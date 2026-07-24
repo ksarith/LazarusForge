@@ -14,9 +14,9 @@
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 2/6                                                                 |
 | Verification Ref | `Admin/Verification_Gates_LF.md`                                    |
-| Last Audit       | 2026-06-19; revised 2026-06-27; revised 2026-07-02; revised 2026-07-08 (two passes); revised 2026-07-09; revised 2026-07-16 |
-| Auditor          | Gemini — Skeptic/Auditor; ChatGPT — Skeptic/Auditor; Grok — Skeptic/Auditor; Claude — Synthesizer/Auditor; Claude — Registration Latency addition (human-directed) 2026-07-08; Claude — Phase 0 manual execution tier added (human-directed) 2026-07-08; Gemini — Exploration audit 2026-07-08 (Archive contradiction, cross-ref, RIP-009, Phase 0 anchor); Claude — fixes integrated + RIP-008 severity correction (human-directed) 2026-07-09; Claude — Post-Exit Monitoring Reversion Mechanism added for GOV-013 (human-directed), 2026-07-16 |
-| Open Unknowns    | 7                                                                   |
+| Last Audit       | 2026-06-19; revised 2026-06-27; revised 2026-07-02; revised 2026-07-08 (two passes); revised 2026-07-09; revised 2026-07-16; revised 2026-07-24 |
+| Auditor          | Gemini — Skeptic/Auditor; ChatGPT — Skeptic/Auditor; Grok — Skeptic/Auditor; Claude — Synthesizer/Auditor; Claude — Registration Latency addition (human-directed) 2026-07-08; Claude — Phase 0 manual execution tier added (human-directed) 2026-07-08; Gemini — Exploration audit 2026-07-08 (Archive contradiction, cross-ref, RIP-009, Phase 0 anchor); Claude — fixes integrated + RIP-008 severity correction (human-directed) 2026-07-09; Claude — Post-Exit Monitoring Reversion Mechanism added for GOV-013 (human-directed), 2026-07-16; Claude — Integrity Confidence/Drift Trend format, Protocol Validation/RIP-010, Status section v0.8 omission fixed (human-directed, external ideation reviewed and scoped down), 2026-07-24 |
+| Open Unknowns    | 8                                                                   |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | High                                                                |
 | Sidecar Link     | #auditor-notes--unknowns                                            |
@@ -260,7 +260,7 @@ For each protected element, this section defines what "intact" looks like in a c
 
 ### Minor Violation
 
-**Examples:** Stale cross-reference, count mismatch in File State table, missing version suffix in archive filename, unlabeled aspirational reference, a sidecar unknown mid-drafting session awaiting its natural batch-registration checkpoint.
+**Examples:** Stale cross-reference, count mismatch in File State table, missing version suffix in archive filename, unlabeled aspirational reference, a sidecar unknown mid-drafting session awaiting its natural batch-registration checkpoint, an Integrity Confidence rating or Drift Trend delta in a Phase 0 report that is not traceable to a finding actually reported in the same session.
 
 **Response:**
 1. Log the violation in the affected file's sidecar as a new unknown or note on an existing unknown
@@ -356,36 +356,15 @@ Not automation — a defined, repeatable manual execution path, distinct from ad
 
 **Verification anchor (added 2026-07-09):** A stated "clean" result is not evidence a file was actually read line-by-line — an agent under context or optimization pressure can assert a check passed without performing it. The daily audit prompt requires extracting and reporting one verifiable fact read directly from this file each run (its exact Open Unknowns count and Last Audit date string) as a minimal proof-of-read. This doesn't guarantee a thorough check, but a wrong or missing extraction is immediate, cheap evidence the fetch didn't happen or wasn't read.
 
-**Report Format — Integrity Confidence and Drift Trend (added v0.9, 2026-07-23):**
-The Phase 0 daily audit output has so far reported findings without a standardized
-summary shape. Two additions standardize it without adding new detection
-capability — this is a reporting-layer change, not a new check.
-
-*Integrity Confidence block* — closes the report with a per-category confidence
-rating (High/Medium/Low), covering: Structural Integrity, Cross-reference
-Integrity, Repository Freshness, Canonical Compliance, Evidence Completeness,
-Automation Confidence. Followed by a one-line Overall Assessment. This is a
-compression of findings already gathered during the audit — it must not be
-asserted independently of them. A category cannot be rated High if the audit
-pass didn't actually exercise the corresponding Protected Element check above.
-
-*Drift Trend block* — compares the current run's counts against the prior
-run's: Integrity status (Stable/Degraded/Improved), Open Unknown count delta,
-Broken Cross-Reference count, Ethical Anchor Violation count, Canonical
-Registration Issue count, Repository Size delta (file count), Automation
-Coverage delta. Requires the prior run's figures to be available — if no
-prior run exists to compare against (first Phase 0 execution, or a gap in
-report retention), state that explicitly rather than reporting a false zero
-delta.
-
-**Constraint:** Neither block is a substitute for the existing Violation
-Classification findings section — both sit after it as a summary layer, and
-both must derive strictly from findings already reported in that section.
-A confidence rating or trend line asserting something the findings section
-doesn't support is itself a Minor integrity violation under this file's own
-ladder (fabricated summary claim).
-
 **What Phase 0 does not provide:** guaranteed execution (an agent can still skip or shallow-check the RIP.md fetch despite the prompt instructing it — the verification anchor above narrows, but does not eliminate, this gap), machine-verifiable consistency, or coverage of files the daily audit doesn't happen to open. Phase 1 automation remains the target for closing these gaps. Phase 0 is a bridge, not a substitute — see RIP-002.
+
+**Report Format — Integrity Confidence and Drift Trend (added 2026-07-24):** The Phase 0 daily audit output has so far reported findings without a standardized summary shape. Two additions standardize it without adding new detection capability — this is a reporting-layer change, not a new check, and it directly answers the effectiveness-measurement gap this file previously had no way to close (there was no way to see, at a glance, whether the protocol is working or drifting over time).
+
+*Integrity Confidence block* — closes the report with a per-category confidence rating (High/Medium/Low), covering: Structural Integrity, Cross-reference Integrity, Repository Freshness, Canonical Compliance, Evidence Completeness, Automation Confidence. Followed by a one-line Overall Assessment. This is a compression of findings already gathered during the audit — it must not be asserted independently of them. A category cannot be rated High if the audit pass didn't actually exercise the corresponding Protected Element check above.
+
+*Drift Trend block* — compares the current run's counts against the prior run's: Integrity status (Stable/Degraded/Improved), Open Unknown count delta, count of findings by Violation Classification tier, Repository Size delta (file count), Automation Coverage delta (Phase 1 checks implemented vs. specified). Requires the prior run's figures to be available — if no prior run exists to compare against (first Phase 0 execution, or a gap in report retention), state that explicitly rather than reporting a false zero delta.
+
+**Constraint:** Neither block is a substitute for the existing Violation Classification findings the audit already reports — both sit after those findings as a summary layer, and both must derive strictly from findings already reported. A confidence rating or trend line asserting something the underlying findings don't support is itself a Minor integrity violation under this file's own ladder (fabricated summary claim) — added to Violation Classification examples and Drift Indicators below.
 
 ### Phase 1 — Structural Checks (near-term)
 
@@ -417,6 +396,16 @@ Requires implementation defined in `Admin/Security_Protocols.md`:
 - Append-only log enforcement
 
 **Rule:** Each phase is a prerequisite for the next. Phase 2 cannot be claimed without systematic archival. Phase 3 cannot be claimed without `Admin/Security_Protocols.md` implementation at sufficient maturity. Governance Enforcement State must not advance beyond actual capability.
+
+### Protocol Validation — Integrity Fire Drill (added 2026-07-24, see RIP-010)
+
+This protocol has never been deliberately tested against a real violation — every Protected Element check above has been exercised only against organic findings encountered during ordinary audits, not a controlled test. A fire drill closes that gap without new tooling, consistent with this file's v0 constraint that procedures must be executable by a human or agent with no automation.
+
+**Scope for a first pass:** two scenarios, not the full space of possible violations — Minor (a planted stale cross-reference or File State count mismatch) and Major (a planted unjustified change beneath a FROZEN marker, or a deleted Resolution Log entry). Both run against a disposable test copy of a low-stakes file, never against a live governance file or this file itself. Constitutional-class injection (altering Tier 1 Axiom text, even in a test copy) is deferred to a later drill once the Minor/Major pass has actually run once — no evidence yet that the simpler pass surfaces zero gaps, so escalating scope before that is unearned.
+
+**Procedure:** (1) plant the violation in a disposable copy; (2) run a normal audit against it exactly as if it were organic — no advance knowledge of which check should fire; (3) confirm detection, correct classification per the Violation Classification ladder, and correct response steps; (4) log the outcome as a new Lessons Learned row regardless of pass or fail — a clean pass is itself evidence worth recording, not just a failure.
+
+**What this does not attempt:** simulated GitHub Actions/CI execution, multi-agent role-play, or a fixed quarterly cadence — those are premature at v0 single-contributor scale and would overstate what a first drill needs to prove. Cadence and scope expansion are decided after the first drill's results are in, not specified in advance.
 
 ---
 
@@ -530,6 +519,7 @@ Mandatory re-audit conditions for this document:
 - Sidecar↔`Unknowns.md` parity check removed from the Phase 1 automation target list
 - Phase 0 manual execution (daily audit prompt) described anywhere as "Phase 1 automation" or "automated enforcement" — Phase 0 is agent-executed per prompt instruction, not machine-enforced, and conflating the two would overstate actual capability in violation of this file's own core rule
 - Daily audit prompt's RIP.md fetch step removed, or its findings section allowed to be silently omitted rather than requiring an explicit "None" statement
+- Integrity Confidence block or Drift Trend block reports a rating or delta not traceable to a finding in the same report's underlying findings, or either block is presented as a replacement for those findings rather than a summary layer after them
 
 **Compound Drift Rule:** If multiple indicators activate simultaneously, halt autonomous audit progression and escalate for human review.
 
@@ -732,7 +722,60 @@ Mandatory re-audit conditions for this document:
 
 ---
 
+### RIP-010 — Protocol never deliberately tested against a planted violation
+
+| Field         | Value                                   |
+|---------------|-------------------------------------------|
+| Status        | Open                                    |
+| Risk          | Low                                     |
+| Priority      | Minor                                   |
+| Type          | Governance / Operational                |
+| Blocking      | No                                      |
+| Owner         | `Admin/Repository_Integrity_Protocol.md`|
+| First Logged  | 2026-07-24                              |
+| Last Reviewed | 2026-07-24                              |
+
+**Description:** Every Protected Element check in this file has been exercised only against violations encountered organically during ordinary audits. None have been deliberately tested — planting a known violation and confirming the audit actually detects, classifies, and responds to it correctly. This means detection reliability is inferred from a handful of real incidents, not demonstrated by controlled test.
+
+**Why It Matters:** Low urgency at current single-contributor scale — the ladder has been exercised in practice and nothing suggests it's failing. But it's an unverified assumption sitting underneath every Protected Element in this file, and it's cheap to close.
+
+**Resolution Path:** Deferred via Specification — see new §Protocol Validation, above. First pass scoped to Minor and Major severity only, against a disposable test copy of a low-stakes file; Constitutional-class injection deferred until after that first pass runs. Close or downgrade this entry once the first drill's outcome is logged in Lessons Learned, regardless of whether it passes cleanly.
+
+*Surfaced via external ideation review (ChatGPT/Grok fire-drill proposal), scoped down substantially before registration — the original proposal's quarterly cadence, seven-scenario menu, and simulated CI/multi-agent role-play were all assessed against this file's own v0 constraints (no tooling assumed, proportional to single-contributor scale) and trimmed to a minimal first pass; registered by Claude — Synthesizer/Auditor, human-directed, 2026-07-24.*
+
+---
+
 ### Resolution Log
+
+- 2026-07-24: **v0.9 — Integrity Confidence/Drift Trend report format added;
+  Protocol Validation subsection and RIP-010 logged; Status section v0.8
+  omission corrected (human-directed, external ideation reviewed).**
+  Reviewed four externally-authored proposals (ChatGPT/Grok) against this
+  file's actual current text before adopting anything. Two were rejected
+  outright: an incident-response SLA proposal reopened exactly the framing
+  RIP-008 was corrected away from (importing rigid cycle-bound timing onto
+  a risk that doesn't share Constitutional-class stakes); a continuous
+  GitHub Actions/CI monitoring proposal was out of scope per this file's
+  own Scope Boundary ("does not define CI/CD pipeline automation
+  mechanics") and would have skipped a phase (Phase 1 checks aren't yet
+  implemented in `Automation/AUDIT_HARNESS.py` per RIP-002, still Open).
+  A sidecar-parity-check code sketch was assessed as correctly scoped but
+  wrong destination — implementation content for `AUDIT_HARNESS.py`
+  itself when RIP-002 is eventually built, not text for this file. Two
+  were adopted, both trimmed before registration: (1) Integrity
+  Confidence and Drift Trend blocks added to the Phase 0 report format,
+  closing the effectiveness-measurement gap this file previously had no
+  way to answer — constrained to derive strictly from findings already
+  reported, with a new Minor violation example and Drift Indicator
+  guarding against confidence/trend claims untethered from actual
+  findings. (2) A Fire Drill proposal (seven scenarios, quarterly
+  cadence, simulated multi-agent/CI role-play) trimmed to a two-scenario
+  first pass (Minor + Major only, Constitutional deferred) against this
+  file's own v0 constraints — registered as **RIP-010**, not
+  pre-ratified as complete doctrine. Separately, the Status section's
+  version history was found missing its v0.8 entry despite that version
+  being present in this Resolution Log since 2026-07-16 — corrected,
+  no substantive content changed. Open Unknowns 7 → 8 (RIP-010 added).
 
 - 2026-07-16: **v0.8 — Post-Exit Monitoring Reversion Mechanism added
   (GOV-013).** New §Post-Exit Monitoring Reversion Mechanism defines
@@ -805,6 +848,10 @@ Mandatory re-audit conditions for this document:
 ---
 
 ## Status
+
+Version 0.9 — Integrity Confidence / Drift Trend report format added to Phase 0 (closes the effectiveness-measurement gap this file previously had no way to answer); Protocol Validation (Integrity Fire Drill) subsection added and RIP-010 logged, scoped to a minimal first pass after trimming a larger external proposal against this file's own v0 constraints; Status section corrected to include the previously-missing v0.8 entry below (2026-07-24).
+
+Version 0.8 — Post-Exit Monitoring Reversion Mechanism added for GOV-013 (human-directed), defining detection-to-response mapping via the existing Violation Classification and Response Ladder rather than new escalation machinery (2026-07-16). *(This entry was omitted from the Status section's version history when originally added, despite being present in the Resolution Log — corrected 2026-07-24, no substantive content changed.)*
 
 Version 0.7 — Gemini's 2026-07-08 audit findings integrated (Archive/Git-tag contradiction resolved, unprefixed cross-reference fixed, RIP-009 logged, Phase 0 verification anchor added), and RIP-008 corrected/downgraded per human governing authority clarification that its original framing overstated urgency (2026-07-09).
 
