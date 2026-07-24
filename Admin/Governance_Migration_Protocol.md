@@ -14,9 +14,9 @@
 | Body Stability   | Volatile                                                            |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | `Admin/Verification_Gates_LF.md`                                    |
-| Last Audit       | 2026-06-19; revised through at least 2026-07-05 internally (GMP-005/GMP-009 dated later than this header — header was not kept current, see Resolution Log); Claude — GOV-013 cross-reference added, 2026-07-16; Claude — GMP-005/GMP-009 resolved, Track A/B redefined by constitutional impact (human-directed), 2026-07-17 |
-| Auditor          | ChatGPT — Skeptic/Auditor; Gemini — Skeptic/Auditor; Grok — Skeptic/Auditor; Claude — Synthesizer; Claude — GMP-009 cross-referenced to GOV-013 (human-directed), 2026-07-16; Claude — GMP-005/GMP-009 resolved (multi-agent proposal, human-directed), 2026-07-17 |
-| Open Unknowns    | 8                                                                   |
+| Last Audit       | 2026-06-19; revised through at least 2026-07-05 internally (GMP-005/GMP-009 dated later than this header — header was not kept current, see Resolution Log); Claude — GOV-013 cross-reference added, 2026-07-16; Claude — GMP-005/GMP-009 resolved, Track A/B redefined by constitutional impact (human-directed), 2026-07-17; Claude — GMP-011/GMP-012 registered, GMP-004 GPG precedent noted, GMP-006/007/008 consolidation noted, Lessons Learned populated, Open Unknowns count corrected, GMP-003 date typo fixed (human-directed, external review reviewed and scoped), 2026-07-25 |
+| Auditor          | ChatGPT — Skeptic/Auditor; Gemini — Skeptic/Auditor; Grok — Skeptic/Auditor; Claude — Synthesizer; Claude — GMP-009 cross-referenced to GOV-013 (human-directed), 2026-07-16; Claude — GMP-005/GMP-009 resolved (multi-agent proposal, human-directed), 2026-07-17; Claude — Synthesizer/Auditor, external review triage (human-directed), 2026-07-25 |
+| Open Unknowns    | 9                                                                   |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | High                                                                |
 | Sidecar Link     | #auditor-notes--unknowns                                            |
@@ -456,7 +456,9 @@ in this file's Resolution Log for Track B amendments.
 
 | Date | Evidence Type | What Was Tried | What Failed | What Was Learned | Confidence | Revalidation Needed |
 |------|---------------|----------------|-------------|------------------|------------|---------------------|
-| —    | —             | —              | —           | No entries yet — pre-deployment file | — | — |
+| 2026-07-17 | Governance Review | Proposing a third migration track to handle non-Axiom content in a Tier 1 file (GMP-009) | A third track added a parallel classification system instead of resolving the actual gap — the existing rule was location-based (Tier 1 file vs. not) when the real distinguishing factor was constitutional impact | Generalizing an existing rule along its true axis is usually better than adding a parallel one for the case that doesn't fit — GMP-005 and GMP-009 were the same underlying gap, not two gaps | Replicated | No |
+| 2026-07-19 | Audit Review | Treating a human-directed approach (CE-006) as sufficiently settled for another file (CLF-004) to build on before independent verification | The underlying mechanism was wrong; caught by chance two days later via an external model's flag and a manufacturer datasheet, not by any structural check this repository runs on itself | A directed approach and ratified doctrine carry different epistemic weight in principle, but nothing previously stopped a directed approach from being *treated* as load-bearing before it earned that weight — silence is not confirmation | Internally Derived | Yes |
+| 2026-07-19 | Governance Review | Resolving GMP-010 for honest error only, without considering deliberate subversion | The initial resolution path (check one primary source) is insufficient against an adversary who can plant or compromise a single source | Source diversity, not just source primacy, is required once an unknown's threat model includes deliberate bad-faith input, not only good-faith error | Internally Derived | Yes |
 
 ---
 
@@ -577,7 +579,7 @@ remains the higher-tier authority fallback.
 | Blocking      | No                                         |
 | Owner         | `Admin/Governance_Migration_Protocol.md`   |
 | First Logged  | 2026-06-05                                 |
-| Last Reviewed | 2026-05-05                                 |
+| Last Reviewed | 2026-06-05                                 |
 
 **Description:** Section III Phase 2 notes that at v0, adversarial
 review may be conducted by a different AI agent class or by the human
@@ -629,6 +631,21 @@ cryptographic authentication is the target. Until then, the interim
 requirement is the operative constraint. Cross-reference SEC-007
 (external root-of-trust architecture) — ratification authentication
 is one of the primary use cases for that architecture.
+
+**Precedent note (added 2026-07-25):** This is not a cold start —
+`Admin/Repository_Integrity_Protocol.md` RIP-001's resolution already
+established GPG-signed Git release tags (key `B5690EEEBB952194`) as
+the repository's archival mechanism. Extending the same signing key
+and workflow to ratification records, rather than proposing a
+separate mechanism, is the lower-friction path when
+`Admin/Security_Protocols.md` implementation begins — logged here as
+a lead for that work, not a resolution of this unknown. Heavier
+infrastructure (hardware security modules, multi-approver quorum
+policy, blockchain anchoring) was considered and set aside as
+disproportionate to a single-contributor v0 project — consistent with
+this repository's existing rejection of cryptographic enforcement
+before its time (see Abandoned Paths, `Admin/Repository_Integrity_Protocol.md`).
+Full design remains owned by `Admin/Security_Protocols.md`, not this file.
 
 ---
 
@@ -730,6 +747,14 @@ proposal may enter Phase 2 while another is in Phase 3. Cross-reference
 GMP-008 (expiration) — serialization requires a mechanism for proposals
 that stall.
 
+**Consolidation note (added 2026-07-25):** GMP-006, GMP-007, and GMP-008
+are three faces of the same missing component — a formal Track B
+amendment state machine (states: Draft → Phase 1 → Phase 2 → Phase 3 →
+Recorded, with Withdrawn/Expired/Rejected/Returned/Superseded
+transitions). Flagged here as the shared resolution target for all
+three; not designed in this pass — that's real design work belonging
+to whichever of the three is picked up first, not a documentation fix.
+
 ---
 
 ### GMP-007 — Amendment withdrawal procedure undefined
@@ -759,6 +784,8 @@ serialization if introduced.
 GMP-006 is resolved. Withdrawal requires a logged rationale and must
 move the proposal to Abandoned Paths. A withdrawn proposal may be
 reopened only by restarting Phase 1 from scratch — no partial resumption.
+See GMP-006's consolidation note — this and GMP-008 resolve together
+with it, not separately.
 
 ---
 
@@ -936,7 +963,122 @@ governing authority's direction that this is worth tracking formally.*
 
 ---
 
+### GMP-011 — Track classification dispute resolution undefined
+
+| Field         | Value                                      |
+|---------------|--------------------------------------------|
+| Status        | Open                                       |
+| Risk          | Medium                                     |
+| Priority      | Minor                                      |
+| Type          | Governance                                 |
+| Blocking      | No                                         |
+| Owner         | `Admin/Governance_Migration_Protocol.md`   |
+| First Logged  | 2026-07-25                                 |
+| Last Reviewed | 2026-07-25                                 |
+
+**Description:** GMP-005/GMP-009's constitutional-impact model defines
+*how* a change should be classified Track A vs. Track B, and "when in
+doubt, Track B" covers genuine uncertainty at classification time. It
+does not cover disagreement after a classification has already been
+made — if an engineer classifies a change Track A and an auditor
+disagrees, no procedure exists for resolving that dispute.
+
+**Why It Matters:** At v0 single-contributor scale this is low-probability
+but not zero — multi-agent audit passes already disagree with each other
+routinely on other questions (see this file's own GMP-005 resolution,
+which took two review rounds to converge). A misclassification dispute
+that has no defined resolution path could stall indefinitely or get
+settled by whoever argues longest, neither of which is the intended
+constitutional discipline.
+
+**Resolution Path:** Deferred via Specification. Minimum candidate:
+disputed classifications default to Track B for the duration of the
+dispute (consistent with the existing "when in doubt" default), with
+resolution requiring human governing authority confirmation of the
+correct track before the proposal may proceed under either track's
+procedure. Not designed further here — flagged as a real gap, not
+solved speculatively.
+
+*Surfaced via external audit review (ChatGPT), checked against this
+file's actual Track identification rule and "when in doubt" doctrine
+before registration — confirmed the dispute-after-classification case
+is genuinely uncovered, not already handled by existing language;
+registered by Claude — Synthesizer/Auditor, human-directed, 2026-07-25.*
+
+---
+
+### GMP-012 — No rollback or repeal doctrine for a ratified Track B amendment
+
+| Field         | Value                                      |
+|---------------|--------------------------------------------|
+| Status        | Open                                       |
+| Risk          | Medium                                     |
+| Priority      | Minor                                      |
+| Type          | Governance                                 |
+| Blocking      | No                                         |
+| Owner         | `Admin/Governance_Migration_Protocol.md`   |
+| First Logged  | 2026-07-25                                 |
+| Last Reviewed | 2026-07-25                                 |
+
+**Description:** Track B's Phase 1–4 procedure defines how a Tier 1
+Axiom amendment gets ratified. Nothing defines what happens if a
+ratified amendment later proves harmful — is reversal a fresh Track B
+amendment reversing the text, a restoration from the pre-amendment
+archived state, or does it require a distinct emergency procedure?
+
+**Why It Matters:** Without this, a bad ratification has no defined
+exit other than treating repeal as a brand-new amendment through the
+full Phase 1–4 cycle — which may be the right answer, but that has
+never been stated, so an actual future repeal would be improvising
+under pressure rather than following a settled procedure.
+
+**Resolution Path:** Deferred via Specification. Minimum candidate:
+repeal is itself a Track B amendment (same Phase 1–4 procedure,
+same human ratification requirement) — no separate emergency track,
+since an emergency-repeal shortcut would itself be a smaller-scale
+version of the same capture risk Track B exists to prevent. Restoration
+of pre-amendment text vs. drafting new replacement text is a case-by-case
+Phase 1 judgment, not something to pre-specify. Not designed further
+here.
+
+*Surfaced via external audit review (ChatGPT), checked against Section
+III's actual Phase 1–4 text before registration — confirmed no rollback
+path exists anywhere in the current procedure; registered by
+Claude — Synthesizer/Auditor, human-directed, 2026-07-25.*
+
+---
+
 ### Resolution Log
+
+- 2026-07-25: **v0.4 — External audit review triaged (ChatGPT, Grok);
+  maintenance fixes and two new unknowns registered (human-directed).**
+  Four externally-authored review passes checked against this file's
+  actual current text before anything was adopted. Confirmed real and
+  fixed: GMP-003's Last Reviewed date preceded its First Logged date
+  (typo); Open Unknowns header claimed 8 but the sidecar table actually
+  contained 7 Open entries (GMP-001/005/009 are Resolved) — the
+  2026-07-19 log entry's own "7 → 8" arithmetic didn't match the table
+  it described; Lessons Learned had sat empty since file creation
+  despite substantial resolvable history in this Resolution Log;
+  Status section was frozen at "Version 0.3" despite GMP-005/009's
+  resolution and GMP-010's registration both landing after that entry.
+  Two new unknowns registered after checking each was genuinely
+  uncovered by existing doctrine: **GMP-011** (classification dispute
+  resolution — "when in doubt, Track B" covers uncertainty, not
+  disagreement after classification) and **GMP-012** (no rollback/repeal
+  doctrine for a ratified amendment that later proves harmful).
+  GMP-006/007/008 gained a shared consolidation note pointing at a
+  future amendment state machine — flagged, not designed, in this pass.
+  GMP-004 gained a cross-reference to existing GPG signing precedent
+  already established via `Admin/Repository_Integrity_Protocol.md`
+  RIP-001, as a lower-friction lead for `Admin/Security_Protocols.md`'s
+  eventual implementation. A separate proposal recommending hardware
+  security modules, multi-approver quorum policy, and blockchain
+  anchoring was reviewed and explicitly not adopted — assessed as
+  disproportionate to a single-contributor v0 project and inconsistent
+  with this repository's existing rejection of premature cryptographic
+  enforcement (`Admin/Repository_Integrity_Protocol.md` Abandoned Paths).
+  Open Unknowns 7 → 9 (corrected baseline, then GMP-011 and GMP-012 added).
 
 - 2026-07-17: **GMP-005 and GMP-009 resolved together; Track A/B
   redefined by constitutional impact, not document location.** Multi-agent
@@ -1069,8 +1211,22 @@ governing authority's direction that this is worth tracking formally.*
 
 ## Status
 
+Version 0.4 — External audit review triaged (ChatGPT, Grok): GMP-003
+date typo fixed; Open Unknowns count corrected from a stale 8 to the
+actual 7 open entries plus two newly registered (GMP-011, GMP-012),
+now 9; Lessons Learned populated from existing Resolution Log history
+(was empty since file creation); GMP-004 gained a cross-reference to
+existing GPG signing precedent (`Admin/Repository_Integrity_Protocol.md`
+RIP-001) rather than adopting proposed HSM/blockchain infrastructure,
+assessed as disproportionate at v0 scale; GMP-006/007/008 gained a
+shared consolidation note pointing at a future amendment state machine,
+not designed in this pass (2026-07-25).
+
 Version 0.3 — GMP-009 logged: track classification gap for non-Axiom
-content changes to the Tier 1 file (2026-07-03).
+content changes to the Tier 1 file (2026-07-03). *(This entry
+previously sat as the most recent Status entry despite GMP-005/GMP-009's
+resolution and GMP-010's registration both landing afterward — corrected
+2026-07-25, no substantive content changed by the correction itself.)*
 
 **What must remain constant:**
 
