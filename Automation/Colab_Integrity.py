@@ -1,10 +1,5 @@
 import sys, subprocess, os
 
-# --- Colab_Launcher_IntegrityCheck.py ---
-# Rename Automation/Integrity_Check.py -> Automation/integrity_check.py
-# on GitHub FIRST — same case-sensitivity issue AUDIT_HARNESS.PY had.
-# This launcher will fail with ModuleNotFoundError until that's done.
-
 result = subprocess.run(
     ["git", "clone", "-q", "https://github.com/ksarith/LazarusForgeV0.git", "/content/LazarusForgeV0"],
     capture_output=True, text=True
