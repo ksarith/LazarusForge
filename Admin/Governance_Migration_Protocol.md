@@ -14,8 +14,8 @@
 | Body Stability   | Volatile                                                            |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | `Admin/Verification_Gates_LF.md`                                    |
-| Last Audit       | 2026-06-19; revised through at least 2026-07-05 internally (GMP-005/GMP-009 dated later than this header — header was not kept current, see Resolution Log); Claude — GOV-013 cross-reference added, 2026-07-16; Claude — GMP-005/GMP-009 resolved, Track A/B redefined by constitutional impact (human-directed), 2026-07-17; Claude — GMP-011/GMP-012 registered, GMP-004 GPG precedent noted, GMP-006/007/008 consolidation noted, Lessons Learned populated, Open Unknowns count corrected, GMP-003 date typo fixed (human-directed, external review reviewed and scoped), 2026-07-25; Claude — §VI Epistemic Quorum Doctrine added, GMP-003 partially mitigated, GMP-013 registered (human-directed, external synthesis reviewed and rescoped away from GOV-008 conflation), 2026-07-26 |
-| Auditor          | ChatGPT — Skeptic/Auditor; Gemini — Skeptic/Auditor; Grok — Skeptic/Auditor; Claude — Synthesizer; Claude — GMP-009 cross-referenced to GOV-013 (human-directed), 2026-07-16; Claude — GMP-005/GMP-009 resolved (multi-agent proposal, human-directed), 2026-07-17; Claude — Synthesizer/Auditor, external review triage (human-directed), 2026-07-25; Claude — Synthesizer/Auditor, EQD adoption with GOV-008 conflation caught and corrected (human-directed), 2026-07-26 |
+| Last Audit       | 2026-06-19; revised through at least 2026-07-05 internally (GMP-005/GMP-009 dated later than this header — header was not kept current, see Resolution Log); Claude — GOV-013 cross-reference added, 2026-07-16; Claude — GMP-005/GMP-009 resolved, Track A/B redefined by constitutional impact (human-directed), 2026-07-17; Claude — GMP-011/GMP-012 registered, GMP-004 GPG precedent noted, GMP-006/007/008 consolidation noted, Lessons Learned populated, Open Unknowns count corrected, GMP-003 date typo fixed (human-directed, external review reviewed and scoped), 2026-07-25; Claude — §VI Epistemic Quorum Doctrine added, GMP-003 partially mitigated, GMP-013 registered (human-directed, external synthesis reviewed and rescoped away from GOV-008 conflation), 2026-07-26; Claude — Polish pass on EQD integration per external review, GOV-008 mirror note added (human-directed), 2026-07-27 |
+| Auditor          | ChatGPT — Skeptic/Auditor; Gemini — Skeptic/Auditor; Grok — Skeptic/Auditor; Claude — Synthesizer; Claude — GMP-009 cross-referenced to GOV-013 (human-directed), 2026-07-16; Claude — GMP-005/GMP-009 resolved (multi-agent proposal, human-directed), 2026-07-17; Claude — Synthesizer/Auditor, external review triage (human-directed), 2026-07-25; Claude — Synthesizer/Auditor, EQD adoption with GOV-008 conflation caught and corrected (human-directed), 2026-07-26; Claude — Synthesizer/Auditor, polish pass (human-directed), 2026-07-27 |
 | Open Unknowns    | 10                                                                  |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | High                                                                |
@@ -99,7 +99,7 @@ argument arises.
 | ID      | Assumption | Basis | Confidence | Expiry Trigger |
 |---------|------------|-------|------------|----------------|
 | ASM-001 | The human operator is the sole ratification authority at v0 | Single-contributor bootstrap context | High | Additional human contributors confirmed |
-| ASM-002 | No Tier 1 amendment will be needed before multi-agent quorum is established | v0 operational scope is narrow | Medium [Estimated / Internally Derived] | Operational friction surfaces axiom inadequacy before quorum |
+| ASM-002 | No Tier 1 amendment will be needed before multi-agent quorum is established | v0 operational scope is narrow | Medium [Estimated / Internally Derived] — partial epistemic quorum now specified via §VI EQD (2026-07-26); GOV-008's full governance quorum remains unestablished, confidence unchanged on that half | Operational friction surfaces axiom inadequacy before quorum |
 | ASM-003 | Engineer role is defined and operational per `Admin/Engineer_Protocols.md` | File exists and is active | High | Engineer_Protocols.md scope boundary revised |
 | ASM-004 | `Admin/Security_Protocols.md` will eventually provide cryptographic ratification authentication | GOV-006 resolution path | Medium [Estimated / Internally Derived] | Security_Protocols.md descoped or deferred beyond v1 |
 | ASM-005 | Lower-tier governance migrations are significantly more frequent than Tier 1 amendments | Expected operational pattern | High | Tier 1 amendment is triggered early in repo lifecycle |
@@ -328,6 +328,9 @@ conducted by a different AI agent class than assembled the proposal,
 or by the human operator themselves using the adversarial reviewer
 mandate explicitly. The review must be documented — it cannot be implicit.
 See GMP-003 for the known weakness of this bootstrap arrangement.
+**Subject to §VI Epistemic Quorum Doctrine** — Track B adversarial
+review must satisfy EQD's quorum minimum and independence dimensions,
+not merely "a different agent class," to count as compliant.
 
 ### Phase 3 — Human Ratification
 
@@ -545,6 +548,10 @@ triggers specific to this file:*
 - Concurrent amendments proceed without GMP-006 resolution
 - Ethical Anchor field absent, altered, or does not match canonical string
 - Verification Ref field changed from `Admin/Verification_Gates_LF.md`
+- §VI Epistemic Quorum Doctrine's Non-goal clause is weakened, removed,
+  or any future amendment cites EQD compliance as satisfying or
+  advancing GOV-008 without that claim itself being flagged as a
+  Track B classification error per GMP-005/GMP-009
 
 **Compound Drift Rule:** If multiple indicators activate simultaneously,
 halt autonomous audit progression and escalate for human review.
@@ -619,7 +626,7 @@ remains the higher-tier authority fallback.
 | Blocking      | No                                         |
 | Owner         | `Admin/Governance_Migration_Protocol.md`   |
 | First Logged  | 2026-06-05                                 |
-| Last Reviewed | 2026-06-05                                 |
+| Last Reviewed | 2026-07-26                                 |
 
 **Description:** Section III Phase 2 notes that at v0, adversarial
 review may be conducted by a different AI agent class or by the human
@@ -647,7 +654,10 @@ standard. Status remains Open. EQD explicitly does not touch GOV-008 —
 see EQD's own Non-goal clause; the cross-reference above to GOV-008
 "resolving this structurally" was itself imprecise and is superseded
 by the sharper epistemic/governance independence distinction EQD
-draws.
+draws. First full application recommended on the next real Track B
+proposal, or a deliberately simulated one if none arises soon — this
+entry should not stay Open indefinitely simply for lack of a live
+proposal to test against.
 
 ---
 
@@ -1146,6 +1156,31 @@ Claude — Synthesizer/Auditor, human-directed, 2026-07-26.*
 
 ### Resolution Log
 
+- 2026-07-27: **v0.6 — Polish pass on EQD integration, external review
+  (Grok, Gemini) checked against source before adoption
+  (human-directed).** Six items confirmed real and fixed: (1) Phase 2
+  gained an explicit "Subject to §VI EQD" anchor, so the link is
+  operational at the point of use, not only referential from EQD's own
+  text. (2) GMP-003's Last Reviewed date was still 2026-06-05 despite
+  the 2026-07-26 partial-mitigation note being added to it that same
+  pass — corrected to 2026-07-26. (3) GMP-003 gained a forward-looking
+  sentence recommending first EQD application on the next real or
+  simulated Track B proposal, so the entry doesn't sit Open indefinitely
+  for lack of a live test case. (4) New Drift Indicator added guarding
+  EQD's Non-goal clause specifically — any future amendment citing EQD
+  as GOV-008 progress must itself be flagged as a misclassification. (5)
+  ASM-002's confidence note updated to reflect EQD as a partial answer
+  on the epistemic-quorum half only, GOV-008's governance-quorum half
+  unchanged. (6) A mirrored non-resolution note added to GOV-008 itself
+  in `Archive/Logs/Governance_Charter_Changelog.md`, so the
+  epistemic/governance independence distinction is visible from both
+  files rather than only from EQD's side — `Admin/Governance_Charter.md`
+  touched for this, Status/Risk/Resolution Path on GOV-008 unchanged.
+  One suggested item not adopted: Grok's proposed baseline summary table
+  duplicates the File State header's existing fields and was left out
+  as redundant rather than added a second time in a different format.
+  Open Unknowns unchanged at 10 — no entry added or resolved this pass.
+
 - 2026-07-26: **v0.5 — §VI Epistemic Quorum Doctrine (EQD) added;
   GMP-003 partially mitigated; GMP-013 registered (human-directed,
   four-way external multi-agent synthesis: ChatGPT, Gemini, Grok,
@@ -1343,6 +1378,14 @@ Claude — Synthesizer/Auditor, human-directed, 2026-07-26.*
 ---
 
 ## Status
+
+Version 0.6 — Polish pass following external review of the v0.5 EQD
+addition (Grok, Gemini): Phase 2 now explicitly anchors to EQD; GMP-003
+date/forward-looking gaps closed; a new Drift Indicator protects EQD's
+Non-goal clause specifically; ASM-002 note updated; a mirrored
+non-resolution note added to GOV-008 in `Admin/Governance_Charter.md`
+so the epistemic/governance independence distinction is visible from
+both files. No unknowns added or resolved (2026-07-27).
 
 Version 0.5 — §VI Epistemic Quorum Doctrine (EQD) added, formalizing
 multi-agent review quorum, independence dimensions, and outcome
