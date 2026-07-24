@@ -14,9 +14,9 @@
 | Body Stability   | Volatile                                                            |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | `Admin/Verification_Gates_LF.md`                                    |
-| Last Audit       | 2026-06-19; revised through at least 2026-07-05 internally (GMP-005/GMP-009 dated later than this header — header was not kept current, see Resolution Log); Claude — GOV-013 cross-reference added, 2026-07-16; Claude — GMP-005/GMP-009 resolved, Track A/B redefined by constitutional impact (human-directed), 2026-07-17; Claude — GMP-011/GMP-012 registered, GMP-004 GPG precedent noted, GMP-006/007/008 consolidation noted, Lessons Learned populated, Open Unknowns count corrected, GMP-003 date typo fixed (human-directed, external review reviewed and scoped), 2026-07-25 |
-| Auditor          | ChatGPT — Skeptic/Auditor; Gemini — Skeptic/Auditor; Grok — Skeptic/Auditor; Claude — Synthesizer; Claude — GMP-009 cross-referenced to GOV-013 (human-directed), 2026-07-16; Claude — GMP-005/GMP-009 resolved (multi-agent proposal, human-directed), 2026-07-17; Claude — Synthesizer/Auditor, external review triage (human-directed), 2026-07-25 |
-| Open Unknowns    | 9                                                                   |
+| Last Audit       | 2026-06-19; revised through at least 2026-07-05 internally (GMP-005/GMP-009 dated later than this header — header was not kept current, see Resolution Log); Claude — GOV-013 cross-reference added, 2026-07-16; Claude — GMP-005/GMP-009 resolved, Track A/B redefined by constitutional impact (human-directed), 2026-07-17; Claude — GMP-011/GMP-012 registered, GMP-004 GPG precedent noted, GMP-006/007/008 consolidation noted, Lessons Learned populated, Open Unknowns count corrected, GMP-003 date typo fixed (human-directed, external review reviewed and scoped), 2026-07-25; Claude — §VI Epistemic Quorum Doctrine added, GMP-003 partially mitigated, GMP-013 registered (human-directed, external synthesis reviewed and rescoped away from GOV-008 conflation), 2026-07-26 |
+| Auditor          | ChatGPT — Skeptic/Auditor; Gemini — Skeptic/Auditor; Grok — Skeptic/Auditor; Claude — Synthesizer; Claude — GMP-009 cross-referenced to GOV-013 (human-directed), 2026-07-16; Claude — GMP-005/GMP-009 resolved (multi-agent proposal, human-directed), 2026-07-17; Claude — Synthesizer/Auditor, external review triage (human-directed), 2026-07-25; Claude — Synthesizer/Auditor, EQD adoption with GOV-008 conflation caught and corrected (human-directed), 2026-07-26 |
+| Open Unknowns    | 10                                                                  |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | High                                                                |
 | Sidecar Link     | #auditor-notes--unknowns                                            |
@@ -452,6 +452,46 @@ in this file's Resolution Log for Track B amendments.
 
 ---
 
+## VI. Epistemic Quorum Doctrine (EQD)
+
+**Purpose:** Strengthen the epistemic reliability of governance review — the quality of reasoning and evidence behind a proposal — for Track B constitutional proposals, adversarial review, and high-risk unknown evaluation.
+
+**Scope:** Applies wherever this file or `Admin/Auditor_Protocols.md` calls for adversarial review, multiple reviewers, or cross-verification of a claim before it is treated as settled — most directly GMP-003's adversarial review requirement and GMP-010's evidence-sufficiency gate.
+
+**Non-goal (binding):** EQD does **not** constitute architectural independence, constitutional separation of powers, satisfaction of Genesis Phase exit criteria, or resolution of `Admin/Governance_Charter.md` GOV-008. GOV-008 requires an independent enforcement substrate with hardware diversity and audit execution capability outside the control of a single operator — a quorum of advisory chat sessions, however diverse in model provider, remains advisory to the same single human principal and does not meet that bar. This distinction — epistemic independence (independent reasoning and evidence review) versus governance independence (independent authority capable of constraining or enforcing outcomes) — is load-bearing and must not be collapsed by future edits. Any future amendment that cites EQD as progress toward GOV-008 is itself a Track B classification error under GMP-005/GMP-009's constitutional-impact model and must be treated as such.
+
+### Minimum Quorum Matrix
+
+| Action / Tier | Minimum Quorum | Independence Requirement | Human Role |
+|---|---|---|---|
+| Routine Track A | 1 proposer + 1 reviewer | Standard | Passive / post-hoc audit |
+| Adversarial Review (GMP-003) | ≥2 independent reviewers | Model + evidence independence (below) | Reviewer of challenge logs |
+| Track B Amendments (Phase 2 → 3) | ≥3 independent participants, 1 explicitly adversarial | Model + evidence + role independence (below) | Mandatory, independent, binding ratification — unaffected by quorum outcome |
+| High-Risk Unknowns (e.g. GMP-010-class evidence gaps) | Cross-verification by ≥1 independent reviewer against primary sources | Evidence independence, minimum | Final arbiter on unresolved splits |
+
+### Three Independence Dimensions
+
+Quorum size alone is insufficient — three reviewers converging on the same shared input can still fail together. A quorum only counts as independent along whichever of these dimensions actually applied to a given review; do not assume all three by default.
+
+1. **Model independence.** Different model families/providers where practical. Multiple sessions of the same model family are not independent for this purpose — this generalizes `Admin/Auditor_Protocols.md` AP-017's existing informational-independence standard from single review to quorum.
+2. **Evidence independence.** A reviewer's conclusions should trace to canonical repository documents or primary sources, not to another reviewer's summary. A second reviewer inheriting a first reviewer's framing is not independent confirmation, even from a different model.
+3. **Role independence.** Proposer, Reviewer, Adversary, and Human Ratifier are distinct roles. The same session should not hold more than one role in a single quorum pass.
+
+### Outcome Taxonomy
+
+| Result | Meaning |
+|---|---|
+| Consensus | No substantive objections remain. |
+| Qualified Consensus | Majority agreement, with dissent documented rather than discarded. |
+| Split Decision | No majority — escalates to human arbitration per the Dissent & Escalation rule below. |
+| Failed Review | Critical issue found — proposal returns for revision, does not advance. |
+
+**Dissent & Escalation:** Minority views are appended to the record, never discarded. A Split Decision automatically escalates to human arbitration — it does not default to either advancing or blocking.
+
+**Resolution status of GMPs this doctrine touches:** Adopting this doctrine is Payment via Specification, not Payment via Implementation. No GMP entry moves to Resolved solely because this section exists — GMP-003 is strengthened but remains Open pending actual multi-reviewer practice against a real Track B proposal; GMP-010 is partially addressed (a cross-verification standard now exists) but remains Open pending tooling. Machine-readable quorum metadata for `Automation/AUDIT_HARNESS.py` is future automation scope, not drafted here — see GMP-013.
+
+---
+
 ## Lessons Learned
 
 | Date | Evidence Type | What Was Tried | What Failed | What Was Learned | Confidence | Revalidation Needed |
@@ -597,6 +637,17 @@ that review must be documented prevents purely implicit self-review.
 At Draft or above, define minimum adversarial review independence
 requirements. Cross-reference GOV-008 (quorum definition) —
 multi-agent quorum resolves this structurally.
+
+**Partial mitigation — 2026-07-26:** §VI Epistemic Quorum Doctrine
+(EQD), above, defines the minimum quorum, independence dimensions, and
+outcome taxonomy this entry called for. This strengthens the
+specification but does not resolve this entry — no adversarial review
+has yet been run against a real Track B proposal under the new
+standard. Status remains Open. EQD explicitly does not touch GOV-008 —
+see EQD's own Non-goal clause; the cross-reference above to GOV-008
+"resolving this structurally" was itself imprecise and is superseded
+by the sharper epistemic/governance independence distinction EQD
+draws.
 
 ---
 
@@ -1048,7 +1099,89 @@ Claude — Synthesizer/Auditor, human-directed, 2026-07-25.*
 
 ---
 
+### GMP-013 — Epistemic Quorum Doctrine has no tooling or machine-readable metadata
+
+| Field         | Value                                      |
+|---------------|--------------------------------------------|
+| Status        | Open                                       |
+| Risk          | Low                                        |
+| Priority      | Minor                                      |
+| Type          | Technical / Governance                     |
+| Blocking      | No                                         |
+| Owner         | `Admin/Governance_Migration_Protocol.md`   |
+| First Logged  | 2026-07-26                                 |
+| Last Reviewed | 2026-07-26                                 |
+
+**Description:** §VI Epistemic Quorum Doctrine defines quorum
+requirements, independence dimensions, and an outcome taxonomy, but
+nothing verifies compliance — a Track B proposal could claim
+"Qualified Consensus" from a quorum that didn't actually satisfy the
+independence dimensions, and nothing would catch it. Multi-agent
+proposals during drafting (this file's own recent history included)
+suggested machine-readable quorum metadata (participant roles, models,
+outcome, dissent flag) that `Automation/AUDIT_HARNESS.py` could
+eventually verify.
+
+**Why It Matters:** Low urgency at v0 single-contributor scale, where
+quorum composition is currently reviewable by direct read of the
+conversation record. Becomes more important as amendment frequency or
+contributor count grows and self-reported quorum outcomes become
+harder to spot-check.
+
+**Resolution Path:** Deferred via Specification. Not designed here —
+this is `Automation/AUDIT_HARNESS.py` implementation scope (see
+`Admin/Repository_Integrity_Protocol.md` RIP-002 for the existing
+pattern of specification-now, implementation-later for that harness).
+A minimal future schema was suggested during drafting (participant
+role/model list, outcome value, dissent boolean) as a starting point,
+not a commitment.
+
+*Surfaced during EQD drafting (external multi-agent synthesis,
+human-directed); scoped down from an inline schema draft to a logged
+future-tooling gap, consistent with this file's own discipline of not
+mixing specification with unbuilt implementation. Registered by
+Claude — Synthesizer/Auditor, human-directed, 2026-07-26.*
+
+---
+
 ### Resolution Log
+
+- 2026-07-26: **v0.5 — §VI Epistemic Quorum Doctrine (EQD) added;
+  GMP-003 partially mitigated; GMP-013 registered (human-directed,
+  four-way external multi-agent synthesis: ChatGPT, Gemini, Grok,
+  reviewed against source before adoption).** A proposal to formalize
+  multi-agent quorum requirements converged across three external
+  agents but initially conflated two different kinds of independence —
+  epistemic (independent reasoning/evidence) and governance
+  (independent authority capable of enforcement) — and an early draft
+  marked GOV-008 "POPULATED" and GMP-003/GMP-010 "RESOLVED" on that
+  basis. Checked against `Admin/Governance_Charter.md`'s actual GOV-008
+  text before adopting anything: GOV-008 requires hardware diversity
+  and "a functional, multi-party enforcement substrate, not a declared
+  intention to pursue one" — a quorum of advisory chat sessions
+  directed by a single human principal does not meet that bar,
+  regardless of model-provider diversity. Adopted instead as EQD,
+  scoped explicitly to epistemic review quality via a binding Non-goal
+  clause disclaiming any GOV-008/Genesis-Phase relevance — this
+  distinction is treated as load-bearing, with an explicit rule that
+  any future edit citing EQD as GOV-008 progress is itself a
+  misclassification under GMP-005/GMP-009. Three independence
+  dimensions (model, evidence, role) adopted, generalizing
+  `Admin/Auditor_Protocols.md` AP-017's existing informational-
+  independence standard from single review to quorum. Outcome taxonomy
+  (Consensus/Qualified Consensus/Split Decision/Failed Review) adopted
+  as proposed. Machine-readable quorum metadata for
+  `Automation/AUDIT_HARNESS.py` was not drafted into doctrine text —
+  logged as **GMP-013** instead, consistent with this repository's
+  specification-before-implementation discipline. GMP-003's resolution
+  path updated to reference EQD and explicitly correct its own prior
+  imprecise claim that quorum "resolves GOV-008 structurally" — status
+  remains Open pending a real Track B proposal reviewed under the new
+  standard. GOV-008 itself was not edited in this file; a cross-
+  reference noting EQD's Non-goal clause is recommended for
+  `Admin/Governance_Charter.md`'s GOV-008 entry as a follow-up, not
+  done here since that file is owned separately. Open Unknowns 9 → 10
+  (GMP-013 added; no entry resolved by this addition alone).
 
 - 2026-07-25: **v0.4 — External audit review triaged (ChatGPT, Grok);
   maintenance fixes and two new unknowns registered (human-directed).**
@@ -1210,6 +1343,17 @@ Claude — Synthesizer/Auditor, human-directed, 2026-07-25.*
 ---
 
 ## Status
+
+Version 0.5 — §VI Epistemic Quorum Doctrine (EQD) added, formalizing
+multi-agent review quorum, independence dimensions, and outcome
+taxonomy for GMP-003/GMP-010-class review. Adopted from four-way
+external multi-agent synthesis, but rescoped before adoption: an
+early draft conflated epistemic independence (reasoning/evidence)
+with governance independence (enforcement authority) and marked
+GOV-008 "resolved" — checked against the Charter's actual GOV-008
+text, found not to satisfy it, and corrected with a binding Non-goal
+clause before anything was adopted. GMP-013 registered for the
+tooling/automation gap this doctrine does not itself close (2026-07-26).
 
 Version 0.4 — External audit review triaged (ChatGPT, Grok): GMP-003
 date typo fixed; Open Unknowns count corrected from a stale 8 to the
