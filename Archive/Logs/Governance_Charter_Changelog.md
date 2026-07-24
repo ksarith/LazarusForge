@@ -206,6 +206,8 @@ GOV-XXX sidecar entry and the full Resolution Log — lives here now.
 
 **Resolution Path:** Payment via Specification — define minimum agent quorum in a dedicated Bootstrap_Protocol.md or extend `Admin/Governance_Migration_Protocol.md`. Inputs: (1) minimum number of distinct agent classes required; (2) hardware diversity requirement (Axiom Q-2 implies architectural independence, not just role separation); (3) attestation mechanism for quorum verification. Cross-reference GOV-007 and `Admin/Security_Protocols.md`. Note: Pathway 1 (Quorum Achievement) in the Genesis Phase Exit Conditions is the primary resolution path for this unknown — closing GOV-008 operationalizes that pathway. Pathways 2, 3, and 4 provide exit routes that do not depend on GOV-008 resolution, reducing the risk of indefinite Genesis Phase extension.
 
+**Non-resolution note (added 2026-07-27):** `Admin/Governance_Migration_Protocol.md` §VI Epistemic Quorum Doctrine (EQD, added v0.5) defines a multi-agent review quorum for Track B proposals and adversarial review. EQD carries its own binding Non-goal clause stating explicitly that it does **not** satisfy this entry — a quorum of advisory chat sessions directed by one human principal provides epistemic independence (reasoning/evidence diversity), not the architectural/hardware independence and multi-party enforcement substrate this entry actually requires. Logged here so this distinction is visible from both files, not only EQD's — a future reader arriving at GOV-008 first should not need to already know EQD's own disclaimer to avoid the same conflation an early draft of EQD itself made before correction.
+
 ---
 
 ### GOV-009 — Bounded framework for external resource consumption and environmental interaction undefined
@@ -598,6 +600,17 @@ independently — a shared mechanism may serve both.
 
 ### Resolution Log
 
+- 2026-07-27: **GOV-008 non-resolution note added (human-directed).**
+  `Admin/Governance_Migration_Protocol.md` v0.5 added §VI Epistemic
+  Quorum Doctrine (EQD) — a multi-agent review quorum for Track B
+  proposals, carrying its own binding Non-goal clause disclaiming any
+  GOV-008 relevance. Added the mirror note here so the distinction
+  (epistemic independence via advisory chat quorum vs. the
+  architectural/hardware independence and enforcement substrate GOV-008
+  actually requires) is visible from this entry directly, not only from
+  EQD's side. No change to GOV-008's Status, Risk, or Resolution Path —
+  this entry remains Open, unaffected in substance by EQD's existence.
+
 - 2026-07-23: **Sidecar and Resolution Log relocated to `Archive/Logs/Governance_Charter_Changelog.md`** (human-directed), matching the precedent set the same day by `Admin/Auditor_Protocols.md`'s relocation to `Archive/Logs/Auditor_Protocols_Logs.md`. `Admin/Governance_Charter.md` retains File State, Scope Boundary, all Tier 1 Axiom and doctrine text, Active Disputes, Abandoned Paths, Drift Indicators, Relationship to Existing Documents, and Status. Every GOV-XXX sidecar entry and the full Resolution Log now live here. This is a documented exception to the general Sidecar Model rule (module-specific unknowns live in the owning file's own body) — a per-file archive split, not a reversion to the centralized-registry pattern `Unknowns.md` retired at v4.3. **GOV-022 registered same session** — see sidecar above — logging "reversibility" as a candidate cross-cutting operating principle surfaced via external multi-agent ideation, with placement (new Operating Principles subsection here vs. `Admin/Auditor_Protocols.md` vs. rejection as redundant with existing P-1/Q-3) left as an open decision for human governing authority. Open Unknowns 18 → 19.
 
 - 2026-07-19: **Three-item revision (human governing authority, human-
@@ -765,5 +778,4 @@ independently — a shared mechanism may serve both.
 - 2026-06-16: **v0.7 — Multi-agent audit pass (Claude + Gemini).** Five findings addressed: (1) Spec Gates corrected 2/6 → 1/6 — Gate 2 remains Blocked (Bootstrap Paradox); metadata now matches historical record. (2) Canonical Governance Ownership table cleaned — [PLANNED] stripped from confirmed-created files; all owners use canonical folder-prefixed paths. (3) Genesis Phase Protocol clarified — Q-2 compliance via single human operator requires demonstrable role separation; same-session self-authorization does not satisfy Q-2. (4) GOV-006-A added — interim authentication rules documented as declarative-only with zero automated resistance. (5) GOV-001 status moved to In Progress — GMP created 2026-06-06 as executing resolution path.
 - 2026-06-17: **v0.8 — Full revision from source (Claude).** Seven findings addressed: (1) Open Unknowns incremented 9 → 10; Last Audit updated. (2) Pathway 4 review horizon labeled [Estimated / Internally Derived]. (3) Gate 2 body text updated with explicit BLOCKED status note. (4) Gate 5 body text updated with explicit AP-006 path reference (`Admin/Auditor_Protocols.md` §AP-006 via `Admin/Forge_Audit_Kit.md`) and Genesis Phase Gate 5 clarification. (5) Autonomous Governance Constraints updated — execution outside RIP visibility frameworks logged as governance visibility violation triggering localized STATE_HOLD (scoped to visibility violation, not constitutional violation, pending RIP maturation). (6) GOV-002 resolution path updated with explicit AP-006 routing. (7) GOV-010 logged — jurisdictional and regulatory compliance friction; cross-referenced to GOV-009 and planned Environmental_Constraints.md. (8) All sidecar Owner fields standardized to backtick-quoted canonical folder-prefixed paths. (9) Governance Authority Hierarchy and Canonical Governance Ownership tables updated with backtick-quoted paths; GMP row added to ownership table. (10) Drift Indicators: Gate 2 block status sentinel added.
 - 2026-07-12: Reordered Abandoned Paths and Drift Indicators to after Auditor Notes & Unknowns, per `Admin/File_Template.md` order — they previously sat between Active Disputes and Auditor Notes & Unknowns. No other content changed. Same ordering bug found and fixed the same day in `Operations/Air_Scrubber.md`, `Operations/Energy.md`, and `Operations/Gate_02_Triage.md` — this is the fifth file with the identical slip, and the first Tier 1 constitutional file caught with it.
-
 
