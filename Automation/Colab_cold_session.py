@@ -18,6 +18,9 @@ print("=== MANIFEST (keep for your own records — never paste this to the audit
 print(json.dumps(bundle.manifest(), indent=2))
 
 payload = bundle.render()
+import os
+if os.path.exists("/content/cold_session_payload.txt"):
+    os.remove("/content/cold_session_payload.txt")
 with open("/content/cold_session_payload.txt", "w") as f:
     f.write(payload)
 print(f"\nPayload: {len(payload):,} chars — written to /content/cold_session_payload.txt")
