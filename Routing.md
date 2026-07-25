@@ -10,100 +10,100 @@ These files are complementary — Routing.md owns *where*, Discovery.md owns *wh
 | File Path / Name | Raw Content URL (LLM Context Target) | Repository URL (Human Target) | Backlink Requirement |
 |---|---|---|---|
 | **Root Layer** |  |  |  |
-| README.md | Raw | Repo | Explicit |
-| Discovery.md * | Raw | Repo | Explicit |
-| Routing.md | Raw | Repo | *Self-referential* |
-| Unknowns.md | Raw | Repo | Explicit |
+| README.md | https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/README.md | https://github.com/ksarith/LazarusForgeV0/blob/main/README.md | Explicit |
+| Discovery.md * | https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Discovery.md | https://github.com/ksarith/LazarusForgeV0/blob/main/Discovery.md | Explicit |
+| Routing.md | https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Routing.md | https://github.com/ksarith/LazarusForgeV0/blob/main/Routing.md | *Self-referential* |
+| Unknowns.md | https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Unknowns.md | https://github.com/ksarith/LazarusForgeV0/blob/main/Unknowns.md | Explicit |
 | **Admin/ Layer** |  |  |  |
-| Admin/Governance_Charter.md | Raw | Repo | Explicit |
-| Admin/Ethical_Constraints.md | Raw | Repo | Explicit |
-| Admin/Auditor_Protocols.md | Raw | Repo | Explicit |
-| Admin/Forge_Audit_Kit.md | Raw | Repo | Explicit |
-| Admin/Verification_Gates_LF.md | Raw | Repo | Explicit |
-| Admin/File_Template.md | Raw | Repo | Explicit |
-| Admin/Canonical_Terms.md | Raw | Repo | Explicit |
-| Admin/Engineer_Protocols.md | Raw | Repo | Explicit |
-| Admin/Safety_Protocols.md | Raw | Repo | Explicit |
-| Admin/Security_Protocols.md | Raw | Repo | Explicit |
-| Admin/Repository_Integrity_Protocol.md | Raw | Repo | Explicit |
-| Admin/Repository_Structure.md | Raw | Repo | Explicit |
-| Admin/Governance_Migration_Protocol.md | Raw | Repo | Explicit |
-| Admin/Ship_of_Theseus.md | Raw | Repo | Explicit |
-| Admin/Trajectories.md | Raw | Repo | Explicit |
-| Admin/Economics.md | Raw | Repo | Explicit |
-| Admin/Environmental_Constraints.md | Raw | Repo | Explicit |
-| Admin/Experiments.md | Raw | Repo | Explicit |
-| Admin/Nothingness Theorem | Raw | Repo | Explicit |
-| Admin/Computational Institutional Reasoning | Raw | Repo | Explicit |
-| Admin/Autonomy_Divergence_Protocol.md | Raw | Repo | Explicit |
+| Admin/Governance_Charter.md | https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Admin/Governance_Charter.md | https://github.com/ksarith/LazarusForgeV0/blob/main/Admin/Governance_Charter.md | Explicit |
+| Admin/Ethical_Constraints.md | https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Admin/Ethical_Constraints.md | https://github.com/ksarith/LazarusForgeV0/blob/main/Admin/Ethical_Constraints.md | Explicit |
+| Admin/Auditor_Protocols.md | https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Admin/Auditor_Protocols.md | https://github.com/ksarith/LazarusForgeV0/blob/main/Admin/Auditor_Protocols.md | Explicit |
+| Admin/Forge_Audit_Kit.md | https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Admin/Forge_Audit_Kit.md | https://github.com/ksarith/LazarusForgeV0/blob/main/Admin/Forge_Audit_Kit.md | Explicit |
+| Admin/Verification_Gates_LF.md | https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Admin/Verification_Gates_LF.md | https://github.com/ksarith/LazarusForgeV0/blob/main/Admin/Verification_Gates_LF.md | Explicit |
+| Admin/File_Template.md | https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Admin/File_Template.md | https://github.com/ksarith/LazarusForgeV0/blob/main/Admin/File_Template.md | Explicit |
+| Admin/Canonical_Terms.md | https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Admin/Canonical_Terms.md | https://github.com/ksarith/LazarusForgeV0/blob/main/Admin/Canonical_Terms.md | Explicit |
+| Admin/Engineer_Protocols.md | https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Admin/Engineer_Protocols.md | https://github.com/ksarith/LazarusForgeV0/blob/main/Admin/Engineer_Protocols.md | Explicit |
+| Admin/Safety_Protocols.md | https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Admin/Safety_Protocols.md | https://github.com/ksarith/LazarusForgeV0/blob/main/Admin/Safety_Protocols.md | Explicit |
+| Admin/Security_Protocols.md | https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Admin/Security_Protocols.md | https://github.com/ksarith/LazarusForgeV0/blob/main/Admin/Security_Protocols.md | Explicit |
+| Admin/Repository_Integrity_Protocol.md | https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Admin/Repository_Integrity_Protocol.md | https://github.com/ksarith/LazarusForgeV0/blob/main/Admin/Repository_Integrity_Protocol.md | Explicit |
+| Admin/Repository_Structure.md | https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Admin/Repository_Structure.md | https://github.com/ksarith/LazarusForgeV0/blob/main/Admin/Repository_Structure.md | Explicit |
+| Admin/Governance_Migration_Protocol.md | https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Admin/Governance_Migration_Protocol.md | https://github.com/ksarith/LazarusForgeV0/blob/main/Admin/Governance_Migration_Protocol.md | Explicit |
+| Admin/Ship_of_Theseus.md | https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Admin/Ship_of_Theseus.md | https://github.com/ksarith/LazarusForgeV0/blob/main/Admin/Ship_of_Theseus.md | Explicit |
+| Admin/Trajectories.md | https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Admin/Trajectories.md | https://github.com/ksarith/LazarusForgeV0/blob/main/Admin/Trajectories.md | Explicit |
+| Admin/Economics.md | https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Admin/Economics.md | https://github.com/ksarith/LazarusForgeV0/blob/main/Admin/Economics.md | Explicit |
+| Admin/Environmental_Constraints.md | https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Admin/Environmental_Constraints.md | https://github.com/ksarith/LazarusForgeV0/blob/main/Admin/Environmental_Constraints.md | Explicit |
+| Admin/Experiments.md | https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Admin/Experiments.md | https://github.com/ksarith/LazarusForgeV0/blob/main/Admin/Experiments.md | Explicit |
+| Admin/Nothingness Theorem | https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Admin/Nothingness%20Theorem | https://github.com/ksarith/LazarusForgeV0/blob/main/Admin/Nothingness%20Theorem | Explicit |
+| Admin/Computational Institutional Reasoning | https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Admin/Computational%20Institutional%20Reasoning | https://github.com/ksarith/LazarusForgeV0/blob/main/Admin/Computational%20Institutional%20Reasoning | Explicit |
+| Admin/Autonomy_Divergence_Protocol.md | https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Admin/Autonomy_Divergence_Protocol.md | https://github.com/ksarith/LazarusForgeV0/blob/main/Admin/Autonomy_Divergence_Protocol.md | Explicit |
 | **Automation/ Layer** |  |  |  |
-| Automation/AUDIT_HARNESS.py | Raw | Repo | N/A (Script) |
-| Automation/audit_lib.py | Raw | Repo | N/A (Script) |
-| Automation/Colab_cold_session.py | Raw | Repo | N/A (Script) |
-| Automation/Colab_Integrity.py | Raw | Repo | N/A (Script) |
-| Automation/Colab_Launcher.py | Raw | Repo | N/A (Script) |
-| Automation/cold_session_bundler.py | Raw | Repo | N/A (Script) |
-| Automation/integrity_check.py | Raw | Repo | N/A (Script) |
-| Automation/parser.py | Raw | Repo | N/A (Script) |
+| Automation/AUDIT_HARNESS.py | https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Automation/AUDIT_HARNESS.py | https://github.com/ksarith/LazarusForgeV0/blob/main/Automation/AUDIT_HARNESS.py | N/A (Script) |
+| Automation/audit_lib.py | https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Automation/audit_lib.py | https://github.com/ksarith/LazarusForgeV0/blob/main/Automation/audit_lib.py | N/A (Script) |
+| Automation/Colab_cold_session.py | https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Automation/Colab_cold_session.py | https://github.com/ksarith/LazarusForgeV0/blob/main/Automation/Colab_cold_session.py | N/A (Script) |
+| Automation/Colab_Integrity.py | https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Automation/Colab_Integrity.py | https://github.com/ksarith/LazarusForgeV0/blob/main/Automation/Colab_Integrity.py | N/A (Script) |
+| Automation/Colab_Launcher.py | https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Automation/Colab_Launcher.py | https://github.com/ksarith/LazarusForgeV0/blob/main/Automation/Colab_Launcher.py | N/A (Script) |
+| Automation/cold_session_bundler.py | https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Automation/cold_session_bundler.py | https://github.com/ksarith/LazarusForgeV0/blob/main/Automation/cold_session_bundler.py | N/A (Script) |
+| Automation/integrity_check.py | https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Automation/integrity_check.py | https://github.com/ksarith/LazarusForgeV0/blob/main/Automation/integrity_check.py | N/A (Script) |
+| Automation/parser.py | https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Automation/parser.py | https://github.com/ksarith/LazarusForgeV0/blob/main/Automation/parser.py | N/A (Script) |
 | **Architecture/ Layer** |  |  |  |
-| Architecture/Forge_flow.md | Raw | Repo | Explicit |
-| Architecture/Components.md | Raw | Repo | Explicit |
-| Architecture/Facilities.md | Raw | Repo | Explicit |
-| Architecture/Geck_forge_seed.md | Raw | Repo | Explicit |
-| Architecture/Engineering.md | Raw | Repo | Explicit |
-| Architecture/Precision.md | Raw | Repo | Explicit |
-| Architecture/Mechanical_Structures.md | Raw | Repo | Explicit |
-| Architecture/Thermal_Systems.md | Raw | Repo | Explicit |
-| Architecture/Friction_Dynamics.md | Raw | Repo | Explicit |
-| Architecture/Chemistry.md | Raw | Repo | Explicit |
-| Architecture/Cognitive_Frameworks.md | Raw | Repo | Explicit |
-| Architecture/Forge_Net.md | Raw | Repo | Explicit |
+| Architecture/Forge_flow.md | https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Architecture/Forge_flow.md | https://github.com/ksarith/LazarusForgeV0/blob/main/Architecture/Forge_flow.md | Explicit |
+| Architecture/Components.md | https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Architecture/Components.md | https://github.com/ksarith/LazarusForgeV0/blob/main/Architecture/Components.md | Explicit |
+| Architecture/Facilities.md | https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Architecture/Facilities.md | https://github.com/ksarith/LazarusForgeV0/blob/main/Architecture/Facilities.md | Explicit |
+| Architecture/Geck_forge_seed.md | https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Architecture/Geck_forge_seed.md | https://github.com/ksarith/LazarusForgeV0/blob/main/Architecture/Geck_forge_seed.md | Explicit |
+| Architecture/Engineering.md | https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Architecture/Engineering.md | https://github.com/ksarith/LazarusForgeV0/blob/main/Architecture/Engineering.md | Explicit |
+| Architecture/Precision.md | https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Architecture/Precision.md | https://github.com/ksarith/LazarusForgeV0/blob/main/Architecture/Precision.md | Explicit |
+| Architecture/Mechanical_Structures.md | https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Architecture/Mechanical_Structures.md | https://github.com/ksarith/LazarusForgeV0/blob/main/Architecture/Mechanical_Structures.md | Explicit |
+| Architecture/Thermal_Systems.md | https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Architecture/Thermal_Systems.md | https://github.com/ksarith/LazarusForgeV0/blob/main/Architecture/Thermal_Systems.md | Explicit |
+| Architecture/Friction_Dynamics.md | https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Architecture/Friction_Dynamics.md | https://github.com/ksarith/LazarusForgeV0/blob/main/Architecture/Friction_Dynamics.md | Explicit |
+| Architecture/Chemistry.md | https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Architecture/Chemistry.md | https://github.com/ksarith/LazarusForgeV0/blob/main/Architecture/Chemistry.md | Explicit |
+| Architecture/Cognitive_Frameworks.md | https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Architecture/Cognitive_Frameworks.md | https://github.com/ksarith/LazarusForgeV0/blob/main/Architecture/Cognitive_Frameworks.md | Explicit |
+| Architecture/Forge_Net.md | https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Architecture/Forge_Net.md | https://github.com/ksarith/LazarusForgeV0/blob/main/Architecture/Forge_Net.md | Explicit |
 | **Operations/ Layer** |  |  |  |
-| Operations/Gate_01_Intake.md | Raw | Repo | Explicit |
-| Operations/Gate_02_Triage.md | Raw | Repo | Explicit |
-| Operations/Gate_03_Reduction.md | Raw | Repo | Explicit |
-| Operations/Gate_04_Separation_Mechanical.md | Raw | Repo | Explicit |
-| Operations/Gate_05_Separation_Thermal.md | Raw | Repo | Explicit |
-| Operations/Gate_06_Fabrication.md | Raw | Repo | Explicit |
-| Operations/Gate_07_Utilization.md | Raw | Repo | Explicit |
-| Operations/Electronics.md | Raw | Repo | Explicit |
-| Operations/Energy.md | Raw | Repo | Explicit |
-| Operations/Air_Scrubber.md | Raw | Repo | Explicit |
-| Operations/Plastics.md | Raw | Repo | Explicit |
-| Operations/Woodworking.md | Raw | Repo | Explicit |
+| Operations/Gate_01_Intake.md | https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Operations/Gate_01_Intake.md | https://github.com/ksarith/LazarusForgeV0/blob/main/Operations/Gate_01_Intake.md | Explicit |
+| Operations/Gate_02_Triage.md | https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Operations/Gate_02_Triage.md | https://github.com/ksarith/LazarusForgeV0/blob/main/Operations/Gate_02_Triage.md | Explicit |
+| Operations/Gate_03_Reduction.md | https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Operations/Gate_03_Reduction.md | https://github.com/ksarith/LazarusForgeV0/blob/main/Operations/Gate_03_Reduction.md | Explicit |
+| Operations/Gate_04_Separation_Mechanical.md | https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Operations/Gate_04_Separation_Mechanical.md | https://github.com/ksarith/LazarusForgeV0/blob/main/Operations/Gate_04_Separation_Mechanical.md | Explicit |
+| Operations/Gate_05_Separation_Thermal.md | https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Operations/Gate_05_Separation_Thermal.md | https://github.com/ksarith/LazarusForgeV0/blob/main/Operations/Gate_05_Separation_Thermal.md | Explicit |
+| Operations/Gate_06_Fabrication.md | https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Operations/Gate_06_Fabrication.md | https://github.com/ksarith/LazarusForgeV0/blob/main/Operations/Gate_06_Fabrication.md | Explicit |
+| Operations/Gate_07_Utilization.md | https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Operations/Gate_07_Utilization.md | https://github.com/ksarith/LazarusForgeV0/blob/main/Operations/Gate_07_Utilization.md | Explicit |
+| Operations/Electronics.md | https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Operations/Electronics.md | https://github.com/ksarith/LazarusForgeV0/blob/main/Operations/Electronics.md | Explicit |
+| Operations/Energy.md | https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Operations/Energy.md | https://github.com/ksarith/LazarusForgeV0/blob/main/Operations/Energy.md | Explicit |
+| Operations/Air_Scrubber.md | https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Operations/Air_Scrubber.md | https://github.com/ksarith/LazarusForgeV0/blob/main/Operations/Air_Scrubber.md | Explicit |
+| Operations/Plastics.md | https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Operations/Plastics.md | https://github.com/ksarith/LazarusForgeV0/blob/main/Operations/Plastics.md | Explicit |
+| Operations/Woodworking.md | https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Operations/Woodworking.md | https://github.com/ksarith/LazarusForgeV0/blob/main/Operations/Woodworking.md | Explicit |
 | **Tests/ Layer** |  |  |  |
-| Tests/Support_Raft.md | Raw | Repo | Explicit |
-| Tests/Leviathan_testing.md | Raw | Repo | Explicit |
-| Tests/Living_Waters.md | Raw | Repo | Explicit |
-| Tests/Trophic_Forge.md | Raw | Repo | Explicit |
-| Tests/Solar_Descent.md | Raw | Repo | Explicit |
-| Tests/Cognitive_Salvage_Layer.md | Raw | Repo | Explicit |
-| Tests/Hydrologic_Resource_Cascade.md | Raw | Repo | Explicit |
-| Tests/Chaos_Dynamics.md | Raw | Repo | Explicit |
+| Tests/Support_Raft.md | https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Tests/Support_Raft.md | https://github.com/ksarith/LazarusForgeV0/blob/main/Tests/Support_Raft.md | Explicit |
+| Tests/Leviathan_testing.md | https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Tests/Leviathan_testing.md | https://github.com/ksarith/LazarusForgeV0/blob/main/Tests/Leviathan_testing.md | Explicit |
+| Tests/Living_Waters.md | https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Tests/Living_Waters.md | https://github.com/ksarith/LazarusForgeV0/blob/main/Tests/Living_Waters.md | Explicit |
+| Tests/Trophic_Forge.md | https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Tests/Trophic_Forge.md | https://github.com/ksarith/LazarusForgeV0/blob/main/Tests/Trophic_Forge.md | Explicit |
+| Tests/Solar_Descent.md | https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Tests/Solar_Descent.md | https://github.com/ksarith/LazarusForgeV0/blob/main/Tests/Solar_Descent.md | Explicit |
+| Tests/Cognitive_Salvage_Layer.md | https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Tests/Cognitive_Salvage_Layer.md | https://github.com/ksarith/LazarusForgeV0/blob/main/Tests/Cognitive_Salvage_Layer.md | Explicit |
+| Tests/Hydrologic_Resource_Cascade.md | https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Tests/Hydrologic_Resource_Cascade.md | https://github.com/ksarith/LazarusForgeV0/blob/main/Tests/Hydrologic_Resource_Cascade.md | Explicit |
+| Tests/Chaos_Dynamics.md | https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Tests/Chaos_Dynamics.md | https://github.com/ksarith/LazarusForgeV0/blob/main/Tests/Chaos_Dynamics.md | Explicit |
 | **Challenges/ Layer** |  |  |  |
-| Challenges/Water.md | Raw | Repo | Explicit |
-| Challenges/Biofouling.md | Raw | Repo | Explicit |
-| Challenges/Waste.md | Raw | Repo | Explicit |
-| Challenges/Planned_Obsolescence.md | Raw | Repo | Explicit |
-| Challenges/Critical_Minerals.md | Raw | Repo | Explicit |
-| Challenges/Emergence.md | Raw | Repo | Explicit |
-| Challenges/Energy_Scarcity.md | Raw | Repo | Explicit — added 2026-07-12 |
-| Challenges/Return_To_Eden.md | Raw | Repo | Explicit |
-| Challenges/Closed_Loop_Feedstock.md | Raw | Repo | Explicit |
+| Challenges/Water.md | https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Challenges/Water.md | https://github.com/ksarith/LazarusForgeV0/blob/main/Challenges/Water.md | Explicit |
+| Challenges/Biofouling.md | https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Challenges/Biofouling.md | https://github.com/ksarith/LazarusForgeV0/blob/main/Challenges/Biofouling.md | Explicit |
+| Challenges/Waste.md | https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Challenges/Waste.md | https://github.com/ksarith/LazarusForgeV0/blob/main/Challenges/Waste.md | Explicit |
+| Challenges/Planned_Obsolescence.md | https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Challenges/Planned_Obsolescence.md | https://github.com/ksarith/LazarusForgeV0/blob/main/Challenges/Planned_Obsolescence.md | Explicit |
+| Challenges/Critical_Minerals.md | https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Challenges/Critical_Minerals.md | https://github.com/ksarith/LazarusForgeV0/blob/main/Challenges/Critical_Minerals.md | Explicit |
+| Challenges/Emergence.md | https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Challenges/Emergence.md | https://github.com/ksarith/LazarusForgeV0/blob/main/Challenges/Emergence.md | Explicit |
+| Challenges/Energy_Scarcity.md | https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Challenges/Energy_Scarcity.md | https://github.com/ksarith/LazarusForgeV0/blob/main/Challenges/Energy_Scarcity.md | Explicit — added 2026-07-12 |
+| Challenges/Return_To_Eden.md | https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Challenges/Return_To_Eden.md | https://github.com/ksarith/LazarusForgeV0/blob/main/Challenges/Return_To_Eden.md | Explicit |
+| Challenges/Closed_Loop_Feedstock.md | https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Challenges/Closed_Loop_Feedstock.md | https://github.com/ksarith/LazarusForgeV0/blob/main/Challenges/Closed_Loop_Feedstock.md | Explicit |
 | **Archive/Logs/ Layer** |  |  |  |
-| Archive/Logs/Unknowns_Changelog.md | Raw | Repo | N/A (History) |
-| Archive/Logs/Governance_Charter_Changelog.md | Raw | Repo | N/A (History) |
-| Archive/Logs/Forge_Audit_Kit_Changelog.md | Raw | Repo | N/A (History) |
-| Archive/Logs/Auditor_Protocols_Logs.md | Raw | Repo | N/A (History) |
-| Archive/Logs/AUDIT_HARNESS_CHANGELOG.md | Raw | Repo | N/A (History) |
+| Archive/Logs/Unknowns_Changelog.md | https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Archive/Logs/Unknowns_Changelog.md | https://github.com/ksarith/LazarusForgeV0/blob/main/Archive/Logs/Unknowns_Changelog.md | N/A (History) |
+| Archive/Logs/Governance_Charter_Changelog.md | https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Archive/Logs/Governance_Charter_Changelog.md | https://github.com/ksarith/LazarusForgeV0/blob/main/Archive/Logs/Governance_Charter_Changelog.md | N/A (History) |
+| Archive/Logs/Forge_Audit_Kit_Changelog.md | https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Archive/Logs/Forge_Audit_Kit_Changelog.md | https://github.com/ksarith/LazarusForgeV0/blob/main/Archive/Logs/Forge_Audit_Kit_Changelog.md | N/A (History) |
+| Archive/Logs/Auditor_Protocols_Logs.md | https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Archive/Logs/Auditor_Protocols_Logs.md | https://github.com/ksarith/LazarusForgeV0/blob/main/Archive/Logs/Auditor_Protocols_Logs.md | N/A (History) |
+| Archive/Logs/AUDIT_HARNESS_CHANGELOG.md | https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Archive/Logs/AUDIT_HARNESS_CHANGELOG.md | https://github.com/ksarith/LazarusForgeV0/blob/main/Archive/Logs/AUDIT_HARNESS_CHANGELOG.md | N/A (History) |
 ** **Discovery.md Description Context:** The foundational navigational directory and behavior scope boundary map for the active working repository layer. It anchors incoming multi-agent analysis runs and human code reviews, defining active document maturity gates, dependency maps, and evolutionary path tracking parameters without cluttering data extraction queries with long textual strings.*
 ## File Template Backlink Requirement
 To prevent dead-ends and maintain rigorous structural provenance, every markdown documentation asset within this repository must explicitly mount this navigation anchor block inside its upper context/metadata parameters:
 ```markdown
 ---
 ## Navigation Anchors
-* **Context Core:** [Discovery.md](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Discovery.md)
-* **Network Routing:** [Routing.md](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Routing.md)
+* **Context Core:** https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Discovery.md
+* **Network Routing:** https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Routing.md
 ---
 
 ```
@@ -122,4 +122,4 @@ Discrepancies between the two are logged as pending corrections in Discovery.md.
 **2026-07-21 correction:** AUDIT_HARNESS.py relocated from Admin/ to Automation/ — the new Automation/ subsystem's canonical home for repository tooling. Row above updated to match; the non-extension-files note above it was also citing the old Admin/-prefixed path for its ALIASES-resolution behavior and has been corrected. Discovery.md's structure-tree entry and the harness's own FALLBACK_REGISTRY self-reference ("AUDIT_HARNESS.py": "...") were updated in the same pass. Admin/AUDIT_HARNESS.py no longer exists as of this date — treat any remaining Admin/AUDIT_HARNESS.py citation elsewhere in the repository (roughly a dozen prose references in doctrine files, none of them live/resolved links) as stale until independently corrected; none of them affect this file's own registry parsing.
 **2026-07-21 correction (unknown_cycles.json):** the 2026-07-16 note above said Admin/unknown_cycles.json was "left in the repository as history... not deleted." That has since changed — the file has been removed, judged unnecessary now that Automation/AUDIT_HARNESS.py v15 computes aging directly from each unknown's First Logged date rather than a separate cycle-number map. The 07-16 note is left above unedited as an accurate record of the decision at the time; this entry supersedes only its final clause. AUDIT_HARNESS.py's ALIASES entry for "unknown_cycles.json" should be removed as dead code pointing at a now-nonexistent file.
 **2026-07-22 reorganization:** Reorganized repository changelogs and audit logs into a dedicated Archive/Logs/ layer to maintain core working layer cleanliness. Updated table entries for Unknowns_Changelog.md, Forge_Audit_Kit_Changelog.md, and AUDIT_HARNESS_CHANGELOG.md to reflect their new paths under Archive/Logs/. Registered newly created log archives Governance_Charter_Changelog.md and Auditor_Protocols_Logs.md.
-**2026-07-25 addition:** Fully registered missing automation tools (parser.py, cold_session_bundler.py, integrity_check.py, audit_lib.py, Colab_cold_session.py, Colab_Launcher.py, Colab_Integrity.py) under the Automation/ section with active Raw and Repository URLs. Updated all Archive/Logs/ entries with explicit hyperlink text and target pairs.
+**2026-07-25 update:** Converted table URL structures from Markdown text hyperlinking ([Raw]/[Repo]) to bare active URLs across all entries. Added direct registration for new automation scripts (parser.py, cold_session_bundler.py, integrity_check.py, audit_lib.py, Colab_cold_session.py, Colab_Launcher.py, Colab_Integrity.py).
