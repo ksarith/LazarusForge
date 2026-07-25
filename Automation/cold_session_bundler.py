@@ -279,6 +279,19 @@ class ColdSessionBundler:
 
             # 1. Metadata tracker tables (Status/Risk/Priority/.../Last Reviewed)
             #    Detect a "| Field | Value |" header and consume the whole table.
+            #    Exception, added after a cold-session audit surfaced the gap
+            #    2026-07-25: Ethical Anchor is a mandatory Audit Entry Condition
+            #    per Admin/File_Template.md ("absence, alteration, or blank value
+            #    is a mandatory drift indicator requiring human review") and
+            #    Admin/Auditor_Protocols.md's own Audit Entry Conditions require
+            #    it be checked before an audit may even begin. Stripping it along
+            #    with the rest of the tracker table silently made that entry
+            #    condition unsatisfiable in a genuinely cold session — the exact
+            #    kind of blind spot this tool exists to prevent, not create.
+            #    Mirrors the Epistemic Ledger's 20%-rule exemption in
+            #    Admin/Auditor_Protocols.md's Metadata Guardrail: a specific,
+            #    named carve-out from a general stripping rule, not a general
+            #    weakening of it.
             if line.strip().startswith("| Field") and "Value" in line:
                 block_start = i
                 j = i
@@ -287,16 +300,25 @@ class ColdSessionBundler:
                 if j < len(lines) and set(lines[j].strip()) <= {"|", "-", " "}:
                     block_lines.append(lines[j])
                     j += 1
+                ethical_anchor_row = None
                 while j < len(lines) and lines[j].strip().startswith("|"):
+                    if "Ethical Anchor" in lines[j]:
+                        ethical_anchor_row = lines[j]
                     block_lines.append(lines[j])
                     j += 1
+                total_block_chars = sum(len(bl) for bl in block_lines)
+                retained_chars = len(ethical_anchor_row) + 1 if ethical_anchor_row is not None else 0
                 stripped_blocks.append(StrippedBlock(
                     file_path=rel_path,
                     reason="tracker metadata table (Status/Risk/Priority/history) — "
-                           "pre-judged framing, not doctrine",
-                    char_count=sum(len(bl) for bl in block_lines),
+                           "pre-judged framing, not doctrine"
+                           + (" (Ethical Anchor row retained — see Audit Entry Conditions)"
+                              if ethical_anchor_row is not None else ""),
+                    char_count=total_block_chars - retained_chars,
                     line_number=block_start + 1,
                 ))
+                if ethical_anchor_row is not None:
+                    out_lines.append(ethical_anchor_row.strip())
                 i = j
                 continue
 
