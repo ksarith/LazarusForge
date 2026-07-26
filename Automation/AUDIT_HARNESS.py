@@ -116,6 +116,20 @@ FALLBACK_REGISTRY = {
     "Return_To_Eden.md":                 "Challenges/Return_To_Eden.md",
     "Closed_Loop_Feedstock.md":          "Challenges/Closed_Loop_Feedstock.md",
     "Energy_Scarcity.md":                "Challenges/Energy_Scarcity.md",
+    "Autonomy_Divergence_Protocol.md":   "Admin/Autonomy_Divergence_Protocol.md",
+    "Hydrologic_Resource_Cascade.md":    "Tests/Hydrologic_Resource_Cascade.md",
+    "audit_lib.py":                      "Automation/audit_lib.py",
+    "parser.py":                         "Automation/parser.py",
+    "integrity_check.py":                "Automation/integrity_check.py",
+    "cold_session_bundler.py":           "Automation/cold_session_bundler.py",
+    "Colab_cold_session.py":             "Automation/Colab_cold_session.py",
+    "Colab_Launcher.py":                 "Automation/Colab_Launcher.py",
+    "Colab_Integrity.py":                "Automation/Colab_Integrity.py",
+    "Unknowns_Changelog.md":             "Archive/Logs/Unknowns_Changelog.md",
+    "Governance_Charter_Changelog.md":   "Archive/Logs/Governance_Charter_Changelog.md",
+    "Forge_Audit_Kit_Changelog.md":      "Archive/Logs/Forge_Audit_Kit_Changelog.md",
+    "Auditor_Protocols_Logs.md":         "Archive/Logs/Auditor_Protocols_Logs.md",
+    "AUDIT_HARNESS_CHANGELOG.md":        "Archive/Logs/AUDIT_HARNESS_CHANGELOG.md",
 }
 
 def _build_registry():
