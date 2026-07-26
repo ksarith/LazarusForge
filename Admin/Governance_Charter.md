@@ -16,9 +16,9 @@
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 6/6 vs. `Admin/Verification_Gates_LF.md` — execution quality (see GOV-011, resolved 2026-07-05); promotion separately blocked by open unknowns (GOV-003, GOV-005) and Enforcement Checkpoint 2 — Bootstrap Paradox |
 | Verification Ref | Admin/Verification_Gates_LF.md                                      |
-| Last Audit       | 2026-07-23                                                          |
+| Last Audit       | 2026-07-27                                                          |
 | Auditor          | Claude — Sidecar/Resolution Log relocation to `Archive/Logs/Governance_Charter_Changelog.md`, GOV-022 registered (human-directed), 2026-07-23; Claude — Skeptic/Auditor; Gemini — Skeptic/Auditor; Grok — Exploration audit 2026-07-05; Gemini — Exploration audit 2026-07-05; Claude — GOV-011 resolution 2026-07-05; Claude — Skeptic/Auditor, 2026-07-16; Claude — GOV-013 drafted (multi-agent synthesis, human-directed), 2026-07-16; Claude — GOV-013/EDL Track classification confirmed (human-directed), 2026-07-17; ChatGPT — adversarial pass, 2026-07-17; Claude — GOV-014 through GOV-020 verified against source and registered (human-directed), 2026-07-17; Claude — GOV-012 threshold deferral, GOV-013 ratification review, GOV-006 biometric addendum (human-directed), 2026-07-19 |
-| Open Unknowns    | 19                                                                  |
+| Open Unknowns    | 20                                                                  |
 | Active Disputes  | 1                                                                   |
 | Highest Risk     | Critical (GOV-013, GOV-015, GOV-018 — see `Archive/Logs/Governance_Charter_Changelog.md`; promotion-blocking risk unchanged from GOV-003/GOV-005) |
 | Sidecar Link     | Archive/Logs/Governance_Charter_Changelog.md#auditor-notes--unknowns |
@@ -776,7 +776,7 @@ Sidecar relocated to `Archive/Logs/Governance_Charter_Changelog.md` as of
 the large majority of it was Resolution Log history. See that file for
 every GOV-XXX entry (including GOV-022, the currently open item on
 Reversibility as a candidate cross-cutting operating principle) and the
-full version history. Current counts: Open Unknowns 19, Highest Risk
+full version history. Current counts: Open Unknowns 20, Highest Risk
 Critical (GOV-013, GOV-015, GOV-018, GOV-022 not yet risk-rated pending
 placement decision).
 
@@ -787,6 +787,13 @@ placement decision).
 Full history: `Archive/Logs/Governance_Charter_Changelog.md` (relocated
 out of this file 2026-07-23 — every entry preserved verbatim, none
 edited or summarized in the move).
+
+**Version 0.10 (working) — 2026-07-27.** GOV-021 formally registered
+(was a reserved-but-unentered candidate ID sitting in `Admin/
+Autonomy_Divergence_Protocol.md` since 2026-07-19); GOV-008
+non-resolution note added, mirroring `Admin/Governance_Migration_
+Protocol.md` §VI EQD's own Non-goal clause. Open Unknowns 19 → 20.
+Full text: `Archive/Logs/Governance_Charter_Changelog.md`.
 
 **Version 0.9 (working) — 2026-07-23.** Sidecar and Resolution Log
 relocated to `Archive/Logs/Governance_Charter_Changelog.md`, matching
