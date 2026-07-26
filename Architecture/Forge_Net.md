@@ -290,7 +290,7 @@ across forge generations — see ASM-005. At v0, save states
 are local only. Network portability is a v1 target.
 *(Placeholder — save state format not yet specified)*
 
-### 2.5 Data Validation Layer
+### 2.5 Data Validation Layer — Provisional Spec
 
 Contributions are not automatically trusted. Before
 propagating to the shared knowledge base, contributions
@@ -307,11 +307,111 @@ pass through a validation layer:
 
 Contributions that fail validation are held for review,
 not discarded. A failed validation is a signal, not a
-rejection. *(Placeholder — validation criteria not yet
-defined; see FN-001)*
+rejection.
 
-Cross-reference: ASM-004, ASM-006,
-Admin/Ethical_Constraints.md Anti-Weaponization Doctrine.
+**Core design rule:** every synchronization event must be
+able to answer, from its accompanying metadata alone: what
+changed, who observed it, what evidence supports it, how
+confident are we and on what basis, what contradicts it,
+who disagrees, can we revert it, and what human review is
+required. If any question cannot be answered, the update
+is forced to Provisional status and may not enter the
+Globally Canonical set.
+
+**DV-001 — Record schema.** Every network contribution
+(intake record, parts list, repair log, save-state delta,
+gate decision log) carries mandatory fields:
+`contribution_id` (immutable, content-addressed),
+`type`, `payload`, `observed_at`, `observer_node`,
+`observation_context`, `evidence_refs` (DV-002),
+`confidence` (DV-003), `contradictions` (DV-004, may be
+empty), `scope_class` (globally_canonical /
+locally_adaptive / provisional), and `schema_version`.
+A contribution missing a required field is rejected at
+structural validation and never enters the shared
+knowledge base.
+
+**DV-002 — Provenance and evidence.** Evidence is the
+unit of trust, not the node. Each `evidence_ref` carries
+`evidence_type` (direct_observation /
+instrument_measurement / cross_node_replication /
+historical_log / external_source / inference),
+`source_descriptor`, `independence_tag` (same_node /
+same_cluster / different_region / different_generation),
+a timestamp, and an `integrity_hash` where available.
+A claim may not be promoted beyond Provisional on the
+basis of a single node's self-report, regardless of that
+node's trust score — promotion requires evidence
+diversity. Consistent with the provenance ceiling rule
+in Admin/Auditor_Protocols.md §Evidence Classification
+and Institutional Truth Provenance Hierarchy (AP-006):
+no internally-derived claim may be represented as
+VERIFIED without a genuine provenance upgrade.
+
+**DV-003 — Confidence model.** Confidence is computed
+from evidence properties, not node reputation:
+observation count, ecological/regional diversity,
+temporal span, contradiction density, and evidence
+quality tier mapped to the repository's five canonical
+confidence labels (Measured / Replicated / Simulated /
+Analogous / Placeholder). A claim starts at Provisional
+and moves to higher epistemic states only when the
+evidence vector satisfies defined thresholds — thresholds
+remain Placeholder until first operational data; the
+structure is what this spec fixes now. Node identity is
+recorded for auditability but does not multiply into the
+confidence score.
+
+**DV-004 — Conflict resolution and minority
+preservation.** A contribution conflicting with a
+higher-confidence existing entry is held, not discarded;
+the conflict is logged with full provenance on both sides
+and the minority claim remains visible under its own
+scope_class. Silent suppression of a minority
+contribution is an Epistemic Integrity Violation
+(EF-0.0 §2 / Challenge Class 9 — Epistemic Corruption).
+Resolution occurs only through additional independent
+evidence, explicit human governing-party decision, or the
+higher-confidence claim decaying under DV-003 and being
+reclassified.
+
+**DV-005 — Rollback and quarantine.** Every accepted
+contribution carries a reversible transaction identifier.
+The network must support rollback of a single
+contribution, a time window from one node, or a full
+contamination horizon. Rollback produces a five-field
+Epistemic Ledger entry (EF-0.3). Node quarantine is
+reversible; destruction of contribution history requires
+explicit human authorization. Downstream cleanup is
+mandatory — contributions that propagated before
+isolation must be flagged at receiving nodes.
+
+**DV-006 — Human escalation criteria.** Automatic
+escalation to human review is required when: confidence
+relies on fewer than the minimum independent evidence
+sources for that claim class; a contradiction persists
+beyond a defined observation window; a node's
+contribution pattern triggers an anomaly signature
+(volume spike, type mismatch, sudden high-confidence
+claims from a previously quiet node); a proposed
+Provisional → Globally Canonical promotion touches a
+safety-critical domain (hazard profiles, gate routing
+for energetic materials); or a rollback/quarantine
+action cannot be cleanly reversed. Human review outcomes
+are themselves logged as contributions with full
+provenance.
+
+*(Provisional Spec — DV-001 through DV-006 define the
+structure of validation; numeric thresholds, decay
+intervals, and anomaly-signature detail remain
+Placeholder pending first operational data. Structural
+validation, evidence requirements, and escalation
+triggers are specified; calibration is not. See FN-001
+sidecar for status.)*
+
+Cross-reference: ASM-004, ASM-006, FN-003,
+Admin/Ethical_Constraints.md Anti-Weaponization Doctrine,
+Admin/Auditor_Protocols.md EF-0.0, EF-0.1, EF-0.3, AP-006.
 
 ---
 
@@ -539,6 +639,23 @@ A cleared node must have a defined path back:
   explicit human sign-off, not automatic recovery
   through contribution accumulation alone.
 
+**Cross-reference (2026-07-25):** the isolation and
+reintegration model above independently converges with
+`Admin/Autonomy_Divergence_Protocol.md` (Draft, PROPOSED
+NOT RATIFIED, candidate GOV-021), which in turn cites
+Astroid-miner's `Rogue_unit_management.md` — an 80–99%
+fleet-consensus threshold before corrective action against
+a flagged unit, and a Reversion/Safe Mode state. Two
+governance documents, drafted separately, converging on a
+similar graduated response ladder is treated elsewhere in
+the repository as evidence the structure is sound, not
+coincidence. ADP's least-restrictive-intervention and
+independent-classification principles — no single
+subsystem may be sole authority for classifying another's
+divergence — are not yet reflected in this section and
+should be adopted or explicitly reconciled once GOV-021
+is ratified.
+
 **Data privacy:**
 Forge instances have legitimate privacy interests —
 proprietary repair techniques, location data, operational
@@ -593,6 +710,11 @@ Anti-Weaponization Doctrine.
 - `Admin/Trajectories.md` — network capability targets
   by version; v1 target includes cognitive save state
   portability
+- `Admin/Autonomy_Divergence_Protocol.md` — node
+  isolation, reintegration, and graduated response
+  doctrine (candidate GOV-021, not yet ratified);
+  independently converges with Section 6's node
+  reintegration model — see cross-reference there
 
 ---
 
@@ -645,7 +767,7 @@ in Discovery.md. Folder-prefixed names take precedence.*
 | Blocking      | No                                               |
 | Owner         | Architecture/Forge_Net.md                    |
 | First Logged  | 2026-05-15                                       |
-| Last Reviewed | 2026-05-15                                       |
+| Last Reviewed | 2026-07-25                                       |
 
 **Description:** The data validation layer (Section 2.5)
 is described doctrinally but validation criteria —
@@ -693,6 +815,21 @@ the primary technical prerequisite for network security.
   contribution samples before first network sync.
 - Payment via Specification — once criteria are defined
   and tested, move to Section 2.5 as Measured.
+
+**Status of this resolution path (2026-07-25):**
+Section 2.5 now carries a Provisional Spec, decomposed
+into DV-001 (record schema), DV-002 (provenance and
+evidence), DV-003 (confidence model), DV-004 (conflict
+resolution and minority preservation), DV-005 (rollback
+and quarantine), and DV-006 (human escalation criteria).
+The public Unknown ID remains FN-001 until the full
+package survives a G3 Adversarial Battery pass (Classes
+1, 3, 6, 9, 10 minimum) and numeric thresholds are
+calibrated against first operational data. Structural
+schema, evidence requirements, minority-report
+preservation, and rollback are specified; consistency
+thresholds, decay intervals, and anomaly-detection
+signatures (shared with FN-003) remain Placeholder.
 
 ---
 
@@ -937,6 +1074,23 @@ prerequisite for it.
 
 ### Resolution Log
 
+- 2026-07-25: Section 2.5 Data Validation Layer expanded
+  from doctrinal Placeholder to a Provisional Spec
+  (DV-001–DV-006) per FN-001's resolution path —
+  structural schema, evidence/provenance requirements,
+  confidence model, minority preservation, rollback, and
+  human escalation criteria specified; numeric thresholds
+  remain Placeholder. Cross-reference to
+  `Admin/Autonomy_Divergence_Protocol.md` (candidate
+  GOV-021, not yet ratified) added to Section 6 and
+  Integration Hooks — independently convergent isolation/
+  reintegration doctrine, not yet reconciled. FN-001
+  sidecar updated (Last Reviewed); FN-001 remains Open
+  pending G3 Adversarial Battery pass (Classes 1, 3, 6,
+  9, 10) and threshold calibration. Synthesized from a
+  Skeptic/Auditor review and a Synthesizer/Evidence-Auditor
+  spec draft, both verified against source before
+  insertion.
 - 2026-06-08: Navigation Anchors block added. Title corrected
   from `Forge Network` to `Forge_Net.md — Decentralized Forge
   Network`. Verification Ref corrected from
