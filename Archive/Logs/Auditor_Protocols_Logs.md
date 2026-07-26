@@ -710,7 +710,54 @@ This becomes governance metadata rather than prose, auditable the same way Truth
 
 ---
 
+### AP-030 — Mission Drift Review N=5 ratification-velocity threshold unvalidated
+
+| Field         | Value                        |
+|---------------|------------------------------|
+| Status        | Open                         |
+| Risk          | Low                          |
+| Priority      | Minor                        |
+| Type          | Governance / Process         |
+| Blocking      | No                           |
+| Owner         | Admin/Auditor_Protocols.md — §Mission Drift Review |
+| First Logged  | 2026-07-26                   |
+| Last Reviewed | 2026-07-26                   |
+
+**Description:** §Mission Drift Review's ratification-velocity trigger (every 5 ratified governance/canonical changes) is a provisional operating parameter, explicitly labeled no higher than Placeholder on this document's own Evidence Classification scale. It was set by multi-agent consensus reasoning (Gemini, Grok, ChatGPT) about audit fatigue and drift-detection sensitivity, not by any operational data — the mechanism has not run once yet.
+
+**Why It Matters:** A provisional numeric threshold with no logged follow-up is exactly the pattern this repository has repeatedly caught itself in elsewhere (Gate 2's m_phys/m_rep thresholds, EF-0.2's deferred hard numerical triggers) — provisional values are acceptable, silently-permanent provisional values are not. `PROBE_INVOCATION.md`, referenced in §Mission Drift Review's Execution Requirements, also does not yet exist and blocks the mechanism's first real run.
+
+**Resolution Path:**
+- Draft and commit `PROBE_INVOCATION.md` as a companion file (turn-key copy-paste probe prompt).
+- Run the first three Mission Drift Review cycles under N=5.
+- Revisit N against the observed pattern: raise if audit fatigue appears with no corresponding findings; lower if a real drift event is caught late; keep if the balance looks right.
+- Promote this unknown's Evidence Classification label once real cycle data exists to support one.
+
+*Registered by Claude — Synthesizer/Auditor, human-directed, alongside the Mission Drift Review mechanism's first specification, 2026-07-26.*
+
+---
+
 ### Resolution Log
+
+- 2026-07-26: **v0.29 — Mission Drift Review mechanism added** as a
+  new major section in `Admin/Auditor_Protocols.md` (between Full
+  Stop Review and Cross-Repo Verification): Phase A (unscored
+  comprehension) / Phase B (scored alignment against the eight Tier 1
+  Axioms) probe structure, absolute cold-start execution requirement,
+  Silent-vs-Atrophied trend distinction across cycles, and a
+  Stable/Major/Critical/Constitutional-Emergency escalation ladder
+  reusing `Admin/Repository_Integrity_Protocol.md`'s existing
+  Violation Classification tiers rather than a new scale.
+  Synthesized from a three-agent design pass (Gemini, Grok, ChatGPT);
+  two proposed elements were deliberately not adopted as-is — a new
+  High/Medium/Low confidence scale (would have duplicated the
+  existing five-label Evidence Classification system this file
+  already consolidated onto after AP-021/AP-026) and a standalone
+  `GOV_RATIFICATION_LOG.md` counter file (would have repeated the
+  exact pattern `Admin/unknown_cycles.json` was deleted for on
+  2026-07-21). AP-030 registered for the mechanism's own unvalidated
+  N=5 threshold. Verified against source by Claude —
+  Synthesizer/Auditor, human-directed.
 
 - 2026-07-23 (fourth entry, same day, sidecar-only — no `Admin/Auditor_Protocols.md` version bump, since nothing in that file changed): **AP-017 gained a second verified-cold instance (Grok), manifest checked before trusting the response this time.** Distinct in character from the first: zero new findings, but every checkable claim verified accurate, and the response correctly flagged its own zero-findings result as warranting suspicion per this file's own doctrine rather than presenting it uncritically. Open question in AP-017 revised to reflect two consistent, independently-verified instances now on record rather than one.
 
