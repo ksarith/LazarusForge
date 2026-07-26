@@ -68,6 +68,19 @@ That check has now been run. `AUDIT_HARNESS.py` line 368: `CURRENT_CYCLE = 10   
 
 ## Version History
 
+- 2026-07-26: **v1.13 — Governing Principles gained a fifth line**
+  ("Correct a flawed premise only when it threatens the task's outcome
+  — not for its own sake"), naming explicitly what the existing
+  "infinite audit recursion is a governance failure mode" line already
+  gestured at without stating as a standalone principle. Sourced from
+  a cross-agent (Grok/Gemini/ChatGPT) prompt-design discussion James
+  brought over from r/InnovativeAIChats; adapted rather than adopted
+  wholesale — the same discussion's larger proposal (a four-tag
+  evidence-provenance scheme) was declined for `Admin/Auditor_Protocols.md`
+  as a fifth parallel vocabulary alongside Evidence Classification,
+  EF-0.0's VERIFIED/PROVISIONAL/UNKNOWN, AP-024's H0–H5, and Forge_Net's
+  DV-002 evidence_type enum — see that file's v0.29 Resolution Log.
+
 - 2026-07-17: **v1.12 — Verification Gates section trimmed (Fallacy 5,
   flagged 2026-07-16, three turns outstanding).** Two of three dated
   paragraphs collapsed to a compact standing rule; full history preserved
