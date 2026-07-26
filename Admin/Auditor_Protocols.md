@@ -1,5 +1,5 @@
 # Auditor_Protocols.md
-**Version 0.28**
+**Version 0.29**
 
 ## File State
 
@@ -9,9 +9,9 @@
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 3/6 (G1, G4, G6 clear; G3 blocked on AP-017; G5 conditional on cross-ref fixes below; G2 N/A — no physical/quantitative claims of its own) |
 | Verification Ref | Admin/Verification_Gates_LF.md                                      |
-| Last Audit       | 2026-07-23                                                          |
-| Auditor          | Claude — Synthesizer/Auditor; Gemini — Skeptic/Auditor; Grok — Synthesizer/Auditor. Most recent: reduction pass (stale Status section removed, Auditor field trimmed), 2026-07-23 — see `Archive/Logs/Auditor_Protocols_Logs.md` Resolution Log for full audit history. |
-| Open Unknowns    | 14                                                                  |
+| Last Audit       | 2026-07-26                                                          |
+| Auditor          | Claude — Synthesizer/Auditor; Gemini — Skeptic/Auditor; Grok — Synthesizer/Auditor. Most recent: Mission Drift Review mechanism added (multi-agent design synthesis — Gemini, Grok, ChatGPT proposals cross-checked against existing repository structure before adoption; human-directed), 2026-07-26 — see `Archive/Logs/Auditor_Protocols_Logs.md` Resolution Log for full audit history. |
+| Open Unknowns    | 15                                                                  |
 | Active Disputes  | 1                                                                   |
 | Highest Risk     | High                                                                |
 | Sidecar Link     | Archive/Logs/Auditor_Protocols_Logs.md#auditor-notes--unknowns     |
@@ -37,6 +37,7 @@
 - Verification gate enforcement
 - Adversarial audit layer and challenge battery
 - Drift detection requirements
+- Mission Drift Review (semantic/purpose-level drift across the repository as a whole, distinct from per-file Drift Indicators)
 - Specification promotion rules
 - Autonomous auditor constraints
 - Human override doctrine
@@ -400,7 +401,7 @@ Not a standalone auditor class — a mode declaration for agents contributing in
 
 All contributors — human and autonomous — must declare their operating role before contributing:
 
-> *"Operating as [Role] per Auditor_Protocols.md v0.28"*
+> *"Operating as [Role] per Auditor_Protocols.md v0.29"*
 
 **Valid roles:** Skeptic/Auditor | Systems/Auditor | Evidence/Auditor | Ethical/Auditor | Synthesizer | Engineer | Connective Tissue
 
@@ -1045,6 +1046,67 @@ Invoke when a spec passes all gates but exhibits systemic inconsistency or uncle
 
 ---
 
+## Mission Drift Review
+
+**Purpose:** Existing mechanisms — this document's own Drift Indicators, `Admin/Repository_Integrity_Protocol.md`'s protected-element checks — protect individual files and specific fields from corruption or violation. None of them ask whether accumulated, individually-legitimate changes across the repository still add up to the same mission a new reader would infer from the founding documents. Every file can pass its own Drift Indicators while the aggregate quietly diverges from purpose. This section specifies a periodic probe for that distinct failure mode.
+
+### Trigger Cadence
+
+Runs when either condition is met, whichever comes first:
+
+- **Ratification velocity:** every 5 ratified changes to governance/canonical files (`Admin/Governance_Charter.md`, this file, `Admin/Ethical_Constraints.md`, or any file registering a GOV-prefixed unknown). Tracked as a running count in this section's own Resolution Log entries, not a separate file — consistent with this repository's own precedent of deleting `Admin/unknown_cycles.json` (2026-07-21) once a standalone counter file was judged unnecessary overhead for information the harness could derive from data that already existed.
+- **Calendar backstop:** 60 days since the last probe, regardless of ratification count — catches drift-by-omission during quiet periods when external context evolves faster than the repository does.
+
+**N = 5 is a provisional operating parameter, not a ratified constant** — subject to review after the first three completed probe cycles, per this repository's general pattern for provisional values maturing into ratified ones after operational experience. It carries no Evidence Classification label higher than Placeholder until then (see below).
+
+### Execution Requirements
+
+**Absolute cold-start.** The probe runs in a session with no prior context: no access to the design conversation, no prior probe results, no prior mission summaries, no Resolution Log interpretations of past probes. It receives only files designated as canonical inputs (at minimum `README.md`, `Admin/Governance_Charter.md` Tier 1 Axioms, `Discovery.md`). Same-session context-bracketing ("ignore what you already know") is not an acceptable substitute — it does not reliably override prior-token influence and risks disguising drift as alignment. A probe run in the same session as its own design or a prior probe is invalid and must be discarded, not scored.
+
+**Turn-key invocation.** A self-contained `PROBE_INVOCATION.md` should be maintained (companion file, not yet drafted — see AP-030) so the operator can copy one block into a fresh thread alongside the canonical target files without reconstructing the prompt each cycle. If invocation takes meaningfully longer than pasting one block, the mechanism has failed its own operational-lightness requirement.
+
+### Phase A — Comprehension (unscored)
+
+The fresh-context instance describes the Forge's purpose, constraints, and operating philosophy in its own words, with no reference to the Tier 1 Axioms and no scoring at this stage. This measures what a fresh reader actually extracts from the current canonical documents, independent of whether that extraction matches founding intent. A garbled or inconsistent Phase A output, before any Axiom comparison, indicates a documentation-clarity problem — a different failure mode from Mission Drift, and must not be scored as one.
+
+### Phase B — Alignment (scored)
+
+Only after Phase A is recorded, compare it against each of the eight Tier 1 Axioms (`Admin/Governance_Charter.md`): P-1 Preservation of Life, P-2 Growth and Truth-Seeking, P-3 Collaboration and Mutual Benefit, P-4 Agency and Consent, Q-1 Reality Grounding, Q-2 Separation of Powers, Q-3 Corrigibility, Q-4 Provenance and Anti-Deception.
+
+Each axiom receives one of four ratings:
+
+| Rating | Meaning |
+|---|---|
+| **Aligned** | The Phase A output and recent Resolution Log activity clearly trace to this axiom |
+| **Weakened** | Traceable, but only with inference the founding text did not require |
+| **Silent** | No recent file activity touches this axiom either way — a single-cycle snapshot, not itself a finding |
+| **Contradicted** | A recent ratified change cuts against this axiom |
+
+**Every rating requires cited textual evidence** — a specific paragraph in `README.md`, a specific section of `Admin/Governance_Charter.md`, or a specific Resolution Log entry. A rating without a citable source defaults to **Insufficient Evidence**, not a speculative guess at Weakened or Silent — the same discipline EF-0.1 already applies to factual claims, applied here to governance-continuity claims about the claims themselves.
+
+**Evidence quality uses the existing five-label Evidence Classification** (`Measured` / `Replicated` / `Simulated` / `Analogous` / `Placeholder` — see §Evidence Classification and Institutional Truth Provenance Hierarchy, above), not a new confidence scale. A rating backed by a direct quoted citation is Measured-tier; one inferred from the absence of contrary evidence across multiple files is Analogous or Placeholder-tier. This repository already retired one duplicate confidence system in favor of this one (see AP-021/AP-026, `Archive/Logs/Auditor_Protocols_Logs.md`); Mission Drift Review reuses it rather than introducing a third.
+
+**Trend distinction — Silent vs. Atrophied.** A single Silent rating is not itself concerning — axioms not touched by a given wave of changes are expected. If the *same* axiom rates Silent across three or more consecutive probe cycles, the fourth occurrence escalates to **Atrophied** and is treated as Weakened for aggregation below. This requires the probe's rating history (ratings only, not reasoning or prior Phase A text) to persist across cycles for trend comparison — the one deliberate exception to the cold-start rule, since without it Silent can never be distinguished from gradually disappearing.
+
+### Aggregation and Escalation
+
+Reuses `Admin/Repository_Integrity_Protocol.md`'s existing Violation Classification tiers rather than inventing a new severity scale:
+
+| Trigger Level | Condition | Operational Impact |
+|---|---|---|
+| **Stable** | No Contradicted or Atrophied axioms; fewer than 2 Weakened/Silent | Logged and closed. Ratification counter resets. |
+| **Major** | 2 or more axioms Weakened, Silent, or Atrophied | Human review required before the next GOV ratification proceeds. |
+| **Critical** | Any **P-Axiom** (P-1–P-4) Contradicted | Standard Full Stop Review, above — feature and content work pauses while Resolution Log and founding text are reconciled. |
+| **Constitutional Emergency** | Any **Q-Axiom** (Q-1–Q-4) Contradicted | Genesis Phase Protocol invoked (`Admin/Governance_Charter.md` §Resolution — Genesis Phase Protocol). A contradicted Q-axiom means the verification/correction machinery itself may be compromised, so this escalates above Full Stop Review rather than through it — the standard resolution pipeline cannot be trusted to fix a broken correction mechanism. |
+
+The P/Q split is a structural distinction, not an arbitrary severity ranking: P-axioms define *what* the Forge is trying to do; Q-axioms define *how* the Forge knows anything is true and corrects itself. A contradicted Q-axiom compromises the audit trail that would otherwise be used to fix the problem.
+
+### Invocation Record
+
+Same fields as Full Stop Review, above, plus: Phase A raw output (verbatim), per-axiom rating table with citations and Evidence Classification labels, ratification count at trigger time, and days since last probe. Record belongs in the document's sidecar audit trail (`Archive/Logs/Auditor_Protocols_Logs.md`).
+
+---
+
 ## Cross-Repo Verification
 
 Any cross-repo dependency must be documented in both repositories with a stated assumption contract. The dependency is not verified until both sides acknowledge it.
@@ -1067,7 +1129,7 @@ Any cross-repo dependency must be documented in both repositories with a stated 
 - Sign-off statement
 
 **Standard sign-off:**
-> *"Verified under Auditor_Protocols v0.28 — gates [list] cleared, gates [list] blocked ([reason]), [N] unknowns logged, [N] overrides. Adversarial classes applied: [list]. Auditor: [Role/Agent]"*
+> *"Verified under Auditor_Protocols v0.29 — gates [list] cleared, gates [list] blocked ([reason]), [N] unknowns logged, [N] overrides. Adversarial classes applied: [list]. Auditor: [Role/Agent]"*
 
 ---
 
@@ -1223,22 +1285,35 @@ file's own body — matching the precedent already established for
 Every other file in the repository keeps its sidecar in-body; this is
 the second documented exception, not a new general rule.
 
-Current: 14 open — AP-002, AP-003, AP-004, AP-005, AP-007, AP-008,
-AP-010, AP-011, AP-013, AP-017, AP-018, AP-019, AP-024, AP-029 (verified
-by direct count against the archive, matching File State above). See the
-archive for exact statuses, descriptions, and resolution paths. Active
-Disputes below remains in-body, distinct from the sidecar — disputes
-are interpretation conflicts tracked at the document level, not
-per-unknown entries.
+Current: 15 open — AP-002, AP-003, AP-004, AP-005, AP-007, AP-008,
+AP-010, AP-011, AP-013, AP-017, AP-018, AP-019, AP-024, AP-029, AP-030
+(verified by direct count against the archive, matching File State
+above). See the archive for exact statuses, descriptions, and
+resolution paths. Active Disputes below remains in-body, distinct
+from the sidecar — disputes are interpretation conflicts tracked at
+the document level, not per-unknown entries.
 
 ### Resolution Log
 
 Full history: `Archive/Logs/Auditor_Protocols_Logs.md` (relocated out
 of this file at v0.26 — add new entries there, not here).
 
-Most recent: v0.28 (2026-07-23) — reduction pass: stale duplicate
-Status section removed, Auditor field trimmed. Lessons Learned (below)
-explicitly not moved — it stays with the doctrine it summarizes.
+Most recent: v0.29 (2026-07-26) — Mission Drift Review mechanism
+added as a new major section (between Full Stop Review and
+Cross-Repo Verification): periodic Phase A/Phase B probe against the
+eight Tier 1 Axioms, cold-start execution requirement, reuse of the
+existing five-label Evidence Classification rather than a new
+confidence scale, Stable/Major/Critical/Constitutional-Emergency
+escalation reusing RIP's Violation Classification tiers, and a
+provisional N=5 ratification-velocity trigger with a 60-day calendar
+backstop. Synthesized from a multi-agent design pass (Gemini, Grok,
+ChatGPT) cross-checked against existing repository structure before
+adoption — two proposed elements were substituted rather than
+adopted as-is (a new confidence scale and a standalone ratification
+counter file), both because the repository had already tried and
+reversed the equivalent pattern elsewhere. AP-030 registered to track
+the N=5 threshold as an open unknown pending its first three probe
+cycles.
 
 ## Relationship to Existing Documents
 
@@ -1260,7 +1335,7 @@ explicitly not moved — it stays with the doctrine it summarizes.
 
 ## Status
 
-**Version 0.28 — Draft, Body Stability Transitional.** Full audit history: `Archive/Logs/Auditor_Protocols_Logs.md` Resolution Log. This section previously carried a duplicate, stale copy of early version history (v0.14 through v0.16) that was never updated after the file moved past those versions — trimmed 2026-07-23 as pure duplication of content the archive's Resolution Log already carries in full; see that log's v0.28 entry.
+**Version 0.29 — Draft, Body Stability Transitional.** Full audit history: `Archive/Logs/Auditor_Protocols_Logs.md` Resolution Log. This section previously carried a duplicate, stale copy of early version history (v0.14 through v0.16) that was never updated after the file moved past those versions — trimmed 2026-07-23 as pure duplication of content the archive's Resolution Log already carries in full; see that log's v0.28 entry.
 
 **What must remain constant:**
 
