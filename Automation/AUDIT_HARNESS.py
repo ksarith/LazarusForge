@@ -130,6 +130,7 @@ FALLBACK_REGISTRY = {
     "Forge_Audit_Kit_Changelog.md":      "Archive/Logs/Forge_Audit_Kit_Changelog.md",
     "Auditor_Protocols_Logs.md":         "Archive/Logs/Auditor_Protocols_Logs.md",
     "AUDIT_HARNESS_CHANGELOG.md":        "Archive/Logs/AUDIT_HARNESS_CHANGELOG.md",
+    "PROBE_INVOCATION.md":               "Admin/PROBE_INVOCATION.md",
 }
 
 def _build_registry():
