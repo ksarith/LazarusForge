@@ -14,8 +14,8 @@
 | Body Stability   | Volatile                                                            |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | `Admin/Verification_Gates_LF.md`                                    |
-| Last Audit       | 2026-06-19; revised through at least 2026-07-05 internally (GMP-005/GMP-009 dated later than this header — header was not kept current, see Resolution Log); Claude — GOV-013 cross-reference added, 2026-07-16; Claude — GMP-005/GMP-009 resolved, Track A/B redefined by constitutional impact (human-directed), 2026-07-17; Claude — GMP-011/GMP-012 registered, GMP-004 GPG precedent noted, GMP-006/007/008 consolidation noted, Lessons Learned populated, Open Unknowns count corrected, GMP-003 date typo fixed (human-directed, external review reviewed and scoped), 2026-07-25; Claude — §VI Epistemic Quorum Doctrine added, GMP-003 partially mitigated, GMP-013 registered (human-directed, external synthesis reviewed and rescoped away from GOV-008 conflation), 2026-07-26; Claude — Polish pass on EQD integration per external review, GOV-008 mirror note added (human-directed), 2026-07-27 |
-| Auditor          | ChatGPT — Skeptic/Auditor; Gemini — Skeptic/Auditor; Grok — Skeptic/Auditor; Claude — Synthesizer; Claude — GMP-009 cross-referenced to GOV-013 (human-directed), 2026-07-16; Claude — GMP-005/GMP-009 resolved (multi-agent proposal, human-directed), 2026-07-17; Claude — Synthesizer/Auditor, external review triage (human-directed), 2026-07-25; Claude — Synthesizer/Auditor, EQD adoption with GOV-008 conflation caught and corrected (human-directed), 2026-07-26; Claude — Synthesizer/Auditor, polish pass (human-directed), 2026-07-27 |
+| Last Audit       | 2026-06-19; revised through at least 2026-07-05 internally (GMP-005/GMP-009 dated later than this header — header was not kept current, see Resolution Log); Claude — GOV-013 cross-reference added, 2026-07-16; Claude — GMP-005/GMP-009 resolved, Track A/B redefined by constitutional impact (human-directed), 2026-07-17; Claude — GMP-011/GMP-012 registered, GMP-004 GPG precedent noted, GMP-006/007/008 consolidation noted, Lessons Learned populated, Open Unknowns count corrected, GMP-003 date typo fixed (human-directed, external review reviewed and scoped), 2026-07-25; Claude — §VI Epistemic Quorum Doctrine added, GMP-003 partially mitigated, GMP-013 registered (human-directed, external synthesis reviewed and rescoped away from GOV-008 conflation), 2026-07-26; Claude — Polish pass on EQD integration per external review, GOV-008 mirror note added (human-directed), 2026-07-27; Claude — Quorum Compliance Trend subsection added to §VI, GMP-013 updated as its second schema consumer (human-directed), 2026-07-26 |
+| Auditor          | ChatGPT — Skeptic/Auditor; Gemini — Skeptic/Auditor; Grok — Skeptic/Auditor; Claude — Synthesizer; Claude — GMP-009 cross-referenced to GOV-013 (human-directed), 2026-07-16; Claude — GMP-005/GMP-009 resolved (multi-agent proposal, human-directed), 2026-07-17; Claude — Synthesizer/Auditor, external review triage (human-directed), 2026-07-25; Claude — Synthesizer/Auditor, EQD adoption with GOV-008 conflation caught and corrected (human-directed), 2026-07-26; Claude — Synthesizer/Auditor, polish pass (human-directed), 2026-07-27; Claude — Synthesizer/Auditor, Quorum Compliance Trend added, GOV-008 conflation re-checked and explicitly guarded a second time (human-directed), 2026-07-26 |
 | Open Unknowns    | 10                                                                  |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | High                                                                |
@@ -492,6 +492,18 @@ Quorum size alone is insufficient — three reviewers converging on the same sha
 **Dissent & Escalation:** Minority views are appended to the record, never discarded. A Split Decision automatically escalates to human arbitration — it does not default to either advancing or blocking.
 
 **Resolution status of GMPs this doctrine touches:** Adopting this doctrine is Payment via Specification, not Payment via Implementation. No GMP entry moves to Resolved solely because this section exists — GMP-003 is strengthened but remains Open pending actual multi-reviewer practice against a real Track B proposal; GMP-010 is partially addressed (a cross-verification standard now exists) but remains Open pending tooling. Machine-readable quorum metadata for `Automation/AUDIT_HARNESS.py` is future automation scope, not drafted here — see GMP-013.
+
+### Quorum Compliance Trend (Persistent Improvement, Not a Threshold)
+
+**Purpose:** The Minimum Quorum Matrix above defines a target; nothing yet tracks whether the doctrine is actually being followed over time, or whether follow-through is improving, stable, or eroding. This subsection specifies a trend metric — not a new tooling commitment beyond GMP-013's already-deferred schema, just what that schema should compute once it exists.
+
+**What is measured:** For each Track B Amendment, Adversarial Review, and High-Risk Unknown resolved within an audit cycle, whether the quorum actually obtained met that action's Minimum Quorum Matrix requirement — size *and* the applicable independence dimensions, both. A quorum that met headcount but collapsed on evidence independence (Three Independence Dimensions, above) does not count as met. Expressed as a rate: qualifying actions with a met requirement, divided by all qualifying actions that cycle.
+
+**Why a trend, not a threshold:** A single cycle's rate is not itself a finding — v0 amendment volume is low enough that one non-compliant action can swing the rate sharply without indicating a real pattern. The rate is tracked across cycles to answer a different question than pass/fail: is EQD conformance improving, holding steady, or eroding as amendment activity continues? No specific rate is required for the doctrine to remain in force — 100% is the aspiration, not the bar for validity. A declining trend across 3 or more consecutive cycles is the actual signal worth surfacing, mirroring the trend-not-snapshot logic `Admin/Auditor_Protocols.md` §Mission Drift Review already uses for its Silent-vs-Atrophied axiom distinction.
+
+**Non-goal (binding, restated):** This metric measures conformance to EQD's own internal standard. It is not evidence of progress toward `Admin/Governance_Charter.md` GOV-008, under any framing — the Non-goal clause above and the Drift Indicator guarding it apply to this subsection exactly as they apply to the rest of §VI. An improving Quorum Compliance Trend means governance review is getting more rigorous by its own declared standard. Nothing more.
+
+**Implementation status:** Deferred via Specification, same disposition as GMP-013's underlying metadata schema — this trend is computed from that schema once it exists and has no separate implementation path before it.
 
 ---
 
@@ -1144,7 +1156,12 @@ this is `Automation/AUDIT_HARNESS.py` implementation scope (see
 pattern of specification-now, implementation-later for that harness).
 A minimal future schema was suggested during drafting (participant
 role/model list, outcome value, dissent boolean) as a starting point,
-not a commitment.
+not a commitment. That schema now has a second consumer beyond
+point-in-time compliance checking: §VI's Quorum Compliance Trend
+subsection (added 2026-07-26) computes a per-cycle conformance rate
+from the same fields — no new schema requirement, but the eventual
+implementation should account for both uses rather than only the
+original spot-check case.
 
 *Surfaced during EQD drafting (external multi-agent synthesis,
 human-directed); scoped down from an inline schema draft to a logged
@@ -1155,6 +1172,29 @@ Claude — Synthesizer/Auditor, human-directed, 2026-07-26.*
 ---
 
 ### Resolution Log
+
+- 2026-07-26: **v0.7 — Quorum Compliance Trend subsection added to
+  §VI EQD**, directly under the existing Resolution-status paragraph.
+  Defines a per-cycle conformance rate (qualifying actions whose
+  quorum met the Minimum Quorum Matrix's size *and* independence
+  requirements, over all qualifying actions that cycle), tracked
+  across cycles rather than gated on any single value — 100% is the
+  aspiration, not a bar for the doctrine's validity; a 3+ cycle
+  declining trend is the actual signal. Explicitly restates the
+  Non-goal clause for this new subsection specifically, since a naive
+  reading of "compliance trending up" is exactly the kind of claim
+  the existing Drift Indicator (added at v0.6) exists to catch if
+  mis-cited as GOV-008 progress. GMP-013 updated to note its deferred
+  metadata schema now has two consumers (point-in-time compliance
+  check, and this trend) rather than designing a second schema.
+  Originated from a human question about applying "persistent
+  improvement over perfection" to governance quorum — redirected from
+  an initial GOV-008-adjacent framing (identified during discussion as
+  a near-repeat of the exact conflation error GMP-013/EQD's Non-goal
+  clause was written to prevent) to EQD's own conformance instead,
+  where incremental improvement is honestly measurable. Human-directed
+  throughout; no automation implemented, per GMP-013's existing
+  deferral.
 
 - 2026-07-27: **v0.6 — Polish pass on EQD integration, external review
   (Grok, Gemini) checked against source before adoption
@@ -1378,6 +1418,13 @@ Claude — Synthesizer/Auditor, human-directed, 2026-07-26.*
 ---
 
 ## Status
+
+Version 0.7 — Quorum Compliance Trend subsection added to §VI EQD: a
+per-cycle conformance rate against the Minimum Quorum Matrix, tracked
+across cycles rather than gated on a single value, with the Non-goal
+clause explicitly restated for this subsection. GMP-013 updated as a
+second consumer of its already-deferred metadata schema. No new
+unknowns; no automation implemented (2026-07-26).
 
 Version 0.6 — Polish pass following external review of the v0.5 EQD
 addition (Grok, Gemini): Phase 2 now explicitly anchors to EQD; GMP-003
