@@ -725,15 +725,15 @@ This becomes governance metadata rather than prose, auditable the same way Truth
 
 **Description:** §Mission Drift Review's ratification-velocity trigger (every 5 ratified governance/canonical changes) is a provisional operating parameter, explicitly labeled no higher than Placeholder on this document's own Evidence Classification scale. It was set by multi-agent consensus reasoning (Gemini, Grok, ChatGPT) about audit fatigue and drift-detection sensitivity, not by any operational data — the mechanism has not run once yet.
 
-**Why It Matters:** A provisional numeric threshold with no logged follow-up is exactly the pattern this repository has repeatedly caught itself in elsewhere (Gate 2's m_phys/m_rep thresholds, EF-0.2's deferred hard numerical triggers) — provisional values are acceptable, silently-permanent provisional values are not. `PROBE_INVOCATION.md`, referenced in §Mission Drift Review's Execution Requirements, also does not yet exist and blocks the mechanism's first real run.
+**Why It Matters:** A provisional numeric threshold with no logged follow-up is exactly the pattern this repository has repeatedly caught itself in elsewhere (Gate 2's m_phys/m_rep thresholds, EF-0.2's deferred hard numerical triggers) — provisional values are acceptable, silently-permanent provisional values are not.
 
 **Resolution Path:**
-- Draft and commit `PROBE_INVOCATION.md` as a companion file (turn-key copy-paste probe prompt).
+- ~~Draft and commit `PROBE_INVOCATION.md` as a companion file (turn-key copy-paste probe prompt).~~ Done — `Admin/PROBE_INVOCATION.md` v1.0 drafted 2026-07-26.
 - Run the first three Mission Drift Review cycles under N=5.
 - Revisit N against the observed pattern: raise if audit fatigue appears with no corresponding findings; lower if a real drift event is caught late; keep if the balance looks right.
 - Promote this unknown's Evidence Classification label once real cycle data exists to support one.
 
-*Registered by Claude — Synthesizer/Auditor, human-directed, alongside the Mission Drift Review mechanism's first specification, 2026-07-26.*
+*Registered by Claude — Synthesizer/Auditor, human-directed, alongside the Mission Drift Review mechanism's first specification, 2026-07-26. Template blocker resolved same day; N-threshold validation remains open pending operational cycles.*
 
 ---
 
