@@ -575,6 +575,31 @@ independently — a shared mechanism may serve both.
 
 ---
 
+### GOV-021 — Autonomy Divergence Protocol formal registration
+
+| Field         | Value                           |
+|---------------|----------------------------------|
+| Status        | Open                             |
+| Risk          | Medium                           |
+| Priority      | Major                            |
+| Type          | Governance / Registration        |
+| Blocking      | No                                |
+| Owner         | `Admin/Governance_Charter.md`    |
+| First Logged  | 2026-07-19 (as a candidate ID, in `Admin/Autonomy_Divergence_Protocol.md`) — formally registered here 2026-07-27 |
+| Last Reviewed | 2026-07-27                       |
+
+**Description:** `Admin/Autonomy_Divergence_Protocol.md` reserved GOV-021 as its candidate registration ID on 2026-07-19 — the document defining detection, classification, response tiers, and restoration for a subsystem whose behavior appears to diverge from authorized objectives. That file has undergone five review passes since (ChatGPT ×3, Grok, cross-checked against a companion repository, Astroid-miner) and remains Draft, PROPOSED NOT RATIFIED, Spec Gates 0/6 — but the ID itself was never actually entered into this sidecar. `Admin/Autonomy_Divergence_Protocol.md`'s own File State explicitly notes the reason: that file sits outside the current paste-based edit workflow, so the registering document could not perform the registration itself. The gap propagated silently to `Unknowns.md`, which also had no entry for GOV-021 until the same sweep that found this.
+
+**Why It Matters:** A governance ID existing informally in one file but not formally in its owning registry is exactly the kind of registration-latency drift `Admin/Repository_Integrity_Protocol.md`'s sidecar-parity concept (and GMP-013's still-unbuilt tooling) exists to catch — this instance was found by a direct question, not by any structural check the repository runs on itself, which is itself worth noting as evidence for why that tooling matters.
+
+**Sub-unknowns tracked in the originating file, not split out further here:** GOV-021b (Detection Criteria calibration — trigger thresholds, evidence-diversity weighting, Watch exit conditions) and GOV-021c (multi-agent coordinated divergence detection, narrowed by AP-016 to detection specifically). Both remain open questions within `Admin/Autonomy_Divergence_Protocol.md` itself.
+
+**Resolution Path:** This entry is satisfied by its own registration — the ID gap is now closed. The underlying protocol's Draft status, 0/6 Spec Gates, and GOV-021b/GOV-021c sub-unknowns are unaffected and remain separately open within `Admin/Autonomy_Divergence_Protocol.md`. Formal audit of that document against this Charter's constraints (the same step GOV-001 already calls for generally) is still outstanding.
+
+*Surfaced via a direct registration-latency question (human-directed); checked against `Admin/Autonomy_Divergence_Protocol.md` and `Unknowns.md` before registering — confirmed the ID was genuinely reserved but never entered, not a naming collision or a duplicate; registered by Claude — Synthesizer/Auditor, human-directed, 2026-07-27.*
+
+---
+
 ### GOV-022 — Reversibility as a cross-cutting operating principle: placement undecided
 
 | Field         | Value                           |
@@ -599,6 +624,25 @@ independently — a shared mechanism may serve both.
 ---
 
 ### Resolution Log
+
+- 2026-07-27: **GOV-021 formally registered; registration-latency sweep
+  found it and four other unlogged entries (human-directed).** A direct
+  question about whether `Unknowns.md` needed unlogged entries surfaced
+  two distinct gaps. First, a cross-index gap: five entries registered
+  in their owning file's own sidecar over the prior four days — GOV-022
+  (this file), RIP-010 (`Admin/Repository_Integrity_Protocol.md`),
+  GMP-011/GMP-012/GMP-013 (`Admin/Governance_Migration_Protocol.md`) —
+  had never been added to `Unknowns.md`'s Active Unknowns Index, fixed
+  in that file directly (v4.27). Second, and older: GOV-021 itself had
+  never been formally registered anywhere. `Admin/Autonomy_Divergence_
+  Protocol.md` reserved it as a candidate ID on 2026-07-19, explicitly
+  noting that file sits outside the current paste-based edit workflow
+  and so could not perform the registration itself — the gap had sat
+  for eight days, propagating silently into `Unknowns.md` as well.
+  Registered here as a proper sidecar entry (see above) rather than
+  merely noted; the underlying protocol's Draft status and its own
+  GOV-021b/GOV-021c sub-unknowns remain separately open and unaffected.
+  Open Unknowns 19 → 20.
 
 - 2026-07-27: **GOV-008 non-resolution note added (human-directed).**
   `Admin/Governance_Migration_Protocol.md` v0.5 added §VI Epistemic
