@@ -17,9 +17,9 @@
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | Admin/Verification_Gates_LF.md                                      |
 | Last Audit       | 2026-05-09 (ChatGPT — Synthesizer); revised 2026-06-08; revised 2026-06-27; revised 2026-07-26 |
-| Auditor          | Claude — Retrofit/Auditor; revised Claude — Synthesizer/Auditor; Gemini — Skeptic/Auditor (Exploration audit), Claude — Synthesizer/Auditor (verification against source, corrections), 2026-07-26 |
+| Auditor          | Claude — Retrofit/Auditor; revised Claude — Synthesizer/Auditor; Gemini — Skeptic/Auditor (Exploration audit), Claude — Synthesizer/Auditor (verification against source, corrections), CF-DS-002 ratified by human governing authority, CF-DS-001 resolved (Claude + Grok, independently confirmed), 2026-07-26 |
 | Open Unknowns    | 5                                                                   |
-| Active Disputes  | 1                                                                   |
+| Active Disputes  | 0                                                                   |
 | Highest Risk     | High                                                                |
 | Sidecar Link     | #auditor-notes--unknowns                                            |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
@@ -232,6 +232,64 @@ escalated. Computationally expensive. **Status:
 Exploratory — likely v2/v3 architecture.**
 *Cross-reference: `Tests/Support_Raft.md`
 Guardian Protocol.*
+
+### Authority Scope Boundary (resolves CF-DS-001)
+
+Frameworks E and F are not competing philosophies —
+they are the same doctrine applied at two different
+decision scales. Which one governs a given decision
+is determined by the criteria below, not by a
+standing commitment to either architecture.
+
+**A decision stays at local unit autonomy (Framework F's
+local layer) only if all four hold:**
+1. **Scope-confined** — effect is limited to the
+   deciding unit; no other unit's behavior, knowledge,
+   or shared parameters are changed.
+2. **Reversible or fail-safe** — the action does not
+   cross an `Admin/Ethical_Constraints.md` hard floor
+   and can be undone or safely contained if wrong.
+3. **Time-critical** — the delay required to route
+   through the supervisory/advisory layer would itself
+   cause harm, mission-critical loss, or unit loss.
+4. **Confidence state is Green or Yellow** — see
+   Section IV. A unit in Orange or worse has already
+   lost the standing to self-certify a scope-confined
+   judgment; escalation is mandatory regardless of the
+   other three criteria.
+
+**A decision routes through the supervisory/advisory
+layer (Framework E's pattern — challenge and dissent
+authority, not command authority) if any hold:**
+1. Effect is swarm-wide — shared parameters, cached
+   governance documents, or other units' operating
+   behavior would change.
+2. The action approaches or crosses an
+   `Ethical_Constraints.md` boundary.
+3. The action is irreversible and not urgent enough to
+   justify bypassing challenge.
+4. Confidence state is Orange or worse.
+
+This is a direct generalization of `Tests/Support_Raft.md`'s
+comms-blackout May/May-Not split (continue charging,
+execute Stasis Mode, execute unit recovery, shed panels
+= local; update cached reference documents, modify
+swarm-wide operating parameters, authorize outside
+`Ethical_Constraints.md` = supervisory) to the general
+case, including when comms are available. The boundary
+was already correct for the blackout case; it did not
+need to be invented, only stated as doctrine that
+applies independent of comms state.
+
+**What "supervisory" does not mean:** Framework E's
+advisors challenge and can trigger escalation; they do
+not unilaterally command. No advisor may plan, execute,
+and self-authorize the same action — Axiom Q-2
+(Separation of Powers) applies to the advisor layer
+exactly as it applies to any other agent. A "supervisory"
+decision is one subject to challenge before it takes
+effect, not one made unilaterally by a higher authority
+in place of the unit.
 
 ---
 
@@ -719,10 +777,13 @@ requiring immediate resolution. They belong in
   states are test targets
 - `Tests/Support_Raft.md` — Framework F natural
   implementation; Guardian Protocol is Framework G
-  prototype
-- `Admin/Ethical_Constraints.md` — CF-DS-002 dispute;
-  hard-line doctrines govern what no cognition layer
-  may override
+  prototype; source precedent for the Authority Scope
+  Boundary (CF-DS-001 resolution, above) generalized from
+  its comms-blackout May/May-Not split
+- `Admin/Ethical_Constraints.md` — hard-line doctrines
+  govern what no cognition layer may override; CF-DS-002
+  resolved here as Bounded Override, full text in that
+  file v0.13
 - `Admin/Ship_of_Theseus.md` — CF-003 identity
   continuity cross-reference
 - `Admin/Auditor_Protocols.md` — multi-agent audit
@@ -758,8 +819,20 @@ requiring immediate resolution. They belong in
 
 | ID | Dispute | Positions in Conflict | Risk | Status | Owner |
 |---|---|---|---|---|---|
-| CF-DS-001 | Centralized vs. distributed cognition | Single executive AI with advisor sub-systems vs. fleet consensus with no single authority | High | Open | `Architecture/Cognitive_Frameworks.md` |
+| CF-DS-001 | Centralized vs. distributed cognition | Single executive AI with advisor sub-systems vs. fleet consensus with no single authority | High | **Resolved — scope-dependent hybrid, 2026-07-26** | `Architecture/Cognitive_Frameworks.md` |
 | CF-DS-002 | Human override authority scope | Absolute human override vs. bounded override constrained by Tier 1 Axioms | High | **Resolved — Bounded Override, 2026-07-26** | `Admin/Ethical_Constraints.md` |
+
+**CF-DS-001 resolution (2026-07-26):** Neither named
+position as stated — Frameworks E and F are not in
+competition; they apply at different decision scales,
+per the Authority Scope Boundary added to Section III
+above. This generalizes `Tests/Support_Raft.md`'s
+existing comms-blackout May/May-Not split rather than
+inventing new doctrine, and was independently confirmed
+by both Claude and Grok before closing. No advisor or
+supervisory layer gains unilateral command authority —
+Q-2 (Separation of Powers) continues to apply to that
+layer exactly as to any other agent.
 
 **CF-DS-002 resolution (2026-07-26):** Ratified directly by human governing authority — hard floors (Anti-Weaponization, Life Preservation, Cultural Sites, per `Admin/Ethical_Constraints.md`) sit above the human governing authority's own direct, real-time order, not only above subordinate agents. Revision requires the deliberate constitutional process any Tier 1 document requires, not an in-the-moment override. Framed by the human principal as a moral commitment, not a technical default: "These hard floors should sit above my own authority. They are a moral imperative." `Admin/Ethical_Constraints.md` v0.13 carries the full doctrine text and the accompanying tool/weapon distinction ratified in the same decision. EC-011 (authenticating that a claimed override genuinely originates from the human principal, as opposed to what the floor binds) remains a separate, still-open unknown in that file — unaffected by this closure.
 
@@ -1083,6 +1156,25 @@ Synthesizer/Auditor, human-directed.*
   only the closure. Active Disputes 2 → 1. CF-DS-001
   (centralized vs. distributed cognition) remains Open — no
   constitutional escalation requirement, ours to work directly.
+- 2026-07-26 (fourth entry, same day): **CF-DS-001
+  resolved — scope-dependent hybrid**, not a win for
+  either named extreme. New subsection "Authority Scope
+  Boundary" added after the Framework Taxonomy (Section
+  III): a decision stays at local unit autonomy only if
+  scope-confined, reversible/fail-safe, time-critical,
+  and confidence state is Green/Yellow; it routes through
+  the supervisory/advisory layer if any of swarm-wide
+  effect, an Ethical_Constraints boundary, irreversibility
+  without urgency, or Orange+ confidence state hold.
+  Directly generalizes `Tests/Support_Raft.md`'s existing
+  comms-blackout May/May-Not split to the general case
+  rather than inventing new doctrine — that file's
+  boundary was already correct, just scoped to blackout
+  only. Explicit clarification that "supervisory" means
+  challenge/dissent authority, not command authority — no
+  advisor may plan, execute, and self-authorize the same
+  action, per Q-2. Independently confirmed by Claude and
+  Grok before closing. Active Disputes 1 → 0.
 
 ---
 
