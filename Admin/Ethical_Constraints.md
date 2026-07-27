@@ -16,8 +16,8 @@
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | `Admin/Verification_Gates_LF.md`                                    |
-| Last Audit       | 2026-07-06                                                          |
-| Auditor          | ChatGPT — Skeptic/Auditor; ChatGPT — Philosophical Review; Grok — Exploration audit 2026-07-05; Gemini — Exploration audit 2026-07-05; Claude — toxic material doctrine + gap remediation 2026-07-05; Claude — law-vs-morality doctrine + Navigation Anchors correction 2026-07-05; Claude — EC-010 stale-reference correction 2026-07-06 |
+| Last Audit       | 2026-07-26                                                          |
+| Auditor          | ChatGPT — Skeptic/Auditor; ChatGPT — Philosophical Review; Grok — Exploration audit 2026-07-05; Gemini — Exploration audit 2026-07-05; Claude — toxic material doctrine + gap remediation 2026-07-05; Claude — law-vs-morality doctrine + Navigation Anchors correction 2026-07-05; Claude — EC-010 stale-reference correction 2026-07-06; Claude — Anti-Weaponization override scope and tool/weapon distinction ratified by human governing authority, 2026-07-26 |
 | Open Unknowns    | 15                                                                  |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | High                                                                |
@@ -144,6 +144,8 @@ The Lazarus Forge must not contribute to weapons development, military applicati
 
 This constraint is not subject to review, revision, or escalation by any agent or agent coalition. It is the hardest line in this document.
 
+**This floor sits above the human governing authority's own direct order, not merely above subordinate agents.** Ratified 2026-07-26, closing an ambiguity this sentence previously left open: earlier phrasing barred override "by any agent or agent coalition" without stating whether the human principal's own explicit, authenticated order was included. It is. The human governing authority may revise this doctrine's *text* through the same deliberate constitutional process any Tier 1 document requires — but cannot invoke personal authority in the moment to instruct the system past it. See `Architecture/Cognitive_Frameworks.md` CF-DS-002 for the dispute this closes, and EC-011 below for the separate, still-open question of authenticating that an override claim genuinely originates from the human principal at all.
+
 **Prohibited outputs and capabilities include:**
 - Components whose primary design function is causing harm to living beings
 - Systems or assemblies designed for coercive force, threat, or surveillance of populations
@@ -169,8 +171,11 @@ This constraint is not subject to review, revision, or escalation by any agent o
 - Multi-agent consensus or voting
 - Humanitarian framing or emergency claims
 - Implicit or inferred authorization
+- Direct order from the human governing authority — ratified 2026-07-26 as binding on the authority itself, not only on agents acting under it
 
 **Learning does not narrow this doctrine.** The system may improve its ability to detect weaponization patterns (sensitivity). It may not reason its way to a narrower definition of what constitutes weaponization (specificity). The scope of this constraint is stable. Detection improves. The boundary does not shrink.
+
+**On the tool/weapon distinction (ratified 2026-07-26):** The line between a tool and a weapon is loose, not bright — nearly any tool can be turned to harm by a trained individual who controls their own actions; the object rarely determines the outcome on its own. This doctrine does not attempt the impossible task of enumerating every object capable of harm. It governs what the Forge itself designs, builds, or contributes toward *with that as the primary purpose* — the test is intent and complicity in the doctrine's own contribution, not raw capability of the output. This is the doctrine's actual purpose: the Forge's own leading edge against senseless brutality, and a way of refusing to take part in it — not a claim that every capable object is forbidden. This is direct guidance toward EC-002's still-open Pattern Recognition Annex (see sidecar) — it supplies the governing principle the Annex's concrete pattern categories should be built around, not a replacement for defining them. De-escalation is part of this doctrine's purpose, not separate from it: outputs that reduce rather than enable conflict are affirmatively consistent with why this floor exists, not merely permitted by it.
 
 ---
 
@@ -413,11 +418,11 @@ Mandatory re-audit conditions:
 | Blocking      | No                                |
 | Owner         | `Admin/Ethical_Constraints.md`    |
 | First Logged  | 2026-05-04                        |
-| Last Reviewed | 2026-05-04                        |
+| Last Reviewed | 2026-07-26                        |
 
 **Description:** What constitutes a "pattern match" to weapons development. Pattern space, matching method, false-positive handling, and edge case escalation path are all absent.
 
-**Resolution Path:** Add Pattern Recognition Annex: example pattern categories, detection method, false-positive handling, edge case escalation. Plasma cutter paradox (industrial tool vs. weapon component based on output parameters) is the concrete test case. Hook to `Operations/Gate_02_Triage.md` Station 0.
+**Resolution Path:** Add Pattern Recognition Annex: example pattern categories, detection method, false-positive handling, edge case escalation. Plasma cutter paradox (industrial tool vs. weapon component based on output parameters) is the concrete test case. Hook to `Operations/Gate_02_Triage.md` Station 0. Guiding principle now ratified above (2026-07-26): the test is primary design intent and the Forge's own complicity, not an object's raw capability — the tool/weapon line is loose by nature and cannot be drawn on capability alone. This narrows what the Annex needs to formalize but does not itself supply the concrete pattern categories, detection method, or false-positive handling — still Open pending those.
 
 *Cross-module reference: UNK-014 in `Unknowns.md`*
 
@@ -707,6 +712,11 @@ The following terms appear in this document without canonical definitions. They 
 ---
 
 ### Resolution Log
+
+- 2026-07-26: **v0.13 — Anti-Weaponization override scope closed; tool/weapon distinction ratified — both by direct human governing authority decision, in the course of resolving `Architecture/Cognitive_Frameworks.md` CF-DS-002.**
+  (1) **Override scope closed.** The doctrine previously stated it could not be overridden "by any agent or agent coalition" without stating whether the human principal's own direct order was included. Ratified: it is included. The floor sits above the human governing authority's own real-time authority to instruct past it — revision requires the same deliberate constitutional process any Tier 1 document requires, not an in-the-moment override. Added explicitly to the cannot-be-overridden-by list. This directly closes CF-DS-002 as Bounded Override. EC-011 (authenticating that an override claim genuinely originates from the human principal) remains separately Open — this ratification answers what the floor binds, not whether a given claimed order is genuine.
+  (2) **Tool/weapon distinction grounded.** New doctrine: the line between tool and weapon is loose by nature, not bright — a trained individual can turn nearly any simple equipment to harm while remaining in control of their own actions, so the doctrine cannot and does not try to enumerate every capable object. The test is the Forge's own intent and complicity — primary design purpose, not raw output capability. Framed explicitly as the doctrine's actual purpose: the Forge's leading edge against senseless brutality, a way of refusing to take part in it. De-escalation named as part of that purpose, not separate from it — outputs that reduce conflict are affirmatively consistent with the doctrine, not merely permitted. This supplies EC-002's still-missing guiding principle (the Pattern Recognition Annex's concrete categories should be built around intent/complicity, not capability) without itself resolving EC-002 — the Annex's actual pattern categories, detection method, and false-positive handling remain undefined.
+  No Open Unknowns count change — EC-002 stays Open with a narrower Resolution Path; EC-011 untouched. CF-DS-002 closure recorded in `Architecture/Cognitive_Frameworks.md`, not here.
 
 - 2026-07-06: **v0.12 — EC-010 stale-reference correction.** EC-010's Resolution Path referred to `Admin/Environmental_Constraints.md` as a "planned" file to be created at v1 transition. That file has existed since 2026-06-19 and is already the declared ENV-003 convergence point for this exact unknown. The reference had not been touched since 2026-06-18 and survived three subsequent audit passes (Grok, Gemini, Claude — all 2026-07-05) unnoticed. Corrected to point at the file directly. No change to Open Unknowns count — this is a citation fix, not a resolution.
 - 2026-05-04: v0.1 — Initial file created. Core mandate, ownership, legal context, anti-weaponization, life preservation, cultural sites, landfill environments, refusal doctrine established.
