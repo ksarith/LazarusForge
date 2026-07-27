@@ -15,14 +15,14 @@
 | Field | Value |
 | :--- | :--- |
 | Status | Exploration |
-| Version | 0.16 |
+| Version | 0.17 |
 | Spec Gates | G4 cleared; G1 partial (Gemini 2026-06-30); G3 blocked by AP-012/AP-016 |
 | Verification Ref | Admin/Verification_Gates_LF.md |
 | Ethical Anchor | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
-| Highest Risk | GOV-008 — Physical Grounding Telemetry Mapping Interface undefined; \u03b31\u2013\u03b34 predicates currently aspirational in harness implementation (see Section 7.4) |
+| Highest Risk | GOV-008 — Physical Grounding Telemetry Mapping Interface undefined; \u03b31\u2013\u03b34 predicates currently aspirational in harness implementation (see Section 7.4). **ID collision flagged 2026-07-26 — this tracker's "GOV-008" is distinct from the registered `Admin/Governance_Charter.md` GOV-008 (minimum agent quorum); not yet renamed, see Resolution Log.** |
 | Truth Basis | Internally Derived (Theorems) + Analogous (Multi-Agent Systems) |
-| Last Audit | 2026-06-30 (Gemini structural revision; Theorem 5 and Section 8 Lifecycle restored in v0.16) |
-| Active Trackers | GOV-008, AP-012, AP-016, CF-004 |
+| Last Audit | 2026-07-26 (Claude — Synthesizer/Auditor; §4.6 added, multi-agent proposal from ChatGPT/Gemini restructured to extend existing theorems rather than duplicate them, human-directed) |
+| Active Trackers | GOV-008, AP-012, AP-016, CF-002, CF-004 |
 
 > **Provenance self-reference note:** This document's own Provenance Ceiling Gate (\u03a8, Section 4.3) classifies its Truth Basis as *Internally Derived*, which bars it from self-promotion under its own algebra. Promotion to Candidate Spec requires at least partial Experimentally Verified status on the core claims.
 
@@ -264,6 +264,8 @@ To enforce absolute systemic constraints, we replace the linear combination mode
 
 $$M(n) = \Phi(n) \cdot \Psi(n) \cdot A(n) \cdot \exp\left(\mathbf{W}^T \cdot \ln \mathbf{V}(n)\right)$$
 
+*(Extended in §4.6.3 with a fourth gate, $\Xi(n)$, governing active contradiction. The two-gate form above is preserved here as the base case with no unresolved conflict; see 4.6.3 for the full four-gate equation.)*
+
 Where $\mathbf{W} = [w_e, w_r, w_c, w_p, w_s]^T$ represents an institutionally configured weight vector satisfying $\sum w_i = 1$ and $w_i > 0$. The categorical behavior of the equation is dictated by three distinct operators:
 
 ### 1. The Physical Grounding Gate $\Phi(n)$
@@ -321,6 +323,42 @@ Knowledge within the graph is deeply recursive. We define the verification matur
 $$M(n_{\text{compound}}) \le \min_{n_i \in \text{deps}(n_{\text{compound}})} M(n_i)$$
 
 An architectural assertion is only as mature as its least verified dependency. Because $G_t$ is strictly restricted to a DAG structure, this evaluation is guaranteed to terminate without encountering infinite recursion loops.
+
+## 4.6 Disjunctive Evidence, Independence, and Conflict Resolution
+
+Section 4.5 bounds a node by its required dependencies alone. Real evidence graphs also contain alternative, independently sufficient lines of support (e.g., three genuinely distinct sensor families each independently confirming the same physical claim), and contain outright contradictions. This section extends the existing algebra to cover both, rather than introducing parallel machinery.
+
+### 4.6.1 The Disjunctive Bounding Extension
+
+Partition the edges into $n$'s **required** dependencies $\text{deps}(n)$ — unchanged, still governed by Theorem 4.5 — and its **alternative sufficient branches** $\text{alt}(n) = \{B_1, B_2, \ldots\}$, where each $B_i \subseteq V_c$ is a set of nodes that, taken together, independently and fully establish $n$'s claim without reference to $\text{deps}(n)$.
+
+The Compound Bounding Theorem generalizes to:
+
+$$M(n) \le \max\left(\min_{d \in \text{deps}(n)} M(d),\ \max_{B_i \,:\, \text{ind}(B_i)} \min_{b \in B_i} M(b)\right)$$
+
+**Corollary 4.6.1 (No Penalty for Absence):** If $\text{alt}(n) = \emptyset$, or no $B_i$ satisfies independence (4.6.2), the bound reduces exactly to Theorem 4.5 — an alternative branch can raise the ceiling on $n$ but its absence never lowers it below what the required dependencies already establish. This distinguishes a required dependency (whose absence forces $M(n)$ toward the floor, per 4.5) from optional supporting evidence (whose absence is neutral).
+
+### 4.6.2 The Independence Predicate
+
+A branch $B_i$ may only be used in 4.6.1 if:
+
+$$\text{ind}(B_i) \equiv \bigwedge \begin{cases} \text{distinct observation sources across } B_i \\ \text{distinct model lineages or physical measurement chains} \\ \text{no shared training data, firmware, or sensor family} \\ \text{CF-002 correlated-failure analysis does not flag } B_i \end{cases}$$
+
+If $\text{ind}(B_i)$ fails, $B_i$ does not qualify as an alternative — its members are folded into $\text{deps}(n)$ and bounded under ordinary conjunction instead. This is the direct operationalization of `Architecture/Cognitive_Frameworks.md` CF-002: apparent redundancy from correlated sources receives no disjunctive credit.
+
+### 4.6.3 The Conflict Gate $\Xi(n)$
+
+Contradiction is enforced as a fourth multiplicative gate, alongside $\Phi$ and $\Psi$, extending the maturity function in 4.3:
+
+$$M(n) = \Phi(n) \cdot \Psi(n) \cdot \Xi(n) \cdot A(n) \cdot \exp\left(\mathbf{W}^T \cdot \ln \mathbf{V}(n)\right)$$
+
+$$\Xi(n) = \begin{cases} 0 & \text{if an active, unresolved } \text{Conflict}(n, \neg n) \text{ exists} \\ 1 & \text{otherwise} \end{cases}$$
+
+As with $\Phi$, this is a hard zero rather than a soft penalty: an active contradiction collapses $M(n)$ regardless of how strong its other supporting dimensions are, and forces $n$ into the UNKNOWN branch of the 4.4 classification matrix. Firing $\Xi(n) = 0$ is not silent — it mandates an Epistemic Ledger entry per EF-0.3. Resolution requires either new empirical input that discharges one side of the conflict, or explicit human governing-party adjudication; $\Xi(n)$ does not average or split the difference between contradictory claims.
+
+### 4.6.4 Observation, Evidence, and Time Remain Outside the Algebra
+
+Two deliberate non-additions, stated explicitly so they are not mistaken for gaps. First, this framework does not introduce a separate Observation/Evidence/Claim data layer — the $E$ (Evidence Completeness) and $S$ (Physical Grounding) dimensions of $\mathbf{V}(n)$ already require raw observations to be logged immutably before they contribute to either dimension, per EF-0.8/EF-0.8b; a node's interpretation may be revised without altering the underlying observation log. Second, $M(n)$ carries no time term. Freshness and expiry remain external governance metadata (Assumptions tables' Expiry Trigger fields, `Unknowns.md`'s Cycle machinery) rather than arguments to the maturity function — keeping $M(n)$ a pure function of evidence state, not of wall-clock time, is intentional and unchanged by this section.
 
 ---
 
@@ -637,6 +675,8 @@ When an institution reaches its targeted operational end-of-life or encounters i
 3. **Graph Freezing:** The system serializes the complete historic state path, stripping active runtime components and transforming the ledger into a read-only cryptographic archive.
 
 ## 8.4 Open Structural Gaps and Registries
+
+> **ID collision flagged 2026-07-26:** The tracker entry below uses "GOV-008" as a local identifier. `Admin/Governance_Charter.md` and `Unknowns.md` also use GOV-008, for an unrelated concept — the minimum agent quorum requirement for Genesis Phase exit. This tracker was never cross-registered against the global GOV-* namespace when authored. Not renamed in this pass — flagged for a deliberate rename (candidate: a CIR-scoped prefix distinct from GOV-*) rather than an unreviewed find-and-replace, since File State's Highest Risk field and Active Trackers list above both currently point to this ID.
 
 ### Tracker Entry: GOV-008 — Physical Grounding Telemetry Mapping Interface
 
