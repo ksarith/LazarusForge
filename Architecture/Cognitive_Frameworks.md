@@ -19,7 +19,7 @@
 | Last Audit       | 2026-05-09 (ChatGPT — Synthesizer); revised 2026-06-08; revised 2026-06-27; revised 2026-07-26 |
 | Auditor          | Claude — Retrofit/Auditor; revised Claude — Synthesizer/Auditor; Gemini — Skeptic/Auditor (Exploration audit), Claude — Synthesizer/Auditor (verification against source, corrections), 2026-07-26 |
 | Open Unknowns    | 5                                                                   |
-| Active Disputes  | 2                                                                   |
+| Active Disputes  | 1                                                                   |
 | Highest Risk     | High                                                                |
 | Sidecar Link     | #auditor-notes--unknowns                                            |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
@@ -759,12 +759,9 @@ requiring immediate resolution. They belong in
 | ID | Dispute | Positions in Conflict | Risk | Status | Owner |
 |---|---|---|---|---|---|
 | CF-DS-001 | Centralized vs. distributed cognition | Single executive AI with advisor sub-systems vs. fleet consensus with no single authority | High | Open | `Architecture/Cognitive_Frameworks.md` |
-| CF-DS-002 | Human override authority scope | Absolute human override vs. bounded override constrained by Tier 1 Axioms | High | Open | `Admin/Ethical_Constraints.md` |
+| CF-DS-002 | Human override authority scope | Absolute human override vs. bounded override constrained by Tier 1 Axioms | High | **Resolved — Bounded Override, 2026-07-26** | `Admin/Ethical_Constraints.md` |
 
-*CF-DS-002 has constitutional implications. Resolution
-must be consistent with `Admin/Ethical_Constraints.md`
-Anti-Weaponization and Life Preservation doctrines.
-Escalate to human governing party before closing.*
+**CF-DS-002 resolution (2026-07-26):** Ratified directly by human governing authority — hard floors (Anti-Weaponization, Life Preservation, Cultural Sites, per `Admin/Ethical_Constraints.md`) sit above the human governing authority's own direct, real-time order, not only above subordinate agents. Revision requires the deliberate constitutional process any Tier 1 document requires, not an in-the-moment override. Framed by the human principal as a moral commitment, not a technical default: "These hard floors should sit above my own authority. They are a moral imperative." `Admin/Ethical_Constraints.md` v0.13 carries the full doctrine text and the accompanying tool/weapon distinction ratified in the same decision. EC-011 (authenticating that a claimed override genuinely originates from the human principal, as opposed to what the floor binds) remains a separate, still-open unknown in that file — unaffected by this closure.
 
 ---
 
@@ -1072,6 +1069,20 @@ Synthesizer/Auditor, human-directed.*
   AND/OR/Conflict operators, and a full Section IV rewrite
   built on it) was not adopted this pass — see the note
   addressed to the human principal for why.
+- 2026-07-26 (third entry, same day): **CF-DS-002 resolved
+  — Bounded Override**, ratified directly by human governing
+  authority after escalation, as this file's own Active
+  Disputes entry required. Hard floors in
+  `Admin/Ethical_Constraints.md` (Anti-Weaponization, Life
+  Preservation, Cultural Sites) sit above the human governing
+  authority's own direct order, not only above subordinate
+  agents — framed by the human principal as moral commitment,
+  not technical default. Full doctrine text, the accompanying
+  tool/weapon distinction, and the override-scope closure live
+  in `Admin/Ethical_Constraints.md` v0.13; this file records
+  only the closure. Active Disputes 2 → 1. CF-DS-001
+  (centralized vs. distributed cognition) remains Open — no
+  constitutional escalation requirement, ours to work directly.
 
 ---
 
