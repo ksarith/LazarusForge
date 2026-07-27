@@ -16,9 +16,9 @@
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | Admin/Verification_Gates_LF.md                                      |
-| Last Audit       | 2026-05-09 (ChatGPT — Synthesizer); revised 2026-06-08; revised 2026-06-27 |
-| Auditor          | Claude — Retrofit/Auditor; revised Claude — Synthesizer/Auditor     |
-| Open Unknowns    | 4                                                                   |
+| Last Audit       | 2026-05-09 (ChatGPT — Synthesizer); revised 2026-06-08; revised 2026-06-27; revised 2026-07-26 |
+| Auditor          | Claude — Retrofit/Auditor; revised Claude — Synthesizer/Auditor; Gemini — Skeptic/Auditor (Exploration audit), Claude — Synthesizer/Auditor (verification against source, corrections), 2026-07-26 |
+| Open Unknowns    | 5                                                                   |
 | Active Disputes  | 2                                                                   |
 | Highest Risk     | High                                                                |
 | Sidecar Link     | #auditor-notes--unknowns                                            |
@@ -100,11 +100,11 @@ machine behavior.
 
 | ID | Assumption | Basis | Confidence | Expiry Trigger |
 |---|---|---|---|---|
-| ASM-001 | Degraded environments, damaged sensors, and partial corruption are normal operating conditions — not edge cases | Salvage-first doctrine; hostile deployment environments | High | v0 operational data contradicts this — environment is consistently benign and controlled |
-| ASM-002 | Mechanical constraints are more reliable than software constraints under failure conditions | Physical law vs. programmable logic; Layer 0 doctrine | High | A hardware failure mode is identified where mechanical constraints become less reliable than software under specific conditions |
-| ASM-003 | Three AI models with different training lineages provide meaningful cognitive diversity for consensus purposes | Model diversity assumption; CF-002 dependency | Low | Correlated AI failure mode study (CF-002) characterizes actual reasoning overlap — diversity must be demonstrated, not assumed |
-| ASM-004 | Human override remains meaningful and executable under degraded communication conditions | Human governance doctrine; Layer 6 | Medium | Operational scenario arises where human override cannot be executed in time to prevent harm — override doctrine must be revised |
-| ASM-005 | The algorithm architecture described in Section IX accurately characterizes the emergent computational behavior of the doctrine | Synthesis from ChatGPT Synthesizer analysis; cross-checked against repository structure | Medium | Operational experience or formal analysis reveals a significant gap between described and actual emergent behavior |
+| ASM-001 | Degraded environments, damaged sensors, and partial corruption are normal operating conditions — not edge cases | Salvage-first doctrine; hostile deployment environments | Analogous | v0 operational data contradicts this — environment is consistently benign and controlled |
+| ASM-002 | Mechanical constraints are more reliable than software constraints under failure conditions | Physical law vs. programmable logic; Layer 0 doctrine | Analogous | A hardware failure mode is identified where mechanical constraints become less reliable than software under specific conditions |
+| ASM-003 | Three AI models with different training lineages provide meaningful cognitive diversity for consensus purposes | Model diversity assumption; CF-002 dependency | Placeholder | Correlated AI failure mode study (CF-002) characterizes actual reasoning overlap — diversity must be demonstrated, not assumed |
+| ASM-004 | Human override remains meaningful and executable under degraded communication conditions | Human governance doctrine; Layer 6 | Analogous | Operational scenario arises where human override cannot be executed in time to prevent harm — override doctrine must be revised |
+| ASM-005 | The algorithm architecture described in Section IX accurately characterizes the emergent computational behavior of the doctrine | Synthesis from ChatGPT Synthesizer analysis; cross-checked against repository structure | Analogous | Operational experience or formal analysis reveals a significant gap between described and actual emergent behavior |
 
 ---
 
@@ -858,18 +858,18 @@ requirements.
 
 ---
 
-### CF-003 — Identity continuity during split-brain unresolved
+### CF-003 — Identity continuity during split-brain, doctrine defined pending empirical validation
 
 | Field         | Value                                            |
 |---------------|--------------------------------------------------|
-| Status        | Open                                             |
+| Status        | In Progress                                      |
 | Risk          | Medium                                           |
 | Priority      | Major                                            |
 | Type          | Architectural / Governance                       |
 | Blocking      | No                                               |
 | Owner         | Architecture/Cognitive_Frameworks.md             |
 | First Logged  | 2026-05-09                                       |
-| Last Reviewed | 2026-05-09                                       |
+| Last Reviewed | 2026-07-26                                       |
 
 **Description:** When a fragmented or partially
 restored cognition system is considered the "same"
@@ -886,19 +886,24 @@ one. Without a doctrine, restoration decisions are
 made ad hoc — which creates inconsistent authority
 chains and potential security gaps.
 
-**Resolution Path:** Cross-reference
-`Admin/Ship_of_Theseus.md` — the Ship of Theseus
-paradox directly addresses identity through
-incremental replacement. A restored cognition system
-with partial original firmware, partial new firmware,
-and cached memory is exactly the Ship of Theseus
-problem applied to AI. A cross-reference section
-in `Admin/Ship_of_Theseus.md` (ST-003) addressing
-AI identity continuity would close this gap.
-Payment via Specification — once ST-003 is resolved
-and a restoration policy is defined, update
-Section VI split-brain doctrine to reference the
-policy.
+**Resolution Path:** This entry was stale — it
+described the gap as if no doctrine existed, when
+`Admin/Ship_of_Theseus.md` §IV (AI Identity
+Continuity Doctrine) already defines Canonical vs.
+Derivative Identity, the 30% Derivative Threshold,
+and the re-vetting path (added 2026-06-08). That
+file's own ST-003 sidecar entry lists updating this
+entry to reference §IV as one of its three closure
+conditions — this update satisfies that condition.
+Status set to In Progress, mirroring ST-003 exactly,
+rather than Resolved: the 30% threshold is still
+Analogous confidence, uncalibrated against real
+split-brain recovery data, and ST-004 (sub-threshold
+state-tampering against that same threshold) is a
+separate open adversarial surface. Moves to Resolved
+alongside ST-003, when the threshold is empirically
+validated and the re-vetting path trial duration is
+defined from operational deployment.
 
 ---
 
@@ -908,12 +913,12 @@ policy.
 |---------------|--------------------------------------------------|
 | Status        | Open                                             |
 | Risk          | Low                                              |
-| Priority      | Minor                                            |
+| Priority      | Major                                            |
 | Type          | Architectural / Automation                       |
 | Blocking      | No                                               |
 | Owner         | Architecture/Cognitive_Frameworks.md             |
 | First Logged  | 2026-06-27                                       |
-| Last Reviewed | 2026-06-27                                       |
+| Last Reviewed | 2026-07-26                                       |
 
 **Description:** Epistemic Load Regulation (Triage
 Posture) is defined as doctrine in Section IX, but
@@ -926,7 +931,17 @@ audit sessions.
 **Why It Matters:** Without a measurable trigger,
 Triage Posture cannot be enforced automatically or
 audited consistently. The doctrine exists; the
-instrument does not.
+instrument does not. Priority raised from Minor to
+Major 2026-07-26: a proposed revision to Section IV
+(Confidence Collapse States, under review, not yet
+adopted) would make the Yellow→Orange transition
+depend on this metric's debt derivative directly —
+whether or not that revision lands, Triage Posture
+and promotion suspension already depend on it today.
+What began as a single automation convenience is
+becoming a dependency surface for other mechanisms —
+the risk profile changed even though the underlying
+gap did not.
 
 **Resolution Path:** Define a rolling window metric
 (e.g., Unknowns opened vs. closed over the last N
@@ -941,6 +956,50 @@ with the concrete threshold. Cross-reference
 `Admin/Computational Institutional Reasoning`
 Section 5 for the formal debt dynamics framework
 that grounds the trigger metric mathematically.
+
+---
+
+### CF-005 — Adversarial audit loop convergence criteria undefined
+
+| Field         | Value                                            |
+|---------------|--------------------------------------------------|
+| Status        | Open                                             |
+| Risk          | Low                                              |
+| Priority      | Minor                                            |
+| Type          | Architectural / Automation                       |
+| Blocking      | No                                               |
+| Owner         | Admin/Auditor_Protocols.md / Automation/AUDIT_HARNESS.py |
+| First Logged  | 2026-07-26                                       |
+| Last Reviewed | 2026-07-26                                       |
+
+**Description:** Section IX's Adversarial Optimization
+(Skeptic/Engineer Loop) already states in body text that
+the loop "stops when session context runs out" rather
+than on a formal convergence threshold or gate-passage
+criterion, and lists this same gap under "What Does Not
+Exist Yet" as the Adversarial loop termination condition.
+Neither location had a corresponding sidecar entry — a
+gap named in body text without a tracked unknown behind
+it, same failure mode this file's own Drift Indicators
+guard against elsewhere.
+
+**Why It Matters:** Without a tracked unknown, this gap
+has no expiry watch, no resolution path ownership, and no
+visibility in Unknowns.md's cross-module index — it could
+sit indefinitely as a body-text aside rather than
+something anyone is accountable for closing.
+
+**Resolution Path:** Define a formal termination
+condition for the multi-agent audit cycle — a convergence
+threshold, gate-passage criterion, or explicit escalation
+trigger — as an extension of `Admin/Auditor_Protocols.md`'s
+existing audit-phase doctrine, computable from
+`Automation/AUDIT_HARNESS.py`'s existing session data
+where practical.
+
+*Surfaced by Gemini — Skeptic/Auditor, 2026-07-26; verified
+against source and registered by Claude —
+Synthesizer/Auditor, human-directed.*
 
 ---
 
@@ -971,6 +1030,48 @@ that grounds the trigger metric mathematically.
   Auditor_Protocols.md EF-0.2 connection noted;
   Computational Institutional Reasoning cross-reference
   added. Open Unknowns 3 → 4. Last Audit date updated.
+- 2026-07-26: Gemini Skeptic/Auditor Exploration audit
+  reviewed and cross-checked against source. Two findings
+  confirmed and fixed: Assumptions table's High/Medium/Low
+  confidence labels (Semantic Drift from canonical Truth
+  Provenance terminology) remapped to the five-label
+  Evidence Classification — four assumptions to Analogous,
+  ASM-003 to Placeholder given its own expiry trigger
+  already states diversity "must be demonstrated, not
+  assumed." CF-005 registered (adversarial audit loop
+  convergence criteria — named in Section IX body text and
+  in "What Does Not Exist Yet," but had no sidecar entry).
+  One finding from the same audit rejected after
+  verification: Gate G5 was reported BLOCKED on grounds
+  that `Admin/Computational Institutional Reasoning` is a
+  hallucinated/non-existent path. It is not — the file
+  exists on disk, is registered in `Routing.md`, and is
+  documented there as one of two files that resolve via
+  hardcoded `ALIASES` in `Automation/AUDIT_HARNESS.py`
+  rather than the dynamic `parse_routing()` registry. G5 is
+  clear; CF-001 remains the sole legitimate promotion
+  blocker. Verified by Claude — Synthesizer/Auditor,
+  human-directed.
+- 2026-07-26 (second entry, same day): Two further fixes
+  from a multi-agent confidence-algebra discussion
+  (ChatGPT, Gemini), both verified against source before
+  adoption. CF-004 priority raised Minor → Major — multiple
+  agents independently identified that Triage Posture,
+  promotion suspension, and a proposed (not yet adopted)
+  Section IV revision all depend on this metric, so its
+  risk profile changed even though the gap itself didn't.
+  CF-003 status and Resolution Path synced with
+  `Admin/Ship_of_Theseus.md` — that file's §IV already
+  defines the Canonical/Derivative Identity doctrine this
+  entry described as nonexistent; its own ST-003 sidecar
+  entry explicitly lists updating CF-003 as one of its three
+  closure conditions, now satisfied. Status set to In
+  Progress, mirroring ST-003, not Resolved — the 30%
+  threshold remains uncalibrated. A third, larger proposal
+  from the same discussion (a new "confidence algebra" with
+  AND/OR/Conflict operators, and a full Section IV rewrite
+  built on it) was not adopted this pass — see the note
+  addressed to the human principal for why.
 
 ---
 
