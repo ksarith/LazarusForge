@@ -30,7 +30,7 @@
 | Verification Ref | `Admin/Verification_Gates_LF.md`                                    |
 | Last Audit       | 2026-06-19                                                          |
 | Auditor          | Gemini — Skeptic/Auditor; Grok — Skeptic/Auditor; ChatGPT — Skeptic/Auditor; Claude — Synthesizer |
-| Open Unknowns    | 12                                                                  |
+| Open Unknowns    | 13                                                                  |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | High                                                                |
 | Sidecar Link     | #auditor-notes--unknowns                                            |
@@ -905,7 +905,61 @@ Leviathan-class deployment is authorized.
 
 ---
 
+### SEC-012 — Asymmetric Cryptographic Overhead on Resource-Constrained Salvaged Silicon
+
+| Field         | Value                              |
+|---------------|-------------------------------------|
+| Status        | Open                               |
+| Risk          | Medium                             |
+| Priority      | Major                              |
+| Type          | Security / Hardware                |
+| Blocking      | No                                 |
+| Owner         | `Admin/Security_Protocols.md`      |
+| First Logged  | 2026-07-02                         |
+| Last Reviewed | 2026-07-28                         |
+
+**Description:** Asymmetric cryptographic execution overhead on
+resource-constrained salvaged silicon — specifically 8/16-bit
+microcontrollers, the class most likely to be recovered and reused
+under this repository's salvage-first sourcing model. This entry
+existed in `Unknowns.md`'s active index since at least v4.0 with no
+matching sidecar block here — registered now to close that gap; the
+underlying concern is not new.
+
+**Why It Matters:** Signature verification and key operations that
+are computationally trivial on modern hardware may impose meaningful
+latency or power draw on salvaged 8/16-bit MCUs. Under Logic-Zero
+recovery (degraded/minimal firmware operation), this risks either a
+localized denial-of-service — a node too slow to complete
+verification within an operational window — or pressure to bypass
+verification entirely under time constraint, which would be a
+protocol violation, not a performance one.
+
+**Resolution Path:** Characterize actual asymmetric-crypto execution
+time on representative salvaged 8/16-bit MCU classes (empirical
+benchmarking required — currently no data exists either way).
+Cross-reference `Operations/Electronics.md` EL-006 (firmware trust
+and reflashing validation) for the hardware side of this question.
+If overhead proves prohibitive on the lowest-capability salvaged
+tier, define either a lighter-weight verification scheme for that
+tier specifically, or an explicit minimum-capability floor below
+which a node cannot participate in cryptographic verification at
+all — the latter is a real constraint worth stating plainly rather
+than working around.
+
+---
+
 ### Resolution Log
+
+- 2026-07-28: SEC-012 given a formal sidecar entry — previously
+  present in `Unknowns.md`'s active index only, with no matching
+  block here, surfaced by a Grok-run repo-wide desync audit and
+  verified against source (zero prior mentions of SEC-012 anywhere
+  in this file) before registering. Description built from the
+  index's own existing text rather than invented; empirical
+  benchmarking still entirely undone. Open Unknowns count: 12 → 13.
+  Verified and registered by Claude — Synthesizer/Auditor,
+  human-directed.
 
 - 2026-05-26: File created (v0.1) — initial architecture by Gemini
   (Engineer/Security). GOV-006 and RIP-005 resolution paths initiated.
