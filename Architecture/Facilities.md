@@ -29,7 +29,7 @@
 | Verification Ref | Admin/Verification_Gates_LF.md                                      |
 | Last Audit       | 2026-06-11                                                          |
 | Auditor          | Claude — Architect/Auditor                                          |
-| Open Unknowns    | 3                                                                   |
+| Open Unknowns    | 4                                                                   |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | High                                                                |
 | Sidecar Link     | #auditor-notes--unknowns                                            |
@@ -525,6 +525,12 @@ resolved. Discovery.md Cross-Module Unknowns table updated. FA-005 closed.
 
 ### Resolution Log
 
+- 2026-07-28: Open Unknowns count corrected 3 → 4. All four of
+  FA-001 through FA-004 checked individually and confirmed genuinely
+  Open — surfaced by a Grok-run repo-wide desync audit, verified
+  against source before correcting. FA-005 remains correctly
+  Resolved and excluded. Claude — Synthesizer/Auditor,
+  human-directed.
 - 2026-06-11: Navigation Anchors block added. Upstream Dependencies and Downstream
   Dependents tables added. ASM-006 converted from Arkansas-specific to Reference
   Deployment Context (RDC) abstraction. Section II Arkansas Climate Consideration
