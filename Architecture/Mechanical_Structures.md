@@ -32,7 +32,7 @@
 | Verification Ref | Admin/Verification_Gates_LF.md                                      |
 | Last Audit       | 2026-06-11                                                          |
 | Auditor          | Gemini (2026-05-31); ChatGPT (2026-06-11); Claude — Retrofit        |
-| Open Unknowns    | 3                                                                   |
+| Open Unknowns    | 4                                                                   |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | High                                                                |
 | Sidecar Link     | #auditor-notes--unknowns                                            |
@@ -431,6 +431,11 @@ to next major file revision — non-blocking.
 
 ### Resolution Log
 
+- 2026-07-28: Open Unknowns count corrected 3 → 4. All four of
+  ME-001 through ME-004 checked individually and confirmed genuinely
+  Open — surfaced by a Grok-run repo-wide desync audit, verified
+  against source before correcting. Claude — Synthesizer/Auditor,
+  human-directed.
 - 2026-06-11: ChatGPT informal audit integrated. Five findings actioned:
   (1) Spec Gate advanced 1→2 — Gate 1 (scope boundary) and Gate 2 (falsifiable
   metrics) both satisfied. (2) "Dampens resonant frequencies by up to 400%"
