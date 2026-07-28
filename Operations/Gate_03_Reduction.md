@@ -33,7 +33,7 @@
 | Verification Ref | Admin/Verification_Gates_LF.md                                      |
 | Last Audit       | 2026-05-15; revised 2026-06-08                                      |
 | Auditor          | Claude — Retrofit/Auditor                                           |
-| Open Unknowns    | 5                                                                   |
+| Open Unknowns    | 8                                                                   |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | High                                                                |
 | Sidecar Link     | #auditor-notes--unknowns                                            |
@@ -731,8 +731,123 @@ for unresolved upstream screening and gate logic gaps.
 
 ---
 
+### GR-006 — Mechanical jam clearing doctrine
+not defined
+
+| Field         | Value                                            |
+|---------------|--------------------------------------------------|
+| Status        | Open                                             |
+| Risk          | Medium                                           |
+| Priority      | Major                                            |
+| Type          | Technical / Safety                               |
+| Blocking      | No                                               |
+| Owner         | Operations/Gate_03_Reduction.md                  |
+| First Logged  | 2026-07-28                                       |
+| Last Reviewed | 2026-07-28                                       |
+
+**Description:** No procedure exists for safely clearing a
+mechanical jam in Reduction equipment. This entry existed in
+`Unknowns.md`'s active index with no matching sidecar block here —
+registered now to close that gap; the underlying concern is not new.
+
+**Why It Matters:** A jam-clearing attempt on energized or
+partially-energized reduction equipment is a plausible injury
+mechanism. Without a defined procedure, operators default to ad hoc
+judgment under time pressure — exactly the condition this
+repository's safety doctrine generally tries to design out.
+
+**Resolution Path:** Define a mandatory de-energization and
+lockout sequence before any jam-clearing attempt, cross-referenced
+against `Admin/Safety_Protocols.md`. Identify jam-prone mechanisms
+specifically (which Reduction method(s) this applies to depends on
+GR-002's method selection, still Open) before finalizing procedure
+detail.
+
+---
+
+### GR-007 — Contaminated equipment retirement threshold
+not defined
+
+| Field         | Value                                            |
+|---------------|--------------------------------------------------|
+| Status        | Open                                             |
+| Risk          | High                                             |
+| Priority      | Critical                                         |
+| Type          | Safety / Governance                              |
+| Blocking      | No                                               |
+| Owner         | Operations/Gate_03_Reduction.md                  |
+| First Logged  | 2026-07-28                                       |
+| Last Reviewed | 2026-07-28                                       |
+
+**Description:** No threshold exists for when Reduction equipment
+exposed to contaminated feedstock (hazardous residue, cross-material
+contamination) must be retired rather than cleaned and returned to
+service. This entry existed in `Unknowns.md`'s active index with no
+matching sidecar block here — registered now to close that gap; the
+underlying concern is not new.
+
+**Why It Matters:** Without a retirement threshold, contaminated
+equipment either stays in service indefinitely (accumulating risk
+silently) or gets retired inconsistently on operator judgment alone.
+Cross-references `Challenges/Waste.md` WA-002 (hazardous fraction
+identification) and `Admin/Ethical_Constraints.md` §Toxic and
+Hazardous Material Handling — this is a genuine safety gap, not a
+process nicety, hence Critical priority.
+
+**Resolution Path:** Define contamination categories requiring
+retirement vs. decontamination-and-return, cross-referenced against
+WA-002's hazardous fraction identification (itself still Open — this
+entry is partially downstream of that one). Until both resolve,
+treat any equipment with confirmed hazardous contamination as
+retired by default rather than attempting an undefined
+decontamination procedure.
+
+---
+
+### GR-008 — Operator decision support minimum standard
+not defined
+
+| Field         | Value                                            |
+|---------------|--------------------------------------------------|
+| Status        | Open                                             |
+| Risk          | Low                                              |
+| Priority      | Major                                            |
+| Type          | Technical / Human Factors                        |
+| Blocking      | No                                               |
+| Owner         | Operations/Gate_03_Reduction.md                  |
+| First Logged  | 2026-07-28                                       |
+| Last Reviewed | 2026-07-28                                       |
+
+**Description:** No minimum standard exists for what decision
+support (guidance, checklists, real-time feedback) an operator
+running Reduction must have available. This entry existed in
+`Unknowns.md`'s active index with no matching sidecar block here —
+registered now to close that gap; the underlying concern is not new.
+
+**Why It Matters:** Reduction is irreversible and safety-relevant
+(see GR-005 above); an operator working from memory alone, with no
+structured decision support, is a weaker safety posture than one
+working from a defined checklist or interlock system — lower
+severity than GR-006/GR-007, hence Major rather than Critical.
+
+**Resolution Path:** Define minimum decision-support content
+(pre-run checklist, in-run status indicators, stop conditions) once
+GR-001 (output envelope) and GR-002 (method selection) resolve —
+decision support content depends on knowing what the operator is
+actually deciding between.
+
+---
+
 ### Resolution Log
 
+- 2026-07-28: GR-006, GR-007, GR-008 given formal sidecar entries —
+  previously present in `Unknowns.md`'s active index only, with no
+  matching blocks here, surfaced by a Grok-run repo-wide desync audit
+  and verified against source (zero prior mentions of any of the
+  three anywhere in this file) before registering. Descriptions built
+  from the index's own existing text rather than invented. Open
+  Unknowns count: 5 → 8. Verified and registered by Claude —
+  Synthesizer/Auditor, human-directed.
 - 2026-06-08: Navigation Anchors block added. Verification Ref
   corrected from `Admin/Forge_Audit_Kit.md` to
   `Admin/Verification_Gates_LF.md` (PC-001). Scope Boundary
