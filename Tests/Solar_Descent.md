@@ -17,14 +17,14 @@
 | Body Stability | Volatile |
 | Spec Gates | 0/6 |
 | Verification Ref | Admin/Verification_Gates_LF.md |
-| Last Audit | 2026-06-14 |
-| Auditor | Claude (Synthesizer), Gemini (Auditor), ChatGPT (Synthesizer), Grok (Synthesizer) |
-| Open Unknowns | 12 |
+| Last Audit | 2026-07-28 |
+| Auditor | Claude (Synthesizer), Gemini (Auditor), ChatGPT (Synthesizer), Grok (Synthesizer); Gemini — Skeptic/Auditor Exploration audit, Claude — Synthesizer/Auditor (verification against source, corrections applied), 2026-07-28 |
+| Open Unknowns | 14 |
 | Active Disputes | 0 |
 | Forward References | Astroid-miner companion repository |
 | Highest Risk | High |
 | Sidecar Link | #auditor-notes--unknowns |
-| Ethical Anchor | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
+| Ethical Anchor | Attempt to do no harm. Defer to Admin/Ethical_Constraints.md if present. |
 
 ---
 
@@ -274,7 +274,7 @@ The underground chamber is the reconvergence point. Whether energy arrives as ph
 
 **Chamber Geometry — Design Candidate**
 
-Rectangular flat-walled chambers develop thermal stress concentrations at corners under repeated heating and cooling cycles. At target operating temperatures (500–2000°C), this is a structural failure pathway over time.
+Rectangular flat-walled chambers develop thermal stress concentrations at corners under repeated heating and cooling cycles. At the conservative-to-stretch operating range ASM-002 establishes (300–1500°C, with 2000°C+ treated there as an unconfirmed research-peak ceiling, not a design target), this is a structural failure pathway over time.
 
 A geodesic or near-spherical geometry — analogous to a truncated icosahedron (soccer ball form) — distributes thermal stress evenly across the entire surface. No stress concentration points. Thermal expansion loads are shared uniformly by the shell.
 
@@ -341,7 +341,7 @@ Consistent with Forge doctrine: physical boundaries and passive mechanisms take 
 **Underground Chamber**
 - Passive weighted pressure-relief vents prevent catastrophic pressure buildup from steam spike or fluid breach.
 - Acoustic emission monitoring for structural shifting — anomalous readings trigger defocused state at surface collection array.
-- Temperature sensors at multiple chamber depths — triple-redundant per Cognitive_Frameworks.md doctrine; sensors lie, cross-reference is required.
+- Temperature sensors at multiple chamber depths — triple-redundant per Architecture/Cognitive_Frameworks.md doctrine; sensors lie, cross-reference is required.
 
 **Thermal Runaway Definition**
 - Chamber temperature exceeds host geology fracturing threshold: immediate full shutoff, both pathways.
@@ -647,7 +647,67 @@ The asteroid processing system is out of scope for this file. Solar Descent defi
 
 ---
 
+### SD-UNK-013 — Surface Collection Bootstrap & Tracking Power Source
+
+| Field | Value |
+|---|---|
+| Status | Open |
+| Risk | Medium |
+| Priority | Major |
+| Type | Technical |
+| Blocking | No |
+| Owner | Tests/Solar_Descent.md |
+| First Logged | 2026-07-28 |
+| Last Reviewed | 2026-07-28 |
+
+**Description:** Tracking heliostats and motorized actuators in the Surface Collection Layer require power to orient toward the sun. During cold-start or any low-thermal-state condition, the subterranean power conversion cascade (the system this array exists to charge) is offline by definition — there is no described source for the power needed to track the sun in the first place. Surfaced by a Gemini Skeptic/Auditor pass, 2026-07-28; verified as a genuine gap (no existing text addresses startup power) before registering.
+
+**Why It Matters:** Without a bootstrap power source, the system cannot self-start after a full cold shutdown (extended cloud cover, maintenance, chamber depletion) — it would need external power just to begin re-collecting the power it's designed to produce.
+
+**Resolution Path:** Define a small, low-power bootstrap source independent of the main thermal cascade — candidates include a small dedicated PV panel, a battery reserve sized specifically for tracking-motor duty cycle (not general storage), or a passive/manual fallback tracking mode that doesn't require motorized actuation during cold-start. Cross-reference `Operations/Energy.md` for existing small-scale power doctrine before proposing a new mechanism.
+
+---
+
+### SD-UNK-014 — Shaft Penetration Sealing & Thermal Isolation
+
+| Field | Value |
+|---|---|
+| Status | Open |
+| Risk | Medium |
+| Priority | Major |
+| Type | Technical |
+| Blocking | No |
+| Owner | Tests/Solar_Descent.md |
+| First Logged | 2026-07-28 |
+| Last Reviewed | 2026-07-28 |
+
+**Description:** The underground chamber specifies high-temperature storage under an inert gas atmosphere (argon or nitrogen purge). No concept exists for how the light-delivery shaft or fluid conduits penetrate the chamber ceiling while preserving gas containment and preventing conductive/convective heat loss up the vertical shaft. Surfaced by a Gemini Skeptic/Auditor pass, 2026-07-28; verified as a genuine gap (chamber atmosphere and shaft penetration are each specified separately, with no interface between them described) before registering.
+
+**Why It Matters:** An unsealed or poorly-insulated shaft penetration is a direct path for both atmosphere loss (undermining the inert-gas containment the chamber design depends on) and continuous heat loss (undermining the whole point of underground thermal storage — the chamber cannot function as a seasonal battery if its main penetration is also its main leak).
+
+**Resolution Path:** Add a conceptual requirement for a shaft penetration seal / thermal break interface — a design that permits optical or fluid transmission through the ceiling while maintaining both gas containment and thermal isolation. Likely candidates (quartz or sapphire window for optical pathways, bellows or labyrinth seals for fluid conduits) are Analogous-confidence at best pending specification.
+
+---
+
 ### Resolution Log
+
+- 2026-07-28: SD-UNK-013 and SD-UNK-014 registered — both surfaced by
+  Gemini's Skeptic/Auditor pass and verified as genuine, previously
+  unaddressed gaps before registering. Four unprefixed canonical
+  cross-references corrected to their folder-prefixed form (Ethical
+  Anchor field, Cognitive_Frameworks.md, File_Template.md,
+  Safety_Protocols.md), also from the same audit. Chamber Geometry
+  section's thermal-stress passage corrected — it stated a flat
+  "500–2000°C" target operating range where ASM-002 itself already
+  tiers the same numbers (300–800°C conservative, 800–1500°C stretch,
+  2000°C+ unconfirmed research-peak ceiling, Low confidence
+  throughout); the passage now carries that same tiering rather than
+  restating the aspirational ceiling as if it were a design target.
+  Not treated as a document-wide contradiction — ASM-002's own framing
+  was already appropriately hedged; this was one downstream passage
+  failing to carry that hedge forward. Open Unknowns count: 12 → 14.
+  Verified and registered by Claude — Synthesizer/Auditor,
+  human-directed.
 
 *(empty — no unknowns resolved at time of first draft)*
 
@@ -665,12 +725,12 @@ The asteroid processing system is out of scope for this file. Solar Descent defi
 
 ## Drift Indicators
 
-Standard mandatory re-audit conditions per File_Template.md apply.
+Standard mandatory re-audit conditions per Admin/File_Template.md apply.
 
 **Additional file-specific drift indicators:**
 
 - SD-UNK-004 (host geology) remains open and Body content begins specifying chamber dimensions → mandatory human review. Chamber design without geology assessment is a safety violation.
 - SD-UNK-002 (achievable temperature) remains unresolved and power conversion pathway is selected based on ASM-002 alone → flag as premature commitment; re-audit before any hardware procurement.
 - SD-001a (molten tin) content migrates from sub-concept to primary pathway without SD-TEST-104 completion → reject migration; return to sub-concept status.
-- Liquid sodium reappears as a working fluid candidate without dedicated containment infrastructure assessment → immediate escalation to Safety_Protocols.md review.
+- Liquid sodium reappears as a working fluid candidate without dedicated containment infrastructure assessment → immediate escalation to Admin/Safety_Protocols.md review.
 - Any reference to grid-scale power export targets before v3 milestone → scope violation; flag for human review.
