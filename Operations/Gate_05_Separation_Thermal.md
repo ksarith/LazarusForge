@@ -27,7 +27,7 @@
 | Verification Ref | Admin/Verification_Gates_LF.md                                      |
 | Last Audit       | 2026-05-15; revised 2026-06-08                                      |
 | Auditor          | Claude — Retrofit/Auditor                                           |
-| Open Unknowns    | 5                                                                   |
+| Open Unknowns    | 8                                                                   |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | Medium                                                              |
 | Sidecar Link     | #auditor-notes--unknowns                                            |
@@ -667,8 +667,93 @@ under what conditions.
 
 ---
 
+### SC-007 — Extraction process may disrupt segregation gradients
+
+| Field         | Value                          |
+|---------------|--------------------------------|
+| Status        | Open                           |
+| Risk          | Medium                         |
+| Priority      | Major                          |
+| Type          | Technical                      |
+| Blocking      | No                             |
+| Owner         | Operations/Gate_05_Separation_Thermal.md |
+| First Logged  | 2026-07-28                     |
+| Last Reviewed | 2026-07-28                     |
+
+**Description:** The physical act of extracting separated material
+from the Spin Chamber may itself disturb the density-based
+segregation gradient the separation process relies on, degrading
+output purity at the extraction step even when segregation itself
+worked correctly. This entry existed in `Unknowns.md`'s active index
+with no matching sidecar block here — registered now to close that
+gap; the underlying concern is not new.
+
+**Why It Matters:** If extraction disrupts gradients, segregation
+effectiveness (SC-002, already Open) cannot be fully evaluated by
+looking at input/output composition alone — degradation could be
+happening at either stage, and the two would need to be
+distinguished before either could be resolved.
+
+**Resolution Path:** Define an extraction method and sequence that
+preserves gradient integrity (e.g., layer-by-layer removal vs. bulk
+draw), and test whether output purity varies by extraction method at
+otherwise-identical segregation conditions. Depends on SC-002
+reaching at least Provisional Spec first — no point isolating
+extraction-stage loss before segregation-stage effectiveness itself
+is characterized.
+
+---
+
+### SC-008 — Graphite crucible carbon pickup in alloy
+
+| Field         | Value                          |
+|---------------|--------------------------------|
+| Status        | Open                           |
+| Risk          | Medium                         |
+| Priority      | Major                          |
+| Type          | Technical / Materials           |
+| Blocking      | No                             |
+| Owner         | Operations/Gate_05_Separation_Thermal.md |
+| First Logged  | 2026-07-28                     |
+| Last Reviewed | 2026-07-28                     |
+
+**Description:** Graphite crucibles, a plausible salvage-sourced
+containment material for molten metal, are known in conventional
+metallurgy to transfer carbon into the melt (carbon pickup),
+altering alloy composition. Whether this is significant at Forge
+scale and with salvaged material streams is uncharacterized. This
+entry existed in `Unknowns.md`'s active index with no matching
+sidecar block here — registered now to close that gap; the
+underlying concern is not new.
+
+**Why It Matters:** Uncontrolled carbon pickup changes output alloy
+properties in ways that could silently invalidate downstream
+material claims (e.g., `Architecture/Engineering.md` EN-003's alloy
+identification depends on knowing what alloy is actually present,
+not just what was fed in).
+
+**Resolution Path:** Characterize carbon pickup rate for graphite
+crucibles at Forge-relevant melt temperatures and residence times;
+compare against alternative crucible materials salvage streams are
+likely to provide (ceramic, steel-shell) as a lower-pickup
+alternative if the rate proves significant.
+
+---
+
 ### Resolution Log
 
+- 2026-07-28: SC-007 and SC-008 given formal sidecar entries —
+  previously present in `Unknowns.md`'s active index only, with no
+  matching blocks here, surfaced by a Grok-run repo-wide desync audit
+  and verified against source (zero prior mentions of either anywhere
+  in this file) before registering. Descriptions built from the
+  index's own existing text rather than invented. Same audit also
+  confirmed a separate, pre-existing File State undercount — all six
+  of SC-001 through SC-006 checked individually and confirmed
+  Open/In Progress, against a declared count of 5. Open Unknowns
+  count corrected: 5 → 8 (6 pre-existing + 2 new), not 5 → 7.
+  Verified and registered by Claude — Synthesizer/Auditor,
+  human-directed.
 - 2026-05-15: SC-001 — Status updated from Open to In Progress.
   Static centrifugal pressure and hoop stress calculated. Safety
   factor ~32× at worst-case v0 inputs. Never-exceed of 400 RPM
