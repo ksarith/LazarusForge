@@ -139,7 +139,7 @@ The operational rules of the institution are derived from five fundamental axiom
 
 * **Corollary 2.1:** Informational deficits, hidden variables, and unmapped dependencies are not temporary engineering flaws; they are mathematically unavoidable properties of any finite intelligent system interacting with a complex universe.
 
-**Axiom A3 — Explicit Epistemic Accounting (The Nothingness Principle):** Let $\mathcal{K}_t \subset \mathcal{R}$ represent the bounded subset of reality encountered by the active agent population $A_t$ up to time $t$. If the system recognizes an informational deficit or unmapped dependency associated with an observed concept $x \in \mathcal{K}_t$, that absence must be explicitly represented as a structural entity within the graph.
+**Axiom A3 — Explicit Epistemic Accounting (The Nothingness Principle):** *Derived from `Admin/Nothingness Theorem`'s Core Theorem — see that document for the full philosophical framework (Tier 0, exempt from this file's Spec Gates and Verification Ref).* Let $\mathcal{K}_t \subset \mathcal{R}$ represent the bounded subset of reality encountered by the active agent population $A_t$ up to time $t$. If the system recognizes an informational deficit or unmapped dependency associated with an observed concept $x \in \mathcal{K}_t$, that absence must be explicitly represented as a structural entity within the graph.
 
 > **The Nothingness Principle:** Recognized absence is itself actionable information. An institution cannot maintain internal structural consistency while acknowledging an external uncertainty that lacks an explicit, computable representation.
 
@@ -689,5 +689,6 @@ When an institution reaches its targeted operational end-of-life or encounters i
 | Resolution Requirement | Define the mapping schema and structural verification protocols before promoting this framework to Candidate Spec status. Cross-ref `Tests/Leviathan_testing.md`, `Tests/Support_Raft.md`, `Admin/Security_Protocols.md`. |
 | Status | Open |
 | First Cycle | 9 |
+
 
 
