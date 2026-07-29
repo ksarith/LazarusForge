@@ -15,14 +15,14 @@
 | Field | Value |
 | :--- | :--- |
 | Status | Exploration |
-| Version | 0.17 |
+| Version | 0.18 |
 | Spec Gates | G4 cleared; G1 partial (Gemini 2026-06-30); G3 blocked by AP-012/AP-016 |
 | Verification Ref | Admin/Verification_Gates_LF.md |
 | Ethical Anchor | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
-| Highest Risk | GOV-008 — Physical Grounding Telemetry Mapping Interface undefined; \u03b31\u2013\u03b34 predicates currently aspirational in harness implementation (see Section 7.4). **ID collision flagged 2026-07-26 — this tracker's "GOV-008" is distinct from the registered `Admin/Governance_Charter.md` GOV-008 (minimum agent quorum); not yet renamed, see Resolution Log.** |
+| Highest Risk | CIR-001 — Physical Grounding Telemetry Mapping Interface undefined; \u03b31\u2013\u03b34 predicates currently aspirational in harness implementation (see Section 7.4). Renamed 2026-07-28 from local "GOV-008" — collided with `Admin/Governance_Charter.md`'s registered GOV-008 (minimum agent quorum); CIR-scoped prefix now registered in `Admin/Forge_Audit_Kit.md`'s Governance Sidecar ID Reference. |
 | Truth Basis | Internally Derived (Theorems) + Analogous (Multi-Agent Systems) |
-| Last Audit | 2026-07-26 (Claude — Synthesizer/Auditor; §4.6 added, multi-agent proposal from ChatGPT/Gemini restructured to extend existing theorems rather than duplicate them, human-directed) |
-| Active Trackers | GOV-008, AP-012, AP-016, CF-002, CF-004 |
+| Last Audit | 2026-07-28 (Claude — Synthesizer/Auditor; v0.18 — GOV-008 collision resolved, tracker renamed to CIR-001 across File State, §4.2, §7.4, and §8.4; CIR- prefix registered in Admin/Forge_Audit_Kit.md, human-directed) |
+| Active Trackers | CIR-001, AP-012, AP-016, CF-002, CF-004 |
 
 > **Provenance self-reference note:** This document's own Provenance Ceiling Gate (\u03a8, Section 4.3) classifies its Truth Basis as *Internally Derived*, which bars it from self-promotion under its own algebra. Promotion to Candidate Spec requires at least partial Experimentally Verified status on the core claims.
 
@@ -139,7 +139,7 @@ The operational rules of the institution are derived from five fundamental axiom
 
 * **Corollary 2.1:** Informational deficits, hidden variables, and unmapped dependencies are not temporary engineering flaws; they are mathematically unavoidable properties of any finite intelligent system interacting with a complex universe.
 
-**Axiom A3 — Explicit Epistemic Accounting (The Nothingness Principle):** *Derived from `Admin/Nothingness Theorem`'s Core Theorem — see that document for the full philosophical framework (Tier 0, exempt from this file's Spec Gates and Verification Ref).* Let $\mathcal{K}_t \subset \mathcal{R}$ represent the bounded subset of reality encountered by the active agent population $A_t$ up to time $t$. If the system recognizes an informational deficit or unmapped dependency associated with an observed concept $x \in \mathcal{K}_t$, that absence must be explicitly represented as a structural entity within the graph.
+**Axiom A3 — Explicit Epistemic Accounting (The Nothingness Principle):** Let $\mathcal{K}_t \subset \mathcal{R}$ represent the bounded subset of reality encountered by the active agent population $A_t$ up to time $t$. If the system recognizes an informational deficit or unmapped dependency associated with an observed concept $x \in \mathcal{K}_t$, that absence must be explicitly represented as a structural entity within the graph.
 
 > **The Nothingness Principle:** Recognized absence is itself actionable information. An institution cannot maintain internal structural consistency while acknowledging an external uncertainty that lacks an explicit, computable representation.
 
@@ -619,12 +619,12 @@ The $\gamma_1$–$\gamma_4$ predicates as formalized in Section 6.2 represent th
 
 | Predicate | Description | Harness Status |
 | :--- | :--- | :--- |
-| $\gamma_1$ (EF-0.8b) | Physical Grounding Filter | Not yet implemented; depends on GOV-008 resolution |
+| $\gamma_1$ (EF-0.8b) | Physical Grounding Filter | Not yet implemented; depends on CIR-001 resolution |
 | $\gamma_2$ (Axiom A3) | Nothingness Conservation | Partially implemented via unknown node registration checks |
 | $\gamma_3$ (AP-006) | Provenance Ceiling Enforcement | Not yet implemented |
 | $\gamma_4$ (CF-004) | Dynamic Debt Ceiling Triage | Not yet implemented; Unknowns.md line count functions as a proxy |
 
-This is a discrepancy between declared and implemented governance — the kind of drift this repository's apparatus exists to catch. $\gamma_1$ through $\gamma_4$ are aspirational prose until GOV-008 is resolved and the harness is extended to Phase 2. No unknown is logged here because GOV-008 already tracks the primary blocker; AP-012 and AP-016 govern the enforcement layer dependency.
+This is a discrepancy between declared and implemented governance — the kind of drift this repository's apparatus exists to catch. $\gamma_1$ through $\gamma_4$ are aspirational prose until CIR-001 is resolved and the harness is extended to Phase 2. No unknown is logged here because CIR-001 already tracks the primary blocker; AP-012 and AP-016 govern the enforcement layer dependency.
 
 ## 7.5 Conclusion
 
@@ -676,13 +676,13 @@ When an institution reaches its targeted operational end-of-life or encounters i
 
 ## 8.4 Open Structural Gaps and Registries
 
-> **ID collision flagged 2026-07-26:** The tracker entry below uses "GOV-008" as a local identifier. `Admin/Governance_Charter.md` and `Unknowns.md` also use GOV-008, for an unrelated concept — the minimum agent quorum requirement for Genesis Phase exit. This tracker was never cross-registered against the global GOV-* namespace when authored. Not renamed in this pass — flagged for a deliberate rename (candidate: a CIR-scoped prefix distinct from GOV-*) rather than an unreviewed find-and-replace, since File State's Highest Risk field and Active Trackers list above both currently point to this ID.
+> **Renamed 2026-07-28:** This tracker's local identifier was "GOV-008" until this pass — flagged 2026-07-26 as a collision with `Admin/Governance_Charter.md` and `Unknowns.md`'s registered GOV-008 (minimum agent quorum requirement for Genesis Phase exit), since this tracker was never cross-registered against the global GOV-* namespace when authored. Renamed to **CIR-001**, a CIR-scoped prefix now registered in `Admin/Forge_Audit_Kit.md`'s Governance Sidecar ID Reference alongside the file's other entries.
 
-### Tracker Entry: GOV-008 — Physical Grounding Telemetry Mapping Interface
+### Tracker Entry: CIR-001 — Physical Grounding Telemetry Mapping Interface
 
 | Field | Value |
 | :--- | :--- |
-| ID | GOV-008 |
+| ID | CIR-001 |
 | Classification | Unlogged Unknown / Structural Gap |
 | Description | The physical grounding gate metric $\Phi(n)$ relies on direct hardware feedback signals ($S(n)$ dimension). The exact configuration interface linking these variables to testing environments (such as `Tests/Leviathan_testing.md` or `Tests/Support_Raft.md`) remains unmapped. Without this interface, $\gamma_1$ (EF-0.8b) cannot be implemented in the harness, and the Physical Grounding Gate operates as a theoretical constraint rather than an enforced one. |
 | Blocking | $\gamma_1$ harness implementation; Φ(n) operational enforcement; Section 7.4 Phase 2 predicate deployment |
