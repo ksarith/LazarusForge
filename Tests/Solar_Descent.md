@@ -18,8 +18,8 @@
 | Spec Gates | 0/6 |
 | Verification Ref | Admin/Verification_Gates_LF.md |
 | Last Audit | 2026-07-28 |
-| Auditor | Claude (Synthesizer), Gemini (Auditor), ChatGPT (Synthesizer), Grok (Synthesizer); Gemini — Skeptic/Auditor Exploration audit, Claude — Synthesizer/Auditor (verification against source, corrections applied), 2026-07-28 |
-| Open Unknowns | 14 |
+| Auditor | Claude (Synthesizer), Gemini (Auditor), ChatGPT (Synthesizer), Grok (Synthesizer); Gemini — Skeptic/Auditor Exploration audit, Claude — Synthesizer/Auditor (verification against source, corrections applied), 2026-07-28; Grok — Skeptic/Auditor Exploration audit, Claude — Synthesizer/Auditor (verified against source, SD-UNK-015 registered, SD-UNK-007 resolution path corrected), 2026-07-28 |
+| Open Unknowns | 15 |
 | Active Disputes | 0 |
 | Forward References | Astroid-miner companion repository |
 | Highest Risk | High |
@@ -165,7 +165,7 @@ All figures are proposed parameters pending empirical testing at Forge build qua
 
 **Salvage Component Targets**
 - Fiber optic bundles: industrial process fiber, medical fiber optic light guides. **Telecommunications fiber is likely unsuitable** — designed for information transmission, not power density; may fail almost immediately under concentrated flux. Requires explicit characterization before use.
-- **Light well alternative (elevated priority per ChatGPT audit):** Polished stainless steel tube or salvaged aluminum irrigation pipe with reflective interior lining. Advantages over fiber: no melting risk, no coupling losses, easier shaft cleaning, more scalable. Surface focus → reflective shaft → secondary concentrator → receiver may outperform salvage fiber systems at Forge build quality. Should be tested in parallel with fiber bundles.
+- **Light well alternative (elevated priority per ChatGPT audit):** Polished stainless steel tube or salvaged aluminum irrigation pipe with reflective interior lining. Advantages over fiber: no melting risk, no coupling losses, easier shaft cleaning, more scalable. Surface focus → reflective shaft → secondary concentrator → receiver may outperform salvage fiber systems at Forge build quality. Should be tested in parallel with fiber bundles. See SD-UNK-015.
 - Secondary concentrators at fiber or well input: compound parabolic concentrators (CPC) fabricated from polished salvaged sheet metal.
 
 ---
@@ -209,6 +209,7 @@ At the underground end of the optical downlink, glass rods or fiber ends are sub
 - **SD-TEST-103 (Underground Focal Temperature):** Measure actual temperature achieved at underground cavity receiver under SD-001 delivery at Forge-scale collection area. Compare against ASM-002 projected range.
 - **SD-TEST-104 (Molten Tin Interface Stability):** Dedicated test rig for SD-001a. Measure reflectivity, optical interface stability, and contamination rate over sustained operation under controlled atmosphere. Establish viable operating temperature window.
 - **SD-TEST-105 (Shaft Contamination Rate):** Measure optical transmission degradation over 30-day period in shaft environment. Establish cleaning cycle interval.
+- **SD-TEST-106 (Light-Well Comparative Flux Delivery):** Run as a parallel arm alongside SD-TEST-101. Measure delivered flux, coupling loss, and contamination rate for a reflective light-well against the fiber bundle baseline over equivalent shaft lengths. See SD-UNK-015.
 
 ---
 
@@ -257,6 +258,7 @@ Concentrated sunlight heats a working fluid at a surface receiver. The fluid —
 - **SD-TEST-202 (Parasitic Pump Load):** Measure electrical energy required to circulate working fluid through vertical circuit. Establish net energy delivery ratio (thermal delivered / pump energy consumed). Reject configurations below ratio of 10:1.
 - **SD-TEST-203 (Freeze Recovery Protocol):** Simulate loss of surface collection (night, cloud cover) and measure time-to-freeze at minimum insulation specification. Establish freeze prevention protocol (trace heating, drain-back, minimum flow).
 - **SD-TEST-204 (Fluid Degradation Rate):** Measure working fluid thermal stability over 30-day sustained operation at target temperature. Establish fluid replacement interval.
+- **SD-TEST-205 (Chamber Self-Discharge Measurement):** Dedicated test, distinct from SD-TEST-202's parasitic pump load scope. Measure chamber heat loss rate into surrounding bedrock over a sustained period at known insulation R-value, isolated from pump-circuit losses. See SD-UNK-007.
 
 ---
 
@@ -286,7 +288,7 @@ This geometry also has a declared forward relevance: a self-contained spherical 
 
 **Self-Discharge Rate**
 
-Heat leaks into surrounding bedrock continuously. Self-discharge rate (% of stored energy lost per day) is a function of insulation thickness, temperature differential, and chamber geometry. This must be characterized empirically — it sets the minimum daily solar input required to maintain operating temperature.
+Heat leaks into surrounding bedrock continuously. Self-discharge rate (% of stored energy lost per day) is a function of insulation thickness, temperature differential, and chamber geometry. This must be characterized empirically — it sets the minimum daily solar input required to maintain operating temperature. See SD-UNK-007.
 
 ---
 
@@ -542,11 +544,11 @@ The asteroid processing system is out of scope for this file. Solar Descent defi
 | Blocking | No — blocks optimization, not initial test |
 | Owner | Tests/Solar_Descent.md |
 | First Logged | 2026-06-14 |
-| Last Reviewed | 2026-06-14 |
+| Last Reviewed | 2026-07-28 |
 
 **Description:** Rate of heat loss from the underground chamber into surrounding bedrock has not been measured or modeled for target chamber geometry and insulation specification. This sets the minimum daily solar input required to maintain operating temperature and determines whether overnight or cloudy-day operation is viable.
 
-**Resolution Path:** SD-TEST-202 (extended) or dedicated thermal modeling of chamber geometry with known insulation R-value.
+**Resolution Path:** SD-TEST-205 (Chamber Self-Discharge Measurement) — dedicated test, distinct from SD-TEST-202's parasitic pump load scope. Measure chamber heat loss rate into surrounding bedrock over a sustained period at known insulation R-value, isolated from pump-circuit losses. Alternatively, dedicated thermal modeling of chamber geometry may substitute if direct measurement is impractical at this stage.
 
 ---
 
@@ -689,7 +691,40 @@ The asteroid processing system is out of scope for this file. Solar Descent defi
 
 ---
 
+### SD-UNK-015 — Light-well vs. fiber comparative flux delivery unassessed
+
+| Field | Value |
+|---|---|
+| Status | Open |
+| Risk | Medium |
+| Priority | Major |
+| Type | Technical |
+| Blocking | No — SD-001 fiber pathway proceeds independently via SD-TEST-101 |
+| Owner | Tests/Solar_Descent.md |
+| First Logged | 2026-07-28 |
+| Last Reviewed | 2026-07-28 |
+
+**Description:** The light-well alternative (polished stainless or salvaged aluminum irrigation pipe with reflective interior lining) is called out in Body text as "elevated priority per ChatGPT audit" — claimed advantages over fiber include no melting risk, no coupling losses, easier shaft cleaning, and greater scalability. No dedicated unknown or test ID existed for it, unlike fiber's SD-TEST-101/102/105 coverage. Surfaced by Grok's Skeptic/Auditor pass, 2026-07-28; verified as a genuine gap before registering.
+
+**Why It Matters:** A claim of "elevated priority" sitting on zero dedicated test coverage is exactly the kind of unlabeled confidence the Fallacy Checklist screens for — the light-well hasn't been shown to underperform fiber, but it also hasn't been tested, so its priority claim currently rests on assertion rather than evidence.
+
+**Resolution Path:** SD-TEST-106 (Light-Well Comparative Flux Delivery) — run as a parallel arm alongside SD-TEST-101, measuring delivered flux, coupling loss, and contamination rate for a reflective light-well against the fiber bundle baseline over equivalent shaft lengths.
+
+---
+
 ### Resolution Log
+
+- 2026-07-28: SD-UNK-015 registered — surfaced by Grok's Skeptic/Auditor
+  pass and verified as a genuine, previously unaddressed gap before
+  registering (light-well alternative carried an "elevated priority"
+  claim with no dedicated unknown or test ID). SD-TEST-106 added to
+  SD-001 Proposed Test Parameters as its resolution path. SD-UNK-007's
+  Resolution Path corrected — previously referenced "SD-TEST-202
+  (extended)," but SD-TEST-202 is scoped exclusively to parasitic pump
+  load (SD-002); self-discharge measurement now has its own test ID,
+  SD-TEST-205, added to SD-002 Proposed Test Parameters. Open Unknowns
+  count: 14 → 15. Verified and registered by Claude — Synthesizer/
+  Auditor, human-directed.
 
 - 2026-07-28: SD-UNK-013 and SD-UNK-014 registered — both surfaced by
   Gemini's Skeptic/Auditor pass and verified as genuine, previously
