@@ -144,6 +144,7 @@ Admin/                                      — Governance, protocols, and doctr
     ├── Nothingness Theorem                 — Philosophical substrate; foundational framework for salvage-first doctrine, distributed disagreement, and anti-entropy maintenance principles; functionless artifact filed in Admin
     ├── Computational Institutional Reasoning — Formal theoretical paper; axiomatic state-machine model of institutional epistemics; Unknown Conservation, Governance Stability, Epistemic Debt Instability, and Institutional Memory Dominance theorems; non-linear Verification Algebra specification
     ├── Governance_Migration_Protocol.md    — Tier 1 Axiom amendment procedures
+    ├── PROBE_INVOCATION.md                 — Copy-paste cold-start template for Mission Drift Review (AP-030); not doctrine, an operational prompt
     └── AUDIT_HARNESS.py                    — Automated script supporting verification
 
 Architecture/                               — System architecture and foundational logic
@@ -196,7 +197,13 @@ Challenges/                                 — Problem layer: why these capabil
     └── Closed_Loop_Feedstock.md            — Persistence Yield (Y_p = FIR × PIR) telemetry model; recursive epistemic-ascent loop; salvage-to-feedstock closed-loop doctrine; CLF-001 through CLF-010
 
 Archive/                                    — Prior states of governance-bearing documents
-    └── [Discharge via Lessons Learned 2026-06-28 — Git release tags (V0.6–V0.97, GPG-signed) satisfy prior-state archival at v0 scale; see RIP-001 resolution in Unknowns.md. Manual directory deposit deferred pending distillate architecture (RIP-006).]
+    ├── README.md                           — Archive scope and retention rationale
+    └── Logs/                                — Split-out full changelogs (condensed current versions remain in the main files)
+        ├── Unknowns_Changelog.md           — Full version history for Unknowns.md pre-v4.29
+        ├── Governance_Charter_Changelog.md — Full version history for Governance_Charter.md
+        ├── Forge_Audit_Kit_Changelog.md    — Full version history for Forge_Audit_Kit.md
+        ├── AUDIT_HARNESS_CHANGELOG.md      — Full version history for AUDIT_HARNESS.py
+        └── Auditor_Protocols_Logs.md       — Full version history + AP-series registration log
 ```
 
 **Planned / not yet created:**
@@ -219,9 +226,9 @@ Archive/                                    — Prior states of governance-beari
 
 > ⚠️ **Correction, 2026-07-06:** `Challenges/Closed_Loop_Feedstock.md` had the same gap RE-UNK-001/RE-UNK-005 exposed above — present in `Routing.md` (as of that file's 2026-07-04/06 rows) and in `Unknowns.md`'s active index (CLF-001 through CLF-010, v4.12) but absent from this file's structure tree, Maturity Snapshot, and Scope Map until this pass. Added below. See `Unknowns.md` PC-005 for this file's own remaining registration debt (Routing.md backlink confirmation, `Automation/AUDIT_HARNESS.py` static registry entry).
 
----
+> ⚠️ **Correction, 2026-07-28:** Full refresh pass — this file had drifted in multiple ways simultaneously, none caught until checked directly against source. `Admin/PROBE_INVOCATION.md` (created 2026-07-26) was entirely absent from the structure tree, Maturity Snapshot, and Scope Map. `Archive/`'s tree entry still showed the pre-v0.99.27 placeholder note despite `Archive/Logs/` holding five real changelog files since that restructuring. Three Maturity Snapshot rows were stale against their own files' current File State tables (`Admin/Forge_Audit_Kit.md` showed "Active" / no Spec Gates, actually Draft / 0/6; `Architecture/Cognitive_Frameworks.md` showed no Spec Gates value, actually 0/6; `Admin/Computational Institutional Reasoning` showed a placeholder "Compiled — Theoretical paper" description dating from before the file had any sidecar tracking at all). Pending Corrections table showed PC-001, PC-002, PC-003, and PC-005 as still open; all five (with PC-004) are Resolved in `Unknowns.md`. The Cross-Module Unknowns table itself was seventeen `Unknowns.md` version bumps stale (last refreshed at v4.12); one entry (CT-007) had actually regressed from Open back through an incorrect "Resolved" label before `Unknowns.md`'s own text corrected itself — this file hadn't caught either the error or the correction. Every ID in the refreshed table below was individually re-checked against the current Active Index rather than carried forward. This file's own "verified complete" and "refreshed" claims should continue to be read as bounded by what was checked at the time, per the standing caveat two corrections above.
 
-## Rename Registry
+---
 
 Canonical record of filename changes. Stale references should be resolved using this table.
 
@@ -258,11 +265,11 @@ Discovery.md is a navigation map — task tracking belongs in Unknowns.md.
 
 | ID | Summary | See |
 |----|---------|-----|
-| PC-001 | Verification Ref corrections — 10 files pointing to Forge_Audit_Kit.md | `Unknowns.md` §Pending Corrections |
-| PC-002 | Upstream reference corrections — 7 files missing Facilities.md link | `Unknowns.md` §Pending Corrections |
-| PC-003 | New file cross-reference corrections — 10 files missing 2026-06-06 file references | `Unknowns.md` §Pending Corrections |
+| ~~PC-001~~ | ~~Verification Ref corrections — 10 files pointing to Forge_Audit_Kit.md~~ | Resolved — all 10 files corrected |
+| ~~PC-002~~ | ~~Upstream reference corrections — 7 files missing Facilities.md link~~ | Resolved — all 7 files corrected |
+| ~~PC-003~~ | ~~New file cross-reference corrections — 10 files missing 2026-06-06 file references~~ | Resolved — all 10 files corrected |
 | ~~PC-004~~ | ~~Stale name corrections — Challenges/Water.md and Planned_Obsolescence.md~~ | Resolved 2026-06-11 — retrofit pass applied corrections |
-| PC-005 | `Challenges/Closed_Loop_Feedstock.md` not registered in `Routing.md` (backlink unconfirmed until this pass), this file, or `Automation/AUDIT_HARNESS.py` | `Unknowns.md` §Pending Corrections |
+| ~~PC-005~~ | ~~`Challenges/Closed_Loop_Feedstock.md` not registered in `Routing.md`, this file, or `Automation/AUDIT_HARNESS.py`~~ | Resolved 2026-07-19 — independently re-verified against source in all three locations |
 
 ---
 
@@ -273,7 +280,7 @@ Discovery.md is a navigation map — task tracking belongs in Unknowns.md.
 | `Admin/Governance_Charter.md` | Draft | 1/6 | High |
 | `Admin/Ethical_Constraints.md` | Exploration | 0/6 | High |
 | `Admin/Auditor_Protocols.md` | Active | — | Medium |
-| `Admin/Forge_Audit_Kit.md` | Active | — | Low |
+| `Admin/Forge_Audit_Kit.md` | Draft (v1.14) | 0/6 | Low |
 | `Admin/Verification_Gates_LF.md` | Draft | — | Low |
 | `Admin/File_Template.md` | Active | — | — |
 | `Admin/Canonical_Terms.md` | Active | — | Medium |
@@ -288,9 +295,10 @@ Discovery.md is a navigation map — task tracking belongs in Unknowns.md.
 | `Admin/Environmental_Constraints.md` | Draft | 1/6 | High |
 | `Admin/Experiments.md` | Draft — Stub | 0/6 | Low |
 | `Admin/Nothingness Theorem` | Compiled — Functionless artifact | — | — |
-| `Admin/Computational Institutional Reasoning` | Compiled — Theoretical paper | — | — |
+| `Admin/Computational Institutional Reasoning` | Exploration (v0.18) | G4 cleared; G1 partial; G3 blocked (AP-012/AP-016) | Critical — CIR-001, renamed 2026-07-28 from a colliding local "GOV-008"; Physical Grounding Telemetry Mapping Interface undefined |
 | `Admin/Governance_Migration_Protocol.md` | Exploration | 0/6 | High |
 | `Admin/Autonomy_Divergence_Protocol.md` | Draft (PROPOSED NOT RATIFIED) | 0/6 | High |
+| `Admin/PROBE_INVOCATION.md` | Draft | N/A — operational prompt template | Low |
 | `Automation/AUDIT_HARNESS.py` | Active | — | — |
 | `Architecture/Forge_flow.md` | Exploration | — | High |
 | `Architecture/Components.md` | Exploration | — | Low |
@@ -302,7 +310,7 @@ Discovery.md is a navigation map — task tracking belongs in Unknowns.md.
 | `Architecture/Thermal_Systems.md` | Draft | 0/6 | High |
 | `Architecture/Friction_Dynamics.md` | Draft | 0/6 | High |
 | `Architecture/Chemistry.md` | Draft | 0/6 | High |
-| `Architecture/Cognitive_Frameworks.md` | Exploration | — | High |
+| `Architecture/Cognitive_Frameworks.md` | Exploration | 0/6 | High |
 | `Architecture/Forge_Net.md` | Exploration | — | Critical |
 | `Operations/Gate_01_Intake.md` | Exploration | 0/6 | Medium |
 | `Operations/Gate_02_Triage.md` | Draft | 2/6 | High |
@@ -466,7 +474,7 @@ Philosophical substrate document. Functionless artifact filed in Admin — inten
 Formal theoretical paper. Treats the multi-agent collective as a discrete-time deterministic epistemic state machine operating over a persistent Institutional Knowledge Graph. Establishes Part 0 axioms (Persistent Reality, Representational Incompleteness, Explicit Epistemic Accounting / the Nothingness Principle, Institutional Continuity, Governance Precedes Mutation) and derives four core theorems: Unknown Conservation (proves a nonzero unknown floor is mathematically unavoidable — direct formal backing for the Unknown Budget rule in Unknowns.md Size Management Rules); Governance Stability (inductive safety guarantee under constitutional gating); Epistemic Debt Instability (non-linear acceleration of systemic risk when generation outpaces verification — formal backing for CF-004 and the Triage Posture doctrine in Cognitive_Frameworks.md); and Institutional Memory Dominance (information-theoretic case for complete provenance retention — formal backing for RIP-001's resolution rationale and AP-006's provenance ceiling). Section 4 specifies the non-linear Verification Algebra (five-dimensional verification state vector E/R/C/P/S; Physical Grounding Gate; Provenance Ceiling Gate; Adversarial Multiplier) underlying AP-006's provenance labels and the UNKNOWN/PROVISIONAL/VERIFIED classification system referenced throughout Auditor_Protocols.md. Section 7 documents a production mapping onto the file-based repository runtime and reports simulated empirical validation of the Automated Triage Posture Trigger.
 **Upstream:** None — foundational; references Ship of Theseus framing from Admin/Ship_of_Theseus.md as an analogy only (Axiom A4), not a structural dependency.
 **Downstream:** Formal backing for Admin/Auditor_Protocols.md (EF-0.0, EF-0.8b, AP-006 provenance ceiling, AP-001 retrospective calibration); Architecture/Cognitive_Frameworks.md (CF-004 epistemic debt measurement, Triage Posture doctrine); Unknowns.md (Unknown Budget rule, Size Management Rules rationale); Automation/AUDIT_HARNESS.py (constitutional predicate compiler design target — γ1 through γ4 rule semantics). No operational dependency — repository functions without this file being read, but several doctrine files assert claims this paper is the proof source for.
-⚠️ No sidecar unknowns registered — this is a Tier 0 foundational/theoretical document, not an operational doctrine file. If repository practice diverges from a theorem or axiom stated here (e.g., a resolution that violates Governance Stability's inductive guarantee), log as a Non-blocking Unknown in Auditor_Protocols.md per the Repository Role divergence-logging rule.
+⚠️ **Corrected 2026-07-28:** this file is not exempt from sidecar tracking — that framing was accurate when CIR was purely theoretical but is now stale. Active Trackers: CIR-001 (Physical Grounding Telemetry Mapping Interface, renamed this session from a colliding local "GOV-008" — see `Admin/Forge_Audit_Kit.md`'s Governance Sidecar ID Reference for the registered `CIR-` prefix), AP-012, AP-016, CF-002, CF-004. If repository practice diverges from a theorem or axiom stated here, still log per the Repository Role divergence-logging rule.
 
 ### `Admin/Governance_Migration_Protocol.md`
 Tier 1 Axiom amendment procedures. Two-track migration system. Engineer proposal; human ratification. Hard floor doctrine.
@@ -479,6 +487,12 @@ Autonomy Divergence Protocol — how governance responds when a subsystem's beha
 **Upstream:** Ethical_Constraints.md; Auditor_Protocols.md (AP-008 enforcement gap, AP-012 human-unavailability doctrine, AP-016 concurrent-quarantine doctrine); Governance_Migration_Protocol.md (Track A routing).
 **Downstream:** Governance_Charter.md (pending GOV-021 registration).
 ⚠️ Status: Draft, PROPOSED NOT RATIFIED, Spec Gates 0/6, not yet formally audited. Two open sub-unknowns: GOV-021b (Detection Criteria calibration) and GOV-021c (multi-agent coordinated divergence detection).
+
+### `Admin/PROBE_INVOCATION.md`
+Operational prompt template, not doctrine. The exact copy-paste block an operator pastes into a fresh, cold-start thread to run one Mission Drift Review cycle — canonical input file list and required output structure only. Design rationale, trigger cadence, and escalation rules live in Auditor_Protocols.md §Mission Drift Review; this file defers to that source on any conflict.
+**Upstream:** Admin/Auditor_Protocols.md §Mission Drift Review (this file is derived from it, not independent doctrine).
+**Downstream:** None — invoked manually by a human operator when AP-030's trigger condition fires (5 ratified governance/canonical changes since the last cycle, or 60 days elapsed).
+⚠️ Open Unknowns: 0 at this file's own level — tracked at Admin/Auditor_Protocols.md AP-030 (mechanism-level: as of 2026-07-28, zero probe cycles have actually run since AP-030's registration).
 
 ---
 
@@ -789,43 +803,47 @@ The two files are complementary — Routing.md owns *where*, Discovery.md owns *
 
 Full entries live in `Unknowns.md`. This table is a routing index only —
 refresh it whenever `Unknowns.md`'s version bumps and this table's IDs
-would go stale (this refresh: `Unknowns.md` v4.12, 2026-07-06 — three
-version bumps overdue; v4.10's table had not been refreshed across v4.11
-or the first half of v4.12's own session).
+would go stale (this refresh: `Unknowns.md` v4.29, 2026-07-28 — seventeen
+version bumps overdue; the prior refresh at v4.12 sat unrefreshed for
+three weeks. Every ID below individually re-checked against the current
+Active Index before inclusion, not carried forward on assumption. Several
+entries below turned out subtly wrong, not just stale — see the
+correction note beneath the table.)
 
 | Unknown | Status | See |
 |---------|--------|-----|
-| UNK-006 — Facility siting | **Resolved** — `Architecture/Facilities.md` owns; PC-002 tracks reference corrections | `Unknowns.md` |
-| UNK-008 — Welding wire chemical qualification | Open — no owner assigned | `Unknowns.md` |
-| UNK-009 — External root-of-trust cross-module | Critical — spans GOV-003, GOV-005, SEC-007a | `Unknowns.md` |
-| RIP-001 — Prior-state archival | **Resolved** 2026-06-27 — Discharge via Lessons Learned; Git release tags (V0.6–V0.97) satisfy requirement at v0 scale | `Unknowns.md` |
-| RIP-004 — Constitutional violation detection latency | **Resolved** 2026-06-19 — Tier 1 Axiom Verification is now mandatory Audit Opening Checklist Step 1 | `Unknowns.md` |
+| UNK-008 — Welding wire chemical qualification | Open — ownership reassigned 2026-07-19 to `Architecture/Geck_forge_seed.md` (was incorrectly listed under `Gate_05_Separation_Thermal.md`, which explicitly disclaims it) | `Unknowns.md` |
+| UNK-009 — External root-of-trust cross-module | Critical — spans GOV-003, GOV-005, RIP-001, SEC-007a/SEC-007b | `Unknowns.md` |
 | FA-001 — Site not confirmed | Critical — blocks all hot operations | `Unknowns.md` |
-| ECN-002 — Operating cost baseline | Critical — blocks TR-001; depends on EV-001; renamed from EC-002 2026-07-06 (CT-007 Resolved) | `Unknowns.md` |
+| ECN-002 — Operating cost baseline | Critical — blocks TR-001; depends on EV-001 | `Unknowns.md` |
 | PR-001 — Precision ceiling not declared | Critical — blocks T1/T2 part claims | `Unknowns.md` |
-| PC-001 — Verification Ref corrections | Blocking — 10 files; affects AUDIT_HARNESS.py | `Unknowns.md` |
-| PC-005 — Closed_Loop_Feedstock.md not registered | Open — Routing.md backlink now confirmed; this file and AUDIT_HARNESS.py still pending | `Unknowns.md` |
-| AP-012 / AP-016 — Human authority availability / concurrent quarantine | **Resolved** 2026-07-03 — Payment via Specification; Auditor_Protocols.md v0.16 | `Unknowns.md` |
 | GH-009 — Emergent heuristic conflict (Cognitive Salvage) | Critical — N² interaction scaling; blocks heuristic co-deployment | `Unknowns.md` |
 | HR-UNK-002 — Hydrologic Resource Cascade material quality | Critical — flood sediment contaminant risk; safety-critical | `Unknowns.md` |
-| SEC-007a / SEC-007b — External root-of-trust, split 2026-07-02 | Critical — constitutional (007a) blocks physical (007b); both blocked pending GOV-008/GOV-005 | `Unknowns.md` §Ethics & Governance |
+| SEC-007a / SEC-007b — External root-of-trust, constitutional/physical split | Critical — both blocked pending resolution; owning layer split Admin/Operations | `Unknowns.md` §Ethics & Governance |
 | SEC-012 — Asymmetric crypto overhead on salvaged silicon | Major — Logic-Zero node recovery DoS risk | `Unknowns.md` §Ethics & Governance |
-| GOV-011 — Spec Gates field scored against wrong gate system | **Resolved** 2026-07-05 — confirmed isolated to Governance_Charter.md after spot-check of all governance-tier files | `Unknowns.md` §Ethics & Governance |
-| CT-007 — ID namespace collision, Ethical_Constraints.md/Economics.md | **Resolved** 2026-07-06 — `ECN-` rename verified and applied; EC-008 citation error corrected; ECN-003 identified as the real fifth collision | `Unknowns.md` §Ethics & Governance |
-| CT-010 — Enforcement Checkpoint rename propagation | Major — confirm no file still cites old unqualified "Gate N" for Governance_Charter.md's renamed checkpoints | `Unknowns.md` §Ethics & Governance |
-| RE-UNK-001 / RE-UNK-005 — Return_To_Eden Eden Index measurement/baseline undefined | Blocking (Tier I gate); non-blocking at Exploration; cross-ref CLF-005 (symbol ambiguity, unresolved) | `Unknowns.md` §Return to Eden |
-| RE-UNK-004 — Return_To_Eden dependency map absent | Discovery.md portion resolved 2026-07-05 (reconciled against source file directly); file's own formal Upstream/Downstream declaration still absent — not fully closeable in `Unknowns.md` until that's added | `Unknowns.md` §Return to Eden |
-| CLF-001 through CLF-010 — Closed_Loop_Feedstock.md new cluster | CLF-003/004/006 Critical Watch; collision history CF-→FL-→CLF- documented in Unknowns.md Audit Trail | `Unknowns.md` §Closed-Loop Feedstock |
-| ENV-DS-001 — Bootstrap operating doctrine vs. Compliance-Maximizing Default | Open — reconciled text drafted in Environmental_Constraints.md, pending human governing authority ratification | `Unknowns.md` §Active Disputes Registry |
+| CT-007 — ID namespace allocation doctrine undefined | Open, not Resolved — narrower `EC→ECN` rename sub-issue resolved 2026-07-06, but the broader namespace-allocation doctrine gap this ID was meant to cover was never actually closed; confirmed directly against `Unknowns.md`'s own current text, which itself corrects an earlier premature "Resolved" framing | `Unknowns.md` §Ethics & Governance |
+| CT-010 — Enforcement Checkpoint rename propagation | In Progress — confirm no file still cites old unqualified "Gate N" for Governance_Charter.md's renamed checkpoints | `Unknowns.md` §Ethics & Governance |
+| CF-004 — Epistemic debt measurement mechanism | Open, narrowed 2026-07-28 — formal trigger now defined (`Admin/Computational Institutional Reasoning` §5.4, Lyapunov-stable); numeric calibration is the remaining gap. Dependency surface: Triage Posture, promotion suspension, and `Cognitive_Frameworks.md` Section IV (revised same day) | `Unknowns.md` §Cognitive Frameworks |
+| CIR-001 — Physical Grounding Telemetry Mapping Interface | Open — renamed 2026-07-28 from a colliding local "GOV-008" (see `Admin/Forge_Audit_Kit.md` Governance Sidecar ID Reference); γ1–γ4 predicates aspirational pending harness Phase 2 | `Admin/Computational Institutional Reasoning` §8.4 |
+| RE-UNK-001 / RE-UNK-005 — Return_To_Eden Eden Index measurement/baseline undefined | Blocking (Tier I gate); non-blocking at Exploration; CLF-005 cross-ref confirmed resolved and unrelated (renamed to $\Delta_{sc}$, no effect on this pair) | `Unknowns.md` §Return to Eden |
+| RE-UNK-004 — Return_To_Eden dependency map absent | Open — narrower than originally stated; file lacks a dedicated Upstream/Downstream section other Challenges/ files use | `Unknowns.md` §Return to Eden |
+| CLF-003 / CLF-004 / CLF-006 — Closed_Loop_Feedstock.md Critical Watch | Open — CLF-004 specifically blocked pending CE-006 (chlorine containment, `Architecture/Chemistry.md`); candidate chlor-alkali pathway logged 2026-07-07 | `Unknowns.md` §Closed-Loop Feedstock |
+| CE-006 — Chlorine off-gas containment mechanism | Open — corrected 2026-07-19 from an unworkable KMnO₄ approach to caustic wet scrubbing (already the file's own existing architecture); CE-007 spun off for the resulting NaOCl storage gap | `Unknowns.md` §Chemistry |
+
+**Resolved since the last refresh, removed from this table:** UNK-006
+(Facility siting), RIP-001 (Prior-state archival), RIP-004 (Constitutional
+violation detection latency), AP-012 / AP-016 (Human authority
+availability / concurrent quarantine), GOV-011 (Spec Gates field scored
+against wrong gate system), PC-001 through PC-005 (all — see Pending
+Corrections above), ENV-DS-001 (bootstrap doctrine — ratified with a
+bridge-authority exception clause, 2026-07-11).
 
 **Parked, not open work:** Governance_Charter.md's External Design Lineage
 amendment is drafted and ready but deliberately unratified — a considered
 decision given GOV-011 and general system fragility, not neglect. No
 expiry watch applies to it; it doesn't decay by sitting since it isn't
-claiming to be true yet, only proposed.
-
-**Resolved this session (2026-07-02/03), not previously reflected here:**
-SEC-DS-001 (Grok/Gemini gate-maturity dispute) — see
-`Admin/Security_Protocols.md` Active Disputes.
+claiming to be true yet, only proposed. GOV-013 (Pathway 2/3 Post-Exit
+Monitoring Doctrine, table above) is a second item in the same
+category — drafted, not neglected, awaiting ratification.
 
 ---
