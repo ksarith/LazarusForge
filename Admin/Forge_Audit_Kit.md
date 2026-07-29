@@ -1,5 +1,5 @@
 # Forge_Audit_Kit.md
-**Version 1.13**
+**Version 1.14**
 
 ## File State
 
@@ -8,10 +8,10 @@
 | Status         | Draft                                                               |
 | Spec Gates     | 0/6                                                                 |
 | Verification Ref | Admin/Verification_Gates_LF.md                                    |
-| Last Audit     | 2026-07-26                                                          |
-| Auditor        | Claude — Synthesizer; Claude — v1.10 reduction + Expiry Watch redesign (human-directed); Claude — self-audit + v1.11 (FAK-010/011/012, First Battery) — 2026-07-14; Claude — v1.12 Verification Gates trim (human-directed), derivation versions corrected, 2026-07-17; Claude — v1.13 Pragmatic Accuracy principle added (human-directed), 2026-07-26 |
+| Last Audit     | 2026-07-28                                                          |
+| Auditor        | Claude — Synthesizer; Claude — v1.10 reduction + Expiry Watch redesign (human-directed); Claude — self-audit + v1.11 (FAK-010/011/012, First Battery) — 2026-07-14; Claude — v1.12 Verification Gates trim (human-directed), derivation versions corrected, 2026-07-17; Claude — v1.13 Pragmatic Accuracy principle added (human-directed), 2026-07-26; Claude — v1.14 CIR- prefix registered, FAK-013 stale changelog path corrected (human-directed), 2026-07-28 |
 | Open Unknowns  | 5 — see Sidecar Link                                                |
-| Sidecar Link   | Admin/Forge_Audit_Kit_Changelog.md#sidecar--auditor-notes--unknowns |
+| Sidecar Link   | Archive/Logs/Forge_Audit_Kit_Changelog.md#sidecar--auditor-notes--unknowns |
 | Ethical Anchor | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
 **Derived from:** `Admin/Auditor_Protocols.md` v0.24 | `Admin/Verification_Gates_LF.md` v0.7 | `Unknowns.md` v4.21
@@ -192,7 +192,7 @@ Sequential. Auditor has binding block authority. Self-approval loops not permitt
 - **G3** passes if the Adversarial Battery was applied and documented — full Battery, or partial with deferred classes named and reasoned (Exploration-stage default per §Adversarial Audit Layer "When to Apply"). G3 does not require that findings from the Battery be resolved; unresolved Critical findings block *promotion*, tracked as open unknowns, not as a G3 failure.
 - **G6** passes if the committed text does not contradict itself or another *committed* spec. G6 does not test whether upstream dependencies are resolved — that is a promotion-readiness question.
 
-**Gate 3 status is not permanent.** A resolved blocker is not automatically a passed gate — re-verify Gate 3's actual blocking status at each audit rather than assuming a prior "cleared" or "blocked" note still holds. Full incident history (a 2026-07-05 case where this went wrong in both directions) in `Admin/Forge_Audit_Kit_Changelog.md`.
+**Gate 3 status is not permanent.** A resolved blocker is not automatically a passed gate — re-verify Gate 3's actual blocking status at each audit rather than assuming a prior "cleared" or "blocked" note still holds. Full incident history (a 2026-07-05 case where this went wrong in both directions) in `Archive/Logs/Forge_Audit_Kit_Changelog.md`.
 
 **Physical harness note (AP-010 pending):** For documents with physical implementation claims, Gate 6 requires at least one confirmed cross-reference to an active test harness specifying test and grounding artifact. Documents without physical claims are exempt.
 
@@ -256,6 +256,7 @@ Non-obvious governance prefixes only. All operational prefixes: load `Discovery.
 |--------|-------------|
 | AP-    | `Admin/Auditor_Protocols.md` |
 | CT-    | `Admin/Canonical_Terms.md` |
+| CIR-   | `Admin/Computational Institutional Reasoning` |
 | EC-    | `Admin/Ethical_Constraints.md` |
 | FAK-   | `Admin/Forge_Audit_Kit.md` |
 | GH-    | `Tests/Cognitive_Salvage_Layer.md` |
@@ -277,7 +278,7 @@ Load additional files only when the audit focus requires them — each adds toke
 
 **Maintenance trigger:** Update this file when `Admin/Auditor_Protocols.md` is revised OR when `Unknowns.md` version increments. Minimum fields to update: derivation version strings, role declaration version string, EF condensed section if EF sections changed. (Critical watch list removed at v1.10 — no longer a maintenance target.)
 
-**End-of-Life:** This kit is a working document, not a permanent one — its function is to stay current with `Admin/Auditor_Protocols.md`, `Admin/Verification_Gates_LF.md`, and `Unknowns.md`. When it's superseded — a successor kit, a structural change to the audit process, or the source documents outgrowing what a condensed reference can track — it is not deleted. It's shelved at its final version as a historical record: evidence of what the audit process actually was at a given point in Forge's evolution, available for ideological and process study rather than active use. Superseding a kit is a normal lifecycle event, not a failure; the sidecar and version history in `Admin/Forge_Audit_Kit_Changelog.md` are what make that shelving legible later rather than just an abandoned file.
+**End-of-Life:** This kit is a working document, not a permanent one — its function is to stay current with `Admin/Auditor_Protocols.md`, `Admin/Verification_Gates_LF.md`, and `Unknowns.md`. When it's superseded — a successor kit, a structural change to the audit process, or the source documents outgrowing what a condensed reference can track — it is not deleted. It's shelved at its final version as a historical record: evidence of what the audit process actually was at a given point in Forge's evolution, available for ideological and process study rather than active use. Superseding a kit is a normal lifecycle event, not a failure; the sidecar and version history in `Archive/Logs/Forge_Audit_Kit_Changelog.md` are what make that shelving legible later rather than just an abandoned file.
 
 ---
 
@@ -302,7 +303,7 @@ Load additional files only when the audit focus requires them — each adds toke
 
 ## Auditor Notes & Unknowns
 
-Sidecar relocated to `Admin/Forge_Audit_Kit_Changelog.md` §Sidecar as of
+Sidecar relocated to `Archive/Logs/Forge_Audit_Kit_Changelog.md` §Sidecar as of
 v1.11 (2026-07-14) — this kit is a working document, and its self-tracking
 content was accumulating alongside the reference content it exists to
 keep lean. This is a documented exception to the general rule that
@@ -318,7 +319,7 @@ Cycle/CURRENT_CYCLE finding).
 
 ## Resolution Log
 
-Full history: `Admin/Forge_Audit_Kit_Changelog.md` (relocated out of this
+Full history: `Archive/Logs/Forge_Audit_Kit_Changelog.md` (relocated out of this
 kit at v1.10 — add new entries there, not here).
 
 Most recent: v1.13 (2026-07-26) — Governing Principles gained a fifth
