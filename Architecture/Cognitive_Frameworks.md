@@ -16,8 +16,8 @@
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | Admin/Verification_Gates_LF.md                                      |
-| Last Audit       | 2026-05-09 (ChatGPT — Synthesizer); revised 2026-06-08; revised 2026-06-27; revised 2026-07-26 |
-| Auditor          | Claude — Retrofit/Auditor; revised Claude — Synthesizer/Auditor; Gemini — Skeptic/Auditor (Exploration audit), Claude — Synthesizer/Auditor (verification against source, corrections), CF-DS-002 ratified by human governing authority, CF-DS-001 resolved (Claude + Grok, independently confirmed), 2026-07-26 |
+| Last Audit       | 2026-05-09 (ChatGPT — Synthesizer); revised 2026-06-08; revised 2026-06-27; revised 2026-07-26; revised 2026-07-28 |
+| Auditor          | Claude — Retrofit/Auditor; revised Claude — Synthesizer/Auditor; Gemini — Skeptic/Auditor (Exploration audit), Claude — Synthesizer/Auditor (verification against source, corrections), CF-DS-002 ratified by human governing authority, CF-DS-001 resolved (Claude + Grok, independently confirmed), 2026-07-26; Claude — Synthesizer/Auditor, Section IV revised with formal transition triggers from `Admin/Computational Institutional Reasoning` §5.4, CF-004 updated, Section IX consistency check performed (human-directed), 2026-07-28 |
 | Open Unknowns    | 5                                                                   |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | High                                                                |
@@ -295,19 +295,76 @@ in place of the unit.
 
 ## IV. Confidence Collapse States
 
-| State | Meaning | Typical Response |
-|---|---|---|
-| Green | Stable consensus | Normal operation |
-| Yellow | Minority disagreement | Increase logging |
-| Orange | Persistent disagreement | Slow operations |
-| Red | Cognitive instability | Enter caution/stasis |
-| Black | Trust chain compromised | Mechanical lockdown |
+| State | Meaning | Typical Response | Formal Trigger |
+|---|---|---|---|
+| Green | Stable consensus | Normal operation | $dD_e/dt \le 0$ — Stable Operating Zone or Neutral Equilibrium (CIR §5.3) |
+| Yellow | Minority disagreement | Increase logging | $dD_e/dt > 0$, rolling average not yet past $\varepsilon_{\text{triage}}$ |
+| Orange | Persistent disagreement | Slow operations; Triage Posture active | Rolling average of $dD_e/dt$ over $N$ audit cycles breaches $\varepsilon_{\text{triage}}$ — CIR §5.4 Entry Condition |
+| Red | Cognitive instability | Enter caution/stasis | Sustained $\ddot{D}_e > 0$ — Collapse Region (CIR §5.3): debt accumulation itself accelerating, not merely present |
+| Black | Trust chain compromised | Mechanical lockdown | Direct detection of trust chain compromise — bypasses the debt-derivative ladder entirely |
 
 Transitions are not purely linear. A system can move
 from Green to Black if trust chain compromise is
-detected directly, bypassing intermediate states.
-Downward transitions (toward Green) require explicit
-re-verification, not mere absence of new faults.
+detected directly, bypassing intermediate states —
+Black remains a direct-detection condition, not
+derived from the debt derivative, exactly as before
+this revision. Downward transitions (toward Green)
+require explicit re-verification, not mere absence
+of new faults.
+
+**Revised 2026-07-28:** The Yellow→Orange transition
+— previously undefined, tracked as CF-004 — now has
+a formal trigger. `Admin/Computational Institutional
+Reasoning` §5.4 (The Automated Triage Posture
+Trigger) defines this exact condition and proves it
+stable under a Lyapunov argument (§5.4 Theorem 3):
+the trajectory cannot oscillate indefinitely once
+triage engages. Entering Orange is the same event as
+this file's Epistemic Load Regulation section
+(Section IX) entering Triage Posture — they are one
+mechanism described from two angles, not two
+mechanisms that happen to agree. Exit follows the
+same hysteresis in both descriptions: the rolling
+debt derivative must demonstrate sustained reduction
+beneath $-\varepsilon_{\text{exit}}$ before returning
+to Yellow — not mere absence of new faults, consistent
+with this section's existing downward-transition
+requirement above.
+
+Green, Yellow, and Orange correspond to CIR §5.3's
+Stability Regimes (Stable Operating Zone / Neutral
+Equilibrium / Triage Zone, respectively). Red
+corresponds to the Collapse Region — note this
+requires the *second* derivative of debt to be
+sustained positive, i.e. debt growth that is itself
+accelerating, a strictly harder condition than simply
+carrying high debt. A system can sit in Orange
+indefinitely without ever reaching Red if its debt
+growth rate is elevated but not worsening.
+
+**Calibration status:** the mathematical form and
+stability proof are established. The specific numeric
+values for $\theta_p$, $\varepsilon_{\text{triage}}$,
+$\varepsilon_{\text{exit}}$, and the audit-cycle
+window $N$ remain undefined — see CF-004, whose scope
+now narrows to calibration rather than formal
+definition. Until calibrated, Orange/Triage Posture
+entry and exit remain human judgment calls, as
+before; this revision changes what the judgment is
+checked against, not who makes it.
+
+**Consistency check against Section IX (2026-07-28):**
+Section IX's Confidence Propagation rule
+($\text{confidence}(A) \le \text{confidence}(B)$ for
+dependent nodes, operating on the Measured / Replicated
+/ Simulated / Analogous / Placeholder label set) is
+unaffected by this revision — it governs per-claim
+evidentiary confidence, an orthogonal axis to these
+system-level aggregate debt states. Triage Posture
+entering Orange changes agent bandwidth allocation
+toward verification, which can accelerate individual
+claims moving up the label set, but does not alter
+the propagation rule itself. No change required there.
 
 ---
 
@@ -730,10 +787,11 @@ functioning as designed — the same asymmetric
 conservatism that governs individual claims here
 governs system-level operational tempo.
 
-*Dependency: CF-004 (debt measurement mechanism
-undefined — see sidecar). Triage Posture is
-doctrine now; the trigger metric is a v1
-automation target.*
+*Dependency: CF-004 (debt measurement mechanism —
+see sidecar). The trigger metric now has a formal
+definition and stability proof, `Admin/Computational
+Institutional Reasoning` §5.4; numeric calibration
+is the remaining v1 automation target.*
 
 ---
 
@@ -988,44 +1046,56 @@ defined from operational deployment.
 | Blocking      | No                                               |
 | Owner         | Architecture/Cognitive_Frameworks.md             |
 | First Logged  | 2026-06-27                                       |
-| Last Reviewed | 2026-07-26                                       |
+| Last Reviewed | 2026-07-28                                       |
 
 **Description:** Epistemic Load Regulation (Triage
-Posture) is defined as doctrine in Section IX, but
-the trigger metric — Unknown accumulation rate vs.
-resolution rate over a rolling interval — has no
-formal implementation. Triage Posture entry and
-exit are currently human judgment calls during
-audit sessions.
+Posture) is defined as doctrine in Section IX. The
+trigger metric — Unknown accumulation rate vs.
+resolution rate over a rolling interval — previously
+had no formal implementation. As of 2026-07-28,
+verified: `Admin/Computational Institutional
+Reasoning` §5.4 (The Automated Triage Posture
+Trigger) formally defines this exact metric — a
+rolling average of the debt derivative $dD_e/dt$
+over $N$ audit cycles against a calibrated ceiling
+$\varepsilon_{\text{triage}}$ — and proves it stable
+under a Lyapunov argument (§5.4 Theorem 3). The
+mathematical form and stability guarantee are no
+longer missing. What remains open: numeric
+calibration of $\theta_p$, $\varepsilon_{\text{triage}}$,
+$\varepsilon_{\text{exit}}$, and $N$. Until calibrated,
+Triage Posture entry and exit remain human judgment
+calls during audit sessions — the check now has a
+formal target to be checked against, but the check
+itself is not yet automated.
 
-**Why It Matters:** Without a measurable trigger,
-Triage Posture cannot be enforced automatically or
-audited consistently. The doctrine exists; the
-instrument does not. Priority raised from Minor to
-Major 2026-07-26: a proposed revision to Section IV
-(Confidence Collapse States, under review, not yet
-adopted) would make the Yellow→Orange transition
-depend on this metric's debt derivative directly —
-whether or not that revision lands, Triage Posture
-and promotion suspension already depend on it today.
-What began as a single automation convenience is
-becoming a dependency surface for other mechanisms —
-the risk profile changed even though the underlying
-gap did not.
+**Why It Matters:** Without calibrated values, Triage
+Posture still cannot be enforced automatically or
+audited consistently — the instrument now has a
+proven-stable design but no dial settings. Priority
+raised from Minor to Major 2026-07-26: Section IV
+(Confidence Collapse States) has now been revised
+(2026-07-28) to formally reference this same debt
+derivative for its Yellow→Orange transition, per the
+CF-004/CIR §5.4 connection flagged during a prior
+audit pass and confirmed in this one. That widens the
+dependency surface further — Section IV, Triage
+Posture, and promotion suspension now all cite the
+same uncalibrated metric. The risk profile keeps
+growing even as the underlying formal gap has
+narrowed.
 
-**Resolution Path:** Define a rolling window metric
-(e.g., Unknowns opened vs. closed over the last N
-audit cycles) computable from `Unknowns.md`
-history. Candidate location for implementation is
-`Automation/AUDIT_HARNESS.py` — the harness already reads
-Unknowns.md and could emit a debt ratio alongside
-Phase 1 output. Payment via Specification — once
-a metric is defined and validated against at least
-two audit cycles, update Section IX Triage Posture
-with the concrete threshold. Cross-reference
-`Admin/Computational Institutional Reasoning`
-Section 5 for the formal debt dynamics framework
-that grounds the trigger metric mathematically.
+**Resolution Path:** Calibrate $\theta_p$,
+$\varepsilon_{\text{triage}}$, $\varepsilon_{\text{exit}}$,
+and $N$ against at least two audit cycles of real
+`Unknowns.md` history — candidate location for
+implementation remains `Automation/AUDIT_HARNESS.py`,
+which already reads `Unknowns.md` and could emit the
+debt derivative alongside Phase 1 output. Once
+calibrated and validated, update Section IX Triage
+Posture and Section IV's Orange-state trigger with
+the concrete threshold values, replacing the symbolic
+form with numbers.
 
 ---
 
@@ -1074,6 +1144,32 @@ Synthesizer/Auditor, human-directed.*
 ---
 
 ### Resolution Log
+
+- 2026-07-28: Section IV (Confidence Collapse States)
+  revised — Yellow→Orange transition now formally
+  defined via `Admin/Computational Institutional
+  Reasoning` §5.4's debt derivative trigger
+  ($dD_e/dt$ rolling average vs. $\varepsilon_{\text{triage}}$),
+  Lyapunov-proven stable per that section's Theorem 3.
+  Green/Yellow/Orange mapped to CIR §5.3's Stability
+  Regimes; Red mapped to the Collapse Region (requires
+  sustained positive second derivative, not merely
+  elevated debt); Black remains direct-detection,
+  unchanged. Numeric calibration ($\theta_p$,
+  $\varepsilon_{\text{triage}}$, $\varepsilon_{\text{exit}}$,
+  $N$) remains open — CF-004 updated to reflect this
+  narrowed scope (formal implementation resolved,
+  calibration pending). Section IX's Confidence
+  Propagation rule checked for consistency per this
+  file's own Drift Indicator — found orthogonal
+  (per-claim label confidence vs. system-level debt
+  state); no change required there. Epistemic Load
+  Regulation's CF-004 dependency note updated to
+  match. Prior status ("proposed revision... under
+  review, not yet adopted," referenced in CF-004's
+  own text) is now superseded — the revision has
+  landed. Verified and drafted by Claude —
+  Synthesizer/Auditor, human-directed.
 
 - 2026-06-08: Navigation Anchors added. File State
   expanded to full table format. Assumptions section
