@@ -32,15 +32,6 @@ Formal axioms, theorems, and Verification Algebra backing CF-004, AP-006, and ep
 
 ---
 
-## What v4.29 Means
-
-- **CF-004's core gap closed — the mathematical form and stability proof, not the calibration.** `Admin/Computational Institutional Reasoning` §5.4 (The Automated Triage Posture Trigger) was checked directly rather than assumed to answer CF-004, per a connection flagged in a prior audit pass and never followed up until now. It does: a rolling-average debt derivative against a calibrated ceiling, proven stable under a Lyapunov argument. What's left is numeric calibration only — θ_p, ε_triage, ε_exit, and the audit-cycle window N remain undefined.
-- **Architecture/Cognitive_Frameworks.md Section IV (Confidence Collapse States) revised same day.** The Yellow→Orange transition — previously informal, tracked only as CF-004's growing dependency surface — now cites the same CIR §5.4 metric directly. Green/Yellow/Orange mapped to CIR §5.3's Stability Regimes; Red requires the *second* derivative of debt sustained positive, a stricter bar than simply carrying elevated debt. Black remains direct-detection, unchanged.
-- **Section IX's Confidence Propagation rule checked for consistency, per this file's own Drift Indicator, and found orthogonal.** Per-claim evidentiary confidence labels (Measured/Replicated/Simulated/Analogous/Placeholder) are a different axis from these system-level aggregate debt states; no change was needed there. Documented rather than silently skipped.
-- **This file itself scrubbed the same day.** The version-history block at the top had drifted to keeping only the five most recent versions in full while the Audit Trail — meant to be the permanent compressed record per Size Management Rule 4 — had stopped being updated after v4.16, thirteen versions behind. Both problems shared one root cause: the "retire old What section into Audit Trail, promote new What section" step in Rule 1 had quietly stopped happening. Audit Trail entries for v4.17–v4.29 added below, verified against `Unknowns_Changelog.md` and this file's own prior version blocks before writing. Top-of-file block reduced to current version only.
-
----
-
 ## Size Management Rules
 
 These rules are enforced at every audit cycle opening:
