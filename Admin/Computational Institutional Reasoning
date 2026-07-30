@@ -15,13 +15,13 @@
 | Field | Value |
 | :--- | :--- |
 | Status | Exploration |
-| Version | 0.18 |
+| Version | 0.19 |
 | Spec Gates | G4 cleared; G1 partial (Gemini 2026-06-30); G3 blocked by AP-012/AP-016 |
 | Verification Ref | Admin/Verification_Gates_LF.md |
 | Ethical Anchor | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 | Highest Risk | CIR-001 — Physical Grounding Telemetry Mapping Interface undefined; \u03b31\u2013\u03b34 predicates currently aspirational in harness implementation (see Section 7.4). Renamed 2026-07-28 from local "GOV-008" — collided with `Admin/Governance_Charter.md`'s registered GOV-008 (minimum agent quorum); CIR-scoped prefix now registered in `Admin/Forge_Audit_Kit.md`'s Governance Sidecar ID Reference. |
 | Truth Basis | Internally Derived (Theorems) + Analogous (Multi-Agent Systems) |
-| Last Audit | 2026-07-28 (Claude — Synthesizer/Auditor; v0.18 — GOV-008 collision resolved, tracker renamed to CIR-001 across File State, §4.2, §7.4, and §8.4; CIR- prefix registered in Admin/Forge_Audit_Kit.md, human-directed) |
+| Last Audit | 2026-07-29 (Claude — Skeptic/Auditor, verifying a Copilot-proposed finding set against source before commit; v0.19 — CIR-F01 [Axiom A4 / §4.2 Provenance Confidence contradiction] and CIR-F02 [ln(0) undefined-coordinate gap] both confirmed real and resolved, with three corrections to Copilot's original draft: A4's "(The Epistemic Ship of Theseus)" subtitle restored rather than dropped; Coordinate Floor Constraint relocated from §4.3 to §4.2 so it covers both the base and §4.6.3-extended M(n) forms in one patch rather than needing two; illustrative floor example corrected from R (already screened by §4.4 before M(n) evaluation, so never actually reaches ln(0) in practice) to S (not screened, genuinely reachable). Copilot's §7.3 citation also corrected — "Agent Replacement Information Loss" is a comparison-table row within §7.3, not a section title in its own right; substance of that cross-check unaffected. Human-directed.) |
 | Active Trackers | CIR-001, AP-012, AP-016, CF-002, CF-004 |
 
 > **Provenance self-reference note:** This document's own Provenance Ceiling Gate (\u03a8, Section 4.3) classifies its Truth Basis as *Internally Derived*, which bars it from self-promotion under its own algebra. Promotion to Candidate Spec requires at least partial Experimentally Verified status on the core claims.
@@ -143,7 +143,7 @@ The operational rules of the institution are derived from five fundamental axiom
 
 > **The Nothingness Principle:** Recognized absence is itself actionable information. An institution cannot maintain internal structural consistency while acknowledging an external uncertainty that lacks an explicit, computable representation.
 
-**Axiom A4 — Institutional Continuity (The Epistemic Ship of Theseus):** The state transition function $\sigma(\mathcal{I}_t, \Delta \mathcal{I}) = \mathcal{I}_{t+1}$ depends strictly upon the current state tuple $\mathcal{I}_t$ and the structural properties of the validated mutation patch. It contains zero functional dependencies on the specific underlying models or identities within the active agent population $A_t$.
+**Axiom A4 — Institutional Continuity (The Epistemic Ship of Theseus) [Revised 2026-07-29]:** The state transition function $\sigma(\mathcal{I}_t, \Delta \mathcal{I}) = \mathcal{I}_{t+1}$ depends strictly upon the current state tuple $\mathcal{I}_t$ and the structural properties of the validated mutation patch. It contains no direct dependency on agent identity. Agent reputation may inform Provenance Confidence $P(n)$ (§4.2) as a bounded, auditable input, but cannot itself satisfy, override, or bypass any constitutional predicate $\gamma$.
 
 **Axiom A5 — Governance Precedes Mutation:** A graph state transition $G_t \rightarrow G_{t+1}$ can occur if and only if an atomic proposal patch $\Delta G \in \Pi_t$ satisfies the complete conjunction of compiled constitutional predicates enforced by $\Gamma$:
 
@@ -255,8 +255,10 @@ Let $n \in V_c$ be an arbitrary concept node. We define the verification state o
 * **E — Evidence Completeness:** The ratio of verified, documented empirical observations or sensor logs to the total number of declared dependencies required by the claim.
 * **R — Reproducibility:** The fraction of independent verification routines or distinct agent nodes that successfully reproduced the assertions of the claim. $R$ remains explicitly undefined ($\emptyset$) until at least two distinct agents have executed an independent audit.
 * **C — Cross-Domain Consistency:** The structural absence of active disputes or logical conflicts linking this node to adjacent domains.
-* **P — Provenance Confidence:** A scalar tracking the immutable lineage of the claim, incorporating source recency, historical agent reputation, and the systemic reliability of the origination point.
+* **P — Provenance Confidence:** A scalar tracking the immutable lineage of the claim, incorporating source recency, historical agent reputation, and the systemic reliability of the origination point. *Permitted under Axiom A4's bounded-input exception (§2.2): agent reputation informs $P(n)$ as an already-computed scalar, but $\sigma$ itself never takes raw agent identity as an argument — the distinction A4 draws is between identity as a direct input to state transition (disallowed) and identity-derived confidence already folded into the state (permitted, auditable, and bounded).*
 * **S — Physical Grounding:** The fraction of implementation claims or material specifications validated by direct hardware outcomes, physical testing benches, or real-world sensor telemetry. *S is the only dimension that cannot be advanced or manipulated through documentation or textual generation alone.*
+
+**Coordinate Floor Constraint [Added 2026-07-29]:** Each coordinate of $\mathbf{V}(n)$ is bounded below by an institutionally configured floor $\varepsilon \in (0, e_{\min})$. Formally, for all $i \in \{E,R,C,P,S\}$: $v_i \in [\varepsilon, 1]$. A coordinate with no data yet — most notably $S(n)$ for a node with zero physical telemetry, which is not screened out upstream the way $E$ and $R$ are (see §4.4's classification matrix, which routes $E < e_{\min}$ or undefined $R$ to UNKNOWN STATE *before* $M(n)$ is evaluated at all) — is assigned $\varepsilon$ rather than $0$, so that $\ln \mathbf{V}(n)$ remains defined wherever $M(n)$ is actually computed, in both the base form (§4.3) and the conflict-extended form (§4.6.3). This changes no threshold or gate behavior: $S(n)=0$ nodes in $V_{\text{phys}}$ still collapse to $M(n)=0$ via $\Phi(n)$, which multiplies the whole expression independently of the floored log term; $R$-undefined nodes still route to UNKNOWN STATE via §4.4 regardless of the floor. The floor exists so the log term itself never evaluates to an undefined quantity, not to weaken any existing exclusion.
 
 ## 4.3 The Non-Linear Maturity Function
 
