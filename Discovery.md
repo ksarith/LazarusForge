@@ -842,8 +842,22 @@ bridge-authority exception clause, 2026-07-11).
 amendment is drafted and ready but deliberately unratified — a considered
 decision given GOV-011 and general system fragility, not neglect. No
 expiry watch applies to it; it doesn't decay by sitting since it isn't
-claiming to be true yet, only proposed. GOV-013 (Pathway 2/3 Post-Exit
-Monitoring Doctrine, table above) is a second item in the same
-category — drafted, not neglected, awaiting ratification.
+claiming to be true yet, only proposed.
+
+⚠️ **Correction, 2026-07-29:** GOV-013 was previously listed here as
+parked/unratified. That was wrong — it was **ratified 2026-07-19**
+(`Admin/Governance_Charter.md` §Post-Exit Monitoring Doctrine, live
+"STATUS: RATIFIED" note), eleven days before this file said otherwise.
+The error traced back to two supporting files —
+`Admin/Auditor_Protocols.md`'s metrics section and
+`Admin/Repository_Integrity_Protocol.md`'s reversion mechanism —
+still carrying stale "PROPOSED, NOT RATIFIED" / "once ratified"
+language after the Charter ratified; both corrected same day as this
+note. What's genuinely still open, confirmed by checking
+Auditor_Protocols.md directly rather than assumed: the Semantic Drift
+Score threshold is a literal `[Threshold TBD]` placeholder — human
+governing authority still needs to set actual numeric values before
+Post-Exit Monitoring can leave Phase 0 (manual) and become
+automatable. That's a real gap, just not a ratification one.
 
 ---
