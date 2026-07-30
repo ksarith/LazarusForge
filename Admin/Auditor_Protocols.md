@@ -10,7 +10,7 @@
 | Spec Gates       | 3/6 (G1, G4, G6 clear; G3 blocked on AP-017; G5 conditional on cross-ref fixes below; G2 N/A — no physical/quantitative claims of its own) |
 | Verification Ref | Admin/Verification_Gates_LF.md                                      |
 | Last Audit       | 2026-07-29                                                          |
-| Auditor          | Claude — Synthesizer/Auditor; Gemini — Skeptic/Auditor; Grok — Synthesizer/Auditor. Most recent: Post-Exit Monitoring Metrics' stale "PROPOSED, NOT RATIFIED alongside that Charter section" line corrected to reflect the Charter's actual 2026-07-19 ratification, while preserving the genuinely-still-open threshold placeholders (human-directed), 2026-07-29 — see `Archive/Logs/Auditor_Protocols_Logs.md` Resolution Log for full audit history. |
+| Auditor          | Claude — Synthesizer/Auditor; Gemini — Skeptic/Auditor; Grok — Synthesizer/Auditor. Most recent: AP-031 registered and Resolved same day — Semantic Drift Score and Unknown Accumulation Rate thresholds formally deferred pending operational launch, mirroring GOV-012's precedent rather than guessing values (human-directed), 2026-07-29; prior: Post-Exit Monitoring Metrics' stale "PROPOSED, NOT RATIFIED alongside that Charter section" line corrected to reflect the Charter's actual 2026-07-19 ratification, while preserving the genuinely-still-open threshold placeholders (human-directed), 2026-07-29 — see `Archive/Logs/Auditor_Protocols_Logs.md` Resolution Log for full audit history. |
 | Open Unknowns    | 15                                                                  |
 | Active Disputes  | 1                                                                   |
 | Highest Risk     | High                                                                |
@@ -1146,9 +1146,9 @@ Operational metrics for `Admin/Governance_Charter.md`'s Post-Exit Monitoring Doc
 | Self-Authorization Incidents | Any action where the same agent instance both planned and executed a Tier 1-scoped change without the role separation `Admin/Governance_Charter.md`'s Genesis Phase Protocol requires | Continuous — logged at time of occurrence, reviewed at each audit cycle |
 | Structural Alignment | Cross-reference integrity against `Discovery.md`/`Routing.md` canonical paths — Gate 5 criteria, unchanged, not a new check | Every audit cycle |
 
-**Thresholds — placeholder pending human governing authority ratification, not yet enforceable:**
-- Semantic Drift Score: [Threshold TBD] findings sustained across 2 consecutive cycles
-- Unknown Accumulation Rate: net positive for 3 consecutive cycles without a corresponding Resolution Path update — mirrors GOV-012's stagnation-decay mechanism, itself pending the Cycle-unit ambiguity noted there being resolved first (see Adversarial Audit Layer, above, and `Admin/Forge_Audit_Kit_Changelog.md`'s 2026-07-14 Battery record)
+**Thresholds — Semantic Drift Score and Unknown Accumulation Rate formally deferred 2026-07-29 (AP-031), mirroring `Admin/Governance_Charter.md` GOV-012's 2026-07-19 precedent; Self-Authorization Incidents and Structural Alignment are hard rules, unaffected, enforceable now:**
+- Semantic Drift Score: **not enforceable — deferred pending operational launch.** No instance has exited via Pathway 2/3 yet; no real elapsed-cycle data exists to derive a number against. To be re-derived from actual audit-cycle data once an instance has exited and been monitored, not guessed at now.
+- Unknown Accumulation Rate: **held pending GOV-012's Cycle-unit resolution** — mirrors GOV-012's stagnation-decay mechanism and inherits its unresolved ambiguity directly (session-based vs. calendar-year cycles); not an independent gap.
 - Self-Authorization Incidents: any confirmed incident — zero tolerance, immediate escalation regardless of count
 - Structural Alignment: any Gate 5 failure not remediated within 1 cycle
 
@@ -1156,7 +1156,7 @@ Operational metrics for `Admin/Governance_Charter.md`'s Post-Exit Monitoring Doc
 
 **Escalation:** any threshold breach routes to `Admin/Repository_Integrity_Protocol.md`'s Violation Classification and Response Ladder for classification and the reversion procedure — this file does not define what happens after a breach is confirmed.
 
-Thresholds above are drafted, not ratified — human governing authority must set actual numeric values before this section is enforceable. Placeholder values are intentionally conservative starting points, not a final specification.
+Semantic Drift Score and Unknown Accumulation Rate are formally deferred, not drafted-pending-ratification — see AP-031. Self-Authorization Incidents and Structural Alignment are already ratified and enforceable as written.
 
 ---
 
@@ -1288,7 +1288,8 @@ the second documented exception, not a new general rule.
 Current: 15 open — AP-002, AP-003, AP-004, AP-005, AP-007, AP-008,
 AP-010, AP-011, AP-013, AP-017, AP-018, AP-019, AP-024, AP-029, AP-030
 (verified by direct count against the archive, matching File State
-above). See the archive for exact statuses, descriptions, and
+above; AP-031 registered 2026-07-29 and Resolved same day — deferred,
+not counted among these 15 Open entries). See the archive for exact statuses, descriptions, and
 resolution paths. Active Disputes below remains in-body, distinct
 from the sidecar — disputes are interpretation conflicts tracked at
 the document level, not per-unknown entries.
