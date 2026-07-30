@@ -27,8 +27,8 @@
 | Body Stability   | Volatile                                                            |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | Admin/Verification_Gates_LF.md                                      |
-| Last Audit       | 2026-06-11                                                          |
-| Auditor          | Claude — Architect/Auditor                                          |
+| Last Audit       | 2026-07-29                                                          |
+| Auditor          | Claude — Architect/Auditor; Claude — Synthesizer/Auditor, Section VII "Operational Launch, defined" + deferred-parameters reference added, scoped down from a broader multi-agent proposal (human-directed), 2026-07-29 |
 | Open Unknowns    | 4                                                                   |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | High                                                                |
@@ -365,7 +365,32 @@ This checklist is the structured interface between the generic Forge doctrine in
 
 ---
 
-*A completed Site Initialization Checklist does not replace FA-001 (physical site survey). It is a pre-survey instrument that surfaces what the survey must verify. A site that passes the checklist on paper must still be physically assessed against Sections I–VI before hot operations begin.*
+### Operational Launch, defined
+
+A site reaching "operational launch" is not a checklist state — it's this:
+**FA-001 is resolved for a specific, physically-surveyed site, and the first hot-work
+session under the verified constraints begins.** Completing this Section VII checklist
+is not sufficient on its own; it's the pre-survey instrument FA-001's own Resolution
+Path already requires before the physical survey. Nothing here creates a new gate,
+status, or promotion state beyond what FA-001 and Section I–VI already define.
+
+**Deferred governance parameters — informational, not part of the checklist above.**
+These are values that cannot be honestly set yet anywhere in the repository, because
+no site has reached operational launch and no real audit-cycle data exists to derive
+them from. Listed here, once, so they don't stay scattered:
+
+| Parameter | Owning file | Why it's deferred |
+|---|---|---|
+| GOV-012 stagnation-decay cycle count | `Admin/Governance_Charter.md` | Set to zero cycles, formally deferred 2026-07-19 — no elapsed operational time to calibrate against |
+| Semantic Drift Score threshold (Post-Exit Monitoring) | `Admin/Auditor_Protocols.md` (AP-031) | Formally deferred 2026-07-29, same reasoning as GOV-012 |
+| Unknown Accumulation Rate cycle count (Post-Exit Monitoring) | `Admin/Auditor_Protocols.md` (AP-031) | Inherits GOV-012's Cycle-unit ambiguity directly, not a separate gap |
+
+**Re-derivation rule, stated once:** each value above is set from real elapsed-time /
+audit-cycle data collected after this file's own operational launch (defined above),
+using the method GOV-012 already specifies. None of them get a second guess — they
+get a first real measurement.
+
+---
 
 *Builders initializing a Forge outside the RDC baseline: once you have completed columns D and E above, re-read Sections II, IV, and FA-004 with your substituted values. Any section that references "RDC baseline" should be re-evaluated against your local conditions.*
 
@@ -525,6 +550,19 @@ resolved. Discovery.md Cross-Module Unknowns table updated. FA-005 closed.
 
 ### Resolution Log
 
+- 2026-07-29: Section VII gained an "Operational Launch, defined" block
+  and a "Deferred governance parameters" reference table — a scoped-down
+  response to a multi-agent proposal (Grok, ChatGPT, Gemini) that had
+  grown into a full four-tier parameter taxonomy, a formal site-lifecycle
+  state machine, and a new canonical artifact schema. All three agents'
+  factual citations checked out against source (§VII's actual content,
+  FA-002/FA-004, Auditor_Protocols.md's Highest Verified Baseline
+  doctrine, Forge_Audit_Kit.md's Verification Maturity Model — none
+  fabricated), but the proposed apparatus itself was scope creep beyond
+  what was asked: a plain-language launch definition tied to FA-001's
+  existing Resolution Path, plus a one-time pointer list for AP-031's
+  and GOV-012's deferred values. No new gate, status, or promotion state
+  introduced. Claude — Synthesizer/Auditor, human-directed.
 - 2026-07-28: Open Unknowns count corrected 3 → 4. All four of
   FA-001 through FA-004 checked individually and confirmed genuinely
   Open — surfaced by a Grok-run repo-wide desync audit, verified
