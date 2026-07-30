@@ -17,14 +17,14 @@
 | Body Stability | Volatile |
 | Spec Gates | 0/6 |
 | Verification Ref | Admin/Verification_Gates_LF.md |
-| Last Audit | 2026-07-28 |
-| Auditor | Claude (Synthesizer), Gemini (Auditor), ChatGPT (Synthesizer), Grok (Synthesizer); Gemini — Skeptic/Auditor Exploration audit, Claude — Synthesizer/Auditor (verification against source, corrections applied), 2026-07-28; Grok — Skeptic/Auditor Exploration audit, Claude — Synthesizer/Auditor (verified against source, SD-UNK-015 registered, SD-UNK-007 resolution path corrected), 2026-07-28 |
+| Last Audit | 2026-07-30 |
+| Auditor | Claude (Synthesizer), Gemini (Auditor), ChatGPT (Synthesizer), Grok (Synthesizer); Gemini — Skeptic/Auditor Exploration audit, Claude — Synthesizer/Auditor (verification against source, corrections applied), 2026-07-28; Grok — Skeptic/Auditor Exploration audit, Claude — Synthesizer/Auditor (verified against source, SD-UNK-015 registered, SD-UNK-007 resolution path corrected), 2026-07-28; 2026-07-30 Phase 0 hygiene — Ethical Anchor canonicalized, SD-UNK-013/014/015 mirrored to Unknowns.md (Synthesizer) |
 | Open Unknowns | 15 |
 | Active Disputes | 0 |
 | Forward References | Astroid-miner companion repository |
 | Highest Risk | High |
 | Sidecar Link | #auditor-notes--unknowns |
-| Ethical Anchor | Attempt to do no harm. Defer to Admin/Ethical_Constraints.md if present. |
+| Ethical Anchor | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
 ---
 
@@ -713,6 +713,16 @@ The asteroid processing system is out of scope for this file. Solar Descent defi
 ---
 
 ### Resolution Log
+
+- 2026-07-30: Phase 0 hygiene pass — Ethical Anchor corrected to canonical
+  plain-text string (was non-canonical `Admin/`-prefixed variant; same
+  PC-006 class drift already closed on eight other files 2026-07-12 /
+  Energy_Scarcity 2026-07-19). SD-UNK-013, SD-UNK-014, and SD-UNK-015
+  registered into `Unknowns.md` Solar Descent table (local sidecar had
+  carried them since 2026-07-28; global index lagged at 001–012 only).
+  Open Unknowns count unchanged at 15 — no demotion or discharge this
+  pass. Index lag closed only; Resolution Pass (10-entry rule) deferred
+  to Phase 1. Operating as Synthesizer per Auditor_Protocols.md v0.29.
 
 - 2026-07-28: SD-UNK-015 registered — surfaced by Grok's Skeptic/Auditor
   pass and verified as a genuine, previously unaddressed gap before
