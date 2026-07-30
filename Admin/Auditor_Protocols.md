@@ -9,8 +9,8 @@
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 3/6 (G1, G4, G6 clear; G3 blocked on AP-017; G5 conditional on cross-ref fixes below; G2 N/A — no physical/quantitative claims of its own) |
 | Verification Ref | Admin/Verification_Gates_LF.md                                      |
-| Last Audit       | 2026-07-26                                                          |
-| Auditor          | Claude — Synthesizer/Auditor; Gemini — Skeptic/Auditor; Grok — Synthesizer/Auditor. Most recent: Mission Drift Review mechanism added (multi-agent design synthesis — Gemini, Grok, ChatGPT proposals cross-checked against existing repository structure before adoption; human-directed), 2026-07-26 — see `Archive/Logs/Auditor_Protocols_Logs.md` Resolution Log for full audit history. |
+| Last Audit       | 2026-07-29                                                          |
+| Auditor          | Claude — Synthesizer/Auditor; Gemini — Skeptic/Auditor; Grok — Synthesizer/Auditor. Most recent: Post-Exit Monitoring Metrics' stale "PROPOSED, NOT RATIFIED alongside that Charter section" line corrected to reflect the Charter's actual 2026-07-19 ratification, while preserving the genuinely-still-open threshold placeholders (human-directed), 2026-07-29 — see `Archive/Logs/Auditor_Protocols_Logs.md` Resolution Log for full audit history. |
 | Open Unknowns    | 15                                                                  |
 | Active Disputes  | 1                                                                   |
 | Highest Risk     | High                                                                |
@@ -1135,7 +1135,7 @@ Any cross-repo dependency must be documented in both repositories with a stated 
 
 ## Post-Exit Monitoring Metrics (GOV-013)
 
-Operational metrics for `Admin/Governance_Charter.md`'s Post-Exit Monitoring Doctrine (Pathway 2/3) — PROPOSED, NOT RATIFIED alongside that Charter section; see GOV-013 there. This section defines what is measured and against what threshold. `Admin/Repository_Integrity_Protocol.md` defines how measurement is mechanically performed and what happens on a confirmed breach — this file does not define reversion mechanics, to avoid the same constitutional/implementation mixing GOV-013's drafting process caught and corrected.
+Operational metrics for `Admin/Governance_Charter.md`'s Post-Exit Monitoring Doctrine (Pathway 2/3) — **that Charter section is RATIFIED (2026-07-19); this section's thresholds are not.** *[Corrected 2026-07-29: this line previously read "PROPOSED, NOT RATIFIED alongside that Charter section," which stopped being accurate the moment the Charter ratified and was never updated — a stale echo, not a substantive gap.]* This section defines what is measured and against what threshold. `Admin/Repository_Integrity_Protocol.md` defines how measurement is mechanically performed and what happens on a confirmed breach — this file does not define reversion mechanics, to avoid the same constitutional/implementation mixing GOV-013's drafting process caught and corrected.
 
 **Metrics:**
 
