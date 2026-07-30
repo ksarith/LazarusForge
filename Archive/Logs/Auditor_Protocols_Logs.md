@@ -737,7 +737,50 @@ This becomes governance metadata rather than prose, auditable the same way Truth
 
 ---
 
+### AP-031 — Post-Exit Monitoring thresholds (Semantic Drift Score, Unknown Accumulation Rate) formally deferred, not set
+
+| Field         | Value                        |
+|---------------|------------------------------|
+| Status        | Resolved — deferred, not a numeric answer |
+| Risk          | Low                          |
+| Priority      | Minor                        |
+| Type          | Governance / Process         |
+| Blocking      | No                           |
+| Owner         | Admin/Auditor_Protocols.md — §Post-Exit Monitoring Metrics (GOV-013) |
+| First Logged  | 2026-07-29                   |
+| Last Reviewed | 2026-07-29                   |
+
+**Description:** GOV-013's Post-Exit Monitoring Metrics carried two unset values — Semantic Drift Score's threshold was a literal `[Threshold TBD]` placeholder, and Unknown Accumulation Rate's "3 consecutive cycles" figure explicitly depended on `Admin/Governance_Charter.md`'s GOV-012 Cycle-unit ambiguity being resolved first. Both share the same root cause GOV-012 already named and formally resolved on 2026-07-19: no instance has exited via Pathway 2 or 3, so no real elapsed-cycle data exists to derive a threshold from. Setting a number now would be guessing, not deriving.
+
+**Why It Matters:** GOV-012's own resolution rejected exactly this move — "forcing a numeric derivation onto a clock that hasn't started would be solving a problem that doesn't exist yet." Applying a different standard to GOV-013's thresholds than was applied to GOV-012's, when both share the identical missing-data problem, would be inconsistent for no principled reason.
+
+**Resolution Path — Deferred 2026-07-29 (human governing authority), mirroring GOV-012's 2026-07-19 precedent exactly:**
+- Semantic Drift Score threshold: set to **not enforceable** rather than a guessed numeric value. Formally blocked pending operational launch — an actual Pathway 2/3 exit followed by real audit-cycle data to derive against.
+- Unknown Accumulation Rate's "3 consecutive cycles" figure: **held pending the same Cycle-unit resolution GOV-012 already identified** — this was never an independent ambiguity, it inherits GOV-012's.
+- Self-Authorization Incidents (zero tolerance) and Structural Alignment (1-cycle remediation window) are unaffected — both are hard rules independent of cycle-length calibration or operational history, and remain enforceable now.
+- Re-derive both deferred values from `Admin/Governance_Charter.md` GOV-012's real First Logged / elapsed-time data once the repository is actually running, using the same method GOV-012 specifies — not guessed at a second time.
+
+**Related, surfaced same session:** an isolated "operator's adjustable parameters" reference — collecting deferred/operator-tunable values like these in one forefronted location rather than scattered across owning files, possibly wired to `Architecture/Facilities.md`'s site-establishment process as the natural point where "operational launch" first becomes concrete — was proposed but not built. Not registered as its own unknown pending a decision on scope; flagged here as related context if it does get taken up.
+
+*Deferred by Claude — Synthesizer/Auditor, human-directed, 2026-07-29, applying `Admin/Governance_Charter.md` GOV-012's precedent to GOV-013's thresholds rather than deriving independently.*
+
+---
+
 ### Resolution Log
+
+- 2026-07-29: **AP-031 registered and resolved same day —
+  Semantic Drift Score and Unknown Accumulation Rate thresholds
+  formally deferred**, not numerically set. Both traced to the same
+  missing-data problem `Admin/Governance_Charter.md`'s GOV-012 already
+  named and resolved on 2026-07-19 (no elapsed operational time to
+  derive a threshold against); this applies that same precedent
+  rather than deriving independently or leaving the placeholder in
+  place. Self-Authorization Incidents and Structural Alignment
+  unaffected — both remain enforceable now. An "operator's adjustable
+  parameters" reference file, possibly linked to
+  `Architecture/Facilities.md`'s site-establishment process, was
+  proposed alongside this but not built — noted in AP-031 as related
+  context, not separately registered.
 
 - 2026-07-26: **v0.29 — Mission Drift Review mechanism added** as a
   new major section in `Admin/Auditor_Protocols.md` (between Full
