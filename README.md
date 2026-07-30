@@ -463,11 +463,21 @@ original framing and is worth naming plainly:
 None of this is drift away from the founding idea. It is the founding idea taken more
 seriously than a workshop floor alone could demand.
 
-The primary remaining gaps are: enforcement architecture (GOV-003), human override
-authentication (GOV-006), and the operational hardware unknowns tracked in `Unknowns.md`.
-The verification doctrine layer (`Admin/Auditor_Protocols.md`) has reached v0.14 with
-a constitutional Epistemic Foundation (EF-0.0–EF-0.8b) establishing Axiom Zero and
-physical reality grounding as the meta-constitutional floor above all operational content.
+The primary remaining gaps are: enforcement architecture (GOV-003, In Progress),
+human override authentication (GOV-006), and the operational hardware unknowns tracked
+in `Unknowns.md`. The verification doctrine layer (`Admin/Auditor_Protocols.md`) has
+reached v0.29, adding a Mission Drift Review mechanism and Audit Phase Separation
+doctrine on top of the constitutional Epistemic Foundation (EF-0.0–EF-0.8b) that
+established Axiom Zero and physical reality grounding as the meta-constitutional floor
+above all operational content.
+
+Governance's mathematical substrate is formalized separately in
+`Admin/Computational Institutional Reasoning` — a verification algebra defining
+non-linear claim maturity, epistemic debt dynamics, and the trigger conditions
+now cited directly by `Architecture/Cognitive_Frameworks.md`'s Confidence Collapse
+States and Triage Posture doctrine. It is Exploration status with Spec Gates
+partially cleared, not yet a promoted specification — its formal apparatus already
+governs live doctrine even so.
 
 No claims of full automation, self-replication, or net-positive economics are made
 without measurement. All quantitative figures carry confidence levels per
