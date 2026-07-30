@@ -14,8 +14,8 @@
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 2/6                                                                 |
 | Verification Ref | `Admin/Verification_Gates_LF.md`                                    |
-| Last Audit       | 2026-06-19; revised 2026-06-27; revised 2026-07-02; revised 2026-07-08 (two passes); revised 2026-07-09; revised 2026-07-16; revised 2026-07-24 |
-| Auditor          | Gemini — Skeptic/Auditor; ChatGPT — Skeptic/Auditor; Grok — Skeptic/Auditor; Claude — Synthesizer/Auditor; Claude — Registration Latency addition (human-directed) 2026-07-08; Claude — Phase 0 manual execution tier added (human-directed) 2026-07-08; Gemini — Exploration audit 2026-07-08 (Archive contradiction, cross-ref, RIP-009, Phase 0 anchor); Claude — fixes integrated + RIP-008 severity correction (human-directed) 2026-07-09; Claude — Post-Exit Monitoring Reversion Mechanism added for GOV-013 (human-directed), 2026-07-16; Claude — Integrity Confidence/Drift Trend format, Protocol Validation/RIP-010, Status section v0.8 omission fixed (human-directed, external ideation reviewed and scoped down), 2026-07-24 |
+| Last Audit       | 2026-06-19; revised 2026-06-27; revised 2026-07-02; revised 2026-07-08 (two passes); revised 2026-07-09; revised 2026-07-16; revised 2026-07-24; revised 2026-07-29 |
+| Auditor          | Gemini — Skeptic/Auditor; ChatGPT — Skeptic/Auditor; Grok — Skeptic/Auditor; Claude — Synthesizer/Auditor; Claude — Registration Latency addition (human-directed) 2026-07-08; Claude — Phase 0 manual execution tier added (human-directed) 2026-07-08; Gemini — Exploration audit 2026-07-08 (Archive contradiction, cross-ref, RIP-009, Phase 0 anchor); Claude — fixes integrated + RIP-008 severity correction (human-directed) 2026-07-09; Claude — Post-Exit Monitoring Reversion Mechanism added for GOV-013 (human-directed), 2026-07-16; Claude — Integrity Confidence/Drift Trend format, Protocol Validation/RIP-010, Status section v0.8 omission fixed (human-directed, external ideation reviewed and scoped down), 2026-07-24; Claude — stale "PROPOSED, NOT RATIFIED" / "once ratified" GOV-013 references corrected to reflect the Charter's actual 2026-07-19 ratification (human-directed), 2026-07-29 |
 | Open Unknowns    | 8                                                                   |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | High                                                                |
@@ -376,7 +376,7 @@ Automatable without cryptographic tooling:
 - Version header presence in `Unknowns.md`
 - Navigation file spot-check: sample of `Discovery.md` / `Routing.md` path entries against hardcoded folder-prefixed layout in `Admin/Repository_Structure.md`
 - Sidecar↔`Unknowns.md` registration parity: cross-check each fetched file's sidecar IDs against `Unknowns.md`'s active index; flag any Critical/Blocking entry unregistered across multiple sessions with no sign a registration checkpoint is coming
-- Post-Exit Monitoring telemetry presence (GOV-013, once ratified): Pathway 2/3-exited instances have current-cycle metric values logged in their sidecar per `Admin/Auditor_Protocols.md` §Post-Exit Monitoring Metrics
+- Post-Exit Monitoring telemetry presence (GOV-013 — ratified 2026-07-19; automation still blocked on Auditor_Protocols.md's placeholder thresholds, not on ratification): Pathway 2/3-exited instances have current-cycle metric values logged in their sidecar per `Admin/Auditor_Protocols.md` §Post-Exit Monitoring Metrics
 
 ### Phase 2 — Comparison Checks (requires archived prior states)
 
@@ -385,7 +385,7 @@ Automatable once systematic archival is established:
 - Axiom text verbatim comparison against ratified version
 - Sidecar entry presence comparison (detect deletions)
 - Frozen section content comparison (detect unauthorized changes)
-- Post-Exit Monitoring drift comparison (GOV-013, once ratified): Semantic Drift Score and Unknown Accumulation Rate trend across cycles
+- Post-Exit Monitoring drift comparison (GOV-013 — ratified 2026-07-19; blocked on the same threshold gap as the Phase 1 item above): Semantic Drift Score and Unknown Accumulation Rate trend across cycles
 
 ### Phase 3 — Cryptographic Verification (requires `Admin/Security_Protocols.md`)
 
@@ -411,7 +411,7 @@ This protocol has never been deliberately tested against a real violation — ev
 
 ## Post-Exit Monitoring Reversion Mechanism (GOV-013)
 
-Verification mechanism for `Admin/Governance_Charter.md`'s Post-Exit Monitoring Doctrine (Pathway 2/3) and `Admin/Auditor_Protocols.md`'s Post-Exit Monitoring Metrics — both PROPOSED, NOT RATIFIED; see GOV-013 in the Charter's sidecar. This section defines detection and response mechanics only — it does not restate or redefine the metrics or thresholds themselves.
+Verification mechanism for `Admin/Governance_Charter.md`'s Post-Exit Monitoring Doctrine (Pathway 2/3) — **RATIFIED 2026-07-19** — and `Admin/Auditor_Protocols.md`'s Post-Exit Monitoring Metrics, whose thresholds remain placeholder pending human governing authority setting actual numeric values; see GOV-013 in the Charter's sidecar. *[Corrected 2026-07-29: this line previously read "both PROPOSED, NOT RATIFIED," which stopped being accurate for the Charter half the moment it ratified and was never updated — a stale echo, not a substantive gap. The metrics threshold gap is real and separate; see Auditor_Protocols.md.]* This section defines detection and response mechanics only — it does not restate or redefine the metrics or thresholds themselves.
 
 A confirmed threshold breach is classified and handled per the existing Violation Classification and Response Ladder, above — not a new escalation path:
 
