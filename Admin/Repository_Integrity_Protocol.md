@@ -376,7 +376,7 @@ Automatable without cryptographic tooling:
 - Version header presence in `Unknowns.md`
 - Navigation file spot-check: sample of `Discovery.md` / `Routing.md` path entries against hardcoded folder-prefixed layout in `Admin/Repository_Structure.md`
 - Sidecar↔`Unknowns.md` registration parity: cross-check each fetched file's sidecar IDs against `Unknowns.md`'s active index; flag any Critical/Blocking entry unregistered across multiple sessions with no sign a registration checkpoint is coming
-- Post-Exit Monitoring telemetry presence (GOV-013 — ratified 2026-07-19; automation still blocked on Auditor_Protocols.md's placeholder thresholds, not on ratification): Pathway 2/3-exited instances have current-cycle metric values logged in their sidecar per `Admin/Auditor_Protocols.md` §Post-Exit Monitoring Metrics
+- Post-Exit Monitoring telemetry presence (GOV-013 — ratified 2026-07-19; automation still blocked on Auditor_Protocols.md's formally-deferred thresholds — AP-031 — not on ratification): Pathway 2/3-exited instances have current-cycle metric values logged in their sidecar per `Admin/Auditor_Protocols.md` §Post-Exit Monitoring Metrics
 
 ### Phase 2 — Comparison Checks (requires archived prior states)
 
@@ -421,7 +421,7 @@ A confirmed threshold breach is classified and handled per the existing Violatio
 
 **Reversion procedure**, triggered by any Constitutional Violation classification above: the exited instance reverts to Genesis Phase constraints (`Admin/Governance_Charter.md` §Genesis Phase constraints). This is additive to STATE_HOLD, not a replacement for it. Reversion is logged in the instance's owning file's Resolution Log with date, triggering metric and value, and a cross-reference to the `Unknowns.md` incident entry. Reversion is not self-remediated — per the existing ladder, constitutional violations are never self-remediated by autonomous agents, and this is no exception.
 
-**Automation status:** Phase 0 (manual, via recurring audit) at drafting — see Automation Migration Path, above. Metric logging and threshold comparison are Phase 1/Phase 2 candidates once `Admin/Auditor_Protocols.md`'s placeholder thresholds are ratified with actual values; not claimed as automated before then.
+**Automation status:** Phase 0 (manual, via recurring audit) at drafting — see Automation Migration Path, above. Metric logging and threshold comparison are Phase 1/Phase 2 candidates once `Admin/Auditor_Protocols.md`'s AP-031-deferred thresholds are re-derived from real operational data at launch; not claimed as automated before then.
 
 ---
 
