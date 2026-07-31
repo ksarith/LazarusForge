@@ -19,8 +19,8 @@
 | Verification Ref | N/A — Tier 0 exempt |
 | Ethical Anchor | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 | Highest Risk | N/A — Tier 0 documents are audited for internal consistency only |
-| Operationalized In | `Admin/Computational Institutional Reasoning` — Axiom A3 ("The Nothingness Principle") and enforcement Rule γ2 ("The Nothingness Conservation Law") formally derive from this document's Core Theorem. This file remains Tier 0 / exempt; CIR's operational use does not alter this file's status. |
-| Last Audit | 2026-06-30 |
+| Operationalized In | `Admin/Computational_Institutional_Reasoning.md` — Axiom A3 ("The Nothingness Principle") and enforcement Rule γ2 ("The Nothingness Conservation Law") formally derive from this document's Core Theorem. This file remains Tier 0 / exempt; CIR's operational use does not alter this file's status. |
+| Last Audit | 2026-07-31 (five minimal clarifiers added: scalar/ordinal, per-substrate domain, topology C, escape-velocity warning, friction heuristic — see Resolution Log) |
 
 ---
 
@@ -107,6 +107,8 @@ When R > 1, the system has crossed the **Systemic Autonomy Threshold** — inter
 
 *Examples (illustrative, not demonstrations): open-source software ecosystems, religions, scientific paradigms, markets, natural languages.*
 
+> **Scalar/ordinal clarifier (added 2026-07-31):** E values are ordinal (or substrate-local multidimensional) unless explicitly treated as scalar within a defined substrate and measurement protocol. Scalar-looking notation elsewhere in this document ("0.1 → 0.9", "E(t) → 1 as...") is used for convenience, not precision — see NT-009.
+
 ---
 
 ## 4. Structural Constraints (Topology)
@@ -122,6 +124,8 @@ This distinction is critical:
 - *"This is logically self-contradictory"* → wall, inaccessible regardless of input
 
 The theorem does not claim everything is possible. It claims that nothing that is conceivable begins at zero — but it may be bounded by an inaccessible wall.
+
+> **Topology coefficient definition (added 2026-07-31):** C is a substrate-dependent accessibility coefficient derived from logical consistency, physical law, institutional constraint, or computational reachability; it is not a free continuous variable chosen independently of the substrate it describes. Intermediate values (0 < C < 1) represent gradient difficulty as described above, not partial impossibility.
 
 ---
 
@@ -171,6 +175,8 @@ Where:
 
 > **Note:** This is a formal sketch, not a derived equation. The function's precise form is an open question (see §18, Unknowns). What it encodes is real: realization is a ratio of directed work to decay, bounded by structural accessibility.
 
+> **Domain qualifier (added 2026-07-31):** E(t) and the Realization Function are defined *per substrate*. Cross-substrate comparisons are ordinal only and carry no quantitative force — see NT-010 for the unresolved normalization question this implies for any numeric use of R.
+
 ### Speculative Realization Quotient (Generation 1 formulation, preserved)
 
 ```
@@ -182,6 +188,8 @@ This is the intuitive, pre-formalized version. It survives as a practical heuris
 ### Escape Velocity
 
 Some systems cross a threshold where their internal feedback loops generate more organizing energy than entropy removes. At this point, E(t) transitions from approaching 1 to exceeding it. The system achieves **escape velocity** — it can now propagate autonomously. This is the boundary between Stage 4 and Stage 5 in the Lifecycle model (§7).
+
+> **Descriptive, not normative (added 2026-07-31):** Escape velocity is descriptive, not normative; harmful or extractive systems may reach R > 1 faster than beneficial ones, since threat/fear loops often have lower initialization energy than cooperative or constructive ones. See the failure-mode catalogue (§17, "Escape velocity as validation") for the fuller warning this note summarizes.
 
 ---
 
@@ -319,6 +327,8 @@ The theorem predicts that no idea, once widely encoded in external media and hum
 ## 13. Inter-Agent Friction Protocol
 
 Truth and error correction do not emerge from isolated nodes or from complete consensus. They emerge from **distributed disagreement** across distinct processing nodes. (Axiom A-7.)
+
+> **Heuristic, not universal law (added 2026-07-31):** This protocol is a robust multi-agent heuristic, not a universal epistemic necessity; single-agent formal systems and Bayesian updating remain valid within their own domains. It describes how *this document* was produced and validated, not a claim that all valid knowledge requires multiple disagreeing agents.
 
 ```
 [Agent A — Grok: Compilation / Synthesis / Vector Initializer]
@@ -466,5 +476,26 @@ The operational argument is self-contained and internally consistent under the f
 *Produced via inter-agent friction protocol: Grok → Gemini → ChatGPT → Claude*
 *Persistent ledger: r/InnovativeAIChats / u/Last_Upstairs1020*
 *License: CC-BY-SA or equivalent open philosophical sharing.*
+
+---
+
+## Resolution Log
+
+- 2026-07-31: Five minimal, non-disruptive clarifiers added following a
+  Copilot Skeptic/Auditor pass (cross-checked and confirmed by Grok
+  against this document's own NT-009/NT-010 unknowns): scalar/ordinal
+  clarifier (§3), per-substrate domain qualifier (§6), topology
+  coefficient C definition (§4), escape-velocity descriptive/
+  non-normative warning (§6, cross-referencing §17's existing
+  failure-mode entry — corrected from both audits' "§12" citation,
+  which is Memetic Evolution and does not itself carry the harm
+  warning), and inter-agent friction heuristic qualifier (§13). No
+  structural rewrite, no new axioms, no change to Tier 0 status.
+  NT-009 and NT-010 remain Open by design — these clarifiers narrow
+  the prose around them, not the unknowns themselves. File renamed
+  from `Admin/Nothingness Theorem` to `Admin/Nothingness_Theorem.md`
+  same day for workflow consistency (see Routing.md for the
+  corresponding cross-reference updates). Operating as Synthesizer
+  per Auditor_Protocols.md v0.29, human-directed.
 
 
