@@ -299,14 +299,14 @@ the infrastructure that prevents the system from drifting into entropy or weapon
 - `Admin/Trajectories.md` — Version roadmap from v0 through v5. Each version defined
   by survival threshold and exit condition, not a feature list
 - `Admin/File_Template.md` — Canonical document structure for all repository files
-- `Admin/Computational Institutional Reasoning` — Formal theoretical paper. Treats the
+- `Admin/Computational_Institutional_Reasoning.md` — Formal theoretical paper. Treats the
   multi-agent collective as an axiomatic epistemic state machine and proves five
   theorems — Unknown Conservation, Governance Stability, Epistemic Debt Instability,
   Institutional Memory Dominance, and Compiler Soundness — that formally justify the
   Unknown Budget, the Triage Posture trigger, and the provenance ceiling system described
   above. Not required reading for operators, but it is the proof source several governance
   claims rest on
-- `Admin/Nothingness Theorem` — Philosophical substrate. Functionless by design; the
+- `Admin/Nothingness_Theorem.md` — Philosophical substrate. Functionless by design; the
   framework from which salvage-first doctrine, distributed disagreement as error
   correction, and the maintenance-as-creation equivalence derive
 
@@ -472,7 +472,7 @@ established Axiom Zero and physical reality grounding as the meta-constitutional
 above all operational content.
 
 Governance's mathematical substrate is formalized separately in
-`Admin/Computational Institutional Reasoning` — a verification algebra defining
+`Admin/Computational_Institutional_Reasoning.md` — a verification algebra defining
 non-linear claim maturity, epistemic debt dynamics, and the trigger conditions
 now cited directly by `Architecture/Cognitive_Frameworks.md`'s Confidence Collapse
 States and Triage Posture doctrine. It is Exploration status with Spec Gates
