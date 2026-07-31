@@ -12,15 +12,15 @@
 |--------------------|-------|
 | Status             | Exploration |
 | Challenges Subtype | Solution-Track |
-| Version            | v0.7.0 |
+| Version            | v0.8.0 |
 | Body Stability     | Transitional |
 | Spec Gates         | 0/6 |
 | Verification Ref   | `Admin/Verification_Gates_LF.md` |
 | Ethical Anchor     | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 | Highest Risk       | Silent contamination cascades or toolhead destruction (CLF-003/CLF-006). |
-| Last Audit         | 2026-07-17 (human-directed ratification — Embedded Value Preservation adopted; CLF-004 cross-referenced to CE-006's directed approach) |
-| Auditor            | Claude — Skeptic/Auditor (integration, 2026-07-07); prior: Grok, Gemini, Claude (2026-07-06); Claude — ratification pass (human-directed), 2026-07-17 |
-| Open Unknowns      | 10 (CLF-001 through CLF-010) |
+| Last Audit         | 2026-07-30 (§7 Proposed Solutions added — CLF-006 doctrine, CLF-009 Material Certainty Manifest, validation logic; Status: Proposed, not ratified) |
+| Auditor            | Claude — Skeptic/Auditor (integration, 2026-07-07); prior: Grok, Gemini, Claude (2026-07-06); Claude — ratification pass (human-directed), 2026-07-17; Grok — drafted §7 contamination doctrine / MCM schema / validation logic (Skeptic/Auditor), Claude — Synthesizer (verified against source, integrated as §7, cross-consistency check vs Gate_04/05/Ethical_Constraints, adversarial stress-test additions), 2026-07-30 |
+| Open Unknowns      | 10 (CLF-001 through CLF-010) — unchanged; CLF-006/CLF-009 remain Open pending §7 ratification |
 | Active Disputes    | 0 |
 | Sidecar Link       | #6-open-unknowns |
 
@@ -309,7 +309,7 @@ Trial-coupon rule: any Medium/High path still allowed must produce an inspected 
 
 ## Resolution Log
 
-- 2026-07-30: **§7 Proposed Solutions added — CLF-006 contamination doctrine, CLF-009 Material Certainty Manifest schema, and validation/hardening logic, drafted and merged as one cross-referenced package.** Includes a compound sub-threshold trigger (§7.1) and an assay-gated confidence ceiling (§7.2), both added after adversarial stress-testing against Auditor_Protocols.md Challenge Classes 2, 3, and 5. A cross-consistency check against existing repo thresholds found no numeric contradictions; one terminology collision between this doctrine's "Contamination Diversion" and Gate_04's existing "Material Diversion Rate" was resolved via an explicit disambiguation note (§7.1, with a corresponding addendum to add on Gate_04's side at ratification). **Status: Proposed only — CLF-006 and CLF-009 remain Open in §6.** Nothing in §7 is binding until human governing authority reviews and ratifies the package as a unit; CLF-003 and CLF-004 are untouched by this proposal and remain separately Open/Critical. Operating as Synthesizer per Auditor_Protocols.md v0.29.
+- 2026-07-30: **v0.8.0 — §7 Proposed Solutions added** — CLF-006 contamination doctrine, CLF-009 Material Certainty Manifest schema, and validation/hardening logic, drafted and merged as one cross-referenced package. Includes a compound sub-threshold trigger (§7.1) and an assay-gated confidence ceiling (§7.2), both added after adversarial stress-testing against Auditor_Protocols.md Challenge Classes 2, 3, and 5. A cross-consistency check against existing repo thresholds found no numeric contradictions; one terminology collision between this doctrine's "Contamination Diversion" and Gate_04's existing "Material Diversion Rate" was resolved via an explicit disambiguation note (§7.1, with a corresponding addendum to add on Gate_04's side at ratification). **Status: Proposed only — CLF-006 and CLF-009 remain Open in §6.** Nothing in §7 is binding until human governing authority reviews and ratifies the package as a unit; CLF-003 and CLF-004 are untouched by this proposal and remain separately Open/Critical. Operating as Synthesizer per Auditor_Protocols.md v0.29.
 
 - 2026-07-19: Stale "Registration status" note corrected — this file's own text claimed registration in `Routing.md`, `Discovery.md`, `Unknowns.md`, and `Automation/AUDIT_HARNESS.py` was outstanding, contradicting all four of those files, which have carried it since 2026-07-06. `Unknowns.md`'s PC-005 had flagged this as "possibly stale, not independently re-verified" since v4.20 (2026-07-12) without anyone closing the loop — done now, PC-005 marked Resolved.
 
