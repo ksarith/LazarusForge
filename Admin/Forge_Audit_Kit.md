@@ -256,7 +256,7 @@ Non-obvious governance prefixes only. All operational prefixes: load `Discovery.
 |--------|-------------|
 | AP-    | `Admin/Auditor_Protocols.md` |
 | CT-    | `Admin/Canonical_Terms.md` |
-| CIR-   | `Admin/Computational Institutional Reasoning` |
+| CIR-   | `Admin/Computational_Institutional_Reasoning.md` |
 | EC-    | `Admin/Ethical_Constraints.md` |
 | FAK-   | `Admin/Forge_Audit_Kit.md` |
 | GH-    | `Tests/Cognitive_Salvage_Layer.md` |
