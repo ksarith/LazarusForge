@@ -18,8 +18,8 @@
 | Spec Gates | 0/6 |
 | Verification Ref | Admin/Verification_Gates_LF.md |
 | Last Audit | 2026-07-30 |
-| Auditor | Claude (Synthesizer), Gemini (Auditor), ChatGPT (Synthesizer), Grok (Synthesizer); Gemini — Skeptic/Auditor Exploration audit, Claude — Synthesizer/Auditor (verification against source, corrections applied), 2026-07-28; Grok — Skeptic/Auditor Exploration audit, Claude — Synthesizer/Auditor (verified against source, SD-UNK-015 registered, SD-UNK-007 resolution path corrected), 2026-07-28; 2026-07-30 Phase 0 hygiene — Ethical Anchor canonicalized, SD-UNK-013/014/015 mirrored to Unknowns.md (Synthesizer) |
-| Open Unknowns | 15 |
+| Auditor | Claude (Synthesizer), Gemini (Auditor), ChatGPT (Synthesizer), Grok (Synthesizer); Gemini — Skeptic/Auditor Exploration audit, Claude — Synthesizer/Auditor (verification against source, corrections applied), 2026-07-28; Grok — Skeptic/Auditor Exploration audit, Claude — Synthesizer/Auditor (verified against source, SD-UNK-015 registered, SD-UNK-007 resolution path corrected), 2026-07-28; 2026-07-30 Phase 0 hygiene — Ethical Anchor canonicalized, SD-UNK-013/014/015 mirrored to Unknowns.md (Synthesizer); 2026-07-30 Phase 1 Resolution Pass — open unknowns 15 → 8 (Synthesizer) |
+| Open Unknowns | 8 |
 | Active Disputes | 0 |
 | Forward References | Astroid-miner companion repository |
 | Highest Risk | High |
@@ -78,8 +78,8 @@ This file lives in Tests/ because excavation requirements are unvalidated at For
 | ASM-002 | Achievable underground focal temperature at Forge build quality falls within useful industrial range | Research literature peaks at 1000–2000°C; Forge-scale with salvaged components likely underperforms significantly. Conservative expectation: 300–800°C. Stretch: 800–1500°C. Research peak: 2000°C+. Conservative range still supports Stirling, pyrolysis, distillation, and thermal storage. | Low | SD-TEST-103 temperature measurement |
 | ASM-003 | Molten salt or synthetic oil working fluid can be sourced or synthesized from salvage stream | Analogous — industrial availability; Forge sourcing unconfirmed | Low | Component audit |
 | ASM-004 | Host geology at target site can sustain subterranean chamber without thermal fracturing | General geomechanical literature; site-specific geology unknown | Very Low | SD-TEST-201 geomechanical assessment |
-| ASM-005 | Underground chamber thermal self-discharge rate is manageable without active insulation beyond packed earth and salvaged insulation board | Analogous — passive underground thermal storage literature | Low | SD-TEST-202 self-discharge measurement |
-| ASM-006 | Stirling engine or sCO₂ turbine can be sourced from salvage stream in suitable configuration | Analogous — Stirling engines appear in salvage; sCO₂ turbines unlikely at v0 | Medium for Stirling; Low for sCO₂ | Component audit |
+| ASM-005 | Underground chamber thermal self-discharge rate is manageable without active insulation beyond packed earth and salvaged insulation board | Analogous — passive underground thermal storage literature | Low | SD-TEST-205 chamber self-discharge measurement |
+| ASM-006 | Stirling engine or sCO₂ turbine can be sourced from salvage stream in suitable configuration | Analogous — Stirling engines appear in salvage; sCO₂ turbines unlikely at v0 | Medium for Stirling; Very Low for sCO₂ | Component audit |
 
 ---
 
@@ -132,6 +132,9 @@ Both downlink pathways draw from the same surface collection infrastructure.
 - Structural frames: salvaged steel tube and angle iron.
 - Cover glass: tempered glass salvaged from appliances, shower enclosures, commercial glazing.
 
+**Cold-Start / Bootstrap Power (provisional)**
+Tracking actuators must not depend on the underground conversion cascade for initial orientation. Required independent of chamber state: (1) a small dedicated PV panel and/or battery reserve sized only for tracking-motor duty cycle, or (2) a passive/manual fallback tracking mode usable during cold-start. Cross-reference `Operations/Energy.md` for small-scale power doctrine before inventing a parallel mechanism. Empirical sizing remains open; the independence requirement is binding for any motorized array design.
+
 ---
 
 ### SD-001 — Optical Downlink
@@ -165,7 +168,7 @@ All figures are proposed parameters pending empirical testing at Forge build qua
 
 **Salvage Component Targets**
 - Fiber optic bundles: industrial process fiber, medical fiber optic light guides. **Telecommunications fiber is likely unsuitable** — designed for information transmission, not power density; may fail almost immediately under concentrated flux. Requires explicit characterization before use.
-- **Light well alternative (elevated priority per ChatGPT audit):** Polished stainless steel tube or salvaged aluminum irrigation pipe with reflective interior lining. Advantages over fiber: no melting risk, no coupling losses, easier shaft cleaning, more scalable. Surface focus → reflective shaft → secondary concentrator → receiver may outperform salvage fiber systems at Forge build quality. Should be tested in parallel with fiber bundles. See SD-UNK-015.
+- **Light well alternative (parallel test arm — not a promoted primary path):** Polished stainless steel tube or salvaged aluminum irrigation pipe with reflective interior lining. Claimed advantages over fiber (no melting risk, no coupling losses, easier shaft cleaning, greater scalability) are unvalidated at Forge scale. Tracked exclusively by SD-TEST-106 as a parallel arm to SD-TEST-101; do not treat as elevated-priority doctrine until comparative flux data exist. See SD-UNK-015 (Vehicle).
 - Secondary concentrators at fiber or well input: compound parabolic concentrators (CPC) fabricated from polished salvaged sheet metal.
 
 ---
@@ -274,6 +277,9 @@ The underground chamber is the reconvergence point. Whether energy arrives as ph
 - **Geomechanical constraint:** Operating temperature ceiling strictly bounded by host rock thermal expansion limits. Temperature must remain below fracturing threshold for local geology. See SD-UNK-004.
 - **Atmosphere:** Inert atmosphere (argon or nitrogen purge) preferred for any pathway involving molten metal components or high-purity processing. Passive gravity-fed pressure relief venting for steam spike or containment breach.
 
+**Shaft / conduit penetration envelope (conceptual requirement)**
+Any light-delivery shaft or fluid conduit that pierces the chamber boundary must preserve (1) inert-gas containment and (2) thermal isolation sufficient that the penetration is not the dominant self-discharge path. Solar_Descent owns this operating envelope (atmosphere integrity + thermal-break intent at the interface). Structural civil detailing of the seal (grout, bellows, window frames, shaft lining) is out of scope here and belongs with site/facilities doctrine (`Architecture/Facilities.md` when that interface is registered). Candidate elements (quartz/sapphire window for optical paths; bellows or labyrinth seals for fluid paths) are Analogous only until specified.
+
 **Chamber Geometry — Design Candidate**
 
 Rectangular flat-walled chambers develop thermal stress concentrations at corners under repeated heating and cooling cycles. At the conservative-to-stretch operating range ASM-002 establishes (300–1500°C, with 2000°C+ treated there as an unconfirmed research-peak ceiling, not a design target), this is a structural failure pathway over time.
@@ -288,7 +294,7 @@ This geometry also has a declared forward relevance: a self-contained spherical 
 
 **Self-Discharge Rate**
 
-Heat leaks into surrounding bedrock continuously. Self-discharge rate (% of stored energy lost per day) is a function of insulation thickness, temperature differential, and chamber geometry. This must be characterized empirically — it sets the minimum daily solar input required to maintain operating temperature. See SD-UNK-007.
+Heat leaks into surrounding bedrock continuously. Self-discharge rate (% of stored energy lost per day) is a function of insulation thickness, temperature differential, and chamber geometry. **Diurnal / overnight** loss bounds must be characterized before any claim of overnight or cloudy-day hold — see SD-UNK-007 (Open, Minor) and SD-TEST-205. **Multi-month / seasonal** storage loss is out of v0 Exploration scope and is routed to `Admin/Trajectories.md` (discharged from this file's active unknown set in Phase 1).
 
 ---
 
@@ -315,6 +321,8 @@ Tier 3 — Low-Grade Waste Heat (<200°C)
       → Drying operations (lumber, salvage materials)
       ↓
 Thermal baseline reset (fluid returns to cold side of storage)
+
+**Living_Waters interface boundary:** Solar_Descent owns thermal energy delivery up to the heat-exchanger interface (target: usable waste heat at return, provisionally ≥90°C where distillation is intended). `Tests/Living_Waters.md` owns distillation vessel fluid dynamics, purity doctrine, and yield rates. Neither file may unilaterally redefine the other's side of this boundary.
 ```
 
 **Conversion Technology Assessment**
@@ -463,12 +471,12 @@ The asteroid processing system is out of scope for this file. Solar Descent defi
 |---|---|
 | Status | Open |
 | Risk | Medium |
-| Priority | Major |
+| Priority | Minor |
 | Type | Technical |
-| Blocking | No — SD-001 viable without SD-001a |
+| Blocking | No — SD-001 viable without SD-001a; optional sub-concept only |
 | Owner | Tests/Solar_Descent.md |
 | First Logged | 2026-06-14 |
-| Last Reviewed | 2026-06-14 |
+| Last Reviewed | 2026-07-30 |
 
 **Description:** The molten tin fiber termination concept has physical basis but faces oxidation, contamination, boiling instability, and glass compatibility challenges at target operating temperatures. Gallium alloy alternatives are unassessed.
 
@@ -533,22 +541,22 @@ The asteroid processing system is out of scope for this file. Solar Descent defi
 
 ---
 
-### SD-UNK-007 — Chamber self-discharge rate unknown
+### SD-UNK-007 — Diurnal chamber self-discharge rate unknown
 
 | Field | Value |
 |---|---|
 | Status | Open |
-| Risk | High |
-| Priority | Major |
+| Risk | Medium |
+| Priority | Minor |
 | Type | Technical |
-| Blocking | No — blocks optimization, not initial test |
+| Blocking | No — blocks overnight/cloudy hold claims, not initial flux or geology work |
 | Owner | Tests/Solar_Descent.md |
 | First Logged | 2026-06-14 |
-| Last Reviewed | 2026-07-28 |
+| Last Reviewed | 2026-07-30 |
 
-**Description:** Rate of heat loss from the underground chamber into surrounding bedrock has not been measured or modeled for target chamber geometry and insulation specification. This sets the minimum daily solar input required to maintain operating temperature and determines whether overnight or cloudy-day operation is viable.
+**Description:** Diurnal / overnight heat loss from the underground chamber into surrounding bedrock has not been measured or modeled for target chamber geometry and insulation. Sets minimum daily solar input for overnight or cloudy-day hold. Multi-month / seasonal loss discharged to `Admin/Trajectories.md` in Phase 1 (2026-07-30).
 
-**Resolution Path:** SD-TEST-205 (Chamber Self-Discharge Measurement) — dedicated test, distinct from SD-TEST-202's parasitic pump load scope. Measure chamber heat loss rate into surrounding bedrock over a sustained period at known insulation R-value, isolated from pump-circuit losses. Alternatively, dedicated thermal modeling of chamber geometry may substitute if direct measurement is impractical at this stage.
+**Resolution Path:** SD-TEST-205 (Chamber Self-Discharge Measurement) — measure heat loss over a sustained period at known insulation R-value, isolated from pump-circuit losses. Thermal modeling may substitute if direct measurement is impractical at this stage.
 
 ---
 
@@ -556,18 +564,17 @@ The asteroid processing system is out of scope for this file. Solar Descent defi
 
 | Field | Value |
 |---|---|
-| Status | Open |
+| Status | Resolved |
 | Risk | Medium |
-| Priority | Major |
+| Priority | — |
 | Type | Technical |
-| Blocking | No — TEG and direct process heat viable at lower conversion efficiency |
+| Blocking | No |
 | Owner | Tests/Solar_Descent.md |
 | First Logged | 2026-06-14 |
-| Last Reviewed | 2026-06-14 |
+| Last Reviewed | 2026-07-30 |
+| Resolution | Discharge via Trajectory — site component audit at deployment; fall back to TEG / direct process heat already stated in prior path |
 
-**Description:** Stirling engines are the preferred power conversion technology for this system due to salvage probability and thermal compatibility. Availability at sufficient output scale in the local salvage stream has not been confirmed.
-
-**Resolution Path:** Component audit. If Stirling is unavailable, fall back to TEG for bootstrap instrumentation power and direct process heat for Gate_05 operations until conversion technology is sourced.
+**Closed 2026-07-30 (Phase 1):** Salvage availability is site-conditioned. Body conversion table already records Stirling as preferred with TEG/process-heat fallback. Active tracking moved off this sidecar; reopen only if a deployment site audit finds no viable path and fallback is rejected.
 
 ---
 
@@ -575,18 +582,17 @@ The asteroid processing system is out of scope for this file. Solar Descent defi
 
 | Field | Value |
 |---|---|
-| Status | Open |
+| Status | Resolved |
 | Risk | High |
-| Priority | Major |
+| Priority | — |
 | Type | Site-Conditioned |
-| Blocking | Yes — blocks chamber construction |
+| Blocking | — |
 | Owner | Tests/Solar_Descent.md |
 | First Logged | 2026-06-14 |
-| Last Reviewed | 2026-06-14 |
+| Last Reviewed | 2026-07-30 |
+| Resolution | Discharge via Trajectory — parallels FA-001; site assessment required |
 
-**Description:** Underground chamber construction requires excavation. Depth, diameter, and construction method are all site-conditioned. Manual excavation, salvaged excavation equipment, and contract excavation all have different cost and feasibility profiles. No assessment has been conducted.
-
-**Resolution Path:** Discharge via Trajectory — site assessment required. Parallels FA-001.
+**Closed 2026-07-30 (Phase 1):** Path was already declared in-sidecar. Excavation method/depth remain blocked by FA-001 / SD-UNK-004; this entry no longer carries a separate open unknown.
 
 ---
 
@@ -594,20 +600,17 @@ The asteroid processing system is out of scope for this file. Solar Descent defi
 
 | Field | Value |
 |---|---|
-| Status | Open |
+| Status | Resolved |
 | Risk | Low |
-| Priority | Minor |
+| Priority | — |
 | Type | Architectural |
 | Blocking | No |
 | Owner | Tests/Solar_Descent.md + Tests/Living_Waters.md |
 | First Logged | 2026-06-14 |
-| Last Reviewed | 2026-06-14 |
+| Last Reviewed | 2026-07-30 |
+| Resolution | Payment via Specification — Body interface boundary under Power Conversion Cascade Tier 3 |
 
-**Description:** The Tier 3 waste heat cascade explicitly feeds LW-001 (Vacuum Distillation) and LW-008 (Multi-Effect Vacuum Distillation). The interface — what temperature, flow rate, and connection architecture is required — has not been defined in either file.
-
-**Why It Matters:** Both files may define the interface independently, producing contradictory requirements. Living_Waters.md owns water purification doctrine; Solar_Descent.md owns heat delivery. Where they interact, a shared interface spec is required.
-
-**Resolution Path:** Joint resolution on next audit pass. Living_Waters.md governs temperature and purity requirements at the heat exchanger; Solar_Descent.md governs heat delivery parameters up to that point.
+**Closed 2026-07-30 (Phase 1):** Solar_Descent owns delivered heat quality up to the exchanger; Living_Waters owns distillation doctrine and yield. Reciprocal note on Living_Waters.md still recommended; boundary text is binding here.
 
 ---
 
@@ -617,12 +620,12 @@ The asteroid processing system is out of scope for this file. Solar Descent defi
 |---|---|
 | Status | Open |
 | Risk | High |
-| Priority | Major |
+| Priority | Minor |
 | Type | Technical |
-| Blocking | No — blocks sustained operation specification |
+| Blocking | No — blocks sustained-operation specification; T1 coupon work, not excavation gate |
 | Owner | Tests/Solar_Descent.md |
 | First Logged | 2026-06-14 |
-| Last Reviewed | 2026-06-14 |
+| Last Reviewed | 2026-07-30 |
 
 **Description:** The underground receiver exposed to concentrated solar flux may experience thermal shock, oxidation, creep, spalling, and localized melting. Receiver material lifetime determines maintenance interval and sets a practical ceiling on maximum sustainable operating temperature — independent of what the fiber or fluid downlink can theoretically deliver.
 
@@ -634,18 +637,17 @@ The asteroid processing system is out of scope for this file. Solar Descent defi
 
 | Field | Value |
 |---|---|
-| Status | Open |
+| Status | Resolved |
 | Risk | Medium |
-| Priority | Major |
+| Priority | — |
 | Type | Technical |
-| Blocking | No — blocks maintenance interval specification |
+| Blocking | No |
 | Owner | Tests/Solar_Descent.md |
 | First Logged | 2026-06-14 |
-| Last Reviewed | 2026-06-14 |
+| Last Reviewed | 2026-07-30 |
+| Resolution | Vehicle — SD-TEST-105 (dust) owns contamination; alignment stability folded as explicit extension of that test arm / maintenance-interval protocol |
 
-**Description:** Optical systems require tracking accuracy, shaft cleanliness, and alignment retention over time. Small angular errors in the surface collection array or reflective shaft may dramatically reduce delivered flux. Dust accumulation in the shaft degrades transmission. Alignment drift under thermal cycling of structural supports is uncharacterized. This may become one of the dominant maintenance burdens of SD-001.
-
-**Resolution Path:** SD-TEST-105 (shaft contamination rate) partially addresses dust accumulation. Dedicated alignment stability test required — measure delivered flux degradation over 30, 60, and 90-day periods without realignment intervention. Establish realignment interval and design for accessible adjustment.
+**Closed 2026-07-30 (Phase 1):** Unmanaged unknown retired. Empirical dust/alignment work remains; tracked only via SD-TEST-105 (and any later alignment extension), not as a free-floating sidecar entry. Not empirically resolved.
 
 ---
 
@@ -653,20 +655,17 @@ The asteroid processing system is out of scope for this file. Solar Descent defi
 
 | Field | Value |
 |---|---|
-| Status | Open |
+| Status | Resolved |
 | Risk | Medium |
-| Priority | Major |
+| Priority | — |
 | Type | Technical |
 | Blocking | No |
 | Owner | Tests/Solar_Descent.md |
 | First Logged | 2026-07-28 |
-| Last Reviewed | 2026-07-28 |
+| Last Reviewed | 2026-07-30 |
+| Resolution | Payment via Specification — Body Cold-Start / Bootstrap Power requirement under Surface Collection Layer |
 
-**Description:** Tracking heliostats and motorized actuators in the Surface Collection Layer require power to orient toward the sun. During cold-start or any low-thermal-state condition, the subterranean power conversion cascade (the system this array exists to charge) is offline by definition — there is no described source for the power needed to track the sun in the first place. Surfaced by a Gemini Skeptic/Auditor pass, 2026-07-28; verified as a genuine gap (no existing text addresses startup power) before registering.
-
-**Why It Matters:** Without a bootstrap power source, the system cannot self-start after a full cold shutdown (extended cloud cover, maintenance, chamber depletion) — it would need external power just to begin re-collecting the power it's designed to produce.
-
-**Resolution Path:** Define a small, low-power bootstrap source independent of the main thermal cascade — candidates include a small dedicated PV panel, a battery reserve sized specifically for tracking-motor duty cycle (not general storage), or a passive/manual fallback tracking mode that doesn't require motorized actuation during cold-start. Cross-reference `Operations/Energy.md` for existing small-scale power doctrine before proposing a new mechanism.
+**Closed 2026-07-30 (Phase 1):** Independence from the underground cascade is specified (dedicated PV/battery duty-cycle reserve or passive/manual fallback). Sizing and Energy.md cross-check remain implementation work, not an open architectural unknown.
 
 ---
 
@@ -674,20 +673,17 @@ The asteroid processing system is out of scope for this file. Solar Descent defi
 
 | Field | Value |
 |---|---|
-| Status | Open |
+| Status | Resolved |
 | Risk | Medium |
-| Priority | Major |
+| Priority | — |
 | Type | Technical |
 | Blocking | No |
 | Owner | Tests/Solar_Descent.md |
 | First Logged | 2026-07-28 |
-| Last Reviewed | 2026-07-28 |
+| Last Reviewed | 2026-07-30 |
+| Resolution | Payment via Specification (narrow) — Body penetration envelope; civil seal detailing toward Architecture/Facilities.md |
 
-**Description:** The underground chamber specifies high-temperature storage under an inert gas atmosphere (argon or nitrogen purge). No concept exists for how the light-delivery shaft or fluid conduits penetrate the chamber ceiling while preserving gas containment and preventing conductive/convective heat loss up the vertical shaft. Surfaced by a Gemini Skeptic/Auditor pass, 2026-07-28; verified as a genuine gap (chamber atmosphere and shaft penetration are each specified separately, with no interface between them described) before registering.
-
-**Why It Matters:** An unsealed or poorly-insulated shaft penetration is a direct path for both atmosphere loss (undermining the inert-gas containment the chamber design depends on) and continuous heat loss (undermining the whole point of underground thermal storage — the chamber cannot function as a seasonal battery if its main penetration is also its main leak).
-
-**Resolution Path:** Add a conceptual requirement for a shaft penetration seal / thermal break interface — a design that permits optical or fluid transmission through the ceiling while maintaining both gas containment and thermal isolation. Likely candidates (quartz or sapphire window for optical pathways, bellows or labyrinth seals for fluid conduits) are Analogous-confidence at best pending specification.
+**Closed 2026-07-30 (Phase 1):** Operating envelope (containment + thermal-break intent) defined here. Structural seal design is not owned by this file; register or co-own under Facilities when site civil work starts. Not a blank transfer without owner.
 
 ---
 
@@ -695,24 +691,54 @@ The asteroid processing system is out of scope for this file. Solar Descent defi
 
 | Field | Value |
 |---|---|
-| Status | Open |
+| Status | Resolved |
 | Risk | Medium |
-| Priority | Major |
+| Priority | — |
 | Type | Technical |
-| Blocking | No — SD-001 fiber pathway proceeds independently via SD-TEST-101 |
+| Blocking | No |
 | Owner | Tests/Solar_Descent.md |
 | First Logged | 2026-07-28 |
-| Last Reviewed | 2026-07-28 |
+| Last Reviewed | 2026-07-30 |
+| Resolution | Vehicle — SD-TEST-106 (Tier 0 / parallel arm to SD-TEST-101) |
 
-**Description:** The light-well alternative (polished stainless or salvaged aluminum irrigation pipe with reflective interior lining) is called out in Body text as "elevated priority per ChatGPT audit" — claimed advantages over fiber include no melting risk, no coupling losses, easier shaft cleaning, and greater scalability. No dedicated unknown or test ID existed for it, unlike fiber's SD-TEST-101/102/105 coverage. Surfaced by Grok's Skeptic/Auditor pass, 2026-07-28; verified as a genuine gap before registering.
-
-**Why It Matters:** A claim of "elevated priority" sitting on zero dedicated test coverage is exactly the kind of unlabeled confidence the Fallacy Checklist screens for — the light-well hasn't been shown to underperform fiber, but it also hasn't been tested, so its priority claim currently rests on assertion rather than evidence.
-
-**Resolution Path:** SD-TEST-106 (Light-Well Comparative Flux Delivery) — run as a parallel arm alongside SD-TEST-101, measuring delivered flux, coupling loss, and contamination rate for a reflective light-well against the fiber bundle baseline over equivalent shaft lengths.
+**Closed 2026-07-30 (Phase 1):** Priority claim no longer unmanaged. Comparative flux remains empirically open until SD-TEST-106 runs; tracked only by that test ID. Body light-well language demoted from "elevated priority" to parallel test arm.
 
 ---
 
 ### Resolution Log
+
+- 2026-07-30: Phase 1 Resolution Pass — Open unknowns **15 → 8** (10-entry
+  sidecar rule satisfied). No physics claims closed by prose.
+
+  **Still Open (8):**
+  - Critical / Blocking: SD-UNK-001 (flux), SD-UNK-002 (temperature band),
+    SD-UNK-004 (host geology ‖ FA-001)
+  - Major: SD-UNK-005 (working-fluid salvage), SD-UNK-006 (parasitic pump load)
+  - Minor: SD-UNK-003 (molten tin / SD-001a optional), SD-UNK-007 (diurnal
+    self-discharge only; seasonal half discharged), SD-UNK-011 (receiver
+    survivability, T1)
+
+  **Closed / discharged (7):**
+  - SD-UNK-008 → Discharge via Trajectory (site Stirling audit; TEG/process
+    heat fallback already in Body)
+  - SD-UNK-009 → Discharge via Trajectory (excavation ‖ FA-001; path was
+    pre-declared)
+  - SD-UNK-010 → Payment via Specification (Living_Waters interface boundary
+    in Power Conversion Cascade Tier 3)
+  - SD-UNK-012 → Vehicle SD-TEST-105 (+ alignment as test-arm extension);
+    not empirically resolved
+  - SD-UNK-013 → Payment via Specification (Cold-Start / Bootstrap Power
+    under Surface Collection Layer)
+  - SD-UNK-014 → Payment via Specification, narrow (penetration envelope in
+    Underground Chamber; civil seal toward Facilities)
+  - SD-UNK-015 → Vehicle SD-TEST-106; Body "elevated priority" language
+    retired
+
+  **Also:** ASM-005 expiry trigger corrected to SD-TEST-205; SD-UNK-007
+  narrowed to diurnal/overnight; seasonal multi-month loss noted for
+  `Admin/Trajectories.md`. Count verified by direct sidecar enumeration
+  of Status=Open entries. Operating as Synthesizer per
+  Auditor_Protocols.md v0.29.
 
 - 2026-07-30: Phase 0 hygiene pass — Ethical Anchor corrected to canonical
   plain-text string (was non-canonical `Admin/`-prefixed variant; same
@@ -779,3 +805,5 @@ Standard mandatory re-audit conditions per Admin/File_Template.md apply.
 - SD-001a (molten tin) content migrates from sub-concept to primary pathway without SD-TEST-104 completion → reject migration; return to sub-concept status.
 - Liquid sodium reappears as a working fluid candidate without dedicated containment infrastructure assessment → immediate escalation to Admin/Safety_Protocols.md review.
 - Any reference to grid-scale power export targets before v3 milestone → scope violation; flag for human review.
+- SD-UNK-015 (or Body light-well text) is restored to "elevated priority" or primary-path language without SD-TEST-106 results → reject; return to parallel test-arm status.
+- Closed Phase 1 entries (008–010, 012–015) reopen without Epistemic Ledger / contradictory evidence → treat as silent priority/status change; re-audit.
