@@ -12,15 +12,15 @@
 |--------------------|-------|
 | Status             | Exploration |
 | Challenges Subtype | Solution-Track |
-| Version            | v0.8.0 |
+| Version            | v0.8.1 |
 | Body Stability     | Transitional |
 | Spec Gates         | 0/6 |
 | Verification Ref   | `Admin/Verification_Gates_LF.md` |
 | Ethical Anchor     | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 | Highest Risk       | Silent contamination cascades or toolhead destruction (CLF-003/CLF-006). |
-| Last Audit         | 2026-07-30 (§7 Proposed Solutions added — CLF-006 doctrine, CLF-009 Material Certainty Manifest, validation logic; Status: Proposed, not ratified) |
-| Auditor            | Claude — Skeptic/Auditor (integration, 2026-07-07); prior: Grok, Gemini, Claude (2026-07-06); Claude — ratification pass (human-directed), 2026-07-17; Grok — drafted §7 contamination doctrine / MCM schema / validation logic (Skeptic/Auditor), Claude — Synthesizer (verified against source, integrated as §7, cross-consistency check vs Gate_04/05/Ethical_Constraints, adversarial stress-test additions), 2026-07-30 |
-| Open Unknowns      | 10 (CLF-001 through CLF-010) — unchanged; CLF-006/CLF-009 remain Open pending §7 ratification |
+| Last Audit         | 2026-07-31 (§8 CLF-003 detail added — no hardware exists yet on either polymer or metal extrusion path; provisional wear thresholds borrowed from §7.1) |
+| Auditor            | Claude — Skeptic/Auditor (integration, 2026-07-07); prior: Grok, Gemini, Claude (2026-07-06); Claude — ratification pass (human-directed), 2026-07-17; Grok — drafted §7 contamination doctrine / MCM schema / validation logic (Skeptic/Auditor), Claude — Synthesizer (verified against source, integrated as §7, cross-consistency check vs Gate_04/05/Ethical_Constraints, adversarial stress-test additions), 2026-07-30; Claude — Synthesizer, expanded CLF-003 from single-line entry to full detail (§8), verified against Plastics.md and Gate_05 SC-004 source, human-directed, 2026-07-31 |
+| Open Unknowns      | 10 (CLF-001 through CLF-010) — unchanged; CLF-006/CLF-009 remain Open pending §7 ratification; CLF-003 detailed but still Open pending hardware |
 | Active Disputes    | 0 |
 | Sidecar Link       | #6-open-unknowns |
 
@@ -113,7 +113,7 @@ Recursive loops risk cascading contamination (heavy metals in polymers, alloy dr
 |----|-------|-------------|--------|---------|------------------|
 | CLF-001 | Blending ratios and thermal stabilizer performance for mixed, un-refined polymer streams across multiple thermal cycles. | Challenges/Closed_Loop_Feedstock.md | Open | — | Major |
 | CLF-002 | Minimal viable field assay protocols (spot tests, melt-flow, etc.) for copper/aluminum alloys from salvage. | Challenges/Closed_Loop_Feedstock.md | Open | — | Major |
-| CLF-003 | Nozzle and die wear tolerances when processing high-variance, particulate-laden salvage feedstocks. | Challenges/Closed_Loop_Feedstock.md | Open | — | Critical |
+| CLF-003 | Nozzle and die wear tolerances when processing high-variance, particulate-laden salvage feedstocks. **Detailed 2026-07-31** — no dedicated extrusion hardware exists yet on either the polymer side (`Operations/Plastics.md` routes filament-drawing rigs to `Admin/Trajectories.md` as future blueprints) or the metal side (`Operations/Gate_05_Separation_Thermal.md` SC-004, wire extrusion nozzle design, also unspecified). Provisional acceptance-criteria numbers borrowed from the unratified §7.1 CLF-006 doctrine (nozzle diameter growth >8%, die pressure rise >25%, particulate >2%) — see §8 for full detail. Still Critical/Open; cannot reach Resolved without physical instrumented test cycles on hardware that does not yet exist. | Challenges/Closed_Loop_Feedstock.md | Open | — | Critical |
 | CLF-004 | Chemical footprint of electrolytic/electrorefining pathways undefined — local/organic acid sourcing vs. closed-loop acid reclamation not decided. Intersects `Admin/Ethical_Constraints.md` §Toxic and Hazardous Material Handling, `Operations/Gate_03_Reduction.md` GR-003, PL-001/CE-003, and `Challenges/Critical_Minerals.md` CM-002 (closed-loop reagent recovery — same underlying problem, different material stream). **Candidate pathway logged 2026-07-07 (human-directed):** on-site acid synthesis via salt-water electrolysis with an ion-selective membrane (chlor-alkali-type process) — a third option alongside "external sourcing" and "closed-loop reclamation," not a replacement for them; the sourcing decision among the three remains open. Uses cheap/abundant, non-toxic precursors (salt, water, electricity). Not a resolution: standard chlor-alkali electrolysis co-produces chlorine gas, which requires a containment/scrubbing design to satisfy Ethical_Constraints.md's active-release-prohibited doctrine before this pathway can be adopted. **Directed approach added 2026-07-17 (human-directed) at `Architecture/Chemistry.md` CE-006:** capture and nullification via existing `Operations/Air_Scrubber.md` chemisorption infrastructure, subject to verification at this process's actual generation rate — see CE-006 for detail. **Mechanism corrected 2026-07-19:** the chemisorption infrastructure referenced above (Stage E) does not target Cl₂; redirected to Stage D wet caustic scrubbing, and reframed as value-recovery (sodium hypochlorite byproduct) rather than pure nullification — see CE-006/CE-007 for full detail. Still Critical/Open pending verification and formal ratification of the sourcing decision among the three candidate paths. | Challenges/Closed_Loop_Feedstock.md | Open | — | Critical |
 | CLF-006 | Recursive cascading contamination thresholds, bleed-off, and purge metrics undefined — what triggers diversion to low-spec/full reduction, and what the quantitative purge/wear limits actually are. | Challenges/Closed_Loop_Feedstock.md | Open | — | Critical |
 | CLF-007 | PIR aggregation function undefined — the four sub-vectors (energy, chemical, maintenance, labor) are collapsed into "overall PIR" with no stated operator. An arithmetic mean would let one strong vector mask a near-zero vector, contradicting this file's own stated intent. Needs a geometric mean or weighted product, with weights reflecting each vector's existential risk. | Challenges/Closed_Loop_Feedstock.md | Open | — | Major |
@@ -124,7 +124,8 @@ Recursive loops risk cascading contamination (heavy metals in polymers, alloy dr
 *CLF-003 and CLF-006 are Critical — CLF-003 blocks sustained polymer extrusion operations; CLF-006 blocks safe recursive-loop operation without defined contamination thresholds.*
 *CLF-004 is Critical — no electrolytic/electrorefining pathway may proceed without a chemical footprint decision, and a candidate pathway now exists pending a chlorine containment answer.*
 *CLF-005 — Resolved 2026-07-07 (see §1). Retained in this table as a closed record rather than removed, consistent with this file's own audit trail practice.*
-*CLF-006 and CLF-009 — Proposed solutions drafted 2026-07-30 (contamination doctrine, Material Certainty Manifest schema, and validation/hardening logic), including a compound sub-threshold trigger and an assay-gated confidence ceiling surfaced by adversarial stress-testing. Full text in §7 below. Status remains Open/Proposed — not yet ratified by human governing authority, and CLF-003/CLF-004 remain unaddressed by this proposal.*
+*CLF-006 and CLF-009 — Proposed solutions drafted 2026-07-30 (contamination doctrine, Material Certainty Manifest schema, and validation/hardening logic), including a compound sub-threshold trigger and an assay-gated confidence ceiling surfaced by adversarial stress-testing. Full text in §7 below. Status remains Open/Proposed — not yet ratified by human governing authority. §7 does not itself resolve CLF-003 or CLF-004; CLF-004 remains fully untouched, and CLF-003 is treated separately below.*
+*CLF-003 — expanded 2026-07-31 from a single-line entry to full detail (§8). No extrusion hardware exists yet on either the polymer (`Operations/Plastics.md`) or metal (`Operations/Gate_05_Separation_Thermal.md` SC-004) path; provisional wear-tolerance numbers borrowed from §7.1 by citation. Still Critical/Open — documentation progress only, not a resolution.*
 
 **ID collision history:** originally registered as `CF-001` through `CF-003` (collided with `Architecture/Cognitive_Frameworks.md`/`Operations/Electronics.md`), corrected to `CLF-001`–`CLF-003`. An intervening hygiene pass renamed these to `FL-001`–`FL-004`, reintroducing a collision with `Architecture/Forge_flow.md`'s FL-001 (Blocking) — reverted back to `CLF-`. Do not rename off this prefix without checking `Unknowns.md`'s full active index first.
 
@@ -307,7 +308,39 @@ Trial-coupon rule: any Medium/High path still allowed must produce an inspected 
 
 ---
 
+## 8. CLF-003 — Nozzle and Die Wear Tolerances (Detail)
+
+**Status: Open, Critical.** Previously a single line in §6 with no supporting detail — expanded 2026-07-31 to bring it to the same standard as other Critical unknowns in this repository. This is a documentation-honesty pass, not a resolution; CLF-003 cannot become Resolved from writing alone.
+
+**Description:** Nozzle and die wear tolerances when processing high-variance, particulate-laden salvage feedstocks are undefined on both halves of the extrusion problem this file's recursive loop depends on:
+
+- **Polymer path:** `Operations/Plastics.md` has no concrete extrusion hardware specification. Filament-drawing rigs and custom extrusion screws are explicitly routed to `Admin/Trajectories.md` as future blueprints — they do not exist yet, even on paper, beyond that forward pointer.
+- **Metal path:** `Operations/Gate_05_Separation_Thermal.md` SC-004 (wire extrusion nozzle design not specified) is the direct counterpart — Open, also routed to Trajectory pending a validated design. Wire drawn from Gate_05's ranked/segregated output needs a die; that die's wear behavior under salvage-grade, contamination-variable metal is exactly what CLF-003 asks about, and no design exists to characterize yet.
+
+**Why It Matters:** Wear tolerances are the acceptance criteria that let §7's contamination-diversion doctrine actually function — CLF-006's triggers (§7.1) route material away from tooling *before* it causes damage, but that only works if the wear thresholds those triggers protect are real numbers, not placeholders. Without CLF-003, the whole recursive loop's tooling-protection logic rests on unvalidated assumptions. This file's own Highest Risk field already names toolhead destruction as a top concern (§File State).
+
+**Provisional acceptance criteria (borrowed, not independently derived):** §7.1's contamination doctrine already contains numeric wear-proxy thresholds designed for a different purpose (contamination-triggered diversion) that are functionally identical to what CLF-003 needs:
+
+| Trigger | Threshold | Source |
+|---|---|---|
+| Nozzle diameter growth from new | >8% | §7.1, polymer/extrusion path |
+| Die pressure rise at constant throughput | >25% | §7.1, polymer/extrusion path |
+| Particulate mass fraction | >2% | §7.1, polymer/extrusion path |
+
+These numbers carry the same provisional, design-intent status as the rest of §7 — unratified, and revised only by the evidence rules in §7.3 (any false negative on a safety-critical outcome tightens immediately; loosening requires human governing authority ratification and an Epistemic Ledger entry). Adopting them here does not require ratifying all of §7 — it is a citation, not an independent CLF-003 resolution — but it means CLF-003 is no longer working from zero.
+
+**Resolution Path:**
+1. **Hardware must exist before tolerances can be measured.** Neither the polymer filament-drawing rig nor the metal wire-extrusion die (SC-004) has a validated design yet. This is real engineering work with an open solution space, not something a documentation pass can shortcut — per this file's own framing, "it could go a million different paths at present."
+2. **Once hardware exists (either path), run the same instrumented-cycle validation §7.3 already specifies:** ≥3 batches deliberately exercising particulate load, nozzle growth, and die pressure; record actual outcomes against the borrowed thresholds; compute false-negative/false-positive rates; tighten or loosen per §7.3's asymmetric rule.
+3. **Register the design work itself** — when a polymer extrusion rig or SC-004's wire-die spec moves from Trajectory to active development, that should be logged here and cross-linked, not left implicit.
+
+**Cross-references:** `Operations/Plastics.md` (polymer path, no hardware spec yet); `Operations/Gate_05_Separation_Thermal.md` SC-004 (metal path, wire extrusion nozzle); §7.1 (borrowed provisional thresholds); §7.3 (validation/hardening methodology to apply once hardware exists); `Admin/Trajectories.md` (current parking location for both hardware paths).
+
+---
+
 ## Resolution Log
+
+- 2026-07-31: **v0.8.1 — CLF-003 expanded from a single-line table entry to full detail (§8).** Confirmed against source that neither the polymer extrusion path (`Operations/Plastics.md` — filament-drawing rigs routed to Trajectories, no hardware spec) nor the metal path (`Operations/Gate_05_Separation_Thermal.md` SC-004 — wire extrusion nozzle design not specified) has any extrusion hardware yet, real or detailed-on-paper. Borrowed §7.1's provisional wear-proxy thresholds (nozzle diameter growth >8%, die pressure rise >25%, particulate >2%) as CLF-003's acceptance criteria by citation, not independent derivation — same provisional/design-intent status, same §7.3 evidence rules for revision. Explicitly not a resolution: CLF-003 remains Critical/Open, and cannot reach Resolved without physical hardware and instrumented test cycles that do not yet exist. Human governing authority noted the hardware question "could go a million different paths at present" — documentation-honesty progress only, engineering solution space deliberately left open. Operating as Synthesizer per Auditor_Protocols.md v0.29.
 
 - 2026-07-30: **v0.8.0 — §7 Proposed Solutions added** — CLF-006 contamination doctrine, CLF-009 Material Certainty Manifest schema, and validation/hardening logic, drafted and merged as one cross-referenced package. Includes a compound sub-threshold trigger (§7.1) and an assay-gated confidence ceiling (§7.2), both added after adversarial stress-testing against Auditor_Protocols.md Challenge Classes 2, 3, and 5. A cross-consistency check against existing repo thresholds found no numeric contradictions; one terminology collision between this doctrine's "Contamination Diversion" and Gate_04's existing "Material Diversion Rate" was resolved via an explicit disambiguation note (§7.1, with a corresponding addendum to add on Gate_04's side at ratification). **Status: Proposed only — CLF-006 and CLF-009 remain Open in §6.** Nothing in §7 is binding until human governing authority reviews and ratifies the package as a unit; CLF-003 and CLF-004 are untouched by this proposal and remain separately Open/Critical. Operating as Synthesizer per Auditor_Protocols.md v0.29.
 
