@@ -3,12 +3,17 @@
 
 **Full version history in `Unknowns_Changelog.md` (2026-07-19 cleanup pass, following the precedent set by `Admin/AUDIT_HARNESS_CHANGELOG.md` and `Admin/Forge_Audit_Kit_Changelog.md`; scrubbed to current-version-only 2026-07-28 — the "current plus last four in full" window was itself compressed further, since the Audit Trail below now carries the compressed record for every version back to v1.0, and the changelog carries full text for all of them. This block now keeps only the current version.)**
 
-**Version 4.33 — 2026-07-31. SC-009 (Gate_05 titanium/reactive-metal atmosphere) registered.**
-`Operations/Gate_05_Separation_Thermal.md` gained a new sidecar entry,
-SC-009, raised when a claim that titanium welding capability would
-make `Challenges/Closed_Loop_Feedstock.md` CLF-003 moot was checked
-against source and found to require a new atmosphere unknown instead.
-Mirrored here same-day, no lag. Gate_05 Open Unknowns: 8 → 9.
+**Version 4.34 — 2026-07-31. Chemistry.md CE-005/006/007/008 updated.**
+Copilot audit findings on `Architecture/Chemistry.md` were checked against
+source and found to contain three false claims (truncation, missing
+Appendix A, missing corrosion-rate qualifier — all already present/false).
+A proposed "Dilution Doctrine" insertion as CE-004 would have collided
+with the existing CE-004; registered as CE-008 instead. Real gaps closed:
+§2.3 full doctrine, §2.4 Dilution Doctrine, §1.2 SCC extension, §3.2 NOₓ
+subsection. CE-005 and CE-007 moved Open → In Progress; CE-006 given
+quantitative scrubber chemistry and alarm thresholds but remains Open
+pending real vessel hardware. Mirrored here same-day. Open Unknowns for
+Chemistry.md: 7 → 8 (CE-008 added).
 
 **Expiry Rule active — see `Admin/Canonical_Terms.md` §4 for the Cycle definition this rule now explicitly references (one calendar year default, not one audit pass — see CT-011). Protocol Performance metrics collecting.**
 
@@ -37,12 +42,13 @@ Formal axioms, theorems, and Verification Algebra backing CF-004, AP-006, and ep
 
 ---
 
-## What v4.33 Means
+## What v4.34 Means
 
-- **New unknown, not a mirror.** Unlike recent versions, SC-009 originates here-and-now rather than lagging an owning-file sidecar — registered in `Operations/Gate_05_Separation_Thermal.md` and this index in the same session, same day.
-- **Raised by checking a claim against source, not by routine audit.** A claim that titanium welding capability would make `Challenges/Closed_Loop_Feedstock.md` CLF-003 (nozzle/die wear) moot was verified against Gate_05's actual atmosphere doctrine (§9) and Chemistry.md's sole titanium mention (galvanic series, marine hardware) — found insufficient, producing SC-009 instead of resolving anything.
-- **Cross-repo note attached, not treated as resolution.** `Admin/Trajectories.md` TR-MET-002 records that Astroid-miner's `zero_g_fabrication.md` independently specifies EM Levitation as a fit for reactive metals, gated by UNK-003's Leviathan-milestone deferral — supporting detail only, not license to downgrade SC-009's priority today.
-- **Count:** Gate_05 Open Unknowns 8 → 9, verified by direct addition, not carried over from a proposal.
+- **Verification caught real errors in an incoming audit, not just style issues.** Copilot's Chemistry.md audit claimed the file was truncated mid-sentence, that the Chemical Operator Competency appendix was missing, and that a corrosion-rate qualifier was absent — all three checked against source and found false. This mattered because the audit's own proposed fix set was built partly on those false premises.
+- **ID collision caught before insertion, not after.** A proposed "Dilution Doctrine" addition was labeled CE-004 by the incoming drafts — but CE-004 (Chemical Operator Minimum Competency) already existed and was already In Progress. Registered the new content as CE-008 instead.
+- **Real gaps still closed.** §2.3 (Solution Chemistry, was a stub), §2.4 (new Dilution Doctrine), §1.2 SCC extension, and §3.2 NOₓ subsection all added, verified against source structure before insertion.
+- **Two unknowns narrowed to In Progress, one stayed Open on purpose.** CE-005 and CE-007 now have doctrine-level answers with only quantitative/hardware work remaining. CE-006 got real chemistry (stoichiometry, operating parameters) and concrete alarm thresholds but stays Open — sealed vessel design and real flow-rate calibration are hardware gaps no amount of doctrine closes, the same category as `Challenges/Closed_Loop_Feedstock.md` CLF-003.
+- **Count:** Chemistry.md Open Unknowns 7 → 8 (CE-008 added), mirrored same-day.
 
 ---
 
@@ -315,9 +321,10 @@ GH-009 (Emergent heuristic conflict — N² interaction scaling)
 | CE-002 | Oxide burden effect on Spin Chamber output quality not quantified | `Architecture/Chemistry.md` | Open | — | Major |
 | CE-003 | Field polymer identification reliability not validated for mixed salvage stream | `Architecture/Chemistry.md` | Open | — | Critical |
 | CE-004 | Chemical Operator Minimum Competency — Appendix A created in Chemistry.md | `Architecture/Chemistry.md` | In Progress | Vehicle | Major |
-| CE-005 | Solution chemistry and precipitation doctrine not established | `Architecture/Chemistry.md` | Open | — | Major |
-| CE-006 | Chlorine gas containment doctrine — mechanism corrected 2026-07-19 to `Operations/Air_Scrubber.md` Stage D caustic scrubbing (was incorrectly directed to Stage E KMnO₄ bed, which does not target Cl₂) — cross-ref `Challenges/Closed_Loop_Feedstock.md` CLF-004 (candidate pathway this blocks) and `Admin/Ethical_Constraints.md` §Toxic and Hazardous Material Handling | `Architecture/Chemistry.md` | Open | — | Critical |
-| CE-007 | Sodium hypochlorite (NaOCl) byproduct storage, stability, and reuse doctrine undefined — new gap surfaced by CE-006's Stage D mechanism correction; no file currently governs this output | `Architecture/Chemistry.md` | Open | — | Major |
+| CE-005 | Solution chemistry and precipitation doctrine — §2.3 expanded to full doctrine 2026-07-31; quantitative Ksp validation and sludge-disposal routing to GR-003 remain (GR-003 itself unassigned in `Operations/Gate_03_Reduction.md`) | `Architecture/Chemistry.md` | In Progress | — | Major |
+| CE-006 | Chlorine gas containment doctrine — mechanism corrected 2026-07-19 to `Operations/Air_Scrubber.md` Stage D caustic scrubbing (was incorrectly directed to Stage E KMnO₄ bed, which does not target Cl₂); quantitative scrubber chemistry and detection/alarm thresholds added 2026-07-31 — cross-ref `Challenges/Closed_Loop_Feedstock.md` CLF-004 (candidate pathway this blocks) and `Admin/Ethical_Constraints.md` §Toxic and Hazardous Material Handling. Sealed vessel design and real flow-rate calibration remain open (hardware gap, same category as CLF-003). | `Architecture/Chemistry.md` | Open | — | Critical |
+| CE-007 | Sodium hypochlorite (NaOCl) byproduct storage, stability, and reuse doctrine — full doctrine (decomposition pathways, acidification-to-Cl₂ risk, storage/segregation, potable-water reuse pathway) added 2026-07-31; quantitative sizing depends on CE-006's hardware gap | `Architecture/Chemistry.md` | In Progress | — | Major |
+| CE-008 | Dilution doctrine (§2.4, added 2026-07-31) competency validation not folded into CE-004's existing Appendix A checklist — registered separately to avoid colliding with the already-existing CE-004 (Chemical Operator Minimum Competency) | `Architecture/Chemistry.md` | Open | — | Minor |
 
 *CE-003 is a safety-critical prerequisite before first hot pyrolysis run — cross-references PL-001.*
 *CE-006 is Critical — blocks `Challenges/Closed_Loop_Feedstock.md`'s CLF-004 candidate acid-sourcing pathway until a sealed-vessel/scrubbing design is defined.*
