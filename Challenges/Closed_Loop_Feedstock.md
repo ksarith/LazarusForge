@@ -98,7 +98,7 @@ Measurement → Processing → Fabrication → Upgrade.
 
 This loop directly advances FIR while respecting energy and uncertainty constraints.
 
-> ⚠️ **CLF-009 — data handoff interface contract undefined.** This loop assumes characterization output is legible to downstream fabrication tools (`Operations/Gate_06_Fabrication.md`), but no form factor for that handoff is defined — no equivalent of a "Material Certainty Manifest" specifying how a Bayesian certainty profile gets encoded and read. Without it, "epistemic ascent" is a philosophical goal rather than a software design pressure with an actual interface.
+> ⚠️ **CLF-009 — data handoff interface contract undefined.** This loop assumes characterization output is legible to downstream fabrication tools (`Operations/Gate_06_Fabrication.md`), but no form factor for that handoff is defined — no equivalent of a "Material Certainty Manifest" specifying how a Bayesian certainty profile gets encoded and read. Without it, "epistemic ascent" is a philosophical goal rather than a software design pressure with an actual interface. **Proposed solution drafted 2026-07-30 — see §7.2; Status: Proposed, not ratified.**
 
 **Degraded Operation & Failure Modes**
 
@@ -124,6 +124,7 @@ Recursive loops risk cascading contamination (heavy metals in polymers, alloy dr
 *CLF-003 and CLF-006 are Critical — CLF-003 blocks sustained polymer extrusion operations; CLF-006 blocks safe recursive-loop operation without defined contamination thresholds.*
 *CLF-004 is Critical — no electrolytic/electrorefining pathway may proceed without a chemical footprint decision, and a candidate pathway now exists pending a chlorine containment answer.*
 *CLF-005 — Resolved 2026-07-07 (see §1). Retained in this table as a closed record rather than removed, consistent with this file's own audit trail practice.*
+*CLF-006 and CLF-009 — Proposed solutions drafted 2026-07-30 (contamination doctrine, Material Certainty Manifest schema, and validation/hardening logic), including a compound sub-threshold trigger and an assay-gated confidence ceiling surfaced by adversarial stress-testing. Full text in §7 below. Status remains Open/Proposed — not yet ratified by human governing authority, and CLF-003/CLF-004 remain unaddressed by this proposal.*
 
 **ID collision history:** originally registered as `CF-001` through `CF-003` (collided with `Architecture/Cognitive_Frameworks.md`/`Operations/Electronics.md`), corrected to `CLF-001`–`CLF-003`. An intervening hygiene pass renamed these to `FL-001`–`FL-004`, reintroducing a collision with `Architecture/Forge_flow.md`'s FL-001 (Blocking) — reverted back to `CLF-`. Do not rename off this prefix without checking `Unknowns.md`'s full active index first.
 
@@ -133,7 +134,182 @@ Full sidecar details maintained here; register cross-references in `Unknowns.md`
 
 ---
 
+## 7. Proposed Solutions — Pending Ratification (CLF-006, CLF-009)
+
+**Status: Proposed.** The three sub-sections below (7.1–7.3) are a complete, internally cross-referenced draft package addressing CLF-006 (contamination doctrine) and CLF-009 (Material Certainty Manifest + data handoff), including a compound-metric aggregation rule and an assay-gated confidence ceiling added after adversarial stress-testing (Auditor_Protocols.md Challenge Classes 2, 3, and 5). **None of this is ratified.** CLF-006 and CLF-009 remain Open in §6 above until human governing authority reviews and formally adopts this package. It is written to be adopted as **one atomic unit** — several values in 7.2's examples (e.g. the 0.15% carbon-pickup limit) only exist because 7.1 proposes them, and 7.3 governs how every number in 7.1/7.2 gets revised. This proposal does not address CLF-003 or CLF-004, which remain separately Open and Critical.
+
+### 7.1 CLF-006 Contamination Doctrine (Proposed)
+
+**Priority:** Critical · **Downstream action points on ratification:** Gate_04 (Unknown Bulk / Class C), Gate_05 (slag / ranked streams / wire path), Gate_02 (Triage), Gate_03 (full reduction), Gate_06 (fabrication), Plastics.md (polymer path)
+
+**Governing Principle:** A closed loop that stays closed under progressive contamination is superior to a higher-purity process that eventually fails open. Contamination is treated as an expected, measurable state variable — not an anomaly. Diversion is a success condition when it preserves tooling life, alloy utility, and operator safety. Reduction is never the default; it is the last controlled exit from the recursive loop. This implements Embedded Value Preservation (§2a) one layer earlier than Gate_02.
+
+**Definitions (provisional):**
+
+| Term | Definition |
+|------|------------|
+| **Contamination Load (\(C\))** | Mass fraction of non-target species (heavy metals in polymer, alloy tramp elements, particulate > specified size, halogenated residue, carbon pickup beyond baseline) relative to total stream mass. |
+| **Bleed-off Fraction (\(B\))** | Mass intentionally diverted from the primary recursive path in a given cycle. |
+| **Contamination Diversion** | The purge/bleed-off action defined here — material routed away from the recursive path due to a fired contamination trigger. **Distinct from Gate_04's "Material Diversion Rate"** (`Operations/Gate_04_Separation_Mechanical.md`, Falsifiable Performance Metric), which measures successful recovery of intact value to Class A/B reuse and treats high diversion as a *success* signal. This doctrine's Unknown Bulk escalation trigger (25%) sits numerically inside Gate_04's healthy 10–30% band without being the same measurement — do not conflate a healthy Gate_04 diversion rate with an active CLF-006 contamination cascade. *On ratification, add this note to Gate_04's Falsifiable Performance Metric section as well.* |
+| **Purge Event** | Controlled diversion of a defined mass fraction when a trigger below is met. |
+| **Low-Spec Structural** | Non-critical use (brackets, ballast, sacrificial wear parts, non-load-bearing frames) where alloy drift or particulate is tolerable. |
+| **Full Reduction** | Return to Gate_03 for irreversible sizing / re-entry into the lowest-value recovery path. |
+| **Wear Proxy** | Observable proxy for tooling degradation (nozzle diameter growth, die pressure rise, vibration signature change, motor current drift under constant load). |
+
+**Quantitative Triggers (v0 Provisional — design-intent starting points, falsifiable, revised per §7.3):**
+
+*Polymer / Extrusion Path (CLF-003 interface):*
+
+| Trigger | Threshold | Action | Destination |
+|---------|-----------|--------|-------------|
+| Particulate mass fraction > 2% | Immediate | Divert batch | Low-Spec or full reduction |
+| Nozzle diameter growth > 8% from new | After current run | Purge + replace/ream | Bleed-off to Low-Spec; tooling to maintenance |
+| Die pressure rise > 25% at constant throughput | After current run | Purge + inspect | Same |
+| Black specking / gel count rising 3 consecutive batches | Progressive | Increase \(B\) by 10% each cycle until clear | Low-Spec or Gate_03 |
+| Halogen positive (Beilstein or equivalent) | Any detection | Full diversion | Specialist disposal / Gate_03 — never pyrolysis or extrusion. Cites `Admin/Ethical_Constraints.md`; note EC-014 (concrete encapsulation/failure-mode standard) is itself still Open — direction is sound, target standard is not yet fully specified. |
+
+*Metallic Path (Gate_04 → Gate_05):*
+
+| Trigger | Threshold | Action | Destination |
+|---------|-----------|--------|-------------|
+| Gate_04 confidence < 90% (MG-003) | Per fragment/parcel | Route to Unknown Bulk | Gate_02 Triage |
+| Unknown Bulk accumulation > 25% of intake/shift | System | Tighten confidence threshold or reduce RPM; escalate review | — |
+| Gate_05 slag/oxide layer mass > 8% of melt | Per batch | Skim + divert | Low-Spec or Gate_03 |
+| Carbon pickup (SC-008) > 0.15% C above charge composition | Per batch | Divert inner fraction or entire melt | Low-Spec or full reduction |
+| Vibration signature drift > baseline for 10 min (existing Gate_05 rule) | Continuous | Reduce RPM; abort + divert if persistent | Remaining melt to Low-Spec/Gate_03 |
+| Alloy tramp elements > application-specific limit | Per batch | Divert affected radial fraction | Low-Spec |
+
+*Cross-Path / Recursive Cascade:*
+
+| Trigger | Threshold | Action |
+|---------|-----------|--------|
+| Same contaminant species, 3 successive generations | Cascade declared | Mandatory 15–25% bleed-off + root-cause isolation |
+| Tooling end-of-life (CLF-003) | Per tool | Immediate diversion of feedstock contacting failed tool |
+| Toxic/hazardous species not covered above | Any detection | Immediate stop + full diversion per Ethical_Constraints.md and Gate_03 GR-003 |
+
+*Compound Sub-Threshold Trigger (added after adversarial stress-test, Challenge Class 2/5):* Individual triggers above evaluate independently, so a batch sitting just under several thresholds at once passes every check despite elevated aggregate risk. **Trigger:** two or more of {\(C\)-estimate, confidence (inverse), slag/oxide fraction, particulate fraction, carbon-pickup estimate} sitting within 15% of their respective trigger values simultaneously. **Action:** treat as if the more severe of the near-miss metrics had fired outright. Provisional; revise once real or constructed compound cases exist.
+
+**Bleed-off Mechanics:** Minimum intentional bleed-off 5% of processed mass per cycle while CLF-003/CLF-004/CLF-006 remain Open (safety floor, not efficiency target). Maximum continuous bleed-off 30% of intake over any rolling 5-batch window — exceeding forces formal Triage/Reduction review. Purge sequence preference: Low-Spec Structural → Gate_03 full reduction → specialist hazardous handling. Slag, anode slime, and polymer char are never treated as inert.
+
+**Degraded Operation Rules:** When any trigger is active, continue at reduced throughput rather than pass contaminated material downstream. Hot-idle/long-hold doctrines (Gate_05) remain in force. Sensor fouling, jams, or vibration events (MG-007/008, SC-001/005) automatically tighten relevant thresholds until cause is cleared.
+
+**Explicit Non-Goals:** Achieving zero contamination; replacing Gate_04 refusal-first or Gate_05 progressive-enrichment philosophy; defining exact chemical assay methods (defers to `Architecture/Characterization.md` [PLANNED] and `Architecture/Chemistry.md`); final disposition of hazardous byproducts beyond diversion rules (CLF-008 remains open).
+
+**Integration Hooks (on ratification):** Replace this file's §5 Degraded Operation & Failure Modes prose with this doctrine · Gate_04 Fail-to-Bin/Unknown Bulk sections reference cascade/accumulation triggers + terminology note above · Gate_05 Extraction/Failure Philosophy references slag mass and carbon-pickup triggers · CLF-003 wear proxies become measurable acceptance criteria · CLF-008 gets Low-Spec/Gate_03 as interim destinations · CLF-009 gets the Material Certainty Manifest as its first concrete form factor (§7.2).
+
+### 7.2 CLF-009 Material Certainty Manifest — Schema & Examples (Proposed)
+
+**Why it matters:** `Architecture/Characterization.md` remains `[PLANNED]`. Gate_06 already assumes variable-quality feedstock and owns the precision ceiling (add-to-excess, mill-to-spec) but has no structured way to receive a certainty profile. Without a defined handoff, characterization data dies at the gate boundary and "epistemic ascent" (§5) stays philosophical rather than operational. Design rule: **never collapse uncertainty into a single grade code** — the Manifest exists so fabrication sees a distribution, not a false certainty.
+
+**v0 Schema (binding on ratification):** Physical tag or attached sheet on the batch container, optional plain-text/JSON digital twin; physical tag is authoritative.
+
+```
+MCM-v0
+batch_id:          <string>          # required
+source_gate:       Gate_04 | Gate_05 | Gate_03 | mixed | other
+nominal_class:     <string>
+mass_kg:           <float>
+generation:        <int>
+C_estimate:        <float|unmeasured>
+confidence:        <0.0–1.0|low|med|high>
+assay_method:      <list or none>    # gates the confidence ceiling — see below
+segregation_note:  <free text>
+wear_flags:        [<flag>, ...]
+intended_destination: Gate_06-weld | Gate_06-mill | Low-Spec | Gate_03 | Triage | Specialist
+carbon_pickup_est: <float%|unmeasured|n/a>
+halogen_status:    negative | positive | untested
+weldability_proxy: acceptable | high-spatter | unknown | n/a
+recommended_excess_mm: <float|default>
+certainty_profile:                   # required block
+  primary:         <element/alloy>
+  secondary:       [<species range or unmeasured>, ...]
+  confidence:      <0.0–1.0>
+  method:          <how derived>
+  notes:           <free text>
+timestamp:         <ISO or local>
+operator:          <id or name>
+prior_manifests:   [<batch_id>, ...] # optional, for blends
+```
+
+**Validity rule:** A Manifest is valid with at least `batch_id`, `source_gate`, `nominal_class`, `mass_kg`, `C_estimate`, `confidence`, `assay_method`, `intended_destination`, and `certainty_profile`. Missing optional fields default to "unmeasured"/empty/n/a.
+
+**Assay-gated confidence ceiling (added after adversarial stress-test, Challenge Class 3):** without this, an operator under time pressure could write a high `confidence` value with no instrumented backing behind it.
+
+| `assay_method` | Maximum claimable `confidence` |
+|---|---|
+| none / unstated | 0.30 |
+| visual only | 0.65 |
+| density or melt-flow only | 0.75 |
+| visual + one instrumented method | 0.85 |
+| two or more instrumented methods | 0.95 |
+| cross-checked against Gate_04 confidence (prior manifest) | inherits the more conservative of the two |
+
+A Manifest claiming `confidence` above its `assay_method` ceiling is INVALID (§7.3) and is force-corrected to the ceiling before any Gate_06 rule applies.
+
+**Gate_06 Consumption Rules (v0):**
+
+| Manifest signal | Gate_06 action |
+|-----------------|----------------|
+| confidence ≥ 0.80 and \(C\) ≤ 0.05 and no flags | Standard weld parameters; default excess |
+| confidence 0.60–0.79 or \(C\) 0.05–0.10 | +50% excess (min +1mm); reduce heat input; enhanced fume capture |
+| confidence < 0.60 or \(C\) > 0.10 or cascade/wear flags | Refuse load-bearing/precision; Low-Spec or sacrificial only, or reject to Gate_03 |
+| halogen_status: positive | Immediate refuse; never weld or extrude |
+| weldability_proxy: high-spatter/unknown | Trial coupon required before production parts |
+| generation ≥ 3 and elevated secondary species | Next-stricter tramp limit; prefer diversion |
+| Missing required fields | Treat as confidence: low, C: unmeasured → refuse critical use |
+| confidence exceeds assay_method ceiling | Force-correct before applying any other rule |
+
+**Physical tag minimum:** `ID / Src / Gen / Mass / Class / C≈ / Conf (assay method) / Dest / Flags / Primary (+secondary) / Operator / timestamp` — enough for pure analog operation while still supporting the confidence-ceiling check.
+
+**Relationship to other unknowns:** feeds CLF-006 (\(C\), wear flags, cascade, diversion decision), CLF-003 (wear proxies travel with the batch that caused them), CLF-008 (destination field makes bleed-off routing explicit), CLF-010 (generation/source fields clarify FIR counting), SC-002/SC-007 (segregation note), SC-008 (carbon-pickup field), Gate_06 ASM-001/ASM-005 (weldability proxy and confidence feed wire and base-metal decisions), and becomes `Characterization.md`'s first concrete output schema once that file exists.
+
+**Open design questions (for human/multi-agent decision on ratification):** minimum required fields for validity vs. "unmeasured" as a valid state; authority to write/amend a Manifest; blending rule when two Manifests combine (worst-case? mass-weighted? explicit Bayesian update?); hard confidence floor vs. advisory guidance at Gate_06; retention period for tags/digital twins across generations.
+
+### 7.3 Validation Logic — MCM + CLF-006 (Proposed)
+
+**Manifest Validity Check (entry gate):**
+
+| Check | Pass Condition | Fail Action |
+|-------|----------------|-------------|
+| Required fields present | All required fields (§7.2) present | Reject or force high-risk defaults |
+| confidence range | 0.0–1.0 or {low, med, high} | Force confidence = low |
+| confidence vs. assay_method ceiling | ≤ ceiling for stated assay_method | Force down to ceiling; log Medium-severity discrepancy |
+| C_estimate | ≥ 0 or "unmeasured" | Force "unmeasured" |
+| halogen_status | {negative, positive, untested} | Force "untested" |
+| Internal consistency | wear/cascade flags present → destination not critical unless human-overridden | Auto-redirect to Low-Spec/Triage |
+| Generation + cascade | generation ≥ 3 + elevated species → destination not critical without sign-off | Hold for Triage |
+| Compound sub-threshold (§7.1) | Two or more metrics within 15% of trigger simultaneously | Treat as the more severe metric fired outright |
+
+Result codes: `VALID` (normal rules) · `VALID-DEGRADED` (tightened rules) · `INVALID` (refuse/re-characterize/divert).
+
+**Material Acceptance Logic (Gate_06, severity-ordered, higher overrides lower):**
+
+| Condition | Severity | Action |
+|-----------|----------|--------|
+| halogen_status = positive | Critical | Immediate refuse; route per Ethical_Constraints |
+| Cascade flag, or generation ≥ 3 with elevated tramp, or compound trigger fired | High | Refuse load-bearing/precision; Low-Spec/sacrificial only; human review for other use |
+| C > 0.10, or confidence < 0.60, or active wear flags | High | Refuse critical use; increase excess if used; trial coupon mandatory |
+| confidence 0.60–0.79, or C 0.05–0.10, or weldability high-spatter/unknown | Medium | +50% excess (min +1mm); reduce heat input; trial coupon; log as degraded |
+| confidence ≥ 0.80, C ≤ 0.05, no flags, weldability acceptable | Low/Normal | Standard parameters, default excess |
+| Missing/unmeasured critical fields | Treat as High | Apply High-severity rules |
+
+Trial-coupon rule: any Medium/High path still allowed must produce an inspected test coupon before the rest of the batch commits; coupon failure diverts the remainder immediately. Precision-ceiling interaction: if Gate_06/Precision.md's current ceiling cannot absorb the Manifest's uncertainty, refuse for that part regardless of the table above.
+
+**CLF-006 Threshold Hardening (asymmetric, safety-conservative):** Validation cycle = ≥3 instrumented batches deliberately exercising the relevant trigger (or honest natural occurrence), recording actual \(C\)/wear/slag/vibration, downstream outcome, and whether the provisional threshold correctly diverted or incorrectly allowed the batch. Compute false-negative rate (contaminated material that passed and caused harm) and false-positive rate (clean material unnecessarily diverted). **Decision rule:** any false negative on a safety-critical outcome → tighten immediately. High false-positive rate with zero safety false-negatives → may loosen, but only with human governing authority ratification and an Epistemic Ledger entry. No threshold changes solely to improve \(Y_p\) or throughput while any Critical unknown remains Open. The safety-critical/non-critical severity boundary itself is provisional — a false negative on a batch classified non-critical that later causes unexpected harm is evidence the *classification*, not just the threshold, needs revision; log both.
+
+**Feedback into Epistemic Ascent (§5):** part meets spec → raise confidence for that material class/generation; part fails → lower confidence, flag sibling batches from the same parent, trigger root-cause review; wear proxy observed → append flag, feed CLF-003; cascade detected → mark related generation-N manifests, force bleed-off next cycle.
+
+**Authority:** automated systems apply the tables above only, never loosen a threshold or override a High/Critical refuse. Human operator may temporarily override a Medium path with logged justification. Human governing authority required to change any numeric threshold, accept a High-severity batch for critical use, or retire a provisional rule.
+
+**Logging (minimum for validation):** every decision point records MCM snapshot/batch_id, decision code + severity, action taken, later outcome when known — the evidence base for promoting any provisional number to Measured under the repository's Verification Algebra.
+
+**Stress-test provenance (for context):** a cross-consistency check against existing repo thresholds (Gate_04's 30%/10% diversion-rate metric, Gate_05's 10-minute vibration rule, `Ethical_Constraints.md` EC-014) found no numeric contradictions, one terminology collision (addressed via the Contamination Diversion definition in §7.1), and one soft dependency gap (CLF-006's halogen routing cites Ethical_Constraints' toxic-handling doctrine, which itself has EC-014 open — noted, not blocking). Two adversarial scenarios (Auditor_Protocols.md Challenge Class 2/5 stacked sub-threshold contamination; Class 3 asserted-vs-measured confidence) directly produced the compound sub-threshold trigger (§7.1) and the assay-gated confidence ceiling (§7.2) above.
+
+---
+
 ## Resolution Log
+
+- 2026-07-30: **§7 Proposed Solutions added — CLF-006 contamination doctrine, CLF-009 Material Certainty Manifest schema, and validation/hardening logic, drafted and merged as one cross-referenced package.** Includes a compound sub-threshold trigger (§7.1) and an assay-gated confidence ceiling (§7.2), both added after adversarial stress-testing against Auditor_Protocols.md Challenge Classes 2, 3, and 5. A cross-consistency check against existing repo thresholds found no numeric contradictions; one terminology collision between this doctrine's "Contamination Diversion" and Gate_04's existing "Material Diversion Rate" was resolved via an explicit disambiguation note (§7.1, with a corresponding addendum to add on Gate_04's side at ratification). **Status: Proposed only — CLF-006 and CLF-009 remain Open in §6.** Nothing in §7 is binding until human governing authority reviews and ratifies the package as a unit; CLF-003 and CLF-004 are untouched by this proposal and remain separately Open/Critical. Operating as Synthesizer per Auditor_Protocols.md v0.29.
 
 - 2026-07-19: Stale "Registration status" note corrected — this file's own text claimed registration in `Routing.md`, `Discovery.md`, `Unknowns.md`, and `Automation/AUDIT_HARNESS.py` was outstanding, contradicting all four of those files, which have carried it since 2026-07-06. `Unknowns.md`'s PC-005 had flagged this as "possibly stale, not independently re-verified" since v4.20 (2026-07-12) without anyone closing the loop — done now, PC-005 marked Resolved.
 
