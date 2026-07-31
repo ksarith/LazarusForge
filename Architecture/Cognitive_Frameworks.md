@@ -17,7 +17,7 @@
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | Admin/Verification_Gates_LF.md                                      |
 | Last Audit       | 2026-05-09 (ChatGPT — Synthesizer); revised 2026-06-08; revised 2026-06-27; revised 2026-07-26; revised 2026-07-28 |
-| Auditor          | Claude — Retrofit/Auditor; revised Claude — Synthesizer/Auditor; Gemini — Skeptic/Auditor (Exploration audit), Claude — Synthesizer/Auditor (verification against source, corrections), CF-DS-002 ratified by human governing authority, CF-DS-001 resolved (Claude + Grok, independently confirmed), 2026-07-26; Claude — Synthesizer/Auditor, Section IV revised with formal transition triggers from `Admin/Computational Institutional Reasoning` §5.4, CF-004 updated, Section IX consistency check performed (human-directed), 2026-07-28 |
+| Auditor          | Claude — Retrofit/Auditor; revised Claude — Synthesizer/Auditor; Gemini — Skeptic/Auditor (Exploration audit), Claude — Synthesizer/Auditor (verification against source, corrections), CF-DS-002 ratified by human governing authority, CF-DS-001 resolved (Claude + Grok, independently confirmed), 2026-07-26; Claude — Synthesizer/Auditor, Section IV revised with formal transition triggers from `Admin/Computational_Institutional_Reasoning.md` §5.4, CF-004 updated, Section IX consistency check performed (human-directed), 2026-07-28 |
 | Open Unknowns    | 5                                                                   |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | High                                                                |
@@ -856,7 +856,7 @@ requiring immediate resolution. They belong in
 - `Unknowns.md` — Dependency Map is the confidence
   propagation graph; Expiry Watch implements
   Unknown-Driven Search prioritization
-- `Admin/Computational Institutional Reasoning` —
+- `Admin/Computational_Institutional_Reasoning.md` —
   formal theoretical grounding for Epistemic Load
   Regulation, Triage Posture, and debt dynamics
   (Theorem 3, Section 5)
@@ -1209,7 +1209,7 @@ Synthesizer/Auditor, human-directed.*
   in "What Does Not Exist Yet," but had no sidecar entry).
   One finding from the same audit rejected after
   verification: Gate G5 was reported BLOCKED on grounds
-  that `Admin/Computational Institutional Reasoning` is a
+  that `Admin/Computational_Institutional_Reasoning.md` is a
   hallucinated/non-existent path. It is not — the file
   exists on disk, is registered in `Routing.md`, and is
   documented there as one of two files that resolve via
