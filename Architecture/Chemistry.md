@@ -29,9 +29,9 @@
 | Body Stability   | Volatile                                                            |
 | Spec Gates       | 1/6                                                                 |
 | Verification Ref | Admin/Verification_Gates_LF.md                                      |
-| Last Audit       | 2026-07-19                                                          |
-| Auditor          | Claude (2026-06-02); ChatGPT informal (2026-06-11); Claude retrofit; Claude — CE-006 logged (human-directed) 2026-07-07; Claude — CE-006 directed approach added (human-directed), 2026-07-17; Claude — CE-006 mechanism correction, CE-007 registered (Grok flag, cross-checked against source), 2026-07-19 |
-| Open Unknowns    | 7                                                                   |
+| Last Audit       | 2026-07-31                                                          |
+| Auditor          | Claude (2026-06-02); ChatGPT informal (2026-06-11); Claude retrofit; Claude — CE-006 logged (human-directed) 2026-07-07; Claude — CE-006 directed approach added (human-directed), 2026-07-17; Claude — CE-006 mechanism correction, CE-007 registered (Grok flag, cross-checked against source), 2026-07-19; Claude — Synthesizer, §2.3 expanded to full doctrine, §2.4 Dilution Doctrine added (CE-008, corrected from proposed CE-004 to avoid ID collision), §1.2 SCC extended, §3.2 NOₓ subsection added, CE-005 narrowed to In Progress, CE-006/CE-007 given quantitative scrubber chemistry and storage doctrine (Grok content, verified against source before adoption), human-directed, 2026-07-31 |
+| Open Unknowns    | 8                                                                   |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | High                                                                |
 | Sidecar Link     | #auditor-notes--unknowns                                            |
@@ -277,6 +277,39 @@ and fail with little warning. Salvaged structural members with unknown
 stress history and unknown alloy composition in chloride environments
 should be treated as SCC candidates.
 
+**SCC-susceptible alloy/environment pairs (Forge-relevant):**
+
+| Alloy | Environment | Notes |
+|------------------------|----------------------|-------|
+| 304/316 stainless | Chloride | Pitting initiates SCC under tensile load |
+| Brass | Ammonia | Dezincification + SCC |
+| Aluminum alloys | Salt water / cyclic stress | High risk for salvage structural members |
+| High-strength steels | Hydrogen (from CP overprotection or acid) | Hydrogen embrittlement |
+
+**Inspection doctrine:** SCC cracks are narrow, follow grain boundaries,
+may be invisible under paint or corrosion products, and preferentially
+occur at welds, cold bends, or residual-stress zones. Any salvaged
+structural member with unknown alloy history that has been exposed to
+chloride + tensile load is an SCC candidate until proven otherwise.
+
+**Mitigation strategies:**
+- Reduce residual tensile stress (re-torque, redesign load path,
+  stress-relieve if possible).
+- Remove chloride contamination (fresh-water rinse followed by
+  passivation where applicable).
+- Isolate brass components from ammonia sources.
+- Apply cathodic protection carefully — overprotection can increase
+  hydrogen embrittlement risk in high-strength steels.
+- Prefer known alloys or apply isolation barriers for mixed-metal marine
+  assemblies.
+
+**Salvage rejection criteria:** Reject the component if cracks follow
+grain boundaries or appear at welds/bends, cracks continue to propagate
+after cleaning, or the alloy is unknown and the service environment was
+chloride-rich or ammonia-bearing. Cross-reference
+`Architecture/Mechanical_Structures.md` and `Tests/Support_Raft.md`
+SR-001.
+
 #### 1.3 Cathodic Protection
 
 Cathodic protection (CP) suppresses corrosion by making the protected
@@ -298,7 +331,10 @@ Anode material selection:
 Sizing rule of thumb: sacrificial anode capacity in amp-hours must exceed
 the estimated cathodic current demand of the protected surface over the
 service interval. Current demand depends on surface area, coating
-condition, and electrolyte conductivity.
+condition, and electrolyte conductivity. Full sizing must also
+incorporate coating breakdown factor, electrolyte resistivity,
+temperature, flow velocity, and biofouling state; quantitative doctrine
+remains under CE-001 / `Tests/Support_Raft.md` SR-001.
 
 **Impressed current CP:** External DC power source drives the protected
 structure cathodic. More controllable and longer-lasting than sacrificial
@@ -384,23 +420,121 @@ biological waste streams at Gate_03.
 
 ---
 
-### Section 2.3 — Solution Chemistry and Precipitation *(stub)*
+### Section 2.3 — Solution Chemistry and Precipitation
 
-Solubility and precipitation govern dissolved metal behavior, scaling,
-hard water effects, filter fouling, sludge formation, and carbonate
-deposits across the Forge's wet processing operations.
+Solution chemistry governs every wet process in the Forge. Precipitation,
+solubility limits, scaling, and dissolved-metal behavior determine
+scrubber saturation (AS-003), sludge formation in Gate_03 wet processing,
+carbonate scaling in heat exchangers, iron hydroxide floc in runoff,
+filter fouling, and water chemistry in Living Waters systems. These
+phenomena are predictable chemical behaviors, not contamination or
+failure signals.
 
-Key phenomena not yet documented:
-- Dissolved metal precipitation (iron hydroxide, calcium carbonate)
-- Scaling in heat exchangers and wet scrubbers
-- Hard water effects on scrubber buffering capacity
-- Iron oxidation and rust floc formation in wet processing
-- Filter fouling from precipitated solids
+#### 2.3.1 Solubility and Ionic Equilibria
 
-These touch Air_Scrubber, wet processing in Gate_03, Living Waters
-condensation water quality, and biofouling chemistry. See CE-005.
+Solubility is governed by the equilibrium between dissolved ions and the
+solid phase:
 
-*This section is a placeholder. Full doctrine deferred to CE-005 resolution.*
+```
+Mⁿ⁺ + nX⁻ ⇌ MXₙ(s)
+```
+
+When the ionic product exceeds the solubility product (Ksp), precipitation
+occurs.
+
+**Forge-relevant Ksp values (order-of-magnitude only):**
+
+| Compound | Ksp (approx.) | Implication |
+|--------------|---------------|-------------|
+| CaCO₃ | ~10⁻⁹ | Hard-water scaling in heat exchangers and wet scrubbers |
+| Fe(OH)₃ | ~10⁻³⁸ | Iron hydroxide sludge forms readily once pH rises above ~3–4 |
+| Mg(OH)₂ | ~10⁻¹¹ | Precipitates under alkaline conditions; reduces buffer capacity |
+| CaSO₄ | ~10⁻⁵ | Gypsum scaling possible in high-sulfate streams |
+
+**Operational rule:** Rising pH drives metal-hydroxide precipitation.
+Rising carbonate concentration or CO₂ degassing drives Ca/Mg carbonate
+precipitation. Both reduce effective reagent capacity and foul equipment.
+
+#### 2.3.2 Precipitation in Scrubber Systems
+
+The Air Scrubber's alkaline buffer neutralizes acids:
+
+```
+2HCl + Na₂CO₃ → 2NaCl + H₂O + CO₂↑
+```
+
+As local pH increases, dissolved iron (from corrosion products or
+feedstock runoff) precipitates:
+
+```
+Fe³⁺ + 3OH⁻ → Fe(OH)₃(s)
+```
+
+This sludge reduces buffer capacity, fouls pumps and sensors, and
+accelerates AS-003 saturation. **Doctrine:** Scrubber sump drainage and
+filtration are expected maintenance, not failure indicators.
+Cross-reference `Operations/Air_Scrubber.md` AS-003 and CE-005 resolution
+path.
+
+#### 2.3.3 Hard Water and Carbonate Scaling
+
+Hard water (elevated Ca²⁺/Mg²⁺) produces scale when heated or when CO₂
+degasses:
+
+```
+Ca²⁺ + CO₃²⁻ → CaCO₃(s)
+```
+
+Scaling reduces heat-exchanger efficiency, clogs spray nozzles, and
+deposits in wet-processing lines. **Mitigation:** Periodic dilute acetic
+or citric acid wash. Never use strong mineral acids on aluminum
+components. Cross-reference `Architecture/Thermal_Systems.md` for
+heat-exchanger fouling interactions.
+
+#### 2.3.4 Filter Fouling and Floc Formation
+
+Iron oxidation in wet environments produces floc:
+
+```
+Fe²⁺ → Fe³⁺ → Fe(OH)₃(s)
+```
+
+Floc clogs filters, increases pump load, reduces flow, and is a
+diagnostic signature of upstream corrosion or MIC activity. **Doctrine:**
+Treat the upstream corrosion source; do not treat floc as an isolated
+filtration problem. Cross-reference §1.2 MIC and `Challenges/Biofouling.md`.
+
+---
+
+### Section 2.4 — Dilution Doctrine
+
+Dilution is one of the highest-risk routine operations in chemical
+handling. Incorrect order of addition produces violent boiling, acid
+ejection, and severe burns.
+
+**Fundamental rule:** Always add acid to water. Never add water to
+concentrated acid.
+
+Adding water to concentrated sulfuric or hydrochloric acid causes
+instantaneous surface boiling and ejection of hot acid droplets.
+
+**Heat of dilution:** Dilution of strong acids is strongly exothermic.
+Perform slowly, with continuous stirring, in a heat-resistant container
+(glass or HDPE). Allow the mixture to cool before further handling.
+
+**Container compatibility (minimum):**
+- Concentrated H₂SO₄ / HCl: glass or HDPE. Unsafe in steel, aluminum, or
+  most concrete.
+- NaOH solutions: HDPE. Attacks aluminum.
+- Default when uncertain: HDPE.
+
+**Minimum PPE for dilution operations:** face shield + chemical goggles,
+chemical-resistant gloves (nitrile or better), long sleeves, and forced
+ventilation. This is non-negotiable and aligns with
+`Admin/Safety_Protocols.md`.
+
+Cross-reference battery electrolyte handling (§6.1) and etch-waste
+neutralization (`Operations/Electronics.md`). See CE-008.
 
 ---
 
@@ -479,6 +613,34 @@ is not a minor impurity — a significant HCl fraction is produced per unit
 mass of PVC. At pyrolysis temperatures, this becomes a corrosive gas that
 attacks reactor walls, scrubber components, and operator airways. The
 Beilstein test exists to catch this before the reactor does. See Section 4.
+
+**Nitrogen oxides (NOₓ) formation:** High-temperature combustion of any
+nitrogen-containing air or fuel produces thermal NOₓ:
+
+```
+N₂ + O₂ → 2NO
+2NO + O₂ → 2NO₂
+```
+
+NO is colorless; NO₂ is brown and strongly irritating. Both are toxic and
+form nitric/nitrous acids in the presence of moisture:
+
+```
+2NO₂ + H₂O → HNO₂ + HNO₃
+```
+
+**Hazards and scrubber load:** NOₓ causes acute respiratory injury,
+increases wet-system corrosion, and adds an acid burden to the Air
+Scrubber independent of HCl load. **Doctrine:** An unexplained scrubber
+pH drop with low measured HCl may indicate NOₓ loading. Buffer
+replacement frequency must increase during high-temperature or confined
+combustion operations. Cross-reference `Operations/Air_Scrubber.md`
+Stage D and AS-003.
+
+**Mitigation:** Ensure excess combustion air (complete combustion reduces
+both CO and thermal NOₓ). Control peak flame temperature where practical.
+Treat scrubber pH monitoring as continuous, not snapshot. Route any
+high-NOₓ exhaust through the wet caustic stage before discharge.
 
 ---
 
@@ -966,20 +1128,22 @@ sign-off mechanism for Forge instance initialization.
 
 | Field | Value |
 |-------|-------|
-| Status | Open |
+| Status | In Progress |
 | Risk | Medium |
 | Priority | Major |
 | Type | Technical |
 | Blocking | No |
 | Owner | `Architecture/Chemistry.md` |
 | First Logged | 2026-06-11 |
-| Last Reviewed | 2026-06-11 |
+| Last Reviewed | 2026-07-31 |
 
 **Description:** Solubility, precipitation, scaling, hard water behavior,
-and dissolved metal dynamics are not yet addressed in Chemistry.md.
-Section 2.3 is a stub placeholder. These phenomena affect Air_Scrubber
-scrubber buffering saturation (AS-003), wet processing in Gate_03, Living
-Waters condensation water quality, and biofouling chemistry.
+and dissolved metal dynamics are now addressed in full at Section 2.3
+(2026-07-31 — Ksp table, scrubber precipitation, hard-water scaling, and
+filter-fouling/floc doctrine added, verified against source before
+insertion). These phenomena affect Air_Scrubber scrubber buffering
+saturation (AS-003), wet processing in Gate_03, Living Waters
+condensation water quality, and biofouling chemistry.
 
 **Why It Matters:** A scrubber that silently scales over weeks loses
 effectiveness without obvious failure signal. Iron hydroxide precipitation
@@ -987,11 +1151,15 @@ in wet processing creates sludge that fouls equipment and requires disposal
 doctrine (GR-003). Hard water reduces reagent efficiency in neutralization
 operations.
 
-**Resolution Path:** Expand Section 2.3 stub into full doctrine covering:
-solubility product constants for common Forge-relevant precipitates (iron
-hydroxide, calcium carbonate, calcium sulfate); scaling prediction and
-prevention; hard water identification and treatment; sludge formation and
-disposal routing to GR-003. Cross-reference Air_Scrubber.md AS-003.
+**Resolution Path:** Section 2.3 stub expanded into full qualitative
+doctrine (2026-07-31) — Ksp values, scaling prediction, hard-water
+treatment, and floc/sludge diagnosis are now documented. Two items remain
+before full Resolution: (1) quantitative Ksp validation against actual
+Forge feedstock streams rather than order-of-magnitude literature values;
+(2) sludge disposal routing to GR-003 — note `Operations/Gate_03_Reduction.md`
+currently shows GR-003 itself as "not yet assigned," so this dependency is
+presently blocked on that file, not on Chemistry.md. Remains In Progress,
+not Resolved, until both close.
 
 ---
 
@@ -1006,7 +1174,7 @@ disposal routing to GR-003. Cross-reference Air_Scrubber.md AS-003.
 | Blocking | Yes (for `Challenges/Closed_Loop_Feedstock.md` CLF-004 candidate pathway) |
 | Owner | `Architecture/Chemistry.md` |
 | First Logged | 2026-07-07 |
-| Last Reviewed | 2026-07-19 |
+| Last Reviewed | 2026-07-31 |
 
 **Description:** A candidate pathway logged in `Challenges/Closed_Loop_Feedstock.md` CLF-004 proposes on-site acid synthesis via salt-water electrolysis with a homemade ion-selective membrane (chlor-alkali-type process), using salt, water, and electricity as precursors. Standard chlor-alkali electrolysis co-produces chlorine gas at the anode. No containment, venting, or scrubbing doctrine exists in this file for that byproduct.
 
@@ -1020,7 +1188,34 @@ disposal routing to GR-003. Cross-reference Air_Scrubber.md AS-003.
 
 The correct mechanism is a wet caustic (NaOH) absorption stage, not Stage E's dry chemisorption bed — and `Operations/Air_Scrubber.md`'s **Stage D (Wet Scrubbing / Water Column)** is already architected for exactly this: a recirculating liquid loop with continuous chemical monitoring, the standard industrial form for chlorine gas absorption (Cl₂ + 2NaOH → NaCl + NaOCl + H₂O). This is not a new stage requirement — it's routing this pathway's off-gas through Stage D with a caustic reagent dose, rather than relying on Stage E. See `Operations/Air_Scrubber.md`'s own Resolution Log for the cross-referenced update.
 
-**Turning the problem into a solution, 2026-07-19:** every caustic chlorine scrubber produces sodium hypochlorite (NaOCl) — dilute bleach — as its natural reaction product, not as a secondary waste to further process. Small-scale NaOH-scrubber-to-hypochlorite apparatus is an established, patented approach (US Patent 4,308,123, "Apparatus for the small-scale manufacture of chlorine and sodium hydroxide or sodium hypochlorite"), not a novel or speculative direction. Framing Stage D's output as **nullification-with-recoverable-value** rather than pure hazard neutralization is consistent with this file's own precedent (§ toward `Challenges/Closed_Loop_Feedstock.md`'s epigraph — "The Forge optimizes for the closure of loops, not the purity of outputs") and with `Operations/Air_Scrubber.md`'s existing Waste as a Managed Output doctrine, which already mandates testing captured material for reuse potential before hazardous immobilization. Sodium hypochlorite has direct salvage value as a disinfectant/sanitizer — relevant to `Challenges/Water.md`'s potable-water doctrine and general facility sanitation — rather than needing disposal. This does not relax any safety requirement: NaOCl solutions decompose over time (faster with heat, UV, and concentration), can release Cl₂ gas back if mismanaged, and are incompatible with several common reagents (sulfites, peroxide, acids) — see new CE-007 below for the storage/stability/utility doctrine this introduces, which did not previously exist anywhere in the repository.
+**Turning the problem into a solution, 2026-07-19:** every caustic chlorine scrubber produces sodium hypochlorite (NaOCl) — dilute bleach — as its natural reaction product, not as a secondary waste to further process. Small-scale NaOH-scrubber-to-hypochlorite apparatus is an established, patented approach (US Patent 4,308,123, "Apparatus for the small-scale manufacture of chlorine and sodium hydroxide or sodium hypochlorite"), not a novel or speculative direction. Framing Stage D's output as **nullification-with-recoverable-value** rather than pure hazard neutralization is consistent with this file's own precedent (§ toward `Challenges/Closed_Loop_Feedstock.md`'s epigraph — "The Forge optimizes for the closure of loops, not the purity of outputs") and with `Operations/Air_Scrubber.md`'s existing Waste as a Managed Output doctrine, which already mandates testing captured material for reuse potential before hazardous immobilization. Sodium hypochlorite has direct salvage value as a disinfectant/sanitizer — relevant to `Challenges/Water.md`'s potable-water doctrine and general facility sanitation — rather than needing disposal. This does not relax any safety requirement: NaOCl solutions decompose over time (faster with heat, UV, and concentration), can release Cl₂ gas back if mismanaged, and are incompatible with several common reagents (sulfites, peroxide, acids) — see CE-007 below for the storage/stability/utility doctrine this introduces.
+
+**Scrubber chemistry and operating parameters, 2026-07-31 (Grok, verified against standard chlor-alkali/wet-scrubbing references before adoption — closes item 2 of the four-item Resolution Path and provides the quantitative basis for item 1):**
+
+*Primary absorption reaction:* Cl₂ + 2NaOH → NaOCl + NaCl + H₂O — fast, irreversible disproportionation (one Cl atom oxidized to +1 in hypochlorite, the other reduced to −1 in chloride). Stoichiometry (weight basis): 1 kg Cl₂ requires 1.128 kg NaOH (exact from molecular weights: 2×40.0/70.9) and yields ≈1.05 kg NaOCl+NaCl+H₂O combined. The reaction is strongly exothermic (≈1,460 kJ/kg Cl₂ absorbed) — temperature rise is a primary design constraint, not a side concern.
+
+*Critical operating conditions:*
+
+| Parameter | Preferred Range | Why It Matters |
+|-----------|-----------------|----------------|
+| pH / excess NaOH | pH ≥ 11–12 (or ≥ 0.5–2% free NaOH residual) | Ensures complete absorption and stabilizes NaOCl. Below ~pH 10–11, absorption slows and over-chlorination risk rises. |
+| Temperature | Keep below 40–50°C (ideally < 30–35°C) | High temperature accelerates NaOCl-destroying side reactions and can boil the liquor, reducing mass-transfer efficiency. |
+| NaOH concentration | Typically 5–20 wt% | Higher strength gives more capacity per volume but less thermal mass and higher rapid-temperature-rise risk; lower strength needs larger liquor volume. |
+| Contact time / L:G ratio | Adequate packed-bed height or residence time + sufficient liquid recirculation | Reaction is essentially instantaneous once Cl₂ dissolves — gas–liquid contact (mass transfer), not reaction kinetics, is rate-limiting. |
+
+**Over-chlorination hazard:** if free NaOH is exhausted, residual Cl₂ reacts with NaOCl to form HOCl, which disproportionates to chlorate (NaOCl + Cl₂ + H₂O → 2HOCl + NaCl; 2HOCl + NaOCl → NaClO₃ + 2HCl) — this destroys product value and can drop pH, risking Cl₂ re-evolution. Conductivity or ORP monitoring is preferred over pH probes for strong caustic solutions, since pH electrodes saturate above ~pH 14.
+
+**Detection / alarm thresholds, 2026-07-31 (closes item 3 of the four-item Resolution Path):** Cl₂ is denser than air and accumulates in low-lying or poorly ventilated spaces; odor threshold (~0.08–0.3 ppm) is typically below occupational limits, but olfactory fatigue occurs rapidly — absence of odor is **never** a clearance signal, consistent with §4.3 doctrine. Given the Forge's remote, high-humidity operating context and limited continuous medical support, the conservative end of published exposure guidelines is the design target:
+
+| Threshold | Value | Basis | Action |
+|-----------|-------|-------|--------|
+| Action / warning | ≤ 0.5 ppm | NIOSH REL (15-min ceiling) / AEGL-1 | Investigate, increase ventilation, or pause process |
+| High alarm | 1–2 ppm | OSHA PEL ceiling / ERPG-1 / AEGL-2 (short duration) | Evacuate and isolate |
+| Immediate danger | 10 ppm | NIOSH IDLH | Full emergency response, SCBA or equivalent, process shutdown |
+
+Continuous monitoring with interlock capability (matching Air_Scrubber.md's existing AS-003 sensor-matrix doctrine) is the preferred engineering control over point-in-time checks. Materials for scrubber liquor contact: HDPE, PVC, FRP, or PTFE-lined; avoid aluminum, copper alloys, and mild steel. Properly designed packed or spray towers with excess caustic routinely achieve >99% Cl₂ removal in a single stage when pH and temperature are controlled — this is mature, well-characterized industrial chemistry, not a novel or speculative process for the Forge to pioneer.
+
+**Status of the four-item Resolution Path after this pass:** item 2 (dosing rate/residence time) and item 3 (detection/alarm thresholds) now have a concrete quantitative and doctrinal basis above. Items 1 (sealed vessel design confirming no anode-side leak path) and the calibration half of item 2 (matching these parameters to this specific process's actual, measured Cl₂ generation rate and flow) remain genuinely open — they require a real vessel design and real flow-rate data, which paper doctrine cannot substitute for. This is the same category of gap `Challenges/Closed_Loop_Feedstock.md` CLF-003 has for its extrusion hardware: the chemistry and the acceptance criteria are now specified; the hardware that must be measured against them does not yet exist. CE-006 remains Open, not Resolved, pending that hardware.
 
 ---
 
@@ -1028,24 +1223,105 @@ The correct mechanism is a wet caustic (NaOH) absorption stage, not Stage E's dr
 
 | Field | Value |
 |-------|-------|
-| Status | Open |
+| Status | In Progress |
 | Risk | Medium |
 | Priority | Major |
 | Type | Technical / Safety |
 | Blocking | No — CE-006's containment resolution does not depend on this; only the value-recovery framing does |
 | Owner | `Architecture/Chemistry.md` |
 | First Logged | 2026-07-19 |
-| Last Reviewed | 2026-07-19 |
+| Last Reviewed | 2026-07-31 |
 
 **Description:** CE-006's Stage D caustic-scrubbing mechanism produces sodium hypochlorite (NaOCl) liquor as its natural output. No file in the repository currently defines storage concentration limits, decomposition/venting risk over time, incompatible-reagent doctrine, or a downstream utility pathway (disinfection, sanitation, or other reuse) for this output. Without this, CE-006's captured chlorine converts from an atmospheric hazard into a stored chemical hazard with no governing doctrine.
 
 **Why It Matters:** NaOCl solutions decompose over time — faster with heat, UV exposure, and higher concentration — releasing Cl₂ gas back if stored improperly, which would silently defeat CE-006's containment purpose. NaOCl is also incompatible with several common reagents (sulfites, hydrogen peroxide, acids), creating a secondary hazard-mixing risk if stored near other Forge chemical streams without labeling/segregation doctrine. `Admin/Ethical_Constraints.md`'s do-no-harm standard applies to this stored output exactly as it does to the original gas.
 
-**Resolution Path:** Define (1) safe storage concentration and container material (dilute NaOCl is corrosive to many metals); (2) decomposition monitoring or a blowdown/dilution schedule consistent with industrial chlorine-scrubber practice; (3) segregation/incompatibility doctrine cross-referenced to `Admin/Safety_Protocols.md`; (4) a downstream utility pathway — cross-reference `Challenges/Water.md` for potable-water disinfection use, or general facility sanitation, as the most direct salvage-value application. Payment via Specification once a storage/reuse doctrine exists and is cross-referenced back to CE-006.
+**Storage, stability, and reuse doctrine, 2026-07-31 (Grok, verified against standard hypochlorite chemistry before adoption — addresses all four Resolution Path items below):**
+
+*Decomposition pathways:* NaOCl decomposes via two main routes — thermal/concentration-driven chlorate formation (3NaOCl → NaClO₃ + 2NaCl, dominant under alkaline conditions) and oxygen-evolving decomposition (2NaOCl → 2NaCl + O₂, catalyzed by transition metals, UV, or heat). Decomposition rate roughly doubles to quadruples per +10°C, and accelerates with higher concentration, UV/sunlight exposure, and transition-metal impurities (Fe, Cu, Ni, Co).
+
+*Acidification risk (the failure mode that most directly threatens CE-006's containment purpose):* if liquor pH falls below ~4–5 (especially < 2), the equilibrium HOCl + Cl⁻ + H⁺ ⇌ Cl₂(aq) + H₂O → Cl₂(g) shifts toward free chlorine gas release — the classic "bleach + acid = chlorine gas" hazard. This is why segregation from acids is not a generic chemical-safety footnote here but a direct reopening path for CE-006 if violated.
+
+**(1) Storage concentration and container material:** Store cool, dark, and at high pH (>11–12) to minimize decomposition. HDPE, PVC, FRP, or PTFE-lined containers; avoid most metals (especially aluminum, copper alloys, mild steel), consistent with CE-006's own scrubber-materials doctrine above.
+
+**(2) Decomposition monitoring / blowdown schedule:** Periodic blow-down or batch replacement is required as NaOCl + NaCl accumulate and free NaOH is consumed in the scrubber liquor loop itself; stored product should be used or diluted before significant decomposition occurs rather than held indefinitely at high concentration.
+
+**(3) Segregation/incompatibility doctrine:** Segregate from acids, sulfites, peroxides, and ammonia to prevent Cl₂ re-evolution or violent reactions. Cross-reference `Admin/Safety_Protocols.md` for general incompatible-reagent storage doctrine.
+
+**(4) Downstream utility pathway:** The liquor is a usable dilute bleach stream with direct salvage value as a disinfectant/sanitizer — cross-reference `Challenges/Water.md` for potable-water disinfection use, or general facility sanitation, as the most direct application. This chemistry is mature and well-characterized (small-scale NaOH-scrubber-to-hypochlorite apparatus is an established, patented approach — US Patent 4,308,123), not a novel or speculative direction for the Forge to validate from scratch.
+
+**Resolution Path:** All four items above now have doctrinal answers. Remaining before full Resolution: quantitative sizing (actual storage volume, blowdown frequency, and NaOCl concentration) depends on CE-006's own remaining hardware gap (sealed vessel design, actual Cl₂ generation rate) — this file cannot close ahead of CE-006's vessel-design item. Payment via Specification once CE-006's hardware exists and these doctrinal answers are calibrated against real flow/volume data.
+
+---
+
+### CE-008 — Dilution doctrine competency validation not established
+
+| Field | Value |
+|-------|-------|
+| Status | Open |
+| Risk | Medium |
+| Priority | Minor |
+| Type | Technical / Safety |
+| Blocking | No |
+| Owner | `Architecture/Chemistry.md` |
+| First Logged | 2026-07-31 |
+| Last Reviewed | 2026-07-31 |
+
+**Description:** Section 2.4 (Dilution Doctrine) documents the acid-to-water rule, heat-of-dilution hazard, container compatibility, and minimum PPE for dilution operations — added 2026-07-31. This is qualitative safety doctrine, not yet a validated operator competency item. It is distinct from CE-004 (Chemical Operator Minimum Competency), which already exists and is In Progress with its own Appendix A checklist; CE-008 is registered separately to avoid colliding with that existing ID.
+
+**Why It Matters:** Dilution is one of the highest-risk routine chemical operations in the Forge — incorrect order of addition produces violent boiling, acid ejection, and severe burns. Written doctrine alone does not confirm operators will follow it correctly under real conditions.
+
+**Resolution Path:** Add a dilution-specific item to CE-004's Appendix A competency checklist (cross-reference, do not duplicate content) once that checklist is next revised. Payment via Specification once dilution competency is folded into the existing Appendix A structure rather than maintained as a separate standalone check.
 
 ---
 
 ### Resolution Log
+
+- 2026-07-31: **Corrected audit findings, then closed real gaps; one new CE- entry
+  added (CE-008), avoiding a collision with the already-existing CE-004.**
+  Copilot's audit contained three demonstrably false claims, checked against
+  source before any action: (1) "file ends abruptly mid-sentence" — false, the
+  cited sentence is complete; (2) "Chemical Operator Minimum Competency
+  appendix is missing" — false, CE-004/Appendix A already exists and is In
+  Progress; (3) corrosion-rate order-of-magnitude qualifier "missing" — false,
+  already present verbatim. Grok's proposal to insert new "Dilution Doctrine"
+  content as CE-004 would have collided with the real CE-004 — registered as
+  **CE-008** instead. Grok's downstream-file audit also cited malformed
+  filenames (missing underscores); not carried into this file.
+
+  Real gaps closed: §2.3 stub replaced with full Solution Chemistry and
+  Precipitation doctrine (Ksp table, scrubber precipitation, hard-water
+  scaling, filter fouling/floc). New §2.4 Dilution Doctrine added (CE-008).
+  §1.2 SCC extended with alloy/environment table, inspection doctrine,
+  mitigation strategies, and salvage rejection criteria (real content already
+  existed; extended, not replaced). §1.3 CP sizing sentence extended with
+  temperature/flow/biofouling factors (partial gap — coating and electrolyte
+  conductivity were already covered). §3.2 NOₓ formation and scrubber-load
+  subsection added (genuinely new).
+
+  CE-005 narrowed from Open to **In Progress** — §2.3 now complete;
+  quantitative Ksp validation and sludge-disposal routing to GR-003 remain
+  (GR-003 itself is currently unassigned in `Operations/Gate_03_Reduction.md`,
+  so this dependency is blocked on that file, not on Chemistry.md).
+
+  CE-006 given quantitative scrubber chemistry (stoichiometry, operating
+  parameter table, over-chlorination hazard) and concrete detection/alarm
+  thresholds (NIOSH/OSHA/EPA AEGL/AIHA ERPG-sourced, Grok content verified
+  against standard references before adoption) — closes items 2 and 3 of its
+  four-item Resolution Path. Items 1 (sealed vessel design) and the
+  calibration half of item 2 remain genuinely open pending real hardware —
+  same category of gap as `Challenges/Closed_Loop_Feedstock.md` CLF-003.
+  CE-006 remains Open, not Resolved.
+
+  CE-007 narrowed from Open to **In Progress** — decomposition pathways,
+  acidification-to-Cl₂-release risk, storage/container doctrine,
+  segregation/incompatibility doctrine, and downstream utility pathway
+  (potable-water disinfection, cross-referenced to `Challenges/Water.md`) now
+  answer all four of its Resolution Path items at the doctrine level;
+  quantitative sizing still depends on CE-006's hardware gap.
+
+  Open Unknowns: 7 → 8 (CE-008 added). Operating as Synthesizer per
+  Auditor_Protocols.md v0.29, human-directed.
 
 - 2026-07-19: **CE-006 — mechanism correction; CE-007 registered (Grok flag, cross-checked against
   source, human-directed adoption).** The 2026-07-17 directed approach's premise — that Stage E's
