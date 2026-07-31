@@ -18,7 +18,7 @@
 | Spec Gates | 0/6 |
 | Verification Ref | Admin/Verification_Gates_LF.md |
 | Last Audit | 2026-07-30 |
-| Auditor | Claude (Synthesizer), Gemini (Auditor), ChatGPT (Synthesizer), Grok (Synthesizer); Gemini — Skeptic/Auditor Exploration audit, Claude — Synthesizer/Auditor (verification against source, corrections applied), 2026-07-28; Grok — Skeptic/Auditor Exploration audit, Claude — Synthesizer/Auditor (verified against source, SD-UNK-015 registered, SD-UNK-007 resolution path corrected), 2026-07-28; 2026-07-30 Phase 0 hygiene — Ethical Anchor canonicalized, SD-UNK-013/014/015 mirrored to Unknowns.md (Synthesizer); 2026-07-30 Phase 1 Resolution Pass — open unknowns 15 → 8 (Synthesizer) |
+| Auditor | Claude (Synthesizer), Gemini (Auditor), ChatGPT (Synthesizer), Grok (Synthesizer); Gemini — Skeptic/Auditor Exploration audit, Claude — Synthesizer/Auditor (verification against source, corrections applied), 2026-07-28; Grok — Skeptic/Auditor Exploration audit, Claude — Synthesizer/Auditor (verified against source, SD-UNK-015 registered, SD-UNK-007 resolution path corrected), 2026-07-28; 2026-07-30 Phase 0 hygiene — Ethical Anchor canonicalized, SD-UNK-013/014/015 mirrored to Unknowns.md (Synthesizer); 2026-07-30 Phase 1 Resolution Pass — open unknowns 15 → 8 (Synthesizer); 2026-07-30 — Tier 3 Living_Waters interface expanded (distillation + sorption desorption); SD-UNK-010 note expanded, count unchanged (Synthesizer) |
 | Open Unknowns | 8 |
 | Active Disputes | 0 |
 | Forward References | Astroid-miner companion repository |
@@ -315,14 +315,21 @@ Tier 2 — Mid-Grade Waste Heat (200–500°C)
       → Process heat for Gate_05_Separation_Thermal.md operations
       ↓
 Tier 3 — Low-Grade Waste Heat (<200°C)
-      → LW-001 Vacuum Distillation (waste heat as thermal input — direct synergy)
+      → LW-001 Vacuum Distillation (waste heat as thermal input)
       → LW-008 Multi-Effect Vacuum Distillation
+      → Sorption / desiccant regeneration for arid atmospheric harvesting (LW-005 path)
       → Space heating
       → Drying operations (lumber, salvage materials)
       ↓
 Thermal baseline reset (fluid returns to cold side of storage)
 
-**Living_Waters interface boundary:** Solar_Descent owns thermal energy delivery up to the heat-exchanger interface (target: usable waste heat at return, provisionally ≥90°C where distillation is intended). `Tests/Living_Waters.md` owns distillation vessel fluid dynamics, purity doctrine, and yield rates. Neither file may unilaterally redefine the other's side of this boundary.
+**Interface — Living_Waters.md (reciprocal)**
+
+- This file owns thermal energy delivery up to a heat-exchanger or desorption interface: available temperature band, duty cycle, and that the stream is cascade residual (not a dedicated boiler claim).
+- `Tests/Living_Waters.md` owns water-side use of that heat: vacuum / multi-effect distillation (LW-001, LW-008), **sorption-bed regeneration** for arid AWG, and treatment of any condensate once produced.
+- Neither file unilaterally sets the other's requirements. Living_Waters states temperature and purity needs at the water-side boundary; Solar_Descent states what Tier 3 can actually deliver.
+- Coupling parameters (exact °C, flow, which cascade stage feeds which LW use) remain unvalidated — declared interface only, not Measured.
+- Active refrigeration AWG (LW-005a) is primarily electrical; Tier 3 heat is optional boost, not its main energy path. Sorption regeneration is the preferred heat use for arid atmospheric harvesting.
 ```
 
 **Conversion Technology Assessment**
@@ -612,6 +619,8 @@ The asteroid processing system is out of scope for this file. Solar Descent defi
 
 **Closed 2026-07-30 (Phase 1):** Solar_Descent owns delivered heat quality up to the exchanger; Living_Waters owns distillation doctrine and yield. Reciprocal note on Living_Waters.md still recommended; boundary text is binding here.
 
+**Expanded 2026-07-30:** Interface scope widened beyond LW-001/008 to include sorption/desiccant regeneration for arid LW-005; reciprocal AWG/desorption language mirrored on Living_Waters. Ownership boundary unchanged.
+
 ---
 
 ### SD-UNK-011 — Receiver material survivability uncharacterized
@@ -706,6 +715,12 @@ The asteroid processing system is out of scope for this file. Solar Descent defi
 ---
 
 ### Resolution Log
+
+- 2026-07-30: Living_Waters interface mirror (Tier 3).
+  - Body: Tier 3 cascade list now includes sorption/desiccant regeneration for arid atmospheric harvesting (LW-005), not only LW-001/008.
+  - Body: Reciprocal interface paragraph — Solar_Descent owns heat delivery to HX/desorption boundary; Living_Waters owns water-side use (distillation, sorption regen, condensate). Active refrigeration AWG noted as primarily electrical.
+  - SD-UNK-010: Expansion note appended to Phase 1 closure (already Resolved) — scope widened beyond LW-001/008 without reopening the entry.
+  - Pair with Living_Waters 2026-07-30 AWG hygiene patch (ASM-004 soften + arid preference + same boundary). Operating as Synthesizer per Auditor_Protocols.md v0.29.
 
 - 2026-07-30: Phase 1 Resolution Pass — Open unknowns **15 → 8** (10-entry
   sidecar rule satisfied). No physics claims closed by prose.
@@ -807,3 +822,5 @@ Standard mandatory re-audit conditions per Admin/File_Template.md apply.
 - Any reference to grid-scale power export targets before v3 milestone → scope violation; flag for human review.
 - SD-UNK-015 (or Body light-well text) is restored to "elevated priority" or primary-path language without SD-TEST-106 results → reject; return to parallel test-arm status.
 - Closed Phase 1 entries (008–010, 012–015) reopen without Epistemic Ledger / contradictory evidence → treat as silent priority/status change; re-audit.
+- Tier 3 waste heat is committed to a specific Living_Waters duty (exact temperature/flow) without measured cascade residual data → reject; interface remains declared, not Measured.
+- Solar_Descent claims ownership of water purification or AWG yield parameters (Living_Waters side of the boundary) → scope violation; those parameters belong to Living_Waters.md.
