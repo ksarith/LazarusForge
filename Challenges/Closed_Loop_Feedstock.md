@@ -12,13 +12,13 @@
 |--------------------|-------|
 | Status             | Exploration |
 | Challenges Subtype | Solution-Track |
-| Version            | v0.8.1 |
+| Version            | v0.8.2 |
 | Body Stability     | Transitional |
 | Spec Gates         | 0/6 |
 | Verification Ref   | `Admin/Verification_Gates_LF.md` |
 | Ethical Anchor     | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 | Highest Risk       | Silent contamination cascades or toolhead destruction (CLF-003/CLF-006). |
-| Last Audit         | 2026-07-31 (§8 CLF-003 detail added — no hardware exists yet on either polymer or metal extrusion path; provisional wear thresholds borrowed from §7.1) |
+| Last Audit         | 2026-07-31 (§8 CLF-003 updated — Gate_05 SC-004 Driving Mechanism Options added, dieless drawing identified as strongest metal-side mitigation, TR-MET-003 cross-linked) |
 | Auditor            | Claude — Skeptic/Auditor (integration, 2026-07-07); prior: Grok, Gemini, Claude (2026-07-06); Claude — ratification pass (human-directed), 2026-07-17; Grok — drafted §7 contamination doctrine / MCM schema / validation logic (Skeptic/Auditor), Claude — Synthesizer (verified against source, integrated as §7, cross-consistency check vs Gate_04/05/Ethical_Constraints, adversarial stress-test additions), 2026-07-30; Claude — Synthesizer, expanded CLF-003 from single-line entry to full detail (§8), verified against Plastics.md and Gate_05 SC-004 source, human-directed, 2026-07-31 |
 | Open Unknowns      | 10 (CLF-001 through CLF-010) — unchanged; CLF-006/CLF-009 remain Open pending §7 ratification; CLF-003 detailed but still Open pending hardware |
 | Active Disputes    | 0 |
@@ -334,11 +334,15 @@ These numbers carry the same provisional, design-intent status as the rest of §
 2. **Once hardware exists (either path), run the same instrumented-cycle validation §7.3 already specifies:** ≥3 batches deliberately exercising particulate load, nozzle growth, and die pressure; record actual outcomes against the borrowed thresholds; compute false-negative/false-positive rates; tighten or loosen per §7.3's asymmetric rule.
 3. **Register the design work itself** — when a polymer extrusion rig or SC-004's wire-die spec moves from Trajectory to active development, that should be logged here and cross-linked, not left implicit.
 
-**Cross-references:** `Operations/Plastics.md` (polymer path, no hardware spec yet); `Operations/Gate_05_Separation_Thermal.md` SC-004 (metal path, wire extrusion nozzle); §7.1 (borrowed provisional thresholds); §7.3 (validation/hardening methodology to apply once hardware exists); `Admin/Trajectories.md` (current parking location for both hardware paths).
+**Update 2026-07-31:** `Operations/Gate_05_Separation_Thermal.md` SC-004 was expanded with a Driving Mechanism Options comparison (centrifugal, gas-pressure, MHD/EM, mechanical piston/screw, hybrid continuous-cast + dieless drawing). Dieless drawing in particular removes die contact from the metal-wire path entirely rather than just tolerating wear on it — a stronger mitigation than the borrowed §7.1 thresholds above, though it applies only to the metal-wire half of CLF-003, not the polymer-extrusion half. A minimal experimental configuration is parked at `Admin/Trajectories.md` TR-MET-003 (v1 scope). This does not change CLF-003's status — still Critical/Open, still no hardware built.
+
+**Cross-references:** `Operations/Plastics.md` (polymer path, no hardware spec yet); `Operations/Gate_05_Separation_Thermal.md` SC-004 (metal path, wire extrusion nozzle + driving mechanism options, including dieless drawing); §7.1 (borrowed provisional thresholds); §7.3 (validation/hardening methodology to apply once hardware exists); `Admin/Trajectories.md` (TR-MET-003 for the dieless-drawing experimental plan; parking location for other hardware paths).
 
 ---
 
 ## Resolution Log
+
+- 2026-07-31: **v0.8.2 — CLF-003 §8 updated with Gate_05 SC-004's new Driving Mechanism Options.** `Operations/Gate_05_Separation_Thermal.md` SC-004 was expanded (same session) with a comparison of five wire-extrusion driving mechanisms; dieless drawing identified as removing die contact from the metal-wire path entirely rather than tolerating wear on it, verified against real literature performance (30–54% area reduction per pass on Ti-6Al-4V) and against the confirmed Astroid-miner "Spun Conical Ceramic Extrusion" primary-wire-source claim. Minimal experimental configuration parked at `Admin/Trajectories.md` TR-MET-003 (v1 scope, not authorization to build now). Applies only to CLF-003's metal-wire half — the polymer-extrusion half is unaffected and has no equivalent dieless option. Status unchanged: still Critical/Open, no hardware exists. Operating as Synthesizer per Auditor_Protocols.md v0.29.
 
 - 2026-07-31: **v0.8.1 — CLF-003 expanded from a single-line table entry to full detail (§8).** Confirmed against source that neither the polymer extrusion path (`Operations/Plastics.md` — filament-drawing rigs routed to Trajectories, no hardware spec) nor the metal path (`Operations/Gate_05_Separation_Thermal.md` SC-004 — wire extrusion nozzle design not specified) has any extrusion hardware yet, real or detailed-on-paper. Borrowed §7.1's provisional wear-proxy thresholds (nozzle diameter growth >8%, die pressure rise >25%, particulate >2%) as CLF-003's acceptance criteria by citation, not independent derivation — same provisional/design-intent status, same §7.3 evidence rules for revision. Explicitly not a resolution: CLF-003 remains Critical/Open, and cannot reach Resolved without physical hardware and instrumented test cycles that do not yet exist. Human governing authority noted the hardware question "could go a million different paths at present" — documentation-honesty progress only, engineering solution space deliberately left open. Operating as Synthesizer per Auditor_Protocols.md v0.29.
 
