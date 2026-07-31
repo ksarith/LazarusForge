@@ -3,14 +3,12 @@
 
 **Full version history in `Unknowns_Changelog.md` (2026-07-19 cleanup pass, following the precedent set by `Admin/AUDIT_HARNESS_CHANGELOG.md` and `Admin/Forge_Audit_Kit_Changelog.md`; scrubbed to current-version-only 2026-07-28 — the "current plus last four in full" window was itself compressed further, since the Audit Trail below now carries the compressed record for every version back to v1.0, and the changelog carries full text for all of them. This block now keeps only the current version.)**
 
-**Version 4.32 — 2026-07-30. Solar Descent Phase 1 Resolution Pass mirrored.**
-`Tests/Solar_Descent.md` closed SD-UNK-008, 009, 010, 012, 013, 014, and
-015 (Trajectory/Specification/Vehicle pathways, logged in that file's
-Resolution Log) and demoted SD-UNK-003, 007, and 011 to Minor. This
-file's Solar Descent table updated to match: closed IDs marked
-Resolved with pathway noted, retained IDs re-labeled at current
-priority. Open set now 001, 002, 003, 004, 005, 006, 007, 011 (8) —
-verified against owning file's File State (Open Unknowns | 8).
+**Version 4.33 — 2026-07-31. SC-009 (Gate_05 titanium/reactive-metal atmosphere) registered.**
+`Operations/Gate_05_Separation_Thermal.md` gained a new sidecar entry,
+SC-009, raised when a claim that titanium welding capability would
+make `Challenges/Closed_Loop_Feedstock.md` CLF-003 moot was checked
+against source and found to require a new atmosphere unknown instead.
+Mirrored here same-day, no lag. Gate_05 Open Unknowns: 8 → 9.
 
 **Expiry Rule active — see `Admin/Canonical_Terms.md` §4 for the Cycle definition this rule now explicitly references (one calendar year default, not one audit pass — see CT-011). Protocol Performance metrics collecting.**
 
@@ -39,12 +37,12 @@ Formal axioms, theorems, and Verification Algebra backing CF-004, AP-006, and ep
 
 ---
 
-## What v4.32 Means
+## What v4.33 Means
 
-- **Solar Descent Phase 1 Resolution Pass mirrored from owning file.** `Tests/Solar_Descent.md` ran its 10-entry Resolution Pass on 2026-07-30: SD-UNK-008 and 009 discharged via Trajectory (site-conditioned, parallels FA-001 pattern for 009); SD-UNK-010 and 013 closed via Payment via Specification (Body interface/requirement text now binding); SD-UNK-014 closed via Payment via Specification narrow (envelope owned here, civil seal deferred to Facilities); SD-UNK-012 and 015 closed via Vehicle (folded into SD-TEST-105 and SD-TEST-106 respectively — not empirically resolved, just no longer unmanaged).
-- **Three retained IDs demoted, not closed.** SD-UNK-003 (molten tin, optional sub-concept), SD-UNK-007 (retitled to diurnal-only after its seasonal half was routed to `Admin/Trajectories.md`), and SD-UNK-011 (receiver survivability, T1-tier work) move from Major to Minor, matching the owning file's sidecar exactly.
-- **Count verified against source, not assumed.** Open set is 001, 002, 003, 004, 005, 006, 007, 011 — eight entries — cross-checked against `Tests/Solar_Descent.md` File State (`Open Unknowns | 8`) by direct enumeration, not carried over from the patch proposal.
-- **No structural changes this version** — routine index maintenance, following the same "found by checking this file against the session's own work" discipline as v4.30/v4.31.
+- **New unknown, not a mirror.** Unlike recent versions, SC-009 originates here-and-now rather than lagging an owning-file sidecar — registered in `Operations/Gate_05_Separation_Thermal.md` and this index in the same session, same day.
+- **Raised by checking a claim against source, not by routine audit.** A claim that titanium welding capability would make `Challenges/Closed_Loop_Feedstock.md` CLF-003 (nozzle/die wear) moot was verified against Gate_05's actual atmosphere doctrine (§9) and Chemistry.md's sole titanium mention (galvanic series, marine hardware) — found insufficient, producing SC-009 instead of resolving anything.
+- **Cross-repo note attached, not treated as resolution.** `Admin/Trajectories.md` TR-MET-002 records that Astroid-miner's `zero_g_fabrication.md` independently specifies EM Levitation as a fit for reactive metals, gated by UNK-003's Leviathan-milestone deferral — supporting detail only, not license to downgrade SC-009's priority today.
+- **Count:** Gate_05 Open Unknowns 8 → 9, verified by direct addition, not carried over from a proposal.
 
 ---
 
@@ -517,6 +515,7 @@ GH-009 (Emergent heuristic conflict — N² interaction scaling)
 | SC-006 | Siting and area-of-operation requirements | `Operations/Gate_05_Separation_Thermal.md` | Open | — | Major |
 | SC-007 | Extraction process may disrupt segregation gradients | `Operations/Gate_05_Separation_Thermal.md` | Open | — | Major |
 | SC-008 | Graphite crucible carbon pickup in alloy | `Operations/Gate_05_Separation_Thermal.md` | Open | — | Major |
+| SC-009 | Titanium / reactive-metal atmosphere requirements undefined — current §9 doctrine (charcoal bed, optional inert purge) cannot support titanium or similar reactive metals; nitrogen embrittlement and oxygen pickup require full argon shielding or vacuum | `Operations/Gate_05_Separation_Thermal.md` | Open | — | Critical (if reactive metals enter material set); Non-blocking otherwise |
 | MG-001 | Quantitative energy reduction not established | `Operations/Gate_04_Separation_Mechanical.md` | Open | — | Minor |
 | MG-002 | Optimal RPM bands not characterized per feedstock | `Operations/Gate_04_Separation_Mechanical.md` | Open | — | Major |
 | MG-003 | Confidence threshold not empirically validated | `Operations/Gate_04_Separation_Mechanical.md` | Open | — | Major |
