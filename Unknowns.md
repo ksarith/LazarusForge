@@ -29,7 +29,7 @@ Cross-module unknowns → listed here, full entry in owning file
 Pending corrections (task list) → PC cluster in this file
 Programmatic URL routing → `Routing.md`
 Navigation map and scope boundaries → `Discovery.md`
-Formal axioms, theorems, and Verification Algebra backing CF-004, AP-006, and epistemic-debt doctrine → `Admin/Computational Institutional Reasoning`
+Formal axioms, theorems, and Verification Algebra backing CF-004, AP-006, and epistemic-debt doctrine → `Admin/Computational_Institutional_Reasoning.md`
 
 **Cross-module dependencies** are owned by each file's Upstream/Downstream tables as of the v0.2 retrofit pass. See `Discovery.md` Scope Map for navigation.
 
@@ -259,7 +259,7 @@ GH-009 (Emergent heuristic conflict — N² interaction scaling)
 | AP-024 | Human attestation provenance insufficiently granular — "human-directed" collapses at least five distinguishable review levels into one label | `Admin/Auditor_Protocols.md` | Open | — | Major |
 | AP-029 | 10-Entry Rule tripped by the sidecar's own open-count, unaddressed | `Admin/Auditor_Protocols.md` | Open | — | Minor |
 | AP-030 | Mission Drift Review N=5 ratification-velocity threshold unvalidated pending first three probe cycles | `Admin/Auditor_Protocols.md` | Open | — | Minor |
-| CIR-001 | Physical Grounding Telemetry Mapping Interface undefined — γ1–γ4 predicates aspirational pending harness Phase 2; renamed 2026-07-28 from a colliding local "GOV-008" (see `Admin/Forge_Audit_Kit.md`'s Governance Sidecar ID Reference); registration gap closed 2026-07-29 — this tracker existed in `Admin/Computational Institutional Reasoning`'s own sidecar since the rename but was never mirrored here, despite its sibling tracker CF-004 (same file's Active Trackers list) being registered | `Admin/Computational Institutional Reasoning` | Open | — | Critical |
+| CIR-001 | Physical Grounding Telemetry Mapping Interface undefined — γ1–γ4 predicates aspirational pending harness Phase 2; renamed 2026-07-28 from a colliding local "GOV-008" (see `Admin/Forge_Audit_Kit.md`'s Governance Sidecar ID Reference); registration gap closed 2026-07-29 — this tracker existed in `Admin/Computational_Institutional_Reasoning.md`'s own sidecar since the rename but was never mirrored here, despite its sibling tracker CF-004 (same file's Active Trackers list) being registered | `Admin/Computational_Institutional_Reasoning.md` | Open | — | Critical |
 | RIP-002 | AUDIT_HARNESS.py Phase 1 checks not yet implemented | `Admin/Repository_Integrity_Protocol.md` | Open | — | Major |
 | RIP-003 | Violation incident log location undefined | `Admin/Repository_Integrity_Protocol.md` | Open | — | Major |
 | RIP-005 | Security_Protocols.md Phase 3 dependency — file exists at v0.5; cryptographic implementation not yet operational | `Admin/Repository_Integrity_Protocol.md` | In Progress | Vehicle | Major |
@@ -352,7 +352,7 @@ GH-009 (Emergent heuristic conflict — N² interaction scaling)
 | CF-001 | Hardware watchdog minimum standard — parameters defined, hardware validation pending | `Operations/Electronics.md` | In Progress | Active | Critical |
 | CF-002 | Correlated AI failure modes — test protocol defined, swarm deployment pending | `Architecture/Cognitive_Frameworks.md` | In Progress | Vehicle | Major |
 | CF-003 | Identity continuity during split-brain — doctrine defined, threshold calibration pending | `Architecture/Cognitive_Frameworks.md` | In Progress | Vehicle | Major |
-| CF-004 | Epistemic debt measurement mechanism — formally defined via `Admin/Computational Institutional Reasoning` §5.4 (Lyapunov-stable trigger), 2026-07-28; numeric calibration ($\theta_p$, $\varepsilon_{\text{triage}}$, $\varepsilon_{\text{exit}}$, $N$) remains open; dependency surface now includes Section IV (Confidence Collapse States, revised 2026-07-28), Triage Posture, promotion suspension — priority raised Minor → Major 2026-07-26, held at Major | `Architecture/Cognitive_Frameworks.md` | Open | — | Major |
+| CF-004 | Epistemic debt measurement mechanism — formally defined via `Admin/Computational_Institutional_Reasoning.md` §5.4 (Lyapunov-stable trigger), 2026-07-28; numeric calibration ($\theta_p$, $\varepsilon_{\text{triage}}$, $\varepsilon_{\text{exit}}$, $N$) remains open; dependency surface now includes Section IV (Confidence Collapse States, revised 2026-07-28), Triage Posture, promotion suspension — priority raised Minor → Major 2026-07-26, held at Major | `Architecture/Cognitive_Frameworks.md` | Open | — | Major |
 | CF-005 | Adversarial audit loop convergence criteria undefined — Skeptic/Engineer cycle has no formal termination condition, named in body text but previously untracked | `Architecture/Cognitive_Frameworks.md` | Open | — | Minor |
 
 *CF-001 remains Blocking — parameters are Analogous confidence pending first hardware prototype validation.*
@@ -812,9 +812,9 @@ GH-009 (Emergent heuristic conflict — N² interaction scaling)
 
 | ID | Title | Owning File | Status | Subtype | Priority (Promo) |
 |---|---|---|---|---|---|
-| NT-010 | Maintenance energy normalization undefined — R metric assumes a common unit of "maintenance energy" across physical, informational, institutional, and cognitive substrates; normalization methodology undefined | `Admin/Nothingness Theorem` | Open | Active | Minor |
+| NT-010 | Maintenance energy normalization undefined — R metric assumes a common unit of "maintenance energy" across physical, informational, institutional, and cognitive substrates; normalization methodology undefined | `Admin/Nothingness_Theorem.md` | Open | Active | Minor |
 
-*NT-001 through NT-009 are tracked in the Admin/Nothingness Theorem internal unknowns table. They are not cross-module and are not registered here.*
+*NT-001 through NT-009 are tracked in the Admin/Nothingness_Theorem.md internal unknowns table. They are not cross-module and are not registered here.*
 
 ### Cross-Module
 
