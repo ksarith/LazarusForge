@@ -27,7 +27,7 @@
 | Verification Ref | Admin/Verification_Gates_LF.md                                      |
 | Last Audit       | 2026-05-15; revised 2026-06-08                                      |
 | Auditor          | Claude — Retrofit/Auditor                                           |
-| Open Unknowns    | 8                                                                   |
+| Open Unknowns    | 9                                                                   |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | Medium                                                              |
 | Sidecar Link     | #auditor-notes--unknowns                                            |
@@ -740,8 +740,41 @@ alternative if the rate proves significant.
 
 ---
 
+### SC-009 — Titanium / reactive-metal atmosphere requirements undefined
+
+| Field         | Value                          |
+|---------------|--------------------------------|
+| Status        | Open                           |
+| Risk          | High                           |
+| Priority      | Critical (if titanium/reactive metals enter material set); Non-blocking otherwise |
+| Type          | Technical / Physical Plausibility (G2) |
+| Blocking      | Yes — any titanium (or Zr/Hf/Nb/Ta) melt, weld, or wire-extrusion path |
+| Owner         | Operations/Gate_05_Separation_Thermal.md (primary); Architecture/Chemistry.md (oxidation/nitride chemistry) |
+| First Logged  | 2026-07-31 |
+| Last Reviewed | 2026-07-31 |
+
+**Description:** §9 Atmosphere Control above (passive reducing environment preferred; charcoal bed or inert purge if available; oxygen ingress minimized, not eliminated; precision gas chemistry out of scope for v0) is adequate for the aluminum-class melts this file currently scopes around, but not for titanium or other reactive/refractory metals. These metals react readily with both oxygen and nitrogen when hot or molten — nitrogen contamination in particular causes severe embrittlement, which is why a simple nitrogen purge (fine for many steels or aluminum) is actively harmful here. Real titanium welding or wire-arc additive manufacturing requires either full high-purity argon shielding (residual O₂ typically <50–300 ppm, entire cooling surface protected until <~400°C) or true vacuum (~10⁻²–10⁻³ Pa or better for aerospace-grade work). Titanium currently appears nowhere in this repository as a feedstock, salvage target, or fabrication material — its only existing mention is `Architecture/Chemistry.md`'s galvanic series table (most noble/cathodic metal, high-end marine hardware reference). Raised 2026-07-31 in response to a claim that titanium welding capability would make CLF-003 (nozzle/die wear) moot; verified against source that no such capability or material pathway currently exists.
+
+**Why It Matters:** If titanium (or an equivalent reactive metal) is ever admitted as a salvage stream or fabrication material, this file's existing atmosphere doctrine cannot be silently inherited — doing so would produce embrittled, non-load-bearing product while appearing to have succeeded. It also would not resolve CLF-003 (`Challenges/Closed_Loop_Feedstock.md`): any titanium wire still has to be drawn through a die (harder problem, not easier), and any titanium part welded from near-net shape still needs cutting/trimming, where titanium's low thermal conductivity and rapid work-hardening make tool wear worse than for steel or aluminum, not moot.
+
+**Resolution Path:** (1) G2 Physical Plausibility gate first — confirm whether reactive-metal processing is in scope for any near-term version; if not, this stays parked. (2) If pursued, define minimum atmosphere spec (residual O₂/N₂ limits, shielding vs. blanket, monitoring), explicitly exclude nitrogen as a purge gas, and identify the hardware delta from the current charcoal-bed baseline (full argon shielding vs. vacuum pumping train). (3) Register any external argon/vacuum-hardware dependency against `Challenges/Closed_Loop_Feedstock.md`'s closed-loop premise. (4) `Admin/Trajectories.md` TR-MET-002 records that Astroid-miner's `Propulsion_Economy_isru/zero_g_fabrication.md` independently specifies Induction Heating + EM Levitation (crucible-free, vacuum-native, high-purity) as a fabrication technique well-suited to this exact problem — but per UNK-003 (Cross-repo assumption contracts, Deferred pending Leviathan milestone) that is supporting detail for a v3+ off-world capability, not a resolution path for this terrestrial v0–v2 unknown.
+
+**Cross-references:** §9 (this file, current atmosphere doctrine); SC-004 (wire extrusion nozzle — any titanium wire path inherits this unknown); `Challenges/Closed_Loop_Feedstock.md` CLF-003 (die/nozzle wear — titanium would add a harder second front, not remove the first); `Architecture/Chemistry.md` (galvanic series, sole existing titanium mention); `Admin/Trajectories.md` TR-MET-002 (Astroid-miner cross-repo note, parked).
+
+---
+
 ### Resolution Log
 
+- 2026-07-31: SC-009 registered — titanium/reactive-metal atmosphere
+  requirements. Raised in response to a claim that titanium welding
+  would make CLF-003 moot; verified against source that titanium has
+  no existing pathway in this repository and that this file's §9
+  atmosphere doctrine cannot support it without a dedicated Critical
+  unknown. Cross-linked to CLF-003 (Closed_Loop_Feedstock.md) and
+  TR-MET-002 (Trajectories.md, Astroid-miner EM-levitation/vacuum
+  note, recorded as supporting detail only per UNK-003's
+  Leviathan-milestone gate). Open Unknowns: 8 → 9. Verified and
+  registered by Claude — Synthesizer/Auditor, human-directed.
 - 2026-07-28: SC-007 and SC-008 given formal sidecar entries —
   previously present in `Unknowns.md`'s active index only, with no
   matching blocks here, surfaced by a Grok-run repo-wide desync audit
