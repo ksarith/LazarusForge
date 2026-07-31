@@ -25,8 +25,8 @@
 | Body Stability   | Volatile                                                            |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | Admin/Verification_Gates_LF.md                                      |
-| Last Audit       | 2026-05-15; revised 2026-06-08                                      |
-| Auditor          | Claude — Retrofit/Auditor                                           |
+| Last Audit       | 2026-07-31 (SC-009 registered; SC-004 expanded with Driving Mechanism Options) |
+| Auditor          | Claude — Retrofit/Auditor; Claude — Synthesizer, human-directed (SC-009, SC-004 expansion), 2026-07-31 |
 | Open Unknowns    | 9                                                                   |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | Medium                                                              |
@@ -543,7 +543,7 @@ honestly to a higher-power future version.
 | Blocking      | No                             |
 | Owner         | Operations/Gate_05_Separation_Thermal.md |
 | First Logged  | 2026-05-04                     |
-| Last Reviewed | 2026-05-15                     |
+| Last Reviewed | 2026-07-31                     |
 
 **Description:** Nozzle material, geometry, replacement interval,
 and draw speed control method for the centerline wire extrusion
@@ -554,6 +554,36 @@ for welding wire production and a direct pathway toward
 self-replication. Without a nozzle specification, the extrusion
 interface remains a placeholder and the self-replication pathway
 it enables cannot be validated or built toward deliberately.
+
+**Driving Mechanism Options (added 2026-07-31):** The interface
+above specifies *what* the wire path looks like (centerline tap,
+heated replaceable nozzle, draw-speed diameter control) but not
+*what force* drives melt through it. Five candidate mechanisms,
+ranked by near-term fit:
+
+| Mechanism | Fit | CLF-003 (die/nozzle wear) relevance |
+|---|---|---|
+| Centrifugal / spin-driven | Strongest v0–v1 fit — uses existing rotation, no new pump; pressure scales with RPM² within the existing 50–400 RPM envelope (SC-001) | Nozzle still under continuous centrifugal + thermal load |
+| Gas-pressure (inert-gas head) | Simple, modulable; adds a consumable-gas dependency | Same die-wear exposure as centrifugal |
+| Electromagnetic / MHD pumping | Contactless; synergizes with existing induction coils and optional MHD damping; needed for reactive metals in vacuum | Removes mechanical die contact — CLF-003 exposure drops sharply |
+| Mechanical piston/ram or screw | High pressure, mature tech, handles particulate/semi-solid feed | Highest CLF-003 exposure — moving parts in molten-metal contact |
+| Hybrid continuous-cast + downstream draw (including **dieless drawing**) | Separates the hard molten-nozzle problem from final sizing; dieless drawing (induction-zone softening + velocity-ratio-controlled reduction) is demonstrated on titanium at 30–54% area reduction per pass and eliminates die contact for the sizing stage entirely | Removes the die-wear problem at its root for the sizing stage, not just tolerates it |
+
+Recommended sequencing: centrifugal (+ optional gas assist) for v0
+aluminum-class wire; centrifugal + MHD assist as wire maturity
+increases; MHD/EM-levitation-driven once reactive metals require
+vacuum-compatible, containerless processing (see SC-009). Dieless
+drawing is the strongest CLF-003 mitigation for the metal-wire path
+specifically — CLF-003 already notes it "applies most strongly to
+any mechanical or high-pressure contact die and least strongly to
+pure MHD or dieless paths." This does not touch CLF-003's
+polymer-extrusion half, which has no equivalent dieless option.
+A minimal experimental dieless-drawing configuration is parked at
+`Admin/Trajectories.md` TR-MET-003 (v1 scope, not v0). Astroid-miner's
+`Propulsion_Economy_isru/zero_g_fabrication.md` independently lists
+"Spun Conical Ceramic Extrusion" (centrifugal) as its stated primary
+wire source — consistent with the same centrifugal-first sequencing
+recommended here for terrestrial v0.
 
 **Resolution Path:**
 - Wire extrusion is correctly marked future-ready in the body
@@ -567,7 +597,9 @@ it enables cannot be validated or built toward deliberately.
   3. Draw speed control method is selected and integrated
      with instrumentation spec
 - Discharge via Trajectory — route full nozzle specification
-  to `Admin/Trajectories.md` v1 scope.
+  and driving-mechanism selection to `Admin/Trajectories.md` v1
+  scope (see TR-MET-003 for the dieless-drawing experimental plan
+  specifically).
 - Payment via Specification — once nozzle design is validated
   and draw speed control demonstrated, move to Body as Measured.
 
@@ -765,6 +797,20 @@ alternative if the rate proves significant.
 
 ### Resolution Log
 
+- 2026-07-31: SC-004 expanded — added Driving Mechanism Options
+  subsection (five candidate mechanisms for the wire-extrusion
+  driving force: centrifugal, gas-pressure, MHD/EM, mechanical
+  piston/screw, hybrid continuous-cast + dieless drawing), verified
+  against source (existing interface bullets, SC-001's 50–400 RPM
+  envelope, Astroid-miner's confirmed "Spun Conical Ceramic
+  Extrusion" primary wire source) and cross-linked to CLF-003
+  (dieless/MHD paths mitigate die-wear exposure most; centrifugal/
+  gas/piston paths least). Status, Priority, Risk, and Blocking
+  unchanged (Open/Minor/Low/No) — this remains correctly deferred to
+  v1 per the file's own sequencing; no urgency escalation intended.
+  Minimal dieless-drawing experimental configuration parked at
+  `Admin/Trajectories.md` TR-MET-003. Verified and added by Claude —
+  Synthesizer, human-directed.
 - 2026-07-31: SC-009 registered — titanium/reactive-metal atmosphere
   requirements. Raised in response to a claim that titanium welding
   would make CLF-003 moot; verified against source that titanium has
