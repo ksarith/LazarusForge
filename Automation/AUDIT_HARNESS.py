@@ -40,8 +40,8 @@ ALIASES = {
     "Component_Triage_System.md":        "Operations/Gate_02_Triage.md",
     "Ship_of_Theseus_Right_to_Repair.md":"Admin/Ship_of_Theseus.md",
     "Stratification_Chamber_v0.md":      "Operations/Gate_04_Separation_Mechanical.md",
-    "Nothingness Theorem":               "Admin/Nothingness%20Theorem",
-    "Computational Institutional Reasoning": "Admin/Computational%20Institutional%20Reasoning",
+    "Nothingness Theorem":               "Admin/Nothingness_Theorem.md",
+    "Computational Institutional Reasoning": "Admin/Computational_Institutional_Reasoning.md",
     # unknown_cycles.json entry removed 2026-07-21 — the file itself was
     # deleted from the repository (judged unnecessary; v15 already computes
     # aging from each unknown's First Logged date, not this file). See
