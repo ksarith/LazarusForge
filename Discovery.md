@@ -688,7 +688,7 @@ Hostile-environment test framework. Fail fast; recover often; sensors lie; recor
 ### `Tests/Living_Waters.md`
 Water purification pathways initiative. LW-001 through LW-010 experimental pathways. Site-conditioned pathway selection doctrine. Water Hierarchy (Tier 1–7). Primary candidates: LW-001 Vacuum Distillation (with MVR), LW-003 Deep-Sea RO. Declared trajectory: hydrological counterpart to Energy.md.
 **Upstream:** Energy.md; Safety_Protocols.md; Ethical_Constraints.md; Unknowns.md; Challenges/Water.md; Challenges/Biofouling.md (LW-UNK-004); Architecture/Thermal_Systems.md (TH-003); Architecture/Friction_Dynamics.md.
-**Downstream:** Operations/ (pending validation and promotion criteria); Economics.md (LW-010 mineral recovery); Unknowns.md (LW-UNK-001 through LW-UNK-009); Tests/Trophic_Forge.md (pond node interface, TF-009); Tests/Solar_Descent.md (waste heat cascade interface, SD-UNK-010).
+**Downstream:** Operations/ (pending validation and promotion criteria); Economics.md (LW-010 mineral recovery); Unknowns.md (LW-UNK-001 through LW-UNK-009); Tests/Trophic_Forge.md (pond node interface, TF-009); Tests/Solar_Descent.md (waste heat cascade interface — boundary specified 2026-07-30, SD-UNK-010 Resolved).
 ⚠️ LW-UNK-001 (volatile co-distillation — CRITICAL safety gap before any potable output claim). LW-UNK-003 (lumen implosion threshold — CRITICAL for LW-003 deployment). TH-003 (atmospheric moisture yield) — Blocking for LW-005 atmospheric harvesting.
 
 ### `Tests/Trophic_Forge.md`
@@ -699,9 +699,9 @@ Biological cascade network architecture. Light node ignition (UV/blue LED photot
 
 ### `Tests/Solar_Descent.md`
 Underground concentrated solar architecture. Surface collection layer feeds two diverging downlink pathways — SD-001 optical (fiber optic / light well) and SD-002 thermal/fluid (molten salt / synthetic oil) — that reconverge at a shared subterranean chamber. Power conversion cascade (Stirling primary; TEG bootstrap). Waste heat feeds LW-001 and LW-008 in Living_Waters.md.
-**Upstream:** Ethical_Constraints.md; Energy.md; Architecture/Thermal_Systems.md; Operations/Gate_05_Separation_Thermal.md; Tests/Living_Waters.md (waste heat cascade interface — SD-UNK-010); Safety_Protocols.md; Challenges/Biofouling.md (surface collection layer in humid climates).
-**Downstream:** Operations/Energy.md (power output); Operations/Gate_05_Separation_Thermal.md (high-grade process heat); Operations/Plastics.md (pyrolysis heat feed); Tests/Living_Waters.md (LW-001, LW-008 waste heat); Unknowns.md (SD-UNK-001 through SD-UNK-012).
-⚠️ SD-UNK-004 (host geology fracturing threshold — CRITICAL; blocks all excavation and chamber construction; parallels FA-001 in governance weight). SD-UNK-002 (achievable underground temperature — CRITICAL; blocks power conversion pathway selection). SD-UNK-010 (waste heat interface with Living_Waters.md — joint resolution required).
+**Upstream:** Ethical_Constraints.md; Energy.md; Architecture/Thermal_Systems.md; Operations/Gate_05_Separation_Thermal.md; Tests/Living_Waters.md (waste heat cascade interface — boundary specified 2026-07-30, SD-UNK-010 Resolved); Safety_Protocols.md; Challenges/Biofouling.md (surface collection layer in humid climates).
+**Downstream:** Operations/Energy.md (power output); Operations/Gate_05_Separation_Thermal.md (high-grade process heat); Operations/Plastics.md (pyrolysis heat feed); Tests/Living_Waters.md (LW-001, LW-008 waste heat); Unknowns.md (SD-UNK-001 through SD-UNK-015 — 8 Open after 2026-07-30 Phase 1 Resolution Pass, 7 Resolved).
+⚠️ SD-UNK-004 (host geology fracturing threshold — CRITICAL; blocks all excavation and chamber construction; parallels FA-001 in governance weight). SD-UNK-002 (achievable underground temperature — CRITICAL; blocks power conversion pathway selection).
 
 ### `Tests/Cognitive_Salvage_Layer.md`
 Heuristic salvage pipeline. Harvests machinery-derived operational wisdom (e.g., gate logic edge cases, separation process tuning) from puzzle/simulator engines, aggregates it through multi-run consensus, and promotes qualifying heuristics through a CANDIDATE_NOVEL → NOVEL gate. Designed to capture tacit "the machine taught us this" knowledge that would otherwise be lost between Forge generations. validated_on_machinery_revision field tracks fidelity to current hardware; no expiration logic defined yet (GH-008).
