@@ -3,7 +3,14 @@
 
 **Full version history in `Unknowns_Changelog.md` (2026-07-19 cleanup pass, following the precedent set by `Admin/AUDIT_HARNESS_CHANGELOG.md` and `Admin/Forge_Audit_Kit_Changelog.md`; scrubbed to current-version-only 2026-07-28 — the "current plus last four in full" window was itself compressed further, since the Audit Trail below now carries the compressed record for every version back to v1.0, and the changelog carries full text for all of them. This block now keeps only the current version.)**
 
-**Version 4.30 — 2026-07-29. Two registration-latency gaps closed. CIR-001 (`Admin/Computational Institutional Reasoning`, Physical Grounding Telemetry Mapping Interface) added to Governance & Verification — it had existed in CIR's own sidecar since its 2026-07-28 rename from a colliding local "GOV-008" but was never mirrored here, unlike its sibling tracker CF-004. GOV-012's entry enriched to note its 2026-07-19 deferral decision (threshold set to zero cycles pending operational launch, not neglected) — status remains accurately Open, description was just incomplete. Found while checking Unknowns.md against everything else touched this session, not from an external report.**
+**Version 4.32 — 2026-07-30. Solar Descent Phase 1 Resolution Pass mirrored.**
+`Tests/Solar_Descent.md` closed SD-UNK-008, 009, 010, 012, 013, 014, and
+015 (Trajectory/Specification/Vehicle pathways, logged in that file's
+Resolution Log) and demoted SD-UNK-003, 007, and 011 to Minor. This
+file's Solar Descent table updated to match: closed IDs marked
+Resolved with pathway noted, retained IDs re-labeled at current
+priority. Open set now 001, 002, 003, 004, 005, 006, 007, 011 (8) —
+verified against owning file's File State (Open Unknowns | 8).
 
 **Expiry Rule active — see `Admin/Canonical_Terms.md` §4 for the Cycle definition this rule now explicitly references (one calendar year default, not one audit pass — see CT-011). Protocol Performance metrics collecting.**
 
@@ -32,11 +39,12 @@ Formal axioms, theorems, and Verification Algebra backing CF-004, AP-006, and ep
 
 ---
 
-## What v4.30 Means
+## What v4.32 Means
 
-- **Two registration-latency gaps closed, both found by checking this file against the session's own work rather than an external report.** CIR-001 had existed in `Admin/Computational Institutional Reasoning`'s own sidecar since its rename from a colliding local "GOV-008" the previous day — but was never mirrored into this file's Governance & Verification section, unlike its sibling tracker CF-004, which was. Same class of gap v4.27 was built specifically to catch, recurring.
-- **GOV-012's row was accurate but incomplete.** Status (Open) was correct; the description simply never mentioned that its threshold had already been formally deferred to zero cycles on 2026-07-19, with a stated re-derivation method for when it's actually needed. Enriched rather than corrected — this wasn't wrong, just thin.
-- **No structural changes this version** — the v4.28/v4.29 scrub and Audit Trail catch-up stand; this is routine index maintenance, not another round of the same drift.
+- **Solar Descent Phase 1 Resolution Pass mirrored from owning file.** `Tests/Solar_Descent.md` ran its 10-entry Resolution Pass on 2026-07-30: SD-UNK-008 and 009 discharged via Trajectory (site-conditioned, parallels FA-001 pattern for 009); SD-UNK-010 and 013 closed via Payment via Specification (Body interface/requirement text now binding); SD-UNK-014 closed via Payment via Specification narrow (envelope owned here, civil seal deferred to Facilities); SD-UNK-012 and 015 closed via Vehicle (folded into SD-TEST-105 and SD-TEST-106 respectively — not empirically resolved, just no longer unmanaged).
+- **Three retained IDs demoted, not closed.** SD-UNK-003 (molten tin, optional sub-concept), SD-UNK-007 (retitled to diurnal-only after its seasonal half was routed to `Admin/Trajectories.md`), and SD-UNK-011 (receiver survivability, T1-tier work) move from Major to Minor, matching the owning file's sidecar exactly.
+- **Count verified against source, not assumed.** Open set is 001, 002, 003, 004, 005, 006, 007, 011 — eight entries — cross-checked against `Tests/Solar_Descent.md` File State (`Open Unknowns | 8`) by direct enumeration, not carried over from the patch proposal.
+- **No structural changes this version** — routine index maintenance, following the same "found by checking this file against the session's own work" discipline as v4.30/v4.31.
 
 ---
 
@@ -455,19 +463,23 @@ GH-009 (Emergent heuristic conflict — N² interaction scaling)
 |---|---|---|---|---|---|
 | SD-UNK-001 | Flux delivery at Forge-scale salvage fiber unvalidated | `Tests/Solar_Descent.md` | Open | — | Critical |
 | SD-UNK-002 | Achievable underground temperature at Forge build quality unknown | `Tests/Solar_Descent.md` | Open | — | Critical |
-| SD-UNK-003 | Molten tin termination (SD-001a) viability unconfirmed | `Tests/Solar_Descent.md` | Open | — | Major |
+| SD-UNK-003 | Molten tin termination (SD-001a) viability unconfirmed | `Tests/Solar_Descent.md` | Open | — | Minor |
 | SD-UNK-004 | Host geology fracturing threshold unknown — blocks all excavation | `Tests/Solar_Descent.md` | Open | — | Critical — parallels FA-001 |
 | SD-UNK-005 | Working fluid salvage sourcing for SD-002 unconfirmed | `Tests/Solar_Descent.md` | Open | — | Major |
 | SD-UNK-006 | Parasitic pump load for SD-002 uncharacterized | `Tests/Solar_Descent.md` | Open | — | Major |
-| SD-UNK-007 | Chamber self-discharge rate unknown | `Tests/Solar_Descent.md` | Open | — | Major |
-| SD-UNK-008 | Stirling engine salvage availability at required scale unconfirmed | `Tests/Solar_Descent.md` | Open | — | Major |
-| SD-UNK-009 | Excavation feasibility at Forge scale unassessed | `Tests/Solar_Descent.md` | Open | — | Major |
-| SD-UNK-010 | Waste heat cascade interface with Living_Waters.md undefined | `Tests/Solar_Descent.md` + `Tests/Living_Waters.md` | Open | — | Minor |
-| SD-UNK-011 | Receiver material survivability uncharacterized | `Tests/Solar_Descent.md` | Open | — | Major |
-| SD-UNK-012 | Dust and alignment stability uncharacterized | `Tests/Solar_Descent.md` | Open | — | Major |
+| SD-UNK-007 | Diurnal chamber self-discharge rate unknown — seasonal loss discharged to Trajectories | `Tests/Solar_Descent.md` | Open | — | Minor |
+| SD-UNK-008 | Stirling engine salvage availability at required scale unconfirmed | `Tests/Solar_Descent.md` | Resolved | — | Discharge via Trajectory |
+| SD-UNK-009 | Excavation feasibility at Forge scale unassessed | `Tests/Solar_Descent.md` | Resolved | — | Discharge via Trajectory (‖ FA-001) |
+| SD-UNK-010 | Waste heat cascade interface with Living_Waters.md undefined | `Tests/Solar_Descent.md` + `Tests/Living_Waters.md` | Resolved | — | Payment via Specification |
+| SD-UNK-011 | Receiver material survivability uncharacterized | `Tests/Solar_Descent.md` | Open | — | Minor |
+| SD-UNK-012 | Dust and alignment stability uncharacterized | `Tests/Solar_Descent.md` | Resolved | — | Vehicle: SD-TEST-105 |
+| SD-UNK-013 | Surface Collection Bootstrap & Tracking Power Source — cold-start / low-thermal-state tracking power undefined | `Tests/Solar_Descent.md` | Resolved | — | Payment via Specification |
+| SD-UNK-014 | Shaft Penetration Sealing & Thermal Isolation — chamber inert-gas / shaft interface undefined | `Tests/Solar_Descent.md` | Resolved | — | Payment via Specification (narrow) |
+| SD-UNK-015 | Light-well vs. fiber comparative flux delivery unassessed — parallel arm to SD-TEST-101; priority claim previously untracked | `Tests/Solar_Descent.md` | Resolved | — | Vehicle: SD-TEST-106 |
 
 *SD-UNK-004 carries same governance weight as FA-001 — no excavation without geomechanical assessment.*
 *SD-UNK-002 Critical — all power conversion planning must assume conservative lower bound (~500°C).*
+*Phase 1 Resolution Pass (2026-07-30) closed SD-UNK-008/009/010/012/013/014/015 with logged pathways (Trajectory/Specification/Vehicle, per `Tests/Solar_Descent.md` Resolution Log) and demoted SD-UNK-003/007/011 to Minor. Open set: 001, 002, 003, 004, 005, 006, 007, 011 (8 total) — matches `Tests/Solar_Descent.md` File State exactly.*
 
 ### Critical Minerals
 
