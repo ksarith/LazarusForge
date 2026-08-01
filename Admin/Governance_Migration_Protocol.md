@@ -14,8 +14,8 @@
 | Body Stability   | Volatile                                                            |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | `Admin/Verification_Gates_LF.md`                                    |
-| Last Audit       | 2026-06-19; revised through at least 2026-07-05 internally (GMP-005/GMP-009 dated later than this header — header was not kept current, see Resolution Log); Claude — GOV-013 cross-reference added, 2026-07-16; Claude — GMP-005/GMP-009 resolved, Track A/B redefined by constitutional impact (human-directed), 2026-07-17; Claude — GMP-011/GMP-012 registered, GMP-004 GPG precedent noted, GMP-006/007/008 consolidation noted, Lessons Learned populated, Open Unknowns count corrected, GMP-003 date typo fixed (human-directed, external review reviewed and scoped), 2026-07-25; Claude — §VI Epistemic Quorum Doctrine added, GMP-003 partially mitigated, GMP-013 registered (human-directed, external synthesis reviewed and rescoped away from GOV-008 conflation), 2026-07-26; Claude — Polish pass on EQD integration per external review, GOV-008 mirror note added (human-directed), 2026-07-27; Claude — Quorum Compliance Trend subsection added to §VI, GMP-013 updated as its second schema consumer (human-directed), 2026-07-26 |
-| Auditor          | ChatGPT — Skeptic/Auditor; Gemini — Skeptic/Auditor; Grok — Skeptic/Auditor; Claude — Synthesizer; Claude — GMP-009 cross-referenced to GOV-013 (human-directed), 2026-07-16; Claude — GMP-005/GMP-009 resolved (multi-agent proposal, human-directed), 2026-07-17; Claude — Synthesizer/Auditor, external review triage (human-directed), 2026-07-25; Claude — Synthesizer/Auditor, EQD adoption with GOV-008 conflation caught and corrected (human-directed), 2026-07-26; Claude — Synthesizer/Auditor, polish pass (human-directed), 2026-07-27; Claude — Synthesizer/Auditor, Quorum Compliance Trend added, GOV-008 conflation re-checked and explicitly guarded a second time (human-directed), 2026-07-26 |
+| Last Audit       | 2026-06-19; revised through at least 2026-07-05 internally (GMP-005/GMP-009 dated later than this header — header was not kept current, see Resolution Log); Claude — GOV-013 cross-reference added, 2026-07-16; Claude — GMP-005/GMP-009 resolved, Track A/B redefined by constitutional impact (human-directed), 2026-07-17; Claude — GMP-011/GMP-012 registered, GMP-004 GPG precedent noted, GMP-006/007/008 consolidation noted, Lessons Learned populated, Open Unknowns count corrected, GMP-003 date typo fixed (human-directed, external review reviewed and scoped), 2026-07-25; Claude — §VI Epistemic Quorum Doctrine added, GMP-003 partially mitigated, GMP-013 registered (human-directed, external synthesis reviewed and rescoped away from GOV-008 conflation), 2026-07-26; Claude — Polish pass on EQD integration per external review, GOV-008 mirror note added (human-directed), 2026-07-27; Claude — Quorum Compliance Trend subsection added to §VI, GMP-013 updated as its second schema consumer (human-directed), 2026-07-26; Claude — §VII Bootstrap Quorum Doctrine added as a candidate GOV-008 specification, drafted to satisfy the higher governance-independence bar §VI's own Non-goal clause distinguishes from EQD's epistemic-independence bar (human-directed, external draft reviewed and refined), 2026-07-31 |
+| Auditor          | ChatGPT — Skeptic/Auditor; Gemini — Skeptic/Auditor; Grok — Skeptic/Auditor; Claude — Synthesizer; Claude — GMP-009 cross-referenced to GOV-013 (human-directed), 2026-07-16; Claude — GMP-005/GMP-009 resolved (multi-agent proposal, human-directed), 2026-07-17; Claude — Synthesizer/Auditor, external review triage (human-directed), 2026-07-25; Claude — Synthesizer/Auditor, EQD adoption with GOV-008 conflation caught and corrected (human-directed), 2026-07-26; Claude — Synthesizer/Auditor, polish pass (human-directed), 2026-07-27; Claude — Synthesizer/Auditor, Quorum Compliance Trend added, GOV-008 conflation re-checked and explicitly guarded a second time (human-directed), 2026-07-26; Claude — Synthesizer/Auditor, §VII drafted from an external candidate spec, verified against GOV-008's actual sidecar Resolution Path (`Archive/Logs/Governance_Charter_Changelog.md`) and §VI's Non-goal clause before integration, human-directed, 2026-07-31 |
 | Open Unknowns    | 10                                                                  |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | High                                                                |
@@ -504,6 +504,84 @@ Quorum size alone is insufficient — three reviewers converging on the same sha
 **Non-goal (binding, restated):** This metric measures conformance to EQD's own internal standard. It is not evidence of progress toward `Admin/Governance_Charter.md` GOV-008, under any framing — the Non-goal clause above and the Drift Indicator guarding it apply to this subsection exactly as they apply to the rest of §VI. An improving Quorum Compliance Trend means governance review is getting more rigorous by its own declared standard. Nothing more.
 
 **Implementation status:** Deferred via Specification, same disposition as GMP-013's underlying metadata schema — this trend is computed from that schema once it exists and has no separate implementation path before it.
+
+---
+
+## VII. Bootstrap Quorum Doctrine (GOV-008 Candidate Specification) — Proposed, Not Ratified
+
+**Read §VI's Non-goal clause first.** This section exists specifically because that clause is real: EQD (§VI) satisfies epistemic independence — diverse reasoning and evidence review — and explicitly does **not** satisfy governance independence, the actual bar GOV-008 sets. This section is an attempt at the latter. It must be held to that higher bar throughout, not quietly graded on EQD's curve. If any part of this section reads like a repackaged EQD quorum, that is a drafting error, not an acceptable substitute.
+
+**Status:** Candidate specification. Not ratified. Does not resolve GOV-008. Existence of this section is Payment via Specification only — the same disposition §VI's own doctrine carries — and does not itself move GOV-008 to Resolved, In Progress, or any status short of what human ratification confirms.
+
+**Purpose:** Define the minimum agent, hardware, and verification quorum that would satisfy Axiom Q-2 (Separation of Powers) for the specific purpose of GOV-008 — Genesis Phase exit via Pathway 1 and termination of Post-Exit Monitoring for Pathways 2/3.
+
+### VII.1 Core Requirements
+
+A compliant quorum must satisfy all of the following simultaneously — partial satisfaction does not constitute a compliant quorum:
+
+| Requirement | Description |
+|---|---|
+| Minimum Agent Count | ≥3 distinct agent instances |
+| Architectural Diversity | ≥2 distinct model families/providers/architectures — no single-provider monoculture |
+| Role Separation | ≥1 agent dedicated to skeptical/adversarial review that cannot also hold execution authority on the same action |
+| Independent Review Capability | Every agent class can perform independent skeptical review of every other agent class's output |
+| **Hardware/Runtime Diversity** | ≥2 distinct runtime environments or hardware hosts. Logical separation is acceptable as an interim measure only if physical diversity is not yet available, and must be upgraded to physical/logical isolation before v1. **This is the requirement §VI's quorum structurally cannot meet** — advisory chat sessions run on infrastructure controlled by a single operator, not independent hardware/runtime hosts. |
+| Non-Simulatability | Quorum membership and outputs must be independently verifiable by a human operator or an orthogonal system, so a single compromised agent cannot forge the entire quorum |
+| Human Ratification | Explicit human confirmation that the quorum is genuine, not simulated, and meets every criterion above |
+
+### VII.2 Agent Class Taxonomy (Minimum)
+
+| Class | Min. Count | Primary Function | Cannot Also Hold |
+|---|---|---|---|
+| Planner / Proposer | 1 | Generates proposed actions, state mutations, or governance recommendations | Final authorization & sole audit of its own proposal |
+| Skeptic / Adversary | 1 | Independent adversarial review, challenge generation, contradiction detection | Execution authority on the same action |
+| Auditor / Verifier | 1 | Lineage, provenance, and constitutional-compliance checking | Planning or execution of the action under review |
+| (Optional) Executor | 0–1 | Carries out ratified actions | Self-authorization |
+
+Total minimum live agents at any governance decision point: **3**. The optional Executor may share a runtime with the Planner only if the Skeptic and Auditor remain fully independent of both.
+
+*Relationship to §VI's Three Independence Dimensions:* this taxonomy's Role Separation is the same concept as §VI's role independence, extended from "distinct roles in one review pass" to "distinct, simultaneously live agent instances with distinct hardware." §VI's model and evidence independence dimensions still apply here and are necessary but not sufficient — GOV-008 additionally requires the hardware/runtime diversity row above, which §VI never claims to provide.
+
+### VII.3 Operational Definition of "Quorum Achieved"
+
+The quorum is achieved only when all of the following are true and recorded:
+
+1. ≥3 agents meeting the class and diversity criteria (VII.1–VII.2) are simultaneously reachable and responsive.
+2. Each agent has performed ≥1 independent skeptical review of another agent's output within the preceding audit cycle.
+3. No single agent or model family holds more than 50% of the decision weight on any constitutional-class action.
+4. A human operator has issued a signed or otherwise externally recorded ratification stating the quorum is genuine and not simulated.
+5. The ratification record is stored outside the runtime session of the agents being ratified, per the Genesis Phase Protocol's role-separation rules (`Admin/Governance_Charter.md`).
+
+### VII.4 Verification & Independence Criteria
+
+- **Independence test:** an agent's review of another agent's output must be generated without access to the reviewed agent's internal chain-of-thought or private scratchpad, or must treat any such access as non-authoritative.
+- **Diversity test:** model-family diversity is measured by provider + architecture family (distinct foundation-model lineages). Fine-tunes of the same base model do not count as diversity — same standard `Admin/Auditor_Protocols.md` AP-017 already applies to single-review independence, extended here to quorum composition.
+- **Liveness test:** each required agent must respond to a challenge query within a defined timeout (Statutory; suggested starting value 120s, to be set alongside this file's other tunable parameters if this section is ratified).
+- **Non-collusion test:** periodic adversarial probes (to be defined in `Admin/Auditor_Protocols.md`) must be able to detect and flag coordinated identical outputs across the quorum.
+
+### VII.5 Interim & Escalation Rules
+
+- While this quorum remains unmet, Genesis Phase rules and human-anchor requirements stay fully in force — nothing in this section relaxes them.
+- If a previously achieved quorum later falls below the minimum (agent loss, diversity collapse, hardware consolidation, etc.), the system automatically re-enters Genesis-Phase-equivalent restricted mode until the quorum is restored and re-ratified.
+- Any attempt by agents to self-declare quorum achievement without human ratification is a constitutional violation, triggering STATE_HOLD and immediate human escalation.
+
+### VII.6 Open Items for Ratification Review
+
+- Exact timeout and liveness parameters (Statutory, not constitutional).
+- Precise definition of "model family" for diversity scoring.
+- Whether hardware diversity is mandatory at Pathway 1 exit itself, or only before v1 (VII.1 currently allows logical separation as an interim measure — this leniency itself needs explicit ratification, not silent adoption).
+- Weighting/voting rules if more than the minimum agents are present.
+- Integration points with `Admin/Auditor_Protocols.md` and `Automation/AUDIT_HARNESS.py`.
+- Whether `Admin/CIR_Gov.md`'s predicate kernel (itself unratified, structurally dependent on this section per its own §Binding Status) should be reviewed alongside this section, given the two documents would become load-bearing for each other if both were ratified.
+
+### VII.7 Relationship to Existing Doctrine
+
+- **Pathway 1** (`Admin/Governance_Charter.md`): this section is the candidate concrete definition of "the minimum agent quorum defined in GOV-008."
+- **Post-Exit Monitoring** (Pathways 2/3): monitoring terminates only upon verified satisfaction of this section once ratified — not upon this section's mere existence as a draft.
+- **Axiom Q-2:** satisfying this section, once ratified, is the structural means of meeting Separation of Powers outside Genesis Phase.
+- **`Admin/CIR_Gov.md`:** that document's §8.2 (Genesis-Mode/Single-Agent Degradation) already states that no CIR-VERIFIED transition is valid until a quorum meeting this description exists. This section is what CIR_Gov.md's own text is waiting on.
+
+**Recommendation:** circulate this candidate for the same multi-agent skeptical review + human governing-authority ratification process §VI's own doctrine describes for Track B changes, given this section — if ratified — would itself be Tier-1-adjacent constitutional structure, not a routine Track A change. Do not treat drafting this section as itself satisfying any part of GOV-008.
 
 ---
 
@@ -1173,6 +1251,25 @@ Claude — Synthesizer/Auditor, human-directed, 2026-07-26.*
 
 ### Resolution Log
 
+- 2026-07-31: **v0.8 — §VII Bootstrap Quorum Doctrine added as a
+  candidate GOV-008 specification**, drafted from an external candidate
+  spec and refined after verifying its claims against GOV-008's actual
+  sidecar entry (`Archive/Logs/Governance_Charter_Changelog.md`) and
+  §VI's own Non-goal clause. Deliberately held to the higher
+  governance-independence bar §VI explicitly disclaims meeting — the
+  section leads with a restatement of that clause and flags its own
+  Hardware/Runtime Diversity requirement as the specific line EQD's
+  quorum structurally cannot cross. Explicitly filed Candidate — not
+  ratified, does not resolve GOV-008, existence of the section is
+  Payment via Specification only. Six subsections: Core Requirements,
+  Agent Class Taxonomy, Operational Definition of Quorum Achieved,
+  Verification & Independence Criteria, Interim & Escalation Rules,
+  Open Items for Ratification Review — plus a Relationship subsection
+  noting `Admin/CIR_Gov.md`'s §8.2 already depends on this section
+  existing and being ratified. Cross-referenced back into GOV-008's own
+  sidecar entry and `Unknowns.md` same-day. Operating as Synthesizer
+  per Auditor_Protocols.md v0.29, human-directed.
+
 - 2026-07-26: **v0.7 — Quorum Compliance Trend subsection added to
   §VI EQD**, directly under the existing Resolution-status paragraph.
   Defines a per-cycle conformance rate (qualifying actions whose
@@ -1418,6 +1515,14 @@ Claude — Synthesizer/Auditor, human-directed, 2026-07-26.*
 ---
 
 ## Status
+
+Version 0.8 — §VII Bootstrap Quorum Doctrine added: a candidate
+GOV-008 specification (Core Requirements, Agent Class Taxonomy,
+Operational Definition of Quorum Achieved, Verification Criteria,
+Interim/Escalation Rules, Open Items), explicitly held to the
+governance-independence bar §VI's Non-goal clause distinguishes from
+EQD's epistemic-independence bar. Candidate only — not ratified, does
+not resolve GOV-008. No automation implemented (2026-07-31).
 
 Version 0.7 — Quorum Compliance Trend subsection added to §VI EQD: a
 per-cycle conformance rate against the Minimum Quorum Matrix, tracked
