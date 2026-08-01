@@ -30,7 +30,7 @@
 | Spec Gates       | 1/6                                                                 |
 | Verification Ref | Admin/Verification_Gates_LF.md                                      |
 | Last Audit       | 2026-07-31                                                          |
-| Auditor          | Claude (2026-06-02); ChatGPT informal (2026-06-11); Claude retrofit; Claude — CE-006 logged (human-directed) 2026-07-07; Claude — CE-006 directed approach added (human-directed), 2026-07-17; Claude — CE-006 mechanism correction, CE-007 registered (Grok flag, cross-checked against source), 2026-07-19; Claude — Synthesizer, §2.3 expanded to full doctrine, §2.4 Dilution Doctrine added (CE-008, corrected from proposed CE-004 to avoid ID collision), §1.2 SCC extended, §3.2 NOₓ subsection added, CE-005 narrowed to In Progress, CE-006/CE-007 given quantitative scrubber chemistry and storage doctrine (Grok content, verified against source before adoption), human-directed, 2026-07-31 |
+| Auditor          | Claude (2026-06-02); ChatGPT informal (2026-06-11); Claude retrofit; Claude — CE-006 logged (human-directed) 2026-07-07; Claude — CE-006 directed approach added (human-directed), 2026-07-17; Claude — CE-006 mechanism correction, CE-007 registered (Grok flag, cross-checked against source), 2026-07-19; Claude — Synthesizer, §2.3 expanded to full doctrine, §2.4 Dilution Doctrine added (CE-008, corrected from proposed CE-004 to avoid ID collision), §1.2 SCC extended, §3.2 NOₓ subsection added, CE-005 narrowed to In Progress, CE-006/CE-007 given quantitative scrubber chemistry and storage doctrine (Grok content, verified against source before adoption), human-directed, 2026-07-31; Claude — CE-006 vessel design sketch integrated after two rounds of correction (thermal-sink sizing, AS-003 prerequisite gate) verified against Air_Scrubber.md source; CE-006 moved Open → In Progress, human-directed, 2026-07-31 |
 | Open Unknowns    | 8                                                                   |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | High                                                                |
@@ -1167,7 +1167,7 @@ not Resolved, until both close.
 
 | Field | Value |
 |-------|-------|
-| Status | Open |
+| Status | In Progress |
 | Risk | High |
 | Priority | Critical |
 | Type | Technical / Safety |
@@ -1215,7 +1215,26 @@ The correct mechanism is a wet caustic (NaOH) absorption stage, not Stage E's dr
 
 Continuous monitoring with interlock capability (matching Air_Scrubber.md's existing AS-003 sensor-matrix doctrine) is the preferred engineering control over point-in-time checks. Materials for scrubber liquor contact: HDPE, PVC, FRP, or PTFE-lined; avoid aluminum, copper alloys, and mild steel. Properly designed packed or spray towers with excess caustic routinely achieve >99% Cl₂ removal in a single stage when pH and temperature are controlled — this is mature, well-characterized industrial chemistry, not a novel or speculative process for the Forge to pioneer.
 
-**Status of the four-item Resolution Path after this pass:** item 2 (dosing rate/residence time) and item 3 (detection/alarm thresholds) now have a concrete quantitative and doctrinal basis above. Items 1 (sealed vessel design confirming no anode-side leak path) and the calibration half of item 2 (matching these parameters to this specific process's actual, measured Cl₂ generation rate and flow) remain genuinely open — they require a real vessel design and real flow-rate data, which paper doctrine cannot substitute for. This is the same category of gap `Challenges/Closed_Loop_Feedstock.md` CLF-003 has for its extrusion hardware: the chemistry and the acceptance criteria are now specified; the hardware that must be measured against them does not yet exist. CE-006 remains Open, not Resolved, pending that hardware.
+**Status of the four-item Resolution Path after this pass:** item 2 (dosing rate/residence time) and item 3 (detection/alarm thresholds) now have a concrete quantitative and doctrinal basis above. Item 1 (sealed vessel design) now has a concrete conceptual/architectural sketch — see below — but not a built vessel. The calibration half of item 2 (matching these parameters to this specific process's actual, measured Cl₂ generation rate and flow) remains genuinely open regardless of the sketch's existence — it requires real flow-rate data, which paper doctrine cannot substitute for. This is the same category of gap `Challenges/Closed_Loop_Feedstock.md` CLF-003 has for its extrusion hardware: the chemistry and the acceptance criteria are now specified; the hardware that must be measured against them does not yet exist. CE-006 moves to **In Progress** (doctrine and conceptual design now complete) but stays short of Resolved pending that hardware.
+
+**Vessel design sketch, 2026-07-31 (Grok, revised after two corrections; verified against Air_Scrubber.md source before adoption — addresses item 1):**
+
+*Architecture:* Divided cell (diaphragm or ion-selective membrane, homemade or scavenged acceptable at v0). Anode compartment (Cl₂ generation) fully sealed, isolated from cathode compartment (H₂ + dilute NaOH). Anode headspace has exactly one gas exit — a single dedicated off-gas line running directly to Stage D's inlet, with no vents, pressure-relief-to-atmosphere, or secondary openings. Cathode-side H₂ is vented or captured separately and needs its own handling doctrine (not covered by CE-006).
+
+*Non-negotiable design rules:*
+1. **Single-path anode off-gas** — exactly one exit, routed exclusively to Stage D.
+2. **Negative-pressure / liquid-seal protection** — leverages Stage D's already-existing negative-pressure operation (see Air_Scrubber.md) so any leak tendency is inward, not outward.
+3. **Over-pressure relief routes only to Stage D** (or a dedicated secondary caustic scrubber) — never to atmosphere.
+4. **Materials:** Anode compartment and Cl₂ line — PVC, CPVC, PTFE, glass, or FRP. Stage D's own wet side may use **316L stainless**, already approved under Air_Scrubber.md's Corrosion Isolation doctrine for halogenated exhaust; "avoid most steels" applies to the anode/Cl₂-line side, not to Stage D's already-vetted hull material.
+5. **Instrumentation and interlocks:** Anode-side Cl₂ detector using the thresholds above (≤0.5 ppm warning, 1–2 ppm high alarm, 10 ppm IDLH); Stage D free-NaOH/conductivity/ORP monitoring. **Hard prerequisite, not assumed infrastructure:** AS-003 calibration must be complete and the interlock system no longer operating on estimated values before this vessel is permitted to run — AS-003 is currently In Progress, blocked on the Gate 4 Cold Verification Harness running first.
+
+*Thermal management — explicit requirement, not a generic "heat balance TBD":* Stage D already carries a hard Thermal Sink Requirement (see `Operations/Air_Scrubber.md`), logged after a 2026-05 audit finding where Stage D was specified without one and hot exhaust overwhelmed the scrubbing liquid's quench capacity — a hidden failure mode. The Cl₂ + NaOH reaction adds a **second, independent heat load** (≈1.46 MJ/kg Cl₂ absorbed) on top of whatever this vessel's Stage D deployment is already sized for from other exhaust sources. Any CE-006 thermal-sink sizing must be calculated as the **sum** of the existing design heat load plus this reaction's exotherm at the maximum intended Cl₂ generation rate — not treated as a separate, smaller, or optional calculation.
+
+*Operating sequence (with gates, not just steps):* (1) confirm Stage D circulating with verified excess caustic **and** AS-003 interlocks calibrated and live; (2) confirm thermal-sink capacity adequate for the combined heat load; (3) fill cell, close all anode openings except the single off-gas line; (4) apply DC current only after gates 1–2 are satisfied; (5) Cl₂ flows solely to Stage D, absorbed as NaOCl+NaCl; (6) monitor free-NaOH residual, stop or replenish before over-chlorination; (7) recover NaOCl liquor per CE-007.
+
+*Remaining quantification (genuinely open, not paper-closeable):* membrane/diaphragm selection and sealing method; first-article Cl₂ generation rate (suggested starting envelope 10–100 g/h); explicit thermal-sink sizing calculation combining both heat loads; fail-safe interlock behavior if Stage D recirculation or power is lost (cell must stop, not merely alarm).
+
+This sketch closes item 1 of the four-item Resolution Path at the conceptual/architectural level — a concrete, evaluable vessel design now exists where none did before. It does not close it at the hardware level: no vessel has been built, AS-003 is not yet calibrated, and the combined thermal-sink calculation has not been performed. CE-006 moves to **In Progress** — this is architecture, not a finished system.
 
 ---
 
@@ -1276,6 +1295,32 @@ Continuous monitoring with interlock capability (matching Air_Scrubber.md's exis
 ---
 
 ### Resolution Log
+
+- 2026-07-31: **CE-006 vessel design sketch integrated; status moved Open →
+  In Progress.** Grok proposed a small-scale sealed chlor-alkali cell
+  concept (divided cell, single-path anode off-gas to Stage D, no
+  atmospheric release path). Checked against `Operations/Air_Scrubber.md`
+  source before adoption: the sketch correctly leveraged Stage D's existing
+  negative-pressure doctrine, but (1) did not connect its own "heat balance
+  TBD" open point to Stage D's existing, named Thermal Sink Requirement —
+  logged after a real 2026-05 hidden-failure-mode incident — despite the
+  Cl₂+NaOH exotherm being a second, independent heat load on top of
+  whatever Stage D is already sized for; (2) assumed AS-003's interlock
+  system was working infrastructure, when AS-003 is actually In Progress
+  and blocked on the Gate 4 Cold Verification Harness. Sent back for
+  revision; Grok's second pass made both gaps explicit design
+  requirements (combined thermal-sink sizing calculation; AS-003
+  calibration as a hard operating prerequisite, not assumed
+  infrastructure) rather than open points. Revised sketch verified and
+  integrated as CE-006's vessel-design artifact, closing item 1 of the
+  four-item Resolution Path at the conceptual/architectural level only —
+  no vessel built, AS-003 uncalibrated, thermal-sink calculation not yet
+  performed. Also noted 316L stainless as already-approved (via Air_
+  Scrubber.md's Corrosion Isolation doctrine) for Stage D's own hull,
+  distinct from the anode/Cl₂-line materials rule. CE-006 moved to In
+  Progress alongside CE-005/CE-007, same precedent: doctrine and design
+  now complete, hardware and calibration remain. Operating as Synthesizer
+  per Auditor_Protocols.md v0.29, human-directed.
 
 - 2026-07-31: **Corrected audit findings, then closed real gaps; one new CE- entry
   added (CE-008), avoiding a collision with the already-existing CE-004.**
