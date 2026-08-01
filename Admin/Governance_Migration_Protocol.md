@@ -14,7 +14,7 @@
 | Body Stability   | Volatile                                                            |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | `Admin/Verification_Gates_LF.md`                                    |
-| Last Audit       | 2026-06-19; revised through at least 2026-07-05 internally (GMP-005/GMP-009 dated later than this header — header was not kept current, see Resolution Log); Claude — GOV-013 cross-reference added, 2026-07-16; Claude — GMP-005/GMP-009 resolved, Track A/B redefined by constitutional impact (human-directed), 2026-07-17; Claude — GMP-011/GMP-012 registered, GMP-004 GPG precedent noted, GMP-006/007/008 consolidation noted, Lessons Learned populated, Open Unknowns count corrected, GMP-003 date typo fixed (human-directed, external review reviewed and scoped), 2026-07-25; Claude — §VI Epistemic Quorum Doctrine added, GMP-003 partially mitigated, GMP-013 registered (human-directed, external synthesis reviewed and rescoped away from GOV-008 conflation), 2026-07-26; Claude — Polish pass on EQD integration per external review, GOV-008 mirror note added (human-directed), 2026-07-27; Claude — Quorum Compliance Trend subsection added to §VI, GMP-013 updated as its second schema consumer (human-directed), 2026-07-26; Claude — §VII Bootstrap Quorum Doctrine added as a candidate GOV-008 specification, drafted to satisfy the higher governance-independence bar §VI's own Non-goal clause distinguishes from EQD's epistemic-independence bar (human-directed, external draft reviewed and refined), 2026-07-31 |
+| Last Audit       | 2026-06-19; revised through at least 2026-07-05 internally (GMP-005/GMP-009 dated later than this header — header was not kept current, see Resolution Log); Claude — GOV-013 cross-reference added, 2026-07-16; Claude — GMP-005/GMP-009 resolved, Track A/B redefined by constitutional impact (human-directed), 2026-07-17; Claude — GMP-011/GMP-012 registered, GMP-004 GPG precedent noted, GMP-006/007/008 consolidation noted, Lessons Learned populated, Open Unknowns count corrected, GMP-003 date typo fixed (human-directed, external review reviewed and scoped), 2026-07-25; Claude — §VI Epistemic Quorum Doctrine added, GMP-003 partially mitigated, GMP-013 registered (human-directed, external synthesis reviewed and rescoped away from GOV-008 conflation), 2026-07-26; Claude — Polish pass on EQD integration per external review, GOV-008 mirror note added (human-directed), 2026-07-27; Claude — Quorum Compliance Trend subsection added to §VI, GMP-013 updated as its second schema consumer (human-directed), 2026-07-26; Claude — §VII Bootstrap Quorum Doctrine added as a candidate GOV-008 specification, drafted to satisfy the higher governance-independence bar §VI's own Non-goal clause distinguishes from EQD's epistemic-independence bar (human-directed, external draft reviewed and refined), 2026-07-31; Claude — Skeptic/Auditor review of §VII integrated: substrate-gap warning added to VII.6 (hardware diversity currently declarable, not achieved), four near-term action items recorded, GMP-011 interim rule adopted from candidate to operative, TR-GOV-001 hardware-ladder reference parked in Trajectories.md with explicit non-claim language (human-directed, external review and implementation guidance verified against Electronics.md TMR doctrine before integration), 2026-07-31 |
 | Auditor          | ChatGPT — Skeptic/Auditor; Gemini — Skeptic/Auditor; Grok — Skeptic/Auditor; Claude — Synthesizer; Claude — GMP-009 cross-referenced to GOV-013 (human-directed), 2026-07-16; Claude — GMP-005/GMP-009 resolved (multi-agent proposal, human-directed), 2026-07-17; Claude — Synthesizer/Auditor, external review triage (human-directed), 2026-07-25; Claude — Synthesizer/Auditor, EQD adoption with GOV-008 conflation caught and corrected (human-directed), 2026-07-26; Claude — Synthesizer/Auditor, polish pass (human-directed), 2026-07-27; Claude — Synthesizer/Auditor, Quorum Compliance Trend added, GOV-008 conflation re-checked and explicitly guarded a second time (human-directed), 2026-07-26; Claude — Synthesizer/Auditor, §VII drafted from an external candidate spec, verified against GOV-008's actual sidecar Resolution Path (`Archive/Logs/Governance_Charter_Changelog.md`) and §VI's Non-goal clause before integration, human-directed, 2026-07-31 |
 | Open Unknowns    | 10                                                                  |
 | Active Disputes  | 0                                                                   |
@@ -567,12 +567,20 @@ The quorum is achieved only when all of the following are true and recorded:
 
 ### VII.6 Open Items for Ratification Review
 
+**Read this before the list below.** A Skeptic/Auditor review (2026-07-31) correctly identified that VII.1's Hardware/Runtime Diversity and Non-Simulatability requirements are currently **declarable, not achieved** — there is no second physical host, no independent verification system, and no external root of trust beyond GMP-004's still-unenforceable interim authentication placeholder anywhere in this repository's actual operating environment. Declaring the requirement in this section does not create the substrate it requires. This is not one item among the ratification questions below; it is more fundamental than that. Until a concrete, testable second runtime exists, this section cannot honestly be marked "achieved" regardless of how the other Open Items resolve. A tiered implementation reference for actually closing this gap (interim logical isolation → minimal physical diversity → full TMR-aligned diversity, cross-referenced to `Operations/Electronics.md`'s existing silicon/firmware/power-path/thermal/procurement diversity doctrine for salvaged-component TMR) is parked at `Admin/Trajectories.md` TR-GOV-001 — a reference for when this is actually built, not a claim that it has been.
+
 - Exact timeout and liveness parameters (Statutory, not constitutional).
 - Precise definition of "model family" for diversity scoring.
 - Whether hardware diversity is mandatory at Pathway 1 exit itself, or only before v1 (VII.1 currently allows logical separation as an interim measure — this leniency itself needs explicit ratification, not silent adoption).
 - Weighting/voting rules if more than the minimum agents are present.
 - Integration points with `Admin/Auditor_Protocols.md` and `Automation/AUDIT_HARNESS.py`.
 - Whether `Admin/CIR_Gov.md`'s predicate kernel (itself unratified, structurally dependent on this section per its own §Binding Status) should be reviewed alongside this section, given the two documents would become load-bearing for each other if both were ratified.
+
+**Near-term action items (recommended by the 2026-07-31 Skeptic/Auditor review, not yet executed):**
+1. Explicitly record the minimum dispute-resolution rule for GMP-011 (defaulting a disputed classification to Track B for the duration of the dispute is a workable minimum — write it down rather than leaving it a future candidate).
+2. Decide whether §VII's hardware-diversity requirement is mandatory for Pathway 1 exit or only pre-v1, and treat that decision itself as Track B-adjacent, not a casual edit.
+3. Either run a simulated Track B proposal under EQD (§VI), or formally accept that GMP-003 stays Open until a live case appears — the recommendation to test on a real or deliberately simulated proposal is sound and should be a near-term action, not left indefinite.
+4. **Do not promote ownership transfer (GMP-002) or claim any progress on GOV-008 until Gate 4 and a real second runtime exist.** This section's existence is Payment via Specification only, as already stated above — this line exists so that constraint survives independent of who is reading this file next.
 
 ### VII.7 Relationship to Existing Doctrine
 
@@ -1118,14 +1126,14 @@ governing authority's direction that this is worth tracking formally.*
 
 | Field         | Value                                      |
 |---------------|--------------------------------------------|
-| Status        | Open                                       |
+| Status        | In Progress — interim minimum rule adopted |
 | Risk          | Medium                                     |
 | Priority      | Minor                                      |
 | Type          | Governance                                 |
 | Blocking      | No                                         |
 | Owner         | `Admin/Governance_Migration_Protocol.md`   |
 | First Logged  | 2026-07-25                                 |
-| Last Reviewed | 2026-07-25                                 |
+| Last Reviewed | 2026-07-31                                 |
 
 **Description:** GMP-005/GMP-009's constitutional-impact model defines
 *how* a change should be classified Track A vs. Track B, and "when in
@@ -1142,13 +1150,21 @@ that has no defined resolution path could stall indefinitely or get
 settled by whoever argues longest, neither of which is the intended
 constitutional discipline.
 
-**Resolution Path:** Deferred via Specification. Minimum candidate:
-disputed classifications default to Track B for the duration of the
-dispute (consistent with the existing "when in doubt" default), with
-resolution requiring human governing authority confirmation of the
-correct track before the proposal may proceed under either track's
-procedure. Not designed further here — flagged as a real gap, not
-solved speculatively.
+**Interim minimum rule (adopted 2026-07-31, per Skeptic/Auditor
+recommendation):** disputed classifications default to Track B for the
+duration of the dispute, consistent with the existing "when in doubt"
+default. Resolution requires explicit human governing authority
+confirmation of the correct track before the proposal may proceed under
+either track's procedure. This is adopted as the operative rule now,
+not left as an undesigned candidate — the review that raised this
+correctly noted that flagging a workable minimum without committing to
+it left needless ambiguity for no real design benefit.
+
+**Resolution Path:** The interim rule above is sufficient for v0
+single-contributor scale. Full design (formal dispute logging format,
+timeout for human confirmation, whether repeated disputes on the same
+proposal type should trigger a GMP-011-style structural fix rather than
+case-by-case resolution) remains open and is not solved here.
 
 *Surfaced via external audit review (ChatGPT), checked against this
 file's actual Track identification rule and "when in doubt" doctrine
@@ -1250,6 +1266,35 @@ Claude — Synthesizer/Auditor, human-directed, 2026-07-26.*
 ---
 
 ### Resolution Log
+
+- 2026-07-31: **v0.9 — Skeptic/Auditor review of §VII integrated.** An
+  external review of the v0.8 candidate state was checked against
+  source before acceptance: all cited GMP-004/006/007/008/011/012 and
+  ASM-002 details confirmed exact, all cited GOV-008 sidecar and §VI
+  Non-goal language confirmed exact. The review's central finding —
+  that VII.1's Hardware/Runtime Diversity and Non-Simulatability
+  requirements are currently declarable, not achieved, since no second
+  physical host or independent verification system exists anywhere in
+  this repository's actual operating environment — was accepted as
+  correct and given prominent placement at the top of VII.6, ahead of
+  the routine ratification questions, rather than buried as one item
+  among several. Four near-term action items from the review recorded
+  verbatim in VII.6. GMP-011 upgraded from a flagged candidate rule to
+  an adopted interim rule (disputed classifications default to Track B
+  for the dispute's duration, human confirmation required) per the
+  review's specific recommendation that leaving a workable minimum
+  undesigned had no remaining benefit. A companion hardware-diversity
+  implementation ladder (Tier 0 interim logical isolation through Tier
+  3 full TMR alignment) was checked against `Operations/Electronics.md`
+  source — its silicon/firmware/power-path/thermal/procurement
+  diversity claim confirmed as an exact match to that file's own EL-007
+  and 2026-05-09 audit entry — and parked at `Admin/Trajectories.md`
+  TR-GOV-001 as a reference for future implementation, explicitly not
+  as a claim that any of it currently exists. No status change to
+  GOV-008 itself resulted from this pass; per the review's own fourth
+  recommendation, no progress on GOV-008 may be claimed until a real
+  second runtime exists. Operating as Synthesizer per
+  Auditor_Protocols.md v0.29, human-directed.
 
 - 2026-07-31: **v0.8 — §VII Bootstrap Quorum Doctrine added as a
   candidate GOV-008 specification**, drafted from an external candidate
@@ -1516,6 +1561,14 @@ Claude — Synthesizer/Auditor, human-directed, 2026-07-26.*
 
 ## Status
 
+Version 0.9 — Skeptic/Auditor review of §VII integrated: substrate-gap
+warning given prominent placement in VII.6 (hardware diversity
+currently declarable, not achieved — no second host exists), four
+near-term action items recorded, GMP-011 upgraded from flagged
+candidate to adopted interim rule, TR-GOV-001 implementation ladder
+parked in Trajectories.md with explicit non-claim language. No status
+change to GOV-008 resulted. No automation implemented (2026-07-31).
+
 Version 0.8 — §VII Bootstrap Quorum Doctrine added: a candidate
 GOV-008 specification (Core Requirements, Agent Class Taxonomy,
 Operational Definition of Quorum Achieved, Verification Criteria,
@@ -1528,46 +1581,4 @@ Version 0.7 — Quorum Compliance Trend subsection added to §VI EQD: a
 per-cycle conformance rate against the Minimum Quorum Matrix, tracked
 across cycles rather than gated on a single value, with the Non-goal
 clause explicitly restated for this subsection. GMP-013 updated as a
-second consumer of its already-deferred metadata schema. No new
-unknowns; no automation implemented (2026-07-26).
-
-Version 0.6 — Polish pass following external review of the v0.5 EQD
-addition (Grok, Gemini): Phase 2 now explicitly anchors to EQD; GMP-003
-date/forward-looking gaps closed; a new Drift Indicator protects EQD's
-Non-goal clause specifically; ASM-002 note updated; a mirrored
-non-resolution note added to GOV-008 in `Admin/Governance_Charter.md`
-so the epistemic/governance independence distinction is visible from
-both files. No unknowns added or resolved (2026-07-27).
-
-Version 0.5 — §VI Epistemic Quorum Doctrine (EQD) added, formalizing
-multi-agent review quorum, independence dimensions, and outcome
-taxonomy for GMP-003/GMP-010-class review. Adopted from four-way
-external multi-agent synthesis, but rescoped before adoption: an
-early draft conflated epistemic independence (reasoning/evidence)
-with governance independence (enforcement authority) and marked
-GOV-008 "resolved" — checked against the Charter's actual GOV-008
-text, found not to satisfy it, and corrected with a binding Non-goal
-clause before anything was adopted. GMP-013 registered for the
-tooling/automation gap this doctrine does not itself close (2026-07-26).
-
-Version 0.4 — External audit review triaged (ChatGPT, Grok): GMP-003
-date typo fixed; Open Unknowns count corrected from a stale 8 to the
-actual 7 open entries plus two newly registered (GMP-011, GMP-012),
-now 9; Lessons Learned populated from existing Resolution Log history
-(was empty since file creation); GMP-004 gained a cross-reference to
-existing GPG signing precedent (`Admin/Repository_Integrity_Protocol.md`
-RIP-001) rather than adopting proposed HSM/blockchain infrastructure,
-assessed as disproportionate at v0 scale; GMP-006/007/008 gained a
-shared consolidation note pointing at a future amendment state machine,
-not designed in this pass (2026-07-25).
-
-Version 0.3 — GMP-009 logged: track classification gap for non-Axiom
-content changes to the Tier 1 file (2026-07-03). *(This entry
-previously sat as the most recent Status entry despite GMP-005/GMP-009's
-resolution and GMP-010's registration both landing afterward — corrected
-2026-07-25, no substantive content changed by the correction itself.)*
-
-**What must remain constant:**
-
-**The procedure must exist before the argument arises.**
-**Constitutional Capture is guarded against by both text and interpretation.**
+second consumer of its al
