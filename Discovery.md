@@ -296,6 +296,7 @@ Discovery.md is a navigation map — task tracking belongs in Unknowns.md.
 | `Admin/Experiments.md` | Draft — Stub | 0/6 | Low |
 | `Admin/Nothingness_Theorem.md` | Compiled — Functionless artifact | — | — |
 | `Admin/Computational_Institutional_Reasoning.md` | Exploration (v0.18) | G4 cleared; G1 partial; G3 blocked (AP-012/AP-016) | Critical — CIR-001, renamed 2026-07-28 from a colliding local "GOV-008"; Physical Grounding Telemetry Mapping Interface undefined |
+| `Admin/CIR_Gov.md` | **Proposed — Not Ratified** (2026-07-31) | 0/6 | Low while unratified — CIR-GOV-001 (predicate/Checkpoint mapping incomplete); structurally depends on GOV-008 (Open), see file's own Binding Status section |
 | `Admin/Governance_Migration_Protocol.md` | Exploration | 0/6 | High |
 | `Admin/Autonomy_Divergence_Protocol.md` | Draft (PROPOSED NOT RATIFIED) | 0/6 | High |
 | `Admin/PROBE_INVOCATION.md` | Draft | N/A — operational prompt template | Low |
@@ -475,6 +476,12 @@ Formal theoretical paper. Treats the multi-agent collective as a discrete-time d
 **Upstream:** None — foundational; references Ship of Theseus framing from Admin/Ship_of_Theseus.md as an analogy only (Axiom A4), not a structural dependency.
 **Downstream:** Formal backing for Admin/Auditor_Protocols.md (EF-0.0, EF-0.8b, AP-006 provenance ceiling, AP-001 retrospective calibration); Architecture/Cognitive_Frameworks.md (CF-004 epistemic debt measurement, Triage Posture doctrine); Unknowns.md (Unknown Budget rule, Size Management Rules rationale); Automation/AUDIT_HARNESS.py (constitutional predicate compiler design target — γ1 through γ4 rule semantics). No operational dependency — repository functions without this file being read, but several doctrine files assert claims this paper is the proof source for.
 ⚠️ **Corrected 2026-07-28:** this file is not exempt from sidecar tracking — that framing was accurate when CIR was purely theoretical but is now stale. Active Trackers: CIR-001 (Physical Grounding Telemetry Mapping Interface, renamed this session from a colliding local "GOV-008" — see `Admin/Forge_Audit_Kit.md`'s Governance Sidecar ID Reference for the registered `CIR-` prefix), AP-012, AP-016, CF-002, CF-004. If repository practice diverges from a theorem or axiom stated here, still log per the Repository Role divergence-logging rule.
+
+### `Admin/CIR_Gov.md`
+Candidate epistemic governance kernel — "CIR v2.0." Distinct from `Admin/Computational_Institutional_Reasoning.md` (the formal theoretical paper above): this file is a proposed *operational* runtime specification — predicate-gated state transitions (`Γ`), typed unknowns with debt accounting, provenance ceilings, and a deterministic triage posture — drafted 2026-07-31, filed **Proposed — Not Ratified**. Its central claim (agent-independent state transitions, Principle 7 / Axiom A4) structurally depends on GOV-008 (minimum agent/hardware quorum, `Governance_Charter.md`), which remains Open with no concrete specification and no ratified quorum. The file's own Binding Status section states plainly that running this kernel today would not implement Q-2 Separation of Powers — it would reproduce the Bootstrap Paradox under the appearance of predicate rigor. Preserved in full specifically so the architecture isn't lost, per explicit human direction, while sequencing recommends GOV-008 be drafted and ratified first, independently of this file.
+**Upstream:** None — draws a single minimal axiom (A6, non-zero representational floor) from `Admin/Nothingness_Theorem.md`'s Core Theorem, explicitly not a full merge.
+**Downstream:** None currently — no harness, evaluator, or automation implements any part of this file. Intended eventual downstream: a future multi-agent audit harness, once GOV-008 exists.
+⚠️ Do not cite this file as evidence of current Q-2 compliance, Checkpoint 2 clearance, or Genesis Phase exit. It is a specification, not a running system.
 
 ### `Admin/Governance_Migration_Protocol.md`
 Tier 1 Axiom amendment procedures. Two-track migration system. Engineer proposal; human ratification. Hard floor doctrine.
