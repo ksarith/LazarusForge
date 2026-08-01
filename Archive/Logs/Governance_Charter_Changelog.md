@@ -191,14 +191,14 @@ GOV-XXX sidecar entry and the full Resolution Log — lives here now.
 
 | Field         | Value                           |
 |---------------|---------------------------------|
-| Status        | Open                            |
+| Status        | Open — candidate specification drafted, pending ratification |
 | Risk          | High                            |
 | Priority      | Major                           |
 | Type          | Governance / Architectural      |
 | Blocking      | No                              |
 | Owner         | `Admin/Governance_Charter.md`   |
 | First Logged  | 2026-05-25                      |
-| Last Reviewed | 2026-05-25                      |
+| Last Reviewed | 2026-07-31                      |
 
 **Description:** The minimum number and diversity of independent agents or hardware systems required to satisfy Axiom Q-2 (Separation of Powers) during Genesis Phase is undefined. The Genesis Phase exit condition depends on this quorum definition.
 
@@ -207,6 +207,8 @@ GOV-XXX sidecar entry and the full Resolution Log — lives here now.
 **Resolution Path:** Payment via Specification — define minimum agent quorum in a dedicated Bootstrap_Protocol.md or extend `Admin/Governance_Migration_Protocol.md`. Inputs: (1) minimum number of distinct agent classes required; (2) hardware diversity requirement (Axiom Q-2 implies architectural independence, not just role separation); (3) attestation mechanism for quorum verification. Cross-reference GOV-007 and `Admin/Security_Protocols.md`. Note: Pathway 1 (Quorum Achievement) in the Genesis Phase Exit Conditions is the primary resolution path for this unknown — closing GOV-008 operationalizes that pathway. Pathways 2, 3, and 4 provide exit routes that do not depend on GOV-008 resolution, reducing the risk of indefinite Genesis Phase extension.
 
 **Non-resolution note (added 2026-07-27):** `Admin/Governance_Migration_Protocol.md` §VI Epistemic Quorum Doctrine (EQD, added v0.5) defines a multi-agent review quorum for Track B proposals and adversarial review. EQD carries its own binding Non-goal clause stating explicitly that it does **not** satisfy this entry — a quorum of advisory chat sessions directed by one human principal provides epistemic independence (reasoning/evidence diversity), not the architectural/hardware independence and multi-party enforcement substrate this entry actually requires. Logged here so this distinction is visible from both files, not only EQD's — a future reader arriving at GOV-008 first should not need to already know EQD's own disclaimer to avoid the same conflation an early draft of EQD itself made before correction.
+
+**Candidate specification drafted (2026-07-31):** `Admin/Governance_Migration_Protocol.md` §VII "Bootstrap Quorum Doctrine" now contains a candidate GOV-008 specification — Core Requirements (including the Hardware/Runtime Diversity row EQD structurally cannot meet), Agent Class Taxonomy, an operational definition of "Quorum Achieved," verification/independence criteria, interim/escalation rules, and open ratification-review items. Explicitly filed as a candidate, not a resolution — the section's own header states its existence is Payment via Specification only and does not itself move this entry's Status past "candidate drafted, pending ratification." Circulate for multi-agent skeptical review and human governing-authority ratification per the same process §VI's own doctrine describes for Track B changes before considering this entry Resolved.
 
 ---
 
