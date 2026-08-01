@@ -3,14 +3,15 @@
 
 **Full version history in `Unknowns_Changelog.md` (2026-07-19 cleanup pass, following the precedent set by `Admin/AUDIT_HARNESS_CHANGELOG.md` and `Admin/Forge_Audit_Kit_Changelog.md`; scrubbed to current-version-only 2026-07-28 — the "current plus last four in full" window was itself compressed further, since the Audit Trail below now carries the compressed record for every version back to v1.0, and the changelog carries full text for all of them. This block now keeps only the current version.)**
 
-**Version 4.36 — 2026-07-31. CE-006 vessel design sketch integrated.**
-`Architecture/Chemistry.md` CE-006 moved Open → In Progress: a
-conceptual chlor-alkali vessel design was checked against
-`Operations/Air_Scrubber.md` source, found to miss the file's existing
-Thermal Sink Requirement and to assume AS-003's uncalibrated interlock
-was working infrastructure, sent back, and integrated only after both
-gaps became explicit design requirements. No vessel built; still
-short of Resolved. Mirrored same-day.
+**Version 4.37 — 2026-07-31. GOV-008 candidate specification drafted.**
+`Admin/Governance_Migration_Protocol.md` §VII "Bootstrap Quorum
+Doctrine" drafted as a candidate GOV-008 specification, explicitly
+held to the governance-independence bar §VI's own EQD Non-goal clause
+distinguishes from epistemic independence — leads with that clause,
+flags Hardware/Runtime Diversity as the specific requirement EQD's
+quorum cannot meet. Candidate only; not ratified; does not resolve
+GOV-008. Mirrored here and into GOV-008's own sidecar entry
+(`Archive/Logs/Governance_Charter_Changelog.md`) same-day.
 
 **Expiry Rule active — see `Admin/Canonical_Terms.md` §4 for the Cycle definition this rule now explicitly references (one calendar year default, not one audit pass — see CT-011). Protocol Performance metrics collecting.**
 
@@ -39,11 +40,11 @@ Formal axioms, theorems, and Verification Algebra backing CF-004, AP-006, and ep
 
 ---
 
-## What v4.36 Means
+## What v4.37 Means
 
-- **A proposed design was sent back before it was accepted.** Grok's first CE-006 vessel sketch was checked against `Operations/Air_Scrubber.md` source and found to miss the file's existing Thermal Sink Requirement — logged there specifically because a past version of Stage D was once specified without one and hot exhaust overwhelmed the scrubbing liquid — and to quietly assume AS-003's interlock was working infrastructure when it's actually uncalibrated and blocked on the Gate 4 Cold Verification Harness.
-- **The revision, not just the original, is what got adopted.** Both gaps became explicit, named design requirements in the second pass (combined thermal-sink sizing; AS-003 calibration as a hard prerequisite gate) before integration — this file did not accept the first draft and separately note the gaps, it required the fix.
-- **Status change matches precedent, not optimism.** CE-006 moves Open → In Progress alongside CE-005/CE-007 — same bar: doctrine and conceptual design complete, real hardware and calibration remain. No vessel has been built.
+- **The hardest-to-conflate unknown in the repo got its candidate spec written under its own strictest warning label.** GOV-008 has a documented history of near-misses — an early EQD draft itself once nearly conflated epistemic quorum with governance quorum before self-correction, which is why §VI carries a binding Non-goal clause. §VII's candidate specification opens by restating that clause and explicitly names the one requirement (Hardware/Runtime Diversity) that a chat-session quorum structurally cannot satisfy, so the same conflation can't quietly recur in this draft.
+- **Drafting the spec is not resolving the unknown.** GOV-008's Status field now reads "Open — candidate specification drafted, pending ratification," not Resolved or even In Progress. The section's own text states its existence is Payment via Specification only.
+- **This is what `Admin/CIR_Gov.md` was waiting on.** That file's §8.2 already states no CIR-VERIFIED transition is valid without a quorum meeting this description. §VII is the first concrete step toward that quorum actually existing — still just a candidate, not yet ratified.
 
 ---
 
@@ -214,7 +215,7 @@ GH-009 (Emergent heuristic conflict — N² interaction scaling)
 | GOV-005 | Long-term constitutional stability unproven | `Admin/Governance_Charter.md` | Open | — | Critical |
 | GOV-006 | Human override authenticity validation undefined — GOV-006-A: interim authentication rules are declarative-only; zero automated resistance until Security_Protocols.md reaches Provisional Spec | `Admin/Governance_Charter.md` | Open | — | Major |
 | GOV-007 | Bootstrap governance authority initialization undefined | `Admin/Governance_Charter.md` | In Progress | Active | Major |
-| GOV-008 | Minimum hardware and agent quorum for bootstrap compliance | `Admin/Governance_Charter.md` | Open | — | Major |
+| GOV-008 | Minimum hardware and agent quorum for bootstrap compliance — candidate specification drafted 2026-07-31 (`Admin/Governance_Migration_Protocol.md` §VII), explicitly held to the governance-independence bar §VI's own EQD Non-goal clause distinguishes from epistemic independence; not ratified, does not resolve this entry | `Admin/Governance_Charter.md` | Open | — | Major |
 | GOV-009 | Bounded framework for external resource consumption and environmental interaction — `Admin/Environmental_Constraints.md` created as resolution vehicle | `Admin/Governance_Charter.md` | In Progress | Vehicle | Major |
 | GOV-010 | Jurisdictional and regulatory compliance friction for physical forge deployment — cross-ref EC-010; `Admin/Environmental_Constraints.md` created as convergence resolution vehicle | `Admin/Governance_Charter.md` | In Progress | Vehicle | Minor |
 | GOV-012 | Constitutional Stagnation Decay — no automated demotion mechanism for unknowns that remain Open past the Cycle threshold without substantively updated Resolution Path; threshold formally deferred to zero cycles 2026-07-19 (no elapsed operational time to derive a real value against), not neglected — re-derivation method already specified for when a site reaches operational launch | `Admin/Governance_Charter.md` | Open | — | Major |
