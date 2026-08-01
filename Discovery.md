@@ -296,7 +296,7 @@ Discovery.md is a navigation map — task tracking belongs in Unknowns.md.
 | `Admin/Experiments.md` | Draft — Stub | 0/6 | Low |
 | `Admin/Nothingness_Theorem.md` | Compiled — Functionless artifact | — | — |
 | `Admin/Computational_Institutional_Reasoning.md` | Exploration (v0.18) | G4 cleared; G1 partial; G3 blocked (AP-012/AP-016) | Critical — CIR-001, renamed 2026-07-28 from a colliding local "GOV-008"; Physical Grounding Telemetry Mapping Interface undefined |
-| `Admin/CIR_Gov.md` | **Proposed — Not Ratified** (2026-07-31) | 0/6 | Low while unratified — CIR-GOV-001 (predicate/Checkpoint mapping incomplete); structurally depends on GOV-008 (Open), see file's own Binding Status section |
+| `Admin/CIR_Gov.md` | **Proposed — Not Ratified** (2026-07-31) | 0/6 | Low while unratified — CIR-GOV-001 (candidate Predicate↔Checkpoint mapping supplied 2026-07-31; Checkpoints 2 and 4 confirmed to have no corresponding predicate); structurally depends on GOV-008 (Open), see file's own Binding Status section |
 | `Admin/Governance_Migration_Protocol.md` | Exploration | 0/6 | High |
 | `Admin/Autonomy_Divergence_Protocol.md` | Draft (PROPOSED NOT RATIFIED) | 0/6 | High |
 | `Admin/PROBE_INVOCATION.md` | Draft | N/A — operational prompt template | Low |
