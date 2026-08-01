@@ -3,17 +3,13 @@
 
 **Full version history in `Unknowns_Changelog.md` (2026-07-19 cleanup pass, following the precedent set by `Admin/AUDIT_HARNESS_CHANGELOG.md` and `Admin/Forge_Audit_Kit_Changelog.md`; scrubbed to current-version-only 2026-07-28 — the "current plus last four in full" window was itself compressed further, since the Audit Trail below now carries the compressed record for every version back to v1.0, and the changelog carries full text for all of them. This block now keeps only the current version.)**
 
-**Version 4.34 — 2026-07-31. Chemistry.md CE-005/006/007/008 updated.**
-Copilot audit findings on `Architecture/Chemistry.md` were checked against
-source and found to contain three false claims (truncation, missing
-Appendix A, missing corrosion-rate qualifier — all already present/false).
-A proposed "Dilution Doctrine" insertion as CE-004 would have collided
-with the existing CE-004; registered as CE-008 instead. Real gaps closed:
-§2.3 full doctrine, §2.4 Dilution Doctrine, §1.2 SCC extension, §3.2 NOₓ
-subsection. CE-005 and CE-007 moved Open → In Progress; CE-006 given
-quantitative scrubber chemistry and alarm thresholds but remains Open
-pending real vessel hardware. Mirrored here same-day. Open Unknowns for
-Chemistry.md: 7 → 8 (CE-008 added).
+**Version 4.35 — 2026-07-31. CLF-006/CLF-009 ratified.**
+`Challenges/Closed_Loop_Feedstock.md` §7 (contamination doctrine +
+Material Certainty Manifest schema + validation logic) ratified by
+human governing authority, adopted as one atomic unit as drafted.
+CLF-006 and CLF-009 moved Open → In Progress here to match: doctrine
+is now binding, numeric thresholds remain provisional pending §7.3's
+instrumented-cycle validation. Mirrored same-day.
 
 **Expiry Rule active — see `Admin/Canonical_Terms.md` §4 for the Cycle definition this rule now explicitly references (one calendar year default, not one audit pass — see CT-011). Protocol Performance metrics collecting.**
 
@@ -42,13 +38,11 @@ Formal axioms, theorems, and Verification Algebra backing CF-004, AP-006, and ep
 
 ---
 
-## What v4.34 Means
+## What v4.35 Means
 
-- **Verification caught real errors in an incoming audit, not just style issues.** Copilot's Chemistry.md audit claimed the file was truncated mid-sentence, that the Chemical Operator Competency appendix was missing, and that a corrosion-rate qualifier was absent — all three checked against source and found false. This mattered because the audit's own proposed fix set was built partly on those false premises.
-- **ID collision caught before insertion, not after.** A proposed "Dilution Doctrine" addition was labeled CE-004 by the incoming drafts — but CE-004 (Chemical Operator Minimum Competency) already existed and was already In Progress. Registered the new content as CE-008 instead.
-- **Real gaps still closed.** §2.3 (Solution Chemistry, was a stub), §2.4 (new Dilution Doctrine), §1.2 SCC extension, and §3.2 NOₓ subsection all added, verified against source structure before insertion.
-- **Two unknowns narrowed to In Progress, one stayed Open on purpose.** CE-005 and CE-007 now have doctrine-level answers with only quantitative/hardware work remaining. CE-006 got real chemistry (stoichiometry, operating parameters) and concrete alarm thresholds but stays Open — sealed vessel design and real flow-rate calibration are hardware gaps no amount of doctrine closes, the same category as `Challenges/Closed_Loop_Feedstock.md` CLF-003.
-- **Count:** Chemistry.md Open Unknowns 7 → 8 (CE-008 added), mirrored same-day.
+- **First ratification of the session's drafted doctrine.** §7 in `Challenges/Closed_Loop_Feedstock.md` — contamination doctrine, Material Certainty Manifest schema, and validation logic — moved from drafted-and-verified to formally binding, adopted as one atomic unit exactly as integrated on 2026-07-30, no last-minute changes.
+- **Status change reflects what ratification actually does, not more than that.** CLF-006 and CLF-009 move Open → In Progress, not Open → Resolved. The doctrine is now binding (Payment via Specification), but every numeric threshold inside it stays provisional design-intent until hardened through the instrumented-cycle validation process the doctrine itself specifies. Ratifying the rulebook is not the same as validating the numbers in it.
+- **No new content, no re-verification needed.** This version only updates status fields to match a governance decision already made against previously-verified text.
 
 ---
 
@@ -758,10 +752,10 @@ GH-009 (Emergent heuristic conflict — N² interaction scaling)
 | CLF-002 | Minimal viable field assay protocols (spot tests, melt-flow, etc.) for copper/aluminum alloys from salvage | `Challenges/Closed_Loop_Feedstock.md` | Open | — | Major |
 | CLF-003 | Nozzle and die wear tolerances when processing high-variance, particulate-laden salvage feedstocks | `Challenges/Closed_Loop_Feedstock.md` | Open | — | Critical |
 | CLF-004 | Chemical footprint of electrolytic/electrorefining pathways undefined — local/organic acid sourcing vs. closed-loop acid reclamation not decided; cross-ref `Admin/Ethical_Constraints.md` §Toxic and Hazardous Material Handling, `Operations/Gate_03_Reduction.md` GR-003, PL-001/CE-003, `Challenges/Critical_Minerals.md` CM-002. Candidate pathway logged 2026-07-07 (on-site chlor-alkali electrolysis) — blocked pending CE-006 (`Architecture/Chemistry.md`, chlorine containment). | `Challenges/Closed_Loop_Feedstock.md` | Open | — | Critical |
-| CLF-006 | Recursive cascading contamination thresholds, bleed-off, and purge metrics undefined | `Challenges/Closed_Loop_Feedstock.md` | Open | — | Critical |
+| CLF-006 | Recursive cascading contamination thresholds, bleed-off, and purge metrics — full doctrine ratified 2026-07-31 (owning file §7.1); numeric thresholds provisional pending instrumented-cycle validation | `Challenges/Closed_Loop_Feedstock.md` | In Progress | — | Critical |
 | CLF-007 | PIR aggregation function undefined — four sub-vectors collapsed to a scalar with no stated operator; arithmetic mean would contradict the file's own single-fatal-dependency framing | `Challenges/Closed_Loop_Feedstock.md` | Open | — | Major |
 | CLF-008 | Downstream destination for degraded/bleed-off material and hazardous byproducts undefined — no link to full-reduction diversion or waste-output accumulation tracking | `Challenges/Closed_Loop_Feedstock.md` | Open | — | Major |
-| CLF-009 | Interface contract for characterization→fabrication data handoff undefined (e.g. a "Material Certainty Manifest" form factor) | `Challenges/Closed_Loop_Feedstock.md` | Open | — | Minor |
+| CLF-009 | Interface contract for characterization→fabrication data handoff — Material Certainty Manifest schema ratified 2026-07-31 (owning file §7.2); not yet physically deployed on any real batch | `Challenges/Closed_Loop_Feedstock.md` | In Progress | — | Minor |
 | CLF-010 | FIR boundary conditions undefined — how donated virgin resin, reclaimed-but-unprocessed wire, and reused fasteners count toward salvaged vs. total mass is unspecified | `Challenges/Closed_Loop_Feedstock.md` | Open | — | Major |
 
 *CLF-003 and CLF-006 are Critical — CLF-003 blocks sustained polymer extrusion operations; CLF-006 blocks safe recursive-loop operation.*
