@@ -3,13 +3,14 @@
 
 **Full version history in `Unknowns_Changelog.md` (2026-07-19 cleanup pass, following the precedent set by `Admin/AUDIT_HARNESS_CHANGELOG.md` and `Admin/Forge_Audit_Kit_Changelog.md`; scrubbed to current-version-only 2026-07-28 — the "current plus last four in full" window was itself compressed further, since the Audit Trail below now carries the compressed record for every version back to v1.0, and the changelog carries full text for all of them. This block now keeps only the current version.)**
 
-**Version 4.35 — 2026-07-31. CLF-006/CLF-009 ratified.**
-`Challenges/Closed_Loop_Feedstock.md` §7 (contamination doctrine +
-Material Certainty Manifest schema + validation logic) ratified by
-human governing authority, adopted as one atomic unit as drafted.
-CLF-006 and CLF-009 moved Open → In Progress here to match: doctrine
-is now binding, numeric thresholds remain provisional pending §7.3's
-instrumented-cycle validation. Mirrored same-day.
+**Version 4.36 — 2026-07-31. CE-006 vessel design sketch integrated.**
+`Architecture/Chemistry.md` CE-006 moved Open → In Progress: a
+conceptual chlor-alkali vessel design was checked against
+`Operations/Air_Scrubber.md` source, found to miss the file's existing
+Thermal Sink Requirement and to assume AS-003's uncalibrated interlock
+was working infrastructure, sent back, and integrated only after both
+gaps became explicit design requirements. No vessel built; still
+short of Resolved. Mirrored same-day.
 
 **Expiry Rule active — see `Admin/Canonical_Terms.md` §4 for the Cycle definition this rule now explicitly references (one calendar year default, not one audit pass — see CT-011). Protocol Performance metrics collecting.**
 
@@ -38,11 +39,11 @@ Formal axioms, theorems, and Verification Algebra backing CF-004, AP-006, and ep
 
 ---
 
-## What v4.35 Means
+## What v4.36 Means
 
-- **First ratification of the session's drafted doctrine.** §7 in `Challenges/Closed_Loop_Feedstock.md` — contamination doctrine, Material Certainty Manifest schema, and validation logic — moved from drafted-and-verified to formally binding, adopted as one atomic unit exactly as integrated on 2026-07-30, no last-minute changes.
-- **Status change reflects what ratification actually does, not more than that.** CLF-006 and CLF-009 move Open → In Progress, not Open → Resolved. The doctrine is now binding (Payment via Specification), but every numeric threshold inside it stays provisional design-intent until hardened through the instrumented-cycle validation process the doctrine itself specifies. Ratifying the rulebook is not the same as validating the numbers in it.
-- **No new content, no re-verification needed.** This version only updates status fields to match a governance decision already made against previously-verified text.
+- **A proposed design was sent back before it was accepted.** Grok's first CE-006 vessel sketch was checked against `Operations/Air_Scrubber.md` source and found to miss the file's existing Thermal Sink Requirement — logged there specifically because a past version of Stage D was once specified without one and hot exhaust overwhelmed the scrubbing liquid — and to quietly assume AS-003's interlock was working infrastructure when it's actually uncalibrated and blocked on the Gate 4 Cold Verification Harness.
+- **The revision, not just the original, is what got adopted.** Both gaps became explicit, named design requirements in the second pass (combined thermal-sink sizing; AS-003 calibration as a hard prerequisite gate) before integration — this file did not accept the first draft and separately note the gaps, it required the fix.
+- **Status change matches precedent, not optimism.** CE-006 moves Open → In Progress alongside CE-005/CE-007 — same bar: doctrine and conceptual design complete, real hardware and calibration remain. No vessel has been built.
 
 ---
 
@@ -316,7 +317,7 @@ GH-009 (Emergent heuristic conflict — N² interaction scaling)
 | CE-003 | Field polymer identification reliability not validated for mixed salvage stream | `Architecture/Chemistry.md` | Open | — | Critical |
 | CE-004 | Chemical Operator Minimum Competency — Appendix A created in Chemistry.md | `Architecture/Chemistry.md` | In Progress | Vehicle | Major |
 | CE-005 | Solution chemistry and precipitation doctrine — §2.3 expanded to full doctrine 2026-07-31; quantitative Ksp validation and sludge-disposal routing to GR-003 remain (GR-003 itself unassigned in `Operations/Gate_03_Reduction.md`) | `Architecture/Chemistry.md` | In Progress | — | Major |
-| CE-006 | Chlorine gas containment doctrine — mechanism corrected 2026-07-19 to `Operations/Air_Scrubber.md` Stage D caustic scrubbing (was incorrectly directed to Stage E KMnO₄ bed, which does not target Cl₂); quantitative scrubber chemistry and detection/alarm thresholds added 2026-07-31 — cross-ref `Challenges/Closed_Loop_Feedstock.md` CLF-004 (candidate pathway this blocks) and `Admin/Ethical_Constraints.md` §Toxic and Hazardous Material Handling. Sealed vessel design and real flow-rate calibration remain open (hardware gap, same category as CLF-003). | `Architecture/Chemistry.md` | Open | — | Critical |
+| CE-006 | Chlorine gas containment doctrine — mechanism corrected 2026-07-19 to `Operations/Air_Scrubber.md` Stage D caustic scrubbing; quantitative scrubber chemistry, detection/alarm thresholds, and a conceptual vessel design sketch (thermal-sink sizing + AS-003 calibration gate) added 2026-07-31 — cross-ref `Challenges/Closed_Loop_Feedstock.md` CLF-004 (candidate pathway this blocks) and `Admin/Ethical_Constraints.md` §Toxic and Hazardous Material Handling. No vessel built and AS-003 uncalibrated (hardware gap, same category as CLF-003). | `Architecture/Chemistry.md` | In Progress | — | Critical |
 | CE-007 | Sodium hypochlorite (NaOCl) byproduct storage, stability, and reuse doctrine — full doctrine (decomposition pathways, acidification-to-Cl₂ risk, storage/segregation, potable-water reuse pathway) added 2026-07-31; quantitative sizing depends on CE-006's hardware gap | `Architecture/Chemistry.md` | In Progress | — | Major |
 | CE-008 | Dilution doctrine (§2.4, added 2026-07-31) competency validation not folded into CE-004's existing Appendix A checklist — registered separately to avoid colliding with the already-existing CE-004 (Chemical Operator Minimum Competency) | `Architecture/Chemistry.md` | Open | — | Minor |
 
