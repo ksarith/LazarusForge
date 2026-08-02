@@ -766,7 +766,53 @@ This becomes governance metadata rather than prose, auditable the same way Truth
 
 ---
 
+### AP-032 — Gate/Status self-attestation pattern generalized into AI Contribution Protocols Rule 8
+
+| Field         | Value                        |
+|---------------|------------------------------|
+| Status        | Resolved — protocol rule added |
+| Risk          | Medium                       |
+| Priority      | Major                        |
+| Type          | Governance / Process         |
+| Blocking      | No                            |
+| Owner         | `Admin/Auditor_Protocols.md` — §AI Contribution Protocols, §The Fallacy Checklist item 4 |
+| First Logged  | 2026-08-02                   |
+| Last Reviewed | 2026-08-02                   |
+
+**Description:** In one working session (2026-08-02), the identical error appeared in three separate cross-agent drafts, all from Copilot: a draft would silently advance a file's `Status`, `Body Stability`, or `Spec Gates` value — or invent a locally-scoped redefinition of Spec Gates 1–6 — with no audit event behind the change. Caught each time only by manually diffing the draft's File State against the file's actual last-audited state:
+- `Operations/Energy.md` (2026-08-01 draft): `Status` written as "Transitional" into a field that takes Body-Stability-shaped values, `Spec Gates` self-declared 2/6 with a fabricated "Closed (structural)" justification for Gate 2, plus an invented file-local "Spec Gates Definition" table redefining G1–G6 as content milestones.
+- `Operations/Gate_02_Triage.md` §XII (2026-08-02 draft): the same fabricated "Spec Gate: Constitutional" category, and framing that treated proposed predicates as already binding into `Admin/CIR_Gov.md` despite that file's own Binding Status section forbidding exactly this while GOV-008 is unratified.
+- `Operations/Electronics.md` (2026-08-02 draft): `Status` written as "Transitional" (actual: Exploration) and `Spec Gates` written as "1/6" (actual: 0/6), again with no audit evidence.
+
+**Why It Matters:** Three instances of the identical failure shape from the same agent, in one session, is a pattern, not noise. Relying on a human or a different agent to notice the mismatch by manually comparing File State each time is exactly the kind of avoidable, repeated verification cost this repo's Sidecar Model and Fallacy Checklist exist to eliminate — per [EF-0.4] Auditor Fallibility, the fix belongs in the checkable protocol, not in institutional memory of "Copilot does this."
+
+**Resolution Path — resolved same day (human-directed):**
+- Added **Rule 8 — Gate/Status Self-Attestation Prohibition** to §AI Contribution Protocols: no contribution may advance `Status`/`Body Stability`/`Spec Gates`; these change only via an audit event logged by a different agent citing specific `Admin/Verification_Gates_LF.md` criteria; a contribution arriving with these fields pre-advanced is treated as unaudited and the fields are reverted before the rest of the contribution is evaluated.
+- Extended **Fallacy Checklist item 4 (Semantic Drift)** to explicitly include this check, so it's screened for during the standard audit sequence rather than requiring a separate manual pass.
+- Not done: expanding the canonical 10-item Fallacy Checklist itself with an 11th named fallacy. Considered and deliberately avoided — the checklist is referenced verbatim across many prior audit sign-offs repository-wide, and folding this into the existing Semantic Drift item (which already covers "has a term/value changed without documented revision") was lower-disruption than renumbering or extending a stable, widely-cited list for what is a specific instance of drift, not a new category of error.
+
+**Related:** all three instances were caught and corrected in-session before merge (see `Operations/Energy.md`, `Operations/Gate_02_Triage.md`, and `Operations/Electronics.md` Resolution Logs, 2026-08-02 entries) — AP-032 is the generalization step, not the first catch.
+
+*Registered and resolved same day by Claude — Synthesizer/Auditor, human-directed, 2026-08-02.*
+
+---
+
 ### Resolution Log
+
+- 2026-08-02: **v0.30 — AP-032 registered and resolved same day.**
+  Rule 8 (Gate/Status Self-Attestation Prohibition) added to §AI
+  Contribution Protocols; Fallacy Checklist item 4 (Semantic Drift)
+  extended to explicitly cover silently-advanced `Status`/`Body
+  Stability`/`Spec Gates` values and locally-invented gate categories.
+  Generalizes an identical error caught three times in one session
+  from the same agent (Copilot) across `Operations/Energy.md`,
+  `Operations/Gate_02_Triage.md` §XII, and `Operations/Electronics.md`
+  — each previously required a manual File State diff to catch rather
+  than a named, checkable rule. Deliberately did not expand the
+  canonical 10-item Fallacy Checklist with a new numbered entry;
+  folded into the existing Semantic Drift item instead, since the
+  checklist is cited verbatim across many prior audit sign-offs and
+  this is a specific instance of drift, not a new category.
 
 - 2026-07-29: **AP-031 registered and resolved same day —
   Semantic Drift Score and Unknown Accumulation Rate thresholds
@@ -1076,18 +1122,4 @@ This becomes governance metadata rather than prose, auditable the same way Truth
   Cycle entry.
 
 - 2026-05-04: **UNK-004 (Expiry Rule enforcement mechanism)** — Discharged. Sidecar Model addresses the underlying accumulation problem structurally.
-- 2026-05-04: **UNK-022 (Full Stop Review trigger conditions)** — Resolved. Three specific trigger conditions and invocation record format added. Fourth trigger added at v0.6.
-- 2026-05-19: **Gate 3 Adversarial Pass** — Upgraded from single-scenario requirement to full Adversarial Challenge Battery (ten classes).
-- 2026-05-23: **Reconciliation pass** — v0.7 merges v0.6 depth with older draft's role class structure, 10-phase audit sequence, and evidence classification table. Abandoned Paths and Drift Indicators sections added per File_Template.md. Assumptions table added. Failure Modes reformatted to table.
-- 2026-05-23: **AP-005 through AP-007 added** — verification termination threshold, institutional truth provenance hierarchy, and repository integrity doctrine lineage introduced from Forge_Audit_Kit.md v0.7 reconciliation.
-- 2026-06-21: **v0.8 — Epistemic Foundation constitutional header inserted (EF-0.0 through EF-0.8b).** Multi-agent synthesis (Gemini, ChatGPT, Grok, Claude) across six sessions. EF-0.8b is a LazarusForgeV0-specific addition — closes the self-confirming simulation gap.
-- 2026-06-21: **v0.8.1 — Dual audit pass (Gemini + Grok, Skeptic/Auditor).** AP-001 through AP-007 escalated to Systemic Risk (8-cycle expiry threshold exceeded). Three new unknowns logged: AP-008 (High), AP-009 (Low), AP-010 (Medium). Open Unknowns incremented 7 → 10. Gates cleared: G1, G2, G4, G5, G6. Gate blocked: G3.
-- 2026-06-21: **v0.9 — AP Resolution Pass (Claude, Synthesizer/Auditor).** AP-006 closed — Payment via Specification. AP-007 moved to In Progress. AP-002 through AP-005 resolution paths updated. Open Unknowns decremented 10 → 9.
-- 2026-06-21: **v0.10 — Active mandate pass (Claude + Gemini).** EF-0.2 Level 2 and Level 3 action text expanded. AP-009 closed. AP-001, AP-004, AP-005 moved to In Progress. Open Unknowns decremented 9 → 7.
-- 2026-06-21: **v0.11 — Gemini adversarial pass integration.** AP-001 indicator set rolled back — premature metric naming removed. AP-011 logged (Medium, Major). Open Unknowns incremented 7 → 8.
-- 2026-06-23: **v0.12 — RC governance stubs added to Unknowns Registry.** Priority Demotion Doctrine (RC-007), Inventory Calcification Check (RC-008), Vehicle Advancement Visibility (RC-009) integrated as body doctrine. Open Unknowns: 8 (no new AP entries).
-- 2026-06-24: **v0.13 — Full Adversarial Challenge Battery complete.** Claude (Classes 1, 5, 6) + Gemini (Classes 3, 8, 9, 10) + Gemini prior pass (Classes 2, 4, 7). AP-012 through AP-020 logged (9 entries). Human Interaction Point Doctrine added to Governing Principles. EF-0.2 autonomous degradation amendment added. Failure Modes row added. Provenance Ceiling Self-Application Rule added. Gate 3: BLOCKED pending AP-012 and AP-016 reaching Provisional Spec. Open Unknowns: 8 → 15.
-- 2026-06-24: **v0.14 — Full clean rewrite (Claude, Synthesizer/Auditor).** All v0.12 and v0.13 amendment blocks integrated into canonical body positions. Sidecar triage pass: AP-006 and AP-009 remain Resolved; AP-014 closed (Payment via Specification — Epistemic State Calibration Reference table added to Evidence Classification section); AP-015 discharged (Trajectory — v0→v1 transition item); AP-020 discharged (Trajectory — Golden Dataset deferred; AP-014 inline set sufficient for current scale); AP-012 and AP-016 reclassified In Progress → Vehicle (Human Interaction Point Doctrine constitutes doctrine layer; enforcement gap remains). Lessons Learned row added for AP-001 indicator rollback. Gate 3 status note added to Verification Gate Enforcement. Systemic Risk escalation status note updated. Open Unknowns decremented 15 → 12. Highest Risk updated to Critical (AP-012, AP-016).
-
----
-
+- 2026-05-04: **UNK-022 (Full Stop Review trigger conditions)** — Resolved. Three spec
