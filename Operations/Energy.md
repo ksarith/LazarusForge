@@ -11,7 +11,7 @@
 > ⚠️ **Operational Safety Advisory**
 > Salvaged electrochemical batteries with unknown state-of-health present catastrophic thermal runaway and toxic hydrofluoric acid outgassing risks. Containment and isolation protocols are mandatory before any salvaged battery bank is commissioned (EV-003). Do not install salvaged storage in unventilated or uninsulated enclosures. Air Scrubber operation is strictly required during any battery handling, charging, or thermal failure event. **When in doubt, isolate the battery bank and do not proceed.**
 >
-> Multi-source operation (grid + motor-generators + biogas + solar + thermal recovery) introduces voltage, frequency, and ripple instability risks. The Energy Arbitration Layer (EAL) and Source Stability & Harmonization Layer are proposed doctrine, drafted this session and not yet audited — treat as structural specification, not a validated safety mechanism, until it clears Gate 1.
+> Multi-source operation (grid + motor-generators + biogas + solar + thermal recovery) introduces voltage, frequency, and ripple instability risks. The Energy Arbitration Layer (EAL) and Source Stability & Harmonization Layer are proposed doctrine, drafted this session and not yet audited — treat as a candidate architectural model, not a validated safety mechanism, until it clears Gate 1.
 
 ---
 
@@ -25,7 +25,7 @@
 | Verification Ref | Admin/Verification_Gates_LF.md                                      |
 | Last Audit       | 2026-05-31 (original, Gemini); EGL/Storage Model expansion drafted 2026-08-01, not yet audited |
 | Auditor          | Gemini (original, 2026-05-31); Grok — drafted Energy Governance Layer expansion (human-directed, 2026-08-01), pending Gate 1 pass |
-| Open Unknowns    | 3                                                                   |
+| Open Unknowns    | 5                                                                   |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | High                                                                |
 | Sidecar Link     | #auditor-notes--unknowns                                            |
@@ -212,10 +212,10 @@ Governance constraint (proposed): If \(L(t) + W(t) + S(t)\) cannot be maintained
 
 | Mode              | Target Consumption          | Tolerable Voltage Ripple | Mandated Source Allocation                  | Actionable Sag Protocol                          |
 |-------------------|-----------------------------|---------------------------|---------------------------------------------|--------------------------------------------------|
-| Logic / Watchdog  | < 15 W baseline             | ±1%                      | Primary TEG / Isolated Lead-Acid Buffer     | Maintain state indefinitely; keep-alive telemetry |
-| Mechanical Milling| 1.5 kW peak                 | ±5%                      | Hydro-Engine / Main Battery (SoH > 70%)     | Cycle spindle 50%; halt axis steppers            |
-| Nominal           | 15–40 kW                    | ±5%                      | Grid / Scaled Generators + Air Scrubber     | Throttle feed rates; pause secondary axes        |
-| Thermal Melt (G5) | 8.0 kW burst                | ±10%                     | Direct Generator / Biomass Syngas Loop      | Safety clamp; dump molten charge to safe crucible|
+| Logic / Watchdog  | < 15 W baseline             | ±1% [Placeholder]        | Isolated Lead-Acid/Lithium Buffer (TEG contributes only if a thermal process is concurrently active — see EV-005; not assumable at idle) | Maintain state indefinitely; keep-alive telemetry |
+| Mechanical Milling| 1.5 kW peak                 | ±5% [Placeholder]        | Hydro-Engine / Main Battery (SoH > 70%)     | Cycle spindle 50%; halt axis steppers            |
+| Nominal           | 15–40 kW                    | ±5% [Placeholder]        | Grid / Scaled Generators + Air Scrubber     | Throttle feed rates; pause secondary axes        |
+| Thermal Melt (G5) | 8.0 kW burst                | ±10% [Placeholder]       | Direct Generator / Biomass Syngas Loop      | Safety clamp; dump molten charge to safe crucible|
 
 *Note: "G5" above refers to `Operations/Gate_05_Separation_Thermal.md`, not Spec Gate 5 (Cross-Reference Integrity) in `Admin/Verification_Gates_LF.md`. Retained from the original table; flagging to prevent conflation between the two G5 usages.*
 
@@ -253,7 +253,7 @@ Proposed as the canonical reference for all energy budgeting, generator sizing, 
 | G₂ | Salvaged Motor-Generators | \(P_{\text{MG}}(t) = \eta_{\text{MG}} \cdot \tau(t) \cdot \omega(t)\) | Tar Minimization Rule mandatory               |
 | G₃ | Biogas                   | \(P_{\text{biogas}}(t) = \eta_{\text{gen}} \cdot \dot{m}_{\text{CH}_4} \cdot LHV\) | Net-positive only if digestate > 35 °C and parasitic < 22% |
 | G₄ | Solar                    | \(P_{\text{solar}}(t) = \eta_{\text{PV}} \cdot A \cdot I_{\text{solar}}(t)\) | Supplemental; offsets control loads           |
-| G₅ | Thermal Recovery (TEG)   | \(P_{\text{thermal}}(t) = \eta_{\text{TEG}} \cdot Q_{\text{waste}}(t)\) | \(\eta_{\text{TEG}} \approx 3\text{–}7\%\); stabilizes baseline rails |
+| G₅ | Thermal Recovery (TEG)   | \(P_{\text{thermal}}(t) = \eta_{\text{TEG}} \cdot Q_{\text{waste}}(t)\) | \(\eta_{\text{TEG}} \approx 3\text{–}7\%\); opportunistic offset during active high-temperature thermal processes only — zero during idle/cold-start, see EV-005 |
 
 *Note: these G₁–G₅ source-class labels are local notation for this table only and are unrelated to Spec Gates 1–6.*
 
@@ -380,8 +380,10 @@ Salvaged battery state-of-health (SoH), cycle history, and remaining capacity ar
   – Class C: < 50% or unknown, material recovery only
 - **Buffer Sizing (proposed):** Baseline rails must be supportable from isolated buffer for ≥ 30 minutes under Safe Halt conditions.
 - **Degradation Tracking (proposed):** Cycle count and capacity fade logged; slope feeds falsifiable metrics.
+- **Safe Maintenance Access (proposed, gap flagged 2026-08-02):** Battery modules must be testable/serviceable without dropping the P₁ Logic/Watchdog rail — isolate the pack under test via a dedicated maintenance disconnect that never shares a bus with the baseline rails, so a fault during servicing can't cascade into a P₁ brownout.
+- **End-of-Life / Disposal Routing (proposed, gap flagged 2026-08-02):** Class C packs (SoH < 50% or unknown, material recovery only) route to `Operations/Gate_02_Triage.md` for disposition and, once discharged/inert, to `Challenges/Waste.md` for final handling. Not yet specified: the discharge-to-safe-storage-voltage procedure prior to handoff.
 
-*The Physical Isolation, Over-Extraction Guard, and Scrubber Prerequisite rules above are the original, audited EV-003 doctrine (2026-05-31) and remain load-bearing. The SoH Classification, Buffer Sizing, and Degradation Tracking items are new proposed extensions drafted 2026-08-01, not yet audited.*
+*The Physical Isolation, Over-Extraction Guard, and Scrubber Prerequisite rules above are the original, audited EV-003 doctrine (2026-05-31) and remain load-bearing. The SoH Classification, Buffer Sizing, Degradation Tracking, Safe Maintenance Access, and End-of-Life Disposal Routing items are new proposed extensions, not yet audited.*
 
 ---
 
@@ -422,7 +424,7 @@ Key guiding principles drawn from disciplined analysis:
   - SC-H3: Net system-level kWh benefit after accounting for cooling/strain infrastructure.
 
 ### Cross-References & Migration Path
-- Strong empirical or prototype success → migrate detailed implementation to **Engineering.md** (pragmatic fabrication focus).
+- Strong empirical or prototype success → migrate detailed implementation to **`Architecture/Engineering.md`** (pragmatic fabrication focus).
 - Ties to: `Operations/Gate_05_Separation_Thermal.md` (induction efficiency), `Tests/Leviathan_testing.md`, `Challenges/Critical_Minerals.md` (rare-earth magnet alternatives), and `Architecture/Cognitive_Frameworks.md` (emergent optimization of energy loops).
 
 **Drift Indicator:** Treating superconductivity as assumed or near-term rather than exploratory triggers re-audit and potential removal of optimistic language.
@@ -543,6 +545,48 @@ Key guiding principles drawn from disciplined analysis:
 
 ---
 
+### EV-004 — Energy Arbitration Layer (EAL) hardware watchdog and firmware isolation unvalidated
+
+| Field         | Value                                                               |
+|---------------|-----------------------------------------------------------------------|
+| Status        | Open                                                                  |
+| Risk          | High                                                                  |
+| Priority      | Major                                                                 |
+| Type          | Technical / Governance                                                |
+| Blocking      | Yes — before autonomous multi-source power distribution commissioning |
+| Owner         | `Operations/Energy.md`                                                |
+| First Logged  | 2026-08-02                                                            |
+| Last Reviewed | 2026-08-02                                                            |
+
+**Description:** ASM-006 assumes discrete/minimal-firmware controllers can implement EAL priority logic (P₁ > P₂ > P₃ > P₄, "no software overrides") without introducing new programmable attack surface. That assumption is tracked at the Assumptions-table level but had no corresponding tracked unknown for the hardware realization and adversarial firmware-compromise resistance of the mechanism itself.
+
+**Why It Matters:** The EAL's central claim — that safety-rail priority can't be software-bypassed — rests entirely on this unvalidated hardware isolation. If it turns out to require more than discrete logic, ASM-006 fails and the EAL's core guarantee needs rework.
+
+**Resolution Path:** Prototype the EAL priority watchdog using discrete analog/logic circuits or minimal verified firmware per `Operations/Electronics.md` EL-006's Logic-Zero wipe doctrine. Validate hard-wire cutoff under simulated software corruption before any EAL hardware is trusted with real P₁ rails. Payment via Specification once a prototype passes adversarial testing.
+
+---
+
+### EV-005 — Thermoelectric Generator (TEG) net energy harvesting threshold uncharacterized
+
+| Field         | Value                                            |
+|---------------|-----------------------------------------------------|
+| Status        | Open                                                 |
+| Risk          | Low                                                  |
+| Priority      | Minor                                                |
+| Type          | Technical                                            |
+| Blocking      | No                                                    |
+| Owner         | `Operations/Energy.md`                                |
+| First Logged  | 2026-08-02                                            |
+| Last Reviewed | 2026-08-02                                            |
+
+**Description:** TEG conversion efficiency is low (η_TEG ≈ 3–7%). Section V models `R_thermal(t) = η_TEG · Q_waste(t)` as generation without a paired, explicit net-positive check against the coolant pump and radiator fan draw (`P_pump + P_fan`) that recovery itself requires — those parasitic terms exist in the Demand Model's `P_thermal(t)`, but nothing currently confirms recovery is worth its own overhead at low delta-T, and the Source Classes table previously (and incorrectly) implied TEG could supply idle-state baseline load with no active thermal process running at all — corrected 2026-08-02, see Resolution Log.
+
+**Why It Matters:** Below some delta-T, running coolant pumps to chase TEG recovery could be a net energy loss, not a gain — the opposite of what "thermal recovery" is for.
+
+**Resolution Path:** Measure parasitic pump/fan draw against TEG electrical output across realistic temperature gradients during `Operations/Gate_05_Separation_Thermal.md` thermal separation tests. Define `P_5,net(t) = R_thermal(t) - (P_pump(t) + P_fan(t))` explicitly and add an automated pump/fan shutoff when `P_5,net(t) ≤ 0`. Payment via Specification once measured across a representative operating range.
+
+---
+
 ### Resolution Log
 
 - 2026-05-27: EV-001–003 logged and structured.
@@ -551,6 +595,7 @@ Key guiding principles drawn from disciplined analysis:
 - 2026-07-12: Abandoned Paths / Drift Indicators reordered per template.
 - 2026-08-01: Grok drafted a full Energy Governance Layer expansion (Demand + Generation + EAL + TIA), a Storage Model expansion of EV-003, and an Energy Capability Trajectory, claiming Spec Gates advanced to 2/6 and File Status → Transitional.
 - 2026-08-02: **Corrective merge, human-directed.** Verified the 2026-08-01 draft against source and against `Admin/Verification_Gates_LF.md`/`Admin/File_Template.md` before integrating. Merged in: EGL (Demand/Generation/EAL/TIA), Storage Model SoH classing, Source Stability & Harmonization, Energy Capability Trajectory — all explicitly marked **proposed / not yet audited**, distinct from the original 2026-05-31 audited body. Cut/corrected: (1) `Status` and `Body Stability` fields reverted to valid `Admin/File_Template.md` enum values (Draft / Transitional) — the draft had written a Body-Stability value ("Transitional") into the Status field and invented a non-canonical Body Stability value ("Improving"); (2) Spec Gates reverted 2/6 → 1/6 and the draft's invented file-local "Spec Gates Definition" table (which redefined G1–G6 as content milestones) removed — Gate 2 was self-declared "Closed (structural)" with no Gate 1 Fallacy Check or Gate 2 Physical Plausibility pass by a different agent, and the canonical G1–G6 meanings are fixed by `Admin/Verification_Gates_LF.md`, not locally redefinable per file; (3) restored the Superconductivity section's original Integration Pathways and Cross-References & Migration Path content, which the draft had cut despite claiming full preservation — stripped only the non-substantive citation-card render artifacts; (4) corrected ASM-006's citation from `Operations/Electronics.md` CF-001 to `Architecture/Cognitive_Frameworks.md` CF-001 (owning file), noting Electronics.md as implementer; (5) added inline notes disambiguating the table's "G5" (Gate_05_Separation_Thermal.md) and the Source Classes table's "G₁–G₅" labels from canonical Spec Gates 1–6, to prevent future conflation. Open Unknowns unchanged at 3; no new unknowns registered for the proposed EGL pending a real Gate 1 pass.
+- 2026-08-02: **Dual-audit adjudication (Gemini Skeptic/Auditor + Grok Skeptic/Auditor, both against `Admin/Auditor_Protocols.md`/`Admin/Forge_Audit_Kit.md`), human-directed.** Both audits verified against source before acting on either. Merged from Gemini (found, Grok missed): (1) the Source Classes table's TEG description ("stabilizes baseline rails") and the Layer 2 Operational Modes table's Logic/Watchdog row (listing "Primary TEG" as a baseline-mode source) implied TEG can supply idle-state load with no active thermal process running — physically ungrounded, since TEG output requires `Q_waste(t) > 0`; corrected, and EV-005 registered to track the underlying net-positive-threshold gap; (2) EV-004 registered for EAL hardware watchdog/firmware-isolation validation — ASM-006 carried the assumption but nothing tracked the hardware realization itself; (3) the Safety Advisory's "treat as structural specification" phrasing revised to "candidate architectural model" — legitimate semantic-hygiene catch, since "specification" is a loaded term adjacent to the File State `Status` enum; (4) the bare "Engineering.md" cross-reference corrected to `Architecture/Engineering.md`, matching this repo's first-mention-full-path convention; (5) Voltage Ripple values in the Operational Modes table tagged `[Placeholder]`, matching the file's existing confidence-labeling convention elsewhere; (6) Storage Model gained Safe Maintenance Access and End-of-Life Disposal Routing subsections (cross-referencing `Operations/Gate_02_Triage.md` and `Challenges/Waste.md`), closing a real lifecycle-truncation gap both audits independently noted at different severities. **Rejected from Gemini's audit:** the finding that the Ethical Anchor field's unprefixed "Ethical_Constraints.md" needs an `Admin/` prefix — `Admin/File_Template.md` fixes that exact unprefixed string as the canonical, non-negotiable value across every file in this repository, and `Tests/Support_Raft.md`'s own Resolution Log records a 9-file sweep (2026-07-12) that *removed* an `Admin/`-prefixed variant to restore this same plain-text form; adding the prefix would repeat a mistake already caught and fixed once. Also not adopted: Gemini's flag on "Payment via Specification only" as semantic drift — that phrase is the file's own pre-existing, previously-audited idiom (used identically in EV-001/002/003's Resolution Paths since 2026-05-31), not new promotion-hazard language. On balance, Grok's gate verdicts (G1/G2-provisional/G4/G5/G6 cleared, G3 partial-by-design) were better calibrated to what this file actually claims about itself — Energy.md's Status has been Draft/Exploration throughout and never purported to pass any gate, so treating open physical-plausibility gaps in clearly-quarantined proposed content as file-blocking (Gemini's framing) overstates the stakes; Grok's "flag and track" framing better matches the file's own honesty about its maturity. Open Unknowns 3 → 5 (EV-004, EV-005). Status/Spec Gates unchanged (Draft, 1/6) — none of this promotes anything, it corrects and tracks.
 
 ---
 
