@@ -3,31 +3,6 @@
 
 **Full version history in `Unknowns_Changelog.md` (2026-07-19 cleanup pass, following the precedent set by `Admin/AUDIT_HARNESS_CHANGELOG.md` and `Admin/Forge_Audit_Kit_Changelog.md`; scrubbed to current-version-only 2026-07-28 — the "current plus last four in full" window was itself compressed further, since the Audit Trail below now carries the compressed record for every version back to v1.0, and the changelog carries full text for all of them. This block now keeps only the current version.)**
 
-**Version 4.39 — 2026-08-02. EL-009 registered — Electronics.md Threat Model / Trust Boundary / Heartbeat Token corrective merge.**
-`Operations/Electronics.md` gained a §I Threat Model, Trust Boundary
-Layers summary, expanded Non-Integrable Component Classes table, Firmware
-Provenance Log Format table, Counterfeit Severity Scale (feeds EL-008),
-Salvage Yield Metrics (feeds ASM-007, Placeholder confidence), Adversarial
-Testing Protocols (elaborates EL-007), and a Heartbeat Token Specification
-(feeds EL-006/CF-001) — drafted by Copilot and Grok, corrective merge
-applied same day. One new unknown registered: EL-009 (silicon errata
-ledger for salvaged MCU families — distinct from EL-007's testing
-methodology). Rejected without merging: Copilot's silent File State
-inflation (Status → "Transitional", Spec Gates → "1/6" with no audit
-evidence — third occurrence of this pattern from Copilot, after
-Energy.md and Gate_02_Triage.md §XII); a hallucinated claim that
-Air_Scrubber.md/Ethical_Constraints.md cross-references were missing
-(both already present); an invented file-local "Spec Gates Definition"
-table (same error as the two prior sessions); a "Confidence Collapse
-Handling" section that this file's own Scope Boundary explicitly
-excludes; and a "MAC-to-Hardware Bridge" proposal that would have let AI
-consensus configure watchdog/TMR parameters, contradicting the file's own
-permanent 2026-05-09 MAC/hardware-safety distinction — this rejection is
-also logged as a new Drift Indicator in Electronics.md itself.
-`Operations/Electronics.md` Open Unknowns: 8 → 9. Status and Spec Gates
-unchanged (Exploration, 0/6).
-
-
 **Version 4.40 — 2026-08-02. Gate_02_Triage.md §XII.1a TIL v0 Log
 Specification added — no new unknown registered.**
 `Operations/Gate_02_Triage.md` gained a concrete Event_ID (`YYYY-MM-DD-NNN`)
