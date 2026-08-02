@@ -2017,7 +2017,295 @@ Which direction do you want to take?
 
 
 
+Below is the full constitutional‑grade integration block that inserts the Energy Governance Layer (EGL) directly into CIR, written in CIR’s formal epistemic voice, predicate structure, and constitutional framing.  
 
+This is the energy counterpart to the triage integration you just completed.  
+It elevates the entire energy subsystem — Demand, Generation, Arbitration, Thermal Integration — into CIR’s constitutional domain, where irreversibility, safety, and epistemic determinism are governed.
+
+This is written as a new major section titled:
+
+> CIR‑Energy: Constitutional Integration of the Energy Governance Layer
+
+You can paste this directly into CIR as a load‑bearing constitutional module.
+
+---
+
+CIR‑Energy: Constitutional Integration of the Energy Governance Layer (EGL)
+(Spec Gate: Constitutional; applies to Energy.md and all downstream operational modules)
+
+Energy is the Forge’s most fundamental substrate. Every gate, every station, every safety boundary, every irreversible action depends on stable, governed, predictable energy behavior. The Energy Governance Layer (EGL) defines how the Forge consumes, produces, allocates, routes, and recovers energy — electrical and thermal — under all operating conditions.
+
+CIR‑Energy binds the EGL into constitutional predicates, maturity requirements, and safety boundaries.  
+It ensures that energy failures cannot cascade into triage failures, contamination bypass, mechanical hazard, or destructive misrouting.
+
+The EGL integrates four load‑bearing components:
+
+- Demand Model  
+- Generation Model  
+- Energy Arbitration Layer  
+- Thermal Integration Architecture  
+
+CIR‑Energy elevates these from engineering doctrine to constitutional law.
+
+---
+
+I. Constitutional Purpose of CIR‑Energy
+
+CIR‑Energy exists to ensure:
+
+1. Safety rails never brown out.  
+2. Thermal hazards never propagate.  
+3. Generators never stall under load.  
+4. Battery banks never enter thermal runaway without containment.  
+5. Scrubber rails remain powered during all hazardous processes.  
+6. Mode transitions are governed, not emergent.  
+7. Energy claims are falsifiable, auditable, and maturity‑scored.  
+8. No subsystem may override energy safety boundaries.
+
+Energy is constitutional because energy governs safety, irreversibility, and system‑wide stability.
+
+---
+
+II. Constitutional Predicates (γ‑Energy)
+These predicates bind energy behavior to CIR’s epistemic and safety architecture.
+
+γ‑Energy‑1 — Baseline Rail Supremacy
+The Logic, Watchdog, and Scrubber rails (P₁) must remain powered under all conditions.
+
+If \(G{\text{net}} < P1\):
+
+→ Immediate Safe Halt  
+→ No escalation  
+→ No irreversible actions  
+→ Mechanical neutral enforced
+
+γ‑Energy‑2 — Brownout Determinism
+If \(V{\text{rail}} < V{\text{min}}\):
+
+→ Shed P₄  
+→ Shed P₃  
+→ Mode downgrade  
+→ If persistent → Safe Halt
+
+Brownout behavior must be deterministic and auditable.
+
+γ‑Energy‑3 — Thermal Hazard Containment
+If \(T_1\) (hazardous thermal loads) cannot be contained:
+
+→ Emergency vent  
+→ Scrubber Max‑Flow  
+→ Safe Halt  
+→ No Gate A/B/C/D routing allowed
+
+γ‑Energy‑4 — Generator Stall Prevention
+If \(\tau < \tau_{\text{min}}\):
+
+→ Shed P₃ + P₄  
+→ Switch source  
+→ Prevent cascading stall
+
+γ‑Energy‑5 — Irreversibility Guard
+No irreversible action (Gate D destruction, thermal melt, mechanical neutral lockout) may occur unless:
+
+\[
+P1 \text{ stable} \land M{\text{energy}} \ge 0.25
+\]
+
+Where \(M_{\text{energy}}\) is the energy maturity score.
+
+γ‑Energy‑6 — Thermal–Electrical Coupling
+Thermal loads must be reflected in electrical demand:
+
+\[
+P{\text{thermal}} = P{\text{pump}} + P{\text{fan}} + P{\text{sink}} + P_{\text{coolant}}
+\]
+
+No subsystem may ignore thermal‑electrical coupling.
+
+γ‑Energy‑7 — Source Isolation
+No energy source may backfeed into another without verified isolation.
+
+γ‑Energy‑8 — Transient Spike Governance
+If transient envelope exceeds 1.25× source rating:
+
+→ Preemptively shed P₃ + P₄  
+→ Prevent generator stall  
+→ Prevent battery collapse  
+→ Prevent rail sag
+
+γ‑Energy‑9 — Mode Determinism
+Mode transitions must follow:
+
+\[
+M3 \rightarrow M2 \rightarrow M1 \rightarrow M0
+\]
+
+No skipping.  
+No oscillation.  
+No operator override.
+
+γ‑Energy‑10 — Cross‑Forge Energy Consistency
+If multiple Forges exist:
+
+→ Shared energy maturity scoring  
+→ Shared safety rail definitions  
+→ Shared thermal hazard thresholds  
+→ Shared generator stall profiles
+
+---
+
+III. Energy Maturity Vector (EMV)
+CIR defines energy maturity as:
+
+\[
+EMV = (Ee, Se, Te, Re)
+\]
+
+Where:
+
+- Eₑ: Evidence quality (sensor fidelity, measurement confidence)  
+- Sₑ: Source stability (voltage, frequency, ripple)  
+- Tₑ: Thermal stability (containment, routing, dissipation)  
+- Rₑ: Rail stability (baseline rail resilience)  
+
+Each dimension ranges from 0–3.
+
+Normalized Maturity Score
+\[
+M{\text{energy}} = \frac{Ee + Se + Te + R_e}{12}
+\]
+
+Maturity Thresholds
+
+- Mₑ < 0.25 (Bootstrap)  
+  - High false‑positive tolerance  
+  - No irreversible actions  
+  - Mode locked to Logic/Milling only
+
+- 0.25 ≤ Mₑ < 0.5 (Transitional)  
+  - Mode transitions allowed  
+  - Thermal recovery active  
+  - Generator switching allowed
+
+- 0.5 ≤ Mₑ < 0.75 (Industrial)  
+  - Full arbitration  
+  - Predictive load shedding  
+  - Thermal routing optimization
+
+- Mₑ ≥ 0.75 (Mature)  
+  - Autonomous energy governance  
+  - Cross‑Forge harmonization  
+  - Predictive hazard suppression
+
+---
+
+IV. Constitutional Routing Logic
+
+Energy routing is constitutionally valid only if:
+
+\[
+\text{Valid} = (\text{Demand}) \land (\text{Generation}) \land (\text{Arbitration}) \land (\text{Thermal})
+\]
+
+Expanded:
+
+\[
+\text{Valid} = (D(t)) \land (G_{\text{net}}(t)) \land (EAL) \land (TIA)
+\]
+
+If any term is false:
+
+→ Safe Halt  
+→ Oversight Gate  
+→ No irreversible action
+
+This is the constitutional energy substrate.
+
+---
+
+V. Oversight Gate Integration
+
+The Oversight Gate inherits new constitutional powers:
+
+Oversight‑Energy‑1 — Rail Stability Review
+Oversight must confirm:
+
+- P₁ stability  
+- rail voltage  
+- rail ripple  
+- thermal load coupling  
+
+before any irreversible action.
+
+Oversight‑Energy‑2 — Thermal Hazard Review
+Oversight must validate:
+
+- thermal containment  
+- coolant flow  
+- exhaust routing  
+- TEG recovery state  
+
+before any thermal‑dependent routing.
+
+Oversight‑Energy‑3 — Source Stability Review
+Oversight must confirm:
+
+- generator torque  
+- biogas temperature  
+- solar collapse state  
+- grid brownout state  
+
+before any mode upgrade.
+
+---
+
+VI. Constitutional Drift Indicators (Energy‑Specific)
+
+CIR must trigger re‑audit if:
+
+- P₁ rails brown out  
+- thermal hazard propagates  
+- generator stall cascades  
+- battery thermal runaway occurs  
+- mode oscillation occurs  
+- transient spikes exceed 1.25× without shedding  
+- source backfeed occurs  
+- rail ripple exceeds threshold  
+- thermal routing fails  
+- EMV not updated  
+- irreversible actions occur without EMV citation
+
+If multiple indicators activate → halt energy subsystem and escalate to human review.
+
+---
+
+VII. Integration Points
+
+CIR‑Energy integrates with:
+
+- Energy Governance Layer  
+- Energy.md  
+- Gate02Triage.md (triage capacity depends on energy stability)  
+- Air_Scrubber.md (scrubber rail dependency)  
+- Electronics.md (electrical load profiles)  
+- Forge_flow.md (mode determinism)  
+- Thermal Integration Architecture  
+- Generation Model  
+- Demand Model  
+- Unknowns.md (energy unknowns and maturity tracking)
+
+---
+
+Next Step
+
+You now have the full constitutional integration of the Energy Governance Layer into CIR.
+
+You can proceed in one of two directions:
+
+- Assemble Full Forge Governance Architecture  
+- Integrate EGL into Energy.md fully
+
+Which direction do you want to take next?
 
 
 
