@@ -329,5 +329,216 @@ Would you like me to produce any of the following as ready-to-use artifacts?
 
 Any of these can be drafted immediately.
 
+**Event_ID Format Design**
 
+### Recommended Format
 
+```
+YYYY-MM-DD-NNN
+```
+
+**Examples**  
+`2026-08-02-001`  
+`2026-08-02-017`  
+`2026-12-15-042`
+
+### Rationale
+
+| Criterion | Why this format succeeds |
+|-----------|--------------------------|
+| Uniqueness | Date + daily sequence is unique for practical volumes (hundreds of items per day still leaves headroom). |
+| Human readability | Immediately shows *when* the triage occurred. Critical for physical tags and manual log review. |
+| Sortability | Lexicographical sort = chronological sort. Spreadsheets and file systems handle it cleanly. |
+| Handwriting / physical tags | Uses only digits and hyphens. No ambiguous characters (O/0, I/1, etc.). Short enough for small tags or marker writing. |
+| Lookup speed | Operator can jump straight to the correct date block in a log or spreadsheet. |
+| Collision resistance | Extremely low risk at Gen-1 scale. Even at 200 items/day the three-digit sequence is sufficient. |
+| Future-proofing | Easy to extend later (add a site prefix or year-only compaction) without breaking existing IDs. |
+
+### Generation Rules (v0)
+
+1. **Date portion** = calendar date of the *final disposition* decision (the moment the item leaves the triage stations with a Gate A/B/C/D or Hold outcome).
+2. **Sequence (NNN)** = three-digit zero-padded counter that resets every calendar day, starting at `001`.
+3. **Assignment moment** = at final disposition, after the outcome is decided and before the physical tag is written.
+4. **Who assigns** = the operator performing the disposition (or the single triage operator at Gen-1).
+5. **Recording** = written on the physical provenance tag **and** as the first field of the TIL log row in the same action.
+
+### Edge Cases & Handling
+
+| Situation | Rule |
+|-----------|------|
+| More than 999 items in one day | Extremely unlikely at Gen-1. If it occurs, extend to four digits for that day only (`2026-08-02-1001`) and note the overflow in the log. |
+| Back-dated or delayed logging | Use the actual disposition date, not the logging date. |
+| Re-triage of a previously tracked item | Create a **new** Event_ID for the new triage event. Link back to the original via the Later_Fate / Linked_New_Event_ID fields. Never reuse or overwrite an existing ID. |
+| Missing or illegible tag | Treat as a new triage event. Assign a fresh Event_ID and record “prior provenance lost” in Notes. |
+| Multiple operators on the same day | Share a single daily sequence (one shared counter or a simple paper tally). At Gen-1 this is trivial. |
+| Clock / date uncertainty | Use the best available local date. Consistency matters more than perfect UTC. |
+
+### Physical Tag Layout Suggestion
+
+```
+Event_ID: 2026-08-02-017
+Class:    Motor – 500 W pump
+Tier:     Constrained
+Outcome:  Gate C (repurpose – ventilation)
+Date:     2026-08-02
+```
+
+The Event_ID is the primary lookup key; the rest is human-readable context.
+
+### Alternatives Considered (and why not primary)
+
+| Format | Pros | Cons | Verdict |
+|--------|------|------|---------|
+| `LF-T-00001` (global sequential) | Compact, pure sequence | Loses date information; harder to locate in a large log; requires a persistent counter | Secondary option only |
+| `YYMMDD-NNN` | Slightly shorter | Year ambiguity after 2099; less immediately readable | Acceptable compact variant |
+| `20260802-017` (no hyphens) | Shorter | Harder to parse visually; easier transcription errors | Avoid |
+| Class-prefixed (`MOT-2026-08-02-017`) | Self-describing | Longer; vocabulary must be controlled; changes if class taxonomy evolves | Unnecessary at v0 |
+
+### Implementation Notes
+
+- **Spreadsheet / log**: Make Event_ID the leftmost column and the primary sort key.
+- **Counter method at Gen-1**: A simple paper tally sheet or a single cell in the daily log that is incremented. No software required.
+- **Validation**: At the weekly fate-review, quickly scan for duplicate IDs (should be zero).
+- **Migration path**: If the Forge later moves to a database or multi-site operation, the existing `YYYY-MM-DD-NNN` IDs remain valid primary keys; a site prefix can be added only to *new* IDs if needed.
+
+This format is deliberately boring, robust, and matched to the physical + manual realities of Gen-1 triage. It gives closed-loop fate tracking a reliable anchor without introducing tooling debt.
+
+**Ready-to-use next actions**
+- Adopt `YYYY-MM-DD-NNN` as the canonical Event_ID.
+- Add the generation rule to the Station disposition checklist.
+- Update the TIL log header to lead with Event_ID.
+
+Would you like a short formal specification block that can be dropped directly into Gate_02_Triage.md (or a companion TIL note), or sample tag + log entries using this format?
+
+**Unified Forge Event / Artifact ID Format**
+
+Design goal: one consistent, human-readable, multi-Forge, multi-purpose ID scheme that works for  
+- triage events  
+- fabricated / produced items  
+- any other tracked artifact or process step  
+
+while remaining writable on physical tags and easy to sort/filter in a log or spreadsheet.
+
+### Recommended Canonical Format
+
+```
+YYYY-MM-DD-Fxx-NNNN
+```
+
+**Breakdown**
+
+| Segment     | Meaning                          | Length / Rules                          | Example     |
+|-------------|----------------------------------|-----------------------------------------|-------------|
+| `YYYY-MM-DD`| Calendar date of the event or of final disposition / completion | ISO date, always 10 characters with hyphens | `2026-08-02` |
+| `Fxx`       | Forge ID                         | `F` + 2-digit zero-padded site code (00–99) | `F01`       |
+| `NNNN`      | Daily sequence number            | 4-digit zero-padded counter that resets every calendar day per Forge | `0017`      |
+
+**Full examples**
+
+- Triage event at primary Forge:  
+  `2026-08-02-F01-0017`
+
+- Fabricated part completed the same day:  
+  `2026-08-02-F01-0042`
+
+- Same day at a second Forge:  
+  `2026-08-02-F02-0003`
+
+### Why this structure
+
+- **Multi-Forge ready** — Forge ID is an explicit, fixed-position field. Adding a new site never collides with existing IDs.
+- **Date-first** — chronological sorting and human scanning remain excellent.
+- **4-digit sequence** — supports up to 9 999 events/items per Forge per day (far beyond Gen-1 needs; still short enough for tags).
+- **Uniform for triage *and* fabrication** — the same ID format is used whether the row in the log is a triage decision or a newly made part. Context (triage vs fabrication) lives in the log/metadata, not in the ID itself.
+- **Hand-writable & tag-friendly** — only digits, hyphens, and a single letter. No ambiguous characters.
+- **Parseable** — fixed positions make splitting trivial even in a spreadsheet (`LEFT`, `MID`, or simple text-to-columns).
+
+### Daily Quantity / Output Indication
+
+You asked for “extra digits indicating daily quantity output.”  
+
+Two clean options (choose one):
+
+**Option A (recommended for simplicity)**  
+Keep the ID itself clean (`YYYY-MM-DD-Fxx-NNNN`).  
+Record the daily total (planned or actual) as a separate field in the log or on a daily header row:
+
+```
+Daily_Header: 2026-08-02-F01  |  Triage events: 23  |  Fabrications: 17  |  Total: 40
+```
+
+**Option B (embedded quantity)**  
+If you strongly prefer the quantity inside the ID string:
+
+```
+YYYY-MM-DD-Fxx-NNNN-QQQQ
+```
+
+where `QQQQ` is the running or final daily total for that Forge on that date (updated at end of day or left as the sequence of the last item).
+
+Example:  
+`2026-08-02-F01-0017-0040`  
+(meaning this is sequence 17 of a day that ultimately produced/handled 40 items).
+
+**Recommendation:** Start with Option A. Embedding the daily total inside every ID adds length and update complexity for little gain at Gen-1. The daily header (or a simple summary row) is clearer and easier to maintain.
+
+### Generation Rules
+
+1. **Date** = calendar date of final disposition (triage) or of completion/acceptance (fabrication).
+2. **Forge ID** = the fixed code of the physical site performing the work (`F01`, `F02` …). Assign codes once in a central registry.
+3. **Sequence (`NNNN`)** = per-Forge, per-day counter starting at `0001`. Resets at midnight local time.
+4. **Assignment moment**  
+   - Triage: at final Gate A/B/C/D / Hold decision, just before the physical tag is written.  
+   - Fabrication: when the item is accepted as complete and ready for the Component Library or next process.
+5. **Uniqueness guarantee** = Date + Forge + Sequence. No two artifacts or events share the same ID.
+
+### Physical Tag Example
+
+```
+ID:       2026-08-02-F01-0017
+Type:     Triage – Motor 500 W
+Tier:     Constrained
+Outcome:  Gate C (vent duty)
+Forge:    F01
+```
+
+or for a fabricated part:
+
+```
+ID:       2026-08-02-F01-0042
+Type:     Fabricated – Shaft Ø12 mm
+Material: 6061 scrap
+Forge:    F01
+```
+
+### Log / Spreadsheet Columns (minimal)
+
+| Event_ID              | Type     | Class / Description      | Outcome / Status | Forge | Notes / Later_Fate          |
+|-----------------------|----------|--------------------------|------------------|-------|-----------------------------|
+| 2026-08-02-F01-0017  | Triage   | Motor 500 W pump        | Gate C           | F01   | Still in service 2026-09-01 |
+| 2026-08-02-F01-0042  | Fabrication | Shaft Ø12 × 80 mm    | Accepted         | F01   |                             |
+
+### Edge Cases
+
+| Situation                        | Handling |
+|----------------------------------|----------|
+| > 9999 items in one day on one Forge | Extremely unlikely. Extend sequence to 5 digits for that day only and note the overflow. |
+| New Forge comes online           | Assign next free `Fxx` code. Existing IDs remain valid forever. |
+| Item moves between Forges        | Keep original ID. Record the move in Later_Fate / transfer log. New work at the receiving Forge gets a new ID. |
+| Re-triage                        | Always mint a **new** Event_ID. Link to the previous ID in the Later_Fate field. |
+| Lost / illegible tag             | Issue a fresh ID and record “prior ID lost”. |
+
+### Adoption Path
+
+1. Freeze the format: `YYYY-MM-DD-Fxx-NNNN`.
+2. Assign Forge codes (start with `F01` for the current site).
+3. Update the physical tag template and the TIL / fabrication log headers.
+4. Begin using the new IDs for both triage dispositions and newly fabricated items.
+5. (Optional) Add a daily summary row that records total triage + fabrication counts for that Forge/date.
+
+This gives you a single, scalable ID language that already anticipates multiple Forges and covers both recovered and newly created artifacts.
+
+Would you like me to also draft:
+- the exact short specification text that can be pasted into Gate_02_Triage.md or a new `Admin/ID_Scheme.md`,
+- a sample tag layout,
+- or the spreadsheet header + a few realistic example rows?
