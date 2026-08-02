@@ -30,9 +30,9 @@
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 2/6                                                                 |
 | Verification Ref | Admin/Verification_Gates_LF.md                                      |
-| Last Audit       | 2026-07-17                                                          |
-| Auditor          | ChatGPT — Synthesizer; Claude — Engineer; Claude — Embedded Value Preservation cross-reference added (human-directed), 2026-07-17 |
-| Open Unknowns    | 3                                                                   |
+| Last Audit       | 2026-07-17 (body); §XII proposed extension drafted 2026-08-02, not yet audited |
+| Auditor          | ChatGPT — Synthesizer; Claude — Engineer; Claude — Embedded Value Preservation cross-reference added (human-directed), 2026-07-17; Copilot — drafted TIL/TAL/TCM/TMV + CIR-Triage extension (human-directed), 2026-08-02; Claude — verified against source and `Admin/Verification_Gates_LF.md`, corrective merge (human-directed), 2026-08-02 |
+| Open Unknowns    | 7                                                                   |
 | Active Disputes  | 1                                                                   |
 | Highest Risk     | High                                                                |
 | Sidecar Link     | #auditor-notes--unknowns                                            |
@@ -55,6 +55,9 @@
 - Minimum viable triage configuration for Gen-1 Forge
 - Guiding axioms
 - Interface map to upstream and downstream modules
+- §XII: a proposed, unaudited intelligence/arbitration/capability/maturity
+  extension to the above (TIL, TAL, TCM, TMV) — candidate doctrine only,
+  not yet load-bearing
 
 **This file DOES NOT define:**
 - Master gate logic and shared vocabulary
@@ -74,6 +77,13 @@
   routing decisions made here)
 - FRT reinvestment accounting
   (→ `Operations/Gate_07_Utilization.md`, `Admin/Trajectories.md`)
+- Whether any predicate in §XII is constitutionally binding
+  (→ `Admin/CIR_Gov.md`'s own Binding Status section, which is authoritative;
+  CIR_Gov.md is itself Proposed — Not Ratified and structurally depends on
+  GOV-008 — nothing in this file can promote §XII above that status)
+- The definition of Spec Gates 1–6
+  (→ `Admin/Verification_Gates_LF.md` — this file does not define its own
+  gate categories)
 
 ---
 
@@ -350,6 +360,113 @@ Recurring failure patterns on specific component types are flagged for classific
 
 ---
 
+## XII. Proposed Triage Intelligence & Governance Extension (Not Audited)
+
+**Status: Candidate architecture. Drafted 2026-08-02 (Copilot, human-directed).
+Has not passed Gate 1 (Fallacy Check) or any other canonical Verification
+Gate. Nothing in this section changes Stations 0–4, the Gate A–D routing
+table in §IV, or Principle 9 — it proposes an additional layer that would,
+if validated, sit alongside them. Payment via Specification only: presence
+of this section is not evidence of operational capability.**
+
+The original draft of this material described itself as already
+constitutional and cited a "Spec Gate: Constitutional" category. Neither
+claim survives contact with the source files: `Admin/Verification_Gates_LF.md`
+defines exactly six gates (Fallacy Check, Physical Plausibility, Adversarial
+Challenge, Scope Alignment, Cross-Reference Integrity, Conflict Check) with
+no seventh "constitutional" tier, and `Admin/CIR_Gov.md` — the file this
+draft proposed to bind itself into — is filed Proposed — Not Ratified, 0/6
+gates, and states explicitly that nothing should issue a CIR-VERIFIED
+transition until GOV-008 is ratified. This section is written below with
+that corrected: every predicate is a *candidate*, not a binding rule.
+
+### XII.1 Triage Intelligence Layer (TIL) — proposed
+
+Converts triage events into structured knowledge that could, once
+validated, improve pass/fail decisions and threshold calibration.
+
+- **Would record per event:** component class, station path, tests
+  performed, outcome (Gate A/B/C/D), later in-service failures/re-triage.
+- **Would derive:** failure-mode distributions per class, repair-success
+  likelihoods, repurpose-suitability bands, contamination incidence per
+  source stream, strategic-scarcity trends.
+- **Proposed governance hook:** numeric thresholds (the 70% performance
+  figure in TS-001, the 5–15 min runtime figure) would only be eligible for
+  revision once TIL shows a stable pattern at N≥50 consistent events per
+  class — this is the same bar ASM-005 already sets; TIL would be the
+  mechanism for actually clearing it, not a new bar.
+- **v0 minimal form:** a structured log (even a spreadsheet) of component
+  class, station path, outcome, and later service fate, reviewed manually.
+  No tooling exists for this today.
+
+### XII.2 Triage Arbitration Layer (TAL) — proposed
+
+A candidate resource-allocation scheme for triage under constraint, modeled
+on the Energy Arbitration Layer in `Operations/Energy.md` §IV — which is
+itself proposed and unaudited as of 2026-08-02. TAL should be read as
+depending on that unvalidated layer, not on a proven one.
+
+- **Priority classes:** T₁ safety-critical (contamination check, dual-use
+  flag, Oversight escalation) > T₂ strategic preservation (tiering,
+  Principle 9 extraction) > T₃ operational utility (Station 1–3 testing,
+  Repair & Learn routing) > T₄ opportunistic (extended characterization).
+- **Proposed rule:** if T₁ capacity cannot be maintained, hold everything
+  at Station 0 — no escalation, no Gate D routing. This is consistent with
+  the existing Safety Advisory at the top of this file ("when in doubt,
+  hold at Station 0") rather than a new invention.
+- **Not yet defined:** what "triage capacity" is measured in, or how it
+  would be sensed. No hardware or telemetry for this exists.
+
+### XII.3 Triage Capability Model (TCM) — proposed
+
+A candidate way of stating, explicitly, what the Forge can currently test,
+repair, repurpose, decontaminate, and extract — so triage routing reflects
+actual capability rather than operator optimism.
+
+- **Domains:** testing, repair, repurpose, decontamination, embedded-value
+  extraction — each with a v0/v1/v2+ maturity ladder.
+- **Proposed governance hook:** Gate B (Repair & Learn) is only meaningful
+  if repair capability is above the minimum rung; Gate D destruction of a
+  component with extractable embedded value (Principle 9) is inappropriate
+  if extraction capability can't actually reach it yet. This formalizes
+  something Principle 9 and the Gate Correspondence table already imply
+  qualitatively — it does not change either.
+
+### XII.4 Triage Maturity Vector (TMV) — proposed
+
+A candidate quantitative maturity score across five dimensions — evidence
+quality, repair feasibility, contamination confidence, provenance
+completeness, strategic recoverability — each 0–3, averaged to a 0–1 score.
+
+- **Proposed rule:** Gate D destruction of a Strategic or Critical tier
+  item would require evidence quality ≥1, repair feasibility ≥1, and
+  strategic recoverability ≥1. This is a candidate quantification of the
+  Human/AI Oversight Gate requirement §IV and §VIII already impose for
+  Strategic/Critical tier items — it is not a new authority, and it does
+  not lower the existing bar.
+- **Not yet defined:** who scores these dimensions, how often, or with
+  what evidence. No scoring mechanism exists.
+
+### XII.5 What this section explicitly does not do
+
+- It does not bind CIR. `Admin/CIR_Gov.md` remains the sole owner of any
+  claim about constitutional/predicate-gated enforcement, and that file's
+  own Binding Status section governs, not this one.
+- It does not raise this file's Spec Gates count. Spec Gates remains 2/6
+  until an actual Gate 3+ pass occurs on the existing body — drafting §XII
+  is not that pass.
+- It does not change Stations 0–4, the Gate Correspondence table, or any
+  Core Principle. If a future revision wants TIL/TAL/TCM/TMV to actually
+  govern routing, that requires editing §IV–§VI directly, with its own
+  audit trail — not treating this section as already authoritative.
+- It does not stand alone: TAL depends on Energy.md's unaudited EGL, so
+  this entire section inherits that dependency's unvalidated status. If
+  EGL is later corrected or reworked, this section needs re-review.
+
+See TS-005 through TS-008 below for tracked unknowns against this section.
+
+---
+
 ## Interfaces
 
 | Interface | Direction | What crosses |
@@ -364,6 +481,8 @@ Recurring failure patterns on specific component types are flagged for classific
 | Air Scrubber | → Triage | Contamination handling; chemical waste from decontamination |
 | Architecture/Precision.md | Reference | Tolerance tier standard for Station 1/3 threshold calibration (T0–T4) |
 | Architecture/Facilities.md | Reference | Zone separation doctrine — acoustic isolation for Station 2 |
+| Operations/Energy.md §IV (proposed, unaudited) | Reference | §XII.2 TAL priority-class model borrows the EAL pattern; inherits its unaudited status |
+| Admin/CIR_Gov.md | Reference | §XII explicitly does not bind to this file; see CIR_Gov.md's own Binding Status |
 
 ---
 
@@ -375,6 +494,7 @@ Recurring failure patterns on specific component types are flagged for classific
 | May 2026 | Audit Review  | Station 3 routed Fail directly to disassembly        | Missing Human/AI Oversight Gate — irreversible action without hold       | Triage Terminal added as mandatory hold before any material recovery proceeds                              | Replicated | No                  |
 | May 2026 | Audit Review  | Queues treated as passive storage                    | Risk of latent hoarding, decision fatigue, dead inventory accumulation   | Queues are active allocations with decay, saturation behavior, and reassessment triggers                   | Replicated | No                  |
 | May 2026 | Audit Review  | Single triage axis (operational utility only)        | Strategically irreplaceable components destroyed at same confidence threshold as common components | Strategic Recoverability added as second triage axis; four-tier classification system | Analogous  | Yes                 |
+| 2026-08-02 | Cross-agent draft review | Copilot drafted TIL/TAL/TCM/TMV as an already-binding constitutional extension | Wrote candidate architecture as though it were ratified: invented a "Spec Gate: Constitutional" category not present in `Admin/Verification_Gates_LF.md`, and bound it into `Admin/CIR_Gov.md` despite that file's own Binding Status explicitly forbidding this | Cross-agent architectural drafts are useful but default to overclaiming operative status; every such draft needs to be checked against the actual gate/ratification state of every file it claims to extend, not just against plausibility | Analogous | Yes — recheck if §XII is ever promoted toward actual gate passage |
 
 ---
 
@@ -490,8 +610,118 @@ Cross-reference `Architecture/Forge_flow.md` FL-001.
 
 ---
 
+### TS-005 — Triage Intelligence Layer (TIL) has no implementation
+
+| Field         | Value                          |
+|---------------|--------------------------------|
+| Status        | Open                           |
+| Risk          | Low                            |
+| Priority      | Minor                          |
+| Type          | Technical                      |
+| Blocking      | No — §XII is not load-bearing  |
+| Owner         | Operations/Gate_02_Triage.md   |
+| First Logged  | 2026-08-02                     |
+| Last Reviewed | 2026-08-02                     |
+
+**Description:** §XII.1 proposes converting triage events into structured
+knowledge (failure-mode distributions, repair-likelihood curves, etc.). No
+log, database, or manual-review process for this currently exists.
+
+**Why It Matters:** TS-001's threshold-revision bar (N≥50 consistent
+observations) already exists independently of TIL; TIL would be the
+mechanism for actually reaching it, so its absence keeps TS-001 open too.
+
+**Resolution Path:** Stand up the v0 minimal form described in §XII.1 (a
+structured log, manually reviewed) as a real, low-effort first step, before
+any more elaborate TIL tooling is drafted.
+
+---
+
+### TS-006 — Triage Arbitration Layer (TAL) depends on an unaudited Energy Governance Layer
+
+| Field         | Value                          |
+|---------------|--------------------------------|
+| Status        | Open                           |
+| Risk          | Low                            |
+| Priority      | Minor                          |
+| Type          | Technical / Governance         |
+| Blocking      | No — §XII is not load-bearing  |
+| Owner         | Operations/Gate_02_Triage.md   |
+| First Logged  | 2026-08-02                     |
+| Last Reviewed | 2026-08-02                     |
+
+**Description:** §XII.2's priority-class model is patterned on
+`Operations/Energy.md` §IV's Energy Arbitration Layer, which is itself
+proposed and unaudited (Spec Gates 1/6 as of 2026-08-01/02). "Triage
+capacity" as a sensed quantity is undefined.
+
+**Why It Matters:** A doctrine layer built on top of another unvalidated
+doctrine layer compounds risk — if Energy.md's EGL is revised, TAL needs
+re-review, and neither should be treated as operative until its own
+foundation clears Gate 1.
+
+**Resolution Path:** Re-review TAL once Energy.md's EGL passes Gate 1.
+Do not implement TAL ahead of that.
+
+---
+
+### TS-007 — Triage Capability Model (TCM) capability ladder is undefined against real tooling
+
+| Field         | Value                          |
+|---------------|--------------------------------|
+| Status        | Open                           |
+| Risk          | Low                            |
+| Priority      | Minor                          |
+| Type          | Technical                      |
+| Blocking      | No — §XII is not load-bearing  |
+| Owner         | Operations/Gate_02_Triage.md   |
+| First Logged  | 2026-08-02                     |
+| Last Reviewed | 2026-08-02                     |
+
+**Description:** §XII.3's v0/v1/v2+ maturity ladder across testing, repair,
+repurpose, decontamination, and embedded-value extraction has not been
+checked against what tooling actually exists at the Forge's current stage.
+
+**Why It Matters:** An overstated capability rung could make Gate B/C/D
+routing look more justified than the Forge can actually deliver on.
+
+**Resolution Path:** Populate the v0 rung of each domain against
+`Operations/Electronics.md`, `Operations/Air_Scrubber.md`, and
+`Architecture/Precision.md`'s actual current tooling before treating any
+rung above v0 as real.
+
+---
+
+### TS-008 — Triage Maturity Vector (TMV) has no scoring mechanism
+
+| Field         | Value                          |
+|---------------|--------------------------------|
+| Status        | Open                           |
+| Risk          | Low                            |
+| Priority      | Minor                          |
+| Type          | Technical / Governance         |
+| Blocking      | No — §XII is not load-bearing  |
+| Owner         | Operations/Gate_02_Triage.md   |
+| First Logged  | 2026-08-02                     |
+| Last Reviewed | 2026-08-02                     |
+
+**Description:** §XII.4 proposes a five-dimension 0–3 maturity score. No
+one is designated to assign these scores, at what cadence, or against what
+evidence standard.
+
+**Why It Matters:** An unscored or self-scored maturity vector attached to
+a destruction-authorization rule (Gate D for Strategic/Critical tier) would
+be worse than no vector at all — it would look quantitative without being
+verifiable.
+
+**Resolution Path:** Do not cite TMV scores in any actual Gate D decision
+until a scoring owner and cadence are assigned and logged here.
+
+---
+
 ### Resolution Log
 
+- 2026-08-02: **§XII Proposed Triage Intelligence & Governance Extension added, corrective merge, human-directed.** Copilot drafted a four-layer extension (Triage Intelligence Layer, Triage Arbitration Layer, Triage Capability Model, Triage Maturity Vector) plus a "CIR-Triage" constitutional-integration block. Verified against source before integrating. Merged in: the TIL/TAL/TCM/TMV architecture itself, as a clearly-marked proposed/unaudited §XII, with governance hooks reframed as candidate rules that formalize existing doctrine (Principle 9, the Oversight Gate requirement, ASM-005's N≥50 bar) rather than new authority. Cut: (1) the "CIR-Triage" section binding these predicates into `Admin/CIR_Gov.md` as constitutional law — CIR_Gov.md is Proposed — Not Ratified, 0/6 gates, and its own Binding Status section states nothing should issue a CIR-VERIFIED transition until GOV-008 is ratified; (2) the invented "Spec Gate: Constitutional" category, which does not exist in `Admin/Verification_Gates_LF.md`'s six canonical gates; (3) all framing that implied Gate D routing, threshold revision, or Oversight Gate decisions are already governed by these predicates — none are, until §XII passes its own Gate 1. Registered TS-005 through TS-008 to track the four sub-layers' lack of implementation, rather than leaving them unregistered. Open Unknowns 3 → 7. Spec Gates unchanged at 2/6 — drafting §XII is not a gate pass.
 - 2026-07-21: **CT-002 → TS-004 (Resolved — Discharge via Consolidation), human-directed, surfaced by `Automation/integrity_check.py`.** The sidecar entry previously logged here as "CT-002" collided with `Admin/Canonical_Terms.md`'s own CT-002 — the same Component Library Schema unknown, independently logged there 11 days earlier (2026-05-26). Renamed to this file's own `TS-` convention and marked discharged to `Admin/Canonical_Terms.md`'s CT-002, which `Unknowns.md`'s global index already treated as canonical. Entry retained per the non-deletion principle, not removed. Open Unknowns 4 → 3.
 - 2026-07-17: **Embedded Value Preservation cross-reference added (human-directed).** New Core Principle 9, sourced from `Challenges/Closed_Loop_Feedstock.md` §2a's ratification the same day. Governs a step Principle 8 (Strategic Recoverability) doesn't reach: separable high-value sub-components in a triage-failed unit are extracted and preserved before what remains proceeds to full reduction. Routing table (§IV) annotated at the Gate D / Material Recovery row. Does not change the pass/fail triage decision itself — only what happens to material already routed to Reduction.
 - May 2026: Gate Correspondence table added.
@@ -538,6 +768,9 @@ Mandatory re-audit conditions for this document:
 - Human/AI Oversight Gate requirement removed for Strategic or Critical tier components
 - DS-001 resolved without explicit audit cycle and cross-validation with Gate_07_Utilization.md
 - Ethical Anchor field absent, altered, or does not match canonical string
+- §XII (TIL/TAL/TCM/TMV) cited as binding, constitutional, or CIR-integrated without GOV-008 existing and CIR_Gov.md being ratified
+- §XII treated as having raised this file's Spec Gates count without an actual gate pass on record
+- TMV scores or TCM capability rungs cited in an actual Gate D decision without a scoring owner assigned (TS-008) or a v0-tooling check performed (TS-007)
 
 **Compound Drift Rule:** If multiple indicators activate simultaneously, halt
 autonomous audit progression and escalate for human review.
