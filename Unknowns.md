@@ -3,21 +3,33 @@
 
 **Full version history in `Unknowns_Changelog.md` (2026-07-19 cleanup pass, following the precedent set by `Admin/AUDIT_HARNESS_CHANGELOG.md` and `Admin/Forge_Audit_Kit_Changelog.md`; scrubbed to current-version-only 2026-07-28 — the "current plus last four in full" window was itself compressed further, since the Audit Trail below now carries the compressed record for every version back to v1.0, and the changelog carries full text for all of them. This block now keeps only the current version.)**
 
-**Version 4.40 — 2026-08-02. Gate_02_Triage.md §XII.1a TIL v0 Log
-Specification added — no new unknown registered.**
-`Operations/Gate_02_Triage.md` gained a concrete Event_ID (`YYYY-MM-DD-NNN`)
-and closed-loop fate-tracking specification implementing §XII.1's existing
-"v0 minimal form" — drafted by Grok, human-directed, verified against
-source. `Component_Class` is explicitly logged as provisional pending
-CT-002 (Component Library Schema — already tracked at TS-004/
-`Admin/Canonical_Terms.md` CT-002, not a new gap). A multi-Forge Event_ID
-extension (`YYYY-MM-DD-Fxx-NNNN`) was deferred rather than adopted or
-dropped: `Admin/Trajectories.md` TR-GOV-001 tracks the actual trigger
-(second physical host confirmed to exist), and the deferral note in
-Gate_02_Triage.md §XII.1a specifies the full extended format in reserve
-against that trigger, so no redesign is needed if/when it fires. No
-change to Open Unknowns (stays 7) — this elaborates TS-005 rather than
-opening new tracking surface.
+**Version 4.41 — 2026-08-02. EV-004, EV-005 registered — Energy.md dual-audit adjudication (Gemini + Grok).**
+Two independent Skeptic/Auditor passes on `Operations/Energy.md`'s
+proposed EGL disagreed on gate verdicts and specific findings; both
+verified against source before adjudicating. Merged from Gemini (Grok's
+pass missed these): the Source Classes/Operational Modes tables wrongly
+implied TEG could supply idle-state baseline load with zero active
+thermal process — physically ungrounded, now corrected; EV-004 (EAL
+hardware watchdog/firmware isolation — ASM-006's assumption had no
+tracked unknown behind it) and EV-005 (TEG net-positive threshold vs.
+pump/fan parasitic draw) registered; a semantic-hygiene fix to the Safety
+Advisory's "structural specification" phrasing; a bare `Engineering.md`
+reference corrected to `Architecture/Engineering.md`; Voltage Ripple
+values tagged `[Placeholder]`; Storage Model gained Safe Maintenance
+Access and End-of-Life Disposal Routing (cross-referencing
+`Operations/Gate_02_Triage.md` and `Challenges/Waste.md`). Rejected from
+Gemini's audit: a finding that the Ethical Anchor field needs an `Admin/`
+prefix — `Admin/File_Template.md` fixes the unprefixed form as canonical
+and non-negotiable across every file, and `Tests/Support_Raft.md`'s own
+history records a 9-file sweep that removed that exact prefix once
+already; also rejected: flagging "Payment via Specification only" as
+semantic drift — that's the file's own pre-existing, previously-audited
+idiom, used identically since 2026-05-31 in EV-001/002/003. Grok's gate
+verdicts (mostly cleared, flag-and-track framing) were judged better
+calibrated than Gemini's (several BLOCKED) to what Energy.md actually
+claims about itself — it has been Draft/Exploration throughout and never
+purported to pass a gate. `Operations/Energy.md` Open Unknowns: 3 → 5.
+Status/Spec Gates unchanged (Draft, 1/6).
 
 **Expiry Rule active — see `Admin/Canonical_Terms.md` §4 for the Cycle definition this rule now explicitly references (one calendar year default, not one audit pass — see CT-011). Protocol Performance metrics collecting.**
 
@@ -178,6 +190,8 @@ GH-009 (Emergent heuristic conflict — N² interaction scaling)
 | EV-001 | Forge power demand uncharacterized | `Operations/Energy.md` | In Progress | Active | Blocking |
 | EV-002 | Parasitic and thermal startup loads for biogas streams uncharacterized | `Operations/Energy.md` | In Progress | Active | Minor |
 | EV-003 | Salvaged battery thermal containment and ventilation strategy undefined | `Operations/Energy.md` | In Progress | Active | Critical |
+| EV-004 | Energy Arbitration Layer (EAL) hardware watchdog and firmware isolation unvalidated | `Operations/Energy.md` | Open | — | Major |
+| EV-005 | Thermoelectric Generator (TEG) net energy harvesting threshold uncharacterized | `Operations/Energy.md` | Open | — | Minor |
 
 ### Leviathan / Autonomy
 
