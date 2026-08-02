@@ -3,19 +3,29 @@
 
 **Full version history in `Unknowns_Changelog.md` (2026-07-19 cleanup pass, following the precedent set by `Admin/AUDIT_HARNESS_CHANGELOG.md` and `Admin/Forge_Audit_Kit_Changelog.md`; scrubbed to current-version-only 2026-07-28 — the "current plus last four in full" window was itself compressed further, since the Audit Trail below now carries the compressed record for every version back to v1.0, and the changelog carries full text for all of them. This block now keeps only the current version.)**
 
-**Version 4.38 — 2026-08-02. TS-005 through TS-008 registered — Gate_02_Triage.md §XII proposed governance extension.**
-`Operations/Gate_02_Triage.md` gained §XII, a proposed and unaudited
-Triage Intelligence/Arbitration/Capability/Maturity extension (drafted by
-Copilot, corrective merge applied same day after the draft was found
-claiming already-binding constitutional status via an invented
-"Spec Gate: Constitutional" category and an unauthorized `Admin/CIR_Gov.md`
-binding — both cut before merge; see that file's Resolution Log). Four new
-unknowns registered tracking the sub-layers' lack of implementation:
-TS-005 (TIL), TS-006 (TAL — depends on `Operations/Energy.md`'s own
-unaudited Energy Arbitration Layer, drafted 2026-08-01), TS-007 (TCM),
-TS-008 (TMV). None are Blocking — §XII is explicitly not load-bearing on
-Gate_02_Triage.md's existing routing. `Operations/Gate_02_Triage.md` Open
-Unknowns: 3 → 7. Spec Gates unchanged at 2/6.
+**Version 4.39 — 2026-08-02. EL-009 registered — Electronics.md Threat Model / Trust Boundary / Heartbeat Token corrective merge.**
+`Operations/Electronics.md` gained a §I Threat Model, Trust Boundary
+Layers summary, expanded Non-Integrable Component Classes table, Firmware
+Provenance Log Format table, Counterfeit Severity Scale (feeds EL-008),
+Salvage Yield Metrics (feeds ASM-007, Placeholder confidence), Adversarial
+Testing Protocols (elaborates EL-007), and a Heartbeat Token Specification
+(feeds EL-006/CF-001) — drafted by Copilot and Grok, corrective merge
+applied same day. One new unknown registered: EL-009 (silicon errata
+ledger for salvaged MCU families — distinct from EL-007's testing
+methodology). Rejected without merging: Copilot's silent File State
+inflation (Status → "Transitional", Spec Gates → "1/6" with no audit
+evidence — third occurrence of this pattern from Copilot, after
+Energy.md and Gate_02_Triage.md §XII); a hallucinated claim that
+Air_Scrubber.md/Ethical_Constraints.md cross-references were missing
+(both already present); an invented file-local "Spec Gates Definition"
+table (same error as the two prior sessions); a "Confidence Collapse
+Handling" section that this file's own Scope Boundary explicitly
+excludes; and a "MAC-to-Hardware Bridge" proposal that would have let AI
+consensus configure watchdog/TMR parameters, contradicting the file's own
+permanent 2026-05-09 MAC/hardware-safety distinction — this rejection is
+also logged as a new Drift Indicator in Electronics.md itself.
+`Operations/Electronics.md` Open Unknowns: 8 → 9. Status and Spec Gates
+unchanged (Exploration, 0/6).
 
 **Expiry Rule active — see `Admin/Canonical_Terms.md` §4 for the Cycle definition this rule now explicitly references (one calendar year default, not one audit pass — see CT-011). Protocol Performance metrics collecting.**
 
@@ -44,11 +54,11 @@ Formal axioms, theorems, and Verification Algebra backing CF-004, AP-006, and ep
 
 ---
 
-## What v4.38 Means
+## What v4.39 Means
 
-- **Cross-agent drafts get checked against real gate/ratification state before merge, not after.** Copilot's §XII draft for `Operations/Gate_02_Triage.md` was internally coherent but claimed operative constitutional status it hadn't earned — an invented "Spec Gate: Constitutional" category and a binding into `Admin/CIR_Gov.md` that file's own Binding Status explicitly forbids while GOV-008 is unratified. Both were cut before merge. The architecture itself (TIL/TAL/TCM/TMV) was kept as clearly-marked proposed doctrine.
-- **Proposed doctrine now gets its unknowns registered on arrival, not after the fact.** TS-005–008 track the four new sub-layers' lack of implementation from day one, rather than sitting as an unregistered prose block the way a similar gap was found and fixed for other files in earlier sweeps (see v4.28's SEC-012/GR-006/GR-007/GR-008/SC-007/SC-008 finding).
-- **Two proposed, unaudited layers now explicitly depend on each other.** TS-006 (Triage Arbitration Layer) is patterned on and depends on `Operations/Energy.md`'s own proposed, unaudited Energy Arbitration Layer (drafted 2026-08-01). Neither should be treated as operative; if Energy.md's EGL changes, TS-006 needs re-review.
+- **Copilot's self-promotion pattern is now a confirmed trend, not a one-off.** Three sessions running (`Operations/Energy.md`, `Operations/Gate_02_Triage.md` §XII, `Operations/Electronics.md`), a Copilot draft has silently advanced a file's Status and/or Spec Gates count with no audit evidence behind it. All three were caught and reverted before merge. Future cross-agent drafts from any agent should be checked against the file's actual current File State before anything in them is trusted at face value.
+- **A file's own Scope Boundary is a hard constraint on what gets added to it, not a suggestion.** A draft proposed adding confidence-collapse/split-brain handling directly to `Operations/Electronics.md`, which that file's own Scope Boundary explicitly assigns to `Architecture/Cognitive_Frameworks.md`. Rejected on that basis alone, independent of the content's quality.
+- **Doctrine that's already permanent and ratified overrides a plausible-sounding new proposal.** `Operations/Electronics.md` carries a permanent 2026-05-09 doctrine distinguishing MAC (pre-implementation verification) from hardware TMR/watchdog (runtime safety). A new "MAC-to-Hardware Bridge" proposal that would have let MAC outputs configure watchdog parameters was rejected as a direct instance of the conflation that doctrine exists to prevent, even though the proposal itself included a disclaimer that MAC couldn't override Layer 0/1.
 
 ## Size Management Rules
 
@@ -575,6 +585,7 @@ GH-009 (Emergent heuristic conflict — N² interaction scaling)
 | EL-006 | Firmware trust and reflashing validation not defined | `Operations/Electronics.md` | Open | — | Critical |
 | EL-007 | Correlated failure modes in homogeneous salvage TMR not characterized | `Operations/Electronics.md` | Open | — | Major |
 | EL-008 | Counterfeit salvage component detection doctrine not defined | `Operations/Electronics.md` | Open | — | Major |
+| EL-009 | Silicon errata ledger for common salvaged MCU families does not exist | `Operations/Electronics.md` | Open | — | Minor |
 
 ### Reduction
 
