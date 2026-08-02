@@ -175,13 +175,15 @@ entry and the full Resolution Log — lives here now.
 | Blocking      | No                         |
 | Owner         | `Admin/Auditor_Protocols.md` |
 | First Logged  | 2026-05-23                 |
-| Last Reviewed | 2026-06-24                 |
+| Last Reviewed | 2026-08-02                 |
 
 **Description:** The repository lacks explicit operational doctrine for audit history integrity, rollback detection, canonical-path authority, and institutional memory corruption at the auditor protocol level.
 
 **Why It Matters:** Governance systems become fragile if repository state itself cannot be trusted — stale doctrine can masquerade as current policy, fabricated resolution logs can close unknowns without evidence, and silent rollback can erase lineage.
 
 **Resolution Path:** Payment via Specification — define repository integrity requirements in the Autonomous Auditor Constraints and Drift Detection sections. Cross-reference GOV-003 (integrity enforcement architecture). Partial progress: EF-0.3 (Epistemic Ledger) directly addresses lineage preservation — all core state corrections must be immutably recorded with five fields, and ledger entries may only be created on genuine falsification. EF-0.2 Level 3 explicitly classifies history tampering and alteration of audit trail entries as Integrity Violations triggering Epistemic Reset and mandatory human governing party review. These two sections constitute the doctrine layer of AP-007's resolution; the remaining gap is the enforcement layer — how tampering is detected structurally rather than declared textually. A future implementation target, not yet started: SHA-256 upstream parity checks (Gemini recommendation, 2026-06-21), planned for `Admin/Security_Protocols.md` but not present there as of 2026-07-17 — confirmed by direct inspection; that file currently contains SEC-ASM-002 (an assumption about SHA-256's continued robustness, a different concern) and SEC-010 (algorithm migration doctrine), neither of which is the parity-check mechanism this path describes.
+
+**Concrete scenario (2026-08-02, from a self-audit's Adversarial Challenge Class 8 — Malicious Actor Simulation):** a knowledgeable actor falsifies the relocated sidecar itself — altering resolution dates, flipping an open entry's status to Resolved, or injecting a fabricated "independent Battery" entry to manufacture false AP-017 progress. Because the main file only points to `Archive/Logs/Auditor_Protocols_Logs.md` (this file) rather than embedding its content, the falsification would be invisible to any audit that trusts the pointer without independently checking the archive. This is the exact enforcement-layer gap AP-007 already names — logged here as a concrete instance rather than as a separately-numbered unknown, since the underlying gap is the same one, not a new one. (The self-audit that surfaced this had no confirmed archive access and initially proposed "candidate AP-033" — see `Admin/Auditor_Protocols.md` §Sidecar Format's 2026-08-02 addition for the resulting doctrine: an agent without confirmed sidecar access should describe a candidate finding rather than number it, precisely to avoid this kind of near-duplicate.)
 
 ---
 
@@ -798,6 +800,23 @@ This becomes governance metadata rather than prose, auditable the same way Truth
 ---
 
 ### Resolution Log
+
+- 2026-08-02: **v0.31 — Sidecar Model §Sidecar Format extended;
+  AP-007 gained a concrete scenario.** A same-day self-audit (Grok,
+  operating on `Admin/Auditor_Protocols.md`'s body text without
+  confirmed access to this archive) surfaced a real finding under
+  Adversarial Challenge Class 8 (Malicious Actor Simulation) —
+  sidecar/archive falsification risk — and proposed it as candidate
+  "AP-033." The gap was real but not new: it's already AP-007,
+  open since 2026-05-23, which names this exact enforcement-layer
+  problem and a not-yet-built SHA-256 parity-check mitigation
+  proposed back on 2026-06-21. Folded Class 8's scenario into AP-007
+  as a concrete instance rather than registering a duplicate ID.
+  Added a new paragraph to §Sidecar Format: an agent without
+  confirmed sidecar access may surface a candidate finding but must
+  describe it rather than assign a specific ID number — duplicate
+  checking and numbering are reserved for an agent with verified
+  access. No new unknown opened; Open Unknowns remains 15.
 
 - 2026-08-02: **v0.30 — AP-032 registered and resolved same day.**
   Rule 8 (Gate/Status Self-Attestation Prohibition) added to §AI
