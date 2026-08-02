@@ -399,6 +399,91 @@ validated, improve pass/fail decisions and threshold calibration.
   class, station path, outcome, and later service fate, reviewed manually.
   No tooling exists for this today.
 
+### XII.1a TIL v0 Log Specification — proposed
+
+*Drafted by Grok 2026-08-02, human-directed; verified against source. This
+is a concrete implementation of §XII.1's "v0 minimal form," not a new
+layer — it formalizes the physical provenance tag Principle 5 already
+requires into a loggable record. Same candidate/not-audited status as the
+rest of §XII: it does not make TIL operative, it makes TIL *startable*.*
+
+**Fields (single flat table — spreadsheet or paper log, transcribed
+weekly):** Event_ID, Triage_Date, Component_Class, Source_Stream,
+Strategic_Tier, Station_Path, Tests_Performed, Measured_Performance,
+Outcome (Gate A/B/C/D/Hold/Terminal), Embedded_Value_Actions (if Gate D),
+Operator, Energy_Time_Cost (optional), Later_Fate, Notes. Most fields are
+free-text at v0; only Event_ID, Triage_Date, Strategic_Tier, Station_Path,
+Outcome, and Operator are required.
+
+**`Component_Class` is explicitly provisional, not a settled taxonomy.**
+This file's own TS-004 records that the Component Library Schema
+(`Admin/Canonical_Terms.md` CT-002) is a genuinely open unknown that
+*blocks this file's own Specification promotion*. TIL's log should not be
+read as quietly resolving CT-002 by starting to use class labels
+informally — log free-text component descriptions now, and reconcile
+against a controlled vocabulary once CT-002 actually closes. Do not treat
+early TIL groupings by class as validated categories.
+
+**Event_ID format:** `YYYY-MM-DD-NNN` (date of final disposition + a
+three-digit daily sequence resetting each day, e.g. `2026-08-02-017`).
+Assigned by the operator at final disposition, written on the physical
+provenance tag and as the log row's first field in the same action. A
+re-triage event always mints a *new* Event_ID and links back via
+Later_Fate — the original record is never overwritten.
+
+**Closed-loop fate tracking** is what makes the log more than a decision
+record: `Later_Fate` (and `Fate_Date`) get written back against the
+original Event_ID when a component fails in service, gets repaired, or is
+finally retired — via a re-triage event, a periodic (weekly) fate-review
+pass over items still in service, or final-disposition notes at material
+recovery. Without this, TIL can only describe what was *decided*, not
+what turned out to be *correct* — see §XII.1's threshold-revision hook,
+which depends on fate data, not just initial-decision counts.
+
+**Deferred: multi-Forge ID extension (`YYYY-MM-DD-Fxx-NNNN`).** A version
+of this format that adds a two-digit Forge-site code was also drafted.
+It is deliberately *not* adopted now: `Admin/Trajectories.md` TR-GOV-001
+and GOV-008's own sidecar are explicit that no second physical host
+exists anywhere in this repository yet, and writing a site code onto
+every tag today would add friction for a scenario that isn't real —
+directly against this same spec's own "start below the tooling
+threshold" principle. This is a deferral, not a rejection: the extension
+is specified below so it's ready to adopt without a redesign the day it's
+actually needed, rather than being invented under time pressure once a
+second Forge exists.
+
+*Expansion criteria — adopt `YYYY-MM-DD-Fxx-NNNN` when any of the
+following becomes true, not before:*
+- *A second physical Forge host is confirmed to exist (the exact
+  condition GOV-008 and TR-GOV-001 are already tracking) — this is the
+  primary trigger.*
+- *Component or provenance data needs to move between two active Forges
+  and plain `YYYY-MM-DD-NNN` IDs from each site would collide.*
+- *`Admin/Governance_Migration_Protocol.md`'s hardware diversity ladder
+  reaches a stage where multi-site coordination doctrine is being
+  actively drafted (see TR-GOV-001) — at that point the ID scheme should
+  be adopted alongside it, not as an afterthought.*
+
+*Migration path when triggered:* existing `YYYY-MM-DD-NNN` IDs remain
+valid as-is; assign the current site `F01` and mint `Fxx` only for new
+Forges going forward — no renumbering of historical records required.
+This is why the plain format was chosen as primary: it's a strict prefix
+of the extended one, so the deferral costs nothing to reverse later.
+
+*Full extended-format specification, held for that trigger:* `Fxx` = `F`
++ 2-digit zero-padded site code (`F01`–`F99`), assigned once from a
+central registry when a site comes online. Sequence extends to 4 digits
+(`NNNN`, resets daily per Forge) to comfortably exceed any plausible
+single-site daily volume. A parallel daily-total field (`Daily_Header:
+2026-08-02-F01 | Triage: 23 | Fabrications: 17 | Total: 40`) covers
+quantity reporting rather than embedding a running count inside every
+individual ID, which was considered and rejected as unnecessary length
+and update overhead for Gen-1-scale volumes. Fabrication-artifact IDs
+were considered under this same scheme but are out of scope for this
+file — if a unified triage+fabrication ID scheme is wanted later, it
+belongs in `Admin/Canonical_Terms.md`, which already owns the Component
+Library Schema question, not in this file's TIL note.
+
 ### XII.2 Triage Arbitration Layer (TAL) — proposed
 
 A candidate resource-allocation scheme for triage under constraint, modeled
@@ -462,6 +547,13 @@ completeness, strategic recoverability — each 0–3, averaged to a 0–1 score
 - It does not stand alone: TAL depends on Energy.md's unaudited EGL, so
   this entire section inherits that dependency's unvalidated status. If
   EGL is later corrected or reworked, this section needs re-review.
+- It does not resolve CT-002 (Component Library Schema, tracked at
+  TS-004). §XII.1a's TIL log uses free-text component descriptions
+  precisely because CT-002 remains open — starting to log is not the
+  same as having settled the taxonomy.
+- It does not adopt the multi-Forge Event_ID extension. §XII.1a specifies
+  it and states the trigger conditions for adopting it, but the format in
+  active use today is the single-Forge `YYYY-MM-DD-NNN` form.
 
 See TS-005 through TS-008 below for tracked unknowns against this section.
 
@@ -483,6 +575,8 @@ See TS-005 through TS-008 below for tracked unknowns against this section.
 | Architecture/Facilities.md | Reference | Zone separation doctrine — acoustic isolation for Station 2 |
 | Operations/Energy.md §IV (proposed, unaudited) | Reference | §XII.2 TAL priority-class model borrows the EAL pattern; inherits its unaudited status |
 | Admin/CIR_Gov.md | Reference | §XII explicitly does not bind to this file; see CIR_Gov.md's own Binding Status |
+| Admin/Canonical_Terms.md | Reference | Owns CT-002 (Component Library Schema); §XII.1a's TIL log uses free-text `Component_Class` pending that resolution |
+| Admin/Trajectories.md | Reference | TR-GOV-001 tracks hardware diversity / second-host status; §XII.1a's multi-Forge Event_ID extension is deferred until that trigger fires |
 
 ---
 
@@ -721,6 +815,37 @@ until a scoring owner and cadence are assigned and logged here.
 
 ### Resolution Log
 
+- 2026-08-02: **§XII.1a TIL v0 Log Specification added (Event_ID format,
+  closed-loop fate tracking, multi-Forge deferral note), human-directed.**
+  Grok drafted three implementation docs (TIL v0 log data model,
+  closed-loop fate tracking mechanism, and two Event_ID format proposals
+  — single-Forge `YYYY-MM-DD-NNN` and multi-Forge `YYYY-MM-DD-Fxx-NNNN`)
+  as a follow-on to reviewing the 2026-08-02 §XII corrective merge (that
+  review was independently verified and found accurate — a useful
+  second-agent confirmation that the corrective merge held up). Verified
+  the implementation docs against source before integrating. Merged in:
+  the log data model and closed-loop fate mechanism as §XII.1a, an
+  implementation of §XII.1's existing "v0 minimal form," not a new layer;
+  the single-Forge `YYYY-MM-DD-NNN` Event_ID as the format in active use.
+  Flagged rather than silently accepted: `Component_Class` is explicitly
+  noted as provisional/free-text pending CT-002 (Component Library
+  Schema), which this file's own TS-004 already records as open and
+  blocking — the draft had listed it as an ordinary field needing "a
+  short controlled list," which undersold that it's a currently-tracked
+  blocking unknown, not a small design choice. Deferred rather than
+  adopted: the multi-Forge `Fxx` extension — `Admin/Trajectories.md`
+  TR-GOV-001 and GOV-008 are explicit that no second physical host exists
+  yet, so embedding a site code in every tag today adds friction for a
+  scenario that isn't real. Per human direction, the deferral is written
+  as an explicit trigger-conditioned expansion note (three named trigger
+  conditions, tied to TR-GOV-001) with the full extended-format spec held
+  in reserve, rather than dropped — chosen so the extension needs no
+  redesign if a second Forge does materialize, since the single-Forge
+  format is a strict prefix of the extended one. Fabrication-artifact IDs
+  (also proposed under the same scheme) were left out as outside this
+  file's Scope Boundary — noted as `Admin/Canonical_Terms.md`'s territory
+  if wanted later. No new Open Unknowns — this elaborates TS-005, and the
+  CT-002 dependency is already tracked at TS-004.
 - 2026-08-02: **§XII Proposed Triage Intelligence & Governance Extension added, corrective merge, human-directed.** Copilot drafted a four-layer extension (Triage Intelligence Layer, Triage Arbitration Layer, Triage Capability Model, Triage Maturity Vector) plus a "CIR-Triage" constitutional-integration block. Verified against source before integrating. Merged in: the TIL/TAL/TCM/TMV architecture itself, as a clearly-marked proposed/unaudited §XII, with governance hooks reframed as candidate rules that formalize existing doctrine (Principle 9, the Oversight Gate requirement, ASM-005's N≥50 bar) rather than new authority. Cut: (1) the "CIR-Triage" section binding these predicates into `Admin/CIR_Gov.md` as constitutional law — CIR_Gov.md is Proposed — Not Ratified, 0/6 gates, and its own Binding Status section states nothing should issue a CIR-VERIFIED transition until GOV-008 is ratified; (2) the invented "Spec Gate: Constitutional" category, which does not exist in `Admin/Verification_Gates_LF.md`'s six canonical gates; (3) all framing that implied Gate D routing, threshold revision, or Oversight Gate decisions are already governed by these predicates — none are, until §XII passes its own Gate 1. Registered TS-005 through TS-008 to track the four sub-layers' lack of implementation, rather than leaving them unregistered. Open Unknowns 3 → 7. Spec Gates unchanged at 2/6 — drafting §XII is not a gate pass.
 - 2026-07-21: **CT-002 → TS-004 (Resolved — Discharge via Consolidation), human-directed, surfaced by `Automation/integrity_check.py`.** The sidecar entry previously logged here as "CT-002" collided with `Admin/Canonical_Terms.md`'s own CT-002 — the same Component Library Schema unknown, independently logged there 11 days earlier (2026-05-26). Renamed to this file's own `TS-` convention and marked discharged to `Admin/Canonical_Terms.md`'s CT-002, which `Unknowns.md`'s global index already treated as canonical. Entry retained per the non-deletion principle, not removed. Open Unknowns 4 → 3.
 - 2026-07-17: **Embedded Value Preservation cross-reference added (human-directed).** New Core Principle 9, sourced from `Challenges/Closed_Loop_Feedstock.md` §2a's ratification the same day. Governs a step Principle 8 (Strategic Recoverability) doesn't reach: separable high-value sub-components in a triage-failed unit are extracted and preserved before what remains proceeds to full reduction. Routing table (§IV) annotated at the Gate D / Material Recovery row. Does not change the pass/fail triage decision itself — only what happens to material already routed to Reduction.
