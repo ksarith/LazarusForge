@@ -36,8 +36,9 @@
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | Admin/Verification_Gates_LF.md                                      |
-| Last Audit       | 2026-05-09 (multi-agent), actioned 2026-05-19; revised 2026-06-08  |
-| Auditor          | Claude — Retrofit/Auditor; Gemini — Synthesizer (CF-001 parameters) |
+| Last Audit       | 2026-05-09 (multi-agent), actioned 2026-05-19; revised 2026-06-08; Threat Model/Trust Boundary/Heartbeat Token additions drafted 2026-08-02, not yet audited |
+| Auditor          | Claude — Retrofit/Auditor; Gemini — Synthesizer (CF-001 parameters); Copilot — drafted Threat Model/Trust Boundary/Firmware Provenance Log restructure (human-directed), 2026-08-02; Grok — drafted Heartbeat Token Cryptography spec and reviewed Copilot's draft (human-directed), 2026-08-02; Claude — verified against source, corrective merge (human-directed), 2026-08-02 |
+| Open Unknowns    | 9                                                                   |
 | Open Unknowns    | 8                                                                   |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | High                                                                |
@@ -231,6 +232,97 @@ constraint enforcement, watchdog behavior, and TMR
 vote depends on the hardware this file governs.
 Compromise here propagates everywhere.
 
+### Threat Model
+
+*Added 2026-08-02 (Copilot, human-directed; verified against source). This
+formalizes what ASM-004 already stated informally — the file did not
+previously separate "adversary capability" from "assumption" as distinct
+concepts. Nothing below changes ASM-004 itself; it expands on it.*
+
+**Adversary capability classes** this file's doctrine defends against:
+- Supply-chain insertion — compromised hardware planted in a salvage
+  pathway before it reaches the Forge (ASM-004)
+- Firmware compromise — malicious or backdoored logic surviving physical
+  recovery (ASM-001, EL-006)
+- Counterfeit/remarked components — relabeled or cloned parts with altered
+  behavior (EL-008)
+- Covert surveillance capability embedded in recovered controllers or
+  network devices
+- Correlated-failure exploitation — an adversary (or coincidence) that
+  defeats TMR by exploiting shared batch, thermal, or firmware lineage
+  across all three legs (EL-007)
+
+**Escalation paths:** EL-006 (firmware provenance), EL-007 (TMR
+independence), EL-008 (counterfeit detection), `Admin/Ethical_Constraints.md`
+(dual-use — see §VI below, already a dedicated section, not a missing
+cross-reference).
+
+**What this section does not do:** it does not lower the bar ASM-004
+already sets (salvage assumed passive, not targeted, until forge
+operations grow enough strategic value to warrant reassessment — see
+Abandoned Paths, 2026-05-19 entry). It also does not add new adversary
+classes beyond what EL-006/007/008 and ASM-001/004 already imply — it
+names them in one place for auditability.
+
+### Trust Boundary Layers
+
+*Conceptual summary of doctrine already present in this file, gathered
+into one diagram for orientation. Layers 0–2 are defined in
+`Architecture/Cognitive_Frameworks.md` and enforced here; Layer 3 is this
+file's own Firmware Trust Doctrine (§II, "Firmware Trust Doctrine"
+subsection, below — kept in place rather than relocated, to avoid
+duplicating ~100 lines of existing audited text). Layer 4 (MAC) is
+explicitly a pre-implementation verification step, not a trust boundary
+layer in the same sense as 0–3 — see "Multi-Agent Consensus (MAC)" in
+§IV, and the explicit non-extension of MAC into hardware configuration
+below.*
+
+- **Layer 0 — Mechanical truth.** Passive spring-return neutral state.
+  Defined in `Architecture/Cognitive_Frameworks.md`.
+- **Layer 1 — Hardware watchdog.** Discrete, un-bypassable, no firmware.
+  See "Hardware Watchdog Doctrine" (CF-001) below.
+- **Layer 2 — Logic controllers.** MCUs, programmable devices — the
+  layer Layer 1 does not trust.
+- **Layer 3 — Firmware provenance.** Logic-Zero wipe, hash verification,
+  provenance logging. See "Firmware Trust Doctrine" below and EL-006.
+- **MAC (pre-implementation, not a numbered trust layer).** Multi-agent
+  engineering review before anything is built. Does not configure, tune,
+  or influence Layers 0–3 at runtime — see the explicit rejection of a
+  "MAC-to-Hardware Bridge" under §IV.
+
+### Non-Integrable Component Classes
+
+*Expands the existing "Devices that cannot be wiped" doctrine (Firmware
+Trust Doctrine, below) with explicit categories. The base rule — locked
+bootloader devices route to material recovery — already existed; the
+categories below make it concrete enough to apply consistently.*
+
+| Class | Why it's non-integrable |
+|---|---|
+| Locked-bootloader MCUs | Cannot be wiped or hash-verified — already this file's existing rule |
+| Secure-element chips with unknown provenance keys | Key material cannot be verified or replaced; trust cannot be established |
+| TPMs from unknown provenance | Same as secure elements — attestation chain cannot be re-established |
+| Network controllers with opaque/undocumented firmware | Cannot confirm absence of covert communication capability |
+| SoCs with undocumented coprocessors | Coprocessor firmware and capability cannot be audited even if the primary core is wiped |
+
+All classes above route to material recovery (copper, rare earths), not
+the Component Library — consistent with the existing locked-bootloader
+rule. Document the encounter and feed it to EL-006.
+
+### Firmware Provenance Log Format
+
+*Formalizes the field list already present in the Logic-Zero wipe
+protocol's step 5 (below) as a table, for consistent logging.*
+
+| Field | Description |
+|---|---|
+| Device ID | Unique identifier assigned at intake |
+| Donor Board | Source board identifier |
+| Wipe Method | Erase protocol used |
+| Firmware Hash | Verified hash of installed (known-good) firmware |
+| Operator | Responsible technician |
+| Timestamp | UTC timestamp of wipe/verification |
+
 ---
 
 ## II. Phase I — Non-Destructive Harvesting
@@ -305,7 +397,28 @@ Electrical testing alone does not detect counterfeits.
 - See EL-008 for unresolved counterfeit detection
   doctrine
 
+**Counterfeit Severity Scale (proposed, feeds EL-008):**
+
+*Drafted by Copilot 2026-08-02, human-directed. This is a candidate
+triage aid for EL-008, not a resolution of it — EL-008 remains Open until
+detection criteria per component class are actually validated against an
+operational harvesting cycle, per its existing Resolution Path.*
+
+| Level | Description | Suggested routing |
+|---|---|---|
+| C0 | Benign remarking (cosmetic only, function matches label) | Component Library, note in provenance |
+| C1 | Degraded electrical performance vs. label | Repurpose to non-critical/auxiliary use |
+| C2 | Altered ROM/behavior vs. expected function | Route to EL-006 firmware trust doctrine — treat as Layer 2/3 concern, not just counterfeit |
+| C3 | Malicious firmware suspected | Non-integrable — route to material recovery per Non-Integrable Component Classes (§I) |
+| C4 | Confirmed supply-chain attack vector | Material recovery; document and escalate per Threat Model (§I) |
+
 ### Firmware Trust Doctrine
+
+*Summarized and cross-referenced from §I's new Threat Model / Trust
+Boundary Layers / Non-Integrable Component Classes / Firmware Provenance
+Log Format subsections (added 2026-08-02) — this is the detailed
+operational protocol those subsections point back to. Kept in place
+rather than relocated, to avoid duplicating audited text.*
 
 **Physical recovery of a chip does not guarantee
 the integrity of its embedded logic.**
@@ -543,6 +656,23 @@ This standard does not require perfect components
 but functional controller that speaks I2C at 3.3V
 can be adapted to any Forge-Standard slot.
 
+### Salvage Yield Metrics (Placeholder — feeds ASM-007)
+
+*Drafted by Copilot 2026-08-02, human-directed. These are qualitative
+starting estimates, not measured data — presented at Placeholder
+confidence, matching ASM-007's own confidence rating ("Low"). ASM-007's
+expiry trigger (first operational harvesting cycle characterizes actual
+yield rate per component class) is what would move this table to
+Analogous or better — this table does not itself satisfy that trigger.*
+
+| Component Class | Expected Yield (qualitative) |
+|---|---|
+| MOSFETs | Medium |
+| MCUs | Low |
+| Passives | High |
+| Inductors | Medium |
+| Connectors | High |
+
 ### Hardware TMR Implementation
 
 TMR implementation in hardware is this file's
@@ -594,6 +724,37 @@ from different boards are automatically independent
 — has been removed. Independence must be
 demonstrated through adversarial testing, not
 assumed from physical separation. See EL-007.
+
+**Adversarial testing protocols (feeds EL-007):**
+
+*Drafted 2026-08-02, human-directed. These elaborate EL-007's existing
+Resolution Path ("first TMR prototype must include adversarial correlated
+failure testing") rather than adding new authority — EL-007 already
+required this; the list below makes it concrete.*
+
+- Correlated failure injection — deliberately induce failure in one leg,
+  verify the other two remain independent
+- Thermal stress divergence — apply differential thermal load, confirm
+  legs don't fail together
+- Firmware mutation testing — introduce controlled firmware variance,
+  confirm voter still catches disagreement
+- Power-path isolation testing — confirm no common-mode power failure
+  across legs
+
+**Silicon Errata Ledger (new gap — see EL-009):**
+Diversity claims above (silicon, firmware, thermal, procurement) assume
+someone is tracking known errata for the MCU families actually in use. No
+such ledger exists yet — this is a distinct gap from EL-007's testing
+methodology, since even well-executed adversarial testing can miss an
+errata-driven correlated failure nobody knew to test for. See EL-009.
+
+**Thermal history assessment (feeds EL-007 and ASM-002):**
+Where visual/nondestructive indicators are available, use them to flag
+likely-correlated thermal history before TMR assignment: PCB
+discoloration, solder-joint oxidation, warped packages, delamination
+patterns. These are screening heuristics, not a validated methodology —
+they don't resolve EL-007, they reduce the chance of assigning
+obviously-correlated components to the same TMR set in the first place.
 
 **Voter implementation:**
 - Hardware voter (discrete logic gates) — more
@@ -686,6 +847,75 @@ Cross-reference: `Architecture/Cognitive_Frameworks.md`
 CF-001, Layer 0 mechanical truth doctrine,
 Layer 1 hardware watchdog enforcement.
 
+**Heartbeat Token Specification (proposed, feeds EL-006 and CF-001):**
+
+*Drafted by Grok 2026-08-02, human-directed; verified against source. This
+is the strongest new material from this session — it was designed against
+this file's actual constraints (no MCU, no programmable firmware on Layer
+1; τ=50ms; discrete RC timer/comparator/relay only) rather than assuming
+generic crypto hardware, and it ends by naming its own open items instead
+of claiming completeness. Presented here as a candidate specification for
+CF-001's "cryptographic heartbeat" requirement — it does not change any
+parameter in the table above, it defines how that requirement could
+actually be implemented.*
+
+*Design goal:* prove Layer 2 is still executing *correct* control-path
+code, not merely that a GPIO is still toggling — a free-running pulse can
+be spoofed by a partially-hung or compromised Layer 2. The scheme below
+keeps Layer 1 fully discrete (no microcontroller, no programmable
+firmware) while raising the attack cost well above a simple pulse.
+
+| Parameter | Requirement | Notes |
+|---|---|---|
+| Token length | 64–128 bits (effective) | Truncated response acceptable at v0 |
+| Challenge source | Rolling nonce or LFSR state, generated on the Layer 1 side | Must change every window |
+| Response function | Keyed one-way function of (challenge \|\| secret) | See algorithm options below |
+| Secret | 128-bit shared secret, provisioned at Logic-Zero/integration time | Stored only on the Layer 1 verification side, in a non-volatile, non-firmware element (OTP, discrete fuse array, or hard-wired jumper matrix); never readable by Layer 2 after provisioning |
+| Replay protection | Rolling nonce/sequence counter; each challenge used once | Windowed acceptance only |
+| Timing | Response must arrive inside the WDT's open window | Outside window → fault, same as any missed heartbeat |
+| Failure mode | Invalid or missing token → relay opens, spring-return neutral | Same permanent failure mode as the existing table above — this doesn't add a new failure path, it defines what "invalid" means |
+
+**Algorithm options (ordered by implementability with discrete hardware):**
+
+1. *Preferred v0 (salvage-friendly):* Layer 1 holds a 128-bit secret plus a
+   hardware LFSR/counter advancing every window. Layer 2 computes a
+   truncated keyed hash (HMAC-SHA256, SipHash, or BLAKE2s truncated) of the
+   challenge and drives a bit pattern a discrete decoder (shift registers +
+   comparators + AND gates) can match against a pre-loaded expected value.
+2. *Minimal discrete-only fallback:* pre-shared rolling-code sequence
+   burned into a small OTP or diode matrix; Layer 2 emits the next code as
+   a timed pulse train; Layer 1 discrete logic advances its own copy and
+   compares. Weaker against full sequence extraction, but stronger than a
+   free-running pulse and fully discrete.
+3. *v1+ target:* a dedicated, Logic-Zero'd, architecturally-diverse
+   secure-element or discrete crypto accelerator performs full HMAC/AEAD
+   and supplies only a binary "token-valid" signal to Layer 1's comparator
+   — Layer 1 itself remains pure discrete timeout + relay.
+
+**Why this satisfies CF-001:** a compromised Layer 2 that has lost the
+ability to execute correct token generation (or had its secret wiped or
+altered) cannot produce a valid response, even if it can still toggle
+GPIOs — the secret lives only on the Layer 1 side. Replay is defeated by
+the rolling challenge. The existing τ=50ms window is unchanged and still
+catches a locked/looping control board before a damaging actuation cycle
+completes.
+
+**Salvage implementation notes:** secret provisioning happens only during
+Logic-Zero/firmware verification and is logged in the Firmware Provenance
+Log (§I). The Layer 1 side's secret must never be readable by any Layer 2
+MCU after provisioning. First hardware prototype must measure actual
+control-loop latency and confirm the token computation fits inside the
+open window (feeds the existing "Why 50ms" validation note above, not a
+new requirement).
+
+**Open items (tracked under EL-006, not a new unknown):** which lightweight
+keyed function to use at v0 (HMAC-SHA256 truncated vs. SipHash vs. custom);
+physical realization of secret storage with available salvage parts;
+whether a fully compromised Layer 2 could still produce valid tokens if
+the token-generation routine itself is left intact — if so, the token
+needs to be further bound to a live integrity check of critical control
+code, which is a genuine open question this draft does not resolve.
+
 ### Multi-Agent Consensus (MAC)
 
 MAC is distinct from hardware TMR. Conflating
@@ -719,6 +949,19 @@ Neither replaces the other.
   significantly — disagreement is signal, not noise
 - MAC cannot substitute for physical safety
   constraints (Layer 0)
+
+**Rejected proposal — "MAC-to-Hardware Bridge" (2026-08-02):** A draft
+this session proposed letting MAC outputs "influence firmware selection,
+hardware routing decisions, and watchdog configuration parameters,"
+framed as not overriding Layer 0/1. This was not merged. Having AI
+consensus shape the watchdog's *configuration* — even without a runtime
+override path — is the same conflation the 2026-05-09 permanent doctrine
+above exists to prevent: MAC is pre-implementation verification, hardware
+TMR/watchdog is runtime safety, and the two are not supposed to touch.
+If a future draft wants MAC to inform an engineering *decision* about
+watchdog design (e.g., "should τ be revisited"), that's consistent with
+MAC's existing pre-implementation role — but MAC should never sit in the
+runtime configuration path itself. See the Drift Indicator added below.
 
 Cross-reference: `Architecture/Cognitive_Frameworks.md`
 Framework D, CF-002 correlated AI failure modes.
@@ -1139,7 +1382,7 @@ answer rather than a detectable disagreement.
 | Blocking      | No                                               |
 | Owner         | Operations/Electronics.md                        |
 | First Logged  | 2026-05-19                                       |
-| Last Reviewed | 2026-05-19                                       |
+| Last Reviewed | 2026-08-02                                       |
 
 **Description:** Counterfeit and remarked
 components — recycled parts relabeled as higher
@@ -1147,7 +1390,11 @@ spec, cloned chips with altered ROM behavior,
 fraudulent components with falsified datasheets
 — are present in salvage streams. Detection
 criteria and doctrine beyond provisional guidance
-in Section II are not yet defined.
+in Section II are not yet defined. A candidate
+Counterfeit Severity Scale (C0–C4) was added to
+Section II 2026-08-02 as a triage aid — it does
+not itself constitute the validated detection
+criteria this unknown's Resolution Path calls for.
 
 **Why It Matters:** A counterfeit MOSFET labeled
 for higher current than it can handle fails under
@@ -1178,7 +1425,94 @@ watchdog systems depend on.
 
 ---
 
+### EL-009 — Silicon errata ledger for common salvaged MCU families does not exist
+
+| Field         | Value                                            |
+|---------------|--------------------------------------------------|
+| Status        | Open                                             |
+| Risk          | Low                                              |
+| Priority      | Minor                                            |
+| Type          | Technical                                        |
+| Blocking      | No                                               |
+| Owner         | Operations/Electronics.md                        |
+| First Logged  | 2026-08-02                                       |
+| Last Reviewed | 2026-08-02                                       |
+
+**Description:** Hardware TMR's silicon-diversity claim (§IV) assumes
+someone is tracking known errata for the MCU families actually in use
+(ARM vs AVR vs PIC families, specific salvaged part numbers). No such
+ledger exists. This is distinct from EL-007 — even well-executed
+adversarial correlated-failure testing (EL-007's resolution path) could
+miss an errata-driven correlated failure nobody knew to test for, because
+nobody has catalogued which errata apply to which salvaged parts.
+
+**Why It Matters:** A TMR set built from three MCUs that happen to share
+an undocumented errata could fail together in exactly the way TMR is
+supposed to prevent, and EL-007's adversarial testing wouldn't
+necessarily surface it unless the specific fault mode is tested for.
+
+**Resolution Path:** Start a ledger (even a simple table) of known errata
+for whichever MCU families first appear in salvage streams, referencing
+manufacturer errata sheets where available. Cross-reference against
+EL-007's adversarial test design so known errata inform which correlated
+failure modes get tested first. Payment via Specification once a ledger
+exists and is cross-referenced from §IV.
+
+---
+
 ### Resolution Log
+
+- 2026-08-02: **§I Threat Model / Trust Boundary Layers / Non-Integrable
+  Component Classes / Firmware Provenance Log Format added; Counterfeit
+  Severity Scale, Salvage Yield Metrics, Adversarial Testing Protocols,
+  Silicon Errata Ledger, and Heartbeat Token Specification added;
+  corrective merge, human-directed.** Copilot produced a 15-point
+  improvement plan and a condensed "v1.1" regeneration; Grok reviewed
+  Copilot's draft and separately produced a detailed Heartbeat Token
+  Cryptography specification. Verified all of it against source before
+  integrating. Merged in, all explicitly marked proposed/unaudited or
+  tied back to their governing unknown: the Threat Model and Trust
+  Boundary Layers summary in §I (new, but formalizes ASM-004 and the
+  existing Layer 0–2 doctrine rather than replacing it); the expanded
+  Non-Integrable Component Classes table (genuine addition — the base
+  locked-bootloader rule already existed, the categories did not); the
+  Firmware Provenance Log Format table (formalizes fields already implied
+  by the existing Logic-Zero wipe protocol, step 5); the Counterfeit
+  Severity Scale C0–C4 (feeds EL-008, does not resolve it); Salvage Yield
+  Metrics (feeds ASM-007, presented at Placeholder confidence matching
+  ASM-007's own rating, not as measured data); Adversarial Testing
+  Protocols (elaborates EL-007's existing Resolution Path, not new
+  authority); and Grok's Heartbeat Token Specification (feeds EL-006 and
+  CF-001 — the strongest new material this session, correctly respects
+  the no-firmware-on-Layer-1 constraint and self-flags open items).
+  Registered EL-009 for the Silicon Errata Ledger gap, a genuinely
+  distinct unknown from EL-007 that surfaced during review. Cut: (1)
+  Copilot's silent File State inflation — Status was written as
+  "Transitional" and Spec Gates as "1/6" in the draft, with no audit
+  evidence; both left unchanged (Exploration, 0/6) — this is the same
+  self-promotion pattern already caught and corrected in `Operations/
+  Energy.md` and `Operations/Gate_02_Triage.md` §XII, now observed twice
+  from Copilot specifically; (2) the claim that Air_Scrubber.md and
+  Ethical_Constraints.md cross-references were missing — both are already
+  present (§VI is a dedicated Dual-Use Awareness section; Air_Scrubber.md
+  is cross-referenced repeatedly) — this was a hallucinated gap, not a
+  real one; (3) the invented "Spec Gates Definition" table redefining
+  Gates 1–6 as file-local content milestones — same error as Energy.md
+  and Gate_02_Triage.md §XII, rejected on the same grounds:
+  `Admin/Verification_Gates_LF.md` owns the six canonical gate
+  definitions; (4) the "Confidence Collapse Handling" section — this
+  file's own Scope Boundary explicitly excludes confidence-collapse/
+  split-brain doctrine as belonging to `Architecture/
+  Cognitive_Frameworks.md`; adding it here would have been an unauthorized
+  scope expansion, not a gap-fill; (5) the "MAC-to-Hardware Bridge"
+  proposal — rejected outright and documented as a rejected proposal
+  inline in the Multi-Agent Consensus section and as a new Drift
+  Indicator, since it would have let MAC outputs configure watchdog/TMR
+  parameters, directly contradicting this file's own permanent
+  2026-05-09 doctrine distinguishing MAC (pre-implementation) from
+  hardware safety (runtime). Open Unknowns 8 → 9. Status and Spec Gates
+  unchanged (Exploration, 0/6) — none of this session's additions
+  constitute an actual gate pass.
 
 - 2026-05-19: EL-001 through EL-004 — Reformatted
   from prose to structured sidecar table format.
@@ -1234,6 +1568,7 @@ additional local triggers specific to Electronics.md:
 | Salvaged programmable device integrated without Logic-Zero wipe and firmware verification | Permanently abandoned path — EL-006 prerequisite. Physical recovery does not guarantee firmware integrity |
 | TMR implemented with components from same production batch or firmware source without diversity verification | Independence must be demonstrated, not assumed. Correlated failure risk bypasses TMR protection |
 | MAC results used as safety system substitute rather than pre-implementation verification | MAC and hardware TMR are permanently distinct. MAC cannot substitute for runtime physical safety constraints |
+| MAC outputs used to configure, tune, or select parameters for the hardware watchdog or TMR voter at runtime ("MAC-to-Hardware Bridge") | Explicitly rejected 2026-08-02 — see "Multi-Agent Consensus (MAC)" above. Same conflation as the row above, specifically instanced against watchdog/TMR configuration |
 | Hardware watchdog implemented with programmable firmware rather than discrete hardware | Discrete hardware implementation is permanent doctrine for safety-critical watchdog — programmable watchdog creates recursive trust problem |
 | CNC milling or bulk furnace reflow performed without Air Scrubber operation and respiratory protection | EL-005 Critical — BFR dust and fiberglass microdust are serious health hazards. Air Scrubber prerequisite |
 | Dual-use High components processed without escalation to `Admin/Ethical_Constraints.md` | Dual-use escalation is mandatory — no local override permitted |
