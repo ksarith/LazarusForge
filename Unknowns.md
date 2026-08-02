@@ -3,15 +3,19 @@
 
 **Full version history in `Unknowns_Changelog.md` (2026-07-19 cleanup pass, following the precedent set by `Admin/AUDIT_HARNESS_CHANGELOG.md` and `Admin/Forge_Audit_Kit_Changelog.md`; scrubbed to current-version-only 2026-07-28 — the "current plus last four in full" window was itself compressed further, since the Audit Trail below now carries the compressed record for every version back to v1.0, and the changelog carries full text for all of them. This block now keeps only the current version.)**
 
-**Version 4.37 — 2026-07-31. GOV-008 candidate specification drafted.**
-`Admin/Governance_Migration_Protocol.md` §VII "Bootstrap Quorum
-Doctrine" drafted as a candidate GOV-008 specification, explicitly
-held to the governance-independence bar §VI's own EQD Non-goal clause
-distinguishes from epistemic independence — leads with that clause,
-flags Hardware/Runtime Diversity as the specific requirement EQD's
-quorum cannot meet. Candidate only; not ratified; does not resolve
-GOV-008. Mirrored here and into GOV-008's own sidecar entry
-(`Archive/Logs/Governance_Charter_Changelog.md`) same-day.
+**Version 4.38 — 2026-08-02. TS-005 through TS-008 registered — Gate_02_Triage.md §XII proposed governance extension.**
+`Operations/Gate_02_Triage.md` gained §XII, a proposed and unaudited
+Triage Intelligence/Arbitration/Capability/Maturity extension (drafted by
+Copilot, corrective merge applied same day after the draft was found
+claiming already-binding constitutional status via an invented
+"Spec Gate: Constitutional" category and an unauthorized `Admin/CIR_Gov.md`
+binding — both cut before merge; see that file's Resolution Log). Four new
+unknowns registered tracking the sub-layers' lack of implementation:
+TS-005 (TIL), TS-006 (TAL — depends on `Operations/Energy.md`'s own
+unaudited Energy Arbitration Layer, drafted 2026-08-01), TS-007 (TCM),
+TS-008 (TMV). None are Blocking — §XII is explicitly not load-bearing on
+Gate_02_Triage.md's existing routing. `Operations/Gate_02_Triage.md` Open
+Unknowns: 3 → 7. Spec Gates unchanged at 2/6.
 
 **Expiry Rule active — see `Admin/Canonical_Terms.md` §4 for the Cycle definition this rule now explicitly references (one calendar year default, not one audit pass — see CT-011). Protocol Performance metrics collecting.**
 
@@ -40,13 +44,11 @@ Formal axioms, theorems, and Verification Algebra backing CF-004, AP-006, and ep
 
 ---
 
-## What v4.37 Means
+## What v4.38 Means
 
-- **The hardest-to-conflate unknown in the repo got its candidate spec written under its own strictest warning label.** GOV-008 has a documented history of near-misses — an early EQD draft itself once nearly conflated epistemic quorum with governance quorum before self-correction, which is why §VI carries a binding Non-goal clause. §VII's candidate specification opens by restating that clause and explicitly names the one requirement (Hardware/Runtime Diversity) that a chat-session quorum structurally cannot satisfy, so the same conflation can't quietly recur in this draft.
-- **Drafting the spec is not resolving the unknown.** GOV-008's Status field now reads "Open — candidate specification drafted, pending ratification," not Resolved or even In Progress. The section's own text states its existence is Payment via Specification only.
-- **This is what `Admin/CIR_Gov.md` was waiting on.** That file's §8.2 already states no CIR-VERIFIED transition is valid without a quorum meeting this description. §VII is the first concrete step toward that quorum actually existing — still just a candidate, not yet ratified.
-
----
+- **Cross-agent drafts get checked against real gate/ratification state before merge, not after.** Copilot's §XII draft for `Operations/Gate_02_Triage.md` was internally coherent but claimed operative constitutional status it hadn't earned — an invented "Spec Gate: Constitutional" category and a binding into `Admin/CIR_Gov.md` that file's own Binding Status explicitly forbids while GOV-008 is unratified. Both were cut before merge. The architecture itself (TIL/TAL/TCM/TMV) was kept as clearly-marked proposed doctrine.
+- **Proposed doctrine now gets its unknowns registered on arrival, not after the fact.** TS-005–008 track the four new sub-layers' lack of implementation from day one, rather than sitting as an unregistered prose block the way a similar gap was found and fixed for other files in earlier sweeps (see v4.28's SEC-012/GR-006/GR-007/GR-008/SC-007/SC-008 finding).
+- **Two proposed, unaudited layers now explicitly depend on each other.** TS-006 (Triage Arbitration Layer) is patterned on and depends on `Operations/Energy.md`'s own proposed, unaudited Energy Arbitration Layer (drafted 2026-08-01). Neither should be treated as operative; if Energy.md's EGL changes, TS-006 needs re-review.
 
 ## Size Management Rules
 
@@ -127,6 +129,12 @@ EV-001 (Forge power demand)
         └── TR-001 (v1 profitability baseline)
 ```
 
+**Gate Logic & Triage (proposed extension)**
+```
+Operations/Energy.md EGL/EAL (proposed, unaudited, 2026-08-01)
+└── TS-006 (Triage Arbitration Layer — patterned on and dependent on EAL)
+```
+
 **Epistemic / Governance**
 ```
 AP-008 (Quarantine implementation)
@@ -186,6 +194,10 @@ GH-009 (Emergent heuristic conflict — N² interaction scaling)
 | TS-001 | "Sufficient for forge duty" threshold | `Operations/Gate_02_Triage.md` | In Progress | Active | Blocking |
 | TS-002 | Contamination routing protocol | `Operations/Gate_02_Triage.md` | Open | — | Blocking |
 | TS-003 | Gate determinism (downstream) | `Operations/Gate_02_Triage.md` | In Progress | Active | Blocking |
+| TS-005 | Triage Intelligence Layer (TIL) has no implementation — proposed §XII sub-layer | `Operations/Gate_02_Triage.md` | Open | — | Minor |
+| TS-006 | Triage Arbitration Layer (TAL) depends on Energy.md's own unaudited Energy Arbitration Layer — proposed §XII sub-layer | `Operations/Gate_02_Triage.md` | Open | — | Minor |
+| TS-007 | Triage Capability Model (TCM) capability ladder unverified against real tooling — proposed §XII sub-layer | `Operations/Gate_02_Triage.md` | Open | — | Minor |
+| TS-008 | Triage Maturity Vector (TMV) has no scoring mechanism or owner — proposed §XII sub-layer | `Operations/Gate_02_Triage.md` | Open | — | Minor |
 | CO-001 | Graduation Rule detection circularity | `Architecture/Components.md` | In Progress | Active | Blocking |
 | CO-002 | Metrology precision thresholds | `Architecture/Components.md` | Open | — | Minor |
 
