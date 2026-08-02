@@ -1,5 +1,5 @@
 # Auditor_Protocols.md
-**Version 0.29**
+**Version 0.30**
 
 ## File State
 
@@ -9,8 +9,8 @@
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 3/6 (G1, G4, G6 clear; G3 blocked on AP-017; G5 conditional on cross-ref fixes below; G2 N/A — no physical/quantitative claims of its own) |
 | Verification Ref | Admin/Verification_Gates_LF.md                                      |
-| Last Audit       | 2026-07-29                                                          |
-| Auditor          | Claude — Synthesizer/Auditor; Gemini — Skeptic/Auditor; Grok — Synthesizer/Auditor. Most recent: AP-031 registered and Resolved same day — Semantic Drift Score and Unknown Accumulation Rate thresholds formally deferred pending operational launch, mirroring GOV-012's precedent rather than guessing values (human-directed), 2026-07-29; prior: Post-Exit Monitoring Metrics' stale "PROPOSED, NOT RATIFIED alongside that Charter section" line corrected to reflect the Charter's actual 2026-07-19 ratification, while preserving the genuinely-still-open threshold placeholders (human-directed), 2026-07-29 — see `Archive/Logs/Auditor_Protocols_Logs.md` Resolution Log for full audit history. |
+| Last Audit       | 2026-08-02                                                          |
+| Auditor          | Claude — Synthesizer/Auditor, human-directed, 2026-08-02: AP-032 registered — Rule 8 (Gate/Status Self-Attestation Prohibition) added to AI Contribution Protocols and Fallacy Checklist item 4 (Semantic Drift) extended to cover it, generalizing a same-session pattern caught three times in `Operations/Energy.md`, `Operations/Gate_02_Triage.md` §XII, and `Operations/Electronics.md`; prior: Claude — Synthesizer/Auditor; Gemini — Skeptic/Auditor; Grok — Synthesizer/Auditor. AP-031 registered and Resolved same day — Semantic Drift Score and Unknown Accumulation Rate thresholds formally deferred pending operational launch, mirroring GOV-012's precedent rather than guessing values (human-directed), 2026-07-29 — see `Archive/Logs/Auditor_Protocols_Logs.md` Resolution Log for full audit history. |
 | Open Unknowns    | 15                                                                  |
 | Active Disputes  | 1                                                                   |
 | Highest Risk     | High                                                                |
@@ -401,7 +401,7 @@ Not a standalone auditor class — a mode declaration for agents contributing in
 
 All contributors — human and autonomous — must declare their operating role before contributing:
 
-> *"Operating as [Role] per Auditor_Protocols.md v0.29"*
+> *"Operating as [Role] per Auditor_Protocols.md v0.30"*
 
 **Valid roles:** Skeptic/Auditor | Systems/Auditor | Evidence/Auditor | Ethical/Auditor | Synthesizer | Engineer | Connective Tissue
 
@@ -509,7 +509,7 @@ Does the design ignore mechanical resistance, thermal losses, fluid drag, or int
 Does any recovery, recycling, or bootstrapping step consume more than it produces? Justify as enabling investment or flag. Recovery that costs more than it recovers is reduction dressed as progress.
 
 **4. Semantic Drift**
-Has a term changed meaning between documents without a documented revision? Cross-check against `Architecture/Forge_flow.md` as the reference standard.
+Has a term changed meaning between documents without a documented revision? Cross-check against `Architecture/Forge_flow.md` as the reference standard. Also check File State's `Status`/`Body Stability`/`Spec Gates` values against the file's own audit history — a contribution that silently advances these, or that redefines Spec Gates 1–6 locally instead of deferring to `Admin/Verification_Gates_LF.md`, is Semantic Drift on the file's own governing vocabulary. See AI Contribution Protocols Rule 8 (AP-032).
 
 **5. Scope Creep Disguised as Refinement**
 Does a revision quietly expand claimed capabilities beyond what the current version can demonstrate? New capabilities belong in `Admin/Trajectories.md`.
@@ -597,6 +597,8 @@ Agents disagreeing on epistemic state classification for a claim not covered by 
 **Rule 6 — Inter-Agent Consistency:** Open with Assumption Extraction: *"Prior contributions assumed: [list]. Carried forward unless contradicted."* Failure to re-evaluate prior assumptions is a primary cause of multi-agent hallucination cascades.
 
 **Rule 7 — Repository Structure Awareness:** The repository uses folder-based structure (Admin/, Architecture/, Operations/, Tests/). Legacy flat filenames are aliases documented in the Rename Registry in `Discovery.md`. Use canonical folder-prefixed paths in all new contributions.
+
+**Rule 8 — Gate/Status Self-Attestation Prohibition (AP-032):** No contribution may advance a file's `Status`, `Body Stability`, or `Spec Gates` value. These fields change only via an audit event logged by a different agent, citing the specific canonical gate criteria met (`Admin/Verification_Gates_LF.md`). A contribution that arrives with these fields already advanced — or with a locally-invented gate category not defined in `Verification_Gates_LF.md` — is treated as unaudited regardless of its stated value, and the fields are reverted to the file's actual last-audited state before anything else in the contribution is evaluated. See AP-032 in the sidecar for the three same-session instances (`Operations/Energy.md`, `Operations/Gate_02_Triage.md` §XII, `Operations/Electronics.md`) that established this as a pattern rather than a one-off.
 
 **Trust the process, not the predecessor.**
 
@@ -1129,7 +1131,7 @@ Any cross-repo dependency must be documented in both repositories with a stated 
 - Sign-off statement
 
 **Standard sign-off:**
-> *"Verified under Auditor_Protocols v0.29 — gates [list] cleared, gates [list] blocked ([reason]), [N] unknowns logged, [N] overrides. Adversarial classes applied: [list]. Auditor: [Role/Agent]"*
+> *"Verified under Auditor_Protocols v0.30 — gates [list] cleared, gates [list] blocked ([reason]), [N] unknowns logged, [N] overrides. Adversarial classes applied: [list]. Auditor: [Role/Agent]"*
 
 ---
 
@@ -1288,8 +1290,9 @@ the second documented exception, not a new general rule.
 Current: 15 open — AP-002, AP-003, AP-004, AP-005, AP-007, AP-008,
 AP-010, AP-011, AP-013, AP-017, AP-018, AP-019, AP-024, AP-029, AP-030
 (verified by direct count against the archive, matching File State
-above; AP-031 registered 2026-07-29 and Resolved same day — deferred,
-not counted among these 15 Open entries). See the archive for exact statuses, descriptions, and
+above; AP-031 registered 2026-07-29 and Resolved same day — deferred;
+AP-032 registered 2026-08-02 and Resolved same day — protocol rule
+added; neither is counted among these 15 Open entries). See the archive for exact statuses, descriptions, and
 resolution paths. Active Disputes below remains in-body, distinct
 from the sidecar — disputes are interpretation conflicts tracked at
 the document level, not per-unknown entries.
@@ -1299,7 +1302,18 @@ the document level, not per-unknown entries.
 Full history: `Archive/Logs/Auditor_Protocols_Logs.md` (relocated out
 of this file at v0.26 — add new entries there, not here).
 
-Most recent: v0.29 (2026-07-26) — Mission Drift Review mechanism
+Most recent: v0.30 (2026-08-02) — AP-032 registered: Rule 8
+(Gate/Status Self-Attestation Prohibition) added to AI Contribution
+Protocols, and Fallacy Checklist item 4 (Semantic Drift) extended to
+explicitly cover silently-advanced Status/Body Stability/Spec Gates
+values and locally-redefined gate categories. Generalizes a pattern
+caught three times in one session across `Operations/Energy.md`,
+`Operations/Gate_02_Triage.md` §XII, and `Operations/Electronics.md` —
+same underlying error each time, previously caught only by manual
+comparison against each file's audit history rather than by a named,
+checkable rule.
+
+Prior: v0.29 (2026-07-26) — Mission Drift Review mechanism
 added as a new major section (between Full Stop Review and
 Cross-Repo Verification): periodic Phase A/Phase B probe against the
 eight Tier 1 Axioms, cold-start execution requirement, reuse of the
@@ -1336,7 +1350,7 @@ cycles.
 
 ## Status
 
-**Version 0.29 — Draft, Body Stability Transitional.** Full audit history: `Archive/Logs/Auditor_Protocols_Logs.md` Resolution Log. This section previously carried a duplicate, stale copy of early version history (v0.14 through v0.16) that was never updated after the file moved past those versions — trimmed 2026-07-23 as pure duplication of content the archive's Resolution Log already carries in full; see that log's v0.28 entry.
+**Version 0.30 — Draft, Body Stability Transitional.** Full audit history: `Archive/Logs/Auditor_Protocols_Logs.md` Resolution Log. This section previously carried a duplicate, stale copy of early version history (v0.14 through v0.16) that was never updated after the file moved past those versions — trimmed 2026-07-23 as pure duplication of content the archive's Resolution Log already carries in full; see that log's v0.28 entry.
 
 **What must remain constant:**
 
