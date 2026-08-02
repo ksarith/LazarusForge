@@ -27,6 +27,23 @@ also logged as a new Drift Indicator in Electronics.md itself.
 `Operations/Electronics.md` Open Unknowns: 8 → 9. Status and Spec Gates
 unchanged (Exploration, 0/6).
 
+
+**Version 4.40 — 2026-08-02. Gate_02_Triage.md §XII.1a TIL v0 Log
+Specification added — no new unknown registered.**
+`Operations/Gate_02_Triage.md` gained a concrete Event_ID (`YYYY-MM-DD-NNN`)
+and closed-loop fate-tracking specification implementing §XII.1's existing
+"v0 minimal form" — drafted by Grok, human-directed, verified against
+source. `Component_Class` is explicitly logged as provisional pending
+CT-002 (Component Library Schema — already tracked at TS-004/
+`Admin/Canonical_Terms.md` CT-002, not a new gap). A multi-Forge Event_ID
+extension (`YYYY-MM-DD-Fxx-NNNN`) was deferred rather than adopted or
+dropped: `Admin/Trajectories.md` TR-GOV-001 tracks the actual trigger
+(second physical host confirmed to exist), and the deferral note in
+Gate_02_Triage.md §XII.1a specifies the full extended format in reserve
+against that trigger, so no redesign is needed if/when it fires. No
+change to Open Unknowns (stays 7) — this elaborates TS-005 rather than
+opening new tracking surface.
+
 **Expiry Rule active — see `Admin/Canonical_Terms.md` §4 for the Cycle definition this rule now explicitly references (one calendar year default, not one audit pass — see CT-011). Protocol Performance metrics collecting.**
 
 ---
@@ -143,6 +160,10 @@ EV-001 (Forge power demand)
 ```
 Operations/Energy.md EGL/EAL (proposed, unaudited, 2026-08-01)
 └── TS-006 (Triage Arbitration Layer — patterned on and dependent on EAL)
+
+Admin/Trajectories.md TR-GOV-001 (second physical host status)
+└── Operations/Gate_02_Triage.md §XII.1a (multi-Forge Event_ID extension,
+    deferred until TR-GOV-001's trigger fires — spec held in reserve)
 ```
 
 **Epistemic / Governance**
