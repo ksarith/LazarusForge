@@ -1360,3 +1360,260 @@ or
 - Assemble full Forge Governance Architecture
 
 Which direction do you want to take?
+
+Below is the full, governance‑grade integration block that inserts the Unified Triage Governance Layer (UTGL) directly into CIR, written in CIR’s constitutional voice, structure, and predicate‑driven architecture.  
+
+This is not a rewrite of CIR — it is the exact constitutional extension that allows CIR to formally govern triage decisions, triage evidence, triage capability, and triage irreversibility.  
+
+It is written as a new major section titled:
+
+> CIR‑Triage: Constitutional Integration of the Unified Triage Governance Layer
+
+You can paste this directly into CIR as a load‑bearing constitutional module.
+
+---
+
+CIR‑Triage: Constitutional Integration of the Unified Triage Governance Layer (UTGL)
+(Spec Gate: Constitutional; applies to Gate02Triage.md and all downstream routing)
+
+The Forge’s triage system is not merely operational. It is constitutional.  
+Triage determines whether embodied industrial capability is preserved or destroyed, whether contamination is contained or propagated, whether strategic artifacts survive or vanish, and whether irreversible actions occur under uncertainty.
+
+The Unified Triage Governance Layer (UTGL) integrates four load‑bearing components:
+
+- Triage Intelligence Layer  
+- Triage Arbitration Layer  
+- Triage Capability Model  
+- Triage Maturity Vector  
+
+CIR‑Triage binds these components into constitutional predicates, maturity requirements, and irreversible‑action safeguards.
+
+---
+
+I. Constitutional Purpose of CIR‑Triage
+
+CIR‑Triage exists to ensure:
+
+1. Irreversible actions (Gate D destruction) occur only under governed conditions.  
+2. Contamination bypass is constitutionally impossible.  
+3. Strategic and Critical tier artifacts cannot be destroyed without explicit constitutional satisfaction.  
+4. Triage decisions are evidence‑based, capability‑bounded, and maturity‑scored.  
+5. Operator judgment is respected but never allowed to bypass constitutional safeguards.  
+6. Triage becomes progressively more deterministic as the Forge matures.
+
+Triage is a constitutional subsystem because it governs irreversibility, safety, and strategic capability preservation.
+
+---
+
+II. Constitutional Predicates (γ‑Triage)
+These predicates bind triage behavior to CIR’s epistemic and safety architecture.
+
+γ‑Triage‑1 — Irreversibility Guard
+No irreversible action (Gate D destruction) may occur unless:
+
+\[
+Et \ge 1,\; Rt \ge 1,\; St \ge 1,\; TC5 \ge 1
+\]
+
+Where \(Et, Rt, St\) are TMV dimensions and \(TC5\) is embedded value extraction capability.
+
+γ‑Triage‑2 — Contamination Boundary
+If \(C_t = 0\) (no contamination confidence):
+
+→ No routing beyond Station 0  
+→ No Gate A/B/C/D decisions  
+→ Oversight Gate required to resume
+
+γ‑Triage‑3 — Strategic Preservation
+If \(S_t = 0\):
+
+→ Strategic/Critical tier destruction forbidden  
+→ Gate D routing requires human attestation  
+→ TIL evidence must be cited
+
+γ‑Triage‑4 — Embedded Value Preservation
+Embedded Value Preservation must precede any reduction.  
+If \(TC_5 <\) embedded value threshold → Gate D forbidden.
+
+γ‑Triage‑5 — Queue Decay Safeguard
+Queue decay may not destroy Strategic/Critical tier items.  
+Decay routing must cite TMV and TIL evidence.
+
+γ‑Triage‑6 — Triage Halt Supremacy
+If T₁ (safety‑critical actions) cannot be executed:
+
+→ Triage Halt overrides all operator decisions  
+→ No irreversible actions allowed  
+→ No escalation allowed  
+→ All items held at Station 0
+
+γ‑Triage‑7 — Threshold Revision Governance
+Numeric thresholds (e.g., 70% performance) may only be revised when:
+
+\[
+E_t \ge 2 \quad \text{and} \quad \text{TIL shows stable patterns (N≥50)}
+\]
+
+γ‑Triage‑8 — Evidence Citation Requirement
+All Gate D decisions must cite:
+
+- TMV  
+- TIL evidence  
+- TAL arbitration state  
+- TCM capability vector  
+
+γ‑Triage‑9 — Capability‑Bound Routing
+Routing must satisfy:
+
+\[
+\text{Routing Valid} = TAL \land TCM \land TMV \land TIL
+\]
+
+If any layer fails → Hold or Oversight.
+
+γ‑Triage‑10 — Cross‑Forge Consistency
+If multiple Forges exist:
+
+→ Strategic tier definitions must be synchronized  
+→ TMV scoring must be harmonized  
+→ TIL intelligence must be shared  
+→ Destruction of Critical tier artifacts requires multi‑Forge attestation
+
+---
+
+III. Constitutional Maturity Requirements
+
+CIR defines triage maturity as:
+
+\[
+M{\text{triage}} = \frac{Et + Rt + Ct + Pt + St}{15}
+\]
+
+Maturity Thresholds
+
+- Mₜ < 0.25 (Bootstrap)  
+  - High false‑positive tolerance  
+  - No destruction of Strategic/Critical tier  
+  - TAL locked in Safety Mode
+
+- 0.25 ≤ Mₜ < 0.5 (Transitional)  
+  - Balanced false‑positive/false‑negative tolerance  
+  - Gate B meaningful  
+  - TIL begins threshold refinement
+
+- 0.5 ≤ Mₜ < 0.75 (Industrial)  
+  - Deterministic routing  
+  - Predictive triage  
+  - Strategic scarcity forecasting active
+
+- Mₜ ≥ 0.75 (Mature)  
+  - Autonomous triage with human oversight  
+  - Cross‑Forge coordination  
+  - Destruction confidence becomes statistically grounded
+
+---
+
+IV. Constitutional Routing Logic
+
+A triage decision is constitutionally valid only if:
+
+\[
+\text{Valid} = (\text{Safety}) \land (\text{Capability}) \land (\text{Evidence}) \land (\text{Maturity})
+\]
+
+Expanded:
+
+\[
+\text{Valid} = (TAL) \land (TCM) \land (TMV) \land (TIL)
+\]
+
+If any term is false:
+
+→ Hold  
+→ Oversight Gate  
+→ No irreversible action
+
+This is the constitutional routing substrate.
+
+---
+
+V. Constitutional Oversight Integration
+
+The Oversight Gate inherits new constitutional powers:
+
+Oversight‑1 — Irreversibility Review
+Oversight must confirm:
+
+- TMV citation  
+- TIL evidence  
+- TAL arbitration state  
+- TCM capability vector  
+- Strategic tier classification  
+
+before any Gate D destruction.
+
+Oversight‑2 — Contamination Review
+Oversight must validate:
+
+- contamination severity  
+- Cₜ level  
+- TC₄ capability  
+- Air Scrubber routing  
+
+before any contaminated item leaves Station 0.
+
+Oversight‑3 — Strategic Tier Review
+Oversight must confirm:
+
+- scarcity trends  
+- embedded value  
+- capability erosion risk  
+- cross‑Forge strategic alignment  
+
+before any Strategic/Critical tier routing.
+
+---
+
+VI. Constitutional Drift Indicators (Triage‑Specific)
+
+CIR must trigger re‑audit if:
+
+- Gate D destruction occurs without TMV citation  
+- contamination bypass occurs  
+- Strategic tier destruction occurs without attestation  
+- thresholds change without TIL evidence  
+- TAL arbitration is bypassed  
+- TCM capability is overstated  
+- triage maturity score is not updated  
+- provenance completeness drops below Pₜ=1  
+- queue decay destroys Strategic/Critical tier items
+
+If multiple indicators activate → halt triage and escalate to human review.
+
+---
+
+VII. Integration Points
+
+CIR‑Triage integrates with:
+
+- Unified Triage Governance Layer  
+- Gate02Triage.md  
+- Energy Governance Layer (triage capacity depends on energy availability)  
+- Air_Scrubber.md (contamination routing)  
+- Electronics.md (electrical testing capability)  
+- Forge_flow.md (Gate A–D determinism)  
+- Canonical_Terms.md (Component Library schema)  
+- Unknowns.md (triage unknowns and maturity tracking)
+
+---
+
+Next Step
+
+You now have the full constitutional integration of UTGL into CIR.
+
+You can proceed in one of two directions:
+
+- Assemble Full Forge Governance Architecture  
+- Integrate UTGL into Gate02Triage.md fully
+
+Which direction do you want to take?
