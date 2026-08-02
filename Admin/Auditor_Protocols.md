@@ -1,5 +1,5 @@
 # Auditor_Protocols.md
-**Version 0.30**
+**Version 0.31**
 
 ## File State
 
@@ -10,7 +10,7 @@
 | Spec Gates       | 3/6 (G1, G4, G6 clear; G3 blocked on AP-017; G5 conditional on cross-ref fixes below; G2 N/A — no physical/quantitative claims of its own) |
 | Verification Ref | Admin/Verification_Gates_LF.md                                      |
 | Last Audit       | 2026-08-02                                                          |
-| Auditor          | Claude — Synthesizer/Auditor, human-directed, 2026-08-02: AP-032 registered — Rule 8 (Gate/Status Self-Attestation Prohibition) added to AI Contribution Protocols and Fallacy Checklist item 4 (Semantic Drift) extended to cover it, generalizing a same-session pattern caught three times in `Operations/Energy.md`, `Operations/Gate_02_Triage.md` §XII, and `Operations/Electronics.md`; prior: Claude — Synthesizer/Auditor; Gemini — Skeptic/Auditor; Grok — Synthesizer/Auditor. AP-031 registered and Resolved same day — Semantic Drift Score and Unknown Accumulation Rate thresholds formally deferred pending operational launch, mirroring GOV-012's precedent rather than guessing values (human-directed), 2026-07-29 — see `Archive/Logs/Auditor_Protocols_Logs.md` Resolution Log for full audit history. |
+| Auditor          | Claude — Synthesizer/Auditor, human-directed, 2026-08-02: Sidecar Model §Sidecar Format extended with a "candidate findings without confirmed sidecar access" rule — ID assignment (and the duplicate check it requires) is reserved for an agent with verified sidecar access; an agent without it should describe, not number, a candidate finding. Prompted by a same-day self-audit (Grok, no archive access) surfacing a real gap already covered by AP-007 under a proposed new "AP-033"; prior: AP-032 registered — Rule 8 (Gate/Status Self-Attestation Prohibition) added to AI Contribution Protocols and Fallacy Checklist item 4 extended to cover it (human-directed), 2026-08-02 — see `Archive/Logs/Auditor_Protocols_Logs.md` Resolution Log for full audit history. |
 | Open Unknowns    | 15                                                                  |
 | Active Disputes  | 1                                                                   |
 | Highest Risk     | High                                                                |
@@ -401,7 +401,7 @@ Not a standalone auditor class — a mode declaration for agents contributing in
 
 All contributors — human and autonomous — must declare their operating role before contributing:
 
-> *"Operating as [Role] per Auditor_Protocols.md v0.30"*
+> *"Operating as [Role] per Auditor_Protocols.md v0.31"*
 
 **Valid roles:** Skeptic/Auditor | Systems/Auditor | Evidence/Auditor | Ethical/Auditor | Synthesizer | Engineer | Connective Tissue
 
@@ -629,6 +629,8 @@ A centralized unknowns registry that stores full entry detail grows without boun
 ### Sidecar Format
 
 Full sidecar format is defined in `Admin/File_Template.md` Section 8. Local IDs use file abbreviation + three digits: `AP-001` (Auditor Protocols), `SC-001` (Separation Thermal), `GI-001` (Gate Intake), etc. Cross-module unknowns use global `UNK-XXX` format and are indexed in `Unknowns.md`.
+
+**Candidate findings without confirmed sidecar access:** An agent auditing a file without confirmed access to that file's sidecar (in-body, or relocated per the documented-exception pattern above) may still surface a candidate finding — it should not stay silent. But it must describe the finding rather than assign it a specific ID number. Duplicate-checking against existing entries, and ID assignment itself, are reserved for an agent with verified sidecar access, since an unverified guess at the next free number risks colliding with or duplicating an entry the auditor couldn't see. (Concrete instance: a 2026-08-02 self-audit of this file, run without archive access, surfaced a real gap — sidecar/archive integrity against falsification — as "candidate AP-033." The gap was real but not new: it was already AP-007, open since May. Described-not-numbered would have avoided the near-duplicate on the first pass rather than requiring a second agent to catch it.)
 
 ### The 10-Entry Rule
 
@@ -1131,7 +1133,7 @@ Any cross-repo dependency must be documented in both repositories with a stated 
 - Sign-off statement
 
 **Standard sign-off:**
-> *"Verified under Auditor_Protocols v0.30 — gates [list] cleared, gates [list] blocked ([reason]), [N] unknowns logged, [N] overrides. Adversarial classes applied: [list]. Auditor: [Role/Agent]"*
+> *"Verified under Auditor_Protocols v0.31 — gates [list] cleared, gates [list] blocked ([reason]), [N] unknowns logged, [N] overrides. Adversarial classes applied: [list]. Auditor: [Role/Agent]"*
 
 ---
 
@@ -1302,7 +1304,16 @@ the document level, not per-unknown entries.
 Full history: `Archive/Logs/Auditor_Protocols_Logs.md` (relocated out
 of this file at v0.26 — add new entries there, not here).
 
-Most recent: v0.30 (2026-08-02) — AP-032 registered: Rule 8
+Most recent: v0.31 (2026-08-02) — Sidecar Model §Sidecar Format
+extended: an agent without confirmed sidecar access may surface a
+candidate finding but must describe it rather than assign a specific
+ID number — duplicate-checking and numbering are reserved for an
+agent with verified access. Prompted same day by a self-audit (no
+archive access) proposing "AP-033" for a gap already covered by
+AP-007; folded as a concrete scenario into AP-007 rather than
+registered separately.
+
+Prior: v0.30 (2026-08-02) — AP-032 registered: Rule 8
 (Gate/Status Self-Attestation Prohibition) added to AI Contribution
 Protocols, and Fallacy Checklist item 4 (Semantic Drift) extended to
 explicitly cover silently-advanced Status/Body Stability/Spec Gates
@@ -1350,7 +1361,7 @@ cycles.
 
 ## Status
 
-**Version 0.30 — Draft, Body Stability Transitional.** Full audit history: `Archive/Logs/Auditor_Protocols_Logs.md` Resolution Log. This section previously carried a duplicate, stale copy of early version history (v0.14 through v0.16) that was never updated after the file moved past those versions — trimmed 2026-07-23 as pure duplication of content the archive's Resolution Log already carries in full; see that log's v0.28 entry.
+**Version 0.31 — Draft, Body Stability Transitional.** Full audit history: `Archive/Logs/Auditor_Protocols_Logs.md` Resolution Log. This section previously carried a duplicate, stale copy of early version history (v0.14 through v0.16) that was never updated after the file moved past those versions — trimmed 2026-07-23 as pure duplication of content the archive's Resolution Log already carries in full; see that log's v0.28 entry.
 
 **What must remain constant:**
 
