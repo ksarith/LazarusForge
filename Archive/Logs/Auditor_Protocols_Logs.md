@@ -185,6 +185,8 @@ entry and the full Resolution Log — lives here now.
 
 **Concrete scenario (2026-08-02, from a self-audit's Adversarial Challenge Class 8 — Malicious Actor Simulation):** a knowledgeable actor falsifies the relocated sidecar itself — altering resolution dates, flipping an open entry's status to Resolved, or injecting a fabricated "independent Battery" entry to manufacture false AP-017 progress. Because the main file only points to `Archive/Logs/Auditor_Protocols_Logs.md` (this file) rather than embedding its content, the falsification would be invisible to any audit that trusts the pointer without independently checking the archive. This is the exact enforcement-layer gap AP-007 already names — logged here as a concrete instance rather than as a separately-numbered unknown, since the underlying gap is the same one, not a new one. (The self-audit that surfaced this had no confirmed archive access and initially proposed "candidate AP-033" — see `Admin/Auditor_Protocols.md` §Sidecar Format's 2026-08-02 addition for the resulting doctrine: an agent without confirmed sidecar access should describe a candidate finding rather than number it, precisely to avoid this kind of near-duplicate.)
 
+**Partial implementation, 2026-08-02 (this specific scenario, human-directed):** `Admin/Auditor_Protocols.md`'s File State now carries a `Sidecar SHA-256` field recording this file's hash as of the last synchronized edit, and the Sidecar Format section now instructs that the first structural check in any audit against that file is confirming the archive still matches the recorded hash — a mismatch is a Level 3 Integrity Violation under EF-0.2's existing "history tampering... alteration of audit trail entries, sidecar IDs, or resolution logs" trigger, which already covered this scenario doctrinally but had no detection mechanism behind it until now. Honest limitation: the hash must be updated by whoever edits this file, in the same edit — this catches divergence from unauthorized or out-of-band edits to the archive, not a failure of the normal edit-both-files discipline itself; it is not a cryptographic guarantee, the same honest-heuristic framing `Automation/cold_session_bundler.py` already uses for `guarantees_true_independence`. This closes the specific "trusted pointer" gap the 2026-08-02 scenario named. AP-007's broader scope — repository-wide canonical-path authority and the still-unbuilt SHA-256 upstream parity checks proposed 2026-06-21 for other cross-references generally — remains open; Status stays In Progress, not Resolved.
+
 ---
 
 ### AP-008 — Technical implementation of quarantine actions undefined
@@ -393,7 +395,7 @@ entry and the full Resolution Log — lives here now.
 | Blocking      | Epistemic                    |
 | Owner         | Admin/Auditor_Protocols.md   |
 | First Logged  | 2026-06-24                   |
-| Last Reviewed | 2026-07-16                   |
+| Last Reviewed | 2026-08-02                   |
 
 **Description:** No doctrine requires that any Battery class be applied by an agent without session context from the current audit cycle. A formally compliant Battery sign-off can be produced by an agent auditing its own prior contributions. Gate 3 can be satisfied without genuine independence.
 
@@ -420,6 +422,24 @@ Separately, one reported finding (claimed sidecar truncation at AP-017, omitting
 **Revised open question:** with two verified-cold instances now on record — one finding real issues with a checkable error rate, one confirming their resolution with all claims accurate — does that combination satisfy this entry, or does the bar require a higher volume of instances, or an instance with zero errors on its own claims rather than errors caught by verification? Still a human governing authority call, not decided here, but the evidence base for that call is now meaningfully stronger than the single-instance state this entry was in as of the previous entry above.
 
 **Infrastructure progress, updated:** `Automation/cold_session_bundler.py` has now been run twice against this file, on two different models (Claude, Grok), both verified cold before their outputs were trusted. The "not yet run" status in the original version of this note is stale as of this entry.
+
+**Acceptance criteria formally defined, 2026-08-02 (human-directed) — the missing piece named in the 2026-07-23 "open question" entries above:** this entry has had a working independence *mechanism* since 2026-07-23 but no defined closure *bar*. Adopting a falsifiable one rather than leaving "how many instances is enough" as a standing open question each time:
+
+1. At least **three** independent cold instances exist, each applying **five or more** of the ten Battery classes with a concrete scenario per class meeting that class's own stated minimum (a restated class description does not count).
+2. **Cross-model preferred, not required** — but at least two of the three must be on different model families from each other, so convergence isn't an artifact of one model's habits.
+3. **At least one instance must surface a finding the in-session audit missed** (already satisfied once — see the 2026-07-23 first instance's genuinely new AP-029 finding).
+4. **Zero of the counted instances may fabricate a file, cross-reference, or finding** — inventing something that doesn't exist is disqualifying for that instance, not a minor error to average against real findings. This is a *stricter* bar than "checked and mostly correct."
+5. All counted instances logged with the bundle manifest's `raw_sha256` and the model identifier, per the Fresh Instance format already in use in this entry.
+
+**Retroactive check against criteria 1–5, honestly, using the two instances already on record above:**
+
+- Volume: **2 of 3.** One short.
+- Cross-model: **met** — Claude (2026-07-23, first) and Grok (2026-07-23, second) are already different families.
+- "Missed finding" criterion: **met** — the first instance's AP-029 finding (10-Entry Rule tripped at 13 open entries) was genuinely new, not previously known.
+- **Zero-fabrication criterion: NOT cleanly met.** The first instance (2026-07-23) fabricated a claimed `Verification_Gates.md` vs `Verification_Gates_LF.md` naming inconsistency — no such second filename exists anywhere in this repository. Under criterion 4 as now defined, this disqualifies that specific instance from counting toward the three, even though its other findings (the two real ones, logged as fixed same pass) remain correct and useful on their own terms. The second instance (Grok, same day) reported zero findings, all claims verified accurate, no fabrication — this one qualifies cleanly.
+- **Net result under the newly-defined bar: 1 of 3 clean qualifying instances, not 2.** The 2026-07-23 first instance's real findings stand and were correctly adopted at the time (per this entry's own Resolution Path — findings get checked against source before adoption, which is exactly what happened), but the instance itself doesn't count toward AP-017's volume bar because it also invented something. Quality of the *verification step* and qualification of the *instance* are being evaluated separately here on purpose — conflating them would let a good verification process quietly launder a bad independent instance into looking like a good one.
+
+**Still Open.** Two more clean instances needed (one more beyond the single clean one currently on record, per criterion 1 as stated — re-reading criterion 1: three total, cross-model constraint satisfiable with the existing clean Grok instance plus two more on any models). Use `Admin/BATTERY_SEED.md`'s frozen prompt for future attempts rather than the bundler's general-purpose default, so future instances are creditable against the Battery's ten-class structure directly rather than requiring after-the-fact interpretation of whether general review output maps onto Battery classes.
 
 ---
 
@@ -800,6 +820,48 @@ This becomes governance metadata rather than prose, auditable the same way Truth
 ---
 
 ### Resolution Log
+
+- 2026-08-02: **AP-017 — formal acceptance criteria defined; `Admin/BATTERY_SEED.md` created.**
+  AP-017 had a working independence mechanism (`cold_session_bundler.py`,
+  verified cold twice) since 2026-07-23 but no defined closure bar —
+  each instance ended in an "open question for human governing
+  authority" about how many instances would be enough. Defined a
+  five-part falsifiable bar (human-directed): 3 instances, ≥5 Battery
+  classes with concrete scenarios each, cross-model on at least 2 of 3,
+  at least one instance surfacing a finding the in-session audit
+  missed, and — the strictest addition — zero fabrication disqualifies
+  an instance from counting at all, evaluated separately from whether
+  its real findings were still correctly verified and adopted. Checked
+  the new bar honestly against the two instances already on record:
+  the first (2026-07-23, Claude) doesn't count toward the volume bar
+  under criterion 4, because it fabricated a nonexistent
+  `Verification_Gates.md` cross-reference alongside its two real
+  findings — net result 1 of 3 clean instances, not 2, despite two
+  instances existing. Also created `Admin/BATTERY_SEED.md` — a frozen,
+  versioned prompt (mirroring `PROBE_INVOCATION.md`'s pattern) that
+  fills a parameter `cold_session_bundler.py`'s constructor already
+  supported (`standard_audit_prompt`) but had no Battery-shaped text
+  for; the bundler's default prompt produces general review, not
+  output creditable class-by-class against the ten-class Battery
+  structure. No code changes to the bundler itself in this pass — its
+  existing `standard_audit_prompt` parameter was sufficient; a
+  self-audit-specific stripping capability for the relocated sidecar
+  (raised as a "not yet built" item) remains genuinely unbuilt and is
+  documented as such in `BATTERY_SEED.md` rather than silently assumed.
+  AP-017 Status remains Open — two more clean instances needed.
+
+- 2026-08-02: **AP-007 partial implementation — sidecar hash pointer.**
+  Added a `Sidecar SHA-256` field to `Admin/Auditor_Protocols.md`'s File
+  State and a "check the hash first" instruction to its Sidecar Format
+  section, implementing the detection mechanism AP-007 had named as its
+  missing enforcement layer since May. Scoped narrowly and honestly:
+  this closes the specific relocated-sidecar-falsification scenario
+  Adversarial Challenge Class 8 surfaced (2026-08-02, same session);
+  AP-007's broader repository-wide canonical-path-authority scope and
+  the still-unbuilt general SHA-256 upstream parity checks (Gemini,
+  2026-06-21) remain open. AP-007 Status stays In Progress — this is a
+  partial resolution of one scenario, not full closure. No new unknown
+  opened.
 
 - 2026-08-02: **v0.31 — Sidecar Model §Sidecar Format extended;
   AP-007 gained a concrete scenario.** A same-day self-audit (Grok,
