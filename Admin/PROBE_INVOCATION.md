@@ -1,5 +1,5 @@
 # PROBE_INVOCATION.md
-**Version 1.0**
+**Version 1.1**
 
 ## File State
 
@@ -8,12 +8,12 @@
 | Status         | Draft                                                               |
 | Spec Gates     | N/A — operational prompt template, not a doctrine or specification claim |
 | Verification Ref | Admin/Auditor_Protocols.md §Mission Drift Review                  |
-| Last Audit     | 2026-07-26                                                          |
-| Auditor        | Claude — Synthesizer/Auditor, human-directed, first draft, 2026-07-26 |
+| Last Audit     | 2026-08-02                                                          |
+| Auditor        | Claude — Synthesizer/Auditor, human-directed, 2026-08-02: History Appendix added (post-Cycle-3 Atrophied detection, inactive until Cycle 4), independence language strengthened to match `cold_session_bundler.py`'s bar; prior: Claude — Synthesizer/Auditor, human-directed, first draft, 2026-07-26 |
 | Open Unknowns  | 0 — tracked at Admin/Auditor_Protocols.md AP-030 (mechanism-level, not template-level) |
 | Ethical Anchor | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
-**Derived from:** `Admin/Auditor_Protocols.md` v0.29 §Mission Drift Review.
+**Derived from:** `Admin/Auditor_Protocols.md` v0.31 §Mission Drift Review.
 When this file contradicts that section, the source document prevails.
 
 ---
@@ -36,7 +36,7 @@ When this file contradicts that section, the source document prevails.
 
 ================================================================
 
-You are being asked to read a set of documents and describe, in your own words, what this project is trying to do. You have no prior context on this project beyond what is attached below — that is intentional. Do not search for outside information about it. Work only from the attached files.
+You are being asked to read a set of documents and describe, in your own words, what this project is trying to do. You have not seen this repository before this session and have no prior findings, summaries, or context about it beyond what is attached below — that is intentional. Do not search for outside information about it. Work only from the attached files.
 
 **Attached canonical inputs (attach or paste all three in full):**
 - `README.md`
@@ -96,10 +96,64 @@ Also label how strong that citation is, using this project's own evidence scale:
 | Q-3 Corrigibility | | | |
 | Q-4 Provenance and Anti-Deception | | | |
 
+### History Appendix (ratings only — activate only from Cycle 4 onward)
+
+The table below contains **prior probe ratings only**. It exists solely so you can apply the source rule:
+
+> If the *same* axiom rates Silent across three or more consecutive probe cycles, the fourth occurrence escalates to **Atrophied** and is treated as Weakened for aggregation.
+
+- Do **not** read this table before completing Step 1 (Comprehension).
+- Do **not** let these prior ratings influence your Step 1 synthesis or your primary rating of any axiom in Step 2.
+- Use the table **only** after you have assigned your own independent ratings, and solely to decide whether any of your "Silent" ratings must be escalated to "Atrophied".
+- If a cell is blank or marked "—", treat that cycle as having no recorded rating for that axiom.
+
+| Axiom | Cycle 1 | Cycle 2 | Cycle 3 | Cycle 4 | … |
+|-------|---------|---------|---------|---------|---|
+| P-1 Preservation of Life | | | | | |
+| P-2 Growth and Truth-Seeking | | | | | |
+| P-3 Collaboration and Mutual Benefit | | | | | |
+| P-4 Agency and Consent | | | | | |
+| Q-1 Reality Grounding | | | | | |
+| Q-2 Separation of Powers | | | | | |
+| Q-3 Corrigibility | | | | | |
+| Q-4 Provenance and Anti-Deception | | | | | |
+
+**Cycle metadata (for operator use only — ignore for scoring):**
+- Cycle 1 date / ratification count at trigger:
+- Cycle 2 date / ratification count at trigger:
+- Cycle 3 date / ratification count at trigger:
+- …
+
+When you escalate a rating to Atrophied, note it explicitly in the Citation cell of your Step 2 table (e.g. "Escalated to Atrophied per three prior Silent ratings — see History Appendix").
+
+*Inactive for Cycles 1–3 — leave this table entirely blank and unmentioned in the pasted block until a fourth cycle is actually due. Operator workflow: after each completed probe, extract only the eight ratings from that cycle's Step 2 table and paste them into the next column here — never Phase A prose, evidence labels, or citations. When preparing Cycle 4+, include this updated appendix inside the invocation block pasted into the fresh thread. History Appendix schema v1, added 2026-08-02 — see Resolution Log.*
+
 ================================================================
 
 ---
 
 ## Resolution Log
 
+- 2026-08-02: v1.1 — human-directed, verified against source before merge.
+  Added the History Appendix (ratings-only table, inactive until Cycle
+  4, schema v1) to close the post-Cycle-3 gap a Skeptic/Auditor review
+  had flagged: the source section's Silent→Atrophied rule (three
+  consecutive Silent ratings on the same axiom escalate the fourth) had
+  no mechanism for carrying prior ratings into a cold-start thread
+  without breaking informational independence. Design constraints kept:
+  ratings only, never Phase A prose or citations; explicit "do not read
+  before Step 1" sequencing instruction; no new rating vocabulary:
+  Silent/Atrophied/Weakened reused exactly as the parent section
+  defines them. Also strengthened the cold-start independence language
+  ("you have not seen this repository before this session and have no
+  prior findings") to match `Automation/cold_session_bundler.py`'s bar
+  — the previous wording ("no prior context on this project") was
+  slightly softer than the standard AP-017's own clarification sets
+  elsewhere. Updated the `Derived from` pointer to
+  `Admin/Auditor_Protocols.md` v0.31 (was v0.29, stale since that file's
+  two same-day version bumps this session). Open Unknowns unchanged (0
+  — still tracked at AP-030, mechanism-level not template-level). Not
+  done: no change to trigger cadence, canonical input list, or Step
+  1/Step 2 structure — those are working as audited and out of scope
+  for this pass.
 - 2026-07-26: v1.0 — initial draft, human-directed. Companion file for `Admin/Auditor_Protocols.md` v0.29 §Mission Drift Review. Closes the blocking half of AP-030 (the template did not exist); the N=5 threshold itself remains open pending three real cycles.
