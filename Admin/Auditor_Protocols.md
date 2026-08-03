@@ -1,5 +1,5 @@
 # Auditor_Protocols.md
-**Version 0.33**
+**Version 0.34**
 
 ## File State
 
@@ -7,15 +7,15 @@
 |------------------|---------------------------------------------------------------------|
 | Status           | Draft                                                               |
 | Body Stability   | Transitional                                                        |
-| Spec Gates       | 3/6 (G1, G4, G6 clear; G3 blocked on AP-017; G5 conditional on cross-ref fixes below; G2 N/A — no physical/quantitative claims of its own) |
+| Spec Gates       | 4/6 (G1, G3, G4, G6 clear — G3 cleared 2026-08-03 via AP-017 Resolved; G5 conditional on cross-ref fixes below; G2 N/A — no physical/quantitative claims of its own) |
 | Verification Ref | Admin/Verification_Gates_LF.md                                      |
 | Last Audit       | 2026-08-02                                                          |
-| Auditor          | Claude — Synthesizer/Auditor, human-directed, 2026-08-02: AP-017 formal acceptance criteria defined (3 clean cold instances, ≥5 Battery classes each, cross-model on 2+, zero fabrication tolerance) and checked honestly against the two instances already on record (1 of 3 currently qualifies — the 2026-07-23 first instance's real findings stand but it doesn't count toward volume, since it also fabricated a cross-reference); `Admin/BATTERY_SEED.md` created as the frozen Battery-shaped prompt `cold_session_bundler.py`'s existing `standard_audit_prompt` parameter needed; two stale cross-references fixed in passing (§Mission Drift Review's "not yet drafted" note on PROBE_INVOCATION.md, which has existed since 2026-07-26). Sidecar SHA-256 refreshed to match. Prior: AP-007 partial implementation — sidecar hash pointer (v0.32); Sidecar Model extended (v0.31); AP-032 registered (v0.30) — see `Archive/Logs/Auditor_Protocols_Logs.md` Resolution Log for full audit history. |
-| Open Unknowns    | 15                                                                  |
+| Auditor          | Claude — Synthesizer/Auditor, human-directed, 2026-08-03: **AP-017 Resolved** — three cold-session Battery instances (Grok, ChatGPT, Gemini) checked exhaustively against v0.33 source; Grok and ChatGPT qualified cleanly, Gemini disqualified for a fabricated "Gate 3 self-contradiction" (a misreading of "3/6" as "Gate 3 is clear") plus an ID-collision from assigning unknown numbers without sidecar access. Combined with instances already on record, the 2026-08-02 acceptance criteria are met (3 of 3 clean, cross-model at minimum satisfying level, missed-finding and zero-fabrication criteria both met). Spec Gates 3/6 → 4/6, Gate 3 status rewritten to Clear (the first time this line has said so without an immediate caveat — it was wrong twice before). Open Unknowns 15 → 14; prior: AP-017 formal acceptance criteria defined, `Admin/BATTERY_SEED.md` created (v0.33); AP-007 partial implementation (v0.32) — see `Archive/Logs/Auditor_Protocols_Logs.md` Resolution Log for full audit history. |
+| Open Unknowns    | 14                                                                  |
 | Active Disputes  | 1                                                                   |
 | Highest Risk     | High                                                                |
 | Sidecar Link     | Archive/Logs/Auditor_Protocols_Logs.md#auditor-notes--unknowns     |
-| Sidecar SHA-256  | `e94da2473366397710da640d1c4e911746708d3ddfebb2164f363632fa003e62` as of 2026-08-02 (AP-017 acceptance criteria added) — heuristic integrity check, not a cryptographic guarantee; see §Sidecar Format |
+| Sidecar SHA-256  | `1d5b57e3be94cc7e9f41f81f274df56aff1d6b7658c919770a334902d47b38e6` as of 2026-08-03 (AP-017 Resolved) — heuristic integrity check, not a cryptographic guarantee; see §Sidecar Format |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
 **Version String Registry** (self-referential citations outside File State — update on every version bump; required per `Admin/File_Template.md` §Self-Referential Version Strings):
@@ -402,7 +402,7 @@ Not a standalone auditor class — a mode declaration for agents contributing in
 
 All contributors — human and autonomous — must declare their operating role before contributing:
 
-> *"Operating as [Role] per Auditor_Protocols.md v0.33"*
+> *"Operating as [Role] per Auditor_Protocols.md v0.34"*
 
 **Valid roles:** Skeptic/Auditor | Systems/Auditor | Evidence/Auditor | Ethical/Auditor | Synthesizer | Engineer | Connective Tissue
 
@@ -759,7 +759,7 @@ Sequential. Auditor has binding block authority. Self-approval loops not permitt
 
 **Gate 3 is formally gated on the Adversarial Audit Layer.** A single concrete failure scenario is insufficient. The Adversarial Challenge Battery below defines the minimum requirement. Gate 3 additionally requires that at least one Battery class per promotion cycle be applied by an agent instance with no session context from the current audit cycle — see AP-017.
 
-**Current Gate 3 status:** Resolved — AP-012 and AP-016 reached Provisional Spec (v0.16, 2026-07-03). Battery application is complete (v0.13). Re-evaluate before treating Gate 3 as fully clear: AP-017's independence requirement (at least one Battery class per promotion cycle applied by an agent instance with no session context from the current audit cycle) is still Open and separately gates Gate 3 — a resolved blocker is not automatically a passed gate. (Corrected 2026-07-05 — this line was stale since v0.16 resolved AP-012/AP-016; `Admin/Forge_Audit_Kit.md` caught and fixed the same stale text same-day at v1.8, this file did not. Fixed here twice now — see Resolution Log for the first pass and this note for why it didn't hold.)
+**Current Gate 3 status:** Clear, as of 2026-08-03. AP-012 and AP-016 reached Provisional Spec (v0.16, 2026-07-03); Battery application is complete (v0.13); AP-017's independence requirement — at least one Battery class per promotion cycle applied by an agent instance with no session context from the current audit cycle — is Resolved as of 2026-08-03 via three cold-session instances checked against a pre-defined acceptance bar (see AP-017 in the sidecar for the full evidentiary record, including which instances qualified and which were rejected for fabrication). This is the first time this line has been able to say Clear without an immediate caveat — the prior text ("Resolved... re-evaluate before treating Gate 3 as fully clear") had been wrong twice before (see Resolution Log, 2026-07-05 correction and the note on why it didn't hold); this version is written only once the independence requirement was actually, verifiably met, not declared in anticipation of it.
 
 ---
 
@@ -1138,7 +1138,7 @@ Any cross-repo dependency must be documented in both repositories with a stated 
 - Sign-off statement
 
 **Standard sign-off:**
-> *"Verified under Auditor_Protocols v0.33 — gates [list] cleared, gates [list] blocked ([reason]), [N] unknowns logged, [N] overrides. Adversarial classes applied: [list]. Auditor: [Role/Agent]"*
+> *"Verified under Auditor_Protocols v0.34 — gates [list] cleared, gates [list] blocked ([reason]), [N] unknowns logged, [N] overrides. Adversarial classes applied: [list]. Auditor: [Role/Agent]"*
 
 ---
 
@@ -1294,12 +1294,14 @@ file's own body — matching the precedent already established for
 Every other file in the repository keeps its sidecar in-body; this is
 the second documented exception, not a new general rule.
 
-Current: 15 open — AP-002, AP-003, AP-004, AP-005, AP-007, AP-008,
-AP-010, AP-011, AP-013, AP-017, AP-018, AP-019, AP-024, AP-029, AP-030
+Current: 14 open — AP-002, AP-003, AP-004, AP-005, AP-007, AP-008,
+AP-010, AP-011, AP-013, AP-018, AP-019, AP-024, AP-029, AP-030
 (verified by direct count against the archive, matching File State
-above; AP-031 registered 2026-07-29 and Resolved same day — deferred;
+above; AP-017 Resolved 2026-08-03 — Payment via Validation, the
+independence-mechanism closure this Version's own edit records; AP-031
+registered 2026-07-29 and Resolved same day — deferred;
 AP-032 registered 2026-08-02 and Resolved same day — protocol rule
-added; neither is counted among these 15 Open entries). See the archive for exact statuses, descriptions, and
+added; none of these three is counted among these 14 Open entries). See the archive for exact statuses, descriptions, and
 resolution paths. Active Disputes below remains in-body, distinct
 from the sidecar — disputes are interpretation conflicts tracked at
 the document level, not per-unknown entries.
@@ -1309,7 +1311,28 @@ the document level, not per-unknown entries.
 Full history: `Archive/Logs/Auditor_Protocols_Logs.md` (relocated out
 of this file at v0.26 — add new entries there, not here).
 
-Most recent: v0.33 (2026-08-02) — AP-017 given a formal, falsifiable
+Most recent: v0.34 (2026-08-03) — **AP-017 Resolved.** Three cold
+sessions run against v0.33 using `Admin/BATTERY_SEED.md`'s prompt for
+the first time (Grok, ChatGPT, Gemini). Grok and ChatGPT checked
+clean against source, zero fabrication. Gemini's headline finding —
+a claimed "direct logical self-contradiction" in File State — was
+itself a misreading of "3/6" (three of six gates clear) as "Gate 3
+is clear"; disqualified under the zero-fabrication criterion, same
+standard as the 2026-07-23 Claude instance. Separately, Gemini
+assigned unknown IDs without sidecar access against the rule added
+2026-08-02 for this exact situation, and collided with itself doing
+so (UNK-AP-034 used twice) — a live demonstration of that rule's
+purpose, not a new problem. With the two clean instances from this
+batch plus the two already on record (2026-07-23), the 2026-08-02
+acceptance criteria are met: 3 of 3 clean instances, cross-model at
+the minimum satisfying level, both remaining criteria already
+satisfied by earlier evidence. Spec Gates 3/6 → 4/6 (G3 now Clear).
+Gate 3's status line rewritten to state Clear without a caveat for
+the first time — it had been wrong twice before, so this version
+was written only once the requirement was actually met, not in
+anticipation of it.
+
+Prior: v0.33 (2026-08-02) — AP-017 given a formal, falsifiable
 closure bar (3 clean cold instances, ≥5 Battery classes each with
 concrete scenarios, cross-model on at least 2, at least one instance
 must surface a finding the in-session audit missed, zero fabrication
@@ -1394,7 +1417,7 @@ cycles.
 
 ## Status
 
-**Version 0.33 — Draft, Body Stability Transitional.** Full audit history: `Archive/Logs/Auditor_Protocols_Logs.md` Resolution Log. This section previously carried a duplicate, stale copy of early version history (v0.14 through v0.16) that was never updated after the file moved past those versions — trimmed 2026-07-23 as pure duplication of content the archive's Resolution Log already carries in full; see that log's v0.28 entry.
+**Version 0.34 — Draft, Body Stability Transitional.** Full audit history: `Archive/Logs/Auditor_Protocols_Logs.md` Resolution Log. This section previously carried a duplicate, stale copy of early version history (v0.14 through v0.16) that was never updated after the file moved past those versions — trimmed 2026-07-23 as pure duplication of content the archive's Resolution Log already carries in full; see that log's v0.28 entry.
 
 **What must remain constant:**
 
