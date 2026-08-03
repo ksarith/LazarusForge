@@ -39,7 +39,6 @@
 | Last Audit       | 2026-05-09 (multi-agent), actioned 2026-05-19; revised 2026-06-08; Threat Model/Trust Boundary/Heartbeat Token additions drafted 2026-08-02, not yet audited |
 | Auditor          | Claude — Retrofit/Auditor; Gemini — Synthesizer (CF-001 parameters); Copilot — drafted Threat Model/Trust Boundary/Firmware Provenance Log restructure (human-directed), 2026-08-02; Grok — drafted Heartbeat Token Cryptography spec and reviewed Copilot's draft (human-directed), 2026-08-02; Claude — verified against source, corrective merge (human-directed), 2026-08-02 |
 | Open Unknowns    | 9                                                                   |
-| Open Unknowns    | 8                                                                   |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | High                                                                |
 | Sidecar Link     | #auditor-notes--unknowns                                            |
