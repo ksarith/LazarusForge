@@ -388,14 +388,14 @@ entry and the full Resolution Log — lives here now.
 
 | Field         | Value                        |
 |---------------|------------------------------|
-| Status        | Open                         |
-| Risk          | High                         |
-| Priority      | Major                        |
+| Status        | Resolved — Payment via Validation |
+| Risk          | High (pre-resolution)         |
+| Priority      | Major (pre-resolution)         |
 | Type          | Governance / Epistemic       |
-| Blocking      | Epistemic                    |
+| Blocking      | No — resolved 2026-08-03      |
 | Owner         | Admin/Auditor_Protocols.md   |
 | First Logged  | 2026-06-24                   |
-| Last Reviewed | 2026-08-02                   |
+| Last Reviewed | 2026-08-03                   |
 
 **Description:** No doctrine requires that any Battery class be applied by an agent without session context from the current audit cycle. A formally compliant Battery sign-off can be produced by an agent auditing its own prior contributions. Gate 3 can be satisfied without genuine independence.
 
@@ -440,6 +440,22 @@ Separately, one reported finding (claimed sidecar truncation at AP-017, omitting
 - **Net result under the newly-defined bar: 1 of 3 clean qualifying instances, not 2.** The 2026-07-23 first instance's real findings stand and were correctly adopted at the time (per this entry's own Resolution Path — findings get checked against source before adoption, which is exactly what happened), but the instance itself doesn't count toward AP-017's volume bar because it also invented something. Quality of the *verification step* and qualification of the *instance* are being evaluated separately here on purpose — conflating them would let a good verification process quietly launder a bad independent instance into looking like a good one.
 
 **Still Open.** Two more clean instances needed (one more beyond the single clean one currently on record, per criterion 1 as stated — re-reading criterion 1: three total, cross-model constraint satisfiable with the existing clean Grok instance plus two more on any models). Use `Admin/BATTERY_SEED.md`'s frozen prompt for future attempts rather than the bundler's general-purpose default, so future instances are creditable against the Battery's ten-class structure directly rather than requiring after-the-fact interpretation of whether general review output maps onto Battery classes.
+
+**Fresh instance, 2026-08-03 — Grok, second cold pass, using `Admin/BATTERY_SEED.md`'s frozen prompt against v0.33 (this is the first use of that prompt rather than the bundler's general default):** manifest verified before evaluating the response — `raw_sha256` for `Admin/Auditor_Protocols.md` matches the v0.33 state at time of bundling, 1 block stripped (File State tracker table, Ethical Anchor retained), `Admin/Ethical_Constraints.md` also bundled per the Self-Audit Target List, 18 blocks stripped there. All ten Battery classes applied, each meeting its stated minimum with a genuine concrete scenario, not a restatement. Checked exhaustively against source before trusting: the response quotes this file verbatim in multiple places — the Sidecar SHA-256 value itself, "heuristic integrity check, not a cryptographic guarantee," the full "Highest Verified Baseline" definition, "the auditor that cannot challenge them is the auditor that has become the thing it was built to prevent" (exact), "Crystallization principle... A shrinking sidecar is a maturing document" (exact), the 2026-07-05 correction date and CT-011 reference (exact), "three AI models with overlapping training data converge on the same wrong answer" (exact, from Class 9's own worked example), and the exact substantive-notes wording — every one of these checked and confirmed verbatim against the actual v0.33 text. Zero fabrication found across ten dense, specific classes. This instance qualifies cleanly under all five criteria.
+
+**Fresh instance, 2026-08-03 (same batch) — ChatGPT, first cold pass logged from this model family, same `BATTERY_SEED.md` payload:** all ten classes applied and technically meeting stated minimums, though noticeably more generic/hedged than the Grok instance above — fewer verbatim citations, more "may/potential/cannot determine" framing. No fabrication detected: all references to unsupplied files (`Verification_Gates_LF.md`, `Discovery.md`, `File_Template.md`, `Governance_Charter.md`, the archive) are accurately characterized as absent and unverifiable rather than assumed or invented; the one conditional hypothetical (Class 2's "if Verification_Gates_LF.md contains an incorrect gate definition") is correctly framed as conditional, not asserted as fact. One borderline item: Class 6 describes "the governance chain" generally being self-reinforcing rather than naming one specific claim as the minimum requires — closer to restating the class's own worked example than fully independent application; noted, not disqualifying, since the requirement is technically still addressed (a chain of self-reference is identified and correctly labeled as needing external grounding). Also notable: both this instance and the Grok instance above independently chose "cycle"/"current audit cycle" for Class 4 rather than exploring the class's other listed drift-prone terms (safe/contained/stable/acceptable/hold/clear/sufficient) — a shared blind spot across both, not a disqualifying one. This instance qualifies, at the lower end of rigor but cleanly on fabrication.
+
+**Fresh instance, 2026-08-03 (same batch) — Gemini, same payload — does NOT qualify, disqualified on fabrication:** the sign-off's own "Highest-risk finding" claims "a direct logical self-contradiction" — that File State marks Spec Gate 3 clear while also stating it's blocked. Checked directly against the actual field: `Spec Gates | 3/6 (G1, G4, G6 clear; G3 blocked on AP-017; ...)`. This says three *of six total gates* are clear (specifically G1, G4, G6) and explicitly states G3 is blocked in the same cell — "3/6" was misread as "Gate 3 is among the clear ones" rather than "three gates total are clear," manufacturing a contradiction that doesn't exist and presenting it as the headline finding. Disqualifying under criterion 4, same standard applied to the 2026-07-23 first instance's fabricated cross-reference — a high quality pass otherwise (the rest of the ten classes check out cleanly against source, including verbatim-accurate citations of EF-0.8 "Software Reality Anchors," the loophole guard's exact text, the P/Q-axiom split's exact wording, and "Sybil-style alignment is not truth") does not average out one fabricated headline claim. Separately, and usefully: this instance had no sidecar access (states so itself) and assigned specific unknown IDs anyway (UNK-AP-034 through UNK-AP-039) — against the rule added 2026-08-02 for exactly this situation — and collided with itself doing so: the sign-off lists `Class 1: UNK-AP-034` and `Class 3: UNK-AP-034` as two different findings sharing one ID. A live demonstration of the exact risk that rule exists to prevent, not a new gap to register.
+
+**Final tally against the 2026-08-02 acceptance criteria, counting all instances on record:**
+
+1. **Volume: 3 of 3, met.** Clean qualifying instances: Grok (2026-07-23), Grok (2026-08-03), ChatGPT (2026-08-03). The 2026-07-23 Claude instance and 2026-08-03 Gemini instance are excluded from this count under criterion 4 — their real findings were still checked and adopted where valid, but the instances themselves don't count toward volume.
+2. **Cross-model: met, at the minimum satisfying level.** Two distinct families are represented (Grok, ChatGPT) among the three counted instances — technically satisfies "at least two of the three must be on different model families from each other," though two of the three counted instances share a model (Grok). Noted plainly rather than glossed over: a batch with three distinct families would have been a stronger result than this one.
+3. **Missed-finding criterion: met.** 2026-07-23 first instance's AP-029 finding (10-Entry Rule tripped at 13 open entries) remains the qualifying case.
+4. **Zero fabrication: met** for all three counted instances, verified against source, not assumed.
+5. **Manifest hash + model identifier: met.** All three counted instances have logged `raw_sha256` values and named models.
+
+**AP-017 — Status: Resolved, 2026-08-03 (human-directed, verified against source before closure).** Payment via Validation — this closes through repeated empirical testing against a pre-defined, falsifiable bar, not through a text specification. Gate 3's independence requirement is satisfied; see `Admin/Auditor_Protocols.md` §Verification Gate Enforcement and File State for the corresponding update. This does not retroactively validate every finding from every instance ever logged here — the fabricated ones (Claude's `Verification_Gates.md`, Gemini's Gate-3 misreading) remain correctly rejected; what closes is the independence *mechanism and bar*, evaluated honestly against its own criteria rather than declared satisfied by inspection.
 
 ---
 
@@ -820,6 +836,33 @@ This becomes governance metadata rather than prose, auditable the same way Truth
 ---
 
 ### Resolution Log
+
+- 2026-08-03: **AP-017 Resolved — Payment via Validation.** Three
+  simultaneous cold-session Battery runs against v0.33, using
+  `Admin/BATTERY_SEED.md`'s frozen prompt for the first time (Grok,
+  ChatGPT, Gemini), checked exhaustively against source before any
+  were credited. Two qualified cleanly (Grok, ChatGPT — zero
+  fabrication, all ten classes meeting stated minimums); one
+  (Gemini) did not — its "highest-risk finding" was a fabricated
+  self-contradiction built on misreading "3/6" as "Gate 3 is clear"
+  rather than "three gates total are clear," and it separately
+  assigned unknown IDs without sidecar access against the rule added
+  2026-08-02 for exactly this situation, colliding with itself in
+  the process (UNK-AP-034 used for two different findings). Combined
+  with the two clean instances already on record (Grok x2 total, one
+  from 2026-07-23; ChatGPT x1), the 2026-08-02 acceptance criteria
+  are met: 3 of 3 clean instances, cross-model at the minimum
+  satisfying level (2 distinct families among 3, noted honestly
+  rather than inflated), the missed-finding criterion already
+  satisfied by the original 2026-07-23 AP-029 catch, zero fabrication
+  across all three counted instances, all logged with manifest hash
+  and model identifier. AP-017 Status → Resolved. This closes the
+  independence *mechanism and bar* — it does not retroactively
+  validate the fabricated findings from either disqualified instance
+  (Claude 2026-07-23, Gemini 2026-08-03), which remain correctly
+  rejected. Gate 3's independence requirement is satisfied; see
+  `Admin/Auditor_Protocols.md` for the corresponding Spec Gates and
+  §Verification Gate Enforcement update. Open Unknowns 15 → 14.
 
 - 2026-08-02: **AP-017 — formal acceptance criteria defined; `Admin/BATTERY_SEED.md` created.**
   AP-017 had a working independence mechanism (`cold_session_bundler.py`,
