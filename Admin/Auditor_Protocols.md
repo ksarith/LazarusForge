@@ -1,5 +1,5 @@
 # Auditor_Protocols.md
-**Version 0.31**
+**Version 0.33**
 
 ## File State
 
@@ -10,11 +10,12 @@
 | Spec Gates       | 3/6 (G1, G4, G6 clear; G3 blocked on AP-017; G5 conditional on cross-ref fixes below; G2 N/A — no physical/quantitative claims of its own) |
 | Verification Ref | Admin/Verification_Gates_LF.md                                      |
 | Last Audit       | 2026-08-02                                                          |
-| Auditor          | Claude — Synthesizer/Auditor, human-directed, 2026-08-02: Sidecar Model §Sidecar Format extended with a "candidate findings without confirmed sidecar access" rule — ID assignment (and the duplicate check it requires) is reserved for an agent with verified sidecar access; an agent without it should describe, not number, a candidate finding. Prompted by a same-day self-audit (Grok, no archive access) surfacing a real gap already covered by AP-007 under a proposed new "AP-033"; prior: AP-032 registered — Rule 8 (Gate/Status Self-Attestation Prohibition) added to AI Contribution Protocols and Fallacy Checklist item 4 extended to cover it (human-directed), 2026-08-02 — see `Archive/Logs/Auditor_Protocols_Logs.md` Resolution Log for full audit history. |
+| Auditor          | Claude — Synthesizer/Auditor, human-directed, 2026-08-02: AP-017 formal acceptance criteria defined (3 clean cold instances, ≥5 Battery classes each, cross-model on 2+, zero fabrication tolerance) and checked honestly against the two instances already on record (1 of 3 currently qualifies — the 2026-07-23 first instance's real findings stand but it doesn't count toward volume, since it also fabricated a cross-reference); `Admin/BATTERY_SEED.md` created as the frozen Battery-shaped prompt `cold_session_bundler.py`'s existing `standard_audit_prompt` parameter needed; two stale cross-references fixed in passing (§Mission Drift Review's "not yet drafted" note on PROBE_INVOCATION.md, which has existed since 2026-07-26). Sidecar SHA-256 refreshed to match. Prior: AP-007 partial implementation — sidecar hash pointer (v0.32); Sidecar Model extended (v0.31); AP-032 registered (v0.30) — see `Archive/Logs/Auditor_Protocols_Logs.md` Resolution Log for full audit history. |
 | Open Unknowns    | 15                                                                  |
 | Active Disputes  | 1                                                                   |
 | Highest Risk     | High                                                                |
 | Sidecar Link     | Archive/Logs/Auditor_Protocols_Logs.md#auditor-notes--unknowns     |
+| Sidecar SHA-256  | `e94da2473366397710da640d1c4e911746708d3ddfebb2164f363632fa003e62` as of 2026-08-02 (AP-017 acceptance criteria added) — heuristic integrity check, not a cryptographic guarantee; see §Sidecar Format |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
 **Version String Registry** (self-referential citations outside File State — update on every version bump; required per `Admin/File_Template.md` §Self-Referential Version Strings):
@@ -401,7 +402,7 @@ Not a standalone auditor class — a mode declaration for agents contributing in
 
 All contributors — human and autonomous — must declare their operating role before contributing:
 
-> *"Operating as [Role] per Auditor_Protocols.md v0.31"*
+> *"Operating as [Role] per Auditor_Protocols.md v0.33"*
 
 **Valid roles:** Skeptic/Auditor | Systems/Auditor | Evidence/Auditor | Ethical/Auditor | Synthesizer | Engineer | Connective Tissue
 
@@ -630,6 +631,8 @@ A centralized unknowns registry that stores full entry detail grows without boun
 
 Full sidecar format is defined in `Admin/File_Template.md` Section 8. Local IDs use file abbreviation + three digits: `AP-001` (Auditor Protocols), `SC-001` (Separation Thermal), `GI-001` (Gate Intake), etc. Cross-module unknowns use global `UNK-XXX` format and are indexed in `Unknowns.md`.
 
+**Integrity check before trusting a relocated sidecar (AP-007 partial implementation, 2026-08-02):** For any file whose sidecar has been relocated (per the documented-exception pattern above), the first structural check in any audit sequence against that file — before reading the archive's content as fact — is confirming the archive still matches the `Sidecar SHA-256` recorded in that file's File State. A mismatch is a Level 3 Integrity Violation under [EF-0.2] ("history tampering... alteration of audit trail entries, sidecar IDs, or resolution logs") and halts the audit pending human governing party review rather than proceeding on unverified archive content. Honest limitation: the hash is updated by whoever edits the archive, in the same edit — this catches divergence from unauthorized or out-of-band changes, not a failure of the normal edit-both-files discipline itself. It is a heuristic, not a cryptographic guarantee — the same honesty standard `Automation/cold_session_bundler.py` already applies to its own `guarantees_true_independence: false` field. This closes one concrete scenario under AP-007 (relocated-sidecar falsification); AP-007's broader repository-wide scope remains open.
+
 **Candidate findings without confirmed sidecar access:** An agent auditing a file without confirmed access to that file's sidecar (in-body, or relocated per the documented-exception pattern above) may still surface a candidate finding — it should not stay silent. But it must describe the finding rather than assign it a specific ID number. Duplicate-checking against existing entries, and ID assignment itself, are reserved for an agent with verified sidecar access, since an unverified guess at the next free number risks colliding with or duplicating an entry the auditor couldn't see. (Concrete instance: a 2026-08-02 self-audit of this file, run without archive access, surfaced a real gap — sidecar/archive integrity against falsification — as "candidate AP-033." The gap was real but not new: it was already AP-007, open since May. Described-not-numbered would have avoided the near-duplicate on the first pass rather than requiring a second agent to catch it.)
 
 ### The 10-Entry Rule
@@ -785,6 +788,8 @@ Partial application (selected challenge classes) is acceptable for Exploration-s
 ### The Adversarial Challenge Battery
 
 Ten challenge classes. Each requires at least one concrete scenario, not a general acknowledgment.
+
+**Turn-key invocation for AP-017-qualifying instances.** `Admin/BATTERY_SEED.md` (companion file, drafted 2026-08-02) is the frozen prompt to pair with `Automation/cold_session_bundler.py` when the goal is a genuine independent instance toward AP-017's acceptance criteria — the bundler's own default prompt produces general review, not output structured class-by-class against the ten below. See AP-017 for the closure bar this feeds.
 
 ---
 
@@ -1067,7 +1072,7 @@ Runs when either condition is met, whichever comes first:
 
 **Absolute cold-start.** The probe runs in a session with no prior context: no access to the design conversation, no prior probe results, no prior mission summaries, no Resolution Log interpretations of past probes. It receives only files designated as canonical inputs (at minimum `README.md`, `Admin/Governance_Charter.md` Tier 1 Axioms, `Discovery.md`). Same-session context-bracketing ("ignore what you already know") is not an acceptable substitute — it does not reliably override prior-token influence and risks disguising drift as alignment. A probe run in the same session as its own design or a prior probe is invalid and must be discarded, not scored.
 
-**Turn-key invocation.** A self-contained `PROBE_INVOCATION.md` should be maintained (companion file, not yet drafted — see AP-030) so the operator can copy one block into a fresh thread alongside the canonical target files without reconstructing the prompt each cycle. If invocation takes meaningfully longer than pasting one block, the mechanism has failed its own operational-lightness requirement.
+**Turn-key invocation.** `Admin/PROBE_INVOCATION.md` (companion file, drafted 2026-07-26, extended with a History Appendix 2026-08-02) is the self-contained block the operator copies into a fresh thread alongside the canonical target files without reconstructing the prompt each cycle. If invocation takes meaningfully longer than pasting one block, the mechanism has failed its own operational-lightness requirement.
 
 ### Phase A — Comprehension (unscored)
 
@@ -1133,7 +1138,7 @@ Any cross-repo dependency must be documented in both repositories with a stated 
 - Sign-off statement
 
 **Standard sign-off:**
-> *"Verified under Auditor_Protocols v0.31 — gates [list] cleared, gates [list] blocked ([reason]), [N] unknowns logged, [N] overrides. Adversarial classes applied: [list]. Auditor: [Role/Agent]"*
+> *"Verified under Auditor_Protocols v0.33 — gates [list] cleared, gates [list] blocked ([reason]), [N] unknowns logged, [N] overrides. Adversarial classes applied: [list]. Auditor: [Role/Agent]"*
 
 ---
 
@@ -1304,7 +1309,35 @@ the document level, not per-unknown entries.
 Full history: `Archive/Logs/Auditor_Protocols_Logs.md` (relocated out
 of this file at v0.26 — add new entries there, not here).
 
-Most recent: v0.31 (2026-08-02) — Sidecar Model §Sidecar Format
+Most recent: v0.33 (2026-08-02) — AP-017 given a formal, falsifiable
+closure bar (3 clean cold instances, ≥5 Battery classes each with
+concrete scenarios, cross-model on at least 2, at least one instance
+must surface a finding the in-session audit missed, zero fabrication
+tolerance — an instance that invents a file or finding is
+disqualified from the count even if its other findings are real and
+correctly adopted). Checked honestly against the two instances
+already on record: 1 of 3 currently qualifies, not 2 — the
+2026-07-23 first instance's real findings were correctly kept, but
+the instance itself doesn't count toward volume because it also
+fabricated a `Verification_Gates.md` cross-reference that doesn't
+exist. `Admin/BATTERY_SEED.md` created — a frozen, versioned prompt
+(same pattern as `PROBE_INVOCATION.md`) filling a parameter
+`cold_session_bundler.py`'s constructor already accepted but had no
+Battery-shaped text for. In passing: fixed a stale note in §Mission
+Drift Review claiming PROBE_INVOCATION.md was "not yet drafted" —
+it's existed since 2026-07-26.
+
+Prior: v0.32 (2026-08-02) — AP-007 partial implementation:
+`Sidecar SHA-256` added to File State, and §Sidecar Format now
+requires confirming the archive matches that hash as the first
+structural check before trusting a relocated sidecar's content — a
+mismatch is a Level 3 Integrity Violation under EF-0.2's existing
+history-tampering trigger. Closes the specific relocated-sidecar
+falsification scenario (Adversarial Challenge Class 8, 2026-08-02);
+AP-007's broader repository-wide canonical-path-authority scope
+remains open, Status stays In Progress.
+
+Prior: v0.31 (2026-08-02) — Sidecar Model §Sidecar Format
 extended: an agent without confirmed sidecar access may surface a
 candidate finding but must describe it rather than assign a specific
 ID number — duplicate-checking and numbering are reserved for an
@@ -1361,7 +1394,7 @@ cycles.
 
 ## Status
 
-**Version 0.31 — Draft, Body Stability Transitional.** Full audit history: `Archive/Logs/Auditor_Protocols_Logs.md` Resolution Log. This section previously carried a duplicate, stale copy of early version history (v0.14 through v0.16) that was never updated after the file moved past those versions — trimmed 2026-07-23 as pure duplication of content the archive's Resolution Log already carries in full; see that log's v0.28 entry.
+**Version 0.33 — Draft, Body Stability Transitional.** Full audit history: `Archive/Logs/Auditor_Protocols_Logs.md` Resolution Log. This section previously carried a duplicate, stale copy of early version history (v0.14 through v0.16) that was never updated after the file moved past those versions — trimmed 2026-07-23 as pure duplication of content the archive's Resolution Log already carries in full; see that log's v0.28 entry.
 
 **What must remain constant:**
 
