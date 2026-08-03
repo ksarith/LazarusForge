@@ -3,33 +3,30 @@
 
 **Full version history in `Unknowns_Changelog.md` (2026-07-19 cleanup pass, following the precedent set by `Admin/AUDIT_HARNESS_CHANGELOG.md` and `Admin/Forge_Audit_Kit_Changelog.md`; scrubbed to current-version-only 2026-07-28 — the "current plus last four in full" window was itself compressed further, since the Audit Trail below now carries the compressed record for every version back to v1.0, and the changelog carries full text for all of them. This block now keeps only the current version.)**
 
-**Version 4.41 — 2026-08-02. EV-004, EV-005 registered — Energy.md dual-audit adjudication (Gemini + Grok).**
-Two independent Skeptic/Auditor passes on `Operations/Energy.md`'s
-proposed EGL disagreed on gate verdicts and specific findings; both
-verified against source before adjudicating. Merged from Gemini (Grok's
-pass missed these): the Source Classes/Operational Modes tables wrongly
-implied TEG could supply idle-state baseline load with zero active
-thermal process — physically ungrounded, now corrected; EV-004 (EAL
-hardware watchdog/firmware isolation — ASM-006's assumption had no
-tracked unknown behind it) and EV-005 (TEG net-positive threshold vs.
-pump/fan parasitic draw) registered; a semantic-hygiene fix to the Safety
-Advisory's "structural specification" phrasing; a bare `Engineering.md`
-reference corrected to `Architecture/Engineering.md`; Voltage Ripple
-values tagged `[Placeholder]`; Storage Model gained Safe Maintenance
-Access and End-of-Life Disposal Routing (cross-referencing
-`Operations/Gate_02_Triage.md` and `Challenges/Waste.md`). Rejected from
-Gemini's audit: a finding that the Ethical Anchor field needs an `Admin/`
-prefix — `Admin/File_Template.md` fixes the unprefixed form as canonical
-and non-negotiable across every file, and `Tests/Support_Raft.md`'s own
-history records a 9-file sweep that removed that exact prefix once
-already; also rejected: flagging "Payment via Specification only" as
-semantic drift — that's the file's own pre-existing, previously-audited
-idiom, used identically since 2026-05-31 in EV-001/002/003. Grok's gate
-verdicts (mostly cleared, flag-and-track framing) were judged better
-calibrated than Gemini's (several BLOCKED) to what Energy.md actually
-claims about itself — it has been Draft/Exploration throughout and never
-purported to pass a gate. `Operations/Energy.md` Open Unknowns: 3 → 5.
-Status/Spec Gates unchanged (Draft, 1/6).
+**Version 4.42 — 2026-08-03. Integrity correction pass on v0.99.35 release — AP-017 closure mirrored, duplicate row fixed.**
+Checking the new release zip against this session's work (human request:
+"ensure we don't lose its record") surfaced two real gaps introduced
+between this file's last edit and the new release, plus one placement
+issue: (1) this index still listed AP-017 as Open in the active table
+and in the Dependency Clusters section, despite AP-017 having Resolved
+2026-08-03 in `Admin/Auditor_Protocols.md` v0.34 (three cold-session
+Battery instances checked against source, Gate 3 now Clear) — corrected,
+AP-017 removed from the active index per this file's own convention that
+Resolved AP- entries don't appear there (matching AP-006, AP-012, AP-014,
+AP-016, AP-031, AP-032), and the Dependency Clusters note updated to
+reflect resolution rather than blockage; (2) `Operations/Electronics.md`'s
+File State table had acquired a duplicate `Open Unknowns` row (`9` and
+`8` both present as separate table rows) — malformed markdown, not a
+content decision; corrected to the single accurate value (9, matching
+EL-001 through EL-009); (3) `Admin/BATTERY_SEED.md` was found relocated
+to `Automation/BATTERY_SEED.md` in the new release, while
+`Admin/Auditor_Protocols.md` still cross-references it at the `Admin/`
+path in four places and the file's own Verification Ref/Derived-from
+fields describe itself as an `Admin/` doctrine companion (matching
+`PROBE_INVOCATION.md`'s placement precedent) — flagged for correction
+on next repository sync; not fixed here since this file doesn't govern
+folder placement, only cross-reference accuracy. No new unknowns
+registered — this is a correction pass, not new tracking surface.
 
 **Expiry Rule active — see `Admin/Canonical_Terms.md` §4 for the Cycle definition this rule now explicitly references (one calendar year default, not one audit pass — see CT-011). Protocol Performance metrics collecting.**
 
@@ -165,8 +162,8 @@ AP-012 (Resolved 2026-07-03 — Human authority availability — autonomous degr
 ├── AP-016 (Resolved 2026-07-03 — Concurrent quarantine — co-resolved under AP-012 doctrine)
 └── AP-011 (Human fatigue escalation — depends on AP-012's now-resolved doctrine)
 
-AP-017 (Battery independence requirement)
-└── Gate 3 clearance blocked until AP-017 reaches Provisional Spec
+AP-017 (Resolved 2026-08-03 — Battery independence requirement — three cold-session instances checked against the 2026-08-02 acceptance criteria)
+└── Gate 3 clearance no longer blocked — Clear as of 2026-08-03
 ```
 
 **Cognitive Salvage / Interaction Safety**
@@ -287,7 +284,6 @@ GH-009 (Emergent heuristic conflict — N² interaction scaling)
 | AP-010 | Physical test harness integration with epistemic grounding layer undefined | `Admin/Auditor_Protocols.md` | Open | — | Major |
 | AP-011 | Automated arbitration deadlock and human fatigue escalation | `Admin/Auditor_Protocols.md` | Open | — | Major |
 | AP-013 | Unknown closure authority undefined | `Admin/Auditor_Protocols.md` | Open | — | Major |
-| AP-017 | Adversarial Battery independence requirement undefined | `Admin/Auditor_Protocols.md` | Open | — | Major |
 | AP-018 | Saturation threshold hysteresis and smoothing undefined | `Admin/Auditor_Protocols.md` | Open | — | Major |
 | AP-019 | Semantic convergence metrics for unknown resolution undefined | `Admin/Auditor_Protocols.md` | Open | — | Major |
 | AP-024 | Human attestation provenance insufficiently granular — "human-directed" collapses at least five distinguishable review levels into one label | `Admin/Auditor_Protocols.md` | Open | — | Major |
