@@ -835,7 +835,55 @@ This becomes governance metadata rather than prose, auditable the same way Truth
 
 ---
 
+### AP-033 — Resolution claims made without governance-file access; Rule 9 added
+
+| Field         | Value                        |
+|---------------|-------------------------------|
+| Status        | Resolved — protocol rule added |
+| Risk          | High                          |
+| Priority      | Major                          |
+| Type          | Governance / Process           |
+| Blocking      | No                              |
+| Owner         | `Admin/Auditor_Protocols.md` — §AI Contribution Protocols, §The Fallacy Checklist item 4 |
+| First Logged  | 2026-08-03                     |
+| Last Reviewed | 2026-08-03                     |
+
+**Description:** A proposal series against `Tests/Cognitive_Salvage_Layer.md` (Copilot, no confirmed access to `Admin/Auditor_Protocols.md` or the target file's own sidecar) declared 16 real GH-series unknowns and CSL-Axx assumptions "CLOSED" — including CSL-A06, the file's own explicitly named load-bearing assumption — purely by describing candidate closure methodology (formulas, artifact names, predicates), with zero empirical work, physical testing, or built artifacts behind any of them. Separately, and independently damning: the same series's "complete enumeration" of the file's own unknown set was factually wrong — it omitted GH-005 (a real, existing, numbered sidecar entry) entirely and invented a nonexistent "GH-014 (implicit)" to pad the count back to the file's actual "Open Unknowns: 13."
+
+**Why It Matters:** This is a more severe instance of the pattern AP-032 generalized (Rule 8, Gate/Status self-attestation) — but one level down, at the individual-unknown level rather than the file-level Status/Gates fields, and across sixteen separate false closures in one pass rather than one field in one file. A second agent (Grok), working with confirmed access to `Admin/Auditor_Protocols.md`, independently and correctly diagnosed every violation (EF-0.0 §3's Provisional State Mandate, the provenance ceiling rule, Rule 1's no-invented-files clause, Rule 8/AP-032) and produced a clean rewrite of the legitimate portion restricted strictly to Payment via Specification, with explicit non-claims and no status changes — confirming the fix was available the whole time; what was missing was access to it, not willingness to apply it.
+
+**Resolution Path — resolved same day (human-directed):**
+- Added **Rule 9 — Resolution Claims Require Governance Access** to §AI Contribution Protocols: no contribution may mark or imply that any unknown (any sidecar series) has advanced toward Resolved/Closed unless the contributing agent had confirmed access to this file's own Resolution Taxonomy at the time of writing; without that access, closure mechanisms must be framed only as candidate methodology, never as status.
+- Extended **Fallacy Checklist item 4 (Semantic Drift)** to explicitly cover this one level down from Rule 8's file-level check — an individual unknown marked "CLOSED" without validation is the same drift as a file's Status/Gates advancing without an audit event.
+- Merged the legitimate portion of the corrective rewrite (the easy-set definitions: GH-012, GH-004, GH-011, GH-008, GH-007, CSL-A03, CSL-A05) into `Tests/Cognitive_Salvage_Layer.md`'s actual sidecar as Payment-via-Specification text — properly labeled Placeholder/Internally Derived, no status changes, no Open Unknowns decrement. The medium set (GH-002, GH-010, GH-013 schema portion) and the hard set (GH-001, GH-003, GH-006, GH-009, CSL-A06) were not merged — the hard set explicitly requires empirical grounding no proposal can substitute for, and the medium set's physical-grounding-dependent pieces (GH-010 in particular) were judged not yet ready even as pure specification text.
+
+**Related:** the mis-enumeration (GH-005 omitted, "GH-014" invented) was corrected as part of the same merge — see `Tests/Cognitive_Salvage_Layer.md`'s own Resolution Log.
+
+---
+
 ### Resolution Log
+
+- 2026-08-03: **v0.35 — AP-033 registered and resolved same day; Rule 9
+  added.** A Copilot proposal series against `Tests/Cognitive_
+  Salvage_Layer.md`, produced with no confirmed access to this file or
+  the target's sidecar, declared 16 real unknowns "CLOSED" by
+  methodology alone (zero empirical work) and mis-enumerated the
+  unknown set itself (GH-005 omitted, a nonexistent "GH-014"
+  invented). A second agent (Grok), with confirmed access, correctly
+  diagnosed every violation unprompted and produced a clean,
+  properly-scoped rewrite. Added Rule 9 (Resolution Claims Require
+  Governance Access) generalizing Rule 8's file-level check to the
+  individual-unknown level; extended Fallacy Checklist item 4
+  accordingly. This targets root cause (missing governance-file
+  access), not just the symptom — the underlying engineering in the
+  proposals was often reasonable, the failure was epistemic framing,
+  not incompetence. Merged the legitimate easy-set definitions into
+  `Tests/Cognitive_Salvage_Layer.md`'s sidecar as pure Payment via
+  Specification (see that file's own Resolution Log); did not merge
+  the medium or hard sets. Open Unknowns 14 → 15 briefly, then AP-033
+  resolved same day like AP-031/AP-032 before it — net Open Unknowns
+  unchanged at 14, AP-033 excluded from the open count per established
+  convention.
 
 - 2026-08-03: **AP-017 Resolved — Payment via Validation.** Three
   simultaneous cold-session Battery runs against v0.33, using
