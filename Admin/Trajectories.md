@@ -16,8 +16,8 @@
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 1/6                                                                 |
 | Verification Ref | Admin/Verification_Gates_LF.md                                      |
-| Last Audit       | 2026-05-23; revised 2026-06-08; revised 2026-06-24; audited 2026-06-26 |
-| Auditor          | Claude — Retrofit/Auditor                                           |
+| Last Audit       | 2026-05-23; revised 2026-06-08; revised 2026-06-24; audited 2026-06-26; revised 2026-08-03 |
+| Auditor          | Claude — Retrofit/Auditor; Claude — Synthesizer, TR-GOV-001 split into `Admin/Hardware_Diversity_Ladder.md` per this file's own Scope Boundary (human-directed), 2026-08-03 |
 | Open Unknowns    | 3                                                                   |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | Medium                                                              |
@@ -327,7 +327,7 @@ activation work is implied until a version's planning phase formally begins.
 | TR-MET-001 | Autonomous micro-meteorite repair swarm — small-scale autonomous units detecting and repairing micro-collision damage to off-world Forge structures/hulls | Proposed mid-session, not yet developed into a capability spec or routed to an owning file. Likely shares the UNK-008 / LT-003 autonomy dependency already tracked for v3/v4. No owning file assigned yet — candidate: `Tests/Leviathan_testing.md` (autonomy testbed) or a future off-world-specific test file. | 2026-07-05 |
 | TR-MET-002 | Reactive-metal (titanium, Zr, Nb, etc.) atmosphere processing — `Operations/Gate_05_Separation_Thermal.md` §9's oxygen-tolerant, precision-gas-free atmosphere doctrine cannot support titanium or similar reactive metals (nitrogen embrittlement, oxygen pickup); would require full argon shielding or true vacuum. Astroid-miner's `Propulsion_Economy_isru/zero_g_fabrication.md` independently specifies Induction Heating + EM Levitation (crucible-free, high-purity, vacuum-native) as a primary technique for exactly this class of metal — confirmed present in the 2026-07-31 companion-repo upload. Per UNK-003 (Cross-repo assumption contracts, Deferred pending Leviathan milestone) and the 2026-07-19 Leviathan_testing.md merge anchor, this is recorded as supporting detail for a v3+ off-world capability, not a resolution to any current terrestrial unknown — see the Gate_05/reactive-metal item still open in that file's sidecar for v0–v2 status. | 2026-07-31 |
 | TR-MET-003 | Dieless wire-drawing experimental configuration — a minimal, salvage-buildable test rig (induction-heated softening zone + differential feed/take-up velocity + downstream cooling; no conventional drawing die) to validate CLF-003 die-wear avoidance for the Gate_05 wire path (SC-004). Aluminum/steel first, titanium later once atmosphere control (SC-009) is addressed. Documented literature performance: 30–54% area reduction per pass on Ti-6Al-4V, up to ~63–85% in optimized lab conditions; success criteria proposed at ≥30% reduction without fracture, ±5–8% diameter variation, several minutes stable continuous operation. This is v1 scope, not v0 — Gate_05's own doctrine defers nozzle/driving-mechanism work until Gen-0 demonstrates stable melt output (SC-004 Resolution Path). Recorded as a concrete future test plan, not authorization to build now. See `Operations/Gate_05_Separation_Thermal.md` SC-004 Driving Mechanism Options for the full mechanism comparison this configuration was selected from. | 2026-07-31 |
-| TR-GOV-001 | Hardware/runtime diversity implementation reference for `Admin/Governance_Migration_Protocol.md` §VII (candidate GOV-008 specification) — a tiered ladder for closing the Hardware/Runtime Diversity requirement §VII.1 currently only declares: Tier 0 (interim logical isolation, microVMs/containers on one host — explicitly insufficient, upgrade-only bridge), Tier 1 (minimal physical diversity — primary workstation + one secondary physical host, different architecture preferred, independent network path, independent power, external human ratification record), Tier 2 (three hosts, stronger architectural diversity, independent power/thermal domains), Tier 3 (full alignment with `Operations/Electronics.md`'s existing TMR diversity doctrine — silicon, firmware, power-path, thermal, and procurement diversity, verified real via that file's EL-007 and 2026-05-09 audit entry). Recorded as an implementation reference for when a second host is actually acquired and configured — **not a claim that any of this exists.** As of 2026-07-31, no second physical host, no independent runtime, and no orthogonal verification system exist anywhere in this repository's operating environment; §VII cannot be marked achieved until that changes. See `Admin/Governance_Migration_Protocol.md` §VII.6 for the explicit warning this trajectory item is paired with. | 2026-07-31 |
+| TR-GOV-001 | Hardware/runtime diversity implementation reference for `Admin/Governance_Migration_Protocol.md` §VII (candidate GOV-008 specification) — full four-tier ladder (Tier 0 interim logical isolation → Tier 1 minimal physical diversity → Tier 2 three-host architectural diversity → Tier 3 full TMR-aligned diversity, reusing `Operations/Electronics.md`'s existing silicon/firmware/power-path/thermal/procurement diversity doctrine) now lives at `Admin/Hardware_Diversity_Ladder.md` (split out 2026-08-03 — this entry previously compressed the full ladder into this table cell, but Trajectories.md's own Scope Boundary excludes "implementation specs for future versions," which a four-tier requirements ladder is). Recorded as an implementation reference for when a second host is actually acquired and configured — **not a claim that any of this exists.** As of 2026-08-03, no second physical host, no independent runtime, and no orthogonal verification system exist anywhere in this repository's operating environment; §VII cannot be marked achieved until that changes. See `Admin/Governance_Migration_Protocol.md` §VII.6 for the explicit warning this trajectory item is paired with. | 2026-07-31 |
 
 *This section holds candidate ideas only. An item graduates out of this table
 when it is either (a) assigned an owning file and registered as a proper
@@ -486,6 +486,27 @@ prose since 2026-06-26 but never registered as a tracked unknown.*
 ---
 
 ### Resolution Log
+
+- 2026-08-03: **TR-GOV-001 split into `Admin/Hardware_Diversity_Ladder.md`,
+  human-directed, approved for integration.** The full four-tier ladder
+  (Tier 0 interim logical isolation → Tier 1 minimal physical diversity →
+  Tier 2 three-host architectural diversity → Tier 3 full TMR-aligned
+  diversity) had been compressed into this table's single TR-GOV-001 cell
+  since 2026-07-31. This file's own Scope Boundary excludes "component
+  taxonomy or implementation specs for future versions" — a four-tier
+  requirements ladder with per-tier minimum configuration, independence
+  properties, and exit triggers is exactly that, and doesn't fit a
+  registry-table cell without either breaking the table's readability or
+  staying too compressed to be useful as a real reference. Split out to
+  a standalone file (same pattern as `Admin/PROBE_INVOCATION.md` and
+  `Admin/BATTERY_SEED.md` — a proper companion document, not a table
+  cell), with TR-GOV-001's entry here reduced to a concise pointer.
+  `Admin/Governance_Migration_Protocol.md` §VII.6's existing cross-
+  reference to "TR-GOV-001" needed no edit — it already pointed at this
+  entry, which now resolves onward via the pointer, so no broken links
+  resulted. No change to Open Unknowns (this was never a tracked unknown
+  — see the table's own note that v0→v1 items "do not carry unknown
+  IDs"). Status/Spec Gates unchanged.
 
 - 2026-07-05 (second entry, same day): **TR-003 logged** (off-world nuclear
   containment architecture) — formalizes a dependency v3's own text had
