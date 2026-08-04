@@ -863,6 +863,18 @@ This becomes governance metadata rather than prose, auditable the same way Truth
 
 ### Resolution Log
 
+- 2026-08-03: **v0.36 — GMP §VII added to Challenge Class 10's
+  high-coupling documents table.** Third of three fixes recommended
+  from the §VII cold Battery pass (the other two — VII.1's ambiguity
+  resolved, VII.3.4/5's GMP-004 cross-reference added — landed in
+  `Admin/Governance_Migration_Protocol.md` v0.10, same session). The
+  cold pass's Class 10 trace showed §VII belonged in this table; it
+  didn't. Added, with the two-level cascade path named (Genesis Phase
+  exit → Post-Exit Monitoring termination → CIR_Gov.md §8.2 treating
+  CIR-VERIFIED transitions as valid). No unknown registered — this is
+  a documentation completeness fix the cold pass identified directly,
+  not a new gap. Open Unknowns unchanged at 14.
+
 - 2026-08-03: **v0.35 — AP-033 registered and resolved same day; Rule 9
   added.** A Copilot proposal series against `Tests/Cognitive_
   Salvage_Layer.md`, produced with no confirmed access to this file or
