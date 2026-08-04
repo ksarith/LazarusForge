@@ -14,8 +14,8 @@
 | Body Stability   | Volatile                                                            |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | `Admin/Verification_Gates_LF.md`                                    |
-| Last Audit       | 2026-06-19; revised through at least 2026-07-05 internally (GMP-005/GMP-009 dated later than this header — header was not kept current, see Resolution Log); Claude — GOV-013 cross-reference added, 2026-07-16; Claude — GMP-005/GMP-009 resolved, Track A/B redefined by constitutional impact (human-directed), 2026-07-17; Claude — GMP-011/GMP-012 registered, GMP-004 GPG precedent noted, GMP-006/007/008 consolidation noted, Lessons Learned populated, Open Unknowns count corrected, GMP-003 date typo fixed (human-directed, external review reviewed and scoped), 2026-07-25; Claude — §VI Epistemic Quorum Doctrine added, GMP-003 partially mitigated, GMP-013 registered (human-directed, external synthesis reviewed and rescoped away from GOV-008 conflation), 2026-07-26; Claude — Polish pass on EQD integration per external review, GOV-008 mirror note added (human-directed), 2026-07-27; Claude — Quorum Compliance Trend subsection added to §VI, GMP-013 updated as its second schema consumer (human-directed), 2026-07-26; Claude — §VII Bootstrap Quorum Doctrine added as a candidate GOV-008 specification, drafted to satisfy the higher governance-independence bar §VI's own Non-goal clause distinguishes from EQD's epistemic-independence bar (human-directed, external draft reviewed and refined), 2026-07-31; Claude — Skeptic/Auditor review of §VII integrated: substrate-gap warning added to VII.6 (hardware diversity currently declarable, not achieved), four near-term action items recorded, GMP-011 interim rule adopted from candidate to operative, TR-GOV-001 hardware-ladder reference parked in Trajectories.md with explicit non-claim language (human-directed, external review and implementation guidance verified against Electronics.md TMR doctrine before integration), 2026-07-31 |
-| Auditor          | ChatGPT — Skeptic/Auditor; Gemini — Skeptic/Auditor; Grok — Skeptic/Auditor; Claude — Synthesizer; Claude — GMP-009 cross-referenced to GOV-013 (human-directed), 2026-07-16; Claude — GMP-005/GMP-009 resolved (multi-agent proposal, human-directed), 2026-07-17; Claude — Synthesizer/Auditor, external review triage (human-directed), 2026-07-25; Claude — Synthesizer/Auditor, EQD adoption with GOV-008 conflation caught and corrected (human-directed), 2026-07-26; Claude — Synthesizer/Auditor, polish pass (human-directed), 2026-07-27; Claude — Synthesizer/Auditor, Quorum Compliance Trend added, GOV-008 conflation re-checked and explicitly guarded a second time (human-directed), 2026-07-26; Claude — Synthesizer/Auditor, §VII drafted from an external candidate spec, verified against GOV-008's actual sidecar Resolution Path (`Archive/Logs/Governance_Charter_Changelog.md`) and §VI's Non-goal clause before integration, human-directed, 2026-07-31 |
+| Last Audit       | 2026-06-19; revised through at least 2026-07-05 internally (GMP-005/GMP-009 dated later than this header — header was not kept current, see Resolution Log); Claude — GOV-013 cross-reference added, 2026-07-16; Claude — GMP-005/GMP-009 resolved, Track A/B redefined by constitutional impact (human-directed), 2026-07-17; Claude — GMP-011/GMP-012 registered, GMP-004 GPG precedent noted, GMP-006/007/008 consolidation noted, Lessons Learned populated, Open Unknowns count corrected, GMP-003 date typo fixed (human-directed, external review reviewed and scoped), 2026-07-25; Claude — §VI Epistemic Quorum Doctrine added, GMP-003 partially mitigated, GMP-013 registered (human-directed, external synthesis reviewed and rescoped away from GOV-008 conflation), 2026-07-26; Claude — Polish pass on EQD integration per external review, GOV-008 mirror note added (human-directed), 2026-07-27; Claude — Quorum Compliance Trend subsection added to §VI, GMP-013 updated as its second schema consumer (human-directed), 2026-07-26; Claude — §VII Bootstrap Quorum Doctrine added as a candidate GOV-008 specification, drafted to satisfy the higher governance-independence bar §VI's own Non-goal clause distinguishes from EQD's epistemic-independence bar (human-directed, external draft reviewed and refined), 2026-07-31; Claude — Skeptic/Auditor review of §VII integrated: substrate-gap warning added to VII.6 (hardware diversity currently declarable, not achieved), four near-term action items recorded, GMP-011 interim rule adopted from candidate to operative, TR-GOV-001 hardware-ladder reference parked in Trajectories.md with explicit non-claim language (human-directed, external review and implementation guidance verified against Electronics.md TMR doctrine before integration), 2026-07-31; Claude — Skeptic/Auditor cold pass (independent instance, no prior session context — see `Admin/BATTERY_SEED.md`-style bundling) findings integrated: VII.1's "physical/logical isolation" ambiguity resolved to state unambiguously that the v1 bar is physical hardware diversity, logical-only does not satisfy it; VII.3.4/5 gained an explicit GMP-004 cross-reference naming the ratification-authentication gap they inherit (human-directed, cold-pass findings verified against source before integration), 2026-08-03 |
+| Auditor          | ChatGPT — Skeptic/Auditor; Gemini — Skeptic/Auditor; Grok — Skeptic/Auditor; Claude — Synthesizer; Claude — GMP-009 cross-referenced to GOV-013 (human-directed), 2026-07-16; Claude — GMP-005/GMP-009 resolved (multi-agent proposal, human-directed), 2026-07-17; Claude — Synthesizer/Auditor, external review triage (human-directed), 2026-07-25; Claude — Synthesizer/Auditor, EQD adoption with GOV-008 conflation caught and corrected (human-directed), 2026-07-26; Claude — Synthesizer/Auditor, polish pass (human-directed), 2026-07-27; Claude — Synthesizer/Auditor, Quorum Compliance Trend added, GOV-008 conflation re-checked and explicitly guarded a second time (human-directed), 2026-07-26; Claude — Synthesizer/Auditor, §VII drafted from an external candidate spec, verified against GOV-008's actual sidecar Resolution Path (`Archive/Logs/Governance_Charter_Changelog.md`) and §VI's Non-goal clause before integration, human-directed, 2026-07-31; Claude — Synthesizer, cold-pass corrective merge (human-directed), 2026-08-03 |
 | Open Unknowns    | 10                                                                  |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | High                                                                |
@@ -525,7 +525,7 @@ A compliant quorum must satisfy all of the following simultaneously — partial 
 | Architectural Diversity | ≥2 distinct model families/providers/architectures — no single-provider monoculture |
 | Role Separation | ≥1 agent dedicated to skeptical/adversarial review that cannot also hold execution authority on the same action |
 | Independent Review Capability | Every agent class can perform independent skeptical review of every other agent class's output |
-| **Hardware/Runtime Diversity** | ≥2 distinct runtime environments or hardware hosts. Logical separation is acceptable as an interim measure only if physical diversity is not yet available, and must be upgraded to physical/logical isolation before v1. **This is the requirement §VI's quorum structurally cannot meet** — advisory chat sessions run on infrastructure controlled by a single operator, not independent hardware/runtime hosts. |
+| **Hardware/Runtime Diversity** | ≥2 distinct runtime environments or hardware hosts. Logical separation (distinct containers, microVMs, or processes with strict namespace/cgroup isolation) is acceptable as an interim measure only if physical diversity is not yet available, and must be upgraded to physical hardware diversity — not merely re-confirmed as logical — before v1. **Disambiguated 2026-08-03 (Skeptic/Auditor cold pass, human-directed):** the phrase "physical/logical isolation" previously used here for the v1 target was genuinely ambiguous — it could be read as "physical OR logical, either satisfies v1" as easily as the intended "physical is the real v1 bar, logical is interim-only." That ambiguity sat directly on the one requirement this section exists to add beyond §VI, which is exactly where it could least afford to be unclear. The v1 bar is physical hardware diversity, full stop; logical-only separation (Tier 0 in `Admin/Trajectories.md` TR-GOV-001's hardware diversity ladder) does not satisfy this row at v1 regardless of how strong the logical isolation is. **This is the requirement §VI's quorum structurally cannot meet** — advisory chat sessions run on infrastructure controlled by a single operator, not independent hardware/runtime hosts. |
 | Non-Simulatability | Quorum membership and outputs must be independently verifiable by a human operator or an orthogonal system, so a single compromised agent cannot forge the entire quorum |
 | Human Ratification | Explicit human confirmation that the quorum is genuine, not simulated, and meets every criterion above |
 
@@ -551,6 +551,8 @@ The quorum is achieved only when all of the following are true and recorded:
 3. No single agent or model family holds more than 50% of the decision weight on any constitutional-class action.
 4. A human operator has issued a signed or otherwise externally recorded ratification stating the quorum is genuine and not simulated.
 5. The ratification record is stored outside the runtime session of the agents being ratified, per the Genesis Phase Protocol's role-separation rules (`Admin/Governance_Charter.md`).
+
+**GMP-004 cross-reference (added 2026-08-03, Skeptic/Auditor cold pass, human-directed):** items 4 and 5 above inherit GMP-004's already-registered, already-unenforced ratification-authentication gap in full — GMP-004 names ratification-record forgery as "the highest-risk attack vector against the Tier 1 amendment process," and no enforcement mechanism exists yet beyond GMP-004's own interim GPG-signing precedent. This section did not previously make that inheritance visible: a "signed or otherwise externally recorded" ratification for Genesis Phase exit — arguably the highest-stakes single governance transition in this repository — was specified without pointing at the exact unresolved vulnerability it depends on. It still isn't resolved here; this cross-reference exists so a future reader (or auditor) checking VII.3's readiness doesn't have to separately rediscover that items 4 and 5 are only as strong as GMP-004 currently is.
 
 ### VII.4 Verification & Independence Criteria
 
@@ -1266,6 +1268,38 @@ Claude — Synthesizer/Auditor, human-directed, 2026-07-26.*
 ---
 
 ### Resolution Log
+
+- 2026-08-03: **v0.10 — §VII cold Battery pass integrated (two of
+  three findings; the third parked for later).** A Skeptic/Auditor
+  cold-session pass against §VII + `Admin/Governance_Charter.md`
+  (bundled via the real cold-session tooling, ten-class Adversarial
+  Challenge Battery applied, checked exhaustively against source
+  before anything was trusted — every specific claim it made verified
+  accurate) surfaced ten findings; two were acted on here. (1) VII.1's
+  Hardware/Runtime Diversity row previously said logical isolation
+  "must be upgraded to physical/logical isolation before v1" — the
+  slash was genuinely ambiguous, readable as either "physical is the
+  real bar" or "physical OR logical satisfies v1," sitting directly on
+  the one requirement this section exists to add beyond §VI. Resolved
+  unambiguously: the v1 bar is physical hardware diversity; logical-
+  only (Tier 0 in `Admin/Trajectories.md` TR-GOV-001's ladder) does not
+  satisfy it regardless of isolation strength. (2) VII.3.4/5's
+  ratification-recording requirements inherited GMP-004's already-
+  registered, already-unenforced forgery vulnerability without saying
+  so — added an explicit cross-reference naming that inheritance,
+  without resolving GMP-004 itself. Not yet done: adding §VII to
+  `Admin/Auditor_Protocols.md`'s Challenge Class 10 high-coupling
+  documents table (the pass's third concrete recommendation) — queued
+  as the next action, not forgotten. §VII's ambiguous-decision-weight
+  question for coupled orchestration architectures (Class 5) and the
+  vendor-diversity-vs-epistemic-diversity conflation risk (Class 9) are
+  both logged as genuine open findings, not yet actioned — this file's
+  own Open Unknowns count is unaffected since neither was assigned a
+  GMP- ID by the cold instance (it correctly declined to, having no
+  confirmed sidecar/registry access — same discipline established via
+  AP-033/Rule 9 elsewhere this session). §VII remains un-ratified;
+  this pass improved the candidate text, it did not clear it for
+  ratification.
 
 - 2026-07-31: **v0.9 — Skeptic/Auditor review of §VII integrated.** An
   external review of the v0.8 candidate state was checked against
