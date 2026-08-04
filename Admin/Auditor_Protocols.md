@@ -1,5 +1,5 @@
 # Auditor_Protocols.md
-**Version 0.34**
+**Version 0.35**
 
 ## File State
 
@@ -10,12 +10,12 @@
 | Spec Gates       | 4/6 (G1, G3, G4, G6 clear — G3 cleared 2026-08-03 via AP-017 Resolved; G5 conditional on cross-ref fixes below; G2 N/A — no physical/quantitative claims of its own) |
 | Verification Ref | Admin/Verification_Gates_LF.md                                      |
 | Last Audit       | 2026-08-02                                                          |
-| Auditor          | Claude — Synthesizer/Auditor, human-directed, 2026-08-03: **AP-017 Resolved** — three cold-session Battery instances (Grok, ChatGPT, Gemini) checked exhaustively against v0.33 source; Grok and ChatGPT qualified cleanly, Gemini disqualified for a fabricated "Gate 3 self-contradiction" (a misreading of "3/6" as "Gate 3 is clear") plus an ID-collision from assigning unknown numbers without sidecar access. Combined with instances already on record, the 2026-08-02 acceptance criteria are met (3 of 3 clean, cross-model at minimum satisfying level, missed-finding and zero-fabrication criteria both met). Spec Gates 3/6 → 4/6, Gate 3 status rewritten to Clear (the first time this line has said so without an immediate caveat — it was wrong twice before). Open Unknowns 15 → 14; prior: AP-017 formal acceptance criteria defined, `Admin/BATTERY_SEED.md` created (v0.33); AP-007 partial implementation (v0.32) — see `Archive/Logs/Auditor_Protocols_Logs.md` Resolution Log for full audit history. |
+| Auditor          | Claude — Synthesizer/Auditor, human-directed, 2026-08-03: **AP-033 registered and resolved same day; Rule 9 added.** A Copilot proposal series against `Tests/Cognitive_Salvage_Layer.md`, produced with no confirmed access to this file, declared 16 real unknowns "CLOSED" by methodology alone and mis-enumerated the unknown set itself (a real entry omitted, a nonexistent one invented). A second agent with confirmed access (Grok) independently diagnosed every violation correctly. Added Rule 9 (Resolution Claims Require Governance Access), generalizing Rule 8 one level down — from file-level Status/Gates to individual-unknown closure claims; extended Fallacy Checklist item 4 accordingly. Sidecar SHA-256 refreshed. Open Unknowns unchanged at 14 (AP-033 excluded from count, resolved same day). Prior: AP-017 Resolved (v0.34); AP-007 partial implementation (v0.32) — see `Archive/Logs/Auditor_Protocols_Logs.md` Resolution Log for full audit history. |
 | Open Unknowns    | 14                                                                  |
 | Active Disputes  | 1                                                                   |
 | Highest Risk     | High                                                                |
 | Sidecar Link     | Archive/Logs/Auditor_Protocols_Logs.md#auditor-notes--unknowns     |
-| Sidecar SHA-256  | `1d5b57e3be94cc7e9f41f81f274df56aff1d6b7658c919770a334902d47b38e6` as of 2026-08-03 (AP-017 Resolved) — heuristic integrity check, not a cryptographic guarantee; see §Sidecar Format |
+| Sidecar SHA-256  | `1a6254fdf977c119b5b3646c5803c5d8a2a57e327a10971434c65e42effe181b` as of 2026-08-03 (AP-033 registered/resolved, Rule 9 added) — heuristic integrity check, not a cryptographic guarantee; see §Sidecar Format |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
 **Version String Registry** (self-referential citations outside File State — update on every version bump; required per `Admin/File_Template.md` §Self-Referential Version Strings):
@@ -402,7 +402,7 @@ Not a standalone auditor class — a mode declaration for agents contributing in
 
 All contributors — human and autonomous — must declare their operating role before contributing:
 
-> *"Operating as [Role] per Auditor_Protocols.md v0.34"*
+> *"Operating as [Role] per Auditor_Protocols.md v0.35"*
 
 **Valid roles:** Skeptic/Auditor | Systems/Auditor | Evidence/Auditor | Ethical/Auditor | Synthesizer | Engineer | Connective Tissue
 
@@ -510,7 +510,7 @@ Does the design ignore mechanical resistance, thermal losses, fluid drag, or int
 Does any recovery, recycling, or bootstrapping step consume more than it produces? Justify as enabling investment or flag. Recovery that costs more than it recovers is reduction dressed as progress.
 
 **4. Semantic Drift**
-Has a term changed meaning between documents without a documented revision? Cross-check against `Architecture/Forge_flow.md` as the reference standard. Also check File State's `Status`/`Body Stability`/`Spec Gates` values against the file's own audit history — a contribution that silently advances these, or that redefines Spec Gates 1–6 locally instead of deferring to `Admin/Verification_Gates_LF.md`, is Semantic Drift on the file's own governing vocabulary. See AI Contribution Protocols Rule 8 (AP-032).
+Has a term changed meaning between documents without a documented revision? Cross-check against `Architecture/Forge_flow.md` as the reference standard. Also check File State's `Status`/`Body Stability`/`Spec Gates` values against the file's own audit history — a contribution that silently advances these, or that redefines Spec Gates 1–6 locally instead of deferring to `Admin/Verification_Gates_LF.md`, is Semantic Drift on the file's own governing vocabulary. See AI Contribution Protocols Rule 8 (AP-032). The same check applies one level down: a contribution that marks an individual unknown "CLOSED"/"Resolved," or that structures a proposal as though defining a mechanism is the same act as validating it, is Semantic Drift on "Payment via Specification" vs. actual resolution — see Rule 9 (AP-033).
 
 **5. Scope Creep Disguised as Refinement**
 Does a revision quietly expand claimed capabilities beyond what the current version can demonstrate? New capabilities belong in `Admin/Trajectories.md`.
@@ -600,6 +600,8 @@ Agents disagreeing on epistemic state classification for a claim not covered by 
 **Rule 7 — Repository Structure Awareness:** The repository uses folder-based structure (Admin/, Architecture/, Operations/, Tests/). Legacy flat filenames are aliases documented in the Rename Registry in `Discovery.md`. Use canonical folder-prefixed paths in all new contributions.
 
 **Rule 8 — Gate/Status Self-Attestation Prohibition (AP-032):** No contribution may advance a file's `Status`, `Body Stability`, or `Spec Gates` value. These fields change only via an audit event logged by a different agent, citing the specific canonical gate criteria met (`Admin/Verification_Gates_LF.md`). A contribution that arrives with these fields already advanced — or with a locally-invented gate category not defined in `Verification_Gates_LF.md` — is treated as unaudited regardless of its stated value, and the fields are reverted to the file's actual last-audited state before anything else in the contribution is evaluated. See AP-032 in the sidecar for the three same-session instances (`Operations/Energy.md`, `Operations/Gate_02_Triage.md` §XII, `Operations/Electronics.md`) that established this as a pattern rather than a one-off.
+
+**Rule 9 — Resolution Claims Require Governance Access (AP-033):** No contribution may mark, or by its structure imply, that any unknown (GH-, EL-, EV-, TS-, AP-, GOV-, or any other sidecar series) has advanced toward Resolved/Closed status unless the contributing agent had confirmed access to this file's own Resolution Taxonomy at the time of writing. Without that access, proposed closure mechanisms — formulas, artifacts, predicates, thresholds, or procedures — must be framed only as candidate methodology, never as status: no "Status: CLOSED," no governance patch implying resolution, no dependency graph terminating in "safe" or "resolved." This targets the cause, not just the symptom Rule 8 catches: an agent reasoning coherently from an incomplete constitutional picture — missing the Provisional State Mandate ([EF-0.0] §3), the provenance ceiling rule, and the actual definition of Payment via Specification below — will produce confident-sounding closures that are Epistemic Integrity Violations regardless of how sound the underlying engineering looks. See AP-033 for the case that established this: a proposal series that declared 16 real GH-/CSL-A unknowns "CLOSED" (including the file's own named load-bearing assumption) purely by describing methodology, with zero empirical work behind any of them, and separately mis-enumerated the unknown set itself (omitted a real entry, invented a nonexistent one) — a direct consequence of working from a partial context payload with no governance-file access at all.
 
 **Trust the process, not the predecessor.**
 
@@ -1138,7 +1140,7 @@ Any cross-repo dependency must be documented in both repositories with a stated 
 - Sign-off statement
 
 **Standard sign-off:**
-> *"Verified under Auditor_Protocols v0.34 — gates [list] cleared, gates [list] blocked ([reason]), [N] unknowns logged, [N] overrides. Adversarial classes applied: [list]. Auditor: [Role/Agent]"*
+> *"Verified under Auditor_Protocols v0.35 — gates [list] cleared, gates [list] blocked ([reason]), [N] unknowns logged, [N] overrides. Adversarial classes applied: [list]. Auditor: [Role/Agent]"*
 
 ---
 
@@ -1311,7 +1313,32 @@ the document level, not per-unknown entries.
 Full history: `Archive/Logs/Auditor_Protocols_Logs.md` (relocated out
 of this file at v0.26 — add new entries there, not here).
 
-Most recent: v0.34 (2026-08-03) — **AP-017 Resolved.** Three cold
+Most recent: v0.35 (2026-08-03) — **AP-033 registered and resolved
+same day; Rule 9 added.** A Copilot proposal series against
+`Tests/Cognitive_Salvage_Layer.md`, produced with no confirmed access
+to `Admin/Auditor_Protocols.md` or the target's own sidecar, declared
+16 real GH-series unknowns and CSL-Axx assumptions "CLOSED" — including
+the file's own explicitly named load-bearing assumption — by
+describing candidate closure methodology, with zero empirical work
+behind any of them. It separately mis-enumerated the file's own
+unknown set: omitted a real, existing entry (GH-005) and invented a
+nonexistent one ("GH-014") to keep the count matching. A second agent
+(Grok), working with confirmed governance-file access, independently
+and correctly diagnosed every violation against EF-0.0 §3's Provisional
+State Mandate, the provenance ceiling rule, and Rule 8/AP-032 —
+unprompted — and produced a clean, properly-scoped rewrite restricted
+to genuine Payment via Specification. This confirmed the fix was never
+about willingness; it was about access. Added Rule 9 — Resolution
+Claims Require Governance Access — generalizing Rule 8 one level down,
+from file-level Status/Gates fields to individual-unknown closure
+claims across any sidecar series. Extended Fallacy Checklist item 4
+accordingly. Merged the legitimate easy-set definitions into
+`Tests/Cognitive_Salvage_Layer.md`'s sidecar as pure Payment via
+Specification — no status changes, no Open Unknowns decrement; see
+that file's own Resolution Log. The medium and hard sets were not
+merged.
+
+Prior: v0.34 (2026-08-03) — **AP-017 Resolved.** Three cold
 sessions run against v0.33 using `Admin/BATTERY_SEED.md`'s prompt for
 the first time (Grok, ChatGPT, Gemini). Grok and ChatGPT checked
 clean against source, zero fabrication. Gemini's headline finding —
@@ -1417,7 +1444,7 @@ cycles.
 
 ## Status
 
-**Version 0.34 — Draft, Body Stability Transitional.** Full audit history: `Archive/Logs/Auditor_Protocols_Logs.md` Resolution Log. This section previously carried a duplicate, stale copy of early version history (v0.14 through v0.16) that was never updated after the file moved past those versions — trimmed 2026-07-23 as pure duplication of content the archive's Resolution Log already carries in full; see that log's v0.28 entry.
+**Version 0.35 — Draft, Body Stability Transitional.** Full audit history: `Archive/Logs/Auditor_Protocols_Logs.md` Resolution Log. This section previously carried a duplicate, stale copy of early version history (v0.14 through v0.16) that was never updated after the file moved past those versions — trimmed 2026-07-23 as pure duplication of content the archive's Resolution Log already carries in full; see that log's v0.28 entry.
 
 **What must remain constant:**
 
