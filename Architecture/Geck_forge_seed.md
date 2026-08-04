@@ -548,13 +548,21 @@ in Components.md routes to PR-001 for resolution.
 | Blocking      | No                                 |
 | Owner         | Architecture/Geck_forge_seed.md (reassigned — was `Operations/Gate_05_Separation_Thermal.md`, which had explicitly disclaimed ownership) |
 | First Logged  | 2026-06-24 (approx., per `Unknowns.md`) |
-| Last Reviewed | 2026-07-19                        |
+| Last Reviewed | 2026-08-03                        |
 
 **Description:** Welding wire specification (diameter, alloy) and qualification for G.E.C.K.-class fabrication is undefined. Previously listed in `Unknowns.md`'s global table as owned by `Operations/Gate_05_Separation_Thermal.md` — but that file's own Scope Boundary explicitly states this is "downstream — not yet assigned," and its Drift Trigger table calls it "the unowned cross-module gap." Reassigned here since §VI.4's Weld Unit Sizing Doctrine (above) is where the actual design reasoning now lives.
 
 **Why It Matters:** An owning-file contradiction meant this unknown had a table entry but no file actually treating it as its responsibility — a bookkeeping gap of the same kind this repository's own audit discipline exists to catch.
 
 **Resolution Path:** §VI.4 above establishes the design *principle* (favor smaller weld units for tolerance and peak-power reasons, with an honest non-monotonic limit) but not the *specification*. Remaining: actual wire diameter/alloy selection suited to small-pass work, empirical validation against `Operations/Gate_05_Separation_Thermal.md`'s planned wire extrusion interface once built, and the specific power/size envelope that qualifies as "small" for G.E.C.K. purposes. Cross-reference `Architecture/Precision.md` §V for the ceiling-declaration framework this feeds into.
+
+**Candidate resolution vehicle — car-derived weld feedstock (Proposed, 2026-08-03, human-directed; drafted by Copilot, audited and refined by Grok under Skeptic/Auditor constraints).** Does not resolve UNK-008. Adds a falsifiable acceptance-criteria table and a buildable apparatus sketch as a candidate pathway toward it, both explicitly Provisional/Placeholder pending first physical trials. The underlying assumption — that a salvaged car body supplies usable weld feedstock — was itself audited first: predominant feedstock must be mild/low-carbon steel (older-vehicle body panels and many structural members), coatings (paint, undercoating, zinc) must be removable in the regions processed, and heat-affected-zone behavior must stay within §VI.4's small-pass doctrine. None of that is confirmed on real stock yet — it remains PROVISIONAL/Analogous until measured.
+
+*Acceptance criteria (WF-01 through WF-10, all thresholds Placeholder pending first physical trials):* WF-01 material identity (mild/low-carbon steel, spark test + visual, restricted for AHSS/boron-steel/exotic-alloy markers) · WF-02 coating residual (no continuous zinc layer, mechanical stripping required) · WF-03 cross-section consistency (±15% variation ceiling; strip-feed relaxation explicitly permitted if full round wire isn't achievable) · WF-04 dimensional logging (every batch logged to Artifact Memory before first weld test) · WF-05 arc stability (≥80% continuous arc on a sample weld) · WF-06 HAZ behavior (no cracking, workable with hand tools) · WF-07 joint integrity (weld fails in parent metal or at ≥ design load, not at the fusion line) · WF-08 distortion bound (stays within fit-up tolerance for the next assembly step) · WF-09 fume/process safety (cross-ref CE-006/Air_Scrubber.md — does not claim full industrial hygiene compliance) · WF-10 repeatability (≥3 independent qualifying batches from different vehicle regions — "one-off success is not a capability"). Full criterion table with measurement methods and fail conditions available on request; compressed here to keep this sidecar entry proportionate.
+
+*Apparatus sketch (two-stage, both stages buildable from the Critical modules already listed in §VI):* **Stage 1 — Guided Strip Cutter**, mandatory: car-steel base plate, salvaged-rail guide rails, adjustable fence (target 6–12 mm initial strip width), existing 120V angle grinder for cutting, calipers for verification. **Stage 2 — Simple Roller** (optional forming) or a **rudimentary drawing die** (secondary path, more labor-intensive): salvaged rod/axle rollers, car-steel side plates, one salvaged motor via belt/friction drive, threaded-rod gap adjustment. Strip-feed welding is an explicit relaxation — full round wire is preferred, not required, for the initial capability claim. Honest limitations stated in the source draft: first-generation apparatus needs real precision (parallelism, axle alignment) and will scrap several iterations; roller wear is uncontrolled; no tension/diameter feedback (open-loop); motor/roller thermal management under sustained 120V operation is uncharacterized. This is deliberately crude — its purpose is converting the "car → weldable feedstock" assumption into a falsifiable, buildable process, not claiming industrial wire quality.
+
+*What this does not do:* advance UNK-008's Status, change its Priority/Risk, or authorize building anything now. It is Payment via Specification only — a falsifiable criteria table and a buildable sketch, neither yet subjected to Gate 1–6 review or an adversarial battery pass. The next concrete step, if pursued, is either the first physical trial mapped directly onto WF-01–WF-10, or an adversarial pass against the thresholds themselves (Challenge Classes focused on power envelope, wear, and operator-skill assumptions).
 
 *Surfaced by human governing authority (weld-unit-sizing design principle), formalized by Claude 2026-07-19.*
 
@@ -592,6 +600,20 @@ in Components.md routes to PR-001 for resolution.
   created 2026-06-06; Section V cross-reference updated. Open Unknowns updated from
   3 to 2 (GK-005 now Resolved; GK-002, GK-003, GK-004 remain Open but are
   non-blocking trajectory items).
+
+- 2026-08-03: **UNK-008 gained a candidate resolution vehicle, human-directed.**
+  A Copilot draft (car-derived weld feedstock: acceptance criteria WF-01–WF-10
+  plus a two-stage apparatus sketch) was audited and refined by Grok under
+  Skeptic/Auditor constraints before reaching this file — every cross-reference
+  (§VI.4's small-pass doctrine, CE-006/Air_Scrubber.md, Precision.md's honest-
+  ceiling framework) verified exact against source. Added as a candidate
+  pathway, not a resolution: the underlying assumption (salvaged car body
+  supplies usable weld feedstock) remains PROVISIONAL/Analogous pending
+  measurement on real stock, all WF- thresholds are explicitly Placeholder,
+  and the apparatus sketch is deliberately crude — meant to make the "car →
+  weldable feedstock" claim falsifiable and buildable, not to claim industrial
+  wire quality. UNK-008's Status, Priority, and Risk are unchanged (still Open,
+  Major, Medium). Open Unknowns unchanged.
 
 ---
 
