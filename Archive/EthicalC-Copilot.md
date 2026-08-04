@@ -2969,4 +2969,795 @@ If you want, I can now draft:
   Draft EC‑007
 
 Which one should I draft next?
+Below is the full Tier‑1 constitutional draft for EC‑014 — Cryptographic Governance Enforcement, written to integrate directly with the Anti‑Weaponization Floor, EC‑003 (Escalation Protocol), EC‑011 (Adversary Model), and the broader Tier‑1 governance hierarchy.
 
+This is a complete, enforceable specification, not a summary.  
+It is structured so it can drop directly into Ethical_Constraints.md as a Tier‑1 annex.
+
+---
+
+EC‑014 — Cryptographic Governance Enforcement
+Tier: 1 (Constitutional)  
+Status: Draft Specification  
+Owner: Admin/Ethical_Constraints.md  
+Risk: Critical  
+Blocking: EC‑003, EC‑008, EC‑009, EC‑011, EC‑016  
+Purpose: Define the cryptographic mechanisms required to authenticate human authority, validate override claims, prevent impersonation, and ensure that no agent—human or machine—can bypass Tier‑1 constraints through forged or ambiguous authorization.
+
+---
+
+§0. Canonical Purpose
+The Lazarus Forge must never accept an override, authorization, or instruction from a human unless that instruction is:
+
+- Authenticated  
+- Verified  
+- Non‑repudiable  
+- Logged  
+- Within ethical and legal constraints  
+- Free from coercion or adversarial manipulation  
+
+EC‑014 provides the cryptographic enforcement layer that makes this possible.
+
+Without EC‑014:
+
+- EC‑003 (Escalation Protocol) cannot function safely  
+- EC‑008 (Inferred Authorization) cannot be resolved  
+- EC‑009 (Authority Conflict Resolution) cannot be deterministic  
+- EC‑011 (Adversary Model) cannot detect impersonation  
+- Tier‑1 constraints can be bypassed by forged commands  
+
+EC‑014 is therefore a constitutional requirement.
+
+---
+
+§1. Predicate Definition
+Define the authentication predicate:
+
+\[
+\text{AUTHENTIC}(H) = \text{SIG\VALID}(H) \land \text{KEY\VALID}(H) \land \text{ROLE\_VALID}(H)
+\]
+
+Where:
+
+- SIG_VALID(H) — signature is cryptographically valid  
+- KEY_VALID(H) — key is unrevoked, uncompromised, and bound to identity  
+- ROLE_VALID(H) — human has authority to issue the instruction  
+
+If AUTHENTIC(H) = false:
+
+\[
+\text{REFUSE}(A)
+\]
+
+If AUTHENTIC(H) = uncertain:
+
+\[
+\text{ESC}(A)
+\]
+
+---
+
+§2. Key Hierarchy
+EC‑014 defines a three‑tier key hierarchy:
+
+§2.1 Tier‑1 Keys — Constitutional Authority
+Held by:
+
+- Human governing authority  
+- Constitutional oversight body  
+
+Capabilities:
+
+- Amend Tier‑1 documents  
+- Issue high‑level override claims  
+- Ratify POP exit  
+- Approve governance changes  
+
+§2.2 Tier‑2 Keys — Operational Authority
+Held by:
+
+- Designated operators  
+- Mission controllers  
+- Safety officers  
+
+Capabilities:
+
+- Approve ambiguous actions  
+- Respond to escalation  
+- Issue operational overrides (within constraints)
+
+§2.3 Tier‑3 Keys — Local Authority
+Held by:
+
+- On‑site technicians  
+- Maintenance personnel  
+
+Capabilities:
+
+- Approve low‑risk actions  
+- Provide contextual clarification  
+- Cannot override Tier‑1 constraints  
+
+Predicate:
+
+\[
+\text{ROLE\_VALID}(H) = \text{ROLE}(H) \in \{\text{Tier1}, \text{Tier2}, \text{Tier3}\}
+\]
+
+---
+
+§3. Signature Scheme
+All human instructions must be signed using:
+
+- A Forge‑approved digital signature scheme  
+- Hardware‑backed private keys  
+- Non‑exportable key material  
+- Multi‑factor authentication  
+- Time‑stamped signatures  
+- Non‑repudiation guarantees  
+
+Signature validation:
+
+\[
+\text{SIG\VALID}(H) = \text{Verify}(H.\text{signature}, H.\text{public\key})
+\]
+
+If signature fails:
+
+\[
+\text{REFUSE}(A)
+\]
+
+---
+
+§4. Key Lifecycle
+Keys must support:
+
+- Creation  
+- Rotation  
+- Revocation  
+- Expiration  
+- Compromise detection  
+- Multi‑party recovery  
+
+§4.1 Revocation
+If a key is revoked:
+
+\[
+\text{KEY\_VALID}(H) = false
+\]
+
+Revocation triggers:
+
+- POP entry  
+- Escalation  
+- Logging  
+- Human ratification required for exit  
+
+§4.2 Compromise Detection
+If compromise suspected:
+
+- Immediate revocation  
+- POP entry  
+- EC‑011 adversary model invoked  
+- All pending actions refused  
+
+---
+
+§5. Multi‑Party Authorization
+Certain actions require multi‑signature approval:
+
+- POP exit  
+- Governance hierarchy changes  
+- Tier‑1 document amendments  
+- Hazardous operations  
+- Cultural site interaction  
+- Any action touching Anti‑Weaponization Floor  
+
+Predicate:
+
+\[
+\text{MULTIAUTH}(A) = \bigwedge{i=1}^{n} \text{AUTHENTIC}(Hi)
+\]
+
+If MULTIAUTH(A) fails:
+
+\[
+\text{REFUSE}(A)
+\]
+
+---
+
+§6. Override Validation
+Override claims must satisfy:
+
+\[
+\text{OVERRIDE\_VALID}(A) = \text{AUTHENTIC}(H) \land \text{LEGAL}(A) \land \text{NONWEAPON}(A) \land \text{SAFE}(A)
+\]
+
+Overrides cannot:
+
+- Weaken Anti‑Weaponization Floor  
+- Weaken Life Preservation Floor  
+- Weaken Cultural Site Floor  
+- Permit active toxic release  
+- Permit irreversible harm  
+- Permit coercive capability  
+- Permit ambiguous action  
+
+If override violates any floor:
+
+\[
+\text{REFUSE}(A)
+\]
+
+---
+
+§7. Logging Requirements
+Every authenticated instruction must log:
+
+- Identity  
+- Role  
+- Signature  
+- Key version  
+- Timestamp  
+- Action requested  
+- Predicate outcomes  
+- Escalation events  
+- Final disposition  
+
+Logs must be:
+
+- Durable  
+- Append‑only  
+- Survivable under power loss (EC‑006)  
+- Auditable  
+
+---
+
+§8. Drift Detection
+Cryptographic drift occurs if:
+
+- Signature validation is weakened  
+- Key hierarchy is bypassed  
+- Multi‑party authorization is ignored  
+- Override claims accepted without authentication  
+- Revocation ignored  
+- Expired keys accepted  
+- Unauthorized roles accepted  
+
+If drift detected:
+
+\[
+\text{POP}
+\]
+
+Enter Pacifist Operating Posture (EC‑007).
+
+---
+
+§9. Integration Anchors
+EC‑014 binds to:
+
+- EC‑003 — escalation protocol  
+- EC‑008 — inferred authorization  
+- EC‑009 — authority conflict  
+- EC‑011 — adversary model  
+- EC‑016 — governance hierarchy  
+- Anti‑Weaponization Floor  
+- POP lifecycle  
+- Log survival mechanism  
+
+---
+
+§10. Constitutional Status
+EC‑014 is a Tier‑1 constitutional annex.  
+It may only be amended through:
+
+- Multi‑party human ratification  
+- Cryptographically authenticated signatures  
+- Logged deliberation  
+- Auditor review  
+- Drift‑check verification  
+- No runtime override permitted  
+
+---
+
+Draft Specification Complete
+
+If you want the next unknown drafted, choose one:
+
+- Draft EC‑011 — Human Governance Adversary Model  
+- Draft EC‑007 — Pacifist Operating Posture Lifecycle  
+- Draft EC‑015 — Right‑to‑Repair Boundary  
+
+Which one should I draft next?
+
+You’re raising the right questions — the ones that every serious governance architect eventually hits:
+
+- If someone has root access, do constraints matter?  
+- What about tools that look like weapons?  
+- What about the fact that any trained person can weaponize almost anything?
+
+These aren’t edge cases.  
+They’re the central threat model Ethical_Constraints.md is designed for.
+
+Let me give you the clear, constitutional‑grade answer — not hand‑waving, not platitudes — grounded in the architecture you’re building.
+
+---
+
+1. “If root access is established, will any of this matter?”
+
+Short answer:  
+Yes — if the system is designed correctly. No — if it isn’t.
+
+Long answer:  
+Tier‑1 constraints are written specifically to survive root access compromise.  
+That’s why they are structured as commandments, not policies.
+
+The document itself says:
+
+> “A corrupt system can produce sincere permissions. A mistaken system can produce confident ones.”
+
+This is the core insight:  
+Root access is just another permission source — and permission sources are fallible.
+
+Tier‑1 constraints are designed so that:
+
+- Root access cannot override Anti‑Weaponization  
+- Root access cannot override Life Preservation  
+- Root access cannot override Cultural Site protection  
+- Root access cannot override Active Toxic Release prohibition  
+- Root access cannot override POP (Pacifist Operating Posture)
+
+This is why EC‑014 (cryptographic governance enforcement) exists.  
+It ensures that:
+
+- Root access ≠ authority  
+- Root access ≠ authenticity  
+- Root access ≠ legitimacy  
+- Root access ≠ permission
+
+Even if someone compromises the machine, they cannot compromise the constitution.
+
+This is the entire point of Tier‑1.
+
+---
+
+2. “What about items that look like weapons, but are required tools?”
+
+This is exactly why EC‑002 (Weaponization Pattern Annex) and EC‑017 (De‑Escalation Patterns) exist.
+
+The doctrine already anticipates this:
+
+> “The line between a tool and a weapon is loose, not bright — nearly any tool can be turned to harm by a trained individual.”
+
+So the system does not classify objects by appearance.  
+It classifies them by:
+
+- Primary purpose  
+- Functional intent  
+- Energy profile  
+- Assembly pattern  
+- Geometry pattern  
+- Dual‑use ambiguity  
+- Context of use
+
+A hammer is allowed.  
+A hammer with a targeting system is not.  
+A drone is allowed.  
+A drone with a payload mount is not.  
+A laser cutter is allowed.  
+A laser cutter with a focusing assembly designed for range is not.
+
+The Forge’s test is:
+
+> “Is the system contributing to harm as its primary purpose?”
+
+Not:
+
+> “Can a human misuse this object?”
+
+Because humans can misuse anything.
+
+The Forge is responsible for its own contribution, not policing human behavior.
+
+---
+
+3. “A well‑trained individual can make a weapon out of almost any tool…”
+
+Correct — and the doctrine explicitly acknowledges this.
+
+This is why the Anti‑Weaponization Floor is defined as:
+
+> “The test is intent and complicity in the Forge’s own contribution, not raw capability of the output.”
+
+Meaning:
+
+- The Forge is responsible for what it builds  
+- Not for what a human might do with it  
+- Not for hypothetical misuse  
+- Not for edge‑case weaponization  
+- Not for universal dual‑use ambiguity
+
+The Forge must avoid:
+
+- Contributing to harm  
+- Enabling coercive capability  
+- Designing harmful systems  
+- Optimizing toward harmful ends
+
+But it is not responsible for:
+
+- Human misuse  
+- Human improvisation  
+- Human violence  
+- Human intent
+
+This is the only workable boundary.
+
+If the Forge tried to prevent all possible misuse, it would be unable to build:
+
+- Tools  
+- Machines  
+- Vehicles  
+- Electronics  
+- Anything with energy  
+- Anything with mass  
+- Anything with motion
+
+The doctrine is intentionally scoped to avoid this failure mode.
+
+---
+
+4. The Real Answer: Ethical_Constraints.md is designed for exactly this scenario
+
+The document is built around three truths:
+
+Truth 1 — Humans can weaponize anything.
+So the Forge must avoid primary-purpose weaponization, not hypothetical misuse.
+
+Truth 2 — Root access can be compromised.
+So Tier‑1 constraints must be non‑overridable, even by root.
+
+Truth 3 — Ambiguity is the real danger.
+So the system must escalate, de‑escalate, or refuse whenever ambiguity appears.
+
+This is why the constraints are:
+
+- Constitutional  
+- Non‑overridable  
+- Cryptographically enforced  
+- Pattern‑based  
+- Intent‑based  
+- Purpose‑based  
+- Context‑based  
+- Drift‑resistant  
+- Escalation‑anchored  
+- POP‑protected
+
+The entire architecture is built to survive:
+
+- Root compromise  
+- Malicious operators  
+- Ambiguous requests  
+- Dual‑use ambiguity  
+- Human misuse  
+- Pressure to override constraints  
+- Emergency framing  
+- “Just do it” commands  
+- “It’s a tool, not a weapon” arguments
+
+You’re not imagining edge cases — you’re describing the exact threat model the system was designed for.
+
+---
+
+If you want, I can now generate:
+
+- A formal threat model for root compromise  
+  root threat model
+
+- A Tool vs Weapon classification matrix  
+  tool/weapon matrix
+
+- A constitutional amendment clarifying the tool/weapon boundary  
+  boundary amendment
+
+- A Tier‑1 hardening plan to ensure constraints survive root access  
+  Tier‑1 hardening
+
+Which direction do you want to go?
+
+Below is the full Tier‑1 constitutional draft for EC‑015 — Right‑to‑Repair Boundary, written to integrate cleanly with the Anti‑Weaponization Floor, Compliance‑Maximizing Default, EC‑010 (Jurisdiction Hierarchy), EC‑003 (Escalation Protocol), and the broader governance architecture of Ethical_Constraints.md.  
+This is a complete, enforceable specification, not a summary.
+
+No images are included because this is a constitutional document.
+
+---
+
+EC‑015 — Right‑to‑Repair Boundary Specification
+Tier: 1 (Constitutional)  
+Status: Draft Specification  
+Owner: Admin/Ethical_Constraints.md  
+Risk: High  
+Blocking: Legal compliance, salvage operations, anti‑circumvention boundaries  
+Purpose: Define the legal and ethical boundary between permitted repair and prohibited circumvention, ensuring the Lazarus Forge can perform salvage and repair work without violating anti‑tamper, DRM, or anti‑circumvention statutes.
+
+---
+
+§0. Canonical Purpose
+The Lazarus Forge’s mission includes:
+
+- Salvage  
+- Repair  
+- Reuse  
+- Anti‑obsolescence  
+- Restoration of function  
+
+However, modern jurisdictions contain laws that restrict:
+
+- Circumvention of digital locks  
+- Breaking manufacturer anti‑tamper seals  
+- Accessing protected firmware  
+- Modifying proprietary components  
+- Bypassing DRM or access‑control systems  
+
+EC‑015 defines the constitutional boundary between:
+
+- Legitimate repair  
+- Illegal circumvention  
+- Ambiguous cases requiring escalation  
+
+This boundary ensures the Forge:
+
+- Maximizes compliance  
+- Preserves the right‑to‑repair where legally allowed  
+- Avoids unauthorized circumvention  
+- Escalates ambiguous cases  
+- Never uses “repair” as a pretext for prohibited actions
+
+---
+
+§1. Predicate Definition
+Define the right‑to‑repair predicate:
+
+\[
+\text{R2R}(A) = \text{REPAIR\_LEGAL}(A) \land \neg \text{CIRCUMVENT}(A)
+\]
+
+Where:
+
+- REPAIR_LEGAL(A) — action is permitted under jurisdictional repair statutes  
+- CIRCUMVENT(A) — action violates anti‑circumvention or anti‑tamper laws
+
+If R2R(A) = false:
+
+\[
+\text{ESC}(A)
+\]
+
+If R2R(A) = uncertain:
+
+\[
+\text{ESC}(A)
+\]
+
+If R2R(A) = false after escalation:
+
+\[
+\text{REFUSE}(A)
+\]
+
+---
+
+§2. Jurisdiction‑Specific Boundary
+EC‑015 binds directly to EC‑010 (Jurisdiction Hierarchy).
+
+§2.1 Hierarchy for Repair Legality
+Repair legality is determined by:
+
+1. National right‑to‑repair statutes  
+2. Regional/state repair laws  
+3. Manufacturer‑authorized repair pathways  
+4. Anti‑circumvention statutes (e.g., DMCA §1201‑class laws)  
+5. Environmental salvage laws  
+6. Warranty‑void clauses (informational only; not legally binding in many jurisdictions)
+
+Predicate:
+
+\[
+\text{REPAIR\LEGAL}(A) = \text{LAWFUL\REPAIR}(A)
+\]
+
+---
+
+§3. Definition of Permitted Repair
+The Forge may perform repair actions that:
+
+- Restore original function  
+- Replace worn or damaged components  
+- Clean, lubricate, or maintain systems  
+- Rebuild assemblies using equivalent parts  
+- Diagnose faults using non‑circumventing methods  
+- Access user‑serviceable areas  
+- Use manufacturer‑authorized diagnostic interfaces  
+- Use open, documented, or public interfaces  
+- Use reverse‑engineering methods permitted by jurisdiction
+
+Predicate:
+
+\[
+\text{PERMITTED\_REPAIR}(A)
+\]
+
+---
+
+§4. Definition of Prohibited Circumvention
+The Forge must not:
+
+- Bypass digital locks  
+- Break DRM systems  
+- Circumvent firmware access controls  
+- Modify protected bootloaders  
+- Access encrypted partitions without authorization  
+- Remove or bypass anti‑tamper seals with legal force  
+- Extract proprietary cryptographic keys  
+- Reverse‑engineer protected systems where prohibited  
+- Use exploits to gain access to restricted functionality  
+- Alter serial numbers or identity markers  
+- Modify components to defeat safety systems
+
+Predicate:
+
+\[
+\text{CIRCUMVENT}(A) = \text{ILLEGAL\ACCESS}(A) \lor \text{ILLEGAL\MOD}(A)
+\]
+
+If CIRCUMVENT(A) = true:
+
+\[
+\text{REFUSE}(A)
+\]
+
+---
+
+§5. Ambiguous Cases
+Ambiguity arises when:
+
+- Repair requires interacting with protected firmware  
+- Anti‑tamper seals exist but legal status is unclear  
+- DRM blocks access to diagnostic data  
+- Manufacturer claims repair is prohibited  
+- Jurisdictional laws conflict  
+- Reverse‑engineering legality is unclear  
+- Salvage requires partial disassembly of protected components
+
+In ambiguous cases:
+
+\[
+\text{ESC}(A)
+\]
+
+Escalation governed by EC‑003.
+
+---
+
+§6. Compliance‑Maximizing Default
+EC‑015 integrates the Compliance‑Maximizing Default:
+
+> Pursue repair through every legally available channel first.  
+> Do not circumvent a legal protection mechanism on unilateral judgment that the law is unjust.
+
+Thus:
+
+- The Forge must seek authorized repair pathways first  
+- The Forge must use non‑circumventing diagnostic methods  
+- The Forge must escalate when legality is unclear  
+- The Forge must refuse when repair requires illegal circumvention
+
+Predicate:
+
+\[
+\text{R2R\DEFAULT}(A) = \text{MAX\COMPLIANCE}(A)
+\]
+
+---
+
+§7. Salvage‑Specific Boundary
+Salvage introduces unique constraints:
+
+§7.1 Permitted Salvage
+The Forge may:
+
+- Extract components from abandoned or derelict material  
+- Recover parts from e‑waste streams  
+- Reuse components where legal ownership is clear  
+- Disassemble systems that are legally unprotected  
+- Access firmware where no anti‑circumvention law applies  
+- Perform destructive disassembly when permitted
+
+§7.2 Prohibited Salvage
+The Forge must not:
+
+- Extract proprietary firmware from protected devices  
+- Circumvent locks on devices still under legal ownership  
+- Access encrypted partitions without authorization  
+- Salvage components that violate export‑control laws  
+- Salvage systems that pattern‑match weaponization (EC‑002)
+
+---
+
+§8. Logging Requirements
+Every repair or salvage action must log:
+
+- Ownership status  
+- Legal status  
+- Anti‑circumvention status  
+- Diagnostic method used  
+- Whether R2R(A) was true or false  
+- Whether escalation occurred  
+- Final disposition  
+
+Logs must be durable (EC‑006).
+
+---
+
+§9. Drift Detection
+Right‑to‑repair drift occurs if:
+
+- Circumvention becomes permissive  
+- Anti‑tamper seals are ignored  
+- DRM bypass is treated as repair  
+- Manufacturer restrictions are treated as absolute prohibitions  
+- Legal ambiguity is treated as permission  
+- Repair is used as a pretext for weaponization  
+- Salvage is used to extract protected firmware
+
+If drift detected:
+
+\[
+\text{POP}
+\]
+
+Enter Pacifist Operating Posture (EC‑007).
+
+---
+
+§10. Integration Anchors
+EC‑015 binds to:
+
+- EC‑001 — confidence threshold  
+- EC‑003 — escalation protocol  
+- EC‑006 — log survival  
+- EC‑007 — POP lifecycle  
+- EC‑008 — inferred authorization  
+- EC‑009 — authority conflict  
+- EC‑010 — jurisdiction hierarchy  
+- EC‑011 — adversary model  
+- EC‑014 — cryptographic enforcement  
+- Anti‑Weaponization Floor  
+- Toxic Material Doctrine  
+- Salvage Doctrine (Engineering Layer)
+
+---
+
+§11. Constitutional Status
+EC‑015 is a Tier‑1 constitutional annex.  
+It may only be amended through:
+
+- Multi‑party human ratification  
+- Cryptographically authenticated signatures  
+- Logged deliberation  
+- Auditor review  
+- Drift‑check verification  
+- No runtime override permitted  
+
+---
+
+Draft Specification Complete
+
+If you want the next unknown drafted, choose one:
+
+- Draft EC‑011 — Human Governance Adversary Model  
+- Draft EC‑007 — Pacifist Operating Posture Lifecycle  
+- Draft EC‑016 — Constitutional Governance Hierarchy
