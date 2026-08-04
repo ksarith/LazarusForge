@@ -696,5 +696,73 @@ No hot thermal work under this file while PL-001 and CE-003 remain open.
 ---
 
 This skeleton is ready to drop into `Tests/` (or to stay in Archive until a formal promotion decision). It keeps the architectural idea alive, makes every Critical collision explicit, and refuses to carry unsupported numbers or ownership claims.
+The base idea evolved from separation of plastic lining in aluminum can processing.  The off gasses are a problem, so the thought emerged what would happen if they were simply tossed in a pyrolysis chamber.  What then happens to the coke that the chamber has as a byproduct?  Then we get to how do we leverage the remnants into improved functionality?  Overall, I have been chasing down the what happens next...
+That origin story changes the center of gravity.
 
+The cascade didn’t start as “process all the garbage.” It started as a concrete materials problem:
 
+1. **Aluminum can stock** arrives with polymer lining (epoxy, acrylic, or similar).
+2. Separating or thermally stripping that lining produces **off-gases** that are awkward to handle.
+3. Pyrolysis becomes a candidate sink for those organics / off-gas streams.
+4. Pyrolysis then leaves a **carbonaceous solid** (char/coke + any entrained fines or residual metal).
+5. The open question becomes: what is the highest-value, lowest-harm next use of that solid — and can its processing also improve the energy or materials balance of the earlier steps?
+
+That is a much tighter, more Forge-native chain than the later “mixed MSW + bloomery” expansion. The archival draft grew outward from the residue problem and picked up heat integration and metal recovery along the way. The original driver was residue management and off-gas containment inside an already-intended aluminum pathway.
+
+### Re-centered framing
+
+**Core sequence under investigation**
+
+```
+Aluminum can (Al + polymer lining)
+        ↓
+Lining separation / thermal strip
+        ↓
+Off-gas / organic fraction  ──→  candidate pyrolysis stage
+        ↓
+Pyrolysis products:
+  • condensables / syngas (still need scrubbing & disposition)
+  • char/coke solid
+        ↓
+“What happens next” to the char?
+  – fuel / reductant?
+  – further high-temperature treatment for residual metal recovery?
+  – carbon product?
+  – disposal path?
+        ↓
+Can any of those downstream steps return heat, carbon, or metal value
+back into the aluminum or energy system?
+```
+
+This keeps the problem inside a materials-recovery logic rather than a general waste-to-energy logic. It also makes the Critical unknowns land more precisely:
+
+- The polymer lining is a **defined, relatively consistent** organic stream, not unsorted MSW. That softens (but does not remove) the PL-001 / CE-003 problem — you still need to know whether the specific lining chemistry carries chlorine, fluorine, or other problematic substituents, and you still need off-gas control.
+- The solid residue is downstream of a known metal (aluminum). Any high-temperature follow-on step is therefore interacting with aluminum chemistry, oxide films, and possible alloying elements, not with a random mixed-metal char.
+- “Leverage the remnants into improved functionality” is the real design thesis: close loops, reduce external inputs, or raise the value of a fraction that would otherwise be a disposal liability.
+
+### Implications for the Tests/ skeleton
+
+The earlier skeleton treated the cascade as a general mixed-waste architecture. With this history, a tighter version would:
+
+- Anchor the primary feedstock as **polymer-lined aluminum can stock** (or the separated lining + associated off-gas), not generic MSW.
+- Treat mixed-waste expansion as a later, optional generalization that inherits all the existing Critical blockers.
+- Keep the bloomery / high-temperature stage as one candidate answer to “what happens to the coke,” not as the assumed architecture.
+- Make the central open question explicit: **what is the best next use of the pyrolysis solid when the upstream metal is aluminum?**
+
+That reframing does not erase the earlier claim map; it simply ranks the unknowns differently. PL-001 and off-gas handling remain first-order because the lining chemistry is still not characterized. GR-002 (reduction method) and the char-disposition questions become the actual design surface rather than a general metals-recovery claim. FA-001, EN-001, and the economic baselines stay relevant only if/when a physical pilot is contemplated.
+
+### The pattern you’re describing
+
+“What happens next” is a useful generator, but it is also how exploratory cascades accumulate scope. Each residue creates a new process idea; each process idea creates a new residue or off-gas; the system grows. The governance posture that fits this pattern is:
+
+- Keep the chain legible and sequential.
+- Refuse to let any downstream stage silently rewrite the upstream scope or safety constraints.
+- Treat every new stage as a candidate that must earn its place against the existing Critical/Blocking list rather than as an automatic continuation.
+
+If you want to continue from here, the highest-leverage next steps are probably:
+
+1. **Characterize the actual lining chemistry** (or the range of common can linings) enough to know the halogen and additive risk — this is the real PL-001 entry point for this concept.
+2. **Define the pyrolysis solid** more carefully: expected carbon content, residual aluminum, ash, particle size, and whether it is closer to a fuel, a reductant, or a waste.
+3. **List the candidate “next uses” of that solid** without committing to any of them, and mark which existing unknowns each candidate collides with.
+
+That keeps the chase honest: every “what happens next” is paired with “what must already be true before we are allowed to try it.”
