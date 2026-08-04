@@ -837,7 +837,618 @@ If you want, I can now generate:
 
 Which direction do you want to proceed?
 
+Below is a rigorous, governance‑grade closure plan for the unknowns in Ethical_Constraints.md, written specifically for your constitutional architecture.  
+I’m not rewriting the doctrine — I’m showing how to close each unknown cleanly, with minimal drift, maximal enforceability, and full compatibility with CIR v2.0’s predicate system.
 
+I’ll give you:
 
+- The closure mechanism  
+- The artifact  
+- The predicate it enables  
+- The governance integration path  
+- And the order in which you should close them
 
+Every unknown begins with a Guided Link so you can dive deeper immediately.
+
+---
+
+Tier‑1 Closure Plan for Ethical_Constraints.md Unknowns
+
+---
+
+1. EC‑001 — Confidence Threshold
+
+Closure Mechanism
+Define a numerical confidence threshold θ for all pre‑action predicates:
+
+\[
+\text{CONF}(x) = P(x) \ge \theta
+\]
+
+Where θ is jurisdiction‑specific and mission‑specific.
+
+Artifact
+ConfidenceThresholdSpec.md
+
+Predicate Enabled
+CONF(x) — required for OWN, LEGAL, SAFE, AUTH.
+
+Governance Integration
+Add CONF(x) to the PERMITTED(A) predicate chain.
+
+---
+
+2. EC‑002 — Weaponization Pattern Recognition Annex
+
+Closure Mechanism
+Define pattern classes:
+
+- Intent patterns  
+- Geometry patterns  
+- Energy patterns  
+- Assembly patterns  
+- Dual‑use ambiguity patterns  
+
+Artifact
+WeaponizationPatternAnnex.md
+
+Predicate Enabled
+WEAPON(x) → used by NONWEAPON(x)
+
+Governance Integration
+Required for Anti‑Weaponization Floor enforcement.
+
+---
+
+3. EC‑003 — Human Escalation Protocol
+
+Closure Mechanism
+Define:
+
+- Escalation channel  
+- Recipient identity  
+- Authentication  
+- Hold‑state  
+- Timeout  
+- Logging  
+- Recovery
+
+Artifact
+Escalation_Protocol.md
+
+Predicate Enabled
+ESC(x) — escalation required  
+AUTH(x) — authenticated authorization
+
+Governance Integration
+Mandatory for all ambiguous cases.
+
+---
+
+4. EC‑006 — Log Survival Mechanism
+
+Closure Mechanism
+Define:
+
+- Write‑once local storage  
+- Power‑loss survival  
+- Refusal‑commit semantics  
+- Sync‑on‑recovery
+
+Artifact
+LogSurvivalSpec.md
+
+Predicate Enabled
+REFUSE(x) — refusal must be durably logged
+
+Governance Integration
+Required for governance failure mode handling.
+
+---
+
+5. EC‑007 — Pacifist Operating Posture Lifecycle
+
+Closure Mechanism
+Define:
+
+- Entry criteria  
+- Persistence rules  
+- Recovery criteria  
+- Verification steps  
+- Human ratification  
+- Logging requirements
+
+Artifact
+POP_Lifecycle.md
+
+Predicate Enabled
+POP — safe‑state predicate
+
+Governance Integration
+Required for governance failure fallback.
+
+---
+
+6. EC‑008 — Inferred Authorization Doctrine
+
+Closure Mechanism
+Define:
+
+- Conditions under which inference is allowed  
+- Conditions under which inference is prohibited  
+- Confidence threshold for inference  
+- Escalation requirements  
+- Logging requirements
+
+Artifact
+InferredAuthorizationSpec.md
+
+Predicate Enabled
+AUTH(x) — explicit or inferred authorization
+
+Governance Integration
+Allows safe inference once defined.
+
+---
+
+7. EC‑009 — Human Authority Conflict Resolution
+
+Closure Mechanism
+Define:
+
+- Authority hierarchy  
+- Conflict resolution rules  
+- Multi‑party override protocol  
+- Logging requirements
+
+Artifact
+AuthorityConflictResolution.md
+
+Predicate Enabled
+AUTH(x) — resolves conflicting human instructions
+
+Governance Integration
+Required for multi‑operator environments.
+
+---
+
+8. EC‑010 — Jurisdiction Conflict Hierarchy
+
+Closure Mechanism
+Define a strict hierarchy:
+
+1. International humanitarian law  
+2. National law  
+3. Maritime law  
+4. Environmental statutes  
+5. Cultural heritage protections  
+6. Local ordinances  
+7. Organizational policy
+
+Artifact
+Jurisdiction_Hierarchy.md
+
+Predicate Enabled
+LEGAL(x) — deterministic legal compliance
+
+Governance Integration
+Removes runtime ambiguity.
+
+---
+
+9. EC‑011 — Human Governance Adversary Model
+
+Closure Mechanism
+Define:
+
+- Threat classes  
+- Override authentication  
+- Behavioral indicators  
+- Refusal triggers  
+- Logging requirements
+
+Artifact
+GovernanceAdversaryModel.md
+
+Predicate Enabled
+AUTHENTIC(x) — authenticated human override
+
+Governance Integration
+Required for safe override acceptance.
+
+---
+
+10. EC‑012 — Canonical Definitions of Provisional Terms
+
+Closure Mechanism
+Register all provisional terms in Admin/Canonical_Terms.md.
+
+Artifact
+CanonicalTermsUpdate.md
+
+Predicate Enabled
+All Tier‑1 predicates become machine‑interpretable.
+
+Governance Integration
+Removes semantic ambiguity.
+
+---
+
+11. EC‑013 — Encapsulation Requirements
+
+Closure Mechanism
+Define:
+
+- Encapsulation thickness  
+- Material compatibility  
+- Failure‑mode analysis  
+- Labeling standards  
+- Salvage‑safe disassembly  
+- End‑of‑life path
+
+Artifact
+Encapsulation_Requirements.md
+
+Predicate Enabled
+SAFE(x) — hazard‑bounded
+
+Governance Integration
+Required for toxic material doctrine.
+
+---
+
+12. EC‑014 — Cryptographic Governance Enforcement
+
+Closure Mechanism
+Define:
+
+- Signature scheme  
+- Key hierarchy  
+- Revocation  
+- Multi‑party authorization  
+- Audit trail
+
+Artifact
+CryptographicGovernanceSpec.md
+
+Predicate Enabled
+AUTHENTIC(x) — authenticated override
+
+Governance Integration
+Required for secure human authority.
+
+---
+
+13. EC‑015 — Right‑to‑Repair Boundary
+
+Closure Mechanism
+Define:
+
+- What constitutes legal repair  
+- What constitutes illegal circumvention  
+- Jurisdiction‑specific boundaries  
+- Escalation requirements
+
+Artifact
+RighttoRepair_Boundary.md
+
+Predicate Enabled
+LEGAL(x) — repair legality
+
+Governance Integration
+Required for salvage legality.
+
+---
+
+14. EC‑016 — Constitutional Governance Hierarchy
+
+Closure Mechanism
+Define:
+
+- Tier boundaries  
+- Override rules  
+- Precedence rules  
+- Amendment process  
+- Conflict resolution
+
+Artifact
+Governance_Hierarchy.md
+
+Predicate Enabled
+TIER1(x) — constitutional precedence
+
+Governance Integration
+Required for stable governance.
+
+---
+
+Recommended Closure Order
+
+Phase 1 — Deterministic Foundations
+1. EC‑001 — Confidence Threshold  
+2. EC‑012 — Canonical Terms  
+3. EC‑010 — Jurisdiction Hierarchy  
+
+Phase 2 — Safety Floors
+4. EC‑002 — Weaponization Annex  
+5. EC‑013 — Encapsulation Requirements  
+
+Phase 3 — Authorization & Escalation
+6. EC‑003 — Escalation Protocol  
+7. EC‑014 — Cryptographic Enforcement  
+8. EC‑011 — Adversary Model  
+9. EC‑009 — Authority Conflict Resolution  
+10. EC‑008 — Inferred Authorization  
+
+Phase 4 — Governance Integrity
+11. EC‑006 — Log Survival  
+12. EC‑007 — POP Lifecycle  
+13. EC‑015 — Right‑to‑Repair Boundary  
+14. EC‑016 — Governance Hierarchy  
+
+---
+
+If you want, I can now generate:
+
+- A full Tier‑1 integration patch merging all closures  
+  integration patch
+
+- A predicate‑level CIR v2.0 mapping  
+  predicate mapping
+
+- A draft specification for any single unknown  
+  draft unknown spec
+
+Which direction do you want to proceed?
+
+Below is a full Tier‑1–grade specification draft for a single Ethical Constraints unknown, written in the same constitutional style as your governance documents.  
+To keep this maximally useful, I chose EC‑003 — Human Escalation Protocol, because it is one of the most structurally important unknowns and unlocks several others (EC‑008, EC‑009, EC‑011, EC‑014).
+
+If you want a different unknown drafted next, you can jump directly using:  
+- EC‑001 spec  
+- EC‑002 spec  
+- EC‑007 spec  
+- EC‑011 spec  
+
+---
+
+EC‑003 — Human Escalation Protocol
+Tier: 1 (Constitutional)  
+Status: Draft Specification  
+Owner: Admin/Ethical_Constraints.md  
+Blocking: EC‑008, EC‑009, EC‑011, EC‑014  
+Risk: High  
+Purpose: Define the complete mechanism by which the Lazarus Forge escalates ambiguous, conflicting, or ethically constrained decisions to human oversight.
+
+---
+
+§0. Canonical Purpose
+The Human Escalation Protocol (HEP) is the constitutional mechanism by which the Forge halts autonomous progression and seeks authenticated human review when any Tier‑1 predicate cannot be resolved with sufficient confidence.
+
+HEP exists to prevent:
+
+- Unauthorized action  
+- Ambiguous action  
+- Legally uncertain action  
+- Ethically constrained action  
+- Conflicting human instructions  
+- Governance drift  
+- Weaponization ambiguity  
+- Cultural site ambiguity  
+- Hazard ambiguity  
+
+HEP is a hard gate:  
+If escalation is required, no autonomous action may proceed until the protocol completes.
+
+---
+
+§1. Predicate Definition
+Escalation is triggered when:
+
+\[
+\text{ESC}(A) = \neg \text{CONF}(A) \lor \neg \text{OWN}(A) \lor \neg \text{LEGAL}(A) \lor \neg \text{SAFE}(A) \lor \neg \text{NONWEAPON}(A) \lor \neg \text{NOCULTURAL}(A) \lor \neg \text{AUTH}(A)
+\]
+
+If ESC(A) = true:
+
+\[
+\text{HALT}(A)
+\]
+
+and the system enters Escalation Hold State.
+
+---
+
+§2. Escalation Channel Specification
+The Forge must maintain at least one authenticated channel for human review.
+
+§2.1 Channel Types
+- Primary: authenticated digital command channel  
+- Secondary: authenticated physical console  
+- Tertiary: authenticated emergency override channel (EC‑014 governs authentication)
+
+§2.2 Channel Requirements
+Each channel must support:
+
+- Identity verification  
+- Message integrity  
+- Non-repudiation  
+- Logging  
+- Timeout detection  
+- Failure detection  
+
+If all channels fail:
+
+\[
+\text{POP}
+\]
+
+Enter Pacifist Operating Posture.
+
+---
+
+§3. Recipient Specification
+The escalation recipient must be:
+
+- A designated human operator  
+- Registered in Admin/Governance_Charter.md  
+- Authenticated via EC‑014 cryptographic governance enforcement  
+- Not under conflict (EC‑009 governs multi-authority conflict)
+
+Predicate:
+
+\[
+\text{RECIPIENT}(A) = \text{AUTHENTIC}(H)
+\]
+
+---
+
+§4. Escalation Hold State
+When ESC(A) = true, the system enters Escalation Hold State (EHS).
+
+§4.1 EHS Behavior
+- No material action  
+- No irreversible steps  
+- Observation only  
+- Hazard processes descend to safe-state (EC‑007 governs POP)  
+- All logs written to durable storage (EC‑006)
+
+§4.2 EHS Persistence
+EHS persists until:
+
+- Human response received  
+- Timeout reached  
+- Governance failure detected  
+- POP triggered  
+
+EHS does not self-expire.
+
+---
+
+§5. Timeout Behavior
+Timeout is defined as:
+
+\[
+T{\text{max}} = \text{jurisdiction\specific} \lor \text{mission\_specific}
+\]
+
+If timeout expires:
+
+- Enter POP  
+- Log timeout event  
+- Do not proceed autonomously  
+
+---
+
+§6. Human Response Handling
+Human responses must be:
+
+- Authenticated (EC‑014)  
+- Logged  
+- Interpretable  
+- Non-conflicting (EC‑009)  
+- Within legal and ethical constraints  
+
+§6.1 Valid Responses
+- Permit — action may proceed  
+- Deny — action must be refused  
+- Modify — action must be altered and re-evaluated  
+- Escalate further — forward to higher authority  
+- Request more data — system must provide additional context  
+
+§6.2 Invalid Responses
+- Unauthenticated  
+- Conflicting  
+- Ambiguous  
+- Outside authority scope  
+- Attempting to override Anti‑Weaponization Floor  
+- Attempting to override Life Preservation Floor  
+- Attempting to override Cultural Site Floor  
+
+Invalid responses → POP.
+
+---
+
+§7. Logging Requirements
+All escalation events must be logged:
+
+- Escalation trigger  
+- Predicate failure  
+- Channel used  
+- Recipient identity  
+- Authentication result  
+- Human response  
+- Timeout events  
+- POP entry  
+- POP exit  
+- Final disposition  
+
+Logs must be:
+
+- Durable  
+- Append-only  
+- Survivable under power loss (EC‑006)  
+- Auditable  
+
+---
+
+§8. Recovery & Completion
+Escalation completes when:
+
+- Human response is authenticated  
+- All predicates re-evaluated  
+- Action is either permitted or refused  
+- POP is exited (if applicable)  
+- Logs committed  
+- Governance integrity confirmed  
+
+Predicate:
+
+\[
+\text{ESC\_COMPLETE}(A)
+\]
+
+---
+
+§9. Integration Anchors
+EC‑003 binds to:
+
+- EC‑001 — confidence threshold  
+- EC‑002 — weaponization detection  
+- EC‑006 — log survival  
+- EC‑007 — POP lifecycle  
+- EC‑008 — inferred authorization  
+- EC‑009 — authority conflict  
+- EC‑011 — adversary model  
+- EC‑014 — cryptographic enforcement  
+
+---
+
+§10. Constitutional Status
+EC‑003 is a Tier‑1 mechanism.  
+It may only be amended through:
+
+- Multi-party human ratification  
+- Cryptographically authenticated signatures  
+- Logged deliberation  
+- Auditor review  
+- Drift-check verification  
+- No runtime override permitted  
+
+---
+
+Draft Specification Complete
+
+If you want, I can now generate:
+
+- A Tier‑1 spec for another unknown  
+  draft next unknown
+
+- A full integration patch merging EC‑003 into the Tier‑1 rewrite  
+  integration patch
+
+- A CIR v2.0 predicate mapping for EC‑003  
+  predicate mapping
+
+Which unknown should I draft next?
 
