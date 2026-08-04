@@ -1,5 +1,5 @@
 # Auditor_Protocols.md
-**Version 0.35**
+**Version 0.36**
 
 ## File State
 
@@ -10,12 +10,12 @@
 | Spec Gates       | 4/6 (G1, G3, G4, G6 clear — G3 cleared 2026-08-03 via AP-017 Resolved; G5 conditional on cross-ref fixes below; G2 N/A — no physical/quantitative claims of its own) |
 | Verification Ref | Admin/Verification_Gates_LF.md                                      |
 | Last Audit       | 2026-08-02                                                          |
-| Auditor          | Claude — Synthesizer/Auditor, human-directed, 2026-08-03: **AP-033 registered and resolved same day; Rule 9 added.** A Copilot proposal series against `Tests/Cognitive_Salvage_Layer.md`, produced with no confirmed access to this file, declared 16 real unknowns "CLOSED" by methodology alone and mis-enumerated the unknown set itself (a real entry omitted, a nonexistent one invented). A second agent with confirmed access (Grok) independently diagnosed every violation correctly. Added Rule 9 (Resolution Claims Require Governance Access), generalizing Rule 8 one level down — from file-level Status/Gates to individual-unknown closure claims; extended Fallacy Checklist item 4 accordingly. Sidecar SHA-256 refreshed. Open Unknowns unchanged at 14 (AP-033 excluded from count, resolved same day). Prior: AP-017 Resolved (v0.34); AP-007 partial implementation (v0.32) — see `Archive/Logs/Auditor_Protocols_Logs.md` Resolution Log for full audit history. |
+| Auditor          | Claude — Synthesizer/Auditor, human-directed, 2026-08-03: added `Admin/Governance_Migration_Protocol.md` §VII to Challenge Class 10's high-coupling documents table — third of three fixes from the §VII cold Battery pass, the other two landing in GMP itself (v0.10). Sidecar SHA-256 refreshed. Open Unknowns unchanged at 14. Prior: AP-033 registered and resolved same day, Rule 9 added (v0.35); AP-017 Resolved (v0.34) — see `Archive/Logs/Auditor_Protocols_Logs.md` Resolution Log for full audit history. |
 | Open Unknowns    | 14                                                                  |
 | Active Disputes  | 1                                                                   |
 | Highest Risk     | High                                                                |
 | Sidecar Link     | Archive/Logs/Auditor_Protocols_Logs.md#auditor-notes--unknowns     |
-| Sidecar SHA-256  | `1a6254fdf977c119b5b3646c5803c5d8a2a57e327a10971434c65e42effe181b` as of 2026-08-03 (AP-033 registered/resolved, Rule 9 added) — heuristic integrity check, not a cryptographic guarantee; see §Sidecar Format |
+| Sidecar SHA-256  | `891eacd9d3e2a4031da1d6650909572c385ace673ce942571e3fcf6362fe55c8` as of 2026-08-03 (§VII added to high-coupling table) — heuristic integrity check, not a cryptographic guarantee; see §Sidecar Format |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
 **Version String Registry** (self-referential citations outside File State — update on every version bump; required per `Admin/File_Template.md` §Self-Referential Version Strings):
@@ -402,7 +402,7 @@ Not a standalone auditor class — a mode declaration for agents contributing in
 
 All contributors — human and autonomous — must declare their operating role before contributing:
 
-> *"Operating as [Role] per Auditor_Protocols.md v0.35"*
+> *"Operating as [Role] per Auditor_Protocols.md v0.36"*
 
 **Valid roles:** Skeptic/Auditor | Systems/Auditor | Evidence/Auditor | Ethical/Auditor | Synthesizer | Engineer | Connective Tissue
 
@@ -900,6 +900,7 @@ Current high-coupling documents:
 - `Operations/Electronics.md` — failure here compromises the trust anchor
 - `Architecture/Forge_flow.md` — failure here corrupts all gate routing
 - `Architecture/Forge_Net.md` — failure here propagates across the ecology
+- `Admin/Governance_Migration_Protocol.md` §VII — added 2026-08-03, cold-pass finding (see AP-033-adjacent §VII review, `Admin/Governance_Migration_Protocol.md` Resolution Log v0.10): if ratified on ambiguous or non-diverse grounds, Genesis Phase exit propagates through `Admin/Governance_Charter.md`'s Post-Exit Monitoring termination clause into `Admin/CIR_Gov.md` §8.2 treating CIR-VERIFIED transitions as newly valid — a two-level cascade from one document's ratification into a second document's operative logic
 
 *Minimum requirement:* Trace this document's failure footprint through at least two levels of downstream dependency.
 
@@ -1140,7 +1141,7 @@ Any cross-repo dependency must be documented in both repositories with a stated 
 - Sign-off statement
 
 **Standard sign-off:**
-> *"Verified under Auditor_Protocols v0.35 — gates [list] cleared, gates [list] blocked ([reason]), [N] unknowns logged, [N] overrides. Adversarial classes applied: [list]. Auditor: [Role/Agent]"*
+> *"Verified under Auditor_Protocols v0.36 — gates [list] cleared, gates [list] blocked ([reason]), [N] unknowns logged, [N] overrides. Adversarial classes applied: [list]. Auditor: [Role/Agent]"*
 
 ---
 
@@ -1313,7 +1314,19 @@ the document level, not per-unknown entries.
 Full history: `Archive/Logs/Auditor_Protocols_Logs.md` (relocated out
 of this file at v0.26 — add new entries there, not here).
 
-Most recent: v0.35 (2026-08-03) — **AP-033 registered and resolved
+Most recent: v0.36 (2026-08-03) — `Admin/Governance_Migration_Protocol.md`
+§VII added to Challenge Class 10's high-coupling documents table, with
+the two-level cascade path named (Genesis Phase exit → Post-Exit
+Monitoring termination → CIR_Gov.md §8.2 treating CIR-VERIFIED
+transitions as valid). Third of three fixes recommended from a
+Skeptic/Auditor cold Battery pass against §VII — the other two
+(VII.1's "physical/logical isolation" ambiguity resolved; VII.3.4/5
+gained an explicit GMP-004 cross-reference) landed in
+`Admin/Governance_Migration_Protocol.md` v0.10, same session. §VII
+remains un-ratified; this closes out the pass's concrete
+recommendations without claiming ratification-readiness.
+
+Prior: v0.35 (2026-08-03) — **AP-033 registered and resolved
 same day; Rule 9 added.** A Copilot proposal series against
 `Tests/Cognitive_Salvage_Layer.md`, produced with no confirmed access
 to `Admin/Auditor_Protocols.md` or the target's own sidecar, declared
@@ -1444,7 +1457,7 @@ cycles.
 
 ## Status
 
-**Version 0.35 — Draft, Body Stability Transitional.** Full audit history: `Archive/Logs/Auditor_Protocols_Logs.md` Resolution Log. This section previously carried a duplicate, stale copy of early version history (v0.14 through v0.16) that was never updated after the file moved past those versions — trimmed 2026-07-23 as pure duplication of content the archive's Resolution Log already carries in full; see that log's v0.28 entry.
+**Version 0.36 — Draft, Body Stability Transitional.** Full audit history: `Archive/Logs/Auditor_Protocols_Logs.md` Resolution Log. This section previously carried a duplicate, stale copy of early version history (v0.14 through v0.16) that was never updated after the file moved past those versions — trimmed 2026-07-23 as pure duplication of content the archive's Resolution Log already carries in full; see that log's v0.28 entry.
 
 **What must remain constant:**
 
