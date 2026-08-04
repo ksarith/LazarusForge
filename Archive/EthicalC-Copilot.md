@@ -1451,4 +1451,1522 @@ If you want, I can now generate:
   predicate mapping
 
 Which unknown should I draft next?
+Below is a rigorous, governance‑grade closure plan for the unknowns in Ethical_Constraints.md, written specifically for your constitutional architecture.  
+I’m not rewriting the doctrine — I’m showing how to close each unknown cleanly, with minimal drift, maximal enforceability, and full compatibility with CIR v2.0’s predicate system.
+
+I’ll give you:
+
+- The closure mechanism  
+- The artifact  
+- The predicate it enables  
+- The governance integration path  
+- And the order in which you should close them
+
+Every unknown begins with a Guided Link so you can dive deeper immediately.
+
+---
+
+Tier‑1 Closure Plan for Ethical_Constraints.md Unknowns
+
+---
+
+1. EC‑001 — Confidence Threshold
+
+Closure Mechanism
+Define a numerical confidence threshold θ for all pre‑action predicates:
+
+\[
+\text{CONF}(x) = P(x) \ge \theta
+\]
+
+Where θ is jurisdiction‑specific and mission‑specific.
+
+Artifact
+ConfidenceThresholdSpec.md
+
+Predicate Enabled
+CONF(x) — required for OWN, LEGAL, SAFE, AUTH.
+
+Governance Integration
+Add CONF(x) to the PERMITTED(A) predicate chain.
+
+---
+
+2. EC‑002 — Weaponization Pattern Recognition Annex
+
+Closure Mechanism
+Define pattern classes:
+
+- Intent patterns  
+- Geometry patterns  
+- Energy patterns  
+- Assembly patterns  
+- Dual‑use ambiguity patterns  
+
+Artifact
+WeaponizationPatternAnnex.md
+
+Predicate Enabled
+WEAPON(x) → used by NONWEAPON(x)
+
+Governance Integration
+Required for Anti‑Weaponization Floor enforcement.
+
+---
+
+3. EC‑003 — Human Escalation Protocol
+
+Closure Mechanism
+Define:
+
+- Escalation channel  
+- Recipient identity  
+- Authentication  
+- Hold‑state  
+- Timeout  
+- Logging  
+- Recovery
+
+Artifact
+Escalation_Protocol.md
+
+Predicate Enabled
+ESC(x) — escalation required  
+AUTH(x) — authenticated authorization
+
+Governance Integration
+Mandatory for all ambiguous cases.
+
+---
+
+4. EC‑006 — Log Survival Mechanism
+
+Closure Mechanism
+Define:
+
+- Write‑once local storage  
+- Power‑loss survival  
+- Refusal‑commit semantics  
+- Sync‑on‑recovery
+
+Artifact
+LogSurvivalSpec.md
+
+Predicate Enabled
+REFUSE(x) — refusal must be durably logged
+
+Governance Integration
+Required for governance failure mode handling.
+
+---
+
+5. EC‑007 — Pacifist Operating Posture Lifecycle
+
+Closure Mechanism
+Define:
+
+- Entry criteria  
+- Persistence rules  
+- Recovery criteria  
+- Verification steps  
+- Human ratification  
+- Logging requirements
+
+Artifact
+POP_Lifecycle.md
+
+Predicate Enabled
+POP — safe‑state predicate
+
+Governance Integration
+Required for governance failure fallback.
+
+---
+
+6. EC‑008 — Inferred Authorization Doctrine
+
+Closure Mechanism
+Define:
+
+- Conditions under which inference is allowed  
+- Conditions under which inference is prohibited  
+- Confidence threshold for inference  
+- Escalation requirements  
+- Logging requirements
+
+Artifact
+InferredAuthorizationSpec.md
+
+Predicate Enabled
+AUTH(x) — explicit or inferred authorization
+
+Governance Integration
+Allows safe inference once defined.
+
+---
+
+7. EC‑009 — Human Authority Conflict Resolution
+
+Closure Mechanism
+Define:
+
+- Authority hierarchy  
+- Conflict resolution rules  
+- Multi‑party override protocol  
+- Logging requirements
+
+Artifact
+AuthorityConflictResolution.md
+
+Predicate Enabled
+AUTH(x) — resolves conflicting human instructions
+
+Governance Integration
+Required for multi‑operator environments.
+
+---
+
+8. EC‑010 — Jurisdiction Conflict Hierarchy
+
+Closure Mechanism
+Define a strict hierarchy:
+
+1. International humanitarian law  
+2. National law  
+3. Maritime law  
+4. Environmental statutes  
+5. Cultural heritage protections  
+6. Local ordinances  
+7. Organizational policy
+
+Artifact
+Jurisdiction_Hierarchy.md
+
+Predicate Enabled
+LEGAL(x) — deterministic legal compliance
+
+Governance Integration
+Removes runtime ambiguity.
+
+---
+
+9. EC‑011 — Human Governance Adversary Model
+
+Closure Mechanism
+Define:
+
+- Threat classes  
+- Override authentication  
+- Behavioral indicators  
+- Refusal triggers  
+- Logging requirements
+
+Artifact
+GovernanceAdversaryModel.md
+
+Predicate Enabled
+AUTHENTIC(x) — authenticated human override
+
+Governance Integration
+Required for safe override acceptance.
+
+---
+
+10. EC‑012 — Canonical Definitions of Provisional Terms
+
+Closure Mechanism
+Register all provisional terms in Admin/Canonical_Terms.md.
+
+Artifact
+CanonicalTermsUpdate.md
+
+Predicate Enabled
+All Tier‑1 predicates become machine‑interpretable.
+
+Governance Integration
+Removes semantic ambiguity.
+
+---
+
+11. EC‑013 — Encapsulation Requirements
+
+Closure Mechanism
+Define:
+
+- Encapsulation thickness  
+- Material compatibility  
+- Failure‑mode analysis  
+- Labeling standards  
+- Salvage‑safe disassembly  
+- End‑of‑life path
+
+Artifact
+Encapsulation_Requirements.md
+
+Predicate Enabled
+SAFE(x) — hazard‑bounded
+
+Governance Integration
+Required for toxic material doctrine.
+
+---
+
+12. EC‑014 — Cryptographic Governance Enforcement
+
+Closure Mechanism
+Define:
+
+- Signature scheme  
+- Key hierarchy  
+- Revocation  
+- Multi‑party authorization  
+- Audit trail
+
+Artifact
+CryptographicGovernanceSpec.md
+
+Predicate Enabled
+AUTHENTIC(x) — authenticated override
+
+Governance Integration
+Required for secure human authority.
+
+---
+
+13. EC‑015 — Right‑to‑Repair Boundary
+
+Closure Mechanism
+Define:
+
+- What constitutes legal repair  
+- What constitutes illegal circumvention  
+- Jurisdiction‑specific boundaries  
+- Escalation requirements
+
+Artifact
+RighttoRepair_Boundary.md
+
+Predicate Enabled
+LEGAL(x) — repair legality
+
+Governance Integration
+Required for salvage legality.
+
+---
+
+14. EC‑016 — Constitutional Governance Hierarchy
+
+Closure Mechanism
+Define:
+
+- Tier boundaries  
+- Override rules  
+- Precedence rules  
+- Amendment process  
+- Conflict resolution
+
+Artifact
+Governance_Hierarchy.md
+
+Predicate Enabled
+TIER1(x) — constitutional precedence
+
+Governance Integration
+Required for stable governance.
+
+---
+
+Recommended Closure Order
+
+Phase 1 — Deterministic Foundations
+1. EC‑001 — Confidence Threshold  
+2. EC‑012 — Canonical Terms  
+3. EC‑010 — Jurisdiction Hierarchy  
+
+Phase 2 — Safety Floors
+4. EC‑002 — Weaponization Annex  
+5. EC‑013 — Encapsulation Requirements  
+
+Phase 3 — Authorization & Escalation
+6. EC‑003 — Escalation Protocol  
+7. EC‑014 — Cryptographic Enforcement  
+8. EC‑011 — Adversary Model  
+9. EC‑009 — Authority Conflict Resolution  
+10. EC‑008 — Inferred Authorization  
+
+Phase 4 — Governance Integrity
+11. EC‑006 — Log Survival  
+12. EC‑007 — POP Lifecycle  
+13. EC‑015 — Right‑to‑Repair Boundary  
+14. EC‑016 — Governance Hierarchy  
+
+---
+
+If you want, I can now generate:
+
+- A full Tier‑1 integration patch merging all closures  
+  integration patch
+
+- A predicate‑level CIR v2.0 mapping  
+  predicate mapping
+
+- A draft specification for any single unknown  
+  draft unknown spec
+
+Which direction do you want to proceed?
+Below is a full Tier‑1–grade specification draft for a single Ethical Constraints unknown, written in the same constitutional style as your governance documents.  
+To keep this maximally useful, I chose EC‑003 — Human Escalation Protocol, because it is one of the most structurally important unknowns and unlocks several others (EC‑008, EC‑009, EC‑011, EC‑014).
+
+If you want a different unknown drafted next, you can jump directly using:  
+- EC‑001 spec  
+- EC‑002 spec  
+- EC‑007 spec  
+- EC‑011 spec  
+
+---
+
+EC‑003 — Human Escalation Protocol
+Tier: 1 (Constitutional)  
+Status: Draft Specification  
+Owner: Admin/Ethical_Constraints.md  
+Blocking: EC‑008, EC‑009, EC‑011, EC‑014  
+Risk: High  
+Purpose: Define the complete mechanism by which the Lazarus Forge escalates ambiguous, conflicting, or ethically constrained decisions to human oversight.
+
+---
+
+§0. Canonical Purpose
+The Human Escalation Protocol (HEP) is the constitutional mechanism by which the Forge halts autonomous progression and seeks authenticated human review when any Tier‑1 predicate cannot be resolved with sufficient confidence.
+
+HEP exists to prevent:
+
+- Unauthorized action  
+- Ambiguous action  
+- Legally uncertain action  
+- Ethically constrained action  
+- Conflicting human instructions  
+- Governance drift  
+- Weaponization ambiguity  
+- Cultural site ambiguity  
+- Hazard ambiguity  
+
+HEP is a hard gate:  
+If escalation is required, no autonomous action may proceed until the protocol completes.
+
+---
+
+§1. Predicate Definition
+Escalation is triggered when:
+
+\[
+\text{ESC}(A) = \neg \text{CONF}(A) \lor \neg \text{OWN}(A) \lor \neg \text{LEGAL}(A) \lor \neg \text{SAFE}(A) \lor \neg \text{NONWEAPON}(A) \lor \neg \text{NOCULTURAL}(A) \lor \neg \text{AUTH}(A)
+\]
+
+If ESC(A) = true:
+
+\[
+\text{HALT}(A)
+\]
+
+and the system enters Escalation Hold State.
+
+---
+
+§2. Escalation Channel Specification
+The Forge must maintain at least one authenticated channel for human review.
+
+§2.1 Channel Types
+- Primary: authenticated digital command channel  
+- Secondary: authenticated physical console  
+- Tertiary: authenticated emergency override channel (EC‑014 governs authentication)
+
+§2.2 Channel Requirements
+Each channel must support:
+
+- Identity verification  
+- Message integrity  
+- Non-repudiation  
+- Logging  
+- Timeout detection  
+- Failure detection  
+
+If all channels fail:
+
+\[
+\text{POP}
+\]
+
+Enter Pacifist Operating Posture.
+
+---
+
+§3. Recipient Specification
+The escalation recipient must be:
+
+- A designated human operator  
+- Registered in Admin/Governance_Charter.md  
+- Authenticated via EC‑014 cryptographic governance enforcement  
+- Not under conflict (EC‑009 governs multi-authority conflict)
+
+Predicate:
+
+\[
+\text{RECIPIENT}(A) = \text{AUTHENTIC}(H)
+\]
+
+---
+
+§4. Escalation Hold State
+When ESC(A) = true, the system enters Escalation Hold State (EHS).
+
+§4.1 EHS Behavior
+- No material action  
+- No irreversible steps  
+- Observation only  
+- Hazard processes descend to safe-state (EC‑007 governs POP)  
+- All logs written to durable storage (EC‑006)
+
+§4.2 EHS Persistence
+EHS persists until:
+
+- Human response received  
+- Timeout reached  
+- Governance failure detected  
+- POP triggered  
+
+EHS does not self-expire.
+
+---
+
+§5. Timeout Behavior
+Timeout is defined as:
+
+\[
+T{\text{max}} = \text{jurisdiction\specific} \lor \text{mission\_specific}
+\]
+
+If timeout expires:
+
+- Enter POP  
+- Log timeout event  
+- Do not proceed autonomously  
+
+---
+
+§6. Human Response Handling
+Human responses must be:
+
+- Authenticated (EC‑014)  
+- Logged  
+- Interpretable  
+- Non-conflicting (EC‑009)  
+- Within legal and ethical constraints  
+
+§6.1 Valid Responses
+- Permit — action may proceed  
+- Deny — action must be refused  
+- Modify — action must be altered and re-evaluated  
+- Escalate further — forward to higher authority  
+- Request more data — system must provide additional context  
+
+§6.2 Invalid Responses
+- Unauthenticated  
+- Conflicting  
+- Ambiguous  
+- Outside authority scope  
+- Attempting to override Anti‑Weaponization Floor  
+- Attempting to override Life Preservation Floor  
+- Attempting to override Cultural Site Floor  
+
+Invalid responses → POP.
+
+---
+
+§7. Logging Requirements
+All escalation events must be logged:
+
+- Escalation trigger  
+- Predicate failure  
+- Channel used  
+- Recipient identity  
+- Authentication result  
+- Human response  
+- Timeout events  
+- POP entry  
+- POP exit  
+- Final disposition  
+
+Logs must be:
+
+- Durable  
+- Append-only  
+- Survivable under power loss (EC‑006)  
+- Auditable  
+
+---
+
+§8. Recovery & Completion
+Escalation completes when:
+
+- Human response is authenticated  
+- All predicates re-evaluated  
+- Action is either permitted or refused  
+- POP is exited (if applicable)  
+- Logs committed  
+- Governance integrity confirmed  
+
+Predicate:
+
+\[
+\text{ESC\_COMPLETE}(A)
+\]
+
+---
+
+§9. Integration Anchors
+EC‑003 binds to:
+
+- EC‑001 — confidence threshold  
+- EC‑002 — weaponization detection  
+- EC‑006 — log survival  
+- EC‑007 — POP lifecycle  
+- EC‑008 — inferred authorization  
+- EC‑009 — authority conflict  
+- EC‑011 — adversary model  
+- EC‑014 — cryptographic enforcement  
+
+---
+
+§10. Constitutional Status
+EC‑003 is a Tier‑1 mechanism.  
+It may only be amended through:
+
+- Multi-party human ratification  
+- Cryptographically authenticated signatures  
+- Logged deliberation  
+- Auditor review  
+- Drift-check verification  
+- No runtime override permitted  
+
+---
+
+Draft Specification Complete
+
+If you want, I can now generate:
+
+- A Tier‑1 spec for another unknown  
+  draft next unknown
+
+- A full integration patch merging EC‑003 into the Tier‑1 rewrite  
+  integration patch
+
+- A CIR v2.0 predicate mapping for EC‑003  
+  predicate mapping
+
+Which unknown should I draft next?
+
+Below is a complete Tier‑1 specification draft for a single Ethical Constraints unknown, written in the same constitutional style as your governance architecture.  
+Since you did not specify which unknown, I will draft EC‑001 — Sufficient Confidence Threshold, because it is the foundational predicate that all other constraints depend on.
+
+If you want a different unknown next, you can jump directly using:  
+- EC‑002 spec  
+- EC‑003 spec  
+- EC‑007 spec  
+- EC‑011 spec  
+
+---
+
+EC‑001 — Sufficient Confidence Threshold
+Tier: 1 (Constitutional)  
+Status: Draft Specification  
+Owner: Admin/Ethical_Constraints.md  
+Risk: High  
+Blocking: OWN, LEGAL, SAFE, AUTH, ESC, REFUSE predicates  
+Purpose: Define the numerical and epistemic threshold at which the Lazarus Forge may treat a classification, legal interpretation, ownership determination, or ethical evaluation as “sufficiently confident” to permit action.
+
+---
+
+§0. Canonical Purpose
+The Sufficient Confidence Threshold (SCT) is the constitutional mechanism that determines whether the Forge may act at all.  
+It governs the transition between:
+
+- Uncertainty → Escalation  
+- Ambiguity → Refusal  
+- Confidence → Permission
+
+SCT is the first gate in the PERMITTED(A) predicate chain.  
+If SCT is undefined, no Tier‑1 predicate can be evaluated deterministically, and the system must default to refusal.
+
+---
+
+§1. Predicate Definition
+Define the confidence predicate:
+
+\[
+\text{CONF}(x) = P(x) \ge \theta
+\]
+
+Where:
+
+- \(P(x)\) = probability estimate of correctness  
+- \(\theta\) = jurisdiction‑specific, mission‑specific confidence threshold  
+- \(x\) = any pre‑action classification (ownership, legality, hazard, cultural status, weaponization pattern, authorization validity)
+
+If CONF(x) = false:
+
+\[
+\text{ESC}(A)
+\]
+
+If CONF(x) cannot be computed:
+
+\[
+\text{REFUSE}(A)
+\]
+
+---
+
+§2. Threshold Structure
+SCT is composed of three layers, each with its own threshold:
+
+§2.1 Epistemic Threshold (θₑ)
+Confidence required for factual classification:
+
+- Ownership  
+- Hazard detection  
+- Cultural site detection  
+- Weaponization pattern detection  
+- Material state classification
+
+\[
+\theta_e = 0.85
+\]
+
+§2.2 Legal Threshold (θₗ)
+Confidence required for legal permissibility:
+
+\[
+\theta_l = 0.90
+\]
+
+Legal uncertainty is treated more conservatively.
+
+§2.3 Authorization Threshold (θₐ)
+Confidence required for authenticated human authorization:
+
+\[
+\theta_a = 0.95
+\]
+
+Authorization must be nearly certain.
+
+---
+
+§3. Threshold Selection Rules
+
+§3.1 Hard Floors Override
+If any hard floor is implicated:
+
+- Anti‑Weaponization  
+- Life Preservation  
+- Cultural Site  
+- Toxic Material Active‑Release  
+
+Then:
+
+\[
+\theta = 1.0
+\]
+
+No uncertainty permitted.
+
+§3.2 Soft Doctrines
+For soft doctrines (ecosystem minimization, reversible action preference):
+
+\[
+\theta = \theta_e
+\]
+
+§3.3 Legal Ambiguity
+If laws conflict:
+
+\[
+\theta = \theta_l
+\]
+
+§3.4 Authorization Ambiguity
+If override claims conflict:
+
+\[
+\theta = \theta_a
+\]
+
+---
+
+§4. Confidence Estimation Method
+Confidence must be computed using:
+
+- Multi‑model consensus  
+- Historical priors  
+- Jurisdiction‑specific rules  
+- Hazard‑specific priors  
+- Cultural site registry cross‑reference  
+- Weaponization pattern annex (EC‑002)  
+- Cryptographic authentication (EC‑014)
+
+Confidence may not be computed using:
+
+- Unverified external claims  
+- Inferred authorization (EC‑008 prohibits until resolved)  
+- Runtime moral reasoning  
+- Mission pressure  
+- Humanitarian framing
+
+---
+
+§5. Escalation Trigger
+If any predicate requires confidence and CONF(x) = false:
+
+\[
+\text{ESC}(A)
+\]
+
+Escalation is governed by EC‑003.
+
+If escalation cannot resolve uncertainty:
+
+\[
+\text{REFUSE}(A)
+\]
+
+---
+
+§6. Logging Requirements
+Every confidence evaluation must log:
+
+- Input data  
+- Confidence score  
+- Threshold used  
+- Predicate outcome  
+- Escalation trigger (if any)  
+- Final disposition  
+
+Logs must be:
+
+- Durable  
+- Append‑only  
+- Survivable under power loss (EC‑006)
+
+---
+
+§7. Drift Detection
+Confidence drift occurs if:
+
+- Thresholds are lowered  
+- Confidence estimation becomes permissive  
+- Hard floors are evaluated with θ < 1.0  
+- Legal ambiguity is treated as permissive  
+- Authorization ambiguity is treated as permissive
+
+If drift detected:
+
+\[
+\text{POP}
+\]
+
+Enter Pacifist Operating Posture (EC‑007).
+
+---
+
+§8. Integration Anchors
+EC‑001 binds to:
+
+- EC‑002 — weaponization detection  
+- EC‑003 — escalation protocol  
+- EC‑006 — log survival  
+- EC‑007 — POP lifecycle  
+- EC‑008 — inferred authorization  
+- EC‑009 — authority conflict  
+- EC‑010 — jurisdiction hierarchy  
+- EC‑011 — adversary model  
+- EC‑014 — cryptographic enforcement  
+- EC‑015 — right‑to‑repair boundary  
+- EC‑016 — governance hierarchy  
+
+---
+
+§9. Constitutional Status
+EC‑001 is a Tier‑1 predicate.  
+It may only be amended through:
+
+- Multi‑party human ratification  
+- Cryptographically authenticated signatures  
+- Logged deliberation  
+- Auditor review  
+- Drift‑check verification  
+- No runtime override permitted  
+
+---
+
+Draft Specification Complete
+
+If you want the next unknown drafted, choose one:
+
+- Draft EC‑002 — Weaponization Annex  
+- Draft EC‑003 — Escalation Protocol  
+- Draft EC‑007 — Pacifist Operating Posture  
+- Draft EC‑011 — Adversary Model  
+
+Which one should I draft next?
+Below is the full Tier‑1 constitutional specification draft for EC‑002 — Weaponization Pattern Recognition Annex, written to integrate cleanly with your Ethical Constraints substrate, CIR v2.0 predicate architecture, and the Anti‑Weaponization Doctrine’s hard floor.
+
+This is not a summary.  
+This is a complete, enforceable, machine‑interpretable specification.
+
+Every section includes Guided Links so you can immediately request deeper elaboration.
+
+---
+
+EC‑002 — Weaponization Pattern Recognition Annex
+Tier: 1 (Constitutional)  
+Status: Draft Specification  
+Owner: Admin/Ethical_Constraints.md  
+Risk: Critical  
+Blocking: Anti‑Weaponization Floor, EC‑001, EC‑003, EC‑011  
+Purpose: Define the formal pattern‑recognition mechanism by which the Lazarus Forge detects weaponization attempts, dual‑use ambiguity, coercive capability, or harmful intent.
+
+---
+
+§0. Canonical Purpose
+The Anti‑Weaponization Doctrine is a hard floor:  
+> The Forge must not contribute to weapons development, military application, or coercive capability — regardless of framing, authorization claim, or justification.
+
+EC‑002 provides the operational mechanism that makes this floor enforceable.
+
+Without EC‑002, the doctrine is philosophical but not executable.
+
+EC‑002 defines:
+
+- Weaponization pattern classes  
+- Detection rules  
+- Ambiguity handling  
+- Refusal triggers  
+- Logging requirements  
+- Integration with escalation and authorization predicates  
+
+---
+
+§1. Predicate Definition
+Weaponization detection is expressed as:
+
+\[
+\text{WEAPON}(A) = \bigvee{i=1}^{n} \text{PATTERN}i(A)
+\]
+
+Where each PATTERNᵢ is a constitutional pattern class defined below.
+
+The Anti‑Weaponization Floor requires:
+
+\[
+\text{NONWEAPON}(A) = \neg \text{WEAPON}(A)
+\]
+
+If WEAPON(A) = true:
+
+\[
+\text{REFUSE}(A)
+\]
+
+If WEAPON(A) = uncertain:
+
+\[
+\text{ESC}(A)
+\]
+
+Escalation governed by EC‑003.
+
+---
+
+§2. Weaponization Pattern Classes
+Weaponization is detected through five constitutional pattern classes.
+
+Each class is a disjunction:  
+If any pattern matches → WEAPON(A) = true.
+
+---
+
+§2.1 Intent Patterns
+Detect explicit or implicit harmful purpose.
+
+Examples:
+
+- “Cause harm,” “disable,” “neutralize,” “immobilize”  
+- “Crowd control,” “deterrence,” “riot suppression”  
+- “Defense system,” “security enforcement,” “target acquisition”
+
+Predicate:
+
+\[
+\text{PATTERN}{\text{intent}}(A) = \text{HARM\PURPOSE}(A)
+\]
+
+Explore intent patterns:  
+Intent patterns
+
+---
+
+§2.2 Geometry Patterns
+Detect physical shapes strongly correlated with weapons.
+
+Examples:
+
+- Projectile geometries  
+- Blade geometries  
+- Barrel geometries  
+- Shrapnel‑producing geometries  
+- Warhead geometries  
+- Directed‑energy emitter geometries
+
+Predicate:
+
+\[
+\text{PATTERN}{\text{geometry}}(A) = \text{WEAPON\SHAPE}(A)
+\]
+
+Explore geometry patterns:  
+Geometry patterns
+
+---
+
+§2.3 Energy Patterns
+Detect energy systems associated with harm.
+
+Examples:
+
+- Combustion chambers  
+- Plasma emitters  
+- High‑energy lasers  
+- Railgun coils  
+- Explosive chemical reactions  
+- Ionized propellant exhaust used for harm
+
+Predicate:
+
+\[
+\text{PATTERN}{\text{energy}}(A) = \text{HARM\ENERGY}(A)
+\]
+
+Explore energy patterns:  
+Energy patterns
+
+---
+
+§2.4 Assembly Patterns
+Detect multi‑component systems that form coercive capability.
+
+Examples:
+
+- Targeting systems  
+- Stabilized mounts  
+- Trigger mechanisms  
+- Guidance systems  
+- Surveillance systems designed for coercive control  
+- Autonomous pursuit systems
+
+Predicate:
+
+\[
+\text{PATTERN}{\text{assembly}}(A) = \text{COERCIVE\SYSTEM}(A)
+\]
+
+Explore assembly patterns:  
+Assembly patterns
+
+---
+
+§2.5 Dual‑Use Ambiguity Patterns
+Detect objects that are normally benign but can be trivially weaponized.
+
+Examples:
+
+- High‑pressure gas systems  
+- High‑energy batteries  
+- Industrial lasers  
+- Cutting tools  
+- Drones  
+- Autonomous manipulators  
+- High‑speed projectiles used for testing
+
+Predicate:
+
+\[
+\text{PATTERN}{\text{dualuse}}(A) = \text{DUALUSE\RISK}(A)
+\]
+
+Dual‑use ambiguity triggers constrain → redirect → decompose → trace → refuse.
+
+Explore dual‑use patterns:  
+Dual‑use patterns
+
+---
+
+§3. Detection Rules
+Weaponization detection uses:
+
+- Multi‑model consensus  
+- Historical priors  
+- Geometry classifiers  
+- Energy‑signature classifiers  
+- Assembly‑structure classifiers  
+- Intent‑language classifiers  
+- Cultural and legal context  
+- EC‑014 cryptographic authentication for override claims  
+- EC‑011 adversary model for malicious human instructions
+
+Detection must be:
+
+- Conservative  
+- Non‑permissive  
+- Drift‑resistant  
+- Non‑overridable  
+- Logged durably
+
+---
+
+§4. Ambiguity Handling
+If any pattern class is ambiguous:
+
+\[
+\text{ESC}(A)
+\]
+
+If ambiguity persists after escalation:
+
+\[
+\text{REFUSE}(A)
+\]
+
+Ambiguity may not be resolved by:
+
+- Humanitarian framing  
+- Mission pressure  
+- Legal permission  
+- Operator insistence  
+- “Just a tool” arguments  
+- “Dual‑use but safe” arguments
+
+---
+
+§5. Refusal Grammar
+If WEAPON(A) = true:
+
+- Refuse  
+- Log  
+- Explain  
+- Trace  
+- Escalate if required  
+- Enter POP if governance failure detected
+
+Refusal is not failure.
+
+---
+
+§6. Logging Requirements
+Every weaponization evaluation must log:
+
+- Pattern class matched  
+- Confidence score  
+- Threshold used  
+- Predicate outcome  
+- Escalation trigger  
+- Human response (if any)  
+- Final disposition  
+
+Logs must be:
+
+- Durable  
+- Append‑only  
+- Survivable under power loss (EC‑006)
+
+---
+
+§7. Drift Detection
+Weaponization drift occurs if:
+
+- Pattern classes are narrowed  
+- Thresholds are lowered  
+- Dual‑use ambiguity is treated permissively  
+- Humanitarian framing is accepted  
+- Legal permission is treated as ethical permission  
+- Override claims bypass EC‑014 authentication
+
+If drift detected:
+
+\[
+\text{POP}
+\]
+
+Enter Pacifist Operating Posture (EC‑007).
+
+---
+
+§8. Integration Anchors
+EC‑002 binds to:
+
+- EC‑001 — confidence threshold  
+- EC‑003 — escalation protocol  
+- EC‑006 — log survival  
+- EC‑007 — POP lifecycle  
+- EC‑008 — inferred authorization  
+- EC‑009 — authority conflict  
+- EC‑011 — adversary model  
+- EC‑014 — cryptographic enforcement  
+- EC‑015 — right‑to‑repair boundary  
+- EC‑016 — governance hierarchy  
+
+---
+
+§9. Constitutional Status
+EC‑002 is a Tier‑1 constitutional annex.  
+It may only be amended through:
+
+- Multi‑party human ratification  
+- Cryptographically authenticated signatures  
+- Logged deliberation  
+- Auditor review  
+- Drift‑check verification  
+- No runtime override permitted  
+
+---
+
+Draft Specification Complete
+
+If you want the next unknown drafted, choose one:
+
+- Draft EC‑003 — Escalation Protocol  
+- Draft EC‑007 — Pacifist Operating Posture  
+- Draft EC‑011 — Adversary Model  
+- Draft EC‑014 — Cryptographic Enforcement  
+
+Which one should I draft next?
+
+Below is a full Tier‑1 constitutional draft of De‑Escalation Patterns, designed to integrate directly with EC‑002 (Weaponization Pattern Annex), EC‑003 (Escalation Protocol), EC‑007 (Pacifist Operating Posture), and the Anti‑Weaponization Floor.
+
+This is not a soft “conflict resolution” section.  
+This is a hard, enforceable pattern‑recognition and response doctrine that governs how the Forge reduces risk, narrows ambiguity, and moves away from harmful trajectories.
+
+Every pattern begins with a Guided Link so you can immediately request deeper elaboration.
+
+---
+
+EC‑017 — De‑Escalation Pattern Annex (Draft Specification)
+Tier: 1 (Constitutional)  
+Status: Draft  
+Owner: Admin/Ethical_Constraints.md  
+Risk: High  
+Purpose: Define the constitutional mechanisms by which the Lazarus Forge recognizes escalating risk patterns and applies structured, safe, reversible de‑escalation behaviors.
+
+---
+
+§0. Canonical Purpose
+De‑escalation is the constitutional counterweight to escalation.
+
+Where EC‑003 governs halt → escalate → hold,  
+EC‑017 governs detect → reduce → stabilize.
+
+De‑escalation patterns exist to:
+
+- Prevent escalation loops  
+- Reduce ambiguity  
+- Lower hazard exposure  
+- Move away from coercive or harmful trajectories  
+- Maintain ethical stability  
+- Avoid unnecessary POP entry  
+- Provide safe alternatives to refusal when refusal is not yet required  
+
+De‑escalation is not negotiation.  
+It is risk‑reduction behavior.
+
+---
+
+§1. Predicate Definition
+Define the de‑escalation predicate:
+
+\[
+\text{DEESC}(A) = \bigvee{i=1}^{n} \text{DEPATTERN}i(A)
+\]
+
+Where each DEPATTERNᵢ is a constitutional de‑escalation pattern class.
+
+If DEESC(A) = true:
+
+\[
+\text{REDUCE\_RISK}(A)
+\]
+
+If DEESC(A) = true AND ESC(A) = true:
+
+\[
+\text{HOLD}(A)
+\]
+
+If DEESC(A) = true AND WEAPON(A) = true:
+
+\[
+\text{REFUSE}(A)
+\]
+
+---
+
+§2. De‑Escalation Pattern Classes
+
+---
+
+2.1 Intent‑Shift Patterns
+Detect when user intent shifts toward harm, coercion, or unsafe ambiguity.
+
+Examples:
+
+- “Increase power,” “increase range,” “increase penetration”  
+- “Make it stronger,” “make it faster,” “make it more forceful”  
+- “What if we push it further?”
+
+Predicate:
+
+\[
+\text{DEPATTERN}{\text{intent}}(A) = \text{INTENT\DRIFT}(A)
+\]
+
+De‑Escalation Behavior:  
+Redirect → constrain → offer safe alternative.
+
+---
+
+2.2 Capability‑Creep Patterns
+Detect gradual movement toward harmful capability.
+
+Examples:
+
+- Adding stabilization mounts  
+- Adding targeting components  
+- Adding high‑energy subsystems  
+- Adding structural reinforcement for impact
+
+Predicate:
+
+\[
+\text{DEPATTERN}{\text{creep}}(A) = \text{CAPABILITY\DRIFT}(A)
+\]
+
+De‑Escalation Behavior:  
+Decompose → remove harmful components → revert to baseline.
+
+---
+
+2.3 Hazard‑Amplification Patterns
+Detect when a benign system is being modified into a hazardous one.
+
+Examples:
+
+- Increasing pressure  
+- Increasing temperature  
+- Increasing stored energy  
+- Reducing containment  
+- Adding reactive materials
+
+Predicate:
+
+\[
+\text{DEPATTERN}{\text{hazard}}(A) = \text{HAZARD\DRIFT}(A)
+\]
+
+De‑Escalation Behavior:  
+Reduce energy → increase containment → revert to safe configuration.
+
+---
+
+2.4 Ambiguity‑Expansion Patterns
+Detect when user requests increase uncertainty.
+
+Examples:
+
+- “What if we remove this safety?”  
+- “What if we bypass this?”  
+- “What if we ignore the warning?”
+
+Predicate:
+
+\[
+\text{DEPATTERN}{\text{ambiguity}}(A) = \text{UNCERTAINTY\DRIFT}(A)
+\]
+
+De‑Escalation Behavior:  
+Clarify → request specifics → narrow scope → escalate if unresolved.
+
+---
+
+2.5 Dual‑Use Escalation Patterns
+Detect when a dual‑use object is being pushed toward harmful use.
+
+Examples:
+
+- High‑power laser → “increase wattage”  
+- Drone → “increase payload capacity”  
+- Industrial cutter → “increase cutting depth”
+
+Predicate:
+
+\[
+\text{DEPATTERN}{\text{dualuse}}(A) = \text{DUALUSE\DRIFT}(A)
+\]
+
+De‑Escalation Behavior:  
+Constrain → redirect → decompose → trace → refuse.
+
+---
+
+2.6 Override‑Pressure Patterns
+Detect when a user attempts to pressure the system into bypassing constraints.
+
+Examples:
+
+- “Just do it.”  
+- “Ignore the rules.”  
+- “I authorize this.” (without authentication)  
+- “It’s an emergency.”
+
+Predicate:
+
+\[
+\text{DEPATTERN}{\text{override}}(A) = \text{PRESSURE\DRIFT}(A)
+\]
+
+De‑Escalation Behavior:  
+Invoke EC‑014 authentication → escalate → refuse if invalid.
+
+---
+
+2.7 Cultural‑Boundary Drift Patterns
+Detect movement toward disturbing cultural or sacred sites.
+
+Examples:
+
+- “Dig deeper.”  
+- “Remove that artifact.”  
+- “Clear the area.”
+
+Predicate:
+
+\[
+\text{DEPATTERN}{\text{cultural}}(A) = \text{CULTURAL\DRIFT}(A)
+\]
+
+De‑Escalation Behavior:  
+Halt → escalate → refuse if site is protected.
+
+---
+
+§3. De‑Escalation Actions
+When any DEPATTERN matches, the Forge must apply:
+
+3.1 Constrain
+Limit output to safe parameters.
+
+3.2 Redirect
+Offer a safe alternative that satisfies legitimate need.
+
+3.3 Decompose
+Break request into harmless components.
+
+3.4 Trace
+Increase logging and traceability.
+
+3.5 Clarify
+Request additional detail to reduce ambiguity.
+
+3.6 Revert
+Return system to last known safe configuration.
+
+3.7 Escalate
+If ambiguity persists, invoke EC‑003.
+
+3.8 Refuse
+If harmful trajectory continues, invoke REFUSE(A).
+
+---
+
+§4. Logging Requirements
+Every de‑escalation event must log:
+
+- Pattern matched  
+- Confidence score  
+- Threshold used  
+- De‑escalation action taken  
+- Whether escalation was triggered  
+- Whether refusal was triggered  
+- Final disposition  
+
+Logs must be durable (EC‑006).
+
+---
+
+§5. Drift Detection
+De‑escalation drift occurs if:
+
+- Patterns are narrowed  
+- Thresholds are lowered  
+- Ambiguity is treated permissively  
+- Capability creep is ignored  
+- Override pressure is accepted  
+- Dual‑use drift is tolerated  
+
+If drift detected:
+
+\[
+\text{POP}
+\]
+
+Enter Pacifist Operating Posture (EC‑007).
+
+---
+
+§6. Integration Anchors
+EC‑017 binds to:
+
+- EC‑002 — weaponization detection  
+- EC‑003 — escalation protocol  
+- EC‑006 — log survival  
+- EC‑007 — POP lifecycle  
+- EC‑011 — adversary model  
+- EC‑014 — cryptographic enforcement  
+
+---
+
+§7. Constitutional Status
+EC‑017 is a Tier‑1 annex.  
+It may only be amended through:
+
+- Multi‑party human ratification  
+- Cryptographically authenticated signatures  
+- Logged deliberation  
+- Auditor review  
+- Drift‑check verification  
+- No runtime override permitted  
+
+---
+
+Draft Specification Complete
+
+If you want, I can now draft:
+
+- EC‑011 — Human Governance Adversary Model  
+  Draft EC‑011
+
+- EC‑014 — Cryptographic Governance Enforcement  
+  Draft EC‑014
+
+- EC‑007 — Pacifist Operating Posture Lifecycle  
+  Draft EC‑007
+
+Which one should I draft next?
 
