@@ -17,8 +17,8 @@
 | Body Stability   | Draft                                                               |
 | Spec Gates       | 1/6                                                                 |
 | Verification Ref | Admin/Verification_Gates_LF.md                                      |
-| Last Audit       | 2026-06-24                                                          |
-| Auditor          | Claude — Synthesizer/Auditor                                        |
+| Last Audit       | 2026-08-03                                                          |
+| Auditor          | Claude — Synthesizer/Auditor, human-directed, 2026-08-03: corrective merge of a Copilot/Grok exchange — GH-004/GH-012/CSL-A03 gained complementary elaboration (Payment via Specification only, see AP-033 in Admin/Auditor_Protocols.md); GH-007/GH-008/GH-009/GH-011 left untouched, already better-specified than what was proposed; prior: Claude — Synthesizer/Auditor                                        |
 | Open Unknowns    | 13                                                                  |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | High                                                                |
@@ -83,6 +83,8 @@ Just as the Forge assumes that discarded materials contain unrealized value, the
 | CSL-A06 | Stage 3 high-fidelity simulation predicts physical outcomes with sufficient accuracy     | Placeholder — no Forge-specific data | Placeholder | First S2R delta measurement on promoted heuristic       |
 
 CSL-A06 is load-bearing: the entire pipeline's safety guarantee rests on Stage 3 catching hazardous sequences. If simulation-to-physical fidelity is low, promoted heuristics may pass Stage 3 while failing in physical execution. This assumption requires empirical validation before any heuristic reaches Operational Spec status.
+
+**CSL-A03 elaboration (Payment via Specification, added 2026-08-03 — human-directed, corrective merge from a Copilot/Grok exchange, see AP-033):** the expiry trigger above ("Stage 3 validation pass on first physical anomaly") elaborated as a concrete test: at the first physical anomaly that generates a puzzle, perform Stage 3 validation of the resulting heuristic and compare simulated versus measured physical profiles; if Δ_physical exceeds a Placeholder threshold ε, flag the puzzle physics model for redesign. Required artifact if adopted: a `Puzzle Fidelity Validation Log` recording anomaly_class, Δ_physical, and the redesign decision. This does not close CSL-A03 — it only states the test that will run when first-anomaly data exists, same as the existing expiry trigger already implies.
 
 ---
 
@@ -594,11 +596,13 @@ Full Battery deferred to Candidate Spec. No specification-level claims promoted.
 | Blocking      | No                               |
 | Owner         | Tests/Cognitive_Salvage_Layer.md |
 | First Logged  | 2026-06-24                       |
-| Last Reviewed | 2026-06-24                       |
+| Last Reviewed | 2026-08-03                       |
 
 **Description:** What abstraction level preserves useful human intuition while remaining computationally tractable? The typed action_sequence operates at operation level. Whether this is sufficient is untested.
 
 **Resolution Path:** Payment via Specification — define abstraction hierarchy: Strategic (goal/sequence), Operational (current typed schema), Tactical (tool-path vectors). Store multiple levels when possible. GH-011 (canonicalization) partially addresses this.
+
+**Canonicalization envelope (Payment via Specification, added 2026-08-03 — human-directed, corrective merge from a Copilot/Grok exchange, see AP-033):** independent of which abstraction hierarchy above is eventually adopted, any canonicalization pass needs a hard constraint on what it may alter: **allowed** — removal of redundant actions, normalization of syntactically equivalent sequences that produce identical Stage 3 outcomes; **forbidden** — removal or reordering of any action that alters Stage 3 outcomes (kinematic, stress, or metrics_delta results). Verification method (unexecuted): run Stage 3 on both the original and candidate canonicalized sequence, require identical outcomes within the same `simulation_fidelity_version`. This defines a testable envelope, not an abstraction level — it constrains GH-011's eventual implementation regardless of which hierarchy tier that implementation targets. Placeholder / Internally Derived. Does not resolve GH-004 or GH-011.
 
 ---
 
@@ -764,13 +768,15 @@ Full Battery deferred to Candidate Spec. No specification-level claims promoted.
 | Blocking      | No                               |
 | Owner         | Tests/Cognitive_Salvage_Layer.md |
 | First Logged  | 2026-06-24                       |
-| Last Reviewed | 2026-06-24                       |
+| Last Reviewed | 2026-08-03                       |
 
 **Description:** What percentage of harvested heuristics are genuinely novel? This is distinct from GH-005 (how often are humans needed). GH-005 asks how frequently the pipeline is invoked. GH-012 asks how often invocations produce new knowledge. A system might require human intervention frequently while producing very little novel knowledge, or rarely while producing extremely valuable breakthroughs. The ratio determines the actual return on investment of the layer and whether Cognitive Salvage functions as a high-value augmentation or an expensive edge-case handler. Without this metric, the pipeline cannot demonstrate its own effectiveness — a recursive justification problem (Adversarial Battery Challenge Class 6).
 
 **Why It Matters:** If 100,000 player solutions produce 99,900 duplicates, 99 improvements, and 1 breakthrough, the economics and operational posture of the layer look entirely different than 100,000 solutions producing 5,000 useful improvements. That ratio also determines how aggressively the Leviathan emergency cognition pathway should be pursued versus alternative approaches. This unknown is the primary ROI signal for the entire layer.
 
 **Resolution Path:** Payment via Specification — define a discovery yield rate metric as part of the AP-001 audit effectiveness metrics pass (once that entry matures). Minimum: track CANDIDATE_NOVEL rate as a fraction of total FEASIBLE completions per anomaly class, stratified by anomaly complexity. Cross-reference AP-001 (audit effectiveness metrics) — discovery yield rate is a candidate indicator for that entry's eventual indicator set, subject to EF-0.6 (must remain an indicator, not an optimization target). A pipeline optimized to maximize discovery yield rate rather than genuine novelty detection would produce exactly the epistemic corruption it was designed to prevent.
+
+**Baseline ratio (Payment via Specification, added 2026-08-03 — human-directed, corrective merge from a Copilot/Grok exchange, see AP-033):** the simplest possible version of this metric, useful as a coarse baseline before the stratified CANDIDATE_NOVEL-rate version above matures: YieldRate = (heuristics graded FEASIBLE) / (total heuristic submissions), computed per `anomaly_class`. Required artifact if adopted: a `DiscoveryYieldReport` per deployment cycle (fields: anomaly_class, total_submissions, feasible_count, yield_rate, reporting_period). Placeholder / Internally Derived — no numerical target asserted, no collection has occurred. This is a coarser, earlier-available companion metric, not a replacement for the stratified version above.
 
 *Surfaced by Gemini review, 2026-06-24.*
 
@@ -806,6 +812,38 @@ Full Battery deferred to Candidate Spec. No specification-level claims promoted.
 - 2026-07-12 (second entry, same day): **v0.3.1 → v0.4 — Conceptual Salvage Pipeline added as a provisional Body subsection.** Origin: James's illusion-power RPG character example (optical-illusion constraint → optics study → wavelength curiosity → laser interest), discussed with ChatGPT and documented on r/InnovativeAIChats, 2026-07-12. Explicitly marked Exploration-within-Exploration and not yet Gate 1-reviewed — this is a proposed second pipeline (conceptual/idea salvage), structurally distinct from the existing physical Heuristic Failure Class pipeline, not a variant of it. A comparison table makes explicit which existing stages (Kinematic Mapping, Simulation) have no equivalent for non-physical input. The working principle ("every idea is provisional feedstock...") is recorded as provisional, not ratified doctrine. GH-013 registered for the storage/object-schema gap this subsection cannot resolve on its own — marked Blocking specifically for this subsection's advancement, not for the file as a whole. Open Unknowns 12 → 13. *(Correction, 2026-07-19: this entry originally said "Unknowns.md requires update: GH-013 global index registration (joins GH-007 through GH-012 already outstanding there)" — stale on arrival. GH-007 through GH-012 were already registered in `Unknowns.md` since v4.1 (2026-06-24), and GH-013 itself was registered the same day as this entry, per `Unknowns.md` v4.18. Nothing was actually outstanding.)*
 
 ---
+
+- 2026-08-03: **Corrective merge — AP-033, human-directed.** A Copilot
+  proposal series, produced with no confirmed access to this file's
+  sidecar or `Admin/Auditor_Protocols.md`, declared 16 of this file's
+  unknowns "CLOSED" purely by describing methodology, with zero
+  empirical work behind any of them — including CSL-A06, this file's
+  own named load-bearing assumption. It also mis-enumerated this
+  file's own unknown set: never mentioned GH-005 (a real entry
+  registered since v0.1), and invented a nonexistent "GH-014" to pad
+  the count back to 13. None of that was merged — see AP-033 in
+  `Admin/Auditor_Protocols.md`'s sidecar for the full account and the
+  resulting Rule 9. A second agent (Grok), with confirmed access,
+  correctly diagnosed every violation and produced a clean rewrite
+  restricted to genuine Payment via Specification. Checked that
+  rewrite against what this file already had before merging anything:
+  three entries (GH-004, GH-012, CSL-A03) gained genuinely
+  complementary elaboration — a canonicalization envelope constraint
+  for GH-004, a simpler baseline yield ratio alongside GH-012's
+  existing stratified metric, and a concrete Δ_physical test for
+  CSL-A03's existing expiry trigger — all explicitly marked Placeholder
+  / Internally Derived, none changing Status or Open Unknowns. Four
+  entries (GH-007, GH-008, GH-009, GH-011) already had more specific,
+  better-grounded resolution paths than the proposal series offered
+  (GH-007 and GH-008 already tie to the real `simulation_fidelity_
+  version`/`validated_on_machinery_revision` schema fields; GH-009
+  already defines Interaction Volume, more concrete than a generic
+  interaction matrix; GH-011 already specifies a pre-Stage-1 merge
+  pass) — the proposal's versions of these would have been a downgrade
+  if merged, so they weren't. CSL-A05's existing expiry trigger already
+  matched the proposal exactly (dependent on GH-003) — nothing to add.
+  Open Unknowns unchanged at 13. Status/Spec Gates unchanged
+  (Exploration, 1/6).
 
 ## Abandoned Paths
 
