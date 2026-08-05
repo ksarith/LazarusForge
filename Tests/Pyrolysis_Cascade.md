@@ -15,9 +15,9 @@
 | Spec Gates       | 0/6 (not yet audited)                                               |
 | Verification Ref | `Admin/Verification_Gates_LF.md`                                    |
 | First Logged     | 2026-08-04                                                          |
-| Last Audit       | — (pre-audit skeleton)                                              |
-| Auditor          | —                                                                   |
-| Open Unknowns    | 8 (PC-001 … PC-008)                                                 |
+| Last Audit       | — (pre-audit skeleton; ID-collision fix applied 2026-08-04, not a Gate audit) |
+| Auditor          | — (Claude — Synthesizer, PC-/PYC- namespace collision fix only, human-directed, 2026-08-04) |
+| Open Unknowns    | 8 (PYC-001 … PYC-008)                                                 |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | High (thermal processing of mixed salvage; halogen & hazardous-fraction exposure) |
 | Sidecar Link     | #auditor-notes--unknowns                                            |
@@ -68,11 +68,11 @@ It exists to keep the architectural idea legible, to surface its dependency on a
 
 | ID      | Assumption                                                                 | Basis                              | Confidence   | Expiry Trigger                                      |
 |---------|----------------------------------------------------------------------------|------------------------------------|--------------|-----------------------------------------------------|
-| ASM-PC-001 | Pre-triage can reduce halogenated polymer content to a level compatible with the chosen thermal path | External industrial practice (XRF/NIR sorting) | Low (Analogous) | PL-001 / CE-003 resolution or measured residual-Cl data on Forge salvage |
-| ASM-PC-002 | A bloomery-type or equivalent high-temperature stage can accept pyrolysis char and separate ferrous / non-ferrous fractions | Historical metallurgical practice; unvalidated on pyrolysis char | Low (Analogous) | GR-002 decision + char characterization |
-| ASM-PC-003 | Meaningful heat integration between 1100–1300 °C and 400–700 °C stages is thermodynamically possible | Basic heat-transfer principles     | Medium (Analogous) | First energy-balance calculation with bounded yields |
-| ASM-PC-004 | Off-gas from both stages can be rendered acceptable by the existing Air_Scrubber architecture once upstream halogen load is controlled | Air_Scrubber.md doctrine + external incineration practice | Low | AS-003 closure + residual-Cl acceptance limit |
-| ASM-PC-005 | Mixed urban salvage will remain highly variable in moisture, metal content, and contamination | Observed Forge development state   | High         | Site-specific characterization after FA-001 |
+| ASM-PYC-001 | Pre-triage can reduce halogenated polymer content to a level compatible with the chosen thermal path | External industrial practice (XRF/NIR sorting) | Low (Analogous) | PL-001 / CE-003 resolution or measured residual-Cl data on Forge salvage |
+| ASM-PYC-002 | A bloomery-type or equivalent high-temperature stage can accept pyrolysis char and separate ferrous / non-ferrous fractions | Historical metallurgical practice; unvalidated on pyrolysis char | Low (Analogous) | GR-002 decision + char characterization |
+| ASM-PYC-003 | Meaningful heat integration between 1100–1300 °C and 400–700 °C stages is thermodynamically possible | Basic heat-transfer principles     | Medium (Analogous) | First energy-balance calculation with bounded yields |
+| ASM-PYC-004 | Off-gas from both stages can be rendered acceptable by the existing Air_Scrubber architecture once upstream halogen load is controlled | Air_Scrubber.md doctrine + external incineration practice | Low | AS-003 closure + residual-Cl acceptance limit |
+| ASM-PYC-005 | Mixed urban salvage will remain highly variable in moisture, metal content, and contamination | Observed Forge development state   | High         | Site-specific characterization after FA-001 |
 
 ---
 
@@ -124,11 +124,11 @@ This file owns none of the above. It only records the cascade concept and the qu
 
 These are candidate measurements, not approved test plans:
 
-- **PC-TEST-001** — Residual halogen content after candidate triage methods on real salvage samples.
-- **PC-TEST-002** — Mass and energy balance of a laboratory-scale pyrolysis run on pre-triaged, characterized feedstock (halogen-free or quantified).
-- **PC-TEST-003** — Char composition (fixed carbon, metals, ash, residual Cl) and behavior under high-temperature reducing conditions.
-- **PC-TEST-004** — First-order heat-integration calculation (not physical HX test) using measured or tightly bounded yields.
-- **PC-TEST-005** — Off-gas speciation (acid gases, condensables, particulates) under controlled residual-Cl loads.
+- **PYC-TEST-001** — Residual halogen content after candidate triage methods on real salvage samples.
+- **PYC-TEST-002** — Mass and energy balance of a laboratory-scale pyrolysis run on pre-triaged, characterized feedstock (halogen-free or quantified).
+- **PYC-TEST-003** — Char composition (fixed carbon, metals, ash, residual Cl) and behavior under high-temperature reducing conditions.
+- **PYC-TEST-004** — First-order heat-integration calculation (not physical HX test) using measured or tightly bounded yields.
+- **PYC-TEST-005** — Off-gas speciation (acid gases, condensables, particulates) under controlled residual-Cl loads.
 
 No test may be run that violates the hard preconditions in Scope Boundary.
 
@@ -152,7 +152,7 @@ No test may be run that violates the hard preconditions in Scope Boundary.
 
 ## Auditor Notes & Unknowns
 
-### PC-001 — Halogenated-polymer triage dependency
+### PYC-001 — Halogenated-polymer triage dependency
 
 | Field | Value |
 |-------|-------|
@@ -171,7 +171,7 @@ No test may be run that violates the hard preconditions in Scope Boundary.
 
 ---
 
-### PC-002 — Reduction-method selection dependency
+### PYC-002 — Reduction-method selection dependency
 
 | Field | Value |
 |-------|-------|
@@ -189,7 +189,7 @@ No test may be run that violates the hard preconditions in Scope Boundary.
 
 ---
 
-### PC-003 — Hazardous-fraction and disposal dependency
+### PYC-003 — Hazardous-fraction and disposal dependency
 
 | Field | Value |
 |-------|-------|
@@ -207,7 +207,7 @@ No test may be run that violates the hard preconditions in Scope Boundary.
 
 ---
 
-### PC-004 — Site and emergency-response dependency
+### PYC-004 — Site and emergency-response dependency
 
 | Field | Value |
 |-------|-------|
@@ -223,7 +223,7 @@ No test may be run that violates the hard preconditions in Scope Boundary.
 
 ---
 
-### PC-005 — Energy integration quantitative claims
+### PYC-005 — Energy integration quantitative claims
 
 | Field | Value |
 |-------|-------|
@@ -241,7 +241,7 @@ No test may be run that violates the hard preconditions in Scope Boundary.
 
 ---
 
-### PC-006 — Metals-recovery yield claims
+### PYC-006 — Metals-recovery yield claims
 
 | Field | Value |
 |-------|-------|
@@ -259,7 +259,7 @@ No test may be run that violates the hard preconditions in Scope Boundary.
 
 ---
 
-### PC-007 — Structural / refractory adequacy for salvaged construction
+### PYC-007 — Structural / refractory adequacy for salvaged construction
 
 | Field | Value |
 |-------|-------|
@@ -275,7 +275,7 @@ No test may be run that violates the hard preconditions in Scope Boundary.
 
 ---
 
-### PC-008 — Economic viability framing
+### PYC-008 — Economic viability framing
 
 | Field | Value |
 |-------|-------|
@@ -296,6 +296,7 @@ No test may be run that violates the hard preconditions in Scope Boundary.
 ### Resolution Log
 
 - 2026-08-04: Skeleton created from archived conversation + Critical/Blocking claim map. All prior quantitative performance and economic numbers retired to Placeholder / external-analogous. Eight dependency unknowns registered. File positioned strictly as Exploration under Tests/.
+- 2026-08-04: **ID collision fixed, human-directed.** The original local unknown series used `PC-001` through `PC-008` (and `PC-TEST-001` through `PC-TEST-005`). `PC-` is not a free local prefix — it is already a live, repo-wide series in `Unknowns.md` tracking cross-file Process Corrections, currently running through PC-006 (e.g., the real PC-001 is "Verification Ref corrections," Resolved — unrelated to this file's halogenated-polymer dependency). Renamed throughout to `PYC-001`–`PYC-008` and `PYC-TEST-001`–`PYC-TEST-005` (confirmed unused anywhere in the repository before adopting), including the `ASM-PC-00x` assumption IDs → `ASM-PYC-00x` for consistency. No content, status, risk, or dependency changed — this was a namespace fix only, caught before merge by checking the prefix against the live global registry rather than assuming it was free.
 
 ---
 
