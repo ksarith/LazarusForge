@@ -3,30 +3,17 @@
 
 **Full version history in `Unknowns_Changelog.md` (2026-07-19 cleanup pass, following the precedent set by `Admin/AUDIT_HARNESS_CHANGELOG.md` and `Admin/Forge_Audit_Kit_Changelog.md`; scrubbed to current-version-only 2026-07-28 — the "current plus last four in full" window was itself compressed further, since the Audit Trail below now carries the compressed record for every version back to v1.0, and the changelog carries full text for all of them. This block now keeps only the current version.)**
 
-**Version 4.42 — 2026-08-03. Integrity correction pass on v0.99.35 release — AP-017 closure mirrored, duplicate row fixed.**
-Checking the new release zip against this session's work (human request:
-"ensure we don't lose its record") surfaced two real gaps introduced
-between this file's last edit and the new release, plus one placement
-issue: (1) this index still listed AP-017 as Open in the active table
-and in the Dependency Clusters section, despite AP-017 having Resolved
-2026-08-03 in `Admin/Auditor_Protocols.md` v0.34 (three cold-session
-Battery instances checked against source, Gate 3 now Clear) — corrected,
-AP-017 removed from the active index per this file's own convention that
-Resolved AP- entries don't appear there (matching AP-006, AP-012, AP-014,
-AP-016, AP-031, AP-032), and the Dependency Clusters note updated to
-reflect resolution rather than blockage; (2) `Operations/Electronics.md`'s
-File State table had acquired a duplicate `Open Unknowns` row (`9` and
-`8` both present as separate table rows) — malformed markdown, not a
-content decision; corrected to the single accurate value (9, matching
-EL-001 through EL-009); (3) `Admin/BATTERY_SEED.md` was found relocated
-to `Automation/BATTERY_SEED.md` in the new release, while
-`Admin/Auditor_Protocols.md` still cross-references it at the `Admin/`
-path in four places and the file's own Verification Ref/Derived-from
-fields describe itself as an `Admin/` doctrine companion (matching
-`PROBE_INVOCATION.md`'s placement precedent) — flagged for correction
-on next repository sync; not fixed here since this file doesn't govern
-folder placement, only cross-reference accuracy. No new unknowns
-registered — this is a correction pass, not new tracking surface.
+**Version 4.43 — 2026-08-04. PYC-001 through PYC-008 registered — Tests/Pyrolysis_Cascade.md.**
+New file `Tests/Pyrolysis_Cascade.md` registered across Routing.md, Discovery.md
+(structure tree, Maturity Snapshot, dedicated Scope Map subsection), and
+`Automation/AUDIT_HARNESS.py` (FALLBACK_REGISTRY + EXTRA_FILES catalog), same
+session. Eight dependency unknowns mirrored here, all pointing outward to
+unknowns owned by other files (PL-001/CE-003 halogen triage, GR-002/GR-003
+reduction and disposal, FA-001/SP-006 site, EN-001 structural, EV-001/ECN-002/
+TR-001 energy and economics) — this file owns none of its dependencies.
+Originally drafted with a colliding local `PC-` prefix (the repo-wide Process
+Correction series, through PC-006); renamed to `PYC-` before merge, confirmed
+unused elsewhere first. No change to any other file's Open Unknowns count.
 
 **Expiry Rule active — see `Admin/Canonical_Terms.md` §4 for the Cycle definition this rule now explicitly references (one calendar year default, not one audit pass — see CT-011). Protocol Performance metrics collecting.**
 
@@ -821,6 +808,24 @@ GH-009 (Emergent heuristic conflict — N² interaction scaling)
 | GH-011 | Heuristic canonicalization layer undefined — variant sequences inflate consensus_run_count without adding evidential weight | `Tests/Cognitive_Salvage_Layer.md` | Open | — | Major |
 | GH-012 | Discovery yield rate undefined — fraction of harvested heuristics that are genuinely novel; primary ROI signal for the layer | `Tests/Cognitive_Salvage_Layer.md` | Open | — | Major |
 | GH-013 | Conceptual salvage artifact storage mechanism undefined — no object schema exists for non-physical-input recovery (Conceptual Salvage Pipeline, provisional) | `Tests/Cognitive_Salvage_Layer.md` | Open | — | Minor (Blocking for the Conceptual Salvage Pipeline subsection specifically, not the file as a whole) |
+| PYC-001 | Halogenated-polymer triage dependency — blocks all hot thermal work under this file | `Tests/Pyrolysis_Cascade.md` | Open | — | Critical |
+| PYC-002 | Reduction-method selection dependency (GR-002) — blocks any claim the secondary stage is a bloomery | `Tests/Pyrolysis_Cascade.md` | Open | — | High |
+| PYC-003 | Hazardous-fraction and disposal dependency (WA-002, GR-003, WA-004) | `Tests/Pyrolysis_Cascade.md` | Open | — | Critical |
+| PYC-004 | Site and emergency-response dependency (FA-001 → SP-006) — blocks any physical pilot | `Tests/Pyrolysis_Cascade.md` | Open | — | Critical |
+| PYC-005 | Energy integration quantitative claims — no Forge energy balance exists; archived heat-recapture targets retired to Placeholder | `Tests/Pyrolysis_Cascade.md` | Open | — | Medium |
+| PYC-006 | Metals-recovery yield claims — stated without measurement or a selected reduction method | `Tests/Pyrolysis_Cascade.md` | Open | — | Medium |
+| PYC-007 | Structural/refractory adequacy for salvaged construction (EN-001) — blocks any physical build claim | `Tests/Pyrolysis_Cascade.md` | Open | — | High |
+| PYC-008 | Economic viability framing — tipping-fee/break-even claims lack an operating-cost baseline and a site (ECN-002, EV-001, FA-001, TR-001) | `Tests/Pyrolysis_Cascade.md` | Open | — | Medium |
+
+*PYC-001 and PYC-003 are co-blocking with PYC-004: no hot thermal work, no physical pilot, until PL-001/CE-003 and FA-001 close.*
+| PYC-001 | Halogenated-polymer triage dependency | `Tests/Pyrolysis_Cascade.md` | Open | — | Blocking |
+| PYC-002 | Reduction-method selection dependency | `Tests/Pyrolysis_Cascade.md` | Open | — | Blocking (bloomery-specific) |
+| PYC-003 | Hazardous-fraction and disposal dependency | `Tests/Pyrolysis_Cascade.md` | Open | — | Blocking |
+| PYC-004 | Site and emergency-response dependency | `Tests/Pyrolysis_Cascade.md` | Open | — | Blocking (physical pilot) |
+| PYC-005 | Energy integration quantitative claims | `Tests/Pyrolysis_Cascade.md` | Open | — | Major |
+| PYC-006 | Metals-recovery yield claims | `Tests/Pyrolysis_Cascade.md` | Open | — | Major |
+| PYC-007 | Structural / refractory adequacy for salvaged construction | `Tests/Pyrolysis_Cascade.md` | Open | — | Blocking (physical build) |
+| PYC-008 | Economic viability framing | `Tests/Pyrolysis_Cascade.md` | Open | — | Major |
 
 *GH-001 and CSL-A06 are co-blocking: translation fidelity and simulation-to-physical fidelity are the two load-bearing assumptions for operational deployment.*
 *GH-003 maps to Adversarial Battery Challenge Class 8 — route adversarial resistance requirements to Admin/Security_Protocols.md.*
