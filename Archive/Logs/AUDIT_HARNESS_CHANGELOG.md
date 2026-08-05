@@ -6,6 +6,24 @@ Add new entries here, not back into the .py docstring.
 
 ────────────────────────────────────────────────────────────────────
 
+CHANGES IN THIS PATCH (v15 → v16, 2026-08-04):
+  - Cell 1: FALLBACK_REGISTRY — added Pyrolysis_Cascade.md (Tests/).
+    Discoverable via dynamic parse once Routing.md's Master Routing Map
+    gains a row for it (added same date). Added here per this file's
+    own established practice of also mirroring new files into the
+    fallback safety net, matching the Chaos_Dynamics.md precedent
+    below rather than skipping it.
+  - EXTRA_FILES commented catalog — added Pyrolysis_Cascade.md under
+    Tests/ section for discoverability: "staged thermal cascade,
+    PYC-UNK items."
+  - No KNOWN OPEN ITEM added: unlike Chaos_Dynamics.md and
+    Return_To_Eden.md at their creation, Pyrolysis_Cascade.md already
+    has a full File State table as of this compile (confirmed via
+    direct fetch, 2026-08-04) — no "File State table not found"
+    finding expected on first Phase 1 pass.
+
+────────────────────────────────────────────────────────────────────
+
 CHANGES IN THIS PATCH (v14 → v15, 2026-07-16):
   - Root fix, not a relabeling: CURRENT_CYCLE (manual per-session
     counter) and UNKNOWN_FIRST_CYCLE / Admin/unknown_cycles.json
