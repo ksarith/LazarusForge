@@ -1006,3 +1006,325 @@ If you want, I can now generate:
 
 Which direction do you want next?
 
+Below is the full design rationale for Governance Charter v2.0 — not a restatement of the text, but the architectural reasoning behind every structural decision. This is the “why” behind the redesign: why Tier‑1 must be sparse, why operational doctrine was extracted, why lineage rules were elevated, and why the Charter must be rebuilt as a true constitutional substrate rather than a hybrid governance manual.
+
+I’m writing this for you, Ksarith, in the same constitutional‑engineering voice you use when designing CIR or Forge governance layers.
+
+---
+
+1. Tier‑1 Must Be Sparse (Axiom ASM‑006)
+The original Charter v1.0 accumulated:
+
+- Genesis Phase Protocol  
+- Post‑Exit Monitoring  
+- Enforcement Checkpoints  
+- Migration doctrine  
+- Provenance doctrine  
+- Audit lineage doctrine  
+- Ownership tables  
+- Transitional governance rules  
+
+This violated its own assumption:
+
+> Tier 1 Axioms must remain sparse — operational detail belongs downstream.
+
+A Tier‑1 document must behave like a constitution, not a constitution + operating manual.  
+If Tier‑1 accumulates operational detail, three failures occur:
+
+Failure 1 — Constitutional Drift
+Operational doctrine changes frequently.  
+Tier‑1 must change rarely.  
+Mixing them forces constitutional churn.
+
+Failure 2 — Enforcement Ambiguity
+Downstream files cannot tell whether a rule is constitutional or procedural.
+
+Failure 3 — Migration Deadlock
+If Tier‑1 owns migration doctrine, then migration doctrine cannot evolve without constitutional amendment — a paradox.
+
+Design Rationale:  
+Charter v2.0 extracts all operational doctrine and leaves only:
+
+- Tier‑1 axioms  
+- immutable constraints  
+- amendment boundaries  
+- constitutional interpretation rules  
+- lineage requirements  
+- human override doctrine  
+
+This restores Tier‑1 sparseness.
+
+---
+
+2. Genesis Phase Paradox Must Be Removed
+Charter v1.0 acknowledged a structural contradiction:
+
+- Axiom Q‑2 requires separation of powers  
+- Genesis Phase has only one agent  
+- Therefore Q‑2 cannot be satisfied during bootstrap  
+
+This created a constitutional deadlock:  
+Tier‑1 demanded something impossible.
+
+Design Rationale:  
+Charter v2.0 removes Genesis Phase from Tier‑1 entirely.
+
+Bootstrap logic is procedural, not constitutional.  
+It belongs in:
+
+- Auditor Protocols  
+- Governance Migration Protocol  
+
+Tier‑1 now states only:
+
+> Temporary exceptions to Q‑2 require human authorization recorded outside the runtime session.
+
+This resolves the paradox without weakening Q‑2.
+
+---
+
+3. Tier‑1 Must Not Own Downstream Governance
+Charter v1.0 claimed ownership of:
+
+- migration doctrine  
+- integrity doctrine  
+- enforcement checkpoints  
+- provenance doctrine  
+
+This created authority conflicts with:
+
+- RIP  
+- GMP  
+- Auditor Protocols  
+- Security Protocols  
+
+When Tier‑1 claims ownership of Tier‑2/3 doctrine, two failures occur:
+
+Failure 1 — Circular Governance
+Downstream files depend on Charter.  
+Charter depends on downstream files.  
+This creates recursive dependency loops.
+
+Failure 2 — Constitutional Capture Risk
+If Tier‑1 owns operational doctrine, any operational change becomes a constitutional change.
+
+Design Rationale:  
+Charter v2.0 explicitly delegates ownership:
+
+- Tier‑1 → Charter  
+- Tier‑2 → Auditor Protocols, GMP, RIP, Security Protocols  
+- Tier‑3 → Audit kits  
+- Tier‑4/5 → Domain specifications  
+
+This eliminates circular dependencies.
+
+---
+
+4. Tier‑1 Must Have Perfect Lineage
+Charter v1.0 had:
+
+- stale Last Audit  
+- mismatched sidecar ↔ Unknowns entries  
+- missing archival anchors  
+- incomplete audit lineage  
+
+This violated Axiom Q‑4 (Provenance and Anti‑Deception).
+
+Tier‑1 documents must be:
+
+- perfectly traceable  
+- perfectly auditable  
+- perfectly reconstructible  
+
+Design Rationale:  
+Charter v2.0 adds explicit constitutional lineage rules:
+
+- prior state preservation  
+- line‑count anchors  
+- hash anchors  
+- sidecar ↔ Unknowns parity  
+- zero unknowns before promotion  
+
+These are not operational rules — they are constitutional requirements.
+
+---
+
+5. Tier‑1 Must Be Amendment‑Stable
+Charter v1.0 mixed Track A and Track B logic inside the Charter itself.  
+This created ambiguity:
+
+- Which changes require human ratification?  
+- Which changes require adversarial review?  
+- Which changes require downstream updates?  
+
+Tier‑1 must have clear amendment boundaries.
+
+Design Rationale:  
+Charter v2.0 defines:
+
+- constitutional impact test  
+- strengthening requirement  
+- prior text preservation  
+- human ratification requirement  
+- downstream update requirement  
+
+This makes Tier‑1 amendment safe, predictable, and auditable.
+
+---
+
+6. Tier‑1 Must Not Contain Enforcement Logic
+Enforcement Checkpoints belong to Auditor Protocols.  
+Post‑Exit Monitoring belongs to RIP + Auditor Protocols.  
+Genesis Phase belongs to GMP + Auditor Protocols.
+
+Tier‑1 must define constraints, not mechanisms.
+
+Design Rationale:  
+Charter v2.0 removes all enforcement logic and replaces it with:
+
+> Tier‑1 requires enforcement.  
+> Enforcement is defined downstream.
+
+This preserves separation of concerns.
+
+---
+
+7. Tier‑1 Must Be Human‑Centric
+Charter v1.0 contained detailed procedural logic for human override.  
+This created two problems:
+
+Problem 1 — Over‑specification
+Human override doctrine became procedural rather than constitutional.
+
+Problem 2 — Fragility
+If override procedures change, Charter must change — unacceptable.
+
+Design Rationale:  
+Charter v2.0 reduces human override doctrine to four constitutional rules:
+
+- human veto  
+- human ratification  
+- external authorization  
+- non‑delegability  
+
+Downstream files define the mechanics.
+
+---
+
+8. Tier‑1 Must Be Implementation‑Independent
+Charter v1.0 referenced:
+
+- audit harness execution  
+- telemetry  
+- enforcement substrate  
+- quorum architecture  
+- hardware diversity  
+
+Tier‑1 must not depend on implementation details.
+
+Design Rationale:  
+Charter v2.0 removes all implementation references.  
+Tier‑1 now defines only:
+
+- constraints  
+- axioms  
+- amendment boundaries  
+- lineage requirements  
+- human override  
+
+Everything else is delegated.
+
+---
+
+9. Tier‑1 Must Be Free of Open Unknowns
+Charter v1.0 had 20 open unknowns.  
+Tier‑1 cannot be promoted with unresolved unknowns.
+
+Design Rationale:  
+Charter v2.0 requires:
+
+> Tier‑1 documents must have zero open unknowns before promotion.
+
+Unknowns move to:
+
+- GMP  
+- RIP  
+- Auditor Protocols  
+
+Tier‑1 becomes stable.
+
+---
+
+10. Tier‑1 Must Be a Single Source of Truth
+Charter v1.0 had:
+
+- governance hierarchy  
+- ownership tables  
+- migration doctrine  
+- enforcement checkpoints  
+- provenance doctrine  
+
+These created multiple “sources of truth” inside the Charter.
+
+Design Rationale:  
+Charter v2.0 defines only:
+
+- Tier‑1 axioms  
+- immutable constraints  
+- constitutional interpretation rules  
+- amendment boundaries  
+- lineage requirements  
+- human override doctrine  
+
+Everything else is delegated.
+
+This makes Charter v2.0 a true constitutional substrate.
+
+---
+
+Summary — Why Charter v2.0 Works
+
+Charter v2.0 is designed to be:
+
+Sparse
+Only axioms + constitutional rules.
+
+Stable
+No operational doctrine inside Tier‑1.
+
+Traceable
+Perfect lineage requirements.
+
+Amendable
+Clear Track B boundaries.
+
+Delegated
+Downstream governance owns enforcement, migration, integrity.
+
+Non‑circular
+No recursive dependencies.
+
+Human‑anchored
+Override doctrine is minimal and constitutional.
+
+Implementation‑agnostic
+No runtime or hardware assumptions.
+
+Promotion‑ready
+Zero unknowns required.
+
+This is the architecture Tier‑1 must have to support LazarusForgeV0 long‑term.
+
+---
+
+If you want, I can now generate:
+
+- Charter v2.0 migration patch‑set  
+- Downstream update plan  
+- Tier‑1 stability audit
+
+
+
+
+
+
