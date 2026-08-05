@@ -107,6 +107,7 @@ FALLBACK_REGISTRY = {
     "Trophic_Forge.md":                  "Tests/Trophic_Forge.md",
     "Hydrologic_Resource_Cascade.md":    "Tests/Hydrologic_Resource_Cascade.md",
     "Chaos_Dynamics.md":                 "Tests/Chaos_Dynamics.md",
+    "Pyrolysis_Cascade.md":              "Tests/Pyrolysis_Cascade.md",
     "Biofouling.md":                     "Challenges/Biofouling.md",
     "Critical_Minerals.md":              "Challenges/Critical_Minerals.md",
     "Emergence.md":                      "Challenges/Emergence.md",
@@ -685,6 +686,7 @@ def format_boundary_index(fetched_files):
 #   "Leviathan_testing.md"           hostile-environment autonomy
 #   "Hydrologic_Resource_Cascade.md" cascade hydrology, HR-UNK items
 #   "Chaos_Dynamics.md"              sandbox/R&D pipeline doctrine, EN-005 vehicle
+#   "Pyrolysis_Cascade.md"           staged thermal cascade, PYC-UNK items
 #   ── Challenges/ ──
 #   "Water.md"                       hydrological challenge requirements
 #   "Biofouling.md"                  marine fouling, MIC, BF-UNK items
