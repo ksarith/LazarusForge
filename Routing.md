@@ -80,6 +80,7 @@ These files are complementary — Routing.md owns *where*, Discovery.md owns *wh
 | `Tests/Trophic_Forge.md` | https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Tests/Trophic_Forge.md | https://github.com/ksarith/LazarusForgeV0/blob/main/Tests/Trophic_Forge.md | Explicit |
 | `Tests/Solar_Descent.md` | https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Tests/Solar_Descent.md | https://github.com/ksarith/LazarusForgeV0/blob/main/Tests/Solar_Descent.md | Explicit |
 | `Tests/Cognitive_Salvage_Layer.md` | https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Tests/Cognitive_Salvage_Layer.md | https://github.com/ksarith/LazarusForgeV0/blob/main/Tests/Cognitive_Salvage_Layer.md | Explicit |
+| `Tests/Pyrolysis_Cascade.md` | https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Tests/Pyrolysis_Cascade.md | https://github.com/ksarith/LazarusForgeV0/blob/main/Tests/Pyrolysis_Cascade.md | Explicit |
 | `Tests/Hydrologic_Resource_Cascade.md` | https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Tests/Hydrologic_Resource_Cascade.md | https://github.com/ksarith/LazarusForgeV0/blob/main/Tests/Hydrologic_Resource_Cascade.md | Explicit |
 | `Tests/Chaos_Dynamics.md` | https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Tests/Chaos_Dynamics.md | https://github.com/ksarith/LazarusForgeV0/blob/main/Tests/Chaos_Dynamics.md | Explicit |
 | **Challenges/ Layer** |  |  |  |
