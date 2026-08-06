@@ -857,6 +857,8 @@ If you want, I can now generate:
 - Human override artifact format  
 - Genesis‑Mode audit harness integration
 
+<Grok joined>
+
 Below is the actual content you asked for — not a tool call, not an action, but the administrative operation that “Load evaluator registry” refers to inside GOV‑008.
 
 This is the Evaluator Registry Load Procedure, written as a governance‑layer operation, not a runtime command.
@@ -1240,3 +1242,207 @@ Would you like me to:
 **B.** Move straight to the next highest-leverage prompt (Resolve dual-ownership conflicts) as a ready-to-paste block?
 
 Just say A or B (or tell me a different priority) and I’ll give you the full ready-to-paste text.
+
+Locate exact insertion points
+
+Use these deterministic anchors to find the correct lines for each patch before applying:
+
+- Governance_Charter.md  
+  - Find the heading Tier‑1 Axioms or Constitutional Interpretation Rules and insert GOV‑008 immediately after the nearest following subsection that lists Tier‑1‑adjacent requirements.  
+  - Find the Canonical Governance Ownership or Ownership table and insert the GOV‑008 row where other Tier‑1‑adjacent entries appear.
+
+- CIR_Gov.md  
+  - Find the Binding Status heading and replace the paragraph that begins with the file’s non‑operational disclaimer (the paragraph referencing GOV‑008 or the bootstrap paradox).
+
+- ComputationalInstitutionalReasoning.md (CIR.md)  
+  - Find Axiom A4 or the Axioms section and replace the A4 explanatory paragraph.
+
+- Unknowns.md  
+  - Find the Tier‑1‑adjacent Unknowns section and insert GOV‑008‑A under that list.
+
+Use exact text search (case sensitive) for these phrases to locate insertion points:  
+- Tier‑1 Axioms  
+- Canonical Governance Ownership  
+- Binding Status  
+- Axiom A4  
+- Tier‑1‑adjacent Unknowns
+
+---
+
+---
+
+Resolution Log entries to add (exact text blocks)
+
+Insert the following append‑only Resolution Log / Changelog entries into the repository’s canonical Resolution Log (per RIP rules). Add one entry per modified file. Replace the HASH_ANCHOR placeholder with the file hash after you commit.
+
+Governance_Charter.md Resolution Log entry
+`
+--- APPEND TO Admin/ResolutionLog.md OR Archive/Logs/GovernanceCharter_Changelog.md ---
+
+Date: 2026-08-06
+Author: Ksarith (human governing authority)
+Change: Add GOV-008 Tier-1-adjacent quorum requirement and ownership table entry.
+Files Modified: Admin/Governance_Charter.md
+Summary: Inserted GOV-008 Minimum Agent & Hardware Quorum as a Tier-1-adjacent requirement and added corresponding ownership table row. No existing axioms or procedures were altered; only a Tier-1-adjacent requirement and ownership mapping were added.
+Prior State Preserved: Prior text preserved verbatim in /Archive/GovernanceCharterpreGOV-008.md.
+Hash Anchor: HASH_ANCHOR
+Rationale: Satisfy Axiom Q-2 enforcement dependency and enable downstream CIR predicate activation once quorum is demonstrated.
+`
+
+CIR_Gov.md Resolution Log entry
+`
+--- APPEND TO Admin/ResolutionLog.md OR Archive/Logs/CIRGov_Changelog.md ---
+
+Date: 2026-08-06
+Author: Ksarith (human governing authority)
+Change: Update Binding Status and Axiom A4 dependency language to reference GOV-008.
+Files Modified: Admin/CIR_Gov.md
+Summary: Replaced Binding Status paragraph to reflect GOV-008 dependency; clarified that Axiom A4 is aspirational until GOV-008 is satisfied. No other axioms or procedures changed.
+Prior State Preserved: Prior text preserved verbatim in /Archive/CIRGovpreGOV-008.md.
+Hash Anchor: HASH_ANCHOR
+Rationale: Make CIR binding status consistent with newly declared Tier-1-adjacent quorum requirement.
+`
+
+ComputationalInstitutionalReasoning.md Resolution Log entry
+`
+--- APPEND TO Admin/ResolutionLog.md OR Archive/Logs/CIRChangelog.md ---
+
+Date: 2026-08-06
+Author: Ksarith (human governing authority)
+Change: Update Axiom A4 explanatory paragraph to reference GOV-008 dependency.
+Files Modified: Admin/ComputationalInstitutionalReasoning.md
+Summary: Replaced Axiom A4 explanatory paragraph to state that A4 is enforceable only once GOV-008 quorum is satisfied. No change to A4 axiom text itself.
+Prior State Preserved: Prior text preserved verbatim in /Archive/CIR_preGOV-008.md.
+Hash Anchor: HASH_ANCHOR
+Rationale: Ensure internal consistency between CIR axioms and Charter quorum requirement.
+`
+
+Unknowns.md Resolution Log entry
+`
+--- APPEND TO Admin/ResolutionLog.md OR Archive/Logs/UnknownsChangelog.md ---
+
+Date: 2026-08-06
+Author: Ksarith (human governing authority)
+Change: Add GOV-008-A unknown entry.
+Files Modified: Admin/Unknowns.md
+Summary: Added GOV-008-A (Quorum Unsatisfied) with dependency arrows to GovernanceCharter.md (GOV-008), CIRGov.md (Binding Status), and CIR.md (Axiom A4). No existing unknown IDs or resolution paths were altered.
+Prior State Preserved: Prior text preserved verbatim in /Archive/Unknowns_preGOV-008.md.
+Hash Anchor: HASH_ANCHOR
+Rationale: Record the new Tier-1‑adjacent unknown created by adding GOV-008 and link its resolution condition.
+`
+
+---
+
+---
+
+Sidecar archival anchors to add for each modified file
+
+For each file you modify, append a short archival anchor block at the end of the file (or in its sidecar) before committing. Use these exact templates and replace placeholders.
+
+File sidecar anchor template
+`
+--- APPEND TO END OF <filename> OR ITS SIDECAR ---
+
+Archival Anchor
+Date: 2026-08-06
+Change Summary: <one-line summary matching Resolution Log>
+Line Count: LINECOUNTPLACEHOLDER
+SHA256: HASH_ANCHOR
+Prior State Reference: /Archive/<filename>_preGOV-008.md
+`
+
+Action: compute LINECOUNTPLACEHOLDER and HASH_ANCHOR after staging the change and before final promotion.
+
+---
+
+---
+
+Commit message and tagging (exact text)
+
+Use this exact commit message for the patch commit that applies all four changes:
+
+`
+Commit: Add GOV-008 quorum requirement and register GOV-008-A unknown; update CIR binding language
+Signed-off-by: Ksarith
+Files: Admin/GovernanceCharter.md, Admin/CIRGov.md, Admin/ComputationalInstitutionalReasoning.md, Admin/Unknowns.md
+Notes: Tier-1 axioms unchanged; added Tier-1-adjacent requirement and linked unknown; updated CIR binding references only.
+`
+
+After commit, compute file hashes and update the Resolution Log and sidecar anchors with the HASH_ANCHOR values.
+
+---
+
+---
+
+Quick checklist to apply safely (one-pass)
+
+1. Locate insertion points using the exact search phrases listed above.  
+2. Stage the four text changes (use the exact patch text you already approved).  
+3. Append the four Resolution Log entries to the canonical Resolution Log.  
+4. Append sidecar archival anchors to each modified file (fill line counts and hashes after staging).  
+5. Commit with the exact commit message above.  
+6. Compute SHA256 hashes for each modified file and replace HASH_ANCHOR in Resolution Log and sidecars.  
+7. Push and tag per your repository policy.  
+8. Record GOV-008-A in Unknowns.md (already in patch) and ensure Unknowns.md references the new Resolution Log entries.
+
+---
+
+If you want, I will now produce the exact sidecar anchor blocks with placeholders filled using the current working copies if you tell me to proceed and confirm I should compute line counts and hashes from the repository snapshot you want me to use.
+
+**This is solid, lineage-compliant material.** Copilot correctly extended the pure patch-set into the full RIP-required package: deterministic insertion anchors, append-only Resolution Log entries, sidecar archival anchors, a clean commit message, and a one-pass checklist. That closes the two gaps I flagged earlier.
+
+### Quality assessment
+- **Anchors** — Using exact search phrases (`Tier-1 Axioms`, `Binding Status`, `Axiom A4`, etc.) is better than approximate line numbers. Safer.
+- **Resolution Log entries** — Correct format, preserve prior state, give clear rationale, and treat the change as Tier-1-adjacent only. Good.
+- **Sidecar anchors + hash placeholders** — Matches the project’s integrity expectations.
+- **Commit message** — Precise and non-overclaiming.
+
+**Minor refinements worth making before you apply:**
+
+1. File-name consistency  
+   The live repo uses `Governance_Charter.md`, `CIR_Gov.md`, `Computational_Institutional_Reasoning.md` (or `CIR.md`), and `Unknowns.md`. Some of the log entries use slightly different spellings (`GovernanceCharter.md`, `CIRGov.md`, etc.). Normalize them to the exact current filenames.
+
+2. Archive path  
+   Confirm the exact prior-state archive location your RIP expects (`/Archive/...` vs `Archive/Logs/...`). Use whatever is already canonical.
+
+3. Hash timing  
+   The checklist correctly says “compute hashes *after* staging / before final promotion.” Keep that order.
+
+Otherwise this package is ready to use.
+
+---
+
+### Recommended next move
+
+Now that the GOV-008 integration + lineage package is complete, the highest-leverage structural step is still **Resolve dual-ownership conflicts**.
+
+Here is a ready-to-paste prompt you can give Copilot (or a fresh multi-agent session) once the current patches are applied:
+
+```
+Using only the current text of:
+- Admin/Governance_Charter.md
+- Admin/Governance_Migration_Protocol.md
+- Admin/Repository_Integrity_Protocol.md
+
+Produce a minimal, exact patch-set that resolves the dual-ownership conflicts for:
+1. Migration doctrine
+2. Integrity / provenance / lineage doctrine
+
+Rules:
+- Assign exclusive ownership of each doctrine cluster to exactly one file.
+- Convert any overlapping claims into pure cross-references.
+- Do not invent new doctrine, procedures, or axioms.
+- Do not change any Tier-1 axiom text.
+- Output only the exact text blocks to insert/replace, each with a clear search-phrase or heading anchor.
+- After the patches, also supply the corresponding Resolution Log entries (one per modified file) in the same format used for the GOV-008 change.
+```
+
+Would you like me to:
+
+- Polish the current Resolution Log / sidecar package with normalized filenames, or  
+- Expand the dual-ownership prompt above into an even more constrained version, or  
+- Move to the unknowns-partition prompt next?
+
+Just say which.
+
+
