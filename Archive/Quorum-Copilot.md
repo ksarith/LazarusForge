@@ -1677,3 +1677,414 @@ Would you like me to also prepare:
 - Just wait for the result of this one and then review/patch it?
 
 Your call.
+
+**Genesis-Mode Escalation Protocol — Investigation**
+
+### 1. Source & Status
+The protocol exists only as a **draft** produced in the multi-agent (Copilot) thread that also generated GOV-008. It is **not yet integrated** into any canonical file (`Governance_Charter.md`, `CIR_Gov.md`, `GMP`, or RIP).
+
+It was explicitly designed to integrate three existing sources:
+- Charter’s Genesis Phase Protocol + human override doctrine
+- CIR Binding Status constraints
+- GMP Track-B escalation logic
+
+### 2. Full Structure of the Draft Protocol
+
+**I. Trigger**  
+Any failure in the five GOV-008 dimensions:
+- Model independence
+- Hardware independence
+- Evidence independence
+- Role separation
+- Evaluator liveness
+
+→ Immediate entry into Genesis Mode.
+
+**II. Immediate Actions (Mandatory)**
+1. Halt all VERIFIED transitions — no predicate evaluation, no state mutation.
+2. Freeze the proposed ΔI / governance action in a buffer.
+3. Log the refusal with full context (failure reason, evaluators, hardware metadata, timestamp, action ID).
+
+**III. Human-Override Escalation**
+4. Notify human governing authority with ΔI summary + failure details.
+5. Enforce role separation for the human decision itself (must be generated in a separate session / external medium).
+6. Capture a formal human authorization record (identity, timestamp, decision, external artifact location).
+
+**IV. Post-Authorization Paths** (human chooses one)
+- **Path A** — Reject permanently → close ΔI, log rationale.
+- **Path B** — Return for revision → send back to proposer with concerns; still no VERIFIED status.
+- **Path C** — Authorize *degraded-mode* execution → may proceed, but:
+  - Must be logged as Genesis-Mode execution
+  - Cannot be treated as VERIFIED
+  - Cannot update maturity or provenance ceilings
+  - Cannot serve as precedent
+
+**V. Post-Escalation Logging**
+7. Update Resolution Log
+8. Update Unknowns.md (re-register GOV-008-A or surface new unknowns)
+9. Append failure record to Quorum Registry
+
+**VI. Exit Conditions**
+Genesis Mode ends *only* when:
+10. All GOV-008 checks pass again
+11. Human governing authority explicitly confirms exit
+12. Exit is logged (timestamp, quorum composition, human confirmation)
+
+Only then may VERIFIED transitions resume.
+
+### 3. Alignment with Canonical Doctrine
+
+| Element | Matches Charter / CIR / GMP? | Notes |
+|---------|------------------------------|-------|
+| Hard stop on VERIFIED | Yes | Matches Binding Status + Genesis Phase |
+| Freeze ΔI | Yes | Consistent with “no autonomous action” |
+| Human override required | Yes | Directly implements Charter human-override doctrine and Q-2 separation |
+| External medium / separate session | Yes | Explicitly required by Charter for human authorization during Genesis |
+| Degraded Path C | Mostly | Careful — preserves Q-2 but allows emergency action without creating precedent |
+| Exit requires both technical + human confirmation | Yes | Matches “exit is not automatic” language in Charter Pathway 1 |
+| Logging & lineage | Yes | Fully compatible with RIP and Resolution Log rules |
+
+**Strengths**
+- Deterministic and auditable
+- Safe-by-default (failure → freeze + escalate)
+- Does not invent new constitutional rules
+- Correctly treats human as the ultimate circuit breaker
+
+**Gaps / Risks still present in the draft**
+1. **No formal definition of the “frozen buffer”** — where it lives, how long it persists, who can un-freeze it.
+2. **Path C (degraded execution)** needs tighter language to prevent gradual normalization of Genesis-Mode actions.
+3. **Notification mechanism** is unspecified (how the human is actually reached).
+4. **Concurrent failures** (multiple ΔIs frozen at once) are not addressed.
+5. **Re-entry after exit** — the protocol is silent on temporary quorum loss after Pathway 1 has already been declared.
+
+### 4. Relationship to Other Artifacts
+- Triggered by the Quorum Verification Checklist
+- Feeds the Quorum Registry (failure records)
+- Directly supports the runtime gate we are about to design for CIR
+- Complements Hardware_Diversity_Ladder.md (hardware failure is one of the five triggers)
+
+### 5. Recommended Next Steps for This Protocol
+
+**Highest-value actions:**
+1. Tighten Path C language so degraded execution cannot accumulate into de-facto precedent.
+2. Define the minimal frozen-buffer semantics.
+3. Produce the companion “Human Override Artifact Format” (already offered in the original thread).
+4. Integrate the finished protocol into `CIR_Gov.md` (or a new subsection under Genesis Phase in the Charter) once GOV-008 itself is ratified.
+
+Would you like me to:
+- Produce a tightened version of the full protocol (still minimal, no new doctrine),  
+- Draft the Human Override Artifact Format next, or  
+- Write a ready-to-paste prompt that forces the agents to formalize the frozen-buffer + Path C constraints?
+
+You’ve got three clean paths forward, and each one closes a different gap in the Genesis‑Mode protocol. Since you asked “Would you like me to tighten the protocol, draft the artifact format, or write a prompt to force agents to formalize frozen‑buffer + Path C constraints?”, I’ll give you a decision‑ready breakdown of each option — and you can pick the one that moves LazarusForgeV0 fastest toward governance‑complete v0.
+
+No filler, no drift — just the actionable next step.
+
+---
+
+Option A — Tighten the Genesis‑Mode Protocol (highest leverage)
+This produces a fully ratifiable version of the protocol you just analyzed, with:
+
+- Frozen‑buffer semantics defined  
+- Path C hardened so degraded execution cannot accumulate into precedent  
+- Notification mechanism clarified  
+- Temporary quorum‑loss behavior added  
+- Concurrent ΔI handling added  
+
+This is the most direct way to turn the draft into canonical governance text ready for insertion into CIR_Gov.md or the Charter.
+
+If you want this, choose:
+
+Produce tightened Genesis‑Mode protocol
+
+---
+
+Option B — Draft the Human Override Artifact Format (medium leverage)
+This produces the external‑medium record required by:
+
+- Charter Genesis Phase  
+- GOV‑008 failure behavior  
+- CIR Binding Status  
+- GMP Track‑B escalation  
+
+It defines:
+
+- Required fields  
+- Signature rules  
+- External‑medium constraints  
+- How it links to QuorumID  
+- How it is referenced in Resolution Log and Unknowns.md  
+
+This is required for enforcement but not as urgent as tightening Path C.
+
+If you want this, choose:
+
+Draft human override artifact format
+
+---
+
+Option C — Write a prompt that forces agents to formalize frozen‑buffer + Path C constraints (meta‑level)
+This produces a ready‑to‑paste multi‑agent prompt that forces Claude/Grok/Copilot to:
+
+- Define frozen‑buffer semantics  
+- Define degraded‑mode execution boundaries  
+- Prevent precedent accumulation  
+- Specify concurrency rules  
+- Specify re‑entry rules after temporary quorum loss  
+
+This is useful if you want the multi‑agent system to generate the tightened protocol collaboratively rather than having me draft it directly.
+
+If you want this, choose:
+
+Generate frozen‑buffer + Path C formalization prompt
+
+---
+
+My recommendation (based on your governance trajectory)
+You’re at the stage where:
+
+- GOV‑008 is drafted  
+- Patch‑set integration is ready  
+- Enforcement architecture is the next blocker  
+- CIR Binding Status cannot be lifted until Genesis‑Mode behavior is canonical  
+
+Therefore the highest‑value next move is:
+
+Option A — Tighten the Genesis‑Mode Protocol
+
+It closes the enforcement gap directly and gives you a drop‑in section for CIR_Gov.md.
+
+But the choice is yours — just tap the link for the direction you want to push.
+**Proceeding with Option A — Tightened Genesis-Mode Escalation Protocol.**
+
+Below is a clean, minimal, ratifiable version. It incorporates only the gaps identified in the investigation (frozen-buffer semantics, Path C hardening, concurrent handling, temporary loss after exit, notification clarity) while remaining strictly grounded in existing Charter, CIR, GMP, and RIP doctrine. No new constitutional rules are introduced.
+
+---
+
+### Genesis-Mode Escalation Protocol (v1.1 — Tightened)
+**GOV-008 Failure Response**  
+A mandatory governance procedure triggered when quorum independence cannot be satisfied.  
+Integrates Charter Genesis Phase Protocol, CIR Binding Status, and GMP Track-B escalation logic.
+
+#### I. Trigger Condition
+Genesis Mode is entered immediately when any of the following GOV-008 dimensions fails:
+- Model independence  
+- Hardware independence  
+- Evidence independence  
+- Role separation  
+- Evaluator liveness  
+
+#### II. Immediate Actions (Mandatory)
+1. **Halt VERIFIED transitions**  
+   No Γ predicate evaluation may proceed. No state mutation may be committed.
+
+2. **Freeze the proposed mutation**  
+   The ΔI (or governance action) is placed in the Frozen Buffer.  
+   - The Frozen Buffer is an append-only, time-stamped holding area under RIP control.  
+   - A frozen ΔI may not be executed, modified, or discarded except by human decision under this protocol.  
+   - Concurrent freezes are permitted; each ΔI receives its own independent freeze record and QuorumID.
+
+3. **Log Genesis-Mode refusal**  
+   Record at minimum:  
+   - Quorum failure dimension(s)  
+   - Evaluators and hardware metadata involved  
+   - Timestamp  
+   - Proposed Action / ΔI identifier  
+   - QuorumID (even if invalid)
+
+#### III. Human-Override Escalation
+4. **Notify human governing authority**  
+   Escalation notice must include the ΔI summary, failure details, and the three available decision paths.  
+   Notification method is implementation-defined but must produce an auditable external record.
+
+5. **Enforce role separation for the human decision**  
+   The authorization must be generated in a separate session or external medium from the runtime that evaluated the ΔI (Charter Genesis Phase requirement).
+
+6. **Capture human authorization record**  
+   Required fields: human identity, date/time, explicit decision (Path A/B/C), external artifact location, and linked QuorumID / ΔI identifier.
+
+#### IV. Post-Authorization Paths
+Human governing authority selects exactly one:
+
+- **Path A — Reject**  
+  ΔI is permanently closed. Rationale recorded in Resolution Log. Frozen Buffer entry marked Closed-Rejected.
+
+- **Path B — Return for revision**  
+  ΔI is released from the Frozen Buffer and returned to the proposer with explicit concerns. No VERIFIED status is granted. A new quorum check is required on any resubmission.
+
+- **Path C — Authorize degraded-mode execution**  
+  Human may authorize the ΔI to proceed under the following hard constraints:  
+  - It is logged as Genesis-Mode execution only.  
+  - It receives no VERIFIED status.  
+  - It may not update maturity scores, provenance ceilings, or any claim of institutional progress.  
+  - It may not be cited as precedent for any future VERIFIED action or for any subsequent Genesis-Mode authorization.  
+  - The Frozen Buffer entry is marked Closed-Degraded.  
+
+  Path C exists solely for genuine emergency continuity; repeated or routine use is a Track-B drift signal.
+
+#### V. Post-Escalation Logging
+7. Update Resolution Log with human decision and outcome.  
+8. Update Unknowns.md (re-affirm or refine GOV-008-A; surface any new unknowns).  
+9. Append complete failure + human-decision record to the Quorum Registry.
+
+#### VI. Exit Conditions (Leaving Genesis Mode)
+Genesis Mode ends only when **all** of the following are true:
+10. A fresh GOV-008 quorum verification passes.  
+11. Human governing authority issues an explicit exit confirmation (separate session / external medium).  
+12. Exit is logged (timestamp, quorum composition, human confirmation).
+
+Only after these three conditions may VERIFIED transitions resume.
+
+#### VII. Temporary Quorum Loss After Pathway 1 Exit
+If a previously exited forge instance later fails a GOV-008 check:
+- It re-enters Genesis Mode under this same protocol.  
+- Prior Pathway 1 exit status is suspended, not revoked.  
+- Re-exit requires a new human confirmation.  
+- No automatic inheritance of previous quorum validity is permitted.
+
+#### VIII. Summary
+| Stage              | Required Action                          | Outcome                          |
+|--------------------|------------------------------------------|----------------------------------|
+| Trigger            | Any GOV-008 dimension fails              | Enter Genesis Mode               |
+| Immediate          | Halt VERIFIED, freeze ΔI, log            | No autonomous action             |
+| Escalation         | Human override (external medium)         | Human selects Path A/B/C         |
+| Post-Decision      | Log + update lineage + registry          | Continuity preserved             |
+| Exit               | Quorum restored + human confirmation     | VERIFIED transitions allowed     |
+| Post-Exit Loss     | Re-enter this protocol                   | Suspended exit status            |
+
+---
+
+This version is ready for direct insertion into `CIR_Gov.md` (or as a referenced subsection under the Charter’s Genesis Phase) once GOV-008 itself is ratified.
+
+Would you like the corresponding Resolution Log entry + archival anchor package for this tightened protocol, or shall we move to the Human Override Artifact Format next?
+
+Perfect — since you’ve confirmed Option A, the next correct move is to generate the Resolution Log + archival anchor package for the tightened Genesis‑Mode protocol so it can be formally integrated into the repository under RIP rules.
+
+Below is the exact, minimal, ratifiable patch‑support package, containing:
+
+- Resolution Log entries (one per modified file)  
+- Sidecar archival anchors (with placeholders)  
+- Commit message  
+- Integration notes  
+
+No doctrine expansion, no restructuring — only the required lineage artifacts.
+
+---
+
+Resolution Log Entries (Exact Text Blocks)
+
+1. CIR_Gov.md — Genesis‑Mode Protocol Integration
+Append to Admin/ResolutionLog.md or Archive/Logs/CIRGov_Changelog.md:
+
+`
+Date: 2026-08-06
+Author: Ksarith (human governing authority)
+Change: Integrated tightened Genesis-Mode Escalation Protocol (v1.1) into CIR_Gov.md.
+Files Modified: Admin/CIR_Gov.md
+Summary: Added Genesis-Mode Escalation Protocol v1.1 as a governed subsection. No Tier-1 axioms or CIR principles were altered; only enforcement behavior under GOV-008 failure was clarified and formalized.
+Prior State Preserved: Prior text preserved verbatim in /Archive/CIRGovpreGenesisMode_v1.1.md.
+Hash Anchor: HASH_ANCHOR
+Rationale: Complete enforcement path for GOV-008 and CIR Binding Status; ensures deterministic, auditable behavior under quorum failure.
+`
+
+---
+
+2. Governance_Charter.md — Cross‑Reference Update
+Append:
+
+`
+Date: 2026-08-06
+Author: Ksarith (human governing authority)
+Change: Added cross-reference to Genesis-Mode Escalation Protocol in CIR_Gov.md.
+Files Modified: Admin/Governance_Charter.md
+Summary: Added a non-normative reference to the Genesis-Mode Escalation Protocol as the operational mechanism for Charter Genesis Phase escalation under GOV-008 failure. No Charter axioms or Genesis Phase rules were modified.
+Prior State Preserved: Prior text preserved verbatim in /Archive/GovernanceCharterpreGenesisModeRef.md.
+Hash Anchor: HASH_ANCHOR
+Rationale: Ensure Charter → CIR linkage for Genesis Phase enforcement without altering constitutional doctrine.
+`
+
+---
+
+3. Unknowns.md — Update GOV‑008‑A Dependencies
+Append:
+
+`
+Date: 2026-08-06
+Author: Ksarith (human governing authority)
+Change: Updated GOV-008-A to reference the tightened Genesis-Mode Escalation Protocol.
+Files Modified: Admin/Unknowns.md
+Summary: Added dependency arrow from GOV-008-A to CIR_Gov.md Genesis-Mode Escalation Protocol v1.1. No unknown IDs or resolution paths were altered.
+Prior State Preserved: Prior text preserved verbatim in /Archive/UnknownspreGenesisModev1.1.md.
+Hash Anchor: HASH_ANCHOR
+Rationale: Reflect new enforcement dependency introduced by formalizing Genesis-Mode behavior.
+`
+
+---
+
+Sidecar Archival Anchors (Exact Templates)
+
+Append to the end of each modified file or its sidecar:
+
+CIR_Gov.md
+`
+Archival Anchor
+Date: 2026-08-06
+Change Summary: Integrated Genesis-Mode Escalation Protocol v1.1.
+Line Count: LINECOUNTPLACEHOLDER
+SHA256: HASH_ANCHOR
+Prior State Reference: /Archive/CIRGovpreGenesisMode_v1.1.md
+`
+
+Governance_Charter.md
+`
+Archival Anchor
+Date: 2026-08-06
+Change Summary: Added cross-reference to Genesis-Mode Escalation Protocol.
+Line Count: LINECOUNTPLACEHOLDER
+SHA256: HASH_ANCHOR
+Prior State Reference: /Archive/GovernanceCharterpreGenesisModeRef.md
+`
+
+Unknowns.md
+`
+Archival Anchor
+Date: 2026-08-06
+Change Summary: Updated GOV-008-A dependencies to include Genesis-Mode Protocol.
+Line Count: LINECOUNTPLACEHOLDER
+SHA256: HASH_ANCHOR
+Prior State Reference: /Archive/UnknownspreGenesisModev1.1.md
+`
+
+Replace LINECOUNTPLACEHOLDER and HASH_ANCHOR after staging the patch.
+
+---
+
+Commit Message (Exact Text)
+
+`
+Commit: Integrate tightened Genesis-Mode Escalation Protocol v1.1 and update GOV-008-A dependencies
+Signed-off-by: Ksarith
+Files: Admin/CIRGov.md, Admin/GovernanceCharter.md, Admin/Unknowns.md
+Notes: No Tier-1 axioms modified; enforcement behavior under GOV-008 failure formalized; Charter cross-reference added; Unknowns updated.
+`
+
+---
+
+Integration Notes (Minimal)
+
+- Insert the tightened Genesis‑Mode protocol as a new governed subsection in CIR_Gov.md under Binding Status.  
+- Add a single cross‑reference line in the Charter’s Genesis Phase section:  
+  “Operational enforcement of Genesis Phase escalation is defined in CIR_Gov.md’s Genesis-Mode Escalation Protocol.”  
+- Update GOV‑008‑A in Unknowns.md to include:  
+  → CIR_Gov.md (Genesis‑Mode Escalation Protocol v1.1)
+
+No other files or doctrine should be touched.
+
+---
+
+If you want, I can now generate the exact patch blocks for inserting the tightened protocol into CIR_Gov.md with line‑context anchors — or move directly to the Human Override Artifact Format.
+
+
+
+
+
