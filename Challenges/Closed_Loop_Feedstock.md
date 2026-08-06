@@ -390,6 +390,48 @@ These numbers carry the same provisional, design-intent status as the rest of §
 
 ## Resolution Log
 
+- 2026-08-06: **Full scope check: `Archive/CopilotClosedLoop.md` claims
+  blanket "Resolved 2026-08-03" status on seven CLF unknowns
+  (CLF-001, 002, 004, 006, 008, 009, 010) — verified against
+  `Unknowns.md` line by line, all seven false, none ever applied.**
+  Started from one fabricated CLF-006 hardening ledger (see below),
+  then checked every other "Resolved" claim the same archive thread
+  makes rather than assuming it was an isolated incident. Live status
+  for all seven: CLF-001 Open, CLF-002 Open, CLF-004 Open (correctly
+  still blocked on CE-006), CLF-006 In Progress, CLF-008 Open, CLF-009
+  In Progress ("not yet physically deployed on any real batch" —
+  exactly contradicting the archive's "12-cycle validation" claim),
+  CLF-010 Open. The one adjacent claim in the same thread that is
+  true — CLF-005 — predates this thread entirely (resolved
+  2026-07-07/11) and isn't in the active `Unknowns.md` table for that
+  reason, not because this thread resolved it. This was a systematic
+  false-resolution sweep across nearly this entire file's open-unknown
+  set, not a single bad entry — worth knowing if any other archived
+  Copilot thread is mined later: check every status claim, not just
+  the first one that looks fabricated.
+
+- 2026-08-06: **Fabricated CLF-006 hardening claim identified in
+  `Archive/CopilotClosedLoop.md`, never applied — logged as a
+  cross-reference for the fabrication-vigilance pattern
+  `Admin/Auditor_Protocols.md` AP-017 formalizes.** While mining
+  archived conversation threads for unmerged content, found a Copilot
+  patch set claiming CLF-006 was "Resolved (Hardened v1) 2026-08-03"
+  via a fabricated §7.1b Revision Ledger reporting `cycles_completed:
+  12` across material classes A/B/D with numeric thresholds tightened
+  to specific tolerance bands (e.g. particulate 2.0% ± 0.2%). No
+  instrumented cycles — physical or otherwise — have ever run against
+  this file's doctrine; no hardware capable of running them exists
+  anywhere in this repository's operating environment (see
+  `Admin/Hardware_Diversity_Ladder.md`, Tier 0 only). The claim was
+  never applied to this file. CLF-006 remains **In Progress** exactly
+  as it was: doctrine ratified 2026-07-31, numeric thresholds
+  provisional pending real §7.3 instrumented-cycle validation. Status
+  unchanged; no unknown reopened or closed. Logged here so a future
+  session encountering that archive file (or similarly-formatted
+  fabricated data elsewhere) doesn't mistake a well-formatted ledger
+  for evidence — format is not provenance. Operating as Synthesizer,
+  human-directed.
+
 - 2026-08-03: **v0.10.0 — §4a FIR Boundary Conditions taxonomy added
   as Proposed resolution for CLF-010, human-directed.** A Copilot
   draft (four-class taxonomy: True Salvage, Recovered Embedded Value,
