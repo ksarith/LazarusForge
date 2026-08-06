@@ -16,7 +16,7 @@
 | Verification Ref | `Admin/Verification_Gates_LF.md`                                    |
 | Last Audit       | 2026-06-19; revised 2026-06-27; revised 2026-07-02; revised 2026-07-08 (two passes); revised 2026-07-09; revised 2026-07-16; revised 2026-07-24; revised 2026-07-29 |
 | Auditor          | Gemini — Skeptic/Auditor; ChatGPT — Skeptic/Auditor; Grok — Skeptic/Auditor; Claude — Synthesizer/Auditor; Claude — Registration Latency addition (human-directed) 2026-07-08; Claude — Phase 0 manual execution tier added (human-directed) 2026-07-08; Gemini — Exploration audit 2026-07-08 (Archive contradiction, cross-ref, RIP-009, Phase 0 anchor); Claude — fixes integrated + RIP-008 severity correction (human-directed) 2026-07-09; Claude — Post-Exit Monitoring Reversion Mechanism added for GOV-013 (human-directed), 2026-07-16; Claude — Integrity Confidence/Drift Trend format, Protocol Validation/RIP-010, Status section v0.8 omission fixed (human-directed, external ideation reviewed and scoped down), 2026-07-24; Claude — stale "PROPOSED, NOT RATIFIED" / "once ratified" GOV-013 references corrected to reflect the Charter's actual 2026-07-19 ratification (human-directed), 2026-07-29 |
-| Open Unknowns    | 8                                                                   |
+| Open Unknowns    | 9                                                                   |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | High                                                                |
 | Sidecar Link     | #auditor-notes--unknowns                                            |
@@ -745,7 +745,41 @@ Mandatory re-audit conditions for this document:
 
 ---
 
+### RIP-011 — §Version Preservation Protocol's own hash/line-count anchor rule is essentially unimplemented repository-wide
+
+| Field         | Value                                   |
+|---------------|-------------------------------------------|
+| Status        | Open                                    |
+| Risk          | Low                                     |
+| Priority      | Minor                                   |
+| Type          | Technical / Governance                  |
+| Blocking      | No                                      |
+| Owner         | `Admin/Repository_Integrity_Protocol.md`|
+| First Logged  | 2026-08-06                              |
+| Last Reviewed | 2026-08-06                              |
+
+**Description:** §Version Preservation Protocol (line 109 of this file) requires every revision to record the prior state's hash if tooling is available, or the final line count and open-unknowns count as a lightweight integrity anchor if not. Verified against the live repository: outside this file, only three files anywhere reference "hash" or "line count" — `Operations/Electronics.md` (SHA256 in an unrelated hardware-watchdog-token context) and `Admin/Computational_Institutional_Reasoning.md` (line count used as a debt-accounting proxy, also unrelated). No file's Resolution Log entries actually carry a hash or line-count anchor for the revision being logged. The count of files implementing this file's own §109 rule, checked directly rather than assumed, is zero.
+
+**Why It Matters:** Every Resolution Log entry across the repository — including entries added today — records what changed but not a value anyone could use to verify a file hasn't silently drifted from what its own log claims. This is exactly the gap RIP §109 exists to close, and it has gone unimplemented since this file's creation without being tracked as a discrete unknown.
+
+**Resolution Path:** Not resolved here — deciding what "lightweight" means in practice (line count only, or open-unknowns count too; applied to every revision or only Major/Constitutional-class ones; retroactive or forward-only) is a real design choice, not a default to fall into. Left open for a deliberate scoping pass rather than resolved by assumption.
+
+*Surfaced during a review of `Archive/RIP_GMP-Copilot.md`, an archived multi-agent audit thread — the thread's broader four-category compliance audit was found to be almost entirely unverified "likely" hedging rather than checked findings (its one concrete claim, GMP's Last Audit staleness, was true when written but has since been resolved through ordinary session work), but this specific claim was checked directly against the live repository and confirmed accurate. Registered by Claude — Synthesizer, human-directed, 2026-08-06.*
+
+---
+
 ### Resolution Log
+
+- 2026-08-06: **RIP-011 registered — §Version Preservation Protocol's own
+  hash/line-count anchor rule found essentially unimplemented, verified
+  against the live repository (0 of ~50+ canonical files carry a hash or
+  line-count anchor on any revision, outside two unrelated incidental
+  mentions).** Surfaced while reviewing an archived multi-agent audit
+  thread (`Archive/RIP_GMP-Copilot.md`) whose broader compliance audit was
+  mostly unverified "likely" hedging — this one claim was checked directly
+  and confirmed true. Open Unknowns 8 → 9. Not resolved; scoping the actual
+  anchor mechanism left as deliberate future work. Operating as Synthesizer,
+  human-directed.
 
 - 2026-07-24: **v0.9 — Integrity Confidence/Drift Trend report format added;
   Protocol Validation subsection and RIP-010 logged; Status section v0.8
