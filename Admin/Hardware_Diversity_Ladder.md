@@ -86,6 +86,7 @@ Provide a progressive, falsifiable path from the current single-operator advisor
 - Power and (where practical) thermal domains independent.
 - Network design prevents unilateral partition by one host.
 - Diversity scoring uses the same "provider + architecture family" rule already defined in §VII.4.
+- **Practical entry point:** attempting this tier for real — three physically separate hosts, each running a different agent model family, working toward quorum — is the highest-value field test this repository currently needs. See `Tests/Field_Logs.md` for the submission format; log the attempt regardless of whether it reaches full quorum.
 
 **Tier 3 – Full TMR-Aligned Diversity**
 - Direct reuse of the five diversity mechanisms already written for salvaged-component TMR in `Operations/Electronics.md`:
@@ -131,6 +132,13 @@ Any future edit that softens this file's "currently declarable, not achieved" fr
 ---
 
 ## Resolution Log
+
+- 2026-08-06: **Tier 2 cross-referenced to `Tests/Field_Logs.md`, a new
+  append-only field-data intake file.** Created in response to a direct
+  question about how to invite physical/cross-agent testing without
+  requiring pull-request literacy. Does not change any tier's
+  requirements or status — this file's "declarable, not achieved" framing
+  is unchanged. Operating as Synthesizer, human-directed.
 
 - 2026-08-06: **Hardware-independence test procedure added to Advancement Rule 3, reconciled from an independent multi-agent thread.** A Grok/Copilot thread drafted a standalone "Hardware Independence Test" without loading this file's "declarable, not achieved" framing or its Advancement Rules. Its anti-spoofing content (host/instance-ID cross-checks, rejecting same-host container/VM claims as independent, treating missing location metadata as unverified) filled a genuine gap — Rule 3(b) referenced §VII.4 tests without a concrete procedure existing anywhere. Folded in as an elaboration of Rule 3, not a new rule; does not change any tier's requirements or this file's "not achieved" status. See `Governance_Migration_Protocol.md` §VII.8 and `CIR_Gov.md` §8.2.1 for the companion reconciliations from the same thread. Operating as Synthesizer, human-directed.
 
