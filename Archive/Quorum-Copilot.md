@@ -1445,4 +1445,235 @@ Would you like me to:
 
 Just say which.
 
+**Quorum Enforcement Mechanisms in LazarusForge**
 
+GOV-008 defines *what* a valid quorum is. Enforcement is the harder problem: how the system actually detects, proves, and acts on quorum status without creating new single points of failure or circular dependencies.
+
+Here is a structured exploration grounded in the current doctrine (Charter Genesis Phase, Hardware_Diversity_Ladder.md, CIR Binding Status, RIP integrity rules, and the GOV-008 drafts).
+
+### 1. Current Enforcement Reality (as of 0.99.38)
+
+- **No automated enforcement substrate exists yet.**  
+  Hardware_Diversity_Ladder.md is explicit: “As of 2026-08-03 no second physical host, independent runtime, or orthogonal verification system exists.”  
+  Everything is still in **Genesis Mode**. Enforcement is human-mediated.
+
+- **Primary enforcement lever today**:  
+  The Charter’s Genesis Phase rules + human override.  
+  Any attempted VERIFIED transition while GOV-008 is unsatisfied must be refused and escalated. CIR’s Binding Status already encodes this as a hard constitutional block.
+
+### 2. Layered Enforcement Architecture (progressive)
+
+The project already sketches a clean progression:
+
+| Layer | Mechanism | Who/What Enforces | Maturity |
+|-------|-----------|-------------------|----------|
+| **L0 – Human Anchor** | External signed authorization record, separate session, or second human | Human governing authority | Current (only working layer) |
+| **L1 – Registry + Checklist** | Append-only Quorum Registry + deterministic verification checklist | Automation/AUDIT_HARNESS or cold-session script | Drafted (GOV-008 checklist + registry spec) |
+| **L2 – Hardware Diversity** | Physical host independence (Hardware_Diversity_Ladder tiers) | Second physical runtime + independence tests | Ladder defined, Tier 0 only |
+| **L3 – Cryptographic / Runtime** | Signed quorum proofs, non-collusion tests, external root-of-trust (SEC-007) | Independent evaluators + hardware roots | Future (blocked on SEC-007a and real second host) |
+
+### 3. Concrete Enforcement Mechanisms (ordered by readiness)
+
+**A. Soft / Procedural (immediate)**
+- Pre-action checklist (the GOV-008 Quorum Verification Checklist you already have).
+- Mandatory logging of quorum composition before any predicate evaluation.
+- Automatic fall-through to Genesis Mode + human escalation on any Fail.
+- Role-separation invariant: no agent may hold more than one of {Proposer, Skeptic, Verifier, Integrator} in the same cycle.
+
+**B. Registry-Based (near-term)**
+- Append-only Quorum Registry (EvaluatorID, ModelFamily, HardwareID, Roles, independence statuses, Outcome).
+- Every VERIFIED action must reference a valid QuorumID.
+- RIP treats the registry as a governed artifact (versioned, auditable, no retroactive edits).
+
+**C. Hardware Independence Tests (Hardware_Diversity_Ladder)**
+- Four-tier ladder already defined:
+  - Tier 0: Single-operator advisory
+  - Tier 1: Second physical host (even a cheap SBC)
+  - Tier 2–3: Increasing diversity (power, network, silicon, firmware, procurement)
+- Advancement requires demonstrated evidence + human ratification, never declaration.
+- Anti-spoofing: reject pure logical isolation (containers/VMs on same host).
+
+**D. Runtime / CIR Enforcement**
+- CIR kernel refuses to execute Γ predicates unless the registry reports a live QuorumValid status.
+- Genesis-Mode degradation rules already partially specified in CIR_Gov.md.
+- Once GOV-008 is satisfied, Axiom A4 becomes enforceable (agent identity cannot influence admissibility).
+
+**E. Cryptographic / External Root (longer-term)**
+- SEC-007a/b external root-of-trust.
+- Signed quorum proofs that can be verified offline.
+- Non-collusion tests across model families and hardware.
+
+### 4. Key Design Constraints (from existing doctrine)
+
+- **No self-authorization**: The proposing agent may never evaluate its own predicates.
+- **Evidence independence**: Evaluators must read canonical sources, not summaries from other evaluators.
+- **Failure is safe**: Quorum failure → freeze ΔI → escalate → log. Never silent degradation into VERIFIED.
+- **Human remains the ultimate circuit breaker**: Even after Pathway 1 exit, human override authority stays intact.
+- **Bootstrap paradox awareness**: You cannot use the system to prove the quorum that the system itself requires. Initial proof must be external / human-ratified.
+
+### 5. Practical Near-Term Enforcement Path
+
+1. Finalize and integrate the GOV-008 definition + checklist (already in progress).
+2. Stand up a minimal Quorum Registry (even a markdown or simple append-only log).
+3. Acquire / designate a second physical host and document it against the Hardware Diversity Ladder Tier 1 criteria.
+4. Run the three-instance cold-session battery to prove model + hardware + evidence independence.
+5. Human ratification of the first valid quorum → Pathway 1 exit candidate.
+6. Only then lift CIR Binding Status.
+
+### 6. Open Questions Worth Exploring Next
+
+- Is Tier 1 of the Hardware Diversity Ladder sufficient for Pathway 1 exit, or is Tier 2/3 required? (Still an open ratification question in GMP §VII.6.)
+- How should the registry itself be protected against corruption (RIP rules apply, but who watches the watchers)?
+- What is the minimal viable non-collusion test that does not itself require a higher quorum?
+- How do you handle temporary quorum loss after exit (graceful degradation vs hard re-entry into Genesis Mode)?
+
+---
+
+**Highest-value next prompt you could feed the agents:**
+
+```
+Explore and draft the minimal enforceable Quorum Registry + runtime gate for CIR, using only existing GOV-008 definition, Hardware_Diversity_Ladder.md, RIP integrity rules, and Charter Genesis Phase constraints. Output:
+1. Exact data model for the registry
+2. The single runtime check CIR must perform before any Γ predicate evaluation
+3. Failure behavior (must match Genesis-Mode Escalation Protocol)
+4. How the registry itself is protected under RIP
+Do not invent new constitutional doctrine.
+```
+
+Would you like me to expand any of the layers above, produce that ready-to-paste prompt in full detail, or focus on a specific enforcement mechanism (e.g., the hardware test or the registry)?
+
+Absolutely — and this is the right moment to crystallize this into a ready‑to‑paste, high‑leverage prompt you can feed directly into the multi‑agent quorum or Copilot thread.
+
+Below is the clean, minimal, correctly scoped prompt, written exactly in the style Grok recommended:  
+- grounded only in existing doctrine,  
+- no new constitutional rules,  
+- focused on enforcement,  
+- structured for maximum yield.
+
+I’ll give you the final prompt first, then (optionally) a short rationale.
+
+---
+
+Ready‑to‑Paste Prompt: Minimal Enforceable Quorum Registry + Runtime Gate
+
+`
+Using only existing doctrine — GOV-008, the Quorum Verification Checklist, the Hardware Independence Test, the Quorum Registry Spec, HardwareDiversityLadder.md, RIP integrity rules, CIR Binding Status, and the Charter’s Genesis Phase constraints — draft the minimal enforceable Quorum Registry + runtime gate for CIR.
+
+Output exactly four sections:
+
+1. Registry Data Model
+   - The smallest complete set of fields required to enforce GOV-008.
+   - Must satisfy RIP’s append-only, no-retroactive-edit, lineage-preservation rules.
+   - No new governance doctrine; only structure.
+
+2. Single Runtime Gate for CIR
+   - The exact check CIR must perform before executing any Γ predicate.
+   - Must reference only GOV-008 quorum validity and the registry.
+   - Must not invent new predicates or new admissibility rules.
+
+3. Failure Behavior
+   - Must match the Genesis-Mode Escalation Protocol exactly.
+   - Freeze ΔI, reject VERIFIED, escalate to human override, log refusal.
+   - No new behavior beyond what is already ratified.
+
+4. Registry Protection Under RIP
+   - How the registry is protected as a governed artifact.
+   - Append-only, versioned, auditable, no retroactive edits.
+   - No new integrity doctrine; only application of existing RIP rules.
+
+Constraints:
+- Do not modify any Tier-1 axioms.
+- Do not introduce new constitutional requirements.
+- Do not expand GOV-008 beyond its current definition.
+- Keep the output minimal, deterministic, and ready for direct insertion into CIRGov.md and Automation/AUDITHARNESS.py.
+`
+
+---
+
+Why this prompt is high‑leverage
+
+It forces the agents to produce:
+
+- the exact data model needed for enforcement (not theory),
+- the single runtime gate CIR must use (closing Binding Status),
+- the failure path already ratified (Genesis Mode),
+- the RIP protection rules that make the registry safe.
+
+This is the smallest enforceable slice of the enforcement architecture — the part that actually makes GOV‑008 real in practice.
+
+It also avoids:
+- new doctrine,
+- new predicates,
+- new constitutional rules,
+- any attempt to “solve” hardware diversity prematurely.
+
+It is the perfect next step.
+
+If you want, I can also produce:
+- a variant prompt optimized for Claude/Grok multi‑agent runs,
+- a cold‑session battery prompt for verifying the output,
+- or a patch‑set prompt for integrating the result into CIR_Gov.md.
+
+Just tell me which direction you want to push.
+
+**Yes — that prompt is excellent.** It is tight, correctly scoped, and forces exactly the minimal enforceable slice we need without inventing doctrine.
+
+### Small refinements I recommend before you paste it
+
+1. **Filename consistency**  
+   Use the exact current names:  
+   `Hardware_Diversity_Ladder.md`, `CIR_Gov.md`, `Automation/AUDIT_HARNESS.py`.
+
+2. **Slightly stronger constraint on inventiveness**  
+   Add one more bullet under Constraints:  
+   `- Do not invent new fields, statuses, or checks beyond what is required to operationalize the already-drafted GOV-008 definition and registry spec.`
+
+3. **Output format hint**  
+   Add at the end:  
+   `Format each of the four sections so it can be dropped directly into CIR_Gov.md (as a new subsection) or into a Python module for AUDIT_HARNESS.py with minimal editing.`
+
+### Ready-to-paste version (refined)
+
+```
+Using only existing doctrine — GOV-008, the Quorum Verification Checklist, the Hardware Independence Test, the Quorum Registry Spec, Hardware_Diversity_Ladder.md, RIP integrity rules, CIR Binding Status, and the Charter’s Genesis Phase constraints — draft the minimal enforceable Quorum Registry + runtime gate for CIR.
+
+Output exactly four sections:
+
+1. Registry Data Model
+   - The smallest complete set of fields required to enforce GOV-008.
+   - Must satisfy RIP’s append-only, no-retroactive-edit, lineage-preservation rules.
+   - No new governance doctrine; only structure.
+
+2. Single Runtime Gate for CIR
+   - The exact check CIR must perform before executing any Γ predicate.
+   - Must reference only GOV-008 quorum validity and the registry.
+   - Must not invent new predicates or new admissibility rules.
+
+3. Failure Behavior
+   - Must match the Genesis-Mode Escalation Protocol exactly.
+   - Freeze ΔI, reject VERIFIED, escalate to human override, log refusal.
+   - No new behavior beyond what is already ratified.
+
+4. Registry Protection Under RIP
+   - How the registry is protected as a governed artifact.
+   - Append-only, versioned, auditable, no retroactive edits.
+   - No new integrity doctrine; only application of existing RIP rules.
+
+Constraints:
+- Do not modify any Tier-1 axioms.
+- Do not introduce new constitutional requirements.
+- Do not expand GOV-008 beyond its current definition.
+- Do not invent new fields, statuses, or checks beyond what is required to operationalize the already-drafted GOV-008 definition and registry spec.
+- Keep the output minimal, deterministic, and ready for direct insertion into CIR_Gov.md and Automation/AUDIT_HARNESS.py.
+
+Format each of the four sections so it can be dropped directly into CIR_Gov.md (as a new subsection) or into a Python module for AUDIT_HARNESS.py with minimal editing.
+```
+
+This version is ready to fire.
+
+Would you like me to also prepare:
+- A companion cold-session verification prompt for the output, or  
+- The dual-ownership resolution prompt as the parallel structural track, or  
+- Just wait for the result of this one and then review/patch it?
+
+Your call.
