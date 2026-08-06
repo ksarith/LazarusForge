@@ -185,6 +185,7 @@ Tests/                                      — Test frameworks and deployment p
     ├── Hydrologic_Resource_Cascade.md      — Flood-driven sediment recovery basin; sequential hydraulic sorting zones; episodic operation doctrine; HR-UNK-001 through HR-UNK-002 (formal); HR-003 through HR-010 (research questions)
     ├── Chaos_Dynamics.md                   — Exploration/R&D pipeline doctrine; Sandbox (Level ≤4 hypothesis generation) → Promotion Gate → EXP-ID → physical testing → Engineering derating; resolution vehicle for EN-005; feeder for EN-001a
     └── Pyrolysis_Cascade.md                — Staged thermal cascade (pyrolysis → high-temp reduction) for pre-triaged salvage; explicitly dependency-gated on PL-001/CE-003 (halogen), GR-002 (reduction method), FA-001 (site), EN-001 (structural); PYC-001 through PYC-008
+    └── Field_Logs.md                       — Append-only intake for physical test runs and cross-agent field data; not a specification, no Spec Gates apply
 
 Challenges/                                 — Problem layer: why these capabilities exist
     ├── Water.md                            — Water scarcity and contamination (Living Waters)
@@ -219,6 +220,7 @@ Archive/                                    — Prior states of governance-beari
 - `Tests/Chaos_Dynamics.md` — created 2026-07-04 ✓ (see Tests/ structure tree and Scope Map below); supersedes EN-005's original never-created candidate names (`Tests/Verification_Methods.md`, `Admin/Test_Protocols.md`).
 - `Challenges/Closed_Loop_Feedstock.md` — created 2026-07-06 ✓ (see Challenges/ structure tree and Scope Map below).
 - `Tests/Pyrolysis_Cascade.md` — created 2026-08-04 ✓ (see Tests/ structure tree and Scope Map above); drafted from archived conversation via Copilot, distilled and quantitative claims retired to Placeholder by Grok, PC-/PYC- namespace collision fixed before merge.
+- `Tests/Field_Logs.md` — created 2026-08-06 ✓, append-only intake for physical test runs and cross-agent field data, cross-referenced from `CONTRIBUTING.md`; not a specification file, no Spec Gates or Unknowns of its own.
 - `Architecture/Characterization.md` — **[PLANNED]**, referenced as a forward dependency by `Closed_Loop_Feedstock.md`; not yet created.
 - `Operations/Metals.md` — **[PLANNED]**, referenced as a forward dependency by `Closed_Loop_Feedstock.md`; not yet created.
 
