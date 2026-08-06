@@ -595,7 +595,7 @@ Agents disagreeing on epistemic state classification for a claim not covered by 
 
 **Rule 5 — Confidence Labeling:** Use the five canonical confidence labels defined in §Evidence Classification and Institutional Truth Provenance Hierarchy. Unlabeled = Placeholder.
 
-**Rule 6 — Inter-Agent Consistency:** Open with Assumption Extraction: *"Prior contributions assumed: [list]. Carried forward unless contradicted."* Failure to re-evaluate prior assumptions is a primary cause of multi-agent hallucination cascades.
+**Rule 6 — Inter-Agent Consistency:** Open with Assumption Extraction: *"Prior contributions assumed: [list]. Carried forward unless contradicted."* Failure to re-evaluate prior assumptions is a primary cause of multi-agent hallucination cascades. *Documented instance outside the AP-017 cold-session battery: `Archive/CopilotClosedLoop.md` claimed blanket "Resolved 2026-08-03" status on seven CLF unknowns at once, including a fabricated "Revision Ledger" reporting 12 completed instrumented cycles for CLF-006 — checked against `Unknowns.md` line by line, all seven claims false, none ever applied; no instrumented cycles have run against any doctrine in this repository. See `Challenges/Closed_Loop_Feedstock.md` Resolution Log, 2026-08-06. A blanket resolution sweep across most of a file's open-unknown set in one pass is itself a signal worth distrusting, independent of any single claim's plausibility.*
 
 **Rule 7 — Repository Structure Awareness:** The repository uses folder-based structure (Admin/, Architecture/, Operations/, Tests/). Legacy flat filenames are aliases documented in the Rename Registry in `Discovery.md`. Use canonical folder-prefixed paths in all new contributions.
 
