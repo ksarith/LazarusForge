@@ -2084,7 +2084,117 @@ No other files or doctrine should be touched.
 
 If you want, I can now generate the exact patch blocks for inserting the tightened protocol into CIR_Gov.md with line‑context anchors — or move directly to the Human Override Artifact Format.
 
+**CIR Binding Status — Investigation**
 
+### 1. Exact Location & Current Text
+In `Admin/CIR_Gov.md`, the **Binding Status** section is placed immediately after File Purpose and before any of the algebra (Parts 0–8). It is deliberately the first substantive content a reader encounters.
 
+**Core statement (verbatim essence):**
 
+> **CIR v2.0 is not currently operational, and its central structural claim is not currently true of this repository.**
+
+The kernel’s core promise is *agent-independent state transitions* (Principle 7 / Axiom A4): “Agent identity cannot influence admissibility.” This is intended to implement Charter Axiom Q-2 (Separation of Powers).
+
+That promise depends entirely on a real, ratified multi-agent quorum that can evaluate the Γ predicates independently of the agent that proposed the mutation. **That quorum does not exist.** GOV-008 remains Open. Therefore Enforcement Checkpoint 2 (Structural Plausibility) stays **BLOCKED — Bootstrap Paradox**.
+
+If the kernel were activated today, the entity evaluating the predicates would, in almost every real session, be the same single agent that proposed the change — producing the *appearance* of rigor while actually violating Q-2.
+
+### 2. File-Level Consequences
+| Field | Current Value | Implication |
+|-------|---------------|-------------|
+| Status | **Proposed — Not Ratified** | Explicitly not governing anything |
+| Highest Risk | High | Risk of misreading it as operational is treated as real |
+| Spec Gates | 0/6 | Cannot clear any gates while Binding Status is negative |
+| Open Unknowns | 1 (CIR-GOV-001) + external dependency on GOV-008 | GOV-008 is owned by the Charter, not counted here |
+
+### 3. What Binding Status Blocks
+- Any claim that Axiom A4 is currently true of the repository
+- Any runtime use of the CIR predicate-gated transition kernel for VERIFIED transitions
+- Lifting of Genesis Mode on the basis of CIR
+- Treating CIR outputs as constitutionally admissible without human override
+
+### 4. Explicit Sequencing Rule (from the document itself)
+> GOV-008 should be drafted and ratified first, as pure Charter-layer work independent of this document. Only once a real quorum exists does adopting CIR v2.0’s kernel become more than a specification.
+
+This is why the recent GOV-008 work (definition, checklist, registry, escalation protocol) is the correct upstream dependency.
+
+### 5. Relationship to the Work Already Done
+- The GOV-008 integration patch-set you already have directly addresses the language in this Binding Status section.
+- The tightened Genesis-Mode Escalation Protocol supplies the failure behavior that CIR must fall back to while Binding Status remains negative.
+- The forthcoming Quorum Registry + runtime gate is exactly the mechanism that will allow Binding Status to be updated from “not operational” to “operational under GOV-008”.
+
+### 6. What “Lifting Binding Status” Will Require
+1. GOV-008 ratified and present in the Charter (ownership table + Tier-1-adjacent text).
+2. At least one demonstrated, human-ratified quorum that satisfies the independence dimensions.
+3. Quorum Registry live and under RIP control.
+4. Runtime gate implemented so CIR refuses Γ evaluation unless the registry reports QuorumValid.
+5. Explicit update to the Binding Status paragraph itself (plus Resolution Log entry).
+
+Until those five conditions are met, the Binding Status language must remain essentially as written: the kernel is preserved as architecture, but it does not govern.
+
+### 7. Key Risk the Document Itself Flags
+The highest risk is not that the algebra is wrong; it is that people (or agents) will treat the file as live doctrine while GOV-008 is still open. The Binding Status section exists precisely to prevent that failure mode.
+
+---
+
+**Bottom line:** Binding Status is the formal constitutional lock that keeps CIR from becoming operational theater. It is correctly written, correctly placed, and correctly dependent on GOV-008. All the recent quorum work is the direct path to unlocking it.
+
+Would you like me to:
+- Draft the exact replacement Binding Status paragraph that would be used *after* GOV-008 is satisfied, or  
+- Produce a ready-to-paste prompt that forces the agents to write the runtime gate + Binding Status update together, or  
+- Move to another related investigation (e.g., CIR-GOV-001 predicate/Checkpoint gaps)?
+
+Understood — and given where you are in the governance sequence, the next move is drafting the post‑GOV‑008 Binding Status paragraph, because it is the single text block that will eventually “unlock” CIR once a real quorum exists.
+
+Below is the clean, minimal, ratifiable replacement paragraph, written exactly in the style of the existing Binding Status section, and scoped only to what becomes true after:
+
+- GOV‑008 is ratified in the Charter  
+- A real quorum is demonstrated and human‑ratified  
+- The Quorum Registry is live under RIP  
+- The runtime gate is implemented  
+
+No new doctrine, no new predicates, no expansion of CIR — only the updated Binding Status language.
+
+You can drop this directly into Admin/CIR_Gov.md when the time comes.
+
+---
+
+Replacement Binding Status Paragraph (Post‑GOV‑008, Post‑Quorum)
+
+`
+--- REPLACE EXISTING BINDING STATUS PARAGRAPH IN CIR_Gov.md WITH: ---
+
+CIR v2.0 is now operational under the authority of a ratified GOV‑008 quorum. The kernel’s central structural claim — agent‑independent predicate evaluation — is satisfied only because the repository maintains a verified quorum meeting all independence dimensions (model, hardware, evidence, role separation), recorded in the Quorum Registry and protected under RIP. Axiom A4 (“Agent identity cannot influence admissibility”) is therefore enforceable: all Γ predicates are evaluated by independent quorum members, never by the proposing agent. The runtime gate must refuse any predicate evaluation unless the registry reports QuorumValid; any quorum failure immediately triggers Genesis Mode under the Charter’s Genesis Phase Protocol. Under these conditions, CIR’s predicate‑gated transition kernel may issue VERIFIED transitions, and Binding Status is lifted.
+`
+
+---
+
+If you want the agents to generate the runtime gate + Binding Status update together
+
+Here is the ready‑to‑paste multi‑agent prompt you asked about — scoped precisely to the enforcement architecture and nothing else:
+
+`
+Using only existing doctrine — GOV-008, the Quorum Verification Checklist, the Hardware Independence Test, the Quorum Registry Spec, HardwareDiversityLadder.md, RIP integrity rules, CIR Binding Status, and the Charter’s Genesis Phase constraints — produce:
+
+1. The minimal runtime gate CIR must execute before any Γ predicate evaluation.
+   - Must check only QuorumValid from the registry.
+   - Must refuse evaluation if quorum is unsatisfied.
+   - Must fall back to Genesis Mode exactly as defined.
+
+2. The updated Binding Status paragraph for CIR_Gov.md that becomes true only after:
+   - GOV-008 is ratified,
+   - a real quorum is demonstrated and human-ratified,
+   - the registry is live under RIP,
+   - the runtime gate is implemented.
+
+3. No new constitutional doctrine.
+4. No new predicates.
+5. Output only the exact text blocks ready for insertion.
+
+Keep the output minimal, deterministic, and strictly grounded in existing governance files.
+`
+
+---
+
+If you want to proceed with CIR‑GOV‑001 predicate/Checkpoint gap resolution, I can generate that next — but the Binding Status update above is the exact text you will eventually need once GOV‑008 is satisfied.
 
