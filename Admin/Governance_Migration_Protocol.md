@@ -593,6 +593,28 @@ The quorum is achieved only when all of the following are true and recorded:
 
 **Recommendation:** circulate this candidate for the same multi-agent skeptical review + human governing-authority ratification process §VI's own doctrine describes for Track B changes, given this section — if ratified — would itself be Tier-1-adjacent constitutional structure, not a routine Track A change. Do not treat drafting this section as itself satisfying any part of GOV-008.
 
+### VII.8 Registry Data Model & Runtime Gate (Extension, Not Yet Ratified)
+
+**Provenance and status:** an independent multi-agent thread (Grok/Copilot, 2026-08-06, human-directed) drafted a full parallel GOV-008 definition, checklist, registry spec, and escalation protocol — without ever loading this section, `Unknowns.md`, or `Admin/CIR_Gov.md` §8.2. Cross-checked against source before any integration: the thread's core quorum definition (Model/Evidence/Hardware Independence, three roles) substantially duplicates VII.1–VII.4 above under different names, and its proposed patch to insert a second, conflicting GOV-008 definition directly into `Governance_Charter.md` was **rejected** — `Unknowns.md`'s canonical GOV-008 entry already points here, and a second Charter-level definition would recreate the exact "colliding local GOV-008" incident this repository already logged and corrected 2026-07-28 (renamed to `CIR-001`). The thread's Model/Evidence Independence framing (§2.1–2.2 of its draft) is also the repackaged-EQD drafting error this section's own opening paragraph warns against — advisory chat-session diversity is not governance independence, full stop, regardless of how the requirement is phrased.
+
+**What was genuinely additive** — a concrete data schema and runtime-check procedure that VII.1–VII.4 describe operationally but never formalize as a structure — is preserved here, reframed as an extension of this section rather than a competing definition. This does not change VII.1–VII.4's requirements, VII.5's escalation rule, or this section's Status (Candidate, Not Ratified, Payment via Specification only, does not resolve GOV-008).
+
+**Registry data model (candidate):** if VII.3's "Quorum Achieved" record (items 1–5) is ever implemented as a structured artifact rather than narrative record-keeping, the minimum fields are:
+
+| Field | Purpose |
+|---|---|
+| EvaluatorID | Stable unique identifier per agent instance |
+| ModelFamily | Provider/architecture lineage — see VII.4's diversity test (fine-tunes of one base model do not count as distinct) |
+| HardwareID / Location | Physical host or instance identifier — must satisfy VII.1's hardware/runtime diversity row; logical-only separation (same host, different container) fails this field regardless of what it reports |
+| Role | One of VII.2's agent classes; no evaluator holds more than one role in the same quorum cycle (VII.2) |
+| Status | Active / Suspended / Retired |
+
+Any registry implementing this must be append-only, versioned, and auditable under `Admin/Repository_Integrity_Protocol.md` — this is an application of RIP's existing integrity rules, not new integrity doctrine.
+
+**Runtime gate (candidate, extends `Admin/CIR_Gov.md` §8.2):** before evaluating any `Γ` predicate, the runtime must check that the registry reports a quorum meeting VII.1–VII.4 for the current cycle. This is not a new rule — it is §8.2's existing "the kernel must not issue a VERIFIED transition" requirement, stated as a concrete pre-check instead of a narrative constraint. Failure behavior is exactly §8.2's existing refuse/escalate/log sequence; nothing here adds a new failure path.
+
+**What this does not do:** does not move GOV-008, VII, or CIR-GOV-001 off their current Status; does not authorize building a registry now; does not supersede VII.1–VII.4's requirements or VII.5's escalation rule, which remain the sole quorum and interim-failure doctrine. This subsection exists so a data-model sketch isn't lost, not because the quorum definition itself needed a second version.
+
 ---
 
 ## Lessons Learned
@@ -1269,6 +1291,7 @@ Claude — Synthesizer/Auditor, human-directed, 2026-07-26.*
 
 ### Resolution Log
 
+- 2026-08-06: **§VII.8 added — Registry Data Model & Runtime Gate (Extension, Not Yet Ratified), reconciliation of an independent multi-agent thread against source.** An independent Grok/Copilot thread produced a full parallel GOV-008 definition, quorum checklist, registry spec, and escalation protocol without loading this section, `Unknowns.md`, or `CIR_Gov.md` §8.2. Its patch to insert a second GOV-008 definition directly into `Governance_Charter.md` was rejected: `Unknowns.md`'s canonical entry already owns GOV-008 here, and a second Charter-level definition would recreate the "colliding local GOV-008" incident already corrected 2026-07-28. Its Model/Evidence Independence framing was identified as the repackaged-EQD drafting error this section's own opening paragraph already warns against. The one genuinely additive piece — a concrete registry data schema and runtime pre-check that VII.1–VII.4 describe operationally but never formalize — was preserved as §VII.8, explicitly framed as extending this section, not competing with it. VII.1–VII.4's requirements, VII.5's escalation rule, and this section's Status (Candidate, Not Ratified, Payment via Specification only) are unchanged. Open Unknowns unchanged; GOV-008 remains Open. Operating as Synthesizer, human-directed.
 - 2026-08-03: **v0.10 — §VII cold Battery pass integrated (two of
   three findings; the third parked for later).** A Skeptic/Auditor
   cold-session pass against §VII + `Admin/Governance_Charter.md`

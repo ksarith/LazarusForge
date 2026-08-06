@@ -104,6 +104,13 @@ Provide a progressive, falsifiable path from the current single-operator advisor
 1. **No silent promotion.** Tier status is recorded in the owning file's File State or sidecar and mirrored in Unknowns.md only after human ratification.
 2. **Degradation is automatic.** Loss of a required host or diversity property drops the system to the highest still-satisfied tier (or back to Genesis Phase if below Tier 1).
 3. **Evidence required.** Each upgrade must include: (a) inventory of hosts and diversity properties, (b) results of §VII.4 independence / diversity / liveness / non-collusion tests, (c) signed human ratification stored outside the runtimes.
+
+   **§VII.4 hardware-independence test procedure (candidate, 2026-08-06, human-directed — folded in from an independent multi-agent thread that had not seen this file's "declarable, not achieved" framing or evidence rule):** §VII.4's diversity test names the requirement but not a procedure. This is a minimum anti-spoofing check for evidence item (a)/(b) above, not a new requirement — it does not lower or raise the tier bar itself:
+   - Record each host's identifier, physical location (rack/region if available), and provider/instance metadata — not just a container or process ID.
+   - Confirm no two evaluators claimed as hardware-independent share a host identifier, instance ID, or hypervisor.
+   - Reject same-host claims disguised as independent: distinct containers or VMs on one physical machine do not satisfy any tier above Tier 0, regardless of how the evidence record is worded (this is the same rule the "Treat Softening as Drift" section below already protects).
+   - Where physical location metadata is unavailable, treat the claim as unverified, not as passing by default.
+   Missing or ambiguous hardware metadata is a failed check, not a tier-neutral gap — evidence item (a) is not satisfied until the metadata exists.
 4. **Relationship to Pathway 1.** Tier 1 is the earliest possible exit candidate; Tier 3 is the preferred steady-state. The decision whether Tier 1 is sufficient for Pathway 1 itself remains an open ratification question in §VII.6.
 
 ---
@@ -124,6 +131,8 @@ Any future edit that softens this file's "currently declarable, not achieved" fr
 ---
 
 ## Resolution Log
+
+- 2026-08-06: **Hardware-independence test procedure added to Advancement Rule 3, reconciled from an independent multi-agent thread.** A Grok/Copilot thread drafted a standalone "Hardware Independence Test" without loading this file's "declarable, not achieved" framing or its Advancement Rules. Its anti-spoofing content (host/instance-ID cross-checks, rejecting same-host container/VM claims as independent, treating missing location metadata as unverified) filled a genuine gap — Rule 3(b) referenced §VII.4 tests without a concrete procedure existing anywhere. Folded in as an elaboration of Rule 3, not a new rule; does not change any tier's requirements or this file's "not achieved" status. See `Governance_Migration_Protocol.md` §VII.8 and `CIR_Gov.md` §8.2.1 for the companion reconciliations from the same thread. Operating as Synthesizer, human-directed.
 
 - 2026-08-03: **v1.0 — file created, human-directed.** Drafted from
   external candidate material (Grok), reviewed and integrated by
