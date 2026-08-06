@@ -16,8 +16,8 @@
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 6/6 vs. `Admin/Verification_Gates_LF.md` — execution quality (see GOV-011, resolved 2026-07-05); promotion separately blocked by open unknowns (GOV-003, GOV-005) and Enforcement Checkpoint 2 — Bootstrap Paradox |
 | Verification Ref | Admin/Verification_Gates_LF.md                                      |
-| Last Audit       | 2026-07-27                                                          |
-| Auditor          | Claude — Sidecar/Resolution Log relocation to `Archive/Logs/Governance_Charter_Changelog.md`, GOV-022 registered (human-directed), 2026-07-23; Claude — Skeptic/Auditor; Gemini — Skeptic/Auditor; Grok — Exploration audit 2026-07-05; Gemini — Exploration audit 2026-07-05; Claude — GOV-011 resolution 2026-07-05; Claude — Skeptic/Auditor, 2026-07-16; Claude — GOV-013 drafted (multi-agent synthesis, human-directed), 2026-07-16; Claude — GOV-013/EDL Track classification confirmed (human-directed), 2026-07-17; ChatGPT — adversarial pass, 2026-07-17; Claude — GOV-014 through GOV-020 verified against source and registered (human-directed), 2026-07-17; Claude — GOV-012 threshold deferral, GOV-013 ratification review, GOV-006 biometric addendum (human-directed), 2026-07-19 |
+| Last Audit       | 2026-08-05                                                          |
+| Auditor          | Claude — Synthesizer, added two consolidated-reference sections (Human Override Doctrine, Constitutional Amendment Boundaries) and one clarifying sentence on doctrine-vs-procedures ownership; no substantive doctrine changed, corrects a prior Copilot audit's false "doctrine is absent" findings by pointing to where the existing text already lives (human-directed), 2026-08-05; prior: Claude — Sidecar/Resolution Log relocation to `Archive/Logs/Governance_Charter_Changelog.md`, GOV-022 registered (human-directed), 2026-07-23; Claude — Skeptic/Auditor; Gemini — Skeptic/Auditor; Grok — Exploration audit 2026-07-05; Gemini — Exploration audit 2026-07-05; Claude — GOV-011 resolution 2026-07-05; Claude — Skeptic/Auditor, 2026-07-16; Claude — GOV-013 drafted (multi-agent synthesis, human-directed), 2026-07-16; Claude — GOV-013/EDL Track classification confirmed (human-directed), 2026-07-17; ChatGPT — adversarial pass, 2026-07-17; Claude — GOV-014 through GOV-020 verified against source and registered (human-directed), 2026-07-17; Claude — GOV-012 threshold deferral, GOV-013 ratification review, GOV-006 biometric addendum (human-directed), 2026-07-19 |
 | Open Unknowns    | 20                                                                  |
 | Active Disputes  | 1                                                                   |
 | Highest Risk     | Critical (GOV-013, GOV-015, GOV-018 — see `Archive/Logs/Governance_Charter_Changelog.md`; promotion-blocking risk unchanged from GOV-003/GOV-005) |
@@ -326,6 +326,29 @@ Lower-tier governance may extend higher-tier doctrine but may not silently redef
 | Governance migration procedures | `Admin/Governance_Migration_Protocol.md` | Active (created 2026-06-06) |
 
 If canonical governance targets do not yet exist, authority temporarily remains with the nearest active governance owner until migration occurs.
+
+**Doctrine vs. procedures split (clarified 2026-08-05, human-directed):** where a row above shows the Charter owning "doctrine" and a downstream file owning "procedures" for the same governance concept (see Governance Migration doctrine vs. procedures above), this is a deliberate split, not an accidental overlap — the Charter states the constitutional principle and constraints; the downstream file defines how that principle is executed. `Repository Integrity Doctrine` below states the same split explicitly for integrity: *"This charter defines integrity expectations, not integrity implementation mechanics."* The same reading applies wherever this pattern recurs in this table.
+
+---
+
+## Human Override Doctrine — Consolidated Reference
+
+*Added 2026-08-05 (human-directed) as a navigational summary only — no new rule, no relocated text. Every claim below already exists verbatim elsewhere in this file; this section exists so a reader doesn't have to hunt across Axioms, Bootstrap Governance Doctrine, and Post-Exit Monitoring Doctrine to find the full picture of human override authority in one place. A prior audit pass incorrectly concluded this doctrine was absent from the Charter — it was present but scattered; this section corrects that finding by pointing to where it actually lives, not by writing new content.*
+
+- **Foundational rule (Axiom P-4, Protections Clause, above):** "No agent or coalition may permanently bypass, simulate, or override meaningful human oversight and veto power on matters affecting human outcomes. Temporary autonomous operation is permitted where architecturally necessary — permanent removal of human oversight is not."
+- **During Genesis Phase (Bootstrap Governance Doctrine, above):** every exit pathway (Quorum Achievement, Demonstrated Track Record, Milestone-Gated, Time-Bounded Review) "requires explicit human ratification — the exit is not automatic even when the technical threshold is met." No autonomous agent may promote itself to governance authority during Genesis Phase without human ratification.
+- **Post-exit (Bootstrap Governance Doctrine, "Post-exit obligations," above):** "Exiting Genesis Phase does not remove human oversight — it changes its character... Human override authority remains intact. The Tier 1 Axioms remain in force."
+- **Amendment (Governance Migration Doctrine, below):** "human ratification is mandatory" and "no autonomous agent or coalition may initiate axiom amendment" for any Tier 1 change.
+
+Together these establish: human veto and oversight authority is continuous across every governance state this Charter defines (bootstrap, post-exit, and amendment) — it is never suspended, only exercised differently as the system matures.
+
+---
+
+## Constitutional Amendment Boundaries — Consolidated Reference
+
+*Added 2026-08-05 (human-directed), same navigational purpose as the section above. The substantive rules already exist under "Governance Migration Doctrine" below, under the "Tier 1 Axiom amendment" subheading — this section points there rather than duplicating it, to avoid two copies of amendment-boundary text drifting apart over time.*
+
+Tier 1 Axiom amendment is bounded by four rules, stated in full under Governance Migration Doctrine below: human ratification is mandatory; no autonomous agent or coalition may initiate the amendment; the amendment must strengthen rather than narrow protection; and prior axiom text must be preserved in the Resolution Log with amendment date and rationale. See that section for the complete, authoritative text — this entry exists only so the amendment boundary isn't mistaken for absent when scanning the file's section headers.
 
 ---
 
