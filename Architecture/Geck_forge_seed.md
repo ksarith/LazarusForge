@@ -211,8 +211,11 @@ Baseline Observability defeats two Critical components simultaneously.*
 - Small metal AM system or CNC / hybrid tool
 - Manual machining tools (drill press, grinder)
 - Welding or joining capability
+- Feedstock regeneration capability — self-sourced weld wire from salvaged base metal (v0→v1 growth target, not a v0 baseline; see UNK-008 below)
 
-*Reason: The seed must be able to repair and extend itself.*
+*Reason: The seed must be able to repair and extend itself. Self-containment is incomplete
+while joining capability depends on procured filler wire — see Feedstock Self-Sufficiency
+below.*
 
 **Weld Unit Sizing Doctrine, 2026-07-19 (human-directed design principle, resolves part of UNK-008):**
 
@@ -224,6 +227,19 @@ Favor smaller weld units — finer passes, lower heat input per pass — over la
 **Honest limit, not a monotonic rule:** this does not mean smaller is always better without bound. Excessive pass count reintroduces problems from a different direction — accumulated inter-pass residual stress, and if passes don't get adequate cooling between them, total arc-on time and cumulative heat input can approach or exceed a coarser single-pass approach. There is a real optimum weld-unit size for a given joint and material, not an unbounded improvement curve. Consistent with `Architecture/Precision.md`'s own doctrine: a stated precision or efficiency ceiling must be an honest bound demonstrated in practice, not an aspirational claim.
 
 **Remaining open work (UNK-008, still Open):** this doctrine establishes the *design principle*, not the *specification*. Still needed: actual welding wire specification and qualification (wire diameter/alloy suited to small-pass work), the specific weld-unit size/power envelope that qualifies as "small" for G.E.C.K. purposes, and empirical validation of the distortion-reduction claim against `Operations/Gate_05_Separation_Thermal.md`'s planned wire extrusion interface once that interface exists. Cross-reference `Architecture/Precision.md` §V (Precision Threshold) for the ceiling-declaration framework this doctrine feeds.
+
+**Feedstock Self-Sufficiency (v0→v1 growth target, not a v0 baseline):** At v0, the Fabrication
+Module's joining capability may rely on procured or salvaged joinable stock per Section IV
+Procurement Doctrine — that is a valid bootstrap position, not a doctrinal gap. But a G.E.C.K.
+whose weld wire must always be purchased has not fully closed the self-replacement loop
+Section I demands. Producing qualifying weld wire directly from salvaged base metal (car body
+steel and similar) is the named growth capability that closes this dependency. The candidate
+resolution vehicle — acceptance criteria WF-01 through WF-10 and a two-stage apparatus sketch
+(guided strip cutter + roller/drawing-die stage), both buildable from Critical modules already
+listed in this section — is detailed under UNK-008 below. It remains Open and
+Provisional/Placeholder pending first physical trials: the underlying assumption that a
+salvaged car body supplies usable weld feedstock is not yet confirmed on real stock. This
+entry exists so the module list itself reflects the growth path, not only the sidecar.
 
 ---
 
@@ -289,6 +305,9 @@ A deployed G.E.C.K. is considered successful when it can:
 - Generate surplus value through repair or fabrication
 - Preserve and transfer its operational memory
 - Demonstrate measurable precision floor for at least one output class *(Placeholder — metric not yet defined; see CO-002 in Components.md)*
+- Produce qualifying weld wire feedstock from salvaged base metal, closing the procured-filler-wire
+  dependency *(Growth criterion, not v0-required — see §VI.4 Feedstock Self-Sufficiency and UNK-008;
+  not yet demonstrated, Provisional pending first physical trials)*
 
 ---
 
@@ -614,6 +633,17 @@ in Components.md routes to PR-001 for resolution.
   weldable feedstock" claim falsifiable and buildable, not to claim industrial
   wire quality. UNK-008's Status, Priority, and Risk are unchanged (still Open,
   Major, Medium). Open Unknowns unchanged.
+- 2026-08-06: **Feedstock self-sufficiency elevated from sidecar-only to doctrine,
+  human-directed.** UNK-008's 2026-08-03 candidate resolution vehicle (car-derived
+  weld feedstock, WF-01–WF-10, apparatus sketch) was fully specified in the sidecar
+  but invisible from §VI.4's module list and §VIII's success criteria — a reader
+  skimming the doctrine would not know self-sourced wire was part of the plan.
+  Added: a §VI.4 module-list bullet and "Feedstock Self-Sufficiency" paragraph
+  framing it explicitly as a v0→v1 growth target (not a v0 baseline, consistent with
+  Section IV Procurement Doctrine); a new §VIII success-criterion bullet, marked
+  Growth criterion / not yet demonstrated. UNK-008's own Status, Priority, Risk, and
+  Provisional/Placeholder framing are unchanged — this is a visibility fix, not a
+  resolution or a claim of new capability.
 
 ---
 
