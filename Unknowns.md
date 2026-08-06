@@ -284,6 +284,7 @@ GH-009 (Emergent heuristic conflict — N² interaction scaling)
 | RIP-007 | Integrity incident ownership undefined | `Admin/Repository_Integrity_Protocol.md` | Open | — | Major |
 | RIP-009 | No cross-file correlation mechanism for coordinated minor integrity drift | `Admin/Repository_Integrity_Protocol.md` | Open | — | Minor |
 | RIP-010 | Protocol never deliberately tested against a planted violation — Protocol Validation / Integrity Fire Drill specified, first pass not yet run | `Admin/Repository_Integrity_Protocol.md` | Open | — | Minor |
+| RIP-011 | §Version Preservation Protocol's own hash/line-count anchor rule found essentially unimplemented repository-wide — verified, 0 of ~50+ files carry one | `Admin/Repository_Integrity_Protocol.md` | Open | — | Minor |
 | CT-001 | Legacy script integration name mapping | `Admin/Canonical_Terms.md` | Open | — | Minor |
 | CT-002 | Component Library Schema standard undefined | `Admin/Canonical_Terms.md` | Open | — | Major |
 | CT-003 | Dependency_Priority_Map.md needed before v1 | `Admin/Canonical_Terms.md` | Open | — | Minor |
