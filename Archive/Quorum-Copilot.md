@@ -973,5 +973,270 @@ If you want, I can now draft:
 - Evaluator registration procedure  
 - Registry integrity audit
 
+Below is the clean, minimal patch‑set, containing only the exact text blocks to insert/replace, each with line‑context anchors.  
+No redesign, no extra commentary, no guided links, no restructuring — only the required patches.
 
+---
 
+PATCH 1 — Governance_Charter.md
+
+Add GOV‑008 as Tier‑1‑adjacent requirement + ownership entry
+(Insert immediately after the “Governance Precedence Rules” section, before “Governance Enforcement States.”)
+
+`
+--- INSERT AFTER LINE ~365 IN Governance_Charter.md ---
+
+Tier‑1‑Adjacent Requirements
+
+GOV‑008 — Minimum Agent & Hardware Quorum
+To satisfy Axiom Q‑2 (Separation of Powers) and permit any VERIFIED governance action or state‑mutation, the repository must maintain a minimum independent quorum defined as follows:
+
+1. Model Independence — At least three distinct model families must be simultaneously reachable.
+2. Hardware Independence — At least two evaluators must operate on physically distinct hardware substrates.
+3. Evidence Independence — Each evaluator must read canonical source material directly, not inherited summaries.
+4. Role Separation — Proposer, Skeptic, Verifier, and Integrator must be distinct evaluators.
+
+If any dimension is unsatisfied, the system enters Genesis Mode and no VERIFIED transition may occur.
+
+GOV‑008 is a Tier‑1‑adjacent requirement: mandatory for enforcing Axiom Q‑2, but not itself a Tier‑1 axiom.
+`
+
+Add ownership table entry
+(Modify the Canonical Governance Ownership table.)
+
+`
+--- MODIFY TABLE ENTRY AROUND LINE ~430 IN Governance_Charter.md ---
+
+| Minimum agent & hardware quorum (GOV‑008) | Admin/Governance_Charter.md (Tier‑1‑adjacent) | Active |
+`
+
+---
+
+PATCH 2 — CIR_Gov.md
+
+Update Binding Status + Axiom A4 dependency language
+(Replace the Binding Status paragraph that describes the missing quorum.)
+
+`
+--- REPLACE LINES ~85–118 IN CIR_Gov.md (Binding Status section) WITH: ---
+
+CIR v2.0 is not currently operational. Its core guarantee — agent‑independent predicate evaluation — depends on a real, ratified GOV‑008 quorum. GOV‑008 is now defined as a Tier‑1‑adjacent requirement in Governance_Charter.md, but the repository has not yet satisfied its independence criteria (model, hardware, evidence, role separation). Until GOV‑008 is satisfied, all predicate evaluation remains constitutionally invalid for VERIFIED transitions, and the kernel must operate exclusively in Genesis Mode.
+
+Axiom A4 (“Agent identity cannot influence admissibility”) is therefore aspirational until GOV‑008 is met. Once a valid quorum exists, Axiom A4 becomes enforceable, and CIR’s predicate‑gated transition kernel may be activated.
+`
+
+---
+
+PATCH 3 — CIR.md (Computational Institutional Reasoning)
+
+Update Axiom A4 dependency language
+(Replace the Axiom A4 explanatory paragraph.)
+
+`
+--- REPLACE LINES ~245–255 IN CIR.md (Axiom A4 explanation) WITH: ---
+
+Axiom A4 requires agent‑independent admissibility. This condition is only satisfiable when the GOV‑008 minimum quorum is active: three distinct model families, two physically independent hardware substrates, evidence‑independent read paths, and full role separation. Until GOV‑008 is satisfied, Axiom A4 remains structurally aspirational and all evaluations must be treated as Genesis‑Mode operations.
+`
+
+---
+
+PATCH 4 — Unknowns.md
+
+Add GOV‑008‑A unknown with correct dependency arrows
+(Insert under the “Tier‑1‑adjacent Unknowns” section.)
+
+`
+--- INSERT UNDER TIER‑1‑ADJACENT UNKNOWN SECTION IN Unknowns.md ---
+
+GOV‑008‑A — Quorum Unsatisfied
+Description: The repository does not currently satisfy the GOV‑008 minimum quorum (model independence, hardware independence, evidence independence, role separation).  
+Dependencies: → GovernanceCharter.md (GOV‑008), → CIRGov.md (Binding Status), → CIR.md (Axiom A4).  
+Resolution Condition: A valid GOV‑008 quorum must be demonstrated and logged in the Quorum Registry.
+`
+
+---
+
+END OF PATCH SET
+
+**Yes.** Here are focused, high-value directional prompts you can feed into the same multi-agent / Copilot thread (or a fresh one with the relevant files loaded). They are ordered by leverage toward v0 completion and designed to stay strictly grounded in existing doctrine rather than inventing new philosophy.
+
+### Highest-leverage next moves (governance closure)
+
+1. **Integrate & ratify GOV-008**  
+   “Using the GOV-008 draft, the Quorum Verification Checklist, Hardware Independence Test, Quorum Registry Spec, and Genesis-Mode Escalation Protocol already produced, produce a clean, minimal patch set that:  
+   - Adds GOV-008 as a Tier-1-adjacent requirement in Governance_Charter.md (with ownership table entry).  
+   - Updates CIR_Gov.md Binding Status and Axiom A4 dependency language.  
+   - Adds the single new unknown GOV-008-A to Unknowns.md with correct dependency arrows.  
+   - Leaves every existing axiom and procedure untouched.  
+   Output only the exact text blocks to insert/replace, with line-context anchors.”
+
+2. **Resolve dual-ownership conflicts**  
+   “Perform a single-thread ownership audit of migration doctrine and integrity doctrine across Governance_Charter.md, Governance_Migration_Protocol.md, and Repository_Integrity_Protocol.md. Produce a minimal set of ownership statements that assign exclusive ownership of each doctrine cluster to exactly one file, with cross-references only. No new doctrine, only boundary clarification.”
+
+3. **Partition the unknowns**  
+   “Take the current Unknowns.md dependency clusters and the 20 open unknowns inside Governance_Charter.md. Produce a clean tier partition:  
+   - Tier-1 constitutional unknowns  
+   - Tier-2 migration / integrity unknowns  
+   - Tier-3 operational / hardware unknowns  
+   Keep every existing ID and resolution path; only re-group and add tier tags.”
+
+### High-value operational / verification outputs
+
+4. **Runnable quorum harness**  
+   “Convert the GOV-008 Quorum Verification Checklist + Hardware Independence Test + Evaluator Registry Load Procedure into a single deterministic Python checklist module that can be called by Automation/AUDIT_HARNESS.py or a cold-session script. Include pass/fail logging that matches the existing Resolution Log format. No new governance rules.”
+
+5. **Genesis-Mode runtime behavior for CIR**  
+   “Draft the exact CIR runtime evaluator behavior when GOV-008 fails (Genesis Mode). Reference only existing Binding Status language, Axiom A4, and the new escalation protocol. Output as a self-contained section ready for CIR_Gov.md.”
+
+6. **Human override artifact format**  
+   “Produce a minimal, auditable human-authorization record format that satisfies the Charter’s Genesis Phase human-override requirements and the new escalation protocol. Include required fields, external-medium rules, and how it is referenced from a QuorumID.”
+
+### Broader high-value directions (once quorum is closed)
+
+7. **Enforcement architecture status**  
+   “Audit current state of GOV-003 (enforcement architecture) against Repository_Integrity_Protocol.md and Security_Protocols.md. List only the remaining concrete blockers to Phase 1/2 readiness and the shortest resolution path that does not invent new doctrine.”
+
+8. **v0 exit checklist**  
+   “Using Discovery.md’s definition of ‘done’ for v0, produce a single checklist of every remaining Critical/Blocking unknown and Spec-Gate item that must clear before the repository can claim governance-complete single-site specification status. Group by Gate / Admin file.”
+
+9. **Cold-session battery for the new GOV-008 material**  
+   “Design a three-instance cold-session test plan (model-family + hardware independence) that can verify the newly drafted GOV-008 material against the acceptance criteria used for AP-017. Output the exact prompt sequence and success criteria.”
+
+### Suggested loading order for the next session
+Load in this sequence to avoid the one-file-at-a-time bottleneck:
+1. Governance_Charter.md  
+2. CIR_Gov.md + Computational_Institutional_Reasoning.md  
+3. Unknowns.md (current version)  
+4. The full GOV-008 paste you already have  
+5. Repository_Integrity_Protocol.md + Governance_Migration_Protocol.md (if doing ownership work)
+
+Any of the first three prompts above should produce immediately usable, ratifiable text. The quorum integration one is the single highest-leverage step right now.  
+
+Which direction do you want to push first, or do you want me to expand any of these into a full ready-to-paste prompt?
+
+Ksarith, this is exactly the kind of “meta‑prompt audit” Grok excels at — and you’re steering the system correctly.  
+You’ve already executed Prompt #1 (GOV‑008 integration patch‑set), and it landed cleanly.  
+Now you’re asking: Which direction to push next, or expand into a ready‑to‑paste prompt?
+
+Let me give you a high‑signal, decision‑ready synthesis of the nine prompts Grok listed — but without overwhelming you. I’ll anchor each option with a Guided Link so you can fire it directly.
+
+---
+
+Your three highest‑leverage next moves
+
+These are the ones that materially advance LazarusForgeV0 toward governance‑complete v0.
+
+1. Resolve dual‑ownership conflicts
+This is the next structural blocker after GOV‑008.  
+Right now, migration doctrine and integrity doctrine are co‑owned by multiple files — a governance hazard.
+
+If you want to proceed:
+
+- Resolve doctrine ownership
+
+This produces a minimal patch‑set clarifying which file owns what — no new doctrine, just boundary cleanup.
+
+---
+
+2. Partition the unknowns
+Charter has 20 open unknowns, and Unknowns.md has mixed tiers.  
+Partitioning them by tier is required before any Tier‑1 promotion.
+
+If you want to proceed:
+
+- Partition unknowns by tier
+
+This keeps all IDs and resolution paths intact — only adds tier tags and grouping.
+
+---
+
+3. CIR Genesis‑Mode runtime behavior
+Now that GOV‑008 exists, CIR needs a runtime section describing exactly what happens when quorum is unsatisfied.
+
+If you want to proceed:
+
+- Draft CIR Genesis‑Mode behavior
+
+This becomes a drop‑in section for CIR_Gov.md.
+
+---
+
+Operationally valuable but optional next moves
+
+These don’t unblock governance, but they strengthen the system.
+
+4. Runnable quorum harness
+A deterministic Python checklist module implementing GOV‑008.
+
+- Generate quorum harness module
+
+---
+
+5. Human override artifact format
+A minimal, auditable external‑medium record for Genesis Phase overrides.
+
+- Draft human override artifact
+
+---
+
+6. Cold‑session battery for GOV‑008
+A three‑instance test plan verifying quorum independence.
+
+- Draft cold‑session battery
+
+---
+
+Strategic governance‑completion moves
+
+These matter once the quorum and ownership boundaries are settled.
+
+7. Enforcement architecture blockers (GOV‑003)
+A direct audit of enforcement readiness.
+
+- Audit enforcement blockers
+
+---
+
+8. v0 exit checklist
+A single list of everything blocking v0 completion.
+
+- Draft v0 exit checklist
+
+---
+
+Which direction do you want to push?
+
+If you want the highest leverage, choose:
+
+- Resolve doctrine ownership  
+or  
+- Partition unknowns by tier
+
+If you want the next CIR‑layer closure, choose:
+
+- Draft CIR Genesis‑Mode behavior
+
+Just tap one of the links and I’ll execute immediately.
+
+**Clean, minimal, and correctly scoped.** The patch-set does exactly what was asked: it inserts GOV-008 as Tier-1-adjacent, updates the two CIR documents’ dependency language, adds the single new unknown, and leaves everything else untouched.
+
+### Quick quality notes
+- Ownership claim is correctly placed on the Charter (Tier-1-adjacent).
+- Binding Status and Axiom A4 language now accurately reflect the new dependency without inventing new rules.
+- GOV-008-A is properly downstream of the definition itself.
+- No doctrine expansion, no restructuring — good.
+
+**Two small practical gaps** you will want to close before applying:
+
+1. The line-number anchors (`~365`, `~430`, etc.) are approximate. You will need to locate the actual insertion points in the current files (especially the ownership table and the Binding Status section).
+2. The project’s integrity rules (RIP) require corresponding Resolution Log / Changelog entries for every change to Tier-1 and Tier-1-adjacent material. The pure patch-set does not yet include those log entries.
+
+### Recommended next action
+Apply the four patches, then immediately produce the matching Resolution Log entries so the change is lineage-clean.
+
+Would you like me to:
+
+**A.** Expand the current patch-set with the required Resolution Log / Changelog blocks (so the whole thing is ready to drop in), or  
+**B.** Move straight to the next highest-leverage prompt (Resolve dual-ownership conflicts) as a ready-to-paste block?
+
+Just say A or B (or tell me a different priority) and I’ll give you the full ready-to-paste text.
