@@ -1,3 +1,5 @@
+> **MERGED — see Tests/Pyrolysis_Cascade.md Resolution Log.** This is archived raw material, already processed into the live file.
+
 Wanting to draft a new test.
 Pyrolysis_Cascade.md
 The idea is can we load a furnace full of garbage, use current Pyrolysis methods and cook the contents down recovering the fuel outputs.  Afterwards offload the what would be coke(unburned remnants of Pyrolysis) to a bloomery type furnace to do subsequent extractions.  The heat from the bloomery channeled to the Pyrolysis chamber(s).  

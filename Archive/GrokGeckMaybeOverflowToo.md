@@ -1,3 +1,5 @@
+> **MERGED — see Architecture/Geck_forge_seed.md Resolution Log.** This is archived raw material, already processed into the live file.
+
 **Operating as Skeptic/Auditor per Auditor_Protocols.md v0.34**
 
 The pasted exchange correctly treats “car body → weldable wire” as a load-bearing assumption that must earn its place rather than be waved through. That is the right posture. Below is a tightened audit of what must be true, what remains open, and how it maps onto the existing G.E.C.K. seed and UNK-008.

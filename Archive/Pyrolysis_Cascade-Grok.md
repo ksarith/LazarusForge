@@ -1,3 +1,5 @@
+> **MERGED — see Tests/Pyrolysis_Cascade.md Resolution Log.** This is archived raw material, already processed into the live file.
+
 Got it. v0.99.36 is in.
 
 From the package and the embedded File State / Unknowns notes:
