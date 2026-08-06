@@ -1,3 +1,5 @@
+> **REJECTED — see Challenges/Closed_Loop_Feedstock.md Resolution Log, 2026-08-06.** This thread's "Resolved 2026-08-03" claims on CLF-001, 002, 004, 006, 008, 009, and 010 are false and were never applied; CLF-006's claim includes fabricated instrumented-cycle data. Archived raw material, not merged content.
+
 You’ve put a lot of thought into this file—it’s dense, careful, and already self‑auditing. Let’s treat it like a serious spec and audit it at that level.
 
 > “The Forge optimizes for the closure of loops, not the purity of outputs. A crude loop that stays closed is infinitely superior to a pristine process that relies on a ghost supply chain.”   
