@@ -627,6 +627,34 @@ independently — a shared mechanism may serve both.
 
 ### Resolution Log
 
+- 2026-08-05: **Consolidation pass — two navigational reference sections
+  added, no doctrine changed (human-directed).** A Copilot audit
+  claimed the Charter contained "no minimal human override doctrine"
+  and "no constitutional amendment boundaries." Both claims were
+  checked directly against the file and found false — the doctrine
+  exists (Axiom P-4, the Bootstrap Governance Doctrine exit pathways,
+  Post-Exit Monitoring's "Human override authority remains intact,"
+  and the Tier 1 Axiom amendment rules under Governance Migration
+  Doctrine) but was scattered across sections rather than consolidated.
+  Copilot itself corrected this finding once shown the line numbers.
+  Added "Human Override Doctrine — Consolidated Reference" and
+  "Constitutional Amendment Boundaries — Consolidated Reference" as
+  pure navigational summaries, each explicitly stating it relocates no
+  text and changes no rule — every substantive sentence quoted in them
+  already exists verbatim elsewhere in the file, cited by section name.
+  Also added one clarifying sentence to the Canonical Governance
+  Ownership table distinguishing "doctrine" (Charter-owned) from
+  "procedures" (downstream-owned) for the rows where both exist,
+  matching the pattern the Repository Integrity Doctrine section
+  already stated explicitly for itself. Deliberately not adopted: a
+  Copilot-proposed full "Charter v2.0" rewrite that would have
+  extracted Genesis Phase Protocol out of Tier 1 entirely — its own
+  author later confirmed, when asked directly, that doing so "relocates
+  the paradox, it doesn't resolve it," which removed the rewrite's main
+  justification. Genesis Phase and the Bootstrap Paradox acknowledgment
+  are untouched by this pass. Open Unknowns unchanged at 20. Status/Spec
+  Gates unchanged.
+
 - 2026-07-27: **GOV-021 formally registered; registration-latency sweep
   found it and four other unlogged entries (human-directed).** A direct
   question about whether `Unknowns.md` needed unlogged entries surfaced
