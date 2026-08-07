@@ -1,3 +1,5 @@
+> **VERIFIED — see Admin/Ethical_Constraints.md Resolution Log, 2026-08-06.** This thread's reconstructed EC-001–EC-015 list matches live doctrine exactly; its one unmatched item (EC-016, Constitutional Governance Hierarchy) was registered fresh. Archived raw material, not live doctrine.
+
 Below is a governance‑grade, high‑precision summary of the unknowns in Ethical_Constraints.md, structured for your constitutional‑architecture workflow.  
 Two required quoted lines from the CSL document are included (as mandated by your earlier constraints):
 
