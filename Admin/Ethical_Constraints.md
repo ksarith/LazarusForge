@@ -16,8 +16,8 @@
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | `Admin/Verification_Gates_LF.md`                                    |
-| Last Audit       | 2026-07-26                                                          |
-| Auditor          | ChatGPT — Skeptic/Auditor; ChatGPT — Philosophical Review; Grok — Exploration audit 2026-07-05; Gemini — Exploration audit 2026-07-05; Claude — toxic material doctrine + gap remediation 2026-07-05; Claude — law-vs-morality doctrine + Navigation Anchors correction 2026-07-05; Claude — EC-010 stale-reference correction 2026-07-06; Claude — Anti-Weaponization override scope and tool/weapon distinction ratified by human governing authority, 2026-07-26 |
+| Last Audit       | 2026-08-06                                                          |
+| Auditor          | ChatGPT — Skeptic/Auditor; ChatGPT — Philosophical Review; Grok — Exploration audit 2026-07-05; Gemini — Exploration audit 2026-07-05; Claude — toxic material doctrine + gap remediation 2026-07-05; Claude — law-vs-morality doctrine + Navigation Anchors correction 2026-07-05; Claude — EC-010 stale-reference correction 2026-07-06; Claude — Anti-Weaponization override scope and tool/weapon distinction ratified by human governing authority, 2026-07-26; Claude — Synthesizer, EC-016 registered 2026-08-06 |
 | Open Unknowns    | 16                                                                  |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | High                                                                |
