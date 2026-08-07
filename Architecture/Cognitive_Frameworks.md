@@ -16,13 +16,33 @@
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | Admin/Verification_Gates_LF.md                                      |
-| Last Audit       | 2026-05-09 (ChatGPT — Synthesizer); revised 2026-06-08; revised 2026-06-27; revised 2026-07-26; revised 2026-07-28 |
+| Last Audit       | 2026-08-07 (Authority & Tier Classification preface added; Confidence Algebra patches 1 and 2); prior: 2026-05-09 (ChatGPT — Synthesizer); revised 2026-06-08; revised 2026-06-27; revised 2026-07-26; revised 2026-07-28 |
 | Auditor          | Claude — Retrofit/Auditor; revised Claude — Synthesizer/Auditor; Gemini — Skeptic/Auditor (Exploration audit), Claude — Synthesizer/Auditor (verification against source, corrections), CF-DS-002 ratified by human governing authority, CF-DS-001 resolved (Claude + Grok, independently confirmed), 2026-07-26; Claude — Synthesizer/Auditor, Section IV revised with formal transition triggers from `Admin/Computational_Institutional_Reasoning.md` §5.4, CF-004 updated, Section IX consistency check performed (human-directed), 2026-07-28 |
 | Open Unknowns    | 5                                                                   |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | High                                                                |
 | Sidecar Link     | #auditor-notes--unknowns                                            |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
+
+---
+
+## Authority & Tier Classification
+
+This file is **Architecture-layer doctrine**.
+It defines cognitive reliability architectures, distributed trust models, confidence-collapse responses, Framework taxonomy (A–G), split-brain handling, and the algorithm architecture that emerges from Forge assumptions about knowledge and uncertainty.
+
+It informs auditor behavior, CIR triage mapping, and divergence handling. It does **not**:
+
+- alter Tier-1 Axioms or create new constitutional authority
+- redefine Genesis Phase exit conditions or GOV-008 quorum requirements
+- override `Admin/Governance_Charter.md`, `Admin/Auditor_Protocols.md`, or `Admin/Ethical_Constraints.md`
+- convert its confidence labels or system-level debt states into already-calibrated enforcement parameters
+
+Numeric thresholds ($\theta_p$, $\varepsilon_{\text{triage}}$, $\varepsilon_{\text{exit}}$, $N$) and correlated-failure criteria remain explicit unknowns (CF-004, CF-002). Until those are calibrated against operational data and the file itself advances beyond Exploration / 0 Spec Gates, confidence states and triage triggers stay human-judgment calls checked against the formal targets already named in Section IV and CIR §5.4.
+
+Any attempt to treat this file's content as constitutional, or to automate enforcement of its uncalibrated thresholds, is a scope violation.
+
+*[Added 2026-08-07, drafted by Grok, verified against source before applying: File State/Scope Boundary placement, Status (Exploration/0 Spec Gates), CF-001 as this file's sole Blocking unknown among five (CF-002/003/004/005 confirmed non-Blocking), and CF-002/CF-004 as the correct open numeric-threshold surface all checked directly against this file and `Unknowns.md` rather than accepted on the draft's framing alone. Prompted by the day's Confidence Algebra and CIR identity patches making the authority boundary worth stating explicitly, so those additions can't be misread as constitutional elevation. Human-directed.]*
 
 ---
 
@@ -1237,6 +1257,22 @@ Synthesizer/Auditor, human-directed.*
 ---
 
 ### Resolution Log
+
+- 2026-08-07: **Added `## Authority & Tier Classification` immediately after
+  File State, before Scope Boundary — states explicitly that this file is
+  Architecture-layer doctrine, not constitutional, and cannot be read as
+  elevating today's Confidence Algebra/CIR identity work into enforcement
+  authority.** Drafted by Grok; verified before applying rather than taken
+  on the draft's framing — File State/Scope Boundary placement confirmed,
+  Status (Exploration/0 Spec Gates) confirmed, CF-001 confirmed as this
+  file's sole Blocking unknown among its five (CF-002/003/004/005 checked
+  individually, none carry that designation), CF-002/CF-004 confirmed as
+  the correct open numeric-threshold surface. Also corrected in the same
+  pass: this file's own Last Audit field hadn't been updated for either of
+  today's two Confidence Algebra patches before this one — same oversight
+  pattern as an earlier same-day gap on `Ethical_Constraints.md`'s Last
+  Audit field after EC-016. No doctrine changed; this is a boundary
+  statement plus a bookkeeping fix. Human-directed.
 
 - 2026-08-07: **Section IX.3 gained a disjunction operator, ported from
   CIR §4.6.1–4.6.2 — second patch toward Confidence Algebra
