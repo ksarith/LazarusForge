@@ -6,6 +6,26 @@ Split out from `Unknowns.md` 2026-07-19, following the precedent already establi
 
 ---
 
+**Version 4.45 — 2026-08-06. EC-016 registered — Constitutional Governance Hierarchy.**
+`Admin/Ethical_Constraints.md` gained EC-016: no doctrine defines how Tier 1
+constitutional material is supposed to interact with lower-tier files that
+claim ownership of a doctrine area — surfaced while reviewing an archived
+Copilot thread (`Archive/EthicalC-Copilot.md`) whose reconstructed EC-001
+through EC-015 list otherwise matched live doctrine exactly. Connects to the
+same "dual-ownership conflicts" gap a same-session GOV-008 audit thread
+flagged between `Governance_Charter.md`, `Governance_Migration_Protocol.md`,
+and `Repository_Integrity_Protocol.md` — this is the third independent
+surfacing of that structural gap this session, after the GOV-008 thread
+itself and RIP-011's hash-anchor finding pointed at adjacent territory.
+Not resolved; the recommended path is the still-unexecuted "resolve
+dual-ownership conflicts" pass first proposed in `Archive/Gov-Copilot.md`.
+`Admin/Ethical_Constraints.md` Open Unknowns: 15 → 16.
+
+*[Superseded by v4.46, 2026-08-07 — this entry's central claim was checked
+against source the next day and found wrong: no live dual-ownership conflict
+exists. Left unedited here per this file's own append-only convention; see
+v4.46 for the correction.]*
+
 **Version 4.44 — 2026-08-06. RIP-011 mirrored — hash/line-count anchor rule found unimplemented repository-wide.** While reviewing an archived multi-agent audit thread (`Archive/RIP_GMP-Copilot.md`), one of its four claimed compliance-gap categories was checked directly against the live repository rather than accepted on the thread's own "likely non-compliant" framing: `Admin/Repository_Integrity_Protocol.md`'s own §Version Preservation Protocol (line 109) requires every revision to record a prior-state hash or, absent tooling, a line-count anchor. Verified count: zero of the repository's ~50+ canonical files implement this, outside two incidental unrelated mentions (a hardware-watchdog SHA256 reference in `Operations/Electronics.md`, and a debt-accounting line-count proxy in `Admin/Computational_Institutional_Reasoning.md`). Registered as RIP-011 in `Repository_Integrity_Protocol.md` and mirrored here. Not resolved — scoping what "lightweight" means in practice (line count only vs. open-unknowns count too; every revision vs. Major/Constitutional-class only) is left as a deliberate future design choice. The thread's other three claimed categories were mostly unverified "likely" hedging and were not adopted.
 
 **Version 4.43 — 2026-08-04. PYC-001 through PYC-008 registered — Tests/Pyrolysis_Cascade.md.**
