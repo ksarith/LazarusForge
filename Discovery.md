@@ -232,6 +232,8 @@ Archive/                                    — Prior states of governance-beari
 
 > ⚠️ **Correction, 2026-07-28:** Full refresh pass — this file had drifted in multiple ways simultaneously, none caught until checked directly against source. `Admin/PROBE_INVOCATION.md` (created 2026-07-26) was entirely absent from the structure tree, Maturity Snapshot, and Scope Map. `Archive/`'s tree entry still showed the pre-v0.99.27 placeholder note despite `Archive/Logs/` holding five real changelog files since that restructuring. Three Maturity Snapshot rows were stale against their own files' current File State tables (`Admin/Forge_Audit_Kit.md` showed "Active" / no Spec Gates, actually Draft / 0/6; `Architecture/Cognitive_Frameworks.md` showed no Spec Gates value, actually 0/6; `Admin/Computational_Institutional_Reasoning.md` showed a placeholder "Compiled — Theoretical paper" description dating from before the file had any sidecar tracking at all). Pending Corrections table showed PC-001, PC-002, PC-003, and PC-005 as still open; all five (with PC-004) are Resolved in `Unknowns.md`. The Cross-Module Unknowns table itself was seventeen `Unknowns.md` version bumps stale (last refreshed at v4.12); one entry (CT-007) had actually regressed from Open back through an incorrect "Resolved" label before `Unknowns.md`'s own text corrected itself — this file hadn't caught either the error or the correction. Every ID in the refreshed table below was individually re-checked against the current Active Index rather than carried forward. This file's own "verified complete" and "refreshed" claims should continue to be read as bounded by what was checked at the time, per the standing caveat two corrections above.
 
+> ⚠️ **Correction, 2026-08-06: full Maturity Snapshot re-verification, all 66 rows checked directly against each file's own current File State block for the first time since this file's creation.** Prior passes fixed individual rows as they were noticed; this pass programmatically extracted Status/Spec Gates/Highest Risk from every listed file and diffed against this table cell by cell. Result: **34 of 66 rows had at least one stale field** — roughly half the table. Notable findings: `Admin/Governance_Charter.md` showed Spec Gates 1/6 when the file has been at 6/6 since GOV-011 resolved 2026-07-05 (a month stale on the single most load-bearing file in the repository); `Admin/Auditor_Protocols.md` showed Status "Active" when the file's own File State says "Draft"; `Challenges/Emergence.md` showed Spec Gates "0/6" and Highest Risk "High" when the file — correctly, as a Problem-Statement subtype — has neither field at all, meaning those values were never real; `Admin/Forge_Audit_Kit.md` showed a Highest Risk of "Low" that doesn't exist anywhere in the file's own File State block. The six Active Problem-Statement Challenges files (Water, Biofouling, Waste, Planned_Obsolescence, Critical_Minerals, Energy_Scarcity) were re-checked and confirmed genuinely correct as-is — Problem-Statement subtype files don't carry Spec Gates/Highest Risk by design, this isn't an omission. Full corrected table below; every cell now traces to a specific line in its source file's own File State block, not to a prior pass's memory of that file. This does not mean the table is now permanently synchronized — same caveat as every prior correction: accurate as of what was checked today, not a standing guarantee.
+
 ---
 
 Canonical record of filename changes. Stale references should be resolved using this table.
@@ -281,42 +283,42 @@ Discovery.md is a navigation map — task tracking belongs in Unknowns.md.
 
 | File | Status | Spec Gates | Highest Risk |
 |------|--------|-----------|--------------|
-| `Admin/Governance_Charter.md` | Draft | 1/6 | High |
+| `Admin/Governance_Charter.md` | Draft | 6/6 vs. `Admin/Verification_Gates_LF.md` — execution quality (see GOV-011, resolved 2026-07-05); promotion separately blocked by open unknowns (GOV-003, GOV-005) and Enforcement Checkpoint 2 — Bootstrap Paradox | Critical (GOV-013, GOV-015, GOV-018 — see `Archive/Logs/Governance_Charter_Changelog.md`; promotion-blocking risk unchanged from GOV-003/GOV-005) |
 | `Admin/Ethical_Constraints.md` | Exploration | 0/6 | High |
-| `Admin/Auditor_Protocols.md` | Active | — | Medium |
-| `Admin/Forge_Audit_Kit.md` | Draft (v1.14) | 0/6 | Low |
-| `Admin/Verification_Gates_LF.md` | Draft | — | Low |
-| `Admin/File_Template.md` | Active | — | — |
-| `Admin/Canonical_Terms.md` | Active | — | Medium |
-| `Admin/Engineer_Protocols.md` | Draft | — | Low |
+| `Admin/Auditor_Protocols.md` | Draft | 4/6 (G1, G3, G4, G6 clear — G3 cleared 2026-08-03 via AP-017 Resolved; G5 conditional on cross-ref fixes below; G2 N/A — no physical/quantitative claims of its own) | High |
+| `Admin/Forge_Audit_Kit.md` | Draft | 0/6 | — |
+| `Admin/Verification_Gates_LF.md` | Draft | 2/6 | High |
+| `Admin/File_Template.md` | Exploration / Draft / Specification | 0/6 | Low / Medium / High |
+| `Admin/Canonical_Terms.md` | Draft | 0/6 | Low |
+| `Admin/Engineer_Protocols.md` | Draft | 2/6 | High |
 | `Admin/Safety_Protocols.md` | Exploration | 0/6 | High |
-| `Admin/Security_Protocols.md` | Draft | — | Critical |
-| `Admin/Repository_Integrity_Protocol.md` | Draft | — | Critical |
+| `Admin/Security_Protocols.md` | Draft | 0/6 | High |
+| `Admin/Repository_Integrity_Protocol.md` | Draft | 2/6 | High |
 | `Admin/Repository_Structure.md` | Exploration | 0/6 | Low |
-| `Admin/Ship_of_Theseus.md` | Exploration | — | Low |
+| `Admin/Ship_of_Theseus.md` | Exploration | 0/6 | Medium |
 | `Admin/Trajectories.md` | Exploration | 1/6 | Medium |
 | `Admin/Economics.md` | Exploration | 0/6 | Medium |
-| `Admin/Environmental_Constraints.md` | Draft | 1/6 | High |
-| `Admin/Experiments.md` | Draft — Stub | 0/6 | Low |
-| `Admin/Nothingness_Theorem.md` | Compiled — Functionless artifact | — | — |
-| `Admin/Computational_Institutional_Reasoning.md` | Exploration (v0.18) | G4 cleared; G1 partial; G3 blocked (AP-012/AP-016) | Critical — CIR-001, renamed 2026-07-28 from a colliding local "GOV-008"; Physical Grounding Telemetry Mapping Interface undefined |
-| `Admin/CIR_Gov.md` | **Proposed — Not Ratified** (2026-07-31) | 0/6 | Low while unratified — CIR-GOV-001 (candidate Predicate↔Checkpoint mapping supplied 2026-07-31; Checkpoints 2 and 4 confirmed to have no corresponding predicate); structurally depends on GOV-008 (Open), see file's own Binding Status section |
+| `Admin/Environmental_Constraints.md` | Draft | 1/6 (G1 cleared — fallacy checklist applied at creation; G3/G5 fixes applied 2026-07-06, pending re-audit confirmation) | High |
+| `Admin/Experiments.md` | Draft | 0/6 | Low |
+| `Admin/Nothingness_Theorem.md` | Tier 0 — Philosophical Substrate (functionless by doctrine; not subject to operational promotion gates) | N/A — Tier 0 exempt | N/A — Tier 0 documents are audited for internal consistency only |
+| `Admin/Computational_Institutional_Reasoning.md` | Exploration | G4 cleared; G1 partial (Gemini 2026-06-30); G3 blocked by AP-012/AP-016 | CIR-001 — Physical Grounding Telemetry Mapping Interface undefined; \u03b31\u2013\u03b34 predicates currently aspirational in harness implementation (see Section 7.4). Renamed 2026-07-28 from local "GOV-008" — collided with `Admin/Governance_Charter.md`'s registered GOV-008 (minimum agent quorum); CIR-scoped prefix now registered in `Admin/Forge_Audit_Kit.md`'s Governance Sidecar ID Reference. |
+| `Admin/CIR_Gov.md` | **Proposed — Not Ratified** | 0/6 | High — while unratified and GOV-008 remains Open, the misreading risk (treating this as operational) is real, not theoretical; raised from Medium 2026-07-31 per Skeptic/Auditor review. See §Binding Status below. |
 | `Admin/Governance_Migration_Protocol.md` | Exploration | 0/6 | High |
-| `Admin/Autonomy_Divergence_Protocol.md` | Draft (PROPOSED NOT RATIFIED) | 0/6 | High |
-| `Admin/PROBE_INVOCATION.md` | Draft | N/A — operational prompt template | Low |
+| `Admin/Autonomy_Divergence_Protocol.md` | Draft — PROPOSED NOT RATIFIED | 0/6 (drafted, not yet audited) | High (governs response to AI governance/objective divergence) |
+| `Admin/PROBE_INVOCATION.md` | Draft | N/A — operational prompt template, not a doctrine or specification claim | — |
 | `Automation/AUDIT_HARNESS.py` | Active | — | — |
-| `Architecture/Forge_flow.md` | Exploration | — | High |
-| `Architecture/Components.md` | Exploration | — | Low |
+| `Architecture/Forge_flow.md` | Exploration | 0/6 | Medium |
+| `Architecture/Components.md` | Exploration | 0/6 | Low |
 | `Architecture/Facilities.md` | Exploration | 0/6 | High |
-| `Architecture/Geck_forge_seed.md` | Exploration | — | Low |
-| `Architecture/Engineering.md` | Draft | — | Critical |
+| `Architecture/Geck_forge_seed.md` | Exploration | 0/6 | Medium |
+| `Architecture/Engineering.md` | Draft | 3/6 | High |
 | `Architecture/Precision.md` | Exploration | 0/6 | High |
-| `Architecture/Mechanical_Structures.md` | Draft | 1/6 | High |
-| `Architecture/Thermal_Systems.md` | Draft | 0/6 | High |
-| `Architecture/Friction_Dynamics.md` | Draft | 0/6 | High |
-| `Architecture/Chemistry.md` | Draft | 0/6 | High |
+| `Architecture/Mechanical_Structures.md` | Draft | 2/6 | High |
+| `Architecture/Thermal_Systems.md` | Draft | 1/6 | High |
+| `Architecture/Friction_Dynamics.md` | Draft | 2/6 | Medium |
+| `Architecture/Chemistry.md` | Draft | 1/6 | High |
 | `Architecture/Cognitive_Frameworks.md` | Exploration | 0/6 | High |
-| `Architecture/Forge_Net.md` | Exploration | — | Critical |
+| `Architecture/Forge_Net.md` | Exploration | 0/6 | Medium |
 | `Operations/Gate_01_Intake.md` | Exploration | 0/6 | Medium |
 | `Operations/Gate_02_Triage.md` | Draft | 2/6 | High |
 | `Operations/Gate_03_Reduction.md` | Exploration | 0/6 | High |
@@ -325,30 +327,29 @@ Discovery.md is a navigation map — task tracking belongs in Unknowns.md.
 | `Operations/Gate_06_Fabrication.md` | Exploration | 0/6 | Medium |
 | `Operations/Gate_07_Utilization.md` | Exploration | 0/6 | Low |
 | `Operations/Electronics.md` | Exploration | 0/6 | High |
-| `Operations/Energy.md` | Exploration | 0/6 | Medium |
-| `Operations/Air_Scrubber.md` | Draft | 2/6 | High |
+| `Operations/Energy.md` | Draft | 1/6 | High |
+| `Operations/Air_Scrubber.md` | Draft | 3/6 | High |
 | `Operations/Plastics.md` | Exploration | 0/6 | High |
 | `Operations/Woodworking.md` | Draft | 0/6 | High |
-| `Tests/Support_Raft.md` | Exploration | — | High |
-| `Tests/Leviathan_testing.md` | Exploration | — | High |
-| `Tests/Living_Waters.md` | Exploration | — | High |
+| `Tests/Support_Raft.md` | Exploration | 0/6 | High — SR-001 (galvanic corrosion) is Open/High and required before v1.0; a hull that corrodes faster than modeled threatens the whole anchor-node concept |
+| `Tests/Leviathan_testing.md` | Exploration | 0/6 | High |
+| `Tests/Living_Waters.md` | Exploration | 0/6 | Critical — LW-UNK-001 (volatile co-distillation) and LW-UNK-003 (lumen implosion) both carry immediate safety consequences if bypassed |
 | `Tests/Trophic_Forge.md` | Exploration | 0/6 | High |
 | `Tests/Solar_Descent.md` | Exploration | 0/6 | High |
-| `Tests/Cognitive_Salvage_Layer.md` | Exploration | 0/6 | Medium |
-| `Tests/Hydrologic_Resource_Cascade.md` | Exploration | 0/6 | Medium |
-| `Tests/Chaos_Dynamics.md` | Exploration | 0/6 | High |
-| `Tests/Pyrolysis_Cascade.md` | Exploration | 0/6 | High |
+| `Tests/Cognitive_Salvage_Layer.md` | Exploration | 1/6 | High |
+| `Tests/Hydrologic_Resource_Cascade.md` | Exploration | 0/6 | High |
+| `Tests/Chaos_Dynamics.md` | Exploration | 0/6 | Medium — gatekeeps the evidentiary pipeline feeding EN-001/EN-001a; misuse risk if sandbox output is cited past its Level ≤4 ceiling |
+| `Tests/Pyrolysis_Cascade.md` | Draft — Exploration | 0/6 (not yet audited) | High (thermal processing of mixed salvage; halogen & hazardous-fraction exposure) |
 | `Challenges/Water.md` | Active | — | — |
 | `Challenges/Biofouling.md` | Active | — | — |
 | `Challenges/Waste.md` | Active | — | — |
 | `Challenges/Planned_Obsolescence.md` | Active | — | — |
 | `Challenges/Critical_Minerals.md` | Active | — | — |
 | `Challenges/Energy_Scarcity.md` | Active | — | — |
-| `Challenges/Emergence.md` | Exploration | 0/6 | High |
-| `Challenges/Return_To_Eden.md` | Exploration | 0/6 (per file's own File State: "None cleared") | High — RE-UNK-001/RE-UNK-005 Blocking at Tier I gate, non-blocking at Exploration; confirmed directly against the file's own Highest Risk field 2026-07-05, no longer inferred |
-| `Challenges/Closed_Loop_Feedstock.md` | Exploration (per file's own File State, v0.5.0 — downgraded from an initial "Active / Core Doctrinal" self-declaration during audit) | 0/6 | High — CLF-003, CLF-004, CLF-006 (Critical); confirmed directly against the file's own Highest Risk field |
+| `Challenges/Emergence.md` | Exploration | — | — |
+| `Challenges/Return_To_Eden.md` | Exploration | None cleared (G1–G2 conditional, G4–G6 cleared per 2026-06-30 audit — see Last Audit) | RE-UNK-001 — Eden Index variables lack defined measurement protocols; index is formally specified but not yet operationally measurable. RE-UNK-005 is a direct dependency. |
+| `Challenges/Closed_Loop_Feedstock.md` | Exploration | 0/6 | Silent contamination cascades or toolhead destruction (CLF-003/CLF-006). |
 
----
 
 ## Scope Map — Root Files
 
