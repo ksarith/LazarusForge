@@ -3,20 +3,25 @@
 
 **Full version history in `Unknowns_Changelog.md` (2026-07-19 cleanup pass, following the precedent set by `Admin/AUDIT_HARNESS_CHANGELOG.md` and `Admin/Forge_Audit_Kit_Changelog.md`; scrubbed to current-version-only 2026-07-28 — the "current plus last four in full" window was itself compressed further, since the Audit Trail below now carries the compressed record for every version back to v1.0, and the changelog carries full text for all of them. This block now keeps only the current version.)**
 
-**Version 4.45 — 2026-08-06. EC-016 registered — Constitutional Governance Hierarchy.**
-`Admin/Ethical_Constraints.md` gained EC-016: no doctrine defines how Tier 1
-constitutional material is supposed to interact with lower-tier files that
-claim ownership of a doctrine area — surfaced while reviewing an archived
-Copilot thread (`Archive/EthicalC-Copilot.md`) whose reconstructed EC-001
-through EC-015 list otherwise matched live doctrine exactly. Connects to the
-same "dual-ownership conflicts" gap a same-session GOV-008 audit thread
-flagged between `Governance_Charter.md`, `Governance_Migration_Protocol.md`,
-and `Repository_Integrity_Protocol.md` — this is the third independent
-surfacing of that structural gap this session, after the GOV-008 thread
-itself and RIP-011's hash-anchor finding pointed at adjacent territory.
-Not resolved; the recommended path is the still-unexecuted "resolve
-dual-ownership conflicts" pass first proposed in `Archive/Gov-Copilot.md`.
-`Admin/Ethical_Constraints.md` Open Unknowns: 15 → 16.
+**Version 4.46 — 2026-08-07. EC-016 corrected and downgraded — no live dual-ownership conflict found.**
+James asked directly how to resolve dual-ownership conflicts, prompting the
+first actual check of the underlying claim against `Governance_Charter.md`'s
+own content. Found a full `## Governance Authority Hierarchy` section, an
+explicit "Governance hierarchy" ownership-table row, and a 2026-08-05
+doctrine-vs-procedures clarification — none of which v4.45's registration
+had checked. `Governance_Migration_Protocol.md` and `Repository_Integrity_
+Protocol.md`'s own Scope Boundary sections were checked directly too:
+neither claims doctrine ownership in conflict with the Charter; GMP frames
+its interest as explicitly "proposed... pending," RIP explicitly defers
+governance doctrine to the Charter. EC-016 downgraded Major→Minor, narrowed
+to the one real residual gap (GMP's proposed/pending pattern isn't named as
+a reusable convention). Not closed — Open Unknowns count unchanged — this is
+a severity correction, not a resolution. Also corrects the record: today's
+earlier framing (this entry, RIP-011's neighboring context, a same-session
+GOV-008 audit thread, and `Governance_Migration_Protocol.md` §VII.8) all
+described this as multiple independent findings converging on one real gap.
+They were four threads repeating one unverified claim, not four
+confirmations of it.
 
 **Expiry Rule active — see `Admin/Canonical_Terms.md` §4 for the Cycle definition this rule now explicitly references (one calendar year default, not one audit pass — see CT-011). Protocol Performance metrics collecting.**
 
@@ -227,7 +232,7 @@ GH-009 (Emergent heuristic conflict — N² interaction scaling)
 | EC-013 | Safe-state descent sequence undefined for active hazardous processes during governance failure | `Admin/Ethical_Constraints.md` | Open | — | Major |
 | EC-014 | Toxic material encapsulation standard undefined | `Admin/Ethical_Constraints.md` | Open | — | Major |
 | EC-015 | Right-to-repair / anti-circumvention legal boundary undefined per jurisdiction | `Admin/Ethical_Constraints.md` | Open | — | Major |
-| EC-016 | Constitutional Governance Hierarchy — how Tier 1 documents interact with lower-tier governance ownership claims undefined; same gap as GMP/RIP dual-ownership conflict | `Admin/Ethical_Constraints.md` | Open | — | Major |
+| EC-016 | Constitutional Governance Hierarchy naming convention not consolidated — corrected 2026-08-07, original registration overclaimed a live conflict that checking against source showed doesn't exist (hierarchy doctrine already exists in three places; GMP/RIP already correctly deferential) | `Admin/Ethical_Constraints.md` | Open | — | Minor |
 | GOV-001 | Governance migration mechanics incompletely operationalized — `Admin/Governance_Migration_Protocol.md` created; not yet audited against charter constraints | `Admin/Governance_Charter.md` | In Progress | Vehicle | Major |
 | GOV-002 | Provenance operationalization immature | `Admin/Governance_Charter.md` | In Progress | Active | Major |
 | GOV-003 | Integrity enforcement architecture undefined | `Admin/Governance_Charter.md` | In Progress | Active | Critical |
