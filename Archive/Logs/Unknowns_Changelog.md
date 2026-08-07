@@ -6,6 +6,26 @@ Split out from `Unknowns.md` 2026-07-19, following the precedent already establi
 
 ---
 
+**Version 4.46 — 2026-08-07. EC-016 corrected and downgraded — no live dual-ownership conflict found.**
+James asked directly how to resolve dual-ownership conflicts, prompting the
+first actual check of the underlying claim against `Governance_Charter.md`'s
+own content. Found a full `## Governance Authority Hierarchy` section, an
+explicit "Governance hierarchy" ownership-table row, and a 2026-08-05
+doctrine-vs-procedures clarification — none of which v4.45's registration
+had checked. `Governance_Migration_Protocol.md` and `Repository_Integrity_
+Protocol.md`'s own Scope Boundary sections were checked directly too:
+neither claims doctrine ownership in conflict with the Charter; GMP frames
+its interest as explicitly "proposed... pending," RIP explicitly defers
+governance doctrine to the Charter. EC-016 downgraded Major→Minor, narrowed
+to the one real residual gap (GMP's proposed/pending pattern isn't named as
+a reusable convention). Not closed — Open Unknowns count unchanged — this is
+a severity correction, not a resolution. Also corrects the record: today's
+earlier framing (this entry, RIP-011's neighboring context, a same-session
+GOV-008 audit thread, and `Governance_Migration_Protocol.md` §VII.8) all
+described this as multiple independent findings converging on one real gap.
+They were four threads repeating one unverified claim, not four
+confirmations of it.
+
 **Version 4.45 — 2026-08-06. EC-016 registered — Constitutional Governance Hierarchy.**
 `Admin/Ethical_Constraints.md` gained EC-016: no doctrine defines how Tier 1
 constitutional material is supposed to interact with lower-tier files that
