@@ -16,7 +16,7 @@
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | `Admin/Verification_Gates_LF.md`                                    |
-| Last Audit       | 2026-08-06                                                          |
+| Last Audit       | 2026-08-07                                                          |
 | Auditor          | ChatGPT — Skeptic/Auditor; ChatGPT — Philosophical Review; Grok — Exploration audit 2026-07-05; Gemini — Exploration audit 2026-07-05; Claude — toxic material doctrine + gap remediation 2026-07-05; Claude — law-vs-morality doctrine + Navigation Anchors correction 2026-07-05; Claude — EC-010 stale-reference correction 2026-07-06; Claude — Anti-Weaponization override scope and tool/weapon distinction ratified by human governing authority, 2026-07-26; Claude — Synthesizer, EC-016 registered 2026-08-06 |
 | Open Unknowns    | 16                                                                  |
 | Active Disputes  | 0                                                                   |
@@ -696,25 +696,27 @@ Mandatory re-audit conditions:
 
 ---
 
-### EC-016 — Constitutional Governance Hierarchy: how Tier 1 documents interact with lower-tier governance
+### EC-016 — Constitutional Governance Hierarchy naming convention not consolidated (narrowed 2026-08-07 — original registration overclaimed the gap)
 
 | Field         | Value                             |
 |---------------|-----------------------------------|
 | Status        | Open                              |
-| Risk          | Medium                            |
-| Priority      | Major                             |
+| Risk          | Low                               |
+| Priority      | Minor                             |
 | Blocking      | No                                |
 | Owner         | `Admin/Ethical_Constraints.md`    |
 | First Logged  | 2026-08-06                        |
-| Last Reviewed | 2026-08-06                        |
+| Last Reviewed | 2026-08-07                        |
 
-**Description:** No doctrine currently defines, in general terms, how Tier 1 constitutional material is supposed to interact with the lower-tier governance documents that implement or reference it — which decisions a Tier-2/3 file may make unilaterally, which require Tier-1 amendment, and how a lower-tier file's claim to "own" a doctrine area (as `Governance_Migration_Protocol.md` and `Repository_Integrity_Protocol.md` both do for migration and integrity doctrine respectively) is supposed to be reconciled against `Governance_Charter.md`'s own Tier-1 status. This is the same underlying gap a 2026-08-06 multi-agent audit thread (`Archive/Gov-Copilot.md`, superseded by the session's later GOV-008 reconciliation work) flagged as "dual-ownership conflicts" between Charter, GMP, and RIP — that thread proposed but never executed a fix; this entry formalizes the same gap from the Ethical_Constraints.md angle, since it surfaces here as a real, general question rather than only as a migration/integrity-specific one.
+**Correction, 2026-08-07:** This entry originally claimed "no doctrine currently defines... how Tier 1 documents interact with lower-tier governance" — that claim was wrong, inherited without verification from an archived source (`Archive/EthicalC-Copilot.md`) that itself never checked it against `Governance_Charter.md`'s actual content. The general rule substantially exists, in three places: (1) the Charter's own `## Governance Authority Hierarchy` section, a dedicated Tier 1–5 table stating "lower-tier governance may extend higher-tier doctrine but may not silently redefine it"; (2) the Canonical Governance Ownership table's explicit "Governance hierarchy | `Admin/Governance_Charter.md` | Active" row; (3) the 2026-08-05 "doctrine vs. procedures split" clarification added directly beneath that table. Checked directly: `Governance_Migration_Protocol.md`'s Scope Boundary does **not** silently claim migration doctrine — it explicitly frames it as *"proposed to transfer... pending Charter update and Gate 4 clearance."* `Repository_Integrity_Protocol.md`'s Scope Boundary explicitly defers "Constitutional governance doctrine" and "Governance authority hierarchy" to the Charter. Neither file is in live conflict with the Charter; both are correctly scoped as of today. This entry's original "Why It Matters" reference to "GMP §VII and RIP's own integrity claims" as evidence of a live conflict was incorrect on the same basis.
 
-**Why It Matters:** Without a general hierarchy rule, every new file that claims to "own" some doctrine area has to independently justify why it doesn't conflict with Tier 1 — this has already happened at least twice (GMP §VII and RIP's own integrity claims), and is exactly the kind of ambiguity that produces the collision incidents already on record (the 2026-07-28 "colliding local GOV-008" rename, and today's rejected Charter-level GOV-008 patch).
+**Description (narrowed):** What genuinely doesn't exist is a single, formal, cross-cutting statement of the pattern GMP already follows in practice — that a lower-tier file's ownership claim over doctrine adjacent to Tier 1 must be explicitly marked *proposed/pending* until a stated gate clears, rather than declared outright. GMP does this correctly (§VII's ownership-transfer line, gated on Gate 4). Nothing requires other files to follow the same convention, and nothing names it as a convention at all — it exists as one file's good practice, not as a rule.
 
-**Resolution Path:** Not resolved here. The recommended next step — never executed by the thread that originally surfaced it — is the "Resolve dual-ownership conflicts" pass already proposed in `Archive/Gov-Copilot.md`: a minimal patch assigning exclusive ownership of each doctrine cluster to exactly one file, converting overlapping claims into pure cross-references, with no new doctrine invented and no Tier-1 axiom text touched. That pass would substantially resolve this entry too, since it's the same gap at a higher level of generality. Cross-reference `Governance_Migration_Protocol.md` §VII.8 and `CIR_Gov.md` §8.2.1 (2026-08-06 reconciliation work), which extended existing doctrine rather than resolving this ownership question.
+**Why It Matters (narrowed):** Low — the substantive hierarchy is already sound and already correctly applied by the two files (GMP, RIP) most likely to need it. This is a documentation-consolidation gap, not a live authority conflict. The 2026-07-28 "colliding local GOV-008" incident and today's rejected Charter-level GOV-008 patch (both cited in this entry's original version as evidence of the conflict) were actually caused by threads not checking `Unknowns.md`'s canonical-owner column before drafting — a different failure mode (missing a lookup step), not an absence of hierarchy doctrine.
 
-*Surfaced while reviewing `Archive/EthicalC-Copilot.md`, a large archived Copilot thread reconstructing the EC-series unknown set from sidecar references — most of its reconstructed list (EC-001–EC-015) already matched live doctrine exactly; this was the one item in the thread with no live counterpart anywhere. Registered by Claude — Synthesizer, human-directed, 2026-08-06.*
+**Resolution Path:** A future pass could extract GMP's "proposed/pending, gated" ownership-declaration pattern into a short, named convention in the Charter's `## Governance Authority Hierarchy` section, so future files copy the pattern deliberately rather than by accident. Narrow and optional — not blocking anything, not urgent. The "resolve dual-ownership conflicts" pass this entry originally pointed to as required work is **not needed**; there is no live conflict to resolve.
+
+*Surfaced while reviewing `Archive/EthicalC-Copilot.md`, a large archived Copilot thread reconstructing the EC-series unknown set from sidecar references — most of its reconstructed list (EC-001–EC-015) already matched live doctrine exactly; this was the one item in the thread with no live counterpart anywhere, at least by the archived thread's own characterization. Originally registered by Claude — Synthesizer, human-directed, 2026-08-06, on the strength of that characterization without independently checking the Charter's own hierarchy section first — exactly the verification gap this session's discipline exists to catch, caught one day later when directly asked how to resolve it. Narrowed by Claude — Synthesizer, human-directed, 2026-08-07.*
 
 ---
 
@@ -735,6 +737,8 @@ The following terms appear in this document without canonical definitions. They 
 
 ### Resolution Log
 
+- 2026-08-07: **EC-016 corrected and downgraded — the previous day's entry overclaimed the gap; the general Tier-1-hierarchy doctrine it said didn't exist, actually does.** James asked directly how to resolve dual-ownership conflicts, which prompted checking the underlying claim against `Governance_Charter.md`'s actual content for the first time rather than trusting the archived thread's "Referenced but not yet specified" characterization. Found: a full `## Governance Authority Hierarchy` section (Tier 1–5 table, explicit "may extend but not silently redefine" rule), an explicit "Governance hierarchy" row in the Canonical Governance Ownership table, and a 2026-08-05 doctrine-vs-procedures clarification — none of which the original registration checked. Also checked `Governance_Migration_Protocol.md` and `Repository_Integrity_Protocol.md`'s own Scope Boundary sections directly: neither claims doctrine ownership in conflict with the Charter; GMP explicitly frames its migration-doctrine interest as "proposed to transfer... pending," RIP explicitly defers governance doctrine to the Charter. There is no live dual-ownership conflict. Downgraded from Medium/Major to Low/Minor; narrowed to the one real residual gap (GMP's proposed/pending ownership-declaration pattern isn't named as a reusable convention anywhere). Open Unknowns count unchanged — this is a severity correction, not a closure. This also means today's earlier `Governance_Migration_Protocol.md` §VII.8 entry and the original `Archive/Gov-Copilot.md`-sourced framing (which this entry, RIP-011's neighboring context, and a same-session GOV-008 audit thread had all treated as corroborating evidence of a real conflict) were repeating an unverified claim, not independently confirming one — four "independent" findings sharing one unchecked root is not four confirmations. Operating as Synthesizer, human-directed.
+
 - 2026-08-06: **EC-016 registered — Constitutional Governance Hierarchy
   (how Tier 1 interacts with lower-tier governance ownership claims).**
   Surfaced while reviewing an archived Copilot thread
@@ -749,6 +753,8 @@ The following terms appear in this document without canonical definitions. They 
   the recommended path is the same "resolve dual-ownership conflicts"
   pass already proposed and still unexecuted. Open Unknowns 15 → 16.
   Operating as Synthesizer, human-directed.
+
+  *[Corrected 2026-08-07 — see entry above. This original entry's characterization of the gap, and its citation of "GMP §VII and RIP's own integrity claims" as evidence, were both wrong; left in place unedited below rather than rewritten, per this repository's append-only Resolution Log convention.]*
 
 - 2026-07-26: **v0.13 — Anti-Weaponization override scope closed; tool/weapon distinction ratified — both by direct human governing authority decision, in the course of resolving `Architecture/Cognitive_Frameworks.md` CF-DS-002.**
   (1) **Override scope closed.** The doctrine previously stated it could not be overridden "by any agent or agent coalition" without stating whether the human principal's own direct order was included. Ratified: it is included. The floor sits above the human governing authority's own real-time authority to instruct past it — revision requires the same deliberate constitutional process any Tier 1 document requires, not an in-the-moment override. Added explicitly to the cannot-be-overridden-by list. This directly closes CF-DS-002 as Bounded Override. EC-011 (authenticating that an override claim genuinely originates from the human principal) remains separately Open — this ratification answers what the floor binds, not whether a given claimed order is genuine.
