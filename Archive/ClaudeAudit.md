@@ -1,4 +1,4 @@
-> **PARTIALLY MERGED — see Admin/Governance_Migration_Protocol.md Resolution Log.** Two of three original findings integrated 2026-08-03 (v0.10 cold Battery pass). Of the remaining two ClaudeAudit findings tracked at session start: Class 9 (vendor-diversity vs. epistemic-diversity conflation) addressed 2026-08-07 in §VII.4. Class 5 (coupled-orchestration decision-weight) remains open. Archived source material, not live doctrine.
+> **PARTIALLY MERGED — see Admin/Governance_Migration_Protocol.md Resolution Log.** This file's cold pass surfaced ten findings under its ten-class Adversarial Challenge Battery; four have been acted on: two (hardware/runtime diversity ambiguity, GMP-004 cross-reference) integrated 2026-08-03, plus Class 9 (vendor-diversity vs. epistemic-diversity conflation) and Class 5 (coupled-orchestration decision-weight) both closed 2026-08-07. The other six findings from this pass were never selected for action and remain undocumented in live doctrine — this tag does not claim they were addressed. Archived source material, not live doctrine.
 
 Operating as Skeptic/Auditor per the attached Auditor_Protocols.md.
 
