@@ -1,3 +1,5 @@
+> **SUPERSEDED — prior-state snapshot of Architecture/Components.md, not a chat thread.** Live file has since advanced (Open Unknowns 3→2, Last Audit updated). Correctly preserved per RIP prior-state doctrine; no unmerged content here.
+
 components and the G.E.C.K 
 # Lazarus Forge — G.E.C.K.
 **(Genesis / General Environmental Construction Kit)**
