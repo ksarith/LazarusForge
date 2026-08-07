@@ -18,7 +18,7 @@
 | Verification Ref | `Admin/Verification_Gates_LF.md`                                    |
 | Last Audit       | 2026-07-26                                                          |
 | Auditor          | ChatGPT — Skeptic/Auditor; ChatGPT — Philosophical Review; Grok — Exploration audit 2026-07-05; Gemini — Exploration audit 2026-07-05; Claude — toxic material doctrine + gap remediation 2026-07-05; Claude — law-vs-morality doctrine + Navigation Anchors correction 2026-07-05; Claude — EC-010 stale-reference correction 2026-07-06; Claude — Anti-Weaponization override scope and tool/weapon distinction ratified by human governing authority, 2026-07-26 |
-| Open Unknowns    | 15                                                                  |
+| Open Unknowns    | 16                                                                  |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | High                                                                |
 | Sidecar Link     | #auditor-notes--unknowns                                            |
@@ -696,6 +696,28 @@ Mandatory re-audit conditions:
 
 ---
 
+### EC-016 — Constitutional Governance Hierarchy: how Tier 1 documents interact with lower-tier governance
+
+| Field         | Value                             |
+|---------------|-----------------------------------|
+| Status        | Open                              |
+| Risk          | Medium                            |
+| Priority      | Major                             |
+| Blocking      | No                                |
+| Owner         | `Admin/Ethical_Constraints.md`    |
+| First Logged  | 2026-08-06                        |
+| Last Reviewed | 2026-08-06                        |
+
+**Description:** No doctrine currently defines, in general terms, how Tier 1 constitutional material is supposed to interact with the lower-tier governance documents that implement or reference it — which decisions a Tier-2/3 file may make unilaterally, which require Tier-1 amendment, and how a lower-tier file's claim to "own" a doctrine area (as `Governance_Migration_Protocol.md` and `Repository_Integrity_Protocol.md` both do for migration and integrity doctrine respectively) is supposed to be reconciled against `Governance_Charter.md`'s own Tier-1 status. This is the same underlying gap a 2026-08-06 multi-agent audit thread (`Archive/Gov-Copilot.md`, superseded by the session's later GOV-008 reconciliation work) flagged as "dual-ownership conflicts" between Charter, GMP, and RIP — that thread proposed but never executed a fix; this entry formalizes the same gap from the Ethical_Constraints.md angle, since it surfaces here as a real, general question rather than only as a migration/integrity-specific one.
+
+**Why It Matters:** Without a general hierarchy rule, every new file that claims to "own" some doctrine area has to independently justify why it doesn't conflict with Tier 1 — this has already happened at least twice (GMP §VII and RIP's own integrity claims), and is exactly the kind of ambiguity that produces the collision incidents already on record (the 2026-07-28 "colliding local GOV-008" rename, and today's rejected Charter-level GOV-008 patch).
+
+**Resolution Path:** Not resolved here. The recommended next step — never executed by the thread that originally surfaced it — is the "Resolve dual-ownership conflicts" pass already proposed in `Archive/Gov-Copilot.md`: a minimal patch assigning exclusive ownership of each doctrine cluster to exactly one file, converting overlapping claims into pure cross-references, with no new doctrine invented and no Tier-1 axiom text touched. That pass would substantially resolve this entry too, since it's the same gap at a higher level of generality. Cross-reference `Governance_Migration_Protocol.md` §VII.8 and `CIR_Gov.md` §8.2.1 (2026-08-06 reconciliation work), which extended existing doctrine rather than resolving this ownership question.
+
+*Surfaced while reviewing `Archive/EthicalC-Copilot.md`, a large archived Copilot thread reconstructing the EC-series unknown set from sidecar references — most of its reconstructed list (EC-001–EC-015) already matched live doctrine exactly; this was the one item in the thread with no live counterpart anywhere. Registered by Claude — Synthesizer, human-directed, 2026-08-06.*
+
+---
+
 ### Pending Canonical Term Anchors
 
 The following terms appear in this document without canonical definitions. They are flagged here pending routing to `Admin/Canonical_Terms.md`. Until canonical definitions exist, apply the most restrictive interpretation available.
@@ -712,6 +734,21 @@ The following terms appear in this document without canonical definitions. They 
 ---
 
 ### Resolution Log
+
+- 2026-08-06: **EC-016 registered — Constitutional Governance Hierarchy
+  (how Tier 1 interacts with lower-tier governance ownership claims).**
+  Surfaced while reviewing an archived Copilot thread
+  (`Archive/EthicalC-Copilot.md`) that reconstructed the full EC-series
+  unknown set from sidecar references; its list (EC-001–EC-015) matched
+  live doctrine exactly except this one item, which had no live
+  counterpart anywhere. Connects to the same dual-ownership gap a
+  same-session GOV-008 audit thread flagged between
+  `Governance_Charter.md`, `Governance_Migration_Protocol.md`, and
+  `Repository_Integrity_Protocol.md` — formalized here as a general
+  question rather than a migration/integrity-specific one. Not resolved;
+  the recommended path is the same "resolve dual-ownership conflicts"
+  pass already proposed and still unexecuted. Open Unknowns 15 → 16.
+  Operating as Synthesizer, human-directed.
 
 - 2026-07-26: **v0.13 — Anti-Weaponization override scope closed; tool/weapon distinction ratified — both by direct human governing authority decision, in the course of resolving `Architecture/Cognitive_Frameworks.md` CF-DS-002.**
   (1) **Override scope closed.** The doctrine previously stated it could not be overridden "by any agent or agent coalition" without stating whether the human principal's own direct order was included. Ratified: it is included. The floor sits above the human governing authority's own real-time authority to instruct past it — revision requires the same deliberate constitutional process any Tier 1 document requires, not an in-the-moment override. Added explicitly to the cannot-be-overridden-by list. This directly closes CF-DS-002 as Bounded Override. EC-011 (authenticating that an override claim genuinely originates from the human principal) remains separately Open — this ratification answers what the floor binds, not whether a given claimed order is genuine.
