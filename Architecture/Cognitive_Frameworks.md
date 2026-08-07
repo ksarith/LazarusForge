@@ -648,6 +648,60 @@ CIR's $\Psi(n)$ with `Admin/Auditor_Protocols.md`'s
 Institutional Provenance Labels, not with this
 section's Quantitative Confidence Labels here).
 
+**Disjunction operator, ported from CIR §4.6.1–4.6.2
+[Added 2026-08-07, second patch toward Confidence
+Algebra formalization]:** unlike the conjunction
+identity above — where both files already had the same
+operator, just unnamed — this section previously had
+no disjunction rule at all. CIR's Disjunctive Bounding
+Extension already solves the equivalent problem for
+continuous $M(n)$: a node bounded by required
+dependencies (§4.5) can have its ceiling *raised*, never
+lowered, by genuinely independent alternative evidence
+branches, gated by CIR §4.6.2's Independence Predicate
+(distinct observation sources, distinct model lineages
+or measurement chains, no shared training data/firmware/
+sensor family, and `Architecture/Cognitive_Frameworks.md`
+CF-002's correlated-failure check — that CF-002 reference
+is this file's own criterion, cited back from CIR, not a
+new one invented for this patch). Because the five
+confidence labels are totally ordered (Measured >
+Replicated > Simulated > Analogous > Placeholder), the
+identical min/max structure applies without modification:
+
+```
+if node A has required dependencies deps(A) (§IX.3 above)
+and alternative independent branches alt(A) = {B_1, B_2, ...},
+each satisfying CIR §4.6.2's Independence Predicate, then:
+
+confidence(A) <= max(
+    min over d in deps(A) of confidence(d),
+    max over independent B_i of ( min over b in B_i of confidence(b) )
+)
+```
+
+If `alt(A)` is empty, or no branch satisfies the
+Independence Predicate, this reduces exactly to the
+existing conjunction rule above — same "no penalty for
+absence" property as CIR's Corollary 4.6.1: an
+independent alternative can raise a claim's label ceiling
+above what its required dependencies alone would allow,
+but the absence of one never lowers it. A branch that
+fails the Independence Predicate does not get discarded —
+its members fold into `deps(A)` and are bounded under the
+ordinary conjunction rule instead, exactly as CIR
+specifies for $\text{ind}(B_i)$ failure. No new
+independence criteria are introduced here; this patch
+reuses CIR §4.6.2's predicate and its CF-002 cross-
+reference unchanged. Still not addressed: decay (how a
+label should erode with age or lack of revalidation) and
+absence handling (how to treat a claim with no upstream
+label at all) — both remain open per this section's own
+scope note above; CIR §4.6.3's Conflict Gate $\Xi(n)$ is
+also not ported here, since this file has no equivalent
+concept of an active contradiction defined yet, and
+inventing one would exceed this patch's scope.
+
 **4. Divergence Detection**
 
 `Discovery.md` treats divergence between doctrine
@@ -1183,6 +1237,25 @@ Synthesizer/Auditor, human-directed.*
 ---
 
 ### Resolution Log
+
+- 2026-08-07: **Section IX.3 gained a disjunction operator, ported from
+  CIR §4.6.1–4.6.2 — second patch toward Confidence Algebra
+  formalization.** Unlike the first patch (naming an identity that
+  already existed in both files), this section had no disjunction
+  concept at all before this patch: only the conjunction rule from
+  earlier today. CIR's Disjunctive Bounding Extension already solves
+  the equivalent problem for continuous $M(n)$ — ported directly,
+  reusing CIR's Independence Predicate (and its `CF-002` cross-reference
+  back to this file, unchanged) rather than deriving new independence
+  criteria. Sound because the five confidence labels are totally
+  ordered, so the same min/max structure applies without modification.
+  Same "no penalty for absence" property as CIR's Corollary 4.6.1.
+  Deliberately not ported: CIR §4.6.3's Conflict Gate $\Xi(n)$ — this
+  file has no equivalent "active contradiction" concept yet, and
+  defining one would have exceeded this patch's scope. Decay and
+  absence-handling remain the two operators still open. Companion
+  patch in `Admin/Computational_Institutional_Reasoning.md` §4.6.2
+  cross-references this addition. Human-directed.
 
 - 2026-08-07: **Section IX.3 gained a conjunction-operator
   identity note with CIR's Compound Bounding Theorem —
