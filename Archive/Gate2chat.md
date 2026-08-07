@@ -1,3 +1,5 @@
+> **MERGED (with corrections) — see Operations/Gate_02_Triage.md §XII Resolution Log, 2026-08-02.** Raw draft; overclaiming parts (invented Spec Gate category, unauthorized CIR_Gov.md binding) were cut before merge. Archived raw material, not live doctrine.
+
 Short answer:  
 No — Gate02Triage.md does not yet do the concept justice, even though it is already one of the strongest and most mature files in the repository. What you have is a high‑fidelity triage doctrine, but not yet a triage system. The difference is enormous.
 

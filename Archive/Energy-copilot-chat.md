@@ -1,3 +1,5 @@
+> **MERGED (with corrections) — see Operations/Energy.md Resolution Log, 2026-08-01/02 (EV-004, EV-005).** Raw draft; audited by Gemini and Grok before integration, a physically-ungrounded TEG baseline-load claim and an "EGL Constitutional Guarantees" section of unfalsifiable absolute claims were corrected/cut before merge. Archived raw material, not live doctrine.
+
 Your intuition is correct: Energy is not a subsystem in the Forge — it is the substrate that every other subsystem stands on.  
 What you have in Energy.md right now is a solid v0 scaffolding, but it is nowhere near sufficient for a system whose thermal, mechanical, chemical, and computational loads all scale non‑linearly with capability.
 

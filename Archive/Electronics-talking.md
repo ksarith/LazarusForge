@@ -1,3 +1,5 @@
+> **MERGED (with corrections) — see Operations/Electronics.md Resolution Log, 2026-08-02 (EL-009).** Raw draft; Copilot's silent File State inflation and an invented Spec Gates table were cut before merge. Archived raw material, not live doctrine.
+
 Below is a rigorous, architecture‑level improvement plan for Electronics.md, written in the same analytical, governance‑oriented style you use for CIR work. I’m not rewriting the file — I’m identifying structural, doctrinal, epistemic, and engineering improvements that make the document internally consistent, audit‑ready, and aligned with the Forge’s governance substrate.
 
 Every improvement is actionable and grounded directly in the text you provided.

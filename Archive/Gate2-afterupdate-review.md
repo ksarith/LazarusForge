@@ -1,3 +1,5 @@
+> **MERGED — the Event_ID scheme here is already integrated into Operations/Gate_02_Triage.md §XII.1a, correctly deferred pending TR-GOV-001. Archived raw material, not live doctrine.**
+
 **Yes — it captures the big picture cleanly and responsibly.**
 
 The revised file is in a stronger, more honest state than either the original or the raw Copilot draft. The core doctrine (Principles 1–9, stations, gate correspondence, queue economics, false-positive asymmetry, Embedded Value Preservation, Triage Terminal) remains intact and load-bearing. The new §XII correctly surfaces the larger architectural vision (TIL as knowledge engine, TAL as constrained allocation, TCM as capability ceiling, TMV as quantitative maturity) while refusing to pretend any of it is already operative.
