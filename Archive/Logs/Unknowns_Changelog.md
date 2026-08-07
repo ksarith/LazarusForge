@@ -6,6 +6,22 @@ Split out from `Unknowns.md` 2026-07-19, following the precedent already establi
 
 ---
 
+**Version 4.44 — 2026-08-06. RIP-011 mirrored — hash/line-count anchor rule found unimplemented repository-wide.** While reviewing an archived multi-agent audit thread (`Archive/RIP_GMP-Copilot.md`), one of its four claimed compliance-gap categories was checked directly against the live repository rather than accepted on the thread's own "likely non-compliant" framing: `Admin/Repository_Integrity_Protocol.md`'s own §Version Preservation Protocol (line 109) requires every revision to record a prior-state hash or, absent tooling, a line-count anchor. Verified count: zero of the repository's ~50+ canonical files implement this, outside two incidental unrelated mentions (a hardware-watchdog SHA256 reference in `Operations/Electronics.md`, and a debt-accounting line-count proxy in `Admin/Computational_Institutional_Reasoning.md`). Registered as RIP-011 in `Repository_Integrity_Protocol.md` and mirrored here. Not resolved — scoping what "lightweight" means in practice (line count only vs. open-unknowns count too; every revision vs. Major/Constitutional-class only) is left as a deliberate future design choice. The thread's other three claimed categories were mostly unverified "likely" hedging and were not adopted.
+
+**Version 4.43 — 2026-08-04. PYC-001 through PYC-008 registered — Tests/Pyrolysis_Cascade.md.**
+New file `Tests/Pyrolysis_Cascade.md` registered across Routing.md, Discovery.md
+(structure tree, Maturity Snapshot, dedicated Scope Map subsection), and
+`Automation/AUDIT_HARNESS.py` (FALLBACK_REGISTRY + EXTRA_FILES catalog), same
+session. Eight dependency unknowns mirrored here, all pointing outward to
+unknowns owned by other files (PL-001/CE-003 halogen triage, GR-002/GR-003
+reduction and disposal, FA-001/SP-006 site, EN-001 structural, EV-001/ECN-002/
+TR-001 energy and economics) — this file owns none of its dependencies.
+Originally drafted with a colliding local `PC-` prefix (the repo-wide Process
+Correction series, through PC-006); renamed to `PYC-` before merge, confirmed
+unused elsewhere first. No change to any other file's Open Unknowns count.
+
+---
+
 ---
 
 **Version 4.41 — 2026-08-02. EV-004, EV-005 registered — Energy.md dual-audit adjudication (Gemini + Grok).** Two independent Skeptic/Auditor passes on `Operations/Energy.md`'s proposed EGL disagreed on gate verdicts and specific findings; both verified against source before adjudicating. Merged from Gemini (Grok's pass missed these): the Source Classes/Operational Modes tables wrongly implied TEG could supply idle-state baseline load with zero active thermal process — physically ungrounded, now corrected; EV-004 (EAL hardware watchdog/firmware isolation — ASM-006's assumption had no tracked unknown behind it) and EV-005 (TEG net-positive threshold vs. pump/fan parasitic draw) registered; a semantic-hygiene fix to the Safety Advisory's "structural specification" phrasing; a bare `Engineering.md` reference corrected to `Architecture/Engineering.md`; Voltage Ripple values tagged `[Placeholder]`; Storage Model gained Safe Maintenance Access and End-of-Life Disposal Routing (cross-referencing `Operations/Gate_02_Triage.md` and `Challenges/Waste.md`). Rejected from Gemini's audit: a finding that the Ethical Anchor field needs an `Admin/` prefix — `Admin/File_Template.md` fixes the unprefixed form as canonical and non-negotiable across every file, and `Tests/Support_Raft.md`'s own history records a 9-file sweep that removed that exact prefix once already; also rejected: flagging "Payment via Specification only" as semantic drift — that's the file's own pre-existing, previously-audited idiom, used identically since 2026-05-31 in EV-001/002/003. Grok's gate verdicts (mostly cleared, flag-and-track framing) were judged better calibrated than Gemini's (several BLOCKED) to what Energy.md actually claims about itself — it has been Draft/Exploration throughout and never purported to pass a gate. `Operations/Energy.md` Open Unknowns: 3 → 5. Status/Spec Gates unchanged (Draft, 1/6).**
