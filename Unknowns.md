@@ -3,17 +3,20 @@
 
 **Full version history in `Unknowns_Changelog.md` (2026-07-19 cleanup pass, following the precedent set by `Admin/AUDIT_HARNESS_CHANGELOG.md` and `Admin/Forge_Audit_Kit_Changelog.md`; scrubbed to current-version-only 2026-07-28 — the "current plus last four in full" window was itself compressed further, since the Audit Trail below now carries the compressed record for every version back to v1.0, and the changelog carries full text for all of them. This block now keeps only the current version.)**
 
-**Version 4.43 — 2026-08-04. PYC-001 through PYC-008 registered — Tests/Pyrolysis_Cascade.md.**
-New file `Tests/Pyrolysis_Cascade.md` registered across Routing.md, Discovery.md
-(structure tree, Maturity Snapshot, dedicated Scope Map subsection), and
-`Automation/AUDIT_HARNESS.py` (FALLBACK_REGISTRY + EXTRA_FILES catalog), same
-session. Eight dependency unknowns mirrored here, all pointing outward to
-unknowns owned by other files (PL-001/CE-003 halogen triage, GR-002/GR-003
-reduction and disposal, FA-001/SP-006 site, EN-001 structural, EV-001/ECN-002/
-TR-001 energy and economics) — this file owns none of its dependencies.
-Originally drafted with a colliding local `PC-` prefix (the repo-wide Process
-Correction series, through PC-006); renamed to `PYC-` before merge, confirmed
-unused elsewhere first. No change to any other file's Open Unknowns count.
+**Version 4.45 — 2026-08-06. EC-016 registered — Constitutional Governance Hierarchy.**
+`Admin/Ethical_Constraints.md` gained EC-016: no doctrine defines how Tier 1
+constitutional material is supposed to interact with lower-tier files that
+claim ownership of a doctrine area — surfaced while reviewing an archived
+Copilot thread (`Archive/EthicalC-Copilot.md`) whose reconstructed EC-001
+through EC-015 list otherwise matched live doctrine exactly. Connects to the
+same "dual-ownership conflicts" gap a same-session GOV-008 audit thread
+flagged between `Governance_Charter.md`, `Governance_Migration_Protocol.md`,
+and `Repository_Integrity_Protocol.md` — this is the third independent
+surfacing of that structural gap this session, after the GOV-008 thread
+itself and RIP-011's hash-anchor finding pointed at adjacent territory.
+Not resolved; the recommended path is the still-unexecuted "resolve
+dual-ownership conflicts" pass first proposed in `Archive/Gov-Copilot.md`.
+`Admin/Ethical_Constraints.md` Open Unknowns: 15 → 16.
 
 **Expiry Rule active — see `Admin/Canonical_Terms.md` §4 for the Cycle definition this rule now explicitly references (one calendar year default, not one audit pass — see CT-011). Protocol Performance metrics collecting.**
 
