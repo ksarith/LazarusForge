@@ -224,6 +224,7 @@ GH-009 (Emergent heuristic conflict — N² interaction scaling)
 | EC-013 | Safe-state descent sequence undefined for active hazardous processes during governance failure | `Admin/Ethical_Constraints.md` | Open | — | Major |
 | EC-014 | Toxic material encapsulation standard undefined | `Admin/Ethical_Constraints.md` | Open | — | Major |
 | EC-015 | Right-to-repair / anti-circumvention legal boundary undefined per jurisdiction | `Admin/Ethical_Constraints.md` | Open | — | Major |
+| EC-016 | Constitutional Governance Hierarchy — how Tier 1 documents interact with lower-tier governance ownership claims undefined; same gap as GMP/RIP dual-ownership conflict | `Admin/Ethical_Constraints.md` | Open | — | Major |
 | GOV-001 | Governance migration mechanics incompletely operationalized — `Admin/Governance_Migration_Protocol.md` created; not yet audited against charter constraints | `Admin/Governance_Charter.md` | In Progress | Vehicle | Major |
 | GOV-002 | Provenance operationalization immature | `Admin/Governance_Charter.md` | In Progress | Active | Major |
 | GOV-003 | Integrity enforcement architecture undefined | `Admin/Governance_Charter.md` | In Progress | Active | Critical |
