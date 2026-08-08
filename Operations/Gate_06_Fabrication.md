@@ -32,7 +32,7 @@
 | Body Stability   | Volatile                                                            |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | Admin/Verification_Gates_LF.md                                      |
-| Last Audit       | 2026-05-19; revised 2026-06-08                                      |
+| Last Audit       | 2026-08-08 (Scope Boundary UNK-008 stale reference corrected); prior: 2026-05-19; revised 2026-06-08 |
 | Auditor          | Claude — Skeptic/Auditor (actioning ChatGPT audit 2026-05-19)       |
 | Open Unknowns    | 7                                                                   |
 | Active Disputes  | 1                                                                   |
@@ -86,7 +86,8 @@ High risk which reflects process irreversibility.*
   — SC-004)
 - Welding wire chemical qualification beyond
   functional performance testing
-  (not yet assigned — UNK-008)
+  (`Architecture/Geck_forge_seed.md`, UNK-008 — ownership
+  reassigned 2026-07-19)
 - Laser welding specification
   (deferred — Admin/Trajectories.md)
 - Powder welding specification
@@ -1161,6 +1162,15 @@ the fire risk profile is materially different.
 ---
 
 ### Resolution Log
+
+- 2026-08-08: **Scope Boundary UNK-008 stale reference corrected** —
+  "Welding wire chemical qualification... not yet assigned — UNK-008"
+  was wrong; ownership was reassigned to `Architecture/Geck_forge_seed.md`
+  on 2026-07-19, three weeks before this finding surfaced. This file's
+  own body text (lines 682, 879) already cited UNK-008 correctly as a
+  neutral cross-reference — only the Scope Boundary summary line had
+  drifted. Surfaced by `Operations/Ops_Scope_Map.md`'s 2026-08-08 build.
+  Human-directed.
 
 - 2026-05-19: GF-006, GF-007 — New entries logged
   following ChatGPT audit 2026-05-19. Structural

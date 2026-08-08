@@ -25,7 +25,7 @@
 | Body Stability   | Volatile                                                            |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | Admin/Verification_Gates_LF.md                                      |
-| Last Audit       | 2026-07-31 (SC-009 registered; SC-004 expanded with Driving Mechanism Options) |
+| Last Audit       | 2026-08-08 (Scope Boundary DOES-NOT wording corrected to match Lessons Learned); prior: 2026-07-31 (SC-009 registered; SC-004 expanded with Driving Mechanism Options) |
 | Auditor          | Claude — Retrofit/Auditor; Claude — Synthesizer, human-directed (SC-009, SC-004 expansion), 2026-07-31 |
 | Open Unknowns    | 9                                                                   |
 | Active Disputes  | 0                                                                   |
@@ -60,7 +60,9 @@
 - Wire extrusion nozzle design
   (deferred — `Admin/Trajectories.md`)
 - Welding wire specification or qualification
-  (downstream — not yet assigned)
+  (`Architecture/Geck_forge_seed.md`, UNK-008 — ownership
+  reassigned 2026-07-19, already correctly cited in this
+  file's own Lessons Learned table)
 - Self-replication architecture or loop closure logic
   (`Architecture/Forge_flow.md`,
   `Architecture/Geck_forge_seed.md`)
@@ -796,6 +798,13 @@ alternative if the rate proves significant.
 ---
 
 ### Resolution Log
+- 2026-08-08: **Scope Boundary DOES-NOT wording corrected** — "Welding
+  wire specification or qualification (downstream — not yet assigned)"
+  was inconsistent with this file's own Lessons Learned table (line
+  888), which already correctly cites UNK-008's 2026-07-19 ownership
+  reassignment to `Architecture/Geck_forge_seed.md`. Surfaced by
+  `Operations/Ops_Scope_Map.md`'s 2026-08-08 build. Corrected to match
+  what this file already knew elsewhere in its own text. Human-directed.
 
 - 2026-07-31: SC-004 expanded — added Driving Mechanism Options
   subsection (five candidate mechanisms for the wire-extrusion
