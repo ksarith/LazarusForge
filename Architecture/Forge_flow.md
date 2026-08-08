@@ -31,7 +31,7 @@
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | Admin/Verification_Gates_LF.md                                      |
-| Last Audit       | 2026-06-11                                                          |
+| Last Audit       | 2026-08-08 (Scope Boundary corrections — UNK-008 stale reference, vocabulary asymmetry); prior: 2026-06-11 |
 | Auditor          | Claude — Retrofit/Auditor                                           |
 | Open Unknowns    | 2                                                                   |
 | Active Disputes  | 1                                                                   |
@@ -47,7 +47,11 @@
 - Minimal viable operational logic of the Lazarus Forge v0
 - Reference standard for shared vocabulary across the repository —
   terms defined here carry their meaning into all other documents
-  unless explicitly noted otherwise
+  unless explicitly noted otherwise. `Admin/Canonical_Terms.md`
+  covers a separate, broader vocabulary layer; where the two
+  overlap, this file is authoritative for operational routing
+  semantics, and `Canonical_Terms.md` itself defers to this file
+  on that point.
 - v0 scope, inputs, and explicit non-goals
 - Defined Terms for all shared operational vocabulary
 - Eight sequential decision gates (Intake through Utilization)
@@ -80,7 +84,7 @@
 - Facility siting or area-of-operation requirements
   (→ `Architecture/Facilities.md`)
 - Fabrication output specifications or wire qualification
-  (→ UNK-008 — no owner assigned)
+  (→ `Architecture/Geck_forge_seed.md`, UNK-008 — ownership reassigned 2026-07-19)
 
 ---
 
@@ -820,6 +824,25 @@ deferred, not closed.
 ---
 
 ### Resolution Log
+
+- 2026-08-08: **Two Scope Boundary corrections, both surfaced by
+  `Architecture/Arc_Scope_Map.md` (2026-08-08 folder-scope-map build):**
+  (1) the UNK-008 fabrication/wire-qualification reference still said
+  "no owner assigned" — stale since 2026-07-19, when ownership moved to
+  `Architecture/Geck_forge_seed.md`; this session's own 2026-08-06
+  Feedstock Self-Sufficiency patch had already built doctrine on that
+  ownership. Corrected to point at the real owner. (2) the shared-
+  vocabulary DOES bullet claimed sole reference-standard status without
+  acknowledging `Admin/Canonical_Terms.md` exists — `Canonical_Terms.md`
+  already correctly deferred to this file from its own side, so nothing
+  was actually in conflict, just asymmetrically documented. Added a
+  one-sentence reciprocal acknowledgment. Neither correction changes this
+  file's actual authority or scope — both are documentation catching up
+  to a state that was already true. One of the oldest files in the
+  repository (RS-002 dates to 2026-06-11); worth noting that age alone
+  is exactly why a stale cross-reference like the UNK-008 one can sit
+  unnoticed this long — the file predates the ownership reassignment it
+  was still describing. Human-directed.
 
 - 2026-06-11: RS-002 resolved — `Forge_Flow.md` casing outlier corrected to
   `Forge_flow.md` in Discovery.md Rename Registry. Canonical filename confirmed

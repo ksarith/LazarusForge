@@ -60,12 +60,12 @@ Note: gained an `## Authority & Tier Classification` preface 2026-08-07 (verifie
 
 ### `Architecture/Forge_flow.md`
 **Status:** Exploration · 0/6 · 2 Open Unknowns · Risk: Medium
-**Does:** Minimal viable v0 operational logic; **reference standard for shared vocabulary across the entire repository** — terms defined here carry into all other documents unless noted; eight sequential decision gates; Gate Correspondence table; primary KPI definition.
-**Does not (arrow):** Module hardware specs (`Operations/Gate_04...`, `Gate_05...`) · reduction module spec (`Operations/Gate_03_Reduction.md`) · triage workflow (`Operations/Gate_02_Triage.md`) · energy accounting (`Operations/Energy.md`) · autonomous/AI trust architecture (`Cognitive_Frameworks.md`, `Admin/Ethical_Constraints.md`) · version roadmap (`Admin/Trajectories.md`) · facility siting (`Facilities.md`).
+**Does:** Minimal viable v0 operational logic; **reference standard for shared vocabulary across the entire repository** — terms defined here carry into all other documents unless noted, now explicitly acknowledging `Admin/Canonical_Terms.md`'s adjacent role (fixed 2026-08-08); eight sequential decision gates; Gate Correspondence table; primary KPI definition.
+**Does not (arrow):** Module hardware specs (`Operations/Gate_04...`, `Gate_05...`) · reduction module spec (`Operations/Gate_03_Reduction.md`) · triage workflow (`Operations/Gate_02_Triage.md`) · energy accounting (`Operations/Energy.md`) · autonomous/AI trust architecture (`Cognitive_Frameworks.md`, `Admin/Ethical_Constraints.md`) · version roadmap (`Admin/Trajectories.md`) · facility siting (`Facilities.md`) · fabrication output/wire qualification (`Geck_forge_seed.md`, UNK-008 — reference corrected 2026-08-08).
 
-⚠️ **Two findings on this file, both verified against source before being stated:**
-- **Stale cross-reference (real, concrete):** this file's own Does-Not list still says fabrication/wire qualification is "→ UNK-008 — no owner assigned." Checked directly against `Unknowns.md`: UNK-008's ownership was reassigned to `Architecture/Geck_forge_seed.md` on 2026-07-19, and this session's own 2026-08-06 Feedstock Self-Sufficiency patch built substantial doctrine directly on that ownership (WF-01–WF-10, apparatus sketch). This file's text is simply wrong, three weeks and one full patch cycle out of date.
-- **Asymmetric cross-reference (softer, not a conflict):** this file claims sole "reference standard for shared vocabulary," but never mentions `Admin/Canonical_Terms.md`, which independently defines vocabulary too. Checked the other direction: `Canonical_Terms.md` already correctly defers to this file ("Forge_flow.md is authoritative for operational routing until reconciliation occurs and is logged here") — so the relationship is already resolved in practice, just asymmetrically documented. A reader of this file alone would not know a second vocabulary file exists; a reader of `Canonical_Terms.md` would. Not a conflict, but worth this file acknowledging the same relationship its counterpart already does.
+✅ **Both findings below fixed 2026-08-08, same day they were surfaced — kept here as a record, not a live warning:**
+- **Stale cross-reference (was real, concrete, now corrected):** this file's Does-Not list said fabrication/wire qualification was "→ UNK-008 — no owner assigned." Checked directly against `Unknowns.md`: UNK-008's ownership was reassigned to `Architecture/Geck_forge_seed.md` on 2026-07-19, three weeks before this finding surfaced. Fixed in `Forge_flow.md` directly.
+- **Asymmetric cross-reference (was softer, now acknowledged):** this file claimed sole "reference standard for shared vocabulary" without mentioning `Admin/Canonical_Terms.md`, which already correctly deferred to this file from its own side. Added a one-sentence reciprocal acknowledgment in `Forge_flow.md`.
 
 ### `Architecture/Friction_Dynamics.md`
 **Status:** Draft · 2/6 · 4 Open Unknowns · Risk: Medium
@@ -97,9 +97,9 @@ Note: gained an `## Authority & Tier Classification` preface 2026-08-07 (verifie
 
 ## Gaps Exposed By Building This
 
-1. **`Forge_flow.md`'s UNK-008 cross-reference is stale — a real, concrete, verified error**, not a structural gap like Admin/'s missing-section findings. Ownership moved to `Geck_forge_seed.md` on 2026-07-19; this file's text still says "no owner assigned." Worth a one-line fix in `Forge_flow.md` itself.
+1. **`Forge_flow.md`'s UNK-008 cross-reference was stale — a real, concrete, verified error, fixed same-day.** Ownership moved to `Geck_forge_seed.md` on 2026-07-19; this file's text still said "no owner assigned" until corrected 2026-08-08.
 
-2. **`Forge_flow.md` and `Admin/Canonical_Terms.md` have an asymmetric vocabulary-authority relationship** — already resolved in practice (Canonical_Terms.md defers correctly), but only documented from one side. Softer than finding 1; not urgent, but a reader of Forge_flow.md alone wouldn't know the second file exists.
+2. **`Forge_flow.md` and `Admin/Canonical_Terms.md` had an asymmetric vocabulary-authority relationship — also fixed same-day.** Was already resolved in practice (Canonical_Terms.md deferred correctly); now documented from both sides.
 
 3. **Unlike Admin/, every file in this folder has a genuine, conforming Scope Boundary section.** No missing-section findings here — Architecture/ is structurally cleaner than Admin/ was.
 
@@ -112,6 +112,15 @@ No new unknowns registered. Finding 1 is a one-line factual correction candidate
 ---
 
 ## Resolution Log
+
+- 2026-08-08: **Both findings from this file's initial build (stale UNK-008
+  reference, asymmetric vocabulary acknowledgment) fixed same-day in
+  `Architecture/Forge_flow.md` directly** — James specifically asked for
+  errors to be corrected as this rollout continues, not just cataloged.
+  Entries above and in Gaps Exposed updated to reflect closure rather than
+  rewritten as if the findings never existed, matching this repository's
+  general preference for showing what was found and then what was done
+  about it. Human-directed.
 
 - 2026-08-08: **File created — second folder in the Scope_Map rollout**,
   following `Admin/Adm_Scope_Map.md` (2026-08-07, confirmed pushed to main
