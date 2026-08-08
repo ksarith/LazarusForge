@@ -1,4 +1,4 @@
-# Scope_Map.md — Admin/
+# Adm_Scope_Map.md — Admin/
 
 ## Navigation Anchors
 [README.md](../README.md) | [Discovery.md](../Discovery.md) | [Routing.md](../Routing.md) | [Unknowns.md](../Unknowns.md)
