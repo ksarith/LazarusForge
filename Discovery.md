@@ -164,6 +164,7 @@ Architecture/                               — System architecture and foundati
     └── Forge_Net.md                        — Decentralized data/physical network logistics
 
 Operations/                                 — Physical modules and operational systems
+    ├── Ops_Scope_Map.md                     — Per-file scope/dependency index for this folder (2026-08-08)
     ├── Gate_01_Intake.md                   — Entry safety screening & provenance tagging
     ├── Gate_02_Triage.md                   — 5-station value preservation decision engine
     ├── Gate_03_Reduction.md                — Irreversible mechanical sizing (feedstock milling)
@@ -224,7 +225,8 @@ Archive/                                    — Prior states of governance-beari
 - `Tests/Pyrolysis_Cascade.md` — created 2026-08-04 ✓ (see Tests/ structure tree and Scope Map above); drafted from archived conversation via Copilot, distilled and quantitative claims retired to Placeholder by Grok, PC-/PYC- namespace collision fixed before merge.
 - `Tests/Field_Logs.md` — created 2026-08-06 ✓, append-only intake for physical test runs and cross-agent field data, cross-referenced from `CONTRIBUTING.md`; not a specification file, no Spec Gates or Unknowns of its own.
 - `Admin/Adm_Scope_Map.md` — created 2026-08-07 ✓, renamed with the folder-abbreviation-prefix convention (confirmed pushed to main by James); pilot for a per-folder scope/dependency index (Purpose/Does/Does-Not per file, verified against each file's own Scope Boundary section); surfaced two files with no Scope Boundary section at all (`Computational_Institutional_Reasoning.md`, `Nothingness_Theorem.md`) and one apparent duplicate unknown that checked out as already correctly cross-linked (ENV-003/EC-010).
-- `Architecture/Arc_Scope_Map.md` — created 2026-08-08 ✓, second folder in the rollout, same method; found one concrete stale cross-reference (`Forge_flow.md`'s UNK-008 claim, wrong since 2026-07-19) and one softer asymmetric-documentation gap (Forge_flow.md/Canonical_Terms.md vocabulary authority). Unlike Admin/, no files here lack a Scope Boundary section. Pending: whether to roll the same pattern out to the remaining four folders (Operations/, Challenges/, Tests/, Automation/), and whether to fix the `Forge_flow.md` UNK-008 stale reference this pass surfaced.
+- `Architecture/Arc_Scope_Map.md` — created 2026-08-08 ✓, second folder in the rollout, same method; found one concrete stale cross-reference (`Forge_flow.md`'s UNK-008 claim, wrong since 2026-07-19) and one softer asymmetric-documentation gap (Forge_flow.md/Canonical_Terms.md vocabulary authority) — both fixed same-day in `Forge_flow.md` directly, per instruction to correct errors as found rather than only catalog them.
+- `Operations/Ops_Scope_Map.md` — created 2026-08-08 ✓, third folder in the rollout; found and fixed two more instances of the same UNK-008 staleness pattern (`Gate_05_Separation_Thermal.md`, `Gate_06_Fabrication.md`) — three files total now corrected after one 2026-07-19 ownership reassignment. One look-alike (GF-003) checked and confirmed genuinely fine, not a fourth instance. No missing Scope Boundary sections in this folder. Pending: Challenges/, Tests/, Automation/.
 - `Architecture/Characterization.md` — **[PLANNED]**, referenced as a forward dependency by `Closed_Loop_Feedstock.md`; not yet created.
 - `Operations/Metals.md` — **[PLANNED]**, referenced as a forward dependency by `Closed_Loop_Feedstock.md`; not yet created.
 
