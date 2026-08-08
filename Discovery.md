@@ -179,6 +179,7 @@ Operations/                                 — Physical modules and operational
     └── Woodworking.md                      — Salvaged urban timber milling & drying schedules
 
 Tests/                                      — Test frameworks and deployment platforms
+    ├── Tst_Scope_Map.md                     — Per-file scope/dependency index for this folder (2026-08-08)
     ├── Support_Raft.md                     — Stationary marine deployment anchor
     ├── Leviathan_testing.md                — Deep-ocean autonomous stress-testing
     ├── Living_Waters.md                    — Water purification pathways; site-conditioned selection; LW-001 through LW-010
@@ -191,6 +192,7 @@ Tests/                                      — Test frameworks and deployment p
     └── Field_Logs.md                       — Append-only intake for physical test runs and cross-agent field data; not a specification, no Spec Gates apply
 
 Challenges/                                 — Problem layer: why these capabilities exist
+    ├── Cha_Scope_Map.md                     — Per-file scope/dependency index for this folder (2026-08-08)
     ├── Water.md                            — Water scarcity and contamination (Living Waters)
     ├── Biofouling.md                       — Biological colonization and corrosion
     ├── Waste.md                            — Discretionary waste and repair capacity loss
@@ -226,7 +228,9 @@ Archive/                                    — Prior states of governance-beari
 - `Tests/Field_Logs.md` — created 2026-08-06 ✓, append-only intake for physical test runs and cross-agent field data, cross-referenced from `CONTRIBUTING.md`; not a specification file, no Spec Gates or Unknowns of its own.
 - `Admin/Adm_Scope_Map.md` — created 2026-08-07 ✓, renamed with the folder-abbreviation-prefix convention (confirmed pushed to main by James); pilot for a per-folder scope/dependency index (Purpose/Does/Does-Not per file, verified against each file's own Scope Boundary section); surfaced two files with no Scope Boundary section at all (`Computational_Institutional_Reasoning.md`, `Nothingness_Theorem.md`) and one apparent duplicate unknown that checked out as already correctly cross-linked (ENV-003/EC-010).
 - `Architecture/Arc_Scope_Map.md` — created 2026-08-08 ✓, second folder in the rollout, same method; found one concrete stale cross-reference (`Forge_flow.md`'s UNK-008 claim, wrong since 2026-07-19) and one softer asymmetric-documentation gap (Forge_flow.md/Canonical_Terms.md vocabulary authority) — both fixed same-day in `Forge_flow.md` directly, per instruction to correct errors as found rather than only catalog them.
-- `Operations/Ops_Scope_Map.md` — created 2026-08-08 ✓, third folder in the rollout; found and fixed two more instances of the same UNK-008 staleness pattern (`Gate_05_Separation_Thermal.md`, `Gate_06_Fabrication.md`) — three files total now corrected after one 2026-07-19 ownership reassignment. One look-alike (GF-003) checked and confirmed genuinely fine, not a fourth instance. No missing Scope Boundary sections in this folder. Pending: Challenges/, Tests/, Automation/.
+- `Operations/Ops_Scope_Map.md` — created 2026-08-08 ✓, third folder in the rollout; found and fixed two more instances of the same UNK-008 staleness pattern (`Gate_05_Separation_Thermal.md`, `Gate_06_Fabrication.md`) — three files total now corrected after one 2026-07-19 ownership reassignment. One look-alike (GF-003) checked and confirmed genuinely fine, not a fourth instance. No missing Scope Boundary sections in this folder.
+- `Challenges/Cha_Scope_Map.md` — created 2026-08-08 ✓, fourth folder in the rollout. Structurally different from the prior three: two subtypes (Problem-Statement/Solution-Track) with genuinely different File State fields, and a folder-wide numbered-heading convention (`## 2. Scope Boundary`) that caused one extraction false-positive, caught and documented rather than misreported. No corrections needed this pass — no stale references, no missing sections. One genuine Blocking cross-reference surfaced (Water.md → Thermal_Systems.md TH-003).
+- `Tests/Tst_Scope_Map.md` — created 2026-08-08 ✓, fifth folder in the rollout. No corrections needed, second folder clean in a row after Challenges/. Confirmed one forward reference (`Cognitive_Salvage_Layer.md` → `Operations/Leviathan.md`) as accurately-labeled-planned, not stale. Found one real unknown-tracking inconsistency (`Hydrologic_Resource_Cascade.md`'s partially-unregistered HR-003–010) worth a future decision, not fixed this pass. Noted `Field_Logs.md` is still empty as of this build — infrastructure exists, unused so far. Pending: Automation/ — the last folder, and structurally different (scripts, not doctrine).
 - `Architecture/Characterization.md` — **[PLANNED]**, referenced as a forward dependency by `Closed_Loop_Feedstock.md`; not yet created.
 - `Operations/Metals.md` — **[PLANNED]**, referenced as a forward dependency by `Closed_Loop_Feedstock.md`; not yet created.
 
