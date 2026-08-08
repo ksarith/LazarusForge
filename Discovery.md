@@ -124,6 +124,7 @@ Root
 ├── Unknowns.md                             — Cross-module unknowns global index
 
 Admin/                                      — Governance, protocols, and doctrine
+    ├── Scope_Map.md                         — Per-file scope/dependency index for this folder (pilot, 2026-08-07)
     ├── Governance_Charter.md               — Constitutional tier; 8 Axioms (Tier 1)
     ├── Ethical_Constraints.md              — Embedded AI governance & anti-weaponization (Tier 1)
     ├── Auditor_Protocols.md                — Verification doctrine; 10-phase sequence (Tier 2)
@@ -221,6 +222,7 @@ Archive/                                    — Prior states of governance-beari
 - `Challenges/Closed_Loop_Feedstock.md` — created 2026-07-06 ✓ (see Challenges/ structure tree and Scope Map below).
 - `Tests/Pyrolysis_Cascade.md` — created 2026-08-04 ✓ (see Tests/ structure tree and Scope Map above); drafted from archived conversation via Copilot, distilled and quantitative claims retired to Placeholder by Grok, PC-/PYC- namespace collision fixed before merge.
 - `Tests/Field_Logs.md` — created 2026-08-06 ✓, append-only intake for physical test runs and cross-agent field data, cross-referenced from `CONTRIBUTING.md`; not a specification file, no Spec Gates or Unknowns of its own.
+- `Admin/Scope_Map.md` — created 2026-08-07 ✓, pilot for a per-folder scope/dependency index (Purpose/Does/Does-Not per file, verified against each file's own Scope Boundary section); surfaced two files with no Scope Boundary section at all (`Computational_Institutional_Reasoning.md`, `Nothingness_Theorem.md`) and one apparent duplicate unknown that checked out as already correctly cross-linked (ENV-003/EC-010). Pending: whether to roll the same pattern out to the other five folders.
 - `Architecture/Characterization.md` — **[PLANNED]**, referenced as a forward dependency by `Closed_Loop_Feedstock.md`; not yet created.
 - `Operations/Metals.md` — **[PLANNED]**, referenced as a forward dependency by `Closed_Loop_Feedstock.md`; not yet created.
 
