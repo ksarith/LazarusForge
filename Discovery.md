@@ -147,6 +147,7 @@ Admin/                                      — Governance, protocols, and doctr
     ├── Governance_Migration_Protocol.md    — Tier 1 Axiom amendment procedures
     ├── PROBE_INVOCATION.md                 — Copy-paste cold-start template for Mission Drift Review (AP-030); not doctrine, an operational prompt
     ├── Hardware_Diversity_Ladder.md         — Four-tier path to a hardware-diverse GOV-008 quorum; Draft, declarable-not-achieved
+    ├── Progress_Log.md                      — Active notebook: rolling lessons/continuity tracking (2026-08-09)
     └── BATTERY_SEED.md                      — Frozen prompt block for a genuine AP-017 cold-session Adversarial Battery run
 
 Automation/                                 — Scripts supporting verification and integrity checks
@@ -217,6 +218,7 @@ Challenges/                                 — Problem layer: why these capabil
 
 Archive/                                    — Prior states of governance-bearing documents
     ├── README.md                           — Archive scope and retention rationale
+    ├── Rename_Registry.md                   — Frozen filename-change history, migrated from Discovery.md (2026-08-09)
     └── Logs/                                — Split-out full changelogs (condensed current versions remain in the main files)
         ├── Unknowns_Changelog.md           — Full version history for Unknowns.md pre-v4.29
         ├── Governance_Charter_Changelog.md — Full version history for Governance_Charter.md
@@ -260,31 +262,7 @@ Archive/                                    — Prior states of governance-beari
 
 ---
 
-Canonical record of filename changes. Stale references should be resolved using this table.
-
-| Old Name | New Name | Location | Date |
-|---|---|---|---|
-| Spin_Chamber_v0.md | Gate_05_Separation_Thermal.md | Operations/ | 2026-05-15 |
-| Material_Separation_Gate_v0.md | Gate_04_Separation_Mechanical.md | Operations/ | 2026-05-15 |
-| Stratification_Chamber_v0.md | Gate_04_Separation_Mechanical.md | Operations/ | Prior cycle |
-| Lazarus_forge_v0_flow.md | Forge_flow.md | Architecture/ | 2026-05-15 |
-| Unknowns_LF.md | Unknowns.md | Root | 2026-05-15 |
-| Trajectories_LF.md | Trajectories.md | Admin/ | 2026-05-15 |
-| Component_Triage_System.md | Gate_02_Triage.md | Operations/ | 2026-05-15 |
-| geck_forge_seed.md | Geck_forge_seed.md | Architecture/ | 2026-05-15 |
-| energy_v0.md | Energy.md | Operations/ | 2026-05-15 |
-| Air_Scrubber_v0.md | Air_Scrubber.md | Operations/ | 2026-05-15 |
-| Support_Raft_v0.md | Support_Raft.md | Tests/ | 2026-05-15 |
-| leviathan_testing.md | Leviathan_testing.md | Tests/ | 2026-05-15 |
-| Ship_of_Theseus_Right_to_Repair.md | Ship_of_Theseus.md | Admin/ | 2026-05-15 |
-| Electronics.md (root) | Electronics.md | Operations/ | 2026-05-20 |
-| Canonical_Terms_LF.md | Canonical_Terms.md | Admin/ | 2026-05-26 |
-| Engineering.md (replaced by) | Mechanical_Structures.md | Architecture/ | 2026-05-31 |
-| economics_v0.md | Economics.md | Admin/ | 2026-06-05 |
-| Precision_LF.md | Precision.md | Architecture/ | 2026-06-05 |
-| Forge_flow.md | Forge_flow.md | Architecture/ | Resolved — RS-002 2026-06-11 |
-
-*See `Unknowns.md` CT-007 (Resolved 2026-07-06) and Closed_Loop_Feedstock.md's own Resolution Log for a related but distinct ID-namespace rename history — `EC-` → `ECN-` (Economics.md) and `CF-` → `FL-` → `CLF-` (Closed_Loop_Feedstock.md) — not filename renames, so not tracked in this table, but the same class of drift risk.*
+**Rename Registry migrated to `Archive/Rename_Registry.md` (2026-08-09)** — last entry dated 2026-06-11; didn't belong in a navigation-layer file. Stale filename references should be resolved against that file now.
 
 ---
 
@@ -301,6 +279,7 @@ Discovery.md is a navigation map — task tracking belongs in Unknowns.md.
 | ~~PC-004~~ | ~~Stale name corrections — Challenges/Water.md and Planned_Obsolescence.md~~ | Resolved 2026-06-11 — retrofit pass applied corrections |
 | ~~PC-005~~ | ~~`Challenges/Closed_Loop_Feedstock.md` not registered in `Routing.md`, this file, or `Automation/AUDIT_HARNESS.py`~~ | Resolved 2026-07-19 — independently re-verified against source in all three locations |
 | PC-006 | Six inline "Scope Map — X/" sections (Root Files, Admin/, Architecture/, Operations/Gates, Operations/Domain, Tests/, Challenges/) migrated out to five per-folder `*_Scope_Map.md` files, once all five existed and were verified against source | Resolved 2026-08-09 — see `Repository Maturity Snapshot`'s preceding correction note and each `*_Scope_Map.md`'s own Resolution Log |
+| PC-007 | "Cross-Module Unknowns — Attention Required" table 19 versions stale; Rename Registry frozen since 2026-06-11, didn't belong in a navigation-layer file; `Unknowns.md`'s own "What vX.X Means" section stale by nine version bumps, violating its own Size Management Rule 1 | Resolved 2026-08-09 — table removed (superseded by `Unknowns.md`'s Active Index), Rename Registry migrated to `Archive/Rename_Registry.md`, lessons migrated to new `Admin/Progress_Log.md` |
 
 ---
 
@@ -332,6 +311,7 @@ Discovery.md is a navigation map — task tracking belongs in Unknowns.md.
 | `Admin/Autonomy_Divergence_Protocol.md` | Draft — PROPOSED NOT RATIFIED | 0/6 (drafted, not yet audited) | High (governs response to AI governance/objective divergence) |
 | `Admin/PROBE_INVOCATION.md` | Draft | N/A — operational prompt template, not a doctrine or specification claim | — |
 | `Admin/Hardware_Diversity_Ladder.md` | Draft — Proposed implementation reference only | 0/6 | unlabeled |
+| `Admin/Progress_Log.md` | Active — Living Document | N/A — progression log, not a specification | N/A |
 | `Admin/BATTERY_SEED.md` | Draft | N/A — operational prompt template, not a doctrine or specification claim | — |
 | `Automation/AUDIT_HARNESS.py` | Active | — | — |
 | `Automation/audit_lib.py` | Active | — | — |
@@ -445,63 +425,11 @@ The two files are complementary — Routing.md owns *where*, Discovery.md owns *
 
 ## Cross-Module Unknowns — Attention Required
 
-Full entries live in `Unknowns.md`. This table is a routing index only —
-refresh it whenever `Unknowns.md`'s version bumps and this table's IDs
-would go stale (this refresh: `Unknowns.md` v4.29, 2026-07-28 — seventeen
-version bumps overdue; the prior refresh at v4.12 sat unrefreshed for
-three weeks. Every ID below individually re-checked against the current
-Active Index before inclusion, not carried forward on assumption. Several
-entries below turned out subtly wrong, not just stale — see the
-correction note beneath the table.)
-
-| Unknown | Status | See |
-|---------|--------|-----|
-| UNK-008 — Welding wire chemical qualification | Open — ownership reassigned 2026-07-19 to `Architecture/Geck_forge_seed.md` (was incorrectly listed under `Gate_05_Separation_Thermal.md`, which explicitly disclaims it) | `Unknowns.md` |
-| UNK-009 — External root-of-trust cross-module | Critical — spans GOV-003, GOV-005, RIP-001, SEC-007a/SEC-007b | `Unknowns.md` |
-| FA-001 — Site not confirmed | Critical — blocks all hot operations | `Unknowns.md` |
-| ECN-002 — Operating cost baseline | Critical — blocks TR-001; depends on EV-001 | `Unknowns.md` |
-| PR-001 — Precision ceiling not declared | Critical — blocks T1/T2 part claims | `Unknowns.md` |
-| GH-009 — Emergent heuristic conflict (Cognitive Salvage) | Critical — N² interaction scaling; blocks heuristic co-deployment | `Unknowns.md` |
-| HR-UNK-002 — Hydrologic Resource Cascade material quality | Critical — flood sediment contaminant risk; safety-critical | `Unknowns.md` |
-| SEC-007a / SEC-007b — External root-of-trust, constitutional/physical split | Critical — both blocked pending resolution; owning layer split Admin/Operations | `Unknowns.md` §Ethics & Governance |
-| SEC-012 — Asymmetric crypto overhead on salvaged silicon | Major — Logic-Zero node recovery DoS risk | `Unknowns.md` §Ethics & Governance |
-| CT-007 — ID namespace allocation doctrine undefined | Open, not Resolved — narrower `EC→ECN` rename sub-issue resolved 2026-07-06, but the broader namespace-allocation doctrine gap this ID was meant to cover was never actually closed; confirmed directly against `Unknowns.md`'s own current text, which itself corrects an earlier premature "Resolved" framing | `Unknowns.md` §Ethics & Governance |
-| CT-010 — Enforcement Checkpoint rename propagation | In Progress — confirm no file still cites old unqualified "Gate N" for Governance_Charter.md's renamed checkpoints | `Unknowns.md` §Ethics & Governance |
-| CF-004 — Epistemic debt measurement mechanism | Open, narrowed 2026-07-28 — formal trigger now defined (`Admin/Computational_Institutional_Reasoning.md` §5.4, Lyapunov-stable); numeric calibration is the remaining gap. Dependency surface: Triage Posture, promotion suspension, and `Cognitive_Frameworks.md` Section IV (revised same day) | `Unknowns.md` §Cognitive Frameworks |
-| CIR-001 — Physical Grounding Telemetry Mapping Interface | Open — renamed 2026-07-28 from a colliding local "GOV-008" (see `Admin/Forge_Audit_Kit.md` Governance Sidecar ID Reference); γ1–γ4 predicates aspirational pending harness Phase 2 | `Admin/Computational_Institutional_Reasoning.md` §8.4 |
-| RE-UNK-001 / RE-UNK-005 — Return_To_Eden Eden Index measurement/baseline undefined | Blocking (Tier I gate); non-blocking at Exploration; CLF-005 cross-ref confirmed resolved and unrelated (renamed to $\Delta_{sc}$, no effect on this pair) | `Unknowns.md` §Return to Eden |
-| RE-UNK-004 — Return_To_Eden dependency map absent | Open — narrower than originally stated; file lacks a dedicated Upstream/Downstream section other Challenges/ files use | `Unknowns.md` §Return to Eden |
-| CLF-003 / CLF-004 / CLF-006 — Closed_Loop_Feedstock.md Critical Watch | Open — CLF-004 specifically blocked pending CE-006 (chlorine containment, `Architecture/Chemistry.md`); candidate chlor-alkali pathway logged 2026-07-07 | `Unknowns.md` §Closed-Loop Feedstock |
-| CE-006 — Chlorine off-gas containment mechanism | Open — corrected 2026-07-19 from an unworkable KMnO₄ approach to caustic wet scrubbing (already the file's own existing architecture); CE-007 spun off for the resulting NaOCl storage gap | `Unknowns.md` §Chemistry |
-
-**Resolved since the last refresh, removed from this table:** UNK-006
-(Facility siting), RIP-001 (Prior-state archival), RIP-004 (Constitutional
-violation detection latency), AP-012 / AP-016 (Human authority
-availability / concurrent quarantine), GOV-011 (Spec Gates field scored
-against wrong gate system), PC-001 through PC-005 (all — see Pending
-Corrections above), ENV-DS-001 (bootstrap doctrine — ratified with a
-bridge-authority exception clause, 2026-07-11).
-
-**Parked, not open work:** Governance_Charter.md's External Design Lineage
-amendment is drafted and ready but deliberately unratified — a considered
-decision given GOV-011 and general system fragility, not neglect. No
-expiry watch applies to it; it doesn't decay by sitting since it isn't
-claiming to be true yet, only proposed.
-
-⚠️ **Correction, 2026-07-29:** GOV-013 was previously listed here as
-parked/unratified. That was wrong — it was **ratified 2026-07-19**
-(`Admin/Governance_Charter.md` §Post-Exit Monitoring Doctrine, live
-"STATUS: RATIFIED" note), eleven days before this file said otherwise.
-The error traced back to two supporting files —
-`Admin/Auditor_Protocols.md`'s metrics section and
-`Admin/Repository_Integrity_Protocol.md`'s reversion mechanism —
-still carrying stale "PROPOSED, NOT RATIFIED" / "once ratified"
-language after the Charter ratified; both corrected same day as this
-note. What's genuinely still open, confirmed by checking
-Auditor_Protocols.md directly rather than assumed: the Semantic Drift
-Score threshold is a literal `[Threshold TBD]` placeholder — human
-governing authority still needs to set actual numeric values before
-Post-Exit Monitoring can leave Phase 0 (manual) and become
-automatable. That's a real gap, just not a ratification one.
-
----
+Removed 2026-08-09 — this table was 19 versions stale (last refreshed at
+`Unknowns.md` v4.29, live file at v4.47+ by the time this was caught) and
+duplicated content `Unknowns.md`'s own Active Index already provides,
+filterable by Priority and Blocking status without needing a second copy
+anyone has to remember to update. For the same information, go to
+`Unknowns.md` directly. For the rolling "what's currently hot, what did
+we just learn" content this table was trying to approximate, see
+`Admin/Progress_Log.md`.

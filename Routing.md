@@ -1,6 +1,6 @@
 # Routing.md — LazarusForgeV0
 **Canonical Navigation and Link Mapping Index.**
-**Last updated: 2026-08-08**
+**Last updated: 2026-08-09**
 
 ---
 
@@ -37,6 +37,7 @@ This file acts as the primary network lookup table for automated agents, continu
 | `Admin/Governance_Charter.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Admin/Governance_Charter.md) | [Repo](https://github.com/ksarith/LazarusForgeV0/blob/main/Admin/Governance_Charter.md) | Explicit |
 | `Admin/Governance_Migration_Protocol.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Admin/Governance_Migration_Protocol.md) | [Repo](https://github.com/ksarith/LazarusForgeV0/blob/main/Admin/Governance_Migration_Protocol.md) | Explicit |
 | `Admin/Hardware_Diversity_Ladder.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Admin/Hardware_Diversity_Ladder.md) | [Repo](https://github.com/ksarith/LazarusForgeV0/blob/main/Admin/Hardware_Diversity_Ladder.md) | Explicit |
+| `Admin/Progress_Log.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Admin/Progress_Log.md) | [Repo](https://github.com/ksarith/LazarusForgeV0/blob/main/Admin/Progress_Log.md) | Explicit |
 | `Admin/Nothingness_Theorem.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Admin/Nothingness_Theorem.md) | [Repo](https://github.com/ksarith/LazarusForgeV0/blob/main/Admin/Nothingness_Theorem.md) | Explicit |
 | `Admin/PROBE_INVOCATION.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Admin/PROBE_INVOCATION.md) | [Repo](https://github.com/ksarith/LazarusForgeV0/blob/main/Admin/PROBE_INVOCATION.md) | Explicit |
 | `Admin/Repository_Integrity_Protocol.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Admin/Repository_Integrity_Protocol.md) | [Repo](https://github.com/ksarith/LazarusForgeV0/blob/main/Admin/Repository_Integrity_Protocol.md) | Explicit |
@@ -123,6 +124,7 @@ This file acts as the primary network lookup table for automated agents, continu
 | `Archive/Pyrolysis_Cascade-Copilot.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Archive/Pyrolysis_Cascade-Copilot.md) | [Repo](https://github.com/ksarith/LazarusForgeV0/blob/main/Archive/Pyrolysis_Cascade-Copilot.md) | Explicit |
 | `Archive/Pyrolysis_Cascade-Grok.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Archive/Pyrolysis_Cascade-Grok.md) | [Repo](https://github.com/ksarith/LazarusForgeV0/blob/main/Archive/Pyrolysis_Cascade-Grok.md) | Explicit |
 | `Archive/README.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Archive/README.md) | [Repo](https://github.com/ksarith/LazarusForgeV0/blob/main/Archive/README.md) | Explicit |
+| `Archive/Rename_Registry.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Archive/Rename_Registry.md) | [Repo](https://github.com/ksarith/LazarusForgeV0/blob/main/Archive/Rename_Registry.md) | Explicit |
 | `Archive/RIP_GMP-Copilot.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Archive/RIP_GMP-Copilot.md) | [Repo](https://github.com/ksarith/LazarusForgeV0/blob/main/Archive/RIP_GMP-Copilot.md) | Explicit |
 | **Archive/Logs/ Layer** | | | |
 | `Archive/Logs/AUDIT_HARNESS_CHANGELOG.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Archive/Logs/AUDIT_HARNESS_CHANGELOG.md) | [Repo](https://github.com/ksarith/LazarusForgeV0/blob/main/Archive/Logs/AUDIT_HARNESS_CHANGELOG.md) | Explicit |
@@ -130,6 +132,7 @@ This file acts as the primary network lookup table for automated agents, continu
 | `Archive/Logs/Forge_Audit_Kit_Changelog.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Archive/Logs/Forge_Audit_Kit_Changelog.md) | [Repo](https://github.com/ksarith/LazarusForgeV0/blob/main/Archive/Logs/Forge_Audit_Kit_Changelog.md) | Explicit |
 | `Archive/Logs/Governance_Charter_Changelog.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Archive/Logs/Governance_Charter_Changelog.md) | [Repo](https://github.com/ksarith/LazarusForgeV0/blob/main/Archive/Logs/Governance_Charter_Changelog.md) | Explicit |
 | `Archive/Logs/Unknowns_Changelog.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Archive/Logs/Unknowns_Changelog.md) | [Repo](https://github.com/ksarith/LazarusForgeV0/blob/main/Archive/Logs/Unknowns_Changelog.md) | Explicit |
+| `Archive/Logs/Progress_Log_Changelog.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Archive/Logs/Progress_Log_Changelog.md) | [Repo](https://github.com/ksarith/LazarusForgeV0/blob/main/Archive/Logs/Progress_Log_Changelog.md) | Explicit |
 
 *\* **Discovery.md Description Context:** The foundational navigational directory and behavior scope boundary map for the active working repository layer. It anchors incoming multi-agent analysis runs and human code reviews, defining active document maturity gates, dependency maps, and evolutionary path tracking parameters without cluttering data extraction queries with long textual strings.*
 
@@ -160,7 +163,8 @@ missing most of Admin/, half of Architecture/, most of Challenges/ and
 Tests/, all of Automation/'s nine scripts, CONTRIBUTING.md, and all five
 `*_Scope_Map.md` files created 2026-08-07/08. Rebuilt from a direct
 listing of every `.md`/`.py` file actually present in each folder, not
-from memory or a prior table. Now at 117 entries across nine sections
+from memory or a prior table. Verified count at the time: 108 entries
+across nine sections
 (Root, Admin/, Architecture/, Operations/, Challenges/, Tests/,
 Automation/, Archive/, Archive/Logs/) — the latter three are new
 sections this file did not previously have. Archive/ and Archive/Logs/
@@ -169,3 +173,10 @@ material, not active doctrine, per `Admin/Repository_Integrity_Protocol.md`'s
 append-only rule for that directory. Human-directed, prompted by a direct
 request to verify this file's actual state rather than trust a prior
 description of it.
+
+**2026-08-09 addition:** three entries added — `Admin/Progress_Log.md` and
+`Archive/Rename_Registry.md` (both new, migrated/created same day), plus
+`Archive/Logs/Progress_Log_Changelog.md` (added once the first rotation
+out of `Progress_Log.md` happened, same day it was created). Verified current count: 111 entries. See `Discovery.md`'s
+Pending Corrections PC-007 and `Progress_Log.md`'s own Resolution Log
+for the full change this accompanies.

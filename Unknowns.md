@@ -3,39 +3,19 @@
 
 **Full version history in `Unknowns_Changelog.md` (2026-07-19 cleanup pass, following the precedent set by `Admin/AUDIT_HARNESS_CHANGELOG.md` and `Admin/Forge_Audit_Kit_Changelog.md`; scrubbed to current-version-only 2026-07-28 — the "current plus last four in full" window was itself compressed further, since the Audit Trail below now carries the compressed record for every version back to v1.0, and the changelog carries full text for all of them. This block now keeps only the current version.)**
 
-**Version 4.47 — 2026-08-07. CLF-010's Class-D gaming surface given its Challenge Class 8 adversarial pass.**
-`Challenges/Closed_Loop_Feedstock.md` §4a's known residual gaming surface
-(a pure Class-D batch scoring FIR = 0.5 with zero processing) was flagged
-2026-08-03 but never actually run through the Challenge Class 8 minimum
-requirement it cited. Named the malicious-actor scenario explicitly (park
-material in Class D indefinitely, harvest credit for work never done) and
-proposed a countermeasure: a one-Cycle Class-D residency cap (`Admin/
-Canonical_Terms.md` CT-011's existing default), demoting unconverted
-batches to zero credit at Cycle close. Bookkeeping rule only — no physical
-trial needed to define it, and the 0.5 factor itself remains Placeholder
-pending real §7.3 hardening exactly as before. Proposed, not ratified;
-CLF-010 remains Open — a separate audit event is still required for either
-the taxonomy or this countermeasure to close.
-
-**Version 4.46 — 2026-08-07. EC-016 corrected and downgraded — no live dual-ownership conflict found.**
-James asked directly how to resolve dual-ownership conflicts, prompting the
-first actual check of the underlying claim against `Governance_Charter.md`'s
-own content. Found a full `## Governance Authority Hierarchy` section, an
-explicit "Governance hierarchy" ownership-table row, and a 2026-08-05
-doctrine-vs-procedures clarification — none of which v4.45's registration
-had checked. `Governance_Migration_Protocol.md` and `Repository_Integrity_
-Protocol.md`'s own Scope Boundary sections were checked directly too:
-neither claims doctrine ownership in conflict with the Charter; GMP frames
-its interest as explicitly "proposed... pending," RIP explicitly defers
-governance doctrine to the Charter. EC-016 downgraded Major→Minor, narrowed
-to the one real residual gap (GMP's proposed/pending pattern isn't named as
-a reusable convention). Not closed — Open Unknowns count unchanged — this is
-a severity correction, not a resolution. Also corrects the record: today's
-earlier framing (this entry, RIP-011's neighboring context, a same-session
-GOV-008 audit thread, and `Governance_Migration_Protocol.md` §VII.8) all
-described this as multiple independent findings converging on one real gap.
-They were four threads repeating one unverified claim, not four
-confirmations of it.
+**Version 4.48 — 2026-08-09. "What vX.X Means" retired to `Admin/Progress_Log.md`.**
+This section had violated its own Size Management Rule 1 (retire and
+replace every version bump) for nine consecutive versions — last updated
+at v4.39, this file now well past that. Content migrated to the new
+`Admin/Progress_Log.md`, which uses dated headings instead of a version
+number so the same failure can't recur (nothing about adding a new entry
+requires touching an old one's heading). Rule 1 rewritten to point there.
+Companion change: `Discovery.md`'s "Cross-Module Unknowns — Attention
+Required" table — 19 versions stale, last refreshed at v4.29 — was removed
+outright rather than migrated, since this file's own Active Index with
+Priority/Blocking columns already serves that function without a shadow
+copy. No unknowns opened, closed, or reclassified by this version; this
+is a structural/navigational change only.
 
 **Expiry Rule active — see `Admin/Canonical_Terms.md` §4 for the Cycle definition this rule now explicitly references (one calendar year default, not one audit pass — see CT-011). Protocol Performance metrics collecting.**
 
@@ -64,21 +44,30 @@ Formal axioms, theorems, and Verification Algebra backing CF-004, AP-006, and ep
 
 ---
 
-## What v4.39 Means
+## Recent Lessons
 
-- **Copilot's self-promotion pattern is now a confirmed trend, not a one-off.** Three sessions running (`Operations/Energy.md`, `Operations/Gate_02_Triage.md` §XII, `Operations/Electronics.md`), a Copilot draft has silently advanced a file's Status and/or Spec Gates count with no audit evidence behind it. All three were caught and reverted before merge. Future cross-agent drafts from any agent should be checked against the file's actual current File State before anything in them is trusted at face value.
-- **A file's own Scope Boundary is a hard constraint on what gets added to it, not a suggestion.** A draft proposed adding confidence-collapse/split-brain handling directly to `Operations/Electronics.md`, which that file's own Scope Boundary explicitly assigns to `Architecture/Cognitive_Frameworks.md`. Rejected on that basis alone, independent of the content's quality.
-- **Doctrine that's already permanent and ratified overrides a plausible-sounding new proposal.** `Operations/Electronics.md` carries a permanent 2026-05-09 doctrine distinguishing MAC (pre-implementation verification) from hardware TMR/watchdog (runtime safety). A new "MAC-to-Hardware Bridge" proposal that would have let MAC outputs configure watchdog parameters was rejected as a direct instance of the conflation that doctrine exists to prevent, even though the proposal itself included a disclaimer that MAC couldn't override Layer 0/1.
+Migrated to `Admin/Progress_Log.md` 2026-08-09 — that section's own "What
+vX.X Means" heading had gone stale by nine version bumps (last updated at
+v4.39, this file now at v4.48+), a direct violation of Size Management
+Rule 1 below that nobody had been enforcing. `Progress_Log.md` uses dated
+headings instead of a version number, specifically so adding a new entry
+never requires renaming or retiring an old one. See that file for current
+and historical lessons.
 
 ## Size Management Rules
 
 These rules are enforced at every audit cycle opening:
 
-1. **What vX.X Means — rolling single section.** Only the current version's What section is kept live. When a new version is cut, the prior What section is retired. Its content is already captured in the Audit Trail entry for that version. Keeping stacked What sections is redundant.
+1. **Cross-cutting lessons live in `Admin/Progress_Log.md`, not here.** Prior
+   rule (retired 2026-08-09): "only the current version's What section is
+   kept live." That rule required a manual retirement step every version
+   bump, and had silently gone unenforced for nine versions before being
+   caught. `Progress_Log.md`'s dated-heading format removes the need for a
+   retirement step entirely — new entries never touch old ones.
 
 2. **Resolved entries leave the Active Index immediately.** Once an unknown is resolved, it is removed from the Active Index. Full resolution detail is recorded in the owning file's sidecar under Lessons Learned. This file carries no persistent archive of resolved entries — the Audit Trail's brief resolution notes are the only navigation-layer record maintained here. Active tables show Open, In Progress, and Reopened only.
 
-3. **Compression trigger at 1,200 lines.** If this file exceeds 1,200 lines, a compression pass is mandatory before new entries are added. Compression scope: retire old What sections, verify all resolved actives have been removed from the index, confirm no archive accumulation has restarted.
+3. **Compression trigger at 1,200 lines.** If this file exceeds 1,200 lines, a compression pass is mandatory before new entries are added. Compression scope: verify all resolved actives have been removed from the index, confirm no archive accumulation has restarted.
 
 4. **Audit Trail entries are to be in Unknowns_Changelog.md.** 
 
