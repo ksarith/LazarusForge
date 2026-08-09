@@ -115,6 +115,12 @@ FLAG: **No Scope Boundary section exists** — confirmed by direct heading searc
 **Does:** The exact cold-start copy-paste block for one Mission Drift Review cycle; canonical input file list; required output structure.
 **Does not (arrow):** Mechanism design/cadence/escalation rules, Invocation Record requirements (both `Auditor_Protocols.md`) - Axiom text (`Governance_Charter.md`).
 
+### `Admin/Progress_Log.md`
+**Status:** Active — Living Document · N/A (progression log) · 0 Open Unknowns · Risk: N/A
+**Does:** Rolling, dated-heading lessons/continuity log — replaces `Unknowns.md`'s retired "What vX.X Means" section and `Discovery.md`'s removed 19-versions-stale "Attention Required" table (both 2026-08-09).
+**Does not (arrow):** Duplicate `Unknowns.md`'s Active Index or any `*_Scope_Map.md`'s per-file content — references IDs, never restates full detail. Substitute for a per-file Resolution Log.
+Note: created same day as this Scope_Map build's own findings were still fresh — exists specifically because two other files (this session's own Discovery.md and Unknowns.md work) had independently developed the same failure mode (stale narrative content trapped in structural index files) from opposite directions.
+
 ### `Admin/Repository_Integrity_Protocol.md`
 **Status:** Draft · 2/6 · 9 Open Unknowns (RIP-001-011) · Risk: High
 **Does:** Integrity baselines for protected elements; violation detection/classification/recovery; version preservation (Section 109 hash/line-count anchor rule — see RIP-011); registration latency between sidecars and `Unknowns.md`.
