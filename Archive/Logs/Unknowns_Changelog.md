@@ -6,6 +6,20 @@ Split out from `Unknowns.md` 2026-07-19, following the precedent already establi
 
 ---
 
+**Version 4.47 — 2026-08-07. CLF-010's Class-D gaming surface given its Challenge Class 8 adversarial pass.**
+`Challenges/Closed_Loop_Feedstock.md` §4a's known residual gaming surface
+(a pure Class-D batch scoring FIR = 0.5 with zero processing) was flagged
+2026-08-03 but never actually run through the Challenge Class 8 minimum
+requirement it cited. Named the malicious-actor scenario explicitly (park
+material in Class D indefinitely, harvest credit for work never done) and
+proposed a countermeasure: a one-Cycle Class-D residency cap (`Admin/
+Canonical_Terms.md` CT-011's existing default), demoting unconverted
+batches to zero credit at Cycle close. Bookkeeping rule only — no physical
+trial needed to define it, and the 0.5 factor itself remains Placeholder
+pending real §7.3 hardening exactly as before. Proposed, not ratified;
+CLF-010 remains Open — a separate audit event is still required for either
+the taxonomy or this countermeasure to close.
+
 **Version 4.46 — 2026-08-07. EC-016 corrected and downgraded — no live dual-ownership conflict found.**
 James asked directly how to resolve dual-ownership conflicts, prompting the
 first actual check of the underlying claim against `Governance_Charter.md`'s
