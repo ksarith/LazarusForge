@@ -146,7 +146,19 @@ Admin/                                      — Governance, protocols, and doctr
     ├── Computational Institutional Reasoning — Formal theoretical paper; axiomatic state-machine model of institutional epistemics; Unknown Conservation, Governance Stability, Epistemic Debt Instability, and Institutional Memory Dominance theorems; non-linear Verification Algebra specification
     ├── Governance_Migration_Protocol.md    — Tier 1 Axiom amendment procedures
     ├── PROBE_INVOCATION.md                 — Copy-paste cold-start template for Mission Drift Review (AP-030); not doctrine, an operational prompt
-    └── AUDIT_HARNESS.py                    — Automated script supporting verification
+    ├── Hardware_Diversity_Ladder.md         — Four-tier path to a hardware-diverse GOV-008 quorum; Draft, declarable-not-achieved
+    └── BATTERY_SEED.md                      — Frozen prompt block for a genuine AP-017 cold-session Adversarial Battery run
+
+Automation/                                 — Scripts supporting verification and integrity checks
+    ├── AUDIT_HARNESS.py                    — Primary automated verification script
+    ├── audit_lib.py                        — Shared audit library functions
+    ├── parser.py                           — Routing/registry parsing
+    ├── integrity_check.py                  — Integrity verification script
+    ├── cold_session_bundler.py             — Cold-session audit bundling
+    ├── Cold_session_manifest.py            — Cold-session manifest generation
+    ├── Colab_Launcher.py                   — Colab environment launcher
+    ├── Colab_Integrity.py                  — Colab integrity checks
+    └── Colab_cold_session.py               — Colab cold-session runner
 
 Architecture/                               — System architecture and foundational logic
     ├── Arc_Scope_Map.md                     — Per-file scope/dependency index for this folder (2026-08-08)
@@ -244,6 +256,8 @@ Archive/                                    — Prior states of governance-beari
 
 > ⚠️ **Correction, 2026-08-06: full Maturity Snapshot re-verification, all 66 rows checked directly against each file's own current File State block for the first time since this file's creation.** Prior passes fixed individual rows as they were noticed; this pass programmatically extracted Status/Spec Gates/Highest Risk from every listed file and diffed against this table cell by cell. Result: **34 of 66 rows had at least one stale field** — roughly half the table. Notable findings: `Admin/Governance_Charter.md` showed Spec Gates 1/6 when the file has been at 6/6 since GOV-011 resolved 2026-07-05 (a month stale on the single most load-bearing file in the repository); `Admin/Auditor_Protocols.md` showed Status "Active" when the file's own File State says "Draft"; `Challenges/Emergence.md` showed Spec Gates "0/6" and Highest Risk "High" when the file — correctly, as a Problem-Statement subtype — has neither field at all, meaning those values were never real; `Admin/Forge_Audit_Kit.md` showed a Highest Risk of "Low" that doesn't exist anywhere in the file's own File State block. The six Active Problem-Statement Challenges files (Water, Biofouling, Waste, Planned_Obsolescence, Critical_Minerals, Energy_Scarcity) were re-checked and confirmed genuinely correct as-is — Problem-Statement subtype files don't carry Spec Gates/Highest Risk by design, this isn't an omission. Full corrected table below; every cell now traces to a specific line in its source file's own File State block, not to a prior pass's memory of that file. This does not mean the table is now permanently synchronized — same caveat as every prior correction: accurate as of what was checked today, not a standing guarantee.
 
+> ⚠️ **Correction, 2026-08-08: `Admin/Hardware_Diversity_Ladder.md` and `Admin/BATTERY_SEED.md` were entirely absent from this file's structure tree and Maturity Snapshot** — both real, both created earlier in the same work stream as other content this file did track, neither ever added here. Also: `Automation/` was never broken out as its own folder in the structure tree — `AUDIT_HARNESS.py` was shown nested under Admin/, with the other eight scripts in that folder (`audit_lib.py`, `parser.py`, `integrity_check.py`, `cold_session_bundler.py`, `Cold_session_manifest.py`, `Colab_Launcher.py`, `Colab_Integrity.py`, `Colab_cold_session.py`) absent entirely. All three gaps fixed below. Found while double-checking `Routing.md` at direct request — that file turned out to have a much larger, separate problem (see its own Resolution Log, 2026-08-08 rebuild); checking it prompted a cross-check of Discovery.md's own tree against the real filesystem rather than assuming this file was unaffected. Scripts' "Active" status carried forward from `AUDIT_HARNESS.py`'s existing entry as a reasonable default, not individually re-verified against each script's own internals — flagged as an assumption, not a confirmed fact, for whoever reviews this next.
+
 ---
 
 Canonical record of filename changes. Stale references should be resolved using this table.
@@ -316,7 +330,17 @@ Discovery.md is a navigation map — task tracking belongs in Unknowns.md.
 | `Admin/Governance_Migration_Protocol.md` | Exploration | 0/6 | High |
 | `Admin/Autonomy_Divergence_Protocol.md` | Draft — PROPOSED NOT RATIFIED | 0/6 (drafted, not yet audited) | High (governs response to AI governance/objective divergence) |
 | `Admin/PROBE_INVOCATION.md` | Draft | N/A — operational prompt template, not a doctrine or specification claim | — |
+| `Admin/Hardware_Diversity_Ladder.md` | Draft — Proposed implementation reference only | 0/6 | unlabeled |
+| `Admin/BATTERY_SEED.md` | Draft | N/A — operational prompt template, not a doctrine or specification claim | — |
 | `Automation/AUDIT_HARNESS.py` | Active | — | — |
+| `Automation/audit_lib.py` | Active | — | — |
+| `Automation/parser.py` | Active | — | — |
+| `Automation/integrity_check.py` | Active | — | — |
+| `Automation/cold_session_bundler.py` | Active | — | — |
+| `Automation/Cold_session_manifest.py` | Active | — | — |
+| `Automation/Colab_Launcher.py` | Active | — | — |
+| `Automation/Colab_Integrity.py` | Active | — | — |
+| `Automation/Colab_cold_session.py` | Active | — | — |
 | `Architecture/Forge_flow.md` | Exploration | 0/6 | Medium |
 | `Architecture/Components.md` | Exploration | 0/6 | Low |
 | `Architecture/Facilities.md` | Exploration | 0/6 | High |
