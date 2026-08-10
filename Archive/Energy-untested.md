@@ -25,7 +25,7 @@ Here is the complete **Energy.md v1.1** — a full regeneration that preserves e
 | Status           | Transitional                                                        |
 | Body Stability   | Improving                                                           |
 | Spec Gates       | 2/6                                                                 |
-| Verification Ref | Admin/Verification_Gates_LF.md                                      |
+| Verification Ref | Admin/Verification_Gates.md                                      |
 | Last Audit       | 2026-05-31 (original); expanded 2026-08-01                          |
 | Auditor          | Gemini (original); multi-agent expansion (Demand / EAL / TIA / Generation) |
 | Open Unknowns    | 3                                                                   |

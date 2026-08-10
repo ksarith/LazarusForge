@@ -19,7 +19,7 @@ components and the G.E.C.K
 | Status           | Exploration                                                         |
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 0/6                                                                 |
-| Verification Ref | Admin/Verification_Gates_LF.md                                      |
+| Verification Ref | Admin/Verification_Gates.md                                      |
 | Last Audit       | 2026-05-04 (Claude — Skeptic/Auditor); revised 2026-06-08           |
 | Auditor          | Claude — Skeptic/Auditor                                            |
 | Open Unknowns    | 3                                                                   |
@@ -585,7 +585,7 @@ in Components.md routes to PR-001 for resolution.
 - 2026-05-14: **GK-005** logged — `Architecture/Precision.md` identified as needed
   home document for full precision doctrine.
 - 2026-06-08: Navigation Anchors block added. Verification Ref corrected from
-  `Verification_Gates_LF.md` to `Admin/Verification_Gates_LF.md` (PC-001). Scope
+  `Verification_Gates.md` to `Admin/Verification_Gates.md` (PC-001). Scope
   Boundary stale filenames corrected: Precision_LF.md →
   `Architecture/Precision.md`, Trajectories_LF.md → `Admin/Trajectories.md`,
   energy_v0.md → `Operations/Energy.md` (PC-003). All stale filenames corrected
@@ -621,7 +621,7 @@ in Components.md routes to PR-001 for resolution.
 | Status           | Exploration                                                         |
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 0/6                                                                 |
-| Verification Ref | Admin/Verification_Gates_LF.md                                      |
+| Verification Ref | Admin/Verification_Gates.md                                      |
 | Last Audit       | 2026-05-14 (Gemini 3 Flash — Skeptic/Auditor); revised 2026-06-08  |
 | Auditor          | Gemini 3 Flash — Skeptic/Auditor                                    |
 | Open Unknowns    | 2                                                                   |
@@ -945,7 +945,7 @@ tolerance requirements emerge from actual loop closure attempts, not pre-specifi
 - May 2026: CO-002 logged per Gemini audit finding.
 - May 2026: File retrofitted to canonical LF_File_Template structure. File State, Scope Boundary, File Purpose, Assumptions, Active Disputes, structured unknown tables, and Abandoned Paths added.
 - 2026-06-08: Navigation Anchors block added. Verification Ref corrected from
-  `Verification_Gates_LF.md` to `Admin/Verification_Gates_LF.md` (PC-001). Scope
+  `Verification_Gates.md` to `Admin/Verification_Gates.md` (PC-001). Scope
   Boundary updated — `Architecture/Geck_forge_seed.md` backtick path corrected;
   `Architecture/Precision.md` added as precision ceiling doctrine owner (PC-003).
   Section IID `energy_v0.md` corrected to `Operations/Energy.md`. Section V loop

@@ -523,7 +523,7 @@ Evaluate M(n)
 
 ### 5. Relationship to the Six Operational Spec Gates
 
-The six sequential gates in `Admin/Verification_Gates_LF.md` (Fallacy Check → Physical Plausibility → …) are the *document-promotion* procedure used in day-to-day audits. The Verification Algebra is the deeper mathematical model that justifies why those gates exist and how maturity should be computed. In particular:
+The six sequential gates in `Admin/Verification_Gates.md` (Fallacy Check → Physical Plausibility → …) are the *document-promotion* procedure used in day-to-day audits. The Verification Algebra is the deeper mathematical model that justifies why those gates exist and how maturity should be computed. In particular:
 
 - Gate 2 (Physical Plausibility) is the operational expression of \(\Phi(n)\).
 - Provenance labeling and the prohibition on promoting Internally Derived claims implement \(\Psi(n)\).

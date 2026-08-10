@@ -312,7 +312,7 @@ Spec Gates
 
 Verification Ref
 
-Admin/Verification_Gates_LF.md
+Admin/Verification_Gates.md
 
 Last Audit
 

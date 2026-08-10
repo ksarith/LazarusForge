@@ -378,7 +378,7 @@ The table above is written so it can be dropped directly into a sidecar or Resol
 | Status           | Draft — Exploration                                                 |
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 0/6 (not yet audited)                                               |
-| Verification Ref | `Admin/Verification_Gates_LF.md`                                    |
+| Verification Ref | `Admin/Verification_Gates.md`                                    |
 | First Logged     | 2026-08-04                                                          |
 | Last Audit       | — (pre-audit skeleton)                                              |
 | Auditor          | —                                                                   |
