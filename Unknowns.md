@@ -306,7 +306,7 @@ GH-009 (Emergent heuristic conflict — N² interaction scaling)
 | CT-007 | ID namespace allocation doctrine undefined — narrower EC→ECN rename sub-issue resolved 2026-07-06; the broader namespace-allocation doctrine gap it was meant to cover remains genuinely Open, confirmed directly against source | `Admin/Canonical_Terms.md` | Open | — | Major |
 | CT-008 | HF-001 Heuristic Failure canonicalization status — cross-file consistency tracking | `Admin/Canonical_Terms.md` | In Progress | Vehicle | Minor |
 | CT-009 | Grain System implementation consistency — tracks Canonical_Terms.md definition against ST-001/ST-002 implementation | `Admin/Canonical_Terms.md` | Open | — | Minor |
-| CT-010 | Verification Gate / Enforcement Checkpoint rename propagation — confirm no file still cites unqualified "Gate N" for Governance_Charter.md's renamed checkpoints, outside Verification_Gates_LF.md and Operations/Gate_01–07 | `Admin/Canonical_Terms.md` | In Progress | Vehicle | Major |
+| CT-010 | Verification Gate / Enforcement Checkpoint rename propagation — confirm no file still cites unqualified "Gate N" for Governance_Charter.md's renamed checkpoints, outside Verification_Gates.md and Operations/Gate_01–07 | `Admin/Canonical_Terms.md` | In Progress | Vehicle | Major |
 
 ### Engineer Protocols
 
@@ -744,8 +744,8 @@ GH-009 (Emergent heuristic conflict — N² interaction scaling)
 | ID | Title | Owning File | Status | Subtype | Priority (Promo) |
 |---|---|---|---|---|---|
 | RS-001 | Non-markdown file type introduction procedure undefined | `Admin/Repository_Structure.md` | Open | — | Minor |
-| RS-002 | Forge_flow.md casing outlier not yet corrected | `Admin/Repository_Structure.md` | Open | — | Minor |
-| RS-003 | Archive/ directory not yet physically created | `Admin/Repository_Structure.md` | Open | — | Major |
+| RS-002 | Forge_flow.md casing outlier not yet corrected | `Admin/Repository_Structure.md` | Resolved 2026-08-09 — accepted outlier | — | Minor |
+| RS-003 | Archive/ directory not yet physically created | `Admin/Repository_Structure.md` | Resolved 2026-08-09 | — | Major |
 
 ### Precision
 

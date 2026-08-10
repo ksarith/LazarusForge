@@ -46,7 +46,7 @@ This file acts as the primary network lookup table for automated agents, continu
 | `Admin/Security_Protocols.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Admin/Security_Protocols.md) | [Repo](https://github.com/ksarith/LazarusForgeV0/blob/main/Admin/Security_Protocols.md) | Explicit |
 | `Admin/Ship_of_Theseus.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Admin/Ship_of_Theseus.md) | [Repo](https://github.com/ksarith/LazarusForgeV0/blob/main/Admin/Ship_of_Theseus.md) | Explicit |
 | `Admin/Trajectories.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Admin/Trajectories.md) | [Repo](https://github.com/ksarith/LazarusForgeV0/blob/main/Admin/Trajectories.md) | Explicit |
-| `Admin/Verification_Gates_LF.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Admin/Verification_Gates_LF.md) | [Repo](https://github.com/ksarith/LazarusForgeV0/blob/main/Admin/Verification_Gates_LF.md) | Explicit |
+| `Admin/Verification_Gates.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Admin/Verification_Gates.md) | [Repo](https://github.com/ksarith/LazarusForgeV0/blob/main/Admin/Verification_Gates.md) | Explicit |
 | **Architecture/ Layer** | | | |
 | `Architecture/Arc_Scope_Map.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Architecture/Arc_Scope_Map.md) | [Repo](https://github.com/ksarith/LazarusForgeV0/blob/main/Architecture/Arc_Scope_Map.md) | Explicit |
 | `Architecture/Chemistry.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Architecture/Chemistry.md) | [Repo](https://github.com/ksarith/LazarusForgeV0/blob/main/Architecture/Chemistry.md) | Explicit |
@@ -153,7 +153,7 @@ To prevent dead-ends and maintain rigorous structural provenance, every markdown
 ## Maintenance Protocol
 Update this file whenever:
  * A new file is added to the repository
- * A file is renamed (update entry; old name moves to Discovery.md Rename Registry)
+ * A file is renamed (update entry; old name moves to Archive/Rename_Registry.md)
  * A file is retired to Archive/ (remove from active table; add Archive/ entry if needed)
 Routing.md completeness is verified against Discovery.md structure map.
 Discrepancies between the two are logged as pending corrections in Discovery.md.

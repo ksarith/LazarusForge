@@ -129,7 +129,7 @@ Admin/                                      — Governance, protocols, and doctr
     ├── Ethical_Constraints.md              — Embedded AI governance & anti-weaponization (Tier 1)
     ├── Auditor_Protocols.md                — Verification doctrine; 10-phase sequence (Tier 2)
     ├── Forge_Audit_Kit.md                  — Condensed routine multi-agent cycle reference (Tier 3)
-    ├── Verification_Gates_LF.md            — Canonical 6 document promotion gates
+    ├── Verification_Gates.md            — Canonical 6 document promotion gates
     ├── File_Template.md                    — 10-section layout standard & Ethical Anchor field
     ├── Canonical_Terms.md                  — Anti-drift vocabulary & term exclusions
     ├── Engineer_Protocols.md               — Operational execution standards for engineers
@@ -142,8 +142,10 @@ Admin/                                      — Governance, protocols, and doctr
     ├── Economics.md                        — Dynamic resource doctrine; market navigation; barter
     ├── Environmental_Constraints.md        — Site, regulatory, ecological, and jurisdictional boundary conditions; RDC baseline; No-Externalized-Entropy doctrine
     ├── Experiments.md                      — Physical grounding registry; falsification records; EXP-ID artifacts for PROVISIONAL→VERIFIED claim transitions
-    ├── Nothingness Theorem                 — Philosophical substrate; foundational framework for salvage-first doctrine, distributed disagreement, and anti-entropy maintenance principles; functionless artifact filed in Admin
-    ├── Computational Institutional Reasoning — Formal theoretical paper; axiomatic state-machine model of institutional epistemics; Unknown Conservation, Governance Stability, Epistemic Debt Instability, and Institutional Memory Dominance theorems; non-linear Verification Algebra specification
+    ├── Nothingness_Theorem.md              — Philosophical substrate; foundational framework for salvage-first doctrine, distributed disagreement, and anti-entropy maintenance principles; Tier 0 / functionless by doctrine
+    ├── Computational_Institutional_Reasoning.md — Formal theoretical paper; axiomatic state-machine model of institutional epistemics; Unknown Conservation, Governance Stability, Epistemic Debt Instability, and Institutional Memory Dominance theorems; non-linear Verification Algebra specification
+    ├── CIR_Gov.md                          — CIR v2.0 predicate-kernel packaging; Proposed — Not Ratified; does not claim constitutional authority
+    ├── Autonomy_Divergence_Protocol.md     — Graduated response to observed autonomous-subsystem divergence; Draft — PROPOSED NOT RATIFIED
     ├── Governance_Migration_Protocol.md    — Tier 1 Axiom amendment procedures
     ├── PROBE_INVOCATION.md                 — Copy-paste cold-start template for Mission Drift Review (AP-030); not doctrine, an operational prompt
     ├── Hardware_Diversity_Ladder.md         — Four-tier path to a hardware-diverse GOV-008 quorum; Draft, declarable-not-achieved
@@ -224,7 +226,9 @@ Archive/                                    — Prior states of governance-beari
         ├── Governance_Charter_Changelog.md — Full version history for Governance_Charter.md
         ├── Forge_Audit_Kit_Changelog.md    — Full version history for Forge_Audit_Kit.md
         ├── AUDIT_HARNESS_CHANGELOG.md      — Full version history for AUDIT_HARNESS.py
-        └── Auditor_Protocols_Logs.md       — Full version history + AP-series registration log
+        ├── Auditor_Protocols_Logs.md       — Full version history + AP-series registration log
+        ├── Progress_Log_Changelog.md       — Rotated entries from Admin/Progress_Log.md (2026-08-09)
+        └── Discovery_Changelog.md          — Migrated correction-note history from Discovery.md (2026-08-09)
 ```
 
 **Planned / not yet created:**
@@ -288,11 +292,11 @@ Discovery.md is a navigation map — task tracking belongs in Unknowns.md.
 
 | File | Status | Spec Gates | Highest Risk |
 |------|--------|-----------|--------------|
-| `Admin/Governance_Charter.md` | Draft | 6/6 vs. `Admin/Verification_Gates_LF.md` — execution quality (see GOV-011, resolved 2026-07-05); promotion separately blocked by open unknowns (GOV-003, GOV-005) and Enforcement Checkpoint 2 — Bootstrap Paradox | Critical (GOV-013, GOV-015, GOV-018 — see `Archive/Logs/Governance_Charter_Changelog.md`; promotion-blocking risk unchanged from GOV-003/GOV-005) |
+| `Admin/Governance_Charter.md` | Draft | 6/6 vs. `Admin/Verification_Gates.md` — execution quality (see GOV-011, resolved 2026-07-05); promotion separately blocked by open unknowns (GOV-003, GOV-005) and Enforcement Checkpoint 2 — Bootstrap Paradox | Critical (GOV-013, GOV-015, GOV-018 — see `Archive/Logs/Governance_Charter_Changelog.md`; promotion-blocking risk unchanged from GOV-003/GOV-005) |
 | `Admin/Ethical_Constraints.md` | Exploration | 0/6 | High |
 | `Admin/Auditor_Protocols.md` | Draft | 4/6 (G1, G3, G4, G6 clear — G3 cleared 2026-08-03 via AP-017 Resolved; G5 conditional on cross-ref fixes below; G2 N/A — no physical/quantitative claims of its own) | High |
 | `Admin/Forge_Audit_Kit.md` | Draft | 0/6 | — |
-| `Admin/Verification_Gates_LF.md` | Draft | 2/6 | High |
+| `Admin/Verification_Gates.md` | Draft | 2/6 | High |
 | `Admin/File_Template.md` | Exploration / Draft / Specification | 0/6 | Low / Medium / High |
 | `Admin/Canonical_Terms.md` | Draft | 0/6 | Low |
 | `Admin/Engineer_Protocols.md` | Draft | 2/6 | High |

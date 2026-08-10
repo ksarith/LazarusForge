@@ -284,7 +284,7 @@ the infrastructure that prevents the system from drifting into entropy or weapon
 - `Admin/Governance_Migration_Protocol.md` — Two-track amendment system. Tier 1 Axioms
   require mandatory human ratification. The mechanism that keeps the constitution from
   calcifying and from being quietly rewritten
-- `Admin/Verification_Gates_LF.md` — Single canonical source for the six document
+- `Admin/Verification_Gates.md` — Single canonical source for the six document
   promotion gates (G1–G6)
 - `Admin/Forge_Audit_Kit.md` — Condensed audit reference for routine multi-agent cycles
 - `Admin/Canonical_Terms.md` — Anti-drift vocabulary. Single source of truth for
