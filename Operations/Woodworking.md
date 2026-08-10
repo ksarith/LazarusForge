@@ -19,7 +19,7 @@
 | Status | Draft |
 | Body Stability | Volatile |
 | Spec Gates | 0/6 |
-| Verification Ref | Admin/Verification_Gates_LF.md                                      |
+| Verification Ref | Admin/Verification_Gates.md                                      |
 | Last Audit       | 2026-05-30 (Gemini — Systems/Auditor); revised 2026-06-08           |
 | Auditor | Gemini — Systems/Auditor |
 | Open Unknowns | 5 |
@@ -410,7 +410,7 @@ Fine wood dust suspended in air is explosive. Do not allow dust to accumulate on
 - 2026-06-08: Navigation Anchors block added. Safety Advisory
   formatting corrected — horizontal rule added after advisory,
   stray `>` removed. Verification Ref corrected from
-  `Admin/Forge_Audit_Kit.md` to `Admin/Verification_Gates_LF.md`
+  `Admin/Forge_Audit_Kit.md` to `Admin/Verification_Gates.md`
   (PC-001). Scope Boundary updated — `Architecture/Facilities.md`
   added for shop siting and clearance zones (PC-002);
   `Admin/Safety_Protocols.md` added for hearing conservation

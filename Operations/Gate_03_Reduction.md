@@ -30,7 +30,7 @@
 | Status           | Exploration                                                         |
 | Body Stability   | Volatile                                                            |
 | Spec Gates       | 0/6                                                                 |
-| Verification Ref | Admin/Verification_Gates_LF.md                                      |
+| Verification Ref | Admin/Verification_Gates.md                                      |
 | Last Audit       | 2026-05-15; revised 2026-06-08                                      |
 | Auditor          | Claude — Retrofit/Auditor                                           |
 | Open Unknowns    | 8                                                                   |
@@ -850,7 +850,7 @@ actually deciding between.
   Synthesizer/Auditor, human-directed.
 - 2026-06-08: Navigation Anchors block added. Verification Ref
   corrected from `Admin/Forge_Audit_Kit.md` to
-  `Admin/Verification_Gates_LF.md` (PC-001). Scope Boundary
+  `Admin/Verification_Gates.md` (PC-001). Scope Boundary
   facility siting reference updated from `UNK-006 — no file
   exists yet` to `Architecture/Facilities.md — FA-001` (PC-002).
 

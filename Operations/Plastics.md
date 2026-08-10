@@ -27,7 +27,7 @@
 | Status           | Exploration                                                         |
 | Body Stability   | Volatile                                                            |
 | Spec Gates       | 0/6                                                                 |
-| Verification Ref | Admin/Verification_Gates_LF.md                                      |
+| Verification Ref | Admin/Verification_Gates.md                                      |
 | Last Audit       | 2026-05-27 (Grok — Skeptic/Auditor); revised 2026-06-08             |
 | Auditor          | Grok — Skeptic/Auditor                                              |
 | Open Unknowns    | 5                                                                   |
@@ -419,7 +419,7 @@ char composition is characterized and a routing decision tree is defined.
 - 2026-05-27: PL-005 — New entry. Char and solid residue handling gap identified
   in Grok Skeptic/Auditor audit 2026-05-27. Section D added to body.
 - 2026-06-08: Navigation Anchors block added. Verification Ref corrected from
-  `Admin/Forge_Audit_Kit.md` to `Admin/Verification_Gates_LF.md` (PC-001).
+  `Admin/Forge_Audit_Kit.md` to `Admin/Verification_Gates.md` (PC-001).
   Scope Boundary updated — `Architecture/Facilities.md` added for siting and
   hot-work zone requirements (PC-002); `Admin/Safety_Protocols.md` added for
   operator PPE and respiratory protection standards (PC-003). Both added to

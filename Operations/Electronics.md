@@ -35,9 +35,9 @@
 | Status           | Exploration                                                         |
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 0/6                                                                 |
-| Verification Ref | Admin/Verification_Gates_LF.md                                      |
-| Last Audit       | 2026-05-09 (multi-agent), actioned 2026-05-19; revised 2026-06-08; Threat Model/Trust Boundary/Heartbeat Token additions drafted 2026-08-02, not yet audited |
-| Auditor          | Claude — Retrofit/Auditor; Gemini — Synthesizer (CF-001 parameters); Copilot — drafted Threat Model/Trust Boundary/Firmware Provenance Log restructure (human-directed), 2026-08-02; Grok — drafted Heartbeat Token Cryptography spec and reviewed Copilot's draft (human-directed), 2026-08-02; Claude — verified against source, corrective merge (human-directed), 2026-08-02 |
+| Verification Ref | Admin/Verification_Gates.md                                      |
+| Last Audit       | 2026-08-09 — Grok pseudo-audit (Skeptic read + minimal fixes); prior: 2026-08-02 corrective merge; 2026-08-02 Threat Model/Heartbeat Token still not Gate-1 audited |
+| Auditor          | Claude — Retrofit/Auditor; Gemini — Synthesizer (CF-001 parameters); Copilot — drafted Threat Model/Trust Boundary/Firmware Provenance Log restructure (human-directed), 2026-08-02; Grok — drafted Heartbeat Token Cryptography spec and reviewed Copilot's draft (human-directed), 2026-08-02; Claude — verified against source, corrective merge (human-directed), 2026-08-02; Grok pseudo-audit 2026-08-09 — no Spec Gate promotion |
 | Open Unknowns    | 9                                                                   |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | High                                                                |
@@ -1255,10 +1255,10 @@ simple but must be defined before first use.
 | Risk          | High                                             |
 | Priority      | Critical                                         |
 | Type          | Technical / Safety                               |
-| Blocking      | No                                               |
+| Blocking      | Yes — PPE/scrubber sufficiency unknown until emissions characterized; blocks unsupervised milling/reflow |
 | Owner         | Operations/Electronics.md                        |
 | First Logged  | 2026-05-09                                       |
-| Last Reviewed | 2026-05-19                                       |
+| Last Reviewed | 2026-08-09                                       |
 
 **Description:** Actual particulate composition and
 BFR emission rates during CNC milling and bulk
@@ -1461,6 +1461,8 @@ exists and is cross-referenced from §IV.
 
 ### Resolution Log
 
+- 2026-08-09: **Pseudo-audit (Grok — Skeptic/Auditor read + minimal Synthesizer fixes; human-directed).** Correction: EL-005 Blocking No → Yes — file's own Why It Matters states PPE/scrubber doctrine may be insufficient until emissions characterized (respiratory hazard); Critical Priority with Blocking No understated the operational halt. Aligns with TS-002 treatment pattern. **Findings (not closed):** F-EL-001 — Open Unknowns 9 = EL-001–009; count matches. F-EL-002 — EL-006 correctly Blocking for first salvaged MCU integration; firmware trust not closable in-repo. F-EL-003 — Spec Gates 0/6 honest; 2026-08-02 Threat Model/Heartbeat Token additions remain proposed/unaudited. F-EL-004 — Unknowns.md Priority vocabulary for EL-001/002/003 uses Medium/Low vs local Major/Minor — systemic index overload, not fixed this pass. Spec Gates **unchanged** 0/6. Status **unchanged** Exploration.
+
 - 2026-08-02: **§I Threat Model / Trust Boundary Layers / Non-Integrable
   Component Classes / Firmware Provenance Log Format added; Counterfeit
   Severity Scale, Salvage Yield Metrics, Adversarial Testing Protocols,
@@ -1498,7 +1500,7 @@ exists and is cross-referenced from §IV.
   real one; (3) the invented "Spec Gates Definition" table redefining
   Gates 1–6 as file-local content milestones — same error as Energy.md
   and Gate_02_Triage.md §XII, rejected on the same grounds:
-  `Admin/Verification_Gates_LF.md` owns the six canonical gate
+  `Admin/Verification_Gates.md` owns the six canonical gate
   definitions; (4) the "Confidence Collapse Handling" section — this
   file's own Scope Boundary explicitly excludes confidence-collapse/
   split-brain doctrine as belonging to `Architecture/
@@ -1525,7 +1527,7 @@ exists and is cross-referenced from §IV.
   added to Section II.
 - 2026-06-08: Navigation Anchors block added.
   Verification Ref corrected from `Admin/Forge_Audit_Kit.md`
-  to `Admin/Verification_Gates_LF.md` (PC-001).
+  to `Admin/Verification_Gates.md` (PC-001).
   Scope Boundary UNK-006 reference updated to
   `Architecture/Facilities.md` FA-001 (PC-002).
 - 2026-06-08: Hardware Watchdog Doctrine section

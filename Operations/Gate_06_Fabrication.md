@@ -31,7 +31,7 @@
 | Status           | Exploration                                                         |
 | Body Stability   | Volatile                                                            |
 | Spec Gates       | 0/6                                                                 |
-| Verification Ref | Admin/Verification_Gates_LF.md                                      |
+| Verification Ref | Admin/Verification_Gates.md                                      |
 | Last Audit       | 2026-08-08 (Scope Boundary UNK-008 stale reference corrected); prior: 2026-05-19; revised 2026-06-08 |
 | Auditor          | Claude — Skeptic/Auditor (actioning ChatGPT audit 2026-05-19)       |
 | Open Unknowns    | 7                                                                   |
@@ -1186,7 +1186,7 @@ the fire risk profile is materially different.
 - 2026-06-08: Navigation Anchors block added.
   Verification Ref corrected from
   `Admin/Forge_Audit_Kit.md` to
-  `Admin/Verification_Gates_LF.md` (PC-001).
+  `Admin/Verification_Gates.md` (PC-001).
   Scope Boundary updated — `Architecture/Facilities.md`
   now exists and owns siting doctrine (PC-002);
   `Architecture/Precision.md` added as precision

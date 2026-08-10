@@ -29,9 +29,9 @@
 | Status           | Draft                                                               |
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 2/6                                                                 |
-| Verification Ref | Admin/Verification_Gates_LF.md                                      |
-| Last Audit       | 2026-07-17 (body); §XII proposed extension drafted 2026-08-02, not yet audited |
-| Auditor          | ChatGPT — Synthesizer; Claude — Engineer; Claude — Embedded Value Preservation cross-reference added (human-directed), 2026-07-17; Copilot — drafted TIL/TAL/TCM/TMV + CIR-Triage extension (human-directed), 2026-08-02; Claude — verified against source and `Admin/Verification_Gates_LF.md`, corrective merge (human-directed), 2026-08-02 |
+| Verification Ref | Admin/Verification_Gates.md                                      |
+| Last Audit       | 2026-08-09 — Grok pseudo-audit (Skeptic read + minimal fixes); prior: body 2026-07-17; §XII drafted 2026-08-02 still not Gate-1 audited |
+| Auditor          | ChatGPT — Synthesizer; Claude — Engineer; Claude — Embedded Value Preservation cross-reference added (human-directed), 2026-07-17; Copilot — drafted TIL/TAL/TCM/TMV + CIR-Triage extension (human-directed), 2026-08-02; Claude — verified against source and `Admin/Verification_Gates.md`, corrective merge (human-directed), 2026-08-02; Grok pseudo-audit 2026-08-09 — no Spec Gate promotion |
 | Open Unknowns    | 7                                                                   |
 | Active Disputes  | 1                                                                   |
 | Highest Risk     | High                                                                |
@@ -82,7 +82,7 @@
   CIR_Gov.md is itself Proposed — Not Ratified and structurally depends on
   GOV-008 — nothing in this file can promote §XII above that status)
 - The definition of Spec Gates 1–6
-  (→ `Admin/Verification_Gates_LF.md` — this file does not define its own
+  (→ `Admin/Verification_Gates.md` — this file does not define its own
   gate categories)
 
 ---
@@ -371,7 +371,7 @@ of this section is not evidence of operational capability.**
 
 The original draft of this material described itself as already
 constitutional and cited a "Spec Gate: Constitutional" category. Neither
-claim survives contact with the source files: `Admin/Verification_Gates_LF.md`
+claim survives contact with the source files: `Admin/Verification_Gates.md`
 defines exactly six gates (Fallacy Check, Physical Plausibility, Adversarial
 Challenge, Scope Alignment, Cross-Reference Integrity, Conflict Check) with
 no seventh "constitutional" tier, and `Admin/CIR_Gov.md` — the file this
@@ -588,7 +588,7 @@ See TS-005 through TS-008 below for tracked unknowns against this section.
 | May 2026 | Audit Review  | Station 3 routed Fail directly to disassembly        | Missing Human/AI Oversight Gate — irreversible action without hold       | Triage Terminal added as mandatory hold before any material recovery proceeds                              | Replicated | No                  |
 | May 2026 | Audit Review  | Queues treated as passive storage                    | Risk of latent hoarding, decision fatigue, dead inventory accumulation   | Queues are active allocations with decay, saturation behavior, and reassessment triggers                   | Replicated | No                  |
 | May 2026 | Audit Review  | Single triage axis (operational utility only)        | Strategically irreplaceable components destroyed at same confidence threshold as common components | Strategic Recoverability added as second triage axis; four-tier classification system | Analogous  | Yes                 |
-| 2026-08-02 | Cross-agent draft review | Copilot drafted TIL/TAL/TCM/TMV as an already-binding constitutional extension | Wrote candidate architecture as though it were ratified: invented a "Spec Gate: Constitutional" category not present in `Admin/Verification_Gates_LF.md`, and bound it into `Admin/CIR_Gov.md` despite that file's own Binding Status explicitly forbidding this | Cross-agent architectural drafts are useful but default to overclaiming operative status; every such draft needs to be checked against the actual gate/ratification state of every file it claims to extend, not just against plausibility | Analogous | Yes — recheck if §XII is ever promoted toward actual gate passage |
+| 2026-08-02 | Cross-agent draft review | Copilot drafted TIL/TAL/TCM/TMV as an already-binding constitutional extension | Wrote candidate architecture as though it were ratified: invented a "Spec Gate: Constitutional" category not present in `Admin/Verification_Gates.md`, and bound it into `Admin/CIR_Gov.md` despite that file's own Binding Status explicitly forbidding this | Cross-agent architectural drafts are useful but default to overclaiming operative status; every such draft needs to be checked against the actual gate/ratification state of every file it claims to extend, not just against plausibility | Analogous | Yes — recheck if §XII is ever promoted toward actual gate passage |
 
 ---
 
@@ -637,10 +637,10 @@ Cross-reference `Architecture/Forge_flow.md` FL-001 (gate logic determinism).
 | Risk          | Medium                         |
 | Priority      | Major                          |
 | Type          | Technical                      |
-| Blocking      | No                             |
+| Blocking      | Yes — contamination bypass is highest-risk triage failure mode (operator harm) |
 | Owner         | Operations/Gate_02_Triage.md   |
 | First Logged  | May 2026                       |
-| Last Reviewed | 2026-05-23                     |
+| Last Reviewed | 2026-08-09                     |
 
 **Description:** Full decontamination criteria, routing for components that
 cannot be decontaminated, and provenance tag requirements for contamination
@@ -815,6 +815,8 @@ until a scoring owner and cadence are assigned and logged here.
 
 ### Resolution Log
 
+- 2026-08-09: **Pseudo-audit (Grok — Skeptic/Auditor read + minimal Synthesizer fixes; human-directed).** Correction: TS-002 Blocking No → Yes — file's own "Why It Matters" calls contamination bypass the highest-risk triage failure mode with operator-harm potential; Unknowns.md already indexed Priority Blocking; local Blocking field understated the substance. **Findings (not closed):** F-G2-001 — Open Unknowns 7 = TS-001,002,003,005,006,007,008 (TS-004 Resolved discharge retained); count matches. F-G2-002 — Spec Gates 2/6 left unchanged; §XII explicitly does not raise gate count; no independent Gate evidence package re-verified this pass. F-G2-003 — DS-001 (retirement handoff auto vs operator re-triage) remains Open Active Dispute. F-G2-004 — TS-005–008 correctly non-blocking while §XII proposed/unaudited. Spec Gates **unchanged** 2/6. Status **unchanged** Draft.
+
 - 2026-08-02: **§XII.1a TIL v0 Log Specification added (Event_ID format,
   closed-loop fate tracking, multi-Forge deferral note), human-directed.**
   Grok drafted three implementation docs (TIL v0 log data model,
@@ -846,7 +848,7 @@ until a scoring owner and cadence are assigned and logged here.
   file's Scope Boundary — noted as `Admin/Canonical_Terms.md`'s territory
   if wanted later. No new Open Unknowns — this elaborates TS-005, and the
   CT-002 dependency is already tracked at TS-004.
-- 2026-08-02: **§XII Proposed Triage Intelligence & Governance Extension added, corrective merge, human-directed.** Copilot drafted a four-layer extension (Triage Intelligence Layer, Triage Arbitration Layer, Triage Capability Model, Triage Maturity Vector) plus a "CIR-Triage" constitutional-integration block. Verified against source before integrating. Merged in: the TIL/TAL/TCM/TMV architecture itself, as a clearly-marked proposed/unaudited §XII, with governance hooks reframed as candidate rules that formalize existing doctrine (Principle 9, the Oversight Gate requirement, ASM-005's N≥50 bar) rather than new authority. Cut: (1) the "CIR-Triage" section binding these predicates into `Admin/CIR_Gov.md` as constitutional law — CIR_Gov.md is Proposed — Not Ratified, 0/6 gates, and its own Binding Status section states nothing should issue a CIR-VERIFIED transition until GOV-008 is ratified; (2) the invented "Spec Gate: Constitutional" category, which does not exist in `Admin/Verification_Gates_LF.md`'s six canonical gates; (3) all framing that implied Gate D routing, threshold revision, or Oversight Gate decisions are already governed by these predicates — none are, until §XII passes its own Gate 1. Registered TS-005 through TS-008 to track the four sub-layers' lack of implementation, rather than leaving them unregistered. Open Unknowns 3 → 7. Spec Gates unchanged at 2/6 — drafting §XII is not a gate pass.
+- 2026-08-02: **§XII Proposed Triage Intelligence & Governance Extension added, corrective merge, human-directed.** Copilot drafted a four-layer extension (Triage Intelligence Layer, Triage Arbitration Layer, Triage Capability Model, Triage Maturity Vector) plus a "CIR-Triage" constitutional-integration block. Verified against source before integrating. Merged in: the TIL/TAL/TCM/TMV architecture itself, as a clearly-marked proposed/unaudited §XII, with governance hooks reframed as candidate rules that formalize existing doctrine (Principle 9, the Oversight Gate requirement, ASM-005's N≥50 bar) rather than new authority. Cut: (1) the "CIR-Triage" section binding these predicates into `Admin/CIR_Gov.md` as constitutional law — CIR_Gov.md is Proposed — Not Ratified, 0/6 gates, and its own Binding Status section states nothing should issue a CIR-VERIFIED transition until GOV-008 is ratified; (2) the invented "Spec Gate: Constitutional" category, which does not exist in `Admin/Verification_Gates.md`'s six canonical gates; (3) all framing that implied Gate D routing, threshold revision, or Oversight Gate decisions are already governed by these predicates — none are, until §XII passes its own Gate 1. Registered TS-005 through TS-008 to track the four sub-layers' lack of implementation, rather than leaving them unregistered. Open Unknowns 3 → 7. Spec Gates unchanged at 2/6 — drafting §XII is not a gate pass.
 - 2026-07-21: **CT-002 → TS-004 (Resolved — Discharge via Consolidation), human-directed, surfaced by `Automation/integrity_check.py`.** The sidecar entry previously logged here as "CT-002" collided with `Admin/Canonical_Terms.md`'s own CT-002 — the same Component Library Schema unknown, independently logged there 11 days earlier (2026-05-26). Renamed to this file's own `TS-` convention and marked discharged to `Admin/Canonical_Terms.md`'s CT-002, which `Unknowns.md`'s global index already treated as canonical. Entry retained per the non-deletion principle, not removed. Open Unknowns 4 → 3.
 - 2026-07-17: **Embedded Value Preservation cross-reference added (human-directed).** New Core Principle 9, sourced from `Challenges/Closed_Loop_Feedstock.md` §2a's ratification the same day. Governs a step Principle 8 (Strategic Recoverability) doesn't reach: separable high-value sub-components in a triage-failed unit are extracted and preserved before what remains proceeds to full reduction. Routing table (§IV) annotated at the Gate D / Material Recovery row. Does not change the pass/fail triage decision itself — only what happens to material already routed to Reduction.
 - May 2026: Gate Correspondence table added.
@@ -863,7 +865,7 @@ until a scoring owner and cadence are assigned and logged here.
 - May 2026: Interfaces section added.
 - May 2026: Station 4 anti-overfitting protection added.
 - 2026-05-23: Retrofitted to File_Template.md structure. Safety Advisory, File State table, Scope Boundary, File Purpose, Assumptions table, Abandoned Paths, Drift Indicators added. DS-001 (retirement handoff dispute) added to Active Disputes. Stale flat filenames corrected to canonical folder-prefixed paths throughout. Lessons Learned reformatted to full table with Evidence Type and Confidence columns. Sidecar unknowns reformatted to structured table format.
-- 2026-06-06: Navigation Anchors block added. Verification Ref corrected to Admin/Verification_Gates_LF.md. Electronics.md cross-reference corrected to Operations/Electronics.md. Duplicate separator removed. Interfaces table updated — Precision.md and Facilities.md added as upstream references. CT-002 cross-reference entry added to sidecar. Open Unknowns updated 3 → 4.
+- 2026-06-06: Navigation Anchors block added. Verification Ref corrected to Admin/Verification_Gates.md. Electronics.md cross-reference corrected to Operations/Electronics.md. Duplicate separator removed. Interfaces table updated — Precision.md and Facilities.md added as upstream references. CT-002 cross-reference entry added to sidecar. Open Unknowns updated 3 → 4.
 - 2026-07-12: Reordered Abandoned Paths and Drift Indicators to after Auditor Notes & Unknowns, per template order — they previously sat between Active Disputes and Auditor Notes & Unknowns. No other content changed. Same fix applied same day to `Operations/Air_Scrubber.md` and `Operations/Energy.md`.
 
 ---

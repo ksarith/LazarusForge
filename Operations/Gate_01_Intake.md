@@ -28,7 +28,7 @@
 | Status           | Exploration                                                         |
 | Body Stability   | Volatile                                                            |
 | Spec Gates       | 0/6                                                                 |
-| Verification Ref | Admin/Verification_Gates_LF.md                                      |
+| Verification Ref | Admin/Verification_Gates.md                                      |
 | Last Audit       | 2026-05-19                                                          |
 | Auditor          | Claude — Skeptic/Auditor (actioning ChatGPT audit 2026-05-19)       |
 | Open Unknowns    | 7                                                                   |
@@ -994,7 +994,7 @@ hazards are not yet acknowledged in the system.
   scope constraint added to Section 5.
 - 2026-06-08: Navigation Anchors block added.
   Verification Ref corrected from `Admin/Forge_Audit_Kit.md`
-  to `Admin/Verification_Gates_LF.md` (PC-001).
+  to `Admin/Verification_Gates.md` (PC-001).
   Scope Boundary and sidecar UNK-006 references
   updated to `Architecture/Facilities.md` FA-001
   (PC-002). Section 2 operator safety cross-reference

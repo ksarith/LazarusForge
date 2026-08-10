@@ -28,7 +28,7 @@
 | Status           | Exploration                                                         |
 | Body Stability   | Volatile                                                            |
 | Spec Gates       | 0/6                                                                 |
-| Verification Ref | Admin/Verification_Gates_LF.md                                      |
+| Verification Ref | Admin/Verification_Gates.md                                      |
 | Last Audit       | 2026-05-19; revised 2026-06-08                                      |
 | Auditor          | Claude — Retrofit/Auditor                                           |
 | Open Unknowns    | 5                                                                   |
@@ -729,7 +729,7 @@ different owning file. FRT floor calibration closes both.
   pending operator commissioning decision. FRT logging section (Section 2b)
   added to body. Scope Boundary updated. Open unknowns count updated to 5.
 - 2026-06-08: Navigation Anchors block added. Verification Ref corrected
-  from `Admin/Forge_Audit_Kit.md` to `Admin/Verification_Gates_LF.md`
+  from `Admin/Forge_Audit_Kit.md` to `Admin/Verification_Gates.md`
   (PC-001). Scope Boundary updated — `Architecture/Facilities.md` reference
   added replacing `UNK-006` (PC-002); `Admin/Economics.md` added as FRT
   floor and v1 economic baseline owner (PC-003).

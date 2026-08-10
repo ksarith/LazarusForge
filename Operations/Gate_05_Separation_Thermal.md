@@ -24,7 +24,7 @@
 | Status           | Exploration                                                         |
 | Body Stability   | Volatile                                                            |
 | Spec Gates       | 0/6                                                                 |
-| Verification Ref | Admin/Verification_Gates_LF.md                                      |
+| Verification Ref | Admin/Verification_Gates.md                                      |
 | Last Audit       | 2026-08-08 (Scope Boundary DOES-NOT wording corrected to match Lessons Learned); prior: 2026-07-31 (SC-009 registered; SC-004 expanded with Driving Mechanism Options) |
 | Auditor          | Claude — Retrofit/Auditor; Claude — Synthesizer, human-directed (SC-009, SC-004 expansion), 2026-07-31 |
 | Open Unknowns    | 9                                                                   |
@@ -852,8 +852,8 @@ alternative if the rate proves significant.
   validation to balance and vibration characterization.
 - 2026-06-08: Navigation Anchors block added. Title corrected
   from `Spin Chamber (v0)` to `Gate_05_Separation_Thermal`.
-  Verification Ref corrected from `Verification_Gates_LF.md`
-  to `Admin/Verification_Gates_LF.md` (PC-001). Facilities.md
+  Verification Ref corrected from `Verification_Gates.md`
+  to `Admin/Verification_Gates.md` (PC-001). Facilities.md
   upstream reference added to Scope Boundary (PC-002). All
   stale filenames corrected throughout: Material_Separation_Gate_v0.md
   → Gate_04_Separation_Mechanical.md, Lazarus_forge_v0_flow.md

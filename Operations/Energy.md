@@ -11,7 +11,7 @@
 > ⚠️ **Operational Safety Advisory**
 > Salvaged electrochemical batteries with unknown state-of-health present catastrophic thermal runaway and toxic hydrofluoric acid outgassing risks. Containment and isolation protocols are mandatory before any salvaged battery bank is commissioned (EV-003). Do not install salvaged storage in unventilated or uninsulated enclosures. Air Scrubber operation is strictly required during any battery handling, charging, or thermal failure event. **When in doubt, isolate the battery bank and do not proceed.**
 >
-> Multi-source operation (grid + motor-generators + biogas + solar + thermal recovery) introduces voltage, frequency, and ripple instability risks. The Energy Arbitration Layer (EAL) and Source Stability & Harmonization Layer are proposed doctrine, drafted this session and not yet audited — treat as a candidate architectural model, not a validated safety mechanism, until it clears Gate 1.
+> Multi-source operation (grid + motor-generators + biogas + solar + thermal recovery) introduces voltage, frequency, and ripple instability risks. The Energy Arbitration Layer (EAL) and Source Stability & Harmonization Layer are proposed doctrine, drafted 2026-08-01 and not yet audited — treat as a candidate architectural model, not a validated safety mechanism, until it clears Gate 1.
 
 ---
 
@@ -22,9 +22,9 @@
 | Status           | Draft                                                                |
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 1/6                                                                 |
-| Verification Ref | Admin/Verification_Gates_LF.md                                      |
-| Last Audit       | 2026-05-31 (original, Gemini); EGL/Storage Model expansion drafted 2026-08-01, not yet audited |
-| Auditor          | Gemini (original, 2026-05-31); Grok — drafted Energy Governance Layer expansion (human-directed, 2026-08-01), pending Gate 1 pass |
+| Verification Ref | Admin/Verification_Gates.md                                      |
+| Last Audit       | 2026-08-09 — Grok pseudo-audit (Skeptic read + minimal Synthesizer fixes); prior: 2026-08-02 dual-audit adjudication; EGL body still not Gate-1 cleared |
+| Auditor          | Gemini (2026-05-31); Grok EGL draft (2026-08-01); Gemini+Grok dual-audit (2026-08-02); Grok pseudo-audit (2026-08-09) — no Spec Gate promotion |
 | Open Unknowns    | 5                                                                   |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | High                                                                |
@@ -56,7 +56,7 @@
 - Detailed chemistry sorting algorithms for unknown cells (→ `Operations/Gate_02_Triage.md`)
 - Full cryptographic key management or root-of-trust for energy controllers (cross-ref `Operations/Electronics.md` EL-006)
 - Detailed superconductivity materials science (exploratory horizon only)
-- The canonical meaning of Spec Gates 1–6 (→ `Admin/Verification_Gates_LF.md` — this file does not redefine what a gate is)
+- The canonical meaning of Spec Gates 1–6 (→ `Admin/Verification_Gates.md` — this file does not redefine what a gate is)
 
 ---
 
@@ -217,7 +217,7 @@ Governance constraint (proposed): If \(L(t) + W(t) + S(t)\) cannot be maintained
 | Nominal           | 15–40 kW                    | ±5% [Placeholder]        | Grid / Scaled Generators + Air Scrubber     | Throttle feed rates; pause secondary axes        |
 | Thermal Melt (G5) | 8.0 kW burst                | ±10% [Placeholder]       | Direct Generator / Biomass Syngas Loop      | Safety clamp; dump molten charge to safe crucible|
 
-*Note: "G5" above refers to `Operations/Gate_05_Separation_Thermal.md`, not Spec Gate 5 (Cross-Reference Integrity) in `Admin/Verification_Gates_LF.md`. Retained from the original table; flagging to prevent conflation between the two G5 usages.*
+*Note: "G5" above refers to `Operations/Gate_05_Separation_Thermal.md`, not Spec Gate 5 (Cross-Reference Integrity) in `Admin/Verification_Gates.md`. Retained from the original table; flagging to prevent conflation between the two G5 usages.*
 
 #### Layer 3 — Transient Loads
 
@@ -494,10 +494,10 @@ Key guiding principles drawn from disciplined analysis:
 | Risk          | Medium                                                                |
 | Priority      | Major                                                                 |
 | Type          | Technical                                                             |
-| Blocking      | Yes — blocks v1 operating cost model and `Admin/Economics.md` EC-002 |
+| Blocking      | Yes — blocks v1 operating cost model and `Admin/Economics.md` ECN-002 |
 | Owner         | `Operations/Energy.md`                                                |
 | First Logged  | 2026-05-27                                                            |
-| Last Reviewed | 2026-08-02                                                            |
+| Last Reviewed | 2026-08-09                                                            |
 
 **Description:** Actual consumption of the physical bootstrap hardware remains an estimate based on industrial analogs. The proposed Demand Model gives those estimates equation structure; measured data still does not exist.
 
@@ -589,12 +589,14 @@ Key guiding principles drawn from disciplined analysis:
 
 ### Resolution Log
 
+- 2026-08-09: **Pseudo-audit (Grok — Skeptic/Auditor read + minimal Synthesizer fixes only; human-directed pilot).** Role limits: no Spec Gate promotion, no physical-unknown closure, no self-approval. **Corrections applied:** (1) EV-001 Blocking cross-ref `EC-002` → `ECN-002` (Economics ID namespace rename; confirmed against `Admin/Economics.md` and `Unknowns.md`); (2) Safety Advisory "drafted this session" → "drafted 2026-08-01" (session-relative language had gone stale). **Findings logged, not closed:** F-EN-001 — Spec Gates remains 1/6 with historical justification in 2026-08-02 log, but no independent current Gate 1 evidence package for the pre-EGL core is restated in-file; not demoted to 0/6 (that would also be a claim without dual-auditor Gate work). F-EN-002 — Unknowns.md Active Index still shows EV-001 Priority column as "Blocking" while this file's sidecar correctly separates Priority: Major and Blocking: Yes — index vocabulary overload, systemic, not unique to this file. F-EN-003 — EGL / EAL / Source Stability remain proposed/unaudited; EV-004/EV-005 correctly open. **Verified intact:** Open Unknowns count 5 matches EV-001–005; Air_Scrubber Variant 0 positive-pressure cross-ref valid against `Operations/Air_Scrubber.md`; EV-003 safety advisory and Scrubber Prerequisite still load-bearing; no `Verification_Gates_LF` residue. Spec Gates **unchanged** at 1/6. Status **unchanged** Draft.
+
 - 2026-05-27: EV-001–003 logged and structured.
 - 2026-05-31: Spec Gate 1 baseline; Tar Minimization and 35°C/22% interlocks integrated; EV-001 bound to hardware envelope table; EV-003 physical isolation codified.
 - 2026-06-08: Navigation Anchors and Verification Ref corrected; sidecar format normalized.
 - 2026-07-12: Abandoned Paths / Drift Indicators reordered per template.
 - 2026-08-01: Grok drafted a full Energy Governance Layer expansion (Demand + Generation + EAL + TIA), a Storage Model expansion of EV-003, and an Energy Capability Trajectory, claiming Spec Gates advanced to 2/6 and File Status → Transitional.
-- 2026-08-02: **Corrective merge, human-directed.** Verified the 2026-08-01 draft against source and against `Admin/Verification_Gates_LF.md`/`Admin/File_Template.md` before integrating. Merged in: EGL (Demand/Generation/EAL/TIA), Storage Model SoH classing, Source Stability & Harmonization, Energy Capability Trajectory — all explicitly marked **proposed / not yet audited**, distinct from the original 2026-05-31 audited body. Cut/corrected: (1) `Status` and `Body Stability` fields reverted to valid `Admin/File_Template.md` enum values (Draft / Transitional) — the draft had written a Body-Stability value ("Transitional") into the Status field and invented a non-canonical Body Stability value ("Improving"); (2) Spec Gates reverted 2/6 → 1/6 and the draft's invented file-local "Spec Gates Definition" table (which redefined G1–G6 as content milestones) removed — Gate 2 was self-declared "Closed (structural)" with no Gate 1 Fallacy Check or Gate 2 Physical Plausibility pass by a different agent, and the canonical G1–G6 meanings are fixed by `Admin/Verification_Gates_LF.md`, not locally redefinable per file; (3) restored the Superconductivity section's original Integration Pathways and Cross-References & Migration Path content, which the draft had cut despite claiming full preservation — stripped only the non-substantive citation-card render artifacts; (4) corrected ASM-006's citation from `Operations/Electronics.md` CF-001 to `Architecture/Cognitive_Frameworks.md` CF-001 (owning file), noting Electronics.md as implementer; (5) added inline notes disambiguating the table's "G5" (Gate_05_Separation_Thermal.md) and the Source Classes table's "G₁–G₅" labels from canonical Spec Gates 1–6, to prevent future conflation. Open Unknowns unchanged at 3; no new unknowns registered for the proposed EGL pending a real Gate 1 pass.
+- 2026-08-02: **Corrective merge, human-directed.** Verified the 2026-08-01 draft against source and against `Admin/Verification_Gates.md`/`Admin/File_Template.md` before integrating. Merged in: EGL (Demand/Generation/EAL/TIA), Storage Model SoH classing, Source Stability & Harmonization, Energy Capability Trajectory — all explicitly marked **proposed / not yet audited**, distinct from the original 2026-05-31 audited body. Cut/corrected: (1) `Status` and `Body Stability` fields reverted to valid `Admin/File_Template.md` enum values (Draft / Transitional) — the draft had written a Body-Stability value ("Transitional") into the Status field and invented a non-canonical Body Stability value ("Improving"); (2) Spec Gates reverted 2/6 → 1/6 and the draft's invented file-local "Spec Gates Definition" table (which redefined G1–G6 as content milestones) removed — Gate 2 was self-declared "Closed (structural)" with no Gate 1 Fallacy Check or Gate 2 Physical Plausibility pass by a different agent, and the canonical G1–G6 meanings are fixed by `Admin/Verification_Gates.md`, not locally redefinable per file; (3) restored the Superconductivity section's original Integration Pathways and Cross-References & Migration Path content, which the draft had cut despite claiming full preservation — stripped only the non-substantive citation-card render artifacts; (4) corrected ASM-006's citation from `Operations/Electronics.md` CF-001 to `Architecture/Cognitive_Frameworks.md` CF-001 (owning file), noting Electronics.md as implementer; (5) added inline notes disambiguating the table's "G5" (Gate_05_Separation_Thermal.md) and the Source Classes table's "G₁–G₅" labels from canonical Spec Gates 1–6, to prevent future conflation. Open Unknowns unchanged at 3; no new unknowns registered for the proposed EGL pending a real Gate 1 pass.
 - 2026-08-02: **Dual-audit adjudication (Gemini Skeptic/Auditor + Grok Skeptic/Auditor, both against `Admin/Auditor_Protocols.md`/`Admin/Forge_Audit_Kit.md`), human-directed.** Both audits verified against source before acting on either. Merged from Gemini (found, Grok missed): (1) the Source Classes table's TEG description ("stabilizes baseline rails") and the Layer 2 Operational Modes table's Logic/Watchdog row (listing "Primary TEG" as a baseline-mode source) implied TEG can supply idle-state load with no active thermal process running — physically ungrounded, since TEG output requires `Q_waste(t) > 0`; corrected, and EV-005 registered to track the underlying net-positive-threshold gap; (2) EV-004 registered for EAL hardware watchdog/firmware-isolation validation — ASM-006 carried the assumption but nothing tracked the hardware realization itself; (3) the Safety Advisory's "treat as structural specification" phrasing revised to "candidate architectural model" — legitimate semantic-hygiene catch, since "specification" is a loaded term adjacent to the File State `Status` enum; (4) the bare "Engineering.md" cross-reference corrected to `Architecture/Engineering.md`, matching this repo's first-mention-full-path convention; (5) Voltage Ripple values in the Operational Modes table tagged `[Placeholder]`, matching the file's existing confidence-labeling convention elsewhere; (6) Storage Model gained Safe Maintenance Access and End-of-Life Disposal Routing subsections (cross-referencing `Operations/Gate_02_Triage.md` and `Challenges/Waste.md`), closing a real lifecycle-truncation gap both audits independently noted at different severities. **Rejected from Gemini's audit:** the finding that the Ethical Anchor field's unprefixed "Ethical_Constraints.md" needs an `Admin/` prefix — `Admin/File_Template.md` fixes that exact unprefixed string as the canonical, non-negotiable value across every file in this repository, and `Tests/Support_Raft.md`'s own Resolution Log records a 9-file sweep (2026-07-12) that *removed* an `Admin/`-prefixed variant to restore this same plain-text form; adding the prefix would repeat a mistake already caught and fixed once. Also not adopted: Gemini's flag on "Payment via Specification only" as semantic drift — that phrase is the file's own pre-existing, previously-audited idiom (used identically in EV-001/002/003's Resolution Paths since 2026-05-31), not new promotion-hazard language. On balance, Grok's gate verdicts (G1/G2-provisional/G4/G5/G6 cleared, G3 partial-by-design) were better calibrated to what this file actually claims about itself — Energy.md's Status has been Draft/Exploration throughout and never purported to pass any gate, so treating open physical-plausibility gaps in clearly-quarantined proposed content as file-blocking (Gemini's framing) overstates the stakes; Grok's "flag and track" framing better matches the file's own honesty about its maturity. Open Unknowns 3 → 5 (EV-004, EV-005). Status/Spec Gates unchanged (Draft, 1/6) — none of this promotes anything, it corrects and tracks.
 
 ---
@@ -603,7 +605,7 @@ Key guiding principles drawn from disciplined analysis:
 
 | Date       | Path                                      | Why Abandoned                                                              | Reconsider? |
 |------------|--------------------------------------------|-------------------------------------------------------------------------------|-------------|
-| 2026-08-02 | File-local redefinition of Spec Gates 1–6 | Conflicts with canonical gate definitions in `Admin/Verification_Gates_LF.md`; would desync this file's gate semantics from the rest of the repo | No — use canonical gates only |
+| 2026-08-02 | File-local redefinition of Spec Gates 1–6 | Conflicts with canonical gate definitions in `Admin/Verification_Gates.md`; would desync this file's gate semantics from the rest of the repo | No — use canonical gates only |
 
 ---
 
@@ -620,7 +622,7 @@ Mandatory re-audit conditions:
 - Thermal Class T₁ loads routed without verified containment path
 - Superconductivity treated as assumed or near-term rather than exploratory
 - Multi-source hybrid configuration commissioned without Source Stability & Harmonization validation
-- Spec Gates 1–6 redefined locally within this file rather than deferring to `Admin/Verification_Gates_LF.md`
+- Spec Gates 1–6 redefined locally within this file rather than deferring to `Admin/Verification_Gates.md`
 
 **Compound Drift Rule:** If multiple indicators activate simultaneously, halt autonomous audit progression and escalate for human review.
 

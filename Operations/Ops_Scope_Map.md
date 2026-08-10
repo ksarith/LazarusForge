@@ -37,7 +37,7 @@ Third folder in the Scope_Map rollout, following `Admin/Adm_Scope_Map.md` (2026-
 ### `Operations/Energy.md`
 **Status:** Draft · 1/6 · 5 Open Unknowns · Risk: High
 **Does:** Incremental energy integration philosophy v0-v1; generation interlocks (syngas/biomass); power mode envelopes; battery protection parameters; Energy Governance Layer (EGL — Demand/Generation/Arbitration/Thermal models, proposed 2026-08-01, audited 2026-08-02, not yet ratified); Storage Model & Battery Governance; Energy Capability Trajectory.
-**Does not (arrow):** Deep-environment battery physics (`Tests/Leviathan_testing.md` LT-002) · Leviathan power envelope (`Tests/Leviathan_testing.md` LT-001) · unknown-cell chemistry sorting (`Gate_02_Triage.md`) · crypto/root-of-trust (`Electronics.md` EL-006) · Spec Gate definitions (`Admin/Verification_Gates_LF.md`).
+**Does not (arrow):** Deep-environment battery physics (`Tests/Leviathan_testing.md` LT-002) · Leviathan power envelope (`Tests/Leviathan_testing.md` LT-001) · unknown-cell chemistry sorting (`Gate_02_Triage.md`) · crypto/root-of-trust (`Electronics.md` EL-006) · Spec Gate definitions (`Admin/Verification_Gates.md`).
 
 ### `Operations/Gate_01_Intake.md`
 **Status:** Exploration · 0/6 · 7 Open Unknowns · Risk: Medium

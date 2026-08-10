@@ -35,7 +35,7 @@
 | Status           | Draft                                                               |
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 3/6                                                                 |
-| Verification Ref | Admin/Verification_Gates_LF.md                                      |
+| Verification Ref | Admin/Verification_Gates.md                                      |
 | Last Audit       | 2026-05-31                                                          |
 | Auditor          | Gemini                                                              |
 | Open Unknowns    | 4                                                                   |
@@ -495,7 +495,7 @@ Successful execution of all four protocols is the
 physical evidence required to advance Spec Gates
 from 3/6 to 4/6. Results are logged in the Test
 Execution Matrix below and contributed to
-`Admin/Verification_Gates_LF.md`.
+`Admin/Verification_Gates.md`.
 
 ### Pre-Test Safety & Harness Setup
 
@@ -644,7 +644,7 @@ before updating File State Spec Gates to 4/6.
 If all four protocols achieve Pass status:
 
 1. Append verified checklist data to the
-   `Admin/Verification_Gates_LF.md` log tracking
+   `Admin/Verification_Gates.md` log tracking
    repository.
 2. Update the Spec Gates field in File State from
    3/6 to 4/6.
@@ -857,8 +857,8 @@ that calibration step.
   Flashback arrestors and corrosion isolation material
   updates added. Promoted Spec Gates to 3/6.
 - 2026-06-08: Navigation Anchors block added.
-  Verification Ref corrected from `Verification_Gates_LF.md`
-  to `Admin/Verification_Gates_LF.md` (PC-001).
+  Verification Ref corrected from `Verification_Gates.md`
+  to `Admin/Verification_Gates.md` (PC-001).
   Scope Boundary updated — `Admin/Safety_Protocols.md`
   now exists and owns noise exposure limits / hearing
   conservation program (was listed as "planned").

@@ -29,7 +29,7 @@
 | Status           | Exploration                                                         |
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 0/6                                                                 |
-| Verification Ref | Admin/Verification_Gates_LF.md                                      |
+| Verification Ref | Admin/Verification_Gates.md                                      |
 | Last Audit       | 2026-05-15; revised 2026-06-08                                      |
 | Auditor          | Claude — Retrofit/Auditor                                           |
 | Open Unknowns    | 8                                                                   |
@@ -928,7 +928,7 @@ additive, not substitutes.*
 - 2026-06-08: Navigation Anchors block added. Title corrected
   from `Material Separation Gate (v0)` to
   `Gate_04_Separation_Mechanical`. Verification Ref corrected
-  from `Forge_Audit_Kit.md` to `Admin/Verification_Gates_LF.md`
+  from `Forge_Audit_Kit.md` to `Admin/Verification_Gates.md`
   (PC-001). Facilities.md upstream reference added to Scope
   Boundary and Integration Hooks (PC-002). All stale filenames
   corrected throughout: Spin_Chamber_v0.md →
