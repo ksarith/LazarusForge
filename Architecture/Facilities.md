@@ -26,9 +26,9 @@
 | Status           | Exploration                                                         |
 | Body Stability   | Volatile                                                            |
 | Spec Gates       | 0/6                                                                 |
-| Verification Ref | Admin/Verification_Gates_LF.md                                      |
-| Last Audit       | 2026-07-29                                                          |
-| Auditor          | Claude — Architect/Auditor; Claude — Synthesizer/Auditor, Section VII "Operational Launch, defined" + deferred-parameters reference added, scoped down from a broader multi-agent proposal (human-directed), 2026-07-29 |
+| Verification Ref | Admin/Verification_Gates.md                                      |
+| Last Audit       | 2026-08-09 — Grok pseudo-audit (Skeptic read + minimal fixes); prior 2026-07-29 |
+| Auditor          | Claude — Architect/Auditor; Claude — Synthesizer/Auditor, Section VII "Operational Launch, defined" + deferred-parameters reference added, scoped down from a broader multi-agent proposal (human-directed), 2026-07-29; Grok pseudo-audit 2026-08-09 — no Spec Gate promotion |
 | Open Unknowns    | 4                                                                   |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | High                                                                |
@@ -423,9 +423,9 @@ get a first real measurement.
 | Priority      | Critical           |
 | Type          | Operational        |
 | Blocking      | Yes — blocks all hot operations |
-| Owner         | Facilities.md      |
+| Owner         | Architecture/Facilities.md |
 | First Logged  | 2026-06-05         |
-| Last Reviewed | 2026-06-05         |
+| Last Reviewed | 2026-08-09         |
 
 **Description:** No specific v0 site has been confirmed, surveyed, or assessed against
 the constraints defined in this file.
@@ -549,6 +549,8 @@ resolved. Discovery.md Cross-Module Unknowns table updated. FA-005 closed.
 ---
 
 ### Resolution Log
+
+- 2026-08-09: **Pseudo-audit (Grok — Skeptic/Auditor read + minimal Synthesizer fixes; human-directed).** Corrections: FA-001 Owner `Facilities.md` → `Architecture/Facilities.md` (folder-prefixed path convention). **Findings (not closed):** F-FA-001 — Open Unknowns 4 = FA-001–004 (FA-005 Resolved retained); count matches. F-FA-002 — FA-001 remains Critical/Blocking for all hot operations; physical site survey required — not closable in-repo. F-FA-003 — Spec Gates 0/6 honest; Body Stability Volatile is a valid File_Template enum. Spec Gates **unchanged** 0/6. Status **unchanged** Exploration.
 
 - 2026-07-29: Section VII gained an "Operational Launch, defined" block
   and a "Deferred governance parameters" reference table — a scoped-down

@@ -28,7 +28,7 @@
 | Status           | Draft                                                               |
 | Body Stability   | Volatile                                                            |
 | Spec Gates       | 1/6                                                                 |
-| Verification Ref | Admin/Verification_Gates_LF.md                                      |
+| Verification Ref | Admin/Verification_Gates.md                                      |
 | Last Audit       | 2026-07-31                                                          |
 | Auditor          | Claude (2026-06-02); ChatGPT informal (2026-06-11); Claude retrofit; Claude — CE-006 logged (human-directed) 2026-07-07; Claude — CE-006 directed approach added (human-directed), 2026-07-17; Claude — CE-006 mechanism correction, CE-007 registered (Grok flag, cross-checked against source), 2026-07-19; Claude — Synthesizer, §2.3 expanded to full doctrine, §2.4 Dilution Doctrine added (CE-008, corrected from proposed CE-004 to avoid ID collision), §1.2 SCC extended, §3.2 NOₓ subsection added, CE-005 narrowed to In Progress, CE-006/CE-007 given quantitative scrubber chemistry and storage doctrine (Grok content, verified against source before adoption), human-directed, 2026-07-31; Claude — CE-006 vessel design sketch integrated after two rounds of correction (thermal-sink sizing, AS-003 prerequisite gate) verified against Air_Scrubber.md source; CE-006 moved Open → In Progress, human-directed, 2026-07-31 |
 | Open Unknowns    | 8                                                                   |

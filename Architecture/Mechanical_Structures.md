@@ -29,7 +29,7 @@
 | Status           | Draft                                                               |
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 2/6                                                                 |
-| Verification Ref | Admin/Verification_Gates_LF.md                                      |
+| Verification Ref | Admin/Verification_Gates.md                                      |
 | Last Audit       | 2026-06-11                                                          |
 | Auditor          | Gemini (2026-05-31); ChatGPT (2026-06-11); Claude — Retrofit        |
 | Open Unknowns    | 4                                                                   |
@@ -285,7 +285,7 @@ Mandatory re-audit conditions for this document:
 - Substitution of the falsifiable MTBMF metric with qualitative performance goals
 - Scope boundary revised to absorb foundational engineering principles from
   `Architecture/Engineering.md`
-- Verification Ref changed away from `Admin/Verification_Gates_LF.md`
+- Verification Ref changed away from `Admin/Verification_Gates.md`
 
 **Compound Drift Rule:** If multiple indicators activate simultaneously, halt autonomous
 audit progression and escalate for human review.
@@ -455,7 +455,7 @@ to next major file revision — non-blocking.
   constraints, thermal expansion compensation rules, felt wiper bearing protections,
   kinematic interlock matrix, sacrificial shear pin mandate, and positive-pressure
   spindle purge parameters. Verification Ref corrected to
-  `Admin/Verification_Gates_LF.md`. Open Unknowns count set to 2 (ME-001, ME-002).
+  `Admin/Verification_Gates.md`. Open Unknowns count set to 2 (ME-001, ME-002).
   Spec Gate 1 assessed as passing.
 - 2026-06-08: Navigation Anchors block added. Scope Boundary updated —
   `Operations/Electronics.md` [PLANNED] tag removed (file now exists);

@@ -28,7 +28,7 @@
 | Status           | Draft                                                               |
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 2/6                                                                 |
-| Verification Ref | Admin/Verification_Gates_LF.md                                      |
+| Verification Ref | Admin/Verification_Gates.md                                      |
 | Last Audit       | 2026-06-11                                                          |
 | Auditor          | Claude (2026-05-31); ChatGPT informal (2026-06-11); Claude retrofit  |
 | Open Unknowns    | 4                                                                   |
@@ -897,4 +897,4 @@ first FSI-relevant failure in operational deployment.
   (friction, wear mechanisms, lubrication regimes and selection), and Forge
   integration map. Abandoned path logged for the considered split into two
   files. FD-001 through FD-004 logged. Spec Gate 0/6 — Exploration status.
-  Verification Ref set to `Admin/Verification_Gates_LF.md`.
+  Verification Ref set to `Admin/Verification_Gates.md`.

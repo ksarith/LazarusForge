@@ -27,7 +27,7 @@
 | Status           | Draft                                                               |
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 3/6                                                                 |
-| Verification Ref | Admin/Verification_Gates_LF.md                                      |
+| Verification Ref | Admin/Verification_Gates.md                                      |
 | Last Audit       | 2026-07-05                                                          |
 | Auditor          | Grok (2026-05-29); ChatGPT informal (2026-06-11); Claude retrofit; Claude — Architecture review 2026-06-21; Gemini — Exploration audit 2026-07-04; Claude — Documentation correction pass 2026-07-04; Gemini — Exploration audit 2026-07-05; Claude — EN-007 registration + reference cleanup 2026-07-05; Claude — EN-001 differentiated safety factor table 2026-07-05 |
 | Open Unknowns    | 7                                                                   |
@@ -353,7 +353,7 @@ torque wrenches for critical fasteners.
   — trigger re-audit.
 - Conservation of Complexity principle removed or softened — trigger re-audit.
 - Hierarchy of Evidence table removed or simplified below 5 levels — trigger re-audit.
-- Verification Ref changed away from `Admin/Verification_Gates_LF.md`.
+- Verification Ref changed away from `Admin/Verification_Gates.md`.
 - §5 and §8 interim safety-factor values diverge again — trigger immediate
   re-audit; this file has already had one uncaught internal contradiction on
   this exact value (see Resolution Log, 2026-07-04).
@@ -649,7 +649,7 @@ exists to test.
   subject of this session's correction. **Also not actioned:** Spec Gates
   field left at 3/6 despite Gemini's gate-by-gate table showing five of six
   gates passing — self-approval of gate status is prohibited, and this was a
-  documentation pass, not a formal gate audit against Verification_Gates_LF.md.
+  documentation pass, not a formal gate audit against Verification_Gates.md.
   Flagged for a dedicated gate-verification session before that field is
   touched, particularly given GOV-011 (Unknowns.md) was just registered for
   this exact failure pattern elsewhere in the repository.

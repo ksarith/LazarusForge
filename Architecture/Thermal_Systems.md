@@ -27,7 +27,7 @@
 | Status           | Draft                                                               |
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 1/6                                                                 |
-| Verification Ref | Admin/Verification_Gates_LF.md                                      |
+| Verification Ref | Admin/Verification_Gates.md                                      |
 | Last Audit       | 2026-06-11                                                          |
 | Auditor          | Claude (2026-05-31); ChatGPT informal (2026-06-11); Claude retrofit  |
 | Open Unknowns    | 6                                                                   |
@@ -806,4 +806,4 @@ useful in a waste-heat harvest application. Document acceptance threshold as
   modes, thermal impedance circuit analogy, insulation doctrine, heat pumps, Peltier
   devices, TEGs, and Forge thermal integration map. TH-001 through TH-004 logged.
   Spec Gate 0/6 — Exploration status. Verification Ref set to
-  `Admin/Verification_Gates_LF.md`.
+  `Admin/Verification_Gates.md`.

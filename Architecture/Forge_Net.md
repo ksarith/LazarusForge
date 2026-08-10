@@ -28,7 +28,7 @@
 | Status           | Exploration                                                         |
 | Body Stability   | Volatile                                                            |
 | Spec Gates       | 0/6                                                                 |
-| Verification Ref | Admin/Verification_Gates_LF.md                                      |
+| Verification Ref | Admin/Verification_Gates.md                                      |
 | Last Audit       | 2026-05-18; revised 2026-06-08                                      |
 | Auditor          | Claude — Skeptic/Auditor (actioning ChatGPT audit 2026-05-18)       |
 | Open Unknowns    | 5                                                                   |
@@ -1094,7 +1094,7 @@ prerequisite for it.
 - 2026-06-08: Navigation Anchors block added. Title corrected
   from `Forge Network` to `Forge_Net.md — Decentralized Forge
   Network`. Verification Ref corrected from
-  `Admin/Forge_Audit_Kit.md` to `Admin/Verification_Gates_LF.md`
+  `Admin/Forge_Audit_Kit.md` to `Admin/Verification_Gates.md`
   (PC-001). All sidecar Owner fields corrected from
   `Architecture/Forge_Network.md` to `Architecture/Forge_Net.md`
   (canonical filename per Routing.md and Discovery.md).

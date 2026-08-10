@@ -30,7 +30,7 @@
 | Status           | Exploration                                                         |
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 0/6                                                                 |
-| Verification Ref | Admin/Verification_Gates_LF.md                                      |
+| Verification Ref | Admin/Verification_Gates.md                                      |
 | Last Audit       | 2026-08-08 (Scope Boundary corrections — UNK-008 stale reference, vocabulary asymmetry); prior: 2026-06-11 |
 | Auditor          | Claude — Retrofit/Auditor                                           |
 | Open Unknowns    | 2                                                                   |
@@ -845,10 +845,10 @@ deferred, not closed.
   was still describing. Human-directed.
 
 - 2026-06-11: RS-002 resolved — `Forge_Flow.md` casing outlier corrected to
-  `Forge_flow.md` in Discovery.md Rename Registry. Canonical filename confirmed
+  `Forge_flow.md` in Archive/Rename_Registry.md. Canonical filename confirmed
   as `Forge_flow.md` throughout repository.
 - 2026-06-06: Reference corrections pass — Navigation Anchors block added;
-  Verification Ref corrected to Admin/Verification_Gates_LF.md; all stale
+  Verification Ref corrected to Admin/Verification_Gates.md; all stale
   filenames updated per Rename Registry (Spin_Chamber_v0.md,
   Material_Separation_Gate_v0.md, Component_Triage_System.md, energy_v0.md,
   Trajectories_LF.md, Unknowns_LF.md, Air_Scrubber_v0.md, geck_forge_seed.md,
