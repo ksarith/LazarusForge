@@ -72,7 +72,7 @@ FALLBACK_REGISTRY = {
     "Security_Protocols.md":             "Admin/Security_Protocols.md",
     "Ship_of_Theseus.md":                "Admin/Ship_of_Theseus.md",
     "Trajectories.md":                   "Admin/Trajectories.md",
-    "Verification_Gates_LF.md":          "Admin/Verification_Gates_LF.md",
+    "Verification_Gates.md":          "Admin/Verification_Gates.md",
     "AUDIT_HARNESS.py":                  "Automation/AUDIT_HARNESS.py",
     "Experiments.md":                    "Admin/Experiments.md",
     "Chemistry.md":                      "Architecture/Chemistry.md",
@@ -825,7 +825,7 @@ def run_audit(target_file, focus, extra_files=None, doc_status="Exploration",
         f"  AI Contribution Rules, and condensed Unknowns Registry\n"
         f"- Repository uses folder-based structure: Admin/, Architecture/, Operations/,\n"
         f"  Tests/, Challenges/\n"
-        f"- Rename Registry in Discovery.md maps legacy filenames to current canonical paths\n"
+        f"- Rename Registry in Archive/Rename_Registry.md maps legacy filenames to current canonical paths\n"
         f"- Full reference files: Admin/Auditor_Protocols.md | Unknowns.md\n"
         f"These assumptions are carried forward unless contradicted by new findings."
     )
