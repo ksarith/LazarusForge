@@ -13,7 +13,7 @@
 | Status           | Draft — Exploration                                                 |
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 0/6 (not yet audited)                                               |
-| Verification Ref | `Admin/Verification_Gates_LF.md`                                    |
+| Verification Ref | `Admin/Verification_Gates.md`                                    |
 | First Logged     | 2026-08-04                                                          |
 | Last Audit       | — (pre-audit skeleton; ID-collision fix applied 2026-08-04, not a Gate audit) |
 | Auditor          | — (Claude — Synthesizer, PC-/PYC- namespace collision fix only, human-directed, 2026-08-04) |

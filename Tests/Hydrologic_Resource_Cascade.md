@@ -16,7 +16,7 @@
 | Status           | Exploration                                                         |
 | Body Stability   | Volatile                                                            |
 | Spec Gates       | 0/6                                                                 |
-| Verification Ref | Admin/Verification_Gates_LF.md                                      |
+| Verification Ref | Admin/Verification_Gates.md                                      |
 | Last Audit       | 2026-06-28                                                          |
 | Auditor          | Grok (Synthesizer); revised Gemini + Claude (Synthesizer/Auditor)   |
 | Open Unknowns    | 2 Formal / 6 Unregistered (HR-003–HR-010 pending sidecar registration) |

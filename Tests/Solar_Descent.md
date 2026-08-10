@@ -16,7 +16,7 @@
 | Status | Exploration |
 | Body Stability | Volatile |
 | Spec Gates | 0/6 |
-| Verification Ref | Admin/Verification_Gates_LF.md |
+| Verification Ref | Admin/Verification_Gates.md |
 | Last Audit | 2026-07-30 |
 | Auditor | Claude (Synthesizer), Gemini (Auditor), ChatGPT (Synthesizer), Grok (Synthesizer); Gemini — Skeptic/Auditor Exploration audit, Claude — Synthesizer/Auditor (verification against source, corrections applied), 2026-07-28; Grok — Skeptic/Auditor Exploration audit, Claude — Synthesizer/Auditor (verified against source, SD-UNK-015 registered, SD-UNK-007 resolution path corrected), 2026-07-28; 2026-07-30 Phase 0 hygiene — Ethical Anchor canonicalized, SD-UNK-013/014/015 mirrored to Unknowns.md (Synthesizer); 2026-07-30 Phase 1 Resolution Pass — open unknowns 15 → 8 (Synthesizer); 2026-07-30 — Tier 3 Living_Waters interface expanded (distillation + sorption desorption); SD-UNK-010 note expanded, count unchanged (Synthesizer) |
 | Open Unknowns | 8 |

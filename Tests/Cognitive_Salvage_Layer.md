@@ -16,7 +16,7 @@
 | Status           | Exploration                                                         |
 | Body Stability   | Draft                                                               |
 | Spec Gates       | 1/6                                                                 |
-| Verification Ref | Admin/Verification_Gates_LF.md                                      |
+| Verification Ref | Admin/Verification_Gates.md                                      |
 | Last Audit       | 2026-08-03                                                          |
 | Auditor          | Claude — Synthesizer/Auditor, human-directed, 2026-08-03: corrective merge of a Copilot/Grok exchange — GH-004/GH-012/CSL-A03 gained complementary elaboration (Payment via Specification only, see AP-033 in Admin/Auditor_Protocols.md); GH-007/GH-008/GH-009/GH-011 left untouched, already better-specified than what was proposed; prior: Claude — Synthesizer/Auditor                                        |
 | Open Unknowns    | 13                                                                  |

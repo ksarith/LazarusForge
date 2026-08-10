@@ -16,7 +16,7 @@
 | Status | Exploration |
 | Body Stability | Volatile |
 | Spec Gates | 0/6 |
-| Verification Ref | Admin/Verification_Gates_LF.md |
+| Verification Ref | Admin/Verification_Gates.md |
 | Last Audit | 2026-07-30 |
 | Auditor | James (Owner), Claude (Synthesizer), Gemini (Auditor), ChatGPT (Synthesizer), Grok (Synthesizer); 2026-07-30 — ASM-004 / AWG energy band softened, arid sorption+waste-heat preference noted, Solar Descent heat interface reciprocal text added (Synthesizer) |
 | Open Unknowns | 9 |

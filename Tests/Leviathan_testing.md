@@ -15,7 +15,7 @@
 | Status           | Exploration                                                         |
 | Body Stability   | Volatile                                                            |
 | Spec Gates       | 0/6                                                                 |
-| Verification Ref | Admin/Verification_Gates_LF.md                                      |
+| Verification Ref | Admin/Verification_Gates.md                                      |
 | Last Audit       | 2026-05-04 (Claude — Skeptic/Auditor); revised 2026-06-08           |
 | Auditor          | Claude — Retrofit/Auditor                                           |
 | Open Unknowns    | 7                                                                   |

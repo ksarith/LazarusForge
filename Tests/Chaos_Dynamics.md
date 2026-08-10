@@ -13,7 +13,7 @@
 | Status           | Exploration                                                         |
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 0/6                                                                 |
-| Verification Ref | Admin/Verification_Gates_LF.md                                      |
+| Verification Ref | Admin/Verification_Gates.md                                      |
 | Last Audit       | 2026-07-05 — Claude added first Sandbox Log entries (SB-001–SB-004); no formal Skeptic/Auditor sign-off through Forge_Audit_Kit.md opening sequence yet |
 | Auditor          | None formal yet — see Last Audit and Active Disputes                |
 | Open Unknowns    | 0                                                                   |

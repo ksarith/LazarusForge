@@ -18,7 +18,7 @@
 | **Status** | Exploration |
 | **Body Stability** | Volatile |
 | **Spec Gates** | 0/6 |
-| **Verification Ref** | `Admin/Verification_Gates_LF.md` |
+| **Verification Ref** | `Admin/Verification_Gates.md` |
 | **Last Audit** | 2026-06-11 |
 | **Auditor** | Gemini (Auditor) |
 | **Open Unknowns** | 13 |
