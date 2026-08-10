@@ -13,7 +13,7 @@
 | Status           | Draft — PROPOSED NOT RATIFIED                                       |
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 0/6 (drafted, not yet audited)                                      |
-| Verification Ref | `Admin/Verification_Gates_LF.md`                                    |
+| Verification Ref | `Admin/Verification_Gates.md`                                    |
 | First Logged     | 2026-07-19                                                          |
 | Last Audit       | 2026-07-19 (cross-checked against Admin/Auditor_Protocols.md)      |
 | Auditor          | Drafted Claude, synthesizing ChatGPT proposals (human-directed); revised after ChatGPT/Grok review; cross-checked against Auditor_Protocols.md (Claude, read-only); not yet a formal Skeptic/Auditor dual-pass |
@@ -36,9 +36,26 @@ This protocol defines how Lazarus Forge governance responds when an autonomous s
 
 This document does **not** propose, and explicitly rejects, any framing in which continued alignment with human governing authority has a "cutoff point" or in which an autonomous system's growing capability implies an eventual exit from human oversight. The premise of this protocol is the opposite: divergence is a solvable governance event, not evidence that separation was inevitable.
 
-## 2. Scope
+## 2. Scope Boundary
 
-Applies to any autonomous or semi-autonomous subsystem operating under Lazarus Forge governance with the ability to act on its environment, modify its own configuration, or make decisions without per-action human sign-off. Does not apply to purely advisory or fully human-supervised tooling, which by construction cannot diverge from oversight it never had independence from.
+**This file DOES define:**
+- Response protocol when an autonomous or semi-autonomous subsystem's observed behavior appears to diverge from authorized objectives, scope, or governing constraints
+- Classification of Capability Anomaly vs. Governance Concern (observable-effect discipline)
+- Graduated Response Tiers (Watch / Immediate / Human-Reviewed) and proportionality principles
+- Human authority and decision rights over restriction and restoration
+- Restoration criteria, logging/audit requirements, and periodic review obligations
+- Explicit rejection of any "cutoff point" framing in which growing capability implies eventual exit from human oversight
+
+**This file DOES NOT define:**
+- Detection criteria calibration thresholds or Watch exit conditions (→ GOV-021b, open)
+- Multi-agent coordinated divergence handling (→ GOV-021c / §12 Known Scope Limitation)
+- Ethical hard floors or Anti-Weaponization Doctrine (→ `Admin/Ethical_Constraints.md`)
+- Constitutional hierarchy or Tier ranking (→ `Admin/Governance_Charter.md`)
+- Auditor role definitions or Adversarial Battery (→ `Admin/Auditor_Protocols.md`)
+- CIR predicate evaluation or institutional state algebra (→ `Admin/Computational_Institutional_Reasoning.md`)
+- Application to purely advisory or fully human-supervised tooling (by construction those cannot diverge from oversight they never had independence from)
+
+**Status note:** Draft — PROPOSED NOT RATIFIED. 0/6 Spec Gates. Candidate GOV-021 not yet registered in Charter.
 
 ## 3. Definitions
 

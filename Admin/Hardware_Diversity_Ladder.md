@@ -16,7 +16,7 @@
 | Status           | Draft — Proposed implementation reference only                        |
 | Body Stability   | Volatile                                                               |
 | Spec Gates       | 0/6                                                                    |
-| Verification Ref | Admin/Verification_Gates_LF.md                                        |
+| Verification Ref | Admin/Verification_Gates.md                                        |
 | Last Audit       | 2026-08-03                                                             |
 | Auditor          | Claude — Synthesizer, human-directed. Drafted from external candidate material (Grok), verified against `Operations/Electronics.md` TMR doctrine, `Architecture/Cognitive_Frameworks.md` Framework D, `Admin/Governance_Charter.md` (Genesis Phase Protocol, Axiom Q-2), and `Admin/Security_Protocols.md` SEC-007a/b before integration — all cross-references confirmed exact against source, 2026-08-03 |
 | Open Unknowns    | 0 — this file supplies implementation reference for `Admin/Governance_Migration_Protocol.md` §VII's own open items (VII.6), not new tracked unknowns of its own |

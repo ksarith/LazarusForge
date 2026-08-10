@@ -27,7 +27,7 @@
 | Status           | Draft                                                               |
 | Body Stability   | Volatile                                                            |
 | Spec Gates       | 0/6                                                                 |
-| Verification Ref | `Admin/Verification_Gates_LF.md`                                    |
+| Verification Ref | `Admin/Verification_Gates.md`                                    |
 | Last Audit       | 2026-06-19                                                          |
 | Auditor          | Gemini — Skeptic/Auditor; Grok — Skeptic/Auditor; ChatGPT — Skeptic/Auditor; Claude — Synthesizer |
 | Open Unknowns    | 13                                                                  |
@@ -488,7 +488,7 @@ Mandatory re-audit conditions for this document:
   human-supervised procedure without human ratification
 - SEC-ASM-006 removed before EC-011 (human governance adversary model) is resolved
 - Ethical Anchor field absent, altered, or does not match canonical string
-- Verification Ref field changed from `Admin/Verification_Gates_LF.md`
+- Verification Ref field changed from `Admin/Verification_Gates.md`
 
 **Compound Drift Rule:** If multiple indicators activate simultaneously, halt
 autonomous audit progression and escalate for human review.
@@ -984,7 +984,7 @@ than working around.
   Drift Indicators updated with new entries. Abandoned Paths updated.
   Lessons Learned entry added. Open Unknowns updated to 7.
 - 2026-06-06: v0.4 revision — Navigation Anchors added. Verification Ref
-  corrected to `Admin/Verification_Gates_LF.md`. Drift Indicator reference
+  corrected to `Admin/Verification_Gates.md`. Drift Indicator reference
   updated. Relationship section updated — `Admin/Governance_Migration_Protocol.md`
   and `Admin/Safety_Protocols.md` added. Content unchanged.
 - 2026-06-19: v0.5 revision — Four-agent audit pass (Gemini, Grok, ChatGPT,

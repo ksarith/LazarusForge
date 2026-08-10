@@ -7,7 +7,7 @@
 | Status           | Exploration                                                         |
 | Body Stability   | Volatile                                                            |
 | Spec Gates       | 0/6                                                                 |
-| Verification Ref | Admin/Verification_Gates_LF.md                                      |
+| Verification Ref | Admin/Verification_Gates.md                                      |
 | Last Audit       | 2026-07-06                                                          |
 | Auditor          | Claude — Skeptic/Auditor (rename pass); Gemini — Skeptic/Auditor (Exploration audit, path/gap findings) |
 | Open Unknowns    | 5 (ECN-001, ECN-002, ECN-004, ECN-005, ECN-006)                     |
@@ -749,7 +749,7 @@ doctrine beyond Exploration status.
 
 ### Adversarial Deferral (Gate 3)
 
-Per `Admin/Verification_Gates_LF.md`, Exploration-stage documents may
+Per `Admin/Verification_Gates.md`, Exploration-stage documents may
 defer Adversarial Battery classes if the deferral is explicitly
 declared with rationale, rather than left silent. This file defers:
 

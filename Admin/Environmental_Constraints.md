@@ -13,7 +13,7 @@
 | Status           | Draft                                                               |
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 1/6 (G1 cleared — fallacy checklist applied at creation; G3/G5 fixes applied 2026-07-06, pending re-audit confirmation) |
-| Verification Ref | `Admin/Verification_Gates_LF.md`                                    |
+| Verification Ref | `Admin/Verification_Gates.md`                                    |
 | Last Audit       | 2026-07-17                                                          |
 | Auditor          | Grok — Systems Integrator; Claude — Synthesizer; Gemini — Exploration audit 2026-07-06; Claude — doctrine reconciliation + sidecar correction 2026-07-06; Claude — ENV-DS-001 ratified (human governing authority), 2026-07-17 |
 | Open Unknowns    | 8 (ENV-001, ENV-002, ENV-003, ENV-004, ENV-005, ENV-006, ENV-009, ENV-010)                                |
@@ -278,7 +278,7 @@ Mandatory re-audit conditions for this document:
 - EC-010 and GOV-010 closed without updating this file as their resolution record
 - Site-specific values promoted to Specification without local data replacing Placeholder anchors
 - Ethical Anchor field absent, altered, or does not match canonical string
-- Verification Ref field changed from `Admin/Verification_Gates_LF.md`
+- Verification Ref field changed from `Admin/Verification_Gates.md`
 - Upstream/Downstream table loses any of the eight downstream dependents listed without a corresponding unknown or correction entry
 - Bootstrap operating doctrine's proposed reconciliation (Constraint Category 2) reverted to self-directed gray-zone operation without human governing authority ratification of the reconciled text, or ratified in a form that reintroduces proceeding-without-escalation under ambiguity
 - Bridge authority (Constraint Category 2) invoked as a routine default rather than a logged, bounded exception — e.g. escalation attempted only nominally, expedited post-hoc review skipped or delayed, or the four bridge conditions applied without the triggering unavailability condition being documented

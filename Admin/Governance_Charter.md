@@ -14,8 +14,8 @@
 |------------------|---------------------------------------------------------------------|
 | Status           | Draft                                                               |
 | Body Stability   | Transitional                                                        |
-| Spec Gates       | 6/6 vs. `Admin/Verification_Gates_LF.md` — execution quality (see GOV-011, resolved 2026-07-05); promotion separately blocked by open unknowns (GOV-003, GOV-005) and Enforcement Checkpoint 2 — Bootstrap Paradox |
-| Verification Ref | Admin/Verification_Gates_LF.md                                      |
+| Spec Gates       | 6/6 vs. `Admin/Verification_Gates.md` — execution quality (see GOV-011, resolved 2026-07-05); promotion separately blocked by open unknowns (GOV-003, GOV-005) and Enforcement Checkpoint 2 — Bootstrap Paradox |
+| Verification Ref | Admin/Verification_Gates.md                                      |
 | Last Audit       | 2026-08-05                                                          |
 | Auditor          | Claude — Synthesizer, added two consolidated-reference sections (Human Override Doctrine, Constitutional Amendment Boundaries) and one clarifying sentence on doctrine-vs-procedures ownership; no substantive doctrine changed, corrects a prior Copilot audit's false "doctrine is absent" findings by pointing to where the existing text already lives (human-directed), 2026-08-05; prior: Claude — Sidecar/Resolution Log relocation to `Archive/Logs/Governance_Charter_Changelog.md`, GOV-022 registered (human-directed), 2026-07-23; Claude — Skeptic/Auditor; Gemini — Skeptic/Auditor; Grok — Exploration audit 2026-07-05; Gemini — Exploration audit 2026-07-05; Claude — GOV-011 resolution 2026-07-05; Claude — Skeptic/Auditor, 2026-07-16; Claude — GOV-013 drafted (multi-agent synthesis, human-directed), 2026-07-16; Claude — GOV-013/EDL Track classification confirmed (human-directed), 2026-07-17; ChatGPT — adversarial pass, 2026-07-17; Claude — GOV-014 through GOV-020 verified against source and registered (human-directed), 2026-07-17; Claude — GOV-012 threshold deferral, GOV-013 ratification review, GOV-006 biometric addendum (human-directed), 2026-07-19 |
 | Open Unknowns    | 20                                                                  |
@@ -384,10 +384,10 @@ The Tier 1 Axioms are currently Declared and Detectable. Enforcement architectur
 ## Enforcement Checkpoints
 
 *Renamed 2026-07-03 from "Canonical Verification Gates" — see GOV-011 and
-`Admin/Canonical_Terms.md` §4. Distinct from `Admin/Verification_Gates_LF.md`'s
+`Admin/Canonical_Terms.md` §4. Distinct from `Admin/Verification_Gates.md`'s
 Verification Gates: these checkpoints govern the legitimacy of a governance
 **action**, not the promotion readiness of a **document**. A file's
-`Spec Gates X/6` File State field always refers to Verification_Gates_LF.md's
+`Spec Gates X/6` File State field always refers to Verification_Gates.md's
 Verification Gates — never to these checkpoints, regardless of which file
 the field appears in.*
 
@@ -486,7 +486,7 @@ Requirements:
 **Proposed placement note:** the original proposal cited "Gate 3 or Gate 4"
 as the attachment point. That referred to this file's internal gate system,
 since renamed to Enforcement Checkpoints (2026-07-03) specifically to
-eliminate the naming collision with `Admin/Verification_Gates_LF.md`'s
+eliminate the naming collision with `Admin/Verification_Gates.md`'s
 Verification Gates — see GOV-011. This draft attaches as its own subsection
 rather than under Checkpoint 3 or 4, since EDL concerns document-level
 external-pattern evidence, not governance-action legitimacy.
@@ -557,7 +557,7 @@ evidence supports. Proposed phasing, if ratified:
 ### 5. Open Items Before Ratification
 
 - **Resolved 2026-07-03:** the naming collision this file's Enforcement
-  Checkpoints once had with Verification_Gates_LF.md's Verification Gates
+  Checkpoints once had with Verification_Gates.md's Verification Gates
   is fixed via rename — see GOV-011. **Resolved 2026-07-05:** GOV-011 itself
   is now closed — this file's File State `Spec Gates` field was re-audited
   against the actual Verification Gates (real score: 6/6 execution quality)

@@ -23,7 +23,7 @@ None. This is a governance/epistemics document with no physical hazard surface.
 | Status | **Proposed — Not Ratified** |
 | Body Stability | Volatile |
 | Spec Gates | 0/6 |
-| Verification Ref | `Admin/Verification_Gates_LF.md` |
+| Verification Ref | `Admin/Verification_Gates.md` |
 | Ethical Anchor | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 | Highest Risk | High — while unratified and GOV-008 remains Open, the misreading risk (treating this as operational) is real, not theoretical; raised from Medium 2026-07-31 per Skeptic/Auditor review. See §Binding Status below. |
 | Last Audit | 2026-07-31 |

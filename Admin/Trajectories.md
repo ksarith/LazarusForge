@@ -15,7 +15,7 @@
 | Status           | Exploration                                                         |
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 1/6                                                                 |
-| Verification Ref | Admin/Verification_Gates_LF.md                                      |
+| Verification Ref | Admin/Verification_Gates.md                                      |
 | Last Audit       | 2026-05-23; revised 2026-06-08; revised 2026-06-24; audited 2026-06-26; revised 2026-08-03 |
 | Auditor          | Claude — Retrofit/Auditor; Claude — Synthesizer, TR-GOV-001 split into `Admin/Hardware_Diversity_Ladder.md` per this file's own Scope Boundary (human-directed), 2026-08-03 |
 | Open Unknowns    | 3                                                                   |
@@ -537,7 +537,7 @@ prose since 2026-06-26 but never registered as a tracked unknown.*
 - May 2026: G.E.C.K. cross-references added at v2. UNK-008 / LT-003 autonomy dependency noted at v3 and v4.
 - May 2026: v0 exit condition verification note added — self-reporting circularity acknowledged, human proxy defined.
 - 2026-06-08: Navigation Anchors block added. Verification Ref corrected
-  from `Verification_Gates_LF.md` to `Admin/Verification_Gates_LF.md`
+  from `Verification_Gates.md` to `Admin/Verification_Gates.md`
   (PC-001). Scope Boundary updated — `economics_v0.md` reference corrected
   to `Admin/Economics.md` (PC-003). TR-001 resolution path updated —
   `Admin/Economics.md` now owns economic model and barter doctrine.

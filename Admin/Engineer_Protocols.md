@@ -28,7 +28,7 @@
 | Status           | Draft                                                               |
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 2/6                                                                 |
-| Verification Ref | Admin/Verification_Gates_LF.md                                      |
+| Verification Ref | Admin/Verification_Gates.md                                      |
 | Last Audit       | 2026-05-30 (ChatGPT — Skeptic/Auditor); revised 2026-06-08          |
 | Auditor          | Claude — Retrofit/Auditor (integrating 2026-05-30 addendum)         |
 | Open Unknowns    | 6                                                                   |
@@ -137,8 +137,8 @@ modes in complex systems.
 **2. Has a solution already been found?**
 Search in this order: (1) `Discovery.md` — primary navigation layer, preferred
 first stop; (2) canonical folder structure (Admin/, Architecture/, Operations/,
-Tests/) if Discovery.md is stale or unavailable; (3) Rename Registry in
-Discovery.md for potentially renamed files; (4) direct file search as fallback.
+Tests/) if Discovery.md is stale or unavailable; (3) `Archive/Rename_Registry.md`
+for potentially renamed files; (4) direct file search as fallback.
 `Discovery.md` is the preferred dependency, not the only path — if it becomes
 stale, repository search quality degrades but does not fail entirely. Also consult
 `Architecture/Forge_Net.md` (when available) for cross-forge knowledge.
@@ -270,7 +270,7 @@ sidecar; cross-module unknowns route to `Unknowns.md`.
 - Log solved problems into Lessons Learned immediately.
 - New solutions must explicitly address why prior approaches were
   insufficient. "I didn't know it existed" is not a sufficient reason.
-- Cross-reference `Discovery.md` Rename Registry before assuming a
+- Cross-reference `Archive/Rename_Registry.md` before assuming a
   file does not exist — it may have been renamed.
 
 ---
@@ -684,7 +684,7 @@ Cross-reference `Admin/Auditor_Protocols.md` §Unknowns Registry Governance.
   (acceptable risk threshold undefined). EP-006 logged (unknown lifecycle
   integration undefined). Open Unknowns updated to 6.
 - 2026-06-08: Navigation Anchors block added. Verification Ref corrected
-  from `Verification_Gates_LF.md` to `Admin/Verification_Gates_LF.md`
+  from `Verification_Gates.md` to `Admin/Verification_Gates.md`
   (PC-001). Scope Boundary updated — `Admin/Safety_Protocols.md` added
   for physical safety hazard thresholds and PPE requirements (PC-003).
   Safety_Protocols.md row added to Section 8 Hazard Escalation table.

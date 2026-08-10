@@ -123,7 +123,7 @@ Place immediately below the Navigation Anchors block (and Safety Advisory if pre
 | Status           | Exploration / Draft / Specification                                 |
 | Body Stability   | Volatile / Transitional / Stable                                    |
 | Spec Gates       | 0/6                                                                 |
-| Verification Ref | Admin/Verification_Gates_LF.md                                      |
+| Verification Ref | Admin/Verification_Gates.md                                      |
 | Last Audit       | YYYY-MM-DD                                                          |
 | Auditor          | [Agent — Role]                                                      |
 | Open Unknowns    | N                                                                   |
@@ -139,7 +139,7 @@ indicator requiring human review. It is not a reference to an external document 
 load-bearing principle that survives even if Ethical_Constraints.md is missing, corrupted,
 or deliberately omitted.
 
-**Verification Ref must point to `Admin/Verification_Gates_LF.md`.** Not Forge_Audit_Kit.md.
+**Verification Ref must point to `Admin/Verification_Gates.md`.** Not Forge_Audit_Kit.md.
 The Kit is a condensed reference; the Gates file is the canonical authority.
 
 ---
@@ -169,7 +169,7 @@ or operational evidence.
 
 ### Spec Gates
 
-The repository uses six canonical verification gates defined in `Admin/Verification_Gates_LF.md`.
+The repository uses six canonical verification gates defined in `Admin/Verification_Gates.md`.
 
 | Gate | Requirement                  |
 |------|------------------------------|
@@ -614,7 +614,7 @@ When converting an existing file to this structure:
 
 - [ ] Add Navigation Anchors block immediately below title
 - [ ] **If physical operations file:** Add Operational Safety Advisory — specific hazard, consequence, prerequisite, decision rule, open unknown reference if applicable
-- [ ] Add File State table — include Ethical Anchor field with canonical string; confirm Verification Ref points to `Admin/Verification_Gates_LF.md`
+- [ ] Add File State table — include Ethical Anchor field with canonical string; confirm Verification Ref points to `Admin/Verification_Gates.md`
 - [ ] Add Scope Boundary — be honest about what the file does and does not own
 - [ ] Add File Purpose paragraph
 - [ ] Extract hidden assumptions into Assumptions section
@@ -660,7 +660,7 @@ When converting an existing file to this structure:
 | Status           | Exploration                                                         |
 | Body Stability   | Volatile                                                            |
 | Spec Gates       | 0/6                                                                 |
-| Verification Ref | Admin/Verification_Gates_LF.md                                      |
+| Verification Ref | Admin/Verification_Gates.md                                      |
 | Last Audit       | YYYY-MM-DD                                                          |
 | Auditor          | [Agent — Role]                                                      |
 | Open Unknowns    | 1                                                                   |

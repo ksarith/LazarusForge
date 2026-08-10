@@ -8,7 +8,7 @@
 | Status           | Draft                                                               |
 | Body Stability   | Volatile                                                            |
 | Spec Gates       | 0/6                                                                 |
-| Verification Ref | Admin/Verification_Gates_LF.md                                      |
+| Verification Ref | Admin/Verification_Gates.md                                      |
 | Last Audit       | 2026-07-05                                                          |
 | Auditor          | Claude — Synthesizer/Auditor (2026-06-24); Claude — Cycle definition + version-string correction (2026-07-05); Claude — CT-011 resolution 2026-07-05 |
 | Open Unknowns    | 9                                                                   |
@@ -64,8 +64,8 @@ documentation, governance, and audit contributions. The two are complementary.
 Conflicts between them must be resolved through reconciliation logged here,
 not by either file silently overriding the other.
 
-**Relationship to Discovery.md Rename Registry:** The Rename Registry in
-`Discovery.md` is the canonical source for legacy filename resolution.
+**Relationship to Archive/Rename_Registry.md:** The Rename Registry in
+`Archive/Rename_Registry.md` is the canonical source for legacy filename resolution.
 This file does not duplicate or supersede that function. CT-001 tracks
 alignment between this file's vocabulary and AUDIT_HARNESS.py internal
 string references — that is a distinct function from filename aliasing.
@@ -93,7 +93,7 @@ Three vocabulary sources exist in the repository:
 |------------------------------|-------------------------------------------------------|
 | `Architecture/Forge_flow.md` | Operational routing semantics; gate logic vocabulary  |
 | `Admin/Governance_Charter.md`| Governance tier definitions; constitutional vocabulary|
-| `Admin/Verification_Gates_LF.md` | Document promotion vocabulary; Verification Gate definitions |
+| `Admin/Verification_Gates.md` | Document promotion vocabulary; Verification Gate definitions |
 | `Admin/Canonical_Terms.md`   | Cross-file consistency; anti-drift enforcement        |
 
 **Resolution rules:**
@@ -107,13 +107,13 @@ Three vocabulary sources exist in the repository:
    is authoritative. Log the conflict as an Active Dispute here and
    initiate reconciliation.
 
-3. If this file conflicts with `Admin/Verification_Gates_LF.md` on
+3. If this file conflicts with `Admin/Verification_Gates.md` on
    Verification Gate definitions or document-promotion vocabulary,
-   Verification_Gates_LF.md is authoritative. Log the conflict as an
+   Verification_Gates.md is authoritative. Log the conflict as an
    Active Dispute here and initiate reconciliation. Added 2026-07-03 after
    this file failed to catch a real divergence between Verification Gates
    and Governance_Charter.md's (then-named) "Canonical Verification Gates"
-   because Verification_Gates_LF.md was never registered as an authority
+   because Verification_Gates.md was never registered as an authority
    source — see GOV-011, CT-010.
 
 4. If this file conflicts with `Discovery.md` Rename Registry on filename
@@ -139,7 +139,7 @@ repository. These are not interchangeable:
 | Canonical File            | The authoritative source document for a governed concept       | `Admin/Governance_Charter.md` is the canonical governance authority     |
 | Canonical Term            | An approved vocabulary entry defined in this file              | "Material Recovery" is the canonical term for post-triage feedstock     |
 | Canonical Cross-Reference | A file reference that resolves against Discovery.md confirmed list using folder-prefixed paths | `Operations/Gate_03_Reduction.md` not `Gate_03_Reduction.md` |
-| Canonical Mapping         | A legacy-to-current filename resolution entry in Discovery.md Rename Registry | `Spin_Chamber_v0.md` → `Operations/Gate_05_Separation_Thermal.md` |
+| Canonical Mapping         | A legacy-to-current filename resolution entry in Archive/Rename_Registry.md | `Spin_Chamber_v0.md` → `Operations/Gate_05_Separation_Thermal.md` |
 | Canonical Path            | The folder-prefixed file path used in all new contributions    | `Admin/Ethical_Constraints.md` not `Ethical_Constraints.md`            |
 
 Agents must not treat these as synonymous. "Canonical" without qualification
@@ -302,7 +302,7 @@ Distinct from the three-state Status field. Defined in `Admin/Forge_Audit_Kit.md
 One of the six criteria (Fallacy Checklist, Physical Plausibility, Adversarial
 Battery, Scope Alignment, Cross-reference Integrity, Conflict Check) a
 *document* must satisfy to advance toward Specification status. Defined and
-owned exclusively by `Admin/Verification_Gates_LF.md`. A file's `Spec Gates
+owned exclusively by `Admin/Verification_Gates.md`. A file's `Spec Gates
 X/6` File State field always refers to these gates and to no other system,
 regardless of which document the field appears in. Not to be confused with
 Enforcement Checkpoint (below) or the Operations/Gate_01–07 physical
@@ -459,7 +459,7 @@ Use of banned terms in specification-level content is a Fallacy 4
 | Canonical (unqualified)              | See Disambiguation section above               | Always specify which canonical usage applies                                                     |
 | Gate N (unqualified, N=1–6)           | Verification Gate N or Enforcement Checkpoint N | Always specify which system; both are six-item, numbered, and were once both called "Canonical Verification Gates" — see GOV-011 |
 | Blocking (unqualified)               | Operational Blocking or Epistemic Blocking     | Always specify which type; unqualified Blocking obscures whether physical work halts or only claims halt |
-| SESSION BOUNDARY INDEX               | Audit Cycle (Section 4, this file)             | Not a defined term anywhere in `Admin/Auditor_Protocols.md`, `Admin/Forge_Audit_Kit.md`, `Unknowns.md`, or `Admin/Verification_Gates_LF.md` as of 2026-07-05, despite appearing in multiple audit headers as if citing established doctrine. Treat any audit opening with this phrase as citing an unverified/external convention, not repository doctrine, until traced to a real source or formally adopted here. |
+| SESSION BOUNDARY INDEX               | Audit Cycle (Section 4, this file)             | Not a defined term anywhere in `Admin/Auditor_Protocols.md`, `Admin/Forge_Audit_Kit.md`, `Unknowns.md`, or `Admin/Verification_Gates.md` as of 2026-07-05, despite appearing in multiple audit headers as if citing established doctrine. Treat any audit opening with this phrase as citing an unverified/external convention, not repository doctrine, until traced to a real source or formally adopted here. |
 | EC-00X (bare, no owning file named) | EC-00X (`Admin/Ethical_Constraints.md`) or the pending `ECN-` renumbering (`Admin/Economics.md`) | Ambiguous as of 2026-07-05 — see CT-007. EC-001, EC-002, EC-004, EC-005, and EC-008 are each claimed by both files with unrelated content. Never cite a bare "EC-00X" without naming the owning file until CT-007's rename is complete. |
 
 "Autonomous Decision-Making" without bounding clauses is prohibited because
@@ -475,7 +475,7 @@ under Axiom P-4 (Agency and Consent).
 | 2026-05-26 | Audit Review  | Drafting localized naming definitions inside gate files | Fragmented files diverged quickly over successive multi-agent cycles         | Consolidation into a dedicated terminology document prevents premature cross-file drift                                 | Replicated | No                  |
 | 2026-05-27 | Audit Review  | Gate_04 described using "high-RPM" as defining characteristic | Terminology bled from Gate_05 (Spin Chamber); audit flagged semantic conflict | Gate_04 is defined by flow position (pre-thermal diversion) and protocol (refusal-first); RPM belongs to Gate_05 only  | Replicated | No                  |
 | 2026-05-27 | Audit Review  | Tier 4 defined as "operational logic files" with Forge_flow.md as example | Conflicted with Governance_Charter.md which places Forge_flow.md in Tier 5  | Tier definitions must derive from Governance_Charter.md; Forge_flow.md is Tier 5 (domain specification)                | Replicated | No                  |
-| 2026-07-03 | Audit Review  | `Admin/Verification_Gates_LF.md` and `Admin/Governance_Charter.md` each titled their six-item criteria list "Canonical Verification Gates" independently | Neither file cross-checked the other before naming; `Admin/Verification_Gates_LF.md` was never registered as a vocabulary authority in this file's Conflict Resolution Doctrine, so no mechanism existed to catch the collision | Registering every load-bearing file as a vocabulary authority source matters even when it seems self-evidently canonical — "obviously the audit-gates file owns gate vocabulary" was never actually written down anywhere, so nothing caught the collision until a downstream governance amendment needed to cite "Gate 3 or Gate 4" and found two answers | Replicated | No |
+| 2026-07-03 | Audit Review  | `Admin/Verification_Gates.md` and `Admin/Governance_Charter.md` each titled their six-item criteria list "Canonical Verification Gates" independently | Neither file cross-checked the other before naming; `Admin/Verification_Gates.md` was never registered as a vocabulary authority in this file's Conflict Resolution Doctrine, so no mechanism existed to catch the collision | Registering every load-bearing file as a vocabulary authority source matters even when it seems self-evidently canonical — "obviously the audit-gates file owns gate vocabulary" was never actually written down anywhere, so nothing caught the collision until a downstream governance amendment needed to cite "Gate 3 or Gate 4" and found two answers | Replicated | No |
 
 ---
 
@@ -834,8 +834,8 @@ canonical definition is confirmed consistent.
 **Description:** `Admin/Governance_Charter.md`'s "Canonical Verification
 Gates" (Gate 1–6) was renamed to "Enforcement Checkpoints" (Checkpoint
 1–6) on 2026-07-03 to end a naming collision with this file's
-`Admin/Verification_Gates_LF.md`-owned Verification Gate definition — see
-GOV-011. `Admin/Verification_Gates_LF.md` also received a disambiguation
+`Admin/Verification_Gates.md`-owned Verification Gate definition — see
+GOV-011. `Admin/Verification_Gates.md` also received a disambiguation
 note confirming sole ownership of unqualified "Gate"/"canonical"
 terminology in its domain. CT-010 tracks whether every file that cites
 "Gate 3," "Gate 6," or similar in a governance-action context (as opposed
@@ -845,14 +845,14 @@ disambiguated.
 
 **Why It Matters:** A rename at the two source files does not guarantee
 every downstream citation updates. `Admin/Auditor_Protocols.md` and
-`Admin/Forge_Audit_Kit.md` both cite Verification_Gates_LF.md's Gate 3/6
+`Admin/Forge_Audit_Kit.md` both cite Verification_Gates.md's Gate 3/6
 directly (correctly, no rename needed there) — but any file that was
 actually citing Governance_Charter.md's now-renamed checkpoints under the
 old "Gate N" name would now be citing a term that no longer exists in that
 file, silently breaking the reference rather than erroring visibly.
 
 **Resolution Path:** Payment via Specification — grep the repository for
-"Gate 1" through "Gate 6" outside `Admin/Verification_Gates_LF.md` and
+"Gate 1" through "Gate 6" outside `Admin/Verification_Gates.md` and
 `Operations/Gate_01` through `Gate_07`; for each hit, confirm it means
 Verification Gate (no change needed) or Enforcement Checkpoint (needs
 updating) and correct accordingly. Close when no ambiguous unqualified
@@ -958,7 +958,7 @@ Auditor_Protocols.md specifically, which is now closed.
   table gained a row flagging "SESSION BOUNDARY INDEX" — a phrase used as
   if authoritative in recent Grok/Gemini audit headers but absent from
   Auditor_Protocols.md, Forge_Audit_Kit.md, Unknowns.md, and
-  Verification_Gates_LF.md; treat citations to it as unverified until
+  Verification_Gates.md; treat citations to it as unverified until
   traced or formally adopted. Separately, corrected a live version-string
   mismatch unrelated to today's substantive changes: this file's header
   read "Version 0.3" while the Status section below already documented
@@ -1000,7 +1000,7 @@ Auditor_Protocols.md specifically, which is now closed.
   for tier definitions and constitutional vocabulary; owns Enforcement
   Checkpoint definition (renamed 2026-07-03 from "Canonical Verification
   Gates" — see GOV-011, CT-010)
-- `Admin/Verification_Gates_LF.md` — fourth vocabulary authority source
+- `Admin/Verification_Gates.md` — fourth vocabulary authority source
   (added 2026-07-03); authoritative for Verification Gate definitions and
   document-promotion vocabulary; every file's `Spec Gates X/6` field
   references this file exclusively
@@ -1018,7 +1018,7 @@ Auditor_Protocols.md specifically, which is now closed.
 - `Admin/Trajectories.md` — CT-003 and CT-007 to be logged as v0→v1 items
 - `Admin/Security_Protocols.md` — CT-004 Blocking for Section III.2 promotion
 - `Admin/Canonical_Terms_LF.md` — prior planned filename; resolved via
-  Discovery.md Rename Registry; all references to _LF suffix are stale
+  Archive/Rename_Registry.md; all references to _LF suffix are stale
 
 ---
 
@@ -1049,7 +1049,7 @@ version-string corrected from stale 0.3 to match this file's actual state.
   Status section since at least the prior v0.4 entry below)
 
 **Prior — Version 0.4 (2026-07-03):** Verification Gate / Enforcement
-Checkpoint disambiguation added; CT-010 logged; Verification_Gates_LF.md
+Checkpoint disambiguation added; CT-010 logged; Verification_Gates.md
 registered as fourth vocabulary authority source.
 
 **Changes from v0.2:**
@@ -1074,13 +1074,13 @@ registered as fourth vocabulary authority source.
   7 → 8.
 - 2026-07-03: v0.4 — Verification Gate / Enforcement Checkpoint disambiguation.
   `Admin/Governance_Charter.md`'s "Canonical Verification Gates" and
-  `Admin/Verification_Gates_LF.md`'s "Six Canonical Verification Gates" were
+  `Admin/Verification_Gates.md`'s "Six Canonical Verification Gates" were
   found to be independently-named, materially different six-item systems
   sharing the same "Gate N" numbering — an undocumented divergence (GOV-011)
-  that existed in part because Verification_Gates_LF.md was never registered
+  that existed in part because Verification_Gates.md was never registered
   as a vocabulary authority source in this file's Conflict Resolution
   Doctrine, despite being the file every document's `Spec Gates X/6` field
-  actually references. Fixed: Verification_Gates_LF.md added as fourth
+  actually references. Fixed: Verification_Gates.md added as fourth
   authority source (Resolution Rule 3 renumbered accordingly). New Section 4
   entries: Verification Gate, Enforcement Checkpoint — both explicitly
   cross-referencing each other and the unrelated Operations/Gate_01–07

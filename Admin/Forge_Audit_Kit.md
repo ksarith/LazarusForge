@@ -7,14 +7,14 @@
 |----------------|---------------------------------------------------------------------|
 | Status         | Draft                                                               |
 | Spec Gates     | 0/6                                                                 |
-| Verification Ref | Admin/Verification_Gates_LF.md                                    |
+| Verification Ref | Admin/Verification_Gates.md                                    |
 | Last Audit     | 2026-07-28                                                          |
 | Auditor        | Claude — Synthesizer; Claude — v1.10 reduction + Expiry Watch redesign (human-directed); Claude — self-audit + v1.11 (FAK-010/011/012, First Battery) — 2026-07-14; Claude — v1.12 Verification Gates trim (human-directed), derivation versions corrected, 2026-07-17; Claude — v1.13 Pragmatic Accuracy principle added (human-directed), 2026-07-26; Claude — v1.14 CIR- prefix registered, FAK-013 stale changelog path corrected (human-directed), 2026-07-28 |
 | Open Unknowns  | 5 — see Sidecar Link                                                |
 | Sidecar Link   | Archive/Logs/Forge_Audit_Kit_Changelog.md#sidecar--auditor-notes--unknowns |
 | Ethical Anchor | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
-**Derived from:** `Admin/Auditor_Protocols.md` v0.24 | `Admin/Verification_Gates_LF.md` v0.7 | `Unknowns.md` v4.21
+**Derived from:** `Admin/Auditor_Protocols.md` v0.24 | `Admin/Verification_Gates.md` v0.7 | `Unknowns.md` v4.21
 
 When this file contradicts a full source document, the full source document prevails.
 
@@ -79,7 +79,7 @@ Promotion rule: assumptions narrow, unknowns shrink, external validation expands
 
 **Quantitative** (`Admin/Auditor_Protocols.md` §Evidence Classification; five-label system confirmed canonical via AP-021, 2026-07-10 — "Estimated" retired, relabel prior Estimated claims as Analogous or Simulated):
 Measured | Replicated | Simulated | Analogous | Placeholder — Unlabeled = Placeholder.
-Measured requires `m_phys ≥ 0.75`; Replicated additionally requires `m_rep ≥ 0.50` (`Admin/Verification_Gates_LF.md` Gate 2, active 2026-07-10).
+Measured requires `m_phys ≥ 0.75`; Replicated additionally requires `m_rep ≥ 0.50` (`Admin/Verification_Gates.md` Gate 2, active 2026-07-10).
 
 **Institutional:** Internally Derived | Analogous External | Experimentally Verified | Operationally Hardened
 
@@ -186,9 +186,9 @@ Sequential. Auditor has binding block authority. Self-approval loops not permitt
 | G5 | Cross-reference integrity — all paths use canonical folder-prefixed names? | Hold at draft |
 | G6 | Conflict check — no contradiction with existing committed specs? | Resolve before committing |
 
-**Gate scope vs. promotion readiness (source: `Admin/Verification_Gates_LF.md` §Gate 3, §Gate 6, §Promotion Requirements Summary — the canonical gate-definition layer this kit condenses):** Gates test a document's own execution quality — was the check actually done, documented, and does the committed text avoid contradiction. Gates do **not** test whether unknowns a check surfaced have been resolved. "All six gates pass" and "open unknowns are non-blocking" are two separate, independently required conditions for Specification promotion — a document can clear all six gates while promotion stays blocked by open unknowns, and that is not a gate failure.
+**Gate scope vs. promotion readiness (source: `Admin/Verification_Gates.md` §Gate 3, §Gate 6, §Promotion Requirements Summary — the canonical gate-definition layer this kit condenses):** Gates test a document's own execution quality — was the check actually done, documented, and does the committed text avoid contradiction. Gates do **not** test whether unknowns a check surfaced have been resolved. "All six gates pass" and "open unknowns are non-blocking" are two separate, independently required conditions for Specification promotion — a document can clear all six gates while promotion stays blocked by open unknowns, and that is not a gate failure.
 
-- **G2 evidentiary backing (active 2026-07-10, source: `Admin/Verification_Gates_LF.md` Gate 2, VG-002):** a claim labeled Measured or Replicated must meet the evidentiary thresholds in Truth Provenance Labels above (`m_phys ≥ 0.75`; Replicated additionally `m_rep ≥ 0.50`). Simulated and Analogous remain self-asserted pending a future revision. Enforcement is manual — `AUDIT_HARNESS.py` does not yet compute or check the evidence vector; an auditor applying G2 must check this by hand.
+- **G2 evidentiary backing (active 2026-07-10, source: `Admin/Verification_Gates.md` Gate 2, VG-002):** a claim labeled Measured or Replicated must meet the evidentiary thresholds in Truth Provenance Labels above (`m_phys ≥ 0.75`; Replicated additionally `m_rep ≥ 0.50`). Simulated and Analogous remain self-asserted pending a future revision. Enforcement is manual — `AUDIT_HARNESS.py` does not yet compute or check the evidence vector; an auditor applying G2 must check this by hand.
 - **G3** passes if the Adversarial Battery was applied and documented — full Battery, or partial with deferred classes named and reasoned (Exploration-stage default per §Adversarial Audit Layer "When to Apply"). G3 does not require that findings from the Battery be resolved; unresolved Critical findings block *promotion*, tracked as open unknowns, not as a G3 failure.
 - **G6** passes if the committed text does not contradict itself or another *committed* spec. G6 does not test whether upstream dependencies are resolved — that is a promotion-readiness question.
 
@@ -278,7 +278,7 @@ Load additional files only when the audit focus requires them — each adds toke
 
 **Maintenance trigger:** Update this file when `Admin/Auditor_Protocols.md` is revised OR when `Unknowns.md` version increments. Minimum fields to update: derivation version strings, role declaration version string, EF condensed section if EF sections changed. (Critical watch list removed at v1.10 — no longer a maintenance target.)
 
-**End-of-Life:** This kit is a working document, not a permanent one — its function is to stay current with `Admin/Auditor_Protocols.md`, `Admin/Verification_Gates_LF.md`, and `Unknowns.md`. When it's superseded — a successor kit, a structural change to the audit process, or the source documents outgrowing what a condensed reference can track — it is not deleted. It's shelved at its final version as a historical record: evidence of what the audit process actually was at a given point in Forge's evolution, available for ideological and process study rather than active use. Superseding a kit is a normal lifecycle event, not a failure; the sidecar and version history in `Archive/Logs/Forge_Audit_Kit_Changelog.md` are what make that shelving legible later rather than just an abandoned file.
+**End-of-Life:** This kit is a working document, not a permanent one — its function is to stay current with `Admin/Auditor_Protocols.md`, `Admin/Verification_Gates.md`, and `Unknowns.md`. When it's superseded — a successor kit, a structural change to the audit process, or the source documents outgrowing what a condensed reference can track — it is not deleted. It's shelved at its final version as a historical record: evidence of what the audit process actually was at a given point in Forge's evolution, available for ideological and process study rather than active use. Superseding a kit is a normal lifecycle event, not a failure; the sidecar and version history in `Archive/Logs/Forge_Audit_Kit_Changelog.md` are what make that shelving legible later rather than just an abandoned file.
 
 ---
 

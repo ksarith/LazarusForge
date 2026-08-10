@@ -24,6 +24,28 @@
 
 ---
 
+## Scope Boundary
+
+**This file DOES define:**
+- The Core Theorem: absolute nothingness is not an operational state
+- The 8 Axioms of the Nothingness framework
+- The Ontological Spectrum and realization formalism (E(t), R, Realization Function)
+- Structural/topological constraints on realization
+- Category-error warnings and rival-interpretation defenses
+- Entropy, information-theoretic, and lifecycle interpretations of the framework
+- Cognitive, ethical, and memetic corollaries of the theorem
+
+**This file DOES NOT define:**
+- Operational governance rules, predicates, or enforcement mechanisms (→ `Admin/Computational_Institutional_Reasoning.md`, which derives Axiom A3 and Rule γ2 from this file without altering this file's Tier 0 status)
+- Constitutional hierarchy or authority ranking (→ `Admin/Governance_Charter.md`)
+- Ethical hard floors or pre-action authorization checks (→ `Admin/Ethical_Constraints.md`)
+- Auditor behavior, detection protocols, or response tiers (→ `Admin/Auditor_Protocols.md`, `Admin/Autonomy_Divergence_Protocol.md`)
+- Any specification subject to Spec Gates 1–6; this file is Tier 0 / functionless by doctrine and exempt from operational promotion
+
+**Status note:** Tier 0 documents are audited for internal consistency only. Downstream operationalization in CIR does not promote this file and must not be read as doing so.
+
+---
+
 ## Preamble
 
 This document is the definitive compilation of a framework developed across many sessions of philosophical, mathematical, and practical inquiry. It synthesizes three generations of the idea:

@@ -13,7 +13,7 @@
 | Status           | Draft                                                               |
 | Body Stability   | Stub                                                                |
 | Spec Gates       | 0/6                                                                 |
-| Verification Ref | `Admin/Verification_Gates_LF.md`                                    |
+| Verification Ref | `Admin/Verification_Gates.md`                                    |
 | Last Audit       | 2026-06-21                                                          |
 | Auditor          | Claude — Synthesizer                                                |
 | Open Unknowns    | 0                                                                   |
@@ -35,7 +35,7 @@
 
 **This file DOES NOT define:**
 - Operational test system specifications (→ `Tests/Living_Waters.md`, `Tests/Trophic_Forge.md`, `Tests/Solar_Descent.md`)
-- System-level design validation (→ `Admin/Verification_Gates_LF.md`)
+- System-level design validation (→ `Admin/Verification_Gates.md`)
 - Unknown tracking or status management (→ `Unknowns.md`)
 - Future or speculative experiments without defined method and pass/fail criteria (→ owning file sidecar resolution paths or `Admin/Trajectories.md`)
 - Lab notebook or engineering journal content

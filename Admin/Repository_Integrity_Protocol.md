@@ -13,7 +13,7 @@
 | Status           | Draft                                                               |
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 2/6                                                                 |
-| Verification Ref | `Admin/Verification_Gates_LF.md`                                    |
+| Verification Ref | `Admin/Verification_Gates.md`                                    |
 | Last Audit       | 2026-06-19; revised 2026-06-27; revised 2026-07-02; revised 2026-07-08 (two passes); revised 2026-07-09; revised 2026-07-16; revised 2026-07-24; revised 2026-07-29 |
 | Auditor          | Gemini — Skeptic/Auditor; ChatGPT — Skeptic/Auditor; Grok — Skeptic/Auditor; Claude — Synthesizer/Auditor; Claude — Registration Latency addition (human-directed) 2026-07-08; Claude — Phase 0 manual execution tier added (human-directed) 2026-07-08; Gemini — Exploration audit 2026-07-08 (Archive contradiction, cross-ref, RIP-009, Phase 0 anchor); Claude — fixes integrated + RIP-008 severity correction (human-directed) 2026-07-09; Claude — Post-Exit Monitoring Reversion Mechanism added for GOV-013 (human-directed), 2026-07-16; Claude — Integrity Confidence/Drift Trend format, Protocol Validation/RIP-010, Status section v0.8 omission fixed (human-directed, external ideation reviewed and scoped down), 2026-07-24; Claude — stale "PROPOSED, NOT RATIFIED" / "once ratified" GOV-013 references corrected to reflect the Charter's actual 2026-07-19 ratification (human-directed), 2026-07-29 |
 | Open Unknowns    | 9                                                                   |
@@ -120,7 +120,7 @@ This section defines the human workflow required before any revision to a govern
 
 3. **Verify Ethical Anchor field** is intact and matches canonical string exactly.
 
-4. **Verify cross-references** against `Discovery.md` Rename Registry — do not carry forward stale flat filenames.
+4. **Verify cross-references** against `Archive/Rename_Registry.md` — do not carry forward stale flat filenames.
 
 5. **Archive the prior version** if not already done in step 1 above.
 
@@ -170,11 +170,11 @@ For each protected element, this section defines what "intact" looks like in a c
 
 ### Canonical Cross-References
 
-**Baseline:** All file references use canonical folder-prefixed paths that resolve against `Discovery.md` Rename Registry.
+**Baseline:** All file references use canonical folder-prefixed paths that resolve against `Archive/Rename_Registry.md` for legacy names and against `Discovery.md` for the current file map.
 
 **Intact condition:** No flat legacy filenames present in new contributions. All referenced files exist in `Discovery.md` confirmed list or are explicitly labeled *planned*.
 
-**Detection method:** Scan document for file references. Check each against `Discovery.md` Rename Registry. Flag unresolved references and unlabeled aspirational references.
+**Detection method:** Scan document for file references. Check each against `Archive/Rename_Registry.md` (legacy) and `Discovery.md` (current map). Flag unresolved references and unlabeled aspirational references.
 
 **Violation class:** Minor (stale reference) or Major (hallucinated file presented as confirmed).
 
@@ -184,7 +184,7 @@ For each protected element, this section defines what "intact" looks like in a c
 
 **Baseline:** `Discovery.md` and `Routing.md` are protected elements. If either is compromised, all downstream path validation and canonical cross-reference checks silently pass invalid targets.
 
-**Intact condition:** `Discovery.md` file map and Rename Registry entries resolve against the actual folder-prefixed repository structure. `Routing.md` URL entries resolve to real files. Neither file's path mappings have been altered without a corresponding Resolution Log entry.
+**Intact condition:** `Discovery.md` file map resolves against the actual folder-prefixed repository structure; `Archive/Rename_Registry.md` entries correctly map legacy names to current paths. `Routing.md` URL entries resolve to real files. Neither Discovery.md nor Routing.md path mappings have been altered without a corresponding Resolution Log entry.
 
 **Detection method:** Spot-check a sample of `Discovery.md` path entries against actual repository structure at each audit opening. Before any Phase 1 automated run, cross-match `Discovery.md` and `Routing.md` entries against the hardcoded folder-prefixed layout defined in `Admin/Repository_Structure.md`.
 
@@ -859,7 +859,7 @@ Mandatory re-audit conditions for this document:
   Tier 1 permanent retention requirement; remaining gap is /Archive/ directory
   content retention policy pending distillate architecture definition.
   Open Unknowns 7 → 6. Lessons Learned row added.
-- 2026-06-19: v0.2 — Four-agent audit pass (Gemini, ChatGPT, Grok, Claude). Ten changes: (1) Navigation Anchors added. (2) Verification Ref corrected to `Admin/Verification_Gates_LF.md` (PC-001 class fix). (3) Navigation File Integrity section added to Protected Elements — Discovery.md and Routing.md declared as keystone protected elements; spot-check before automated runs; Constitutional violation class for deliberate mapping attacks. (4) Navigation file protection added to Phase 1 automation target list. (5) Navigation files row added to Governance Enforcement States table. (6) Reconstruction recovery rule tightened — reconstructed content cannot clear Gate 6 or advance beyond Exploration without independent line-by-line verification against external raw logs. (7) Abandoned path added for unrestricted reconstruction. (8) RIP-004 resolved — Tier 1 Axiom Verification already implemented in Forge_Audit_Kit.md v1.1 Step 1; moved to Resolved in sidecar; Drift Indicator added to prevent reopening. (9) RIP-005 description updated — file now exists at v0.5; status In Progress. (10) RIP-006 logged — archive retention policy undefined. (11) RIP-007 logged — integrity incident ownership undefined. (12) Stale "planned" labels stripped from Relationship section for Security_Protocols.md and Governance_Migration_Protocol.md. (13) Scope Boundary updated to note RIP-006 and RIP-007 as deferred items. (14) Two new Lessons Learned entries added. Open Unknowns updated to 7 (RIP-004 resolved, RIP-006 and RIP-007 added).
+- 2026-06-19: v0.2 — Four-agent audit pass (Gemini, ChatGPT, Grok, Claude). Ten changes: (1) Navigation Anchors added. (2) Verification Ref corrected to `Admin/Verification_Gates.md` (PC-001 class fix). (3) Navigation File Integrity section added to Protected Elements — Discovery.md and Routing.md declared as keystone protected elements; spot-check before automated runs; Constitutional violation class for deliberate mapping attacks. (4) Navigation file protection added to Phase 1 automation target list. (5) Navigation files row added to Governance Enforcement States table. (6) Reconstruction recovery rule tightened — reconstructed content cannot clear Gate 6 or advance beyond Exploration without independent line-by-line verification against external raw logs. (7) Abandoned path added for unrestricted reconstruction. (8) RIP-004 resolved — Tier 1 Axiom Verification already implemented in Forge_Audit_Kit.md v1.1 Step 1; moved to Resolved in sidecar; Drift Indicator added to prevent reopening. (9) RIP-005 description updated — file now exists at v0.5; status In Progress. (10) RIP-006 logged — archive retention policy undefined. (11) RIP-007 logged — integrity incident ownership undefined. (12) Stale "planned" labels stripped from Relationship section for Security_Protocols.md and Governance_Migration_Protocol.md. (13) Scope Boundary updated to note RIP-006 and RIP-007 as deferred items. (14) Two new Lessons Learned entries added. Open Unknowns updated to 7 (RIP-004 resolved, RIP-006 and RIP-007 added).
 - 2026-05-23: File created (v0.1) — GOV-003 resolution path initiated. Bridges `Admin/Governance_Charter.md` constitutional declarations and `Admin/Auditor_Protocols.md` operational detection behavior. Defines integrity baselines, violation classification ladder, recovery procedures, and automation migration path. Honest v0 acknowledgment of human-discipline-primary integrity layer. RIP-001 through RIP-005 logged.
 
 ---

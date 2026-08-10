@@ -7,10 +7,10 @@
 | Status           | Exploration                                                         |
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 0/6                                                                 |
-| Verification Ref | Admin/Verification_Gates_LF.md                                      |
-| Last Audit       | 2026-06-05                                                          |
-| Auditor          | Claude — Architect/Auditor                                          |
-| Open Unknowns    | 3                                                                   |
+| Verification Ref | Admin/Verification_Gates.md                                      |
+| Last Audit       | 2026-08-09                                                          |
+| Auditor          | Grok — correction pass                                              |
+| Open Unknowns    | 1                                                                   |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | Low                                                                 |
 | Sidecar Link     | #auditor-notes--unknowns                                            |
@@ -34,7 +34,7 @@
 - File content standards (→ `Admin/File_Template.md`)
 - Governance authority hierarchy (→ `Admin/Governance_Charter.md`)
 - Navigation summaries or the current file map (→ `Discovery.md`)
-- Rename Registry for historical corrections (→ `Discovery.md`)
+- Rename Registry for historical corrections (→ `Archive/Rename_Registry.md`)
 - Migration procedures for existing files (→
   `Admin/Governance_Migration_Protocol.md` Track A)
 - Repository integrity enforcement (→
@@ -50,7 +50,7 @@ naming decisions are made by inference from existing patterns — which
 works until it doesn't, and fails silently when contributors disagree
 about which pattern applies.
 
-The Rename Registry in Discovery.md is the evidence that naming has
+The Rename Registry in `Archive/Rename_Registry.md` is the evidence that naming has
 been inconsistent historically. This file exists so the Rename Registry
 shrinks going forward rather than continuing to grow. It also resolves
 RIP-001 (Archive/ directory not established) by defining the doctrine
@@ -60,8 +60,8 @@ prior-state preservation requirement.
 **Ownership transfer:** The Governance_Charter.md Canonical Governance
 Ownership table lists `Repository_Structure.md` as a planned canonical
 target with no current owner. This file now owns repository structure
-doctrine. Discovery.md retains ownership of the navigation map and
-Rename Registry — those are complementary, not overlapping.
+doctrine. Discovery.md retains ownership of the navigation map;
+`Archive/Rename_Registry.md` owns the historical rename record — those are complementary, not overlapping.
 
 ---
 
@@ -97,7 +97,7 @@ all version information without polluting the filename.
 files with version suffixes are renamed opportunistically during audit
 passes using the Track A migration procedure in
 `Admin/Governance_Migration_Protocol.md`. Renamed files are recorded
-in the Discovery.md Rename Registry.
+in the `Archive/Rename_Registry.md`.
 
 ### The No-Scope-Suffix Rule
 
@@ -124,10 +124,10 @@ Rules:
 - Acronyms treated as single words: `Air_Scrubber.md` not
   `Air_Scrubber.md`
 
-**Known outlier:** `Forge_flow.md` uses lowercase `flow` — this is
-a legacy inconsistency. Correct to `Forge_Flow.md` on next audit pass
-of that file. Until corrected, treat the lowercase as a known exception,
-not a precedent.
+**Accepted outlier:** `Forge_flow.md` uses lowercase `flow`. RS-002 closed
+2026-08-09 as accepted exception — Rename Registry and the 2026-06-11
+resolution log already treated this form as canonical. The lowercase is
+not a precedent for new files.
 
 ### Numeric Prefixes in Gate Files
 
@@ -267,7 +267,7 @@ error — significance is not a root criterion.
 Before creating a new file, answer these questions in order:
 
 **1. Does this file already exist under a different name?**
-Check the Discovery.md Rename Registry and the full file map.
+Check the `Archive/Rename_Registry.md` and the full file map.
 Duplicate files with different names are a governance failure.
 
 **2. What is the single most accurate noun for what this file owns?**
@@ -426,26 +426,26 @@ arises.
 
 | Field         | Value                          |
 |---------------|--------------------------------|
-| Status        | Open                           |
+| Status        | Resolved — Accepted outlier    |
 | Risk          | Low                            |
 | Priority      | Minor                          |
 | Type          | Housekeeping                   |
 | Blocking      | No                             |
 | Owner         | Admin/Repository_Structure.md  |
 | First Logged  | 2026-06-05                     |
-| Last Reviewed | 2026-06-05                     |
+| Last Reviewed | 2026-08-09                     |
+| Resolved      | 2026-08-09                     |
 
-**Description:** `Forge_flow.md` uses lowercase `flow` inconsistent
-with the PascalCase standard defined here. Should be `Forge_Flow.md`.
-Referenced in Section I as a known outlier.
+**Description:** `Forge_flow.md` uses lowercase `flow`, inconsistent with
+the PascalCase standard in Section I.
 
-**Why It Matters:** Low risk individually — high risk as a precedent
-if left uncorrected. Other contributors may treat the lowercase as
-a valid pattern.
-
-**Resolution Path:** Rename to `Forge_Flow.md` on next audit pass
-of that file. Record in Discovery.md Rename Registry. Track A
-migration — compatible with all downstream references once updated.
+**Resolution (2026-08-09):** Option A — accept current form as intentional
+exception. Rename Registry already records `Forge_flow.md → Forge_flow.md
+| Resolved — RS-002 2026-06-11`. The 2026-06-11 resolution log in
+`Architecture/Forge_flow.md` treated the current casing as canonical.
+Re-opening a rename would re-fight a settled historical decision for
+negligible gain. Section I updated to "Accepted outlier." Not a precedent
+for new files.
 
 ---
 
@@ -453,36 +453,44 @@ migration — compatible with all downstream references once updated.
 
 | Field         | Value                          |
 |---------------|--------------------------------|
-| Status        | Open                           |
-| Risk          | Medium                         |
+| Status        | Resolved                       |
+| Risk          | Low                            |
 | Priority      | Major                          |
 | Type          | Operational                    |
 | Blocking      | No                             |
 | Owner         | Admin/Repository_Structure.md  |
 | First Logged  | 2026-06-05                     |
-| Last Reviewed | 2026-06-05                     |
+| Last Reviewed | 2026-08-09                     |
+| Resolved      | 2026-08-09 (recognition of pre-existing state) |
 
 **Description:** Section V defines Archive/ doctrine but the directory
 does not yet exist in the repository. RIP-001 in
 Repository_Integrity_Protocol.md remains open until the directory
 exists and is noted in Discovery.md.
 
-**Why It Matters:** The Version Preservation Protocol in
-Repository_Integrity_Protocol.md requires an archive location.
-Without a physical directory, prior-state preservation defaults to
-local storage outside the repository — which defeats the lineage
-preservation purpose.
-
-**Resolution Path:** Create Archive/ directory in repository root.
-Add a placeholder README.md inside it noting its purpose and
-naming convention. Update Discovery.md structure map. Close RIP-001
-when both are confirmed.
+**Resolution (2026-08-09):** Archive/ has existed and been populated
+for some time (chat distillates, Logs/, Rename_Registry.md, etc.).
+Discovery.md structure map already includes it. RIP-001 itself was
+closed earlier (2026-06-27) via the Git release-tag primary archival
+mechanism. This entry's Status was left Open long after the physical
+condition was satisfied — classic registration lag. Closed on
+recognition; no new action required.
 
 ---
 
 ### Resolution Log
 
-*(empty — first version)*
+- 2026-08-09: **RS-002 closed — accepted outlier.** Keep `Forge_flow.md`
+  casing. Rename Registry and 2026-06-11 Forge_flow resolution log already
+  treated current form as canonical; re-fighting that for PascalCase purity
+  is low-value. Section I updated. Not a precedent for new files.
+  Human-directed.
+
+- 2026-08-09: **RS-003 closed.** Archive/ directory has been present and
+  populated (Logs/, Rename_Registry.md, multiple chat distillates) for
+  an extended period; Discovery.md already maps it; RIP-001 was closed
+  2026-06-27 on the Git-tag primary path. Status left Open purely by
+  registration lag. Human-directed recognition pass.
 
 ---
 

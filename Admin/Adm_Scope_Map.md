@@ -33,7 +33,8 @@ Pilot for a per-folder scope-map pattern, proposed 2026-08-07 as a fix for a kno
 
 ### `Admin/Autonomy_Divergence_Protocol.md`
 **Status:** Draft — PROPOSED NOT RATIFIED · 0/6 · 2 Open Unknowns (GOV-021b, GOV-021c) · Risk: High
-**Does:** Governs response to AI governance/objective divergence in autonomous subsystems. Flag: Uses a narrative "## 2. Scope" section rather than this repository's DOES/DOES NOT template — not missing, but non-conforming; worth normalizing to the standard template in a future pass.
+**Does:** Response protocol for observed divergence of autonomous/semi-autonomous subsystems; Capability Anomaly vs Governance Concern classification; graduated Response Tiers; restoration, logging, and review obligations. Explicitly rejects any "capability implies exit from oversight" framing.
+**Does not (arrow):** Detection calibration / Watch exit conditions (GOV-021b) - coordinated multi-agent divergence (GOV-021c) - ethical hard floors (`Ethical_Constraints.md`) - Charter hierarchy - Auditor Protocols - CIR algebra. Normalized to DOES/DOES NOT template 2026-08-09.
 
 ### `Admin/BATTERY_SEED.md`
 **Status:** Draft · N/A (prompt template) · 0 tracked here (see AP-017) · Risk: unlabeled in File State
@@ -52,7 +53,8 @@ Pilot for a per-folder scope-map pattern, proposed 2026-08-07 as a fix for a kno
 
 ### `Admin/Computational_Institutional_Reasoning.md`
 **Status:** Exploration · G4 cleared, G1 partial, G3 blocked (AP-012/AP-016) · Open Unknowns unclear from File State · Risk: CIR-001 (Physical Grounding Telemetry Mapping undefined)
-FLAG: **No Scope Boundary section exists anywhere in this file** — confirmed by direct heading search, not inferred. This is the one file in Admin/ with zero stated scope of any kind, conforming or not. Given this file's size and the amount of doctrine now built on it (today's Confidence Algebra patches, the CIR-F04 correction), this is a real, load-bearing gap worth closing before the file grows further.
+**Does:** Formal algebraic Institutional State / Mutation model; Core Axioms and five theorems (Unknown Conservation, Governance Stability, Epistemic Debt Instability, Institutional Memory Dominance, Compiler Soundness); Verification Algebra and provenance ceilings; derivation of Axiom A3 / γ2 from Nothingness_Theorem without altering that file's Tier 0 status.
+**Does not (arrow):** Charter hierarchy - Ethical hard floors - Auditor Protocols / Battery - Autonomy Divergence response tiers - runtime implementation - GOV-008 quorum - CIR_Gov packaging. Scope Boundary added 2026-08-09 (was the load-bearing gap flagged on Scope_Map creation).
 
 ### `Admin/Economics.md`
 **Status:** Exploration · 0/6 · 5 Open Unknowns (ECN-001/002/004/005/006) · Risk: Medium
@@ -77,7 +79,7 @@ FLAG: **No Scope Boundary section exists anywhere in this file** — confirmed b
 ### `Admin/Experiments.md`
 **Status:** Draft · 0/6 · 0 Open Unknowns · Risk: Low
 **Does:** Structured falsification records for PROVISIONAL claims; PROVISIONAL to VERIFIED promotion mechanism; pass/fail criteria for physical/sensor/assay/code grounding events.
-**Does not (arrow):** Operational test system specs (`Tests/Living_Waters.md`, `Tests/Trophic_Forge.md`, `Tests/Solar_Descent.md`) - system-level validation (`Verification_Gates_LF.md`).
+**Does not (arrow):** Operational test system specs (`Tests/Living_Waters.md`, `Tests/Trophic_Forge.md`, `Tests/Solar_Descent.md`) - system-level validation (`Verification_Gates.md`).
 
 ### `Admin/File_Template.md`
 **Status:** Exploration/Draft/Specification (template, all three by design) · 0/6 · Risk: Low/Medium/High (template)
@@ -108,7 +110,8 @@ FLAG: Single most load-bearing file in the repository — six other files in thi
 
 ### `Admin/Nothingness_Theorem.md`
 **Status:** Tier 0 — Philosophical Substrate, functionless by doctrine · N/A (Tier 0 exempt) · Risk: N/A
-FLAG: **No Scope Boundary section exists** — confirmed by direct heading search. Unlike `Computational_Institutional_Reasoning.md` above, this is likely intentional given the file's explicit Tier 0/functionless status — a scope statement may not be meaningful for a file designed to have no operational hooks. Worth a one-line confirmation from human governing authority that the absence is deliberate, not an oversight, since as written this file is indistinguishable from the genuine gap above.
+**Does:** Core Theorem (absolute nothingness is not an operational state); 8 Axioms; Ontological Spectrum and realization formalism; structural/topological constraints; category-error and rival-interpretation defenses; entropy/info-theoretic/lifecycle interpretations; cognitive/ethical/memetic corollaries.
+**Does not (arrow):** Operational governance rules/predicates (→ CIR, which derives A3/γ2 without promoting this file) - Charter hierarchy - Ethical hard floors - Auditor / ADP protocols - any Spec-Gate-subject specification. Scope Boundary added 2026-08-09 for consistency; Tier 0 exemption unchanged.
 
 ### `Admin/PROBE_INVOCATION.md`
 **Status:** Draft · N/A (prompt template) · 0 tracked here (see AP-030) · Risk: unlabeled
@@ -127,9 +130,9 @@ Note: created same day as this Scope_Map build's own findings were still fresh �
 **Does not (arrow):** Crypto implementation (`Security_Protocols.md`) - constitutional doctrine, governance hierarchy (`Governance_Charter.md`) - auditor behavior (`Auditor_Protocols.md`) - Anti-Weaponization doctrine (`Ethical_Constraints.md`).
 
 ### `Admin/Repository_Structure.md`
-**Status:** Exploration · 0/6 · 3 Open Unknowns · Risk: Low
+**Status:** Exploration · 0/6 · 1 Open Unknown (RS-001 open; RS-002 resolved 2026-08-09 accepted outlier; RS-003 resolved 2026-08-09) · Risk: Low
 **Does:** No-version-suffix filename convention; folder assignment doctrine; root-file doctrine; Archive/ directory doctrine; planned directory addition trigger conditions.
-**Does not (arrow):** File content standards (`File_Template.md`) - governance hierarchy (`Governance_Charter.md`) - navigation/current file map, Rename Registry (`Discovery.md`) - migration procedures (`GMP` Track A) - integrity enforcement (`Repository_Integrity_Protocol.md`).
+**Does not (arrow):** File content standards (`File_Template.md`) - governance hierarchy (`Governance_Charter.md`) - navigation/current file map - Rename Registry (`Archive/Rename_Registry.md`) - migration procedures (`GMP` Track A) - integrity enforcement (`Repository_Integrity_Protocol.md`).
 
 ### `Admin/Safety_Protocols.md`
 **Status:** Exploration · 0/6 · 6 Open Unknowns · Risk: High
@@ -151,7 +154,7 @@ Note: created same day as this Scope_Map build's own findings were still fresh �
 **Does:** v0 to v5 version trajectory; survival thresholds/exit conditions per version; FRT doctrine and floor (still Placeholder); revenue allocation framework; v0-v1 Trajectory Items registry.
 **Does not (arrow):** Future-version component taxonomy (module docs, when active) - detailed economic model (`Economics.md`) - FRT logging procedure (`Operations/Gate_07_Utilization.md`) - component procurement (`Architecture/Geck_forge_seed.md`).
 
-### `Admin/Verification_Gates_LF.md`
+### `Admin/Verification_Gates.md`
 **Status:** Draft · 2/6 · 0 Open Unknowns · Risk: High
 **Does:** The six canonical verification gates for document promotion; pass criteria and evidence standards per gate; Full Stop Review triggers; gate enforcement rules.
 **Does not (arrow):** Auditor role doctrine, sequencing, Adversarial Battery (all `Auditor_Protocols.md`) - condensed reference (`Forge_Audit_Kit.md`) - cryptographic enforcement (`Security_Protocols.md`) - ethical policy (`Ethical_Constraints.md`) - constitutional hierarchy (`Governance_Charter.md`).
@@ -162,21 +165,28 @@ Note: created same day as this Scope_Map build's own findings were still fresh �
 
 This is the actual test of the format — what juxtaposing all 24 entries surfaced that reading any single file would not have:
 
-1. **`Computational_Institutional_Reasoning.md` has no Scope Boundary section at all.** Confirmed by direct heading search, not assumed. Given how much doctrine now depends on this file (today's two Confidence Algebra patches, the CIR-F04 correction, CIR_Gov.md's entire premise), this is the single most consequential gap this exercise found — a load-bearing file with no stated boundary on what it does and doesn't govern.
+1. ~~**`Computational_Institutional_Reasoning.md` has no Scope Boundary section at all.**~~ **Closed 2026-08-09.** Conforming DOES/DOES NOT Scope Boundary added. Was the single most consequential structural gap found on Scope_Map creation.
 
-2. **`Nothingness_Theorem.md` also has none**, but is more likely intentional given its Tier 0/functionless-by-doctrine status. Flagged for a one-line human confirmation rather than treated as equivalent to finding 1 — the two look identical from outside the file, but their likely cause is different, and conflating them would be its own small inaccuracy.
+2. ~~**`Nothingness_Theorem.md` also has none.**~~ **Closed 2026-08-09.** Scope Boundary added for index consistency; Tier 0 / functionless-by-doctrine status explicitly preserved and restated in the boundary itself.
 
-3. **`Autonomy_Divergence_Protocol.md` uses a non-conforming narrative scope statement** ("## 2. Scope") rather than the DOES/DOES NOT template. Real content exists, just not in the format the rest of this index expects — worth normalizing eventually, not urgent.
+3. ~~**`Autonomy_Divergence_Protocol.md` uses a non-conforming narrative scope statement.**~~ **Closed 2026-08-09.** Normalized to standard DOES/DOES NOT template; prior narrative content preserved and expanded into explicit out-of-scope arrows.
 
 4. **One apparent duplicate turned out not to be one:** `Environmental_Constraints.md`'s ENV-003 and `Ethical_Constraints.md`'s EC-010 both independently claim "jurisdiction conflict hierarchy" — checked directly against `Unknowns.md` rather than flagged on sight, and found already correctly cross-linked there. Neither file's own Scope Boundary text shows that link locally; it only becomes visible by checking the global index. Worth noting as a real limit of this file's method: per-file scope text alone will keep producing false-positive "duplicates" until `Unknowns.md` is also checked, not a substitute for it.
 
 5. **`Governance_Charter.md` is a hub, not just a file** — six other files in this one folder explicitly defer to it by name in their own Out-of-Scope lists (GMP, RIP, CIR_Gov, Hardware_Diversity_Ladder, Security_Protocols, Ethical_Constraints). No single file's own Scope Boundary shows this concentration; only visible once every entry is read together. This matches, and gives independent visual confirmation of, EC-016's 2026-08-07 correction — the Charter genuinely is the hierarchy's real center, which is exactly why the "dual-ownership conflict" framing was wrong: everything already correctly points at one place.
 
-No new unknowns were registered from this pass — findings 1-3 are gaps in structure (missing/non-conforming sections), not gaps in doctrine content, and are noted here rather than filed as new Admin-owned unknowns pending a decision on whether they warrant that.
+Findings 1–3 (structural scope gaps) closed 2026-08-09. Findings 4–5 remain as method observations, not open defects.
 
 ---
 
 ## Resolution Log
+
+- 2026-08-09: **Findings 1–3 closed.** Conforming Scope Boundary sections
+  added to `Computational_Institutional_Reasoning.md` and
+  `Nothingness_Theorem.md`; `Autonomy_Divergence_Protocol.md`'s narrative
+  "## 2. Scope" normalized to the standard DOES/DOES NOT template. All
+  three Adm_Scope_Map entries updated; Gaps Exposed section annotated.
+  No new unknowns registered. Human-directed correction pass.
 
 - 2026-08-07: **File created — pilot for the per-folder Scope_Map pattern**,
   proposed after review of an archived v0.93 `Discovery.md` that attempted

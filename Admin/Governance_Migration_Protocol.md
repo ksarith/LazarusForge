@@ -13,7 +13,7 @@
 | Status           | Exploration                                                         |
 | Body Stability   | Volatile                                                            |
 | Spec Gates       | 0/6                                                                 |
-| Verification Ref | `Admin/Verification_Gates_LF.md`                                    |
+| Verification Ref | `Admin/Verification_Gates.md`                                    |
 | Last Audit       | 2026-06-19; revised through at least 2026-07-05 internally (GMP-005/GMP-009 dated later than this header — header was not kept current, see Resolution Log); Claude — GOV-013 cross-reference added, 2026-07-16; Claude — GMP-005/GMP-009 resolved, Track A/B redefined by constitutional impact (human-directed), 2026-07-17; Claude — GMP-011/GMP-012 registered, GMP-004 GPG precedent noted, GMP-006/007/008 consolidation noted, Lessons Learned populated, Open Unknowns count corrected, GMP-003 date typo fixed (human-directed, external review reviewed and scoped), 2026-07-25; Claude — §VI Epistemic Quorum Doctrine added, GMP-003 partially mitigated, GMP-013 registered (human-directed, external synthesis reviewed and rescoped away from GOV-008 conflation), 2026-07-26; Claude — Polish pass on EQD integration per external review, GOV-008 mirror note added (human-directed), 2026-07-27; Claude — Quorum Compliance Trend subsection added to §VI, GMP-013 updated as its second schema consumer (human-directed), 2026-07-26; Claude — §VII Bootstrap Quorum Doctrine added as a candidate GOV-008 specification, drafted to satisfy the higher governance-independence bar §VI's own Non-goal clause distinguishes from EQD's epistemic-independence bar (human-directed, external draft reviewed and refined), 2026-07-31; Claude — Skeptic/Auditor review of §VII integrated: substrate-gap warning added to VII.6 (hardware diversity currently declarable, not achieved), four near-term action items recorded, GMP-011 interim rule adopted from candidate to operative, TR-GOV-001 hardware-ladder reference parked in Trajectories.md with explicit non-claim language (human-directed, external review and implementation guidance verified against Electronics.md TMR doctrine before integration), 2026-07-31; Claude — Skeptic/Auditor cold pass (independent instance, no prior session context — see `Admin/BATTERY_SEED.md`-style bundling) findings integrated: VII.1's "physical/logical isolation" ambiguity resolved to state unambiguously that the v1 bar is physical hardware diversity, logical-only does not satisfy it; VII.3.4/5 gained an explicit GMP-004 cross-reference naming the ratification-authentication gap they inherit (human-directed, cold-pass findings verified against source before integration), 2026-08-03 |
 | Auditor          | ChatGPT — Skeptic/Auditor; Gemini — Skeptic/Auditor; Grok — Skeptic/Auditor; Claude — Synthesizer; Claude — GMP-009 cross-referenced to GOV-013 (human-directed), 2026-07-16; Claude — GMP-005/GMP-009 resolved (multi-agent proposal, human-directed), 2026-07-17; Claude — Synthesizer/Auditor, external review triage (human-directed), 2026-07-25; Claude — Synthesizer/Auditor, EQD adoption with GOV-008 conflation caught and corrected (human-directed), 2026-07-26; Claude — Synthesizer/Auditor, polish pass (human-directed), 2026-07-27; Claude — Synthesizer/Auditor, Quorum Compliance Trend added, GOV-008 conflation re-checked and explicitly guarded a second time (human-directed), 2026-07-26; Claude — Synthesizer/Auditor, §VII drafted from an external candidate spec, verified against GOV-008's actual sidecar Resolution Path (`Archive/Logs/Governance_Charter_Changelog.md`) and §VI's Non-goal clause before integration, human-directed, 2026-07-31; Claude — Synthesizer, cold-pass corrective merge (human-directed), 2026-08-03 |
 | Open Unknowns    | 10                                                                  |
@@ -671,7 +671,7 @@ triggers specific to this file:*
   operational evidence
 - Concurrent amendments proceed without GMP-006 resolution
 - Ethical Anchor field absent, altered, or does not match canonical string
-- Verification Ref field changed from `Admin/Verification_Gates_LF.md`
+- Verification Ref field changed from `Admin/Verification_Gates.md`
 - §VI Epistemic Quorum Doctrine's Non-goal clause is weakened, removed,
   or any future amendment cites EQD compliance as satisfying or
   advancing GOV-008 without that claim itself being flagged as a
@@ -1562,7 +1562,7 @@ Claude — Synthesizer/Auditor, human-directed, 2026-07-26.*
   acknowledgment of bootstrap limitations added.
 - 2026-06-19: v0.2 — Three-agent audit pass (ChatGPT, Gemini, Grok) plus
   Claude synthesis. Eleven changes: (1) Navigation Anchors added.
-  (2) Verification Ref confirmed — `Admin/Verification_Gates_LF.md` is
+  (2) Verification Ref confirmed — `Admin/Verification_Gates.md` is
   correct; session-context false positive from agents working without full
   registry not applied. (3) Ownership transfer dual-truth-state resolved —
   "takes over ownership" replaced with "proposed to assume ownership pending

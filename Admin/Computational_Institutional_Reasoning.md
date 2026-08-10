@@ -17,7 +17,7 @@
 | Status | Exploration |
 | Version | 0.20 |
 | Spec Gates | G4 cleared; G1 partial (Gemini 2026-06-30); G3 blocked by AP-012/AP-016 |
-| Verification Ref | Admin/Verification_Gates_LF.md |
+| Verification Ref | Admin/Verification_Gates.md |
 | Ethical Anchor | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 | Highest Risk | CIR-001 — Physical Grounding Telemetry Mapping Interface undefined; \u03b31\u2013\u03b34 predicates currently aspirational in harness implementation (see Section 7.4). Renamed 2026-07-28 from local "GOV-008" — collided with `Admin/Governance_Charter.md`'s registered GOV-008 (minimum agent quorum); CIR-scoped prefix now registered in `Admin/Forge_Audit_Kit.md`'s Governance Sidecar ID Reference. |
 | Truth Basis | Internally Derived (Theorems) + Analogous (Multi-Agent Systems) |
@@ -25,6 +25,29 @@
 | Active Trackers | CIR-001, AP-012, AP-016, CF-002, CF-004 |
 
 > **Provenance self-reference note:** This document's own Provenance Ceiling Gate (\u03a8, Section 4.3) classifies its Truth Basis as *Internally Derived*, which bars it from self-promotion under its own algebra. Promotion to Candidate Spec requires at least partial Experimentally Verified status on the core claims.
+
+---
+
+## Scope Boundary
+
+**This file DOES define:**
+- The formal algebraic definition of Institutional State and Institutional Mutation
+- Core Axioms of Institutional Epistemics and Institutional Invariants
+- Five core theorems (Unknown Conservation, Governance Stability, Epistemic Debt Instability, Institutional Memory Dominance, Compiler Soundness)
+- Verification Algebra, physical grounding floors, and provenance ceilings
+- The epistemic state-machine model for multi-agent institutional reasoning
+- Derivation of Axiom A3 / Rule γ2 from `Admin/Nothingness_Theorem.md` (without altering that file's Tier 0 status)
+
+**This file DOES NOT define:**
+- Constitutional authority hierarchy or Tier ranking (→ `Admin/Governance_Charter.md`)
+- Ethical hard floors, Anti-Weaponization Doctrine, or pre-action authorization (→ `Admin/Ethical_Constraints.md`)
+- Operational auditor roles, Adversarial Battery, or detection procedures (→ `Admin/Auditor_Protocols.md`)
+- Autonomy divergence response tiers or restoration criteria (→ `Admin/Autonomy_Divergence_Protocol.md`)
+- Runtime implementation or harness code (nothing in this repository executes CIR predicates)
+- Quorum composition or GOV-008 ratification (Charter-layer work; CIR assumes but does not define it)
+- CIR_Gov.md's predicate-kernel packaging (→ `Admin/CIR_Gov.md` — related but separately scoped Proposed–Not-Ratified layer)
+
+**Status note:** Exploration; G4 cleared, G1 partial, G3 blocked by AP-012/AP-016. This file is a formal theoretical framework, not a ratified governance authority.
 
 ---
 
