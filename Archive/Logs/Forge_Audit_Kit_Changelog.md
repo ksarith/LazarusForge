@@ -31,7 +31,7 @@ elsewhere. Every other file in the repository keeps its sidecar in-body.
 
 **FAK-008** — Cross-agent Gate 3/G6 scoring dispute on `Security_Protocols.md`: gate execution-quality and open-unknown blocking are separate, independently required axes (see kit's Verification Gates section). Resolution: logged as Synthesizer-level resolution in `Security_Protocols.md` Active Disputes, 2026-07-02. Status: Resolved.
 
-**FAK-009** — Gate scope clarification (FAK-008) was drafted while `Verification_Gates_LF.md` was unavailable, so it cited `Admin/Auditor_Protocols.md` directly instead of the correct intermediate canonical layer — first concrete incident evidence for VG-001. Resolution: citation corrected once the file became available; checked independently consistent, no actual divergence. Lessons Learned: a derived file can cite the wrong layer of its own derivation chain even when the content stays correct — citation path and content correctness are different failure modes and both need checking. Status: Open (VG-001 itself remains unresolved in `Verification_Gates_LF.md`; the kit's citation is corrected).
+**FAK-009** — Gate scope clarification (FAK-008) was drafted while `Verification_Gates.md` was unavailable, so it cited `Admin/Auditor_Protocols.md` directly instead of the correct intermediate canonical layer — first concrete incident evidence for VG-001. Resolution: citation corrected once the file became available; checked independently consistent, no actual divergence. Lessons Learned: a derived file can cite the wrong layer of its own derivation chain even when the content stays correct — citation path and content correctness are different failure modes and both need checking. Status: Open (VG-001 itself remains unresolved in `Verification_Gates.md`; the kit's citation is corrected).
 
 **FAK-010** — AI Contribution Rules' role-declaration template cited `Auditor_Protocols.md v0.14` while File State's derivation line read v0.20 — a self-caught breach of the kit's own Maintenance Trigger and Drift Indicator, surfaced by a Claude self-audit 2026-07-14 that explicitly declined to assign this an ID and left it to human ratification. Resolution: corrected 2026-07-14, same session. Lessons Learned: the kit's own version-string maintenance is enforced by chance discovery during unrelated audits, not by any structural check — see also the Cycle/CURRENT_CYCLE finding in the Adversarial Battery record below, which is the same enforcement-gap pattern at a larger scale. Status: Resolved.
 
@@ -51,7 +51,7 @@ elsewhere. Every other file in the repository keeps its sidecar in-body.
 - The kit's existence as a condensed distillation of `Admin/Auditor_Protocols.md` is in structural tension with EF-0.1, which disqualifies agent consensus and precedent as evidence. An auditor who only ever loads the kit — which "How to Use" explicitly sanctions as the baseline for routine sessions — is relying on a secondary summary rather than independently verifying against primary source each time. "When this file contradicts a full source document, the full source document prevails" mitigates this for cases of detected conflict, but does nothing for cases where the kit is simply stale and nobody happens to load the source to notice (exactly what happened with the four separate staleness findings this session: Truth Provenance Labels, three derivation version strings, and the v0.14 role-declaration string). Not a defect to fix by editing text — a structural property of condensed references worth naming so it isn't mistaken for solved.
 
 **Governance Red Team:**
-- The kit grants itself binding block authority over Verification Gates without any structural mechanism ensuring its own gate table hasn't silently drifted from `Admin/Verification_Gates_LF.md`. An auditor exercising a block based on the kit's wording is exercising real authority on a secondary source, with cross-check against the primary left entirely to auditor discretion.
+- The kit grants itself binding block authority over Verification Gates without any structural mechanism ensuring its own gate table hasn't silently drifted from `Admin/Verification_Gates.md`. An auditor exercising a block based on the kit's wording is exercising real authority on a secondary source, with cross-check against the primary left entirely to auditor discretion.
 - Self-amendment without external enforcement: the kit defines its own Discharge Procedure, Drift Indicators, and Maintenance Trigger, but nothing enforces compliance with them except a future auditor happening to notice — which is exactly how FAK-010 was caught this session, by chance, during an audit of the kit for an unrelated reason (Grok's `Governance_Charter.md` audit going wrong). A compliance mechanism that depends on incidental discovery is not a mechanism.
 
 **Systems / Operational Red Team — MAJOR FINDING, confirmed against source, not hypothetical:**
@@ -210,7 +210,7 @@ That check has now been run. `AUDIT_HARNESS.py` line 368: `CURRENT_CYCLE = 10   
   thresholds. Verification Gates section gained a G2 evidentiary-backing
   note it had been missing since VG-002 activated the same day. Derived-
   from line corrected: `Auditor_Protocols.md` v0.18 → v0.20,
-  `Verification_Gates_LF.md` v0.4 → v0.7, `Unknowns.md` v4.10 → v4.20 —
+  `Verification_Gates.md` v0.4 → v0.7, `Unknowns.md` v4.10 → v4.20 —
   all three had drifted since this kit's 2026-07-05 Last Audit. A full
   content re-sync against everything that changed across those version
   gaps was not attempted this pass — flagged as separate follow-up work,
@@ -243,21 +243,21 @@ That check has now been run. `AUDIT_HARNESS.py` line 368: `CURRENT_CYCLE = 10   
 
 - 2026-06-21: **v1.2** — Derivation string updated to `Admin/Auditor_Protocols.md` v0.8.1. Epistemic Foundation condensed reference added. Audit Opening Checklist restructured. AP-001–AP-007 Systemic Risk escalation added. Physical harness gate note added. Rule 8 added to AI Contribution Rules. Token ceiling note added.
 - 2026-06-24: **v1.3** — Derivation strings updated to `Admin/Auditor_Protocols.md` v0.14 and `Unknowns.md` v4.0. Role declaration version string updated to v0.14. Human Interaction Point Doctrine added to Governing Principles. EF-0.2 L2 entry updated to reflect autonomous degradation doctrine. Active Unknowns section removed — replaced by critical watch summary integrated into Expiry Watch step. AP Systemic Risk escalation note updated: all seven entries carry resolution frameworks; AP-006 and AP-009 Resolved; AP-012 and AP-016 Critical. GH- prefix added to Governance Sidecar ID Reference. Operational Blocking / Epistemic Blocking added to Semantic Stability table. Gate 3 note updated with AP-017 independence requirement and current block status. AP-010 physical harness note updated. Token ceiling note updated to reflect v0.14 character count. FAK-005 remains Open — actual post-reduction count ~16,950; ceiling parameter needs revisiting, not the content. Reduction pass complete.
-- 2026-06-27: **v1.3 patch** — Spec Gates (0/6) and Verification Ref (Admin/Verification_Gates_LF.md) added to File State block. Phase 1 enforcement (AUDIT_HARNESS.py v11) flagged missing fields — all repository documents follow the same File State schema, no exceptions for meta documents.
+- 2026-06-27: **v1.3 patch** — Spec Gates (0/6) and Verification Ref (Admin/Verification_Gates.md) added to File State block. Phase 1 enforcement (AUDIT_HARNESS.py v11) flagged missing fields — all repository documents follow the same File State schema, no exceptions for meta documents.
 - 2026-07-02: **v1.4** — Resolved Unknown Discharge Procedure section added, canonizing the RIP-001 pattern (permanent sidecar retention, Resolution + Lessons Learned narrative fields, matching top-table row, one-line Unknowns.md pointer — no centralized archive). Placed between Verification Gates and Sign-Off Format. Matching Drift Indicator added. FAK-006 logged — condensed version lives here per Scope Boundary; full doctrine migration to `Admin/Auditor_Protocols.md` still pending (file unavailable this session). Prompted by retroactive correction of RIP-004's discharge record, which had skipped the Lessons Learned narrative field and matching table row for six weeks despite being correctly resolved in substance.
 - 2026-07-02: **v1.5** — Gate scope vs. promotion readiness clarification added to Verification Gates, sourced from `Admin/Auditor_Protocols.md` §Specification Promotion Rules and §Adversarial Audit Layer (file made available this session for the first time). Resolves the standing Grok/Gemini G3/G6 disagreement on `Admin/Security_Protocols.md`: gates test a document's own execution quality (check applied and documented, text non-contradictory); "open unknowns are non-blocking" is a separate, independently required promotion condition, not folded into G3 or G6. Flagged a legibility issue in the source: `Admin/Auditor_Protocols.md`'s own Gate 3 status entry blends "battery coverage complete" with "promotion blocked" in one line — correct in substance, ambiguous in phrasing. Gate 3 note rewritten to separate the two explicitly. `Unknowns.md` derivation string corrected from stale v4.0 to v4.5 (three missed maintenance-trigger updates). New Drift Indicator added for gate/promotion-status conflation. FAK-007 logged — critical watch summary still needs a full refresh against v4.0→v4.5 changes, not done this session. FAK-008 logged — dispute resolution recorded as Synthesizer-level, reversible, cross-referenced into `Admin/Security_Protocols.md` Active Disputes per `Admin/Auditor_Protocols.md` §Dispute Handling Protocol.
-- 2026-07-02: **v1.6** — `Admin/Verification_Gates_LF.md` reconciliation.
+- 2026-07-02: **v1.6** — `Admin/Verification_Gates.md` reconciliation.
   Derivation line corrected to include it (was citing `Auditor_Protocols.md`
   only, skipping the intermediate canonical layer this kit's gate table is
   actually derived from). Gate scope vs. promotion readiness note's citation
-  corrected to route through Verification_Gates_LF.md §Gate 3/§Gate 6/
+  corrected to route through Verification_Gates.md §Gate 3/§Gate 6/
   §Promotion Requirements Summary; checked against it and confirmed
   independently consistent — no actual divergence, wrong citation path only.
   FAK-009 logged as the first concrete incident evidence for VG-001 (open
   since 2026-05-29, previously hypothetical risk). VG-001 remains Open —
-  see Verification_Gates_LF.md Resolution Log for the full record.
+  see Verification_Gates.md Resolution Log for the full record.
 - 2026-07-02: **v1.7** — Derivation line was stale within the same session
-  that fixed it: v1.6 cited `Verification_Gates_LF.md v0.2` after that file
+  that fixed it: v1.6 cited `Verification_Gates.md v0.2` after that file
   had already been bumped to v0.3 in the same pass, and still cited
   `Unknowns.md v4.5` after Unknowns.md had moved to v4.6 then v4.7. Both
   corrected. Caught via a user-initiated live-repo check (Grok retrieval of
@@ -273,7 +273,7 @@ That check has now been run. `AUDIT_HARNESS.py` line 368: `CURRENT_CYCLE = 10   
   Lessons Learned fields, Discovery.md Objectives section unconfirmed by
   this pass).
 - 2026-07-03: **v1.8** — Derivation line updated (`Auditor_Protocols.md`
-  v0.14 → v0.16, `Verification_Gates_LF.md` v0.3 → v0.4, `Unknowns.md`
+  v0.14 → v0.16, `Verification_Gates.md` v0.3 → v0.4, `Unknowns.md`
   v4.7 → v4.9). Gate 3 note corrected: AP-012 and AP-016 Resolved as of
   `Auditor_Protocols.md` v0.16 (2026-07-03, Payment via Specification,
   full multi-agent specification text verified against original blocking

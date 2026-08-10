@@ -269,10 +269,10 @@ GOV-XXX sidecar entry and the full Resolution Log — lives here now.
 | Resolved      | 2026-07-05                       |
 
 **Description:** This file's File State `Verification Ref` field names
-`Admin/Verification_Gates_LF.md` as the authority for its `Spec Gates X/6`
+`Admin/Verification_Gates.md` as the authority for its `Spec Gates X/6`
 score. But the score itself ("1/6, Gate 2 Blocked — Bootstrap Paradox")
 was being reported against this file's own internal gate system — since
-renamed to Enforcement Checkpoints — not against Verification_Gates_LF.md's
+renamed to Enforcement Checkpoints — not against Verification_Gates.md's
 actual Verification Gates. Discovered while resolving a naming collision
 between the two systems (both were called "Gate N," now disambiguated).
 The naming fix does not resolve this: it only makes visible that the
@@ -287,7 +287,7 @@ Governance_Charter.md.
 
 **Resolution — both parts closed 2026-07-05:**
 
-*Part 1 — real audit against Verification_Gates_LF.md's actual six gates:*
+*Part 1 — real audit against Verification_Gates.md's actual six gates:*
 A dual multi-agent audit (Grok, Gemini) plus independent verification of
 each specific finding against this file's live text found: **G1 (Fallacy
 Checklist), G2 (Physical Plausibility), G4 (Scope Alignment), and G6
@@ -312,16 +312,16 @@ promote, and isn't intended to here either.
 *Part 2 — isolated or systemic:* Spot-checked all eight other
 governance-tier (Admin/) files carrying a `Spec Gates X/6` field:
 `Ethical_Constraints.md`, `Canonical_Terms.md`, `Auditor_Protocols.md`,
-`Forge_Audit_Kit.md`, `Verification_Gates_LF.md`,
+`Forge_Audit_Kit.md`, `Verification_Gates.md`,
 `Repository_Integrity_Protocol.md`, `Security_Protocols.md`, and
 `Governance_Migration_Protocol.md`. **All eight correctly cite
-`Admin/Verification_Gates_LF.md` as their sole Verification Ref, with no
+`Admin/Verification_Gates.md` as their sole Verification Ref, with no
 competing internal gate system.** Security_Protocols.md and
 Governance_Migration_Protocol.md's own changelogs show they already caught
 and corrected a Verification Ref mismatch on their own, independently,
 months before GOV-011 was ever logged here. **Confirmed isolated to this
 file** — the specific failure mode (an internal gate-numbered system
-colliding with Verification_Gates_LF.md's own "Gate N" numbering) could
+colliding with Verification_Gates.md's own "Gate N" numbering) could
 only occur in the one file that owns such a system, which is this one.
 
 **Lessons Learned:** The rename (Enforcement Checkpoints) fixed the naming
@@ -763,7 +763,7 @@ independently — a shared mechanism may serve both.
   Risk updated to Critical (GOV-013).
 
 - 2026-07-05 (second entry, same day): **GOV-011 Resolved.** Real audit
-  against Verification_Gates_LF.md's actual six gates: G1, G2, G4, G6 pass
+  against Verification_Gates.md's actual six gates: G1, G2, G4, G6 pass
   uncontested; G3 and G5 were disputed by Gemini's same-day audit but
   neither dispute held up against direct source-text verification (G5's
   `Lazarus-Forge-` reference is an established repo-wide external-repo
@@ -773,10 +773,10 @@ independently — a shared mechanism may serve both.
   separately blocked by GOV-003/GOV-005, unaffected by this resolution.
   Spot-checked all eight other governance-tier Spec-Gates-bearing files
   (Ethical_Constraints.md, Canonical_Terms.md, Auditor_Protocols.md,
-  Forge_Audit_Kit.md, Verification_Gates_LF.md,
+  Forge_Audit_Kit.md, Verification_Gates.md,
   Repository_Integrity_Protocol.md, Security_Protocols.md,
   Governance_Migration_Protocol.md) — all correctly cite
-  Verification_Gates_LF.md with no competing gate system; two of them
+  Verification_Gates.md with no competing gate system; two of them
   (Security_Protocols.md, Governance_Migration_Protocol.md) had already
   self-corrected an unrelated Verification Ref issue independently, months
   earlier. **Confirmed isolated to this file** — the failure mode requires
@@ -813,7 +813,7 @@ independently — a shared mechanism may serve both.
   §External Design Lineage; proposes phased rollout (pilot review before
   repository-wide mandate) instead of immediate global enforcement; omits
   automated-harness enforcement mechanics as out of scope for constitutional
-  text. Flagged in passing, not addressed: `Admin/Verification_Gates_LF.md`'s
+  text. Flagged in passing, not addressed: `Admin/Verification_Gates.md`'s
   Six Canonical Verification Gates and this file's own §Canonical
   Verification Gates define materially different Gate 3 and Gate 4 criteria
   — an undocumented divergence discovered while locating this amendment's
@@ -826,17 +826,17 @@ independently — a shared mechanism may serve both.
   renaming this file's "Canonical Verification Gates" (Gate 1–6) to
   "Enforcement Checkpoints" (Checkpoint 1–6) throughout the live section,
   File State, Genesis Phase text, and Drift Indicators — eliminating the
-  naming collision with `Admin/Verification_Gates_LF.md`'s Verification
+  naming collision with `Admin/Verification_Gates.md`'s Verification
   Gates. A second, deeper issue surfaced in the same review: this file's
   File State `Spec Gates 1/6 (Gate 2 Blocked...)` field was reporting
   Enforcement Checkpoint 2's status under a label whose `Verification Ref`
-  points to Verification_Gates_LF.md — the two systems test different
+  points to Verification_Gates.md — the two systems test different
   things (governance-action legitimacy vs. document promotion readiness),
   so "1/6" has never been audited against the file it claims to reference.
   Logged as **GOV-011**, Open, not resolved by the rename alone. File
   State field rewritten to state this explicitly rather than imply a
   score that was never actually computed. Cross-referenced in
-  `Admin/Canonical_Terms.md` §4 and `Admin/Verification_Gates_LF.md`.
+  `Admin/Canonical_Terms.md` §4 and `Admin/Verification_Gates.md`.
 
 - 2026-05-23: GOV-LEGACY-01 — Governance hierarchy formalized into constitutional tier structure.
 - 2026-05-23: GOV-LEGACY-02 — Recursive governance escalation partially stabilized through closure doctrine.
@@ -848,7 +848,7 @@ independently — a shared mechanism may serve both.
 - 2026-05-23: **README.md updated** — canonical filenames, governance layer section, all seven gates listed.
 - 2026-05-23: **Abandoned Paths and Drift Indicators sections added** per File_Template.md structure.
 - 2026-06-02: **v0.6 — Genesis Phase exit conditions expanded.** Single quorum-dependent exit replaced with four pathways: (1) Quorum Achievement; (2) Demonstrated Track Record; (3) Milestone-Gated; (4) Time-Bounded Review. Post-exit obligations defined. GOV-008 resolution path updated. Drift Indicators updated. Gate 2 blocked (bootstrapping paradox). Five findings addressed: GOV-006 resolution path tightened; [PLANNED] labels added to Relationship section; Bootstrap Governance Doctrine amended — Genesis Phase Protocol added; GOV-008 and GOV-009 logged; Ethical Anchor fallback clarification added; GOV-007 status moved to In Progress.
-- 2026-06-08: Navigation Anchors block added. Verification Ref corrected from `Verification_Gates_LF.md` to `Admin/Verification_Gates_LF.md` (PC-001). Scope Boundary stale reference corrected: `Canonical_Terms_LF.md` → `Admin/Canonical_Terms.md`. Relationship section [PLANNED] labels removed for four files now confirmed created: `Admin/Canonical_Terms.md` (2026-05-26), `Admin/Repository_Structure.md` (2026-06-06), `Admin/Security_Protocols.md`, `Admin/Governance_Migration_Protocol.md` (2026-06-06) (PC-003). Status section artifact removed — version history absorbed into Resolution Log. Owner fields corrected to `Admin/Governance_Charter.md` throughout sidecar.
+- 2026-06-08: Navigation Anchors block added. Verification Ref corrected from `Verification_Gates.md` to `Admin/Verification_Gates.md` (PC-001). Scope Boundary stale reference corrected: `Canonical_Terms_LF.md` → `Admin/Canonical_Terms.md`. Relationship section [PLANNED] labels removed for four files now confirmed created: `Admin/Canonical_Terms.md` (2026-05-26), `Admin/Repository_Structure.md` (2026-06-06), `Admin/Security_Protocols.md`, `Admin/Governance_Migration_Protocol.md` (2026-06-06) (PC-003). Status section artifact removed — version history absorbed into Resolution Log. Owner fields corrected to `Admin/Governance_Charter.md` throughout sidecar.
 - 2026-06-16: **v0.7 — Multi-agent audit pass (Claude + Gemini).** Five findings addressed: (1) Spec Gates corrected 2/6 → 1/6 — Gate 2 remains Blocked (Bootstrap Paradox); metadata now matches historical record. (2) Canonical Governance Ownership table cleaned — [PLANNED] stripped from confirmed-created files; all owners use canonical folder-prefixed paths. (3) Genesis Phase Protocol clarified — Q-2 compliance via single human operator requires demonstrable role separation; same-session self-authorization does not satisfy Q-2. (4) GOV-006-A added — interim authentication rules documented as declarative-only with zero automated resistance. (5) GOV-001 status moved to In Progress — GMP created 2026-06-06 as executing resolution path.
 - 2026-06-17: **v0.8 — Full revision from source (Claude).** Seven findings addressed: (1) Open Unknowns incremented 9 → 10; Last Audit updated. (2) Pathway 4 review horizon labeled [Estimated / Internally Derived]. (3) Gate 2 body text updated with explicit BLOCKED status note. (4) Gate 5 body text updated with explicit AP-006 path reference (`Admin/Auditor_Protocols.md` §AP-006 via `Admin/Forge_Audit_Kit.md`) and Genesis Phase Gate 5 clarification. (5) Autonomous Governance Constraints updated — execution outside RIP visibility frameworks logged as governance visibility violation triggering localized STATE_HOLD (scoped to visibility violation, not constitutional violation, pending RIP maturation). (6) GOV-002 resolution path updated with explicit AP-006 routing. (7) GOV-010 logged — jurisdictional and regulatory compliance friction; cross-referenced to GOV-009 and planned Environmental_Constraints.md. (8) All sidecar Owner fields standardized to backtick-quoted canonical folder-prefixed paths. (9) Governance Authority Hierarchy and Canonical Governance Ownership tables updated with backtick-quoted paths; GMP row added to ownership table. (10) Drift Indicators: Gate 2 block status sentinel added.
 - 2026-07-12: Reordered Abandoned Paths and Drift Indicators to after Auditor Notes & Unknowns, per `Admin/File_Template.md` order — they previously sat between Active Disputes and Auditor Notes & Unknowns. No other content changed. Same ordering bug found and fixed the same day in `Operations/Air_Scrubber.md`, `Operations/Energy.md`, and `Operations/Gate_02_Triage.md` — this is the fifth file with the identical slip, and the first Tier 1 constitutional file caught with it.
