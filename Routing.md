@@ -133,6 +133,7 @@ This file acts as the primary network lookup table for automated agents, continu
 | `Archive/Logs/Governance_Charter_Changelog.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Archive/Logs/Governance_Charter_Changelog.md) | [Repo](https://github.com/ksarith/LazarusForgeV0/blob/main/Archive/Logs/Governance_Charter_Changelog.md) | Explicit |
 | `Archive/Logs/Unknowns_Changelog.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Archive/Logs/Unknowns_Changelog.md) | [Repo](https://github.com/ksarith/LazarusForgeV0/blob/main/Archive/Logs/Unknowns_Changelog.md) | Explicit |
 | `Archive/Logs/Progress_Log_Changelog.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Archive/Logs/Progress_Log_Changelog.md) | [Repo](https://github.com/ksarith/LazarusForgeV0/blob/main/Archive/Logs/Progress_Log_Changelog.md) | Explicit |
+| `Archive/Logs/Discovery_Changelog.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Archive/Logs/Discovery_Changelog.md) | [Repo](https://github.com/ksarith/LazarusForgeV0/blob/main/Archive/Logs/Discovery_Changelog.md) | Explicit |
 
 *\* **Discovery.md Description Context:** The foundational navigational directory and behavior scope boundary map for the active working repository layer. It anchors incoming multi-agent analysis runs and human code reviews, defining active document maturity gates, dependency maps, and evolutionary path tracking parameters without cluttering data extraction queries with long textual strings.*
 
@@ -177,6 +178,10 @@ description of it.
 **2026-08-09 addition:** three entries added — `Admin/Progress_Log.md` and
 `Archive/Rename_Registry.md` (both new, migrated/created same day), plus
 `Archive/Logs/Progress_Log_Changelog.md` (added once the first rotation
-out of `Progress_Log.md` happened, same day it was created). Verified current count: 111 entries. See `Discovery.md`'s
+out of `Progress_Log.md` happened, same day it was created). A fourth,
+`Archive/Logs/Discovery_Changelog.md`, added shortly after — Discovery.md's
+own inline correction-note history had the same "no dedicated home"
+problem as the Rename Registry, caught by direct human review of the
+delivered patch. Verified current count: 112 entries. See `Discovery.md`'s
 Pending Corrections PC-007 and `Progress_Log.md`'s own Resolution Log
 for the full change this accompanies.
