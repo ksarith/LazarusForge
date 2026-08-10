@@ -21,7 +21,7 @@
 | Challenges Subtype | Solution-Track |
 | Body Stability | Volatile — five open unknowns (RE-UNK-001 through 005) directly affect the Eden Index formula's operability; the mathematical formulation itself is explicitly labeled PROVISIONAL pending instrument specification |
 | Spec Gates | None cleared (G1–G2 conditional, G4–G6 cleared per 2026-06-30 audit — see Last Audit) |
-| Verification Ref | `Admin/Verification_Gates_LF.md` |
+| Verification Ref | `Admin/Verification_Gates.md` |
 | Ethical Anchor | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 | Auditor | Grok + ChatGPT — dual Exploration audit, 2026-06-30 |
 | Open Unknowns | 5 (RE-UNK-001 through RE-UNK-005) |
@@ -190,7 +190,7 @@ As the Lazarus Forge catalog expands, this file serves as the definitive archite
 | Subtype | Active |
 | Status | Open |
 | Blocking | Non-blocking at Exploration. Becomes blocking before Specification promotion — gate logic required for any claim of Tier I achievement. |
-| Resolution Vehicle | Admin/Verification_Gates_LF.md — extend with Return to Eden tier gate definitions; cross-ref Admin/Auditor_Protocols.md EF-0.3 Epistemic Ledger |
+| Resolution Vehicle | Admin/Verification_Gates.md — extend with Return to Eden tier gate definitions; cross-ref Admin/Auditor_Protocols.md EF-0.3 Epistemic Ledger |
 | First Cycle | 11 |
 
 ### RE-UNK-004

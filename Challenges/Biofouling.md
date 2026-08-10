@@ -22,7 +22,7 @@
 | **Version** | v0.3 |
 | **Last Updated** | 2026-07-11 |
 | **Owner** | Challenges/ |
-| **Verification Ref** | `Admin/Verification_Gates_LF.md` |
+| **Verification Ref** | `Admin/Verification_Gates.md` |
 | **Ethical Anchor** | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
 ---

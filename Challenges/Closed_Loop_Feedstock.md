@@ -15,7 +15,7 @@
 | Version            | v0.9.0 |
 | Body Stability     | Transitional |
 | Spec Gates         | 0/6 |
-| Verification Ref   | `Admin/Verification_Gates_LF.md` |
+| Verification Ref   | `Admin/Verification_Gates.md` |
 | Ethical Anchor     | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 | Highest Risk       | Silent contamination cascades or toolhead destruction (CLF-003/CLF-006). |
 | Last Audit         | 2026-08-07 — §4a Class-D gaming surface given its Challenge Class 8 adversarial pass, Class D Residency Cap proposed; prior: 2026-08-03 (§4a CLF-010 proposed resolution added, Proposed, not ratified); prior: 2026-07-31 (§7 CLF-006/CLF-009 doctrine ratified by human governing authority; CLF-006/CLF-009 moved Open → In Progress) |

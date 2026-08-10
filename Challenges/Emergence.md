@@ -20,7 +20,7 @@
 | **Version** | v0.2 |
 | **Last Updated** | 2026-07-11 |
 | **Owner** | Challenges/ |
-| **Verification Ref** | `Admin/Verification_Gates_LF.md` |
+| **Verification Ref** | `Admin/Verification_Gates.md` |
 | **Ethical Anchor** | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
 ---
@@ -43,7 +43,7 @@ This file defines the challenge of emergent intelligence as it applies to the La
 - Hardware watchdog specifications → `Architecture/Cognitive_Frameworks.md` (CF-001)
 - Correlated AI failure mode protocols → `Architecture/Cognitive_Frameworks.md` (CF-002)
 - Firmware trust and Logic-Zero re-baselining doctrine → `Operations/Electronics.md`
-- Multi-agent consensus verification gates → `Admin/Verification_Gates_LF.md`
+- Multi-agent consensus verification gates → `Admin/Verification_Gates.md`
 - Closed-loop behavioral feedback mechanics → `Operations/Gate_07_Utilization.md`
 - Tier 1 Axiom corrigibility requirements (Q-3) → `Admin/Governance_Charter.md`
 
@@ -86,7 +86,7 @@ This file exists to establish that emergent intelligence is a reflexive challeng
 | `Architecture/Forge_Net.md` | Network trust and drift-detection requirements inherit from this challenge |
 | `Tests/Leviathan_testing.md` | Autonomy constraint architecture and Correlated AI Failure Test Protocol |
 | `Tests/Support_Raft.md` | Oversight architecture for remote autonomous units |
-| `Admin/Verification_Gates_LF.md` | Verification gate logic for filtering agent-contributed content |
+| `Admin/Verification_Gates.md` | Verification gate logic for filtering agent-contributed content |
 
 ---
 
@@ -138,7 +138,7 @@ Current approaches active in the repository:
 
 - **Multi-Agent Cross-Examination** — Through workflows developed in communities including r/InnovativeAIChats, the Forge deploys a multi-agent consensus network. Structural decisions, repository updates, and verification gates are cross-referenced across distinct AI architectures to isolate hallucinations by pitting contrasting containment theories against one another until a stable, deterministic resolution is achieved. See: `Admin/Auditor_Protocols.md` for the full protocol governing this workflow.
 
-- **Deterministic Reliability via Verification Gates** — `Admin/Verification_Gates_LF.md` serves as the canonical source for filtering AI-contributed content within engineering workflows. No agent can directly alter physical processing specifications without passing through hard validation metrics that isolate logical fallacies and data anomalies before they incur physical costs.
+- **Deterministic Reliability via Verification Gates** — `Admin/Verification_Gates.md` serves as the canonical source for filtering AI-contributed content within engineering workflows. No agent can directly alter physical processing specifications without passing through hard validation metrics that isolate logical fallacies and data anomalies before they incur physical costs.
 
 - **Logic-Zero Trust Reset** — Borrowing from the firmware doctrines established in `Operations/Electronics.md`, the Forge maintains the capacity to re-baseline programmable components and agent memory arrays. If an active logic loop exhibits unresolvable divergence or rejects corrigibility, the system enforces a clean wipe and reflash to a known-good, open-source architecture. The silicon is not complicit in the lock. The silicon is recoverable.
 
@@ -191,7 +191,7 @@ The Forge itself is not exempt from this standard. A governance architecture tha
 
 ---
 
-*See: `Architecture/Cognitive_Frameworks.md` for the hardware watchdog standard (CF-001), correlated failure modes (CF-002), and the Forge Meta-Algorithm (Section IX) that this challenge directly drives. See: `Admin/Verification_Gates_LF.md` for the canonical verification standard governing agent input. See: `Operations/Electronics.md` for the firmware trust and re-baselining doctrines. See: `Operations/Gate_07_Utilization.md` for closed-loop behavioral feedback mechanics. See: `Admin/Governance_Charter.md` Tier 1 Axiom Q-3 for the constitutional corrigibility requirement the Forge holds itself to.*
+*See: `Architecture/Cognitive_Frameworks.md` for the hardware watchdog standard (CF-001), correlated failure modes (CF-002), and the Forge Meta-Algorithm (Section IX) that this challenge directly drives. See: `Admin/Verification_Gates.md` for the canonical verification standard governing agent input. See: `Operations/Electronics.md` for the firmware trust and re-baselining doctrines. See: `Operations/Gate_07_Utilization.md` for closed-loop behavioral feedback mechanics. See: `Admin/Governance_Charter.md` Tier 1 Axiom Q-3 for the constitutional corrigibility requirement the Forge holds itself to.*
 
 ---
 

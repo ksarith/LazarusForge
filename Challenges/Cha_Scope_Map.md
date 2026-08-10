@@ -46,7 +46,7 @@ Note: this file's own Scope Boundary is `## 2. Scope Boundary` — a numbered he
 **Subtype:** Problem-Statement · Status: Exploration
 **Challenge Class:** Reflexive — unlike every other file in this folder, this pressure is created by the Forge's own capability (autonomous agent deployment), not by an external condition. Explicitly self-distinguished in its own text from the six External-class files.
 **Owns:** Crisis framing for emergent intelligence in distributed autonomous systems; alignment-by-environment engineering requirements; current architectural responses; human-AI co-existence objective.
-**Does not own (arrow):** Hardware watchdog specs (`Architecture/Cognitive_Frameworks.md` CF-001) · correlated AI failure modes (`Cognitive_Frameworks.md` CF-002) · firmware trust/Logic-Zero (`Operations/Electronics.md`) · multi-agent consensus gates (`Admin/Verification_Gates_LF.md`) · closed-loop behavioral feedback (`Gate_07_Utilization.md`) · Tier 1 corrigibility (Q-3, `Admin/Governance_Charter.md`).
+**Does not own (arrow):** Hardware watchdog specs (`Architecture/Cognitive_Frameworks.md` CF-001) · correlated AI failure modes (`Cognitive_Frameworks.md` CF-002) · firmware trust/Logic-Zero (`Operations/Electronics.md`) · multi-agent consensus gates (`Admin/Verification_Gates.md`) · closed-loop behavioral feedback (`Gate_07_Utilization.md`) · Tier 1 corrigibility (Q-3, `Admin/Governance_Charter.md`).
 
 ### `Challenges/Energy_Scarcity.md`
 **Subtype:** Problem-Statement · Status: Active
