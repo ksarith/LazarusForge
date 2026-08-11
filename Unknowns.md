@@ -3,19 +3,19 @@
 
 **Full version history in `Unknowns_Changelog.md` (2026-07-19 cleanup pass, following the precedent set by `Admin/AUDIT_HARNESS_CHANGELOG.md` and `Admin/Forge_Audit_Kit_Changelog.md`; scrubbed to current-version-only 2026-07-28 — the "current plus last four in full" window was itself compressed further, since the Audit Trail below now carries the compressed record for every version back to v1.0, and the changelog carries full text for all of them. This block now keeps only the current version.)**
 
-**Version 4.48 — 2026-08-09. "What vX.X Means" retired to `Admin/Progress_Log.md`.**
-This section had violated its own Size Management Rule 1 (retire and
-replace every version bump) for nine consecutive versions — last updated
-at v4.39, this file now well past that. Content migrated to the new
-`Admin/Progress_Log.md`, which uses dated headings instead of a version
-number so the same failure can't recur (nothing about adding a new entry
-requires touching an old one's heading). Rule 1 rewritten to point there.
-Companion change: `Discovery.md`'s "Cross-Module Unknowns — Attention
-Required" table — 19 versions stale, last refreshed at v4.29 — was removed
-outright rather than migrated, since this file's own Active Index with
-Priority/Blocking columns already serves that function without a shadow
-copy. No unknowns opened, closed, or reclassified by this version; this
-is a structural/navigational change only.
+**Version 4.50 — 2026-08-11. EC-001 resolved — removed from Active Index.**
+`Admin/Ethical_Constraints.md` added its Confidence Threshold Doctrine,
+reusing `Admin/Auditor_Protocols.md` §AP-006's existing UNKNOWN/PROVISIONAL/
+VERIFIED epistemic-state machinery (Risk-tiered) rather than defining a new
+threshold system. Also found that two of the three phrasings EC-001's
+description asked to reconcile ("confidently classified," "reasonably
+bounded") were never live doctrine anywhere in the repository — only in an
+archived transcript — narrowing the actual scope to one term. EC-001
+sidecar entry Open → Resolved; removed from this file's Ethics & Governance
+Active Index per Size Management Rule 2. LT-003 (autonomy architecture),
+EC-008 (inferred authorization), and EC-012 (telemetry spoofing) remain
+separately Open — this doctrine depends on all three but resolves none.
+Human-directed.
 
 **Expiry Rule active — see `Admin/Canonical_Terms.md` §4 for the Cycle definition this rule now explicitly references (one calendar year default, not one audit pass — see CT-011). Protocol Performance metrics collecting.**
 
@@ -220,8 +220,6 @@ GH-009 (Emergent heuristic conflict — N² interaction scaling)
 
 | ID | Title | Owning File | Status | Subtype | Priority (Promo) |
 |---|---|---|---|---|---|
-| EC-001 | "Sufficient confidence" threshold | `Admin/Ethical_Constraints.md` | Open | — | Blocking |
-| EC-002 | Anti-Weaponization pattern-matching | `Admin/Ethical_Constraints.md` | Open | — | Blocking |
 | EC-003 | Human escalation path | `Admin/Ethical_Constraints.md` | In Progress | Active | Blocking |
 | EC-004 | Governance failure modes lifecycle | `Admin/Ethical_Constraints.md` | In Progress | Active | Blocking |
 | EC-005 | Life-preservation vs. Anti-Weaponization | `Admin/Ethical_Constraints.md` | In Progress | Active | Blocking |
