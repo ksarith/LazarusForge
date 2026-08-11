@@ -499,6 +499,13 @@ Mandatory re-audit conditions for this document:
 
 ### Resolution Log
 
+- 2026-08-11: **Pseudo-audit (Grok, same limits).** Findings only; Spec Gates
+  left locked. (1) Open Unknowns **8** = ENV-001–006, ENV-009, ENV-010
+  (ENV-007 Resolved; ENV-008 Partially) — matches File State. (2) ENV-001,
+  ENV-002, ENV-009, ENV-010 correctly **Blocking Yes** for their stated
+  claim classes. (3) No ENV-* closed; no site-assessment claims advanced.
+  Human-directed.
+
 - 2026-07-17: **v0.4 — ENV-DS-001 ratified (human governing authority).** Both
   pieces of the pending package — the core Compliance-Maximizing Default
   reconciliation (2026-07-06) and the bounded bridge-authority amendment

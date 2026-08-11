@@ -22,7 +22,7 @@
 | Highest Risk     | High (governs response to AI governance/objective divergence)      |
 | Sidecar Link     | #auditor-notes--unknowns                                            |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
-| Governance ID    | Candidate GOV-021 (next available; not yet registered in `Admin/Governance_Charter.md` — that file is outside the current paste-based edit workflow, registration pending) |
+| Governance ID    | GOV-021 — formally registered in `Archive/Logs/Governance_Charter_Changelog.md` 2026-07-27; protocol itself remains Draft / PROPOSED NOT RATIFIED |
 
 ---
 
@@ -55,7 +55,7 @@ This document does **not** propose, and explicitly rejects, any framing in which
 - CIR predicate evaluation or institutional state algebra (→ `Admin/Computational_Institutional_Reasoning.md`)
 - Application to purely advisory or fully human-supervised tooling (by construction those cannot diverge from oversight they never had independence from)
 
-**Status note:** Draft — PROPOSED NOT RATIFIED. 0/6 Spec Gates. Candidate GOV-021 not yet registered in Charter.
+**Status note:** Draft — PROPOSED NOT RATIFIED. 0/6 Spec Gates. GOV-021 ID registered in Charter sidecar 2026-07-27; protocol body still unratified.
 
 ## 3. Definitions
 
@@ -189,6 +189,15 @@ Earlier discussion in this drafting process considered framing this as an "exit 
 ---
 
 ## Resolution Log
+
+- 2026-08-11: **Pseudo-audit (Grok, same limits).** Findings only; Spec Gates
+  left locked at 0/6. (1) Open Unknowns **2** = GOV-021b, GOV-021c — matches
+  File State. (2) **Stale registration note corrected:** File State Governance
+  ID and §2 Status note still said GOV-021 “not yet registered in Charter”;
+  Charter sidecar registered GOV-021 on 2026-07-27. Updated both to reflect
+  registration while keeping Draft / PROPOSED NOT RATIFIED for the protocol
+  body itself. (3) No GOV-021b/c closed; no ratification advanced.
+  Human-directed.
 
 - 2026-07-19 (fifth pass): Cross-checked against companion repository Astroid-miner (`Rogue_unit_management.md`, `uranus_ejector_module.md`), expected to eventually be absorbed into Lazarus Forge. Found near-identical governance lifecycle independently drafted months earlier (January 2026): Detection/Monitoring ↔ Watch; Reversion/Safe Mode ↔ Immediate; Isolation/Kill-Switch ↔ Human-Reviewed/Partition; Core Recovery & Reintroduction ↔ Restoration (§9), already generalized further there into feeding recovered data back into system-wide algorithm refinement. Imported one concrete mechanism candidate for GOV-021b: Fleet Consensus Validation's 80–99% agreement threshold, as a numeric answer to §5's abstract "no single subsystem decides" principle (§5). Confirmed the Watch-exit-conditions gap flagged in the fourth pass is not unique to this document — Astroid-miner's Reversion/Safe Mode has the identical unaddressed exit question (§6). Noted Astroid-miner's tiered Ethical Hierarchy Block as an alternative worth future awareness, explicitly not acted on given the standing decision to hold the Ethical Anchor unchanged (§Relationship to Prior Framing). No changes made to response tiers, classification default, or ratification status — this pass added evidence and candidate mechanisms, not new commitments.
 

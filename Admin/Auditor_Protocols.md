@@ -572,7 +572,7 @@ Placeholder claims may not justify Specification promotion.
 
 **Provenance collapse** — the silent upgrade of Internally Derived claims to Operationally Hardened status through repetition, consensus, or institutional weight — is an Epistemic Integrity Violation under EF-0.0 §2 (Anti-Distortion Clause) and triggers EF-0.2 Level 1 at minimum.
 
-**Cross-reference:** FN-001 (fabrication node grounding requirements), CF-002 (confidence failure modes). Full constitutional grounding: EF-0.0, Axiom Q-1 in `Admin/Governance_Charter.md`. Operational condensation: `Admin/Forge_Audit_Kit.md` §Truth Provenance Labels.
+**Cross-reference:** FN-001 (fabrication node grounding requirements), CF-002 (confidence failure modes), EC-001 in `Admin/Ethical_Constraints.md` (Confidence Threshold Doctrine, closed 2026-08-11 — applies this section's UNKNOWN/PROVISIONAL/VERIFIED states, Risk-tiered, to the Core Mandate's default-to-non-action rule). Full constitutional grounding: EF-0.0, Axiom Q-1 in `Admin/Governance_Charter.md`. Operational condensation: `Admin/Forge_Audit_Kit.md` §Truth Provenance Labels.
 
 ### Epistemic State Calibration Reference
 *§AP-014 — Payment via Specification. Closes AP-014 (logged 2026-06-24).*

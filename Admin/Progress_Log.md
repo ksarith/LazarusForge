@@ -66,7 +66,146 @@ Full history, including entries rotated out of the five above, in `Archive/Logs/
 
 ---
 
+## Forward Growth Avenues (2026-08-11)
+
+Proposed after ~54 pseudo-audits covering Operations, Architecture, Challenges,
+Tests, and a large share of Admin. Inventory-style consistency work has high
+coverage; remaining leverage is mostly physical evidence, human architectural
+decisions, and selective ratification — not more file-by-file pseudo-audits.
+
+### 1. Physical and multi-agent evidence (highest leverage)
+
+The repository’s own doctrine already says this is the bottleneck.
+
+- **`Tests/Field_Logs.md` is still empty.** First real entries beat another
+  documentation pass. Highest-value run (already named in that file): three
+  distinct hosts / model families attempting the Hardware Diversity Tier 2
+  quorum while one proposes real doctrine changes.
+- **`Admin/Hardware_Diversity_Ladder.md` remains “declarable, not achieved.”**
+  Tier 0/1 needs a second physical host and documented independence — not more
+  prose about the ladder.
+- Feed any result (pass or fail) into Field_Logs, then fold evidence into the
+  owning doctrine’s Resolution Log. Do not treat a log entry as Spec Gate
+  advancement by itself.
+
+### 2. Human architectural decisions (cannot be automated)
+
+Several Critical items were correctly left as judgment calls during audits:
+
+| ID / topic | Why human-only |
+|------------|----------------|
+| **SEC-007a** | External legitimacy anchor (offline signed snapshot / HSM / human recovery record) — file itself forbids unilateral agent resolution |
+| **ENV-009** | No site assessed against Environmental_Constraints |
+| **FA-001 / Facilities deferred rows** | Meaningful only once a physical site exists |
+| **GOV-015 / GOV-018** | Constitutional interpretation and fork reconciliation |
+| **ADP ratification** | `Autonomy_Divergence_Protocol.md` is still Draft / PROPOSED NOT RATIFIED (GOV-021 ID is registered; body is not) |
+
+Schedule short human ratification sessions for these rather than re-auditing
+the same files.
+
+### 3. Operational Blocking chains (doctrine → capability)
+
+When choosing technical work, prefer unknowns that still **Block physical
+operation or promotion**, not Priority (Promo) vocabulary alone:
+
+- **Safety-critical Tests:** LW-UNK-001 / LW-UNK-003 (volatile co-distillation,
+  lumen integrity); PYC-001 / PYC-003 / PYC-004 (halogen triage, hazardous
+  fraction, site/emergency before any hot pilot).
+- **Network first-connection prerequisites:** FN-001 / FN-005 (already flipped
+  Blocking Yes — need actual validation criteria and privacy tiers drafted).
+- **v1 economics:** TR-001 / ECN-002 (profitability and operating-cost baseline).
+- **Watchdog / autonomy:** CF-001 dual-track with Electronics (parameters defined;
+  hardware validation pending).
+
+### 4. Deprioritize further bulk pseudo-audits
+
+Remaining Admin protocol files (Verification_Gates, GMP, RIP, CIR, Engineer
+Protocols, etc.) can still get light findings-only passes if continuity
+matters, but **expected yield is low** relative to (1)–(3). Prefer:
+
+- Spot-checks when a file is about to change for a real decision
+- Cross-module sweeps only when a new registration-latency or Priority (Promo)
+  false-desync pattern appears
+- Keeping AP-035 discipline (no invented IDs, no fabricated inventory, findings
+  in owning-file logs)
+
+### 5. Hygiene that still pays
+
+- Keep applying **Priority (Promo) vs operational Blocking** (Canonical_Terms)
+  so future audits don’t re-litigate false desyncs.
+- Prefer **closing one Critical Blocking unknown with evidence** over raising
+  Spec Gates on Exploration files with empty Field_Logs.
+- When EC-series or GOV-series items resolve (e.g. recent EC-001 / EC-002 work),
+  update `Unknowns.md` via its rotation rules only — never freestanding ledgers.
+
+### Suggested near-term sequence
+
+1. One real Field_Logs entry (even a documented failure).
+2. Human call on SEC-007a scope or explicit deferral trigger (already partly
+   mirrored in Facilities deferred table).
+3. Draft FN-001 validation schema / FN-005 data tiers to payment-via-spec depth
+   without claiming network readiness.
+4. Ratify or shelve Autonomy_Divergence_Protocol with a dated human decision.
+5. Only then consider Spec Gate campaigns on files whose Critical operational
+   Blockers are actually closed.
+
+---
+
 ## Resolution Log
+
+- 2026-08-11: **Forward Growth Avenues logged** (see section above). Post-~54
+  pseudo-audit recommendation: shift primary effort from inventory audits to
+  physical/multi-agent evidence (Field_Logs, Hardware Diversity Tier 0/1),
+  human decisions on SEC-007a / ENV-009 / ADP ratification, and operational
+  Blocking chains (LW-UNK-001/003, PYC-001/003/004, FN-001/005, TR-001/ECN-002).
+  Bulk pseudo-audits deprioritized. Human-directed synthesis.
+
+- 2026-08-11: **Autonomy_Divergence_Protocol + Hardware_Diversity_Ladder
+  pseudo-audits.** Same limits. ADP: Open Unknowns 2 match (GOV-021b/c);
+  **stale GOV-021 “not registered” note corrected** (Charter registered
+  2026-07-27); Draft/unratified status unchanged. HDL: Open Unknowns 0;
+  “declarable, not achieved” framing intact. Spec Gates left locked. No
+  unknowns closed. Findings in file Resolution Logs. Human-directed.
+
+- 2026-08-11: **Trajectories + Ship_of_Theseus pseudo-audits.** Same limits.
+  TR: Open Unknowns 3 match; TR-001 Blocking Yes correct; Spec Gates 1/6
+  left locked. ST: Open Unknowns 4 match; ST-004 Epistemic Blocking noted
+  as consistent vocabulary. Spec Gates 0/6 left locked. No TR-*/ST-* closed.
+  Findings in file Resolution Logs. Human-directed.
+
+- 2026-08-11: **Ethical_Constraints + Governance_Charter pseudo-audits.** Same
+  limits. EC: Open Unknowns 16 match; Blocking fields remain No — prior
+  “physical/doctrinal” note is Priority (Promo) vocabulary, not operational
+  Blocking. GC: Open Unknowns 20 match (sidecar); GOV-003/005 Blocking Yes
+  correct; GOV-015/018 Critical Priority left as judgment calls. Spec Gates
+  left locked. No EC-*/GOV-* closed. Findings in file/sidecar Resolution
+  Logs. Human-directed.
+
+- 2026-08-11: **Field_Logs + Environmental_Constraints pseudo-audits.** Same
+  limits. FL: Open Unknowns 0 match (intake log); Spec Gates N/A. ENV: Open
+  Unknowns 8 match; ENV-001/002/009/010 Blocking Yes correct. Spec Gates
+  left locked. No ENV-* closed; no site claims advanced. Findings in file
+  Resolution Logs. Human-directed.
+
+- 2026-08-11: **Trophic_Forge + Hydrologic_Resource_Cascade pseudo-audits.**
+  Same limits. TF: Open Unknowns 10 match; TF-001 Blocking Yes correct;
+  collapsed duplicate Res Log header. HRC: Formal Open 2 match; HR-003–010
+  deferred registration is explicit doctrine (not stale note; no IDs invented
+  per AP-035). Spec Gates left locked (0/6 both). No TF-*/HR-UNK-* closed.
+  Findings in file Resolution Logs. Human-directed.
+
+- 2026-08-11: **Pyrolysis_Cascade + Chaos_Dynamics pseudo-audits.** Same limits.
+  PYC: Open Unknowns 8 match; PYC-001/003/004 Critical Blocking Yes correct;
+  PYC-002/007 claim-class Blocking Yes correct. CD: Open Unknowns 0 match;
+  CD-DS-001 already Resolved. Spec Gates left locked (0/6 both). No PYC-*
+  closed. Findings in file Resolution Logs. Human-directed.
+
+- 2026-08-11: **Cognitive_Salvage_Layer + Solar_Descent pseudo-audits.** Same
+  limits. CSL: Open Unknowns 13 match; GH-013 Blocking Yes (subsection only);
+  Epistemic Blocking on GH-001/003/006/009 noted as consistent vocabulary.
+  SD: Open Unknowns 8 match; SD-UNK-001/002/004 Blocking Yes correct. Spec
+  Gates left locked (1/6 and 0/6). No GH-*/SD-UNK-* closed. Findings in file
+  Resolution Logs. Human-directed.
 
 - 2026-08-10: **Support_Raft + Living_Waters + Leviathan_testing pseudo-audits
   (three-file pass).** Same limits. SR: Open 13; SR-001/007 Blocking Yes
@@ -342,3 +481,87 @@ Full history, including entries rotated out of the five above, in `Archive/Logs/
   subdirectories (root/Logs/Transcripts) instead of only the root's
   original, now-inaccurate, snapshot-only description. `Archive/Logs/` and
   `Archive/Rename_Registry.md` untouched. Human-directed.
+
+- 2026-08-11: **Automated morning report found running one push-cycle
+  behind live state.** Grok's daily repository report (auto-run each
+  morning against GitHub `main` via raw.githubusercontent.com) reported
+  Routing.md at 111 entries / "Last updated 2026-08-09" and Unknowns.md at
+  v4.48/2026-08-09, with no trace of 2026-08-10's work: Rule 10 (AP-035),
+  the 40-pseudo-audit cycle (6 Blocking flips: TS-002, EL-005, GI-002,
+  AS-004, FN-001, FN-005), or the Archive/ → Snapshots/Logs/Transcripts
+  reclassification. Confirmed against local verified copy (Routing.md: 123
+  entries, dated 2026-08-10; Rule 10 present in `Auditor_Protocols.md`) —
+  the report's content was accurate for the state it actually read, just a
+  full day stale relative to the push. No fabrication found; this is the
+  same desync class as the 2026-07-27 six-week gap and the resurrected
+  duplicate-file incident, just caught same-day this time because the
+  report runs automatically every morning. **Standing caution:** verify
+  the morning report's freshness (Routing.md's own "Last updated" string)
+  against the last known local push date before treating its contents as
+  current state. Human-directed.
+
+- 2026-08-11: **`Repository_Structure.md` updated to formalize Automation/
+  (external ChatGPT review finding, verified before applying).** Section
+  II's folder diagram and Decision Rules listed only six folders and had
+  no rule for Automation/, though it exists physically (9 scripts) and is
+  already treated as its own layer in both `Routing.md` and `Discovery.md`
+  — those two were already correct; this file was the one lagging. Added
+  Automation/ to the diagram plus a new Rule 8: infrastructure, not a
+  seventh content domain, no `*_Scope_Map.md`, doctrine about automation
+  still goes to Admin/ under Rule 1. Two other ChatGPT findings reviewed
+  and not applied this pass: `Repository_Integrity_Protocol.md`'s
+  historical Archive/Git-tag material is already properly dated within
+  RIP-001's own Resolution Log entry (2026-06-27), not free-floating
+  undated text — lower urgency than flagged. A parallel Gemini review
+  (Vector 1) repeated two already-resolved claims as new top-priority
+  work (CIR and Nothingness_Theorem missing Scope Boundary sections) —
+  both checked and confirmed already present; not applied, since there
+  was nothing to apply. Human-directed.
+
+- 2026-08-11: **EC-002 (Anti-Weaponization pattern-matching mechanism)
+  resolved.** Human-directed request to close a specific Blocking unknown.
+  Added a Pattern Recognition Annex to `Admin/Ethical_Constraints.md`'s
+  Anti-Weaponization Doctrine, built on the 2026-07-26-ratified
+  intent/complicity principle: six pattern categories (stated harmful
+  purpose, effect-first specification, anti-personnel targeting geometry,
+  weapon-specific integration, concealment, circumvention of a prior
+  refusal), a detection method hooked to `Operations/Gate_02_Triage.md`
+  Station 0, false-positive handling scoped to incomplete specification
+  with a one-round resolve-or-escalate rule, and a category-tagged
+  escalation path into the Human Escalation Protocol. Plasma cutter
+  paradox resolved as the worked example. EC-002 sidecar entry Open →
+  Resolved; `Ethical_Constraints.md` Open Unknowns 16 → 15; version bumped
+  0.11 → 0.14 (also correcting a stale Version field that had not tracked
+  two prior bumps). `Unknowns.md` Active Index EC-002 row removed per Size
+  Management Rule 2; `Unknowns_Changelog.md` given a new v4.49 entry.
+  `Operations/Gate_02_Triage.md` ASM-006 updated in step — its Expiry
+  Trigger had fired now that EC-002 has a defined mechanism; Confidence
+  raised Low → Medium, not higher, since the Annex is unvalidated against
+  live triage volume. Explicitly does not resolve EC-001 (confidence
+  threshold) or EC-012 (telemetry spoofing) — both cross-referenced as
+  separate, still-open dependencies. Human-directed.
+
+- 2026-08-11: **EC-001 (Confidence Threshold Doctrine) resolved.**
+  Human-directed follow-on to EC-002's closure the same day. Added
+  Confidence Threshold Doctrine to `Admin/Ethical_Constraints.md` Core
+  Mandate, hooking `Admin/Auditor_Protocols.md` §AP-006's existing
+  UNKNOWN/PROVISIONAL/VERIFIED epistemic-state machinery rather than
+  inventing a new threshold system: High-Risk actions require VERIFIED,
+  Medium/Low-Risk actions may proceed at PROVISIONAL with Analogous
+  External or stronger provenance, UNKNOWN is never sufficient at any
+  Risk level. Checked the Resolution Path's one-standard-vs-scale
+  question directly: "confidently classified" and "reasonably bounded"
+  were found live nowhere in the repository outside one archived Copilot
+  transcript, narrowing the actual scope to defining "sufficient
+  confidence" alone. Assessment method reuses AP-006's existing
+  calibration table and AP-004 arbitration rather than a new dispute
+  path. EC-001 sidecar Open → Resolved; `Ethical_Constraints.md` Open
+  Unknowns 15 → 14, version 0.14 → 0.15. `Admin/Auditor_Protocols.md`
+  §AP-006 given a light reverse cross-reference to EC-001 (logged in
+  `Archive/Logs/Auditor_Protocols_Logs.md` v0.38, no doctrine content
+  changed there). `Unknowns.md` Active Index EC-001 row removed per Size
+  Management Rule 2; v4.50 entry added, v4.49 rotated to
+  `Unknowns_Changelog.md`. Explicitly does not resolve LT-003 (autonomy
+  architecture), EC-008 (inferred authorization), or EC-012 (telemetry
+  spoofing) — all cross-referenced as separate, still-open dependencies.
+  Human-directed.

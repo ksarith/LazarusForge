@@ -607,6 +607,11 @@ human unavailability.
 
 ### Resolution Log
 
+- 2026-08-11: **Pseudo-audit (Grok, same limits).** Findings only; Spec Gates
+  left locked at 0/6. (1) Open Unknowns **4** = ST-001–004, matches local +
+  `Unknowns.md` (ST-003 In Progress). (2) ST-004 **Epistemic** Blocking —
+  consistent vocabulary, not understatement. (3) No ST-* closed. Human-directed.
+
 - 2026-06-08: Navigation Anchors added. File State
   expanded to full table. Scope Boundary, File
   Purpose, Assumptions, Drift Indicators sections

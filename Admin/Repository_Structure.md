@@ -16,8 +16,8 @@
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-08-09                                                          |
-| Auditor          | Grok — correction pass                                              |
+| Last Audit       | 2026-08-11                                                          |
+| Auditor          | Claude — Automation/ formalized in Section II (external ChatGPT review finding, verified before applying), human-directed; prior: Grok — correction pass, 2026-08-09 |
 | Open Unknowns    | 1                                                                   |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | Low                                                                 |
@@ -156,7 +156,7 @@ introduction.
 
 ## II. Folder Assignment Doctrine
 
-### The Six-Folder Structure
+### The Six-Folder Structure Plus Automation/
 
 ```
 Root                 — Navigation and cross-cutting files only
@@ -165,8 +165,15 @@ Architecture/        — System architecture and foundational logic
 Operations/          — Physical modules and operational systems
 Tests/               — Test frameworks and deployment platforms
 Challenges/          — Problem layer: why these capabilities exist
+Automation/          — Repository tooling; executable infrastructure
 Archive/             — Prior states of governance-bearing documents
 ```
+
+Automation/ is not a seventh content domain and does not compete with
+the six above for file-placement purposes — see Rule 8 below. The
+section name is retained for continuity with existing cross-references;
+"Six-Folder Structure" refers to the six content-owning domains, with
+Automation/ and Archive/ as infrastructure and history layers respectively.
 
 ### Decision Rules
 
@@ -205,6 +212,17 @@ If yes → Root. Only a small number of files earn root placement
 
 **Rule 7 — Is it a prior state of a governance-bearing document?**
 If yes → Archive/ (see Section V).
+
+**Rule 8 — Is it an executable script implementing repository tooling
+(audit, integrity-check, session-bootstrap, or similar automation),
+or documentation describing only that script's own operation?**
+If yes → Automation/. Automation/ is infrastructure, not a content
+domain — it does not receive its own `*_Scope_Map.md`, and its
+source of truth is the executable behavior of its scripts plus the
+protocols (in Admin/) that specify what they must do. Doctrine that
+happens to be about automation but sets rules other files must
+follow still goes to Admin/ under Rule 1; only the implementation
+artifacts themselves (the `.py` sources) go in Automation/.
 
 **When rules conflict:** Apply the most specific rule. A file that
 is both architectural and operational belongs in Architecture/ if
@@ -499,6 +517,21 @@ recognition; no new action required.
   an extended period; Discovery.md already maps it; RIP-001 was closed
   2026-06-27 on the Git-tag primary path. Status left Open purely by
   registration lag. Human-directed recognition pass.
+
+- 2026-08-11: **Automation/ formalized in Section II — external
+  (ChatGPT) review finding, verified before applying.** Section II's
+  folder diagram and Decision Rules described only six folders and had
+  no rule covering Automation/, despite it existing physically with 9
+  scripts and already being treated as its own layer in both
+  `Routing.md` ("Automation/ Layer" table) and `Discovery.md` (already
+  called it "structurally different (scripts, not doctrine)" at the
+  Tst_Scope_Map build, 2026-08-08 — this file was the one lagging, not
+  Discovery.md or Routing.md). Added Automation/ to the folder diagram
+  with an explanatory note, and a new Rule 8 stating it is
+  infrastructure, not a seventh content domain — it gets no
+  `*_Scope_Map.md`, and doctrine *about* automation still goes to
+  Admin/ under Rule 1; only the `.py` implementation artifacts
+  themselves go in Automation/. Human-directed.
 
 ---
 

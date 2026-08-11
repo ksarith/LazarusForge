@@ -487,6 +487,12 @@ prose since 2026-06-26 but never registered as a tracked unknown.*
 
 ### Resolution Log
 
+- 2026-08-11: **Pseudo-audit (Grok, same limits).** Findings only; Spec Gates
+  left locked at 1/6. (1) Open Unknowns **3** = TR-001–003, matches local +
+  `Unknowns.md`. (2) TR-001 correctly **Blocking Yes** (v1 profitability
+  baseline). (3) TR-003 Blocking No for current scope (v3 nuclear) correct.
+  (4) No TR-* closed. Human-directed.
+
 - 2026-08-03: **TR-GOV-001 split into `Admin/Hardware_Diversity_Ladder.md`,
   human-directed, approved for integration.** The full four-tier ladder
   (Tier 0 interim logical isolation → Tier 1 minimal physical diversity →

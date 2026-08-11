@@ -133,6 +133,11 @@ Any future edit that softens this file's "currently declarable, not achieved" fr
 
 ## Resolution Log
 
+- 2026-08-11: **Pseudo-audit (Grok, same limits).** Findings only. (1) Open
+  Unknowns **0** — matches File State (supplies reference for GMP §VII,
+  creates none of its own). (2) “Declarable, not achieved” framing intact;
+  no tier progress claimed. (3) Spec Gates N/A / left locked. Human-directed.
+
 - 2026-08-06: **Tier 2 cross-referenced to `Tests/Field_Logs.md`, a new
   append-only field-data intake file.** Created in response to a direct
   question about how to invite physical/cross-agent testing without

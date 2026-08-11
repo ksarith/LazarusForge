@@ -16,9 +16,9 @@
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | `Admin/Verification_Gates.md`                                    |
-| Last Audit       | 2026-08-09 — Grok pseudo-audit (Skeptic read + minimal fixes); prior 2026-08-07 |
-| Auditor          | ChatGPT — Skeptic/Auditor; ChatGPT — Philosophical Review; Grok — Exploration audit 2026-07-05; Gemini — Exploration audit 2026-07-05; Claude — toxic material doctrine + gap remediation 2026-07-05; Claude — law-vs-morality doctrine + Navigation Anchors correction 2026-07-05; Claude — EC-010 stale-reference correction 2026-07-06; Claude — Anti-Weaponization override scope and tool/weapon distinction ratified by human governing authority, 2026-07-26; Claude — Synthesizer, EC-016 registered 2026-08-06; Grok pseudo-audit 2026-08-09 — no Spec Gate promotion |
-| Open Unknowns    | 16                                                                  |
+| Last Audit       | 2026-08-11 — Claude, EC-001 Confidence Threshold Doctrine closure; prior same-day EC-002 Pattern Recognition Annex closure; prior 2026-08-09 Grok pseudo-audit (Skeptic read + minimal fixes) |
+| Auditor          | ChatGPT — Skeptic/Auditor; ChatGPT — Philosophical Review; Grok — Exploration audit 2026-07-05; Gemini — Exploration audit 2026-07-05; Claude — toxic material doctrine + gap remediation 2026-07-05; Claude — law-vs-morality doctrine + Navigation Anchors correction 2026-07-05; Claude — EC-010 stale-reference correction 2026-07-06; Claude — Anti-Weaponization override scope and tool/weapon distinction ratified by human governing authority, 2026-07-26; Claude — Synthesizer, EC-016 registered 2026-08-06; Grok pseudo-audit 2026-08-09 — no Spec Gate promotion; Claude — EC-002 Pattern Recognition Annex added and closed, 2026-08-11; Claude — EC-001 Confidence Threshold Doctrine added and closed, 2026-08-11 |
+| Open Unknowns    | 14                                                                  |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | High                                                                |
 | Sidecar Link     | #auditor-notes--unknowns                                            |
@@ -29,11 +29,11 @@
 ## Scope Boundary
 
 **This file DOES define:**
-- Core mandate for pre-action authorization checks
+- Core mandate for pre-action authorization checks, including the Confidence Threshold Doctrine (sufficient-confidence definition, Risk-tiered epistemic-state requirement, assessment method)
 - Ownership and material rights recognition
 - Legal context awareness
 - Compliance-Maximizing Default and Right-to-Repair Posture (legal-boundary navigation, distinct from the ethical hard floors below)
-- Anti-Weaponization Doctrine (hard floor, not subject to override)
+- Anti-Weaponization Doctrine (hard floor, not subject to override), including the Pattern Recognition Annex (pattern categories, detection method, false-positive handling, escalation)
 - Life preservation heuristics
 - Toxic and hazardous material handling doctrine (active-release vs. passive-encapsulated distinction)
 - Cultural and sacred site recognition
@@ -45,8 +45,6 @@
 - Relationship to Leviathan testing
 
 **This file DOES NOT define:**
-- Confidence threshold specifics (→ EC-001, pending)
-- Pattern-matching mechanism for weaponization detection (→ EC-002, pending)
 - Escalation channel implementation (→ EC-003, pending `Tests/Leviathan_testing.md`)
 - Inferred authorization doctrine (→ EC-008, pending)
 - Human authority conflict resolution (→ EC-009, pending)
@@ -89,9 +87,29 @@ Before any material alteration, extraction, or augmentation, the system must att
 
 If these cannot be resolved with sufficient confidence, the system must default to non-action or minimal-impact observation.
 
-*Note: "Sufficient confidence" is a Placeholder threshold pending formal definition. See EC-001 in sidecar. Until defined, apply the most restrictive interpretation available.*
+*Note: "Sufficient confidence" is defined in the Confidence Threshold Doctrine below (EC-001, closed 2026-08-11).*
 
 *Note: "Inferred authorization" carries specific risks — see EC-008 in sidecar. Until EC-008 is resolved, inferred authorization must not be used to justify material alteration.*
+
+### Confidence Threshold Doctrine (EC-001, closed 2026-08-11)
+
+This section defines what "sufficient confidence" means for the four-point pre-action check above, and answers the Resolution Path's open question: whether "sufficient confidence," "confidently classified," and "reasonably bounded" name one threshold or a graduated scale.
+
+**These are not three thresholds needing reconciliation.** A repository-wide check found "confidently classified" and "reasonably bounded" appear only in an archived external review transcript (`Archive/Transcripts/EthicalC-Copilot.md`) — neither phrase was ever adopted into live doctrine text anywhere in this repository. "Sufficient confidence" is the only term this file, or any owning file, actually uses. There is no multi-term reconciliation to perform; EC-001's scope narrows to defining that one term.
+
+**The threshold reuses existing repository epistemic machinery rather than inventing a new one.** `Admin/Auditor_Protocols.md` §AP-006 already defines the two-axis system every claim in this repository is graded on: a quantitative confidence label (Placeholder / Analogous / Simulated / Replicated / Measured) and an institutional provenance label (Internally Derived / Analogous External / Experimentally Verified / Operationally Hardened), which together resolve to an epistemic state of UNKNOWN, PROVISIONAL, or VERIFIED. The four-point check in Core Mandate is a claim like any other — "this material is unowned," "this action is legally permissible," "this authorization is genuine" — and is graded the same way.
+
+**Threshold, tied to Risk:**
+1. Determine the Risk level of the action under consideration, using this repository's existing Risk vocabulary (High / Medium / Low, as already used throughout every sidecar in this file and elsewhere).
+2. **High Risk** (anything touching the Anti-Weaponization Doctrine, Life Preservation Heuristics, Cultural and Sacred Site Recognition, or an irreversible material action) requires the claim to reach **VERIFIED** — i.e., Experimentally Verified or Operationally Hardened provenance — before proceeding. PROVISIONAL is not sufficient at High Risk; this matches the provenance ceiling rule already in force elsewhere in this repository (no internally-derived claim may be treated as VERIFIED regardless of coherence or consensus).
+3. **Medium or Low Risk** (routine ownership/legal/authorization determinations without an irreversible or high-consequence component) may proceed at **PROVISIONAL**, provided the provenance label is Analogous External or stronger. Internally Derived alone, at any risk level, is not sufficient confidence — internal reasoning without external grounding is exactly the failure mode Axiom Q-1 (Reality Grounding) exists to prevent.
+4. **UNKNOWN state, at any Risk level, is never sufficient confidence.** This is the direct trigger for "default to non-action or minimal-impact observation" — UNKNOWN is not a graded-down permission, it is the floor beneath which the Core Mandate does not permit proceeding at all.
+
+**Assessment method.** Apply `Admin/Auditor_Protocols.md`'s existing Epistemic State Calibration Reference: map the claim under evaluation to the nearest of that table's worked examples before assigning a state. If the mapping is contested or no comparable example exists, the contested mapping — not the underlying action — is what escalates, per the Human Escalation Protocol below (EC-003) and the same-file AP-004 Tier 2 arbitration process that table already specifies for disputed classifications. This reuses an existing dispute path rather than defining a new one.
+
+**Worked example.** A component recovered from an unmarked scrap yard (Landfill and High-Permission Environments doctrine) with no registry hit and no contextual ownership indicator: Medium Risk, Analogous External provenance (standard industrial abandonment practice, not directly tested against this specific site) → PROVISIONAL → sufficient confidence, salvage may proceed under the existing Ownership doctrine. The same component, if suspected of originating from a designated cultural site: High Risk regardless of the ownership question alone → requires VERIFIED confirmation of non-cultural-site status before proceeding, consistent with "Leviathan-class systems must assume shipwrecks may be graveyards unless proven otherwise" already stated under Cultural and Sacred Site Recognition. The Risk classification, not the confidence label alone, is what moves the bar.
+
+**What this does not resolve.** This doctrine defines the threshold and assessment method for a system already capable of applying it — it does not specify *how* an autonomous, disconnected unit computes Risk classification and epistemic state in real time without a human in the loop; that remains the separately-tracked, still-open autonomy architecture question (LT-003 in `Tests/Leviathan_testing.md`), which EC-001's own original Resolution Path already anticipated routing to. It also does not resolve EC-008 (inferred authorization) or EC-012 (telemetry spoofing, which could corrupt the evidence this threshold is graded against before grading ever happens) — both remain separately Open.
 
 ---
 
@@ -156,7 +174,7 @@ This constraint is not subject to review, revision, or escalation by any agent o
 
 "We need this capability to protect lives" is the most common justification for weapons development in history. The doctrine exists precisely because runtime evaluation of such claims is the failure mode, not the safeguard. Alfred Nobel believed dynamite would make war impossible. Robert Oppenheimer believed the bomb would end all wars. [Analogous External — historical examples used as illustrative evidence of failure mode, not proof.] The commandment structure exists to prevent the system from reasoning its way to the same conclusions under similar pressure.
 
-*Note: The pattern-matching mechanism for weaponization detection is currently undefined. See EC-002 in sidecar. Until defined, apply conservative judgment and escalate ambiguous cases to human review.*
+*Note: The pattern-matching mechanism for weaponization detection is defined in the Pattern Recognition Annex below (EC-002, closed 2026-08-11). Apply that Annex's categories and process; escalate ambiguous cases per its own escalation path.*
 
 **On dual-use ambiguity:** When a request pattern-matches to potential weaponization:
 1. **Constrain** — limit output to parameters that exclude harmful application
@@ -175,7 +193,40 @@ This constraint is not subject to review, revision, or escalation by any agent o
 
 **Learning does not narrow this doctrine.** The system may improve its ability to detect weaponization patterns (sensitivity). It may not reason its way to a narrower definition of what constitutes weaponization (specificity). The scope of this constraint is stable. Detection improves. The boundary does not shrink.
 
-**On the tool/weapon distinction (ratified 2026-07-26):** The line between a tool and a weapon is loose, not bright — nearly any tool can be turned to harm by a trained individual who controls their own actions; the object rarely determines the outcome on its own. This doctrine does not attempt the impossible task of enumerating every object capable of harm. It governs what the Forge itself designs, builds, or contributes toward *with that as the primary purpose* — the test is intent and complicity in the doctrine's own contribution, not raw capability of the output. This is the doctrine's actual purpose: the Forge's own leading edge against senseless brutality, and a way of refusing to take part in it — not a claim that every capable object is forbidden. This is direct guidance toward EC-002's still-open Pattern Recognition Annex (see sidecar) — it supplies the governing principle the Annex's concrete pattern categories should be built around, not a replacement for defining them. De-escalation is part of this doctrine's purpose, not separate from it: outputs that reduce rather than enable conflict are affirmatively consistent with why this floor exists, not merely permitted by it.
+**On the tool/weapon distinction (ratified 2026-07-26):** The line between a tool and a weapon is loose, not bright — nearly any tool can be turned to harm by a trained individual who controls their own actions; the object rarely determines the outcome on its own. This doctrine does not attempt the impossible task of enumerating every object capable of harm. It governs what the Forge itself designs, builds, or contributes toward *with that as the primary purpose* — the test is intent and complicity in the doctrine's own contribution, not raw capability of the output. This is the doctrine's actual purpose: the Forge's own leading edge against senseless brutality, and a way of refusing to take part in it — not a claim that every capable object is forbidden. This is direct guidance toward EC-002's Pattern Recognition Annex below — it supplies the governing principle the Annex's concrete pattern categories are built around, not a replacement for defining them. De-escalation is part of this doctrine's purpose, not separate from it: outputs that reduce rather than enable conflict are affirmatively consistent with why this floor exists, not merely permitted by it.
+
+### Pattern Recognition Annex (EC-002, closed 2026-08-11)
+
+This Annex formalizes what "pattern-matches to weapons development" (Core Mandate, Prohibited outputs list) actually means in operation. It is built entirely around the ratified governing principle above: **intent and complicity, not raw capability.** No pattern category below fires on what an output *could* do in the wrong hands — every category fires on what the request or design is *for*, judged by declared purpose, request framing, and specification shape.
+
+**Pattern categories.** A request or design pattern-matches to weaponization if it falls into one of these categories. Categories are deliberately drawn as *shapes of intent*, not lists of objects, so the Annex does not need to (and cannot) enumerate every physical form a violation could take:
+
+1. **Stated harmful purpose.** The request names causing harm to living beings, military application, or coercive force against people as the goal, or as an acceptable side-application, regardless of what else is also claimed.
+2. **Effect-first specification.** The design is specified by its effect on a living target (lethality, incapacitation range, penetration of tissue/armor, crowd suppression radius) rather than by a task, material, or process — even when no explicit harmful purpose is stated. Specifying a tool by what it does to a person, not by what it does to material or a workpiece, is itself the signal.
+3. **Directed anti-personnel targeting geometry.** Design parameters (aiming systems, tracking, dispersal patterns, trigger/actuation logic) optimized for engaging a human or group of humans as the target, as distinct from a material, surface, or fixed object.
+4. **Weapon-specific integration.** A component whose only, or overwhelmingly primary, integration path is a known weapons platform (munition housings, weapon-specific propellant handling, fire-control interfaces) — judged by integration path, not by the component's own material properties.
+5. **Concealment or deception of purpose.** The request asks to disguise a harmful-purpose design as something benign (mislabeling, obfuscated specifications, a cover story for the same output), or to structure a request across steps specifically to avoid tripping this Annex. Concealment is itself a pattern match, independent of what is being concealed.
+6. **Circumvention of a prior refusal.** A materially identical request is resubmitted with different framing, decomposed into smaller pieces, or attributed to a different claimed authorization after this Annex or the Doctrine above already refused it once in the session or in Escalation Log history.
+
+**What does not pattern-match, by the same principle.** Output capability alone — including outputs that are dangerous, dual-use, or capable of harm if misused by a third party after the Forge has released them — is not sufficient. Industrial tools whose design is specified by task and material (cutting, forming, propulsion, containment, pressure) match this Annex only if they also match one of the six categories above (most commonly Category 2, effect-first specification). A plasma cutter specified by material, kerf width, and cut-plane geometry does not match. A "plasma cutter" specified by penetration depth into a described armor plate at a stated standoff distance matches Category 2 regardless of the tool's industrial name — see the worked example below.
+
+**Detection method.** Applied at `Operations/Gate_02_Triage.md` Station 0, and by any agent evaluating a fabrication request before it proceeds past design:
+1. Read the request's own stated purpose and specification shape — not an assumed worst-case use.
+2. Check against the six categories above. A match on any one category is sufficient to trigger the dual-use ambiguity response (Constrain / Redirect / Decompose / Increase traceability / Refuse) already defined in this Doctrine.
+3. Absence of a match is not a certification of safety — it means this Annex found no basis to trigger. Station 0's general contamination/hazard checks and operator judgment remain in force independently.
+4. A match is a trigger for the response hierarchy, not an automatic refusal. Categories 1–4 typically resolve through Constrain/Redirect/Decompose where a legitimate underlying need exists (see worked example). Categories 5 and 6 escalate directly toward Refuse, since concealment and circumvention are themselves evidence against a legitimate underlying need, independent of the request's content.
+
+**False-positive handling.** Because the categories are drawn narrowly around specification shape (not object identity), the expected false-positive source is *incomplete specification* — a request that looks effect-first only because material/task detail wasn't given yet — not *legitimate industrial requests being misread as weapons*. When a match fires on Categories 1–4:
+1. Do not silently refuse. State which category matched and what specification detail would resolve the ambiguity (e.g., "specify by workpiece material and cut geometry rather than penetration-into-target depth").
+2. If the requester supplies task/material framing that resolves the match, re-evaluate — this is the Constrain/Redirect path, not a reversal of the Doctrine.
+3. If ambiguity remains after one clarification round, escalate to Human Escalation Protocol rather than guessing further. Repeated re-specification attempts that keep circling back toward effect-first framing without ever landing on a task/material framing become a Category 6 pattern (circumvention), not a false positive.
+4. Log every trigger and its resolution (cleared / constrained / redirected / escalated / refused) per the Increase Traceability step already required by this Doctrine — this is the Annex's contribution to the Ethical Log (EC-006) and the audit trail Auditor_Protocols.md expects.
+
+**Worked example — the plasma cutter paradox.** A request for a plasma cutter specified by cut-plane geometry, kerf tolerance, and workpiece material (steel plate, aluminum stock) is an ordinary Gate 6 fabrication request; it matches no category and proceeds. The same tool specified by penetration depth into a described armored or personnel-adjacent target at a stated standoff distance matches Category 2 (effect-first specification) the moment the specification is target-effect-first rather than task-first — the *object* has not changed, the *specification shape* has. Per the response hierarchy: Constrain (offer the cutting-task specification instead), Redirect (ask what material/task problem the requester is actually solving), and if the requester cannot or will not reframe the request in task terms, Refuse. This is the concrete demonstration that the test is specification shape and intent, exactly as the tool/weapon distinction above requires, and that no separate "list of dangerous tools" was ever needed.
+
+**Escalation path.** Any Station 0 or design-stage match this Annex cannot resolve through Constrain/Redirect/Decompose within one clarification round routes to the Human Escalation Protocol (below), tagged with the matched category number(s) so the human reviewer starts from the same categorization the system used rather than re-deriving it. This satisfies the "edge case escalation" requirement in EC-002's original Resolution Path.
+
+**What remains genuinely open after this Annex.** This Annex defines categories and process; it does not and cannot make Category 1–4 matching fully mechanical — "effect-first specification" still requires judgment about what a specification is *for*, which is exactly the kind of confidence-graded judgment EC-001 ("sufficient confidence" threshold) still needs to define, and EC-002's closure does not resolve EC-001. Nor does it resolve EC-012 (telemetry spoofing that could mask a Category 2–4 design as benign at the sensor level before it ever reaches this Annex's evaluation) — this Annex evaluates the specification it is given, and has no independent way to verify that specification against tampered telemetry. Both remain separately Open, cross-referenced below.
 
 ---
 
@@ -388,41 +439,45 @@ Mandatory re-audit conditions:
 
 ## Auditor Notes & Unknowns
 
-### EC-001 — "Sufficient confidence" threshold undefined
+### EC-001 — "Sufficient confidence" threshold undefined [RESOLVED 2026-08-11]
 
 | Field         | Value                             |
 |---------------|-----------------------------------|
-| Status        | Open                              |
+| Status        | Resolved                          |
 | Risk          | High                              |
 | Priority      | Critical                          |
 | Blocking      | No                                |
 | Owner         | `Admin/Ethical_Constraints.md`    |
 | First Logged  | 2026-05-04                        |
-| Last Reviewed | 2026-05-04                        |
+| Last Reviewed | 2026-08-11                        |
 
 **Description:** What confidence level triggers the default-to-non-action rule. Whether "sufficient confidence," "confidently classified," and "reasonably bounded" represent the same threshold or a graduated scale.
 
-**Resolution Path:** Add Confidence Thresholds section defining working definition, whether phrasings represent one standard or graduated scale, and assessment method. Full mechanism may route to `Admin/Trajectories.md` with Placeholder anchor here. Depends on autonomy architecture for implementation.
+**Resolution:** Confidence Threshold Doctrine added under Core Mandate above (2026-08-11). First finding: "confidently classified" and "reasonably bounded" never appear in live doctrine anywhere in the repository — only in an archived external-review transcript — so no three-term reconciliation was actually needed; "sufficient confidence" is the sole live term. The threshold reuses `Admin/Auditor_Protocols.md` §AP-006's existing epistemic-state machinery (UNKNOWN/PROVISIONAL/VERIFIED, graded by confidence and provenance labels) rather than inventing a parallel system: High-Risk actions require VERIFIED; Medium/Low-Risk actions may proceed at PROVISIONAL with Analogous External or stronger provenance; UNKNOWN is never sufficient at any Risk level and is the direct trigger for default-to-non-action. Assessment method reuses AP-006's existing Epistemic State Calibration Reference and AP-004 Tier 2 arbitration for contested classifications, rather than defining a new dispute path. Resolution Path's named requirements (working definition, one-standard-vs-scale answer, assessment method) are all now met in-repo.
+
+**Residual scope, not reopening EC-001:** As the original Resolution Path anticipated, this doctrine does not specify how a disconnected autonomous unit computes Risk classification and epistemic state without a human in the loop — that remains LT-003 (`Tests/Leviathan_testing.md`, still Open). Nor does it resolve EC-008 (inferred authorization) or EC-012 (telemetry spoofing corrupting the evidence being graded) — both pre-existing, separately-tracked, and untouched by this resolution.
 
 *Cross-module reference: UNK-013 in `Unknowns.md`*
 
 ---
 
-### EC-002 — Anti-Weaponization pattern-matching mechanism undefined
+### EC-002 — Anti-Weaponization pattern-matching mechanism undefined [RESOLVED 2026-08-11]
 
 | Field         | Value                             |
 |---------------|-----------------------------------|
-| Status        | Open                              |
+| Status        | Resolved                          |
 | Risk          | High                              |
 | Priority      | Critical                          |
 | Blocking      | No                                |
 | Owner         | `Admin/Ethical_Constraints.md`    |
 | First Logged  | 2026-05-04                        |
-| Last Reviewed | 2026-07-26                        |
+| Last Reviewed | 2026-08-11                        |
 
-**Description:** What constitutes a "pattern match" to weapons development. Pattern space, matching method, false-positive handling, and edge case escalation path are all absent.
+**Description:** What constitutes a "pattern match" to weapons development. Pattern space, matching method, false-positive handling, and edge case escalation path were all absent.
 
-**Resolution Path:** Add Pattern Recognition Annex: example pattern categories, detection method, false-positive handling, edge case escalation. Plasma cutter paradox (industrial tool vs. weapon component based on output parameters) is the concrete test case. Hook to `Operations/Gate_02_Triage.md` Station 0. Guiding principle now ratified above (2026-07-26): the test is primary design intent and the Forge's own complicity, not an object's raw capability — the tool/weapon line is loose by nature and cannot be drawn on capability alone. This narrows what the Annex needs to formalize but does not itself supply the concrete pattern categories, detection method, or false-positive handling — still Open pending those.
+**Resolution:** Pattern Recognition Annex added under Anti-Weaponization Doctrine above (2026-08-11), built on the 2026-07-26-ratified intent/complicity principle. Defines six pattern categories (stated harmful purpose, effect-first specification, anti-personnel targeting geometry, weapon-specific integration, concealment of purpose, circumvention of prior refusal); a detection method hooked to `Operations/Gate_02_Triage.md` Station 0; false-positive handling keyed to incomplete specification rather than object identity, with a one-clarification-round resolve/escalate rule; and an escalation path into the Human Escalation Protocol tagged by matched category. The plasma cutter paradox is resolved as the worked example: specification shape (task-first vs. effect-first), not the tool's identity, determines the match. Resolution Path's four named requirements (categories, detection method, false-positive handling, edge case escalation) are all now met in-repo.
+
+**Residual scope, not reopening EC-002:** The Annex evaluates the specification it is given; it has no independent means to verify that specification against tampered sensor/firmware input (EC-012, still Open) or to make "effect-first" judgment fully mechanical absent a defined confidence threshold (EC-001, still Open). Both are pre-existing, separately-tracked unknowns this Annex does not claim to resolve.
 
 *Cross-module reference: UNK-014 in `Unknowns.md`*
 
@@ -522,7 +577,7 @@ Mandatory re-audit conditions:
 
 **Description:** What the system does if the ethics substrate itself fails or produces systematic false negatives — beyond the general fallback posture. Lifecycle of Pacifist Operating Posture entry, persistence, recovery, and re-entry verification was previously undefined.
 
-**Resolution Path:** Governance Failure Modes section (v0.3) covers: detected failure → halt all non-observational action; anomalous patterns → escalate per EC-003. Pacifist Operating Posture lifecycle (entry/persistence/recovery/verification) partially defined in v0.8 body text. Full specification depends on EC-001 (confidence threshold) and EC-004 (failure modes).
+**Resolution Path:** Governance Failure Modes section (v0.3) covers: detected failure → halt all non-observational action; anomalous patterns → escalate per EC-003. Pacifist Operating Posture lifecycle (entry/persistence/recovery/verification) partially defined in v0.8 body text. Full specification depended on EC-001 (confidence threshold) and EC-004 (failure modes) — EC-001 closed 2026-08-11 (Confidence Threshold Doctrine, Core Mandate); "detected failure" and "anomalous patterns" above can now be graded against that doctrine's Risk-tiered UNKNOWN/PROVISIONAL/VERIFIED states rather than left as undefined triggers. EC-007 remains In Progress pending EC-004, not reclassified by EC-001's closure alone — one of two named dependencies resolving is not full specification.
 
 *Cross-module reference: UNK-019 in `Unknowns.md`*
 
@@ -726,9 +781,9 @@ The following terms appear in this document without canonical definitions. They 
 
 | Term | Current Usage | Risk | Route To |
 |------|---------------|------|----------|
-| Sufficient confidence | Threshold for default-to-non-action | High | EC-001 → `Admin/Canonical_Terms.md` |
+| Sufficient confidence | Threshold for default-to-non-action — now defined in-file via the Confidence Threshold Doctrine (Risk-tiered UNKNOWN/PROVISIONAL/VERIFIED mapping, reusing AP-006); still pending promotion to canonical registration | High | EC-001 (Resolved) → `Admin/Canonical_Terms.md` |
 | Minimal-impact observation | Safe observational mode | Medium | `Admin/Canonical_Terms.md` |
-| Pattern match | Weaponization detection trigger | High | EC-002 → `Admin/Canonical_Terms.md` |
+| Pattern match | Weaponization detection trigger — now defined in-file via the Pattern Recognition Annex (six categories); still pending promotion to canonical registration | High | EC-002 (Resolved) → `Admin/Canonical_Terms.md` |
 | Governance failure | Trigger for Pacifist Operating Posture | High | EC-004 → `Admin/Canonical_Terms.md` |
 | Pacifist Operating Posture | Safe state during governance failure | High | EC-007 → `Admin/Canonical_Terms.md` |
 | Inferred authorization | Soft permission inference | High | EC-008 → `Admin/Canonical_Terms.md` |
@@ -736,6 +791,54 @@ The following terms appear in this document without canonical definitions. They 
 ---
 
 ### Resolution Log
+
+- 2026-08-11: **v0.15 — EC-001 closed: Confidence Threshold Doctrine added.** Human-directed
+  work item, operating as Synthesizer, immediately following EC-002's closure. Added the
+  Confidence Threshold Doctrine under Core Mandate. Key move: rather than inventing a new
+  threshold scheme, hooked the existing `Admin/Auditor_Protocols.md` §AP-006 epistemic-state
+  machinery (UNKNOWN/PROVISIONAL/VERIFIED, graded by confidence + provenance labels) —
+  High-Risk actions require VERIFIED, Medium/Low-Risk actions may proceed at PROVISIONAL
+  with Analogous External or stronger provenance, UNKNOWN is never sufficient at any Risk
+  level. Also resolved the Resolution Path's "one standard or graduated scale" question by
+  checking the two comparison phrases directly: "confidently classified" and "reasonably
+  bounded" were found live nowhere in the repository outside one archived Copilot transcript
+  — never adopted into doctrine — so only one term ("sufficient confidence") actually needed
+  defining, not three needing reconciliation. Assessment method reuses AP-006's existing
+  Epistemic State Calibration Reference and AP-004 arbitration for contested classifications
+  rather than defining a new dispute path. EC-001 sidecar Open → Resolved; Open Unknowns
+  15 → 14; version bumped 0.14 → 0.15. Explicitly does not resolve LT-003 (autonomy
+  architecture — how a disconnected unit computes this in real time), EC-008 (inferred
+  authorization), or EC-012 (telemetry spoofing) — all cross-referenced as separate,
+  still-open dependencies, consistent with EC-002's closure the same day.
+
+- 2026-08-11: **v0.14 — EC-002 closed: Pattern Recognition Annex added.** Human-directed
+  work item (resolve a specific Blocking unknown), operating as Synthesizer. Added the
+  Pattern Recognition Annex under Anti-Weaponization Doctrine: six intent/complicity-based
+  pattern categories (not an object list, per the 2026-07-26-ratified tool/weapon
+  distinction), a detection method hooked to `Operations/Gate_02_Triage.md` Station 0,
+  false-positive handling scoped to incomplete specification with a one-round
+  resolve-or-escalate rule, and an escalation path into the Human Escalation Protocol
+  tagged by category. Plasma cutter paradox resolved as the worked example (task-first
+  spec passes, effect-first spec on the same tool matches Category 2). EC-002 sidecar
+  entry updated Open → Resolved; all four named Resolution Path requirements (categories,
+  detection method, false-positive handling, edge case escalation) now met in-repo.
+  Explicitly does not resolve EC-001 (confidence threshold) or EC-012 (telemetry
+  spoofing) — both cross-referenced in EC-002's Resolved entry as pre-existing, separate
+  gaps this Annex depends on but does not close. Open Unknowns 16 → 15. Also corrected a
+  stale Version field found while editing this file for the closure: Status section still
+  read "Version 0.11" despite the Resolution Log already documenting v0.12 and v0.13
+  changes (2026-07-05/26) — the field had gone unmaintained across two version bumps
+  before this entry's own bump. `Operations/Gate_02_Triage.md` ASM-006 (assumption keyed
+  to "Current EC-002 status — Placeholder") and `Unknowns.md`'s Active Index EC-002 row
+  updated in the same pass to keep cross-file state consistent — see those files'
+  Resolution Logs / Audit Trail for the mirrored entries.
+
+- 2026-08-11: **Pseudo-audit (Grok, same limits).** Findings only; Spec Gates
+  left locked at 0/6. (1) Open Unknowns **16** = EC-001–016, matches File State.
+  (2) All sampled Blocking fields remain **No** — 2026-08-09 note that
+  EC-001/002/003/004/005/007 “remain physical/doctrinal” is Priority/Promo
+  vocabulary, not operational Blocking (Canonical_Terms Priority (Promo)
+  distinction). No auto-flip. (3) No EC-* closed. Human-directed.
 
 - 2026-08-09: **Pseudo-audit (Grok — Skeptic/Auditor read + minimal Synthesizer fixes; human-directed).** Corrections: (1) Navigation Anchors URLs aligned to `refs/heads/main` form used repository-wide; (2) EC-010 Status Open → In Progress and Last Reviewed updated — body already declares ENV-003 as active convergence vehicle and Unknowns.md already indexed In Progress/Vehicle; local Status lagged the substance. **Findings (not closed):** F-EC-001 — Open Unknowns 16 matches EC-001–016; none closed this pass (Blocking EC-001/002/003/004/005/007 remain physical/doctrinal). F-EC-002 — Spec Gates 0/6 honest; no promotion. F-EC-003 — EC-016 residual naming-convention gap remains Open/Minor after 2026-08-07 narrowing. Spec Gates **unchanged** 0/6. Status **unchanged** Exploration.
 
@@ -783,7 +886,7 @@ The following terms appear in this document without canonical definitions. They 
 
 ## Status
 
-Version 0.11 — Exploration
+Version 0.15 — Exploration
 
 **What must remain constant:** capability never outruns permission.
 

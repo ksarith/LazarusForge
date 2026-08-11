@@ -811,6 +811,11 @@ Full history: `Archive/Logs/Governance_Charter_Changelog.md` (relocated
 out of this file 2026-07-23 — every entry preserved verbatim, none
 edited or summarized in the move).
 
+**2026-08-11:** Pseudo-audit (Grok, same limits) — findings logged in
+sidecar changelog. Open Unknowns 20 match; GOV-003/005 Blocking Yes
+correct; GOV-015/018 Critical Priority left Blocking No (judgment calls).
+No GOV-* closed. Spec Gates unchanged.
+
 **Version 0.10 (working) — 2026-07-27.** GOV-021 formally registered
 (was a reserved-but-unentered candidate ID sitting in `Admin/
 Autonomy_Divergence_Protocol.md` since 2026-07-19); GOV-008
