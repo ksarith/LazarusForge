@@ -8,18 +8,22 @@
 
 ## Purpose
 
-This directory holds prior-state archives of repository files at significant version milestones.
+This directory holds three distinct kinds of prior-state material, kept separate so each can be governed correctly:
 
-Archival is governed by `Admin/Repository_Integrity_Protocol.md`. Files are deposited here when:
+**Archive/ (root)** — prior-state archives of repository files at significant version milestones. Archival is governed by `Admin/Repository_Integrity_Protocol.md`. Files are deposited here when:
 - A file is promoted to a new major version (e.g., v0 → v1)
 - A file is deprecated or superseded
 - A pre-release snapshot is required before a major structural change
 
-**This directory is read-only for all agents.** No file in Archive/ may be edited, deleted, or overwritten after deposit. Archive/ is append-only.
+**Archive/Logs/** — condensed full-text changelogs split out from their owning files' Resolution Logs, so the main files stay a manageable size while full audit history remains available (e.g. `Unknowns_Changelog.md`, `Progress_Log_Changelog.md`).
+
+**Archive/Transcripts/** — raw external-agent conversation transcripts (Copilot, Grok) retained as provenance for specific ratified decisions that cite them by name. Reclassified out of the flat Archive/ root 2026-08-10 once its stated Purpose (file-version snapshots) was found not to match this content. Files here are cited from Resolution Logs and doctrine files as the source of a specific claim or fix — do not delete a Transcripts/ file without first checking `Routing.md` and grepping the repository for its filename.
+
+**This directory is read-only for all agents.** No file in Archive/, Archive/Logs/, or Archive/Transcripts/ may be edited, deleted, or overwritten after deposit except via an explicit, human-directed reclassification (as above). Append-only otherwise.
 
 ## Current Contents
 
-*Empty at initialization. First archive deposits will occur at first Specification-level file promotion.*
+*Archive/ root: empty at initialization, pending first Specification-level file promotion. Archive/Logs/ and Archive/Transcripts/: populated — see directory listing.*
 
 ## Relationship to GitHub Releases
 
