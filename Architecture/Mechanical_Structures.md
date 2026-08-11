@@ -431,6 +431,14 @@ to next major file revision — non-blocking.
 
 ### Resolution Log
 
+- 2026-08-10: **Pseudo-audit (Grok, same limits as Engineering/Waste pass).**
+  Findings only; Spec Gates left locked at 2/6. (1) Open Unknowns **4** =
+  ME-001–004, matches local sidecar and `Unknowns.md` (count already corrected
+  2026-07-28). (2) All four Blocking No; ME-001 (vibration) and ME-003 (creep)
+  carry silent-failure language but do not rise to the operational-interlock
+  understatement pattern of TS-002/EL-005. (3) No ME-* closed; no physical
+  test claims advanced. Human-directed.
+
 - 2026-07-28: Open Unknowns count corrected 3 → 4. All four of
   ME-001 through ME-004 checked individually and confirmed genuinely
   Open — surfaced by a Grok-run repo-wide desync audit, verified

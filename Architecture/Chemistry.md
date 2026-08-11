@@ -1296,6 +1296,13 @@ This sketch closes item 1 of the four-item Resolution Path at the conceptual/arc
 
 ### Resolution Log
 
+- 2026-08-10: **Pseudo-audit (Grok, same limits).** Findings only; Spec Gates
+  left locked at 1/6. (1) Open Unknowns **8** = CE-001–008, matches local
+  sidecar and `Unknowns.md`. (2) CE-003 correctly **Blocking Yes / Critical**
+  (blocks first hot pyrolysis). (3) CE-006 correctly **Blocking Yes** for
+  CLF-004 candidate pathway. (4) No CE-* closed; no physical/chemical
+  validation claims advanced. Human-directed.
+
 - 2026-07-31: **CE-006 vessel design sketch integrated; status moved Open →
   In Progress.** Grok proposed a small-scale sealed chlor-alkali cell
   concept (divided cell, single-path anode off-gas to Stage D, no

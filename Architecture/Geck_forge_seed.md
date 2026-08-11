@@ -589,6 +589,13 @@ in Components.md routes to PR-001 for resolution.
 
 ### Resolution Log
 
+- 2026-08-10: **Pseudo-audit (Grok, same limits).** Findings only; Spec Gates
+  left locked at 0/6. (1) Open Unknowns **3** = GK-002, GK-003, GK-004
+  (GK-001 and GK-005 Resolved) — matches local field and `Unknowns.md`.
+  (2) All three remaining are Minor/Low–Medium, marine-variant exploratory —
+  Blocking No correct. (3) No GK-* closed; no marine claims advanced.
+  Human-directed.
+
 - 2026-07-19: Weld Unit Sizing Doctrine added to §VI.4 Fabrication Module
   (human-directed design principle) — smaller weld passes for tolerance
   (reduced heat input/distortion) and peak-power reasons (smaller Power &

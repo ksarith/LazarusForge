@@ -789,6 +789,13 @@ useful in a waste-heat harvest application. Document acceptance threshold as
 
 ### Resolution Log
 
+- 2026-08-10: **Pseudo-audit (Grok, same limits).** Findings only; Spec Gates
+  left locked at 1/6. (1) Open Unknowns **6** = TH-001–006, matches local
+  sidecar and `Unknowns.md`. (2) TH-003 correctly nuanced: Blocking for Living
+  Waters deployment only, non-blocking for other Forge operations — aligns with
+  Water.md cross-ref and Unknowns.md. (3) No TH-* closed; no physical yield
+  claims advanced. Human-directed.
+
 - 2026-06-11: ChatGPT informal audit integrated. Seven findings actioned:
   (1) Spec Gate advanced 0→1. (2) Navigation Anchors, Upstream/Downstream tables
   added. (3) All Arkansas/location-specific references converted to RDC abstraction

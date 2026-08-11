@@ -825,6 +825,13 @@ deferred, not closed.
 
 ### Resolution Log
 
+- 2026-08-10: **Pseudo-audit (Grok, same limits).** Findings only; Spec Gates
+  left locked at 0/6. (1) Open Unknowns **2** = FL-001, FL-002, matches local +
+  `Unknowns.md`. (2) FL-001 correctly **Blocking Yes** (blocks promotion to
+  Specification — Epistemic/Promo style, field already accurate). (3) FL-002
+  Open/Major, Blocking No — Reduction module ownership is Gate_03, not a
+  start-interlock here. (4) No FL-* closed. Human-directed.
+
 - 2026-08-08: **Two Scope Boundary corrections, both surfaced by
   `Architecture/Arc_Scope_Map.md` (2026-08-08 folder-scope-map build):**
   (1) the UNK-008 fabrication/wire-qualification reference still said

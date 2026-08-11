@@ -1,5 +1,13 @@
 # Precision.md — LazarusForgeV0
 
+---
+
+## Navigation Anchors
+* **Context Core:** [Discovery.md](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Discovery.md)
+* **Network Routing:** [Routing.md](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Routing.md)
+
+---
+
 ## File State
 
 | Field            | Value                                                               |
@@ -614,7 +622,12 @@ for Governance_Migration_Protocol.md.
 
 ### Resolution Log
 
-*(empty — first version)*
+- 2026-08-10: **Pseudo-audit (Grok, same limits).** Findings only; Spec Gates
+  left locked at 0/6. (1) Open Unknowns **5** = PR-001–005, matches local +
+  `Unknowns.md`. (2) PR-001 correctly **Blocking Yes** (blocks T1/T2 part
+  claims). (3) PR-003 “No — blocks Specification” is Epistemic-style nuance,
+  consistent with Canonical_Terms Priority (Promo) / Epistemic Blocking.
+  (4) No PR-* closed; no ceiling declaration advanced. Human-directed.
 
 ---
 

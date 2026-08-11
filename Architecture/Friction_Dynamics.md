@@ -872,6 +872,12 @@ first FSI-relevant failure in operational deployment.
 
 ### Resolution Log
 
+- 2026-08-10: **Pseudo-audit (Grok, same limits).** Findings only; Spec Gates
+  left locked at 2/6. (1) Open Unknowns **4** = FD-001, FD-002, FD-003, FD-005
+  (FD-004 Resolved) — matches local field and `Unknowns.md`. (2) No Blocking
+  understatement of operational-safety type. (3) No FD-* closed; no physical
+  characterization claims advanced. Human-directed.
+
 - 2026-06-11: ChatGPT informal audit integrated. Eight findings actioned:
   (1) Spec Gate advanced 0→2 — scope boundary clear, Reynolds number unification
   is genuine architectural contribution. (2) Compressible flow out-of-scope

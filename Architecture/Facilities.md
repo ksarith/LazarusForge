@@ -384,6 +384,7 @@ them from. Listed here, once, so they don't stay scattered:
 | GOV-012 stagnation-decay cycle count | `Admin/Governance_Charter.md` | Set to zero cycles, formally deferred 2026-07-19 — no elapsed operational time to calibrate against |
 | Semantic Drift Score threshold (Post-Exit Monitoring) | `Admin/Auditor_Protocols.md` (AP-031) | Formally deferred 2026-07-29, same reasoning as GOV-012 |
 | Unknown Accumulation Rate cycle count (Post-Exit Monitoring) | `Admin/Auditor_Protocols.md` (AP-031) | Inherits GOV-012's Cycle-unit ambiguity directly, not a separate gap |
+| SEC-007a external trust anchor selection | `Admin/Security_Protocols.md` | No physical site or hardware exists yet to choose between offline signed snapshot, HSM, or human-held recovery record — the decision is meaningful only once real deployment constraints (power, physical security, access control) are known. Human ratification required regardless of trigger. |
 
 **Re-derivation rule, stated once:** each value above is set from real elapsed-time /
 audit-cycle data collected after this file's own operational launch (defined above),

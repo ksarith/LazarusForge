@@ -764,10 +764,10 @@ in Discovery.md. Folder-prefixed names take precedence.*
 | Risk          | High                                             |
 | Priority      | Critical                                         |
 | Type          | Technical / Architectural                        |
-| Blocking      | No                                               |
+| Blocking      | Yes — prerequisite for first network connection |
 | Owner         | Architecture/Forge_Net.md                    |
 | First Logged  | 2026-05-15                                       |
-| Last Reviewed | 2026-07-25                                       |
+| Last Reviewed | 2026-08-10                                       |
 
 **Description:** The data validation layer (Section 2.5)
 is described doctrinally but validation criteria —
@@ -1014,10 +1014,10 @@ is available the doctrine may be overly conservative.
 | Risk          | High                                             |
 | Priority      | Critical                                         |
 | Type          | Technical / Ethical / Governance                 |
-| Blocking      | No                                               |
+| Blocking      | Yes — prerequisite for first network connection |
 | Owner         | Architecture/Forge_Net.md                    |
 | First Logged  | 2026-05-15                                       |
-| Last Reviewed | 2026-05-15                                       |
+| Last Reviewed | 2026-08-10                                       |
 
 **Description:** What data is shared across the network,
 what remains private to each forge instance, and how
@@ -1073,6 +1073,14 @@ prerequisite for it.
 ---
 
 ### Resolution Log
+
+- 2026-08-10: **Pseudo-audit (Grok, same limits).** Spec Gates left locked
+  at 0/6. (1) Open Unknowns **5** = FN-001–005, matches local + `Unknowns.md`.
+  (2) **FN-001 and FN-005 Blocking No → Yes** — Safety Advisory states both
+  are “prerequisites for first network connection, not post-connection
+  refinements”; Why It Matters language matches (primary technical
+  prerequisite / privacy is a prerequisite). Same pattern as
+  TS-002/EL-005/GI-002/AS-004. (3) No FN-* closed. Human-directed.
 
 - 2026-07-25: Section 2.5 Data Validation Layer expanded
   from doctrinal Placeholder to a Provisional Spec

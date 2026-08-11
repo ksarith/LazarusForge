@@ -330,6 +330,13 @@ tolerance requirements emerge from actual loop closure attempts, not pre-specifi
 
 ### Resolution Log
 
+- 2026-08-10: **Pseudo-audit (Grok, same limits).** Findings only; Spec Gates
+  left locked at 0/6. (1) Open Unknowns **2** = CO-001, CO-002, matches local +
+  `Unknowns.md`. (2) CO-001 Blocking No local vs Priority (Promo) Blocking in
+  index — vocabulary distinction per Canonical_Terms (not a true desync).
+  (3) CO-002 Minor, owned resolution path via PR-001. (4) No CO-* closed.
+  Human-directed.
+
 - May 2026: Bootstrap Doctrine updated — sufficiency criterion linked to Forge loop definition in geck_forge_seed.md. Human proxy for graduation detection added explicitly.
 - May 2026: v3+ trajectory marker note added to Version Mapping table.
 - May 2026: Dual-use annotation note added explaining absence of High-rated components.

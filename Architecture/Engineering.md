@@ -578,6 +578,14 @@ exists to test.
 
 ### Resolution Log
 
+- 2026-08-10: **Pseudo-audit (Grok, same limits as Facilities/Electronics pass).**
+  Findings only; Spec Gates left locked at 3/6. (1) Open Unknowns **7** =
+  EN-001–007, matches local sidecar and `Unknowns.md`. (2) EN-001 correctly
+  **Blocking Yes / Critical / In Progress** — hazard language and Unknowns.md
+  index align; no understatement. (3) EN-007 compounds EN-001 but remains
+  Blocking No (acceptable: EN-001 already blocks structural promotion).
+  (4) No EN-* closed; no physical test claims advanced. Human-directed.
+
 - 2026-07-05 (second entry, same day): **EN-001 — blanket 6×+ floor replaced
   with differentiated interim table.** §8 now carries four material-category
   rows (structural steel 4×, aluminum 6×, timber 5× + mandatory moisture/rot
