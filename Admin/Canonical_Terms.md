@@ -1,6 +1,14 @@
 # Canonical_Terms.md — Standard Repository Nomenclature
 **Version 0.7**
 
+---
+
+## Navigation Anchors
+* **Context Core:** [Discovery.md](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Discovery.md)
+* **Network Routing:** [Routing.md](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Routing.md)
+
+---
+
 ## File State
 
 | Field            | Value                                                               |
@@ -395,6 +403,19 @@ provenance label — the work continues in a bounded state while that grounding
 is sought. Consistent with the graceful degradation rule in
 `Admin/Auditor_Protocols.md` EF-0.2. Defined as a priority subtype in
 `Admin/Auditor_Protocols.md` Priority Demotion Doctrine.
+
+**Priority (Promo)**
+The `Unknowns.md` Active Index column tracking whether an unknown blocks
+*promotion* of its owning file (Spec Gate advancement, Status change) — distinct
+from a file-local `Blocking` field, which tracks whether an unknown blocks a
+*physical operation* (Operational Blocking) or a *claim* (Epistemic Blocking).
+The same unknown can carry "Blocking" in the Priority (Promo) column and "No"
+in the file-local Blocking field without contradiction: SC-002 (segregation
+effectiveness) blocks the Spin Chamber's capability claim from being promoted,
+but does not by itself stop a physical run from occurring safely. Misreading
+Priority (Promo) as identical to the file-local Blocking field has produced
+false-positive "desync" findings (EV-001/F-EN-002, SC-001–002/F-SC-003). Always
+treat the two columns as separate vocabularies.
 
 **Heuristic Failure (HF-001)**
 A failure class distinct from Sensor Failure and Mechanical Failure. In a

@@ -1,5 +1,13 @@
 # Safety_Protocols.md — LazarusForgeV0
 
+---
+
+## Navigation Anchors
+* **Context Core:** [Discovery.md](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Discovery.md)
+* **Network Routing:** [Routing.md](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Routing.md)
+
+---
+
 > ⚠️ **Operational Safety Advisory**
 > This file governs physical operator safety during Forge operations. Unlike other
 > Admin/ governance files, its failure mode is not document drift — it is injury or
@@ -549,7 +557,12 @@ defer until FA-001 (site confirmed) is resolved. Cross-reference FA-001.
 
 ### Resolution Log
 
-*(empty — first version)*
+- 2026-08-10: **Pseudo-audit (Grok, same limits).** Findings only; Spec Gates
+  left locked at 0/6. (1) Open Unknowns **6** = SP-001–006, matches local +
+  `Unknowns.md`. (2) SP-006 High Risk emergency response correctly deferred
+  pending FA-001 (site confirmed) — Blocking No appropriate. (3) SP-003 site
+  noise measurement cross-links AS-004 (now Blocking Yes for Protocol 1.4
+  calibration). (4) No SP-* closed; no PPE/claim advancement. Human-directed.
 
 ---
 

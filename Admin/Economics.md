@@ -1,5 +1,13 @@
 # Economics.md — LazarusForgeV0
 
+---
+
+## Navigation Anchors
+* **Context Core:** [Discovery.md](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Discovery.md)
+* **Network Routing:** [Routing.md](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Routing.md)
+
+---
+
 ## File State
 
 | Field            | Value                                                               |
@@ -765,7 +773,13 @@ declared with rationale, rather than left silent. This file defers:
 
 ---
 
-*(empty — first version)*
+### Resolution Log
+
+- 2026-08-10: **Pseudo-audit (Grok, same limits).** Findings only; Spec Gates
+  left locked at 0/6. (1) Open Unknowns **5** = ECN-001, ECN-002, ECN-004,
+  ECN-005, ECN-006 (ECN-003 Resolved) — matches File State and `Unknowns.md`.
+  (2) ECN-002 correctly **Blocking Yes** (blocks TR-001 resolution). (3) No
+  ECN-* closed; no market claims advanced. Human-directed.
 
 ---
 

@@ -24,10 +24,11 @@ The repository is treated as a governed knowledge system, not merely a collectio
 
 ## Structure Overview
 
-Every file in LazarusForgeV0 follows this structure:
+Canonical doctrine, protocol, and specification files in LazarusForgeV0 follow this structure
+(see Template Exemptions below for intentional exceptions):
 
 ```
-0. NAVIGATION ANCHORS            — Required. Routing.md and Discovery.md backlinks
+0. NAVIGATION ANCHORS            — Required for non-exempt files. Routing.md and Discovery.md backlinks
 1. OPERATIONAL SAFETY ADVISORY   — Optional. Physical hazard notice, shown before all else
 2. FILE STATE                    — Machine-readable lifecycle metadata
 3. SCOPE BOUNDARY                — Hard ownership boundaries
@@ -47,9 +48,56 @@ A Specification-level body should remain understandable even if all footer secti
 
 ---
 
+## Template Exemptions
+
+The full File Template is **not** applied to every file in the repository. Forcing the template onto files whose purpose is navigation, indexing, historical preservation, or pure operational seeding creates more drift than it prevents. The following classes are intentionally exempt. Agents and retrofit passes must not attempt to force Navigation Anchors, File State tables, or the full section set onto exempt files.
+
+**Exempt classes (hold in memory; do not retrofit):**
+
+1. **Archive/** — All files under `Archive/` and `Archive/Logs/`. These are historical records. Their structure is frozen for preservation fidelity. Relative-link hygiene is still required; full template is not.
+
+2. **Root navigation / index surface**
+   - `README.md`
+   - `Discovery.md`
+   - `Routing.md`
+   - `Unknowns.md`
+   These *are* the navigation layer. Requiring them to contain Navigation Anchors that point at themselves is redundant and creates circular maintenance load.
+
+3. **Contributor / process entry points**
+   - `CONTRIBUTING.md`
+
+4. **Per-folder scope maps**
+   - `Admin/Adm_Scope_Map.md`
+   - `Architecture/Arc_Scope_Map.md`
+   - `Operations/Ops_Scope_Map.md`
+   - `Challenges/Cha_Scope_Map.md`
+   - `Tests/Tst_Scope_Map.md`
+   These are cross-reference indexes. They use a lightweight relative-link Navigation Anchors style appropriate to their role; the absolute GitHub-raw form is not required.
+
+5. **Progression and changelog sidecars**
+   - `Admin/Progress_Log.md`
+   - All `*_Changelog.md` files (wherever located)
+   - `Archive/Rename_Registry.md` and equivalents
+   These exist to absorb entropy, not to host full doctrine structure.
+
+6. **Operational seeds and invocation templates**
+   - `Admin/BATTERY_SEED.md`
+   - `Admin/PROBE_INVOCATION.md`
+   These are prompt / battery / invocation payloads, not governed specification documents.
+
+7. **Automation source**
+   - All files under `Automation/` (`.py` and any accompanying docs that are pure implementation)
+
+**Non-exempt (template applies on retrofit and for new files):**  
+All other files under `Admin/`, `Architecture/`, `Operations/`, `Challenges/`, and `Tests/` that carry doctrine, protocols, specifications, or gate definitions.
+
+When in doubt, prefer exemption over forced retrofit. Adding an exemption is cheaper than creating a new class of false-positive integrity findings.
+
+---
+
 ## 0. Navigation Anchors
 
-**Required in every file.** Place immediately below the title, before the Operational Safety
+**Required for non-exempt files.** Place immediately below the title, before the Operational Safety
 Advisory or File State.
 
 ```markdown
@@ -610,9 +658,12 @@ escalate for human review. Compound instability is more dangerous than isolated 
 
 ## Retrofit Checklist
 
-When converting an existing file to this structure:
+**First check the Template Exemptions section.** If the file falls into an exempt class, stop. Do not force the structure.
 
-- [ ] Add Navigation Anchors block immediately below title
+When converting a *non-exempt* existing file to this structure:
+
+- [ ] Confirm the file is not on the Template Exemptions list
+- [ ] Add Navigation Anchors block immediately below title (standard absolute form)
 - [ ] **If physical operations file:** Add Operational Safety Advisory — specific hazard, consequence, prerequisite, decision rule, open unknown reference if applicable
 - [ ] Add File State table — include Ethical Anchor field with canonical string; confirm Verification Ref points to `Admin/Verification_Gates.md`
 - [ ] Add Scope Boundary — be honest about what the file does and does not own

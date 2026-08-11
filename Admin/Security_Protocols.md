@@ -733,6 +733,9 @@ or human-ratified recovery record stored outside all automated systems.
 This is an above-repository architectural decision requiring human
 ratification; no automated agent may resolve this unilaterally. Blocks
 SEC-007b.
+Deferral trigger documented in `Architecture/Facilities.md` §VII Deferred
+governance parameters table — this decision is meaningful only once a
+physical site exists.
 
 ---
 
@@ -950,6 +953,23 @@ than working around.
 ---
 
 ### Resolution Log
+
+- 2026-08-10: **SEC-007a deferral trigger cross-linked (Claude review + Grok
+  apply).** Blocking remains No (constitutional item; no automated agent may
+  resolve unilaterally — file’s own rule respected). Added: (1) row in
+  `Architecture/Facilities.md` §VII Deferred governance parameters table;
+  (2) back-link from SEC-007a Resolution Path to that table. Gives a stated
+  “when” without pretending the architectural choice is made. Human-directed.
+
+- 2026-08-10: **Pseudo-audit (Grok, same limits as Engineering/Waste pass).**
+  Findings only; Spec Gates left locked at 0/6. (1) Open Unknowns **13** =
+  SEC-001–006, SEC-007a, SEC-007b, SEC-008–012 — matches local sidecar and
+  `Unknowns.md`. (2) SEC-001 correctly Blocking Yes. (3) SEC-007a Priority
+  Critical + “highest-order failure mode for the entire enforcement
+  architecture” language, while Blocking = No (it blocks SEC-007b, not
+  general promotion). Logged as F-SEC-003 for human review — not auto-flipped;
+  constitutional domain differs from the operational-safety understatement
+  pattern seen on TS-002/EL-005. (4) No SEC-* closed. Human-directed.
 
 - 2026-07-28: SEC-012 given a formal sidecar entry — previously
   present in `Unknowns.md`'s active index only, with no matching

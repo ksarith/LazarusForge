@@ -764,7 +764,7 @@ Mandatory re-audit conditions for this document:
 
 **Resolution Path:** Not resolved here — deciding what "lightweight" means in practice (line count only, or open-unknowns count too; applied to every revision or only Major/Constitutional-class ones; retroactive or forward-only) is a real design choice, not a default to fall into. Left open for a deliberate scoping pass rather than resolved by assumption.
 
-*Surfaced during a review of `Archive/RIP_GMP-Copilot.md`, an archived multi-agent audit thread — the thread's broader four-category compliance audit was found to be almost entirely unverified "likely" hedging rather than checked findings (its one concrete claim, GMP's Last Audit staleness, was true when written but has since been resolved through ordinary session work), but this specific claim was checked directly against the live repository and confirmed accurate. Registered by Claude — Synthesizer, human-directed, 2026-08-06.*
+*Surfaced during a review of `Archive/Transcripts/RIP_GMP-Copilot.md`, an archived multi-agent audit thread — the thread's broader four-category compliance audit was found to be almost entirely unverified "likely" hedging rather than checked findings (its one concrete claim, GMP's Last Audit staleness, was true when written but has since been resolved through ordinary session work), but this specific claim was checked directly against the live repository and confirmed accurate. Registered by Claude — Synthesizer, human-directed, 2026-08-06.*
 
 ---
 
@@ -775,7 +775,7 @@ Mandatory re-audit conditions for this document:
   against the live repository (0 of ~50+ canonical files carry a hash or
   line-count anchor on any revision, outside two unrelated incidental
   mentions).** Surfaced while reviewing an archived multi-agent audit
-  thread (`Archive/RIP_GMP-Copilot.md`) whose broader compliance audit was
+  thread (`Archive/Transcripts/RIP_GMP-Copilot.md`) whose broader compliance audit was
   mostly unverified "likely" hedging — this one claim was checked directly
   and confirmed true. Open Unknowns 8 → 9. Not resolved; scoping the actual
   anchor mechanism left as deliberate future work. Operating as Synthesizer,

@@ -11,7 +11,7 @@
 | Spec Gates       | N/A — this file is a progression log, not a specification           |
 | Open Unknowns    | 0 (references existing unknowns; creates none)                      |
 | Owning Domain    | Admin/                                                               |
-| Last Reviewed    | 2026-08-09                                                           |
+| Last Reviewed    | 2026-08-10                                                           |
 | Ethical Anchor   | Attempt to do no harm. Defer to `Admin/Ethical_Constraints.md` if present. |
 
 ---
@@ -67,6 +67,156 @@ Full history, including entries rotated out of the five above, in `Archive/Logs/
 ---
 
 ## Resolution Log
+
+- 2026-08-10: **Support_Raft + Living_Waters + Leviathan_testing pseudo-audits
+  (three-file pass).** Same limits. SR: Open 13; SR-001/007 Blocking Yes
+  correct. LW: Open 9; LW-UNK-001/002/003 Blocking Yes correct. LT: Open 7;
+  LT-001/002/003 Blocking Yes correct. Spec Gates left locked (0/6 all). No
+  unknowns closed. Findings in file Resolution Logs. Human-directed.
+
+- 2026-08-10: **Emergence + Planned_Obsolescence pseudo-audits.** Same limits.
+  EM: Open Unknowns 4 match; EM-004 Critical (governance) left as judgment
+  call; removed stale registration note. PO: Open Unknowns 4 match; removed
+  stale registration note. Spec Gates N/A both. No EM-*/PO-* closed.
+  Findings in file Resolution Logs. Human-directed.
+
+- 2026-08-10: **Biofouling + Energy_Scarcity pseudo-audits.** Same limits. BF:
+  Open Unknowns 4 match; removed stale registration note. ES: Open Unknowns
+  3 match (already registered). Spec Gates N/A both. No BF-*/ES-* closed.
+  Findings in file Resolution Logs. Human-directed.
+
+- 2026-08-10: **Gate_07 + Woodworking pseudo-audits.** Same limits. GU: Open
+  Unknowns 5 match; GU-004 correctly Blocking No (acknowledged v0 limitation).
+  WW: Open Unknowns 5 match; WW-004 and WW-005 correctly Blocking Yes already.
+  Spec Gates left locked (0/6 both). No GU-*/WW-* closed. Findings in file
+  Resolution Logs. Human-directed.
+
+- 2026-08-10: **Return_To_Eden + Economics pseudo-audits.** Same limits. RE:
+  Open Unknowns 5 match; RE-UNK-001/005 correctly nuanced (Tier I Blocking,
+  Non-blocking at Exploration). ECN: Open Unknowns 5 match (ECN-003
+  Resolved); ECN-002 correctly Blocking Yes (TR-001). Spec Gates left locked.
+  No RE-UNK-*/ECN-* closed. Findings in file Resolution Logs. Human-directed.
+
+- 2026-08-10: **Forge_Net + Critical_Minerals pseudo-audits.** Same limits.
+  FN: Open Unknowns 5 match; **FN-001 and FN-005 Blocking No → Yes**
+  (Safety Advisory: prerequisites for first network connection). CM: Open
+  Unknowns 4 match; removed stale registration note; CM-002 Critical
+  consistent. Spec Gates left locked (0/6 and N/A). No FN-*/CM-* closed.
+  Findings in file Resolution Logs. Human-directed.
+
+- 2026-08-10: **Cognitive_Frameworks + Geck_forge_seed pseudo-audits.** Same
+  limits. CF: Open Unknowns 5 match; CF-001 correctly Blocking Yes (watchdog
+  for Spec-level autonomy); dual-track with Electronics implementation In
+  Progress noted. GK: Open Unknowns 3 = GK-002/003/004 (001/005 Resolved);
+  marine exploratory, Blocking No correct. Spec Gates left locked (0/6 both).
+  No CF-*/GK-* closed. Findings in file Resolution Logs. Human-directed.
+
+- 2026-08-10: **Precision + Components pseudo-audits.** Same limits. PR: Open
+  Unknowns 5 match; PR-001 correctly Blocking Yes (T1/T2 claims). CO: Open
+  Unknowns 2 match; CO-001 Priority (Promo) vs local Blocking is vocabulary
+  distinction, not desync. Spec Gates left locked (0/6 both). No PR-*/CO-*
+  closed. Findings in file Resolution Logs. Human-directed.
+
+- 2026-08-10: **Forge_flow + Safety_Protocols pseudo-audits.** Same limits.
+  FL: Open Unknowns 2 match; FL-001 correctly Blocking Yes (promotion).
+  SP: Open Unknowns 6 match; SP-006 emergency response correctly deferred
+  to FA-001; SP-003 cross-links AS-004. Spec Gates left locked (0/6 both).
+  No FL-*/SP-* closed. Findings in file Resolution Logs. Human-directed.
+
+- 2026-08-10: **Gate_03 + Gate_06 pseudo-audits.** Same limits. GR: Open
+  Unknowns 8 match; GR-003/007 Critical left Blocking No (no start-interlock
+  language). GF: Open Unknowns 7 match; GF-007 Critical fire/hot-work logged
+  for human review (no explicit “blocks first arc” contradiction). Spec
+  Gates left locked (0/6 both). No GR-*/GF-* closed. Findings in file
+  Resolution Logs. Human-directed.
+
+- 2026-08-10: **Claude-review follow-up batch applied.** (1) **AS-004
+  Blocking No → Yes** — file’s own text (“blocks that calibration step”) vs
+  field; same pattern as TS-002/EL-005/GI-002. (2) **SEC-007a** left Blocking
+  No (constitutional; agent may not resolve unilaterally); deferred to
+  Facilities.md §VII Deferred governance parameters + back-link from
+  SEC-007a Resolution Path. (3) **Priority (Promo)** defined in
+  `Admin/Canonical_Terms.md` — separates Unknowns.md promotion-blocking
+  column from file-local operational Blocking; clarifies F-SC-003 and
+  EV-001 false-positive desyncs. Human-directed (Claude draft, Grok apply).
+
+- 2026-08-10: **Gate_04 + Gate_01 pseudo-audits.** Same limits. MG: Open
+  Unknowns 8 match; no Blocking understatement. GI: Open Unknowns 7 match;
+  **GI-002 Blocking No → Yes** (hard prerequisite / safety prerequisite
+  language vs field — same pattern as TS-002/EL-005). GI-003 logged for
+  human review. Spec Gates left locked (0/6 both). No MG-*/GI-* closed.
+  Findings in file Resolution Logs. Human-directed.
+
+- 2026-08-10: **Gate_05 + Friction_Dynamics pseudo-audits.** Same limits. SC:
+  Open Unknowns 9 = SC-001–009; SC-009 correctly nuanced; F-SC-003 later
+  clarified as Priority (Promo) vs operational Blocking vocabulary (not a
+  true desync). FD: Open Unknowns 4 = FD-001/002/003/005 (FD-004 Resolved).
+  Spec Gates left locked (0/6 and 2/6). No SC-*/FD-* closed. Findings in
+  file Resolution Logs. Human-directed.
+
+- 2026-08-10: **Plastics + Closed_Loop_Feedstock pseudo-audits.** Same limits.
+  PL: Open Unknowns 5 = PL-001–005; PL-001 and PL-002 correctly Blocking Yes.
+  CLF: Open Unknowns 10 = CLF-001–010; CLF-003/004 Critical correctly Open
+  (CLF-004 blocked on CE-006); CLF-006/009 In Progress consistent. Spec Gates
+  left locked (0/6 both). No PL-*/CLF-* closed. Findings in file Resolution
+  Logs. Human-directed.
+
+- 2026-08-10: **Chemistry + Air_Scrubber pseudo-audits.** Same limits. CE:
+  Open Unknowns 8 = CE-001–008; CE-003 and CE-006 correctly Blocking Yes.
+  AS: Open Unknowns 4 = AS-001–004; AS-003 correctly Blocking Yes; AS-004
+  (noise/hearing) logged for human review (strong Safety Advisory,
+  Blocking No). Spec Gates left locked (1/6 and 3/6). No CE-*/AS-* closed.
+  Findings in file Resolution Logs. Human-directed.
+
+- 2026-08-10: **Thermal_Systems + Water pseudo-audits.** Same limits. TH:
+  Open Unknowns 6 = TH-001–006; TH-003 correctly nuanced (Blocking for Living
+  Waters only). WS: Open Unknowns 4 = WS-001–004; removed stale “to be
+  registered in Unknowns.md” note (already registered). Spec Gates left
+  locked (1/6 and N/A). No TH-*/WS-* closed. Findings in file Resolution Logs.
+  Human-directed.
+
+- 2026-08-10: **Security_Protocols + Mechanical_Structures pseudo-audits.**
+  Same limits. SEC: Open Unknowns 13 match; SEC-001 Blocking Yes correct;
+  SEC-007a Critical + highest-order failure language vs Blocking No logged
+  for human review (not auto-flipped — constitutional domain). ME: Open
+  Unknowns 4 match; no Blocking understatement of operational-safety type.
+  Spec Gates left locked (0/6 and 2/6). No SEC-*/ME-* closed. Findings in
+  file Resolution Logs. Human-directed.
+
+- 2026-08-10: **Engineering + Waste pseudo-audits.** Same role limits as
+  Facilities/Electronics. EN: Open Unknowns 7 = EN-001–007; EN-001 correctly
+  Blocking Yes/Critical (no understatement); Spec Gates left 3/6. WA: Open
+  Unknowns 4 = WA-001–004; WA-002/WA-004 correctly Critical; removed stale
+  “to be registered in Unknowns.md” note (already registered). No EN-*/WA-*
+  closed. Findings F-EN-001–003, F-WA-001–003 in file Resolution Logs.
+  Human-directed.
+
+- 2026-08-10: **Rule 10 (AP-035) added to Auditor_Protocols.md.** External
+  Pseudo-Audit Scope and Logging Destination. Triggered by a Gemini
+  pseudo-audit that fabricated an Archive/ inventory count (claimed 7,
+  actual 27) and proposed three unregistered unknown IDs in a freestanding
+  "Systemic Unknowns Ledger." Claude correctly diagnosed the fabrication
+  pattern (third instance of the same failure class after two prior
+  Copilot incidents). Grok verified file counts and ID collision-check
+  (AP-035 free), then applied the rule. Spec Gates and Open Unknowns
+  count on Auditor_Protocols unchanged. Human-directed.
+
+- 2026-08-10: **Integrity cleanup pass (post-Alpha inspection).** (1) Repaired
+  six broken relative links that had existed in historical copies under
+  `Archive/Logs/` (paths that resolved inside Archive/ instead of repo root);
+  those two historical copies were then retired as pure duplicates of the
+  live `Admin/Progress_Log.md` and `Archive/Rename_Registry.md`. (2) Added
+  explicit Template Exemptions section to `Admin/File_Template.md` so future
+  retrofit passes do not force the full template onto Archive/, root navigation
+  surface, scope maps, changelogs, BATTERY_SEED, PROBE_INVOCATION, or
+  Automation sources. (3) Applied standard Navigation Anchors only to
+  non-exempt active doctrine files that were missing them (Auditor_Protocols,
+  Canonical_Terms, Economics, Forge_Audit_Kit, Repository_Structure,
+  Safety_Protocols, Precision). (4) Documented in `Routing.md` that the table
+  is intentionally the *active operational* map and that Archive/ exclusion
+  is by design, not drift. Zero broken relative links remaining; zero
+  non-exempt files missing Navigation Anchors. Human-directed; deliberately
+  small scope — no governance rewrite.
 
 - 2026-08-10: **Discovery changelog migration integrated.** Installed
   `Archive/Logs/Discovery_Changelog.md` (PC-008 — correction-note history
@@ -174,3 +324,21 @@ Full history, including entries rotated out of the five above, in `Archive/Logs/
   without a shadow copy. See `Discovery.md` and `Unknowns.md`'s own Resolution
   Log / correction-note entries, same date, for the removal side of this
   change. Human-directed.
+
+- 2026-08-10: **Archive/ reclassified into Snapshots/Logs/Transcripts.** Human-
+  directed downtime cleanup, separate from the pseudo-audit cycle. Archive/
+  root's stated Purpose (file-version snapshots) never matched most of its
+  actual contents (raw external-agent chat transcripts). (1) Deleted 3
+  transcript files with zero inbound references anywhere in the repo
+  (Quorum-Copilot.md, Grok-8Aug.md, ADP-Copilot.md). (2) Moved the 15
+  remaining transcripts — all cited by name in Resolution Logs or doctrine
+  files — to new `Archive/Transcripts/`; updated every citing reference
+  (Routing.md, Auditor_Protocols.md, Ethical_Constraints.md,
+  Repository_Integrity_Protocol.md, Closed_Loop_Feedstock.md, and
+  Unknowns_Changelog.md) to the new path; zero dangling references remain.
+  (3) Removed `ForgeFlowchart.png` (1.9MB, ~30% of repo size) — confirmed
+  zero references anywhere in the repo before removal. (4) Rewrote
+  `Archive/README.md`'s Purpose section to accurately describe all three
+  subdirectories (root/Logs/Transcripts) instead of only the root's
+  original, now-inaccurate, snapshot-only description. `Archive/Logs/` and
+  `Archive/Rename_Registry.md` untouched. Human-directed.
