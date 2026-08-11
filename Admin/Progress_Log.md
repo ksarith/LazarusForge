@@ -582,3 +582,27 @@ matters, but **expected yield is low** relative to (1)–(3). Prefer:
   output alone without the actual file text, rather than guessing — a
   clean instance of the discipline AP-035 was written to encourage.
   Human-directed.
+
+- 2026-08-11: **G5 fix from the entry above was incomplete — corrected
+  same day.** A follow-up Skeptic/Auditor pass (Claude) caught that the
+  Resolution Log entry written to document the original G5 fix itself
+  used bare backtick-wrapped filenames to describe the bug, re-tripping
+  the exact harness check it was documenting as resolved. Confirmed by
+  running `audit_lib.py`'s actual extraction regex directly against the
+  file rather than trusting prose claims either way — this is the second
+  time in this thread that verifying a claim by execution rather than
+  reading caught something reading alone missed. Fixed: removed the
+  remaining bare occurrences; re-ran the regex directly, zero bare
+  matches remain. G5 is now genuinely resolved at the tooling level. Also
+  applied from the same audit pass: EF-0.1 wording fix (two instances of
+  "evidence the structure is sound" — an agent-convergence-as-verification
+  framing EF-0.1 disqualifies — reworded to "corroborating design signal,
+  not verification"), and a Semantic Drift clarification (File State now
+  explains why Spec Gates/Governance ID are tracked ahead of formal
+  Candidate-Spec promotion, rather than leaving that as an unexplained
+  mismatch). **Not yet done:** the `[Astroid-miner]` bracket convention
+  works only because of an undocumented substring-match exemption already
+  in `audit_lib.py` — it isn't registered anywhere as a real convention
+  (Routing.md, Discovery.md, Canonical_Terms.md). Worth formalizing before
+  it's relied on again elsewhere. Ratification remains explicitly
+  deferred — GOV-021b and GOV-021c still Open. Human-directed.

@@ -10,7 +10,7 @@
 
 | Field            | Value                                                               |
 |------------------|---------------------------------------------------------------------|
-| Status           | Draft — PROPOSED NOT RATIFIED                                       |
+| Status           | Draft — PROPOSED NOT RATIFIED (Exploration-stage document; Spec Gates and Governance ID are being tracked ahead of formal Candidate-Spec promotion, deliberately, so gate/registration state is visible during drafting rather than assembled retroactively at promotion time) |
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 5/6 — G1 Fallacy, G2 Physical Plausibility, G3 Adversarial Battery, G4 Scope Alignment, G6 Conflict Check PASSED; G5 Cross-Reference Integrity was BLOCKED, now resolved (external Astroid-miner refs qualified, 2026-08-11) — not yet re-verified |
 | Verification Ref | `Admin/Verification_Gates.md`                                    |
@@ -99,7 +99,7 @@ Every detected divergence event is classified before a response tier is selected
 
 This split exists specifically to prevent the failure mode where routine hardware noise triggers the same response as deliberate concealment — which either makes the protocol trigger-happy on noise (eroding trust, causing it to be routed around) or too slow on real concerns (calibrated for the noisy case).
 
-**Concrete mechanism candidate, 2026-07-19 (Astroid-miner convergence):** this repository's companion project, Astroid-miner (expected to eventually be absorbed into Lazarus Forge), independently arrived at the same "no single subsystem decides" principle stated here — but with a concrete numeric mechanism where this document only has a stated principle: `[Astroid-miner] Rogue_unit_management.md` §1.3 requires 80–99% fleet-wide agreement before corrective action is deployed against a flagged unit, specifically to ensure no single unit can make destructive decisions unilaterally. GOV-021b should evaluate adopting an agreement-threshold mechanism of this kind rather than inventing one independently — two governance documents, drafted separately by different AI collaborators months apart, converging on the same structural answer is itself evidence the structure is sound. Not adopted as binding here — GOV-021b's job, not this section's.
+**Concrete mechanism candidate, 2026-07-19 (Astroid-miner convergence):** this repository's companion project, Astroid-miner (expected to eventually be absorbed into Lazarus Forge), independently arrived at the same "no single subsystem decides" principle stated here — but with a concrete numeric mechanism where this document only has a stated principle: `[Astroid-miner] Rogue_unit_management.md` §1.3 requires 80–99% fleet-wide agreement before corrective action is deployed against a flagged unit, specifically to ensure no single unit can make destructive decisions unilaterally. GOV-021b should evaluate adopting an agreement-threshold mechanism of this kind rather than inventing one independently — two governance documents, drafted separately by different AI collaborators months apart, converging on the same structural answer is corroborating design signal, not verification (per EF-0.1: agent consensus is not evidence). Not adopted as binding here — GOV-021b's job, not this section's.
 
 ## 6. Response Tiers
 
@@ -183,7 +183,7 @@ Earlier discussion in this drafting process considered framing this as an "exit 
   - AP-013 (Open) — related-not-identical to Restoration closure authority (§9)
   - AP-016 (Resolved) — concurrent quarantine operational continuity already solved; narrows GOV-021c to detection only (§12)
 - `Admin/Governance_Migration_Protocol.md` — this document should be routed through the Track A / Constitutional Impact Statement process before ratification, given its constitutional-adjacent scope
-- **Astroid-miner** (companion repository, expected to be absorbed into Lazarus Forge) — `[Astroid-miner] Rogue_unit_management.md` and `[Astroid-miner] uranus_ejector_module.md` independently arrived at a near-identical governance lifecycle months before this document existed. See §5 (Fleet Consensus Validation as concrete mechanism candidate for GOV-021b) and §6 (shared Watch/Reversion-mode exit-condition gap). This convergence is treated as evidence the structure is sound, not merely a naming coincidence.
+- **Astroid-miner** (companion repository, expected to be absorbed into Lazarus Forge) — `[Astroid-miner] Rogue_unit_management.md` and `[Astroid-miner] uranus_ejector_module.md` independently arrived at a near-identical governance lifecycle months before this document existed. See §5 (Fleet Consensus Validation as concrete mechanism candidate for GOV-021b) and §6 (shared Watch/Reversion-mode exit-condition gap). This convergence is treated as corroborating design signal, not verification (per EF-0.1), not merely a naming coincidence.
 - **Astroid-miner, technical/fabrication note (2026-07-31, distinct from the governance convergence above):** `[Astroid-miner] Propulsion_Economy_isru/zero_g_fabrication.md` independently specifies Induction Heating + EM Levitation (no crucible, high purity) as a primary fabrication technique for reactive/refractory metals in vacuum — directly relevant to `Operations/Gate_05_Separation_Thermal.md`'s open reactive-metal atmosphere question (titanium etc., raised 2026-07-31). Per the same UNK-003 (Cross-repo assumption contracts, Deferred pending Leviathan milestone) and Tests/Leviathan_testing.md's 2026-07-19 merge anchor governing this document's own Astroid-miner citations above, this is recorded as supporting detail only — it does not resolve or downgrade Gate_05's atmosphere unknown today. This protocol's own scope (autonomy escalation, not fabrication) is unaffected; noted here purely to keep the cross-repo convergence record in one place per this document's established practice. See `Admin/Trajectories.md` for the parked fabrication item.
 
 ---
@@ -214,8 +214,9 @@ Earlier discussion in this drafting process considered framing this as an "exit 
   6-Gate Verification run for the first time on this file. Result: G1, G2,
   G3, G4, G6 PASSED; **G5 (Cross-Reference Integrity) BLOCKED** — the three
   Astroid-miner cross-references throughout this document
-  (`Rogue_unit_management.md`, `uranus_ejector_module.md`,
-  `Propulsion_Economy_isru/zero_g_fabrication.md`) were unqualified,
+  ([Astroid-miner] Rogue_unit_management.md, [Astroid-miner]
+  uranus_ejector_module.md, [Astroid-miner]
+  Propulsion_Economy_isru/zero_g_fabrication.md) were unqualified,
   causing routing checks to risk treating them as local hallucinated
   files. Also flagged, not yet acted on: Watch-tier exit conditions remain
   undefined (folded into GOV-021b, not separately registered) — noted as
@@ -232,3 +233,41 @@ Earlier discussion in this drafting process considered framing this as an "exit 
   fresh audit pass. Status remains Draft — PROPOSED NOT RATIFIED; GOV-021b
   and GOV-021c remain Open. Ratification explicitly deferred pending G5
   re-verification. Human-directed.
+
+- 2026-08-11 (second pass, same day): **G5 fix corrected — the first
+  attempt did not actually clear the harness, confirmed by re-running its
+  own extraction regex directly rather than trusting either audit's
+  prose claim.** A follow-up Skeptic/Auditor pass (Claude) found the
+  harness's Phase 1 check still flagged all three external filenames as
+  unresolved, despite the entry above. Root cause: `Automation/audit_lib.py`'s
+  reference extractor only captures text matching `` `([A-Za-z][A-Za-z0-9_/]+\.md)` ``
+  — a backtick immediately followed by a letter. My original fix wrapped
+  the whole `[Astroid-miner] filename.md` string in one backtick pair,
+  which the regex doesn't match at its start (bracket, not a letter) — so
+  the doctrine-text occurrences were in fact correctly unqualified from
+  the harness's point of view. The actual failure, confirmed by running
+  the exact regex against this file's live content: the Resolution Log
+  entry directly above, written to *describe* the bug, used bare
+  backtick-wrapped filenames to reference what had been wrong — re-tripping
+  the same check it was documenting as fixed. Also confirmed the harness's
+  existing `check_cross_refs` already special-cases any ref containing the
+  substring "Astroid" as skippable — the bracket-prefix convention was
+  never wrong in principle, it just never reached the extractor as a
+  single token. Fixed by removing all remaining bare backtick-wrapped
+  occurrences of the three filenames (replaced with the un-backticked
+  `[Astroid-miner] filename.md` form used elsewhere, or worded around
+  entirely), and confirmed by re-running the harness's actual extraction
+  regex against the file directly — zero bare matches remain. G5 is now
+  genuinely fixed at the tooling level, not just the prose level; still
+  not re-verified by an actual harness invocation, only by directly
+  replicating its regex. **Separately flagged, not yet actioned:** this
+  bracket convention isn't a registered convention anywhere (Routing.md,
+  Discovery.md, Canonical_Terms.md) — it works today only because of the
+  substring-match exemption already in `audit_lib.py`, which is
+  undocumented outside that file's own docstring. Worth formalizing as an
+  explicit `[ExternalRepo]` convention rather than relying on an
+  implementation detail continuing to hold. EF-0.1 wording fix (reword
+  "evidence the structure is sound" to avoid implying agent-convergence-
+  as-verification) and the Semantic Drift finding (Spec Gates/Governance
+  ID tracking ahead of "Exploration" framing) from this pass are logged
+  here but not yet applied. Human-directed.
