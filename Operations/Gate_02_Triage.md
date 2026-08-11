@@ -116,7 +116,7 @@ against it.
 | ASM-003 | Components entering triage have passed basic safety screening at Gate_01_Intake        | Sequential gate doctrine           | High       | Gate_01 bypassed or abbreviated                             |
 | ASM-004 | Queue saturation is detectable before it causes resource deadlock                      | Queue economics doctrine           | Medium     | First operational queue saturation event observed           |
 | ASM-005 | Numeric thresholds (70% performance, 5–15 min runtime) are reasonable starting points | Analogous — industrial triage practice | Low     | N≥50 consistent decisions per component class reached       |
-| ASM-006 | Dual-use and weaponization patterns are recognizable by a trained operator at Station 0 | Current EC-002 status — Placeholder | Low       | EC-002 pattern-matching mechanism defined                   |
+| ASM-006 | Dual-use and weaponization patterns are recognizable by a trained operator at Station 0, applying the Pattern Recognition Annex categories | `Admin/Ethical_Constraints.md` EC-002 Pattern Recognition Annex (closed 2026-08-11) | Medium | Station 0 false-positive/false-negative rate diverges materially from Annex expectation once field data exists |
 
 ---
 
@@ -814,6 +814,22 @@ until a scoring owner and cadence are assigned and logged here.
 ---
 
 ### Resolution Log
+
+- 2026-08-11: **ASM-006 updated — EC-002 Pattern Recognition Annex closed.**
+  `Admin/Ethical_Constraints.md` added the Pattern Recognition Annex EC-002
+  had been pending (six intent/complicity-based pattern categories,
+  detection method, false-positive handling, escalation path — hooked
+  explicitly to this file's Station 0). ASM-006's Expiry Trigger ("EC-002
+  pattern-matching mechanism defined") has fired: Basis updated from
+  "Current EC-002 status — Placeholder" to the Annex itself, Confidence
+  raised Low → Medium (a defined mechanism exists; it has not yet
+  accumulated field data), and Expiry Trigger reworded to what would
+  actually falsify it going forward — a material false-positive/
+  false-negative divergence once Station 0 has real throughput. Not
+  raised to High: the Annex is new and unvalidated against live triage
+  volume. Core Principle 6's cross-reference to `Ethical_Constraints.md`
+  is unchanged and now has a concrete mechanism behind it. No Spec Gate
+  change; no TS-* count change. Human-directed.
 
 - 2026-08-09: **Pseudo-audit (Grok — Skeptic/Auditor read + minimal Synthesizer fixes; human-directed).** Correction: TS-002 Blocking No → Yes — file's own "Why It Matters" calls contamination bypass the highest-risk triage failure mode with operator-harm potential; Unknowns.md already indexed Priority Blocking; local Blocking field understated the substance. **Findings (not closed):** F-G2-001 — Open Unknowns 7 = TS-001,002,003,005,006,007,008 (TS-004 Resolved discharge retained); count matches. F-G2-002 — Spec Gates 2/6 left unchanged; §XII explicitly does not raise gate count; no independent Gate evidence package re-verified this pass. F-G2-003 — DS-001 (retirement handoff auto vs operator re-triage) remains Open Active Dispute. F-G2-004 — TS-005–008 correctly non-blocking while §XII proposed/unaudited. Spec Gates **unchanged** 2/6. Status **unchanged** Draft.
 
