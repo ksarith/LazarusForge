@@ -6,6 +6,31 @@ Split out from `Unknowns.md` 2026-07-19, following the precedent already establi
 
 ---
 
+**Version 4.49 — 2026-08-11. EC-002 resolved — removed from Active Index.**
+`Admin/Ethical_Constraints.md` added its Pattern Recognition Annex
+(six intent/complicity-based pattern categories, detection method hooked
+to `Operations/Gate_02_Triage.md` Station 0, false-positive handling,
+category-tagged escalation path) and closed EC-002's sidecar entry
+Open → Resolved. Per Size Management Rule 2, removed from this file's
+Ethics & Governance Active Index; full resolution detail lives in
+`Admin/Ethical_Constraints.md`'s own EC-002 sidecar entry and Resolution
+Log. EC-001 and EC-012 remain separately Open — the Annex depends on both
+but resolves neither. Human-directed.
+
+**Version 4.48 — 2026-08-09. "What vX.X Means" retired to `Admin/Progress_Log.md`.**
+This section had violated its own Size Management Rule 1 (retire and
+replace every version bump) for nine consecutive versions — last updated
+at v4.39, this file now well past that. Content migrated to the new
+`Admin/Progress_Log.md`, which uses dated headings instead of a version
+number so the same failure can't recur (nothing about adding a new entry
+requires touching an old one's heading). Rule 1 rewritten to point there.
+Companion change: `Discovery.md`'s "Cross-Module Unknowns — Attention
+Required" table — 19 versions stale, last refreshed at v4.29 — was removed
+outright rather than migrated, since this file's own Active Index with
+Priority/Blocking columns already serves that function without a shadow
+copy. No unknowns opened, closed, or reclassified by this version; this
+is a structural/navigational change only.
+
 **Version 4.47 — 2026-08-07. CLF-010's Class-D gaming surface given its Challenge Class 8 adversarial pass.**
 `Challenges/Closed_Loop_Feedstock.md` §4a's known residual gaming surface
 (a pure Class-D batch scoring FIR = 0.5 with zero processing) was flagged

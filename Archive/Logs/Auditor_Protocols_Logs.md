@@ -863,6 +863,15 @@ This becomes governance metadata rather than prose, auditable the same way Truth
 
 ### Resolution Log
 
+- 2026-08-11: **v0.38 — Cross-reference added, no doctrine change.** §AP-006's
+  Evidence Classification and Institutional Truth Provenance Hierarchy
+  cross-reference line updated to point to `Admin/Ethical_Constraints.md`
+  EC-001 (Confidence Threshold Doctrine, closed 2026-08-11), which applies
+  this section's UNKNOWN/PROVISIONAL/VERIFIED states — Risk-tiered — to
+  that file's Core Mandate default-to-non-action rule. No content in this
+  file changed; this is the reverse-direction pointer for a consumer that
+  didn't exist until EC-001 closed. Human-directed.
+
 - 2026-08-10: **v0.37 — Rule 10 (AP-035) added to AI Contribution
   Protocols.** External Pseudo-Audit Scope and Logging Destination.
   Generalizes the AP-034 precedent (Gemini cold-session 2026-08-03:

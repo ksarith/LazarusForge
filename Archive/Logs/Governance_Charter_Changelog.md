@@ -627,6 +627,12 @@ independently — a shared mechanism may serve both.
 
 ### Resolution Log
 
+- 2026-08-11: **Pseudo-audit (Grok, same limits).** Findings only; Spec Gates
+  left locked. (1) Open Unknowns **20** matches File State (sidecar here).
+  (2) GOV-003 and GOV-005 correctly **Blocking Yes**. (3) GOV-015 / GOV-018
+  Critical Priority, Blocking No — constitutional judgment calls, not
+  auto-flipped (SEC-007a pattern). (4) No GOV-* closed. Human-directed.
+
 - 2026-08-05: **Consolidation pass — two navigational reference sections
   added, no doctrine changed (human-directed).** A Copilot audit
   claimed the Charter contained "no minimal human override doctrine"
