@@ -852,6 +852,12 @@ increasingly unreliable when the actual problem is maintenance.
 
 ### Resolution Log
 
+- 2026-08-10: **Pseudo-audit (Grok, same limits).** Findings only; Spec Gates
+  left locked at 0/6. (1) Open Unknowns **8** = MG-001–008, matches local +
+  `Unknowns.md`. (2) No Blocking understatement of operational-safety type.
+  (3) MG-006 siting gap mirrors SC-006 (noted, not escalated this pass).
+  (4) No MG-* closed. Human-directed.
+
 - 2026-05-15: MG-001 through MG-005 — Migrated from prose
   Unknowns Registry to structured sidecar format. Content
   preserved; format updated to template standard.

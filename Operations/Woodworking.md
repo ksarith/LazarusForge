@@ -407,6 +407,13 @@ Fine wood dust suspended in air is explosive. Do not allow dust to accumulate on
 
 ### Resolution Log
 
+- 2026-08-10: **Pseudo-audit (Grok, same limits).** Findings only; Spec Gates
+  left locked at 0/6. (1) Open Unknowns **5** = WW-001–005, matches local +
+  `Unknowns.md`. (2) WW-004 correctly **Blocking Yes** (sustained mixed-species
+  without P100). (3) WW-005 correctly **Blocking Yes / Critical** (no powered
+  machinery on raw urban salvage until IFM screening validated). (4) No WW-*
+  closed. Human-directed.
+
 - 2026-06-08: Navigation Anchors block added. Safety Advisory
   formatting corrected — horizontal rule added after advisory,
   stray `>` removed. Verification Ref corrected from

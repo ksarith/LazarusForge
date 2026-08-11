@@ -798,6 +798,16 @@ alternative if the rate proves significant.
 ---
 
 ### Resolution Log
+- 2026-08-10: **Pseudo-audit (Grok, same limits).** Findings only; Spec Gates
+  left locked at 0/6. (1) Open Unknowns **9** = SC-001–009, matches local
+  sidecar and `Unknowns.md`. (2) SC-009 correctly nuanced Blocking Yes for
+  titanium/reactive-metal path. (3) **F-SC-003 clarified (same-day follow-up):**
+  apparent Unknowns.md ↔ local Blocking desync on SC-001/SC-002 is vocabulary
+  distinction, not data error — `Unknowns.md` Priority (Promo) column ≠
+  file-local operational Blocking field. Definition added to
+  `Admin/Canonical_Terms.md`. Local Blocking left No. (4) No SC-* closed.
+  Human-directed.
+
 - 2026-08-08: **Scope Boundary DOES-NOT wording corrected** — "Welding
   wire specification or qualification (downstream — not yet assigned)"
   was inconsistent with this file's own Lessons Learned table (line

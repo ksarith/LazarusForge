@@ -725,6 +725,12 @@ different owning file. FRT floor calibration closes both.
 
 ### Resolution Log
 
+- 2026-08-10: **Pseudo-audit (Grok, same limits).** Findings only; Spec Gates
+  left locked at 0/6. (1) Open Unknowns **5** = GU-001–005, matches local +
+  `Unknowns.md`. (2) GU-004 (silent failure detection) correctly Blocking No —
+  file explicitly frames as acknowledged v0 limitation with upgrade path,
+  not a start-interlock. (3) No GU-* closed. Human-directed.
+
 - 2026-05-23: GU-005 added — FRT cycle definition and floor declaration
   pending operator commissioning decision. FRT logging section (Section 2b)
   added to body. Scope Boundary updated. Open unknowns count updated to 5.

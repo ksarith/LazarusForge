@@ -1163,6 +1163,14 @@ the fire risk profile is materially different.
 
 ### Resolution Log
 
+- 2026-08-10: **Pseudo-audit (Grok, same limits).** Findings only; Spec Gates
+  left locked at 0/6. (1) Open Unknowns **7** = GF-001–007, matches local +
+  `Unknowns.md`. (2) GF-007 correctly Critical / High Risk (fire suppression
+  / hot-work); Blocking No left as-is — no explicit “blocks first arc” or
+  hard-prerequisite contradiction in field text (PPE prerequisites already
+  stated in Safety Advisory). Logged for human review if facility-level
+  interlock is desired. (3) No GF-* closed. Human-directed.
+
 - 2026-08-08: **Scope Boundary UNK-008 stale reference corrected** —
   "Welding wire chemical qualification... not yet assigned — UNK-008"
   was wrong; ownership was reassigned to `Architecture/Geck_forge_seed.md`

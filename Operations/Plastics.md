@@ -410,6 +410,13 @@ char composition is characterized and a routing decision tree is defined.
 
 ### Resolution Log
 
+- 2026-08-10: **Pseudo-audit (Grok, same limits).** Findings only; Spec Gates
+  left locked at 0/6. (1) Open Unknowns **5** = PL-001–005, matches local
+  sidecar and `Unknowns.md`. (2) PL-001 correctly **Blocking Yes / Critical**
+  (before any hot operational runs). (3) PL-002 correctly **Blocking Yes**
+  (before reactor fabrication). (4) No PL-* closed; no pyrolysis claims
+  advanced. Human-directed.
+
 - 2026-05-27: PL-002 — Scope expanded from pressure control only to include
   maintenance access and corrosion inspection requirements. Finding from Grok
   Skeptic/Auditor audit 2026-05-27.

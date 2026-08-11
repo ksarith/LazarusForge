@@ -781,10 +781,10 @@ first hot-pyrolysis run produces calibration data.
 | Risk          | Medium                                           |
 | Priority      | Major                                            |
 | Type          | Technical / Safety                               |
-| Blocking      | No                                               |
+| Blocking      | Yes — blocks Protocol 1.4 fault-alarm audibility calibration |
 | Owner         | Operations/Air_Scrubber.md                       |
 | First Logged  | 2026-05-23                                       |
-| Last Reviewed | 2026-06-08                                       |
+| Last Reviewed | 2026-08-10                                       |
 
 **Description:** Continuous fan and compressor noise
 levels during Air Scrubber operation have not been
@@ -818,6 +818,19 @@ that calibration step.
 ---
 
 ### Resolution Log
+
+- 2026-08-10: **AS-004 Blocking No → Yes (follow-up).** File’s own Why It
+  Matters states this unknown “blocks that calibration step” (Protocol 1.4
+  fault-alarm audibility). Same documentation-consistency pattern as
+  TS-002 / EL-005 / GI-002. Applied after Claude review confirmed the
+  understatement. Spec Gates still locked; no AS-* closed. Human-directed.
+
+- 2026-08-10: **Pseudo-audit (Grok, same limits).** Findings only; Spec Gates
+  left locked at 3/6. (1) Open Unknowns **4** = AS-001–004, matches local
+  sidecar and `Unknowns.md`. (2) AS-003 correctly **Blocking Yes** (blocks
+  Chemistry validation). (3) AS-004 initially logged for human review; later
+  same-day follow-up flipped Blocking No → Yes (see entry above). (4) No
+  AS-* closed. Human-directed.
 
 - 2026-07-19: **Stage D/E cross-reference correction (Grok flag, cross-checked
   against source, human-directed).** `Architecture/Chemistry.md` CE-006 had

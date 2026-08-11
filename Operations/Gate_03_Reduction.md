@@ -840,6 +840,15 @@ actually deciding between.
 
 ### Resolution Log
 
+- 2026-08-10: **Pseudo-audit (Grok, same limits).** Findings only; Spec Gates
+  left locked at 0/6. (1) Open Unknowns **8** = GR-001–008, matches local +
+  `Unknowns.md`. (2) GR-003 and GR-007 correctly Critical / High Risk;
+  Blocking No left as-is (no file-local “blocks first Reduction run” or
+  hard-prerequisite language — accumulation/governance gaps, not
+  start-interlocks). (3) Safety Advisory prerequisites (Air Scrubber,
+  human present, no energetics) already cross-link GI-002 / AS. (4) No
+  GR-* closed. Human-directed.
+
 - 2026-07-28: GR-006, GR-007, GR-008 given formal sidecar entries —
   previously present in `Unknowns.md`'s active index only, with no
   matching blocks here, surfaced by a Grok-run repo-wide desync audit

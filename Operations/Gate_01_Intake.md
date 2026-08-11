@@ -678,10 +678,10 @@ throughput and identification quality.
 | Risk          | High                                             |
 | Priority      | Critical                                         |
 | Type          | Technical / Safety                               |
-| Blocking      | No                                               |
+| Blocking      | Yes — hard prerequisite before first operational Intake run |
 | Owner         | Operations/Gate_01_Intake.md                     |
 | First Logged  | 2026-05-15                                       |
-| Last Reviewed | 2026-05-15                                       |
+| Last Reviewed | 2026-08-10                                       |
 
 **Description:** Batteries, capacitors, compressed gas
 vessels, and other energetic materials identified at
@@ -979,6 +979,15 @@ hazards are not yet acknowledged in the system.
 ---
 
 ### Resolution Log
+
+- 2026-08-10: **Pseudo-audit (Grok, same limits).** Spec Gates left locked
+  at 0/6. (1) Open Unknowns **7** = GI-001–007, matches local + `Unknowns.md`.
+  (2) **GI-002 Blocking No → Yes** — file’s own language (“hard prerequisite
+  before first operational Intake run”, “safety prerequisite… not a
+  refinement”, Safety Advisory points at GI-002) was stronger than the
+  Blocking field; same pattern as TS-002 / EL-005. (3) GI-003 Critical /
+  Safety / Blocking No logged for human review (detection capability gap).
+  (4) No GI-* closed. Human-directed.
 
 - 2026-05-19: GI-006, GI-007 — New entries logged
   following ChatGPT audit 2026-05-19. Chain-of-
