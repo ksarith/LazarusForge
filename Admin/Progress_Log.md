@@ -565,3 +565,20 @@ matters, but **expected yield is low** relative to (1)–(3). Prefer:
   architecture), EC-008 (inferred authorization), or EC-012 (telemetry
   spoofing) — all cross-referenced as separate, still-open dependencies.
   Human-directed.
+
+- 2026-08-11: **Autonomy_Divergence_Protocol.md's first Skeptic/Auditor
+  dual-pass run (Claude), triggered by a proposed ratification.** Result:
+  5/6 Spec Gates PASSED, G5 (Cross-Reference Integrity) BLOCKED on three
+  unqualified Astroid-miner filenames. Fixed same day: all 8 occurrences
+  qualified with `[Astroid-miner]`, and a §6/§9 semantic-drift wording fix
+  (Human-Reviewed tier menu now points at §9's formal Restoration
+  Procedure instead of implying restoration happens from the menu
+  directly). Ratification was explicitly **not** applied — deferred
+  pending G5 re-verification, with GOV-021b and GOV-021c still Open.
+  Cross-checked independent ChatGPT and Gemini reviews of the same audit
+  run first: both engaged with the real question (is Exploration-stage
+  incompleteness appropriately bounded rather than hidden) rather than
+  fabricating findings; Copilot correctly declined to audit from harness
+  output alone without the actual file text, rather than guessing — a
+  clean instance of the discipline AP-035 was written to encourage.
+  Human-directed.
