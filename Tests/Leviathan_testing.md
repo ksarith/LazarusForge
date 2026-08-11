@@ -808,6 +808,12 @@ LT-005 resolution.
 
 ### Resolution Log
 
+- 2026-08-10: **Pseudo-audit (Grok, same limits).** Findings only; Spec Gates
+  left locked at 0/6. (1) Open Unknowns **7** = LT-001–007, matches local +
+  `Unknowns.md`. (2) LT-001, LT-002, LT-003 correctly **Blocking Yes**. (3)
+  LT-004/005/006/007 Blocking No appropriate. (4) No LT-* closed; no deep-
+  ocean claims advanced. Human-directed.
+
 - 2026-07-19: Designated as the resolved cross-repo merge anchor point for Astroid-miner convergence (human governing authority). LT-004 scope clarified against Extension A's no-consensus-for-learning stance — Astroid-miner's Fleet Consensus Validation does not resolve LT-004 as scoped. LT-007 registered — corrective action authorization mechanism for a peer unit, a genuinely untracked gap surfaced by the cross-check, distinct from LT-004, with Astroid-miner's Fleet Consensus (80–99% agreement) as a candidate reference and a cross-reference to `Admin/Autonomy_Divergence_Protocol.md` §5's independently-convergent principle at a different scale. Open Unknowns 6 → 7.
 
 - 2026-06-08: Full template retrofit — Navigation

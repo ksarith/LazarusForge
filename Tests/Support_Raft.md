@@ -668,6 +668,12 @@ None are masters. Each occupies a scope. The Raft is not headquarters. It is an 
 
 ### Resolution Log
 
+- 2026-08-10: **Pseudo-audit (Grok, same limits).** Findings only; Spec Gates
+  left locked at 0/6. (1) Open Unknowns **13** = SR-001–013, matches local +
+  `Unknowns.md`. (2) SR-001 correctly **Blocking Yes** (before v1.0). (3)
+  SR-007 correctly **Blocking Yes** (before v1.0 deployment). (4) No SR-*
+  closed. Human-directed.
+
 - 2026-07-12: Ethical Anchor field corrected — was using a non-canonical variant (backticked, `Admin/`-prefixed: "Defer to `Admin/Ethical_Constraints.md` if present.") instead of the canonical plain-text string ("Defer to Ethical_Constraints.md if present."). Same drift found across 9 files in a full-repository Phase 1 sweep (ChatGPT, adapted local-disk harness run) — verified independently against source before patching. No semantic change; the anchor's meaning was never in question, only its exact text.
 | Date | Entry |
 |---|---|

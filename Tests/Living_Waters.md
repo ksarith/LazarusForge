@@ -783,6 +783,12 @@ Promotion is partial and pathway-specific. Unvalidated pathways remain in Tests/
 
 ### Resolution Log
 
+- 2026-08-10: **Pseudo-audit (Grok, same limits).** Findings only; Spec Gates
+  left locked at 0/6. (1) Open Unknowns **9** = LW-UNK-001–009, matches local +
+  `Unknowns.md`. (2) LW-UNK-001, LW-UNK-002, LW-UNK-003 correctly **Blocking Yes**
+  (Critical safety / promotion criteria). (3) No LW-UNK-* closed; no potable
+  claims advanced. Human-directed.
+
 - 2026-07-30: AWG planning hygiene (no unknown closures).
   - ASM-004 and Body energy-intensity note: replaced 0.3–0.5 kWh/L as implied Forge baseline with climate-banded planning ranges (~0.8–1.5 humid; higher in mixed/arid); 0.3–0.5 retained only as best-case OEM ceiling. LW-TEST-502 remains the measurement gate.
   - LW-005: added climate-conditioned method preference table — arid sites prefer sorption + solar/waste-heat regeneration over pure vapor-compression AWG.
