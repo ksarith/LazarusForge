@@ -863,6 +863,20 @@ This becomes governance metadata rather than prose, auditable the same way Truth
 
 ### Resolution Log
 
+- 2026-08-10: **v0.37 — Rule 10 (AP-035) added to AI Contribution
+  Protocols.** External Pseudo-Audit Scope and Logging Destination.
+  Generalizes the AP-034 precedent (Gemini cold-session 2026-08-03:
+  assigned unknown IDs without sidecar access and collided with itself,
+  `UNK-AP-034` used twice) to cover inventory fabrication and wrong-
+  destination recording. Immediate trigger: a 2026-08-10 Gemini
+  pseudo-audit proposed a freestanding "Systemic Unknowns Ledger" with
+  three unregistered IDs (`UNK-ADM-001`, `UNK-ADM-002`, `UNK-VRF-003`)
+  and an Archive/ inventory count of 7 against an actual 27. Spec Gates
+  and Open Unknowns count unchanged (14). Human-directed; Grok applied
+  after independent verification of file counts and ID collision-check.
+  AP-035 itself is the rule, not an open unknown — excluded from the
+  open count per established convention (same treatment as AP-033).
+
 - 2026-08-03: **v0.36 — GMP §VII added to Challenge Class 10's
   high-coupling documents table.** Third of three fixes recommended
   from the §VII cold Battery pass (the other two — VII.1's ambiguity
