@@ -1,11 +1,25 @@
 # Routing.md — LazarusForgeV0
 **Canonical Navigation and Link Mapping Index.**
-**Last updated: 2026-08-09**
+**Last updated: 2026-08-10**
 
 ---
 
 ## File Purpose
 This file acts as the primary network lookup table for automated agents, continuous integration systems, and human collaborators. It provides programmatic access to the raw data payloads of the repository while enforcing bi-directional link traceability via the File Template.
+
+## Scope of this Routing Table
+
+**Routing.md is the map of the *active operational repository*, not a complete inventory of every file that exists on disk.**
+
+Intentionally excluded from the Master Routing Map (by design, not by oversight):
+
+- All content under `Archive/` and `Archive/Logs/` — historical preservation layer. These files are not part of the live operational surface and are not required to carry Navigation Anchors or participate in the backlink requirement.
+- Pure implementation artifacts under `Automation/` (the `.py` sources themselves). Supporting documentation that is doctrine may still appear.
+- Transient or generated artifacts that may appear in working trees but are not committed doctrine.
+
+The difference between the number of paths listed here (~112) and the total number of non-directory files in a full checkout is therefore expected. Agents must not treat a missing entry for an Archive file as registry drift or an integrity failure. If an active (non-Archive) doctrine or protocol file is absent from this table, that *is* a defect and should be logged.
+
+Last scope clarification: 2026-08-10 (integrity cleanup pass).
 
 ---
 
@@ -109,23 +123,23 @@ This file acts as the primary network lookup table for automated agents, continu
 | `Automation/integrity_check.py` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Automation/integrity_check.py) | [Repo](https://github.com/ksarith/LazarusForgeV0/blob/main/Automation/integrity_check.py) | N/A (Script) |
 | `Automation/parser.py` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Automation/parser.py) | [Repo](https://github.com/ksarith/LazarusForgeV0/blob/main/Automation/parser.py) | N/A (Script) |
 | **Archive/ Layer** | | | |
-| `Archive/ClaudeAudit.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Archive/ClaudeAudit.md) | [Repo](https://github.com/ksarith/LazarusForgeV0/blob/main/Archive/ClaudeAudit.md) | Explicit |
-| `Archive/Configurations.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Archive/Configurations.md) | [Repo](https://github.com/ksarith/LazarusForgeV0/blob/main/Archive/Configurations.md) | Explicit |
-| `Archive/CopilotClosedLoop.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Archive/CopilotClosedLoop.md) | [Repo](https://github.com/ksarith/LazarusForgeV0/blob/main/Archive/CopilotClosedLoop.md) | Explicit |
-| `Archive/CopilotCognitiveSalvage.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Archive/CopilotCognitiveSalvage.md) | [Repo](https://github.com/ksarith/LazarusForgeV0/blob/main/Archive/CopilotCognitiveSalvage.md) | Explicit |
-| `Archive/Electronics-talking.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Archive/Electronics-talking.md) | [Repo](https://github.com/ksarith/LazarusForgeV0/blob/main/Archive/Electronics-talking.md) | Explicit |
-| `Archive/Energy-copilot-chat.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Archive/Energy-copilot-chat.md) | [Repo](https://github.com/ksarith/LazarusForgeV0/blob/main/Archive/Energy-copilot-chat.md) | Explicit |
-| `Archive/Energy-untested.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Archive/Energy-untested.md) | [Repo](https://github.com/ksarith/LazarusForgeV0/blob/main/Archive/Energy-untested.md) | Explicit |
-| `Archive/EthicalC-Copilot.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Archive/EthicalC-Copilot.md) | [Repo](https://github.com/ksarith/LazarusForgeV0/blob/main/Archive/EthicalC-Copilot.md) | Explicit |
-| `Archive/Gate2-afterupdate-review.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Archive/Gate2-afterupdate-review.md) | [Repo](https://github.com/ksarith/LazarusForgeV0/blob/main/Archive/Gate2-afterupdate-review.md) | Explicit |
-| `Archive/Gate2chat.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Archive/Gate2chat.md) | [Repo](https://github.com/ksarith/LazarusForgeV0/blob/main/Archive/Gate2chat.md) | Explicit |
-| `Archive/Gov-Copilot.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Archive/Gov-Copilot.md) | [Repo](https://github.com/ksarith/LazarusForgeV0/blob/main/Archive/Gov-Copilot.md) | Explicit |
-| `Archive/GrokGeckMaybeOverflowToo.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Archive/GrokGeckMaybeOverflowToo.md) | [Repo](https://github.com/ksarith/LazarusForgeV0/blob/main/Archive/GrokGeckMaybeOverflowToo.md) | Explicit |
-| `Archive/Pyrolysis_Cascade-Copilot.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Archive/Pyrolysis_Cascade-Copilot.md) | [Repo](https://github.com/ksarith/LazarusForgeV0/blob/main/Archive/Pyrolysis_Cascade-Copilot.md) | Explicit |
-| `Archive/Pyrolysis_Cascade-Grok.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Archive/Pyrolysis_Cascade-Grok.md) | [Repo](https://github.com/ksarith/LazarusForgeV0/blob/main/Archive/Pyrolysis_Cascade-Grok.md) | Explicit |
+| `Archive/Transcripts/ClaudeAudit.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Archive/Transcripts/ClaudeAudit.md) | [Repo](https://github.com/ksarith/LazarusForgeV0/blob/main/Archive/Transcripts/ClaudeAudit.md) | Explicit |
+| `Archive/Transcripts/Configurations.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Archive/Transcripts/Configurations.md) | [Repo](https://github.com/ksarith/LazarusForgeV0/blob/main/Archive/Transcripts/Configurations.md) | Explicit |
+| `Archive/Transcripts/CopilotClosedLoop.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Archive/Transcripts/CopilotClosedLoop.md) | [Repo](https://github.com/ksarith/LazarusForgeV0/blob/main/Archive/Transcripts/CopilotClosedLoop.md) | Explicit |
+| `Archive/Transcripts/CopilotCognitiveSalvage.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Archive/Transcripts/CopilotCognitiveSalvage.md) | [Repo](https://github.com/ksarith/LazarusForgeV0/blob/main/Archive/Transcripts/CopilotCognitiveSalvage.md) | Explicit |
+| `Archive/Transcripts/Electronics-talking.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Archive/Transcripts/Electronics-talking.md) | [Repo](https://github.com/ksarith/LazarusForgeV0/blob/main/Archive/Transcripts/Electronics-talking.md) | Explicit |
+| `Archive/Transcripts/Energy-copilot-chat.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Archive/Transcripts/Energy-copilot-chat.md) | [Repo](https://github.com/ksarith/LazarusForgeV0/blob/main/Archive/Transcripts/Energy-copilot-chat.md) | Explicit |
+| `Archive/Transcripts/Energy-untested.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Archive/Transcripts/Energy-untested.md) | [Repo](https://github.com/ksarith/LazarusForgeV0/blob/main/Archive/Transcripts/Energy-untested.md) | Explicit |
+| `Archive/Transcripts/EthicalC-Copilot.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Archive/Transcripts/EthicalC-Copilot.md) | [Repo](https://github.com/ksarith/LazarusForgeV0/blob/main/Archive/Transcripts/EthicalC-Copilot.md) | Explicit |
+| `Archive/Transcripts/Gate2-afterupdate-review.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Archive/Transcripts/Gate2-afterupdate-review.md) | [Repo](https://github.com/ksarith/LazarusForgeV0/blob/main/Archive/Transcripts/Gate2-afterupdate-review.md) | Explicit |
+| `Archive/Transcripts/Gate2chat.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Archive/Transcripts/Gate2chat.md) | [Repo](https://github.com/ksarith/LazarusForgeV0/blob/main/Archive/Transcripts/Gate2chat.md) | Explicit |
+| `Archive/Transcripts/Gov-Copilot.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Archive/Transcripts/Gov-Copilot.md) | [Repo](https://github.com/ksarith/LazarusForgeV0/blob/main/Archive/Transcripts/Gov-Copilot.md) | Explicit |
+| `Archive/Transcripts/GrokGeckMaybeOverflowToo.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Archive/Transcripts/GrokGeckMaybeOverflowToo.md) | [Repo](https://github.com/ksarith/LazarusForgeV0/blob/main/Archive/Transcripts/GrokGeckMaybeOverflowToo.md) | Explicit |
+| `Archive/Transcripts/Pyrolysis_Cascade-Copilot.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Archive/Transcripts/Pyrolysis_Cascade-Copilot.md) | [Repo](https://github.com/ksarith/LazarusForgeV0/blob/main/Archive/Transcripts/Pyrolysis_Cascade-Copilot.md) | Explicit |
+| `Archive/Transcripts/Pyrolysis_Cascade-Grok.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Archive/Transcripts/Pyrolysis_Cascade-Grok.md) | [Repo](https://github.com/ksarith/LazarusForgeV0/blob/main/Archive/Transcripts/Pyrolysis_Cascade-Grok.md) | Explicit |
 | `Archive/README.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Archive/README.md) | [Repo](https://github.com/ksarith/LazarusForgeV0/blob/main/Archive/README.md) | Explicit |
 | `Archive/Rename_Registry.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Archive/Rename_Registry.md) | [Repo](https://github.com/ksarith/LazarusForgeV0/blob/main/Archive/Rename_Registry.md) | Explicit |
-| `Archive/RIP_GMP-Copilot.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Archive/RIP_GMP-Copilot.md) | [Repo](https://github.com/ksarith/LazarusForgeV0/blob/main/Archive/RIP_GMP-Copilot.md) | Explicit |
+| `Archive/Transcripts/RIP_GMP-Copilot.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Archive/Transcripts/RIP_GMP-Copilot.md) | [Repo](https://github.com/ksarith/LazarusForgeV0/blob/main/Archive/Transcripts/RIP_GMP-Copilot.md) | Explicit |
 | **Archive/Logs/ Layer** | | | |
 | `Archive/Logs/AUDIT_HARNESS_CHANGELOG.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Archive/Logs/AUDIT_HARNESS_CHANGELOG.md) | [Repo](https://github.com/ksarith/LazarusForgeV0/blob/main/Archive/Logs/AUDIT_HARNESS_CHANGELOG.md) | Explicit |
 | `Archive/Logs/Auditor_Protocols_Logs.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Archive/Logs/Auditor_Protocols_Logs.md) | [Repo](https://github.com/ksarith/LazarusForgeV0/blob/main/Archive/Logs/Auditor_Protocols_Logs.md) | Explicit |
