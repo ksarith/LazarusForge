@@ -805,6 +805,12 @@ Full Battery deferred to Candidate Spec. No specification-level claims promoted.
 
 ### Resolution Log
 
+- 2026-08-11: **Pseudo-audit (Grok, same limits).** Findings only; Spec Gates
+  left locked at 1/6. (1) Open Unknowns **13** = GH-001–013, matches local
+  field. (2) GH-013 correctly **Blocking Yes** (Conceptual Salvage Pipeline
+  subsection only). (3) GH-001/003/006/009 use **Epistemic** Blocking —
+  consistent vocabulary, not understatement. (4) No GH-* closed. Human-directed.
+
 - 2026-06-24: **v0.1 initial draft.** File created at Exploration stage. GH-001 through GH-006 registered. Inline compilation tags and LayerMD structure abandoned. File registered in Discovery.md and Unknowns.md.
 - 2026-06-24: **v0.2 — Gate 1 pass.** Fabrication heuristics added throughout (Scope Boundary, File Purpose, Heuristic Failure Class, Core Data Streams, Stage 3, Integration Points). Heuristic Object schema updated: typed action_sequence, metrics_delta (replaces efficiency_delta), candidate_novel_flag (replaces novelty_flag), simulation_fidelity_version, validated_on_machinery_revision, physical_grounding_ref. CANDIDATE_NOVEL status added to Grading Matrix with Pareto criterion and GH-006 hard gate. CSL-A06 added (simulation-to-physical fidelity — load-bearing Placeholder). S2R delta trigger added to Stage 3. Canonicalization pass noted in pipeline. HF-001 Canonical Terms registration proposed. GH-007 through GH-011 registered. Gate 1 passed (G1, G2, G4, G5, G6 clear; G3 partial — full Battery deferred to Candidate Spec). Open Unknowns 6 → 11. Spec Gates 0/6 → 1/6. Unknowns.md requires update: GH-007 through GH-011 global index registration.
 - 2026-06-24: **v0.3 — sidecar triage and schema polish.** GH-009 elevated to Critical (N² interaction scaling argument; resolution path hardened with Interaction Volume and risk-stratified testing). GH-007 Trajectory note added (Cognitive_Canonicalization.md candidate at Candidate Spec). GH-012 registered (discovery yield rate — primary ROI signal for layer; cross-reference AP-001). Schema: provenance_trust_tier subfield added (stratified trust tier for differentiated Auditor handling); failure_modes_observed array added (negative learning from Stage 3 failures and player constraint violations). Open Unknowns 11 → 12. Highest Risk remains High (GH-009 Critical elevates sidecar but file-level risk was already High). Unknowns.md requires update: GH-009 Critical elevation, GH-012 global index registration. AUDIT_HARNESS.py UNKNOWN_FIRST_CYCLE requires GH-012 at cycle 10.

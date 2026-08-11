@@ -716,6 +716,12 @@ The asteroid processing system is out of scope for this file. Solar Descent defi
 
 ### Resolution Log
 
+- 2026-08-11: **Pseudo-audit (Grok, same limits).** Findings only; Spec Gates
+  left locked at 0/6. (1) Open Unknowns **8** = SD-UNK-001–007, 011 (008–010,
+  012–015 Resolved) — matches File State. (2) SD-UNK-001/002/004 correctly
+  **Blocking Yes**. (3) No SD-UNK-* closed; no excavation/flux claims advanced.
+  Human-directed.
+
 - 2026-07-30: Living_Waters interface mirror (Tier 3).
   - Body: Tier 3 cascade list now includes sorption/desiccant regeneration for arid atmospheric harvesting (LW-005), not only LW-001/008.
   - Body: Reciprocal interface paragraph — Solar_Descent owns heat delivery to HX/desorption boundary; Living_Waters owns water-side use (distillation, sorption regen, condensate). Active refrigeration AWG noted as primarily electrical.

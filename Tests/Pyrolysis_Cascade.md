@@ -295,6 +295,13 @@ No test may be run that violates the hard preconditions in Scope Boundary.
 
 ### Resolution Log
 
+- 2026-08-11: **Pseudo-audit (Grok, same limits).** Findings only; Spec Gates
+  left locked at 0/6. (1) Open Unknowns **8** = PYC-001–008, matches local +
+  `Unknowns.md`. (2) PYC-001/003/004 Critical Blocking Yes correct (hot thermal
+  work / disposal / physical pilot). (3) PYC-002/007 Blocking Yes for specific
+  claim classes correct. (4) No PYC-* closed; no yield or break-even claims
+  advanced. Human-directed.
+
 - 2026-08-04: Skeleton created from archived conversation + Critical/Blocking claim map. All prior quantitative performance and economic numbers retired to Placeholder / external-analogous. Eight dependency unknowns registered. File positioned strictly as Exploration under Tests/.
 - 2026-08-04: **ID collision fixed, human-directed.** The original local unknown series used `PC-001` through `PC-008` (and `PC-TEST-001` through `PC-TEST-005`). `PC-` is not a free local prefix — it is already a live, repo-wide series in `Unknowns.md` tracking cross-file Process Corrections, currently running through PC-006 (e.g., the real PC-001 is "Verification Ref corrections," Resolved — unrelated to this file's halogenated-polymer dependency). Renamed throughout to `PYC-001`–`PYC-008` and `PYC-TEST-001`–`PYC-TEST-005` (confirmed unused anywhere in the repository before adopting), including the `ASM-PC-00x` assumption IDs → `ASM-PYC-00x` for consistency. No content, status, risk, or dependency changed — this was a namespace fix only, caught before merge by checking the prefix against the live global registry rather than assuming it was free.
 

@@ -516,7 +516,12 @@ This principle is more fundamental than the light node claim. If the LED array f
 
 ### Resolution Log
 
-### Resolution Log
+- 2026-08-11: **Pseudo-audit (Grok, same limits).** Findings only; Spec Gates
+  left locked at 0/6. (1) Open Unknowns **10** = TF-001–010, matches local +
+  `Unknowns.md`. (2) TF-001 correctly **Blocking Yes** (organizing principle
+  validation). (3) TF-006 Ethical_Constraints escalation candidate noted,
+  Blocking No for initial test correct. (4) No TF-* closed. Human-directed.
+  (Also collapsed duplicate Resolution Log header.)
 
 - 2026-07-12: Retired a stale Drift Indicator referencing DS-001 as still-open. DS-001 was already Closed (Gemini audit, 2026-06-14) per the Active Disputes table above — the trigger condition described a dispute that no longer existed. Replaced with a reopening guard instead of deleting the entry outright, since the underlying naming decision is still worth protecting against silent reversal.
 
