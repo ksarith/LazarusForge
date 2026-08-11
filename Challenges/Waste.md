@@ -178,7 +178,7 @@ The river does not waste water. The forest does not waste leaves. Waste, in thos
 
 *WA-002 and WA-004 are Critical — no sustained mixed-waste operations without hazardous fraction identification and negative-value disposal doctrine.*
 
-*Full tracking entries to be registered in `Unknowns.md` on next audit cycle.*
+*All four entries (WA-001–004) are registered in `Unknowns.md`.*
 
 ---
 
@@ -188,6 +188,7 @@ The river does not waste water. The forest does not waste leaves. Waste, in thos
 
 ## Resolution Log
 
+- 2026-08-10: **Pseudo-audit (Grok, same limits as Facilities/Electronics pass).** Findings only; Spec Gates N/A for Challenges Problem-Statement subtype and left untouched. (1) Open Unknowns count 4 = WA-001–004, matches local table and `Unknowns.md`. (2) WA-002 and WA-004 correctly Critical; the “no sustained mixed-waste operations” note aligns with hazard language in Body and with Unknowns.md Priority. (3) Removed stale “Full tracking entries to be registered in Unknowns.md on next audit cycle” — all four were already registered. No WA-* closed; no physical claims advanced. Human-directed.
 - 2026-07-12: Ethical Anchor field corrected — was using a non-canonical variant (backticked, `Admin/`-prefixed: "Defer to `Admin/Ethical_Constraints.md` if present.") instead of the canonical plain-text string ("Defer to Ethical_Constraints.md if present."). Same drift found across 9 files in a full-repository Phase 1 sweep (ChatGPT, adapted local-disk harness run) — verified independently against source before patching. No semantic change; the anchor's meaning was never in question, only its exact text.
 - 2026-07-11: v0.3 — Footer-section backfill: added File Purpose, Assumptions, Lessons Learned, Active Disputes, Abandoned Paths, and Drift Indicators sections (previously absent). No Body content changed.
 

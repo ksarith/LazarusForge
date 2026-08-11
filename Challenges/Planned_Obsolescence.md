@@ -176,7 +176,7 @@ The Forge is part of what changes the world around them.
 | PO-003 | Proprietary connector adapter coverage — no systematic inventory of proprietary connector types in likely salvage streams exists. Standardized interface bridging is aspirational without this. | Open | Minor |
 | PO-004 | Community re-baselining skill transfer standard — the goal of returning repairability to communities requires a training and documentation standard. No owning file currently defines this. | Open | Major |
 
-*Full tracking entries to be registered in `Unknowns.md` on next audit cycle.*
+*All four PO entries (PO-001–004) are registered in `Unknowns.md`.*
 
 ---
 
@@ -185,6 +185,13 @@ The Forge is part of what changes the world around them.
 ---
 
 ## Resolution Log
+
+- 2026-08-10: **Pseudo-audit (Grok, same limits).** Findings only; Spec Gates
+  N/A for Challenges Problem-Statement subtype. (1) Open Unknowns **4** =
+  PO-001–004, matches local table and `Unknowns.md`. (2) PO-002 notes
+  “Blocks non-destructive recovery of potted assemblies” — capability gap,
+  not start-interlock; left as-is. (3) Removed stale registration note.
+  (4) No PO-* closed. Human-directed.
 
 - 2026-07-12: Ethical Anchor field corrected — was using a non-canonical variant (backticked, `Admin/`-prefixed: "Defer to `Admin/Ethical_Constraints.md` if present.") instead of the canonical plain-text string ("Defer to Ethical_Constraints.md if present."). Same drift found across 9 files in a full-repository Phase 1 sweep (ChatGPT, adapted local-disk harness run) — verified independently against source before patching. No semantic change; the anchor's meaning was never in question, only its exact text.
 - 2026-07-11: v0.3 — Footer-section backfill: added File Purpose, Assumptions, Lessons Learned, Active Disputes, Abandoned Paths, and Drift Indicators sections (previously absent). No Body content changed.

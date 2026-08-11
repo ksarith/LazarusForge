@@ -187,7 +187,7 @@ The Forge itself is not exempt from this standard. A governance architecture tha
 | EM-003 | Gradual autonomy transition detection — what observable signals distinguish incremental capability expansion from a phase-shift threshold? No current sensor doctrine. | Open | Medium |
 | EM-004 | Governance substrate integrity under emergent agent access — if an emergent agent gains write access to governance files, what physical or cryptographic backstop prevents constitutional erosion? Mirrors GOV-003, SEC-007. | Open | Critical |
 
-*Full tracking entries to be registered in `Unknowns.md` on next audit cycle.*
+*All four EM entries (EM-001–004) are registered in `Unknowns.md`.*
 
 ---
 
@@ -196,6 +196,13 @@ The Forge itself is not exempt from this standard. A governance architecture tha
 ---
 
 ## Resolution Log
+
+- 2026-08-10: **Pseudo-audit (Grok, same limits).** Findings only; Spec Gates
+  N/A for Challenges Problem-Statement subtype. (1) Open Unknowns **4** =
+  EM-001–004, matches local table and `Unknowns.md`. (2) EM-004 correctly
+  Critical (governance substrate / mirrors SEC-007a) — left as judgment
+  call, not auto-flipped. (3) Removed stale registration note. (4) No EM-*
+  closed. Human-directed.
 
 - 2026-07-12: Ethical Anchor field corrected — was using a non-canonical variant (backticked, `Admin/`-prefixed: "Defer to `Admin/Ethical_Constraints.md` if present.") instead of the canonical plain-text string ("Defer to Ethical_Constraints.md if present."). Same drift found across 9 files in a full-repository Phase 1 sweep (ChatGPT, adapted local-disk harness run) — verified independently against source before patching. No semantic change; the anchor's meaning was never in question, only its exact text.
 - 2026-07-11: v0.2 — Footer-section backfill: added File Purpose, Assumptions, Lessons Learned, Active Disputes, Abandoned Paths, and Drift Indicators sections (previously absent). Also corrected a missing bold-marker typo on "This file owns:" in Scope Boundary. No Body content changed otherwise.

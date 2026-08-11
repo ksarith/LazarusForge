@@ -392,6 +392,14 @@ These numbers carry the same provisional, design-intent status as the rest of §
 
 ## Resolution Log
 
+- 2026-08-10: **Pseudo-audit (Grok, same limits).** Findings only; Spec Gates
+  left locked at 0/6. (1) Open Unknowns **10** = CLF-001–010, matches File
+  State note and `Unknowns.md`. (2) CLF-003 Critical/Open correctly (hardware
+  does not exist yet). (3) CLF-004 Critical/Open correctly blocked on CE-006.
+  (4) CLF-006/CLF-009 In Progress consistent with ratified doctrine + pending
+  validation. (5) No CLF-* closed; no physical cycle claims advanced.
+  Human-directed.
+
 - 2026-08-07: **§4a's Class-D gaming surface given its Challenge Class 8
   (Malicious Actor Simulation) adversarial pass — Class D Residency Cap
   proposed as countermeasure.** The gaming surface was identified and
@@ -413,7 +421,7 @@ These numbers carry the same provisional, design-intent status as the rest of §
   Resolved, per this file's existing Rule 8/AP-032 discipline. Operating as
   Synthesizer, human-directed.
 
-- 2026-08-06: **Full scope check: `Archive/CopilotClosedLoop.md` claims
+- 2026-08-06: **Full scope check: `Archive/Transcripts/CopilotClosedLoop.md` claims
   blanket "Resolved 2026-08-03" status on seven CLF unknowns
   (CLF-001, 002, 004, 006, 008, 009, 010) — verified against
   `Unknowns.md` line by line, all seven false, none ever applied.**
@@ -434,7 +442,7 @@ These numbers carry the same provisional, design-intent status as the rest of §
   the first one that looks fabricated.
 
 - 2026-08-06: **Fabricated CLF-006 hardening claim identified in
-  `Archive/CopilotClosedLoop.md`, never applied — logged as a
+  `Archive/Transcripts/CopilotClosedLoop.md`, never applied — logged as a
   cross-reference for the fabrication-vigilance pattern
   `Admin/Auditor_Protocols.md` AP-017 formalizes.** While mining
   archived conversation threads for unmerged content, found a Copilot

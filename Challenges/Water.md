@@ -169,7 +169,7 @@ The river does not arrive from a central warehouse. It rises from the land it ha
 | WS-004 | Community adoption and maintenance protocol — the social and institutional layer that determines whether a technically sound system is actually used and maintained. No owning file currently defines this. | Open | Major |
 
 *TH-003 (atmospheric moisture yield) is the Blocking unknown for Living Waters condensation deployment — tracked in `Unknowns.md` under Thermal Systems cluster.*
-*Full tracking entries for WS cluster to be registered in `Unknowns.md` on next audit cycle.*
+*All four WS entries (WS-001–004) are registered in `Unknowns.md`.*
 
 ---
 
@@ -179,6 +179,7 @@ The river does not arrive from a central warehouse. It rises from the land it ha
 
 ## Resolution Log
 
+- 2026-08-10: **Pseudo-audit (Grok, same limits).** Findings only; Spec Gates N/A for Challenges Problem-Statement subtype. (1) Open Unknowns **4** = WS-001–004, matches local table and `Unknowns.md`. (2) TH-003 correctly flagged as Blocking for Living Waters deployment (owned in Thermal_Systems; cross-ref intact). (3) Removed stale “Full tracking entries for WS cluster to be registered in Unknowns.md on next audit cycle” — all four already registered. No WS-* closed. Human-directed.
 - 2026-07-12: Ethical Anchor field corrected — was using a non-canonical variant (backticked, `Admin/`-prefixed: "Defer to `Admin/Ethical_Constraints.md` if present.") instead of the canonical plain-text string ("Defer to Ethical_Constraints.md if present."). Same drift found across 9 files in a full-repository Phase 1 sweep (ChatGPT, adapted local-disk harness run) — verified independently against source before patching. No semantic change; the anchor's meaning was never in question, only its exact text.
 - 2026-07-11: v0.3 — Footer-section backfill: added File Purpose, Assumptions, Lessons Learned, Active Disputes, Abandoned Paths, and Drift Indicators sections (previously absent); also closed a stray double-blank-line formatting gap above the Open Unknowns header. No Body content changed otherwise.
 

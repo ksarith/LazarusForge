@@ -185,7 +185,7 @@ The landfill is a mine. The question is whether we build the tools to work it.
 | CM-004 | Urban ore database coverage — no systematic inventory of critical mineral content by device type, generation, and condition exists for likely salvage streams. Recovery yield estimates are currently analogous rather than measured. | Open | Major |
 
 *CM-002 is Critical — no hydrometallurgical processing may proceed without closed-loop reagent recovery and waste stream doctrine.*
-*Full tracking entries to be registered in `Unknowns.md` on next audit cycle.*
+*All four CM entries (CM-001–004) are registered in `Unknowns.md`.*
 
 ---
 
@@ -194,6 +194,13 @@ The landfill is a mine. The question is whether we build the tools to work it.
 ---
 
 ## Resolution Log
+
+- 2026-08-10: **Pseudo-audit (Grok, same limits).** Findings only; Spec Gates
+  N/A for Challenges Problem-Statement subtype. (1) Open Unknowns **4** =
+  CM-001–004, matches local table and `Unknowns.md`. (2) CM-002 correctly
+  Critical (blocks any hydrometallurgical processing). (3) Removed stale
+  “to be registered in Unknowns.md” note — all four already registered.
+  (4) No CM-* closed. Human-directed.
 
 - 2026-07-12: Ethical Anchor field corrected — was using a non-canonical variant (backticked, `Admin/`-prefixed: "Defer to `Admin/Ethical_Constraints.md` if present.") instead of the canonical plain-text string ("Defer to Ethical_Constraints.md if present."). Same drift found across 9 files in a full-repository Phase 1 sweep (ChatGPT, adapted local-disk harness run) — verified independently against source before patching. No semantic change; the anchor's meaning was never in question, only its exact text.
 - 2026-07-11: v0.3 — Footer-section backfill: added File Purpose, Assumptions, Lessons Learned, Active Disputes, Abandoned Paths, and Drift Indicators sections (previously absent). No Body content changed.

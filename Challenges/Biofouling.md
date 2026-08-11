@@ -177,7 +177,7 @@ The barnacle is not the enemy. It is evidence that the environment is alive and 
 | BF-003 | Tropical vs. temperate fouling rate differential — colonization timelines and organism composition vary significantly by latitude and season. No doctrine for adjusting maintenance cycles by deployment region. | Open | Major |
 | BF-004 | Shed panel reef substrate viability — panels deposited as reef substrate must not leach antifoulant or polymer toxins. No validation protocol defined. Cross-ref CE-001 (galvanic corrosion), Plastics.md toxicity doctrine. | Open | Major |
 
-*Full tracking entries to be registered in `Unknowns.md` on next audit cycle.*
+*All four BF entries (BF-001–004) are registered in `Unknowns.md`.*
 
 ---
 
@@ -186,6 +186,12 @@ The barnacle is not the enemy. It is evidence that the environment is alive and 
 ---
 
 ## Resolution Log
+
+- 2026-08-10: **Pseudo-audit (Grok, same limits).** Findings only; Spec Gates
+  N/A for Challenges Problem-Statement subtype. (1) Open Unknowns **4** =
+  BF-001–004, matches local table and `Unknowns.md`. (2) Removed stale “to
+  be registered in Unknowns.md” note — all four already registered. (3) No
+  BF-* closed. Human-directed.
 
 - 2026-07-12: Ethical Anchor field corrected — was using a non-canonical variant (backticked, `Admin/`-prefixed: "Defer to `Admin/Ethical_Constraints.md` if present.") instead of the canonical plain-text string ("Defer to Ethical_Constraints.md if present."). Same drift found across 9 files in a full-repository Phase 1 sweep (ChatGPT, adapted local-disk harness run) — verified independently against source before patching. No semantic change; the anchor's meaning was never in question, only its exact text.
 - 2026-07-11: v0.3 — Footer-section backfill: added File Purpose, Assumptions, Lessons Learned, Active Disputes, Abandoned Paths, and Drift Indicators sections (previously absent). No Body content changed. Abandoned Paths entries (TBT, copper coatings) drawn directly from existing Crisis-section text, not newly introduced claims.
