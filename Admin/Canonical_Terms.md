@@ -169,6 +169,29 @@ The upstream repository (`Lazarus-Forge-`) dedicated exclusively to
 macro-philosophy, abstract doctrine development, and baseline structural
 principles. Divergence between the two repositories is logged, not ignored.
 
+**`[ExternalRepo]` reference convention (registered 2026-08-11)**
+Any cross-reference to a file in a companion or external repository (e.g.
+Astroid-miner) that is not part of this repository's own canonical registry
+must be qualified with a bracketed repository tag immediately before the
+filename, with the bracket tag included **inside the same single
+backtick pair** as the filename — e.g. `` `[Astroid-miner] Rogue_unit_management.md` ``,
+not `` [Astroid-miner] `Rogue_unit_management.md` `` (tag outside the
+backticks). This is not cosmetic and the two forms are not interchangeable:
+`Automation/audit_lib.py`'s reference extractor only matches a pattern
+requiring the character immediately after an opening backtick to be a
+letter (`` `([A-Za-z][A-Za-z0-9_/]+\.md)` ``) — a bracket in that position
+breaks the match entirely, so the whole qualified span is correctly never
+extracted as a reference at all. Putting the tag *outside* the backticks
+leaves the bare `` `filename.md` `` span intact and still matching,
+which still trips an `[UNKNOWN]` finding — confirmed by directly testing
+both forms against the live extraction regex. `check_cross_refs` also has
+a separate, independent substring-based skip for any *extracted* ref
+containing a known external-repo name, but that skip is redundant here in
+practice since the correct form is never extracted in the first place.
+First applied and debugged live in `Admin/Autonomy_Divergence_Protocol.md`
+(2026-08-11, Resolution Log — two passes; the first attempt used the
+bracket-outside-backticks form and did not clear the harness).
+
 **Governance Tier Hierarchy (Tiers 1–5)**
 The structural precedence rules governing documentation authority.
 Derived from `Admin/Governance_Charter.md` §Governance Authority Hierarchy —

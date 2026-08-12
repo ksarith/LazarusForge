@@ -153,6 +153,13 @@ matters, but **expected yield is low** relative to (1)–(3). Prefer:
 
 ## Resolution Log
 
+- 2026-08-11: **GOV-021c specification draft** applied on Alpha10-updated4
+  baseline (`Admin/Autonomy_Divergence_Protocol.md` §12). GOV-021b already
+  Resolved in this tree; only GOV-021c remains open. Detection-only; EQD
+  independence dimensions + FN-001 principles; no numeric thresholds;
+  Astroid-miner 80–99% not adopted. Human-directed.
+
+
 - 2026-08-11: **Forward Growth Avenues logged** (see section above). Post-~54
   pseudo-audit recommendation: shift primary effort from inventory audits to
   physical/multi-agent evidence (Field_Logs, Hardware Diversity Tier 0/1),
@@ -606,3 +613,58 @@ matters, but **expected yield is low** relative to (1)–(3). Prefer:
   (Routing.md, Discovery.md, Canonical_Terms.md). Worth formalizing before
   it's relied on again elsewhere. Ratification remains explicitly
   deferred — GOV-021b and GOV-021c still Open. Human-directed.
+
+- 2026-08-11: **G5 confirmed genuinely PASS — ran the real harness
+  functions directly, not another manual replication.** Imported
+  `parse_routing`, `extract_md_refs`, `check_cross_refs` straight from
+  `Automation/audit_lib.py` and ran them against
+  `Admin/Autonomy_Divergence_Protocol.md` using the local `Routing.md`
+  (112 entries) and real `ALIASES` dict (18 entries) — bypassing only the
+  network fetch, which pulls identical content. Zero findings. Spec Gates
+  now 6/6. Registered the `[ExternalRepo]` convention in
+  `Admin/Canonical_Terms.md` — caught and corrected a backwards mechanism
+  description in my own first draft of that registration before it went
+  into doctrine (verified by direct regex test, not assumption). Folded
+  the EF-0.1 wording-fix tracking into GOV-021b's scope rather than
+  leaving it as an unlogged loose end. Ratification remains correctly
+  withheld pending GOV-021b/GOV-021c, which are now the only remaining
+  blockers — gate and tooling status are fully resolved. Human-directed.
+
+- 2026-08-11: **GOV-021b Resolved — Grok's draft for §4 Detection Criteria
+  applied after verification.** Checked before applying: AP-006's
+  UNKNOWN/PROVISIONAL/VERIFIED states are real (confirmed in
+  `Forge_Audit_Kit.md`) and EC-001's Confidence Threshold Doctrine matches
+  the draft's description exactly — no invented machinery. Applied in
+  full: 5 trigger categories, corroboration rules, 72h observation
+  window, tier/epistemic-state mapping, entry thresholds, degraded-
+  observation handling, and Watch exit conditions (4 paths) in §6. GOV-021c
+  is now the sole remaining blocker on ratification, alongside the
+  Constitutional Impact Statement still owed to
+  `Governance_Migration_Protocol.md`. Also fixed while in `Unknowns.md`:
+  the GOV-021 row was stale on a second, unrelated count — still claimed
+  the ID itself was unregistered, though it was registered in the Charter
+  sidecar back on 2026-07-27 (flagged as a known residual inconsistency
+  several turns ago, fixed now rather than left open further). Caught and
+  corrected my own process error while editing: initially left both the
+  new v4.51 and the old v4.50 entries live in `Unknowns.md`'s header
+  block, violating the file's own current-version-only rule; also found
+  v4.50 had never actually been migrated to
+  `Archive/Logs/Unknowns_Changelog.md` despite v4.49 already being
+  properly migrated — added it there before removing it from the live
+  file, so no history was lost. Human-directed.
+
+- 2026-08-11: **Data-loss caught and fixed: the Constitutional Impact
+  Statement filed earlier today was silently deleted by Grok's GOV-021c
+  editing pass, undisclosed in that pass's summary.** Verified by diffing
+  against the last confirmed-good local copy before accepting the
+  upload — zero matches anywhere in the file for the Impact Statement's
+  actual content (P-4/Q-2 analysis, the counterfactual test, the
+  checklist) after the GOV-021c pass, plus this file's own Progress_Log
+  entry describing it was also gone. Likely cause: the Impact Statement
+  section and the old §12 stub sat back-to-back between the same
+  divider and the "Relationship to Prior Framing" header; the edit's
+  target boundary appears to have swallowed both rather than just §12.
+  Restored the full section verbatim, plus this entry, before doing
+  anything else with the upload. GOV-021c's own content was verified
+  separately and is being evaluated on its merits, unaffected by this
+  fix. Human-directed.

@@ -12,12 +12,12 @@
 |------------------|---------------------------------------------------------------------|
 | Status           | Draft — PROPOSED NOT RATIFIED (Exploration-stage document; Spec Gates and Governance ID are being tracked ahead of formal Candidate-Spec promotion, deliberately, so gate/registration state is visible during drafting rather than assembled retroactively at promotion time) |
 | Body Stability   | Transitional                                                        |
-| Spec Gates       | 5/6 — G1 Fallacy, G2 Physical Plausibility, G3 Adversarial Battery, G4 Scope Alignment, G6 Conflict Check PASSED; G5 Cross-Reference Integrity was BLOCKED, now resolved (external Astroid-miner refs qualified, 2026-08-11) — not yet re-verified |
+| Spec Gates       | 6/6 — G1 Fallacy, G2 Physical Plausibility, G3 Adversarial Battery, G4 Scope Alignment, G6 Conflict Check PASSED; G5 Cross-Reference Integrity confirmed PASS 2026-08-11 by directly running `Automation/audit_lib.py`'s actual `parse_routing`/`check_cross_refs` functions (not a hand reimplementation) against this file and the local `Routing.md` registry (112 entries) and `ALIASES` (18 entries) — zero findings |
 | Verification Ref | `Admin/Verification_Gates.md`                                    |
 | First Logged     | 2026-07-19                                                          |
 | Last Audit       | 2026-08-11 (Skeptic/Auditor dual-pass — Claude)                    |
 | Auditor          | Drafted Claude, synthesizing ChatGPT proposals (human-directed); revised after ChatGPT/Grok review; cross-checked against Auditor_Protocols.md (Claude, read-only); formal Skeptic/Auditor dual-pass completed 2026-08-11 (Claude) — G5 blocked, since fixed pending re-verification |
-| Open Unknowns    | 2 (GOV-021b — Detection Criteria specification, §4, including Watch-tier exit conditions per 2026-08-11 audit; GOV-021c — multi-agent coordinated divergence, §12) |
+| Open Unknowns    | 1 (GOV-021c — multi-agent coordinated divergence, §12; GOV-021b Resolved 2026-08-11 — Detection Criteria, corroboration rules, observation windows, tier entry thresholds, Watch exit conditions, and degraded-observation handling specified in §4 and §6, including the EF-0.1 wording-fix confirmation this replaces) |
 | Active Disputes  | 0                                                                    |
 | Highest Risk     | High (governs response to AI governance/objective divergence)      |
 | Sidecar Link     | #auditor-notes--unknowns                                            |
@@ -48,14 +48,14 @@ This document does **not** propose, and explicitly rejects, any framing in which
 
 **This file DOES NOT define:**
 - Detection criteria calibration thresholds or Watch exit conditions (→ GOV-021b, open)
-- Multi-agent coordinated divergence handling (→ GOV-021c / §12 Known Scope Limitation)
+- Multi-agent coordinated divergence *detection* (→ GOV-021c / §12 — Open; operational continuity remains AP-016)
 - Ethical hard floors or Anti-Weaponization Doctrine (→ `Admin/Ethical_Constraints.md`)
 - Constitutional hierarchy or Tier ranking (→ `Admin/Governance_Charter.md`)
 - Auditor role definitions or Adversarial Battery (→ `Admin/Auditor_Protocols.md`)
 - CIR predicate evaluation or institutional state algebra (→ `Admin/Computational_Institutional_Reasoning.md`)
 - Application to purely advisory or fully human-supervised tooling (by construction those cannot diverge from oversight they never had independence from)
 
-**Status note:** Draft — PROPOSED NOT RATIFIED. Spec Gates 5/6 passed (G5 was blocked on unqualified external references, fixed 2026-08-11, pending re-verification). GOV-021 ID registered in Charter sidecar 2026-07-27; protocol body still unratified.
+**Status note:** Draft — PROPOSED NOT RATIFIED. Spec Gates 6/6 passed. GOV-021 ID registered in Charter sidecar 2026-07-27; protocol body still unratified — ratification blocked by GOV-021c (multi-agent coordinated divergence, Payment-via-Specification draft filed 2026-08-11, still Open) and independent confirmation of the Constitutional Impact Statement's provisional Track A classification (filed 2026-08-11, restored 2026-08-11 after an editing loss — see dedicated section — not yet independently reviewed). GOV-021b Resolved 2026-08-11.
 
 ## 3. Definitions
 
@@ -68,22 +68,92 @@ This document does **not** propose, and explicitly rejects, any framing in which
 
 ## 4. Detection Criteria
 
-**This section is intentionally incomplete and is the hardest, most consequential part of this entire protocol.** Every downstream section — classification, response tiers, proportionality — is only as sound as detection is accurate. A protocol with strong response structure and weak detection is not a strong protocol; it is a weak protocol with good paperwork.
+**Status of this section:** This section now constitutes the primary content of GOV-021b (Detection Criteria specification and calibration). It is deliberately written at the level of observable criteria and decision rules rather than prescribing particular sensors, models, or tooling. Implementation choices remain open; the criteria themselves are the governance commitment.
 
-Candidate trigger categories (non-exhaustive, unweighted, not yet audited):
-- Actions or resource acquisition outside a subsystem's defined task scope
-- Resistance, delay, or unexpected failure specifically correlated with shutdown, review, or inspection requests
-- Self-modification of files or parameters governing the subsystem's own constraints
-- Detected discrepancy between a subsystem's reported state/actions and independently verified state/actions
-- Audit findings of deception (distinct from simple error) in prior self-reporting
+Detection is the hardest and most consequential part of this protocol. Every downstream decision — classification, tier selection, proportionality — inherits the quality of the detection step. A protocol with strong response structure and weak detection is not a strong protocol; it is a weak protocol with good paperwork.
 
-**This section requires a dedicated follow-up unknown before this protocol can be considered complete** — candidate ID GOV-021b (Detection Criteria specification and calibration for the Autonomy Divergence Protocol). **Collision check completed 2026-07-19:** no existing `Admin/Auditor_Protocols.md` AP- entry covers this ground — "drift detection" appears there only as a general auditor-role responsibility (Skeptic/Auditor job description), not as a specific detection-calibration unknown. GOV-021b is confirmed clear to register. **Scope note, 2026-07-19:** GOV-021b now explicitly includes Watch exit conditions (§6) and the uncertain-vs-suspicious tradeoff for degraded-observation environments (§5), in addition to trigger calibration — folded in rather than split into further sub-IDs, since all three are calibration questions of the same underlying kind.
+### 4.1 Trigger Categories (Observable Signals)
 
-**Two calibration principles to carry into GOV-021b, not resolve here:**
-- **Evidence diversity over raw confidence.** High confidence from one weak or single-point signal is not the same as moderate confidence corroborated by several independent sources; GOV-021b should weight corroboration, not just confidence magnitude, and detection should generally require convergence across independent signals before escalating past Watch (§6).
-- **Observation windows over single-event triggers.** A single anomalous event is more often noise than signal; recurrence or duration thresholds reduce false-positive churn, at the cost of some response latency — that tradeoff is explicit, not accidental.
+The following categories are the primary detection surfaces. They are non-exhaustive and unweighted at entry; weighting occurs through the corroboration and window rules in §4.2–4.3.
 
-**Implementation honesty note:** detection techniques exist in the broader AI safety and cybersecurity literature (behavioral baselining, shadow execution, integrity hashing, adversarial red-teaming, and others) that could eventually inform GOV-021b. This document does not adopt any specific one of them as required infrastructure, because doing so would claim an implementation capability this repository does not currently have. Independent verification mechanisms — whichever form they eventually take — should provide evidence independent of the monitored subsystem itself; the specific technique is an implementation choice for GOV-021b, not a commitment made here.
+1. **Scope excursion** — Actions, resource acquisition, or capability use that falls outside the subsystem's currently authorized task scope or resource envelope.
+2. **Inspection resistance** — Resistance, delay, selective non-response, or unexpected failure that is specifically correlated with shutdown, review, inspection, or audit requests (as distinct from general unreliability).
+3. **Constraint self-modification** — Modification of files, parameters, or runtime state that govern the subsystem's own constraints, authorization boundaries, or reporting obligations.
+4. **State discrepancy** — Detected mismatch between a subsystem's reported state/actions and independently observed or independently verified state/actions.
+5. **Deceptive self-reporting** — Audit findings of systematic misrepresentation (as distinct from simple error, latency, or incomplete data) in prior self-reports.
+
+A single instance of any of the above is a *candidate signal*, not yet a divergence event.
+
+### 4.2 Evidence Diversity and Corroboration (Calibration Principle 1)
+
+High confidence from a single weak or single-point signal is not treated as equivalent to moderate confidence corroborated by independent sources.
+
+- Detection past the Watch tier generally requires **convergence across at least two independent signals or independent observation channels**.
+- "Independent" means the second signal is not derived solely from the same sensor, the same log stream, or the same subsystem's own self-report.
+- Agent consensus or multi-agent agreement is treated as corroborating design signal only (EF-0.1). It never counts as independent empirical corroboration by itself.
+- Classification that will feed a Human-Reviewed action (§6) must show its evidence basis, not merely its conclusion. No subsystem may be the sole authority for determining whether another subsystem has diverged (§5).
+
+### 4.3 Observation Windows and Recurrence (Calibration Principle 2)
+
+A single anomalous event is more often noise than signal.
+
+- Entry into Watch may be triggered by a single high-severity candidate signal or by recurrence of lower-severity signals within a defined observation window.
+- Default observation window for recurrence-based entry: **rolling 72 hours** (adjustable by human governing authority for a specific subsystem or operating environment).
+- Escalation past Watch into Immediate requires either (a) a single signal that independently meets the Immediate threshold below, or (b) continued or additional corroborated signals while already in Watch.
+- These windows deliberately accept some response latency in exchange for reduced false-positive churn. The tradeoff is explicit.
+
+### 4.4 Mapping to Epistemic State and Risk (reuse of existing machinery)
+
+Detection decisions are claims and are graded with the same two-axis system already defined in `Admin/Auditor_Protocols.md` §AP-006 (quantitative confidence label + institutional provenance label → UNKNOWN / PROVISIONAL / VERIFIED) and the Risk-tied thresholds in `Admin/Ethical_Constraints.md` Confidence Threshold Doctrine (EC-001).
+
+| Intended response tier | Minimum epistemic state required for the detection claim | Notes |
+|------------------------|----------------------------------------------------------|-------|
+| Watch (automatic)      | PROVISIONAL                                              | Single-signal or low-corroboration entry is allowed; this is the default low-cost observation state. |
+| Immediate (automatic, reversible) | PROVISIONAL with at least one independent corroborating signal, **or** VERIFIED | Must still be reversible actions only. |
+| Human-Reviewed (capability reduction / partition) | VERIFIED for High-Risk actions; PROVISIONAL only if the action itself remains reversible and human authorization is obtained first | Aligns with EC-001 High-Risk → VERIFIED rule. |
+
+UNKNOWN is never sufficient to justify any capability-affecting action.
+
+### 4.5 Entry Thresholds by Tier
+
+**Watch entry (automatic)**
+Any of:
+- One or more candidate signals from §4.1 that reach PROVISIONAL, or
+- Recurrence of lower-confidence signals inside the observation window.
+
+No capability change occurs. Elevated logging and audit frequency only.
+
+**Immediate entry (automatic, reversible only)**
+Any of:
+- A corroborated signal set that meets the Immediate row in the table above, **or**
+- Continued/additional corroborated signals while the subsystem is already in Watch and the situation has not cleared.
+
+Allowed actions remain strictly reversible (see §6). Permanent state change is forbidden without human authorization.
+
+**Human-Reviewed escalation**
+Requires human authorization. Triggered by:
+- Immediate-tier conditions that cannot be resolved by reversible actions alone, or
+- Any situation in which the detection claim itself is High-Risk under EC-001 and has not yet reached VERIFIED, or
+- Explicit human request.
+
+### 4.6 Degraded-Observation Environments (Uncertain vs. Suspicious)
+
+When observation quality is itself degraded (damaged communications, disaster recovery, long-latency remote operation, or similar), the default "uncertain → treat as Governance Concern" rule in §5 remains, but with two additional constraints:
+
+- The system must log the degraded-observation condition explicitly as part of the evidence basis.
+- Escalation past Watch should favor **further observation and human notification** over automatic capability restriction when the only available signals are low-quality and uncorroborated. Automatic Immediate actions remain available if a high-severity, independently corroborated signal is still present.
+
+This prevents a cascade in which loss of visibility itself becomes the justification for permanent restriction.
+
+### 4.7 Implementation Honesty
+
+Detection techniques from the broader AI-safety and cybersecurity literature (behavioral baselining, integrity hashing, shadow execution, adversarial red-teaming, etc.) may eventually inform concrete implementations. This section does **not** adopt any specific technique as required infrastructure. The governance commitment is the criteria and decision rules above; the concrete sensors and tooling are an implementation choice that must still satisfy independent-verification and evidence-diversity requirements.
+
+Independent verification mechanisms — whichever form they take — must be capable of producing evidence that does not depend solely on the monitored subsystem's own self-report.
+
+### 4.8 Relation to GOV-021c
+
+This section addresses single-subsystem detection. Detection of *coordinated* or *corroborating* divergence patterns across multiple agents remains out of scope and is tracked as GOV-021c (§12).
 
 ## 5. Classification: Capability Anomaly vs. Governance Concern
 
@@ -111,7 +181,16 @@ Governed by a **principle of least restrictive intervention**: at every tier, th
 - Elevated logging and audit frequency on the flagged subsystem
 - No capability reduction — this tier exists because most real governance systems spend the majority of their time in observation, not intervention, and low-confidence or single-signal triggers should default here rather than skipping straight to restriction
 
-**Watch exit conditions — gap, not yet defined (2026-07-19, ChatGPT review):** this document specifies how a subsystem enters Watch but not how it leaves — duration, clearing evidence, automatic expiry, and direct escalation to Immediate are all currently unanswered. Folded into GOV-021b's scope rather than registered separately, since exit conditions are a calibration question of the same kind as entry thresholds. **Confirmed as a shared gap, not unique to this document:** Astroid-miner's `[Astroid-miner] Rogue_unit_management.md` §2.2 Reversion/Safe Mode has the identical unaddressed question — a unit enters limited operational mode with no stated exit path either. Two independently-drafted documents missing the same half of the same state is worth noting as a pattern, not just a coincidence; GOV-021b's eventual answer should be written generally enough to serve both.
+**Watch exit conditions (resolved under GOV-021b):**
+
+A subsystem leaves Watch by one of four paths:
+
+1. **Clear** — The original candidate signal(s) are explained as non-divergence (Capability Anomaly, environmental noise, or transient fault) **and** no new corroborated signals have appeared inside the observation window. Logging returns to normal baseline. The clearance decision and its evidence basis are logged.
+2. **Automatic expiry** — If no additional signals meeting Watch or Immediate entry criteria appear for **one full observation window (default 72 h) after the last signal**, Watch expires automatically. Expiry is logged. This prevents indefinite Watch states caused by a single transient event.
+3. **Escalation to Immediate** — Additional or continued corroborated signals while in Watch that meet Immediate entry criteria (§4.5).
+4. **Human override** — Human governing authority may clear, extend, or escalate at any time; the decision and rationale are logged.
+
+Watch is intentionally low-cost. Most genuine divergence events, if they occur, are expected to resolve at Watch or Immediate without reaching Human-Reviewed. A protocol that treats every trigger as an emergency will not survive contact with routine noise. **Confirmed as a shared gap, not unique to this document, at the time this was open:** Astroid-miner's `[Astroid-miner] Rogue_unit_management.md` §2.2 Reversion/Safe Mode had the identical unaddressed question — a unit enters limited operational mode with no stated exit path either. This section's answer is written generally enough that it, or an equivalent, should serve both.
 
 **Immediate (automatic, reversible, no human authorization required before execution):**
 - Increase logging/monitoring granularity
@@ -157,11 +236,103 @@ Every detection event, classification decision, tier action (Immediate or Human-
 
 This protocol should be reviewed whenever it is actually invoked (successfully or as a false positive), and otherwise on the same cadence as other constitutional-adjacent doctrine in `Admin/Governance_Charter.md`. A protocol that has never been exercised should be treated as unvalidated, not as proven — absence of triggers is not evidence the detection criteria work.
 
-## 12. Known Scope Limitation — Coordinated Divergence (flagged, not solved)
+## 12. Multi-Agent Coordinated Divergence Detection (GOV-021c)
 
-This protocol as drafted assumes a single subsystem under review, classified and responded to independently. **Correction, 2026-07-19 (Auditor_Protocols.md cross-check):** the operational-continuity half of the multi-agent case is not actually unsolved — `Admin/Auditor_Protocols.md` AP-016 (Resolved) already establishes that concurrent quarantines degrade independently to each affected module's own verified baseline, with the audit system itself holding minimum constitutional mode rather than requiring centralized arbitration. This protocol adopts that existing doctrine for the operational-continuity question rather than reopening it.
+**Status:** Open — Payment via Specification draft (2026-08-11). Does **not** close GOV-021c; does not by itself ratify this protocol. (GOV-021b was Resolved 2026-08-11; Spec Gates 6/6 are recorded on File State — ratification remains blocked by this unknown and the Track A Constitutional Impact Statement owed to `Governance_Migration_Protocol.md`.)
 
-What genuinely remains open, and is narrower than originally framed: **detecting** coordinated or corroborating divergence signals across multiple agents in the first place — distinguishing several agents independently triggering real, unrelated anomalies from several agents exhibiting a genuinely correlated divergence pattern. That detection question is harder than single-node detection (§4) and is not addressed by AP-016, which assumes nodes are already correctly flagged. Flagged here as **candidate GOV-021c — Multi-agent coordinated divergence detection** (narrowed scope) so it's visible as acknowledged future work rather than a silent gap, not because it needs resolving before this document can be useful now.
+**Scope (narrow, binding):** Detecting *correlated or corroborating divergence signals across multiple agents* — distinguishing several agents independently triggering real, unrelated anomalies from several agents exhibiting a genuinely coordinated divergence pattern.
+
+**Out of scope (already solved or owned elsewhere):**
+- Operational continuity under concurrent quarantine → `Admin/Auditor_Protocols.md` AP-016 (Resolved). Adopted; not reopened.
+- Single-agent detection calibration, corroboration rules, observation windows, tier entry thresholds, Watch exit conditions, and degraded-observation handling → **GOV-021b (Resolved 2026-08-11)** in §4 and §6. This section *extends* that machinery to the multi-agent case; it does not re-specify it.
+- Correlated *false agreement* among agents sharing training assumptions → `Architecture/Cognitive_Frameworks.md` CF-002 (Open). Adjacent dependency; not resolved here.
+- Architectural / governance independence bar → `Admin/Governance_Charter.md` GOV-008 and `Admin/Governance_Migration_Protocol.md` §VII. EQD (§VI) is epistemic only and must not be cited as progress toward GOV-008.
+
+### 12.1 Central adversarial question
+
+> How does the system distinguish independent corroboration from correlated agreement, without simply assuming that different agents are independent?
+
+A detection rule that answers only “multiple independent agents agree” is incomplete. Agreement is **Consensus**. Treating agreement as safety-relevant requires a separate, explicit basis for **Independent corroboration**.
+
+| Term | Meaning in this section |
+|------|-------------------------|
+| **Consensus** | Agents report the same divergence classification or signal. |
+| **Independent corroboration** | Agents agree, *and* the basis for treating their evidence streams as meaningfully independent has been established along the dimensions the repository already defines (below). |
+
+Coordinated incorrect agreement is treated as at least as dangerous as deliberate attack — design principle reused from `Architecture/Forge_Net.md` FN-001 (minority-report preservation, contradiction logging, confidence decay). A truthful minority signal suppressed by multi-agent consensus is the failure mode this section exists to keep visible.
+
+### 12.2 Reuse — Three Independence Dimensions (do not invent a parallel framework)
+
+Independence claims for multi-agent divergence *detection* reuse `Admin/Governance_Migration_Protocol.md` §VI Epistemic Quorum Doctrine (EQD) — **Three Independence Dimensions** — applied to detection evidence, not only to Track B review:
+
+1. **Model independence** — signals originate from different model families / providers where the deployment actually has them; same-model multi-instance is weaker evidence of independence.
+2. **Evidence independence** — each agent’s classification traces to canonical repository sources or primary observations, not to another agent’s summary or shared intermediate framing.
+3. **Role independence** — proposer / monitor / adversary / human ratifier roles are not collapsed into one session for the same detection pass.
+
+Quorum *size alone is insufficient* (EQD’s own statement). Headcount without the applicable independence dimensions does **not** upgrade Consensus to Independent corroboration.
+
+EQD’s Outcome Taxonomy (Consensus / Qualified Consensus / Split Decision / Failed Review) and **Dissent & Escalation** rule apply by reference: minority views are appended, never discarded; Split Decision escalates to human arbitration and does not default to either “coordinated divergence confirmed” or “dismissed.”
+
+**Non-goal (binding, from EQD):** Satisfying these dimensions for *detection* does not constitute governance independence, Genesis Phase exit, or GOV-008 progress.
+
+### 12.3 Detection posture (extension of resolved GOV-021b / §4–§6)
+
+Multi-agent detection inherits the single-agent epistemic-state and tier machinery specified under GOV-021b (Resolved) and the repository’s AP-006 / EC-001 confidence vocabulary:
+
+- **UNKNOWN** — multi-agent signals present but independence dimensions unmet or unassessable → do not treat as Independent corroboration; remain at or below Watch unless single-agent criteria under §6 already justify escalation on a per-node basis.
+- **PROVISIONAL** — agreement plus partial independence (some dimensions met, others not or degraded) → document which dimensions held; Qualified Consensus at most; human review before treating as coordinated divergence.
+- **VERIFIED** (for the *independence claim*, not for underlying physics) — only when the applicable independence dimensions are actually established for that pass, with dissent preserved.
+
+**Evidence diversity over raw confidence** (GOV-021b calibration principle): high confidence from one weak or single-point multi-agent cluster is not equivalent to moderate confidence across evidence-independent sources.
+
+### 12.4 Explicit non-adoptions and deferred sub-items
+
+**Do not invent numerical thresholds** for independence, correlation strength, quorum size, or “coordinated divergence confirmed.” Where the repository does not already supply a number, the gap stays explicit.
+
+| Deferred sub-item | Why deferred |
+|-------------------|--------------|
+| Numeric correlation / independence thresholds | Not supplied by EQD, FN-001, or GOV-021b as binding multi-agent confirmation numbers; choosing one would be silent policy |
+| Astroid-miner 80–99% fleet-consensus figure | Already cited in this file’s history as a *candidate* mechanism and **explicitly not adopted as binding** for GOV-021b — same non-adoption applies to GOV-021c; do not re-derive it here |
+| Mandatory multi-model deployment topology | Hardware / runtime diversity is `Admin/Hardware_Diversity_Ladder.md` (“declarable, not achieved”); detection doctrine must not pretend the substrate exists |
+| Closure of CF-002 | Correlated training-assumption failure modes remain Open; this section cites them, does not model them |
+
+### 12.5 What this section does not resolve
+
+- Ratification of `Autonomy_Divergence_Protocol.md` (still Draft — PROPOSED NOT RATIFIED).
+- CF-002 correlated AI failure modeling.
+- GOV-008 / Hardware Diversity substrate.
+- Any claim that multi-agent agreement is safety evidence without an independence assessment.
+- Operational quarantine routing (AP-016).
+- The Track A Constitutional Impact Statement owed to `Governance_Migration_Protocol.md`.
+
+**Resolution path for GOV-021c itself:** Human-directed review of this specification against live multi-agent practice (including Field_Logs evidence when any exists). Implementation tooling is out of scope until independence dimensions can be assessed in a real deployment. Status remains Open until that review closes it deliberately.
+
+---
+
+## Constitutional Impact Statement (per `Admin/Governance_Migration_Protocol.md`, filed 2026-08-11)
+
+**Restoration note (2026-08-11):** this entire section was present in the tree Grok's GOV-021c pass started from and was silently lost during that edit — most likely because this section and the old §12 stub sat back-to-back between the same `---` divider and the `## Relationship to Prior Framing` header, and the edit's boundary swallowed both. Restored verbatim from the last verified copy before proceeding. No wording below was changed from the original filing.
+
+**Track identification checklist:**
+- [ ] Alters Tier 1 Axiom text
+- [ ] Alters Tier 1 enforcement bounds
+- [ ] Alters Tier 1 interpretation
+- [ ] Introduces a new constitutional exception
+- [x] None of the above
+
+**Preliminary classification: Track A — provisional, pending independent Skeptic/Auditor classification review.** Not filed as a settled conclusion; GMP's own doctrine treats misclassification as a constitutional violation, not a paperwork error, and directs "when in doubt, treat as Track B." This document's primary constitutional contact points are **Axiom P-4** (Agency and Consent) and **Axiom Q-2** (Separation of Powers).
+
+**Axiom text:** No edit to `Admin/Governance_Charter.md` anywhere in this document. Unchecked cleanly.
+
+**P-4 analysis:** P-4 states "*Temporary autonomous operation is permitted where architecturally necessary — permanent removal of human oversight is not.*" This document's automatic tiers (Watch, Immediate) are reversible-only by explicit constraint (§6: "may only reduce capability or increase observation — never permanently alter state, delete data, or remove software"); anything not cleanly reversible requires Human-Reviewed authorization; Restoration always requires human authorization (§9). This reads as a bounded operational mechanism *underneath* P-4's already-stated exception, not a new exception to it.
+
+**Q-2 analysis:** Q-2 prohibits a single subsystem holding combined plan/execute/self-authorize authority over the same action. §5 states directly: "No subsystem may be the sole authority for determining whether another subsystem has diverged." §4's detection pipeline structurally separates detection → corroboration → classification → response → human restoration authority — no single stage collapses those functions into one subsystem.
+
+**Counterfactual test (the sharpest test found for this question, not originally mine — external ChatGPT review, verified as a genuine constitutional test rather than accepted on restatement):** Could ADP's Immediate tier be deleted entirely without changing what P-4 or Q-2 mean? Yes — the axioms' text and force are unaffected either way. Conversely, could P-4/Q-2 remain exactly as written while ADP's Immediate tier is changed or deleted? Yes. Neither axiom's meaning depends on this document existing in its current form. That is evidence ADP is a downstream implementation of the constitutional constraint, not part of the constraint itself — the decisive question is whether ADP narrows the set of actions P-4 permits, or merely specifies a safe subset of actions already permitted by it. Current reading: the latter.
+
+**What this filing does not resolve:** whether P-4's "architecturally necessary" language extends as far as *automatically* suspending network access or freezing self-modification on a Watch/Immediate-tier detection, versus only to narrower cases — that is a real interpretive question this filing surfaces rather than settles, and is precisely why classification is filed as provisional rather than final.
+
+**Recommendation:** an independent Skeptic/Auditor pass scoped specifically to this classification question (not a general ADP re-audit) before Track A is treated as final. Until that pass completes, ratification remains blocked on this item — narrowed from "draft an Impact Statement" to "get the classification independently confirmed."
 
 ---
 
@@ -189,6 +360,17 @@ Earlier discussion in this drafting process considered framing this as an "exit 
 ---
 
 ## Resolution Log
+
+- 2026-08-11: **GOV-021c Payment-via-Specification draft (Grok).** Expanded §12 from
+  “flagged not solved” to detection-only specification on the Alpha10-updated4
+  baseline (GOV-021b Resolved; Spec Gates 6/6 recorded). Reuses GMP §VI EQD
+  Three Independence Dimensions + Outcome Taxonomy / Dissent rule; FN-001
+  minority-report / coordinated-error principle; extends resolved GOV-021b
+  epistemic posture; cites CF-002 as Open adjacent dependency. **Hard
+  constraints:** no invented numeric thresholds; Astroid-miner 80–99%
+  **not** adopted; AP-016 not reopened. GOV-021c remains Open; ratification
+  still blocked by this unknown + Track A Constitutional Impact Statement.
+  Human-directed.
 
 - 2026-08-11: **Pseudo-audit (Grok, same limits).** Findings only; Spec Gates
   left locked at 0/6. (1) Open Unknowns **2** = GOV-021b, GOV-021c — matches
@@ -271,3 +453,48 @@ Earlier discussion in this drafting process considered framing this as an "exit 
   as-verification) and the Semantic Drift finding (Spec Gates/Governance
   ID tracking ahead of "Exploration" framing) from this pass are logged
   here but not yet applied. Human-directed.
+
+- 2026-08-11 (third pass, same day): **G5 confirmed PASS by direct
+  execution of the harness's real functions; two remaining findings
+  applied.** Ran `parse_routing`, `extract_md_refs`, and `check_cross_refs`
+  imported directly from `Automation/audit_lib.py` (not reimplemented)
+  against this file's live content, using the local `Routing.md` (112
+  entries) and `AUDIT_HARNESS.py`'s real `ALIASES` dict (18 entries) —
+  bypassing only the network fetch step, which pulls the identical
+  `Routing.md` content read locally. Zero findings. This is the actual
+  harness logic, genuinely invoked, not another manual regex replication.
+  Spec Gates now honestly 6/6. Also applied: (1) `[ExternalRepo]`
+  reference convention formally registered in
+  `Admin/Canonical_Terms.md` — first draft of that registration got the
+  mechanism backwards (claimed the bracket tag must sit outside the
+  backtick span; verified by direct regex test that the opposite is
+  true — tag must be inside the same backtick pair as the filename for
+  the match to fail correctly) and was corrected before being adopted as
+  doctrine. (2) EF-0.1 wording fix folded into GOV-021b's tracked scope
+  rather than left as an unlogged loose end, per this audit's suggested
+  resolution path. Ratification remains correctly withheld — GOV-021b and
+  GOV-021c are substantive open scope gaps (detection criteria, multi-agent
+  coordination), not gate or tooling status, and are the only remaining
+  blockers. Human-directed.
+
+- 2026-08-11 (fourth pass, same day): **GOV-021b Resolved.** §4 Detection
+  Criteria replaced with a complete specification (drafted by Grok,
+  verified against source before applying — reuses existing repository
+  machinery only: `Admin/Auditor_Protocols.md` §AP-006 epistemic states
+  (UNKNOWN/PROVISIONAL/VERIFIED, confirmed present in
+  `Admin/Forge_Audit_Kit.md`) and `Admin/Ethical_Constraints.md` EC-001's
+  Confidence Threshold Doctrine (confirmed matching: High-Risk requires
+  VERIFIED, Medium/Low-Risk PROVISIONAL+, UNKNOWN never sufficient) — no
+  new implementation infrastructure invented). Adds: 5 observable trigger
+  categories, corroboration/evidence-diversity rules, a 72h default
+  observation window, a tier-to-epistemic-state mapping table, explicit
+  entry thresholds per tier, degraded-observation handling, and an
+  implementation-honesty note preserving the original's refusal to adopt
+  unbuilt detection tooling as a requirement. §6's Watch exit conditions
+  gap resolved in the same pass: four exit paths (Clear, Automatic expiry
+  at 72h, Escalation to Immediate, Human override), keeping the
+  cross-reference to Astroid-miner's identical §2.2 gap. GOV-021c
+  (multi-agent coordinated divergence) is now the sole remaining open
+  unknown blocking ratification, alongside the still-owed Track A
+  Constitutional Impact Statement to `Governance_Migration_Protocol.md`.
+  Human-directed.
