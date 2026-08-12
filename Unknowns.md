@@ -3,19 +3,14 @@
 
 **Full version history in `Unknowns_Changelog.md` (2026-07-19 cleanup pass, following the precedent set by `Admin/AUDIT_HARNESS_CHANGELOG.md` and `Admin/Forge_Audit_Kit_Changelog.md`; scrubbed to current-version-only 2026-07-28 — the "current plus last four in full" window was itself compressed further, since the Audit Trail below now carries the compressed record for every version back to v1.0, and the changelog carries full text for all of them. This block now keeps only the current version.)**
 
-**Version 4.50 — 2026-08-11. EC-001 resolved — removed from Active Index.**
-`Admin/Ethical_Constraints.md` added its Confidence Threshold Doctrine,
-reusing `Admin/Auditor_Protocols.md` §AP-006's existing UNKNOWN/PROVISIONAL/
-VERIFIED epistemic-state machinery (Risk-tiered) rather than defining a new
-threshold system. Also found that two of the three phrasings EC-001's
-description asked to reconcile ("confidently classified," "reasonably
-bounded") were never live doctrine anywhere in the repository — only in an
-archived transcript — narrowing the actual scope to one term. EC-001
-sidecar entry Open → Resolved; removed from this file's Ethics & Governance
-Active Index per Size Management Rule 2. LT-003 (autonomy architecture),
-EC-008 (inferred authorization), and EC-012 (telemetry spoofing) remain
-separately Open — this doctrine depends on all three but resolves none.
-Human-directed.
+**Version 4.51 — 2026-08-11. GOV-021 row corrected — was stale on two counts.**
+Text still said the GOV-021 ID itself was "not yet formally registered,"
+though it was registered in `Admin/Governance_Charter.md`'s sidecar
+2026-07-27 (missed at the time). Also updated to reflect GOV-021b
+(Detection Criteria calibration) Resolved 2026-08-11 in
+`Admin/Autonomy_Divergence_Protocol.md` — GOV-021c is now the row's only
+open sub-item. Row itself stays Open (GOV-021c unresolved); no row
+removed from Active Index this pass.
 
 **Expiry Rule active — see `Admin/Canonical_Terms.md` §4 for the Cycle definition this rule now explicitly references (one calendar year default, not one audit pass — see CT-011). Protocol Performance metrics collecting.**
 
@@ -252,7 +247,7 @@ GH-009 (Emergent heuristic conflict — N² interaction scaling)
 | GOV-018 | Governance fork reconciliation undefined | `Admin/Governance_Charter.md` | Open | — | Critical |
 | GOV-019 | Conflicting authenticated human override arbitration undefined | `Admin/Governance_Charter.md` | Open | — | Major |
 | GOV-020 | Governance cost metric undefined | `Admin/Governance_Charter.md` | Open | — | Minor |
-| GOV-021 | Autonomy Divergence Protocol formal registration — reserved as candidate ID by `Admin/Autonomy_Divergence_Protocol.md` since 2026-07-19; not yet formally registered in `Admin/Governance_Charter.md`'s own sidecar. Sub-unknowns GOV-021b (Detection Criteria calibration) and GOV-021c (multi-agent coordinated divergence detection) tracked within that file, not yet independently registered here either. | `Admin/Governance_Charter.md` | Open | Vehicle | Major |
+| GOV-021 | Autonomy Divergence Protocol formal registration — GOV-021 ID formally registered in `Admin/Governance_Charter.md`'s sidecar 2026-07-27 (protocol body itself remains Draft/PROPOSED NOT RATIFIED). Sub-unknown GOV-021b (Detection Criteria calibration) Resolved 2026-08-11 — see `Admin/Autonomy_Divergence_Protocol.md` §4/§6 Resolution Log. GOV-021c (multi-agent coordinated divergence detection) remains Open, tracked within that file, not yet independently registered here. | `Admin/Governance_Charter.md` | Open | Vehicle | Major |
 | GOV-022 | Reversibility as a cross-cutting operating principle — placement undecided among a new Operating Principles subsection, doctrine in `Admin/Auditor_Protocols.md`, or rejection as redundant with existing P-1/Q-3 | `Admin/Governance_Charter.md` | Open | — | Minor |
 | SEC-001 | Quorum recovery under terminal partition | `Admin/Security_Protocols.md` | Open | — | Major |
 | SEC-002 | Key revocation doctrine undefined | `Admin/Security_Protocols.md` | Open | — | Major |
