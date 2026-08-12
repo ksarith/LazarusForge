@@ -6,6 +6,22 @@ Split out from `Unknowns.md` 2026-07-19, following the precedent already establi
 
 ---
 
+---
+
+**Version 4.50 — 2026-08-11. EC-001 resolved — removed from Active Index.**
+`Admin/Ethical_Constraints.md` added its Confidence Threshold Doctrine,
+reusing `Admin/Auditor_Protocols.md` §AP-006's existing UNKNOWN/PROVISIONAL/
+VERIFIED epistemic-state machinery (Risk-tiered) rather than defining a new
+threshold system. Also found that two of the three phrasings EC-001's
+description asked to reconcile ("confidently classified," "reasonably
+bounded") were never live doctrine anywhere in the repository — only in an
+archived transcript — narrowing the actual scope to one term. EC-001
+sidecar entry Open → Resolved; removed from this file's Ethics & Governance
+Active Index per Size Management Rule 2. LT-003 (autonomy architecture),
+EC-008 (inferred authorization), and EC-012 (telemetry spoofing) remain
+separately Open — this doctrine depends on all three but resolves none.
+Human-directed.
+
 **Version 4.49 — 2026-08-11. EC-002 resolved — removed from Active Index.**
 `Admin/Ethical_Constraints.md` added its Pattern Recognition Annex
 (six intent/complicity-based pattern categories, detection method hooked
