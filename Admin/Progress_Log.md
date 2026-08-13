@@ -153,6 +153,12 @@ matters, but **expected yield is low** relative to (1)–(3). Prefer:
 
 ## Resolution Log
 
+- 2026-08-12: **CLF-011 reconciled onto CLF-010-ratified baseline.** Prior Grok
+  pass used pre-ratification tree (reported 10→11, CLF-010 Open) — incorrect
+  starting point. Correct arithmetic: after CLF-010 Resolve, Open was 9; +CLF-011
+  → **10**. `fir_class` rename applied here without reopening CLF-010. Human-directed.
+
+
 - 2026-08-11: **GOV-021c specification draft** applied on Alpha10-updated4
   baseline (`Admin/Autonomy_Divergence_Protocol.md` §12). GOV-021b already
   Resolved in this tree; only GOV-021c remains open. Detection-only; EQD
@@ -668,3 +674,20 @@ matters, but **expected yield is low** relative to (1)–(3). Prefer:
   anything else with the upload. GOV-021c's own content was verified
   separately and is being evaluated on its merits, unaffected by this
   fix. Human-directed.
+
+- 2026-08-11: **First item ratified purely on documentation-completeness
+  grounds: CLF-010 (Closed_Loop_Feedstock.md §4a).** Surveyed the whole
+  repo for genuinely ready-to-ratify items before picking this one —
+  checked CIR_Gov.md (explicitly sequenced behind GOV-008, which needs
+  physical hardware not yet available — correctly stays Proposed) and
+  confirmed ADP itself still has a real open blocker (GOV-021c) plus an
+  Impact Statement needing independent review, not just acceptance.
+  CLF-010's own text was the one candidate that explicitly said it
+  needed no physical trial — a bookkeeping rule, not a numeric
+  recalibration. Verified the actual proposal before ratifying: formula
+  internally consistent, cited CT-011 real (not fabricated), gaming-
+  surface countermeasure sound. Ratified in full: four-class FIR
+  taxonomy (A/B/C/D) plus Class D Residency Cap. Open Unknowns 10 → 9;
+  Unknowns.md updated to match. Flagged, not done: Gate_04/05/06
+  `material_class` field implementation unverified; Discovery.md's FIR
+  maturity notes not yet updated. Human-directed.
