@@ -3,14 +3,18 @@
 
 **Full version history in `Unknowns_Changelog.md` (2026-07-19 cleanup pass, following the precedent set by `Admin/AUDIT_HARNESS_CHANGELOG.md` and `Admin/Forge_Audit_Kit_Changelog.md`; scrubbed to current-version-only 2026-07-28 — the "current plus last four in full" window was itself compressed further, since the Audit Trail below now carries the compressed record for every version back to v1.0, and the changelog carries full text for all of them. This block now keeps only the current version.)**
 
-**Version 4.51 — 2026-08-11. GOV-021 row corrected — was stale on two counts.**
-Text still said the GOV-021 ID itself was "not yet formally registered,"
-though it was registered in `Admin/Governance_Charter.md`'s sidecar
-2026-07-27 (missed at the time). Also updated to reflect GOV-021b
-(Detection Criteria calibration) Resolved 2026-08-11 in
-`Admin/Autonomy_Divergence_Protocol.md` — GOV-021c is now the row's only
-open sub-item. Row itself stays Open (GOV-021c unresolved); no row
-removed from Active Index this pass.
+**Version 4.52 — 2026-08-11. CLF-010 Ratified (human governing authority) — removed from Active Index.**
+**2026-08-12 — CLF-011 registered** (gate-side `fir_class` consumption; `material_class`→`fir_class` rename). CLF-010 remains Resolved. Active Open CLF count: CLF-001–009 + CLF-011 (10), not a re-open of CLF-010.
+`Challenges/Closed_Loop_Feedstock.md` §4a's four-class FIR boundary
+taxonomy (A/B/C/D) and Class D Residency Cap countermeasure, both
+previously Proposed, were ratified in full — first item ratified this
+session purely on documentation-completeness grounds (a bookkeeping
+rule, explicitly needing no physical trial per its own text), distinct
+from EC-001/EC-002 which closed on doctrine-consistency grounds. Open
+Unknowns count for that file: 10 → 9. Follow-up not yet done, tracked in
+the owning file's Integration Hooks: Gate_04/05/06 `material_class`
+field emission/consumption unverified as implemented; Discovery.md's FIR
+definition and maturity notes not yet updated to reflect ratification.
 
 **Expiry Rule active — see `Admin/Canonical_Terms.md` §4 for the Cycle definition this rule now explicitly references (one calendar year default, not one audit pass — see CT-011). Protocol Performance metrics collecting.**
 
@@ -780,7 +784,7 @@ GH-009 (Emergent heuristic conflict — N² interaction scaling)
 | CLF-007 | PIR aggregation function undefined — four sub-vectors collapsed to a scalar with no stated operator; arithmetic mean would contradict the file's own single-fatal-dependency framing | `Challenges/Closed_Loop_Feedstock.md` | Open | — | Major |
 | CLF-008 | Downstream destination for degraded/bleed-off material and hazardous byproducts undefined — no link to full-reduction diversion or waste-output accumulation tracking | `Challenges/Closed_Loop_Feedstock.md` | Open | — | Major |
 | CLF-009 | Interface contract for characterization→fabrication data handoff — Material Certainty Manifest schema ratified 2026-07-31 (owning file §7.2); not yet physically deployed on any real batch | `Challenges/Closed_Loop_Feedstock.md` | In Progress | — | Minor |
-| CLF-010 | FIR boundary conditions undefined — four-class taxonomy (A/B/C/D) proposed 2026-08-03; Class-D gaming surface given Challenge Class 8 pass 2026-08-07 (Class D Residency Cap proposed, one-Cycle limit before demotion to zero credit) | `Challenges/Closed_Loop_Feedstock.md` | Open | — | Major |
+| CLF-011 | Gate-side `fir_class` consumption unbuilt (Gate_04/05/06); naming collision risk with Gate_04 sorting Class A/B/C — renamed `material_class`→`fir_class` 2026-08-12; CLF-010 remains Resolved | `Challenges/Closed_Loop_Feedstock.md` | Open | — | Major |
 
 *CLF-003 and CLF-006 are Critical — CLF-003 blocks sustained polymer extrusion operations; CLF-006 blocks safe recursive-loop operation.*
 *CLF-004 is Critical — no electrolytic/electrorefining pathway may proceed without a chemical footprint decision. Its candidate pathway is further blocked by CE-006 pending a chlorine containment design.*
