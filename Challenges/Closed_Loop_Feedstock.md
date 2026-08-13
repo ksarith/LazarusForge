@@ -18,9 +18,9 @@
 | Verification Ref   | `Admin/Verification_Gates.md` |
 | Ethical Anchor     | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 | Highest Risk       | Silent contamination cascades or toolhead destruction (CLF-003/CLF-006). |
-| Last Audit         | 2026-08-07 — §4a Class-D gaming surface given its Challenge Class 8 adversarial pass, Class D Residency Cap proposed; prior: 2026-08-03 (§4a CLF-010 proposed resolution added, Proposed, not ratified); prior: 2026-07-31 (§7 CLF-006/CLF-009 doctrine ratified by human governing authority; CLF-006/CLF-009 moved Open → In Progress) |
+| Last Audit         | 2026-08-11 — CLF-010 Ratified (human governing authority), §4a; prior: 2026-08-07 (§4a Class-D gaming surface given its Challenge Class 8 adversarial pass, Class D Residency Cap proposed); prior: 2026-08-03 (§4a CLF-010 proposed resolution added); prior: 2026-07-31 (§7 CLF-006/CLF-009 doctrine ratified by human governing authority; CLF-006/CLF-009 moved Open → In Progress) |
 | Auditor            | Claude — Synthesizer, §4a FIR boundary-condition taxonomy integrated as Proposed (drafted by Copilot, corrected and verified by Grok under Skeptic/Auditor constraints — broken LaTeX fixed, Class D's 0.5 factor explicitly marked Placeholder pending §7.3 hardening, blend-recording rule clarified, gaming surface flagged, premature "Resolved" status claim rejected per AP-032; all cross-references to §2a/§7.2/§7.3/CLF-006 verified exact against source before integration), human-directed, 2026-08-03; prior: Claude — Skeptic/Auditor (integration, 2026-07-07); prior: Grok, Gemini, Claude (2026-07-06); Claude — ratification pass (human-directed), 2026-07-17; Grok — drafted §7 contamination doctrine / MCM schema / validation logic (Skeptic/Auditor), Claude — Synthesizer (verified against source, integrated as §7, cross-consistency check vs Gate_04/05/Ethical_Constraints, adversarial stress-test additions), 2026-07-30; Claude — Synthesizer, expanded CLF-003 from single-line entry to full detail (§8), verified against Plastics.md and Gate_05 SC-004 source, human-directed, 2026-07-31; Claude — §7 ratified (human governing authority), CLF-006/CLF-009 status updated, 2026-07-31 |
-| Open Unknowns      | 10 (CLF-001 through CLF-010) — unchanged; CLF-006/CLF-009 now In Progress (doctrine ratified, numeric thresholds provisional pending §7.3 validation); CLF-003 detailed but still Open pending hardware |
+| Open Unknowns      | 10 (CLF-001–009 Open/In Progress + CLF-011 Open; CLF-010 Resolved 2026-08-11) — CLF-011 registered 2026-08-12 (gate-side fir_class consumption + Gate_04 sorting-class naming collision); CLF-006/CLF-009 In Progress; CLF-003 Open pending hardware |
 | Active Disputes    | 0 |
 | Sidecar Link       | #6-open-unknowns |
 
@@ -74,11 +74,11 @@ $$Y_p = FIR \times PIR$$
 
 **FIR** = salvaged mass fraction: $FIR = \frac{M_{\text{salvaged}}}{M_{\text{total}}}$
 
-*Boundary conditions for what counts toward $M_{\text{salvaged}}$ vs. $M_{\text{total}}$ (donated virgin resin, reclaimed-but-unprocessed copper wire, reused fasteners, scavenged commercial filament) are not yet defined — see CLF-010. Until resolved, different auditors may compute FIR inconsistently for the same physical stream.*
+*Boundary conditions for what counts toward $M_{\text{salvaged}}$ vs. $M_{\text{total}}$ (donated virgin resin, reclaimed-but-unprocessed copper wire, reused fasteners, scavenged commercial filament) — see §4a; CLF-010 Ratified 2026-08-11.*
 
-#### 4a. FIR Boundary Conditions — Proposed (2026-08-03, human-directed; drafted by Copilot, corrected and cleaned by Grok under Skeptic/Auditor constraints, verified against source before integration)
+#### 4a. FIR Boundary Conditions — Ratified 2026-08-11 (human governing authority; drafted 2026-08-03 by Copilot, corrected and cleaned by Grok under Skeptic/Auditor constraints, verified against source before integration; Class D Residency Cap added and given Challenge Class 8 pass 2026-08-07)
 
-**Status: Proposed. Does not change CLF-010's Open status or this file's Open Unknowns count — per AI Contribution Protocols Rule 8/AP-032, that requires a separate audit event by a different agent or human governing authority, not this insertion itself.**
+**Status: Ratified. CLF-010 Resolved — separate audit event per AI Contribution Protocols Rule 8/AP-032 satisfied by this ratification.**
 
 To eliminate cross-auditor inconsistency and prevent corruption of $Y_p$ telemetry, every incoming material batch is classified into one of four falsifiable categories. These categories define what contributes to $M_{\text{salvaged}}$ and $M_{\text{total}}$.
 
@@ -102,7 +102,7 @@ Material reclaimed from salvage but not yet processed into usable feedstock.
 Examples: unstripped copper wire, unsorted polymer flakes, mixed metal fragments.
 Rule: Class D contributes a provisional factor of 0.5 toward $M_{\text{salvaged}}$ until processed into Class A or B. **The factor 0.5 is design-intent (Placeholder), not derived empirically or constitutionally — it is subject to the same §7.3 instrumented-cycle hardening process that already governs CLF-006's numeric thresholds, and should not be treated as Measured until it goes through that process.**
 
-**Formal FIR Definition (binding once ratified):**
+**Formal FIR Definition (binding, ratified 2026-08-11):**
 
 $$M_{\text{salvaged}} = M_A + M_B + 0.5\,M_D$$
 
@@ -114,16 +114,19 @@ $$FIR = \frac{M_A + M_B + 0.5\,M_D}{M_A + M_B + M_C + M_D}$$
 
 **Known residual gaming surface (Challenge Class 8 adversarial pass completed 2026-08-07):** a pure Class-D batch scores FIR = 0.5 with zero actual processing performed. Acceptable for v0 given the factor's Placeholder status, but this is exactly the kind of measure a throughput-optimizing process — human or automated — could game rather than genuinely improve: intake material as Class D and never advance it to Class A/B, harvesting 0.5 credit indefinitely for work never done, since nothing previously created pressure to convert.
 
-**Countermeasure — Class D Residency Cap [Proposed, Challenge Class 8 minimum requirement]:** a batch may remain classified Class D for at most one Cycle (per `Admin/Canonical_Terms.md` CT-011's existing default — one calendar year, not one audit pass). At the close of that Cycle, an unconverted Class-D batch is demoted to zero credit toward $M_{\\text{salvaged}}$ for FIR purposes — treated as Class C until it is actually processed into Class A or B and reclassified. This closes the "park forever, harvest free credit" exploit path without touching the 0.5 factor itself, which remains Placeholder pending real §7.3 instrumented-cycle hardening exactly as before — this is a bookkeeping/residency rule, not a numeric recalibration, and needs no physical trial to define or ratify. The existing per-batch mass-composition logging (below, "Blends") already gives an auditor the intake-date visibility needed to enforce this without new telemetry. Like the rest of §4a, this countermeasure is Proposed, not ratified — it does not change CLF-010's Open status, and does not itself require a separate audit event to exist as a proposal, though ratification does, per the same Rule 8/AP-032 discipline governing the rest of this section.
+**Countermeasure — Class D Residency Cap [Ratified 2026-08-11, Challenge Class 8 minimum requirement]:** a batch may remain classified Class D for at most one Cycle (per `Admin/Canonical_Terms.md` CT-011's existing default — one calendar year, not one audit pass). At the close of that Cycle, an unconverted Class-D batch is demoted to zero credit toward $M_{\\text{salvaged}}$ for FIR purposes — treated as Class C until it is actually processed into Class A or B and reclassified. This closes the "park forever, harvest free credit" exploit path without touching the 0.5 factor itself, which remains Placeholder pending real §7.3 instrumented-cycle hardening exactly as before — this is a bookkeeping/residency rule, not a numeric recalibration, and needs no physical trial to define or ratify. The existing per-batch mass-composition logging (below, "Blends") already gives an auditor the intake-date visibility needed to enforce this without new telemetry. Like the rest of §4a, this countermeasure is Ratified 2026-08-11 (human governing authority) — it does not change the still-Placeholder status of the 0.5 factor itself, which remains pending §7.3 instrumented-cycle hardening.
 
-This taxonomy resolves the boundary-condition gap tracked as CLF-010. Status remains Proposed until a separate audit event (different agent or human governing authority) marks the unknown Resolved and updates §6.
+This taxonomy resolves the boundary-condition gap tracked as CLF-010. **CLF-010 Resolved 2026-08-11** — separate audit event requirement (Rule 8/AP-032) satisfied by human governing authority ratification.
 
-**Integration Hooks (CLF-010 Proposed, activate on ratification):**
-- Gate_04 and Gate_05 must emit `material_class` for every outbound batch.
-- Gate_06 consumption rules must read `material_class` when computing or validating $Y_p$.
-- Discovery.md: update FIR definition and maturity notes on ratification.
-- Unknowns.md: move CLF-010 to Resolved only after the separate audit event — not on this insertion.
-- The residual Class-D gaming surface received its Challenge Class 8 pass 2026-08-07 (Class D Residency Cap proposed); remains flagged for full adversarial re-review at ratification time regardless.
+**Field name (2026-08-12):** The batch field is **`fir_class`** (values A|B|C|D|blend), not Gate_04's sorting "Class A/B/C". Gate_04 Class A/B/C = *sorting quality* (usable → downgraded → Spin Chamber bulk). §4a A/B/C/D = *FIR salvage-provenance credit*. Same letters, different axis — see **CLF-011**.
+
+**Integration Hooks (CLF-010 Ratified 2026-08-11 — taxonomy binding; gate emit/consume still open as CLF-011):**
+- Gate_04 and Gate_05 must emit `fir_class` for every outbound batch (orthogonal to Gate_04 sorting Class A/B/C/Unknown Bulk/Fail). **Not yet implemented in those files — tracked as CLF-011, not covered by CLF-010 ratification.**
+- Gate_06 consumption rules must read `fir_class` when computing or validating $Y_p$. **Same — CLF-011.**
+- Discovery.md FIR definition/maturity notes still need a ratification follow-up pass (flagged at CLF-010 ratification; not CLF-011 scope).
+- Discovery.md: FIR definition and maturity notes need updating to reflect ratification — not done as part of this pass.
+- Unknowns.md: CLF-010 needs to move to Resolved / removed from Active Index there too — not done as part of this pass, tracked separately.
+- The Class-D gaming surface received its Challenge Class 8 pass 2026-08-07 and the Residency Cap countermeasure is now Ratified alongside the rest of §4a — not a separate future review item.
 
 **PIR** = a multi-vector independence score, not a single measurement. The energetic ceiling added in a prior pass ($E_{\text{yield}} > E_{\text{proc}}$, including auxiliary loads for pumps, conveyance, assay, and thermal control per `Operations/Energy.md`) is a real and necessary constraint, but it is only the energy vector — narrowing PIR to that alone breaks the file's own worked example below, which turns on *chemical*, not energy, dependency:
 
@@ -168,7 +171,8 @@ Recursive loops risk cascading contamination (heavy metals in polymers, alloy dr
 | CLF-007 | PIR aggregation function undefined — the four sub-vectors (energy, chemical, maintenance, labor) are collapsed into "overall PIR" with no stated operator. An arithmetic mean would let one strong vector mask a near-zero vector, contradicting this file's own stated intent. Needs a geometric mean or weighted product, with weights reflecting each vector's existential risk. | Challenges/Closed_Loop_Feedstock.md | Open | — | Major |
 | CLF-008 | Downstream destination for degraded/bleed-off material and hazardous byproducts (toxic slag, anode slime) undefined. Section 3's dependency table has no link for where this material physically flows. Candidate links: `Operations/Gate_03_Reduction.md` (full-reduction diversion) and `Challenges/Return_To_Eden.md` $W_{\text{out}}$ (waste-output accumulation) — neither confirmed. | Challenges/Closed_Loop_Feedstock.md | Open | — | Major |
 | CLF-009 | Interface contract for characterization→fabrication data handoff — Material Certainty Manifest schema **ratified 2026-07-31** (§7.2): v0 form factor, assay-gated confidence ceiling, `Operations/Gate_06_Fabrication.md` consumption rules. Not yet physically deployed on any real batch — see §7.2 Open Design Questions. | Challenges/Closed_Loop_Feedstock.md | In Progress | — | Minor |
-| CLF-010 | FIR boundary conditions undefined — how donated virgin resin, reclaimed-but-unprocessed copper wire, reused fasteners, and scavenged commercial filament count toward $M_{\text{salvaged}}$ vs. $M_{\text{total}}$ is not specified, risking inconsistent FIR calculation across auditors/sessions. **Proposed resolution 2026-08-03:** four-class taxonomy (A/B/C/D) with provisional 0.5 credit for Class D and mandatory `material_class` field in MCM-v0 — see §4a. Class-D gaming surface given a Challenge Class 8 adversarial pass 2026-08-07 (Class D Residency Cap proposed — one-Cycle residency limit before demotion to zero credit). Awaiting separate audit event to mark Resolved. | Challenges/Closed_Loop_Feedstock.md | Open (Proposed resolution exists) | — | Major |
+| CLF-010 | FIR boundary conditions — four-class taxonomy (A/B/C/D) with provisional 0.5 credit for Class D and mandatory `fir_class` field in MCM-v0, plus Class D Residency Cap (one-Cycle limit before demotion to zero credit) — see §4a. **Ratified 2026-08-11 (human governing authority).** | Challenges/Closed_Loop_Feedstock.md | Resolved | — | Major |
+| CLF-011 | Gate-side `fir_class` consumption contract unbuilt — Gate_04/05/06 do not emit or read FIR-class; latent vocabulary collision with Gate_04 sorting Class A/B/C if labels used bare; field renamed `material_class`→`fir_class` 2026-08-12 (CLF-010 ratification preserved) | Challenges/Closed_Loop_Feedstock.md | Open | — | Major |
 
 *CLF-003 and CLF-006 are Critical — CLF-003 blocks sustained polymer extrusion operations; CLF-006 blocks safe recursive-loop operation without defined contamination thresholds.*
 *CLF-004 is Critical — no electrolytic/electrorefining pathway may proceed without a chemical footprint decision, and a candidate pathway now exists pending a chlorine containment answer.*
@@ -269,7 +273,7 @@ intended_destination: Gate_06-weld | Gate_06-mill | Low-Spec | Gate_03 | Triage 
 carbon_pickup_est: <float%|unmeasured|n/a>
 halogen_status:    negative | positive | untested
 weldability_proxy: acceptable | high-spatter | unknown | n/a
-material_class:    A | B | C | D | blend            # required — see §4a (Proposed 2026-08-03, not yet ratified)
+fir_class:    A | B | C | D | blend            # required — see §4a (Ratified 2026-08-11; field renamed from material_class 2026-08-12)
 recommended_excess_mm: <float|default>
 certainty_profile:                   # required block
   primary:         <element/alloy>
@@ -392,6 +396,36 @@ These numbers carry the same provisional, design-intent status as the rest of §
 
 ## Resolution Log
 
+- 2026-08-12: **CLF-011 registered on CLF-010-ratified baseline; `material_class` → `fir_class` (Grok).**
+  Prior session had applied the same rename/ID on a pre-ratification tree and
+  incorrectly reported Open Unknowns 10→11 with CLF-010 still Open — that was
+  the wrong baseline (Claude flag, correct). This pass starts from
+  Alpha11-clf010ratified: CLF-010 remains **Resolved/Ratified 2026-08-11**;
+  Open Unknowns **9 → 10** (add CLF-011 only). Collision-check: CLF-011 free.
+  Gate_04 sorting Class A/B/C left unchanged; FIR field namespaced as
+  `fir_class`. Gate emit/consume still unbuilt (explicit in CLF-010
+  ratification follow-ups). No Spec Gate change. Human-directed.
+
+
+- 2026-08-11: **CLF-010 Ratified (human governing authority).** §4a's
+  four-class FIR boundary taxonomy (A/B/C/D) and the Class D Residency
+  Cap countermeasure, both Proposed since 2026-08-03/08-07 respectively,
+  ratified in full as drafted — no changes made at ratification time.
+  Verified before ratifying: the FIR formula is internally consistent
+  ($M_{\text{salvaged}} = M_A + M_B + 0.5M_D$; the 0.5 factor correctly
+  stays Placeholder, untouched by this ratification, pending real §7.3
+  instrumented-cycle hardening); the cited `Admin/Canonical_Terms.md`
+  CT-011 Cycle definition (one calendar year default) is real, not a
+  fabricated citation; the gaming-surface finding and its countermeasure
+  were independently sound on inspection. Satisfies AI Contribution
+  Protocols Rule 8/AP-032's separate-audit-event requirement for CLF-010.
+  Open Unknowns 10 → 9; `Unknowns.md` updated to match (v4.52), row
+  removed from Active Index. **Not done as part of this ratification,
+  flagged as follow-up in §4a's Integration Hooks:** Gate_04/05/06's
+  `fir_class` field emission/consumption is unverified as actually
+  implemented in those files; Discovery.md's FIR definition and maturity
+  notes have not been updated to reflect ratification. Human-directed.
+
 - 2026-08-10: **Pseudo-audit (Grok, same limits).** Findings only; Spec Gates
   left locked at 0/6. (1) Open Unknowns **10** = CLF-001–010, matches File
   State note and `Unknowns.md`. (2) CLF-003 Critical/Open correctly (hardware
@@ -483,10 +517,10 @@ These numbers carry the same provisional, design-intent status as the rest of §
   status was rejected. Per AI Contribution Protocols Rule 8/AP-032,
   that status change requires a separate audit event by a different
   agent or human governing authority; this insertion is Proposed only.
-  `material_class` added to the MCM-v0 schema (§7.2) as a documented
+  `fir_class` added to the MCM-v0 schema (§7.2) as a documented
   field, deliberately *not* added to that section's binding Validity
   rule — §7.2 is already Ratified and §4a is not, so making
-  `material_class` a hard validity requirement now would smuggle
+  `fir_class` a hard validity requirement now would smuggle
   unratified doctrine into enforcement on an already-binding schema.
   CLF-010's §6 row updated to point at the proposed resolution; Status
   remains Open (Proposed resolution exists), not changed to Resolved
