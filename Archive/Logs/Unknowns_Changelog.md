@@ -8,6 +8,15 @@ Split out from `Unknowns.md` 2026-07-19, following the precedent already establi
 
 ---
 
+**Version 4.51 — 2026-08-11. GOV-021 row corrected — was stale on two counts.**
+Text still said the GOV-021 ID itself was "not yet formally registered,"
+though it was registered in `Admin/Governance_Charter.md`'s sidecar
+2026-07-27 (missed at the time). Also updated to reflect GOV-021b
+(Detection Criteria calibration) Resolved 2026-08-11 in
+`Admin/Autonomy_Divergence_Protocol.md` — GOV-021c is now the row's only
+open sub-item. Row itself stays Open (GOV-021c unresolved); no row
+removed from Active Index this pass.
+
 **Version 4.50 — 2026-08-11. EC-001 resolved — removed from Active Index.**
 `Admin/Ethical_Constraints.md` added its Confidence Threshold Doctrine,
 reusing `Admin/Auditor_Protocols.md` §AP-006's existing UNKNOWN/PROVISIONAL/
