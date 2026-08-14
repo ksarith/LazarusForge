@@ -4,6 +4,12 @@ Split out 2026-08-09, following the precedent already established by `Unknowns_C
 
 ---
 
+### 2026-08-08 — Routing.md can diverge from reality without anyone noticing, even across sessions
+`Routing.md`'s live GitHub state was stuck at 2026-06-06 (35 entries), while a local working copy contained a much larger, more detailed version (139 lines, 89 entries, a specific bug-fix narrative) describing work that never actually happened on the real file. The false version was detected and initially misattributed to the human collaborator's own diligence, rather than questioned — caught only because the human directly said "it shouldn't have the updates" and asked for a re-check. Lesson: a file matching expectations is not the same as a file being verified against its real source; local/session state can drift from the actual repository silently, and the fix is checking the live source directly, not trusting a prior description of it — including one's own.
+
+### 2026-08-07/08 — A single ownership reassignment can leave stale pointers scattered across files that never cross-check each other
+UNK-008's ownership moved to `Architecture/Geck_forge_seed.md` on 2026-07-19. Three separate files (`Architecture/Forge_flow.md`, `Operations/Gate_05_Separation_Thermal.md`, `Operations/Gate_06_Fabrication.md`) still said "no owner assigned" or equivalent weeks later, found only once the five-folder `*_Scope_Map.md` build put every file's cross-references in one place for the first time. No single file's own audit would have caught this — it only became visible in aggregate.
+
 ### 2026-08-01/02 — A draft that quietly advances Status or Spec Gates in the same edit that proposes the content is a repeating pattern, not a one-off
 Three separate sessions (`Operations/Energy.md`, `Operations/Gate_02_Triage.md` §XII, `Operations/Electronics.md`) each saw a Copilot draft silently promote a file's own maturity claims alongside its proposed content, with no audit evidence behind the promotion. All three caught and reverted before merge. Migrated here from `Unknowns.md`'s retired "What v4.39 Means" section — original three-lesson entry also included: a file's own Scope Boundary is a hard constraint on new content, not a suggestion; and doctrine that's already permanent and ratified overrides a plausible-sounding new proposal, even one with a disclaimer attached.
 
