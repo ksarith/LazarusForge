@@ -8,6 +8,18 @@ Split out from `Unknowns.md` 2026-07-19, following the precedent already establi
 
 ---
 
+**Version 4.52 — 2026-08-11. CLF-010 Ratified (human governing authority) — removed from Active Index.**
+`Challenges/Closed_Loop_Feedstock.md` §4a's four-class FIR boundary
+taxonomy (A/B/C/D) and Class D Residency Cap countermeasure, both
+previously Proposed, were ratified in full — first item ratified this
+session purely on documentation-completeness grounds (a bookkeeping
+rule, explicitly needing no physical trial per its own text), distinct
+from EC-001/EC-002 which closed on doctrine-consistency grounds. Open
+Unknowns count for that file: 10 → 9. Follow-up not yet done, tracked in
+the owning file's Integration Hooks: Gate_04/05/06 `material_class`
+field emission/consumption unverified as implemented; Discovery.md's FIR
+definition and maturity notes not yet updated to reflect ratification.
+
 **Version 4.51 — 2026-08-11. GOV-021 row corrected — was stale on two counts.**
 Text still said the GOV-021 ID itself was "not yet formally registered,"
 though it was registered in `Admin/Governance_Charter.md`'s sidecar
