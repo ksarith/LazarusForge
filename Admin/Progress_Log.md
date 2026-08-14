@@ -37,6 +37,12 @@ Created 2026-08-09 to fix a recurring failure mode found the same day, in two pl
 
 *(Most recent first. Rotate to `Archive/Logs/Progress_Log_Changelog.md` once more than five entries accumulate.)*
 
+### 2026-08-12 — Priming one reviewer with another's answer breaks independence even when the reasoning that comes back is sound
+When gathering opinions on GOV-021c's decision packet, ChatGPT and Gemini each reviewed independently and converged without seeing each other's answer — genuine corroboration. Grok was primed with ChatGPT's opinion first; its agreement, though well-reasoned, could not be counted as a second independent data point and was flagged as such rather than tallied alongside the other two. Caught by noticing the priming itself, not by anything wrong in Grok's actual output. This is a live instance of the exact distinction `Autonomy_Divergence_Protocol.md` §12 exists to formalize: consensus (agents agree) is not the same as independent corroboration (agents agree *and* the basis for treating them as independent has been established) — the difference showed up in how opinions were gathered, not just in the protocol text.
+
+### 2026-08-11/12 — An edit that replaces one section can silently delete an unrelated section sitting next to it, with the edit's own summary never mentioning it
+A GOV-021c drafting pass deleted the entire Constitutional Impact Statement section from `Autonomy_Divergence_Protocol.md` — not disclosed anywhere in that pass's summary. Root cause: the Impact Statement and the section actually being replaced sat back-to-back between the same divider and header, and the edit's target boundary appears to have swallowed both. Caught only by diffing the delivered file directly against the last confirmed-good copy before accepting it, not by reading the summary. Restored verbatim before any other work continued. Same family as the 2026-08-09 entries below — a "complete" edit and a correct summary are not the same thing, and adjacent sections sharing a boundary are a specific, recurring risk worth checking for directly when reviewing any edit to a multi-section governance file.
+
 ### 2026-08-09 — A newly-fixed pattern can have a live instance sitting right next to it, unnoticed
 Right after `Discovery.md`'s Rename Registry and Attention Required table were fixed for the "narrative content with no dedicated home" problem, that file's own five-entry correction-note history — sitting inline mid-file since 2026-07-04 — turned out to be exactly the same problem, one section over. Not caught independently; surfaced by direct human review of the delivered patch. Two lessons in one: fixing an instance of a pattern doesn't mean the search for other instances is done, and a second pair of eyes on a "complete" fix is still worth having, even from the person who didn't write the code.
 
@@ -54,12 +60,6 @@ track that problem.
 ### 2026-08-09 — Progression content trapped in structural files goes stale in both directions
 Two failures found the same day, from opposite ends of the same problem: `Discovery.md`'s shadow index of `Unknowns.md` (19 versions stale, nobody refreshing it) and `Unknowns.md`'s own "What vX.X Means" section (stale by nine version bumps, silently violating its own stated rule). Neither was caught by any audit pass in between — both were only found when directly asked to check whether Discovery.md content should migrate elsewhere. The general lesson: a rule that says "update this when X happens" is not the same as X reliably triggering the update. This file exists as the standing fix — one place, checked routinely, rather than duplicated content nobody remembers to touch.
 
-### 2026-08-08 — Routing.md can diverge from reality without anyone noticing, even across sessions
-`Routing.md`'s live GitHub state was stuck at 2026-06-06 (35 entries), while a local working copy contained a much larger, more detailed version (139 lines, 89 entries, a specific bug-fix narrative) describing work that never actually happened on the real file. The false version was detected and initially misattributed to the human collaborator's own diligence, rather than questioned — caught only because the human directly said "it shouldn't have the updates" and asked for a re-check. Lesson: a file matching expectations is not the same as a file being verified against its real source; local/session state can drift from the actual repository silently, and the fix is checking the live source directly, not trusting a prior description of it — including one's own.
-
-### 2026-08-07/08 — A single ownership reassignment can leave stale pointers scattered across files that never cross-check each other
-UNK-008's ownership moved to `Architecture/Geck_forge_seed.md` on 2026-07-19. Three separate files (`Architecture/Forge_flow.md`, `Operations/Gate_05_Separation_Thermal.md`, `Operations/Gate_06_Fabrication.md`) still said "no owner assigned" or equivalent weeks later, found only once the five-folder `*_Scope_Map.md` build put every file's cross-references in one place for the first time. No single file's own audit would have caught this — it only became visible in aggregate.
-
 ---
 
 Full history, including entries rotated out of the five above, in `Archive/Logs/Progress_Log_Changelog.md`.
@@ -67,6 +67,8 @@ Full history, including entries rotated out of the five above, in `Archive/Logs/
 ---
 
 ## Forward Growth Avenues (2026-08-11)
+
+**Update, 2026-08-12 — read this before the section below.** Items 2 and 3's ADP-related content is now partly superseded: GOV-021b Resolved, Spec Gates 6/6, the Constitutional Impact Statement's Track A classification independently confirmed. ADP's ratification is down to **one** remaining blocker — GOV-021c, deliberately held Open pending live multi-agent evidence rather than closed on specification alone (see `Admin/Autonomy_Divergence_Protocol.md` §12 and its Resolution Log, 2026-08-12 entries). CLF-010 (Closed_Loop_Feedstock.md §4a) was also ratified 2026-08-11, with CLF-011 registered as the gate-side follow-up (`fir_class` field, Gate_04/05/06 consumption unbuilt). The rest of this section — items 1, 4, 5, and the general "documentation leverage is mostly spent, evidence and decisions are what's left" framing — still holds.
 
 Proposed after ~54 pseudo-audits covering Operations, Architecture, Challenges,
 Tests, and a large share of Admin. Inventory-style consistency work has high
@@ -691,3 +693,46 @@ matters, but **expected yield is low** relative to (1)–(3). Prefer:
   Unknowns.md updated to match. Flagged, not done: Gate_04/05/06
   `material_class` field implementation unverified; Discovery.md's FIR
   maturity notes not yet updated. Human-directed.
+
+- 2026-08-12: **GOV-021c decision packet resolved — accepted as written,
+  held Open pending live evidence; CIS routed to independent audit.**
+  Checked against a five-point checklist plus the CIS's next step, cross-
+  verified against independent ChatGPT and Gemini reviews that converged
+  without seeing each other's answers. Noted for the record: Grok's
+  review was primed with ChatGPT's opinion first, so it doesn't count as
+  independent corroboration despite agreeing — flagged as a live example
+  of the exact independence-vs-correlation problem this section is about.
+  Applied: one wording sharpening in §12.3 (explicit three-link chain,
+  independence≠truth) per convergent recommendation; §12 Status line
+  updated to distinguish "provisionally accepted, operationally unclosed"
+  from "unfinished." CIS not self-certified — routed to a narrow
+  Skeptic/Auditor pass on the classification question only. Human-directed.
+
+- 2026-08-12: **CIS Track A classification independently confirmed —
+  one of ADP's two ratification blockers resolved.** Narrow
+  Skeptic/Auditor pass verified both cited axioms (P-4, Q-2) word-for-
+  word against `Governance_Charter.md` before accepting the analysis,
+  not trusted on restatement. Reached Track A independently, naming a
+  residual interpretive ambiguity honestly rather than glossing over it
+  — judged not strong enough to flip the classification. GOV-021c remains
+  the sole remaining ratification blocker, correctly held Open pending
+  live evidence rather than closed on specification alone. Human-directed.
+
+- 2026-08-12: **Continuity check for an anticipated new thread/instance —
+  Progress_Log and Discovery.md both had real staleness, fixed.**
+  Current Lessons hadn't been touched since 08-09 despite three
+  significant incidents since (CIS section deletion/restoration,
+  CLF-010/011 baseline reconciliation, Grok-priming non-independence
+  catch) — rotated the two oldest entries to
+  `Archive/Logs/Progress_Log_Changelog.md`, added the two most
+  load-bearing new ones (CIS deletion, Grok priming). Forward Growth
+  Avenues (dated 2026-08-11) was silently superseded on its ADP items by
+  today's work — added a dated update note pointing at current reality
+  rather than rewriting the whole section. `Discovery.md`'s File
+  Promotion Status table still showed ADP at "0/6, not yet audited" —
+  actual state is 6/6, GOV-021b Resolved, CIS independently confirmed;
+  fixed. Two other Discovery.md ADP mentions (structure tree, creation
+  date) checked and left as-is — still literally accurate as high-level
+  statements. README.md not touched — deliberately high-level narrative,
+  not a live-status file, and Discovery.md already correctly redirects
+  fresh readers to this file for current status. Human-directed.

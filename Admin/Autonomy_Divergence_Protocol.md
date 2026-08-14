@@ -55,7 +55,7 @@ This document does **not** propose, and explicitly rejects, any framing in which
 - CIR predicate evaluation or institutional state algebra (→ `Admin/Computational_Institutional_Reasoning.md`)
 - Application to purely advisory or fully human-supervised tooling (by construction those cannot diverge from oversight they never had independence from)
 
-**Status note:** Draft — PROPOSED NOT RATIFIED. Spec Gates 6/6 passed. GOV-021 ID registered in Charter sidecar 2026-07-27; protocol body still unratified — ratification blocked by GOV-021c (multi-agent coordinated divergence, Payment-via-Specification draft filed 2026-08-11, still Open) and independent confirmation of the Constitutional Impact Statement's provisional Track A classification (filed 2026-08-11, restored 2026-08-11 after an editing loss — see dedicated section — not yet independently reviewed). GOV-021b Resolved 2026-08-11.
+**Status note:** Draft — PROPOSED NOT RATIFIED. Spec Gates 6/6 passed. GOV-021 ID registered in Charter sidecar 2026-07-27; protocol body still unratified — ratification blocked by GOV-021c only (multi-agent coordinated divergence, Payment-via-Specification draft accepted by human governing authority 2026-08-12, deliberately held Open pending live evidence — not a defect). Constitutional Impact Statement's Track A classification independently confirmed 2026-08-12 (Skeptic/Auditor pass verified both cited axioms against `Governance_Charter.md` directly) — no longer a ratification blocker. GOV-021b Resolved 2026-08-11.
 
 ## 3. Definitions
 
@@ -238,7 +238,7 @@ This protocol should be reviewed whenever it is actually invoked (successfully o
 
 ## 12. Multi-Agent Coordinated Divergence Detection (GOV-021c)
 
-**Status:** Open — Payment via Specification draft (2026-08-11). Does **not** close GOV-021c; does not by itself ratify this protocol. (GOV-021b was Resolved 2026-08-11; Spec Gates 6/6 are recorded on File State — ratification remains blocked by this unknown and the Track A Constitutional Impact Statement owed to `Governance_Migration_Protocol.md`.)
+**Status:** Open — Payment via Specification draft (2026-08-11), **accepted by human governing authority 2026-08-12, specification adequate as written; operational closure deliberately withheld pending live evidence.** "Open" here does not mean the specification is unfinished — it is provisionally accepted in full (scope boundary, non-adopted numeric thresholds, and epistemic mapping all confirmed as written, no changes required). It means the closure condition itself (independence dimensions demonstrated in real multi-agent practice, not merely specified) has not yet been satisfied, and cannot be satisfied by further drafting. Does **not** close GOV-021c; does not by itself ratify this protocol. (GOV-021b was Resolved 2026-08-11; Spec Gates 6/6 are recorded on File State — ratification remains blocked by this unknown and the Track A Constitutional Impact Statement owed to `Governance_Migration_Protocol.md`.)
 
 **Scope (narrow, binding):** Detecting *correlated or corroborating divergence signals across multiple agents* — distinguishing several agents independently triggering real, unrelated anomalies from several agents exhibiting a genuinely coordinated divergence pattern.
 
@@ -282,6 +282,20 @@ Multi-agent detection inherits the single-agent epistemic-state and tier machine
 - **UNKNOWN** — multi-agent signals present but independence dimensions unmet or unassessable → do not treat as Independent corroboration; remain at or below Watch unless single-agent criteria under §6 already justify escalation on a per-node basis.
 - **PROVISIONAL** — agreement plus partial independence (some dimensions met, others not or degraded) → document which dimensions held; Qualified Consensus at most; human review before treating as coordinated divergence.
 - **VERIFIED** (for the *independence claim*, not for underlying physics) — only when the applicable independence dimensions are actually established for that pass, with dissent preserved.
+
+**This chain does not collapse — each link must be separately established, never inferred from the previous one:**
+
+```
+independence verified  →  corroboration status established  →  underlying proposition assessed separately
+```
+
+**Not:**
+
+```
+independence verified  →  proposition verified
+```
+
+Five agents whose independence is genuinely established can still independently reach the same wrong conclusion (see CF-002, Open — correlated training-assumption failure is a distinct risk from correlated *process*). VERIFIED on the independence claim licenses treating the agreement as *real corroboration rather than an artifact of shared inputs* — it never licenses treating the underlying claim as settled. The proposition itself is assessed on its own evidence, same as any single-agent claim under EC-001, independent of how many agents raised it.
 
 **Evidence diversity over raw confidence** (GOV-021b calibration principle): high confidence from one weak or single-point multi-agent cluster is not equivalent to moderate confidence across evidence-independent sources.
 
@@ -333,6 +347,8 @@ Multi-agent detection inherits the single-agent epistemic-state and tier machine
 **What this filing does not resolve:** whether P-4's "architecturally necessary" language extends as far as *automatically* suspending network access or freezing self-modification on a Watch/Immediate-tier detection, versus only to narrower cases — that is a real interpretive question this filing surfaces rather than settles, and is precisely why classification is filed as provisional rather than final.
 
 **Recommendation:** an independent Skeptic/Auditor pass scoped specifically to this classification question (not a general ADP re-audit) before Track A is treated as final. Until that pass completes, ratification remains blocked on this item — narrowed from "draft an Impact Statement" to "get the classification independently confirmed."
+
+**Independent confirmation received 2026-08-12.** A narrow Skeptic/Auditor pass, scoped to this classification question only, pulled Tier 1 Axiom text directly from `Admin/Governance_Charter.md` rather than trusting this filing's quotations — verified against source before acceptance, both P-4 and Q-2 quoted exactly. Independent conclusion: **Track A**, same as filed, reached via the same counterfactual test plus its own four-box walkthrough. One residual ambiguity named, not resolved away: whether P-4's "architecturally necessary" reaches as far as *automatic*, pre-human-authorization capability reductions (network suspend, self-modification freeze) specifically, or whether the necessity determination itself must sometimes be human-gated first. The independent pass judged this ordinary residual — present whenever an axiom's exception is operationalized — not sufficient under GMP's "when in doubt, Track B" rule to flip the classification, given the explicit permanent/temporary bound and the separation pipeline. **Classification is no longer provisional on this document's own authority — it rests on independent confirmation, reached by pulling and checking the primary source, not by restating the original filing.** This satisfies the classification half of ADP's ratification blockers. GOV-021c remains the other, separately, and remains Open pending live evidence per the 2026-08-12 decision above.
 
 ---
 
@@ -498,3 +514,47 @@ Earlier discussion in this drafting process considered framing this as an "exit 
   unknown blocking ratification, alongside the still-owed Track A
   Constitutional Impact Statement to `Governance_Migration_Protocol.md`.
   Human-directed.
+- 2026-08-12 (sixth pass): **§12/GOV-021c decision packet resolved by
+  human governing authority — accepted as written, held Open.** Reviewed
+  against a five-point checklist (scope boundary, no-invented-numbers,
+  epistemic mapping, deliberately-unresolved items, closure condition)
+  plus the Constitutional Impact Statement's next step, cross-checked
+  against independent external review. **Methodological note:** ChatGPT
+  and Gemini each reviewed the checklist without seeing the other's
+  answer and converged independently; Grok's review was primed with
+  ChatGPT's opinion beforehand, so its agreement does not count as a
+  second independent data point despite sound reasoning — flagged
+  explicitly since this is a live instance of exactly the independence-
+  vs-correlation distinction §12 itself is about. Decisions: (1) scope
+  boundary, no-invented-numbers, epistemic mapping, and the six
+  deliberately-unresolved items all **Accepted as written**, no changes
+  required. (2) Closure condition: **held Open pending live multi-agent
+  evidence**, not closed on specification alone — specification is
+  provisionally accepted in full, but cannot itself establish that an
+  implementation produces genuinely independent evidence streams; that
+  requires operational demonstration, not more drafting. (3) One
+  sharpening applied to §12.3: the independence→corroboration→proposition
+  chain made explicit as three separately-established links rather than
+  implicit in a parenthetical, so "VERIFIED" cannot be misread as
+  truth-certification rather than independence-certification. (4)
+  Constitutional Impact Statement: **routed to an independent narrow
+  Skeptic/Auditor pass** scoped specifically to the Track A/B
+  classification question, not a general re-audit, per both independent
+  reviews' recommendation — not self-certified as final. Human-directed.
+
+- 2026-08-12 (seventh pass): **Constitutional Impact Statement's Track A
+  classification independently confirmed.** A narrow Skeptic/Auditor pass
+  scoped to the classification question only pulled and verified both
+  cited axioms (P-4, Q-2) directly against `Admin/Governance_Charter.md`
+  before reasoning about them — confirmed exact word-for-word match
+  before accepting the analysis. Independent conclusion: Track A, via
+  the same counterfactual test plus an independent four-box walkthrough,
+  with one residual ambiguity named honestly rather than resolved away
+  (whether P-4's "architecturally necessary" reaches automatic,
+  pre-human capability reductions specifically, or requires human-gating
+  of the necessity determination itself) — judged not sufficient to flip
+  the classification under GMP's own "when in doubt, Track B" standard.
+  Classification no longer rests on this document's own authority. This
+  resolves one of ADP's two ratification blockers. GOV-021c remains
+  Open, separately, per the 2026-08-12 decision to hold it pending live
+  evidence rather than close it on specification alone. Human-directed.
