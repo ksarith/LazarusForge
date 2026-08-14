@@ -3,18 +3,18 @@
 
 **Full version history in `Unknowns_Changelog.md` (2026-07-19 cleanup pass, following the precedent set by `Admin/AUDIT_HARNESS_CHANGELOG.md` and `Admin/Forge_Audit_Kit_Changelog.md`; scrubbed to current-version-only 2026-07-28 — the "current plus last four in full" window was itself compressed further, since the Audit Trail below now carries the compressed record for every version back to v1.0, and the changelog carries full text for all of them. This block now keeps only the current version.)**
 
-**Version 4.52 — 2026-08-11. CLF-010 Ratified (human governing authority) — removed from Active Index.**
-**2026-08-12 — CLF-011 registered** (gate-side `fir_class` consumption; `material_class`→`fir_class` rename). CLF-010 remains Resolved. Active Open CLF count: CLF-001–009 + CLF-011 (10), not a re-open of CLF-010.
-`Challenges/Closed_Loop_Feedstock.md` §4a's four-class FIR boundary
-taxonomy (A/B/C/D) and Class D Residency Cap countermeasure, both
-previously Proposed, were ratified in full — first item ratified this
-session purely on documentation-completeness grounds (a bookkeeping
-rule, explicitly needing no physical trial per its own text), distinct
-from EC-001/EC-002 which closed on doctrine-consistency grounds. Open
-Unknowns count for that file: 10 → 9. Follow-up not yet done, tracked in
-the owning file's Integration Hooks: Gate_04/05/06 `material_class`
-field emission/consumption unverified as implemented; Discovery.md's FIR
-definition and maturity notes not yet updated to reflect ratification.
+**Version 4.53 — 2026-08-12. CLF-011 registered; GOV-021 row updated for CIS confirmation. Formatting fix: the entry this replaces had jammed a second dated change into v4.52's paragraph instead of its own version line — split cleanly here, v4.52 migrated to changelog intact.**
+CLF-011 (gate-side `fir_class` consumption unbuilt; naming collision risk
+with Gate_04's sorting Class A/B/C, resolved by renaming
+`material_class`→`fir_class`) registered in the Active Index — CLF-010
+remains Resolved, not reopened. Active Open CLF count: CLF-001–009 +
+CLF-011 = 10. Separately: GOV-021 row updated to reflect that the
+Constitutional Impact Statement's Track A classification was
+independently confirmed 2026-08-12 (see
+`Admin/Autonomy_Divergence_Protocol.md` Resolution Log) — ADP's
+ratification is now blocked by GOV-021c alone, deliberately held Open
+pending live multi-agent evidence rather than closed on specification
+alone. Row stays Open either way; no Active Index removal this version.
 
 **Expiry Rule active — see `Admin/Canonical_Terms.md` §4 for the Cycle definition this rule now explicitly references (one calendar year default, not one audit pass — see CT-011). Protocol Performance metrics collecting.**
 
@@ -251,7 +251,7 @@ GH-009 (Emergent heuristic conflict — N² interaction scaling)
 | GOV-018 | Governance fork reconciliation undefined | `Admin/Governance_Charter.md` | Open | — | Critical |
 | GOV-019 | Conflicting authenticated human override arbitration undefined | `Admin/Governance_Charter.md` | Open | — | Major |
 | GOV-020 | Governance cost metric undefined | `Admin/Governance_Charter.md` | Open | — | Minor |
-| GOV-021 | Autonomy Divergence Protocol formal registration — GOV-021 ID formally registered in `Admin/Governance_Charter.md`'s sidecar 2026-07-27 (protocol body itself remains Draft/PROPOSED NOT RATIFIED). Sub-unknown GOV-021b (Detection Criteria calibration) Resolved 2026-08-11 — see `Admin/Autonomy_Divergence_Protocol.md` §4/§6 Resolution Log. GOV-021c (multi-agent coordinated divergence detection) remains Open, tracked within that file, not yet independently registered here. | `Admin/Governance_Charter.md` | Open | Vehicle | Major |
+| GOV-021 | Autonomy Divergence Protocol formal registration — GOV-021 ID formally registered in `Admin/Governance_Charter.md`'s sidecar 2026-07-27 (protocol body itself remains Draft/PROPOSED NOT RATIFIED). Sub-unknown GOV-021b (Detection Criteria calibration) Resolved 2026-08-11. Constitutional Impact Statement's Track A classification independently confirmed 2026-08-12 (Skeptic/Auditor pass, scoped to classification only). GOV-021c (multi-agent coordinated divergence detection) remains Open — sole remaining ratification blocker, deliberately held pending live evidence, not tracked independently here. | `Admin/Governance_Charter.md` | Open | Vehicle | Major |
 | GOV-022 | Reversibility as a cross-cutting operating principle — placement undecided among a new Operating Principles subsection, doctrine in `Admin/Auditor_Protocols.md`, or rejection as redundant with existing P-1/Q-3 | `Admin/Governance_Charter.md` | Open | — | Minor |
 | SEC-001 | Quorum recovery under terminal partition | `Admin/Security_Protocols.md` | Open | — | Major |
 | SEC-002 | Key revocation doctrine undefined | `Admin/Security_Protocols.md` | Open | — | Major |
