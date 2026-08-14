@@ -66,92 +66,86 @@ Full history, including entries rotated out of the five above, in `Archive/Logs/
 
 ---
 
-## Forward Growth Avenues (2026-08-11)
+## Forward Growth Avenues (2026-08-12)
 
-**Update, 2026-08-12 — read this before the section below.** Items 2 and 3's ADP-related content is now partly superseded: GOV-021b Resolved, Spec Gates 6/6, the Constitutional Impact Statement's Track A classification independently confirmed. ADP's ratification is down to **one** remaining blocker — GOV-021c, deliberately held Open pending live multi-agent evidence rather than closed on specification alone (see `Admin/Autonomy_Divergence_Protocol.md` §12 and its Resolution Log, 2026-08-12 entries). CLF-010 (Closed_Loop_Feedstock.md §4a) was also ratified 2026-08-11, with CLF-011 registered as the gate-side follow-up (`fir_class` field, Gate_04/05/06 consumption unbuilt). The rest of this section — items 1, 4, 5, and the general "documentation leverage is mostly spent, evidence and decisions are what's left" framing — still holds.
+**Supersedes the 2026-08-11 version** (full prior text preserved in
+`Archive/Logs/Progress_Log_Changelog.md`). Work map, not a claim that
+anything below is closed. Baseline: Alpha12-continuity2. Spot-checked
+before adoption — FN-001/FN-005 status, SEC-007a/b split, and the
+approximate Active Index counts all verified against `Unknowns.md`
+directly before this replaced the prior section.
 
-Proposed after ~54 pseudo-audits covering Operations, Architecture, Challenges,
-Tests, and a large share of Admin. Inventory-style consistency work has high
-coverage; remaining leverage is mostly physical evidence, human architectural
-decisions, and selective ratification — not more file-by-file pseudo-audits.
+### Lanes
 
-### 1. Physical and multi-agent evidence (highest leverage)
+| Lane | Meaning | Agent-usable? |
+|------|---------|----------------|
+| **A — Spec draft** | Payment-via-Specification depth possible without new hardware | Yes, with human review |
+| **B — Human decision** | Architecture / constitution; unilateral agent close forbidden or empty | Human session |
+| **C — Evidence** | Needs Field_Logs, hardware, or multi-agent run | Observation first |
+| **D — Dependency-blocked** | Upstream unknown must move first | Track only |
+| **E — Exploration hold** | Valid Open; low leverage until site/v1 | Don't prioritize now |
 
-The repository’s own doctrine already says this is the bottleneck.
+### Tier 1 — Highest leverage
 
-- **`Tests/Field_Logs.md` is still empty.** First real entries beat another
-  documentation pass. Highest-value run (already named in that file): three
-  distinct hosts / model families attempting the Hardware Diversity Tier 2
-  quorum while one proposes real doctrine changes.
-- **`Admin/Hardware_Diversity_Ladder.md` remains “declarable, not achieved.”**
-  Tier 0/1 needs a second physical host and documented independence — not more
-  prose about the ladder.
-- Feed any result (pass or fail) into Field_Logs, then fold evidence into the
-  owning doctrine’s Resolution Log. Do not treat a log entry as Spec Gate
-  advancement by itself.
+**Lane C (only path that advances the current ADP gate):** GOV-021c (spec
+accepted, held Open on purpose — Field_Logs entry is the actual work),
+GOV-008/HDL Tier 0–1 (still "declarable, not achieved"), CF-001
+(watchdog parameters defined, unvalidated), CF-002 (protocol defined,
+deployment pending). Work package: one real multi-host/multi-model
+session, logged in `Field_Logs.md`, folded into GOV-021c/HDL Resolution
+Logs. Do not close GOV-021c on prose.
 
-### 2. Human architectural decisions (cannot be automated)
+**Lane A (can start now):** FN-001 (schema/consistency/minority-report,
+resolution path already sketched) and FN-005 (privacy/access tiers) —
+both block first network connection, suggested paired. CLF-011 (minimal
+Gate_04/05/06 `fir_class` acknowledgment — contract lines only, no fake
+telemetry). TS-002, GI-002, GF-007 (safety doctrine — Blocking already
+correctly flipped on each; this is completing the Payment-via-Spec depth
+behind that flip, not re-deciding it).
 
-Several Critical items were correctly left as judgment calls during audits:
+**Lane B (human-only, schedule — don't solve in agents):** SEC-007a
+(what the external root-of-trust *is*, or formal deferral — SEC-007b
+blocked on this), ENV-009/FA-001 (site assessment or explicit "no site
+yet" posture), EC-003–007 cluster, GOV-003/GOV-005, TR-001/ECN-002.
 
-| ID / topic | Why human-only |
-|------------|----------------|
-| **SEC-007a** | External legitimacy anchor (offline signed snapshot / HSM / human recovery record) — file itself forbids unilateral agent resolution |
-| **ENV-009** | No site assessed against Environmental_Constraints |
-| **FA-001 / Facilities deferred rows** | Meaningful only once a physical site exists |
-| **GOV-015 / GOV-018** | Constitutional interpretation and fork reconciliation |
-| **ADP ratification** | `Autonomy_Divergence_Protocol.md` is still Draft / PROPOSED NOT RATIFIED (GOV-021 ID is registered; body is not) |
+### Tier 2 — Safety/process chains (do not run hot pilots until moved)
 
-Schedule short human ratification sessions for these rather than re-auditing
-the same files.
+Halogen/waste/thermal: PL-001, PYC-001 (D, blocks all hot work under
+Pyrolysis_Cascade), PYC-003 (D, on WA-002/GR-003/WA-004), PYC-004 (D, on
+FA-001→SP-006), WA-002, GR-003, CE-006 (A, In Progress — continues
+current track), CLF-004 (D, blocked on CE-006), EL-005, AS-004. One
+doctrine chain at a time — e.g. PL-001 + WA-002 routing sketch — without
+claiming pilot readiness.
 
-### 3. Operational Blocking chains (doctrine → capability)
+Water/lumen safety: LW-UNK-001, LW-UNK-003 — don't promote potable claims
+until these move with data, not spec depth alone.
 
-When choosing technical work, prefer unknowns that still **Block physical
-operation or promotion**, not Priority (Promo) vocabulary alone:
+### Tier 3 — Structural/energy/loop (important, not first)
 
-- **Safety-critical Tests:** LW-UNK-001 / LW-UNK-003 (volatile co-distillation,
-  lumen integrity); PYC-001 / PYC-003 / PYC-004 (halogen triage, hazardous
-  fraction, site/emergency before any hot pilot).
-- **Network first-connection prerequisites:** FN-001 / FN-005 (already flipped
-  Blocking Yes — need actual validation criteria and privacy tiers drafted).
-- **v1 economics:** TR-001 / ECN-002 (profitability and operating-cost baseline).
-- **Watchdog / autonomy:** CF-001 dual-track with Electronics (parameters defined;
-  hardware validation pending).
+EV-001, FL-001, CO-001 (all In Progress), SC-002 (Priority (Promo) vs
+ops Blocking already correctly distinguished — see Canonical_Terms.md),
+CLF-003 (needs hardware path), SD-UNK-001/004 (site-scale), SR-001,
+TF-001, HR-UNK-* (Exploration — after site/evidence spine exists).
 
-### 4. Deprioritize further bulk pseudo-audits
+### Explicit non-work for now
 
-Remaining Admin protocol files (Verification_Gates, GMP, RIP, CIR, Engineer
-Protocols, etc.) can still get light findings-only passes if continuity
-matters, but **expected yield is low** relative to (1)–(3). Prefer:
+Bulk pseudo-audits of remaining Admin files. Closing GOV-021c on
+specification alone. Inventing numeric independence/correlation
+thresholds. Spec Gate campaigns on Exploration files with empty
+Field_Logs. Reopening CLF-010 (Resolved — leave it).
 
-- Spot-checks when a file is about to change for a real decision
-- Cross-module sweeps only when a new registration-latency or Priority (Promo)
-  false-desync pattern appears
-- Keeping AP-035 discipline (no invented IDs, no fabricated inventory, findings
-  in owning-file logs)
+### Suggested work program (next 3–5 sessions)
 
-### 5. Hygiene that still pays
+1. Field_Logs template + first run plan (hosts, models, GOV-021c
+   observation questions) — Lane C
+2. FN-001 Payment-via-Spec draft (schema + conflict/minority-report
+   rules) — Lane A
+3. FN-005 paired privacy/access tier draft — Lane A
+4. CLF-011 three-gate acknowledgment notes only — Lane A
+5. Human packet: SEC-007a options + ENV-009/FA-001 posture — Lane B
 
-- Keep applying **Priority (Promo) vs operational Blocking** (Canonical_Terms)
-  so future audits don’t re-litigate false desyncs.
-- Prefer **closing one Critical Blocking unknown with evidence** over raising
-  Spec Gates on Exploration files with empty Field_Logs.
-- When EC-series or GOV-series items resolve (e.g. recent EC-001 / EC-002 work),
-  update `Unknowns.md` via its rotation rules only — never freestanding ledgers.
-
-### Suggested near-term sequence
-
-1. One real Field_Logs entry (even a documented failure).
-2. Human call on SEC-007a scope or explicit deferral trigger (already partly
-   mirrored in Facilities deferred table).
-3. Draft FN-001 validation schema / FN-005 data tiers to payment-via-spec depth
-   without claiming network readiness.
-4. Ratify or shelve Autonomy_Divergence_Protocol with a dated human decision.
-5. Only then consider Spec Gate campaigns on files whose Critical operational
-   Blockers are actually closed.
-
----
+Parallel optional: CE-006 continuation, or GI-002/GF-007 safety doctrine
+as a pure-ops track alongside network work.
 
 ## Resolution Log
 
@@ -736,3 +730,32 @@ matters, but **expected yield is low** relative to (1)–(3). Prefer:
   statements. README.md not touched — deliberately high-level narrative,
   not a live-status file, and Discovery.md already correctly redirects
   fresh readers to this file for current status. Human-directed.
+
+- 2026-08-12 (second entry, same day): **Unknowns.md also had a real
+  continuity gap, found when specifically asked to check it.** Its
+  version header block had jammed the CLF-011 registration mid-paragraph
+  into the v4.52 entry instead of giving it its own version line —
+  violated the file's own "one version per entry, current-only in the
+  live block" rule (already caught and fixed once before, 2026-08-11).
+  Split cleanly: v4.52 migrated to `Unknowns_Changelog.md` intact, new
+  v4.53 holds the CLF-011 registration alone. Also updated the GOV-021
+  row, which was accurate but incomplete — it didn't mention the CIS
+  Track A confirmation from earlier today, only GOV-021b's resolution.
+  Both fixes are the same class of gap as the Progress_Log/Discovery.md
+  ones from the entry above; checking "was there anything for X" turned
+  out to be worth asking rather than assuming clean. Human-directed.
+
+- 2026-08-12 (third entry, same day): **Forward Growth Avenues replaced
+  with Grok's structured work map (Lane A/B/C/D/E), superseding the
+  2026-08-11 version.** Full prior section preserved verbatim in
+  `Archive/Logs/Progress_Log_Changelog.md` rather than discarded. Spot-
+  checked before adoption, not applied on trust: FN-001/FN-005 status
+  (Critical, Open, both blocking network connection \u2014 confirmed exact
+  match), SEC-007a/SEC-007b split (confirmed, 007b correctly shown
+  blocked on 007a), and the approximate Active Index counts (~49
+  Critical claimed, 48 found by direct count \u2014 close enough, self-
+  labeled approximate). No fabrication found. New section is
+  substantially more structured than what it replaces \u2014 explicit lanes
+  distinguishing spec-draftable work from human-only decisions from
+  evidence-blocked items, plus an explicit non-work list and a suggested
+  session sequence. Human-directed.
