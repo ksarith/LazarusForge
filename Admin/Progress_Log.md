@@ -11,7 +11,7 @@
 | Spec Gates       | N/A — this file is a progression log, not a specification           |
 | Open Unknowns    | 0 (references existing unknowns; creates none)                      |
 | Owning Domain    | Admin/                                                               |
-| Last Reviewed    | 2026-08-10                                                           |
+| Last Reviewed    | 2026-08-14                                                           |
 | Ethical Anchor   | Attempt to do no harm. Defer to `Admin/Ethical_Constraints.md` if present. |
 
 ---
@@ -37,6 +37,9 @@ Created 2026-08-09 to fix a recurring failure mode found the same day, in two pl
 
 *(Most recent first. Rotate to `Archive/Logs/Progress_Log_Changelog.md` once more than five entries accumulate.)*
 
+### 2026-08-14 — A significant doctrine advance can land in Unknowns.md and Field_Logs while Progress_Log's Forward Growth Avenues stays frozen on the prior state
+FN-001 (full 10-class Adversarial Challenge Battery) and FN-005 (PA-001–006 Provisional Spec) both reached spec-complete in the same session and were correctly recorded in `Unknowns.md` v4.55 and a new Second-Highest-Value Run section in `Tests/Field_Logs.md`. `Progress_Log.md`'s Forward Growth Avenues section, last written 2026-08-12, continued to list both as "Lane A — can start now" and kept them in the suggested work program. The file that exists specifically to prevent progression content from going stale was itself the lagging surface. Caught only when a new session explicitly asked what actions remained leveragable without hardware. Same family as every prior entry in this section: a rule that says "update this when X happens" is not the same as X reliably triggering the update.
+
 ### 2026-08-12 — Priming one reviewer with another's answer breaks independence even when the reasoning that comes back is sound
 When gathering opinions on GOV-021c's decision packet, ChatGPT and Gemini each reviewed independently and converged without seeing each other's answer — genuine corroboration. Grok was primed with ChatGPT's opinion first; its agreement, though well-reasoned, could not be counted as a second independent data point and was flagged as such rather than tallied alongside the other two. Caught by noticing the priming itself, not by anything wrong in Grok's actual output. This is a live instance of the exact distinction `Autonomy_Divergence_Protocol.md` §12 exists to formalize: consensus (agents agree) is not the same as independent corroboration (agents agree *and* the basis for treating them as independent has been established) — the difference showed up in how opinions were gathered, not just in the protocol text.
 
@@ -57,23 +60,21 @@ entry directly below, one level more recursive: a rule stated once is not
 a rule enforced continuously, even in the file created specifically to
 track that problem.
 
-### 2026-08-09 — Progression content trapped in structural files goes stale in both directions
-Two failures found the same day, from opposite ends of the same problem: `Discovery.md`'s shadow index of `Unknowns.md` (19 versions stale, nobody refreshing it) and `Unknowns.md`'s own "What vX.X Means" section (stale by nine version bumps, silently violating its own stated rule). Neither was caught by any audit pass in between — both were only found when directly asked to check whether Discovery.md content should migrate elsewhere. The general lesson: a rule that says "update this when X happens" is not the same as X reliably triggering the update. This file exists as the standing fix — one place, checked routinely, rather than duplicated content nobody remembers to touch.
-
 ---
 
 Full history, including entries rotated out of the five above, in `Archive/Logs/Progress_Log_Changelog.md`.
 
 ---
 
-## Forward Growth Avenues (2026-08-12)
+## Forward Growth Avenues (2026-08-14)
 
-**Supersedes the 2026-08-11 version** (full prior text preserved in
+**Supersedes the 2026-08-12 version** (full prior text preserved in
 `Archive/Logs/Progress_Log_Changelog.md`). Work map, not a claim that
-anything below is closed. Baseline: Alpha12-continuity2. Spot-checked
-before adoption — FN-001/FN-005 status, SEC-007a/b split, and the
-approximate Active Index counts all verified against `Unknowns.md`
-directly before this replaced the prior section.
+anything below is closed. Baseline: Alpha.02-updated (Unknowns v4.55).
+Spot-checked before adoption — FN-001/FN-005 status (both spec-complete,
+remain Open for calibration data only), SEC-007a/b split, CLF-011 residual
+state, and Active Index Critical counts all verified against `Unknowns.md`
+and `Tests/Field_Logs.md` directly.
 
 ### Lanes
 
@@ -87,67 +88,48 @@ directly before this replaced the prior section.
 
 ### Tier 1 — Highest leverage
 
-**Lane C (only path that advances the current ADP gate):** GOV-021c (spec
-accepted, held Open on purpose — Field_Logs entry is the actual work),
-GOV-008/HDL Tier 0–1 (still "declarable, not achieved"), CF-001
-(watchdog parameters defined, unvalidated), CF-002 (protocol defined,
-deployment pending). Work package: one real multi-host/multi-model
-session, logged in `Field_Logs.md`, folded into GOV-021c/HDL Resolution
-Logs. Do not close GOV-021c on prose.
+**Lane C (only path that advances the current ADP gate and closes the new FN calibration gaps):** GOV-021c (spec accepted, held Open on purpose — Field_Logs entry is the actual work), GOV-008/HDL Tier 0–1 (still "declarable, not achieved"), CF-001 (watchdog parameters defined, unvalidated), CF-002 (protocol defined, deployment pending). Additionally, FN-001 and FN-005 are now **spec-complete** (10-class Adversarial Challenge Battery + PA-001–006 Provisional Spec) but remain Open solely for numeric threshold calibration; `Tests/Field_Logs.md` now carries an explicit Second-Highest-Value Run section naming the exact observations needed (DV-003 source diversity, DV-004 induced conflict, PA-002 trust-score range). Work package: one real multi-model (and ideally multi-host) session logged in Field_Logs, folded into the relevant Resolution Logs. Do not close GOV-021c or promote FN thresholds on prose.
 
-**Lane A (can start now):** FN-001 (schema/consistency/minority-report,
-resolution path already sketched) and FN-005 (privacy/access tiers) —
-both block first network connection, suggested paired. CLF-011 (minimal
-Gate_04/05/06 `fir_class` acknowledgment — contract lines only, no fake
-telemetry). TS-002, GI-002, GF-007 (safety doctrine — Blocking already
-correctly flipped on each; this is completing the Payment-via-Spec depth
-behind that flip, not re-deciding it).
+**Lane A (can start now):** TS-002, GI-002, GF-007 (safety doctrine — Blocking already correctly flipped; complete the Payment-via-Spec depth behind the flip). CLF-011 residual polish if any (contract lines + Gate_04/05/06 stubs already present; remains Open). CE-006 continuation (chlorine containment — already In Progress). PL-001 + WA-002 routing sketch (one doctrine chain, no pilot-readiness claim).
 
-**Lane B (human-only, schedule — don't solve in agents):** SEC-007a
-(what the external root-of-trust *is*, or formal deferral — SEC-007b
-blocked on this), ENV-009/FA-001 (site assessment or explicit "no site
-yet" posture), EC-003–007 cluster, GOV-003/GOV-005, TR-001/ECN-002.
+**Lane B (human-only, schedule — don't solve in agents):** SEC-007a (what the external root-of-trust *is*, or formal deferral — SEC-007b blocked on this), ENV-009/FA-001 (site assessment or explicit "no site yet" posture), EC-003–007 cluster, GOV-003/GOV-005, TR-001/ECN-002.
 
 ### Tier 2 — Safety/process chains (do not run hot pilots until moved)
 
-Halogen/waste/thermal: PL-001, PYC-001 (D, blocks all hot work under
-Pyrolysis_Cascade), PYC-003 (D, on WA-002/GR-003/WA-004), PYC-004 (D, on
-FA-001→SP-006), WA-002, GR-003, CE-006 (A, In Progress — continues
-current track), CLF-004 (D, blocked on CE-006), EL-005, AS-004. One
-doctrine chain at a time — e.g. PL-001 + WA-002 routing sketch — without
-claiming pilot readiness.
+Halogen/waste/thermal: PL-001, PYC-001 (D, blocks all hot work under Pyrolysis_Cascade), PYC-003 (D, on WA-002/GR-003/WA-004), PYC-004 (D, on FA-001→SP-006), WA-002, GR-003, CE-006 (A, In Progress), CLF-004 (D, blocked on CE-006), EL-005, AS-004. One doctrine chain at a time without claiming pilot readiness.
 
-Water/lumen safety: LW-UNK-001, LW-UNK-003 — don't promote potable claims
-until these move with data, not spec depth alone.
+Water/lumen safety: LW-UNK-001, LW-UNK-003 — don't promote potable claims until these move with data, not spec depth alone.
 
 ### Tier 3 — Structural/energy/loop (important, not first)
 
-EV-001, FL-001, CO-001 (all In Progress), SC-002 (Priority (Promo) vs
-ops Blocking already correctly distinguished — see Canonical_Terms.md),
-CLF-003 (needs hardware path), SD-UNK-001/004 (site-scale), SR-001,
-TF-001, HR-UNK-* (Exploration — after site/evidence spine exists).
+EV-001, FL-001, CO-001 (all In Progress), SC-002 (Priority (Promo) vs ops Blocking already correctly distinguished — see Canonical_Terms.md), CLF-003 (needs hardware path), SD-UNK-001/004 (site-scale), SR-001, TF-001, HR-UNK-* (Exploration — after site/evidence spine exists).
 
 ### Explicit non-work for now
 
-Bulk pseudo-audits of remaining Admin files. Closing GOV-021c on
-specification alone. Inventing numeric independence/correlation
-thresholds. Spec Gate campaigns on Exploration files with empty
-Field_Logs. Reopening CLF-010 (Resolved — leave it).
+Bulk pseudo-audits of remaining Admin files. Closing GOV-021c on specification alone. Inventing numeric independence/correlation thresholds or FN Battery/PA numeric cutoffs without Field_Logs data. Spec Gate campaigns on Exploration files with empty Field_Logs. Reopening CLF-010 (Resolved — leave it). Re-listing FN-001/FN-005 as "can start now" (they are past that stage).
 
 ### Suggested work program (next 3–5 sessions)
 
-1. Field_Logs template + first run plan (hosts, models, GOV-021c
-   observation questions) — Lane C
-2. FN-001 Payment-via-Spec draft (schema + conflict/minority-report
-   rules) — Lane A
-3. FN-005 paired privacy/access tier draft — Lane A
-4. CLF-011 three-gate acknowledgment notes only — Lane A
-5. Human packet: SEC-007a options + ENV-009/FA-001 posture — Lane B
+1. Multi-model Field_Logs run (or at minimum a concrete run plan) covering GOV-021c independence questions **and** the FN-001/FN-005 calibration observations now named in the Second-Highest-Value Run section — Lane C
+2. TS-002 / GI-002 / GF-007 Payment-via-Spec depth — Lane A
+3. CE-006 continuation or PL-001 + WA-002 routing sketch — Lane A
+4. Human packet: SEC-007a options + ENV-009/FA-001 posture — Lane B
+5. Progress_Log / Discovery.md continuity check after any further doctrine advance (this file just demonstrated the failure mode again)
 
-Parallel optional: CE-006 continuation, or GI-002/GF-007 safety doctrine
-as a pure-ops track alongside network work.
+Parallel optional: residual CLF-011 polish; any pure-docs hygiene that does not invent new unknowns.
 
 ## Resolution Log
+
+- 2026-08-14: **Progress_Log refresh after FN-001/FN-005 spec-complete bump.**
+  Forward Growth Avenues (2026-08-12) replaced with 2026-08-14 version;
+  prior text preserved in `Archive/Logs/Progress_Log_Changelog.md`.
+  Current Lessons: new entry on the continuity gap itself (this file lagged
+  Unknowns v4.55 and the Field_Logs Second-Highest-Value Run); oldest
+  2026-08-09 "Progression content trapped…" entry rotated to changelog.
+  Last Reviewed → 2026-08-14. No unknowns created or closed. Verified
+  against source before writing: FN-001/FN-005 remain Open (calibration
+  only), CLF-011 remains Open with stubs present, GOV-021c still the sole
+  ADP ratification blocker. Human-directed.
 
 - 2026-08-12: **CLF-011 reconciled onto CLF-010-ratified baseline.** Prior Grok
   pass used pre-ratification tree (reported 10→11, CLF-010 Open) — incorrect
@@ -759,3 +741,24 @@ as a pure-ops track alongside network work.
   distinguishing spec-draftable work from human-only decisions from
   evidence-blocked items, plus an explicit non-work list and a suggested
   session sequence. Human-directed.
+
+- 2026-08-14: **Two real gaps caught in the delivered Alpha.02 upload,
+  fixed before treating it as current.** (1) `Progress_Log_Changelog.md`
+  was missing the "Superseded — Forward Growth Avenues (2026-08-11)"
+  full-text backup, even though the live `Progress_Log.md` correctly
+  showed the 2026-08-12 replacement — a genuine content-loss gap in the
+  changelog specifically, not the live file. Restored verbatim from the
+  original extraction saved when the replacement was first made. (2)
+  `Archive/Astroid-miner/` (a fresh companion-repo zip snapshot, baked
+  into this release) was a real fourth Archive/ category not covered by
+  `Archive/README.md`'s stated three-category structure — same gap as
+  the 2026-08-10 Transcripts/ reclassification. Documented as a fourth
+  category rather than left implicit; confirmed no live doctrine file
+  references the archived zip's path directly (cross-references are to
+  individual Astroid-miner files by name, resolved externally). The
+  session's own CLF-011 work (§4b contract, Gate_04/05/06 acknowledgment
+  stubs, Unknowns.md v4.54) was verified independently and is sound —
+  it correctly documents its own predecessor's fabrication (two prior
+  summaries claimed this content already existed; it didn't) rather than
+  building on an unverified claim. CLF-011 remains Open, as it should.
+  Human-directed.
