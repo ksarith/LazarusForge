@@ -128,6 +128,37 @@ This taxonomy resolves the boundary-condition gap tracked as CLF-010. **CLF-010 
 - Unknowns.md: CLF-010 needs to move to Resolved / removed from Active Index there too — not done as part of this pass, tracked separately.
 - The Class-D gaming surface received its Challenge Class 8 pass 2026-08-07 and the Residency Cap countermeasure is now Ratified alongside the rest of §4a — not a separate future review item.
 
+**§4b. Minimal `fir_class` Batch Metadata Contract [Proposed 2026-08-14 — not ratified; does not Resolve CLF-011]**
+
+This section is a specification only. It does not itself constitute Gate_04/05/06 implementation, and CLF-011 remains Open until Path A or Path B below is taken (see Resolution Log).
+
+**Field:** `fir_class` — enumerated value, one of `A | B | C | D | blend`. Distinct axis from Gate_04's sorting Class A/B/C (usable / downgraded / Spin Chamber bulk); see the Field name note above.
+
+**Required when:** any batch record contributing to an FIR, $M_{\text{salvaged}}$, or $Y_p$ claim, or any Material Certainty Manifest (§7.2) entry used for closed-loop accounting.
+
+**Hard rule — no silent default:** if `fir_class` is missing on a batch that a $Y_p$ or FIR claim depends on, the claim must be **refused**, not defaulted to Class C or D. A missing field is a data-completeness failure, not an implicit classification.
+
+**Blends:** a blended batch must log the mass composition across classes (matching §4a's existing Blends rule) in addition to the single scalar FIR value, so the scalar is reconstructable rather than trusted blindly.
+
+**Class D interaction:** a batch carrying `fir_class: D` must also carry (or be checkable against) a timestamp equivalent to `fir_class_set_at`, so the Class D Residency Cap (§4a, one Cycle per CT-011) can be enforced without new telemetry beyond what Blends already requires.
+
+**Worked example (illustrative — not a system claim):**
+```
+sorting_class: B    # Gate_04 quality axis — unaffected by this contract
+fir_class: A         # §4a FIR provenance axis — orthogonal, not a contradiction
+mass_kg: 12.4
+```
+
+**MCM (§7.2) interaction:** a Manifest may exist without `fir_class` for basic handoff purposes, but any FIR or $Y_p$ figure computed from that Manifest is invalid until `fir_class` is set on the relevant batch entries.
+
+**Exit criteria for CLF-011 (unchanged by this section; restated here for clarity):**
+- **Path A — Evidence:** at least one real batch record (Field_Logs or MCM) carries `fir_class`, and a documented Gate_06 (or equivalent operator) read step accepts or refuses a $Y_p$ claim using it.
+- **Path B — Contract-complete:** human governing authority accepts this §4b plus the Gate acknowledgment stubs below as binding doctrine, with tooling implementation explicitly deferred (optionally tracked as a new collision-checked ID, e.g. CLF-011b, if the deferral itself needs a handle).
+
+Neither path is taken as of this section's drafting. §4b is Proposed, not ratified, and CLF-011 stays Open.
+
+---
+
 **PIR** = a multi-vector independence score, not a single measurement. The energetic ceiling added in a prior pass ($E_{\text{yield}} > E_{\text{proc}}$, including auxiliary loads for pumps, conveyance, assay, and thermal control per `Operations/Energy.md`) is a real and necessary constraint, but it is only the energy vector — narrowing PIR to that alone breaks the file's own worked example below, which turns on *chemical*, not energy, dependency:
 
 - **PIR_energy** — ratio of locally harvested/regenerated energy to total process energy, bounded by $E_{\text{yield}} > E_{\text{proc}}$
@@ -172,7 +203,7 @@ Recursive loops risk cascading contamination (heavy metals in polymers, alloy dr
 | CLF-008 | Downstream destination for degraded/bleed-off material and hazardous byproducts (toxic slag, anode slime) undefined. Section 3's dependency table has no link for where this material physically flows. Candidate links: `Operations/Gate_03_Reduction.md` (full-reduction diversion) and `Challenges/Return_To_Eden.md` $W_{\text{out}}$ (waste-output accumulation) — neither confirmed. | Challenges/Closed_Loop_Feedstock.md | Open | — | Major |
 | CLF-009 | Interface contract for characterization→fabrication data handoff — Material Certainty Manifest schema **ratified 2026-07-31** (§7.2): v0 form factor, assay-gated confidence ceiling, `Operations/Gate_06_Fabrication.md` consumption rules. Not yet physically deployed on any real batch — see §7.2 Open Design Questions. | Challenges/Closed_Loop_Feedstock.md | In Progress | — | Minor |
 | CLF-010 | FIR boundary conditions — four-class taxonomy (A/B/C/D) with provisional 0.5 credit for Class D and mandatory `fir_class` field in MCM-v0, plus Class D Residency Cap (one-Cycle limit before demotion to zero credit) — see §4a. **Ratified 2026-08-11 (human governing authority).** | Challenges/Closed_Loop_Feedstock.md | Resolved | — | Major |
-| CLF-011 | Gate-side `fir_class` consumption contract unbuilt — Gate_04/05/06 do not emit or read FIR-class; latent vocabulary collision with Gate_04 sorting Class A/B/C if labels used bare; field renamed `material_class`→`fir_class` 2026-08-12 (CLF-010 ratification preserved) | Challenges/Closed_Loop_Feedstock.md | Open | — | Major |
+| CLF-011 | Gate-side `fir_class` emit/read still unbuilt — Gate_04/05/06 carry acknowledgment stubs only (2026-08-14), no functional emit or read logic; §4b batch metadata contract drafted (2026-08-14, Proposed, not ratified); field renamed `material_class`→`fir_class` 2026-08-12 (CLF-010 ratification preserved) | Challenges/Closed_Loop_Feedstock.md | Open | — | Major |
 
 *CLF-003 and CLF-006 are Critical — CLF-003 blocks sustained polymer extrusion operations; CLF-006 blocks safe recursive-loop operation without defined contamination thresholds.*
 *CLF-004 is Critical — no electrolytic/electrorefining pathway may proceed without a chemical footprint decision, and a candidate pathway now exists pending a chlorine containment answer.*
@@ -395,6 +426,24 @@ These numbers carry the same provisional, design-intent status as the rest of §
 ---
 
 ## Resolution Log
+
+- 2026-08-14: **§4b drafted (Claude); Gate_04/05/06 acknowledgment stubs added (this pass).**
+  Prior session summaries (Claude + Grok) claimed §4b already existed as
+  Proposed and that Gate_04/05/06 had "acknowledged" the `fir_class`
+  contract, both dated 2026-08-14 — neither was true of the tree at that
+  point (§4b did not exist; `fir_class` had zero occurrences in any of
+  the three Gate files). Flagged and logged as a convergence-without-
+  verification case rather than acted on. This entry is the actual,
+  first-time creation of that content: §4b (batch metadata contract,
+  exit criteria) added to this file, and comment-level acknowledgment
+  stubs (non-functional, no emit/read logic) added to
+  `Operations/Gate_04_Separation_Mechanical.md`,
+  `Operations/Gate_05_Separation_Thermal.md`, and
+  `Operations/Gate_06_Fabrication.md`. **CLF-011 status unchanged —
+  still Open.** Neither Path A (evidence) nor Path B (human contract-
+  acceptance) has been taken; §4b itself is Proposed, not ratified.
+  No Spec Gate change. Open Unknowns count unchanged (10). Human-
+  directed.
 
 - 2026-08-12: **CLF-011 registered on CLF-010-ratified baseline; `material_class` → `fir_class` (Grok).**
   Prior session had applied the same rename/ID on a pre-ratification tree and
