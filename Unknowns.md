@@ -3,18 +3,26 @@
 
 **Full version history in `Unknowns_Changelog.md` (2026-07-19 cleanup pass, following the precedent set by `Admin/AUDIT_HARNESS_CHANGELOG.md` and `Admin/Forge_Audit_Kit_Changelog.md`; scrubbed to current-version-only 2026-07-28 — the "current plus last four in full" window was itself compressed further, since the Audit Trail below now carries the compressed record for every version back to v1.0, and the changelog carries full text for all of them. This block now keeps only the current version.)**
 
-**Version 4.53 — 2026-08-12. CLF-011 registered; GOV-021 row updated for CIS confirmation. Formatting fix: the entry this replaces had jammed a second dated change into v4.52's paragraph instead of its own version line — split cleanly here, v4.52 migrated to changelog intact.**
-CLF-011 (gate-side `fir_class` consumption unbuilt; naming collision risk
-with Gate_04's sorting Class A/B/C, resolved by renaming
-`material_class`→`fir_class`) registered in the Active Index — CLF-010
-remains Resolved, not reopened. Active Open CLF count: CLF-001–009 +
-CLF-011 = 10. Separately: GOV-021 row updated to reflect that the
-Constitutional Impact Statement's Track A classification was
-independently confirmed 2026-08-12 (see
-`Admin/Autonomy_Divergence_Protocol.md` Resolution Log) — ADP's
-ratification is now blocked by GOV-021c alone, deliberately held Open
-pending live multi-agent evidence rather than closed on specification
-alone. Row stays Open either way; no Active Index removal this version.
+**Version 4.55 — 2026-08-14. FN-001/FN-005 (`Architecture/Forge_Net.md`) both advanced to spec-complete; neither closed.**
+FN-001: full 10-class Adversarial Challenge Battery executed and verified
+against source (satisfies the Classes 1/3/6/9/10 minimum its own
+Resolution Path required, plus 2/4/5/7/8) — G3 gate now satisfied at
+doctrinal-coverage level. FN-005: Section 6's privacy placeholder
+replaced with a full Provisional Spec, PA-001 through PA-006
+(classification schema, access control, anonymization, revocation,
+location precision, ethical review gate), deliberately reusing FN-001's
+trust model and escalation posture rather than inventing parallel
+doctrine. Same-session pass also corrected two false [CROSS-REF FAILURE]
+findings from an external audit (Astroid-miner's `Rogue_unit_management.md`
+was never a broken reference; a residual `Forge_Network.md` string was
+inside a changelog entry describing its own historical fix, not a live
+error) and one real canonical-tag-format nit. **Both FN-001 and FN-005
+remain Open** — structure is specified, but each still needs its
+Battery/threshold work fully closed against real operational data before
+promotion; `Tests/Field_Logs.md` updated with a scoped second Highest-
+Value-Run section naming exactly what data would calibrate DV-003,
+DV-004, and PA-002. No unknowns closed or invented this pass. v4.54
+migrated to changelog intact.
 
 **Expiry Rule active — see `Admin/Canonical_Terms.md` §4 for the Cycle definition this rule now explicitly references (one calendar year default, not one audit pass — see CT-011). Protocol Performance metrics collecting.**
 
@@ -784,7 +792,7 @@ GH-009 (Emergent heuristic conflict — N² interaction scaling)
 | CLF-007 | PIR aggregation function undefined — four sub-vectors collapsed to a scalar with no stated operator; arithmetic mean would contradict the file's own single-fatal-dependency framing | `Challenges/Closed_Loop_Feedstock.md` | Open | — | Major |
 | CLF-008 | Downstream destination for degraded/bleed-off material and hazardous byproducts undefined — no link to full-reduction diversion or waste-output accumulation tracking | `Challenges/Closed_Loop_Feedstock.md` | Open | — | Major |
 | CLF-009 | Interface contract for characterization→fabrication data handoff — Material Certainty Manifest schema ratified 2026-07-31 (owning file §7.2); not yet physically deployed on any real batch | `Challenges/Closed_Loop_Feedstock.md` | In Progress | — | Minor |
-| CLF-011 | Gate-side `fir_class` consumption unbuilt (Gate_04/05/06); naming collision risk with Gate_04 sorting Class A/B/C — renamed `material_class`→`fir_class` 2026-08-12; CLF-010 remains Resolved | `Challenges/Closed_Loop_Feedstock.md` | Open | — | Major |
+| CLF-011 | Gate-side `fir_class` emit/read still unbuilt (Gate_04/05/06 carry acknowledgment stubs only, 2026-08-14); §4b batch metadata contract drafted (2026-08-14, Proposed, not ratified); renamed `material_class`→`fir_class` 2026-08-12; CLF-010 remains Resolved | `Challenges/Closed_Loop_Feedstock.md` | Open | — | Major |
 
 *CLF-003 and CLF-006 are Critical — CLF-003 blocks sustained polymer extrusion operations; CLF-006 blocks safe recursive-loop operation.*
 *CLF-004 is Critical — no electrolytic/electrorefining pathway may proceed without a chemical footprint decision. Its candidate pathway is further blocked by CE-006 pending a chlorine containment design.*
