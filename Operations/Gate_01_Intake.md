@@ -633,7 +633,7 @@ first operational Intake cycle produces yield data.*
 | Blocking      | No                                               |
 | Owner         | Operations/Gate_01_Intake.md                     |
 | First Logged  | 2026-05-15                                       |
-| Last Reviewed | 2026-05-15                                       |
+| Last Reviewed | 2026-08-14                                       |
 
 **Description:** The reference database that
 Gate_01_Intake queries for item identification has
@@ -668,6 +668,8 @@ throughput and identification quality.
   move to Section 4 as Placeholder promoting
   toward Analogous after first operational cycle.
 
+**Grok review 2026-08-14:** Path adequate. Scope / schema / population strategy / Forge_Net alignment are the right four legs; Payment-via-Spec promotion rule is correct. No parallel doctrine invented. **Grok approved (doctrinal completeness of path).** Remains Open — content still needs to be written and first operational cycle run.
+
 ---
 
 ### GI-002 — Energetic material discharge doctrine not defined
@@ -681,7 +683,7 @@ throughput and identification quality.
 | Blocking      | Yes — hard prerequisite before first operational Intake run |
 | Owner         | Operations/Gate_01_Intake.md                     |
 | First Logged  | 2026-05-15                                       |
-| Last Reviewed | 2026-08-10                                       |
+| Last Reviewed | 2026-08-14                                       |
 
 **Description:** Batteries, capacitors, compressed gas
 vessels, and other energetic materials identified at
@@ -721,6 +723,8 @@ Intake operation, not a refinement.
   doctrine is defined and tested, move to
   Section 2 as Analogous.
 
+**Grok review 2026-08-14:** Path adequate and correctly sequenced by energetic category (Li-ion, other batteries, capacitors, compressed gas) plus isolation, PPE, and hard-prerequisite language. Blocking Yes is correct. **Grok approved (path adequate).** Remains Open — written discharge doctrine + validation still required before first operational Intake run; do not close on path alone.
+
 ---
 
 ### GI-003 — Augmented hazard detection capability not specified
@@ -734,7 +738,7 @@ Intake operation, not a refinement.
 | Blocking      | No                                               |
 | Owner         | Operations/Gate_01_Intake.md                     |
 | First Logged  | 2026-05-15                                       |
-| Last Reviewed | 2026-05-15                                       |
+| Last Reviewed | 2026-08-14                                       |
 
 **Description:** Visual inspection cannot reliably
 detect chemical contamination (lead, cadmium, mercury,
@@ -783,6 +787,8 @@ and operator health risk downstream.
   `Operations/Air_Scrubber.md` for chemical hazard
   handling.
 
+**Grok review 2026-08-14:** Path adequate. Candidate kit (Geiger + lead swabs as v0 minimum) is concrete and correctly scoped; unsupervised-operation gate is the right control. Blocking No is acceptable while human oversight compensates, but the drift indicator for unsupervised operation is correctly severe. **Grok approved (path adequate).** Remains Open — kit selection + protocol still required.
+
 ---
 
 ### GI-004 — Intake tagging schema not cross-validated against grain system
@@ -796,7 +802,7 @@ and operator health risk downstream.
 | Blocking      | No                                               |
 | Owner         | Operations/Gate_01_Intake.md                     |
 | First Logged  | 2026-05-15                                       |
-| Last Reviewed | 2026-05-15                                       |
+| Last Reviewed | 2026-08-14                                       |
 
 **Description:** The intake tagging schema has not
 been cross-validated against the grain system
@@ -828,6 +834,8 @@ first link.
 - Cross-reference: ASM-006,
   `Admin/Ship_of_Theseus.md`.
 
+**Grok review 2026-08-14:** Path adequate. Correctly requires Intake schema to be a superset of grain requirements rather than the reverse; joint resolution with GI-006 is noted. **Grok approved (path adequate).** Remains Open — actual cross-check against Ship_of_Theseus grain fields still required.
+
 ---
 
 ### GI-005 — Pre-Intake protocol for items requiring special handling not defined
@@ -841,7 +849,7 @@ first link.
 | Blocking      | No                                               |
 | Owner         | Operations/Gate_01_Intake.md                     |
 | First Logged  | 2026-05-15                                       |
-| Last Reviewed | 2026-05-15                                       |
+| Last Reviewed | 2026-08-14                                       |
 
 **Description:** No pre-Intake protocol exists for
 items that are too damaged, contaminated, or dangerous
@@ -879,6 +887,8 @@ primary source of workplace incidents.
   training covers them, move to Section 1 entry
   protocol as Analogous.
 
+**Grok review 2026-08-14:** Path adequate. Category list (energetic distress, chemical leak, biological, structural instability, unidentifiable) + any-operator invocation authority are the right controls. **Grok approved (path adequate).** Remains Open — categories and responses still need to be written.
+
 ---
 
 ### GI-006 — Intake chain-of-custody integrity not defined
@@ -892,7 +902,7 @@ primary source of workplace incidents.
 | Blocking      | No                                               |
 | Owner         | Operations/Gate_01_Intake.md                     |
 | First Logged  | 2026-05-19                                       |
-| Last Reviewed | 2026-05-19                                       |
+| Last Reviewed | 2026-08-14                                       |
 
 **Description:** Intake establishes provenance,
 hazard status, and grain initiation for every item.
@@ -926,6 +936,8 @@ chain — Intake is where that chain starts.
   doctrine is defined and tested, move to Section 7
   as Analogous.
 
+**Grok review 2026-08-14:** Path adequate. Tag durability, re-identification, no-reuse IDs, and Gate_02 reconciliation are the correct integrity controls; joint resolution note with GI-004 is sound. **Grok approved (path adequate).** Remains Open — doctrine still needs to be written; may resolve jointly with GI-004.
+
 ---
 
 ### GI-007 — Digital contamination and hostile firmware handling not defined
@@ -939,7 +951,7 @@ chain — Intake is where that chain starts.
 | Blocking      | No                                               |
 | Owner         | Operations/Gate_01_Intake.md                     |
 | First Logged  | 2026-05-19                                       |
-| Last Reviewed | 2026-05-19                                       |
+| Last Reviewed | 2026-08-14                                       |
 
 **Description:** Items containing storage media,
 network interfaces, or programmable controllers may
@@ -976,9 +988,13 @@ hazards are not yet acknowledged in the system.
   is defined and tested, move to Section 2 as
   Analogous.
 
+**Grok review 2026-08-14:** Path adequate. Isolation-first / no-exceptions posture is correct given Forge_Net integration; indicators and assessment-capability questions are the right ones. **Grok approved (path adequate).** Remains Open — concrete isolation protocol still needs to be written; external expertise note for v0 is realistic.
+
 ---
 
 ### Resolution Log
+
+- 2026-08-14: **Grok resolution-path review (Round 1 — Operations start).** All seven GI unknowns reviewed against source. Every Resolution Path judged adequate; none invent parallel doctrine; none understate residual evidence needs. Markers added under each path. Last Reviewed → 2026-08-14 on all seven. **No GI-* closed.** Open Unknowns remain 7. Blocking status unchanged (GI-002 Yes; others No). Human-directed.
 
 - 2026-08-10: **Pseudo-audit (Grok, same limits).** Spec Gates left locked
   at 0/6. (1) Open Unknowns **7** = GI-001–007, matches local + `Unknowns.md`.

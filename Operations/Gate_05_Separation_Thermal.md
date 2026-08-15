@@ -278,6 +278,14 @@ Precision gas chemistry is out of scope for v0.
 
 Wire is the preferred first product for self-replication.
 
+**CLF-011 acknowledgment (2026-08-14):** this gate is required to
+emit the `fir_class` batch field (per
+`Challenges/Closed_Loop_Feedstock.md` §4a Integration Hooks / §4b)
+on outbound batches. **Not implemented** — no emit logic exists in
+this file. This note is acknowledgment of the obligation only;
+CLF-011 remains Open until Path A (real batch evidence) or Path B
+(human contract-acceptance) is taken per §4b.
+
 ---
 
 ## 11. Instrumentation & Control
@@ -431,7 +439,7 @@ in the sidecar, not disputes. Revisit after first operational run.*
 | Blocking      | No                             |
 | Owner         | Operations/Gate_05_Separation_Thermal.md |
 | First Logged  | 2026-05-04                     |
-| Last Reviewed | 2026-05-15                     |
+| Last Reviewed | 2026-08-14                     |
 
 **Description:** Whether the 50–400 RPM operating envelope is safe and
 effective for the specified geometry and melt mass.
@@ -453,6 +461,13 @@ an unacceptable failure mode per the failure philosophy.
 - Payment via Specification — once analog test completes and drive system
   is specified, move validated envelope to Body.
 
+**Claude review 2026-08-14:** Path adequate. Static analysis is real
+work already done (not asserted, calculated), and the file correctly
+narrows what's still open (thermal shock, dynamic imbalance) rather
+than treating the whole envelope as unvalidated. **Approved (path
+adequate).** Correctly In Progress, not Open — some resolution exists,
+cold-water analog test still required before hot run.
+
 ---
 
 ### SC-002 — Segregation effectiveness at v0 scale unverified
@@ -466,7 +481,7 @@ an unacceptable failure mode per the failure philosophy.
 | Blocking      | No                             |
 | Owner         | Operations/Gate_05_Separation_Thermal.md |
 | First Logged  | 2026-05-04                     |
-| Last Reviewed | 2026-05-15                     |
+| Last Reviewed | 2026-08-14                     |
 
 **Description:** Whether meaningful density-based segregation is
 achievable at 5–10L melt volume and 100–150 RPM nominal operating
@@ -494,6 +509,12 @@ reduction.
   and should be treated as the primary success metric for Gen-0
   operational testing.
 
+**Claude review 2026-08-14:** Path adequate. Correctly named as the
+file's core unresolved claim (Critical, matches the chamber's actual
+value proposition) rather than buried among lower-stakes items.
+**Approved (path adequate).** Remains Open — this is exactly the kind
+of claim that needs first-operational-run data, not agent-closable.
+
 ---
 
 ### SC-003 — MHD damping effectiveness at v0 power levels
@@ -507,7 +528,7 @@ reduction.
 | Blocking      | No                             |
 | Owner         | Operations/Gate_05_Separation_Thermal.md |
 | First Logged  | 2026-05-04                     |
-| Last Reviewed | 2026-05-15                     |
+| Last Reviewed | 2026-08-14                     |
 
 **Description:** Whether millitesla-scale auxiliary fields provide
 meaningful flow damping at v0 scale and power budget, or negligible
@@ -532,6 +553,12 @@ honestly to a higher-power future version.
   document effective field strength and coil configuration in Body
   as Measured.
 
+**Claude review 2026-08-14:** Path adequate. Honestly bidirectional —
+specifies what happens whether the test finds benefit or doesn't,
+rather than assuming the outcome. Correctly Minor/Low risk since MHD
+is already optional. **Approved (path adequate).** Remains Open —
+needs the comparative Gen-0 hold-test data either way.
+
 ---
 
 ### SC-004 — Wire extrusion nozzle design not specified
@@ -545,7 +572,7 @@ honestly to a higher-power future version.
 | Blocking      | No                             |
 | Owner         | Operations/Gate_05_Separation_Thermal.md |
 | First Logged  | 2026-05-04                     |
-| Last Reviewed | 2026-07-31                     |
+| Last Reviewed | 2026-08-14                     |
 
 **Description:** Nozzle material, geometry, replacement interval,
 and draw speed control method for the centerline wire extrusion
@@ -576,9 +603,9 @@ aluminum-class wire; centrifugal + MHD assist as wire maturity
 increases; MHD/EM-levitation-driven once reactive metals require
 vacuum-compatible, containerless processing (see SC-009). Dieless
 drawing is the strongest CLF-003 mitigation for the metal-wire path
-specifically — CLF-003 already notes it "applies most strongly to
-any mechanical or high-pressure contact die and least strongly to
-pure MHD or dieless paths." This does not touch CLF-003's
+specifically — CLF-003's own text describes dieless drawing as
+removing die contact from the metal-wire path entirely, rather than
+merely tolerating wear on it. This does not touch CLF-003's
 polymer-extrusion half, which has no equivalent dieless option.
 A minimal experimental dieless-drawing configuration is parked at
 `Admin/Trajectories.md` TR-MET-003 (v1 scope, not v0). Astroid-miner's
@@ -605,6 +632,20 @@ recommended here for terrestrial v0.
 - Payment via Specification — once nozzle design is validated
   and draw speed control demonstrated, move to Body as Measured.
 
+**Claude review 2026-08-14:** Path adequate. One correction made
+this pass: the Driving Mechanism Options section attributed a direct
+quote to CLF-003 ("applies most strongly to any mechanical or
+high-pressure contact die...") that does not exist verbatim anywhere
+in CLF-003 or the repository — the substance was accurate (dieless
+drawing does remove die contact per CLF-003's own text) but it was
+presented as a quotation rather than paraphrase. Reworded to remove
+the false quote attribution; no other change to the underlying claim.
+TR-MET-002/003 cross-references in this section independently
+verified against `Admin/Trajectories.md` — both real, phrasing
+accurately reflects source. **Approved (path adequate) with
+correction applied.** Remains Open — v1 task, correctly not v0
+blocking.
+
 ---
 
 ### SC-005 — Drive system geometry not specified; dynamic imbalance analysis blocked
@@ -618,7 +659,7 @@ recommended here for terrestrial v0.
 | Blocking      | No                             |
 | Owner         | Operations/Gate_05_Separation_Thermal.md |
 | First Logged  | 2026-05-15                     |
-| Last Reviewed | 2026-05-15                     |
+| Last Reviewed | 2026-08-14                     |
 
 **Description:** Drive shaft geometry, bearing selection, mounting
 stiffness, and critical speed are not specified. Dynamic imbalance
@@ -655,6 +696,15 @@ failure that monitoring catches too late.
   data reviewed, move validated dynamic envelope to Body alongside
   RPM never-exceed.
 
+**Claude review 2026-08-14:** Path adequate. The 175N cyclical-force
+figure is shown as a worked calculation with stated inputs (mass,
+eccentricity, RPM), not an asserted number — consistent with the
+project's confidence-labeling discipline. Standardization-as-design-
+requirement framing correctly ties this unknown to the forge
+ecology's interchangeability goals, not just this one build.
+**Approved (path adequate).** Remains Open — blocked on drive system
+selection, same dependency SC-001 and MG-007 already carry.
+
 ---
 
 ### SC-006 — Operational siting and area-of-operation requirements not defined
@@ -668,7 +718,7 @@ failure that monitoring catches too late.
 | Blocking      | No                             |
 | Owner         | Operations/Gate_05_Separation_Thermal.md (seed entry) |
 | First Logged  | 2026-05-15                     |
-| Last Reviewed | 2026-05-15                     |
+| Last Reviewed | 2026-08-14                     |
 
 **Description:** No facility, siting, or area-of-operation document
 exists to govern physical separation requirements, clearance zones,
@@ -699,6 +749,14 @@ under what conditions.
   Payment via Specification for terrestrial v0 baseline
   once `Architecture/Facilities.md` FA-001 is resolved.
 
+**Claude review 2026-08-14:** Path adequate. Cross-reference to
+`Architecture/Facilities.md` and its FA-001 confirmed real (matches
+the same verification done on Gate_04's MG-006, same underlying
+file). Discharge-by-reference framing is correct — this file
+shouldn't duplicate siting doctrine another file owns. **Approved
+(path adequate).** Remains Open — this file's separation-doctrine
+gap is real regardless of where the ultimate fix lives.
+
 ---
 
 ### SC-007 — Extraction process may disrupt segregation gradients
@@ -712,7 +770,7 @@ under what conditions.
 | Blocking      | No                             |
 | Owner         | Operations/Gate_05_Separation_Thermal.md |
 | First Logged  | 2026-07-28                     |
-| Last Reviewed | 2026-07-28                     |
+| Last Reviewed | 2026-08-14                     |
 
 **Description:** The physical act of extracting separated material
 from the Spin Chamber may itself disturb the density-based
@@ -736,6 +794,11 @@ reaching at least Provisional Spec first — no point isolating
 extraction-stage loss before segregation-stage effectiveness itself
 is characterized.
 
+**Claude review 2026-08-14:** Path adequate. Correctly sequences
+after SC-002 rather than trying to isolate two confounded unknowns
+at once — that dependency ordering is the substance of a good path
+here, not a formality. **Approved (path adequate).** Remains Open.
+
 ---
 
 ### SC-008 — Graphite crucible carbon pickup in alloy
@@ -749,7 +812,7 @@ is characterized.
 | Blocking      | No                             |
 | Owner         | Operations/Gate_05_Separation_Thermal.md |
 | First Logged  | 2026-07-28                     |
-| Last Reviewed | 2026-07-28                     |
+| Last Reviewed | 2026-08-14                     |
 
 **Description:** Graphite crucibles, a plausible salvage-sourced
 containment material for molten metal, are known in conventional
@@ -772,6 +835,13 @@ compare against alternative crucible materials salvage streams are
 likely to provide (ceramic, steel-shell) as a lower-pickup
 alternative if the rate proves significant.
 
+**Claude review 2026-08-14:** Path adequate. EN-003 cross-reference
+matches a real known concern (alloy ID depends on what's actually
+present) — flags a legitimate silent-failure interaction between two
+files rather than treating this as isolated. **Approved (path
+adequate).** Remains Open — needs characterization data, not
+agent-closable.
+
 ---
 
 ### SC-009 — Titanium / reactive-metal atmosphere requirements undefined
@@ -785,7 +855,7 @@ alternative if the rate proves significant.
 | Blocking      | Yes — any titanium (or Zr/Hf/Nb/Ta) melt, weld, or wire-extrusion path |
 | Owner         | Operations/Gate_05_Separation_Thermal.md (primary); Architecture/Chemistry.md (oxidation/nitride chemistry) |
 | First Logged  | 2026-07-31 |
-| Last Reviewed | 2026-07-31 |
+| Last Reviewed | 2026-08-14 |
 
 **Description:** §9 Atmosphere Control above (passive reducing environment preferred; charcoal bed or inert purge if available; oxygen ingress minimized, not eliminated; precision gas chemistry out of scope for v0) is adequate for the aluminum-class melts this file currently scopes around, but not for titanium or other reactive/refractory metals. These metals react readily with both oxygen and nitrogen when hot or molten — nitrogen contamination in particular causes severe embrittlement, which is why a simple nitrogen purge (fine for many steels or aluminum) is actively harmful here. Real titanium welding or wire-arc additive manufacturing requires either full high-purity argon shielding (residual O₂ typically <50–300 ppm, entire cooling surface protected until <~400°C) or true vacuum (~10⁻²–10⁻³ Pa or better for aerospace-grade work). Titanium currently appears nowhere in this repository as a feedstock, salvage target, or fabrication material — its only existing mention is `Architecture/Chemistry.md`'s galvanic series table (most noble/cathodic metal, high-end marine hardware reference). Raised 2026-07-31 in response to a claim that titanium welding capability would make CLF-003 (nozzle/die wear) moot; verified against source that no such capability or material pathway currently exists.
 
@@ -795,9 +865,45 @@ alternative if the rate proves significant.
 
 **Cross-references:** §9 (this file, current atmosphere doctrine); SC-004 (wire extrusion nozzle — any titanium wire path inherits this unknown); `Challenges/Closed_Loop_Feedstock.md` CLF-003 (die/nozzle wear — titanium would add a harder second front, not remove the first); `Architecture/Chemistry.md` (galvanic series, sole existing titanium mention); `Admin/Trajectories.md` TR-MET-002 (Astroid-miner cross-repo note, parked).
 
+**Claude review 2026-08-14:** Path adequate; this is the most claim-
+dense unknown in the file and each embedded claim was checked
+individually rather than accepted as a set. Confirmed real: TR-MET-002
+and TR-MET-003 in `Admin/Trajectories.md` (phrasing matches source);
+`Architecture/Chemistry.md`'s galvanic series as titanium's sole
+existing mention; the CLF-003 cross-reference substance (dieless
+drawing removes die contact). One correction made this pass, in
+SC-004 above, not here: a quote attributed to CLF-003 in the Driving
+Mechanism Options table did not exist verbatim in source — reworded.
+The Critical/Blocking-conditional framing (Blocking only if titanium
+enters the material set, which it currently has not) is the correct
+way to flag a real risk without inflating the file's present state.
+**Approved (path adequate).** Remains Open, correctly parked pending
+G2 scope decision.
+
 ---
 
 ### Resolution Log
+- 2026-08-14: **Claude resolution-path review (Round 5 — Operations
+  sequence, continuing from Rounds 1-4).** All nine SC unknowns
+  reviewed against source. One real error found and corrected: SC-004's
+  Driving Mechanism Options table attributed a direct quote to
+  `Challenges/Closed_Loop_Feedstock.md` CLF-003 ("applies most strongly
+  to any mechanical or high-pressure contact die and least strongly to
+  pure MHD or dieless paths") that does not exist verbatim anywhere in
+  CLF-003 or the repository — a misattributed quote, not a paraphrase.
+  The underlying substance was accurate (CLF-003's own text does
+  describe dieless drawing as removing die contact from the metal-wire
+  path); reworded to state it as description rather than quotation, in
+  both SC-004 and SC-009's cross-reference note. All other embedded
+  cross-reference claims checked individually and confirmed real:
+  TR-MET-002/003 in `Admin/Trajectories.md`, EN-003 in
+  `Architecture/Engineering.md`, `Architecture/Facilities.md`'s FA-001/
+  UNK-006 ownership, and the Chemistry.md galvanic-series titanium
+  mention. Every Resolution Path judged adequate. **No SC-* closed.**
+  Open Unknowns remain 9. Blocking status unchanged (SC-009 stays the
+  file's sole conditional-Blocking entry). Last Reviewed → 2026-08-14
+  on all nine. Human-directed.
+
 - 2026-08-10: **Pseudo-audit (Grok, same limits).** Findings only; Spec Gates
   left locked at 0/6. (1) Open Unknowns **9** = SC-001–009, matches local
   sidecar and `Unknowns.md`. (2) SC-009 correctly nuanced Blocking Yes for

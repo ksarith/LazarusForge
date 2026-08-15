@@ -613,7 +613,7 @@ See TS-005 through TS-008 below for tracked unknowns against this section.
 | Blocking      | Yes                            |
 | Owner         | Operations/Gate_02_Triage.md   |
 | First Logged  | May 2026                       |
-| Last Reviewed | 2026-05-23                     |
+| Last Reviewed | 2026-08-14                     |
 
 **Description:** Quantitative or contextual definition of acceptable degraded
 performance for forge-duty components remains incompletely defined.
@@ -626,6 +626,8 @@ cross-operator consistency cannot be verified.
 it materially contributes to closure of the current operational loop." Populate
 Baseline Performance Table after N≥50 observations per component class.
 Cross-reference `Architecture/Forge_flow.md` FL-001 (gate logic determinism).
+
+**Grok review 2026-08-14:** Path adequate. Working definition is usable; N≥50 bar is correctly retained as the calibration gate. **Grok approved (path adequate).** Remains In Progress — Baseline Performance Table still needs real observations; do not promote on definition alone.
 
 ---
 
@@ -640,7 +642,7 @@ Cross-reference `Architecture/Forge_flow.md` FL-001 (gate logic determinism).
 | Blocking      | Yes — contamination bypass is highest-risk triage failure mode (operator harm) |
 | Owner         | Operations/Gate_02_Triage.md   |
 | First Logged  | May 2026                       |
-| Last Reviewed | 2026-08-09                     |
+| Last Reviewed | 2026-08-14                     |
 
 **Description:** Full decontamination criteria, routing for components that
 cannot be decontaminated, and provenance tag requirements for contamination
@@ -653,6 +655,8 @@ creates secondary contamination and potential operator harm.
 **Resolution Path:** Station 0 contamination check and Contaminated bin added.
 Full decontamination protocol still needed. Cross-reference
 `Operations/Air_Scrubber.md` AS-003 (scrubber waste stream and saturation).
+
+**Grok review 2026-08-14:** Partial path adequate — Station 0 + Contaminated bin are real progress. Residual gap (full decontamination criteria, non-decontaminable routing, provenance tag for contamination status) is correctly named. Blocking Yes remains correct. **Grok approved (partial path adequate).** Remains Open — full decontamination protocol still required before treating contamination routing as closed.
 
 ---
 
@@ -667,7 +671,7 @@ Full decontamination protocol still needed. Cross-reference
 | Blocking      | Yes                            |
 | Owner         | Operations/Gate_02_Triage.md   |
 | First Logged  | May 2026                       |
-| Last Reviewed | 2026-05-23                     |
+| Last Reviewed | 2026-08-14                     |
 
 **Description:** Deterministic routing for all item types at Gate A/C and
 Gate C/D boundaries remains incomplete. Strategic tier override creates
@@ -680,6 +684,8 @@ cannot accumulate reliable patterns.
 **Resolution Path:** Gate Correspondence table added. Motor worked example
 added. Additional worked examples needed for Strategic tier override paths.
 Cross-reference `Architecture/Forge_flow.md` FL-001.
+
+**Grok review 2026-08-14:** Path adequate. Table + motor example are real progress; residual need for Strategic-tier override examples is correctly named. **Grok approved (path adequate).** Remains In Progress — additional worked examples still required.
 
 ---
 
@@ -715,7 +721,7 @@ Cross-reference `Architecture/Forge_flow.md` FL-001.
 | Blocking      | No — §XII is not load-bearing  |
 | Owner         | Operations/Gate_02_Triage.md   |
 | First Logged  | 2026-08-02                     |
-| Last Reviewed | 2026-08-02                     |
+| Last Reviewed | 2026-08-14                     |
 
 **Description:** §XII.1 proposes converting triage events into structured
 knowledge (failure-mode distributions, repair-likelihood curves, etc.). No
@@ -728,6 +734,8 @@ mechanism for actually reaching it, so its absence keeps TS-001 open too.
 **Resolution Path:** Stand up the v0 minimal form described in §XII.1 (a
 structured log, manually reviewed) as a real, low-effort first step, before
 any more elaborate TIL tooling is drafted.
+
+**Grok review 2026-08-14:** Path adequate and correctly minimal. Non-Blocking status is correct while §XII remains proposed/unaudited. **Grok approved (path adequate).** Remains Open — v0 structured log still needs to be stood up.
 
 ---
 
@@ -742,7 +750,7 @@ any more elaborate TIL tooling is drafted.
 | Blocking      | No — §XII is not load-bearing  |
 | Owner         | Operations/Gate_02_Triage.md   |
 | First Logged  | 2026-08-02                     |
-| Last Reviewed | 2026-08-02                     |
+| Last Reviewed | 2026-08-14                     |
 
 **Description:** §XII.2's priority-class model is patterned on
 `Operations/Energy.md` §IV's Energy Arbitration Layer, which is itself
@@ -757,6 +765,8 @@ foundation clears Gate 1.
 **Resolution Path:** Re-review TAL once Energy.md's EGL passes Gate 1.
 Do not implement TAL ahead of that.
 
+**Grok review 2026-08-14:** Path adequate and correctly dependency-aware. Non-Blocking status is correct. **Grok approved (path adequate).** Remains Open — blocked on Energy.md EGL Gate 1; do not implement ahead of that.
+
 ---
 
 ### TS-007 — Triage Capability Model (TCM) capability ladder is undefined against real tooling
@@ -770,7 +780,7 @@ Do not implement TAL ahead of that.
 | Blocking      | No — §XII is not load-bearing  |
 | Owner         | Operations/Gate_02_Triage.md   |
 | First Logged  | 2026-08-02                     |
-| Last Reviewed | 2026-08-02                     |
+| Last Reviewed | 2026-08-14                     |
 
 **Description:** §XII.3's v0/v1/v2+ maturity ladder across testing, repair,
 repurpose, decontamination, and embedded-value extraction has not been
@@ -783,6 +793,8 @@ routing look more justified than the Forge can actually deliver on.
 `Operations/Electronics.md`, `Operations/Air_Scrubber.md`, and
 `Architecture/Precision.md`'s actual current tooling before treating any
 rung above v0 as real.
+
+**Grok review 2026-08-14:** Path adequate. Correctly requires real tooling check before treating higher rungs as real. **Grok approved (path adequate).** Remains Open — v0 rung population still required.
 
 ---
 
@@ -797,7 +809,7 @@ rung above v0 as real.
 | Blocking      | No — §XII is not load-bearing  |
 | Owner         | Operations/Gate_02_Triage.md   |
 | First Logged  | 2026-08-02                     |
-| Last Reviewed | 2026-08-02                     |
+| Last Reviewed | 2026-08-14                     |
 
 **Description:** §XII.4 proposes a five-dimension 0–3 maturity score. No
 one is designated to assign these scores, at what cadence, or against what
@@ -811,9 +823,13 @@ verifiable.
 **Resolution Path:** Do not cite TMV scores in any actual Gate D decision
 until a scoring owner and cadence are assigned and logged here.
 
+**Grok review 2026-08-14:** Path adequate and correctly conservative — an unscored maturity vector on a destruction-authorization rule would be worse than none. **Grok approved (path adequate).** Remains Open — scoring owner + cadence still required before any Gate D citation.
+
 ---
 
 ### Resolution Log
+
+- 2026-08-14: **Grok resolution-path review (Round 2 — Operations).** All open/in-progress TS unknowns (TS-001,002,003,005,006,007,008) reviewed against source. TS-004 left untouched (already Resolved — Discharge). Every live Resolution Path judged adequate; residual evidence/implementation needs correctly retained. Markers added; Last Reviewed → 2026-08-14 on all seven live entries. **No TS-* closed.** Open Unknowns remain 7. Blocking status unchanged. Human-directed.
 
 - 2026-08-11: **ASM-006 updated — EC-002 Pattern Recognition Annex closed.**
   `Admin/Ethical_Constraints.md` added the Pattern Recognition Annex EC-002

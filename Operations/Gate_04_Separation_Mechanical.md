@@ -531,6 +531,15 @@ Class A salvage priority.
 - `Architecture/Facilities.md` — siting and clearance requirements
   (FA-001)
 
+**CLF-011 acknowledgment (2026-08-14):** this gate is required to
+emit the `fir_class` batch field (per
+`Challenges/Closed_Loop_Feedstock.md` §4a Integration Hooks / §4b)
+on outbound batches, orthogonal to this gate's own sorting
+Class A/B/C/Unknown Bulk/Fail. **Not implemented** — no emit logic
+exists in this file. This note is acknowledgment of the obligation
+only; CLF-011 remains Open until Path A (real batch evidence) or
+Path B (human contract-acceptance) is taken per §4b.
+
 ---
 
 ## Lessons Learned
@@ -570,7 +579,7 @@ made here. Logged following ChatGPT audit 2026-05-15.*
 | Blocking      | No                                               |
 | Owner         | Operations/Gate_04_Separation_Mechanical.md                   |
 | First Logged  | 2026-05-15 (migrated from prose registry)        |
-| Last Reviewed | 2026-05-15                                       |
+| Last Reviewed | 2026-08-14                                       |
 
 **Description:** Quantitative energy reduction from mechanical
 separation vs. thermal processing has not been established.
@@ -588,6 +597,11 @@ the energy-positive claim cannot be verified or falsified.
 - Payment via Specification — once baseline established, move
   quantified claim to Body as Measured.
 
+**Claude review 2026-08-14:** Path adequate. Correctly identifies
+this as the gate's core economic claim and correctly refuses to
+assert it as measured. **Approved (path adequate).** Remains Open
+— needs Leviathan/pilot instrumented data; not agent-closable.
+
 ---
 
 ### MG-002 — Optimal RPM exploration bands not characterized per feedstock
@@ -601,7 +615,7 @@ the energy-positive claim cannot be verified or falsified.
 | Blocking      | No                                               |
 | Owner         | Operations/Gate_04_Separation_Mechanical.md                   |
 | First Logged  | 2026-05-15 (migrated from prose registry)        |
-| Last Reviewed | 2026-05-15                                       |
+| Last Reviewed | 2026-08-14                                       |
 
 **Description:** Optimal RPM bands for mixed municipal vs.
 industrial scrap profiles have not been characterized. The
@@ -621,6 +635,11 @@ not be optimal across all input classes.
 - Payment via Specification — once optimal bands per feedstock
   class are characterized, move to Body as Measured.
 
+**Claude review 2026-08-14:** Path adequate. Three-class sweep is
+a concrete, testable minimum; correctly flags the current band as
+Analogous rather than asserting it as validated. **Approved (path
+adequate).** Remains Open — needs v0 sweep data.
+
 ---
 
 ### MG-003 — Confidence threshold calibration not empirically validated
@@ -634,7 +653,7 @@ not be optimal across all input classes.
 | Blocking      | No                                               |
 | Owner         | Operations/Gate_04_Separation_Mechanical.md                   |
 | First Logged  | 2026-05-15 (migrated from prose registry)        |
-| Last Reviewed | 2026-05-15                                       |
+| Last Reviewed | 2026-08-14                                       |
 
 **Description:** The 90% confidence threshold for Unknown Bulk
 routing has not been validated against known feedstock samples.
@@ -658,6 +677,13 @@ parameter in the gate.
 - Payment via Specification — once empirically validated,
   move confirmed threshold to Body as Measured.
 
+**Claude review 2026-08-14:** Path adequate. Correctly identifies
+this as the most operationally sensitive parameter in the gate and
+resists just picking a defensible-sounding number — a false
+positive/negative sweep against ground-truth samples is the right
+method. **Approved (path adequate).** Remains Open — this is exactly
+the kind of numeric threshold that must not be set on prose alone.
+
 ---
 
 ### MG-004 — Geometry correction algorithm not specified
@@ -671,7 +697,7 @@ parameter in the gate.
 | Blocking      | No                                               |
 | Owner         | Operations/Gate_04_Separation_Mechanical.md                   |
 | First Logged  | 2026-05-15 (migrated from prose registry)        |
-| Last Reviewed | 2026-05-15                                       |
+| Last Reviewed | 2026-08-14                                       |
 
 **Description:** The inertia/optical cross-reference algorithm
 for geometry correction — preventing misclassification of
@@ -695,6 +721,13 @@ without a specified algorithm.
 - Payment via Specification — once algorithm is specified
   and validated, move to Body as Measured.
 
+**Claude review 2026-08-14:** Path adequate. Correctly sequences
+literature review before prototype trials, and correctly names this
+as a hard prerequisite for the sensor cross-check rather than a nice-
+to-have. Named edge cases (foil, thin steel, dense polymer) are the
+right adversarial test set. **Approved (path adequate).** Remains
+Open — algorithm still needs to be specified and validated.
+
 ---
 
 ### MG-005 — Long-term aquatic biofouling impact on rotor balance
@@ -708,7 +741,7 @@ without a specified algorithm.
 | Blocking      | No                                               |
 | Owner         | Operations/Gate_04_Separation_Mechanical.md                   |
 | First Logged  | 2026-05-15 (migrated from prose registry)        |
-| Last Reviewed | 2026-05-15                                       |
+| Last Reviewed | 2026-08-14                                       |
 
 **Description:** Long-term aquatic biofouling impact on rotor
 balance and bearing performance in Leviathan deployments has
@@ -725,6 +758,11 @@ bearing failure without obvious external symptoms.
   for marine deployment test framework.
 - Not relevant to terrestrial v0 validation.
 
+**Claude review 2026-08-14:** Path adequate. `Tests/Leviathan_testing.md`
+confirmed to exist — discharge target is real, not invented. Correctly
+scoped out of terrestrial v0. **Approved (path adequate).** Remains
+Open — this file does not own marine-deployment resolution.
+
 ---
 
 ### MG-006 — Operational siting and area-of-operation requirements not defined
@@ -738,7 +776,7 @@ bearing failure without obvious external symptoms.
 | Blocking      | No                                               |
 | Owner         | Operations/Gate_04_Separation_Mechanical.md (seed entry)      |
 | First Logged  | 2026-05-15                                       |
-| Last Reviewed | 2026-05-15                                       |
+| Last Reviewed | 2026-08-14                                       |
 
 **Description:** No facility, siting, or area-of-operation
 document exists to govern physical separation requirements,
@@ -765,6 +803,15 @@ operator protocols.
 - Payment via Specification for terrestrial v0 baseline
   once siting document exists.
 
+**Claude review 2026-08-14:** Path adequate. `Architecture/Facilities.md`
+confirmed to exist and confirmed to explicitly claim ownership of
+UNK-006 (its own text: "resolve UNK-006 — the facility siting unknown
+referenced by seven [files]"). Cross-reference is real, not invented.
+**Approved (path adequate).** Remains Open — correctly Blocking-No
+for spec work, but this file's own text is right that it must be
+resolved before any operational run; that gate belongs to
+Facilities.md, not here.
+
 ---
 
 ### MG-007 — Rotor jam and entanglement recovery behavior undefined
@@ -778,7 +825,7 @@ operator protocols.
 | Blocking      | No                                               |
 | Owner         | Operations/Gate_04_Separation_Mechanical.md                   |
 | First Logged  | 2026-05-15                                       |
-| Last Reviewed | 2026-05-15                                       |
+| Last Reviewed | 2026-08-14                                       |
 
 **Description:** Rotor jam detection thresholds, automatic shutdown
 conditions, and manual clearing protocols are not yet defined.
@@ -805,6 +852,14 @@ geometries but do not substitute for a clearing doctrine.
   triggers, and clearing protocol are defined and tested,
   move to Lifecycle section as Measured.
 
+**Claude review 2026-08-14:** Path adequate and correctly ordered
+— jam threshold honestly depends on drive system spec existing
+first, not treated as independently definable. Lockout-before-
+access requirement is the correct safety-critical default.
+**Approved (path adequate).** Remains Open — blocked on drive
+system specification; do not write a jam threshold number ahead
+of that.
+
 ---
 
 ### MG-008 — Sensor fouling from conductive or abrasive fines
@@ -818,7 +873,7 @@ geometries but do not substitute for a clearing doctrine.
 | Blocking      | No                                               |
 | Owner         | Operations/Gate_04_Separation_Mechanical.md                   |
 | First Logged  | 2026-05-15                                       |
-| Last Reviewed | 2026-05-15                                       |
+| Last Reviewed | 2026-08-14                                       |
 
 **Description:** Mixed scrap at high RPM generates conductive dust
 and abrasive fines that can coat optical sensors and silently
@@ -848,9 +903,27 @@ increasingly unreliable when the actual problem is maintenance.
   characterized and cleaning interval established, move
   to Sensor Cross-Check section as Measured.
 
+**Claude review 2026-08-14:** Path adequate. Explicitly distinguishing
+this from MG-003 (calibration drift) rather than letting the two
+silent-failure modes get conflated is the right move — same symptom
+(rising Unknown Bulk), different cause, different fix. Cross-reference
+to Air_Scrubber.md is sound. **Approved (path adequate).** Remains
+Open — cleaning interval and housing spec still need Gen-0 data.
+
 ---
 
 ### Resolution Log
+
+- 2026-08-14: **Claude resolution-path review (Round 4 — Operations,
+  continuing the sequence from Grok's Rounds 1-3).** All eight MG
+  unknowns reviewed against source. Every Resolution Path judged
+  adequate; two embedded cross-reference claims (MG-005 →
+  `Tests/Leviathan_testing.md`, MG-006 → `Architecture/Facilities.md`
+  UNK-006 ownership) checked against the actual files, not accepted
+  on the sidecar's word — both confirmed real. Markers added under
+  each path; Last Reviewed → 2026-08-14 on all eight. **No MG-*
+  closed.** Open Unknowns remain 8. Blocking status unchanged (all
+  No). Human-directed.
 
 - 2026-08-10: **Pseudo-audit (Grok, same limits).** Findings only; Spec Gates
   left locked at 0/6. (1) Open Unknowns **8** = MG-001–008, matches local +

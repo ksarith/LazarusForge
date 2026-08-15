@@ -311,13 +311,15 @@ Fine wood dust suspended in air is explosive. Do not allow dust to accumulate on
 | Blocking | No |
 | Owner | Operations/Woodworking.md |
 | First Logged | 2026-05-29 |
-| Last Reviewed | 2026-05-30 |
+| Last Reviewed | 2026-08-15 |
 
 **Description:** Precise air-drying and kiln schedules for common local species under variable microclimate humidity conditions have not been validated. The one-year-per-inch rule of thumb is a generic analog estimate, not a locally measured figure.
 
 **Why It Matters:** Improper drying leads to high material loss through checking, warping, and case-hardening. Underdried stock in joinery causes joint failure as the wood continues to move in service.
 
 **Resolution Path:** Compile regional baseline forestry/extension data relative to the deployment node's climate envelope; cross-reference USDA Forest Products Laboratory drying schedules. Validate against first operational drying stack with moisture meter tracking.
+
+**Grok review 2026-08-15:** Path adequate. Regional baseline + first-stack moisture-meter validation is the right sequence; resists inventing local schedules without data. **Grok approved (path adequate).** Remains Open — needs climate-envelope data + measured stack.
 
 ---
 
@@ -332,13 +334,15 @@ Fine wood dust suspended in air is explosive. Do not allow dust to accumulate on
 | Blocking | No |
 | Owner | Operations/Woodworking.md |
 | First Logged | 2026-05-29 |
-| Last Reviewed | 2026-05-30 |
+| Last Reviewed | 2026-08-15 |
 
 **Description:** Durability differences between urban salvaged timber and forest-grown timber are not characterized. Urban trees grow under different stress conditions — pollutant uptake, asymmetric wind stresses, soil compaction — that may affect structural performance and finishing behavior.
 
 **Why It Matters:** Routing urban salvage to structural applications without understanding its performance profile introduces an uncharacterized failure mode in load-bearing assemblies.
 
 **Resolution Path:** Survey available literature on urban timber structural performance. Flag salvaged urban timber as Analogous confidence for structural use until local destructive/non-destructive testing data exists.
+
+**Grok review 2026-08-15:** Path adequate. Correctly holds structural use at Analogous until local test data exists. **Grok approved (path adequate).** Remains Open — needs literature survey + eventual local NDT/destructive data.
 
 ---
 
@@ -353,13 +357,15 @@ Fine wood dust suspended in air is explosive. Do not allow dust to accumulate on
 | Blocking | No |
 | Owner | Operations/Woodworking.md |
 | First Logged | 2026-05-29 |
-| Last Reviewed | 2026-05-30 |
+| Last Reviewed | 2026-08-15 |
 
 **Description:** Section 5 provides fixturing guidance for irregular slabs but the methods have not been validated against actual live-edge slab operations. Vacuum hold performance on high-void slabs is particularly uncertain.
 
 **Why It Matters:** Workpiece movement during CNC routing damages tooling, destroys the workpiece, and creates a projectile hazard at spindle speeds.
 
 **Resolution Path:** Validate vacuum fixture hold-down force against representative slab geometries during first operational CNC cycle. Document actual minimum surface area requirements for reliable vacuum hold.
+
+**Grok review 2026-08-15:** Path adequate. Correctly deferred to first operational CNC cycle; projectile-hazard framing is right. **Grok approved (path adequate).** Remains Open — needs measured hold-down data.
 
 ---
 
@@ -374,13 +380,15 @@ Fine wood dust suspended in air is explosive. Do not allow dust to accumulate on
 | Blocking | Yes (for sustained mixed-species operations without P100 respirator) |
 | Owner | Operations/Woodworking.md |
 | First Logged | 2026-05-29 |
-| Last Reviewed | 2026-05-30 |
+| Last Reviewed | 2026-08-15 |
 
 **Description:** Precise exposure limits and synergistic effects when milling mixed local species simultaneously are not characterized. Sensitizer species mixed with inert species may produce combined exposures that exceed single-species thresholds at lower individual concentrations.
 
 **Why It Matters:** Chronic wood dust exposure causes occupational asthma, nasal cancer, and sensitization reactions that can become debilitating. Mixed exposure profiles are harder to evaluate than single-species profiles.
 
 **Resolution Path:** Until WW-004 is resolved, treat all mixed-species milling as requiring P100 half-face respirator minimum — do not rely on N95 alone. Cross-reference Operations/Air_Scrubber.md for source capture requirements.
+
+**Grok review 2026-08-15:** Path adequate and correctly conservative. Interim P100 mandate is the right control while thresholds remain uncharacterized; Air_Scrubber cross-ref is real. Blocking Yes is correct. **Grok approved (path adequate).** Remains Open — exposure characterization still required; P100 remains mandatory until then.
 
 ---
 
@@ -395,7 +403,7 @@ Fine wood dust suspended in air is explosive. Do not allow dust to accumulate on
 | Blocking | Yes (for processing raw urban salvage through powered machinery) |
 | Owner | Operations/Woodworking.md |
 | First Logged | 2026-05-30 |
-| Last Reviewed | 2026-05-30 |
+| Last Reviewed | 2026-08-15 |
 
 **Description:** The precise workflow and hardware sensitivity requirements for detecting deeply embedded ferrous and non-ferrous objects within dense hardwood logs have not been calibrated for the v0 shop environment.
 
@@ -403,9 +411,13 @@ Fine wood dust suspended in air is explosive. Do not allow dust to accumulate on
 
 **Resolution Path:** Source or fabricate a reliable deep-penetration wand metal detector. Establish a clear Scan-and-Mark workflow for all incoming urban salvage logs. Validate detection depth limits using a known control sample (e.g., a 16d nail driven into a test block at varying depths). Payment via Specification once detection workflow is validated and minimum detection depth is characterized.
 
+**Grok review 2026-08-15:** Path adequate. Control-sample validation method is concrete and v0-feasible; Scan-and-Mark workflow is the right operational control. Blocking Yes / Critical before powered machinery on raw urban salvage is correct. **Grok approved (path adequate).** Remains Open — detector + validated depth limits still required; do not process raw urban salvage through powered machinery until closed.
+
 ---
 
 ### Resolution Log
+
+- 2026-08-15: **Grok resolution-path review (Operations close-out — Woodworking).** All five WW unknowns reviewed against source. Every Resolution Path judged adequate; residual evidence needs correctly retained. Cross-ref (Air_Scrubber) verified real. Markers added; Last Reviewed → 2026-08-15 on all five. **No WW-* closed.** Open Unknowns remain 5. Blocking status unchanged (WW-004 and WW-005 Yes). Human-directed. This file closes the Operations/ folder review sequence.
 
 - 2026-08-10: **Pseudo-audit (Grok, same limits).** Findings only; Spec Gates
   left locked at 0/6. (1) Open Unknowns **5** = WW-001–005, matches local +

@@ -1122,13 +1122,15 @@ first TMR prototype operational.*
 | Blocking      | No                                               |
 | Owner         | Operations/Electronics.md                        |
 | First Logged  | 2026-05-06                                       |
-| Last Reviewed | 2026-05-19                                       |
+| Last Reviewed | 2026-08-15                                       |
 
 **Description:** The specific voltage rails,
 communication protocols, and mechanical connector
 standard that define the Forge-Standard interface
 are not yet defined. Cannot be finalized until
 Leviathan unit power envelope is specified.
+
+*Grok review 2026-08-15: Resolution Path correct (pending LT-001). No closure.*
 
 **Why It Matters:** Without a defined standard,
 salvaged components cannot be validated for
@@ -1159,12 +1161,14 @@ plug-compatible assembly.
 | Blocking      | No                                               |
 | Owner         | Operations/Electronics.md                        |
 | First Logged  | 2026-05-06                                       |
-| Last Reviewed | 2026-05-19                                       |
+| Last Reviewed | 2026-08-15                                       |
 
 **Description:** Minimum trace width, clearance,
 and via size achievable with actual v0 CNC or
 laser tooling are unknown. Design rules cannot
 be stated until tooling is characterized.
+
+*Grok review 2026-08-15: Resolution Path concrete and empirical. No closure.*
 
 **Resolution Path:**
 - Run test cuts on scrap copper-clad with
@@ -1188,12 +1192,14 @@ be stated until tooling is characterized.
 | Blocking      | No                                               |
 | Owner         | Operations/Electronics.md                        |
 | First Logged  | 2026-05-06                                       |
-| Last Reviewed | 2026-05-19                                       |
+| Last Reviewed | 2026-08-15                                       |
 
 **Description:** The voter circuit that arbitrates
 between three TMR logic blocks has not been
 specified beyond the conceptual level. Hardware
 voter vs. software voter choice is unresolved.
+
+*Grok review 2026-08-15: Resolution Path correctly defers to first prototype. No closure.*
 
 **Why It Matters:** The voter is the single point
 of failure in a TMR system — if the voter fails
@@ -1224,12 +1230,14 @@ architecture.
 | Blocking      | No                                               |
 | Owner         | Operations/Electronics.md                        |
 | First Logged  | 2026-05-06                                       |
-| Last Reviewed | 2026-05-19                                       |
+| Last Reviewed | 2026-08-15                                       |
 
 **Description:** Ferric chloride and other etch
 chemistries produce hazardous waste streams that
 require neutralization and disposal protocols
 not yet defined.
+
+*Grok review 2026-08-15: Resolution Path concrete; Air_Scrubber cross-ref real. No closure.*
 
 **Why It Matters:** Improperly disposed etch waste
 contaminates water and soil. Neutralization is
@@ -1258,13 +1266,15 @@ simple but must be defined before first use.
 | Blocking      | Yes — PPE/scrubber sufficiency unknown until emissions characterized; blocks unsupervised milling/reflow |
 | Owner         | Operations/Electronics.md                        |
 | First Logged  | 2026-05-09                                       |
-| Last Reviewed | 2026-08-09                                       |
+| Last Reviewed | 2026-08-15                                       |
 
 **Description:** Actual particulate composition and
 BFR emission rates during CNC milling and bulk
 furnace reflow of salvaged PCBs have not been
 characterized. Current doctrine relies on analogous
 industrial data.
+
+*Grok review 2026-08-15: Blocking Yes correctly retained (Critical respiratory hazard). Air_Scrubber cross-ref real. No closure.*
 
 **Why It Matters:** BFR dust and fiberglass
 microdust are serious respiratory hazards. If
@@ -1294,7 +1304,7 @@ insufficient — unknown until characterized.
 | Blocking      | Yes — prerequisite for first salvaged MCU integration |
 | Owner         | Operations/Electronics.md                        |
 | First Logged  | 2026-05-09                                       |
-| Last Reviewed | 2026-05-19                                       |
+| Last Reviewed | 2026-08-15                                       |
 
 **Description:** The cryptographic key management
 infrastructure and root-of-trust architecture
@@ -1302,6 +1312,8 @@ required for full firmware signing and verification
 are not defined. Current practice (hash verification
 of known-good images) is the minimum interim
 standard.
+
+*Grok review 2026-08-15: Blocking Yes correctly retained (first MCU integration prerequisite). Security_Protocols.md cross-ref real. No closure.*
 
 **Why It Matters:** Hash verification is better
 than nothing but is not a full root-of-trust. A
@@ -1335,7 +1347,7 @@ trust boundary has a known gap.
 | Blocking      | No                                               |
 | Owner         | Operations/Electronics.md                        |
 | First Logged  | 2026-05-09                                       |
-| Last Reviewed | 2026-05-19                                       |
+| Last Reviewed | 2026-08-15                                       |
 
 **Description:** The independence assumption in
 hardware TMR — that three systems from different
@@ -1345,6 +1357,8 @@ production batch, thermal history, firmware
 lineage, or supply chain origin, creating
 correlated failure modes that bypass TMR
 protection.
+
+*Grok review 2026-08-15: Resolution Path strong (adversarial testing). CF-002 cross-ref real. No closure.*
 
 **Why It Matters:** TMR only works if failures
 are independent. Correlated failures produce
@@ -1381,7 +1395,7 @@ answer rather than a detectable disagreement.
 | Blocking      | No                                               |
 | Owner         | Operations/Electronics.md                        |
 | First Logged  | 2026-05-19                                       |
-| Last Reviewed | 2026-08-02                                       |
+| Last Reviewed | 2026-08-15                                       |
 
 **Description:** Counterfeit and remarked
 components — recycled parts relabeled as higher
@@ -1394,6 +1408,8 @@ Counterfeit Severity Scale (C0–C4) was added to
 Section II 2026-08-02 as a triage aid — it does
 not itself constitute the validated detection
 criteria this unknown's Resolution Path calls for.
+
+*Grok review 2026-08-15: Resolution Path correct; provisional scale correctly does not close the unknown. EL-006 cross-ref real. No closure.*
 
 **Why It Matters:** A counterfeit MOSFET labeled
 for higher current than it can handle fails under
@@ -1435,7 +1451,7 @@ watchdog systems depend on.
 | Blocking      | No                                               |
 | Owner         | Operations/Electronics.md                        |
 | First Logged  | 2026-08-02                                       |
-| Last Reviewed | 2026-08-02                                       |
+| Last Reviewed | 2026-08-15                                       |
 
 **Description:** Hardware TMR's silicon-diversity claim (§IV) assumes
 someone is tracking known errata for the MCU families actually in use
@@ -1444,6 +1460,8 @@ ledger exists. This is distinct from EL-007 — even well-executed
 adversarial correlated-failure testing (EL-007's resolution path) could
 miss an errata-driven correlated failure nobody knew to test for, because
 nobody has catalogued which errata apply to which salvaged parts.
+
+*Grok review 2026-08-15: Correctly distinct from EL-007; Resolution Path minimal and practical. No closure.*
 
 **Why It Matters:** A TMR set built from three MCUs that happen to share
 an undocumented errata could fail together in exactly the way TMR is
@@ -1460,6 +1478,8 @@ exists and is cross-referenced from §IV.
 ---
 
 ### Resolution Log
+
+- 2026-08-15: **Grok review round (alphabetical continuation — Electronics.md).** All 9 EL unknowns (EL-001–009) reviewed. Last Reviewed bumped; review markers added. Cross-refs (LT-001, Air_Scrubber.md, Security_Protocols.md, CF-002, EL-006/007 mutual) verified real. EL-005 and EL-006 Blocking Yes correctly retained. Zero closures, zero Blocking flips, zero Priority changes. Spec Gates left locked at 0/6. Human-directed.
 
 - 2026-08-09: **Pseudo-audit (Grok — Skeptic/Auditor read + minimal Synthesizer fixes; human-directed).** Correction: EL-005 Blocking No → Yes — file's own Why It Matters states PPE/scrubber doctrine may be insufficient until emissions characterized (respiratory hazard); Critical Priority with Blocking No understated the operational halt. Aligns with TS-002 treatment pattern. **Findings (not closed):** F-EL-001 — Open Unknowns 9 = EL-001–009; count matches. F-EL-002 — EL-006 correctly Blocking for first salvaged MCU integration; firmware trust not closable in-repo. F-EL-003 — Spec Gates 0/6 honest; 2026-08-02 Threat Model/Heartbeat Token additions remain proposed/unaudited. F-EL-004 — Unknowns.md Priority vocabulary for EL-001/002/003 uses Medium/Low vs local Major/Minor — systemic index overload, not fixed this pass. Spec Gates **unchanged** 0/6. Status **unchanged** Exploration.
 

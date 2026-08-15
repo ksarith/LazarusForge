@@ -686,12 +686,14 @@ If all four protocols achieve Pass status:
 | Blocking      | No                                               |
 | Owner         | Operations/Air_Scrubber.md                       |
 | First Logged  | 2026-05-06                                       |
-| Last Reviewed | 2026-05-31                                       |
+| Last Reviewed | 2026-08-15                                       |
 
 **Description:** Whether 500W worst-case scrubber
 draw (surface/shallow variants) is compatible with
 Forge power budget at bootstrap and nominal modes.
 Thermal sink power is not yet validated in this loop.
+
+*Grok review 2026-08-15: Resolution Path adequate; Energy.md cross-ref real. No closure.*
 
 **Why It Matters:** If scrubber + thermal sink exceeds
 20% of bootstrap power budget, the Forge cannot operate
@@ -719,11 +721,13 @@ estimates to Measured.
 | Blocking      | No                                               |
 | Owner         | Operations/Air_Scrubber.md                       |
 | First Logged  | 2026-05-06                                       |
-| Last Reviewed | 2026-05-31                                       |
+| Last Reviewed | 2026-08-15                                       |
 
 **Description:** Detailed specification for deep-sea
 Variant 4+ (greater than 50m / 5 atm) remains
 undefined.
+
+*Grok review 2026-08-15: Correctly discharged to Trajectories.md; Leviathan cross-ref real. In Progress / Minor appropriate. No closure.*
 
 **Why It Matters:** Deep-sea operation is a
 `Tests/Leviathan_testing.md` deployment requirement.
@@ -748,13 +752,15 @@ module. Discharge via Trajectory — not in v0 scope.
 | Blocking      | Yes — blocks Chemistry validation per `Unknowns.md` |
 | Owner         | Operations/Air_Scrubber.md                       |
 | First Logged  | 2026-05-06                                       |
-| Last Reviewed | 2026-05-31                                       |
+| Last Reviewed | 2026-08-15                                       |
 
 **Description:** Saturation thresholds have been
 bound to a multi-point differential diagnostic grid
 (PID VOC, ΔP, and Sump pH). Real-world chemical
 baseline data is now required to clamp the
 operational float margins.
+
+*Grok review 2026-08-15: Resolution Path sound; Blocking Yes correctly retained (Chemistry validation dependency). No closure.*
 
 **Why It Matters:** Without calibrated thresholds,
 the interlock system operates on estimated values.
@@ -784,7 +790,7 @@ first hot-pyrolysis run produces calibration data.
 | Blocking      | Yes — blocks Protocol 1.4 fault-alarm audibility calibration |
 | Owner         | Operations/Air_Scrubber.md                       |
 | First Logged  | 2026-05-23                                       |
-| Last Reviewed | 2026-08-10                                       |
+| Last Reviewed | 2026-08-15                                       |
 
 **Description:** Continuous fan and compressor noise
 levels during Air Scrubber operation have not been
@@ -793,6 +799,8 @@ addresses general hearing conservation doctrine and
 PPE requirements, but no site-specific SPL survey
 or formal hearing conservation program for Air
 Scrubber operations exists.
+
+*Grok review 2026-08-15: Blocking Yes correctly retained (Protocol 1.4 dependency). Safety_Protocols.md cross-ref real. No closure.*
 
 **Why It Matters:** If actual SPL during scrubber
 operation exceeds safe exposure limits, current PPE
@@ -818,6 +826,8 @@ that calibration step.
 ---
 
 ### Resolution Log
+
+- 2026-08-15: **Grok review round (alphabetical continuation — Air_Scrubber.md).** All 4 AS unknowns (AS-001–004) reviewed. Last Reviewed bumped; review markers added. Cross-refs (Energy.md, Leviathan_testing.md, Trajectories.md, Chemistry validation dependency, Safety_Protocols.md) verified real. AS-003 and AS-004 Blocking Yes correctly retained. Zero closures, zero Blocking flips, zero Priority changes. Spec Gates left locked. Human-directed.
 
 - 2026-08-10: **AS-004 Blocking No → Yes (follow-up).** File’s own Why It
   Matters states this unknown “blocks that calibration step” (Protocol 1.4

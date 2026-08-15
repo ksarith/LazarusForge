@@ -538,13 +538,15 @@ recommendation and Gate_02 decision.*
 | Blocking      | No                                               |
 | Owner         | Operations/Gate_07_Utilization.md                |
 | First Logged  | 2026-05-19                                       |
-| Last Reviewed | 2026-05-19                                       |
+| Last Reviewed | 2026-08-15                                       |
 
 **Description:** The performance metric schema —
 field types, value formats, and comparable data
 structures — is defined at minimum content level
 but not at schema level. Cross-forge comparison
 requires compatible record structures.
+
+*Grok review 2026-08-15: Resolution Path adequate. FN-001 still Open (spec-complete per Unknowns.md v4.55 but not closed); GI-006 real. No closure.*
 
 **Why It Matters:** Utilization data contributed
 to Architecture/Forge_Net.md is only comparable
@@ -582,12 +584,14 @@ cross-validated with Gate_02_Triage
 | Blocking      | No                                               |
 | Owner         | Operations/Gate_07_Utilization.md                |
 | First Logged  | 2026-05-19                                       |
-| Last Reviewed | 2026-05-19                                       |
+| Last Reviewed | 2026-08-15                                       |
 
 **Description:** The retirement handoff record
 format and recommended classification scheme have
 not been cross-validated against Gate_02_Triage
 intake requirements.
+
+*Grok review 2026-08-15: Resolution Path correct; Gate_02_Triage.md exists and DS-001 standing doctrine (Gate_07 records, Gate_02 decides) is consistent. No closure.*
 
 **Why It Matters:** If the recommendation format
 is incompatible with Gate_02's decision logic,
@@ -622,13 +626,15 @@ standards compliance unowned
 | Blocking      | No                                               |
 | Owner         | Operations/Gate_07_Utilization.md                |
 | First Logged  | 2026-05-19                                       |
-| Last Reviewed | 2026-05-19                                       |
+| Last Reviewed | 2026-08-15                                       |
 
 **Description:** Formal quality certification —
 pressure ratings, load certifications, electrical
 safety standards — is explicitly out of scope for
 v0 Utilization. No file currently owns this future
 requirement.
+
+*Grok review 2026-08-15: Resolution Path correctly discharges to Trajectories.md / Ship_of_Theseus.md. Minor priority appropriate. No closure.*
 
 **Why It Matters:** As the forge ecology grows
 and fabricated parts enter external trade or
@@ -660,7 +666,7 @@ not defined
 | Blocking      | No                                               |
 | Owner         | Operations/Gate_07_Utilization.md                |
 | First Logged  | 2026-05-19                                       |
-| Last Reviewed | 2026-05-19                                       |
+| Last Reviewed | 2026-08-15                                       |
 
 **Description:** Silent failures — fatigue crack
 initiation, gradual dimensional drift, slow
@@ -668,6 +674,8 @@ conductivity loss, creep deformation — are not
 externally observable without instrumentation.
 At v0, the forge learns from observable failures
 only.
+
+*Grok review 2026-08-15: Resolution Path honest about v0 limits; GF-006 cross-ref real and still Open. Blocking=No correctly left (acknowledged limitation, not start-interlock). No closure.*
 
 **Why It Matters:** Safety-critical and load-bearing
 parts may exhibit silent failure progression before
@@ -704,11 +712,13 @@ needs a defined upgrade path.
 | Blocking      | No                                               |
 | Owner         | Operations/Gate_07_Utilization.md                |
 | First Logged  | 2026-05-23                                       |
-| Last Reviewed | 2026-05-23                                       |
+| Last Reviewed | 2026-08-15                                       |
 
 **Description:** The FRT cycle definition (month / audit cycle / throughput
 batch) and the calibrated FRT floor have not been declared by an operator.
 The Placeholder floor [2–5%] applies until first operational cycle data exists.
+
+*Grok review 2026-08-15: Resolution Path correct (operator declaration + post-cycle calibration). TR-002 cross-ref real and still Open in Unknowns.md. No closure.*
 
 **Why It Matters:** Without a declared cycle definition, FRT logging cannot
 begin. Without a calibrated floor, the systemic decline threshold is undefined.
@@ -724,6 +734,8 @@ different owning file. FRT floor calibration closes both.
 ---
 
 ### Resolution Log
+
+- 2026-08-15: **Grok review round (Gate_07 sequence continuation).** All 5 GU unknowns (GU-001–005) reviewed. Last Reviewed bumped; review markers added. Cross-refs verified real (FN-001 still Open/spec-complete per Unknowns.md v4.55, GI-006, Gate_02_Triage.md, GF-006, TR-002, Trajectories.md, Ship_of_Theseus.md). DS-001 standing doctrine (Gate_07 records / Gate_02 decides) consistent. Zero closures, zero Blocking flips, zero Priority changes. Spec Gates left locked at 0/6. Human-directed.
 
 - 2026-08-10: **Pseudo-audit (Grok, same limits).** Findings only; Spec Gates
   left locked at 0/6. (1) Open Unknowns **5** = GU-001–005, matches local +

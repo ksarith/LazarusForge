@@ -497,9 +497,11 @@ Key guiding principles drawn from disciplined analysis:
 | Blocking      | Yes — blocks v1 operating cost model and `Admin/Economics.md` ECN-002 |
 | Owner         | `Operations/Energy.md`                                                |
 | First Logged  | 2026-05-27                                                            |
-| Last Reviewed | 2026-08-09                                                            |
+| Last Reviewed | 2026-08-15                                                            |
 
 **Description:** Actual consumption of the physical bootstrap hardware remains an estimate based on industrial analogs. The proposed Demand Model gives those estimates equation structure; measured data still does not exist.
+
+*Grok review 2026-08-15: Blocking Yes correctly retained (Economics ECN-002 dependency). Cross-ref to Challenges/Energy_Scarcity.md (ASM-002 surplus claim subordinated to EV-001) verified intact and correctly scoped. No closure.*
 
 **Why It Matters:** EV-001 is the demand-side anchor for all cross-module energy accounting. Without measured figures, every power budget claim — including every term in the proposed Demand Model — carries Placeholder confidence.
 
@@ -518,9 +520,11 @@ Key guiding principles drawn from disciplined analysis:
 | Blocking      | No                 |
 | Owner         | `Operations/Energy.md` |
 | First Logged  | 2026-05-27         |
-| Last Reviewed | 2026-08-02         |
+| Last Reviewed | 2026-08-15         |
 
 **Description:** Total net energy yield of anaerobic digestion loops is unmeasured under cold-start conditions.
+
+*Grok review 2026-08-15: Resolution Path concrete; interlock rules already codified. No closure.*
 
 **Resolution Path:** Enforce 35°C thermal interlock and 22% maximum compressor energy rule. Capture gas-flow meter data against input feedstock mass vectors during initial operational loops. Payment via Specification once first cycle data characterizes net yield.
 
@@ -537,9 +541,11 @@ Key guiding principles drawn from disciplined analysis:
 | Blocking      | Yes — before enclosed battery bank commissioning     |
 | Owner         | `Operations/Energy.md`                                |
 | First Logged  | 2026-05-27                                            |
-| Last Reviewed | 2026-08-02                                            |
+| Last Reviewed | 2026-08-15                                            |
 
 **Description:** Unknown state-of-health battery modules present catastrophic thermal runaway vectors. Full containment and ventilation doctrine not yet physically validated. A proposed SoH classification and buffer-sizing extension has been drafted but not audited or physically validated.
+
+*Grok review 2026-08-15: Blocking Yes / Critical correctly retained. Air_Scrubber cross-ref real. No closure.*
 
 **Resolution Path:** Physical isolation rules, locked 3.0V/cell hard-guards, and Air Scrubber Max-Flow auto-trigger remain codified and audited. Move to resolved once the external fire-rated enclosure physical build passes cold safety audit. Payment via Specification once enclosure is physically verified.
 
@@ -556,9 +562,11 @@ Key guiding principles drawn from disciplined analysis:
 | Blocking      | Yes — before autonomous multi-source power distribution commissioning |
 | Owner         | `Operations/Energy.md`                                                |
 | First Logged  | 2026-08-02                                                            |
-| Last Reviewed | 2026-08-02                                                            |
+| Last Reviewed | 2026-08-15                                                            |
 
 **Description:** ASM-006 assumes discrete/minimal-firmware controllers can implement EAL priority logic (P₁ > P₂ > P₃ > P₄, "no software overrides") without introducing new programmable attack surface. That assumption is tracked at the Assumptions-table level but had no corresponding tracked unknown for the hardware realization and adversarial firmware-compromise resistance of the mechanism itself.
+
+*Grok review 2026-08-15: Blocking Yes correctly retained. EL-006 Logic-Zero cross-ref real. No closure.*
 
 **Why It Matters:** The EAL's central claim — that safety-rail priority can't be software-bypassed — rests entirely on this unvalidated hardware isolation. If it turns out to require more than discrete logic, ASM-006 fails and the EAL's core guarantee needs rework.
 
@@ -577,9 +585,11 @@ Key guiding principles drawn from disciplined analysis:
 | Blocking      | No                                                    |
 | Owner         | `Operations/Energy.md`                                |
 | First Logged  | 2026-08-02                                            |
-| Last Reviewed | 2026-08-02                                            |
+| Last Reviewed | 2026-08-15                                            |
 
 **Description:** TEG conversion efficiency is low (η_TEG ≈ 3–7%). Section V models `R_thermal(t) = η_TEG · Q_waste(t)` as generation without a paired, explicit net-positive check against the coolant pump and radiator fan draw (`P_pump + P_fan`) that recovery itself requires — those parasitic terms exist in the Demand Model's `P_thermal(t)`, but nothing currently confirms recovery is worth its own overhead at low delta-T, and the Source Classes table previously (and incorrectly) implied TEG could supply idle-state baseline load with no active thermal process running at all — corrected 2026-08-02, see Resolution Log.
+
+*Grok review 2026-08-15: Resolution Path sound (net-positive check + shutoff). Gate_05 cross-ref real. No closure.*
 
 **Why It Matters:** Below some delta-T, running coolant pumps to chase TEG recovery could be a net energy loss, not a gain — the opposite of what "thermal recovery" is for.
 
@@ -588,6 +598,8 @@ Key guiding principles drawn from disciplined analysis:
 ---
 
 ### Resolution Log
+
+- 2026-08-15: **Grok review round (alphabetical continuation — Energy.md + cross-check of Challenges/Energy_Scarcity.md).** All 5 EV unknowns (EV-001–005) reviewed. Last Reviewed bumped; review markers added. Cross-refs verified real (ECN-002, Air_Scrubber, Electronics EL-006, Gate_05). **Cross-file check:** Challenges/Energy_Scarcity.md correctly distinguishes itself from Operations/Energy.md (External purpose framing vs operational how-to); its ASM-002 explicitly subordinates any community-surplus claim to EV-001 measured figures; EV- prefix collision avoided by design (ES- unknowns). No stale ownership claims found either direction. EV-001/003/004 Blocking Yes correctly retained. Zero closures, zero Blocking flips, zero Priority changes. Spec Gates left locked at 1/6. Human-directed.
 
 - 2026-08-09: **Pseudo-audit (Grok — Skeptic/Auditor read + minimal Synthesizer fixes only; human-directed pilot).** Role limits: no Spec Gate promotion, no physical-unknown closure, no self-approval. **Corrections applied:** (1) EV-001 Blocking cross-ref `EC-002` → `ECN-002` (Economics ID namespace rename; confirmed against `Admin/Economics.md` and `Unknowns.md`); (2) Safety Advisory "drafted this session" → "drafted 2026-08-01" (session-relative language had gone stale). **Findings logged, not closed:** F-EN-001 — Spec Gates remains 1/6 with historical justification in 2026-08-02 log, but no independent current Gate 1 evidence package for the pre-EGL core is restated in-file; not demoted to 0/6 (that would also be a claim without dual-auditor Gate work). F-EN-002 — Unknowns.md Active Index still shows EV-001 Priority column as "Blocking" while this file's sidecar correctly separates Priority: Major and Blocking: Yes — index vocabulary overload, systemic, not unique to this file. F-EN-003 — EGL / EAL / Source Stability remain proposed/unaudited; EV-004/EV-005 correctly open. **Verified intact:** Open Unknowns count 5 matches EV-001–005; Air_Scrubber Variant 0 positive-pressure cross-ref valid against `Operations/Air_Scrubber.md`; EV-003 safety advisory and Scrubber Prerequisite still load-bearing; no `Verification_Gates_LF` residue. Spec Gates **unchanged** at 1/6. Status **unchanged** Draft.
 

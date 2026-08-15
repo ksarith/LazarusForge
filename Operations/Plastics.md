@@ -258,7 +258,7 @@ that bypasses halogenated feedstock rejection at triage. Cross-reference:
 | Blocking      | Yes (before any hot operational runs)            |
 | Owner         | Operations/Plastics.md                           |
 | First Logged  | 2026-05-26                                       |
-| Last Reviewed | 2026-05-27                                       |
+| Last Reviewed | 2026-08-15                                       |
 
 **Description:** PVC and other halogenated plastics release hydrochloric acid (HCl)
 gas and toxic dioxins when subjected to pyrolysis temperatures. Even small quantities
@@ -278,6 +278,8 @@ accidental acid gas bypass from imperfect triage rejection. Payment via
 Specification once triage protocol is validated against a representative
 feedstock sample and scrubber alkaline stage is confirmed.
 
+**Grok review 2026-08-15:** Path adequate. Beilstein + density sorting are concrete v0 methods; GI-003 and AS-003 cross-refs are real and correctly load-bearing. Blocking Yes before any hot run is correct. **Grok approved (path adequate).** Remains Open — triage protocol still needs definition + validation; do not run hot pyrolysis until closed.
+
 ---
 
 ### PL-002 — Reactor Thermal Runaway, Pressure Control, and Maintenance Access
@@ -291,7 +293,7 @@ feedstock sample and scrubber alkaline stage is confirmed.
 | Blocking      | Yes (before reactor fabrication)                 |
 | Owner         | Operations/Plastics.md                           |
 | First Logged  | 2026-05-26                                       |
-| Last Reviewed | 2026-05-27                                       |
+| Last Reviewed | 2026-08-15                                       |
 
 **Description:** The rate of vapor generation must not exceed the throughput
 capacity of the condensation plumbing. Additionally, the reactor and condensation
@@ -312,6 +314,8 @@ Establish minimum inspection interval cadence (Placeholder — to be defined dur
 first operational cycle). Payment via Specification once relief system design is
 validated and maintenance access provisions are incorporated into reactor design.
 
+**Grok review 2026-08-15:** Path adequate. Passive bubbler-lock relief (no air ingress) is the right architecture for an oxygen-free hot reactor; maintenance access and corrosion inspection are correctly co-specified. Blocking Yes before fabrication is correct. **Grok approved (path adequate).** Remains Open — design still needs to be written and validated.
+
 ---
 
 ### PL-003 — Pyrolytic Fuel Stability and Contaminant Profile
@@ -325,7 +329,7 @@ validated and maintenance access provisions are incorporated into reactor design
 | Blocking      | No                                               |
 | Owner         | Operations/Plastics.md                           |
 | First Logged  | 2026-05-26                                       |
-| Last Reviewed | 2026-05-27                                       |
+| Last Reviewed | 2026-08-15                                       |
 
 **Description:** Recovered synthetic crude oil from mixed plastic pyrolysis is
 often acidic and contains wax paraffins that separate and solidify at room
@@ -341,6 +345,8 @@ reserves. Cross-reference `Operations/Energy.md` for integration with motor-gene
 fuel input. Payment via Specification once oil quality is characterized from first
 operational reactor run.
 
+**Grok review 2026-08-15:** Path adequate. Correctly deferred to first operational run for characterization; Energy.md cross-ref is real. Non-Blocking is appropriate. **Grok approved (path adequate).** Remains Open — needs measured oil quality data.
+
 ---
 
 ### PL-004 — Mechanical Filament-Drawing Threshold Not Defined
@@ -354,7 +360,7 @@ operational reactor run.
 | Blocking      | No                                               |
 | Owner         | Operations/Plastics.md                           |
 | First Logged  | 2026-05-26                                       |
-| Last Reviewed | 2026-05-27                                       |
+| Last Reviewed | 2026-08-15                                       |
 
 **Description:** The exact conditions under which mechanical plastic recycling
 (RepRap filament drawing) becomes unfeasible due to contamination or structural
@@ -373,6 +379,8 @@ feasible at v0), density measurement in water bath. Payment via Specification
 once heuristics are validated against first operational triage cycle with
 representative mixed feedstock.
 
+**Grok review 2026-08-15:** Path adequate. Heuristics are concrete and v0-feasible; correctly resists inventing numeric thresholds without data. **Grok approved (path adequate).** Remains Open — needs validation against real mixed feedstock.
+
 ---
 
 ### PL-005 — Char and Solid Residue Composition Uncharacterized
@@ -386,7 +394,7 @@ representative mixed feedstock.
 | Blocking      | No                                               |
 | Owner         | Operations/Plastics.md                           |
 | First Logged  | 2026-05-27                                       |
-| Last Reviewed | 2026-05-27                                       |
+| Last Reviewed | 2026-08-15                                       |
 
 **Description:** Pyrolysis produces 5–20% solid char and ash residue by feedstock
 mass. Char composition from mixed plastic feedstock is unknown — it may contain
@@ -406,9 +414,13 @@ to hazardous hold or material recovery as appropriate. Cross-reference
 doctrine) for hazardous char disposition path. Payment via Specification once
 char composition is characterized and a routing decision tree is defined.
 
+**Grok review 2026-08-15:** Path adequate. Correctly sequences after first operational run; GR-003 and Gate_02 cross-refs are real. Non-Blocking is appropriate until char exists to characterize. **Grok approved (path adequate).** Remains Open — needs measured char data + routing tree.
+
 ---
 
 ### Resolution Log
+
+- 2026-08-15: **Grok resolution-path review (Operations continuation — Plastics).** All five PL unknowns reviewed against source. Every Resolution Path judged adequate; residual evidence needs (triage validation, reactor design, first-run characterization) correctly retained. Cross-refs (GI-003, AS-003, Energy.md, Gate_02, GR-003) verified real. Markers added; Last Reviewed → 2026-08-15 on all five. **No PL-* closed.** Open Unknowns remain 5. Blocking status unchanged (PL-001 and PL-002 Yes). Human-directed.
 
 - 2026-08-10: **Pseudo-audit (Grok, same limits).** Findings only; Spec Gates
   left locked at 0/6. (1) Open Unknowns **5** = PL-001–005, matches local

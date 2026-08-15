@@ -506,7 +506,7 @@ Gate_04 inputs
 | Blocking      | No                                               |
 | Owner         | Operations/Gate_03_Reduction.md                  |
 | First Logged  | 2026-05-15                                       |
-| Last Reviewed | 2026-05-15                                       |
+| Last Reviewed | 2026-08-14                                       |
 
 **Description:** The Reduction output envelope is
 currently defined backward from Gate_04's provisional
@@ -539,6 +539,8 @@ cannot be evaluated.
   Gate_04_Separation_Mechanical.md Inputs section,
   MG-001, UNK-007.
 
+**Grok review 2026-08-14:** Path adequate. Correctly sequences method selection (GR-002) before characterization and Gate_04 cross-validation. **Grok approved (path adequate).** Remains Open — depends on GR-002; needs measured output data.
+
 ---
 
 ### GR-002 — Reduction method not selected
@@ -552,7 +554,7 @@ cannot be evaluated.
 | Blocking      | No                                               |
 | Owner         | Operations/Gate_03_Reduction.md                  |
 | First Logged  | 2026-05-15                                       |
-| Last Reviewed | 2026-05-15                                       |
+| Last Reviewed | 2026-08-14                                       |
 
 **Description:** No Reduction method has been selected
 for v0. Method selection determines output envelope,
@@ -586,6 +588,8 @@ operational parameters.
   output, move to Section 3 as Analogous promoting
   toward Measured.
 
+**Grok review 2026-08-14:** Path adequate. Candidate methods are concrete and correctly scoped to v0 bootstrap; feedstock-fit priority is right. **Grok approved (path adequate).** Remains Open — method still needs selection + first run characterization.
+
 ---
 
 ### GR-003 — Biological and chemical waste disposal
@@ -600,7 +604,7 @@ doctrine not assigned
 | Blocking      | No                                               |
 | Owner         | Operations/Gate_03_Reduction.md                  |
 | First Logged  | 2026-05-15                                       |
-| Last Reviewed | 2026-05-15                                       |
+| Last Reviewed | 2026-08-14                                       |
 
 **Description:** Material that cannot be processed
 through normal Reduction due to biological or chemical
@@ -637,6 +641,8 @@ environmental and safety incidents.
 - Cross-reference: Operations/Gate_01_Intake.md
   GI-005, Admin/Ethical_Constraints.md.
 
+**Grok review 2026-08-14:** Path adequate. Category list + hold doctrine + escalation + jurisdiction note are the right structure; suggestion of a dedicated Waste_Handling.md is reasonable. Blocking No is consistent with prior audit (accumulation/governance gap, not start-interlock). **Grok approved (path adequate).** Remains Open — disposal doctrine still needs writing; Critical priority correctly retained.
+
 ---
 
 ### GR-004 — Particulate generation rate and
@@ -651,7 +657,7 @@ composition not characterized
 | Blocking      | No                                               |
 | Owner         | Operations/Gate_03_Reduction.md                  |
 | First Logged  | 2026-05-15                                       |
-| Last Reviewed | 2026-05-15                                       |
+| Last Reviewed | 2026-08-14                                       |
 
 **Description:** The volume, size distribution, and
 composition of dust and fines generated during
@@ -683,6 +689,8 @@ operational run.
 - Cross-reference: Operations/Air_Scrubber.md,
   ASM-005.
 
+**Grok review 2026-08-14:** Path adequate. Correctly depends on GR-002; combustible-dust check is the right safety flag. **Grok approved (path adequate).** Remains Open — needs method selection + measured particulate data.
+
 ---
 
 ### GR-005 — Automation introduction criteria
@@ -697,7 +705,7 @@ not defined
 | Blocking      | No                                               |
 | Owner         | Operations/Gate_03_Reduction.md                  |
 | First Logged  | 2026-05-15                                       |
-| Last Reviewed | 2026-05-15                                       |
+| Last Reviewed | 2026-08-14                                       |
 
 **Description:** The criteria that must be met before
 automated Reduction without continuous human presence
@@ -729,6 +737,8 @@ for unresolved upstream screening and gate logic gaps.
 - Cross-reference: ASM-006, ASM-001, ASM-002,
   Admin/Ethical_Constraints.md.
 
+**Grok review 2026-08-14:** Path adequate and correctly conservative. Prerequisite list (FL-001, GI-002, GI-003, GR-001, GR-004, interlocks, human sign-off) is the right gate set for an irreversible process. Specification-level decision framing is correct. **Grok approved (path adequate).** Remains Open — automation must not be introduced at Exploration stage.
+
 ---
 
 ### GR-006 — Mechanical jam clearing doctrine
@@ -743,7 +753,7 @@ not defined
 | Blocking      | No                                               |
 | Owner         | Operations/Gate_03_Reduction.md                  |
 | First Logged  | 2026-07-28                                       |
-| Last Reviewed | 2026-07-28                                       |
+| Last Reviewed | 2026-08-14                                       |
 
 **Description:** No procedure exists for safely clearing a
 mechanical jam in Reduction equipment. This entry existed in
@@ -763,6 +773,8 @@ specifically (which Reduction method(s) this applies to depends on
 GR-002's method selection, still Open) before finalizing procedure
 detail.
 
+**Grok review 2026-08-14:** Path adequate. Lockout-first posture is correct; dependency on GR-002 method selection is honestly named. **Grok approved (path adequate).** Remains Open — procedure still needs writing once method is known.
+
 ---
 
 ### GR-007 — Contaminated equipment retirement threshold
@@ -777,7 +789,7 @@ not defined
 | Blocking      | No                                               |
 | Owner         | Operations/Gate_03_Reduction.md                  |
 | First Logged  | 2026-07-28                                       |
-| Last Reviewed | 2026-07-28                                       |
+| Last Reviewed | 2026-08-14                                       |
 
 **Description:** No threshold exists for when Reduction equipment
 exposed to contaminated feedstock (hazardous residue, cross-material
@@ -802,6 +814,8 @@ treat any equipment with confirmed hazardous contamination as
 retired by default rather than attempting an undefined
 decontamination procedure.
 
+**Grok review 2026-08-14:** Path adequate and correctly conservative (default-retire until doctrine exists). Downstream-of-WA-002 dependency is honestly named; Critical priority is justified. **Grok approved (path adequate).** Remains Open — categories still need definition; partially blocked on WA-002.
+
 ---
 
 ### GR-008 — Operator decision support minimum standard
@@ -816,7 +830,7 @@ not defined
 | Blocking      | No                                               |
 | Owner         | Operations/Gate_03_Reduction.md                  |
 | First Logged  | 2026-07-28                                       |
-| Last Reviewed | 2026-07-28                                       |
+| Last Reviewed | 2026-08-14                                       |
 
 **Description:** No minimum standard exists for what decision
 support (guidance, checklists, real-time feedback) an operator
@@ -836,9 +850,13 @@ GR-001 (output envelope) and GR-002 (method selection) resolve —
 decision support content depends on knowing what the operator is
 actually deciding between.
 
+**Grok review 2026-08-14:** Path adequate. Correctly sequences after GR-001/GR-002; content scope (checklist, status indicators, stop conditions) is the right minimum. **Grok approved (path adequate).** Remains Open — depends on method + envelope being known.
+
 ---
 
 ### Resolution Log
+
+- 2026-08-14: **Grok resolution-path review (Round 3 — Operations).** All eight GR unknowns reviewed against source. Every Resolution Path judged adequate; residual dependencies (GR-002 method selection, WA-002, measured data) correctly retained. Markers added; Last Reviewed → 2026-08-14 on all eight. **No GR-* closed.** Open Unknowns remain 8. Blocking status unchanged (all No). Human-directed.
 
 - 2026-08-10: **Pseudo-audit (Grok, same limits).** Findings only; Spec Gates
   left locked at 0/6. (1) Open Unknowns **8** = GR-001–008, matches local +

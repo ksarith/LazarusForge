@@ -788,6 +788,15 @@ without records teach nothing.*
 - `Architecture/Forge_Net.md` — fabrication
   logs and method outcomes contributed to
   network reference database
+
+**CLF-011 acknowledgment (2026-08-14):** this gate is required to
+read the `fir_class` batch field when computing or validating
+$Y_p$ (per `Challenges/Closed_Loop_Feedstock.md` §4a Integration
+Hooks / §4b), and to refuse a $Y_p$ claim if the field is missing
+rather than defaulting it. **Not implemented** — no read/validation
+logic exists in this file. This note is acknowledgment of the
+obligation only; CLF-011 remains Open until Path A (real batch
+evidence) or Path B (human contract-acceptance) is taken per §4b.
 - `Admin/Trajectories.md` — deferred methods
   (powder welding, laser welding, casting,
   pressing) routed here for version targeting
@@ -848,7 +857,7 @@ not defined
 | Blocking      | No                                               |
 | Owner         | Operations/Gate_06_Fabrication.md                |
 | First Logged  | 2026-05-15                                       |
-| Last Reviewed | 2026-05-15                                       |
+| Last Reviewed | 2026-08-15                                       |
 
 **Description:** Wire diameter specification for v0
 arc welding has not been defined. Wire diameter
@@ -856,6 +865,8 @@ determines amperage range, deposition rate, and
 suitable base metal thickness. SC-004 draw speed
 controls diameter — without a target diameter,
 draw speed cannot be set.
+
+*Grok review 2026-08-15: Resolution Path adequate and correctly scoped. SC-004 cross-ref verified real. No closure; no Blocking/Priority change.*
 
 **Why It Matters:** Wire diameter is the primary
 parameter connecting SC-004 wire extrusion to arc
@@ -896,13 +907,15 @@ at v0 bootstrap
 | Blocking      | No                                               |
 | Owner         | Operations/Gate_06_Fabrication.md                |
 | First Logged  | 2026-05-15                                       |
-| Last Reviewed | 2026-05-15                                       |
+| Last Reviewed | 2026-08-15                                       |
 
 **Description:** The actual precision ceiling —
 tightest tolerance achievable and verifiable at
 v0 bootstrap — has not been characterized. Section
 5 provides Analogous estimates but these are not
 measured values.
+
+*Grok review 2026-08-15: Resolution Path sound — demands empirical test pieces before any Measured claim. Cross-ref to Components.md metrology intact. No closure.*
 
 **Why It Matters:** An uncharacterized precision
 ceiling produces overconfident fabrication claims.
@@ -940,11 +953,13 @@ been verified may fail in service silently.
 | Blocking      | No                                               |
 | Owner         | Operations/Gate_06_Fabrication.md                |
 | First Logged  | 2026-05-15                                       |
-| Last Reviewed | 2026-05-15                                       |
+| Last Reviewed | 2026-08-15                                       |
 
 **Description:** Specific material removal equipment
 for the mill-to-spec step has not been specified
 for v0 bootstrap.
+
+*Grok review 2026-08-15: Resolution Path concrete and correctly low-stakes. Cross-ref GF-002 intact. No closure.*
 
 **Why It Matters:** Material removal capability
 determines the precision ceiling. The add-to-excess
@@ -981,12 +996,14 @@ characterized
 | Blocking      | No                                               |
 | Owner         | Operations/Gate_06_Fabrication.md                |
 | First Logged  | 2026-05-15                                       |
-| Last Reviewed | 2026-05-15                                       |
+| Last Reviewed | 2026-08-15                                       |
 
 **Description:** Energy consumption of arc welding
 and material removal operations has not been
 characterized or cross-referenced to
 Operations/Energy.md power budget.
+
+*Grok review 2026-08-15: Resolution Path adequate; Energy.md cross-ref real. No closure.*
 
 **Why It Matters:** Arc welding draws significant
 peak power — a basic MMA welder draws 2–5kW at
@@ -1022,12 +1039,14 @@ scheduling conflicts arise.
 | Blocking      | No                                               |
 | Owner         | Operations/Gate_06_Fabrication.md                |
 | First Logged  | 2026-05-15                                       |
-| Last Reviewed | 2026-05-15                                       |
+| Last Reviewed | 2026-08-15                                       |
 
 **Description:** The Utilization stage — where
 fabricated parts enter service and real-world
 performance is validated — has no owning
 specification file in the repository.
+
+*Grok review 2026-08-15: STALE CLAIM FLAGGED. `Operations/Gate_07_Utilization.md` now exists and carries GU-001–005. The 2026-06-08 Resolution Log incorrectly stated “GF-005 now resolved.” GF-005 remains Open in both local sidecar and Unknowns.md Active Index. Re-scope consideration (ownership of the learning/feedback path) is legitimate but no closure performed this round. Cross-ref Gate_07 verified real.*
 
 **Why It Matters:** Fabrication produces candidates
 for use. Utilization determines whether they are
@@ -1067,7 +1086,7 @@ for v0 fabrication qualification
 | Blocking      | No                                               |
 | Owner         | Operations/Gate_06_Fabrication.md                |
 | First Logged  | 2026-05-19                                       |
-| Last Reviewed | 2026-05-19                                       |
+| Last Reviewed | 2026-08-15                                       |
 
 **Description:** Section 3 qualification criteria
 reference "adequate strength for v0 structural
@@ -1075,6 +1094,8 @@ applications" but no operational definition exists
 for structural adequacy — load classes, acceptable
 weld defects, fatigue expectations, or safety factor
 assumptions.
+
+*Grok review 2026-08-15: Resolution Path correctly resists inventing numbers; demands coarse load classes + destructive testing doctrine. Cross-ref Trajectories.md intact. No closure.*
 
 **Why It Matters:** Without even coarse structural
 classes, "qualified weld" risks semantic drift
@@ -1117,7 +1138,7 @@ and hot-work doctrine undefined
 | Blocking      | No                                               |
 | Owner         | Operations/Gate_06_Fabrication.md                |
 | First Logged  | 2026-05-19                                       |
-| Last Reviewed | 2026-05-19                                       |
+| Last Reviewed | 2026-08-15                                       |
 
 **Description:** Operator PPE is well-covered but
 facility-level fire mitigation for arc welding
@@ -1125,6 +1146,8 @@ operations is not defined. Spark containment,
 fuel separation, extinguisher class requirements,
 ventilation/fire interaction, and hot-work shutdown
 procedures are all absent.
+
+*Grok review 2026-08-15: Resolution Path strong; correctly points fire doctrine to Facilities.md (FA-001) as siting layer. Critical/High Risk preserved; Blocking=No left intact (PPE already hard-prerequisite). No closure.*
 
 **Why It Matters:** Arc welding creates credible
 ignition hazards in salvage environments where
@@ -1162,6 +1185,8 @@ the fire risk profile is materially different.
 ---
 
 ### Resolution Log
+
+- 2026-08-15: **Grok review round (Gate_06 sequence continuation).** All 7 GF unknowns (GF-001–007) reviewed. Last Reviewed bumped; review markers added. One real inconsistency flagged: GF-005 still Open in local sidecar and Unknowns.md Active Index, yet `Operations/Gate_07_Utilization.md` exists and the 2026-06-08 log entry incorrectly claimed “GF-005 now resolved.” Flagged in GF-005 entry; no closure performed. All other Resolution Paths judged adequate; cross-refs (SC-004, UNK-008/Geck, FA-001, Gate_07) verified real. Zero closures, zero Blocking flips, zero Priority changes. Spec Gates left locked at 0/6. Human-directed continuation of prior rounds.
 
 - 2026-08-10: **Pseudo-audit (Grok, same limits).** Findings only; Spec Gates
   left locked at 0/6. (1) Open Unknowns **7** = GF-001–007, matches local +
