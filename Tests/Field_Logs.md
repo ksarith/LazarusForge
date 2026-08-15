@@ -12,7 +12,7 @@
 | Open Unknowns    | 0                                                                    |
 | Body Stability   | N/A                                                                  |
 | Owning Domain    | Tests/                                                               |
-| Last Reviewed    | 2026-08-06                                                           |
+| Last Reviewed    | 2026-08-14                                                           |
 | Sidecar Link     | N/A                                                                  |
 | Ethical Anchor   | Attempt to do no harm. Defer to `Admin/Ethical_Constraints.md` if present. |
 
@@ -88,6 +88,18 @@ This is `Hardware_Diversity_Ladder.md` Tier 2 (Three-Host Architectural Diversit
 
 ---
 
+## Second-Highest-Value Run: Calibration Data for FN-001/FN-005
+
+As of 2026-08-14, `Architecture/Forge_Net.md`'s data validation (DV-001–006) and data privacy (PA-001–006) Provisional Specs are both structurally complete — the remaining gap on both is the same one: numeric thresholds are Placeholder because no operational data has ever been generated to set them. A run doesn't need to be a full multi-forge network to produce this — it needs to generate contributions and conflicts a reviewer can measure. If attempting this, capture:
+
+- **For DV-003 (confidence model):** observation count, source diversity (`independence_tag` values actually achieved — same_node / same_cluster / different_region / different_generation), and contradiction density for a batch of simulated or real contributions. Even a single-node dry run against a small seeded dataset is useful if it's honestly labeled Simulated, not Measured.
+- **For DV-004 (conflict resolution):** at least one deliberately-induced conflicting contribution, to see whether minority-report preservation behaves as specified and what a reasonable "observation window" for a persisting contradiction actually looks like in practice.
+- **For PA-002 (access control):** what trust-score range plausibly separates a new/unproven node from an established one, based on whatever contribution history the run produces — this doesn't need to be a final number, just a first real data point instead of an invented one.
+
+Log this the same way as any other entry — **Evidence label** matters more here than usual, since the entire point is feeding a currently-Placeholder threshold with something honestly classified, not a confident guess dressed as data.
+
+---
+
 ## Log Entries
 
 *(Append new entries below this line, most recent last.)*
@@ -95,6 +107,20 @@ This is `Hardware_Diversity_Ladder.md` Tier 2 (Three-Host Architectural Diversit
 ---
 
 ## Resolution Log
+
+- 2026-08-14: **Second Highest-Value Run section added — FN-001/FN-005
+  calibration data.** `Forge_Net.md`'s DV-001–006 and new PA-001–006
+  Provisional Specs reached the same terminal state the same day
+  (structure complete, only numeric thresholds Placeholder). This file's
+  existing guidance only pointed at GOV-008/Hardware Diversity Tier 2;
+  nothing told a contributor what data would actually calibrate DV-003
+  or PA-002. Added a scoped second section specifying concretely what
+  to capture (observation count/source diversity for DV-003, an induced
+  conflict for DV-004, a plausible trust-score range for PA-002) so a
+  field run produces usable calibration data rather than an unlabeled
+  claim. Does not resolve FN-001, FN-005, or GOV-008 — this file creates
+  no unknowns and resolves none on its own, per its own Scope Boundary.
+  Open Unknowns unchanged (0). Human-directed.
 
 - 2026-08-11: **Pseudo-audit (Grok, same limits).** Findings only. (1) Open
   Unknowns **0** — matches File State (intake log, creates none). (2) Spec
