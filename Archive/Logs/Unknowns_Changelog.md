@@ -8,6 +8,19 @@ Split out from `Unknowns.md` 2026-07-19, following the precedent already establi
 
 ---
 
+**Version 4.54 — 2026-08-14. CLF-011 row updated: §4b batch metadata contract drafted (Proposed) and non-functional Gate_04/05/06 acknowledgment stubs added; status stays Open, no emit/read logic built. v4.53 migrated to changelog intact.**
+CLF-011 row text updated to reflect that `Challenges/Closed_Loop_Feedstock.md`
+now carries a §4b specification (batch metadata contract for `fir_class`,
+required-when rules, no-silent-default rule, exit criteria) and that
+`Operations/Gate_04_Separation_Mechanical.md`, `Gate_05_Separation_Thermal.md`,
+and `Gate_06_Fabrication.md` each carry a dated acknowledgment note of the
+emit/read obligation. None of this is functional implementation — no gate
+emits or reads `fir_class` yet, and §4b itself is Proposed, not ratified.
+**CLF-011 remains Open.** This pass corrects a prior-session discrepancy
+where two agent summaries described this §4b and these acknowledgments as
+already existing when they did not; verified against source before writing.
+Active Open CLF count unchanged: CLF-001–009 + CLF-011 = 10.
+
 **Version 4.52 — 2026-08-11. CLF-010 Ratified (human governing authority) — removed from Active Index.**
 `Challenges/Closed_Loop_Feedstock.md` §4a's four-class FIR boundary
 taxonomy (A/B/C/D) and Class D Residency Cap countermeasure, both
