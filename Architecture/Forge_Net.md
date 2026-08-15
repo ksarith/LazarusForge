@@ -643,7 +643,7 @@ A cleared node must have a defined path back:
 reintegration model above independently converges with
 `Admin/Autonomy_Divergence_Protocol.md` (Draft, PROPOSED
 NOT RATIFIED, candidate GOV-021), which in turn cites
-Astroid-miner's `Rogue_unit_management.md` — an 80–99%
+`[Astroid-miner] Rogue_unit_management.md` — an 80–99%
 fleet-consensus threshold before corrective action against
 a flagged unit, and a Reversion/Safe Mode state. Two
 governance documents, drafted separately, converging on a
@@ -656,22 +656,70 @@ divergence — are not yet reflected in this section and
 should be adopted or explicitly reconciled once GOV-021
 is ratified.
 
-**Data privacy:**
+**Data privacy — Provisional Spec (2026-08-14):**
 Forge instances have legitimate privacy interests —
 proprietary repair techniques, location data, operational
 capacity. The network shares knowledge, not surveillance.
-Data shared to the network must be:
-- Explicitly contributed, not harvested
-- Anonymizable where identity is not operationally
-  necessary
-- Revocable — a forge may withdraw contributed data
-  subject to network consensus
 
-*(Placeholder — privacy and access control specification
-not yet defined; see FN-005)*
+**PA-001 — Classification schema.** Every data element
+carries a `privacy_tier` at creation: `public` (parts
+lists, repair logs, intake records), `cluster` (operational
+capacity, location precision), or `private` (proprietary
+techniques, security keys, contributor identity — never
+leaves the local node). Untagged data defaults to
+`private`, never `public` — fail closed.
+
+**PA-002 — Access control mechanism.** Read access to
+`cluster`-tier data is gated by cluster membership plus
+trust score, reusing FN-001/DV-003's trust model rather
+than defining a second one. `public` tier requires no
+gating. `private` tier is never network-readable at any
+trust score — it is a local-only field, not a permission
+level that a sufficiently trusted node can unlock.
+
+**PA-003 — Anonymization.** Where identity is not
+operationally necessary (e.g. aggregate contribution
+statistics), the contributing node is stripped or hashed
+before propagation. Fields that require identity for
+provenance (DV-002) are exempt from stripping — privacy
+and evidence integrity are reconciled by scope, not by
+weakening one to satisfy the other.
+
+**PA-004 — Revocation.** A forge may withdraw a `cluster`
+or `public` contribution. Revocation removes it from
+future sync but does not force-delete copies already
+replicated to other nodes, which would violate DV-005's
+rollback/ledger integrity — instead the contribution is
+flagged withdrawn, and downstream nodes honor the flag on
+next sync. Revoking a contribution that other entries
+causally depend on triggers DV-006 human escalation rather
+than a silent cascade deletion.
+
+**PA-005 — Location precision doctrine.** Location data
+defaults to `cluster` tier at reduced precision — coarse
+enough to support cluster formation (ASM-002), not precise
+enough to enable physical targeting of a forge instance.
+Full-precision location is `private` unless a node
+explicitly elevates it.
+
+**PA-006 — Ethical review gate.** No privacy tier or
+access rule change ships without review against
+Admin/Ethical_Constraints.md's Anti-Weaponization Doctrine
+— mirrors DV-006's human-escalation posture rather than
+inventing a separate one. Without this gate, the Anti-
+Weaponization Doctrine cannot be enforced at the network
+layer (see FN-005 sidecar, Security implications).
+
+*(Provisional Spec — PA-001 through PA-006 define the
+structure of privacy classification and access control;
+numeric trust-score thresholds for PA-002 remain
+Placeholder pending first operational data, same status
+FN-001/DV-001–006 held before their Battery pass. See
+FN-005 sidecar for status.)*
 
 Cross-reference: Admin/Ethical_Constraints.md
-Anti-Weaponization Doctrine.
+Anti-Weaponization Doctrine, ASM-006, FN-001/DV-002,
+FN-001/DV-005, FN-001/DV-006.
 
 ---
 
@@ -767,7 +815,7 @@ in Discovery.md. Folder-prefixed names take precedence.*
 | Blocking      | Yes — prerequisite for first network connection |
 | Owner         | Architecture/Forge_Net.md                    |
 | First Logged  | 2026-05-15                                       |
-| Last Reviewed | 2026-08-10                                       |
+| Last Reviewed | 2026-08-14                                       |
 
 **Description:** The data validation layer (Section 2.5)
 is described doctrinally but validation criteria —
@@ -830,6 +878,23 @@ schema, evidence requirements, minority-report
 preservation, and rollback are specified; consistency
 thresholds, decay intervals, and anomaly-detection
 signatures (shared with FN-003) remain Placeholder.
+
+**Status update (2026-08-14):** Full 10-class Adversarial
+Challenge Battery executed against this file (Grok,
+verified against source before acceptance) — covers the
+Classes 1, 3, 6, 9, 10 minimum required above, plus
+Classes 2, 4, 5, 7, 8. No Full Stop Review trigger was
+met; no new mandatory unknowns surfaced. Findings reduce
+to reinforcing FN-001/FN-003/FN-005 as the correct
+promotion blockers rather than surfacing anything novel.
+Two optional refinements noted, not yet registered as
+separate IDs: FN-001 escalation-trigger saturation under
+sustained human-review load (Class 7), and Sybil/replay
+detection signatures as a possible FN-003 sub-item
+(Class 8). G3 gate is now satisfied at the doctrinal-
+coverage level; numeric threshold calibration against
+first operational data remains the sole remaining item
+on this resolution path. See Resolution Log.
 
 ---
 
@@ -1017,7 +1082,7 @@ is available the doctrine may be overly conservative.
 | Blocking      | Yes — prerequisite for first network connection |
 | Owner         | Architecture/Forge_Net.md                    |
 | First Logged  | 2026-05-15                                       |
-| Last Reviewed | 2026-08-10                                       |
+| Last Reviewed | 2026-08-14                                       |
 
 **Description:** What data is shared across the network,
 what remains private to each forge instance, and how
@@ -1070,9 +1135,70 @@ prerequisite for it.
 - Cross-reference: Admin/Ethical_Constraints.md
   Anti-Weaponization Doctrine, ASM-006.
 
+**Status update (2026-08-14):** Section 6 now carries a
+Provisional Spec, decomposed into PA-001 (classification
+schema), PA-002 (access control mechanism), PA-003
+(anonymization), PA-004 (revocation), PA-005 (location
+precision doctrine), and PA-006 (ethical review gate).
+Deliberately reuses FN-001/DV-003's trust model for PA-002
+rather than defining a second one, and DV-006's escalation
+posture for PA-006, to keep the two validation/privacy
+layers from drifting into inconsistent doctrine. The
+public Unknown ID remains FN-005 until the package
+survives its own G3 Adversarial Battery pass and PA-002's
+trust-score thresholds are calibrated against first
+operational data — same remaining-work shape FN-001 is
+in. Structural schema, access gating logic, anonymization
+scope, revocation handling, and the ethical review gate
+are specified; only the numeric threshold is Placeholder.
+See Resolution Log.
+
 ---
 
 ### Resolution Log
+
+- 2026-08-14 (second entry, same day): **FN-005 Provisional Spec
+  drafted — PA-001 through PA-006, paired with FN-001 per Forward
+  Growth Avenues Lane A.** Section 6's privacy placeholder replaced
+  with a structured spec mirroring §2.5's DV-00x pattern for
+  consistency: classification schema, access control, anonymization,
+  revocation, location precision, and an ethical review gate. PA-002
+  deliberately reuses FN-001/DV-003's trust model rather than
+  inventing a second one; PA-006 mirrors DV-006's human-escalation
+  posture. Numeric trust-score thresholds remain Placeholder pending
+  operational data — same status FN-001 held before its Battery pass.
+  FN-005 sidecar and File State's privacy cross-reference updated to
+  match; Open Unknowns count unchanged (still 5 — structure specified,
+  not closed). Remaining FN-005 work: its own G3 Adversarial Battery
+  pass and threshold calibration, same shape as FN-001's remaining
+  path. Human-directed.
+
+- 2026-08-14: **Grok Skeptic/Auditor Exploration audit + full 10-class
+  Adversarial Battery — verified against source, two G5 false positives
+  corrected, findings logged toward FN-001.** Two documents received:
+  a Fallacy Checklist / Gate audit and a full Adversarial Challenge
+  Battery (all 10 classes). Both checked against the actual file
+  before acceptance, not taken on convergence. Two claimed [CROSS-REF
+  FAILURE] items under G5 were false: (1) `Rogue_unit_management.md`
+  was never a broken internal reference — it is explicitly attributed
+  to the companion Astroid-miner repository, correctly outside
+  Routing.md/Discovery.md's local index; (2) the residual
+  `Forge_Network.md` string is inside the 2026-06-08 Resolution Log
+  entry describing that rename's own historical fix, not a live
+  reference or "harness warning." G5 corrected from blocked to
+  cleared. One real, separate nit found in the same area: the
+  Astroid-miner cross-reference used "Astroid-miner's `X`" instead of
+  the canonical `[Astroid-miner] X` tag-prefix format per
+  `Admin/Canonical_Terms.md` — corrected in Section 6 above. All other
+  claims in both documents (Expiry Watch dates, Section 7 energy-
+  degradability language, the Class 1/3/6/9/10 minimum quoted from
+  FN-001's own resolution path, and the class-by-class Battery
+  analysis itself) verified accurate against source. Battery findings
+  reduce to reinforcing FN-001/FN-003/FN-005 as correct promotion
+  blockers; no Full Stop Review trigger met; no mandatory new unknowns.
+  FN-001 sidecar updated to record the completed Battery pass — see
+  above. Open Unknowns count unchanged (still 5; no FN-* closed).
+  Human-directed.
 
 - 2026-08-10: **Pseudo-audit (Grok, same limits).** Spec Gates left locked
   at 0/6. (1) Open Unknowns **5** = FN-001–005, matches local + `Unknowns.md`.

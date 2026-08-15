@@ -1174,7 +1174,7 @@ not Resolved, until both close.
 | Blocking | Yes (for `Challenges/Closed_Loop_Feedstock.md` CLF-004 candidate pathway) |
 | Owner | `Architecture/Chemistry.md` |
 | First Logged | 2026-07-07 |
-| Last Reviewed | 2026-07-31 |
+| Last Reviewed | 2026-08-15 |
 
 **Description:** A candidate pathway logged in `Challenges/Closed_Loop_Feedstock.md` CLF-004 proposes on-site acid synthesis via salt-water electrolysis with a homemade ion-selective membrane (chlor-alkali-type process), using salt, water, and electricity as precursors. Standard chlor-alkali electrolysis co-produces chlorine gas at the anode. No containment, venting, or scrubbing doctrine exists in this file for that byproduct.
 
@@ -1236,6 +1236,27 @@ Continuous monitoring with interlock capability (matching Air_Scrubber.md's exis
 
 This sketch closes item 1 of the four-item Resolution Path at the conceptual/architectural level — a concrete, evaluable vessel design now exists where none did before. It does not close it at the hardware level: no vessel has been built, AS-003 is not yet calibrated, and the combined thermal-sink calculation has not been performed. CE-006 moves to **In Progress** — this is architecture, not a finished system.
 
+**Spec-depth pass, 2026-08-15 (digital-only — no equipment exists yet to generate operational data; three of the four remaining quantification items are paper-closeable regardless, one is not):**
+
+*Generation-rate model (grounds the "10–100 g/h" envelope in electrochemistry rather than an arbitrary guess):* Faraday's law gives Cl₂ production directly from current: mass rate = (I × M × η) / (n × F), where I = current (A), M = 70.9 g/mol (Cl₂), n = 2 (electrons per Cl₂ molecule), F = 96,485 C/mol, η = current efficiency (chlor-alkali cells typically 90–97% at reasonable current density; use 0.90 as a conservative v0 planning figure). Worked examples at that efficiency:
+
+| Current | Cl₂ rate |
+|---|---|
+| 5 A | ≈5.9 g/h |
+| 20 A | ≈23.6 g/h |
+| 50 A | ≈59 g/h |
+| 100 A | ≈118 g/h |
+
+The previously-stated 10–100 g/h envelope corresponds to roughly 8–85 A at this efficiency — a plausible range for salvage-sourced DC supply and small electrode area. This does not select a final design current (that depends on electrode area and acceptable current density, still open); it gives the vessel design a formula to plug a chosen current into rather than treating the g/h figure as asserted.
+
+*CE-006's own exotherm, as a function of that same rate (not yet a combined total):* Q = 1.46 MJ/kg × Cl₂ rate. At the worked examples above: 5.9 g/h ≈ 2.4 W; 23.6 g/h ≈ 9.6 W; 59 g/h ≈ 24 W; 118 g/h ≈ 48 W (continuous-equivalent). This term is now a formula ready to add to Stage D's base exhaust heat load — but that base load is still Placeholder (`Operations/Air_Scrubber.md` ASM-004, pending `Gate_05_Separation_Thermal.md` exhaust characterization), which is real operational data no amount of paper work substitutes for. **The combined thermal-sink number stays open until Gate_05 produces that figure — this pass narrows what's missing to exactly one still-unknown term, it does not close the calculation.**
+
+*Fail-safe interlock behavior on loss of Stage D recirculation or power (fully paper-specifiable, addresses the interlock item):* DC supply to the anode compartment is wired through Stage D's recirculation-pump and power-monitoring circuit as a hard series interlock, not a software-polled check — loss of circulation flow or Stage D power immediately opens the DC supply's contactor, stopping Cl₂ generation at the source within the same fault-detection latency Air_Scrubber.md's own Fault 04 pathway already uses. This is a stop, not an alarm: per the file's own governing caveat, a fault state that only alarms while generation continues is not acceptable for an acutely toxic gas with no vent path. No new sensor class is required — it reuses Stage D's existing flow/power monitoring as the interlock's own trigger rather than adding a duplicate detection layer.
+
+*Membrane/diaphragm candidates (narrows options; final selection still requires sourcing/testing, correctly left open):* At v0 salvage-first scope, two realistic candidate classes: (a) a simple porous ceramic or asbestos-free diaphragm (lower selectivity, higher NaCl carryover to cathode side, but salvageable from ceramic filter stock or fabricable from Gate_04/06 material streams) versus (b) a cation-exchange membrane (Nafion-type or equivalent), which gives cleaner separation and lower H₂/Cl₂ cross-contamination risk but is not a plausible salvage item — it would be an external dependency, which CLF-004's closed-loop premise (already cross-referenced above) requires registering explicitly if pursued. Diaphragm-first is the doctrine-consistent default for v0; membrane remains a documented upgrade path, not a v0 requirement.
+
+**Status after this pass:** membrane/diaphragm selection narrowed to two candidate classes (final choice still open); first-article generation rate now has a formula tying current to output (specific current still open, pending electrode-area decision); thermal-sink calculation has CE-006's own term fully specified as a formula, with the combined total correctly still blocked on Gate_05's exhaust-load data; fail-safe interlock behavior now fully specified at the doctrine level. Of the four "genuinely open, not paper-closeable" items from 2026-07-31, three now have real paper specification; the fourth (combined thermal-sink number) remains honestly blocked on hardware-derived data, not something this pass claims to have closed. CE-006 stays **In Progress** — no claim of Resolved.
+
 ---
 
 ### CE-007 — Sodium hypochlorite byproduct storage, stability, and reuse doctrine undefined
@@ -1295,6 +1316,26 @@ This sketch closes item 1 of the four-item Resolution Path at the conceptual/arc
 ---
 
 ### Resolution Log
+
+- 2026-08-15: **CE-006 spec-depth pass — digital-only, no equipment exists.**
+  Given James's confirmation that no physical equipment exists yet, this pass
+  deliberately worked only the three of four "remaining quantification" items
+  from 2026-07-31 that are genuinely paper-closeable: (1) grounded the
+  10–100 g/h Cl₂ generation-rate envelope in Faraday's law (mass rate as a
+  function of current, worked examples at 5/20/50/100 A); (2) expressed
+  CE-006's own reaction exotherm as a formula on that same rate
+  (Q = 1.46 MJ/kg × rate), explicitly left un-combined with Stage D's base
+  exhaust heat load since that term is still Placeholder pending
+  `Gate_05_Separation_Thermal.md` exhaust characterization — real operational
+  data, not something paper work can substitute for; (3) specified fail-safe
+  interlock behavior (DC supply hard-wired through Stage D's recirculation/
+  power monitoring as a series trip, not a software poll) fully at the
+  doctrine level; (4) narrowed membrane/diaphragm choice to two candidate
+  classes (salvage-first ceramic diaphragm vs. external-dependency
+  cation-exchange membrane), final selection still open. The fourth original
+  item (combined thermal-sink number) is explicitly **not** claimed closed —
+  stays blocked on Gate_05 hardware data. CE-006 remains **In Progress**, not
+  advanced to Resolved. Human-directed.
 
 - 2026-08-10: **Pseudo-audit (Grok, same limits).** Findings only; Spec Gates
   left locked at 1/6. (1) Open Unknowns **8** = CE-001–008, matches local
