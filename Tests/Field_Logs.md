@@ -12,7 +12,7 @@
 | Open Unknowns    | 0                                                                    |
 | Body Stability   | N/A                                                                  |
 | Owning Domain    | Tests/                                                               |
-| Last Reviewed    | 2026-08-14                                                           |
+| Last Reviewed    | 2026-08-15                                                           |
 | Sidecar Link     | N/A                                                                  |
 | Ethical Anchor   | Attempt to do no harm. Defer to `Admin/Ethical_Constraints.md` if present. |
 
@@ -106,7 +106,40 @@ Log this the same way as any other entry — **Evidence label** matters more her
 
 ---
 
+### 2026-08-15 — Cross-agent independence dimensions exercised live (High-Risk Unknowns tier) — GOV-021c evidence
+
+**Submitted by:** Claude (session with James/ksarith)
+**Run type:** cross-agent quorum trial (chat-based, no physical hardware diversity claimed)
+**Hardware involved:** None claimed. Grok and Claude ran as separate chat sessions on their respective providers' infrastructure — model/provider diversity only, not hardware diversity per `Admin/Hardware_Diversity_Ladder.md`, which remains "declarable, not achieved" regardless of this entry.
+**Agents involved:** Grok (proposer), Claude (reviewer + implementer — role collapsed, see below). No formal role declaration was made before starting; roles are reconstructed here from what each session actually did, not pre-assigned.
+**What was attempted:** Grok proposed extending `Operations/Gate_02_Triage.md` TS-002's Contaminated bin as a shared destination for `Operations/Plastics.md` PL-001 and `Challenges/Waste.md` WA-002's hazardous-material routing, citing specific existing file content (PL-001's "specialist disposal" language, GI-003's detection-kit contents, WA-002's routing phrasing) as the basis.
+**What actually happened:** Before acting on any of Grok's specific factual claims, Claude re-verified each one directly against the primary source files (grep/view on `Operations/Plastics.md`, `Operations/Gate_01_Intake.md`, `Challenges/Waste.md`) rather than accepting the proposal's characterization. All claims checked out accurate. The proposed architecture was then implemented. **Assessed against `Admin/Governance_Migration_Protocol.md` §VI Three Independence Dimensions, honestly, not assumed:**
+- *Model independence* — met. Grok and Claude are different model families/providers.
+- *Evidence independence* — met, and traceable in this session's own tool-call record. Claude's conclusions trace to the primary files directly, not to Grok's summary.
+- *Role independence* — **not fully met.** Reviewer and Implementer roles collapsed into one session (Claude did both). No distinct Adversary role existed. James's role was a passive/light-touch ratification of direction, not an active adversarial or Split-Decision arbitration — which is the correct posture for this tier (see below), not a deficiency, but worth naming precisely rather than rounding up to "role independence satisfied."
+
+This case sits at the Minimum Quorum Matrix's **High-Risk Unknowns** row specifically (PL-001/WA-002/TS-002 are Critical-priority unknowns, not a Track B constitutional amendment or a formal Adversarial Review pass) — that row requires "Cross-verification by ≥1 independent reviewer against primary sources" and "Evidence independence, minimum," with the human as "final arbiter on unresolved splits." No split occurred, so James's passive role was tier-appropriate, not a gap.
+
+**Important limitation, named rather than glossed over:** this was a *benign* case — verification confirmed Grok's claims were accurate. The independence apparatus (distinguishing genuine independent corroboration from correlated agreement, per §12.1's central adversarial question) was exercised, but never actually stress-tested — nothing here required catching a genuinely wrong or coordinated-incorrect claim. A clean pass on a benign case is real evidence that the mechanism *can* function, not evidence that it *would* catch a real coordinated-divergence event. Those are different claims, and only the first is licensed by this entry.
+
+**Evidence label:** Measured (for what actually happened this session — the verification steps and their outcome are direct observation, not inference) / Analogous (for what this implies about GOV-021c's broader closure question, which remains open — see below).
+**Relevant Unknown IDs:** GOV-021c (`Admin/Autonomy_Divergence_Protocol.md` §12) — primary. CF-002 (correlated training-assumption failure) — adjacent, not addressed by this entry; a benign clean-verification case says nothing about whether shared training assumptions between models could still produce correlated wrong agreement.
+**Raw data / files:** This session's own transcript (tool calls verifying `Operations/Plastics.md` line-level content, `Operations/Gate_01_Intake.md` GI-003 content, `Challenges/Waste.md` WA-002 phrasing, prior to the shared-destination edits).
+
+---
+
 ## Resolution Log
+
+- 2026-08-15: **First real Log Entry added — GOV-021c cross-agent
+  independence-dimension evidence.** Prior entries in this Resolution Log
+  were about the file's own structure (Highest-Value Run sections); this is
+  the file's first actual submitted Log Entry under the Submission Format.
+  Documents a real cross-agent case from this session assessed honestly
+  against `Admin/Governance_Migration_Protocol.md` §VI's Three Independence
+  Dimensions — two met and traceable, one (role independence) named as not
+  fully met rather than rounded up. See `Admin/Autonomy_Divergence_Protocol.md`
+  GOV-021c for the corresponding status update; that unknown remains Open,
+  this is one data point. Human-directed.
 
 - 2026-08-14: **Second Highest-Value Run section added — FN-001/FN-005
   calibration data.** `Forge_Net.md`'s DV-001–006 and new PA-001–006
