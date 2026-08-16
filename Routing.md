@@ -28,6 +28,7 @@ Last scope clarification: 2026-08-10 (integrity cleanup pass).
 | File Path / Name | Raw Content URL (LLM Context Target) | Repository URL (Human Target) | Backlink Requirement |
 | :--- | :--- | :--- | :--- |
 | **Root Layer** | | | |
+| `LICENSE` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForge/refs/heads/main/LICENSE) | [Repo](https://github.com/ksarith/LazarusForge/blob/main/LICENSE) | Explicit |
 | `LICENSE.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForge/refs/heads/main/LICENSE.md) | [Repo](https://github.com/ksarith/LazarusForge/blob/main/LICENSE.md) | Explicit |
 | `README.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForge/refs/heads/main/README.md) | [Repo](https://github.com/ksarith/LazarusForge/blob/main/README.md) | Explicit |
 | `Discovery.md` * | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForge/refs/heads/main/Discovery.md) | [Repo](https://github.com/ksarith/LazarusForge/blob/main/Discovery.md) | Explicit |

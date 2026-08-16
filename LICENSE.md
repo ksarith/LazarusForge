@@ -31,6 +31,12 @@ and related forms.
 No warranty: experimental doctrine and unvalidated engineering claims remain
 the user's responsibility to verify before any physical use.
 
+Ideas and methods: Copyright permission under this license covers the
+copyrightable expression in this repository (text, code, structure). It does
+not create ownership of abstract ideas, methods, or processes, and does not
+transfer trademarks or project identity. Validation status of any engineering
+claim remains independent of this license.
+
 Project identity and endorsement: This license does not grant permission to
 use the Lazarus Forge name, marks, or project identity in a manner that
 falsely suggests official affiliation, endorsement, certification, or
