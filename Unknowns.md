@@ -3,39 +3,8 @@
 
 **Full version history in `Unknowns_Changelog.md` (2026-07-19 cleanup pass, following the precedent set by `Admin/AUDIT_HARNESS_CHANGELOG.md` and `Admin/Forge_Audit_Kit_Changelog.md`; scrubbed to current-version-only 2026-07-28 — the "current plus last four in full" window was itself compressed further, since the Audit Trail below now carries the compressed record for every version back to v1.0, and the changelog carries full text for all of them. This block now keeps only the current version.)**
 
-**Version 4.57 — 2026-08-15 (continued). GR-007/WA-002 chain resolved into real categories; GF-007/FA-002 given sourced fire doctrine; PL-001/WA-002/TS-002 converged on one named shared isolation destination; first live evidence logged for GOV-021c.**
-All work remains digital-only, same constraint as v4.56. **GR-007/WA-002:**
-checking GR-007's "downstream of WA-002" dependency literally, rather than
-restating it, found WA-002 was a bare table row with no real identification
-content. Wrote a Hazardous Fraction Identification Protocol (asbestos by
-material/era, heavy metals by component type, BFRs reusing `Plastics.md`
-PL-001's existing Beilstein test — bromine is a halogen, no new method
-needed) — gave GR-007 three real retirement categories, two immediately
-usable. **GF-007/FA-002:** unlike WA-002, `Facilities.md`'s zone-separation
-doctrine was not hollow — the actual gap was FA-002's clearance-radius
-placeholder, resolved with NFPA 51B's sourced 35ft/11m standard, which then
-grounded four of GF-007's five fire-doctrine items. Fifth (ventilation/fire
-interlock) left honestly open — depends on an `Air_Scrubber.md` addition not
-invented unilaterally. **Shared isolation destination:** PL-001 ("specialist
-disposal") and WA-002 ("routed per WA-004/GR-003") were two different
-sentences pointing at an undefined place; extended TS-002's existing
-Contaminated bin non-decontaminable state to cover compositional hazards
-explicitly rather than inventing a new destination — same AS-005 discipline
-(reuse, don't invent). GI-003 wired as the supporting detection layer
-feeding this same pipeline. **GOV-021c:** a real cross-agent case this
-session (Grok proposed the shared-destination architecture; Claude
-independently re-verified every specific claim against primary sources
-before acting) was assessed honestly against GMP §VI's Three Independence
-Dimensions — model and evidence independence met and traceable, role
-independence named as not fully met rather than rounded up. Meets the
-Minimum Quorum Matrix's High-Risk Unknowns tier specifically. Logged in full
-at `Tests/Field_Logs.md`. Explicitly a benign case (verification confirmed
-accuracy, not caught an actual wrong claim) — real evidence the mechanism
-can function, not evidence it would catch a genuine coordinated-divergence
-event. **GOV-021c remains Open — this is one data point, not closure.** Zero
-unknowns closed this entire version; one new destination-clarity edit is not
-a new unknown (no new AS-005-style ID needed — this reused existing IDs).
-v4.56 migrated to changelog intact.
+**Version 4.62 — 2026-08-16. GR-007 fourth applied case under `Resolution_Methodology.md` (equipment retirement / safety-governance domain); Category C disposition named via GR-003.**
+Ran the five patterns against GR-007. §1 found Category C's prior "disposition pending WA-004/GR-003" citation no longer hollow — GR-003 two-outcome model (written under this methodology 2026-08-15) now exists. §2 reused GR-003 and its intact/fragmentation integrity rule rather than inventing a parallel retirement-disposition path. §3 verified GR-003 outcomes and WA-002 presumptive-match trigger against source. §4: Categories A–C paper-complete at doctrine level; residual openness is cleaning-method validation, B→C confirmation procedures, and jurisdiction rules. §5: Ops_Scope_Map already current enough. Status remains Open; Blocking No unchanged. No unknowns opened or closed. v4.61 migrated to changelog intact.
 
 **Expiry Rule active — see `Admin/Canonical_Terms.md` §4 for the Cycle definition this rule now explicitly references (one calendar year default, not one audit pass — see CT-011). Protocol Performance metrics collecting.**
 
