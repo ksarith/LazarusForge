@@ -11,7 +11,7 @@
 | Spec Gates       | N/A — this file is a cross-reference index, not a specification     |
 | Open Unknowns    | 0 (surfaces existing unknowns from owning files; creates none)      |
 | Owning Domain    | Operations/                                                          |
-| Last Reviewed    | 2026-08-08                                                           |
+| Last Reviewed    | 2026-08-15                                                           |
 | Ethical Anchor   | Attempt to do no harm. Defer to `Admin/Ethical_Constraints.md` if present. |
 
 ---
@@ -101,6 +101,20 @@ Three corrections applied this pass (`Gate_05_Separation_Thermal.md`, `Gate_06_F
 ---
 
 ## Resolution Log
+
+- 2026-08-15: **Re-checked against a full day of Operations edits (Gate_02,
+  Gate_03, Gate_06, Air_Scrubber) — one small drift found and fixed.**
+  Applying `Admin/Resolution_Methodology.md` Pattern 5 for real (a prior
+  citation of it in that file's Applied Case sections had mislabeled a
+  different step — corrected there too). `Gate_02_Triage.md`'s Scope
+  Boundary claimed Air_Scrubber owned "decontamination protocols" outright
+  — in tension with TS-002's own disposition-workflow content now living
+  in that file. Corrected to distinguish mechanism (Air_Scrubber) from
+  workflow (Gate_02). `Gate_03_Reduction.md`'s Scope Boundary checked
+  clean — already correctly claimed contamination-discovery doctrine
+  before GR-003's new content existed. Smaller-scale instance of the same
+  class of finding as the 2026-08-08 UNK-008 catches below, not a new
+  failure mode. Human-directed.
 
 - 2026-08-08: **File created — third folder in the Scope_Map rollout**,
   following `Admin/Adm_Scope_Map.md` (2026-08-07) and

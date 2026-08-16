@@ -62,8 +62,11 @@
 **This file DOES NOT define:**
 - Master gate logic and shared vocabulary
   (→ `Architecture/Forge_flow.md`)
-- Decontamination protocols and air handling
-  (→ `Operations/Air_Scrubber.md`, AS-003)
+- Decontamination *mechanism* — physical scrubbing/cleaning apparatus and
+  air handling equipment (→ `Operations/Air_Scrubber.md`, AS-003). This file
+  owns the disposition *workflow* around decontamination (which of three
+  states a component is in, and where it goes — TS-002, 2026-08-15) but not
+  the physical cleaning method itself.
 - Electrical component harvesting protocols
   (→ `Operations/Electronics.md`)
 - Material Recovery and Reduction methods
@@ -663,7 +666,7 @@ Full decontamination protocol still needed. Cross-reference
 *Three-way Station 0 decision workflow (new — closes the routing-logic half of "full decontamination criteria"):* On contamination flag at Station 0, a component enters exactly one of three states, not left as a binary held/cleared:
 1. **Decontaminated-and-cleared** — a documented decontamination method was applied and a Station 0 recheck (same check method as the original flag) confirms no contamination signal remains. Component re-enters triage at Station 0 per the file's existing re-triage doctrine, carrying a provenance tag recording the prior contamination event (see below) — it does not silently return to "never flagged" status.
 2. **Decontamination attempted, unresolved** — held in the Contaminated bin, re-attempt or escalate; does not proceed past Station 0 under any circumstance while in this state.
-3. **Non-decontaminable** — the component cannot be brought to a clean-recheck state by any method available at this station. This is the state that currently has no destination. Per Ethical_Constraints.md's active-release vs. passive-encapsulation principle, a non-decontaminable component is not automatically waste — but confirming which of those two categories it falls into is exactly what EC-014 doesn't yet define, and disposing of the ones that are genuinely waste is exactly what GR-003 doesn't yet own. **This pass does not resolve either.** What it does: a non-decontaminable component holds in the Contaminated bin under hazmat isolation (no different physical handling than state 2, but tagged with a distinct provenance status) until either EC-014 or GR-003 resolves — whichever applies. No component in this state may be released to any other station under any operator override; that is the one hard rule this pass adds without waiting on either upstream unknown.
+3. **Non-decontaminable** — the component cannot be brought to a clean-recheck state by any method available at this station. Per Ethical_Constraints.md's active-release vs. passive-encapsulation principle, a non-decontaminable component is not automatically waste — but confirming which of those two categories it falls into is exactly what EC-014 doesn't yet define. `Gate_03_Reduction.md` GR-003 gained real disposal categories 2026-08-15 (applying `Admin/Resolution_Methodology.md`) — a non-decontaminable component's ultimate disposition now has actual doctrine to route through, not an empty citation, though GR-003 itself remains Open pending jurisdiction-specific regulatory research and physical validation. What this file does: a non-decontaminable component holds in the Contaminated bin under hazmat isolation (no different physical handling than state 2, but tagged with a distinct provenance status) until either EC-014 or GR-003's categories resolve its specific case. No component in this state may be released to any other station under any operator override; that is the one hard rule this pass adds without waiting on either upstream unknown.
 
 **Shared-destination extension, 2026-08-15:** This same non-decontaminable state is the destination for material-*compositional* hazards, not only surface contamination — specifically the confirmed-halogenated plastics `Operations/Plastics.md` PL-001 flags at reactor triage and the asbestos/heavy-metal/BFR items `Challenges/Waste.md` WA-002's identification protocol flags. Both entered this state directly, skipping the decontamination-attempt state (2) entirely — there is no cleaning method that removes PVC content or asbestos fiber from a component's composition, so treating them as "attempted, unresolved" would misrepresent what happened. Both PL-001 and WA-002 previously pointed at two different, vaguer destinations ("specialist disposal" and "routed per WA-004/GR-003" respectively) without naming a shared one; both now converge on this Contaminated bin non-decontaminable state as the single named path, still correctly holding pending EC-014/GR-003 exactly as before. This does not change what happens to material entering here — it names the destination two other files were each independently gesturing at.
 
@@ -841,6 +844,13 @@ until a scoring owner and cadence are assigned and logged here.
 ---
 
 ### Resolution Log
+
+- 2026-08-15 (third entry, same day): **Non-decontaminable state's GR-003
+  reference updated — points to real disposal categories, not an empty
+  citation.** `Operations/Gate_03_Reduction.md` GR-003 gained actual
+  doctrine this same day (first applied case of `Admin/Resolution_Methodology.md`).
+  No change to this file's own status or the hard no-release rule.
+  Human-directed.
 
 - 2026-08-15 (second entry, same day): **TS-002's Contaminated bin extended as
   the named shared destination for PL-001/WA-002 compositional hazards.**

@@ -648,6 +648,26 @@ environmental and safety incidents.
 
 **Grok review 2026-08-14:** Path adequate. Category list + hold doctrine + escalation + jurisdiction note are the right structure; suggestion of a dedicated Waste_Handling.md is reasonable. Blocking No is consistent with prior audit (accumulation/governance gap, not start-interlock). **Grok approved (path adequate).** Remains Open — disposal doctrine still needs writing; Critical priority correctly retained.
 
+**Spec-depth pass, 2026-08-15, applying `Admin/Resolution_Methodology.md` (first cited applied case) — digital-only, no equipment exists yet:**
+
+*§2 (reuse-before-invent):* Checked whether a dedicated `Operations/Waste_Handling.md` was still warranted, per the prior path's own suggestion. It isn't — this file is already the owner both `Challenges/Waste.md` WA-004 and `Operations/Gate_02_Triage.md` TS-002 point at as "WA-004/GR-003." Splitting the doctrine into a third file would fragment a destination other files already converge on. GR-003 stays the owner; WA-004's row updated to name it explicitly rather than the paired reference.
+
+*§3 (verify-before-accept), architectural basis:* `Admin/Ethical_Constraints.md`'s active-release vs. passive-encapsulation distinction (verified against source, not restated from memory) implies disposal here has exactly two real outcomes, not an open-ended list — permanent passive containment (only for material whose hazard is structurally bound, not something the Forge did to it) or external specialist hand-off (everything else). There is no third "the Forge processes it" option: this is by definition material `Gate_03_Reduction.md`'s normal Reduction already couldn't handle.
+
+*§4 (digital/equipment-gated split), categories:*
+
+- **Heavy-metal-bearing, intact:** CRT glass, leaded solder joints, mercury switches (per `Challenges/Waste.md` WA-002's identification protocol) — intact components qualify for the Ethical_Constraints permitted case (bulk mass, function does not require release) and may hold under long-term passive containment on-site. **Fragmentation changes this** — a crushed CRT is not the same hazard as an intact one; any breach of intended containment moves an item out of this category into specialist hand-off.
+- **Chemical — solvent, flux, liquid residue:** Volatile by nature — cannot qualify for passive containment the way a solid heavy-metal item can, since volatility is itself an active-release risk regardless of intent. Sealed liquid containment only, and always routes to specialist hand-off — there is no long-term on-site holding path for this subcategory.
+- **Asbestos-containing materials:** Intact, undisturbed material (per WA-002's presumption-and-isolation protocol) qualifies for passive containment similarly to heavy metals; any disturbance already documented at intake removes that option.
+- **Biological — organic matter, fluid:** The one category where hold duration itself is the hazard, not just the material — decomposition changes the hazard profile over time in a way the other categories don't. Maximum hold duration here should be the shortest of any category; specialist hand-off should not be delayed pending convenience the way a stable solid might tolerate.
+- **Radiological:** Deliberately **not** given the same Analogous-confidence disposal doctrine as the categories above. The repository has no in-house radiological handling capability beyond `Gate_01_Intake.md` GI-003's Geiger counter, which is detection-only. This category holds under strictest isolation and escalates to specialist/external authority immediately — no disposal pathway is claimed here, and none should be until real capability exists.
+
+*Holding doctrine:* Container and duration requirements are category-specific per the above, not uniform. Labeling reuses `Gate_02_Triage.md` TS-002's existing provenance tag schema (`contamination_type` already includes chemical/biological/radiological/unknown) rather than inventing a parallel tag format.
+
+*Escalation path:* Any item that cannot qualify for permanent passive containment under the criteria above requires specialist involvement — this is not a judgment call made case-by-case, it follows directly from which category the item falls into.
+
+*What stays explicitly Open:* Jurisdiction-dependent regulatory requirements for specialist hand-off — correctly deferred, not researched here. Physical validation of any hold duration or container spec — equipment-gated. GR-003 remains **Open**, Blocking No unchanged — this pass gives it real categories derived from an existing hard floor rather than an invented list, but doctrine, not operational readiness.
+
 ---
 
 ### GR-004 — Particulate generation rate and
@@ -794,7 +814,7 @@ not defined
 | Blocking      | No                                               |
 | Owner         | Operations/Gate_03_Reduction.md                  |
 | First Logged  | 2026-07-28                                       |
-| Last Reviewed | 2026-08-15                                       |
+| Last Reviewed | 2026-08-16                                       |
 
 **Description:** No threshold exists for when Reduction equipment
 exposed to contaminated feedstock (hazardous residue, cross-material
@@ -811,13 +831,7 @@ identification) and `Admin/Ethical_Constraints.md` §Toxic and
 Hazardous Material Handling — this is a genuine safety gap, not a
 process nicety, hence Critical priority.
 
-**Resolution Path:** Define contamination categories requiring
-retirement vs. decontamination-and-return, cross-referenced against
-WA-002's hazardous fraction identification (itself still Open — this
-entry is partially downstream of that one). Until both resolve,
-treat any equipment with confirmed hazardous contamination as
-retired by default rather than attempting an undefined
-decontamination procedure.
+**Resolution Path (refreshed 2026-08-16 under `Admin/Resolution_Methodology.md`):** Three retirement categories defined 2026-08-15 against WA-002's identification protocol — A (decontaminate-and-return, non-hazardous exposure with a defined cleaning method), B (retire by default on WA-002 presumptive-hazard match — usable today without waiting on WA-002 validation), C (retire, confirmed hazardous, no cleaning method). **Category C disposition now named:** route under GR-003's two-outcome disposal model (permanent passive containment only if the contamination is structurally bound and the equipment remains intact; otherwise external specialist hand-off). Default-retire posture retained for any confirmed hazardous contamination until a defined decontamination procedure exists for that exposure type. Remaining equipment-gated work: validated cleaning methods for Category A edge cases, physical confirmation protocols that move an item from B (presumptive) to C (confirmed), and jurisdiction-specific rules for specialist hand-off. Payment via Specification once Category C disposition has been exercised against at least one real retired item and cleaning methods for common Category A exposures are documented — not on further paper category work alone.
 
 **Grok review 2026-08-14:** Path adequate and correctly conservative (default-retire until doctrine exists). Downstream-of-WA-002 dependency is honestly named; Critical priority is justified. **Grok approved (path adequate).** Remains Open — categories still need definition; partially blocked on WA-002.
 
@@ -827,9 +841,23 @@ decontamination procedure.
 
 *Category B — Retire by default (WA-002 presumptive match):* Equipment exposed to material presumptively matching WA-002's asbestos, heavy-metal, or BFR categories. Per this file's own existing conservative stance, presumptive match is sufficient for retirement — waiting for lab confirmation before retiring equipment that's already presumptively contaminated inverts the fail-closed posture the rest of this doctrine relies on. This category does not require WA-002's remaining validation work to be usable; the presumptive-match trigger is exactly what WA-002 already provides.
 
-*Category C — Retire, disposition pending:* Equipment confirmed (not just presumptively) contaminated with hazardous material and for which no cleaning method exists at any confidence level. This is where GR-007 is genuinely still blocked — Category C equipment's ultimate disposition depends on WA-004/GR-003's still-open final-disposal doctrine, the same dependency the Description already named. This pass does not resolve that; it only clarifies that Category C is the specific slice of GR-007 waiting on it, not the whole unknown.
+*Category C — Retire, disposition under GR-003:* Equipment confirmed (not just presumptively) contaminated with hazardous material and for which no cleaning method exists at any confidence level. **Disposition (2026-08-16 methodology pass):** route under this file's own GR-003 two-outcome disposal model — permanent passive containment only if the contamination is structurally bound and the equipment remains intact (same integrity rule as GR-003's heavy-metal/asbestos intact case); otherwise external specialist hand-off. Fragmentation, cutting, or any process that would release bound contamination disqualifies passive containment and forces specialist hand-off. This removes the prior "disposition pending" hollow reference: GR-003 now has real doctrine, so Category C has a named destination rather than an open citation.
 
-**Status after this pass:** Categories A and B are now real, usable doctrine — a Category B determination can be made today using WA-002's protocol without waiting on anything further. Category C remains honestly blocked on WA-004/GR-003. GR-007 stays **Open** — this pass narrows what's actually still missing rather than closing the unknown.
+**Status after 2026-08-15 pass:** Categories A and B real and usable; Category C then still blocked on WA-004/GR-003.
+
+**Resolution_Methodology application, 2026-08-16 (fourth applied case — equipment retirement / safety-governance domain):**
+
+*§1 (dependency-hollowness):* WA-002 identification protocol remains the correct upstream trigger for Category B (still Open for feedstock validation, but presumptive-match is already usable). GR-003 two-outcome model — written under this methodology 2026-08-15 — is no longer hollow; Category C's prior "pending WA-004/GR-003" citation can now point at real doctrine.
+
+*§2 (reuse-before-invent):* Category C disposition reuses GR-003 rather than inventing a parallel retirement-disposition path. Same integrity rule (intact vs fragmented) applied consistently.
+
+*§3 (verify-before-accept):* Confirmed against source that GR-003's two-outcome model and intact/fragmentation rule exist and apply to equipment as physical objects carrying contamination, not only to feedstock items. WA-002 Category B trigger (presumptive match) verified still present and fail-closed.
+
+*§4 (digital/equipment-gated split):* Categories A, B, and C disposition are now paper-complete at the doctrinal level. Remaining work is equipment-gated or operational: validated cleaning methods for Category A exposures, physical confirmation procedures that promote B→C, and jurisdiction-specific specialist hand-off rules. Default-retire posture retained. Stays **Open** — not Resolved, because cleaning-method validation and at least one exercised Category C disposition still require operational data.
+
+*§5 (scope-map stale-pointer):* Ops_Scope_Map was refreshed 2026-08-16; Gate_03 entry should remain consistent with GR-003/GR-007 doctrine advances. No new Scope Boundary contradiction found in this pass.
+
+GR-007 remains **Open** / Critical / Blocking No. Categories A–C now all have named doctrine; residual openness is validation and jurisdiction, not missing architecture.
 
 ---
 
@@ -870,6 +898,40 @@ actually deciding between.
 ---
 
 ### Resolution Log
+
+- 2026-08-16: **GR-007 — Resolution_Methodology fourth applied case (equipment retirement / safety-governance domain).**
+  §1 found Category C's prior "disposition pending WA-004/GR-003" citation
+  no longer hollow — GR-003 two-outcome model now exists. §2 reused GR-003
+  (and its intact/fragmentation integrity rule) rather than inventing a
+  parallel retirement-disposition path. §3 verified GR-003 outcomes and
+  WA-002 presumptive-match trigger against source before rewriting Category C.
+  §4: Categories A–C paper-complete at doctrine level; residual openness is
+  cleaning-method validation, B→C confirmation procedures, and jurisdiction
+  rules — equipment/operational gated. §5: Ops_Scope_Map already current
+  enough; no new Scope Boundary contradiction. Status remains **Open**;
+  Blocking No unchanged. No unknowns opened or closed. Human-directed.
+
+- 2026-08-15 (second entry, same day): **GR-003 spec-depth pass — first
+  applied case of `Admin/Resolution_Methodology.md`, digital-only, no
+  equipment exists.** §1 confirmed GR-003 and WA-004 were both genuinely
+  hollow (outline-only and single table row respectively) before writing
+  anything. §2 decided against a dedicated `Waste_Handling.md` — GR-003
+  was already the destination both WA-004 and TS-002 pointed at; splitting
+  into a third file would fragment an existing convergence point. §3
+  verified `Ethical_Constraints.md`'s active-release vs. passive-
+  encapsulation distinction against source before building categories on
+  it — that distinction implies exactly two disposal outcomes (permanent
+  passive containment or specialist hand-off), not an open-ended list. §4
+  wrote category-specific doctrine: heavy-metal/asbestos intact items
+  qualify for passive containment (fragmentation disqualifies them);
+  chemical/solvent liquids never do (volatility is itself active-release);
+  biological is the one category where hold duration is its own hazard;
+  radiological deliberately given no disposal doctrine at all — detection-
+  only capability exists, nothing more is claimed. §5: WA-004's row and
+  TS-002's non-decontaminable-state text both updated to point at these
+  real categories instead of an empty citation. GR-003 remains **Open**,
+  Blocking No unchanged — jurisdiction-specific regulatory research and
+  physical validation still explicitly open. Human-directed.
 
 - 2026-08-15: **GR-007 spec-depth pass — digital-only, no equipment exists.**
   Followed WA-002's own spec-depth pass this same session

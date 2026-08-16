@@ -1189,22 +1189,26 @@ clear, informed by NFPA 51B's standard post-work fire-watch convention rather th
 an arbitrary Forge-specific figure.
 
 *Ventilation/fire interaction:* Forced ventilation (Air_Scrubber.md's negative-
-pressure intake) feeds oxygen to a fire rather than suppressing it. On any fire
-event in the Hot Zone, ventilation shuts down as part of the fire response, not
-after it — a delayed shutdown actively works against suppression. This needs a
-defined interlock trigger and sequence, which is genuinely still open: it depends
-on Air_Scrubber.md's own fault-detection pathway (the same Fault 04 latency
-pattern used elsewhere) being wired to a fire-specific trigger, not just the
-saturation/particulate faults it currently monitors for. Flagged as the one
-piece of this pass that isn't fully closed at the doctrine level yet.
+pressure intake) feeds oxygen to a fire rather than suppressing it. `Operations/Air_Scrubber.md`
+gained a Fire Event — Hot Zone interlock row 2026-08-15 (applying `Admin/Resolution_Methodology.md`)
+— on any confirmed fire event, forced ventilation halts immediately as part of
+the response, not after, reusing that file's own fault-interlock table rather
+than a separate mechanism defined here. What that row deliberately does not
+resolve: automatic fire/smoke detection hardware is not specified anywhere in
+the repository — the interlock's trigger input is kept method-agnostic (a
+manual pull-station/operator call is sufficient to exercise it) rather than
+inventing sensor doctrine this session cannot validate. Automatic detection
+selection remains open, tracked at Air_Scrubber.md, not here.
 
-**Status after this pass:** four of five Resolution Path items (fuel separation,
-spark containment, extinguisher classes, shutdown procedure) now have real content
-at Analogous confidence, sourced from established hot-work fire safety practice
-(NFPA 51B) rather than invented. The fifth — ventilation/fire interlock — is
-correctly left open, since it depends on an Air_Scrubber.md fault-detection
-addition this pass doesn't attempt to invent unilaterally. GF-007 remains **Open**,
-Blocking No unchanged (PPE is already the hard prerequisite; this is facility-level
+**Status after this pass:** all five Resolution Path items (fuel separation,
+spark containment, extinguisher classes, shutdown procedure, ventilation/fire
+interaction) now have real content at Analogous confidence, sourced from
+established hot-work fire safety practice (NFPA 51B) or reused Air_Scrubber
+interlock architecture, rather than invented. The one thing that remains
+genuinely open across both files is automatic fire/smoke detection hardware
+selection — deliberately not specified, since it would need physical
+validation this session cannot produce. GF-007 remains **Open**, Blocking No
+unchanged (PPE is already the hard prerequisite; this is facility-level
 doctrine layered on top of it, not replacing it).
 
 **Why It Matters:** Arc welding creates credible
@@ -1243,6 +1247,15 @@ the fire risk profile is materially different.
 ---
 
 ### Resolution Log
+
+- 2026-08-15 (third entry, same day): **Ventilation/fire interaction item
+  closed — fifth of five, second applied case of `Admin/Resolution_Methodology.md`.**
+  `Operations/Air_Scrubber.md` gained a Fire Event — Hot Zone row in its
+  existing fault-interlock table; this file's text updated to point at it
+  rather than restate the gap as unowned. Fire/smoke detection hardware
+  selection remains genuinely open — the interlock's trigger stays method-
+  agnostic (manual call suffices) rather than assuming unvalidated sensor
+  doctrine. GF-007 remains **Open**, Blocking No unchanged. Human-directed.
 
 - 2026-08-15 (second entry, same day): **GF-007 spec-depth pass — digital-only,
   no equipment exists.** Checked `Architecture/Facilities.md` before drafting;

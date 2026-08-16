@@ -407,6 +407,9 @@ shutdown sequence.
 | **Acidic Ingress (HCl/HF)** | Post-scrubber electrochemical gas sensor / pH probe in wet sumps | Sump pH less than 5.5 or Exhaust greater than 5 ppm | Instantaneous **E-Stop Lockout** of Pyrolysis Reactor core. |
 | **Thermal Saturation** | Thermocouples in Stage D liquid core | Temperature exceeds rated fluid threshold | Trigger **Thermal Fault**; Divert feedstocks away from primary thermal reduction units. |
 | **Noise Fault Masking** | Ambient microphone calibration check | Alarm audio margin less than 10 dB above operating noise floor | Flash high-intensity visual strobes; Flag system failure to supervisory network layer. |
+| **Fire Event — Hot Zone** *(added 2026-08-15, applying `Admin/Resolution_Methodology.md`)* | Method-agnostic trigger input — automatic detection hardware not yet specified; manual pull-station/operator call is the minimum viable trigger and is not equipment-gated | Any fire event confirmed in `Architecture/Facilities.md`'s Hot Zone | Forced ventilation halts immediately as part of the response, not after — negative-pressure airflow feeds a fire rather than suppressing it, so delayed shutdown actively works against suppression. Reuses this table's own Fault-latency convention rather than a separate response class. |
+
+**Note on the Fire Event row, 2026-08-15:** `Operations/Gate_06_Fabrication.md` GF-007 named this gap but could not close it alone — the actual shutdown mechanism (halting forced ventilation) is this file's own system, so the interlock logic belongs in this table alongside the other five, not duplicated in GF-007. What stays genuinely open: the *detection* half. No automatic fire/smoke detection hardware is specified anywhere in the repository — this row deliberately keeps the trigger input method-agnostic (manual call is sufficient to exercise the interlock logic) rather than inventing a sensor specification that would itself need physical validation this session cannot produce. Automatic detection hardware selection is a separate, still-open item, not silently assumed solved by this row's existence.
 
 ---
 
@@ -897,6 +900,21 @@ operation and the Gate 4 harness are unaffected by this gap.
 ---
 
 ### Resolution Log
+
+- 2026-08-15 (third entry, same day): **Fire Event — Hot Zone interlock row
+  added — second applied case of `Admin/Resolution_Methodology.md`.**
+  `Operations/Gate_06_Fabrication.md` GF-007 named the ventilation/fire
+  interlock gap but couldn't close it alone, since the actual shutdown
+  mechanism (halting forced ventilation) is this file's own system. Reused
+  this table's existing five-row fault-interlock pattern rather than
+  inventing a separate response class. Deliberately kept the trigger input
+  method-agnostic — no automatic fire/smoke detection hardware is specified
+  anywhere in the repository, so a manual pull-station/operator call is the
+  documented minimum viable trigger, not an assumed sensor that would itself
+  need physical validation. Automatic detection hardware selection remains a
+  separate, still-open item. No new unknown ID registered — this closes a
+  cross-file gap between two existing unknowns (GF-007, and this file's own
+  fault-matrix completeness), not a new one. Human-directed.
 
 - 2026-08-15 (second entry, same day): **AS-005 registered — auxiliary
   intake path for discrete unknown-content gas releases, closing the
