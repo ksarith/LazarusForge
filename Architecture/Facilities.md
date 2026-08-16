@@ -236,7 +236,8 @@ failures where an incident in one zone compromises another.
 
 **Hot Zone** — Arc welding, induction heating, pyrolysis staging, reduction equipment.
 Requires: nonburnable flooring, negative pressure airflow, clear egress, no combustible
-storage within defined radius (FA-002 — radius not yet defined).
+storage within defined radius (FA-002 — 35ft/11m NFPA 51B default as of 2026-08-15,
+not yet site-validated).
 
 **Warm Zone** — Electronics harvesting, soldering, chemical handling (flux, acids,
 cleaning agents). Requires: ventilated but not necessarily negative-pressure; nonburnable
@@ -453,7 +454,7 @@ assessment.
 | Blocking      | No            |
 | Owner         | Facilities.md |
 | First Logged  | 2026-06-05    |
-| Last Reviewed | 2026-06-05    |
+| Last Reviewed | 2026-08-15    |
 
 **Description:** The minimum clearance radius between active Hot Zone processes and
 combustible storage has not been defined. Referenced in Section IV but left as a
@@ -466,6 +467,21 @@ storing combustibles too close to active welding.
 **Resolution Path:** Cross-reference AWS welding safety standards and NFPA 51B for
 hot work minimum clearances. Define as a Facilities.md constraint once sourced.
 Human verification required — FA-003 may apply.
+
+**Spec-depth pass, 2026-08-15 (digital-only — no equipment exists yet):** NFPA 51B's
+established hot-work clearance is 35 feet (11m) — combustibles within that radius of
+active hot work must be relocated, or where relocation isn't possible, protected with
+fire-resistant covers/shields, with a fire watch posted for the duration plus a
+standard post-work monitoring period. This is a sourced industry standard, not a
+Forge-specific derivation, and it's a general commercial/industrial figure — it has
+not been validated against any specific v0 site's actual layout, which is exactly
+what FA-001's site assessment is for. Treat 35 feet as the Analogous default
+clearance target; a site that cannot accommodate it needs the cover/shield/fire-watch
+exception, not a silently reduced radius. Confirmed via cross-reference to
+`Operations/Gate_06_Fabrication.md` GF-007, which needs this number for its own
+fuel-separation doctrine (see there). Status remains Open — a sourced default now
+exists, but "Human verification required" per this entry's own Resolution Path
+still stands, and no physical site has confirmed it fits.
 
 ---
 
@@ -550,6 +566,16 @@ resolved. Discovery.md Cross-Module Unknowns table updated. FA-005 closed.
 ---
 
 ### Resolution Log
+
+- 2026-08-15: **FA-002 spec-depth pass — digital-only, no equipment exists.**
+  Reached via `Operations/Gate_06_Fabrication.md` GF-007, whose fuel-separation
+  item needed this radius. Resolved using NFPA 51B's established 35ft (11m)
+  hot-work clearance standard — a sourced industry figure, not independently
+  derived. Section IV's Hot Zone description updated to reference it. FA-002
+  remains **Open** — the entry's own "Human verification required" stands, and
+  no physical site has confirmed the figure fits; this pass gives the
+  placeholder a real sourced default rather than resolving site-specific
+  applicability. Human-directed.
 
 - 2026-08-09: **Pseudo-audit (Grok — Skeptic/Auditor read + minimal Synthesizer fixes; human-directed).** Corrections: FA-001 Owner `Facilities.md` → `Architecture/Facilities.md` (folder-prefixed path convention). **Findings (not closed):** F-FA-001 — Open Unknowns 4 = FA-001–004 (FA-005 Resolved retained); count matches. F-FA-002 — FA-001 remains Critical/Blocking for all hot operations; physical site survey required — not closable in-repo. F-FA-003 — Spec Gates 0/6 honest; Body Stability Volatile is a valid File_Template enum. Spec Gates **unchanged** 0/6. Status **unchanged** Exploration.
 
