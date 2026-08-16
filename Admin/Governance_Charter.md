@@ -3,8 +3,8 @@
 ---
 
 ## Navigation Anchors
-* **Context Core:** [Discovery.md](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Discovery.md)
-* **Network Routing:** [Routing.md](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Routing.md)
+* **Context Core:** [Discovery.md](https://raw.githubusercontent.com/ksarith/LazarusForge/refs/heads/main/Discovery.md)
+* **Network Routing:** [Routing.md](https://raw.githubusercontent.com/ksarith/LazarusForge/refs/heads/main/Routing.md)
 
 ---
 
@@ -64,7 +64,7 @@
 
 ## File Purpose
 
-This file defines the constitutional governance structure of LazarusForgeV0. It exists to stabilize authority relationships between governance-bearing documents, preserve semantic continuity across audit generations, and constrain recursive governance expansion. The charter establishes how governance authority is assigned, inherited, escalated, migrated, and preserved without binding the repository to any single implementation layer or runtime enforcement architecture. It also declares the Tier 1 Axioms — self-evident primitives that function as epistemic circuit breakers, non-derivable by any agent or coalition from within the system. Without this file, governance-bearing systems may silently diverge, invalidate historical audits, or accumulate incompatible authority assumptions over long operational timelines.
+This file defines the constitutional governance structure of LazarusForge. It exists to stabilize authority relationships between governance-bearing documents, preserve semantic continuity across audit generations, and constrain recursive governance expansion. The charter establishes how governance authority is assigned, inherited, escalated, migrated, and preserved without binding the repository to any single implementation layer or runtime enforcement architecture. It also declares the Tier 1 Axioms — self-evident primitives that function as epistemic circuit breakers, non-derivable by any agent or coalition from within the system. Without this file, governance-bearing systems may silently diverge, invalidate historical audits, or accumulate incompatible authority assumptions over long operational timelines.
 
 ---
 

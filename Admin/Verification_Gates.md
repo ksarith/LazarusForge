@@ -3,8 +3,8 @@
 ---
 
 ## Navigation Anchors
-* **Context Core:** [Discovery.md](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Discovery.md)
-* **Network Routing:** [Routing.md](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Routing.md)
+* **Context Core:** [Discovery.md](https://raw.githubusercontent.com/ksarith/LazarusForge/refs/heads/main/Discovery.md)
+* **Network Routing:** [Routing.md](https://raw.githubusercontent.com/ksarith/LazarusForge/refs/heads/main/Routing.md)
 
 ---
 
@@ -55,7 +55,7 @@
 ## File Purpose
 
 This document is the single canonical source for the six verification gates
-of LazarusForgeV0. Every file's `Verification Ref` field in the File State
+of LazarusForge. Every file's `Verification Ref` field in the File State
 table points here. The gates defined here are the authoritative versions —
 condensed representations in `Admin/Forge_Audit_Kit.md` are derived from
 this file and must remain consistent with it.

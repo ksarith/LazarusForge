@@ -1,8 +1,8 @@
 # Repository_Integrity_Protocol.md
 
 ## Navigation Anchors
-* **Context Core:** [Discovery.md](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Discovery.md)
-* **Network Routing:** [Routing.md](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Routing.md)
+* **Context Core:** [Discovery.md](https://raw.githubusercontent.com/ksarith/LazarusForge/refs/heads/main/Discovery.md)
+* **Network Routing:** [Routing.md](https://raw.githubusercontent.com/ksarith/LazarusForge/refs/heads/main/Routing.md)
 
 ---
 
@@ -55,7 +55,7 @@
 
 ## File Purpose
 
-This file defines the operational integrity enforcement procedures for LazarusForgeV0. It exists to bridge the gap between the `Admin/Governance_Charter.md` constitutional declaration of integrity requirements (Declared and Detectable state) and fully Enforceable integrity protections. Without this file, integrity violations may go unclassified, recovery procedures may be improvised inconsistently, and the repository may lose institutional memory of compromise events. This file is the candidate integrity model that `Automation/AUDIT_HARNESS.py` automation will eventually implement — it is written now so the automation has a target to build against.
+This file defines the operational integrity enforcement procedures for LazarusForge. It exists to bridge the gap between the `Admin/Governance_Charter.md` constitutional declaration of integrity requirements (Declared and Detectable state) and fully Enforceable integrity protections. Without this file, integrity violations may go unclassified, recovery procedures may be improvised inconsistently, and the repository may lose institutional memory of compromise events. This file is the candidate integrity model that `Automation/AUDIT_HARNESS.py` automation will eventually implement — it is written now so the automation has a target to build against.
 
 **Honest v0 acknowledgment:** At current maturity, the primary integrity mechanism is human discipline. Automated detection is the destination. This file defines the provisional procedures a human operator or auditor executes manually until automation matures. Procedures written here must therefore be executable without tooling.
 

@@ -4,8 +4,8 @@
 ---
 
 ## Navigation Anchors
-* **Context Core:** [Discovery.md](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Discovery.md)
-* **Network Routing:** [Routing.md](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Routing.md)
+* **Context Core:** [Discovery.md](https://raw.githubusercontent.com/ksarith/LazarusForge/refs/heads/main/Discovery.md)
+* **Network Routing:** [Routing.md](https://raw.githubusercontent.com/ksarith/LazarusForge/refs/heads/main/Routing.md)
 
 ---
 
@@ -160,7 +160,7 @@ is ambiguous — use the specific form.
 ### 1. Architectural and Repository Structural Terms
 
 **Active Working Repository**
-The lean, operational environment (`LazarusForgeV0`) containing functional
+The lean, operational environment (`LazarusForge`) containing functional
 specification files, active gate validations, and localized sidecars.
 Distinct from the companion doctrine repository.
 

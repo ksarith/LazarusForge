@@ -1,10 +1,10 @@
-# Repository_Structure.md — LazarusForgeV0
+# Repository_Structure.md — LazarusForge
 
 ---
 
 ## Navigation Anchors
-* **Context Core:** [Discovery.md](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Discovery.md)
-* **Network Routing:** [Routing.md](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Routing.md)
+* **Context Core:** [Discovery.md](https://raw.githubusercontent.com/ksarith/LazarusForge/refs/heads/main/Discovery.md)
+* **Network Routing:** [Routing.md](https://raw.githubusercontent.com/ksarith/LazarusForge/refs/heads/main/Routing.md)
 
 ---
 
@@ -52,7 +52,7 @@
 
 ## File Purpose
 
-This file defines how the LazarusForgeV0 repository is structured and
+This file defines how the LazarusForge repository is structured and
 how new files are named and placed. Without it, folder assignment and
 naming decisions are made by inference from existing patterns — which
 works until it doesn't, and fails silently when contributors disagree
@@ -383,21 +383,18 @@ The LazarusForge project spans three repositories with distinct roles:
 
 | Repository | Role | Naming Convention |
 |---|---|---|
-| `LazarusForgeV0` | Active working repository — lean, operational, specification-oriented | This file's conventions apply |
+| `LazarusForge` | Active working repository — lean, operational, specification-oriented | This file's conventions apply |
 | `Lazarus-Forge-` | Doctrine and philosophy companion | Separate governance — not subject to this file |
 | `Astroid-miner` | Planned space-based extension — deferred to Leviathan milestone | Not yet active |
 
 **Cross-repo rules:**
-- Do not create files in LazarusForgeV0 that duplicate doctrine
+- Do not create files in LazarusForge that duplicate doctrine
   owned by Lazarus-Forge- without an explicit divergence reason logged
 - Divergence between repos is a signal — log it, do not silently resolve it
-- Astroid-miner does not inherit LazarusForgeV0 structure automatically —
+- Astroid-miner does not inherit LazarusForge structure automatically —
   it will require its own Repository_Structure.md when activated
 
-**The `V0` in LazarusForgeV0 is a repository name, not a file version
-suffix.** The no-version-suffix rule applies to files within the
-repository. It does not apply to the repository name itself, which
-is a proper noun identifying a specific instantiation.
+**Naming history:** The active working repository was renamed from `LazarusForgeV0` to `LazarusForge` (2026-08-16). While it carried the `V0` suffix, that suffix was a repository name, not a file version marker — the no-version-suffix rule always applied to files within the repository, never to the repository name itself, which was a proper noun identifying a specific instantiation. That distinction no longer needs stating now that the repository name itself carries no version marker, but is preserved here as institutional memory — older references to `LazarusForgeV0` elsewhere in the repository (Archive/, historical transcripts) are accurate records of the name at the time and are not retroactively rewritten.
 
 ---
 

@@ -2,7 +2,7 @@
 ### 2026-08-16 — Tag naming convention (Alpha release hygiene)
 
 **Canonical Git tags** for the Alpha line: `V1Alpha.NN` (no dot after V1), e.g. `V1Alpha.03`, `V1Alpha.04`.  
-Do not use `V1.Alpha.NN` for new tags. Archive zip filenames may keep human-readable forms (`LazarusForgeV0-1.Alpha.03`); Git tags stay machine-consistent. Historical tags already published are left as-is; new releases follow this rule.
+Do not use `V1.Alpha.NN` for new tags. Archive zip filenames may keep human-readable forms (e.g. the pre-rename `LazarusForgeV0-1.Alpha.03`, or the current `LazarusForge-1.Alpha.04` convention going forward); Git tags stay machine-consistent. Historical tags already published are left as-is; new releases follow this rule.
 
 # Progress_Log.md — Active Notebook for Repository Progression
 

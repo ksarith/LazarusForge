@@ -5,8 +5,8 @@
 ---
 
 ## Navigation Anchors
-* **Context Core:** [Discovery.md](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Discovery.md)
-* **Network Routing:** [Routing.md](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Routing.md)
+* **Context Core:** [Discovery.md](https://raw.githubusercontent.com/ksarith/LazarusForge/refs/heads/main/Discovery.md)
+* **Network Routing:** [Routing.md](https://raw.githubusercontent.com/ksarith/LazarusForge/refs/heads/main/Routing.md)
 
 ---
 
@@ -48,7 +48,7 @@ None. This is a governance/epistemics document with no physical hazard surface.
 
 ## File Purpose
 
-CIR v2.0 is a candidate epistemic governance kernel for LazarusForgeV0 — a machine-checkable way to gate proposed state mutations through predicate logic rather than narrative judgment alone. It elevates predicates (`Γ`) to the primary admissibility mechanism, separates epistemic quality (`Q`) from admissibility (`A_adm`), treats provenance as a hard ceiling rather than a soft score, gives unknowns explicit weighted-graph semantics with debt accounting, and defines a deterministic state-transition kernel (`σ`) with a graded, debt-bounded triage posture.
+CIR v2.0 is a candidate epistemic governance kernel for LazarusForge — a machine-checkable way to gate proposed state mutations through predicate logic rather than narrative judgment alone. It elevates predicates (`Γ`) to the primary admissibility mechanism, separates epistemic quality (`Q`) from admissibility (`A_adm`), treats provenance as a hard ceiling rather than a soft score, gives unknowns explicit weighted-graph semantics with debt accounting, and defines a deterministic state-transition kernel (`σ`) with a graded, debt-bounded triage posture.
 
 It is preserved here in full, as drafted, because the ideology and architecture are sound and worth keeping intact even though it cannot yet be adopted as operational doctrine. See §Binding Status for exactly why, and §Relationship to Governance_Charter.md for how it is meant to eventually connect.
 
@@ -74,7 +74,7 @@ If this kernel were switched on today, the entity evaluating `γ_grounding`, `γ
 
 | ID | Assumption | Basis | Confidence | Expires When |
 |----|-----------|-------|------------|---------------|
-| ASM-CIR-001 | A deterministic predicate kernel is a good target architecture for LazarusForgeV0's eventual governance automation | Aligns with existing Verification Gates (G1–G6), Auditor Protocols' Adversarial Battery, and the repo's general preference for falsifiable, evidence-graded doctrine over narrative judgment | Medium — Analogous to existing gate structures, not yet tested as a unified kernel | A working reference implementation is built and run against real state mutations |
+| ASM-CIR-001 | A deterministic predicate kernel is a good target architecture for LazarusForge's eventual governance automation | Aligns with existing Verification Gates (G1–G6), Auditor Protocols' Adversarial Battery, and the repo's general preference for falsifiable, evidence-graded doctrine over narrative judgment | Medium — Analogous to existing gate structures, not yet tested as a unified kernel | A working reference implementation is built and run against real state mutations |
 | ASM-CIR-002 | The five `Γ` predicates (grounding, provenance, conflict, unknown, challenge) are a complete and non-redundant set for constitutional-class admissibility decisions | Internal design choice by the drafting agent; not independently derived from `Governance_Charter.md`'s own six Enforcement Checkpoints | **Low, and understated by "confidence" framing alone** — the candidate mapping (§Predicate ↔ Checkpoint Mapping) confirms this is an open design-completeness risk, not just an unverified assumption: Checkpoints 2 (Structural Plausibility) and 4 (Cross-Module Integration) have **no** corresponding predicate at all | Either new predicates are added for Checkpoints 2 and 4, or those Checkpoints are explicitly declared out of CIR's runtime scope and left to the Charter/Auditor layer |
 | ASM-CIR-003 | GOV-008, once ratified, will produce a quorum shape compatible with what CIR's Part 8 runtime evaluator assumes (independently reachable, responsive agent instances capable of predicate evaluation) | Speculative — GOV-008 is currently unratified; its eventual concrete form is unknown | Low | GOV-008 is ratified and its quorum definition is checked against CIR's runtime assumptions |
 
@@ -86,7 +86,7 @@ If this kernel were switched on today, the entity evaluating `γ_grounding`, `γ
 
 #### 0.1 Constitutional Principles (Immutable Within This Document's Own Frame)
 
-These principles are immutable *within CIR v2.0 itself* — i.e., changing them would mean drafting a different kernel, not amending this one. They are **not** constitutionally immutable for LazarusForgeV0 as a whole; that authority remains solely with `Governance_Charter.md`'s Tier-1 Axioms until and unless this document is ratified and placed under that authority per §Relationship to Governance_Charter.md.
+These principles are immutable *within CIR v2.0 itself* — i.e., changing them would mean drafting a different kernel, not amending this one. They are **not** constitutionally immutable for LazarusForge as a whole; that authority remains solely with `Governance_Charter.md`'s Tier-1 Axioms until and unless this document is ratified and placed under that authority per §Relationship to Governance_Charter.md.
 
 1. **Predicate supremacy** — All institutional decisions are gated by constitutional predicates.
 2. **External grounding** — Reality enters only through authenticated grounding interfaces.

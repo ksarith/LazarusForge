@@ -1,8 +1,8 @@
-# Governance_Migration_Protocol.md — LazarusForgeV0
+# Governance_Migration_Protocol.md — LazarusForge
 
 ## Navigation Anchors
-* **Context Core:** [Discovery.md](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Discovery.md)
-* **Network Routing:** [Routing.md](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Routing.md)
+* **Context Core:** [Discovery.md](https://raw.githubusercontent.com/ksarith/LazarusForge/refs/heads/main/Discovery.md)
+* **Network Routing:** [Routing.md](https://raw.githubusercontent.com/ksarith/LazarusForge/refs/heads/main/Routing.md)
 
 ---
 
@@ -108,7 +108,7 @@ argument arises.
 
 ## I. Two Migration Tracks
 
-All governance migration in LazarusForgeV0 falls into one of two tracks.
+All governance migration in LazarusForge falls into one of two tracks.
 The tracks are not interchangeable. Applying the wrong track to a migration
 is a governance error.
 
