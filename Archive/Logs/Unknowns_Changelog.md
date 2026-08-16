@@ -8,6 +8,122 @@ Split out from `Unknowns.md` 2026-07-19, following the precedent already establi
 
 ---
 
+---
+
+---
+
+---
+
+---
+
+**Version 4.59 — 2026-08-15 (continued). Second `Resolution_Methodology.md` applied case — GF-007's ventilation/fire interlock closed, five of five items now real; methodology bumped to v0.3.**
+Deliberately picked a different domain (fire-suppression/safety-systems, not
+waste/disposal) than the first case, per that case's own note. §1 confirmed
+the gap was real. §2 was not a genuine choice this time — the shutdown
+mechanism (halting forced ventilation) is `Operations/Air_Scrubber.md`'s own
+system, so the interlock logic could only sensibly live in its existing
+five-row fault-interlock table, not duplicated in `Gate_06_Fabrication.md`
+GF-007. Added as a sixth row, same table pattern. §3 surfaced a firm limit
+rather than a stronger structure this time: no automatic fire/smoke
+detection hardware is specified anywhere in the repository, so the row's
+trigger input was deliberately kept method-agnostic (a manual pull-station/
+operator call is the documented minimum) rather than inventing sensor
+doctrine needing physical validation. §4/§5: GF-007 reached five of five
+Resolution Path items with real content — the first case to close all of
+them. Automatic detection hardware selection remains a separate, still-open
+item, tracked at Air_Scrubber.md. Neither GF-007 nor Air_Scrubber's own
+unknowns closed by this — both files' underlying unknowns remain Open; this
+closed a cross-file gap, not an ID. Methodology file logged both outcomes
+(§2 sometimes has no real choice; §3 sometimes correctly outputs a limit
+rather than a better structure — both are valid, not a lesser result than
+the first case) as a second Lessons Learned row, bumped to v0.3. v4.58
+migrated to changelog intact.
+
+**Version 4.58 — 2026-08-15 (continued). `Admin/Resolution_Methodology.md` created (v0.1) and applied to its first real case, WA-004/GR-003 — both given real disposal doctrine, neither closed.**
+`Resolution_Methodology.md` was drafted by Grok, verified against source by
+Claude before ratification (every one of its five cited cases checked
+directly, not trusted from the summary), and adopted at Admin-tier alongside
+`Auditor_Protocols.md`/`Forge_Audit_Kit.md`. Immediately applied in the same
+session to WA-004/GR-003 (negative-value waste / biological-chemical
+disposal), its own named first case. §1 confirmed both were genuinely hollow
+(GR-003 outline-only, WA-004 a single table row). §2 decided against a
+dedicated `Waste_Handling.md` — GR-003 was already the convergence point
+WA-004 and TS-002 both pointed at. §3 verified `Ethical_Constraints.md`'s
+active-release vs. passive-encapsulation distinction against source before
+building on it, which turned out to imply a stronger result than originally
+outlined: exactly two disposal outcomes (permanent passive containment or
+specialist hand-off), not an open-ended category list. §4 wrote category-
+specific doctrine (heavy-metal/asbestos intact items passively containable,
+fragmentation disqualifies; chemical/solvent liquids never qualify;
+biological is the one category where hold duration is itself the hazard;
+radiological deliberately given **no** disposal doctrine — detection-only
+capability exists, nothing more claimed). §5 updated WA-004's row and
+TS-002's non-decontaminable-state text to point at the real categories.
+**Neither GR-003 nor WA-004 closed** — both remain Open, jurisdiction-
+specific regulatory research and physical validation still explicitly open.
+Methodology file bumped to v0.2 with this result logged as a Lessons
+Learned row — the finding (§3's verify-before-accept step can produce a
+better architectural answer than the thing being verified, not just guard
+against fabrication) is itself worth carrying forward. v4.57 migrated to
+changelog intact.
+
+**Version 4.57 — 2026-08-15 (continued). GR-007/WA-002 chain resolved into real categories; GF-007/FA-002 given sourced fire doctrine; PL-001/WA-002/TS-002 converged on one named shared isolation destination; first live evidence logged for GOV-021c.**
+All work remains digital-only, same constraint as v4.56. **GR-007/WA-002:**
+checking GR-007's "downstream of WA-002" dependency literally, rather than
+restating it, found WA-002 was a bare table row with no real identification
+content. Wrote a Hazardous Fraction Identification Protocol (asbestos by
+material/era, heavy metals by component type, BFRs reusing `Plastics.md`
+PL-001's existing Beilstein test — bromine is a halogen, no new method
+needed) — gave GR-007 three real retirement categories, two immediately
+usable. **GF-007/FA-002:** unlike WA-002, `Facilities.md`'s zone-separation
+doctrine was not hollow — the actual gap was FA-002's clearance-radius
+placeholder, resolved with NFPA 51B's sourced 35ft/11m standard, which then
+grounded four of GF-007's five fire-doctrine items. Fifth (ventilation/fire
+interlock) left honestly open — depends on an `Air_Scrubber.md` addition not
+invented unilaterally. **Shared isolation destination:** PL-001 ("specialist
+disposal") and WA-002 ("routed per WA-004/GR-003") were two different
+sentences pointing at an undefined place; extended TS-002's existing
+Contaminated bin non-decontaminable state to cover compositional hazards
+explicitly rather than inventing a new destination — same AS-005 discipline
+(reuse, don't invent). GI-003 wired as the supporting detection layer
+feeding this same pipeline. **GOV-021c:** a real cross-agent case this
+session (Grok proposed the shared-destination architecture; Claude
+independently re-verified every specific claim against primary sources
+before acting) was assessed honestly against GMP §VI's Three Independence
+Dimensions — model and evidence independence met and traceable, role
+independence named as not fully met rather than rounded up. Meets the
+Minimum Quorum Matrix's High-Risk Unknowns tier specifically. Logged in full
+at `Tests/Field_Logs.md`. Explicitly a benign case (verification confirmed
+accuracy, not caught an actual wrong claim) — real evidence the mechanism
+can function, not evidence it would catch a genuine coordinated-divergence
+event. **GOV-021c remains Open — this is one data point, not closure.** Zero
+unknowns closed this entire version; one new destination-clarity edit is not
+a new unknown (no new AS-005-style ID needed — this reused existing IDs).
+v4.56 migrated to changelog intact.
+
+**Version 4.61 — 2026-08-16. CE-006 third applied case under `Resolution_Methodology.md` (chemistry/safety domain); paper surface assessed as substantially exhausted.**
+Ran the five patterns against CE-006. §1 confirmed expected hollow dependencies still hollow (AS-003, Gate_05 thermal) and newly solid ones solid (GR-003 two-outcome model now available for residual NaOCl). §2 reused GR-003 rather than inventing a parallel disposition path. §3 caught real staleness in the top-of-entry Resolution Path (still listed detection/alarm and caustic-dosing as remaining after body had answered them). Refreshed to an explicit paper-complete vs equipment-gated split. §4 conclusion: further paper passes will not move CE-006 toward Resolved — remaining work is vessel build, electrode-area selection, AS-003 calibration, Gate_05 exhaust data, quantitative NaOCl sizing, membrane sourcing/test. §5 noted Arc_Scope_Map for later refresh. Status remains In Progress; Blocking Yes for CLF-004 unchanged. No unknowns opened or closed. v4.60 migrated to changelog intact.
+
+**Version 4.60 — 2026-08-15 (continued). `Resolution_Methodology.md` self-corrected (v0.4) after a direct question surfaced a real labeling error; Pattern 5 actually run for the first time and caught a genuine (small) Scope Boundary drift.**
+Prompted by James asking whether the methodology file requires Unknowns.md/
+changelog updates — the precise answer is no, not by name (§5 says "note...
+updates required"; the version-bump-and-migrate convention is `Unknowns.md`'s
+own documented rule, not this file's). Checking that claim precisely surfaced
+two real problems: the methodology's own File State Version field was stuck
+at 0.1 despite the Resolution Log recording v0.3 (fixed), and both Applied
+Case sections had mislabeled a generic "update cross-file pointers" step as
+"§5" — which specifically names the Scope-Map stale-pointer pattern per the
+file's own "How to Cite" section. Neither prior applied case had actually run
+that check. Corrected both labels and ran the real check against
+`Operations/Ops_Scope_Map.md`. Result: `Gate_02_Triage.md`'s Scope Boundary
+claimed Air_Scrubber owned "decontamination protocols" outright — in tension
+with TS-002's own disposition-workflow content now living in that file since
+earlier today. Corrected to distinguish mechanism (Air_Scrubber) from
+workflow (Gate_02). `Gate_03_Reduction.md`'s Scope Boundary checked clean.
+Same class of finding as Ops_Scope_Map.md's prior UNK-008 catches, smaller
+scale — not a new failure mode. No unknowns opened or closed. v4.59 migrated
+to changelog intact.
+
 **Version 4.56 — 2026-08-15. Operations folder review sweep complete (Gate_01–07, Air_Scrubber, Electronics, Energy, Plastics, Woodworking — ~64 unknowns reviewed across Rounds 1–7); three digital-only spec-depth passes (CE-006, TS-002, GI-002); one new unknown registered (AS-005).**
 Given James's confirmation that no physical equipment exists yet, work this
 session deliberately stayed in the digital/doctrinal realm — no claim of
