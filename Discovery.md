@@ -1,11 +1,11 @@
-# Discovery.md — LazarusForgeV0
+# Discovery.md — LazarusForge
 **Navigation layer for the active working repository.**
 
 ---
 
 ## Navigation Anchors
-* **Context Core:** [Discovery.md](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Discovery.md)
-* **Network Routing:** [Routing.md](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Routing.md)
+* **Context Core:** [Discovery.md](https://raw.githubusercontent.com/ksarith/LazarusForge/refs/heads/main/Discovery.md)
+* **Network Routing:** [Routing.md](https://raw.githubusercontent.com/ksarith/LazarusForge/refs/heads/main/Routing.md)
 
 ---
 
@@ -26,7 +26,7 @@ logged is progress.
 
 ## What This Repository Is
 
-LazarusForgeV0 is the active working repository for the Lazarus Forge — a
+LazarusForge is the active working repository for the Lazarus Forge — a
 salvage-first, adaptive resource recovery system designed to preserve functional
 value before material reduction.
 
@@ -418,7 +418,7 @@ Cross-module unknowns global index. Lean index only — full unknown entries liv
 
 ## Cross-Repo Relationship
 
-`LazarusForgeV0` (this repo) — operational implementation.
+`LazarusForge` (this repo) — operational implementation.
 `Astroid-miner` — planned; activates when Leviathan deployment is underway.
 
 **Programmatic entry point:** `Routing.md` is the canonical lookup table for raw file URLs.

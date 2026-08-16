@@ -1,4 +1,4 @@
-# Contributing to LazarusForgeV0
+# Contributing to LazarusForge
 
 This is a governed epistemic repository, not a conventional open-source project. If you're used to typical GitHub contribution flow, some of this will look unfamiliar — that's intentional, and also honestly reflects that the maintainer doesn't use pull requests either. You don't need to.
 
