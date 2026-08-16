@@ -3,26 +3,39 @@
 
 **Full version history in `Unknowns_Changelog.md` (2026-07-19 cleanup pass, following the precedent set by `Admin/AUDIT_HARNESS_CHANGELOG.md` and `Admin/Forge_Audit_Kit_Changelog.md`; scrubbed to current-version-only 2026-07-28 — the "current plus last four in full" window was itself compressed further, since the Audit Trail below now carries the compressed record for every version back to v1.0, and the changelog carries full text for all of them. This block now keeps only the current version.)**
 
-**Version 4.55 — 2026-08-14. FN-001/FN-005 (`Architecture/Forge_Net.md`) both advanced to spec-complete; neither closed.**
-FN-001: full 10-class Adversarial Challenge Battery executed and verified
-against source (satisfies the Classes 1/3/6/9/10 minimum its own
-Resolution Path required, plus 2/4/5/7/8) — G3 gate now satisfied at
-doctrinal-coverage level. FN-005: Section 6's privacy placeholder
-replaced with a full Provisional Spec, PA-001 through PA-006
-(classification schema, access control, anonymization, revocation,
-location precision, ethical review gate), deliberately reusing FN-001's
-trust model and escalation posture rather than inventing parallel
-doctrine. Same-session pass also corrected two false [CROSS-REF FAILURE]
-findings from an external audit (Astroid-miner's `Rogue_unit_management.md`
-was never a broken reference; a residual `Forge_Network.md` string was
-inside a changelog entry describing its own historical fix, not a live
-error) and one real canonical-tag-format nit. **Both FN-001 and FN-005
-remain Open** — structure is specified, but each still needs its
-Battery/threshold work fully closed against real operational data before
-promotion; `Tests/Field_Logs.md` updated with a scoped second Highest-
-Value-Run section naming exactly what data would calibrate DV-003,
-DV-004, and PA-002. No unknowns closed or invented this pass. v4.54
-migrated to changelog intact.
+**Version 4.57 — 2026-08-15 (continued). GR-007/WA-002 chain resolved into real categories; GF-007/FA-002 given sourced fire doctrine; PL-001/WA-002/TS-002 converged on one named shared isolation destination; first live evidence logged for GOV-021c.**
+All work remains digital-only, same constraint as v4.56. **GR-007/WA-002:**
+checking GR-007's "downstream of WA-002" dependency literally, rather than
+restating it, found WA-002 was a bare table row with no real identification
+content. Wrote a Hazardous Fraction Identification Protocol (asbestos by
+material/era, heavy metals by component type, BFRs reusing `Plastics.md`
+PL-001's existing Beilstein test — bromine is a halogen, no new method
+needed) — gave GR-007 three real retirement categories, two immediately
+usable. **GF-007/FA-002:** unlike WA-002, `Facilities.md`'s zone-separation
+doctrine was not hollow — the actual gap was FA-002's clearance-radius
+placeholder, resolved with NFPA 51B's sourced 35ft/11m standard, which then
+grounded four of GF-007's five fire-doctrine items. Fifth (ventilation/fire
+interlock) left honestly open — depends on an `Air_Scrubber.md` addition not
+invented unilaterally. **Shared isolation destination:** PL-001 ("specialist
+disposal") and WA-002 ("routed per WA-004/GR-003") were two different
+sentences pointing at an undefined place; extended TS-002's existing
+Contaminated bin non-decontaminable state to cover compositional hazards
+explicitly rather than inventing a new destination — same AS-005 discipline
+(reuse, don't invent). GI-003 wired as the supporting detection layer
+feeding this same pipeline. **GOV-021c:** a real cross-agent case this
+session (Grok proposed the shared-destination architecture; Claude
+independently re-verified every specific claim against primary sources
+before acting) was assessed honestly against GMP §VI's Three Independence
+Dimensions — model and evidence independence met and traceable, role
+independence named as not fully met rather than rounded up. Meets the
+Minimum Quorum Matrix's High-Risk Unknowns tier specifically. Logged in full
+at `Tests/Field_Logs.md`. Explicitly a benign case (verification confirmed
+accuracy, not caught an actual wrong claim) — real evidence the mechanism
+can function, not evidence it would catch a genuine coordinated-divergence
+event. **GOV-021c remains Open — this is one data point, not closure.** Zero
+unknowns closed this entire version; one new destination-clarity edit is not
+a new unknown (no new AS-005-style ID needed — this reused existing IDs).
+v4.56 migrated to changelog intact.
 
 **Expiry Rule active — see `Admin/Canonical_Terms.md` §4 for the Cycle definition this rule now explicitly references (one calendar year default, not one audit pass — see CT-011). Protocol Performance metrics collecting.**
 
@@ -259,7 +272,7 @@ GH-009 (Emergent heuristic conflict — N² interaction scaling)
 | GOV-018 | Governance fork reconciliation undefined | `Admin/Governance_Charter.md` | Open | — | Critical |
 | GOV-019 | Conflicting authenticated human override arbitration undefined | `Admin/Governance_Charter.md` | Open | — | Major |
 | GOV-020 | Governance cost metric undefined | `Admin/Governance_Charter.md` | Open | — | Minor |
-| GOV-021 | Autonomy Divergence Protocol formal registration — GOV-021 ID formally registered in `Admin/Governance_Charter.md`'s sidecar 2026-07-27 (protocol body itself remains Draft/PROPOSED NOT RATIFIED). Sub-unknown GOV-021b (Detection Criteria calibration) Resolved 2026-08-11. Constitutional Impact Statement's Track A classification independently confirmed 2026-08-12 (Skeptic/Auditor pass, scoped to classification only). GOV-021c (multi-agent coordinated divergence detection) remains Open — sole remaining ratification blocker, deliberately held pending live evidence, not tracked independently here. | `Admin/Governance_Charter.md` | Open | Vehicle | Major |
+| GOV-021 | Autonomy Divergence Protocol formal registration — GOV-021 ID formally registered in `Admin/Governance_Charter.md`'s sidecar 2026-07-27 (protocol body itself remains Draft/PROPOSED NOT RATIFIED). Sub-unknown GOV-021b (Detection Criteria calibration) Resolved 2026-08-11. Constitutional Impact Statement's Track A classification independently confirmed 2026-08-12 (Skeptic/Auditor pass, scoped to classification only). GOV-021c (multi-agent coordinated divergence detection) remains Open — sole remaining ratification blocker, deliberately held pending live evidence. First live evidence logged 2026-08-15 (`Tests/Field_Logs.md`) — one data point at the High-Risk Unknowns tier, honestly assessed as partial (role independence not fully met) and from a benign case, not closure. | `Admin/Governance_Charter.md` | Open | Vehicle | Major |
 | GOV-022 | Reversibility as a cross-cutting operating principle — placement undecided among a new Operating Principles subsection, doctrine in `Admin/Auditor_Protocols.md`, or rejection as redundant with existing P-1/Q-3 | `Admin/Governance_Charter.md` | Open | — | Minor |
 | SEC-001 | Quorum recovery under terminal partition | `Admin/Security_Protocols.md` | Open | — | Major |
 | SEC-002 | Key revocation doctrine undefined | `Admin/Security_Protocols.md` | Open | — | Major |
@@ -564,6 +577,7 @@ GH-009 (Emergent heuristic conflict — N² interaction scaling)
 | AS-002 | Marine bubble-column depth scope | `Operations/Air_Scrubber.md` | In Progress | Active | Low |
 | AS-003 | Scrubber waste stream and saturation | `Operations/Air_Scrubber.md` | In Progress | Active | Medium |
 | AS-004 | Noise exposure limits and hearing conservation program undefined | `Operations/Air_Scrubber.md` | Open | — | Major |
+| AS-005 | No intake path defined for discrete unknown-content releases (non-process-stream sources) | `Operations/Air_Scrubber.md` | Open | — | Major |
 | SR-001 | Galvanic corrosion mitigation | `Tests/Support_Raft.md` | Open | — | Blocking |
 | SR-002 | Sacrificial shell material selection | `Tests/Support_Raft.md` | Open | — | Major |
 | SR-003 | Battery buffer sizing | `Tests/Support_Raft.md` | Open | — | Major |
