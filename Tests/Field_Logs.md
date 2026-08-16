@@ -100,6 +100,21 @@ Log this the same way as any other entry — **Evidence label** matters more her
 
 ---
 
+## Field-trial lifecycle stages
+
+These stages describe **where a submission sits in the trial pipeline**. They do **not** replace Evidence Classification (`Measured` ≻ `Replicated` ≻ `Simulated` ≻ `Analogous` ≻ `Placeholder`). A submission always carries both: a lifecycle stage and an evidence-quality label.
+
+| Stage | Meaning |
+|-------|---------|
+| **Submitted** | Entry accepted into this log; structure checked; claim not yet independently checked |
+| **Reproducible** | Same procedure yields the same class of result on a second run or with a method clear enough to repeat |
+| **Independently replicated** | Different operator or site; same claim survives |
+| **Validated** | Folded into owning doctrine with an Evidence Classification update on the affected unknown or specification |
+
+Examples of valid combinations: `Submitted` + `Measured`; `Independently replicated` + `Replicated`. Invalid: `Validated` + `Placeholder` (validation requires evidence quality above Placeholder).
+
+**Failed trials are first-class.** A documented failure against real requirements is worth more than an unlabeled success claim. Prefer entries that name the claim tested, conditions, observed outcome, failure mode (if any), implication, and any Unknown affected.
+
 ## Log Entries
 
 *(Append new entries below this line, most recent last.)*
