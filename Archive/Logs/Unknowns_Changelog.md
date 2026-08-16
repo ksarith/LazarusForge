@@ -8,6 +8,58 @@ Split out from `Unknowns.md` 2026-07-19, following the precedent already establi
 
 ---
 
+**Version 4.56 — 2026-08-15. Operations folder review sweep complete (Gate_01–07, Air_Scrubber, Electronics, Energy, Plastics, Woodworking — ~64 unknowns reviewed across Rounds 1–7); three digital-only spec-depth passes (CE-006, TS-002, GI-002); one new unknown registered (AS-005).**
+Given James's confirmation that no physical equipment exists yet, work this
+session deliberately stayed in the digital/doctrinal realm — no claim of
+operational validation appears anywhere below. **Review sweep:** every live
+unknown in the Operations folder had its Resolution Path checked against
+source (not accepted on an auditor's word); one real error was found and
+corrected (SC-004/SC-009 in `Gate_05_Separation_Thermal.md` — a quote
+attributed to CLF-003 that did not exist verbatim in source, substance was
+accurate, phrasing corrected); one stale self-contradicting claim in
+`Gate_06_Fabrication.md` GF-005 was flagged by the reviewing agent itself.
+Zero closures, zero Blocking flips across the entire sweep. **Spec-depth
+passes:** CE-006 (`Architecture/Chemistry.md`) — Faraday's-law generation-
+rate model, CE-006's own exotherm as a formula (explicitly not combined
+with Stage D's still-Placeholder base heat load), fail-safe interlock
+doctrine, membrane/diaphragm candidates narrowed; stays In Progress. TS-002
+(`Gate_02_Triage.md`) — three-way Station 0 decision workflow, provenance
+tag schema reusing CLF-009's Material Certainty Manifest pattern; correctly
+does not invent disposal doctrine EC-014/GR-003 already own, cross-linked
+both ways instead; stays Open. GI-002 (`Gate_01_Intake.md`) — actual
+discharge doctrine written by energetic category (lithium, other
+chemistries, capacitors, compressed gas) at Analogous confidence; stays
+Open, "written and tested" still needs the operational run this session
+cannot produce. **New unknown:** GI-002's drafting surfaced a real
+architectural gap in `Operations/Air_Scrubber.md` — no intake path existed
+for a discrete unknown-content release from a different subsystem, only
+for the scrubber's own designed continuous process streams. Registered as
+**AS-005** rather than folded into AS-003 (calibration of a known stream
+vs. absence of a path for an unknown one — distinct problems); Air_Scrubber
+Open Unknowns 4 → 5; GI-002 cross-reference corrected to point at it.
+v4.55 migrated to changelog intact.
+
+**Version 4.55 — 2026-08-14. FN-001/FN-005 (`Architecture/Forge_Net.md`) both advanced to spec-complete; neither closed.**
+FN-001: full 10-class Adversarial Challenge Battery executed and verified
+against source (satisfies the Classes 1/3/6/9/10 minimum its own
+Resolution Path required, plus 2/4/5/7/8) — G3 gate now satisfied at
+doctrinal-coverage level. FN-005: Section 6's privacy placeholder
+replaced with a full Provisional Spec, PA-001 through PA-006
+(classification schema, access control, anonymization, revocation,
+location precision, ethical review gate), deliberately reusing FN-001's
+trust model and escalation posture rather than inventing parallel
+doctrine. Same-session pass also corrected two false [CROSS-REF FAILURE]
+findings from an external audit (Astroid-miner's `Rogue_unit_management.md`
+was never a broken reference; a residual `Forge_Network.md` string was
+inside a changelog entry describing its own historical fix, not a live
+error) and one real canonical-tag-format nit. **Both FN-001 and FN-005
+remain Open** — structure is specified, but each still needs its
+Battery/threshold work fully closed against real operational data before
+promotion; `Tests/Field_Logs.md` updated with a scoped second Highest-
+Value-Run section naming exactly what data would calibrate DV-003,
+DV-004, and PA-002. No unknowns closed or invented this pass. v4.54
+migrated to changelog intact.
+
 **Version 4.54 — 2026-08-14. CLF-011 row updated: §4b batch metadata contract drafted (Proposed) and non-functional Gate_04/05/06 acknowledgment stubs added; status stays Open, no emit/read logic built. v4.53 migrated to changelog intact.**
 CLF-011 row text updated to reflect that `Challenges/Closed_Loop_Feedstock.md`
 now carries a §4b specification (batch metadata contract for `fir_class`,
