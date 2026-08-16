@@ -137,6 +137,20 @@ Current approaches active in the repository:
 
 ---
 
+## Hazardous Fraction Identification Protocol (WA-002 spec-depth pass, 2026-08-15)
+
+**Digital-only — no equipment exists yet to validate this against real feedstock.** Written at Analogous confidence, drawing on established industrial hygiene and electronics-recycling field practice, not asserted as a validated protocol. This is a screening and isolation standard, not a laboratory-grade identification method — its purpose is to get a presumptively hazardous item safely isolated, not to certify its composition.
+
+*Asbestos-containing materials:* Identification is presumptive by material type and manufacture era, not by visual confirmation — asbestos fibers cannot be conclusively identified without polarized light microscopy, so field protocol is presumption-and-isolation, never confirm-and-clear. Presumptive triggers: pre-1980s pipe or duct insulation wrap, 9"×9" vinyl floor tile, textured ceiling coating, flat fibrous-cement sheet siding or roofing. Any presumptive match is never cut, drilled, sanded, or broken (mechanical disturbance is what releases fibers) — isolated intact, tagged, and routed per WA-004/`Gate_03_Reduction.md` GR-003 disposal doctrine, both still Open. This protocol does not resolve where a confirmed-hazardous item ultimately goes; it only gets it safely out of the active stream.
+
+*Heavy-metal-bearing components:* Identifiable by component type rather than material inspection, which is more reliable than the asbestos case. CRT glass (any cathode-ray tube unit) presumptively contains significant lead in the funnel glass. Pre-2006 solder joints on circuit boards are presumptively lead-based (dull gray, versus RoHS lead-free solder's different finish) — presumption by manufacture date where visible, not a required visual test. Mercury tilt switches (older thermostats, some older appliances) are identifiable by a sealed glass tube containing a visible silver bead. NiCd battery chemistry is cadmium-bearing and identifiable from cell markings.
+
+*Brominated flame retardants (BFRs):* Genuinely the hardest category — BFR-containing plastic is not visually distinguishable from non-BFR plastic. This does not need a new detection method: `Operations/Plastics.md` PL-001 already establishes the Beilstein test (copper wire flame test) as a validated halogen-detection method for its own halogenated-polymer rejection doctrine (PVC, Teflon). Bromine is a halogen — the same test that flags chlorinated plastics for Plastics.md's purposes will also flag brominated ones. WA-002 reuses that existing method rather than inventing a parallel one; the two files should converge on describing this as one shared detection step, not two separately-maintained ones. As a presumptive default in the absence of testing, pre-RoHS-era electronics housings and circuit boards are treated as presumptively BFR-bearing — fail closed, consistent with the file's own stated principle of treating hazardous fractions as the normal condition, not an edge case.
+
+**What this pass does not resolve:** a formal training/certification standard for operators (still needed — this protocol gives content to train on, not a training program itself); confirmatory lab-testing arrangements for presumptive-positive items; and disposition once isolated, which is WA-004/GR-003's still-open territory, not this protocol's job. WA-002 moves from a bare table-row description to a real identification protocol at the doctrine level — it stays **Open**, since validation against real feedstock is exactly the operational data this session cannot produce without equipment.
+
+---
+
 ## Long-Term Objective
 
 The long-term objective is not to process more waste. It is to make waste a temporary category.
@@ -172,7 +186,7 @@ The river does not waste water. The forest does not waste leaves. Waste, in thos
 | ID | Description | Status | Risk |
 |---|---|---|---|
 | WA-001 | Embedded complexity preservation metric — no formal measure exists for whether triage decisions are successfully preserving functional complexity versus routing prematurely to reduction. Needed before Gate_02 promotion from Exploration. | Open | Major |
-| WA-002 | Hazardous fraction identification reliability — the triage workflow assumes operator ability to identify asbestos, heavy metals, and BFR-containing materials. No validated identification protocol or training standard is defined. Cross-ref CE-004. | Open | Critical |
+| WA-002 | Hazardous fraction identification reliability — the triage workflow assumes operator ability to identify asbestos, heavy metals, and BFR-containing materials. A field identification protocol now exists (see Hazardous Fraction Identification Protocol section above, 2026-08-15) at Analogous confidence; no validated training standard or feedstock-validated protocol exists yet. Isolated items route to `Operations/Gate_02_Triage.md` TS-002's Contaminated bin (non-decontaminable state, 2026-08-15 shared-destination extension) — the same named path `Operations/Plastics.md` PL-001 uses, not a separately-implied one — pending WA-004/GR-003 for final disposition. Cross-ref CE-004, `Operations/Plastics.md` PL-001 (shared Beilstein halogen-detection method), `Operations/Gate_03_Reduction.md` GR-007 (uses this protocol's presumptive-match categories for equipment retirement). | Open | Critical |
 | WA-003 | Informal sector integration doctrine — no framework exists for how the Forge interfaces with, supports, or avoids displacing existing informal waste recovery workers. Structural gap at community deployment scale. | Open | Major |
 | WA-004 | Negative-value waste fraction disposal — materials that cannot be recovered and are hazardous to store require a disposal doctrine. No owning file currently covers this. Cross-ref GR-003. | Open | Critical |
 
@@ -188,6 +202,26 @@ The river does not waste water. The forest does not waste leaves. Waste, in thos
 
 ## Resolution Log
 
+- 2026-08-15 (second entry, same day): **WA-002's disposal destination named —
+  points to `Operations/Gate_02_Triage.md` TS-002's Contaminated bin instead
+  of the vaguer "routed per WA-004/GR-003."** Same pass wired `Operations/Plastics.md`
+  PL-001 to the same destination — the two files no longer point at two
+  different implied places. Final disposition still correctly awaits
+  WA-004/GR-003; this pass only names the intermediate hold. Human-directed.
+
+- 2026-08-15: **WA-002 spec-depth pass — digital-only, no equipment exists.**
+  Reached via `Operations/Gate_03_Reduction.md` GR-007, which is partially
+  downstream of WA-002. Added a real Hazardous Fraction Identification
+  Protocol (asbestos presumption-and-isolation by material/era, heavy-metal
+  identification by component type, BFR detection) rather than leaving
+  WA-002 as a bare table-row description. Notable reuse: BFR detection
+  does not need a new method — bromine is a halogen, so `Operations/Plastics.md`
+  PL-001's already-established Beilstein test (for its own PVC/Teflon
+  rejection doctrine) also flags brominated plastics; cross-linked rather
+  than duplicated. WA-002 remains **Open** — protocol exists at Analogous
+  confidence, but validation against real feedstock and a formal operator
+  training standard both still require data this session cannot produce.
+  Human-directed.
 - 2026-08-10: **Pseudo-audit (Grok, same limits as Facilities/Electronics pass).** Findings only; Spec Gates N/A for Challenges Problem-Statement subtype and left untouched. (1) Open Unknowns count 4 = WA-001–004, matches local table and `Unknowns.md`. (2) WA-002 and WA-004 correctly Critical; the “no sustained mixed-waste operations” note aligns with hazard language in Body and with Unknowns.md Priority. (3) Removed stale “Full tracking entries to be registered in Unknowns.md on next audit cycle” — all four were already registered. No WA-* closed; no physical claims advanced. Human-directed.
 - 2026-07-12: Ethical Anchor field corrected — was using a non-canonical variant (backticked, `Admin/`-prefixed: "Defer to `Admin/Ethical_Constraints.md` if present.") instead of the canonical plain-text string ("Defer to Ethical_Constraints.md if present."). Same drift found across 9 files in a full-repository Phase 1 sweep (ChatGPT, adapted local-disk harness run) — verified independently against source before patching. No semantic change; the anchor's meaning was never in question, only its exact text.
 - 2026-07-11: v0.3 — Footer-section backfill: added File Purpose, Assumptions, Lessons Learned, Active Disputes, Abandoned Paths, and Drift Indicators sections (previously absent). No Body content changed.
