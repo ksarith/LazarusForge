@@ -1,17 +1,17 @@
 import sys, subprocess, json
 
 result = subprocess.run(
-    ["git", "clone", "-q", "https://github.com/ksarith/LazarusForgeV0.git", "/content/LazarusForgeV0"],
+    ["git", "clone", "-q", "https://github.com/ksarith/LazarusForge.git", "/content/LazarusForge"],
     capture_output=True, text=True
 )
 if result.returncode != 0 and "already exists" not in result.stderr:
     print("CLONE FAILED:", result.stderr)
     raise SystemExit(1)
 
-sys.path.append('/content/LazarusForgeV0/Automation')
+sys.path.append('/content/LazarusForge/Automation')
 from cold_session_bundler import ColdSessionBundler
 
-bundler = ColdSessionBundler("/content/LazarusForgeV0")
+bundler = ColdSessionBundler("/content/LazarusForge")
 bundle = bundler.bundle(["Admin/Auditor_Protocols.md"])  # target file(s), explicit
 
 print("=== MANIFEST (keep for your own records — never paste this to the auditor) ===")

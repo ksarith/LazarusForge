@@ -16,7 +16,7 @@ import re
 
 from audit_lib import Finding, parse_routing, extract_md_refs, check_cross_refs
 
-BASE = "https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/"
+BASE = "https://raw.githubusercontent.com/ksarith/LazarusForge/refs/heads/main/"
 
 # ── Legacy aliases ────────────────────────────────────────────────────
 # Kept separate from canonical registry. Short names that resolve to
@@ -714,9 +714,9 @@ def run_audit(target_file, focus, extra_files=None, doc_status="Exploration",
 
         import sys, subprocess
         subprocess.run(["git", "clone", "-q",
-            "https://github.com/ksarith/LazarusForgeV0.git",
-            "/content/LazarusForgeV0"], capture_output=True)
-        sys.path.append('/content/LazarusForgeV0/Automation')
+            "https://github.com/ksarith/LazarusForge.git",
+            "/content/LazarusForge"], capture_output=True)
+        sys.path.append('/content/LazarusForge/Automation')
         from AUDIT_HARNESS import run_audit
 
         result = run_audit(
@@ -814,7 +814,7 @@ def run_audit(target_file, focus, extra_files=None, doc_status="Exploration",
 
     sections.append(
         f"Operating as Skeptic/Auditor per Auditor_Protocols.md v0.14\n"
-        f"Repository: LazarusForgeV0"
+        f"Repository: LazarusForge"
     )
 
     sections.append(
