@@ -4,8 +4,8 @@
 ---
 
 ## Navigation Anchors
-* **Context Core:** [Discovery.md](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Discovery.md)
-* **Network Routing:** [Routing.md](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Routing.md)
+* **Context Core:** [Discovery.md](https://raw.githubusercontent.com/ksarith/LazarusForge/refs/heads/main/Discovery.md)
+* **Network Routing:** [Routing.md](https://raw.githubusercontent.com/ksarith/LazarusForge/refs/heads/main/Routing.md)
 
 ---
 
@@ -30,7 +30,7 @@
 ## Scope Boundary
 
 **This file DOES define:**
-- The Cognitive Salvage Layer as a distinct architectural module within LazarusForgeV0
+- The Cognitive Salvage Layer as a distinct architectural module within LazarusForge
 - The heuristic failure class that motivates human-in-the-loop integration
 - The feedback loop architecture from physical scan to autonomous execution — covering both disassembly/triage and fabrication heuristics
 - The Auditor Decision Tree for candidate heuristic verification (Stages 1–4)
