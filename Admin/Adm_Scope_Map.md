@@ -102,6 +102,11 @@ FLAG: Single most load-bearing file in the repository — six other files in thi
 **Does not (arrow):** Tier 1 Axioms themselves, constitutional hierarchy (`Governance_Charter.md`) - ratification crypto (`Security_Protocols.md`) - minimum agent quorum *definition* (owned by Charter, specified here) - integrity enforcement mechanics (`Repository_Integrity_Protocol.md`).
 **Explicitly proposed, not claimed:** migration doctrine ownership transfer from `Governance_Charter.md` to this file — "pending Charter update and Gate 4 clearance." This is the pattern EC-016's correction pointed to as worth naming as a reusable convention.
 
+### `Admin/Integrity_Incident_Log.md`
+**Status:** Active — Intake Log · N/A · 0 Open Unknowns · Risk: Medium
+**Does:** Canonical append-only home for RIP integrity incidents (Major/Constitutional required); ownership/closure table; standardized fields.
+**Does not (arrow):** Replace file Resolution Logs · Progress_Log lessons · Field_Logs · define violation classes (RIP).
+
 ### `Admin/Hardware_Diversity_Ladder.md`
 **Status:** Draft — proposed implementation reference only · 0/6 · 0 Open Unknowns of its own · Risk: unlabeled
 **Does:** Four-tier path from single-operator advisory to hardware-diverse governance quorum satisfying GOV-008; per-tier minimum config and advancement rules; cross-referenced to `Tests/Field_Logs.md`'s practical entry point (added 2026-08-06).

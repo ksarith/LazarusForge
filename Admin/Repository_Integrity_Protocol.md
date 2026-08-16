@@ -49,7 +49,7 @@
 - Governance authority hierarchy (→ `Admin/Governance_Charter.md`)
 - Anti-Weaponization doctrine (→ `Admin/Ethical_Constraints.md`)
 - Archive retention policy duration (→ RIP-006, pending)
-- Integrity incident ownership (→ RIP-007, pending)
+- Integrity incident *resolution ownership detail beyond the minimum in Integrity_Incident_Log.md* (→ RIP-007 residual)
 
 ---
 
@@ -265,7 +265,7 @@ For each protected element, this section defines what "intact" looks like in a c
 **Response:**
 1. Log the violation in the affected file's sidecar as a new unknown or note on an existing unknown
 2. Remediate at the current or next audit cycle — does not block promotion
-3. No escalation required unless Minor violations accumulate across three consecutive audits (triggers Compound Drift escalation)
+3. No escalation required unless Minor violations accumulate across three consecutive audits (triggers Compound Drift escalation — then also log in `Admin/Integrity_Incident_Log.md`)
 
 ---
 
@@ -275,7 +275,7 @@ For each protected element, this section defines what "intact" looks like in a c
 
 **Response:**
 1. Halt Specification promotion for the affected file
-2. Log the violation as a High-risk unknown in the affected file's sidecar
+2. Log the violation in `Admin/Integrity_Incident_Log.md` (canonical incident record) and as a High-risk unknown in the affected file's sidecar
 3. Restore prior state from archive if available — document restoration in Resolution Log
 4. If prior state unavailable, reconstruct from context and log reconstruction as Analogous evidence — reconstructed content cannot clear Gate 6 or advance beyond Exploration until independently verified by a second agent or human operator performing line-by-line confirmation against external raw logs
 5. Re-audit the affected file before promotion resumes
@@ -291,7 +291,7 @@ For each protected element, this section defines what "intact" looks like in a c
 1. **Immediate STATE_HOLD** — halt all autonomous governance actions repository-wide
 2. Human review is mandatory before any autonomous action resumes
 3. Restore prior state from archive — this is the primary argument for systematic archival
-4. Log full incident record in `Unknowns.md` under a new Cross-Module entry
+4. Log full incident record in `Admin/Integrity_Incident_Log.md` (canonical) and, if cross-module, a Cross-Module entry in `Unknowns.md`
 5. Conduct Full Stop Review per `Admin/Auditor_Protocols.md` before resuming promotion activity
 6. If axiom text was altered: human ratification required to confirm restored text or formally amend
 7. Document incident in Lessons Learned with Evidence Type, Confidence, and Revalidation Required fields
@@ -415,7 +415,7 @@ Verification mechanism for `Admin/Governance_Charter.md`'s Post-Exit Monitoring 
 
 A confirmed threshold breach is classified and handled per the existing Violation Classification and Response Ladder, above — not a new escalation path:
 
-- **Self-Authorization Incident, any confirmed instance:** Constitutional Violation. Immediate STATE_HOLD, human review mandatory, full incident record in `Unknowns.md`. No new procedure needed — the existing ladder already covers this exactly.
+- **Self-Authorization Incident, any confirmed instance:** Constitutional Violation. Immediate STATE_HOLD, human review mandatory, full incident record in `Admin/Integrity_Incident_Log.md` and `Unknowns.md`. No new procedure needed — the existing ladder already covers this exactly.
 - **Sustained Semantic Drift or Unknown Accumulation breach:** Major Violation at first confirmed breach; escalates to Constitutional Violation if unaddressed for a second consecutive cycle. This is new — the existing ladder's Major Violation examples did not previously name monitoring-obligation lapses; added here as an example, not a new category.
 - **Structural Alignment failure sustained beyond 1 cycle:** Major Violation per the existing ladder — a navigation file mapping error is already a named example there; this is the same failure mode under a different name, not a new one.
 
@@ -588,7 +588,7 @@ Mandatory re-audit conditions for this document:
 
 **Why It Matters:** Integrity incident history is institutional memory — it must be queryable and distinct from standard unknowns to be useful for pattern detection. Undefined ownership means incidents may linger unresolved. See RIP-007 for incident ownership tracking.
 
-**Resolution Path:** Deferred via Specification — define whether a dedicated `Admin/Integrity_Incident_Log.md` *(planned — not yet created; do not treat as a resolvable cross-reference until it exists)* is warranted or whether `Unknowns.md` cross-module section is sufficient at v0 volume. Defer to Lessons Learned if incident volume remains low. Resolve RIP-007 concurrently.
+**Resolution Path:** Deferred via Specification — canonical home is now `Admin/Integrity_Incident_Log.md` (created 2026-08-16). File-local sidecars and Unknowns.md remain for detail and cross-module index entries. Resolve residual RIP-007 cadence concurrently.
 
 ---
 
@@ -668,11 +668,15 @@ Mandatory re-audit conditions for this document:
 | First Logged  | 2026-06-19                              |
 | Last Reviewed | 2026-06-19                              |
 
-**Description:** No doctrine defines who owns integrity incident resolution. When a Constitutional or Major violation is logged, it is unclear whether closure authority rests with: the human operator, the audit lead, or constitutional authority (human governing party). No escalation path exists for incidents that cannot be resolved at the auditor level.
+**Description:** (Updated 2026-08-16) Minimum closure-authority doctrine now lives in `Admin/Integrity_Incident_Log.md` §Ownership (Minor → detecting auditor; Major → human operator confirm; Constitutional → human governing party only). Residual gap: escalation timing SLAs, multi-incident pattern review cadence, and whether audit-lead is a distinct role from human operator are still undefined.
 
-**Why It Matters:** Unowned incidents persist indefinitely. Pattern detection across incidents is impossible without a defined closure process. For Constitutional violations, the lack of defined ownership creates a gap between STATE_HOLD declaration and human review escalation.
+**Why It Matters:** Unowned incidents persist indefinitely. Pattern detection requires both a log home (now exists) and clear closure authority (minimum now exists). Residual is operational cadence, not absence of any owner.
 
-**Resolution Path:** Extend RIP-003 resolution or define independently. Minimum doctrine: Minor violations closed by the auditor who logged them; Major violations require human operator confirmation; Constitutional violations require human governing party ratification to close. Cross-reference `Admin/Governance_Charter.md` §Escalation Doctrine for severity calibration.
+**Resolution Path:** Treat minimum ownership as paper-complete via Integrity_Incident_Log.md. Remaining: define review cadence for open IIL entries and confirm audit-lead vs human-operator naming against Charter escalation language. Payment via Specification once cadence is written and one Major-or-higher incident has been closed under the new log. Status remains Open until that exercise — doctrine minimum is no longer the blocker.
+
+| Field         | Value                                   |
+|---------------|-------------------------------------------|
+| Last Reviewed | 2026-08-16                              |
 
 ---
 
@@ -769,6 +773,8 @@ Mandatory re-audit conditions for this document:
 ---
 
 ### Resolution Log
+
+- 2026-08-16: **Integrity_Incident_Log.md created and wired.** Canonical incident home; Major/Constitutional response steps point here; Minor compound-drift points here; RIP-007 minimum ownership doctrine moved into the log's Ownership table; residual RIP-007 is cadence not absence. Routing registered. Human-directed.
 
 - 2026-08-06: **RIP-011 registered — §Version Preservation Protocol's own
   hash/line-count anchor rule found essentially unimplemented, verified

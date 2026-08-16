@@ -1,3 +1,9 @@
+
+### 2026-08-16 — Tag naming convention (Alpha release hygiene)
+
+**Canonical Git tags** for the Alpha line: `V1Alpha.NN` (no dot after V1), e.g. `V1Alpha.03`, `V1Alpha.04`.  
+Do not use `V1.Alpha.NN` for new tags. Archive zip filenames may keep human-readable forms (`LazarusForgeV0-1.Alpha.03`); Git tags stay machine-consistent. Historical tags already published are left as-is; new releases follow this rule.
+
 # Progress_Log.md — Active Notebook for Repository Progression
 
 ## Navigation Anchors
@@ -36,6 +42,65 @@ Created 2026-08-09 to fix a recurring failure mode found the same day, in two pl
 ## Current Lessons
 
 *(Most recent first. Rotate to `Archive/Logs/Progress_Log_Changelog.md` once more than five entries accumulate.)*
+
+### 2026-08-16 — Integrity incident log stood up (no more willy-nilly)
+
+`Admin/Integrity_Incident_Log.md` created as the canonical append-only home for RIP integrity incidents. Major and Constitutional response steps in Repository_Integrity_Protocol.md now point here; Minor compound-drift (≥3 audits) also logs here. Ownership table implements RIP-007 minimum (Minor → detecting auditor; Major → human operator; Constitutional → human governing party only). File-local Resolution Logs remain for remediation detail; Progress_Log remains for continuity lessons; Field_Logs remains for physical/multi-agent evidence. Prior scattered incidents were not retroactively fabricated into the log. Routing + Adm_Scope_Map registered.
+
+### 2026-08-16 — Priority 2 cross-reference debt classified (no files invented)
+
+Integrity harness UNKNOWN references after Priority 1 (Resolution_Methodology routed; Auditor_Protocols templates at v0.37) classified into five bins. **No new doctrine files created** to silence the harness.
+
+**1. Real active file → route / fix path (done or already routed)**
+| Target | Action |
+|--------|--------|
+| `Admin/Resolution_Methodology.md` | Routed in Priority 1 |
+| `Archive/Logs/AUDIT_HARNESS_CHANGELOG.md` | Live refs in Unknowns.md pointed at wrong `Admin/` path → corrected to Archive/Logs/ |
+| `Archive/Logs/Forge_Audit_Kit_Changelog.md` | Same path correction |
+
+**2. Renamed file → use Rename Registry (do not re-create old name)**
+| Stale name | Canonical | Notes |
+|------------|-----------|--------|
+| `Verification_Gates_LF.md` | `Admin/Verification_Gates.md` | Rename Registry 2026-08-09; remaining hits are rename *history*, leave |
+| `Forge_Network.md` / `Architecture/Forge_Network.md` | `Architecture/Forge_Net.md` | Historical log strings in Forge_Net itself |
+| `Triage.md` | `Operations/Gate_02_Triage.md` | Via Component_Triage_System → Gate_02 |
+| `energy_v0.md` class | `Operations/Energy.md` | Already registered |
+
+**3. Historical / intentional nonexistent — do not create**
+| Target | Classification |
+|--------|----------------|
+| `Operations/Waste_Handling.md` | **Intentionally not created** — Resolution_Methodology §2 / GR-003 pass chose GR-003 as owner instead of a third file. Citations that discuss the *decision not to create it* are correct. |
+| `Operations/Leviathan.md` | Concept lives in `Tests/Leviathan_testing.md` + vision lineage; no Operations/Leviathan.md was ever a live doctrine file in this tree |
+| `Operations/Metals.md` | Never created; metals handling is distributed (Gate_04/05, Chemistry, CLF) |
+| `Architecture/Characterization.md` | Never created; characterization content lives in owning domain files |
+| `Architecture/Chemistry_Electrochemistry.md` | Never split out; electrochemistry stays in Chemistry.md |
+| `Architecture/Cognitive_Canonicalization.md` | Never created |
+| `Architecture/Advanced_Engineering.md` / `Performance_Engineering.md` | Never created as peers |
+| `Admin/Constitutional_Core.md` / `Statutory_Parameters.md` | CIR_Gov aspirational layer refs — not live files; do not invent under CIR |
+| `Admin/Evidence_Management_System.md` | Never created; evidence doctrine is Verification_Gates + Field_Logs + Evidence Classification |
+| `Admin/Integrity_Incident_Log.md` | Named in RIP but never stood up as a file; process gap, not a missing upload |
+| `Admin/Test_Protocols.md` / `Tests/Verification_Methods.md` | Never created; coverage is Verification_Gates + Auditor_Protocols |
+| `Rogue_unit_management.md` | Concept/name only; no file; Leviathan/ADP territory |
+| `Challenges/Energy.md` | Superseded by `Challenges/Energy_Scarcity.md` |
+| `Physical_Site_Requirements.md` | Folded into Facilities / FA-* unknowns |
+| `Propulsion_Economy_isru/zero_g_fabrication.md` | Astroid-miner companion path, not Forge live tree |
+| `filename.md` | Placeholder example string in Canonical_Terms — not a real ref |
+| `Admin/Discovery.md` | Discovery.md is root, not under Admin/ |
+| `GOV_RATIFICATION_LOG.md` | Not a file; ratification lives in Governance_Charter_Changelog |
+| `Admin/ID_Scheme.md` | Transcript-only mention |
+
+**4. Actual missing artifact → Unknown (not invented here)**
+| Target | Disposition |
+|--------|-------------|
+| `Admin/Integrity_Incident_Log.md` | Process named by RIP without a file — candidate future Unknown or explicit "log lives in Progress_Log / sidecar" doctrine, not a silent create |
+| None of the others warrant a new Unknown solely to satisfy the harness |
+
+**5. Companion / external**
+| Target | Notes |
+|--------|--------|
+| `Propulsion_Economy_isru/...` | Astroid-miner archive material; not Forge Routing scope |
+
+**Rule reinforced:** harness UNKNOWN ≠ create file. Classify first.
 
 ### 2026-08-14 — A significant doctrine advance can land in Unknowns.md and Field_Logs while Progress_Log's Forward Growth Avenues stays frozen on the prior state
 FN-001 (full 10-class Adversarial Challenge Battery) and FN-005 (PA-001–006 Provisional Spec) both reached spec-complete in the same session and were correctly recorded in `Unknowns.md` v4.55 and a new Second-Highest-Value Run section in `Tests/Field_Logs.md`. `Progress_Log.md`'s Forward Growth Avenues section, last written 2026-08-12, continued to list both as "Lane A — can start now" and kept them in the suggested work program. The file that exists specifically to prevent progression content from going stale was itself the lagging surface. Caught only when a new session explicitly asked what actions remained leveragable without hardware. Same family as every prior entry in this section: a rule that says "update this when X happens" is not the same as X reliably triggering the update.

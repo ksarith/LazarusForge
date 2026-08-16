@@ -1,6 +1,6 @@
 # Resolution_Methodology.md
 
-**Version 0.6 — 2026-08-16**
+**Version 0.7 — 2026-08-16**
 
 ---
 
@@ -18,7 +18,7 @@
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | N/A — this file is a named reference for demonstrated patterns, not a specification or gate |
 | Verification Ref | Admin/Verification_Gates.md                                         |
-| Last Audit       | 2026-08-16 (GR-007 fourth case)                                     |
+| Last Audit       | 2026-08-16 (v0.7 release-layer refinements)                         |
 | Auditor          | Grok — human-directed draft from 2026-08-15 session patterns        |
 | Open Unknowns    | 0                                                                   |
 | Active Disputes  | 0                                                                   |
@@ -220,7 +220,24 @@ None yet. Candidate for future review: any attempt to turn this reference into a
 
 ---
 
+
+## v0.7 refinements (release-layer, 2026-08-16)
+
+Lessons from applied cases CE-006, GR-007, and integrity P1–P3 — still **reference**, not a gate.
+
+1. **§3 internal-staleness sub-check:** Before writing new doctrine, diff the entry's Resolution Path against body claims already present. (CE-006: path still listed detection/alarm as open after body had answered them.)
+2. **§4 stop rule:** When further paper cannot move Status, state **paper surface exhausted** and leave residual work explicitly equipment-gated or operational. Do not refine digitally for its own sake.
+3. **Upstream-hollow preference:** Prefer closing a hollow citation that unblocks a downstream unknown before opening parallel paper fronts. (GR-003 doctrine unblocked GR-007 Category C.)
+4. **Same-session registration:** New active Admin file → register in `Routing.md` (and Scope_Map if applicable) in the same session. (Resolution_Methodology and Integrity_Incident_Log both needed a later catch-up.)
+5. **Classify ≠ create:** An integrity-harness UNKNOWN reference is a classification task, not a create-file order. Intentional non-creation (e.g. Waste_Handling under GR-003 ownership) remains valid.
+
+Integrity incidents: log Major/Constitutional (and compound Minor) in `Admin/Integrity_Incident_Log.md` — not only Progress_Log or chat. This methodology does not own RIP; it cross-references the log home.
+
+---
+
 ## Resolution Log
+
+- 2026-08-16 (v0.7): Release-layer refinements A–E folded in (internal-staleness sub-check, paper-exhausted stop rule, upstream-hollow preference, same-session Routing, classify≠create). IIL cross-ref only. Human-directed.
 
 - 2026-08-16 (v0.6): **Fourth applied case — GR-007 (equipment retirement / safety-governance domain).**
   Category C disposition named via GR-003 two-outcome model; Categories A–C
