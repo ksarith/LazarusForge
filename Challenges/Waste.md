@@ -188,7 +188,7 @@ The river does not waste water. The forest does not waste leaves. Waste, in thos
 | WA-001 | Embedded complexity preservation metric — no formal measure exists for whether triage decisions are successfully preserving functional complexity versus routing prematurely to reduction. Needed before Gate_02 promotion from Exploration. | Open | Major |
 | WA-002 | Hazardous fraction identification reliability — the triage workflow assumes operator ability to identify asbestos, heavy metals, and BFR-containing materials. A field identification protocol now exists (see Hazardous Fraction Identification Protocol section above, 2026-08-15) at Analogous confidence; no validated training standard or feedstock-validated protocol exists yet. Isolated items route to `Operations/Gate_02_Triage.md` TS-002's Contaminated bin (non-decontaminable state, 2026-08-15 shared-destination extension) — the same named path `Operations/Plastics.md` PL-001 uses, not a separately-implied one — pending WA-004/GR-003 for final disposition. Cross-ref CE-004, `Operations/Plastics.md` PL-001 (shared Beilstein halogen-detection method), `Operations/Gate_03_Reduction.md` GR-007 (uses this protocol's presumptive-match categories for equipment retirement). | Open | Critical |
 | WA-003 | Informal sector integration doctrine — no framework exists for how the Forge interfaces with, supports, or avoids displacing existing informal waste recovery workers. Structural gap at community deployment scale. | Open | Major |
-| WA-004 | Negative-value waste fraction disposal — materials that cannot be recovered and are hazardous to store require a disposal doctrine. No owning file currently covers this. Cross-ref GR-003. | Open | Critical |
+| WA-004 | Negative-value waste fraction disposal — materials that cannot be recovered and are hazardous to store require a disposal doctrine. Owned by `Operations/Gate_03_Reduction.md` GR-003 (real disposal categories written 2026-08-15, applying `Admin/Resolution_Methodology.md`) — this row tracks the same doctrine from the Challenges/ side, not a second one. | Open | Critical |
 
 *WA-002 and WA-004 are Critical — no sustained mixed-waste operations without hazardous fraction identification and negative-value disposal doctrine.*
 
@@ -201,6 +201,14 @@ The river does not waste water. The forest does not waste leaves. Waste, in thos
 ---
 
 ## Resolution Log
+
+- 2026-08-15 (third entry, same day): **WA-004 given a real owner — `Operations/Gate_03_Reduction.md`
+  GR-003 wrote actual disposal categories, first applied case of
+  `Admin/Resolution_Methodology.md`.** WA-004's row updated from "no owning
+  file currently covers this" to name GR-003 explicitly. Both files now
+  track the same doctrine rather than each gesturing at the other. WA-004
+  remains **Open** — categories exist at Analogous confidence, jurisdiction-
+  specific regulatory research and physical validation still open. Human-directed.
 
 - 2026-08-15 (second entry, same day): **WA-002's disposal destination named —
   points to `Operations/Gate_02_Triage.md` TS-002's Contaminated bin instead
