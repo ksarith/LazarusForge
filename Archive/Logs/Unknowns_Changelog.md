@@ -1,6 +1,6 @@
 # Unknowns_Changelog.md — Full Version History for Unknowns.md
 
-Split out from `Unknowns.md` 2026-07-19, following the precedent already established by `Admin/AUDIT_HARNESS_CHANGELOG.md` and `Admin/Forge_Audit_Kit_Changelog.md`. `Unknowns.md` keeps a condensed pointer plus the most recent versions in full; this file holds the complete narrative history. No information was removed in this split — every version entry below is preserved verbatim from `Unknowns.md` prior to this change.
+Split out from `Unknowns.md` 2026-07-19, following the precedent already established by `Archive/Logs/AUDIT_HARNESS_CHANGELOG.md` and `Archive/Logs/Forge_Audit_Kit_Changelog.md`. `Unknowns.md` keeps a condensed pointer plus the most recent versions in full; this file holds the complete narrative history. No information was removed in this split — every version entry below is preserved verbatim from `Unknowns.md` prior to this change.
 
 **Known gap, not an error:** version 4.21 does not exist. The sequence jumps 4.20 → 4.22. Nothing in the repository references v4.21, so this is left as-is rather than renumbered — renumbering would break every existing cross-reference to a specific version number elsewhere in the repository.
 

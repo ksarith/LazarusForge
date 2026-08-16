@@ -19,7 +19,7 @@ retired at v4.3 — that failure was one global store for every module's
 unknowns; this is a per-file archive, still 1:1 owned by
 `Admin/Auditor_Protocols.md` alone, physically split rather than
 logically centralized. The same distinction already applies to
-`Admin/Forge_Audit_Kit_Changelog.md`.
+`Archive/Logs/Forge_Audit_Kit_Changelog.md`.
 
 `Admin/Auditor_Protocols.md` retains: File State, Scope Boundary, the
 full Epistemic Foundation, all operational doctrine, Lessons Learned,
@@ -585,7 +585,7 @@ Separately, one reported finding (claimed sidecar truncation at AP-017, omitting
 | First Logged  | 2026-07-16                   |
 | Last Reviewed | 2026-07-16                   |
 
-**Description:** A Claude self-audit (2026-07-16) of this file found five drifted items, verified against source before correcting: (1) File State's `Open Unknowns: 9` undercounted the actual 12 non-Resolved sidecar entries; (2) the Role Declaration Requirement and Standard Sign-Off template strings both still read `v0.21` against the file's actual `v0.22` — the third recurrence of this exact bug, this time introduced by Claude's own v0.22 edit two turns prior, not inherited; (3) §Adversarial Priority Weighting cited `Admin/Discovery.md`, but `Routing.md`'s canonical registration is `Discovery.md` with no `Admin/` prefix; (4) AP-017's Risk field read `Major` — a Priority-scale value, not a valid Risk-scale one (Low/Medium/High) — almost certainly copy-pasted from the adjacent Priority field; (5) `Admin/Forge_Audit_Kit_Changelog.md`, cited from this file, was never added to `Routing.md` — along with `Admin/AUDIT_HARNESS_CHANGELOG.md`, also missing.
+**Description:** A Claude self-audit (2026-07-16) of this file found five drifted items, verified against source before correcting: (1) File State's `Open Unknowns: 9` undercounted the actual 12 non-Resolved sidecar entries; (2) the Role Declaration Requirement and Standard Sign-Off template strings both still read `v0.21` against the file's actual `v0.22` — the third recurrence of this exact bug, this time introduced by Claude's own v0.22 edit two turns prior, not inherited; (3) §Adversarial Priority Weighting cited `Admin/Discovery.md`, but `Routing.md`'s canonical registration is `Discovery.md` with no `Admin/` prefix; (4) AP-017's Risk field read `Major` — a Priority-scale value, not a valid Risk-scale one (Low/Medium/High) — almost certainly copy-pasted from the adjacent Priority field; (5) `Archive/Logs/Forge_Audit_Kit_Changelog.md`, cited from this file, was never added to `Routing.md` — along with `Archive/Logs/AUDIT_HARNESS_CHANGELOG.md`, also missing.
 
 **Why It Matters:** none of these are individually severe, but the version-string recurrence is the third instance of the same bug in one session, and it's the clearest available evidence for AP-022's own reasoning applied at the tooling level, not just the role-count level: self-referential bookkeeping (counts, version strings, citations) has no structural enforcement in this repository, only chance discovery during unrelated audits. This entry itself was found the same way.
 
@@ -1104,7 +1104,7 @@ This becomes governance metadata rather than prose, auditable the same way Truth
   the result: every AP-XXX sidecar entry and the full Resolution Log
   history moved here in one surgical cut, no content altered. Documented
   exception to the Sidecar Model, matching the precedent already set by
-  `Admin/Forge_Audit_Kit_Changelog.md` at that kit's v1.10 — see this
+  `Archive/Logs/Forge_Audit_Kit_Changelog.md` at that kit's v1.10 — see this
   file's own header for the full rationale. `Admin/Auditor_Protocols.md`
   retains Lessons Learned in-body (explicitly not moved — distinct from
   the sidecar/changelog content, stays where the doctrine it summarizes
@@ -1239,8 +1239,8 @@ This becomes governance metadata rather than prose, auditable the same way Truth
   two turns prior rather than inherited); `Admin/Discovery.md` citation
   corrected to `Discovery.md` (Routing.md's actual canonical form);
   AP-017's Risk field corrected from an invalid `Major` (copy-pasted from
-  Priority) to `High`; `Admin/AUDIT_HARNESS_CHANGELOG.md` and
-  `Admin/Forge_Audit_Kit_Changelog.md` registered in `Routing.md` (both
+  Priority) to `High`; `Archive/Logs/AUDIT_HARNESS_CHANGELOG.md` and
+  `Archive/Logs/Forge_Audit_Kit_Changelog.md` registered in `Routing.md` (both
   missing since their 2026-07-14 creation). Spec Gates header gained an
   inline gate list. Separately, coordinated with a same-day fix in
   `Automation/AUDIT_HARNESS.py`: `CURRENT_CYCLE`/`UNKNOWN_FIRST_CYCLE`

@@ -39,7 +39,7 @@ elsewhere. Every other file in the repository keeps its sidecar in-body.
 
 **FAK-012** — No sidecar entry recorded Adversarial Battery ever being applied to the kit itself (G3), despite Adversarial Priority Weighting plausibly requiring Full Battery given the kit's high Coupling and Governance Authority (every audit session routes through it). Surfaced by the same 2026-07-14 self-audit. Resolution: Battery run 2026-07-14 — see Adversarial Battery record below. Status: Resolved — battery applied; see that record for its own findings, which remain separately open where noted.
 
-**FAK-013** — Five citations inside `Admin/Forge_Audit_Kit.md` (Sidecar Link field plus four body references) still pointed to `Admin/Forge_Audit_Kit_Changelog.md`, the pre-v1.10 location, despite this file's own intro stating the sidecar and changelog were relocated to `Archive/Logs/` at v1.10 (2026-07-14). Flagged as out-of-scope by Grok during a `Tests/Solar_Descent.md` audit, 2026-07-28 ("contains an unresolved reference... not escalated here"). Resolution: all five citations corrected to `Archive/Logs/Forge_Audit_Kit_Changelog.md`, 2026-07-28 (human-directed, in the same pass as the CIR-/GOV-008 rename below). Lessons Learned: a file can correctly document its own relocation in prose while its own self-citations still point at the old address — the intro note isn't self-enforcing. Status: Resolved.
+**FAK-013** — Five citations inside `Admin/Forge_Audit_Kit.md` (Sidecar Link field plus four body references) still pointed to `Archive/Logs/Forge_Audit_Kit_Changelog.md`, the pre-v1.10 location, despite this file's own intro stating the sidecar and changelog were relocated to `Archive/Logs/` at v1.10 (2026-07-14). Flagged as out-of-scope by Grok during a `Tests/Solar_Descent.md` audit, 2026-07-28 ("contains an unresolved reference... not escalated here"). Resolution: all five citations corrected to `Archive/Logs/Forge_Audit_Kit_Changelog.md`, 2026-07-28 (human-directed, in the same pass as the CIR-/GOV-008 rename below). Lessons Learned: a file can correctly document its own relocation in prose while its own self-citations still point at the old address — the intro note isn't self-enforcing. Status: Resolved.
 
 ────────────────────────────────────────────────────────────────────
 
@@ -74,7 +74,7 @@ That check has now been run. `AUDIT_HARNESS.py` line 368: `CURRENT_CYCLE = 10   
   row** (`Admin/Computational Institutional Reasoning`), registered as
   part of renaming that file's colliding local "GOV-008" tracker to
   CIR-001 (see that file's own Resolution Log). FAK-013 also resolved
-  in this pass — five stale `Admin/Forge_Audit_Kit_Changelog.md`
+  in this pass — five stale `Archive/Logs/Forge_Audit_Kit_Changelog.md`
   citations corrected to this file's actual `Archive/Logs/` location.
 
 - 2026-07-26: **v1.13 — Governing Principles gained a fifth line**
@@ -192,7 +192,7 @@ That check has now been run. `AUDIT_HARNESS.py` line 368: `CURRENT_CYCLE = 10   
   that could go stale no longer exists in the kit.
 
   *Reduction pass:* Resolution Log (this file's history, ~7,650 chars)
-  externalized to `Admin/Forge_Audit_Kit_Changelog.md` — full history
+  externalized to `Archive/Logs/Forge_Audit_Kit_Changelog.md` — full history
   preserved verbatim below, add new entries there going forward, not back
   into the kit. Auditor Notes FAK-* entries trimmed to Status/Resolution/
   Lessons Learned per this kit's own Resolved Unknown Discharge Procedure
