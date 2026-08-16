@@ -683,7 +683,7 @@ throughput and identification quality.
 | Blocking      | Yes — hard prerequisite before first operational Intake run |
 | Owner         | Operations/Gate_01_Intake.md                     |
 | First Logged  | 2026-05-15                                       |
-| Last Reviewed | 2026-08-14                                       |
+| Last Reviewed | 2026-08-15                                       |
 
 **Description:** Batteries, capacitors, compressed gas
 vessels, and other energetic materials identified at
@@ -725,6 +725,20 @@ Intake operation, not a refinement.
 
 **Grok review 2026-08-14:** Path adequate and correctly sequenced by energetic category (Li-ion, other batteries, capacitors, compressed gas) plus isolation, PPE, and hard-prerequisite language. Blocking Yes is correct. **Grok approved (path adequate).** Remains Open — written discharge doctrine + validation still required before first operational Intake run; do not close on path alone.
 
+**Spec-depth pass, 2026-08-15 (digital-only — no equipment exists yet):** The prior path was an outline of what discharge doctrine needed to cover; this pass writes the doctrine itself, at Analogous confidence — standard industry battery/electrical safety practice, not anything requiring Forge-specific physical testing to specify. What stays genuinely open is noted per category. Checked cross-references first: `Architecture/Facilities.md` FA-001 confirmed as the siting doctrine (still Open, so isolation-storage siting itself stays deferred to it); `Operations/Air_Scrubber.md` currently only specifies Cl₂-specific off-gas handling, not general battery thermal-runaway off-gassing (HF, VOCs) — that gap is real and flagged below, not papered over. `Gate_04_Separation_Mechanical.md`'s existing lockout-before-access pattern (MG-007) is reused as the operator-safety precedent rather than inventing a separate one.
+
+*Lithium-chemistry cells:* Triage before any discharge attempt — physically damaged, swollen, punctured, or hot-to-touch cells are **not** manually discharged; thermal runaway risk from mechanical intervention exceeds the risk of controlled isolation storage. These route directly to isolated storage (below), no discharge attempted. Undamaged cells: deep-discharge through a resistive load (not a direct short — arc and heat risk), monitored, inside a fire-rated container (steel, sand-lined or vermiculite-lined) with a vent path, never inside an enclosed operator space. Target discharge voltage is chemistry-dependent and genuinely needs verification per cell type at first operational run — flagged Placeholder, not asserted as a universal number. Cells that will not accept discharge (internal fault) are non-recoverable and route to isolated storage, not further intervention.
+
+*Other battery chemistries:* Lead-acid — acid-resistant PPE (gloves, eye protection) mandatory before handling; discharge via resistive load; any electrolyte leakage is neutralized and contained per standard acid-handling practice before the cell is moved. Alkaline/NiMH/NiCd — lower acute hazard; resistive-load discharge without electrolyte-specific PPE, but visually inspected for casing corrosion or leakage first, since NiCd carries its own toxicity concern at breach.
+
+*Capacitors:* Assume charged until measured — voltage verification with a meter is mandatory before any physical contact with terminals, regardless of how long the component has been de-powered. Discharge through a bleeder resistor sized to the capacitor's rated voltage/capacitance, not a direct short (arc and projectile risk on larger units). Large electrolytic or high-voltage capacitors (e.g., from CRTs or industrial drive equipment) are treated as a distinct highest-risk sub-case requiring resistor sizing appropriate to their higher stored energy — a single small-capacitor procedure does not generalize to these without checking rated values first.
+
+*Compressed gas vessels:* Identify contents where labeling or valve type allows; where contents cannot be identified, treat as hazardous by default — fail closed, consistent with the file's existing confidence-labeling discipline elsewhere. Controlled release only in a ventilated area; if contents are suspected hazardous (not just inert), release routes through `Operations/Air_Scrubber.md`'s dedicated auxiliary release point (AS-005, registered 2026-08-15) — a physically separate intake from the main Stage A→E process pipeline, so an unpredictable unknown-content release doesn't enter Stage D's calibrated main water loop. AS-005's own capture-media sizing still depends on this file's largest plausible vessel-volume assumption, which is itself not yet specified — flagged as a residual gap, not silently closed by AS-005's registration. Vessels that cannot be safely released are isolated valve-protected, away from ignition sources and thermal sources, and tagged with contents-unknown status.
+
+*Isolation storage (shared across categories):* A dedicated isolation area, physically separated from active processing stations, houses any energetic material pending discharge or awaiting non-recoverable disposition. Container type varies by category as specified above; siting distance and structural requirements for this area are FA-001's job, not invented here — this doctrine defines what goes in isolation and how, FA-001 defines where.
+
+**Status after this pass:** discharge procedures now exist by category at Analogous confidence, closing the "define discharge doctrine" half of the Resolution Path. What remains genuinely open: (1) chemistry-specific discharge voltage targets for lithium cells — needs first-operational-run verification per cell type; (2) the general-gas Air_Scrubber.md intake gap surfaced above, tracked there rather than assumed away; (3) isolation-area siting specifics, correctly deferred to FA-001. GI-002 remains **Open**, Blocking Yes unchanged — doctrine is written, but "written and tested" (the file's own stated bar for promotion to Section 2) still requires the first operational run this file cannot produce without equipment.
+
 ---
 
 ### GI-003 — Augmented hazard detection capability not specified
@@ -738,7 +752,7 @@ Intake operation, not a refinement.
 | Blocking      | No                                               |
 | Owner         | Operations/Gate_01_Intake.md                     |
 | First Logged  | 2026-05-15                                       |
-| Last Reviewed | 2026-08-14                                       |
+| Last Reviewed | 2026-08-15                                       |
 
 **Description:** Visual inspection cannot reliably
 detect chemical contamination (lead, cadmium, mercury,
@@ -788,6 +802,8 @@ and operator health risk downstream.
   handling.
 
 **Grok review 2026-08-14:** Path adequate. Candidate kit (Geiger + lead swabs as v0 minimum) is concrete and correctly scoped; unsupervised-operation gate is the right control. Blocking No is acceptable while human oversight compensates, but the drift indicator for unsupervised operation is correctly severe. **Grok approved (path adequate).** Remains Open — kit selection + protocol still required.
+
+**Note, 2026-08-15 (Claude):** GI-003's tools (Geiger counter, lead swabs, chemical test strips) are the augmented detection layer feeding the same triage pipeline `Operations/Plastics.md` PL-001's Beilstein test and `Challenges/Waste.md` WA-002's identification protocol already share — a supporting dependency, not a parallel detection path. Positive results from any of the three feed the same downstream destination: `Operations/Gate_02_Triage.md` TS-002's Contaminated bin non-decontaminable state. This does not close GI-003 — kit selection and protocol definition remain open — but it keeps the four detection-and-routing unknowns (GI-003, PL-001, WA-002, TS-002) pointed at one converged pipeline instead of drifting toward separately-imagined ones.
 
 ---
 
@@ -993,6 +1009,25 @@ hazards are not yet acknowledged in the system.
 ---
 
 ### Resolution Log
+
+- 2026-08-15 (second entry, same day): **GI-003 wired as a supporting
+  dependency into the shared PL-001/WA-002/TS-002 detection-and-routing
+  pipeline, not a parallel path.** No change to GI-003's own status — kit
+  selection and protocol definition remain open. Human-directed.
+
+- 2026-08-15: **GI-002 spec-depth pass — digital-only, no equipment exists.**
+  Wrote actual discharge doctrine by energetic category (lithium cells,
+  other battery chemistries, capacitors, compressed gas) at Analogous
+  confidence — standard industry electrical/battery safety practice, not
+  Forge-specific experimental content. Reused `Gate_04_Separation_Mechanical.md`
+  MG-007's lockout-before-access pattern for operator safety rather than
+  inventing a separate one; isolation-area content vs. FA-001 siting kept
+  cleanly split. Surfaced a real gap in the process: `Operations/Air_Scrubber.md`
+  has no general unknown-content gas intake path, only Cl₂-specific handling —
+  flagged there as a note, not silently assumed solved, and not unilaterally
+  given a new unknown ID. GI-002 remains **Open**, Blocking Yes unchanged —
+  doctrine is now written; "written and tested" (this file's own bar for
+  promotion) still needs a first operational run. Human-directed.
 
 - 2026-08-14: **Grok resolution-path review (Round 1 — Operations start).** All seven GI unknowns reviewed against source. Every Resolution Path judged adequate; none invent parallel doctrine; none understate residual evidence needs. Markers added under each path. Last Reviewed → 2026-08-14 on all seven. **No GI-* closed.** Open Unknowns remain 7. Blocking status unchanged (GI-002 Yes; others No). Human-directed.
 

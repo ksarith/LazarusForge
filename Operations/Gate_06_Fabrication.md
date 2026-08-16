@@ -1149,6 +1149,64 @@ procedures are all absent.
 
 *Grok review 2026-08-15: Resolution Path strong; correctly points fire doctrine to Facilities.md (FA-001) as siting layer. Critical/High Risk preserved; Blocking=No left intact (PPE already hard-prerequisite). No closure.*
 
+**Spec-depth pass, 2026-08-15 (digital-only — no equipment exists yet):** Checked
+`Architecture/Facilities.md` before drafting, since Grok's review pointed fire
+doctrine there — unlike the WA-002 case earlier this session, Facilities.md's
+Hazard Zone Separation section already has real content (Hot Zone explicitly covers
+arc welding). The one genuine gap was FA-002's clearance radius, resolved this same
+pass using NFPA 51B's established 35ft (11m) standard — see there. That gives this
+entry's fuel-separation item a real number instead of an open placeholder.
+
+*Fuel separation radius:* 35 feet (11m) per FA-002/NFPA 51B, inherited rather than
+re-derived — this file does not maintain its own separate number. Combustibles
+within that radius are relocated where possible; where not possible, protected with
+fire-resistant covers and a posted fire watch for the duration of hot work plus a
+standard post-work monitoring period (NFPA 51B's own convention, not a Forge
+invention).
+
+*Spark containment:* Welding curtains or screens on any side of the work area not
+already bounded by nonburnable Hot Zone flooring per Facilities.md Section I.
+Minimum clearance from combustibles inside the curtained area follows the same
+35ft logic scaled down only where a physical barrier (not just distance) is
+substituted — a curtain is a barrier, not a distance-reduction excuse, and doesn't
+independently justify shrinking the FA-002 radius.
+
+*Extinguisher class requirements:* Class B (flammable liquids — oil, solvent
+residue plausible in salvage feedstock) and Class D (combustible metal fires —
+aluminum or magnesium fines from upstream Gate_04 separation) both required and
+staged at the Hot Zone boundary, not just Class ABC general coverage — a standard
+ABC extinguisher is not rated for a metal-fines fire and using one on one can make
+it worse (some ABC agents react with burning metals). This is the one item in this
+pass most worth operator training emphasis, not just equipment presence.
+
+*Hot-work shutdown procedure:* Before a welding area is left unattended: (1) arc
+source de-energized and locked out, reusing the same lockout-before-access pattern
+already established at `Gate_04_Separation_Mechanical.md` MG-007 rather than
+inventing a separate one; (2) visual sweep of the work area and the FA-002 radius
+for smoldering material — slag and hot metal can ignite delayed fires well after
+active welding stops; (3) minimum cool-down hold before the area is considered
+clear, informed by NFPA 51B's standard post-work fire-watch convention rather than
+an arbitrary Forge-specific figure.
+
+*Ventilation/fire interaction:* Forced ventilation (Air_Scrubber.md's negative-
+pressure intake) feeds oxygen to a fire rather than suppressing it. On any fire
+event in the Hot Zone, ventilation shuts down as part of the fire response, not
+after it — a delayed shutdown actively works against suppression. This needs a
+defined interlock trigger and sequence, which is genuinely still open: it depends
+on Air_Scrubber.md's own fault-detection pathway (the same Fault 04 latency
+pattern used elsewhere) being wired to a fire-specific trigger, not just the
+saturation/particulate faults it currently monitors for. Flagged as the one
+piece of this pass that isn't fully closed at the doctrine level yet.
+
+**Status after this pass:** four of five Resolution Path items (fuel separation,
+spark containment, extinguisher classes, shutdown procedure) now have real content
+at Analogous confidence, sourced from established hot-work fire safety practice
+(NFPA 51B) rather than invented. The fifth — ventilation/fire interlock — is
+correctly left open, since it depends on an Air_Scrubber.md fault-detection
+addition this pass doesn't attempt to invent unilaterally. GF-007 remains **Open**,
+Blocking No unchanged (PPE is already the hard prerequisite; this is facility-level
+doctrine layered on top of it, not replacing it).
+
 **Why It Matters:** Arc welding creates credible
 ignition hazards in salvage environments where
 upstream operations may have introduced oil residue,
@@ -1185,6 +1243,21 @@ the fire risk profile is materially different.
 ---
 
 ### Resolution Log
+
+- 2026-08-15 (second entry, same day): **GF-007 spec-depth pass — digital-only,
+  no equipment exists.** Checked `Architecture/Facilities.md` before drafting;
+  unlike WA-002 earlier this session, Facilities.md's Hazard Zone Separation
+  already had real content — the actual gap was FA-002's clearance radius,
+  resolved same-session using NFPA 51B's established 35ft/11m standard rather
+  than derived independently. Four of five Resolution Path items given real
+  content at Analogous confidence: fuel separation (inherits FA-002's number),
+  spark containment, extinguisher classes (Class B + Class D both required,
+  not general ABC — flagged as the item most worth operator training
+  emphasis), hot-work shutdown (reuses `Gate_04_Separation_Mechanical.md`
+  MG-007's lockout pattern). Fifth item — ventilation/fire interlock — left
+  honestly open, since it depends on an `Air_Scrubber.md` fault-detection
+  addition not invented unilaterally here. GF-007 remains **Open**, Blocking
+  No unchanged. Human-directed.
 
 - 2026-08-15: **Grok review round (Gate_06 sequence continuation).** All 7 GF unknowns (GF-001–007) reviewed. Last Reviewed bumped; review markers added. One real inconsistency flagged: GF-005 still Open in local sidecar and Unknowns.md Active Index, yet `Operations/Gate_07_Utilization.md` exists and the 2026-06-08 log entry incorrectly claimed “GF-005 now resolved.” Flagged in GF-005 entry; no closure performed. All other Resolution Paths judged adequate; cross-refs (SC-004, UNK-008/Geck, FA-001, Gate_07) verified real. Zero closures, zero Blocking flips, zero Priority changes. Spec Gates left locked at 0/6. Human-directed continuation of prior rounds.
 

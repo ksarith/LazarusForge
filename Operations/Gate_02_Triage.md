@@ -642,7 +642,7 @@ Cross-reference `Architecture/Forge_flow.md` FL-001 (gate logic determinism).
 | Blocking      | Yes — contamination bypass is highest-risk triage failure mode (operator harm) |
 | Owner         | Operations/Gate_02_Triage.md   |
 | First Logged  | May 2026                       |
-| Last Reviewed | 2026-08-14                     |
+| Last Reviewed | 2026-08-15                     |
 
 **Description:** Full decontamination criteria, routing for components that
 cannot be decontaminated, and provenance tag requirements for contamination
@@ -657,6 +657,19 @@ Full decontamination protocol still needed. Cross-reference
 `Operations/Air_Scrubber.md` AS-003 (scrubber waste stream and saturation).
 
 **Grok review 2026-08-14:** Partial path adequate — Station 0 + Contaminated bin are real progress. Residual gap (full decontamination criteria, non-decontaminable routing, provenance tag for contamination status) is correctly named. Blocking Yes remains correct. **Grok approved (partial path adequate).** Remains Open — full decontamination protocol still required before treating contamination routing as closed.
+
+**Spec-depth pass, 2026-08-15 (digital-only — no equipment exists yet):** Checked the rest of the repository before drafting, to avoid inventing doctrine two other unknowns already own. `Admin/Ethical_Constraints.md` EC-014 (Open) is the repo's general toxic-material-encapsulation standard gap — no concrete pass/fail criteria for "adequately encapsulated" exist there either, so this pass does not invent a rival Gate_02-local standard. `Gate_03_Reduction.md` GR-003 (Open, Critical) is the repo's actual final-disposal doctrine gap — "what happens to hazmat that can't be processed" has no owner anywhere in the repo yet. TS-002 should route to that gap explicitly, not paper over it with a second invented disposal path.
+
+*Three-way Station 0 decision workflow (new — closes the routing-logic half of "full decontamination criteria"):* On contamination flag at Station 0, a component enters exactly one of three states, not left as a binary held/cleared:
+1. **Decontaminated-and-cleared** — a documented decontamination method was applied and a Station 0 recheck (same check method as the original flag) confirms no contamination signal remains. Component re-enters triage at Station 0 per the file's existing re-triage doctrine, carrying a provenance tag recording the prior contamination event (see below) — it does not silently return to "never flagged" status.
+2. **Decontamination attempted, unresolved** — held in the Contaminated bin, re-attempt or escalate; does not proceed past Station 0 under any circumstance while in this state.
+3. **Non-decontaminable** — the component cannot be brought to a clean-recheck state by any method available at this station. This is the state that currently has no destination. Per Ethical_Constraints.md's active-release vs. passive-encapsulation principle, a non-decontaminable component is not automatically waste — but confirming which of those two categories it falls into is exactly what EC-014 doesn't yet define, and disposing of the ones that are genuinely waste is exactly what GR-003 doesn't yet own. **This pass does not resolve either.** What it does: a non-decontaminable component holds in the Contaminated bin under hazmat isolation (no different physical handling than state 2, but tagged with a distinct provenance status) until either EC-014 or GR-003 resolves — whichever applies. No component in this state may be released to any other station under any operator override; that is the one hard rule this pass adds without waiting on either upstream unknown.
+
+**Shared-destination extension, 2026-08-15:** This same non-decontaminable state is the destination for material-*compositional* hazards, not only surface contamination — specifically the confirmed-halogenated plastics `Operations/Plastics.md` PL-001 flags at reactor triage and the asbestos/heavy-metal/BFR items `Challenges/Waste.md` WA-002's identification protocol flags. Both entered this state directly, skipping the decontamination-attempt state (2) entirely — there is no cleaning method that removes PVC content or asbestos fiber from a component's composition, so treating them as "attempted, unresolved" would misrepresent what happened. Both PL-001 and WA-002 previously pointed at two different, vaguer destinations ("specialist disposal" and "routed per WA-004/GR-003" respectively) without naming a shared one; both now converge on this Contaminated bin non-decontaminable state as the single named path, still correctly holding pending EC-014/GR-003 exactly as before. This does not change what happens to material entering here — it names the destination two other files were each independently gesturing at.
+
+*Provenance tag schema (new — closes the tagging half):* Reuses the `Challenges/Closed_Loop_Feedstock.md` §7.2 Material Certainty Manifest pattern (ratified 2026-07-31) as precedent rather than inventing a parallel tag format — that schema already establishes the repo's convention for how a Bayesian-style status gets encoded and read downstream. Contamination-status tag fields: `contamination_flag` (boolean, set at Station 0), `contamination_type` (chemical / biological / radiological / unknown — "unknown" is a valid and expected value, not an error state), `decon_state` (cleared / held / non-decontaminable, per the three-way workflow above), `decon_method` (free text, required if `decon_state = cleared`), `decon_recheck_by` (operator/station ID, required if `cleared`). A component with `contamination_flag = true` carries this tag permanently in its record even after clearing — later stations and re-salvage doctrine can see the history, consistent with the file's own re-triage doctrine already requiring provenance tags for prior service history.
+
+**Status after this pass:** the routing-workflow and tagging-schema thirds of TS-002's three-item gap now have real specification. The third — a hazard-class-specific pass/fail decontamination *standard* with numeric or testable criteria — correctly stays open, because it depends on EC-014 (encapsulation standard) and, for non-decontaminable disposition, on GR-003 (disposal doctrine), neither of which this file owns or can resolve unilaterally. TS-002 remains **Open**, Blocking Yes unchanged — this pass reduces what's missing to exactly the two upstream dependencies, it does not close the unknown.
 
 ---
 
@@ -828,6 +841,34 @@ until a scoring owner and cadence are assigned and logged here.
 ---
 
 ### Resolution Log
+
+- 2026-08-15 (second entry, same day): **TS-002's Contaminated bin extended as
+  the named shared destination for PL-001/WA-002 compositional hazards.**
+  Verified against source before acting on a Grok cross-file proposal. PL-001
+  ("specialist disposal") and WA-002 ("routed per WA-004/GR-003") were two
+  different sentences pointing at the same undefined place. Reused this file's
+  existing non-decontaminable state rather than inventing a new destination —
+  compositional hazards (confirmed-halogenated plastics, asbestos, leaded
+  glass) skip the decontamination-attempt state entirely, since no cleaning
+  method removes inherent material composition. All three files now converge
+  on one named path. TS-002 itself unchanged in status — still Open, Blocking
+  Yes. Human-directed.
+
+- 2026-08-15: **TS-002 spec-depth pass — digital-only, no equipment exists.**
+  Checked the rest of the repository before drafting: `Admin/Ethical_Constraints.md`
+  EC-014 (encapsulation standard) and `Operations/Gate_03_Reduction.md` GR-003
+  (final hazmat disposal doctrine) are both Open and both partially overlap
+  TS-002's gap — this pass deliberately does not invent rival doctrine for
+  either. What it does add: a three-way Station 0 decision workflow
+  (decontaminated-and-cleared / held-unresolved / non-decontaminable, the
+  last holding pending EC-014 or GR-003 rather than inventing a second
+  disposal path), and a provenance tag schema for contamination status
+  reusing `Challenges/Closed_Loop_Feedstock.md` §7.2's Material Certainty
+  Manifest pattern as precedent rather than a parallel format. Cross-links
+  added at GR-003 and EC-014 pointing back to this entry. TS-002 remains
+  **Open**, Blocking Yes unchanged — the numeric/testable decontamination
+  standard itself stays open, correctly, pending those two upstream
+  unknowns. Human-directed.
 
 - 2026-08-14: **Grok resolution-path review (Round 2 — Operations).** All open/in-progress TS unknowns (TS-001,002,003,005,006,007,008) reviewed against source. TS-004 left untouched (already Resolved — Discharge). Every live Resolution Path judged adequate; residual evidence/implementation needs correctly retained. Markers added; Last Reviewed → 2026-08-14 on all seven live entries. **No TS-* closed.** Open Unknowns remain 7. Blocking status unchanged. Human-directed.
 

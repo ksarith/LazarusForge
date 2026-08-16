@@ -604,14 +604,19 @@ doctrine not assigned
 | Blocking      | No                                               |
 | Owner         | Operations/Gate_03_Reduction.md                  |
 | First Logged  | 2026-05-15                                       |
-| Last Reviewed | 2026-08-14                                       |
+| Last Reviewed | 2026-08-15                                       |
 
 **Description:** Material that cannot be processed
 through normal Reduction due to biological or chemical
 contamination has no defined disposal path in the
 repository. What happens after isolation — controlled
 disposal, specialist handling, hazmat routing — has
-no owner.
+no owner. Cross-reference `Operations/Gate_02_Triage.md`
+TS-002 (2026-08-15 pass) — Station 0's non-decontaminable
+disposition state holds pending this unknown's resolution
+rather than inventing a second disposal path; both files
+are waiting on the same missing doctrine, not two
+separate ones.
 
 **Why It Matters:** Contaminated material that cannot
 be processed cannot be held indefinitely. Without a
@@ -789,7 +794,7 @@ not defined
 | Blocking      | No                                               |
 | Owner         | Operations/Gate_03_Reduction.md                  |
 | First Logged  | 2026-07-28                                       |
-| Last Reviewed | 2026-08-14                                       |
+| Last Reviewed | 2026-08-15                                       |
 
 **Description:** No threshold exists for when Reduction equipment
 exposed to contaminated feedstock (hazardous residue, cross-material
@@ -815,6 +820,16 @@ retired by default rather than attempting an undefined
 decontamination procedure.
 
 **Grok review 2026-08-14:** Path adequate and correctly conservative (default-retire until doctrine exists). Downstream-of-WA-002 dependency is honestly named; Critical priority is justified. **Grok approved (path adequate).** Remains Open — categories still need definition; partially blocked on WA-002.
+
+**Spec-depth pass, 2026-08-15 (digital-only — no equipment exists yet):** `Challenges/Waste.md` WA-002 gained a real Hazardous Fraction Identification Protocol this same session (asbestos presumption-and-isolation, heavy-metal component typing, BFR detection reusing `Operations/Plastics.md` PL-001's Beilstein test). That gives this entry's categories something concrete to sort against, rather than the generic "hazardous residue" language the description used before.
+
+*Category A — Decontaminate-and-return:* Equipment exposed to contamination that does not match any WA-002 presumptive-hazard category (general dirt, non-hazardous residue, water damage without contamination) and where a defined cleaning method exists for the exposure type. Returns to service after cleaning and a visual recheck.
+
+*Category B — Retire by default (WA-002 presumptive match):* Equipment exposed to material presumptively matching WA-002's asbestos, heavy-metal, or BFR categories. Per this file's own existing conservative stance, presumptive match is sufficient for retirement — waiting for lab confirmation before retiring equipment that's already presumptively contaminated inverts the fail-closed posture the rest of this doctrine relies on. This category does not require WA-002's remaining validation work to be usable; the presumptive-match trigger is exactly what WA-002 already provides.
+
+*Category C — Retire, disposition pending:* Equipment confirmed (not just presumptively) contaminated with hazardous material and for which no cleaning method exists at any confidence level. This is where GR-007 is genuinely still blocked — Category C equipment's ultimate disposition depends on WA-004/GR-003's still-open final-disposal doctrine, the same dependency the Description already named. This pass does not resolve that; it only clarifies that Category C is the specific slice of GR-007 waiting on it, not the whole unknown.
+
+**Status after this pass:** Categories A and B are now real, usable doctrine — a Category B determination can be made today using WA-002's protocol without waiting on anything further. Category C remains honestly blocked on WA-004/GR-003. GR-007 stays **Open** — this pass narrows what's actually still missing rather than closing the unknown.
 
 ---
 
@@ -855,6 +870,17 @@ actually deciding between.
 ---
 
 ### Resolution Log
+
+- 2026-08-15: **GR-007 spec-depth pass — digital-only, no equipment exists.**
+  Followed WA-002's own spec-depth pass this same session
+  (`Challenges/Waste.md`) rather than restating the dependency. Defined
+  three retirement categories: A (decontaminate-and-return, non-hazardous),
+  B (retire by default on WA-002 presumptive-hazard match — usable today,
+  does not wait on WA-002's remaining validation work), C (retire,
+  disposition pending WA-004/GR-003). Categories A and B are now real,
+  usable doctrine; Category C is honestly named as the specific slice
+  still blocked, not the whole unknown. GR-007 remains **Open**. Cross-link
+  added at WA-002 pointing back here. Human-directed.
 
 - 2026-08-14: **Grok resolution-path review (Round 3 — Operations).** All eight GR unknowns reviewed against source. Every Resolution Path judged adequate; residual dependencies (GR-002 method selection, WA-002, measured data) correctly retained. Markers added; Last Reviewed → 2026-08-14 on all eight. **No GR-* closed.** Open Unknowns remain 8. Blocking status unchanged (all No). Human-directed.
 

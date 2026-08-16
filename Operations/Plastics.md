@@ -127,8 +127,11 @@ PVC, Teflon, and other halogenated plastics must not enter the pyrolysis reactor
 At triage, suspected halogenated material is identified using the Beilstein test
 (copper wire combustion — green flame indicates halogen presence) or density
 sorting (PVC density ~1.4 g/cm³ is distinctly higher than most common
-thermoplastics). Confirmed halogenated material routes to specialist disposal,
-not to the reactor. See PL-001.
+thermoplastics). Confirmed halogenated material routes to `Operations/Gate_02_Triage.md`'s
+Contaminated bin (non-decontaminable state, 2026-08-15 shared-destination extension),
+not to the reactor and not to an undefined "specialist disposal" — the same named
+hold `Challenges/Waste.md` WA-002's hazardous fractions use, pending
+EC-014/GR-003 for final disposition. See PL-001.
 
 ---
 
@@ -280,6 +283,8 @@ feedstock sample and scrubber alkaline stage is confirmed.
 
 **Grok review 2026-08-15:** Path adequate. Beilstein + density sorting are concrete v0 methods; GI-003 and AS-003 cross-refs are real and correctly load-bearing. Blocking Yes before any hot run is correct. **Grok approved (path adequate).** Remains Open — triage protocol still needs definition + validation; do not run hot pyrolysis until closed.
 
+**Spec-depth pass, 2026-08-15 (digital-only — no equipment exists yet):** Verified against source before acting on Grok's shared-cluster proposal. This file's "specialist disposal" destination and `Challenges/Waste.md` WA-002's "routed per WA-004/GR-003" were two different sentences pointing at the same undefined place — neither named a real path. Resolved by extending `Operations/Gate_02_Triage.md` TS-002's existing Contaminated bin non-decontaminable state (built earlier this session) to explicitly cover compositional hazards, not only surface contamination — no new destination invented, an existing one reused. Both files now converge on the same named hold. Does not change PL-001's disposition status or Blocking Yes — final disposal still correctly awaits EC-014/GR-003.
+
 ---
 
 ### PL-002 — Reactor Thermal Runaway, Pressure Control, and Maintenance Access
@@ -421,6 +426,12 @@ char composition is characterized and a routing decision tree is defined.
 ### Resolution Log
 
 - 2026-08-15: **Grok resolution-path review (Operations continuation — Plastics).** All five PL unknowns reviewed against source. Every Resolution Path judged adequate; residual evidence needs (triage validation, reactor design, first-run characterization) correctly retained. Cross-refs (GI-003, AS-003, Energy.md, Gate_02, GR-003) verified real. Markers added; Last Reviewed → 2026-08-15 on all five. **No PL-* closed.** Open Unknowns remain 5. Blocking status unchanged (PL-001 and PL-002 Yes). Human-directed.
+
+- 2026-08-15: **PL-001's disposal destination named — points to
+  `Operations/Gate_02_Triage.md` TS-002's Contaminated bin instead of an
+  undefined "specialist disposal."** Same pass wired WA-002 to the same
+  destination. No change to PL-001's Blocking status or triage protocol
+  requirement. Human-directed.
 
 - 2026-08-10: **Pseudo-audit (Grok, same limits).** Findings only; Spec Gates
   left locked at 0/6. (1) Open Unknowns **5** = PL-001–005, matches local

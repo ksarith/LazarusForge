@@ -38,7 +38,7 @@
 | Verification Ref | Admin/Verification_Gates.md                                      |
 | Last Audit       | 2026-05-31                                                          |
 | Auditor          | Gemini                                                              |
-| Open Unknowns    | 4                                                                   |
+| Open Unknowns    | 5                                                                   |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | High                                                                |
 | Sidecar Link     | #auditor-notes--unknowns                                            |
@@ -762,6 +762,8 @@ operational float margins.
 
 *Grok review 2026-08-15: Resolution Path sound; Blocking Yes correctly retained (Chemistry validation dependency). No closure.*
 
+**Note, 2026-08-15 (Claude, cross-referenced from `Operations/Gate_01_Intake.md` GI-002):** GI-002's compressed-gas discharge doctrine calls for routing suspected-hazardous unknown-content vessel releases through scrubber intake, but this file currently only specifies handling for its own designed process streams (pyrolysis gas, Cl₂ via the chlor-alkali path) — there is no general unknown-content gas intake path. Registered as **AS-005** below rather than folded into this entry's scope, since AS-003 is about calibrating a known stream and AS-005 is about the absence of any path for an unknown one.
+
 **Why It Matters:** Without calibrated thresholds,
 the interlock system operates on estimated values.
 An incorrectly set threshold fires too early (false
@@ -825,7 +827,97 @@ that calibration step.
 
 ---
 
+### AS-005 — No intake path defined for discrete unknown-content releases (non-process-stream sources)
+
+| Field         | Value                                            |
+|---------------|--------------------------------------------------|
+| Status        | Open                                              |
+| Risk          | Medium                                           |
+| Priority      | Major                                            |
+| Type          | Technical / Architectural                        |
+| Blocking      | No — does not block Gate 4 harness or existing process-stream operation |
+| Owner         | Operations/Air_Scrubber.md                       |
+| First Logged  | 2026-08-15                                       |
+| Last Reviewed | 2026-08-15                                       |
+
+**Description:** The Stage A→E architecture is built around one
+continuous process gas stream (pyrolysis outgassing, Cl₂ off-gas from
+the chlor-alkali path). Every stage assumes that stream's properties —
+Stage A intercepts coarse process particulates, Stage C thermally
+quenches hot pyrolysis gas specifically. There is no defined path for
+a discrete, ambient-temperature, unknown-content gas release from a
+different subsystem entirely — specifically, `Gate_01_Intake.md`
+GI-002's compressed-gas discharge doctrine, which calls for routing
+suspected-hazardous vessel releases "through scrubber intake" without
+this file having ever specified what that means mechanically.
+
+**Why It Matters:** Two bad options exist if this stays undefined.
+Forcing an occasional unknown-content release through the full A→E
+pipeline wastes Stage A/C capacity on a stream they weren't designed
+for and, more seriously, risks introducing unidentified chemistry into
+Stage D's recirculating water loop — the same loop AS-003 is already
+trying to calibrate against known process chemistry. An unlogged
+contaminant there could silently invalidate that calibration. The
+alternative failure — operators simply venting an unknown gas because
+no defined path exists — is the exact hazard GI-002 exists to prevent.
+
+**Resolution Path:**
+- Define a physically separate auxiliary release point — not a tap
+  into the main A→E pipeline — using the same generic broad-spectrum
+  capture approach already established as this file's own v0 baseline
+  (Variant 1, aerated pond-style bubbler): simple, robust, inspectable,
+  and chemically isolated from Stage D's calibrated main loop.
+- Sizing depends on GI-002's own still-open vessel-volume assumptions
+  (largest plausible compressed-gas vessel expected at Intake) —
+  correctly deferred to GI-002 rather than guessed here.
+- Once a release passes through the auxiliary point, its water/media
+  becomes a separate managed-waste stream under this file's existing
+  "Waste as a Managed Output" doctrine, not merged into Stage D's
+  output stream.
+- Cross-reference: `Operations/Gate_01_Intake.md` GI-002 (source of
+  the releases this path serves); `Operations/Air_Scrubber.md` AS-003
+  (the calibration this path is designed to avoid contaminating).
+- Payment via Specification — once the auxiliary path's capture media
+  and capacity are sized against GI-002's vessel-volume assumptions,
+  move to Functional Architecture as Analogous.
+
+**Claude review 2026-08-15:** Surfaced during GI-002's spec-depth pass
+(`Operations/Gate_01_Intake.md`) — GI-002's discharge doctrine assumed
+scrubber routing existed without this file ever having specified it.
+Registered as its own ID rather than folded into AS-003, since the
+two are architecturally distinct: AS-003 is calibration of a known,
+continuous, designed-for stream; this is the absence of any path for
+an unpredictable, discrete, unknown one. Deliberately does not size
+the auxiliary unit — that number depends on GI-002's vessel-volume
+assumptions, which are themselves still open, so guessing a capacity
+here would be inventing a number to fill a gap rather than reflecting
+what's actually known. Not Blocking — existing process-stream
+operation and the Gate 4 harness are unaffected by this gap.
+
+---
+
 ### Resolution Log
+
+- 2026-08-15 (second entry, same day): **AS-005 registered — auxiliary
+  intake path for discrete unknown-content gas releases, closing the
+  Air_Scrubber gap surfaced during GI-002's spec-depth pass.** GI-002
+  (`Operations/Gate_01_Intake.md`) assumed a "scrubber intake" routing
+  for suspected-hazardous compressed-gas releases that this file had
+  never actually specified — the Stage A→E pipeline is architected for
+  one continuous process stream (pyrolysis gas, Cl₂ off-gas), not a
+  discrete unpredictable release from a different subsystem. Registered
+  as its own unknown rather than folded into AS-003, since AS-003 is
+  calibration of a known stream and this is the absence of any path for
+  an unknown one — architecturally distinct problems. Resolution Path
+  defines a physically separate auxiliary release point reusing the
+  file's own Variant 1 baseline approach, chemically isolated from
+  Stage D's calibrated main loop so an unknown release can't silently
+  invalidate AS-003's calibration work. Deliberately does not size the
+  auxiliary unit — that depends on GI-002's still-open vessel-volume
+  assumption, correctly left for GI-002 to define, not guessed here.
+  Open Unknowns count updated 4 → 5. Not Blocking — existing
+  process-stream operation and the Gate 4 harness are unaffected.
+  Cross-links added at GI-002 pointing to AS-005. Human-directed.
 
 - 2026-08-15: **Grok review round (alphabetical continuation — Air_Scrubber.md).** All 4 AS unknowns (AS-001–004) reviewed. Last Reviewed bumped; review markers added. Cross-refs (Energy.md, Leviathan_testing.md, Trajectories.md, Chemistry validation dependency, Safety_Protocols.md) verified real. AS-003 and AS-004 Blocking Yes correctly retained. Zero closures, zero Blocking flips, zero Priority changes. Spec Gates left locked. Human-directed.
 
