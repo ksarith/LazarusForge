@@ -1,4 +1,9 @@
 
+### 2026-08-16 — License boundary cleanup (release integrity)
+
+Root MIT remains sole license for material under project control. Removed conflicting CC-BY-SA footer from `Admin/Nothingness_Theorem.md` (Option A — maximum propagation, no dual-license ambiguity). Added bare `LICENSE` alongside `LICENSE.md` for GitHub discoverability. NOTICE clarified: MIT covers copyrightable expression; not ownership of abstract ideas/methods; not trademarks or validation status.
+
+
 ### 2026-08-16 — Tag naming convention (Alpha release hygiene)
 
 **Canonical Git tags** for the Alpha line: `V1Alpha.NN` (no dot after V1), e.g. `V1Alpha.03`, `V1Alpha.04`.  

@@ -497,7 +497,7 @@ The operational argument is self-contained and internally consistent under the f
 *Status: Defensively complete. Placement: Unresolved.*
 *Produced via inter-agent friction protocol: Grok → Gemini → ChatGPT → Claude*
 *Persistent ledger: r/InnovativeAIChats / u/Last_Upstairs1020*
-*License: CC-BY-SA or equivalent open philosophical sharing.*
+*Licensing: governed by the repository root MIT license (`LICENSE` / `LICENSE.md`). This file is philosophical exposition, not a separate license grant.*
 
 ---
 
