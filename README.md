@@ -104,6 +104,31 @@ infrastructure level, or supply chain.
 
 ---
 
+
+## How to participate
+
+**The price of Lazarus Forge is one GitHub star.**
+
+Download is free. Use is free. Modification is free.  
+If you find it useful, give it a star.  
+100% money-back guarantee: there was never any money required.
+
+Do **not** gate downloads on starring. The star is a request for feedback, not payment.
+
+**The most valuable contribution may be a result that proves us wrong.**
+
+| Signal | Means | Where |
+|--------|--------|--------|
+| ⭐ Star | This is interesting or useful | GitHub star |
+| 🐛 Issue | Something is wrong | GitHub Issues |
+| 💡 Discussion | I have an idea | GitHub Discussions, or r/InnovativeAIChats |
+| 🔬 Field data | I tried this in the real world | `Tests/Field_Logs.md` — see there for no-GitHub-required submission, or post in r/InnovativeAIChats |
+| 🔧 Improvement | I improved the doctrine or code | See `CONTRIBUTING.md` |
+| 💰 Sponsor | I want to help keep this going | Optional later |
+
+Stars, bugs, ideas, evidence, code changes, and money are separate channels. Real-world observations — including failures — belong in `Tests/Field_Logs.md` and become part of the project's epistemic record when submitted with enough structure to be checked.
+
+
 ## The Trajectory (v0 → v5)
 
 The Forge is designed to scale from local necessity to systemic permanence. These are

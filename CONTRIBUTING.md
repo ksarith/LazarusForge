@@ -2,6 +2,11 @@
 
 This is a governed epistemic repository, not a conventional open-source project. If you're used to typical GitHub contribution flow, some of this will look unfamiliar — that's intentional, and also honestly reflects that the maintainer doesn't use pull requests either. You don't need to.
 
+
+## Feedback without ceremony
+
+The price of Lazarus Forge is one GitHub star if you find it useful — not a requirement to download. See README §How to participate for the full ladder (star → issue → discussion → field data → improvement). Failures in the field belong in `Tests/Field_Logs.md`.
+
 ## The two kinds of contribution that actually matter here
 
 **1. Real-world test data.** This project has a lot of carefully governed doctrine and very little physical evidence behind it — as of 2026-08-06, most of the repository's Critical/Blocking unknowns are waiting on someone actually running hardware, not on someone writing more doctrine. If you can run a physical test, a fabrication attempt, or a multi-agent session, see **`Tests/Field_Logs.md`** for the submission format. No GitHub account, fork, or pull request is required — instructions for low-friction submission are in that file.

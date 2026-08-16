@@ -28,6 +28,7 @@ Last scope clarification: 2026-08-10 (integrity cleanup pass).
 | File Path / Name | Raw Content URL (LLM Context Target) | Repository URL (Human Target) | Backlink Requirement |
 | :--- | :--- | :--- | :--- |
 | **Root Layer** | | | |
+| `LICENSE` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/LICENSE) | [Repo](https://github.com/ksarith/LazarusForgeV0/blob/main/LICENSE) | Explicit |
 | `README.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/README.md) | [Repo](https://github.com/ksarith/LazarusForgeV0/blob/main/README.md) | Explicit |
 | `Discovery.md` * | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Discovery.md) | [Repo](https://github.com/ksarith/LazarusForgeV0/blob/main/Discovery.md) | Explicit |
 | `Unknowns.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Unknowns.md) | [Repo](https://github.com/ksarith/LazarusForgeV0/blob/main/Unknowns.md) | Explicit |
@@ -51,11 +52,13 @@ Last scope clarification: 2026-08-10 (integrity cleanup pass).
 | `Admin/Governance_Charter.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Admin/Governance_Charter.md) | [Repo](https://github.com/ksarith/LazarusForgeV0/blob/main/Admin/Governance_Charter.md) | Explicit |
 | `Admin/Governance_Migration_Protocol.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Admin/Governance_Migration_Protocol.md) | [Repo](https://github.com/ksarith/LazarusForgeV0/blob/main/Admin/Governance_Migration_Protocol.md) | Explicit |
 | `Admin/Hardware_Diversity_Ladder.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Admin/Hardware_Diversity_Ladder.md) | [Repo](https://github.com/ksarith/LazarusForgeV0/blob/main/Admin/Hardware_Diversity_Ladder.md) | Explicit |
+| `Admin/Integrity_Incident_Log.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Admin/Integrity_Incident_Log.md) | [Repo](https://github.com/ksarith/LazarusForgeV0/blob/main/Admin/Integrity_Incident_Log.md) | Explicit |
 | `Admin/Progress_Log.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Admin/Progress_Log.md) | [Repo](https://github.com/ksarith/LazarusForgeV0/blob/main/Admin/Progress_Log.md) | Explicit |
 | `Admin/Nothingness_Theorem.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Admin/Nothingness_Theorem.md) | [Repo](https://github.com/ksarith/LazarusForgeV0/blob/main/Admin/Nothingness_Theorem.md) | Explicit |
 | `Admin/PROBE_INVOCATION.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Admin/PROBE_INVOCATION.md) | [Repo](https://github.com/ksarith/LazarusForgeV0/blob/main/Admin/PROBE_INVOCATION.md) | Explicit |
 | `Admin/Repository_Integrity_Protocol.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Admin/Repository_Integrity_Protocol.md) | [Repo](https://github.com/ksarith/LazarusForgeV0/blob/main/Admin/Repository_Integrity_Protocol.md) | Explicit |
 | `Admin/Repository_Structure.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Admin/Repository_Structure.md) | [Repo](https://github.com/ksarith/LazarusForgeV0/blob/main/Admin/Repository_Structure.md) | Explicit |
+| `Admin/Resolution_Methodology.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Admin/Resolution_Methodology.md) | [Repo](https://github.com/ksarith/LazarusForgeV0/blob/main/Admin/Resolution_Methodology.md) | Explicit |
 | `Admin/Safety_Protocols.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Admin/Safety_Protocols.md) | [Repo](https://github.com/ksarith/LazarusForgeV0/blob/main/Admin/Safety_Protocols.md) | Explicit |
 | `Admin/Security_Protocols.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Admin/Security_Protocols.md) | [Repo](https://github.com/ksarith/LazarusForgeV0/blob/main/Admin/Security_Protocols.md) | Explicit |
 | `Admin/Ship_of_Theseus.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Admin/Ship_of_Theseus.md) | [Repo](https://github.com/ksarith/LazarusForgeV0/blob/main/Admin/Ship_of_Theseus.md) | Explicit |
@@ -188,6 +191,8 @@ material, not active doctrine, per `Admin/Repository_Integrity_Protocol.md`'s
 append-only rule for that directory. Human-directed, prompted by a direct
 request to verify this file's actual state rather than trust a prior
 description of it.
+
+**2026-08-16 addition:** `Admin/Resolution_Methodology.md` registered (v0.6 active reference; was the sole active non-Archive Admin file missing from this table after Alpha.03).
 
 **2026-08-09 addition:** three entries added — `Admin/Progress_Log.md` and
 `Archive/Rename_Registry.md` (both new, migrated/created same day), plus
