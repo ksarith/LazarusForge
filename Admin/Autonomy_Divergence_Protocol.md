@@ -321,6 +321,8 @@ Five agents whose independence is genuinely established can still independently 
 
 **Resolution path for GOV-021c itself:** Human-directed review of this specification against live multi-agent practice (including Field_Logs evidence when any exists). Implementation tooling is out of scope until independence dimensions can be assessed in a real deployment. Status remains Open until that review closes it deliberately.
 
+**First live evidence, 2026-08-15 (`Tests/Field_Logs.md`, same date):** A real cross-agent case (Grok proposing, Claude independently re-verifying against primary sources before acting) was assessed against the Three Independence Dimensions honestly, not assumed. Model and evidence independence were met and are traceable in the session record; role independence was not fully met (Reviewer/Implementer collapsed into one session, no distinct Adversary role) — named precisely rather than rounded up. The case sits at the Minimum Quorum Matrix's High-Risk Unknowns tier, which only requires evidence independence at minimum — that bar was genuinely met. **This does not close GOV-021c.** It is one data point, at one tier, from a benign case where verification confirmed accuracy rather than catching a genuinely wrong or coordinated claim — real evidence the independence-assessment mechanism can function, not evidence it would catch an actual coordinated-divergence event under adversarial conditions. Status remains Open.
+
 ---
 
 ## Constitutional Impact Statement (per `Admin/Governance_Migration_Protocol.md`, filed 2026-08-11)
@@ -376,6 +378,20 @@ Earlier discussion in this drafting process considered framing this as an "exit 
 ---
 
 ## Resolution Log
+
+- 2026-08-15: **First live evidence logged for GOV-021c — does not close it.**
+  A real cross-agent case from this session (Grok proposal, Claude independent
+  verification against primary sources) assessed honestly against the Three
+  Independence Dimensions rather than assumed compliant. Model and evidence
+  independence met and traceable; role independence not fully met (Reviewer/
+  Implementer collapsed) — named precisely, not rounded up. Meets the
+  Minimum Quorum Matrix's High-Risk Unknowns tier specifically (evidence
+  independence minimum), the tier that actually applies here, not a higher
+  one. Logged in full at `Tests/Field_Logs.md` 2026-08-15. Explicitly a
+  benign case — verification confirmed accuracy, so the mechanism was
+  exercised but not stress-tested against a genuinely wrong or coordinated
+  claim. GOV-021c remains **Open**; this is one data point, not closure.
+  Human-directed.
 
 - 2026-08-11: **GOV-021c Payment-via-Specification draft (Grok).** Expanded §12 from
   “flagged not solved” to detection-only specification on the Alpha10-updated4

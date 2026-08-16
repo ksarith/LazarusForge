@@ -11,7 +11,7 @@
 | Spec Gates       | N/A — this file is a cross-reference index, not a specification     |
 | Open Unknowns    | 0 (surfaces existing unknowns from owning files; creates none)      |
 | Owning Domain    | Admin/                                                               |
-| Last Reviewed    | 2026-08-07                                                           |
+| Last Reviewed    | 2026-08-15                                                           |
 | Ethical Anchor   | Attempt to do no harm. Defer to `Admin/Ethical_Constraints.md` if present. |
 
 ---
@@ -123,6 +123,11 @@ FLAG: Single most load-bearing file in the repository — six other files in thi
 **Does:** Rolling, dated-heading lessons/continuity log — replaces `Unknowns.md`'s retired "What vX.X Means" section and `Discovery.md`'s removed 19-versions-stale "Attention Required" table (both 2026-08-09).
 **Does not (arrow):** Duplicate `Unknowns.md`'s Active Index or any `*_Scope_Map.md`'s per-file content — references IDs, never restates full detail. Substitute for a per-file Resolution Log.
 Note: created same day as this Scope_Map build's own findings were still fresh — exists specifically because two other files (this session's own Discovery.md and Unknowns.md work) had independently developed the same failure mode (stale narrative content trapped in structural index files) from opposite directions.
+
+### `Admin/Resolution_Methodology.md`
+**Status:** Active — Reference · N/A (named pattern reference, not a specification) · 0 Open Unknowns · Risk: Low
+**Does:** Five citable resolution patterns demonstrated 2026-08-15 (dependency-hollowness check, reuse-before-invent, verify-before-accept, digital/equipment-gated split, scope-map stale-pointer pattern); intended as a short Admin-tier reference so the moves can be invoked by name rather than rediscovered.
+**Does not (arrow):** Mandatory checklist or Spec Gate requirement · replacement for `Auditor_Protocols.md` / `Forge_Audit_Kit.md` · closure of evidence-gated unknowns by documentation alone · new process gates.
 
 ### `Admin/Repository_Integrity_Protocol.md`
 **Status:** Draft · 2/6 · 9 Open Unknowns (RIP-001-011) · Risk: High

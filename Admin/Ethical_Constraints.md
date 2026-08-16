@@ -719,13 +719,13 @@ Mandatory re-audit conditions:
 | Blocking      | No                                |
 | Owner         | `Admin/Ethical_Constraints.md`    |
 | First Logged  | 2026-07-05                        |
-| Last Reviewed | 2026-07-05                        |
+| Last Reviewed | 2026-08-15                        |
 
 **Description:** The Toxic and Hazardous Material Handling doctrine (added 2026-07-05) establishes the active-release vs. passive-encapsulated principle and a four-point minimum requirement, but does not define concrete encapsulation standards, testing/verification methods, labeling format, or the specific failure-mode analysis threshold that separates "adequately encapsulated" from "not." The mercury/lead examples are illustrative endpoints, not a general test.
 
 **Why It Matters:** Without a concrete standard, "encapsulated" could be asserted rather than verified, and the doctrine's real protective value depends entirely on that gap being closed before it's relied on for an actual material decision.
 
-**Resolution Path:** Define, likely jointly with `Architecture/Engineering.md`: (1) minimum encapsulation/containment specification by material hazard class; (2) verification method (inspection, testing, or both) before a component is approved; (3) standard labeling format; (4) explicit link to the EN-007 (junction fatigue) and re-salvage doctrine so encapsulation is re-verified rather than assumed at decommissioning. Route the general materials-science content to Engineering.md; this file retains the ethical hard-floor statement (active-release prohibition) regardless of where the technical standard ends up living.
+**Resolution Path:** Define, likely jointly with `Architecture/Engineering.md`: (1) minimum encapsulation/containment specification by material hazard class; (2) verification method (inspection, testing, or both) before a component is approved; (3) standard labeling format; (4) explicit link to the EN-007 (junction fatigue) and re-salvage doctrine so encapsulation is re-verified rather than assumed at decommissioning. Route the general materials-science content to Engineering.md; this file retains the ethical hard-floor statement (active-release prohibition) regardless of where the technical standard ends up living. Cross-reference `Operations/Gate_02_Triage.md` TS-002 (2026-08-15 pass) — Station 0's decontamination-clearance workflow needs this standard's pass/fail criteria to determine what counts as adequately decontaminated for a given hazard class; TS-002 does not duplicate this work.
 
 ---
 
