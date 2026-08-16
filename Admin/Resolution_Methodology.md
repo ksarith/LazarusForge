@@ -1,6 +1,6 @@
 # Resolution_Methodology.md
 
-**Version 0.1 — 2026-08-15**
+**Version 0.6 — 2026-08-16**
 
 ---
 
@@ -18,7 +18,7 @@
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | N/A — this file is a named reference for demonstrated patterns, not a specification or gate |
 | Verification Ref | Admin/Verification_Gates.md                                         |
-| Last Audit       | 2026-08-15                                                          |
+| Last Audit       | 2026-08-16 (GR-007 fourth case)                                     |
 | Auditor          | Grok — human-directed draft from 2026-08-15 session patterns        |
 | Open Unknowns    | 0                                                                   |
 | Active Disputes  | 0                                                                   |
@@ -117,30 +117,43 @@ These patterns are intended to be referenced by short name in Resolution Logs, F
 
 Citation is optional. The value is that the move is named and therefore reusable without re-deriving the rationale each time.
 
+**Correction, 2026-08-15 (v0.4):** The First and Second Applied Case sections below originally used "§5" to mean "update cross-file pointers to the new content" — that is not the same thing as Pattern 5 (Scope-Map stale-pointer check) as defined above and cited in this section's own examples. Neither applied case actually ran a scope-map check. Corrected by running one for real against `Operations/Ops_Scope_Map.md` after today's Operations edits — see the note appended to the Second Applied Case section below.
+
 ---
 
-## First Applied Case (intended)
+## First Applied Case
 
-**WA-004 / GR-003** — negative-value waste fraction and biological/chemical disposal doctrine.
+**WA-004 / GR-003** — negative-value waste fraction and biological/chemical disposal doctrine. Applied 2026-08-15, same day as this file's creation.
 
-Both remain Open and Critical. Both are now the explicit downstream of the shared Contaminated-bin destination established 2026-08-15. Both are still thin (table-row or high-level path only). Both are paper-addressable at the doctrinal level under the current equipment constraint.
+Both were confirmed genuinely thin before writing anything (§1: GR-003 outline-only, WA-004 a single table row). §2 decided against a dedicated `Operations/Waste_Handling.md` — GR-003 was already the convergence point both WA-004 and TS-002 pointed at, so extending it kept one destination rather than fragmenting into three. §3 verified `Ethical_Constraints.md`'s active-release vs. passive-encapsulation distinction against source before building on it, rather than restating it from memory — that distinction turned out to structurally imply exactly two disposal outcomes (permanent passive containment or specialist hand-off), not an open-ended list, which is a stronger result than a flat category checklist would have been. §4 wrote category-specific doctrine, deliberately withholding disposal doctrine for the radiological category since no real handling capability exists for it. Cross-file pointers updated (WA-004's row, TS-002's non-decontaminable-state text) — originally mislabeled "§5" here; see the correction under How to Cite and the real Pattern 5 run logged in the Second Applied Case section.
 
-Recommended application order under this methodology:
-1. §1 — Confirm GR-003 and WA-004 still lack concrete disposal categories, hold limits, and escalation language (expected: yes).
-2. §2 — Decide whether doctrine lives by extending an existing owner or whether a dedicated `Operations/Waste_Handling.md` is still warranted; prefer the former if a clean home exists.
-3. §3 — Any proposal that claims regulatory or disposition language must be checked against primary sources (Ethical_Constraints, existing Gate_03 prohibited-input language, etc.) before acceptance.
-4. §4 — Write minimum categories, hold doctrine, and escalation path at Analogous / doctrinal level; leave jurisdiction-specific regulatory research and physical validation explicitly Open.
-5. §5 — Note any Scope_Map or Unknowns.md count/pointer updates required by the change.
+Both GR-003 and WA-004 remain **Open** — categories exist at Analogous confidence; jurisdiction-specific regulatory research and physical validation are still explicitly open, per §4's own instruction not to close on doctrine alone.
 
-This file itself does not perform that work; it only names the method so the next pass can invoke it cleanly.
+**What this run confirmed about the methodology itself:** §2's reuse decision produced a genuinely better architectural result (the two-outcome model) than simply filling in the originally-outlined category list would have — verifying the upstream principle first, rather than treating it as settled, is what surfaced that. Worth noting for future applications: §3 is not just a safety check against fabrication, it can produce a better answer than the thing being verified would have on its own.
+
+---
+
+## Second Applied Case
+
+**GF-007 ventilation/fire interlock (`Operations/Gate_06_Fabrication.md`) × `Operations/Air_Scrubber.md`'s fault-interlock table.** Applied 2026-08-15, same day as the first case — deliberately in a different domain (fire-suppression/safety-systems, not waste/disposal), per the first case's own Revalidation Needed note.
+
+§1 confirmed the gap was real, not already covered by anything else in either file. §2 was the interesting step here: unlike WA-004/GR-003, this wasn't a choice between two owners with equal claim — the actual shutdown mechanism (halting forced ventilation) is Air_Scrubber's own system, so the interlock logic could only sensibly live in its existing five-row fault table, not duplicated in GF-007. §3 surfaced a real limit rather than a stronger structure this time: no automatic fire/smoke detection hardware is specified anywhere in the repository, so the row's trigger input was deliberately kept method-agnostic (manual call) rather than inventing sensor doctrine. §4 closed all five of GF-007's Resolution Path items — the first case to reach that. Cross-file pointers updated in both files (this was originally mislabeled "§5" — see correction above; it is not the Scope-Map pattern).
+
+**Pattern 5 (Scope-Map stale-pointer check), actually run 2026-08-15:** Checked `Operations/Ops_Scope_Map.md` against today's Operations edits (Gate_02, Gate_03, Gate_06, Air_Scrubber all touched). Gate_03's Scope Boundary already correctly claims contamination-discovery doctrine — no drift. Gate_02's Scope Boundary said "Decontamination protocols and air handling → Air_Scrubber.md, AS-003" — in tension with TS-002's own disposition-workflow content now living in that file. Defensible on a narrow mechanism-vs-workflow reading, but ambiguous enough to correct; clarified in `Gate_02_Triage.md` directly. This is the same class of finding Ops_Scope_Map.md's own Gaps Exposed section has caught before (the 2026-07-19 UNK-008 pattern across three files) — a smaller instance of it, not a new failure mode.
+
+**What this run confirmed about the methodology itself:** §2 doesn't always produce a genuine choice between owners — sometimes the mechanism itself dictates the owner, and the step's value is confirming that rather than picking between options. §3 doesn't always surface a better structure (as it did in the first case) — sometimes its honest output is a firm boundary on what can be claimed (no sensor spec without validation), and that's an equally valid result, not a lesser one.
 
 ---
 
 ## Lessons Learned
 
 | Date       | Evidence Type     | What Was Tried                          | What Failed / What Held                      | What Was Learned                                      | Confidence | Revalidation Needed |
-|------------|-------------------|-----------------------------------------|----------------------------------------------|-------------------------------------------------------|------------|---------------------|
+|------------|-------------------|-----------------------------------------|----------------------------------------------|---------------------------------------------------------|------------|---------------------|
 | 2026-08-15 | Cross-agent session | Multiple Critical unknowns advanced under digital-only constraint | Hollow cross-refs and parallel invention were the failure modes that the patterns above prevented | Naming the moves once is higher leverage than any single closure; evidence independence is inspectable only when primary-source checks are performed and logged | Analogous  | After next applied case (WA-004/GR-003 or residual GF-007) |
+| 2026-08-15 | First applied case (WA-004/GR-003) | Ran the five-step order against a real Critical-priority pair | §2's reuse check and §3's verify-before-accept check together produced a better architectural result (two-outcome disposal model) than the originally-outlined flat category list would have | §3 is not only a fabrication safeguard — verifying an upstream principle before building on it can surface a stronger structure than the thing being checked | Analogous | After a second applied case in a different domain (chemistry/safety rather than waste/disposal) |
+| 2026-08-16 | Third applied case (CE-006) | Applied methodology in chemistry/safety domain after two prior cases | Top-of-entry Resolution Path had gone stale relative to its own body; paper surface assessed as exhausted | §3 catches internal staleness as well as external fabrication; §4's "stop when paper is exhausted" outcome should be stated explicitly | Analogous | After a fourth case, or after hardware data changes CE-006's remaining open set |
+| 2026-08-16 | Fourth applied case (GR-007) | Applied after GR-003 doctrine existed from an earlier methodology case | Category C's hollow "pending GR-003" citation became fillable; A–C all paper-complete | Methodology compounds — filling one hollow citation unblocks the next downstream unknown | Analogous | After a fifth case, or when Category C is first exercised against a real retired item |
+| 2026-08-15 | Second applied case (GF-007 × Air_Scrubber) | Ran the same order in a different domain (fire-suppression/safety-systems) | §2 sometimes has no real choice — the mechanism dictates the owner, and the step confirms rather than selects; §3 sometimes correctly outputs a firm limit (no sensor spec without validation) rather than a stronger structure | Both outcomes are valid results of the same step, not a failure mode of the first case's more generative result | Analogous | After a third applied case, ideally one where §2 and §3 disagree or produce tension, to see how the order handles that |
 
 ---
 
@@ -171,7 +184,94 @@ None yet. Candidate for future review: any attempt to turn this reference into a
 
 ---
 
+## Third Applied Case
+
+**CE-006** — chlorine containment for on-site chlor-alkali acid synthesis (`Architecture/Chemistry.md`). Applied 2026-08-16.
+
+*§1:* Remaining dependencies checked against source — AS-003 still Open, Gate_05 thermal still Placeholder, CE-007 quantitative still correctly blocked on CE-006 hardware; GR-003 two-outcome model (written under this methodology the previous day) now available as the named destination for residual NaOCl that cannot be reused under CE-007.
+
+*§2:* No new scrubber, sensor class, or disposition file invented. Stage D path, Stage D flow/power monitoring as interlock trigger, and GR-003 disposal model all reused.
+
+*§3:* Top-of-entry Resolution Path was stale — still listed detection/alarm thresholds and caustic dosing as "remaining work" after the 2026-07-31 and 2026-08-15 body passes had already answered them. Refreshed to an explicit paper-complete vs equipment-gated inventory.
+
+*§4:* Paper surface on CE-006 assessed as substantially exhausted. Remaining work is equipment-gated by nature (vessel build, electrode-area selection, AS-003 calibration against real flow, Gate_05 exhaust data, quantitative NaOCl sizing, membrane sourcing/test). Further paper-only passes will not move Status toward Resolved. Stays **In Progress**; Blocking Yes for CLF-004 unchanged.
+
+*§5:* Noted `Architecture/Arc_Scope_Map.md` for refresh on next Architecture folder pass; no immediate Scope Boundary contradiction found inside Chemistry.md itself.
+
+**What this case added to the methodology's evidence base:** First application in the chemistry/safety domain (prior cases were waste/disposal and fabrication/fire). Confirmed that §3 can catch *staleness of the Resolution Path relative to its own body*, not only fabrication in a proposal. Confirmed §4's "stop when paper surface is exhausted" outcome is reachable and should be stated explicitly rather than left as an open-ended "continue refining."
+
+---
+
+## Fourth Applied Case
+
+**GR-007** — contaminated equipment retirement threshold (`Operations/Gate_03_Reduction.md`). Applied 2026-08-16.
+
+*§1:* Category C's prior "disposition pending WA-004/GR-003" citation checked against source — GR-003 two-outcome model now exists (written under this methodology the previous day), so the dependency is no longer hollow.
+
+*§2:* Category C disposition reuses GR-003 (including its intact/fragmentation integrity rule) rather than inventing a parallel retirement-disposition path.
+
+*§3:* GR-003 outcomes and WA-002 presumptive-match trigger verified against primary sources before rewriting Category C.
+
+*§4:* Categories A, B, and C disposition paper-complete at doctrine level. Residual openness is operational/equipment-gated (validated cleaning methods for Category A, physical confirmation procedures that promote B→C, jurisdiction-specific specialist hand-off). Default-retire posture retained. Stays **Open**.
+
+*§5:* Ops_Scope_Map already refreshed 2026-08-16; no new Scope Boundary contradiction found.
+
+**What this case added:** First application that closed a *downstream dependency* opened by an earlier methodology case (GR-003 → GR-007 Category C). Demonstrates the method compounds: filling one hollow citation unblocks the next.
+
+---
+
 ## Resolution Log
+
+- 2026-08-16 (v0.6): **Fourth applied case — GR-007 (equipment retirement / safety-governance domain).**
+  Category C disposition named via GR-003 two-outcome model; Categories A–C
+  paper-complete at doctrine level. Residual openness is operational validation
+  and jurisdiction, not missing architecture. No unknowns opened or closed.
+  Human-directed.
+
+
+- 2026-08-16 (v0.5): **Third applied case — CE-006 (chemistry/safety domain).**
+  Paper surface assessed as substantially exhausted under §4; Resolution Path
+  refreshed from stale remaining-work list to explicit paper-complete vs
+  equipment-gated split; residual NaOCl disposition pointed at GR-003 rather
+  than a parallel path. No unknowns opened or closed. Human-directed.
+
+
+- 2026-08-15 (v0.4): **Self-correction, prompted by a direct question about
+  whether this file requires Unknowns.md/changelog updates.** Checking that
+  claim precisely (it doesn't — §5 says "note... updates required," the
+  changelog-migration convention is Unknowns.md's own, not this file's)
+  surfaced two real problems: the File State Version field was stuck at
+  0.1 despite the Resolution Log recording v0.3, and both Applied Case
+  sections had mislabeled a generic "update cross-file pointers" step as
+  "§5," which is specifically the Scope-Map stale-pointer pattern — neither
+  applied case had actually run that check. Fixed the version field. Ran
+  the real check against `Operations/Ops_Scope_Map.md`: found one genuine
+  small drift (`Gate_02_Triage.md`'s Scope Boundary claimed Air_Scrubber
+  owned "decontamination protocols" outright, in tension with TS-002's own
+  disposition-workflow content now living there) and corrected it. Same
+  class of finding as Ops_Scope_Map.md's own prior UNK-008 catches, smaller
+  scale. Human-directed.
+
+- 2026-08-15 (v0.3): **Second applied case complete — GF-007 × Air_Scrubber
+  ventilation/fire interlock.** Deliberately a different domain than the
+  first case, per its own Revalidation Needed note. §2 turned out to have
+  no real choice — the shutdown mechanism itself dictated the owner
+  (Air_Scrubber). §3 correctly output a firm limit (no fire-detection
+  hardware spec without physical validation) rather than a stronger
+  structure, showing that's an equally valid §3 outcome, not a lesser
+  one than the first case's more generative result. GF-007 reached five
+  of five Resolution Path items closed — the first case to do so. Neither
+  file's unknown closed; both remain Open. Human-directed.
+
+- 2026-08-15 (v0.2): **First applied case complete — WA-004/GR-003.**
+  Ran the five-step order against a real Critical-priority pair. Result:
+  §2 (reuse) and §3 (verify-before-accept) together produced a stronger
+  architectural outcome (a two-outcome disposal model derived from
+  `Ethical_Constraints.md`'s active-release/passive-encapsulation
+  distinction) than the originally-outlined flat category list would
+  have — logged as a Lessons Learned row, since it's a real finding
+  about the methodology, not just about waste disposal. Neither GR-003
+  nor WA-004 closed — both remain Open, doctrine only. Human-directed.
 
 - 2026-08-15: **File created (v0.1).** Captures the five resolution patterns demonstrated in the 2026-08-15 Operations / Governance session (AS-005, PL-001/WA-002/TS-002 shared destination, GF-007/FA-002, GOV-021c first live evidence). Written as an Admin-tier reference, not a process or gate. First intended applied case named (WA-004/GR-003). No unknowns opened or closed. Human-directed.
 
