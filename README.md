@@ -21,6 +21,24 @@ the energy accounting, and even Leviathan — serves that objective.
 
 ---
 
+## Start Here If You Want to Build Something
+
+Everything below this point is the full doctrine — worth reading, not required
+reading before your first attempt. If you just want to try something:
+
+1. **`Architecture/Geck_forge_seed.md`** — minimum viable seed for a new Forge
+   deployment. The smallest real starting point.
+2. **`Architecture/Facilities.md`** — the Site Initialization Checklist. What
+   your actual space needs to satisfy before any operation, hot or cold.
+3. **`Operations/Gate_01_Intake.md`** — where every physical cycle starts.
+   Safety screening comes first, always.
+4. **`Tests/Field_Logs.md`** — log what happens, including failures. See its
+   Suggested Starter entry if you don't know where to begin.
+5. **[How to participate](#how-to-participate)**, below — where feedback,
+   issues, and field data actually go.
+
+---
+
 ## The Problem
 
 Modern industrial and recycling systems:

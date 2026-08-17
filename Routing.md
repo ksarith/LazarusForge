@@ -29,6 +29,7 @@ Last scope clarification: 2026-08-10 (integrity cleanup pass).
 | :--- | :--- | :--- | :--- |
 | **Root Layer** | | | |
 | `LICENSE` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForge/refs/heads/main/LICENSE) | [Repo](https://github.com/ksarith/LazarusForge/blob/main/LICENSE) | Explicit |
+| `NOTICE` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForge/refs/heads/main/NOTICE) | [Repo](https://github.com/ksarith/LazarusForge/blob/main/NOTICE) | Explicit |
 | `LICENSE.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForge/refs/heads/main/LICENSE.md) | [Repo](https://github.com/ksarith/LazarusForge/blob/main/LICENSE.md) | Explicit |
 | `README.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForge/refs/heads/main/README.md) | [Repo](https://github.com/ksarith/LazarusForge/blob/main/README.md) | Explicit |
 | `Discovery.md` * | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForge/refs/heads/main/Discovery.md) | [Repo](https://github.com/ksarith/LazarusForge/blob/main/Discovery.md) | Explicit |
