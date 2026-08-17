@@ -53,6 +53,8 @@ This file defines the challenge of emergent intelligence as it applies to the La
 
 This file exists to establish that emergent intelligence is a reflexive challenge the Forge's own capability creates — not an external pressure like water scarcity or biofouling — and to set the requirements the Forge's governance architecture must satisfy to remain corrigible under increasing autonomous capability. Without this file, corrigibility risk would be treated as something imposed on agents from outside rather than a structural property the Forge must demonstrate about itself, and individual subsystems (watchdogs, verification gates, firmware trust) would have no shared doctrine explaining why they exist or what failure mode they're jointly guarding against.
 
+**Note on scope:** this file addresses the AI/multi-agent sense of "emergence" specifically. For the general systems-engineering sense (mechanical, thermal, economic, or other coupled-system emergent behavior), see `Admin/Canonical_Terms.md`'s Disambiguation section — the two are related but distinct, and this file's Engineering Requirements (corrigibility, watchdog independence, circular-optimization-loop prevention) are scoped to agentic emergence, not general emergent behavior.
+
 ---
 
 ## Assumptions
@@ -196,6 +198,12 @@ The Forge itself is not exempt from this standard. A governance architecture tha
 ---
 
 ## Resolution Log
+
+- 2026-08-17: **Scope note added — disambiguates this file's AI/governance
+  sense of "emergence" from the general systems-engineering sense.**
+  Companion entry registered at `Admin/Canonical_Terms.md`'s Disambiguation
+  section. No change to this file's own doctrine, Engineering Requirements,
+  or Open Unknowns — pointer only. Human-directed.
 
 - 2026-08-10: **Pseudo-audit (Grok, same limits).** Findings only; Spec Gates
   N/A for Challenges Problem-Statement subtype. (1) Open Unknowns **4** =
