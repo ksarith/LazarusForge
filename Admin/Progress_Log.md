@@ -1,4 +1,9 @@
 
+### 2026-08-16 — GitHub MIT badge / classifier fix
+
+Root `LICENSE` reduced to pure standard MIT body only (no appended NOTICE). Forge-specific interpretation moved to root `NOTICE`. `LICENSE.md` is a short human pointer. GitHub was classifying the previous combined file as license key `other` / SPDX `NOASSERTION` because the classifier matches known templates and rejects extra text in `LICENSE`.
+
+
 ### 2026-08-16 — License boundary cleanup (release integrity)
 
 Root MIT remains sole license for material under project control. Removed conflicting CC-BY-SA footer from `Admin/Nothingness_Theorem.md` (Option A — maximum propagation, no dual-license ambiguity). Added bare `LICENSE` alongside `LICENSE.md` for GitHub discoverability. NOTICE clarified: MIT covers copyrightable expression; not ownership of abstract ideas/methods; not trademarks or validation status.

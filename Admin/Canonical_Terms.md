@@ -155,6 +155,61 @@ is ambiguous — use the specific form.
 
 ---
 
+## Disambiguation: Uses of "Emergence" / "Emergent Behavior"
+
+The word "emergence" covers two genuinely distinct concepts in this
+repository. They are not interchangeable, and content about one should not
+be assumed to apply to the other.
+
+| Usage | Meaning | Canonical Home |
+|-------|---------|-----------------|
+| Emergent Intelligence / Agency | AI and multi-agent systems developing autonomous behavior, self-modifying heuristics, or governance-relevant agency requiring corrigibility, watchdog architecture, and containment doctrine | `Challenges/Emergence.md` |
+| Emergent Behavior (general systems) | System-level behavior arising from component interaction — not a property of any single part, not a simple sum of parts — applicable to any coupled system (mechanical, thermal, economic, ecological, or multi-agent) | This entry, below |
+
+**Emergent Behavior (general systems sense):** system-level behavior that
+depends on interactions among components and is not exhibited by those
+components in isolation. Characteristic properties: interaction dependence
+(altering coupling — links, timing, shared state — changes or destroys the
+behavior), non-derivability by inspection of parts alone, scale/level shift
+(often invisible at micro scale, clear at macro — traffic jams, flocking,
+market prices, thermal equilibrium), robustness to substitution (often
+persists when individual agents are replaced if interaction rules stay the
+same), and sensitivity to organization (same parts, different wiring or
+protocol, different emergent outcome).
+
+*Weak vs. strong:* weak emergence — macro patterns unexpected from casual
+inspection but fully consistent with micro laws, in principle reducible with
+enough compute and the right model — covers essentially all engineering use
+of the term. Strong emergence — macro properties not even in principle
+reducible to micro dynamics — is controversial and rarely load-bearing for
+an engineering claim; a claim of strong emergence should be treated as a
+much heavier claim than one of weak emergence, not a stronger-sounding
+synonym for it.
+
+*Not synergy:* synergy is a combined effect *greater than* the sum of parts
+(a quantitative surplus). Emergence is a new *kind or level* of behavior
+parts don't exhibit alone — it may or may not involve a surplus, and can be
+purely qualitative. A system can show emergence without synergistic gain,
+and additive cooperation without true emergence.
+
+*Engineering discipline for any emergence claim made in this repository:*
+name the scale and interaction producing the property; test by ablation
+(cut links, change topology, change delay) rather than assuming more parts
+means more emergence; measure macro observables (throughput, oscillation,
+consensus time, cascade size) rather than treating "emergent" as
+unexplained or mystical. A claim of emergence without a named mechanism and
+observable is rhetoric, not an engineering claim — same standard this file
+already applies to "canonical" and other high-drift terms.
+
+Cross-reference: `Challenges/Emergence.md` for the AI/governance sense
+specifically, including its Engineering Requirements for corrigibility,
+watchdog independence, and circular-optimization-loop prevention — those
+requirements are scoped to that sense and do not automatically transfer to
+a general mechanical or thermal emergent-behavior claim without their own
+justification.
+
+---
+
 ## Body: Canonical Nomenclature Mapping
 
 ### 1. Architectural and Repository Structural Terms
@@ -948,6 +1003,17 @@ Auditor_Protocols.md specifically, which is now closed.
 ---
 
 ### Resolution Log
+
+- 2026-08-17: **"Emergence" disambiguation registered.** Second use of
+  the disambiguation pattern established for "Canonical" — this time
+  distinguishing `Challenges/Emergence.md`'s AI/governance sense
+  (emergent intelligence, corrigibility) from general systems-engineering
+  emergent behavior (mechanical, thermal, economic, coupled-system).
+  Content drawn from a general systems-theory reference (properties table,
+  weak/strong distinction, emergence-vs-synergy, ablation-testing
+  discipline). Cross-reference pointer added to `Challenges/Emergence.md`'s
+  File Purpose so a reader landing there first also finds the split.
+  Human-directed.
 
 - 2026-07-21: **CT-002 Owner field corrected; `Operations/Gate_02_Triage.md`'s
   colliding duplicate discharged.** `Automation/integrity_check.py`'s Unknown
