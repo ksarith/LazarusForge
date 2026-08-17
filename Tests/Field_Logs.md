@@ -80,7 +80,32 @@ No fork is needed for this. Forking makes sense for parallel, divergent developm
 
 ---
 
-## The Highest-Value Run Right Now
+## Suggested Starter — Lowest Barrier to Entry
+
+The two sections below ask for real hardware or multi-agent access, which most
+readers won't have yet. If you have neither but want to contribute something
+real: **pure Intake + safety screening on 5–10 household items you already
+own.** No processing, no thermal work, no fabrication.
+
+What it needs: a flashlight, a basic multimeter, a phone camera, gloves and
+eye protection, and something to write notes in. About 1–2 hours. Prefer
+items without unknown batteries or sealed electronics for a first run.
+
+What to do: run each item through `Operations/Gate_01_Intake.md`'s safety
+screening as written — hazard identification first (energetic, chemical,
+biological, radiological per GI-002's discharge doctrine and GI-003's
+detection guidance), then attempt identification and a preliminary parts
+list, then tag with provenance. Don't process past Intake in this run — the
+point is exercising the screening step itself, not producing recovered
+material.
+
+What's actually useful to log: not just "it worked" — how many items you
+held vs. cleared and why, how much judgment call was involved on the
+ambiguous ones, anything you almost missed. That's the data GI-002/GI-003
+need and can't get from doctrine alone. A short, honest log of five ordinary
+household items beats an ambitious run that never gets submitted.
+
+---
 
 If you're looking for the single most useful thing to attempt: **three physically separate computers, each running a different agent (different model family on each), attempting to establish the quorum `Admin/Governance_Migration_Protocol.md` §VII defines — while one or more of them actively proposes real doctrine improvements to this repository.**
 
@@ -144,6 +169,14 @@ This case sits at the Minimum Quorum Matrix's **High-Risk Unknowns** row specifi
 ---
 
 ## Resolution Log
+
+- 2026-08-17: **Suggested Starter section added — lowest-barrier entry point
+  for contributors without hardware or multi-agent access.** The existing
+  Highest-Value Run sections both assume resources most readers won't have.
+  Added a pure Intake + safety screening starter (5–10 household items,
+  minimal tooling) drawing on `Operations/Gate_01_Intake.md` GI-002/GI-003's
+  own doctrine — the point is exercising the screening step and logging
+  judgment-call data, not producing recovered material. Human-directed.
 
 - 2026-08-15: **First real Log Entry added — GOV-021c cross-agent
   independence-dimension evidence.** Prior entries in this Resolution Log
