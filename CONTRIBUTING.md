@@ -26,7 +26,7 @@ Having an agent review the repository from the outside — without loading the a
 Claude has been the most consistent for refined, load-bearing doctrine work. Grok has improved substantially in recent sessions. Copilot has been the hardest to work with reliably — it has had trouble reading `Auditor_Protocols.md` in full, and upload-size limits have been a recurring bottleneck. This isn't a permanent verdict on any of them, just what's been true in practice — worth knowing going in, and worth re-checking, since this changes fast.
 
 ## What NOT to do
-- Don't fork this repository to submit test data — see `Tests/Field_Logs.md` for why, and for the low-friction alternative.
+- Don't fork this repository to submit test data — see `Tests/Field_Logs.md` for why, and for the low-friction alternative.(But if you want to delve deep in your own fork, feel free.)
 - Don't ask an agent to "just resolve" an open Unknown for convenience. This repository deliberately maintains a floor on open, honestly-tracked unknowns (`Discovery.md`'s Unknown Budget) — premature closure is treated as a constitutional violation, not progress.
 - Don't trust a claim of physical or measured results without checking it against what's actually possible in this repository's environment first.
 
