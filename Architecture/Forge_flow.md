@@ -353,12 +353,16 @@ the judgment auditable, not to remove it.*
 a discrete object**
 - Shredding, cutting, or milling
 - Size reduction only (no melting yet)
-- Reduction module specification not yet assigned — see
-  FL-002, UNK-007
+- Reduction module specification owned by
+  Operations/Gate_03_Reduction.md — see FL-002, UNK-007
 - *This is the only fully irreversible step in the flow*
 
-**Reduction is intentionally under-specified until
-Operations/Gate_03_Reduction.md exists.** Until that file is created:
+**Operations/Gate_03_Reduction.md exists and carries constraints-first
+doctrine (contamination shutdown, prohibited inputs, output envelope,
+dust handling, emergency shutdown).** Its output envelope has not yet
+been cross-validated against the provisional feedstock envelope in
+Operations/Gate_04_Separation_Mechanical.md Inputs section — that
+cross-validation is FL-002's remaining scope. Until it closes:
 - Do not assume feedstock homogeneity after reduction
 - Do not assume automated reliability of any reduction method
 - Do not assume dust, fines, or contamination are handled
@@ -368,9 +372,10 @@ Operations/Gate_03_Reduction.md exists.** Until that file is created:
 - Emergency shutdown leaves material in whatever state
   it is in — no assumption of safe intermediate states
 - The provisional feedstock envelope in
-  Operations/Gate_04_Separation_Mechanical.md Inputs section is the
-  best available downstream constraint until
-  Operations/Gate_03_Reduction.md cross-validates it
+  Operations/Gate_04_Separation_Mechanical.md Inputs section remains
+  the best available downstream constraint until
+  Operations/Gate_03_Reduction.md's output envelope is cross-validated
+  against it
 
 ### Purification
 - Spin Chamber or any mechanism achieving comparable
@@ -737,7 +742,7 @@ creates inconsistency across forge instances.
 
 ---
 
-### FL-002 — Reduction module unassigned
+### FL-002 — Reduction output envelope cross-validation pending
 
 | Field         | Value                                            |
 |---------------|--------------------------------------------------|
@@ -748,36 +753,36 @@ creates inconsistency across forge instances.
 | Blocking      | No                                               |
 | Owner         | Architecture/Forge_flow.md                         |
 | First Logged  | 2026-05-15                                       |
-| Last Reviewed | 2026-05-15                                       |
+| Last Reviewed | 2026-08-17                                       |
 
-**Description:** The Reduction stage — shredding, cutting,
-or milling of items that have failed Gates A through D —
-has no owning specification file in the repository.
+**Description:** Operations/Gate_03_Reduction.md now exists and
+specifies constraints-first Reduction doctrine (contamination
+shutdown, prohibited inputs, output envelope, dust handling,
+emergency shutdown). Its output envelope has not yet been
+cross-validated against Operations/Gate_04_Separation_Mechanical.md's
+provisional feedstock envelope (Inputs section).
 
 **Why It Matters:** Reduction is the only fully irreversible
 step in the Forge flow. It is also the upstream dependency
 for the Material Separation Gate — the Gate's provisional
 feedstock envelope, RPM bands, sensor calibration, and jam
-risk all depend on knowing what Reduction produces. An
-unspecified Reduction module means the Gate is operating
-against an undefined input.
+risk all depend on knowing what Reduction actually produces.
+An uncross-validated envelope means the Gate is still operating
+against an unconfirmed input.
 
 **Resolution Path:**
-- Create Operations/Gate_03_Reduction.md as a new specification file.
-- Minimum content for v0: output particle envelope
-  (max dimension, max mass, prohibited geometries),
-  moisture and contamination handling, size reduction
-  method (shredding vs. cutting vs. milling), and
-  safety doctrine for energetic or hazardous materials
-  encountered during reduction.
-- Until Operations/Gate_03_Reduction.md exists, Operations/Gate_04_Separation_Mechanical.md
-  provisional feedstock envelope (Inputs section) stands
-  as the best available constraint.
+- Cross-validate Operations/Gate_03_Reduction.md's output envelope
+  (max dimension, max mass, prohibited geometries, moisture and
+  contamination handling) against Operations/Gate_04_Separation_Mechanical.md
+  Inputs section once a Reduction method is selected.
+- Until cross-validated, Operations/Gate_04_Separation_Mechanical.md's
+  provisional feedstock envelope (Inputs section) stands as the
+  best available constraint.
 - Cross-module reference: UNK-007 in Unknowns.md,
   MG-007 in Operations/Gate_04_Separation_Mechanical.md.
-- Payment via Specification — once Operations/Gate_03_Reduction.md exists
-  and its output envelope is cross-validated against
-  Operations/Gate_04_Separation_Mechanical.md Inputs section.
+- Payment via Specification — once the output envelope is
+  cross-validated against Operations/Gate_04_Separation_Mechanical.md
+  Inputs section.
 
 ---
 
