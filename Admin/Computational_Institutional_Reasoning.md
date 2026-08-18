@@ -15,14 +15,14 @@
 | Field | Value |
 | :--- | :--- |
 | Status | Exploration |
-| Version | 0.20 |
-| Spec Gates | G4 cleared; G1 partial (Gemini 2026-06-30); G3 blocked by AP-012/AP-016 |
+| Version | 0.26 |
+| Spec Gates | G4 cleared; G1 partial (Gemini 2026-06-30); G3 cleared (per Admin/Auditor_Protocols.md, Clear as of 2026-08-03 — AP-012/AP-016 Provisional Spec + Battery application + AP-017 independence requirement all met). See §7.4 resolution note. |
 | Verification Ref | Admin/Verification_Gates.md |
 | Ethical Anchor | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 | Highest Risk | CIR-001 — Physical Grounding Telemetry Mapping Interface undefined; \u03b31\u2013\u03b34 predicates currently aspirational in harness implementation (see Section 7.4). Renamed 2026-07-28 from local "GOV-008" — collided with `Admin/Governance_Charter.md`'s registered GOV-008 (minimum agent quorum); CIR-scoped prefix now registered in `Admin/Forge_Audit_Kit.md`'s Governance Sidecar ID Reference. |
 | Truth Basis | Internally Derived (Theorems) + Analogous (Multi-Agent Systems) |
-| Last Audit | 2026-07-29 (Claude — Skeptic/Auditor, verifying a Copilot-proposed finding set against source before commit; v0.19 — CIR-F01 [Axiom A4 / §4.2 Provenance Confidence contradiction] and CIR-F02 [ln(0) undefined-coordinate gap] both confirmed real and resolved, with three corrections to Copilot's original draft: A4's "(The Epistemic Ship of Theseus)" subtitle restored rather than dropped; Coordinate Floor Constraint relocated from §4.3 to §4.2 so it covers both the base and §4.6.3-extended M(n) forms in one patch rather than needing two; illustrative floor example corrected from R (already screened by §4.4 before M(n) evaluation, so never actually reaches ln(0) in practice) to S (not screened, genuinely reachable). Copilot's §7.3 citation also corrected — "Agent Replacement Information Loss" is a comparison-table row within §7.3, not a section title in its own right; substance of that cross-check unaffected. Human-directed. — v0.20 — CIR-F03: Φ(n)'s trigger condition corrected from S(n)=0 to S(n)≤ε, a direct follow-on consequence of CIR-F02's Coordinate Floor Constraint that neither the original CIR-F02 review nor its own "no gate behavior changes" claim caught. Verified directly against this file — not accepted from an unverified larger document set on the strength of its framing alone — since S(n)=0 became structurally unreachable the moment the floor patch landed, silently disabling the gate. A broader "CIR v2.0" proposal bundled alongside this same finding was not applied: it deletes elements of the ratified Definition 1 five-tuple without acknowledgment, introduces an unratified U(n) term already folded into M(n) as if settled, presents three conflicting definitions of A(n) across its source documents, and contains a self-referential predicate (γ_provenance comparing M(n) to Ψ(n) after Ψ(n) is already baked into M(n)'s own definition) not shown to be non-vacuous. None of it went through this file's source-verification discipline; held as unratified draft material pending individual, surgical, source-checked proposals — one change per patch, not a bundle. Human-directed. — v0.21, 2026-08-06 — CIR-F04: §4.5's "downstream dependency cluster" corrected to "required (upstream) dependency cluster." Direction was inverted relative to this document's own consistent usage elsewhere (§3's Cascading Hallucination definition and §5's debt-propagation line both use "downstream" correctly, to mean dependents). The formal inequality and deps(n) usage throughout §4.5–§4.6 were never affected — descriptive prose only. Surfaced by Grok during an epistemic-diversity/CIR compilation review; verified against this file's own other three "downstream"/"upstream" instances before applying rather than accepted on the finding's framing alone. Human-directed. — v0.22, 2026-08-07 — §4.3's Provenance Ceiling Gate gained an identity note with `Admin/Auditor_Protocols.md`'s Institutional Provenance Labels: the four category names in this section's Ψ(n) table were already identical to that file's, never previously stated as the same system. First surgical patch toward the "Confidence Algebra" formalization an external review (Grok) flagged as an open gap; companion patch in `Architecture/Cognitive_Frameworks.md` §IX.3 identifies the separate conjunction-operator relationship between this file's §4.5 Compound Bounding Theorem and that section's confidence-propagation rule. No existing math or category changed in either file — both additions are purely identifying content already true. Deliberately narrow: disjunction/OR, decay, and absence-handling operators remain unaddressed, following the individual-patch discipline the 2026-07-29 rejected "CIR v2.0" bundle established as precedent. Human-directed. — v0.23, 2026-08-07 — §4.6.2's Independence Predicate gained a port note: `Architecture/Cognitive_Frameworks.md` §IX.3 now has an equivalent disjunctive rule for the ordinal Confidence Labels, reusing this predicate and its CF-002 cross-reference unchanged rather than deriving new independence criteria — sound because the five labels are totally ordered, so the same min/max structure applies without modification. Second Confidence Algebra patch; unlike v0.22's identity-naming, §IX.3 had no disjunction concept at all before this one. §4.6.3's Conflict Gate Ξ(n) was deliberately not ported — Cognitive_Frameworks.md has no equivalent "active contradiction" concept yet. Decay and absence-handling remain the two operators still open. Human-directed.) |
-| Active Trackers | CIR-001, AP-012, AP-016, CF-002, CF-004 |
+| Last Audit | 2026-07-29 (Claude — Skeptic/Auditor, verifying a Copilot-proposed finding set against source before commit; v0.19 — CIR-F01 [Axiom A4 / §4.2 Provenance Confidence contradiction] and CIR-F02 [ln(0) undefined-coordinate gap] both confirmed real and resolved, with three corrections to Copilot's original draft: A4's "(The Epistemic Ship of Theseus)" subtitle restored rather than dropped; Coordinate Floor Constraint relocated from §4.3 to §4.2 so it covers both the base and §4.6.3-extended M(n) forms in one patch rather than needing two; illustrative floor example corrected from R (already screened by §4.4 before M(n) evaluation, so never actually reaches ln(0) in practice) to S (not screened, genuinely reachable). Copilot's §7.3 citation also corrected — "Agent Replacement Information Loss" is a comparison-table row within §7.3, not a section title in its own right; substance of that cross-check unaffected. Human-directed. — v0.20 — CIR-F03: Φ(n)'s trigger condition corrected from S(n)=0 to S(n)≤ε, a direct follow-on consequence of CIR-F02's Coordinate Floor Constraint that neither the original CIR-F02 review nor its own "no gate behavior changes" claim caught. Verified directly against this file — not accepted from an unverified larger document set on the strength of its framing alone — since S(n)=0 became structurally unreachable the moment the floor patch landed, silently disabling the gate. A broader "CIR v2.0" proposal bundled alongside this same finding was not applied: it deletes elements of the ratified Definition 1 five-tuple without acknowledgment, introduces an unratified U(n) term already folded into M(n) as if settled, presents three conflicting definitions of A(n) across its source documents, and contains a self-referential predicate (γ_provenance comparing M(n) to Ψ(n) after Ψ(n) is already baked into M(n)'s own definition) not shown to be non-vacuous. None of it went through this file's source-verification discipline; held as unratified draft material pending individual, surgical, source-checked proposals — one change per patch, not a bundle. Human-directed. — v0.21, 2026-08-06 — CIR-F04: §4.5's "downstream dependency cluster" corrected to "required (upstream) dependency cluster." Direction was inverted relative to this document's own consistent usage elsewhere (§3's Cascading Hallucination definition and §5's debt-propagation line both use "downstream" correctly, to mean dependents). The formal inequality and deps(n) usage throughout §4.5–§4.6 were never affected — descriptive prose only. Surfaced by Grok during an epistemic-diversity/CIR compilation review; verified against this file's own other three "downstream"/"upstream" instances before applying rather than accepted on the finding's framing alone. Human-directed. — v0.22, 2026-08-07 — §4.3's Provenance Ceiling Gate gained an identity note with `Admin/Auditor_Protocols.md`'s Institutional Provenance Labels: the four category names in this section's Ψ(n) table were already identical to that file's, never previously stated as the same system. First surgical patch toward the "Confidence Algebra" formalization an external review (Grok) flagged as an open gap; companion patch in `Architecture/Cognitive_Frameworks.md` §IX.3 identifies the separate conjunction-operator relationship between this file's §4.5 Compound Bounding Theorem and that section's confidence-propagation rule. No existing math or category changed in either file — both additions are purely identifying content already true. Deliberately narrow: disjunction/OR, decay, and absence-handling operators remain unaddressed, following the individual-patch discipline the 2026-07-29 rejected "CIR v2.0" bundle established as precedent. Human-directed. — v0.23, 2026-08-07 — §4.6.2's Independence Predicate gained a port note: `Architecture/Cognitive_Frameworks.md` §IX.3 now has an equivalent disjunctive rule for the ordinal Confidence Labels, reusing this predicate and its CF-002 cross-reference unchanged rather than deriving new independence criteria — sound because the five labels are totally ordered, so the same min/max structure applies without modification. Second Confidence Algebra patch; unlike v0.22's identity-naming, §IX.3 had no disjunction concept at all before this one. §4.6.3's Conflict Gate Ξ(n) was deliberately not ported — Cognitive_Frameworks.md has no equivalent "active contradiction" concept yet. Decay and absence-handling remain the two operators still open. Human-directed. — v0.24, 2026-08-18 — Skeptic/Auditor pass (Claude), applied after independent verification of a prior audit's findings against this file's source directly. Applied: (1) §7.1 YAML blueprint given the same illustrative-example disclaimer §6.3's InstL block already had, cross-referencing §7.4; (2) §7.2/§7.3 given explicit "Truth Basis: Simulated" labels, since the prose mention two paragraphs up didn't satisfy the kit's own "Unlabeled = Placeholder" rule for the tables themselves; (3) CIR-001's Classification field corrected from "Unlogged Unknown / Structural Gap" to reflect it is now a fully tracked entry; (4) CIR-001's dating gap — flagged by the audit but not fabricated shut here: no verified origination date exists, so First Logged is recorded as genuinely unknown rather than backfilled from this file's own v0.16 header date, which is circumstantial at best. (5) A fifth issue, not raised by the prior audit: G3's "blocked by AP-012/AP-016" status directly contradicts `Admin/Auditor_Protocols.md` line 774, which records Gate 3 Clear as of 2026-08-03 — four days before this file's own v0.23 touch. Flagged inline at §7.4 and in File State rather than resolved, since changing a Gate status is a call for this file's owner, not an editing pass. Human-directed.) — v0.25, 2026-08-18 — G3 contradiction resolved. Prior "blocked by AP-012/AP-016" language (File State, Status note, and §7.4) was stale relative to `Admin/Auditor_Protocols.md` line 774, which records Gate 3 Clear as of 2026-08-03. Verified directly against that source; status fields and §7.4 note updated to match. No change to CIR-001, γ-predicate Phase-2 status, or any algebraic content. Human-directed.) — v0.26, 2026-08-18 — Added a minimal $S(n)$ mapping schema as a candidate resolution draft under CIR-001 (data model, Leviathan-first mapping rules, freshness rule, harness consumption stub, explicit open-items table). Source-checked before insertion: confirmed `Automation/AUDIT_HARNESS.py` is v16 (2026-08-04) with exactly three Phase-1 checks (Ethical Anchor, required-field structure, cross-reference resolution) and zero γ/Φ(n)/S(n)/CIR-001 references anywhere in the harness or its changelog — Phase-2 is genuinely unimplemented, not partially started. Schema is explicitly Draft/Not Ratified, does not close CIR-001, does not invent hardware or sensors, and correctly treats `Tests/Support_Raft.md`'s sensor surface as still TBD/Placeholder rather than usable. Checked for interaction with same-day edits to `Routing.md`, `Admin/Repository_Integrity_Protocol.md`, and `Admin/CIR_Gov.md` (which has its own, separately-tracked $S(n)$/$\Phi(n)$ symbols under CIR-GOV-002) — no overlap found; none of those files' edited passages reference this schema or CIR-001. Human-directed.) |
+| Active Trackers | CIR-001, CF-002, CF-004 |
 
 > **Provenance self-reference note:** This document's own Provenance Ceiling Gate (\u03a8, Section 4.3) classifies its Truth Basis as *Internally Derived*, which bars it from self-promotion under its own algebra. Promotion to Candidate Spec requires at least partial Experimentally Verified status on the core claims.
 
@@ -47,7 +47,7 @@
 - Quorum composition or GOV-008 ratification (Charter-layer work; CIR assumes but does not define it)
 - CIR_Gov.md's predicate-kernel packaging (→ `Admin/CIR_Gov.md` — related but separately scoped Proposed–Not-Ratified layer)
 
-**Status note:** Exploration; G4 cleared, G1 partial, G3 blocked by AP-012/AP-016. This file is a formal theoretical framework, not a ratified governance authority.
+**Status note:** Exploration; G4 cleared, G1 partial, G3 cleared (AP-012/AP-016 resolved at protocol layer per Admin/Auditor_Protocols.md). This file is a formal theoretical framework, not a ratified governance authority.
 
 ---
 
@@ -598,6 +598,8 @@ The theoretical state tuple $\mathcal{I} = (G, A, \Gamma, \Pi, \Delta_e)$ and it
 
 ### Production Node Implementation Blueprint
 
+> *Note: The following YAML block is an Aspirational / Illustrative Example — the harness does not yet compute these metrics live. See §7.4 for current implementation status.*
+
 ```yaml
 ---
 id: "node_fa_001_fluid_stratification"
@@ -619,6 +621,8 @@ signature: "0x8f2c...9be3"
 
 ## 7.2 Empirical Performance Under Load
 
+**Truth Basis: Simulated** — the following results are from a simulated environment, not measured or replicated hardware data (see §7.4 for harness implementation status).
+
 To evaluate the **Epistemic Debt Instability Theorem** and the **Automated Triage Posture Trigger**, a multi-month autonomous operational environment was simulated.
 
 **Phase 1: Un-Gated Generation Burst (t = 0 to t = 120):** Generation rate intentionally scaled to heavily outpace verification ($g(t) \gg v(t)$). As predicted by Theorem 3, systemic epistemic debt accelerated combinatorially. Because parent nodes remained unverified, their nesting depth $d(n)$ propagated exponentially to downstream child nodes. The debt derivative exhibited strong positive acceleration ($\frac{d^2 D_e}{dt^2} > 0$), driving the system rapidly toward $\Delta_{\text{max}} = 12{,}000$ debt units.
@@ -628,6 +632,8 @@ To evaluate the **Epistemic Debt Instability Theorem** and the **Automated Triag
 **Phase 3: Stabilization and Recovery (t = 200 to t = 300):** The system remained locked in Triage Posture for 80 cycles, systematically clearing expired unknowns and validating empirical premises. Upon satisfying the exit criteria, the system safely returned to the Stable Operating Zone. The aggregate maturity of the graph core was 314% higher than its pre-triage state.
 
 ## 7.3 Quantitative Comparative Analysis
+
+**Truth Basis: Simulated** — see §7.2.
 
 | Performance Metric | Baseline Selective System ($I_2$) | CIR System ($I_1$) | Architectural Significance |
 | :--- | :--- | :--- | :--- |
@@ -651,6 +657,10 @@ The current `Automation/AUDIT_HARNESS.py` (v12 as of 2026-06-30) implements **Ph
 
 The $\gamma_1$–$\gamma_4$ predicates as formalized in Section 6.2 represent the **Phase 2 (planned) implementation target**. Current status:
 
+> **[RESOLVED 2026-08-18 — G3 status]** Prior File State and Status note claimed "G3 blocked by AP-012/AP-016." That claim was stale. `Admin/Auditor_Protocols.md` (line 774) records Gate 3 **Clear as of 2026-08-03**: AP-012 and AP-016 reached Provisional Spec (v0.16, 2026-07-03), Battery application is complete, and AP-017's independence requirement was verified via three cold-session instances against a pre-defined acceptance bar. The blocked language survived through the v0.21–v0.24 patches because those patches did not re-check the cited trackers. Status fields are now aligned to the authoritative source.
+>
+> G3 clearance removes only the adversarial-battery gate as a blocker for this file's Spec Gates field. It does **not** imply that the Phase-2 γ-predicate harness implementation is complete; that remains gated on CIR-001 and the planned harness extension.
+
 | Predicate | Description | Harness Status |
 | :--- | :--- | :--- |
 | $\gamma_1$ (EF-0.8b) | Physical Grounding Filter | Not yet implemented; depends on CIR-001 resolution |
@@ -658,7 +668,7 @@ The $\gamma_1$–$\gamma_4$ predicates as formalized in Section 6.2 represent th
 | $\gamma_3$ (AP-006) | Provenance Ceiling Enforcement | Not yet implemented |
 | $\gamma_4$ (CF-004) | Dynamic Debt Ceiling Triage | Not yet implemented; Unknowns.md line count functions as a proxy |
 
-This is a discrepancy between declared and implemented governance — the kind of drift this repository's apparatus exists to catch. $\gamma_1$ through $\gamma_4$ are aspirational prose until CIR-001 is resolved and the harness is extended to Phase 2. No unknown is logged here because CIR-001 already tracks the primary blocker; AP-012 and AP-016 govern the enforcement layer dependency.
+This is a discrepancy between declared and implemented governance — the kind of drift this repository's apparatus exists to catch. $\gamma_1$ through $\gamma_4$ are aspirational prose until CIR-001 is resolved and the harness is extended to Phase 2. No unknown is logged here because CIR-001 already tracks the primary blocker. The enforcement-layer dependency previously cited (AP-012/AP-016) is resolved at the protocol layer; remaining Phase-2 work is gated solely on CIR-001 and harness extension.
 
 ## 7.5 Conclusion
 
@@ -717,12 +727,92 @@ When an institution reaches its targeted operational end-of-life or encounters i
 | Field | Value |
 | :--- | :--- |
 | ID | CIR-001 |
-| Classification | Unlogged Unknown / Structural Gap |
+| Classification | Structural Gap (formerly Unlogged Unknown — tracked and ID'd as of the 2026-07-28 rename) |
 | Description | The physical grounding gate metric $\Phi(n)$ relies on direct hardware feedback signals ($S(n)$ dimension). The exact configuration interface linking these variables to testing environments (such as `Tests/Leviathan_testing.md` or `Tests/Support_Raft.md`) remains unmapped. Without this interface, $\gamma_1$ (EF-0.8b) cannot be implemented in the harness, and the Physical Grounding Gate operates as a theoretical constraint rather than an enforced one. |
 | Blocking | $\gamma_1$ harness implementation; Φ(n) operational enforcement; Section 7.4 Phase 2 predicate deployment |
-| Resolution Requirement | Define the mapping schema and structural verification protocols before promoting this framework to Candidate Spec status. Cross-ref `Tests/Leviathan_testing.md`, `Tests/Support_Raft.md`, `Admin/Security_Protocols.md`. |
+| Resolution Requirement | Define the mapping schema and structural verification protocols before promoting this framework to Candidate Spec status. Cross-ref `Tests/Leviathan_testing.md`, `Tests/Support_Raft.md`, `Admin/Security_Protocols.md`. A candidate schema (v0, Draft, not ratified) is now proposed immediately below — see "CIR-001 Candidate Resolution." Remains Open until a first concrete Leviathan log → $S$ derivation is demonstrated against it. |
 | Status | Open |
+| First Logged | Not recorded — see resolution note below. Earliest circumstantial evidence in this file is the document's own v0.16 header date (2026-06-30, line 3), but that is this file's version date, not a confirmed origination date for this specific tracker; do not treat it as verified without independent confirmation. |
 | First Cycle | 9 |
+
+### CIR-001 Candidate Resolution: Minimal $S(n)$ Mapping Schema (Proposed, v0 — Not Ratified)
+
+**Status: Draft proposal, source-checked against existing doctrine. Does not close CIR-001. Does not invent hardware, sensors, or test environments — maps only what already exists or is explicitly placeholder in the cited files.**
+
+**Purpose & Scope.** $S(n)$ is the physical-grounding coordinate of a node's evidence vector $\mathbf{V}(n)$. Per the Coordinate Floor Constraint (§4.2) and the corrected $\Phi(n)$ definition (CIR-F03):
+
+$$
+S(n) \in [\varepsilon, 1], \qquad
+\Phi(n) =
+\begin{cases}
+0 & \text{if } n \in V_{\text{phys}} \text{ and } S(n) \le \varepsilon \\
+1 & \text{otherwise}
+\end{cases}
+$$
+
+This schema answers three questions a Phase-2 harness must be able to answer for any physical claim: (1) what is the current $S(n)$ value, (2) how was it obtained, (3) is it still valid.
+
+**Out of scope:** continuous real-time sensor fusion, multi-dimensional sensor vectors, production hardware interfaces, the Support_Raft sensor surface (still TBD/Placeholder), and any change to $M(n)$, $\Psi(n)$, or the rest of the algebra.
+
+**Data Model (Minimal):**
+
+| Field | Type | Range / Values | Required | Notes |
+|-------|------|----------------|----------|-------|
+| `S` | float | $[\varepsilon, 1]$ | Yes | The grounding coordinate itself |
+| `source` | enum | `none` \| `leviathan_log` \| `support_raft_log` \| `manual_attestation` \| `other` | Yes | Provenance of the value |
+| `authenticity` | enum | `unverified` \| `cryptographic` \| `multi_party` \| `poisoned_flagged` | Yes | How the value was authenticated |
+| `freshness` | enum | `current` \| `stale` \| `unknown` | Yes | Relative to the claim's last mutation |
+| `ε_override` | float \| null | $(\varepsilon_{\text{global}}, 1)$ or null | No | Only if a node-specific floor is later ratified; default = global $\varepsilon$ |
+| `evidence_ref` | string | path or UID | Yes if $S > \varepsilon$ | Pointer to the log, test run, or attestation that justifies the value |
+| `notes` | string | free text | No | Human-readable context |
+
+**Default / zero-knowledge assignment:** if no `evidence_ref` exists, or `authenticity = unverified`, or `source = none`, then $S(n) \leftarrow \varepsilon$ — the only assignment that is always safe and already required by the Coordinate Floor Constraint.
+
+**Mapping Rules (Leviathan-first — the only cited environment with usable doctrine today):**
+
+| Leviathan concept (existing) | Maps to $S(n)$ | Condition | Authenticity path |
+|------------------------------|----------------|-----------|-------------------|
+| No physical test run recorded for the claim | $S = \varepsilon$ | Default | `unverified` |
+| Test run exists, but telemetry was never cryptographically logged | $S = \varepsilon$ | Default | `unverified` |
+| Cryptographically logged genuine telemetry (Section VII / IX) with no poisoned-injection flag | $S \in (\varepsilon, 1]$ | Value derived from logged contact / recovery / structural-health evidence | `cryptographic` |
+| Poisoned-telemetry injection detected and flagged (ASM-005 / Section VII) | $S = \varepsilon$ | Even if raw sensors reported contact | `poisoned_flagged` |
+| Multi-unit swarm diversity score available and disagreement analysis performed (CF-002 protocol) | May raise $S$ within $(\varepsilon, 1]$ | Only if authenticity already `cryptographic` | `cryptographic` + diversity note |
+| Manual human attestation of physical recovery / inspection | $S \in (\varepsilon, 1]$ | Explicitly recorded, dated, and signed | `multi_party` or `manual_attestation` |
+
+**Support_Raft:** all sensor surfaces remain TBD/Placeholder. Until SR-006 / SR-007 (and the Leviathan unit physical envelope dependency) resolve, Support_Raft contributes only the default $S = \varepsilon$.
+
+**Security_Protocols contribution:** used only for the authenticity column — cryptographic logging → `cryptographic`; multi-party hardware confirmation / air-gapped attestation → `multi_party`. Hull-breach / remote-wipe patterns inform the "stale" freshness rule but do not themselves raise $S$.
+
+**Freshness Rule (Minimal):** a value is `current` only if the `evidence_ref` timestamp is after the most recent mutation of the claim, and no subsequent poisoned-injection or authenticity-revocation event has been logged against that `evidence_ref`. Otherwise → `stale` or `unknown` → force $S \leftarrow \varepsilon$.
+
+**Harness Consumption Contract (Phase-2 stub, not yet implemented):**
+
+```text
+for each node n where n ∈ V_phys:
+    record = lookup_S(n)          # from sidecar or external log index
+    if record is None or record.authenticity == "unverified" or record.freshness != "current":
+        S = ε
+    else:
+        S = record.S
+    Φ = 0 if S ≤ ε else 1
+    # then apply existing M(n) formula
+```
+
+No continuous sensor stream is required. The harness remains offline / batch, consistent with its current design.
+
+**Explicit Open Items (do not silently close):**
+
+| Item | Status | Why it remains open |
+|------|--------|---------------------|
+| Concrete numeric derivation of $S$ from raw Leviathan logs | Open | Leviathan defines doctrine, not a quantitative scoring function |
+| Support_Raft sensor surface | Open | Still TBD/Placeholder |
+| Global vs node-specific $\varepsilon$ | Open | Current CIR text uses a single institutional $\varepsilon$ |
+| Automated freshness clock | Open | Requires a shared time source the harness can trust |
+| Poisoned-telemetry isolation guarantee (ASM-005) | Open | Still an assumption, not yet demonstrated |
+
+**Truth Basis of this schema:** Analogous (Leviathan sensor doctrine) + Internally Derived (existing $\Phi(n)$ / Coordinate Floor mathematics). No experimentally verified mapping exists yet.
+
+**Next steps if this draft is accepted:** (1) fold a pointer to this schema into CIR-001's Resolution Requirement above; (2) leave CIR-001 Open until a first concrete Leviathan log → $S$ derivation is demonstrated; (3) only then stub the Phase-2 harness cell shown above into `Automation/AUDIT_HARNESS.py`.
 
 
 

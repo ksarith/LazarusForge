@@ -26,9 +26,9 @@ None. This is a governance/epistemics document with no physical hazard surface.
 | Verification Ref | `Admin/Verification_Gates.md` |
 | Ethical Anchor | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 | Highest Risk | High — while unratified and GOV-008 remains Open, the misreading risk (treating this as operational) is real, not theoretical; raised from Medium 2026-07-31 per Skeptic/Auditor review. See §Binding Status below. |
-| Last Audit | 2026-07-31 |
-| Auditor | Grok — drafted CIR v2.0 architecture (Parts 0–8) and Nothingness-bridge/naming recommendations; Claude — Synthesizer, verified cross-references against `Governance_Charter.md`, `Nothingness_Theorem.md`, and `Unknowns.md` GOV-008 status before filing; human-directed, 2026-07-31; Grok — Skeptic/Auditor pass on this file (same-session as original drafting — human noted this is a "cognitive purity" limitation, a fresh instance would have been preferable and is a lesson for future review cycles), produced candidate Checkpoint mapping and f(n)/s(n) definitions; Claude — Synthesizer, independently verified all six Checkpoint names/numbers and the Checkpoint 2/4 gap characterization against `Governance_Charter.md` source before integrating (not just accepting the same-session review's claims), human-directed, 2026-07-31 |
-| Open Unknowns | 1 (CIR-GOV-001 — predicate/Checkpoint mapping, candidate table now supplied; two genuine gaps documented at Checkpoints 2 and 4. Separately, this file's Binding Status also depends on GOV-008, but GOV-008 itself is tracked and owned by `Governance_Charter.md`, not counted here.) |
+| Last Audit | 2026-08-18 |
+| Auditor | Grok — drafted CIR v2.0 architecture (Parts 0–8) and Nothingness-bridge/naming recommendations; Claude — Synthesizer, verified cross-references against `Governance_Charter.md`, `Nothingness_Theorem.md`, and `Unknowns.md` GOV-008 status before filing; human-directed, 2026-07-31; Grok — Skeptic/Auditor pass on this file (same-session as original drafting — human noted this is a "cognitive purity" limitation, a fresh instance would have been preferable and is a lesson for future review cycles), produced candidate Checkpoint mapping and f(n)/s(n) definitions; Claude — Synthesizer, independently verified all six Checkpoint names/numbers and the Checkpoint 2/4 gap characterization against `Governance_Charter.md` source before integrating (not just accepting the same-session review's claims), human-directed, 2026-07-31; Claude — Skeptic/Auditor, verified the γ_provenance circularity directly against this file's own math and registered CIR-GOV-002, human-directed, 2026-08-18; Grok — proposed the M₀(n) non-vacuous reformulation; Claude — Synthesizer, independently verified the reformulation and its stated `[0,1]` premise against source before integrating, applied at all four in-file occurrences of the old form (one beyond the proposal's own scope), discharged CIR-GOV-002, human-directed, 2026-08-18 |
+| Open Unknowns | 1 (CIR-GOV-001 — predicate/Checkpoint mapping, candidate table now supplied; two genuine gaps documented at Checkpoints 2 and 4. CIR-GOV-002 resolved 2026-08-18 — see Auditor Notes / Unknowns and Resolution Log. Separately, this file's Binding Status also depends on GOV-008, but GOV-008 itself is tracked and owned by `Governance_Charter.md`, not counted here.) |
 | Active Disputes | 0 |
 | Sidecar Link | #resolution-log |
 
@@ -246,11 +246,19 @@ Q(n) = exp(Wᵀ · ln V(n)) · U(n)
 A_adm(n) = Φ(n) · Ψ(n) · Ξ(n) · A(n)
 ```
 
+**Pre-Ceiling Maturity** (everything the node would claim before the provenance ceiling is applied — does not contain `Ψ(n)`)
+
+```
+M₀(n) = Φ(n) · Ξ(n) · A(n) · Q(n)
+```
+
 **Full Maturity**
 
 ```
-M(n) = A_adm(n) · Q(n)
+M(n) = Ψ(n) · M₀(n)
 ```
+
+*Note on range:* `Q(n) = exp(Wᵀ · ln V(n)) · U(n)` above is not confirmed bounded to `[0,1]` from this file's own definitions — `exp(·)` is unbounded above depending on `W` and `V(n)`. This does not affect the correctness of the reformulation below (`M₀` still cannot be circular against `Ψ` because it excludes it by construction, regardless of `M₀`'s actual range), but it does mean `Ψ_class`'s own bounds (§0.2, statutory/undefined per the Assumptions table) should be checked before assuming the ceiling always binds as intended. Flagged, not resolved, here.
 
 ---
 
@@ -264,7 +272,7 @@ M(n) = A_adm(n) · Q(n)
 
 ```
 γ_grounding(n)  = 1 if Φ(n) = 1,  else 0
-γ_provenance(n) = 1 if M(n) ≤ Ψ(n),  else 0
+γ_provenance(n) = 1 if M₀(n) ≤ Ψ(n),  else 0
 γ_conflict(n)   = 1 if c(n) = 0,  else 0
 γ_unknown(n)    = 1 if E(n) ≥ e_min and R(n) ≠ undefined,  else 0
 γ_challenge(n)  = 1 if s(n) = 0,  else 0   (see §2.3.1 for definitions of f(n), s(n))
@@ -276,7 +284,7 @@ M(n) = A_adm(n) · Q(n)
 
 - **UNKNOWN STATE** — `E(n) < e_min ∨ R(n) = undefined ⟹ γ_unknown(n) = 0`
 - **CONFLICT STATE** — `c(n) > 0 ⟹ γ_conflict(n) = 0`
-- **PROVENANCE CEILING STATE** — `M(n) > Ψ(n) ⟹ γ_provenance(n) = 0`
+- **PROVENANCE CEILING STATE** — `M₀(n) > Ψ(n) ⟹ γ_provenance(n) = 0`
 - **UNGROUNDED PHYSICAL CLAIM** — `n ∈ V_phys, S(n) = ε ⟹ γ_grounding(n) = 0`
 - **VERIFIED STATE** — `∀γ ∈ Γ: γ(n) = 1`
 
@@ -395,7 +403,7 @@ The predicate pipeline is executed in topological order for early short-circuit 
             ┌─────────────────┴─────────────────┐
             ▼                                   ▼
   [ γ_grounding Gate ]                 [ γ_provenance Gate ]
-  (Φ(n) == 1)                          (M(n) ≤ Ψ(n))
+  (Φ(n) == 1)                          (M₀(n) ≤ Ψ(n))
             │                                   │
             └─────────────────┬─────────────────┘
                               ▼
@@ -491,7 +499,7 @@ CIR v2.0 does not merge with `Governance_Charter.md` and should not. The two ope
 
 ## Lessons Learned
 
-- (None yet — this document has no operational history.)
+- CIR-GOV-002 (2026-08-18): a predicate comparing a composite quantity to its own multiplicative factor is circular regardless of the factor's value range — fix by defining an explicit pre-aggregate term that structurally excludes the tested factor, and check every occurrence of the old form across the file, not just the one a proposal was drafted against.
 
 ---
 
@@ -524,7 +532,7 @@ CIR v2.0 does not merge with `Governance_Charter.md` and should not. The two ope
 |---|---|---|---|---|
 | `γ_unknown` | 1 — Internal Coherence | 6 — Audit Lineage Integrity | Forces explicit representation of incompleteness (`E ≥ e_min`, `R ≠ ⊥`); prevents "silent unknown" being treated as coherent | Does Internal Coherence also require terminology stability / scope-boundary clarity that `γ_unknown` doesn't address? |
 | `γ_grounding` | 5 — Truth Provenance Layering | 1 — Internal Coherence | Directly implements Axiom Q-1 and the four-tier provenance hierarchy; blocks physical claims sitting only at the coordinate floor (`S = ε`) | Checkpoint 5 also demands *labeling* of every claim; `γ_grounding` only gates physical nodes, doesn't yet enforce provenance labels on non-physical claims |
-| `γ_provenance` | 5 — Truth Provenance Layering | 2 — Structural Plausibility | Enforces provenance as a hard ceiling (`M(n) ≤ Ψ_class(n)`) | The ceiling logic is clear; the `Ψ_class` taxonomy itself is still statutory and undefined |
+| `γ_provenance` | 5 — Truth Provenance Layering | 2 — Structural Plausibility | Enforces provenance as a hard ceiling (`M₀(n) ≤ Ψ_class(n)`) | The ceiling logic is clear; the `Ψ_class` taxonomy itself is still statutory and undefined |
 | `γ_conflict` | 1 — Internal Coherence | 3 — Adversarial Pass | Categorical zeroing of contradictions (`c(n)=0`) | Checkpoint 3 also tests recursive-justification resistance and audit-theater detection — `γ_conflict` only catches explicit logical contradiction |
 | `γ_challenge` | 3 — Adversarial Pass | 6 — Audit Lineage Integrity | Requires active adversarial sinking pressure to clear (`s(n)=0`); closest runtime analogue to a live adversarial battery | Gate strength depends entirely on `f(n)`/`s(n)` definitions — see §2.3.1 |
 | *(none)* | **2 — Structural Plausibility** | — | **No direct predicate.** Tractability, bounded escalation, finite authority propagation, sparse axiom layer are meta-properties of the governance system itself, not of a single mutation `ΔI` | Explicit gap — no predicate can currently fail a mutation for "this would make the overall system structurally implausible" |
@@ -536,6 +544,31 @@ CIR v2.0 does not merge with `Governance_Charter.md` and should not. The two ope
 
 ---
 
+### CIR-GOV-002 — γ_provenance circularity, previously rejected by Computational_Institutional_Reasoning.md, undisclosed in this file
+
+| Field | Value |
+|-------|-------|
+| Status | Resolved — Discharge via Lessons Learned |
+| Risk | Low — not a Tier-1 axiom concern; blocks G5/G6, not STATE_HOLD |
+| Priority | Major |
+| Type | Technical / Cross-Reference |
+| Blocking | Was blocking G5 (Cross-ref integrity) and G6 (Conflict check) for this file specifically. Both now clear on this issue. |
+| Owner | `Admin/CIR_Gov.md` |
+| First Logged | 2026-08-18 |
+| Last Reviewed | 2026-08-18 |
+| Resolution | Reformulated §2.4 and Part 3 to remove the circularity: introduced `M₀(n) = Φ(n)·Ξ(n)·A(n)·Q(n)` (pre-ceiling maturity, does not contain `Ψ(n)`), redefined `M(n) = Ψ(n)·M₀(n)` (preserves the existing product form), and redefined `γ_provenance(n) = 1 if M₀(n) ≤ Ψ(n), else 0`. The Provenance Ceiling Gate now asks a real question — whether a node's maturity absent the ceiling already exceeds what its provenance class permits — rather than comparing a quantity to its own factor. Matches the file's own stated intent ("`Ψ` is an upper bound, not a target," line 190) exactly; that clarifying prose is now an accurate description of the algebra instead of a comment contradicting it. Updated at three additional locations this same pass: the classification matrix (line 279), the Predicate DAG pseudocode diagram (line 405, not caught by the originating proposal), and the Candidate Predicate ↔ Enforcement Checkpoint Mapping table (line 535). No change to the other four predicates, to Binding Status, or to the GOV-008 dependency. |
+| Lessons Learned | A predicate that tests a composite quantity against one of that quantity's own multiplicative factors is circular by construction, independent of the factors' actual ranges — the fix is to define an explicit pre-aggregate term that structurally excludes the factor being tested, not to reason about typical value ranges. Also: a proposed fix should be checked for every occurrence of the pattern it's fixing, not just the location the fix was originally drafted against — this file had four separate references to the old `M(n) ≤ Ψ(n)` form, and the originating proposal's own "three blocks" scope missed the DAG diagram. |
+
+**Description:** §Part 3 defines `γ_provenance(n) = 1 if M(n) ≤ Ψ(n)` (line 267 of this file), comparing `M(n)` against `Ψ(n)`. But `Ψ(n)` is already a multiplicative factor inside `M(n)`'s own definition (`M(n) = A_adm(n)·Q(n)`, `A_adm(n) = Φ(n)·Ψ(n)·Ξ(n)·A(n)`, §2.4) — so the predicate compares a quantity against a term already folded into itself, and is not shown to be non-vacuous as written.
+
+This is not a new finding. `Admin/Computational_Institutional_Reasoning.md`'s own v0.20 Resolution Log entry (2026-07-29 — two days before this file was filed) explicitly rejected a bundled "CIR v2.0" proposal for four defects, one of which is worded almost identically to this: *"a self-referential predicate (γ_provenance comparing M(n) to Ψ(n) after Ψ(n) is already baked into M(n)'s own definition) not shown to be non-vacuous."* That proposal was held as unratified draft material pending individual, surgical, source-checked patches rather than a bundle.
+
+This file's own Resolution Log (2026-07-31 filing entry, 2026-07-31 Skeptic/Auditor integration entry) makes no reference to that prior rejection anywhere, and neither `Auditor Notes / Unknowns` nor `Assumptions` above addresses the circularity or explains why the same predicate architecture was re-filed here unresolved. Per the Semantic Stability Check (near-duplicate names, overlapping domain), this is exactly the drift pattern the checklist exists to catch — compounded here by a specific, previously-adjudicated technical defect crossing the file boundary silently.
+
+**Resolution Path:** either (a) demonstrate `γ_provenance` is non-vacuous despite the apparent circularity — e.g., if `Ψ(n)` is intended to be evaluated pre-aggregation, before it is folded into `M(n)`, that sequencing must be stated explicitly in §Part 3 or §2.4 — or (b) acknowledge the circularity is unresolved from the 2026-07-29 rejection, and hold `γ_provenance` as a known-open predicate rather than a settled one, pending a surgical patch. Either way, this file's Resolution Log needs an entry cross-referencing `Computational_Institutional_Reasoning.md`'s v0.20 rejection by name, so the relationship between the two files is discoverable from either side rather than living only in `Computational_Institutional_Reasoning.md`'s log.
+
+---
+
 ## Abandoned Paths
 
 - (None — this is a first draft, not a revision of a prior rejected approach.)
@@ -544,7 +577,11 @@ CIR v2.0 does not merge with `Governance_Charter.md` and should not. The two ope
 
 ## Resolution Log
 
+- 2026-08-18: **CIR-GOV-002 registered — γ_provenance self-referential-predicate circularity, previously rejected by `Computational_Institutional_Reasoning.md` v0.20 (2026-07-29), was undisclosed anywhere in this file.** Skeptic/Auditor pass verified the defect directly against this file's own math (§Part 3 `γ_provenance(n) = 1 if M(n) ≤ Ψ(n)` vs. §2.4's `M(n) = A_adm(n)·Q(n)`, `A_adm(n) = Φ(n)·Ψ(n)·Ξ(n)·A(n)` — `Ψ(n)` is folded into `M(n)` before the predicate compares them) — not accepted on the reviewing agent's framing alone. Confirmed `Computational_Institutional_Reasoning.md`'s v0.20 entry rejects the same predicate design in near-identical wording, two days before this file was filed, and that neither this file's 2026-07-31 filing entry nor its 2026-07-31 Skeptic/Auditor integration entry mentions that prior rejection. Blocks G5 (Cross-ref integrity) and G6 (Conflict check) for this file specifically; does not trigger STATE_HOLD (no Tier-1 axiom involved) and does not block anything else while this file remains unratified. Filed as CIR-GOV-002 rather than silently patched, per Fallacy Checklist item 4 (Semantic Drift) and the Post-Audit Cross-Reference discipline in `Admin/Forge_Audit_Kit.md`. Human-directed.
+
 - 2026-08-06: **§8.2.1 added — elaboration on refuse/escalate/log, reconciled from an independent multi-agent thread.** A Grok/Copilot thread drafted a parallel "Genesis-Mode Escalation Protocol" without loading this section or `Governance_Migration_Protocol.md` §VII.5 (which already specifies automatic re-entry to Genesis-Phase-equivalent restricted mode on quorum loss). Its core halt/escalate/human-decides structure restated §8.2's existing rule rather than adding to it. Three genuinely new refinements — concurrent-ΔI logging, an explicit three-path human decision structure (reject / return for revision / degraded-mode exception with an explicit anti-precedent clause), and a re-entry-after-prior-Pathway-1-exit rule — were folded in as §8.2.1, framed as elaboration of the Hard constraint and refuse/escalate/log sequence, not a replacement. Binding Status, the Hard constraint, and this file's Status (Proposed — Not Ratified) are unchanged. See `Governance_Migration_Protocol.md` §VII.8 for the companion registry/runtime-gate reconciliation from the same thread. Operating as Synthesizer, human-directed.
+
+- 2026-08-18: **CIR-GOV-002 resolved — γ_provenance reformulated as non-vacuous.** Reformulation proposed by Grok, verified against this file's own source before integration (not accepted on the proposal's framing alone): confirmed `Ψ(n)` is genuinely a multiplicative factor inside the old `M(n)` definition, confirmed the fix's `M₀(n) = Φ(n)·Ξ(n)·A(n)·Q(n)` structurally excludes `Ψ(n)`, and confirmed the file's own existing clarifying prose ("`Ψ` is an upper bound, not a target," line 190) already stated the intent this reformulation implements. One correction to the proposal: it also assumed `Q(n)`'s remaining factors are bounded to `[0,1]`, which this file's own definition of `Q(n) = exp(Wᵀ·ln V(n))·U(n)` does not confirm (`exp(·)` is unbounded above) — noted inline at §2.4 rather than silently accepted, though it doesn't affect the reformulation's correctness since `M₀` excludes `Ψ` by construction regardless of range. Applied at all four locations in the file that used the old `M(n) ≤ Ψ(n)` form for the predicate itself: §2.4 definitions, Part 3 predicate, Part 4 classification matrix, and the Predicate DAG diagram (this fourth location was not in the originating proposal's scope and was found during integration) — plus the Candidate Predicate↔Checkpoint Mapping table. Discharged per the Resolved Unknown Discharge Procedure (`Admin/Forge_Audit_Kit.md`): sidecar entry retained with Resolution and Lessons Learned fields, top-level Lessons Learned table updated, Open Unknowns count corrected. Human-directed.
 
 - 2026-07-31: **Skeptic/Auditor review pass integrated (six substantive additions).** Grok reviewed the filed document — same session as original drafting, a limitation the human governing authority explicitly flagged ("should have started a new instance to maximize cognitive purity... lesson for the future"). Given that, every factual claim in the review was independently re-verified against source before integration rather than accepted on the reviewing agent's authority: confirmed all six `Governance_Charter.md` Enforcement Checkpoint names/numbers exactly, and confirmed the Checkpoint 2 (Structural Plausibility) and Checkpoint 4 (Cross-Module Integration) "no corresponding predicate" gap claims against the Checkpoints' actual requirement text. Six changes integrated: (1) candidate Predicate↔Checkpoint mapping table replacing CIR-GOV-001's prior bare description, status updated to "candidate mapping supplied, gaps documented"; (2) new §8.2 Genesis-Mode/Single-Agent Degradation, making explicit that self-evaluation of any γ by the proposing agent is constitutionally invalid under this kernel — not a lesser passing grade, no VERIFIED state at all; (3) new §2.3.1 defining f(n) and s(n) for the previously under-specified Adversarial Challenge Gate; (4) new §6.5 Debt Aging/Resolution Credit, closing the permanent-triage-lock-in gap where resolved unknowns never reduced accumulated debt; (5) Unknown Conservation corollary added under A6, formally linking the Nothingness bridge to `Unknowns.md`'s Unknown Budget rule; (6) γ_provenance ceiling-vs-target inversion warning added inline. Also: Highest Risk raised Medium→High, ASM-CIR-002 reframed from a confidence rating to a documented design-completeness gap (Checkpoints 2/4 have zero predicate coverage), Open Unknowns field corrected to describe CIR-GOV-001 (this file's own tracked item) rather than conflating it with the separately-owned GOV-008 dependency. Declined to integrate: worked micro-examples (3 test vectors) — genuinely useful but lower priority than the structural gaps above; left as a future refinement, not filed as a new unknown. Operating as Synthesizer per Auditor_Protocols.md v0.29, human-directed.
 
