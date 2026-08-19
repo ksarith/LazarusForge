@@ -817,6 +817,8 @@ Parallel optional: residual CLF-011 polish; any pure-docs hygiene that does not 
   evidence-blocked items, plus an explicit non-work list and a suggested
   session sequence. Human-directed.
 
+  Human-directed.
+
 - 2026-08-14: **Two real gaps caught in the delivered Alpha.02 upload,
   fixed before treating it as current.** (1) `Progress_Log_Changelog.md`
   was missing the "Superseded — Forward Growth Avenues (2026-08-11)"
@@ -837,3 +839,34 @@ Parallel optional: residual CLF-011 polish; any pure-docs hygiene that does not 
   summaries claimed this content already existed; it didn't) rather than
   building on an unverified claim. CLF-011 remains Open, as it should.
   Human-directed.
+
+- 2026-08-18: **Ratification attempt on `Admin/CIR_Gov.md` redirected to a
+  GOV-008 candidate audit; audit concluded the candidate is honest but
+  physically unratifiable right now.** James asked to begin CIR_Gov.md's
+  ratification process to surface any conflicts. First conflict found
+  immediately, before any content review: CIR_Gov.md's own Binding Status
+  section states GOV-008 (minimum agent/hardware quorum, owned by
+  `Governance_Charter.md`) must be drafted and ratified first, as a hard
+  sequencing precondition — confirmed still accurate against `Unknowns.md`
+  v4.65, where GOV-008 remains Open. Redirected to auditing the existing
+  GOV-008 candidate at `Admin/Governance_Migration_Protocol.md` §VII
+  (drafted 2026-07-31, extended §VII.8 2026-08-06) for ratifiability
+  rather than treating the dual-CIR-document question as the next step —
+  Grok and ChatGPT both independently converged on the same redirect.
+  Audit covered authority framing, quorum definition (VII.1–VII.2),
+  operational achievement criteria (VII.3), independence/diversity tests
+  (VII.4), failure/escalation behavior (VII.5), bootstrap sequencing, and
+  migration path (VII.7) — all sound, and VII.8 already correctly
+  rejected a competing Grok/Copilot draft that would have recreated the
+  colliding-GOV-008 incident already fixed once (2026-07-28, renamed
+  CIR-001). **Conclusion: not a documentation gap.** §VII.6 states
+  plainly that the Hardware/Runtime Diversity requirement (≥2 distinct
+  physical hosts; logical-only separation is interim-only, not sufficient
+  for v1) is "declarable, not achieved" — no second physical host exists
+  anywhere in the repository's actual operating environment, consistent
+  with the standing no-physical-equipment-yet constraint. GOV-008 cannot
+  be ratified until that physical gap closes; no further prose pass
+  changes this. CIR_Gov.md's ratification remains correctly blocked
+  behind it. The dual-CIR-document authority question (CIR_Gov.md vs.
+  `Computational_Institutional_Reasoning.md`) is deferred — James is
+  doing further reading before deciding that one. Human-directed.
