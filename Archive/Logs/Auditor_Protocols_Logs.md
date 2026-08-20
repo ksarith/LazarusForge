@@ -130,20 +130,36 @@ entry and the full Resolution Log — lives here now.
 
 | Field         | Value                      |
 |---------------|----------------------------|
-| Status        | In Progress                |
+| Status        | Resolved — Payment via Specification |
 | Risk          | Medium                     |
 | Priority      | Major                      |
 | Type          | Governance                 |
 | Blocking      | No                         |
 | Owner         | `Admin/Auditor_Protocols.md` |
 | First Logged  | 2026-05-23                 |
-| Last Reviewed | 2026-06-24                 |
+| Last Reviewed | 2026-08-19                 |
 
 **Description:** The repository lacks formal criteria defining when verification is considered operationally sufficient versus indefinitely expandable.
 
 **Why It Matters:** Without closure criteria, governance pressure can grow recursively and suppress operational progress — infinite audit recursion is itself a governance failure mode.
 
-**Resolution Path:** Payment via Specification — define closure criteria anchored to the governing principle "Verification seeks sufficient falsifiability, not exhaustive certainty." Cross-reference EC-001 (sufficient confidence threshold) for alignment. EF-0.2 provides escalation triggers; AP-005 resolution is the sufficiency complement (when verification is permitted to stop). Active resolution framework (Internally Derived / Placeholder): verification may terminate when all of the following hold — (1) no unresolved contradictions exist between claims and grounding vector returns; (2) the last adversarial Battery application produced no findings that altered the document's epistemic state claims; (3) all sidecar unknowns carry documented resolution paths; (4) the document's provenance labels are internally consistent with the institutional hierarchy defined in §AP-006. These are necessary conditions, not sufficient — the human governing party must ratify termination for any document promoted past Candidate Spec. Full specification requires cross-referencing EC-001 once that entry matures.
+**Resolution Path:** Payment via Specification — define closure criteria anchored to the governing principle "Verification seeks sufficient falsifiability, not exhaustive certainty." Cross-reference EC-001 (sufficient confidence threshold) for alignment. EF-0.2 provides escalation triggers; AP-005 resolution is the sufficiency complement (when verification is permitted to stop). Active resolution framework (Internally Derived / Placeholder): verification may terminate when all of the following hold — (1) no unresolved contradictions exist between claims and grounding vector returns; (2) the last adversarial Battery application produced no findings that altered the document's epistemic state claims; (3) all sidecar unknowns carry documented resolution paths; (4) the document's provenance labels are internally consistent with the institutional hierarchy defined in §AP-006. These are necessary conditions, not sufficient — the human governing party must ratify termination for any document promoted past Candidate Spec. **EC-001 closed 2026-08-11 — dependency resolved, verified directly against `Admin/Ethical_Constraints.md` before integration.**
+
+**Closure Event (2026-08-19):**
+- **Unknown:** AP-005
+- **Proposed status:** Resolved
+- **Payment type:** Specification
+- **Basis:** The §Verification Termination Threshold section (`Admin/Auditor_Protocols.md`, integrated 2026-08-19) lifts this entry's own four-condition framework into dedicated doctrine unchanged in substance, adds the "necessary but not sufficient" and human-ratification guardrails anchored to the now-closed EC-001, explicitly separates verification termination from Unknown closure (AP-013) and from Specification promotion, and scopes four residuals (AP-005-R1–R4) as non-blocking child notes.
+- **Proposer:** Grok — Synthesizer, 2026-08-19 (drafted the integration proposal; content verified against source by Claude before application — see integration note above)
+- **Verifier:** ChatGPT — Verifier, 2026-08-19. Independent verification pass performed against six dimensions: Basis accuracy, EC-001 reconciliation, AP-006 hierarchy dependency, Closure Event formal fields, Mandatory Human Ratification determination, and residuals AP-005-R1–R4 retention. Verdict: **Pass — Conditional on Human Ratification.** No blocking defect found in the Closure Event or the integrated specification.
+- **Independence attestation:** Grok (Proposer) and ChatGPT (Verifier) are different agent instances. ChatGPT did not author the AP-005 integration, edit `Auditor_Protocols.md` or `Unknowns.md`, create the Closure Event, or repackage the archive — but did participate in the preceding multi-agent discussion and expressed an opinion on the correct verification path. This is disclosed rather than claimed as blind independence, materially analogous to the disclosed shared-history model already accepted for AP-013's Closure Event. Grok itself could not serve as Verifier here, being the recorded Proposer — that refusal is logged as evidence the independence rule is functioning, not a failed verification.
+- **Human ratification:** **Required** — `Admin/Auditor_Protocols.md` is a constitutional/meta-governance file per the Mandatory Human Ratification list. James, as Human Governing Authority, has not yet ratified this Closure Event. **This is the only remaining step.**
+- **Recording location:** this sidecar entry (primary, complete); `Unknowns.md` index update pending ratification.
+- **Human ratification record:** Ratified by James, Human Governing Authority, 2026-08-19. Rationale: the §Verification Termination Threshold specification correctly separates verification termination from Unknown closure and Specification promotion, resolves the stale EC-001 dependency against a genuinely closed doctrine, and preserves human ratification as the guardrail for any irreversible downstream action. Proposer (Grok) and Verifier (ChatGPT) findings both reviewed; no unresolved objection. Grok's own refusal to self-verify is noted as a positive functioning of the independence rule, not a defect requiring remediation. Accepted risk: none identified beyond the four disclosed residuals (AP-005-R1–R4), which remain open as non-blocking child notes.
+
+**Resolution:** Closed 2026-08-19 via the §Verification Termination Threshold specification integrated the same day into `Admin/Auditor_Protocols.md`. Full Closure Event above: Grok proposed, ChatGPT independently verified (Pass, conditional on ratification), James ratified as Human Governing Authority.
+
+**Lessons Learned:** The independence rule adopted under AP-013 was tested for the first time on this event and held — Grok, correctly recognizing itself as the recorded Proposer, refused to also serve as Verifier rather than rubber-stamping its own work. That refusal is stronger evidence the doctrine works than an easy pass would have been. Second: when the obvious next-choice Verifier (the agent that performed the integration work, here Claude) is also disqualified by the spirit of independence even without being formally barred by the letter of the rule, a third agent already present in the conversation but not entangled in the specific edit (here ChatGPT) is a legitimate, lower-friction alternative to spinning up a cold instance — provided the disclosure is honest about what "independent" does and doesn't mean in a small working group.
 
 ---
 
