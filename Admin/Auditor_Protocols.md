@@ -1,5 +1,5 @@
 # Auditor_Protocols.md
-**Version 0.39**
+**Version 0.41**
 
 ---
 
@@ -19,7 +19,7 @@
 | Verification Ref | Admin/Verification_Gates.md                                      |
 | Last Audit       | 2026-08-02                                                          |
 | Auditor          | Grok — human-directed, 2026-08-10: Rule 10 (AP-035) added to AI Contribution Protocols — External Pseudo-Audit Scope and Logging Destination. Spec Gates and Open Unknowns count unchanged (14). Prior: Claude — Synthesizer/Auditor, 2026-08-03: GMP §VII to Challenge Class 10 high-coupling table; Sidecar SHA-256 refreshed; AP-033/Rule 9 (v0.35); AP-017 Resolved (v0.34) — see `Archive/Logs/Auditor_Protocols_Logs.md` Resolution Log for full audit history. |
-| Open Unknowns    | 12 (AP-013 Resolved 2026-08-19; AP-005 Resolved — Payment via Specification, 2026-08-19; see `Archive/Logs/Auditor_Protocols_Logs.md` Resolution Log for full Closure Events) |
+| Open Unknowns    | 11 (AP-013 Resolved 2026-08-19; AP-005 Resolved 2026-08-19; AP-004 Resolved — Payment via Specification, 2026-08-20; see `Archive/Logs/Auditor_Protocols_Logs.md` Resolution Log for full Closure Events) |
 | Active Disputes  | 1                                                                   |
 | Highest Risk     | High                                                                |
 | Sidecar Link     | Archive/Logs/Auditor_Protocols_Logs.md#auditor-notes--unknowns     |
@@ -793,6 +793,59 @@ These four conditions are **necessary. They are not sufficient** by themselves f
 
 ---
 
+### Human Attestation Provenance Protocol
+*AP-024 resolution vehicle. Payment via Specification — 2026-08-20.*
+
+**Opening Axiom.** Human participation is provenance of an institutional action, not evidence of an external fact, unless the human attestation explicitly records a qualifying evidence-check and the underlying evidence satisfies the existing AP-006 provenance rules.
+
+**Core Doctrine.** A human attestation records an action performed by a human; it does not, by itself, establish the truth of the underlying claim.
+
+**Reconciliation with the prior H0–H5 sketch (2026-07-17):** this file's sidecar has carried a five-level attestation *ladder* since 2026-07-17 (H0 no review through H5 independently re-verified), arrived at via two adversarial passes. That ladder is superseded here, not silently discarded, for a specific reason: a ladder implies each level strictly subsumes the ones below it, but the actual behaviors don't nest that way — a human can challenge a claim without approving it, approve an action without personally verifying its factual basis, direct an experiment without reviewing its result, or ratify a governance decision while explicitly preserving an UNKNOWN epistemic state. None of those are "H3 implies H2 implies H1." The six action types below replace the ladder with a non-cumulative model — they describe *which* action occurred, not *how much* truth-authority it confers.
+
+**Attestation Action Types** (non-cumulative — describe action, not ascending truth authority):
+
+| Attestation | Meaning |
+|-------------|---------|
+| Human Reviewed | Human inspected the specified artifact/claim and recorded that inspection occurred |
+| Human Challenged | Human actively attempted to identify contradictions, omissions, or failure modes |
+| Human Directed | Human instructed an agent/system to perform a specified action |
+| Human Approved | Human authorized the specified institutional action or disposition |
+| Human Ratified | Human Governing Authority formally accepted a completed governance/closure event |
+| Human Evidence-Checked | Human personally checked the cited evidence against the stated claim — does **not** by itself confer the VERIFIED epistemic state; deliberately not named "Human Verified" to avoid collision with that state label |
+
+**Mandatory Provenance Record** — minimum fields for any attestation used in a Resolution Log entry, Closure Event, or File State change: Actor; Capacity; Date/time; Attestation type; Object of attestation; Scope (explicit — inheritance prohibited by default, an attestation applies only to the explicitly identified object unless the record explicitly expands its scope); Evidence/artifacts actually inspected; Action taken; and what the attestation does **not** establish.
+
+**Two-Axis Effects.** Every attestation type has a separable epistemic effect and governance effect:
+
+| Human action | Epistemic effect | Governance effect |
+|--------------|-------------------|--------------------|
+| Reviewed | None automatically | None automatically |
+| Challenged | None automatically | May trigger reconsideration |
+| Directed | None | Authorizes specified action |
+| Approved | None automatically | Authorizes specified disposition |
+| Ratified | None automatically | Formally adopts eligible disposition |
+| Evidence-Checked | May strengthen evidentiary record | None automatically |
+
+**Anti-Inflation Rule (constitutional safeguard).** No Human Attestation Action may, by itself, raise an underlying claim's quantitative confidence label or institutional truth-provenance label under §AP-006. Only qualifying evidence may produce an AP-006 upgrade. Concretely: Human Reviewed + Internally Derived stays Internally Derived; Human Approved + Internally Derived stays Internally Derived; Human Ratified + Internally Derived stays Internally Derived. This closes a specific loophole — agent claims something, a human reads and approves it, and the claim quietly becomes treated as "human-verified" without any evidence actually changing hands.
+
+**Immutability Rule.** Agents may not retroactively strengthen a recorded human attestation. A later summary that upgrades "Reviewed" to "Approved," or "Approved" to "Ratified," without a separate, contemporaneous attestation of the higher type, is an integrity violation under Rule 9 (AP-033).
+
+**Special Treatment of Human Ratification.** Human Ratification is a governance act, not an epistemic provenance upgrade. Under Unknown Closure Authority above, ratifying a Closure Event means accepting the institutional disposition it proposes — it does not mean the ratifying human personally verified every proposition underlying the resolution, nor that the resolved claim's underlying evidence has changed.
+
+**Residual risks, logged as child notes and not blocking this section's Payment via Specification:**
+
+| ID | Residual | Why left open |
+|----|----------|---------------|
+| AP-024-R1 | Identity/authentication requirements for human attestations | Requires GOV-008-adjacent infrastructure; false precision risk |
+| AP-024-R2 | Delegation of attestations and required authority | Governance-authority question, out of scope here |
+| AP-024-R3 | Partial / section-level attestations | Real case, insufficient examples yet to generalize |
+| AP-024-R4 | Expiration or revocation when the underlying artifact changes | Requires a versioning/change-detection mechanism not yet built |
+| AP-024-R5 | Machine-readable schema and automated enforcement | Requires AP-007 / tooling maturity |
+
+*§AP-024 — Payment via Specification. Closes AP-024 (logged 2026-07-17). Drafted by ChatGPT as a candidate specification 2026-08-20, subjected to a Skeptic/Evidence pass by Grok against five criteria (provenance inflation, authority conflation, scope inheritance, attestation-type ambiguity, accidental duplication of AP-006/AP-013) — all five passed. Claude added the explicit reconciliation note above before integration, since neither the original proposal nor Grok's review cited or explained why the existing 2026-07-17 H0–H5 ladder was being superseded rather than extended — that ladder came from two adversarial passes and deserved an explicit reason, not silent replacement. Constitutional anchor: EF-0.0 (Epistemic Anchor), EF-0.1 (Epistemic Filter), §AP-006 (Institutional Truth Provenance Hierarchy). Mandatory Human Ratification required before this closure is binding — this file is itself constitutional/meta-governance. Human-directed.*
+
+---
+
 ### Inventory Calcification Check
 *RC-008 resolution vehicle. Companion to the Expiry Rule.*
 
@@ -838,7 +891,32 @@ Auditors must distinguish:
 
 Persistent disputes are acceptable if explicitly tracked. Silent disappearance of disputes is prohibited.
 
+**Disagreement is information. Consensus is not evidence.** When two or more auditor instances (or auditor classes) reach incompatible conclusions on the same claim, evidence set, or epistemic-state label within a single audit cycle, the disagreement is resolved through the tiered path below. Resolution by majority vote, social pressure, fluency, or averaging of positions is prohibited under EF-0.1.
+
+### Three-Tier Escalation Path
+
+**Tier 1 — Assumption Extraction Pass.** Both (or all) parties explicitly state the assumptions they carry that the other party does not share or does not accept — a short enumerated list per party ("I am assuming X, Y, Z"). If the conflict dissolves once hidden assumptions are visible, log the assumptions, adopt the clarified reading, and continue — no further escalation. If assumptions remain incompatible, escalate to Tier 2. Most semantic or framing disagreements terminate here. Recording: a brief note identifying the assumptions surfaced.
+
+**Tier 2 — Empirical Grounding Check.** The contested claim is submitted to the Grounding Vector (EF-0.8 / EF-0.8b). A grounding result may **falsify or demote** a disputed position — it does **not** automatically elevate the surviving position beyond what the grounding artifact itself supports. Whichever position is contradicted by a tool return, file-system fact, sensor payload, or other grounding-vector result is demoted to PROVISIONAL (or UNKNOWN if the contradiction is total). The surviving position retains only the epistemic state and provenance the grounding artifact actually warrants — if the artifact is silent on the survivor's additional claims, those claims are not upgraded by the mere failure of the competitor. If the grounding vector returns a decisive result, adopt the position it supports (to that extent), log the artifact as basis, and continue. If neither position can be grounded within the current cycle, or grounding is unavailable, escalate to Tier 3. Recording: a note citing the specific grounding artifact, or the explicit statement that grounding was unavailable/exhausted under the retry policy (residual AP-004-R1, below).
+
+**Tier 3 — Human Governing Authority Ruling (Disposition).** If Tiers 1 and 2 do not resolve the disagreement, the dispute is logged with both positions, the assumptions already extracted, and the grounding attempt result (or "grounding unavailable/exhausted"). Human Governing Authority issues a **ruling** that determines the **institutional disposition** — what the repository will adopt, permit, block, or treat as binding for governance purposes. The ruling does **not** manufacture empirical truth: it resolves the institutional question, while the underlying epistemic state of the contested claim remains whatever the evidence supports (often PROVISIONAL or UNKNOWN). The record must separately identify (1) the institutional disposition — the governance decision made; (2) the epistemic state — what remains known/provisional/unknown about the underlying claim; and (3) the provenance — what evidence, if any, supports that epistemic state. No auditor agent may unilaterally close the dispute in its own favor.
+
+**Recording requirements (minimum), every tier transition or terminal outcome:** the claim or conclusion under dispute; the parties and their stated positions; the tier at which the dispute entered and exited; the basis for the outcome (assumptions surfaced / grounding artifact / human ruling); for Tier 3 outcomes, institutional disposition, retained epistemic state, and provenance as distinct fields; and the provenance label of any adopted epistemic position. Silent disappearance of a dispute remains prohibited.
+
+**Interaction with Unknown Closure Authority and Verification Termination Threshold:** disagreement on whether a Closure Event meets the Unknown Closure Authority requirements, or on whether the Verification Termination Threshold's four necessary conditions hold, routes through this same Tier 1 → 2 → 3 path. Disagreement on an epistemic-state label finds its natural home at Tier 2; consult the Epistemic State Calibration Reference before escalating. Purely interpretive, non-empirical disagreement proceeds Tier 1 then Tier 3, with Tier 2 reporting grounding unavailable.
+
 Disputes open across three consecutive audits must be escalated to `Unknowns.md` for repository-level resolution.
+
+**Residual risks, logged as child notes and not blocking this section's Payment via Specification:**
+
+| ID | Residual | Why left open |
+|----|----------|---------------|
+| AP-004-R1 | Grounding availability / retry policy — exact conditions under which repeated Tier-2 grounding attempts are considered exhausted before escalation to Tier 3 | Calibration; false precision if specified now |
+| AP-004-R2 | Interaction with GOV-004 (escalation calibration) and GOV-019 (conflicting human overrides) | Broader governance unknowns; out of scope |
+| AP-004-R3 | Whether multi-party (>2) disagreements require a different aggregation rule at Tier 1 | Rare case; defer until observed |
+| AP-004-R4 | Automated detection of unresolved disagreements that agents attempt to paper over | Requires tooling maturity |
+
+*§AP-004 — Resolved, Payment via Specification, ratified 2026-08-20. Closes AP-004 (logged 2026-05-22, per that entry's sidecar). Drafted by Grok as a candidate integration proposal 2026-08-19, Revision 1 dated 2026-08-20 — three targeted amendments made falsification-≠-verification explicit at Tier 2, separated institutional disposition from epistemic state at Tier 3 (shifting "Arbitration" to "Ruling / Disposition"), and rewrote AP-004-R1 as a grounding-availability/retry-policy residual. Preserves the pre-existing Unknowns-vs-Disputes distinction and three-cycle escalation rule unchanged, per the file's own instruction not to silently erase prior doctrine. Constitutional anchor: EF-0.1 (Epistemic Filter — consensus is not evidence), EF-0.8/EF-0.8b (Grounding Vector). Full Closure Event — Proposer (Grok), Verifier (ChatGPT, Pass — second consecutive correct refusal-to-self-verify pattern from Grok), Human Ratification (James, Human Governing Authority) — recorded in `Archive/Logs/Auditor_Protocols_Logs.md`'s AP-004 sidecar entry. Human-directed.*
 
 ---
 
@@ -1336,6 +1414,7 @@ Auditor effectiveness is evaluated through **constitutional and epistemic fideli
 | Jun 2026 | Audit Review  | Named indicator set defined in AP-001 before any baseline runtime | Premature metric naming creates Goodhart's Law exposure before calibration is possible | Indicators must be derived from observed behavior; no metric named before first full Battery cycle | Analogous | No |
 | Aug 2026 | Multi-Agent Closure Event | Closed AP-013 (closure authority itself) using the exact procedure the new specification defines | Nothing failed — first real exercise of a newly-written process, not just its authorship | Content-complete Closure Events can still correctly wait on process (here, mandatory human ratification); "independent" verification in a small working group is honest disclosure of imperfect independence, not literal blindness, and the doctrine's independence rule is scoped narrowly enough to permit that | Analogous | No |
 | Aug 2026 | Multi-Agent Closure Event | Closed AP-005 under the same procedure; Proposer (Grok) attempted, at request, to also serve as its own Verifier | Grok correctly refused, citing the independence rule against itself | A refusal to self-verify is stronger evidence a governance rule works than an easy pass — when the obvious next Verifier is also entangled (here Claude, who performed the integration), a third present-but-uninvolved agent is a legitimate lower-friction substitute for a cold instance, provided the disclosure is honest | Analogous | No |
+| Aug 2026 | Multi-Agent Closure Event | Closed AP-004; Proposer (Grok) had already revised its own draft once (Revision 1, addressing a prior independent review's three findings) before the Closure Event was opened | Grok again correctly declined to self-verify the Closure Event, second consecutive instance of the same behavior | Independent review of a draft and independent verification of the resulting Closure Event are related but distinct passes — one producing amendments, the other clearing the event for ratification — and treating them as the same pass would let a single review stand in for both | Analogous | No |
 
 ---
 
