@@ -109,20 +109,36 @@ entry and the full Resolution Log — lives here now.
 
 | Field         | Value                      |
 |---------------|----------------------------|
-| Status        | In Progress                |
+| Status        | Resolved — Payment via Specification |
 | Risk          | Medium                     |
 | Priority      | Major                      |
 | Type          | Governance                 |
 | Blocking      | No                         |
 | Owner         | `Admin/Auditor_Protocols.md` |
 | First Logged  | 2026-05-22                 |
-| Last Reviewed | 2026-06-24                 |
+| Last Reviewed | 2026-08-20                 |
 
 **Description:** The repository lacks a formal mechanism for resolving disagreements between different auditor classes or agent instances within the same audit cycle.
 
 **Why It Matters:** Multi-auditor systems may deadlock or produce inconsistent audit outcomes without an arbitration pathway.
 
 **Resolution Path:** Payment via Specification — define arbitration and escalation pathways for conflicting audit conclusions. May merge with escalation calibration work in `Admin/Governance_Charter.md`. EF-0.1 constraint: arbitration may not resolve disagreements by majority vote or consensus pressure — resolution must ground in empirical artifact, tool return, or physical grounding vector. Active resolution framework (Internally Derived / Placeholder): disagreements between auditor instances escalate through three tiers — (1) Assumption Extraction pass: both agents explicitly state carried assumptions; conflicts at this tier often resolve without arbitration; (2) Empirical Grounding check: the contested claim is submitted to the Grounding Vector (EF-0.8/EF-0.8b) — whichever position is contradicted by tool return or physical measurement is demoted to PROVISIONAL; (3) Human governing party arbitration: if neither position can be grounded empirically within the cycle, the dispute is logged and escalated to human review. The human governing party ruling is logged as an Epistemic Ledger entry with provenance label Internally Derived until physical grounding is available. No auditor agent may unilaterally close a dispute in its own favor.
+
+**Closure Event (2026-08-20):**
+- **Unknown:** AP-004
+- **Proposed status:** Resolved
+- **Payment type:** Specification
+- **Basis:** The §Dispute Handling Protocol expansion (`Admin/Auditor_Protocols.md`, integrated 2026-08-20) lifts this entry's own three-tier framework into dedicated doctrine, with three amendments beyond the original sidecar text: Tier 2 now states explicitly that falsification does not automatically verify the survivor; Tier 3 separates institutional disposition from epistemic state and uses "Ruling / Disposition" terminology rather than "Arbitration"; AP-004-R1 is rewritten as a grounding-availability/retry-policy residual rather than a bare timeout. The pre-existing Unknowns-vs-Disputes distinction and three-cycle escalation rule are preserved unchanged.
+- **Proposer:** Grok — Synthesizer, 2026-08-20 (drafted the integration proposal and its Revision 1)
+- **Verifier:** ChatGPT — Verifier, 2026-08-20. Independent verification pass performed against seven dimensions: three-tier framework completeness, Tier 2 epistemic safeguard (falsification ≠ verification), Tier 3 institutional/epistemic separation, AP-004-R1 reframing, AP-013/AP-005 interaction routing, residual handling, and closure-state integrity. Verdict: **Pass — Ready for Human Ratification.** No substantive defect found; all three pre-integration amendments confirmed correctly implemented.
+- **Independence attestation:** Grok (Proposer) and ChatGPT (Verifier) are different agent instances. ChatGPT did not draft, integrate, or edit the repository — but did review the pre-integration proposal and recommend the three amendments now present. Disclosed rather than claimed as blind independence, consistent with the pattern already accepted for AP-013 and AP-005. Grok itself could not serve as Verifier here, being the recorded Proposer — that refusal is again logged as evidence the independence rule is functioning correctly under repeated use, not a one-off.
+- **Human ratification:** **Required** — `Admin/Auditor_Protocols.md` is a constitutional/meta-governance file per the Mandatory Human Ratification list. James, as Human Governing Authority, has not yet ratified this Closure Event. **This is the only remaining step.**
+- **Recording location:** this sidecar entry (primary, complete); `Unknowns.md` index update pending ratification.
+- **Human ratification record:** Ratified by James, Human Governing Authority, 2026-08-20. Rationale: the §Dispute Handling Protocol expansion correctly preserves the pre-existing Unknowns-vs-Disputes distinction and three-cycle escalation rule while adding a genuine three-tier resolution path, with two substantive epistemic safeguards (falsification-≠-verification at Tier 2; institutional-disposition-≠-epistemic-truth at Tier 3) that prevent the most likely failure modes of a human-arbitrated dispute system. Proposer (Grok) and Verifier (ChatGPT) findings both reviewed; no unresolved objection. Grok's second consecutive refusal to self-verify (after AP-005) is noted as evidence the independence rule holds up under repeated use, not a one-off. Accepted risk: none identified beyond the four disclosed residuals (AP-004-R1–R4), which remain open as non-blocking child notes.
+
+**Resolution:** Closed 2026-08-20 via the §Dispute Handling Protocol expansion integrated the same day into `Admin/Auditor_Protocols.md`. Full Closure Event above: Grok proposed (with a self-produced Revision 1 addressing three amendments requested in a prior ChatGPT review), ChatGPT independently verified (Pass, ready for ratification), James ratified as Human Governing Authority.
+
+**Lessons Learned:** This is the third unknown closed under the AP-013 doctrine, and the first where the Proposer had already revised its own draft once (Revision 1) before the Closure Event was even opened — the independent-review cycle that produces amendments and the independent-verification cycle that clears the Closure Event are related but distinct passes, and conflating them would have let a single review stand in for both. Second: Grok's refusal to self-verify is now a pattern (twice), not an isolated incident — worth treating as expected, correct behavior going forward rather than something to double-check each time.
 
 ---
 
@@ -660,6 +676,19 @@ Separately, one reported finding (claimed sidecar truncation at AP-017, omitting
 This becomes governance metadata rather than prose, auditable the same way Truth Provenance Labels make evidence claims auditable. Cross-reference AP-013 (closure authority is a separate, adjacent question) and AP-004 (arbitration framework, if attestation-level disputes arise).
 
 *Surfaced independently by two adversarial passes, 2026-07-17 (Claude, in-session per AP-017 disclosure; a second model, session details not independently confirmed) — converging findings, not independent confirmation of each other per AP-017's own standard. Generalized wording and the H0–H5 scale adopted from multi-agent synthesis discussion the same day.*
+
+**Closure Event (2026-08-20):**
+- **Unknown:** AP-024
+- **Proposed status:** Resolved
+- **Payment type:** Specification
+- **Basis:** The §Human Attestation Provenance Protocol section (`Admin/Auditor_Protocols.md`, integrated 2026-08-20) resolves the granularity gap with six non-cumulative attestation action types, a two-axis epistemic/governance effect model, an anti-inflation rule preventing human approval from silently upgrading AP-006 provenance labels, and an immutability rule against retroactive attestation strengthening. It explicitly supersedes — with stated reason, not silent replacement — the prior 2026-07-17 H0–H5 ladder recorded above. Five residuals (AP-024-R1–R5) are scoped as non-blocking.
+- **Proposer:** ChatGPT — drafted the candidate specification, 2026-08-20
+- **Reviewer (pre-integration Skeptic/Evidence pass):** Grok — five-criterion pass (provenance inflation, authority conflation, scope inheritance, attestation-type ambiguity, accidental duplication of AP-006/AP-013), all passed, 2026-08-20
+- **Integration note:** Claude performed the integration and added the explicit H0–H5 reconciliation paragraph, since neither the original proposal nor Grok's review addressed why the existing, adversarially-derived ladder was being superseded rather than extended.
+- **Verifier (of this Closure Event):** *pending*. Independence note: this event has three agents already entangled — ChatGPT as Proposer, Grok as a pre-integration Reviewer (a different role from Verifier, but substantively involved in shaping the accepted content), and Claude as the agent who performed the integration and authored a content addition of its own. Per the pattern established on AP-005 and AP-004, none of the three should serve as this Closure Event's Verifier. A fourth party or a genuinely fresh instance of one of the three (no shared session context on this specific work) is needed.
+- **Independence attestation:** N/A pending Verifier assignment.
+- **Human ratification:** **Required** — `Admin/Auditor_Protocols.md` is constitutional/meta-governance per the Mandatory Human Ratification list. Not yet ratified.
+- **Recording location:** this sidecar entry (primary); `Unknowns.md` index update pending ratification.
 
 ---
 
