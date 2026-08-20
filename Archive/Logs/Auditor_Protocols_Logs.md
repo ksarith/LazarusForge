@@ -304,7 +304,7 @@ entry and the full Resolution Log — lives here now.
 
 | Field         | Value                        |
 |---------------|------------------------------|
-| Status        | Open                         |
+| Status        | Resolved — Payment via Specification |
 | Risk          | Medium                       |
 | Priority      | Major                        |
 | Type          | Governance                   |
@@ -320,6 +320,22 @@ entry and the full Resolution Log — lives here now.
 **Resolution Path:** Payment via Specification — define closure authority doctrine: minimum conditions for Resolved status, whether human governing authority confirmation is required for Blocking/Critical entries, and what constitutes a valid closure challenge. Cross-reference AP-004 arbitration framework and Size Management Rule 5 (Unknown Budget).
 
 *Surfaced by Claude — Adversarial Challenge Class 1, 2026-06-24.*
+
+**Closure Event (2026-08-19):**
+- **Unknown:** AP-013
+- **Proposed status:** Resolved
+- **Payment type:** Specification
+- **Basis:** The §Unknown Closure Authority section (`Admin/Auditor_Protocols.md`, integrated 2026-08-19) defines closure authority in full: Proposer/Verifier roles and independence rule, the human unilateral-override path reconciled against existing Human Override Doctrine, minimum Closure Event recording requirements (this entry), the Mandatory Human Ratification list, the five-state status taxonomy with "Closed" explicitly prohibited as a label, disagreement/challenge handling routed to AP-004, and four residuals (AP-013-R1 through R4) explicitly scoped as non-blocking child notes rather than gaps in this specification. This closes the ambiguity the entry above describes — who may mark an unknown Resolved, whether quorum is required, what happens on disagreement — without resolving the empirical/numerical questions the residuals correctly defer.
+- **Proposer:** Claude — Synthesizer, 2026-08-19
+- **Verifier:** Grok — Verifier, 2026-08-19. Independent verification pass performed against the four dimensions the requesting packet specified: Basis accuracy, field completeness, Mandatory Human Ratification determination, and independence-rule compliance for Claude serving as Proposer. Verdict: **Conditional Pass** — no substantive defects found requiring rejection or revision; conditions were the completion of this Verifier field and independence attestation (satisfied by this entry) and human ratification (still outstanding).
+- **Independence attestation:** Claude (Proposer) and Grok (Verifier) are different agent instances. Grok drafted the underlying specification text and Claude verified that text in two prior passes — both parties disclose this shared history rather than claim blind independence, but neither occupies both Proposer and Verifier roles for *this* Closure Event, which is what the independence rule specifically governs.
+- **Human ratification:** **Required** — `Admin/Auditor_Protocols.md` is a constitutional/meta-governance file per the Mandatory Human Ratification list this same specification defines, confirmed correct by Grok's Verifier pass (point 3). James, as Human Governing Authority, has not yet ratified this Closure Event. **This is the only remaining step.**
+- **Recording location:** this sidecar entry (primary, complete); `Unknowns.md` index update pending ratification.
+- **Human ratification record:** Ratified by James, Human Governing Authority, 2026-08-19. Rationale: the §Unknown Closure Authority specification satisfies the ambiguity this unknown identified — who may close an unknown, whether quorum is required, and what happens on disagreement — without overreaching into the residual empirical/numerical questions correctly deferred as AP-013-R1 through R4. Proposer (Claude) and Verifier (Grok) findings both reviewed; no unresolved objection. Accepted risk: none identified beyond the four disclosed residuals, which remain open as non-blocking child notes.
+
+**Resolution:** Closed 2026-08-19 via the §Unknown Closure Authority specification integrated the same day into `Admin/Auditor_Protocols.md`. Full Closure Event above: Claude proposed, Grok independently verified (Conditional Pass, no substantive defects), James ratified as Human Governing Authority (mandatory, since this is itself a constitutional/meta-governance file).
+
+**Lessons Learned:** The specification that resolves AP-013 was itself created and closed under the exact procedure it defines — the first real exercise of the doctrine, not just its authorship. Two things worth carrying forward: (1) a Closure Event can be genuinely complete on content while still correctly blocked on process — this one sat with all its substantive fields filled and zero defects found, purely awaiting the ratification step its own rules required; that's not a flaw in the event, it's the doctrine working as designed. (2) "Independent" verification is rarely absolute in a small multi-agent working group — both Claude (Proposer) and Grok (Verifier) disclosed shared prior context on the underlying text rather than claiming blind independence, and the doctrine's own independence rule is scoped narrowly enough (same act, same instance) that honest disclosure of imperfect independence is compatible with a valid Closure Event, rather than invalidating it.
 
 ---
 
