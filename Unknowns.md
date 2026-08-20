@@ -3,6 +3,8 @@
 
 **Full version history in `Unknowns_Changelog.md` (2026-07-19 cleanup pass, following the precedent set by `Archive/Logs/AUDIT_HARNESS_CHANGELOG.md` and `Archive/Logs/Forge_Audit_Kit_Changelog.md`; scrubbed to current-version-only 2026-07-28 — the "current plus last four in full" window was itself compressed further, since the Audit Trail below now carries the compressed record for every version back to v1.0, and the changelog carries full text for all of them. This block now keeps only the current version.)**
 
+**Version 4.68 — 2026-08-19. AP-005 (verification termination threshold) Resolved — Payment via Specification, ratified by James. Second unknown closed under the AP-013 closure doctrine. Grok proposed; when asked to also self-verify, Grok correctly declined citing the independence rule against itself — ChatGPT then served as an honestly-disclosed (not blind) independent Verifier, Pass conditional on ratification. Full Closure Event in `Archive/Logs/Auditor_Protocols_Logs.md`'s AP-005 sidecar entry. Four residuals (AP-005-R1–R4) remain open as non-blocking child notes.**
+
 **Version 4.67 — 2026-08-19. AP-013 (unknown closure authority) Resolved — Payment via Specification, ratified by James as Human Governing Authority. First unknown closed under its own newly-adopted closure doctrine: Claude proposed, Grok independently verified (Conditional Pass), James ratified. Full Closure Event in `Archive/Logs/Auditor_Protocols_Logs.md`'s AP-013 sidecar entry. Four residuals (AP-013-R1–R4) remain open as non-blocking child notes.**
 
 **Version 4.66 — 2026-08-18. Registry catch-up: three stale/incomplete entries corrected, found while checking whether Unknowns.md needed updates after several same-day fixes elsewhere.**
@@ -278,7 +280,7 @@ GH-009 (Emergent heuristic conflict — N² interaction scaling)
 | AP-002 | Override vs. immutability boundary — EF-0.4/EF-0.5 progress; Ethical_Constraints.md confirmation pending | `Admin/Auditor_Protocols.md` | In Progress | Vehicle | Major |
 | AP-003 | Audit trail schema | `Admin/Auditor_Protocols.md` | Open | — | Minor |
 | AP-004 | Cross-auditor disagreement resolution — three-tier framework defined | `Admin/Auditor_Protocols.md` | In Progress | Vehicle | Major |
-| AP-005 | Verification termination threshold — four necessary conditions defined | `Admin/Auditor_Protocols.md` | In Progress | Vehicle | Major |
+| AP-005 | **Resolved — Payment via Specification, ratified 2026-08-19.** Verification termination threshold now defined in full: `Admin/Auditor_Protocols.md` §Verification Termination Threshold. Full Closure Event (Proposer: Grok; Verifier: ChatGPT, Pass conditional on ratification — Grok itself correctly declined to self-verify as recorded Proposer; Human Ratification: James) recorded in `Archive/Logs/Auditor_Protocols_Logs.md`'s AP-005 sidecar entry. Four residuals (AP-005-R1 through R4) remain open as non-blocking child notes | `Admin/Auditor_Protocols.md` | Resolved | — | Major |
 | AP-007 | Repository integrity and doctrine lineage — EF-0.3/EF-0.2 L3 doctrine layer; enforcement gap in Security_Protocols.md | `Admin/Auditor_Protocols.md` | In Progress | Vehicle | Major |
 | AP-008 | Technical implementation of quarantine actions undefined | `Admin/Auditor_Protocols.md` | Open | — | Major |
 | AP-010 | Physical test harness integration with epistemic grounding layer undefined | `Admin/Auditor_Protocols.md` | Open | — | Major |
