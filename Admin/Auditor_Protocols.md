@@ -1,5 +1,5 @@
 # Auditor_Protocols.md
-**Version 0.38**
+**Version 0.39**
 
 ---
 
@@ -19,7 +19,7 @@
 | Verification Ref | Admin/Verification_Gates.md                                      |
 | Last Audit       | 2026-08-02                                                          |
 | Auditor          | Grok — human-directed, 2026-08-10: Rule 10 (AP-035) added to AI Contribution Protocols — External Pseudo-Audit Scope and Logging Destination. Spec Gates and Open Unknowns count unchanged (14). Prior: Claude — Synthesizer/Auditor, 2026-08-03: GMP §VII to Challenge Class 10 high-coupling table; Sidecar SHA-256 refreshed; AP-033/Rule 9 (v0.35); AP-017 Resolved (v0.34) — see `Archive/Logs/Auditor_Protocols_Logs.md` Resolution Log for full audit history. |
-| Open Unknowns    | 13 (AP-013 Resolved — Payment via Specification, 2026-08-19; see `Archive/Logs/Auditor_Protocols_Logs.md` Resolution Log for the full Closure Event) |
+| Open Unknowns    | 12 (AP-013 Resolved 2026-08-19; AP-005 Resolved — Payment via Specification, 2026-08-19; see `Archive/Logs/Auditor_Protocols_Logs.md` Resolution Log for full Closure Events) |
 | Active Disputes  | 1                                                                   |
 | Highest Risk     | High                                                                |
 | Sidecar Link     | Archive/Logs/Auditor_Protocols_Logs.md#auditor-notes--unknowns     |
@@ -760,6 +760,39 @@ Demotion requires a logged rationale in the owning file's sidecar and an updated
 
 ---
 
+### Verification Termination Threshold
+*AP-005 resolution vehicle. Payment via Specification — 2026-08-19.*
+
+**Verification seeks sufficient falsifiability, not exhaustive certainty.** Infinite audit recursion is itself a governance failure mode. Once the necessary conditions below are met, continued review of the same claims yields diminishing epistemic returns and risks converting the audit process into documentation theater. Termination of verification for a given cycle is therefore permitted — and in some cases required — when those conditions hold.
+
+Termination of verification is **not**: automatic promotion to Specification; automatic closure of any Unknown (that remains governed by Unknown Closure Authority above); a claim that residual uncertainty is zero; or a substitute for Payment via Validation where empirical work remains outstanding.
+
+**Necessary conditions.** Verification of a document may terminate for the current audit cycle when all of the following hold:
+
+1. **No unresolved contradictions with the Grounding Vector** — no open contradiction exists between the document's claims and returns from the software or physical grounding vectors (EF-0.8 / EF-0.8b). Any previously flagged contradiction has been resolved, demoted to an explicit Unknown with a resolution path, or accepted under a documented Provisional designation.
+2. **Last Adversarial Challenge Battery produced no epistemic-state-changing findings** — the most recent Battery application (full or partial, as required by document maturity) yielded no finding that altered any claim's epistemic state (UNKNOWN ↔ PROVISIONAL ↔ VERIFIED) or required a new Unknown entry. Findings already logged and routed into existing resolution paths do not block termination.
+3. **All sidecar Unknowns carry documented resolution paths** — every open entry in the document's sidecar has an explicit Resolution Path field that is non-empty and points to a concrete next action, Vehicle, or external dependency. "TBD" or blank paths block termination.
+4. **Provenance labels are internally consistent** — quantitative confidence labels and institutional provenance labels (per the §AP-006 hierarchy above) are present where required and do not conflict with one another or with the document's own epistemic-state claims.
+
+These four conditions are **necessary. They are not sufficient** by themselves for Specification promotion or for any irreversible action.
+
+**Sufficiency and human ratification guardrail.** Even when all four necessary conditions are satisfied, Human Governing Authority ratification remains required before a document may be promoted past Candidate Spec, or before any claim that "verification is complete" is treated as binding for irreversible downstream decisions. This anchors to the closed Confidence Threshold Doctrine (EC-001, `Admin/Ethical_Constraints.md`, closed 2026-08-11): confidence thresholds are risk-tiered, and default-to-non-action applies where residual uncertainty is load-bearing. Termination of the audit cycle's verification pressure is therefore separable from promotion, and from Unknown closure — the latter governed entirely by Unknown Closure Authority above.
+
+**Interaction with existing rules:** if auditors disagree on whether the four conditions hold, escalate under AP-004. EF-0.2 Epistemic Decay escalation triggers remain live regardless of termination status — termination criteria do not suppress Level 1–3 responses. Condition 2 references the Adversarial Challenge Battery; it does not alter Battery cadence or required classes. Termination is not itself a Resolution Taxonomy payment type — residual Validation Needed must still be stated where applicable.
+
+**Residual risks, logged as child notes and not blocking this section's Payment via Specification:**
+
+| ID | Residual | Why left open |
+|----|----------|---------------|
+| AP-005-R1 | Calibration of "epistemic-state-changing finding" edge cases (minor wording vs. material claim shift) | Requires additional audit-cycle experience; false precision risk if specified now |
+| AP-005-R2 | Whether condition 3 should eventually require active Vehicle advancement rather than merely documented paths | Deferred pending AP-019 / Vehicle Advancement Visibility maturation |
+| AP-005-R3 | Interaction with multi-document dependency graphs (termination of A while B, which A cites, still fails the conditions) | Systems-level question; out of scope for single-document termination |
+| AP-005-R4 | Automated detection / enforcement of the four conditions | Requires AP-007 / tooling maturity |
+
+*§AP-005 — Resolved, Payment via Specification, ratified 2026-08-19. Closes AP-005 (logged 2026-05-23). Drafted by Grok as a candidate integration proposal 2026-08-19, lifting the four-condition framework already present in this file's sidecar (Internally Derived / Placeholder since 2026-06-24) into dedicated doctrine, and reconciling a stale dependency: the prior sidecar text required "cross-referencing EC-001 once that entry matures," and EC-001 closed 2026-08-11 — verified directly against `Admin/Ethical_Constraints.md` before this integration, not accepted on the proposal's citation alone. Constitutional anchor: EF-0.0 (Epistemic Anchor), Axiom Q-1 (Reality Grounding, via EC-001). Full Closure Event — Proposer (Grok), Verifier (ChatGPT, Pass conditional on ratification — Grok itself correctly declined to self-verify as recorded Proposer), Human Ratification (James, Human Governing Authority) — recorded in `Archive/Logs/Auditor_Protocols_Logs.md`'s AP-005 sidecar entry. Human-directed.*
+
+---
+
 ### Inventory Calcification Check
 *RC-008 resolution vehicle. Companion to the Expiry Rule.*
 
@@ -1302,6 +1335,7 @@ Auditor effectiveness is evaluated through **constitutional and epistemic fideli
 | May 2026 | Audit Review  | Lightweight audit outputs without standardized structure    | Audits lacked traceability and escalation consistency              | Audit artifacts require standardized outputs; structured metadata improves reliability    | Measured   | No                  |
 | Jun 2026 | Audit Review  | Named indicator set defined in AP-001 before any baseline runtime | Premature metric naming creates Goodhart's Law exposure before calibration is possible | Indicators must be derived from observed behavior; no metric named before first full Battery cycle | Analogous | No |
 | Aug 2026 | Multi-Agent Closure Event | Closed AP-013 (closure authority itself) using the exact procedure the new specification defines | Nothing failed — first real exercise of a newly-written process, not just its authorship | Content-complete Closure Events can still correctly wait on process (here, mandatory human ratification); "independent" verification in a small working group is honest disclosure of imperfect independence, not literal blindness, and the doctrine's independence rule is scoped narrowly enough to permit that | Analogous | No |
+| Aug 2026 | Multi-Agent Closure Event | Closed AP-005 under the same procedure; Proposer (Grok) attempted, at request, to also serve as its own Verifier | Grok correctly refused, citing the independence rule against itself | A refusal to self-verify is stronger evidence a governance rule works than an easy pass — when the obvious next Verifier is also entangled (here Claude, who performed the integration), a third present-but-uninvolved agent is a legitimate lower-friction substitute for a cold instance, provided the disclosure is honest | Analogous | No |
 
 ---
 
