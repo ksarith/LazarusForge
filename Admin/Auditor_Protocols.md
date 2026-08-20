@@ -1,5 +1,5 @@
 # Auditor_Protocols.md
-**Version 0.37**
+**Version 0.38**
 
 ---
 
@@ -19,7 +19,7 @@
 | Verification Ref | Admin/Verification_Gates.md                                      |
 | Last Audit       | 2026-08-02                                                          |
 | Auditor          | Grok — human-directed, 2026-08-10: Rule 10 (AP-035) added to AI Contribution Protocols — External Pseudo-Audit Scope and Logging Destination. Spec Gates and Open Unknowns count unchanged (14). Prior: Claude — Synthesizer/Auditor, 2026-08-03: GMP §VII to Challenge Class 10 high-coupling table; Sidecar SHA-256 refreshed; AP-033/Rule 9 (v0.35); AP-017 Resolved (v0.34) — see `Archive/Logs/Auditor_Protocols_Logs.md` Resolution Log for full audit history. |
-| Open Unknowns    | 14                                                                  |
+| Open Unknowns    | 13 (AP-013 Resolved — Payment via Specification, 2026-08-19; see `Archive/Logs/Auditor_Protocols_Logs.md` Resolution Log for the full Closure Event) |
 | Active Disputes  | 1                                                                   |
 | Highest Risk     | High                                                                |
 | Sidecar Link     | Archive/Logs/Auditor_Protocols_Logs.md#auditor-notes--unknowns     |
@@ -707,6 +707,59 @@ Demotion requires a logged rationale in the owning file's sidecar and an updated
 
 ---
 
+### Unknown Closure Authority
+*AP-013 resolution vehicle. Payment via Specification — 2026-08-19.*
+
+**Closure is an authority act, not a narrative act.** An unknown may only change status from Open / In Progress to a terminal or transitional state through an explicit, recorded Closure Event that satisfies the rules below. Unilateral status changes, structural implication of closure, or "Status: CLOSED" language without a conforming Closure Event are Epistemic Integrity Violations under [EF-0.0] §2 and Rule 9 (AP-033).
+
+**Authority roles:**
+
+| Role | May do | May not do |
+|------|--------|------------|
+| **Proposer** | Draft a Closure Proposal citing the Resolution Taxonomy payment type, the evidence or decision basis, and the exact status change requested | Unilaterally change the unknown's status field without a Closure Event |
+| **Verifier** | Confirm that the Closure Proposal meets the formal requirements below and that the cited basis is present and correctly typed | Author the original proposal being verified (independence rule) |
+| **Human Governing Authority** | (a) Ratify or reject any Closure Event on the Mandatory Human Ratification list below; (b) Override a Verifier decision with documented reasoning; (c) Unilaterally close a non-Mandatory unknown by issuing a conforming Closure Event under the override path described below | Be bypassed for items on the Mandatory list; issue an undocumented or non-conforming closure |
+| **Any Agent or Human** | Surface a Closure Challenge against a recent Closure Event | Silently re-open or re-close without a new recorded event |
+
+**Independence rule (agents):** a single agent instance may not occupy both Proposer and Verifier roles for the same Closure Event.
+
+**Human path:** a human may serve as Proposer, Verifier, or both (subject to the reconciliation below). Humans are not required to emit an AI-style role-declaration string. Identity is recorded as name/handle + date + capacity ("Human Governing Authority" or "Human Contributor").
+
+**Reconciliation with Human Override Doctrine (above):** closure of an unknown is a verification process decision and therefore falls inside the existing override scope. The normal (preferred) path is Proposer + independent Verifier (± Human ratification when Mandatory). Human Governing Authority retains the right to unilaterally close a non-Mandatory unknown; exercising that right constitutes an override of the normal Proposer+Verifier structure and must still produce a full Closure Event that records that the closure was performed under Human Override, the rationale, the accepted risk, and the date. This does not narrow existing human override rights — it makes the recording requirements for closure-specific overrides explicit so closure events remain legible and challengeable. Override rights continue to stop at the Anti-Weaponization and Life Preservation hard-line doctrines in `Admin/Ethical_Constraints.md`; no closure authority may touch those.
+
+**Closure Event requirements (minimum):** a valid Closure Event must contain (1) the unknown ID, exact and collision-checked; (2) the proposed terminal/transitional status and the Resolution Taxonomy payment type that justifies it; (3) a basis statement, 1–3 sentences; (4) Proposer identity + capacity + timestamp (agent: role declaration string; human: name/handle + capacity); (5) Verifier identity + capacity + timestamp, a different agent instance or a human — exception: when Human Governing Authority exercises the unilateral override path, this field reads "Human Override — no separate Verifier"; (6) an independence attestation for agent-agent pairs, or "Human Override path used"; (7) a human ratification record if required below, or "Human ratification not required"; (8) a recording location — primary entry in the owning file's sidecar Resolution Log, with an `Unknowns.md` index update only if the unknown is globally indexed. Missing any required element renders the event invalid; the unknown remains in its prior status.
+
+**Mandatory Human Ratification** applies when any of the following is true: the unknown is marked Blocking = Yes or Risk = Critical/High; the unknown sits in a constitutional or meta-governance file (`Governance_Charter`, `Auditor_Protocols`, `Ethical_Constraints`, `Verification_Gates`, `CIR_Gov`, etc.); the proposed payment type is Payment via Constitutional Decision; the Closure Event would reduce the global Open Unknown count by more than three entries in a single cycle (anti-sweep rule); or a Closure Challenge has been raised and remains unresolved. All other unknowns may close on Proposer + independent Verifier, or Human unilateral override, provided the requirements above are satisfied.
+
+**Status taxonomy mapping:**
+
+| Final Status | Allowed Payment Types | Notes |
+|--------------|-----------------------|-------|
+| **Resolved** | Specification, Validation, Constitutional Decision, Refactoring | For Specification, residual "Validation Needed" must be stated if still outstanding. |
+| **Discharged** | Discharge | Points to canonical owner elsewhere. |
+| **Deferred** | (transitional) | Parked with dated re-entry condition or dependency. |
+| **Superseded** | Refactoring or Discharge | Original question no longer meaningful. |
+| **Open / In Progress** | — | Default; no valid Closure Event has succeeded. |
+
+"Closed" is not a permitted status label.
+
+**Disagreement handling:** if the Verifier rejects the Closure Proposal, the unknown stays in its prior status and the Proposer may revise/resubmit or raise the disagreement under AP-004. If a Closure Challenge is raised within two audit cycles of the Closure Event, status reverts to In Progress pending AP-004 resolution or human decision. Persistent disagreement on a Mandatory-list item escalates to Human Governing Authority under the AP-004 Tier 3 path. AP-004 is itself In Progress; full load-bearing use of the disagreement path awaits AP-004's completion.
+
+**Interaction with existing rules:** Rule 9 (AP-033) remains in force. The Resolution Taxonomy is authoritative for *what* is being paid; this section governs *who* may apply it. The Unknown Budget / Size Management rules gain an enforcement path via rejection of non-conforming closures. AP-005 (verification termination threshold) remains independent — closure authority does not itself decide when verification is sufficient.
+
+**Residual risks, logged as child notes and not blocking this section's Payment via Specification:**
+
+| ID | Residual | Why left open |
+|----|----------|---------------|
+| AP-013-R1 | Exact numerical definition of "independent agent instance" under multi-model / multi-session conditions | Requires GOV-008-adjacent clarity; false precision risk |
+| AP-013-R2 | Automated detection of non-conforming status changes | Enforcement machinery (AP-007 / GOV-003) |
+| AP-013-R3 | Whether a single human may serve as both Verifier and Ratifier on non-Mandatory items | Left to Human Governing Authority practice |
+| AP-013-R4 | Retroactive application to historical "Resolved" entries that pre-date this doctrine | Separate one-time audit pass; not part of forward doctrine |
+
+*§AP-013 — Resolved, Payment via Specification, ratified 2026-08-19. Closes AP-013 (logged prior to 2026-08-16, exact origination date not recorded in this file's own history). Drafted by Grok as a candidate proposal 2026-08-19; Revision 1 addressed two findings (human-override reconciliation; human Proposer/Verifier path) from an independent verification pass by Claude the same day, which then passed the revision on a second review. Constitutional anchor: EF-0.0 (Epistemic Anchor), Rule 9 / AP-033 (Resolution Claims Require Governance Access). Full Closure Event — Proposer (Claude), Verifier (Grok, Conditional Pass), Human Ratification (James, Human Governing Authority) — recorded in `Archive/Logs/Auditor_Protocols_Logs.md`'s AP-013 sidecar entry. Human-directed.*
+
+---
+
 ### Inventory Calcification Check
 *RC-008 resolution vehicle. Companion to the Expiry Rule.*
 
@@ -1248,6 +1301,7 @@ Auditor effectiveness is evaluated through **constitutional and epistemic fideli
 | May 2026 | Audit Review  | Consensus treated as truth in multi-agent audit cycles      | Epistemic corruption — ten nodes agreeing on a wrong answer produces confident wrongness | Challenge Class 9 (Epistemic Corruption) added; minority-report preservation required | Analogous  | Yes                 |
 | May 2026 | Audit Review  | Lightweight audit outputs without standardized structure    | Audits lacked traceability and escalation consistency              | Audit artifacts require standardized outputs; structured metadata improves reliability    | Measured   | No                  |
 | Jun 2026 | Audit Review  | Named indicator set defined in AP-001 before any baseline runtime | Premature metric naming creates Goodhart's Law exposure before calibration is possible | Indicators must be derived from observed behavior; no metric named before first full Battery cycle | Analogous | No |
+| Aug 2026 | Multi-Agent Closure Event | Closed AP-013 (closure authority itself) using the exact procedure the new specification defines | Nothing failed — first real exercise of a newly-written process, not just its authorship | Content-complete Closure Events can still correctly wait on process (here, mandatory human ratification); "independent" verification in a small working group is honest disclosure of imperfect independence, not literal blindness, and the doctrine's independence rule is scoped narrowly enough to permit that | Analogous | No |
 
 ---
 
@@ -1468,6 +1522,8 @@ cycles.
 ## Status
 
 **Version 0.36 — Draft, Body Stability Transitional.** Full audit history: `Archive/Logs/Auditor_Protocols_Logs.md` Resolution Log. This section previously carried a duplicate, stale copy of early version history (v0.14 through v0.16) that was never updated after the file moved past those versions — trimmed 2026-07-23 as pure duplication of content the archive's Resolution Log already carries in full; see that log's v0.28 entry.
+
+**Note (2026-08-19):** this Status block was already lagging the file's own header version (header at v0.37, this block still describing v0.36) before this edit — a pre-existing gap, not addressed here beyond this note. v0.37 (2026-08-10) added Rule 10 (AP-035). v0.38 (2026-08-19) integrated the AP-013 Unknown Closure Authority candidate specification into §Unknowns Registry — see that section's own Resolution Log line for full provenance. Full history remains in `Archive/Logs/Auditor_Protocols_Logs.md`.
 
 **What must remain constant:**
 
