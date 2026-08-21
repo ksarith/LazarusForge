@@ -105,7 +105,7 @@ v4.56 migrated to changelog intact.
 Ran the five patterns against CE-006. §1 confirmed expected hollow dependencies still hollow (AS-003, Gate_05 thermal) and newly solid ones solid (GR-003 two-outcome model now available for residual NaOCl). §2 reused GR-003 rather than inventing a parallel disposition path. §3 caught real staleness in the top-of-entry Resolution Path (still listed detection/alarm and caustic-dosing as remaining after body had answered them). Refreshed to an explicit paper-complete vs equipment-gated split. §4 conclusion: further paper passes will not move CE-006 toward Resolved — remaining work is vessel build, electrode-area selection, AS-003 calibration, Gate_05 exhaust data, quantitative NaOCl sizing, membrane sourcing/test. §5 noted Arc_Scope_Map for later refresh. Status remains In Progress; Blocking Yes for CLF-004 unchanged. No unknowns opened or closed. v4.60 migrated to changelog intact.
 
 **Version 4.60 — 2026-08-15 (continued). `Resolution_Methodology.md` self-corrected (v0.4) after a direct question surfaced a real labeling error; Pattern 5 actually run for the first time and caught a genuine (small) Scope Boundary drift.**
-Prompted by James asking whether the methodology file requires Unknowns.md/
+Prompted by the Human Governing Authority asking whether the methodology file requires Unknowns.md/
 changelog updates — the precise answer is no, not by name (§5 says "note...
 updates required"; the version-bump-and-migrate convention is `Unknowns.md`'s
 own documented rule, not this file's). Checking that claim precisely surfaced
@@ -125,7 +125,7 @@ scale — not a new failure mode. No unknowns opened or closed. v4.59 migrated
 to changelog intact.
 
 **Version 4.56 — 2026-08-15. Operations folder review sweep complete (Gate_01–07, Air_Scrubber, Electronics, Energy, Plastics, Woodworking — ~64 unknowns reviewed across Rounds 1–7); three digital-only spec-depth passes (CE-006, TS-002, GI-002); one new unknown registered (AS-005).**
-Given James's confirmation that no physical equipment exists yet, work this
+Given confirmation from the human governing authority that no physical equipment exists yet, work this
 session deliberately stayed in the digital/doctrinal realm — no claim of
 operational validation appears anywhere below. **Review sweep:** every live
 unknown in the Operations folder had its Resolution Path checked against
@@ -264,7 +264,7 @@ CLF-010 remains Open — a separate audit event is still required for either
 the taxonomy or this countermeasure to close.
 
 **Version 4.46 — 2026-08-07. EC-016 corrected and downgraded — no live dual-ownership conflict found.**
-James asked directly how to resolve dual-ownership conflicts, prompting the
+the human governing authority asked directly how to resolve dual-ownership conflicts, prompting the
 first actual check of the underlying claim against `Governance_Charter.md`'s
 own content. Found a full `## Governance Authority Hierarchy` section, an
 explicit "Governance hierarchy" ownership-table row, and a 2026-08-05

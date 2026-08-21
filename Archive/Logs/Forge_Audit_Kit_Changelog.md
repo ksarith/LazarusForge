@@ -82,7 +82,7 @@ That check has now been run. `AUDIT_HARNESS.py` line 368: `CURRENT_CYCLE = 10   
   — not for its own sake"), naming explicitly what the existing
   "infinite audit recursion is a governance failure mode" line already
   gestured at without stating as a standalone principle. Sourced from
-  a cross-agent (Grok/Gemini/ChatGPT) prompt-design discussion James
+  a cross-agent (Grok/Gemini/ChatGPT) prompt-design discussion the human governing authority
   brought over from r/InnovativeAIChats; adapted rather than adopted
   wholesale — the same discussion's larger proposal (a four-tag
   evidence-provenance scheme) was declined for `Admin/Auditor_Protocols.md`
