@@ -19,6 +19,7 @@ The single highest-value thing anyone could run right now: **three physically se
 2. Load `Admin/Forge_Audit_Kit.md` and have the agent declare its role before proposing anything.
 3. Follow `Admin/Auditor_Protocols.md` — especially the AI Contribution Protocols and the Fallacy Checklist.
 4. Never let an agent advance a Status, Spec Gate, or Body Stability field in the same edit that proposes the content justifying it. If an agent claims a physical result (a test cycle, a hardened threshold, a validated measurement) that it has no way to have actually run, don't accept it — check it against what the repository's own doctrine says is currently possible before trusting the claim. This has happened before; see the fabrication-vigilance note in `Admin/Auditor_Protocols.md` Rule 6.
+5. Closing an open Unknown now follows a formal process, not just care: see `Admin/Auditor_Protocols.md` §Unknown Closure Authority. In short — a Closure Event needs a Proposer, an independent Verifier (a different agent instance, never the Proposer itself), and Human Ratification if the target file is constitutional/meta-governance. "Closed" is not a permitted status label; the real outcomes are Resolved, Discharged, Deferred, or Superseded. An agent that proposes closing an unknown should not also verify that closure.
 
 Having an agent review the repository from the outside — without loading the actual files — does little. The zip needs to actually be in context for the output to be worth anything.
 

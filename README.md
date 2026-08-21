@@ -460,7 +460,18 @@ Active architecture development. The repository is a living governed document, n
 completed specification.
 
 All seven operational gates exist (Gate_01 through Gate_07). The governance layer has
-reached constitutional maturity with Tier 1 Axioms in place. The architecture layer
+reached constitutional maturity with Tier 1 Axioms in place. As of August 2026, the
+governance layer also has a formal process for how the repository actually decides
+things — not just what it believes: Unknown Closure Authority (who may propose and
+verify closing an open question, and when human ratification is mandatory), a
+Verification Termination Threshold (when an audit cycle may stop without claiming
+false certainty), cross-auditor disagreement resolution, human attestation provenance
+rules, a governance complexity ceiling and pruning doctrine (so the governance layer
+itself stays bounded), and a named cross-cutting Reversibility principle connecting
+mechanisms — Gate_03's point-of-no-return doctrine, sidecar permanence, the Epistemic
+Ledger — that had been independently reinvented without reference to one another. See
+`Admin/Auditor_Protocols.md` and `Admin/Governance_Charter.md` for the full doctrine.
+The architecture layer
 now includes five peer foundational files (Engineering.md, Mechanical_Structures.md,
 Thermal_Systems.md, Friction_Dynamics.md, Chemistry.md) covering the physical-world
 doctrine layer in full. Nine Challenges/ files establish the problem layer across three
