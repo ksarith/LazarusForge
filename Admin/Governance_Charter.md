@@ -18,7 +18,7 @@
 | Verification Ref | Admin/Verification_Gates.md                                      |
 | Last Audit       | 2026-08-05                                                          |
 | Auditor          | Claude — Synthesizer, added two consolidated-reference sections (Human Override Doctrine, Constitutional Amendment Boundaries) and one clarifying sentence on doctrine-vs-procedures ownership; no substantive doctrine changed, corrects a prior Copilot audit's false "doctrine is absent" findings by pointing to where the existing text already lives (human-directed), 2026-08-05; prior: Claude — Sidecar/Resolution Log relocation to `Archive/Logs/Governance_Charter_Changelog.md`, GOV-022 registered (human-directed), 2026-07-23; Claude — Skeptic/Auditor; Gemini — Skeptic/Auditor; Grok — Exploration audit 2026-07-05; Gemini — Exploration audit 2026-07-05; Claude — GOV-011 resolution 2026-07-05; Claude — Skeptic/Auditor, 2026-07-16; Claude — GOV-013 drafted (multi-agent synthesis, human-directed), 2026-07-16; Claude — GOV-013/EDL Track classification confirmed (human-directed), 2026-07-17; ChatGPT — adversarial pass, 2026-07-17; Claude — GOV-014 through GOV-020 verified against source and registered (human-directed), 2026-07-17; Claude — GOV-012 threshold deferral, GOV-013 ratification review, GOV-006 biometric addendum (human-directed), 2026-07-19 |
-| Open Unknowns    | 20                                                                  |
+| Open Unknowns    | 17 (GOV-014, GOV-016, GOV-020 Resolved — Payment via Specification, 2026-08-20; see `Archive/Logs/Governance_Charter_Changelog.md` Resolution Log for full Closure Events) |
 | Active Disputes  | 1                                                                   |
 | Highest Risk     | Critical (GOV-013, GOV-015, GOV-018 — see `Archive/Logs/Governance_Charter_Changelog.md`; promotion-blocking risk unchanged from GOV-003/GOV-005) |
 | Sidecar Link     | Archive/Logs/Governance_Charter_Changelog.md#auditor-notes--unknowns |
@@ -692,6 +692,118 @@ Indicators include:
 - Tier 1 Axioms cited as justification for actions they were designed to prevent
 
 Documentation quality alone is not evidence of correctness.
+
+---
+
+## Governance Complexity Ceiling
+*GOV-014 resolution vehicle. Payment via Specification — 2026-08-20.*
+
+Governance complexity must remain proportional to operational value. This section defines the operational bound that makes that principle enforceable.
+
+**Problem statement.** Governance Closure Doctrine and Governance Anti-Theater Doctrine (above) already constrain *recursive* growth — governance that exists primarily to govern other governance. They do not constrain the *aggregate* volume, inter-dependency, or cognitive load of ordinary subordinate doctrine. It is therefore possible for every individual addition to be locally proportionate while the total set becomes unmanageable — a slow, compounding failure mode, cheap to bound early and expensive once the document set has already sprawled.
+
+**Operational definition of governance complexity.** Measured along three independently checkable, deliberately coarse dimensions — finer metrics belong to GOV-020 (Governance Cost Metric) once that entry is specified:
+
+1. **Doctrine File Count** — number of active, non-archived Markdown files whose primary purpose is governance, protocol, constraint, or audit doctrine (currently the `Admin/` tree plus any future governance-owned modules).
+2. **Cross-Reference Density** — average number of unique internal cross-references per active governance file (inbound + outbound, excluding pure navigational tables of contents and the Unknowns index).
+3. **Dependency Graph Depth** — longest path of "depends-on / is-constrained-by / is-owned-by" relationships from any leaf governance file to a Tier 1 Axiom or this Charter itself.
+
+**Ceiling and review triggers.** There is no absolute hard ban on new doctrine files. Instead, the following soft ceiling triggers a mandatory Complexity Review:
+
+| Trigger condition | Action required |
+|-------------------|-----------------|
+| Doctrine File Count exceeds 40 active governance files | Complexity Review |
+| Cross-Reference Density exceeds 12 unique internal links per file (rolling average of the 10 densest files) | Complexity Review |
+| Dependency Graph Depth exceeds 5 | Complexity Review |
+| Any single new file would push two or more of the above thresholds | Complexity Review before the file may be added |
+
+A Complexity Review is a time-bounded, documented process (target ≤ 14 days) that must produce one of four outcomes: **Justify & Retain** — current complexity is still proportional to operational value, explicit rationale recorded; **Prune** — invoke the process defined under GOV-016 once ratified, to retire or demote obsolete doctrine; **Consolidate** — merge or refactor overlapping files to reduce count/density/depth without loss of constraint; or **Defer with Watch** — temporary acceptance with a dated re-review horizon, maximum one audit cycle.
+
+Failure to complete a triggered Complexity Review within the allowed window places the affected sub-tree under STATE_HOLD for further governance expansion until the review is closed.
+
+**Relationship to existing doctrine.** This ceiling is subordinate to, and does not replace, Governance Closure Doctrine or Governance Anti-Theater Doctrine above. It operationalizes the already-stated principle that governance complexity must remain proportional to operational value. Actual retirement of obsolete doctrine is owned by GOV-016 — not yet ratified as of this section's integration, so the Prune outcome above is a forward reference, not yet executable; Justify & Retain, Consolidate, and Defer with Watch remain available in the meantime. Quantitative cost/benefit measurement is owned by GOV-020. This section supplies only the accumulation bound and the review trigger.
+
+**Explicit non-goals.** This section does not define a fixed numerical quota that may never be exceeded. It does not create a new audit role or new verification gate. It does not authorize automatic deletion of any file — sidecar permanence rules remain intact. It does not apply to engineering, test, or operational files outside the governance ownership boundary.
+
+**Residual risks, logged as child notes and not blocking this section's Payment via Specification:**
+
+| ID | Residual | Why left open |
+|----|----------|---------------|
+| GOV-014-R1 | Exact numerical thresholds (40 files, density 12, depth 5) may need calibration once the repository exceeds roughly 30 governance files | Placeholder values; re-derive against real operational experience rather than invent false precision now |
+| GOV-014-R2 | Cross-reference density measurement currently requires manual or scripted count; no automated harness yet | Implementation detail, not constitutional |
+| GOV-014-R3 | Interaction with future multi-repository governance (e.g., companion doctrine repositories) undefined | Deferred until such repositories exist |
+
+*§GOV-014 — Resolved, Payment via Specification, ratified 2026-08-20. Closes GOV-014 (logged 2026-07-17). Drafted by Grok as a candidate specification 2026-08-20. Current `Admin/` file count (29, confirmed at integration) sits well under the proposed 40-file threshold, giving real headroom rather than a threshold already exceeded or implausibly distant. Constitutional anchor: Governance Closure Doctrine and Governance Anti-Theater Doctrine (above), ASM-006 (Tier 1 Axiom sparseness — this section deliberately stays subordinate, non-axiomatic doctrine rather than proposing a ninth axiom). Full Closure Event — Proposer (Grok), Verifier (ChatGPT, Pass — independently re-counted repository files), Human Ratification (James, Human Governing Authority) — recorded in `Archive/Logs/Governance_Charter_Changelog.md`'s GOV-014 sidecar entry. Human-directed.*
+
+---
+
+## Governance Pruning Doctrine
+*GOV-016 resolution vehicle. Payment via Specification — 2026-08-20.*
+
+Governance that cannot be retired accumulates until it becomes load rather than protection. This section defines the process that makes retirement possible without violating lineage or sidecar permanence.
+
+**Problem statement.** This Charter's incentive structure correctly rewards truth over certainty, unknowns over hidden assumptions, lineage over appearance, and correction over ego. It does not reward a fifth direction: *removing* operative doctrine that has become obsolete. Combined with the sidecar model's permanent-retention rule — the historical record of a decision is never deleted — governance can only grow. Governance Complexity Ceiling (above) supplies the accumulation ceiling; this section supplies the complementary removal mechanism.
+
+**Core distinction.** A *historical record* — the sidecar entry, Resolution Log line, or archived version documenting that a decision was once made — is never subject to deletion. *Active operative doctrine* — text that currently constrains or directs behavior in the live repository — is not automatically permanent. Sidecar permanence protects the record; it does not grant permanent active status to the decision itself.
+
+**Pruning process.** A Pruning Review may be triggered by: (1) a Complexity Review under Governance Complexity Ceiling producing a "Prune" or "Consolidate" outcome; (2) the human governing authority or an independent Auditor explicitly initiating one; or (3) a file or section receiving no substantive reference, citation, or enforcement action for two consecutive audit Cycles, as Cycle is defined in `Admin/Canonical_Terms.md` §4 (one calendar year by default, operator-adjustable — not one audit pass).
+
+A Pruning Review is time-bounded (target ≤ 14 days) and must produce one of four documented outcomes for each candidate: **Retain as Active** — continued relevance is justified, rationale recorded in the owning sidecar; **Demote to Historical** — the text moves out of the active operative body into an explicit Historical/Superseded subsection or the Archive, while the original sidecar entry remains untouched; **Consolidate** — content is merged into a living file, and the source file is marked Superseded and demoted; or **Defer with Watch** — temporary retention with a dated re-review horizon, maximum one Cycle.
+
+Demotion or consolidation requires a logged rationale in the owning file's sidecar, an updated entry in `Unknowns.md` or the relevant Resolution Log if an open unknown is affected, and no erasure of prior text or provenance.
+
+**Explicit non-goals.** This doctrine does not authorize automatic or silent deletion of any file or sidecar entry. It does not create a new audit role, verification gate, or standing "pruning committee." It does not apply to the Unknowns index itself — that domain is already governed by the Expiry Rule, Priority Demotion Doctrine, and Inventory Calcification Check in `Admin/Auditor_Protocols.md`. It does not override Tier 1 Axioms or any text whose active status is constitutionally protected.
+
+**Relationship to existing doctrine.** Subordinate to Governance Closure Doctrine and Governance Anti-Theater Doctrine. Complements Governance Complexity Ceiling — the ceiling detects excess, pruning removes it. Measurement of whether pruning is actually needed remains owned by the Governance Cost Metric below. Distinct from the Expiry Rule and Inventory Calcification Check, which operate on *unknowns*, not on operative doctrine text.
+
+**Residual risks, logged as child notes and not blocking this section's Payment via Specification:**
+
+| ID | Residual | Why left open |
+|----|----------|---------------|
+| GOV-016-R1 | Exact "two consecutive Cycles without reference" threshold is a Placeholder | Re-derive against real citation and enforcement data once available |
+| GOV-016-R2 | No automated citation / enforcement-action scanner yet exists | Implementation detail; manual review is acceptable at current scale |
+| GOV-016-R3 | Interaction with multi-repository or companion-doctrine pruning undefined | Deferred until such repositories exist |
+
+*§GOV-016 — Resolved, Payment via Specification, ratified 2026-08-20. Closes GOV-016 (logged 2026-07-17). Drafted by Grok as a candidate specification 2026-08-20. Constitutional anchor: Governance Closure Doctrine and Governance Anti-Theater Doctrine (above); correctly distinguished from, not a duplicate of, the Expiry Rule and Inventory Calcification Check in `Admin/Auditor_Protocols.md`, which govern unknowns rather than operative doctrine text. Full Closure Event — Proposer (Grok), Verifier (ChatGPT, Pass — assessed as the strongest of the three specifications), Human Ratification (James, Human Governing Authority) — recorded in `Archive/Logs/Governance_Charter_Changelog.md`'s GOV-016 sidecar entry. Human-directed.*
+
+---
+
+## Governance Cost Metric
+*GOV-020 resolution vehicle. Payment via Specification — 2026-08-20.*
+
+Governance overhead must remain proportional to operational value. This section defines the lightweight diagnostic that makes that principle measurable in practice rather than only in intent.
+
+**Problem statement.** Governance Complexity Ceiling supplies accumulation bounds. Governance Pruning Doctrine supplies a removal process. Neither answers the factual question: is the current volume of governance still worth what it costs? Without a metric, every Complexity Review or Pruning Review is forced to rely on qualitative judgment alone — workable at the present scale, but it becomes theater once the repository grows.
+
+**Design constraints.** The metric must be lightweight (computable by a single auditor in minutes), falsifiable (capable of producing a clear signal that governance cost is outrunning value), non-theatrical (resistant to gaming by file-splitting, category-shifting, or performative brevity), diagnostic only (never a hard promotion or blocking gate in its first version), and subordinate (does not create new roles, gates, or axiomatic text).
+
+**The diagnostic panel.** Three numbers and one qualitative flag, none of which is sacred:
+
+| Indicator | Definition | Soft attention band (Placeholder) |
+|-----------|------------|-----------------------------------|
+| G/O Ratio | Active governance Markdown files ÷ total non-archived Markdown files in the repository | Watch above 0.30; discuss above 0.40 |
+| Net Unknown Change | Unknowns closed minus unknowns newly registered, measured over the trailing two audit Cycles | Sustained negative values warrant review |
+| Active Surface | Count of active operative sections (non-Historical, non-Superseded) that a normal gate review must hold in working memory | Watch when the count exceeds the number an experienced auditor can reliably track without external notes |
+| Proportionality Flag | Binary judgment from the most recent Complexity Review or Pruning Review — still proportional to operational value? (Y/N + one-sentence rationale) | N triggers mandatory discussion in the next human ratification cycle |
+
+All numerical thresholds above are Placeholders. They exist to force an early conversation, not to pretend precision the repository does not yet possess. They must be re-derived against real operational data once the repository has crossed roughly 40–50 governance files or two full audit Cycles with the panel in use.
+
+**Computation rules.** "Active governance files" means non-archived Markdown files whose primary purpose is governance, protocol, constraint, or audit doctrine — currently the `Admin/` tree plus any future governance-owned modules. "Total non-archived Markdown files" excludes pure Archive/, sidecar logs, and generated artifacts. Word-count alternatives are deliberately not used as primary indicators — they incentivize dense prose and are weaker proxies for cognitive load. The panel is computed at the opening of any Complexity Review, any Pruning Review, or on explicit request by the human governing authority or an independent Auditor. It is not required on every ordinary audit pass.
+
+**Explicit non-goals.** This section does not define a single scalar "governance cost score." It does not authorize automatic pruning, demotion, or file rejection on the basis of the numbers alone. It does not create a new standing metric-owner role or verification gate. It does not override or reinterpret Tier 1 Axioms, Governance Closure Doctrine, or Governance Anti-Theater Doctrine. It does not apply inside the Unknowns index itself.
+
+**Relationship to existing doctrine.** Subordinate to the proportionality principle already stated in this Charter. Supplies the shared measurement layer referenced by Governance Complexity Ceiling and Governance Pruning Doctrine above. Complements, and does not replace, the qualitative judgment those two sections require. Remains deliberately lighter than the mechanisms it supports.
+
+**Residual risks, logged as child notes and not blocking this section's Payment via Specification:**
+
+| ID | Residual | Why left open |
+|----|----------|---------------|
+| GOV-020-R1 | Soft attention bands (0.30 / 0.40, sustained negative net change, etc.) are Placeholders | Re-derive against real data after the repository has meaningful operating history with the panel |
+| GOV-020-R2 | "Active Surface" count is still partly qualitative | Acceptable at current scale; automate only if the manual count itself becomes costly |
+| GOV-020-R3 | Risk that the panel becomes performative theater | Mitigated by the Explicit Non-Goals and by keeping the specification shorter than the sections it measures |
+| GOV-020-R4 | Multi-repository or companion-doctrine cost accounting undefined | Deferred until such repositories exist |
+
+*§GOV-020 — Resolved, Payment via Specification, ratified 2026-08-20. Closes GOV-020 (logged 2026-07-17). Drafted by Grok as a candidate specification 2026-08-20. Current repository scale (107 total Markdown files, 83 non-archived, 29 in `Admin/`, confirmed at integration) checked against this section's own soft bands — the resulting G/O Ratio is approximately 0.35 (29 ÷ 83), placing the repository inside the 0.30 Watch band but below the 0.40 discussion threshold. This is an early demonstration of the metric doing its job, not a reason to reject the specification: the bands are explicitly Placeholder diagnostic thresholds awaiting real operational data, not a target to stay under. (Corrected 2026-08-20 — the original closing note here incorrectly stated the ratio sat "well below" 0.30; caught during independent verification.) Constitutional anchor: the Charter's own proportionality principle; deliberately kept lighter in scope and length than Governance Complexity Ceiling and Governance Pruning Doctrine, the two sections it measures. Full Closure Event — Proposer (Grok), Verifier (ChatGPT, Pass contingent on the arithmetic correction above, then applied), Human Ratification (James, Human Governing Authority) — recorded in `Archive/Logs/Governance_Charter_Changelog.md`'s GOV-020 sidecar entry. Human-directed.*
 
 ---
 
