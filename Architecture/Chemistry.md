@@ -1335,7 +1335,7 @@ CE-006 remains **In Progress** — Blocking Yes for CLF-004 candidate pathway un
   §1 confirmed remaining dependencies still hollow where expected (AS-003, Gate_05 thermal, CE-007 quantitative) and newly solid where expected (GR-003 two-outcome model now exists for residual NaOCl). §2 reused GR-003 rather than inventing a parallel disposition path. §3 caught a real staleness: the top-of-entry Resolution Path still listed detection/alarm and caustic-dosing items as remaining work after they had already been answered in body — refreshed to an explicit paper-complete vs equipment-gated split. §4 conclusion: paper surface on CE-006 is substantially exhausted; further progress requires hardware. §5 noted Arc_Scope_Map for later refresh. Status remains **In Progress**; Blocking Yes for CLF-004 unchanged. No unknowns opened or closed. Human-directed.
 
 - 2026-08-15: **CE-006 spec-depth pass — digital-only, no equipment exists.**
-  Given James's confirmation that no physical equipment exists yet, this pass
+  Given confirmation from the human governing authority that no physical equipment exists yet, this pass
   deliberately worked only the three of four "remaining quantification" items
   from 2026-07-31 that are genuinely paper-closeable: (1) grounded the
   10–100 g/h Cl₂ generation-rate envelope in Faraday's law (mass rate as a

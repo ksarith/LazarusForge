@@ -115,7 +115,7 @@ No new unknowns registered. Finding 1 is a one-line factual correction candidate
 
 - 2026-08-08: **Both findings from this file's initial build (stale UNK-008
   reference, asymmetric vocabulary acknowledgment) fixed same-day in
-  `Architecture/Forge_flow.md` directly** — James specifically asked for
+  `Architecture/Forge_flow.md` directly** — the human governing authority specifically asked for
   errors to be corrected as this rollout continues, not just cataloged.
   Entries above and in Gaps Exposed updated to reflect closure rather than
   rewritten as if the findings never existed, matching this repository's
