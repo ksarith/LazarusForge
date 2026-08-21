@@ -27,7 +27,7 @@ Do not use `V1.Alpha.NN` for new tags. Archive zip filenames may keep human-read
 | Spec Gates       | N/A — this file is a progression log, not a specification           |
 | Open Unknowns    | 0 (references existing unknowns; creates none)                      |
 | Owning Domain    | Admin/                                                               |
-| Last Reviewed    | 2026-08-14                                                           |
+| Last Reviewed    | 2026-08-21                                                           |
 | Ethical Anchor   | Attempt to do no harm. Defer to `Admin/Ethical_Constraints.md` if present. |
 
 ---
@@ -52,6 +52,35 @@ Created 2026-08-09 to fix a recurring failure mode found the same day, in two pl
 ## Current Lessons
 
 *(Most recent first. Rotate to `Archive/Logs/Progress_Log_Changelog.md` once more than five entries accumulate.)*
+
+### 2026-08-21 — Five ratified closures sat unrecorded here for a full day
+`Unknowns.md` reached v4.72 on 2026-08-21 carrying five closures
+(AP-004, AP-024 on 2026-08-20; GOV-014, GOV-016, GOV-020 on 2026-08-20;
+GOV-022 on 2026-08-21) with zero corresponding entries in this file.
+Caught the same way as the 2026-08-14 entry below it — a session asking
+"what's left" from outside, not this file's own rotation discipline
+triggering on the ratifications. Same family, same root cause restated:
+a file that exists to prevent progression content from going stale is
+not itself exempt from going stale.
+
+### 2026-08-21 — Two independent external "what's left" summaries both misstated GOV-022's status, one also misdirected effort toward a hardware-blocked item
+Asked ChatGPT and Grok directly what work remained. Both listed GOV-022
+as needing its Operating Principles subsection drafted; source
+(`Unknowns.md` v4.72, `Admin/Governance_Charter.md` GOV table,
+`Archive/Logs/Governance_Charter_Changelog.md` sidecar) shows it Resolved
+and ratified the day before. One summary also named GOV-003 as a live
+Critical target without checking that its own Resolution Path
+(`Admin/Security_Protocols.md` Phase 3) is explicitly "Blocked by
+[Phase] 1 and 2" and gated by SEC-ASM-003 on GOV-008 — the same
+no-second-physical-host wall already blocking GOV-008 itself. Separately,
+a source-verification pass on the six items the frozen 2026-08-14 Forward
+Growth Avenues still listed as Lane A found four (TS-002, GI-002, GF-007,
+CE-006) had already been advanced past Lane A by spec-depth passes on
+2026-08-15, landing on genuine hardware/validation gaps not reflected in
+that section's wording. Standing lesson reinforced twice in one session:
+agent "what's left" summaries are candidate leads, never a source of
+truth, and a Lane assignment written on one date does not stay accurate
+after later sessions advance the underlying file.
 
 ### 2026-08-16 — Integrity incident log stood up (no more willy-nilly)
 
@@ -141,15 +170,17 @@ Full history, including entries rotated out of the five above, in `Archive/Logs/
 
 ---
 
-## Forward Growth Avenues (2026-08-14)
+## Forward Growth Avenues (2026-08-21)
 
-**Supersedes the 2026-08-12 version** (full prior text preserved in
-`Archive/Logs/Progress_Log_Changelog.md`). Work map, not a claim that
-anything below is closed. Baseline: Alpha.02-updated (Unknowns v4.55).
-Spot-checked before adoption — FN-001/FN-005 status (both spec-complete,
-remain Open for calibration data only), SEC-007a/b split, CLF-011 residual
-state, and Active Index Critical counts all verified against `Unknowns.md`
-and `Tests/Field_Logs.md` directly.
+**Supersedes the 2026-08-14 version** (full prior text preserved in
+`Archive/Logs/Progress_Log_Changelog.md`). Standing directive from the
+human governing authority: prioritize unknown closure that does not depend
+on real-world/hardware tests — infrastructure is the current limiting
+factor, and work should not be queued against it. Lane-first structure
+below exists specifically to make that filterable at a glance; Tier framing
+dropped this pass in favor of it. Baseline: Alpha.06 (Unknowns v4.72). Every
+item below was checked against its own sidecar this session, not against
+either agent-summary source or the prior Forward Growth Avenues text.
 
 ### Lanes
 
@@ -159,41 +190,149 @@ and `Tests/Field_Logs.md` directly.
 | **B — Human decision** | Architecture / constitution; unilateral agent close forbidden or empty | Human session |
 | **C — Evidence** | Needs Field_Logs, hardware, or multi-agent run | Observation first |
 | **D — Dependency-blocked** | Upstream unknown must move first | Track only |
-| **E — Exploration hold** | Valid Open; low leverage until site/v1 | Don't prioritize now |
+| **E — Exploration hold / no fast path** | Valid Open; low leverage now, or resolution requires elapsed operational time by its own Resolution Path | Don't prioritize now |
 
-### Tier 1 — Highest leverage
+### Lane A — verified this session, do next
 
-**Lane C (only path that advances the current ADP gate and closes the new FN calibration gaps):** GOV-021c (spec accepted, held Open on purpose — Field_Logs entry is the actual work), GOV-008/HDL Tier 0–1 (still "declarable, not achieved"), CF-001 (watchdog parameters defined, unvalidated), CF-002 (protocol defined, deployment pending). Additionally, FN-001 and FN-005 are now **spec-complete** (10-class Adversarial Challenge Battery + PA-001–006 Provisional Spec) but remain Open solely for numeric threshold calibration; `Tests/Field_Logs.md` now carries an explicit Second-Highest-Value Run section naming the exact observations needed (DV-003 source diversity, DV-004 induced conflict, PA-002 trust-score range). Work package: one real multi-model (and ideally multi-host) session logged in Field_Logs, folded into the relevant Resolution Logs. Do not close GOV-021c or promote FN thresholds on prose.
+- **PL-001** (Halogenated polymer contamination, `Operations/Plastics.md`, Critical, Open) — no spec-depth pass yet; genuine prose-only doctrine work available.
+- **WA-002** (Hazardous fraction identification reliability, `Challenges/Waste.md`, Critical, Open) — same; doctrine chain sketch not yet written.
+- **GOV-015** (Constitutional interpretation capture — aggregate drift by subordinate-doctrine volume, `Admin/Governance_Charter.md`, Critical, Blocking No) — Resolution Path is aggregate drift-detection specification; no hardware or field-data dependency found in sidecar.
+- **GOV-018** (Governance fork reconciliation undefined, `Admin/Governance_Charter.md`, Critical, Blocking No) — Resolution Path is a new Track/procedure in `Admin/Governance_Migration_Protocol.md`; pure specification, explicitly "cheaper to design before a fork exists."
 
-**Lane A (can start now):** TS-002, GI-002, GF-007 (safety doctrine — Blocking already correctly flipped; complete the Payment-via-Spec depth behind the flip). CLF-011 residual polish if any (contract lines + Gate_04/05/06 stubs already present; remains Open). CE-006 continuation (chlorine containment — already In Progress). PL-001 + WA-002 routing sketch (one doctrine chain, no pilot-readiness claim).
+### Reclassified out of Lane A this session (were listed Lane A as of 2026-08-14; verified against sidecar 2026-08-21)
 
-**Lane B (human-only, schedule — don't solve in agents):** SEC-007a (what the external root-of-trust *is*, or formal deferral — SEC-007b blocked on this), ENV-009/FA-001 (site assessment or explicit "no site yet" posture), EC-003–007 cluster, GOV-003/GOV-005, TR-001/ECN-002.
+- **TS-002** → **Lane D.** 2026-08-15 spec-depth pass wrote the three-way Station 0 decontamination workflow; remaining gap is a numeric pass/fail decontamination standard, which depends on EC-014 (encapsulation standard) and GR-003 (disposal doctrine) — neither owned by this file.
+- **GI-002** → **Lane C.** 2026-08-15 pass wrote discharge procedures by category; remains Open because the file's own promotion bar is "written and tested," and testing needs a first operational run.
+- **GF-007** → **Lane C.** 2026-08-15 pass resolved FA-002 clearance radius via NFPA 51B; remaining piece needs validation the sidecar says "this session cannot produce."
+- **CE-006** → **Lane C/D.** Quantitative scrubber chemistry and a vessel sketch exist; blocked on "no vessel built, AS-003 uncalibrated" — explicit hardware gap, same category as CLF-003.
+- **GOV-003** → **Lane D** (new to this list). Resolution Path (`Admin/Security_Protocols.md` Phase 3) is "Blocked by [Phase] 1 and 2" and gated by SEC-ASM-003 on GOV-008 — chains directly into the same hardware wall as GOV-008 itself, one hop removed.
+- **GOV-005** → **Lane E** (new to this list). Resolution Path states plainly: "No fast resolution path — requires operational time." Not a specification gap; do not attempt to close on prose.
 
-### Tier 2 — Safety/process chains (do not run hot pilots until moved)
+### Lane B / C / D / E — carried forward from 2026-08-14, not reverified this session
 
-Halogen/waste/thermal: PL-001, PYC-001 (D, blocks all hot work under Pyrolysis_Cascade), PYC-003 (D, on WA-002/GR-003/WA-004), PYC-004 (D, on FA-001→SP-006), WA-002, GR-003, CE-006 (A, In Progress), CLF-004 (D, blocked on CE-006), EL-005, AS-004. One doctrine chain at a time without claiming pilot readiness.
-
-Water/lumen safety: LW-UNK-001, LW-UNK-003 — don't promote potable claims until these move with data, not spec depth alone.
-
-### Tier 3 — Structural/energy/loop (important, not first)
-
-EV-001, FL-001, CO-001 (all In Progress), SC-002 (Priority (Promo) vs ops Blocking already correctly distinguished — see Canonical_Terms.md), CLF-003 (needs hardware path), SD-UNK-001/004 (site-scale), SR-001, TF-001, HR-UNK-* (Exploration — after site/evidence spine exists).
+SEC-007a (external root-of-trust definition or formal deferral —
+SEC-007b blocked on this), ENV-009/FA-001 (site assessment or explicit
+"no site yet" posture), EC-003–007 cluster, TR-001/ECN-002 — Lane B.
+GOV-021c (spec accepted, held Open on purpose), GOV-008/HDL Tier 0–1
+("declarable, not achieved"), CF-001/CF-002, FN-001/FN-005 (spec-
+complete, Open solely for numeric threshold calibration — do not
+re-list as Lane A) — Lane C. PYC-001/003/004, CLF-004 (blocked on
+CE-006) — Lane D. EV-001, FL-001, CO-001, SC-002, CLF-003, SD-UNK-*,
+SR-001, TF-001, HR-UNK-* — Lane E/Tier 3-equivalent. **Flag:** none of
+these were checked against their own sidecars this session — treat as
+inherited, not verified, until re-checked.
 
 ### Explicit non-work for now
 
-Bulk pseudo-audits of remaining Admin files. Closing GOV-021c on specification alone. Inventing numeric independence/correlation thresholds or FN Battery/PA numeric cutoffs without Field_Logs data. Spec Gate campaigns on Exploration files with empty Field_Logs. Reopening CLF-010 (Resolved — leave it). Re-listing FN-001/FN-005 as "can start now" (they are past that stage).
+Bulk pseudo-audits of remaining Admin files. Closing GOV-021c on
+specification alone. Inventing numeric independence/correlation
+thresholds or FN Battery/PA numeric cutoffs without Field_Logs data.
+Spec Gate campaigns on Exploration files with empty Field_Logs.
+Reopening CLF-010 or GOV-016/GOV-020/GOV-022 (Resolved — leave them).
+Treating an agent "what's left" summary as source without checking the
+sidecar first — this session found two live errors that would have
+misdirected work if adopted as given. Re-listing TS-002/GI-002/GF-007/
+CE-006 as "Lane A — can start now" (reclassified to C/D above,
+2026-08-21). Working GOV-003 or GOV-005 as if their resolution paths
+were specification-only.
 
 ### Suggested work program (next 3–5 sessions)
 
-1. Multi-model Field_Logs run (or at minimum a concrete run plan) covering GOV-021c independence questions **and** the FN-001/FN-005 calibration observations now named in the Second-Highest-Value Run section — Lane C
-2. TS-002 / GI-002 / GF-007 Payment-via-Spec depth — Lane A
-3. CE-006 continuation or PL-001 + WA-002 routing sketch — Lane A
-4. Human packet: SEC-007a options + ENV-009/FA-001 posture — Lane B
-5. Progress_Log / Discovery.md continuity check after any further doctrine advance (this file just demonstrated the failure mode again)
+1. PL-001 + WA-002 doctrine drafting — Lane A
+2. GOV-015 aggregate drift-detection specification draft — Lane A
+3. GOV-018 fork-reconciliation procedure draft for
+   `Admin/Governance_Migration_Protocol.md` — Lane A
+4. Human packet: SEC-007a options + ENV-009/FA-001 posture (inherited
+   from prior list, unchanged) — Lane B
+5. Progress_Log continuity check after any further doctrine advance —
+   this file has now demonstrated the same lag twice (2026-08-14,
+   2026-08-21); worth deciding whether a standing trigger (e.g.
+   "no unknown closes without a same-session Progress_Log entry") is
+   worth ratifying as doctrine rather than relying on the next session
+   to ask.
 
-Parallel optional: residual CLF-011 polish; any pure-docs hygiene that does not invent new unknowns.
+Parallel optional: any Lane B/C/D/E item above once actually reverified
+against its own sidecar, rather than carried forward from 2026-08-14.
 
 ## Resolution Log
+
+- 2026-08-20: **AP-004 (cross-auditor disagreement resolution) Resolved
+  — Payment via Specification, ratified by the Human Governing Authority.** Grok proposed (with
+  a self-produced Revision 1 addressing three amendments from a prior
+  ChatGPT review); Grok again correctly declined to self-verify — second
+  consecutive instance of that pattern; ChatGPT served as independent
+  Verifier, Pass. Full Closure Event in
+  `Archive/Logs/Auditor_Protocols_Logs.md`'s AP-004 sidecar entry. Four
+  residuals (AP-004-R1–R4) remain open as non-blocking child notes.
+
+- 2026-08-20: **AP-024 (human attestation provenance) Resolved —
+  Payment via Specification, ratified by the Human Governing Authority.** ChatGPT proposed,
+  Grok performed a pre-integration Skeptic/Evidence pass, Claude
+  integrated with an added H0–H5 reconciliation note, and Copilot —
+  first genuinely uninvolved Verifier used in this campaign, needed
+  because ChatGPT/Grok/Claude were all entangled — independently
+  verified, Pass. A separate Gemini response fabricated an entire
+  alternate specification rather than reading the real one; identified
+  and excluded from the ratification basis, not weighed as input. Full
+  Closure Event in `Archive/Logs/Auditor_Protocols_Logs.md`'s AP-024
+  sidecar entry. Five residuals (AP-024-R1–R5) remain open as
+  non-blocking child notes.
+
+- 2026-08-20: **GOV-014, GOV-016, GOV-020 (governance complexity
+  ceiling, pruning doctrine, cost metric) all Resolved — Payment via
+  Specification, ratified by the Human Governing Authority in one batch.** First unknowns
+  closed under the AP-013 doctrine outside `Admin/Auditor_Protocols.md`.
+  Grok proposed all three; ChatGPT independently verified all three
+  together (Pass on GOV-014 and GOV-016; Pass on GOV-020 contingent on
+  correcting a real arithmetic error — 29/83≈0.35 misdescribed as "well
+  below" the 0.30 Watch threshold when it actually sits inside that
+  band — corrected before ratification). Full Closure Events in
+  `Archive/Logs/Governance_Charter_Changelog.md`'s GOV-014, GOV-016, and
+  GOV-020 sidecar entries. Ten residuals across the three (GOV-014-R1–
+  R3, GOV-016-R1–R3, GOV-020-R1–R4) remain open as non-blocking child
+  notes.
+
+- 2026-08-21: **GOV-022 (reversibility as cross-cutting operating
+  principle) Resolved — Payment via Specification, ratified by the Human Governing Authority.**
+  Fourth unknown closed in the GOV-014/016/020/022 wave, and the only
+  one where Claude was Proposer rather than Grok — drafted directly at
+  the human governing authority's request after the human governing authority asked whether Gate_03_Reduction.md
+  already articulated reversibility well. Source investigation found
+  the principle independently reinvented three times (Gate_03, the
+  Discharge Procedure, the Epistemic Ledger) with zero cross-linking to
+  each other or to Axiom P-1/Q-3 — evidence against the "reject as
+  redundant" option both Grok and ChatGPT had initially favored.
+  ChatGPT served as Verifier, Pass across eight dimensions, explicitly
+  reversing its own prior recommendation once the investigation was
+  available and asking that reversal be preserved as Lessons Learned
+  rather than smoothed over. Full Closure Event in
+  `Archive/Logs/Governance_Charter_Changelog.md`'s GOV-022 sidecar
+  entry.
+
+- 2026-08-21: **Progress_Log restructure — closure backlog recorded,
+  Forward Growth Avenues rebuilt Lane-first, six candidate items
+  reverified against source.** The five closures above were written
+  into this log for the first time (see 2026-08-21 Current Lessons
+  entry — they sat unrecorded across the 2026-08-20/21 ratification
+  session). Two external "what's left" summaries (ChatGPT, Grok) were
+  checked against source rather than adopted directly: found GOV-022
+  already Resolved (both summaries described it as still needing
+  drafting) and GOV-003 dependency-blocked on GOV-008 via
+  `Admin/Security_Protocols.md` Phase 3 (one summary listed it as a
+  live target). Forward Growth Avenues (2026-08-14) replaced with a
+  2026-08-21 version restructured Lane-first per the human governing
+  authority's standing directive to prioritize closure work not dependent
+  on real-world/hardware tests; prior text preserved in
+  `Archive/Logs/Progress_Log_Changelog.md`. Six candidate items
+  (TS-002, GI-002, GF-007, CE-006, GOV-003, GOV-005) verified against
+  their own sidecars: four (TS-002, GI-002, GF-007, CE-006) had already
+  advanced past Lane A into Lane C/D since 2026-08-15 and were not
+  re-flagged by the frozen section; GOV-003 and GOV-005 confirmed
+  Lane D/E respectively. Verified Lane A set: PL-001, WA-002, GOV-015,
+  GOV-018. Current Lessons: two new entries added; two oldest 2026-08-09
+  entries should be rotated to changelog (count was over 5). Last Reviewed
+  → 2026-08-21. No unknowns created or closed by this entry itself —
+  purely a continuity/lane-verification pass. Human-directed.
 
 - 2026-08-14: **Progress_Log refresh after FN-001/FN-005 spec-complete bump.**
   Forward Growth Avenues (2026-08-12) replaced with 2026-08-14 version;
@@ -842,7 +981,7 @@ Parallel optional: residual CLF-011 polish; any pure-docs hygiene that does not 
 
 - 2026-08-18: **Ratification attempt on `Admin/CIR_Gov.md` redirected to a
   GOV-008 candidate audit; audit concluded the candidate is honest but
-  physically unratifiable right now.** James asked to begin CIR_Gov.md's
+  physically unratifiable right now.** the human governing authority asked to begin CIR_Gov.md's
   ratification process to surface any conflicts. First conflict found
   immediately, before any content review: CIR_Gov.md's own Binding Status
   section states GOV-008 (minimum agent/hardware quorum, owned by
@@ -868,5 +1007,5 @@ Parallel optional: residual CLF-011 polish; any pure-docs hygiene that does not 
   be ratified until that physical gap closes; no further prose pass
   changes this. CIR_Gov.md's ratification remains correctly blocked
   behind it. The dual-CIR-document authority question (CIR_Gov.md vs.
-  `Computational_Institutional_Reasoning.md`) is deferred — James is
+  `Computational_Institutional_Reasoning.md`) is deferred — the human governing authority is
   doing further reading before deciding that one. Human-directed.
