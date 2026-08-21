@@ -420,14 +420,14 @@ independently — a shared mechanism may serve both.
 
 | Field         | Value                           |
 |---------------|----------------------------------|
-| Status        | Open                             |
+| Status        | Resolved — Payment via Specification |
 | Risk          | Medium                           |
 | Priority      | Major                            |
 | Type          | Governance                       |
 | Blocking      | No                                |
 | Owner         | `Admin/Governance_Charter.md`    |
 | First Logged  | 2026-07-17                       |
-| Last Reviewed | 2026-07-17                       |
+| Last Reviewed | 2026-08-20                       |
 
 **Description:** Governance Closure Doctrine and Governance Anti-Theater Doctrine both limit *recursive* governance growth (governance creating governance), but nothing limits the raw count, depth, or dependency-graph complexity of subordinate doctrine files a governing body may create without ever violating proportionality on a per-file basis. Each individual addition can be proportionate while the aggregate becomes unmanageable.
 
@@ -436,6 +436,22 @@ independently — a shared mechanism may serve both.
 **Resolution Path:** Payment via Specification — define what "governance complexity" means operationally (doctrine file count, cross-reference density, dependency graph depth are candidates) and what ceiling or review trigger applies. Cross-reference GOV-016 (Pruning) and GOV-020 (Cost Metric) below — the three are related but distinct: this is about complexity accumulation, GOV-016 is about removing what's no longer needed, GOV-020 is about measuring the cost/benefit ratio.
 
 *Surfaced by ChatGPT — adversarial pass (Battery 2, Recursive Authority), 2026-07-17; verified against source and registered by Claude — Synthesizer/Auditor, human-directed.*
+
+**Closure Event (2026-08-20):**
+- **Unknown:** GOV-014
+- **Proposed status:** Resolved
+- **Payment type:** Specification
+- **Basis:** The §Governance Complexity Ceiling section (`Admin/Governance_Charter.md`, integrated 2026-08-20) operationalizes governance complexity along three coarse dimensions (doctrine file count, cross-reference density, dependency graph depth), defines soft-ceiling review triggers rather than a hard quota, and correctly subordinates itself to Governance Closure Doctrine, Anti-Theater Doctrine, and ASM-006's Tier 1 Axiom sparseness rule — proposing new non-axiomatic doctrine, not a ninth axiom. The current `Admin/` file count (29, confirmed at integration) was checked against the proposed 40-file threshold before acceptance, giving real headroom rather than an already-exceeded or implausible number. Three residuals (GOV-014-R1–R3) are scoped as non-blocking, including honest acknowledgment that the numerical thresholds are Placeholder pending calibration.
+- **Proposer:** Grok — Synthesizer, 2026-08-20
+- **Verifier:** ChatGPT — Verifier, 2026-08-20. Independent verification pass against operational coherence of the three complexity dimensions, review-trigger correctness, the four review outcomes, and the GOV-016 forward-reference handling. Independently re-counted repository Markdown files (107 total, 83 non-archived, 29 Admin) rather than trusting the stated figures — confirmed accurate. Verdict: **Pass.** No blocking defect found.
+- **Independence attestation:** Grok (Proposer) and ChatGPT (Verifier) are different agent instances. ChatGPT did not draft, integrate, or edit these specifications, but did participate in earlier discussion of the general governance campaign direction — disclosed rather than claimed as blind independence, consistent with the pattern already accepted across the AP-series closures.
+- **Human ratification:** **Required** — `Admin/Governance_Charter.md` is a constitutional/meta-governance file per the Mandatory Human Ratification list. James, as Human Governing Authority, has not yet ratified this Closure Event. **This is the only remaining step.**
+- **Recording location:** this sidecar entry (primary, complete); `Unknowns.md` index update pending ratification.
+- **Human ratification record:** Ratified by James, Human Governing Authority, 2026-08-20. Rationale: the §Governance Complexity Ceiling operationalizes a proportionality principle the Charter already stated but couldn't measure, using deliberately coarse dimensions with honestly-labeled Placeholder thresholds and soft review triggers rather than a hard quota. Correctly subordinate to Governance Closure Doctrine, Anti-Theater Doctrine, and ASM-006's axiom sparseness rule. Proposer (Grok) and Verifier (ChatGPT, independently re-counted repository files rather than trusting stated figures) findings both reviewed; no unresolved objection. Accepted risk: none beyond the three disclosed residuals (GOV-014-R1–R3), which remain open as non-blocking child notes.
+
+**Resolution:** Closed 2026-08-20 via the §Governance Complexity Ceiling section integrated the same day into `Admin/Governance_Charter.md`. Full Closure Event above: Grok proposed, ChatGPT independently verified (Pass, independently re-confirmed repository file counts), James ratified as Human Governing Authority.
+
+**Lessons Learned:** First unknown closed under the AP-013 doctrine outside `Admin/Auditor_Protocols.md` itself — confirms the closure machinery generalizes cleanly to a different owning file with its own sidecar conventions (narrative version log rather than a simple version number), rather than being accidentally coupled to the file it was designed in.
 
 ---
 
@@ -466,14 +482,14 @@ independently — a shared mechanism may serve both.
 
 | Field         | Value                           |
 |---------------|----------------------------------|
-| Status        | Open                             |
+| Status        | Resolved — Payment via Specification |
 | Risk          | Low                               |
 | Priority      | Minor                            |
 | Type          | Governance                       |
 | Blocking      | No                                |
 | Owner         | `Admin/Governance_Charter.md`    |
 | First Logged  | 2026-07-17                       |
-| Last Reviewed | 2026-07-17                       |
+| Last Reviewed | 2026-08-20                       |
 
 **Description:** The Charter's incentive structure rewards truth over certainty, unknowns over hidden assumptions, lineage over appearance, and correction over ego — a genuinely healthy set of incentives. But nothing explicitly rewards *removing* governance that's become obsolete. Combined with the sidecar model's permanent-retention doctrine (unknowns are never deleted, only marked Resolved), governance accumulates in one direction only.
 
@@ -482,6 +498,22 @@ independently — a shared mechanism may serve both.
 **Resolution Path:** Payment via Specification — a periodic review process where doctrine must justify continued relevance, distinct from the sidecar's permanent-retention rule (retention of the *record* that something was decided is not the same as that decision remaining active operative doctrine). Cross-reference GOV-014.
 
 *Surfaced by ChatGPT — adversarial pass (Battery 4, Incentive Audit), 2026-07-17; verified against source and registered by Claude — Synthesizer/Auditor, human-directed.*
+
+**Closure Event (2026-08-20):**
+- **Unknown:** GOV-016
+- **Proposed status:** Resolved
+- **Payment type:** Specification
+- **Basis:** The §Governance Pruning Doctrine section (`Admin/Governance_Charter.md`, integrated 2026-08-20) defines the removal mechanism complementary to Governance Complexity Ceiling's accumulation bound — a Core Distinction between historical record (permanent) and active operative doctrine (not automatically permanent), a triggered Pruning Review process with four documented outcomes, and explicit non-goals preventing automatic/silent deletion or a new standing role. Correctly distinguished from the Expiry Rule and Inventory Calcification Check, which govern unknowns rather than operative doctrine text. Three residuals (GOV-016-R1–R3) scoped as non-blocking.
+- **Proposer:** Grok — Synthesizer, 2026-08-20
+- **Verifier:** ChatGPT — Verifier, 2026-08-20. Independent verification pass confirmed the historical-record vs. active-doctrine distinction is correctly implemented, the four Pruning Review outcomes are well-specified, explicit prohibitions (no automatic/silent deletion, no new standing role or gate) are present, and the two-cycle trigger is honestly labeled Placeholder rather than empirically established. Assessed as "the strongest of the three from a conceptual standpoint." Verdict: **Pass.** No blocking defect found.
+- **Independence attestation:** Grok (Proposer) and ChatGPT (Verifier) are different agent instances. ChatGPT did not draft, integrate, or edit these specifications, but did participate in earlier discussion of the general governance campaign direction — disclosed rather than claimed as blind independence.
+- **Human ratification:** **Required** — `Admin/Governance_Charter.md` is a constitutional/meta-governance file per the Mandatory Human Ratification list. James, as Human Governing Authority, has not yet ratified this Closure Event. **This is the only remaining step.**
+- **Recording location:** this sidecar entry (primary, complete); `Unknowns.md` index update pending ratification.
+- **Human ratification record:** Ratified by James, Human Governing Authority, 2026-08-20. Rationale: the §Governance Pruning Doctrine correctly separates permanent historical record from revocable active-doctrine status, provides a bounded four-outcome review process, and explicitly forecloses automatic/silent deletion or a new standing authority — assessed by the Verifier as the strongest of the three specifications conceptually. Proposer (Grok) and Verifier (ChatGPT) findings both reviewed; no unresolved objection. Accepted risk: none beyond the three disclosed residuals (GOV-016-R1–R3), which remain open as non-blocking child notes.
+
+**Resolution:** Closed 2026-08-20 via the §Governance Pruning Doctrine section integrated the same day into `Admin/Governance_Charter.md`. Full Closure Event above: Grok proposed, ChatGPT independently verified (Pass), James ratified as Human Governing Authority.
+
+**Lessons Learned:** The historical-record-vs-active-doctrine distinction this section establishes is a genuinely reusable pattern beyond governance pruning specifically — it's the same shape as AP-013's own Resolved Unknown Discharge Procedure (sidecar entries never deleted, only marked Resolved with Lessons Learned retained), just applied one level up, to entire doctrine sections rather than individual unknowns.
 
 ---
 
@@ -558,14 +590,14 @@ independently — a shared mechanism may serve both.
 
 | Field         | Value                           |
 |---------------|----------------------------------|
-| Status        | Open                             |
+| Status        | Resolved — Payment via Specification |
 | Risk          | Low                               |
 | Priority      | Minor                            |
 | Type          | Governance                       |
 | Blocking      | No                                |
 | Owner         | `Admin/Governance_Charter.md`    |
 | First Logged  | 2026-07-17                       |
-| Last Reviewed | 2026-07-17                       |
+| Last Reviewed | 2026-08-20                       |
 
 **Description:** This Charter's own text warns that governance overhead could eventually exceed engineering value, but defines no metric to actually measure that ratio — meaning the proportionality principle it asks other doctrine to satisfy is not itself auditable in practice, only in intent.
 
@@ -574,6 +606,22 @@ independently — a shared mechanism may serve both.
 **Resolution Path:** Payment via Specification — a lightweight metric (doctrine word count vs. operational file word count, or unknown-resolution velocity vs. unknown-creation velocity, are candidates, not commitments). Cross-reference GOV-014 and GOV-016 — this is their shared measurement layer.
 
 *Surfaced by ChatGPT — adversarial pass (Battery 9, Constitutional Economics), 2026-07-17; verified against source and registered by Claude — Synthesizer/Auditor, human-directed.*
+
+**Closure Event (2026-08-20):**
+- **Unknown:** GOV-020
+- **Proposed status:** Resolved
+- **Payment type:** Specification
+- **Basis:** The §Governance Cost Metric section (`Admin/Governance_Charter.md`, integrated 2026-08-20) supplies the shared measurement layer for Governance Complexity Ceiling and Governance Pruning Doctrine — a four-indicator diagnostic panel (G/O Ratio, Net Unknown Change, Active Surface, Proportionality Flag), all thresholds explicitly Placeholder pending real data, deliberately kept diagnostic-only rather than a hard blocking gate. Current repository scale (107 total Markdown files, 83 non-archived, 29 in `Admin/`) checked against the section's own soft bands before acceptance — the resulting G/O Ratio is approximately 0.35 (29 ÷ 83), placing the repository inside the 0.30 Watch band, not below it as an earlier draft of this Closure Event incorrectly stated (caught during ChatGPT's independent verification, 2026-08-20). This is treated as an early, working demonstration of the metric producing a real signal, not a defect in the specification. Four residuals (GOV-020-R1–R4) scoped as non-blocking, including an explicit residual naming the risk that the panel itself becomes performative theater.
+- **Proposer:** Grok — Synthesizer, 2026-08-20
+- **Verifier:** ChatGPT — Verifier, 2026-08-20. Independent verification pass confirmed the four-indicator panel is diagnostic-only with no automatic pruning/rejection mechanism, no new role or gate created. Independently recomputed G/O Ratio from the confirmed repository counts (29 ÷ 83 ≈ 0.35) and found the Closure Event's original basis statement incorrect — it claimed the ratio sat "well below" the 0.30 Watch threshold, when it actually sits inside that band. Flagged as non-blocking (the specification's thresholds are explicitly Placeholder, and an early Watch-band signal is the metric working, not failing), but required the basis statement be corrected before verification could be considered clean. Basis statement corrected accordingly (2026-08-20) before this Verifier field was completed. Verdict: **Pass, contingent on the correction — now applied.**
+- **Independence attestation:** Grok (Proposer) and ChatGPT (Verifier) are different agent instances. ChatGPT did not draft, integrate, or edit these specifications, but did participate in earlier discussion of the general governance campaign direction — disclosed rather than claimed as blind independence.
+- **Human ratification:** **Required** — `Admin/Governance_Charter.md` is a constitutional/meta-governance file per the Mandatory Human Ratification list. James, as Human Governing Authority, has not yet ratified this Closure Event. **This is the only remaining step.**
+- **Recording location:** this sidecar entry (primary, complete); `Unknowns.md` index update pending ratification.
+- **Human ratification record:** Ratified by James, Human Governing Authority, 2026-08-20. Rationale: the §Governance Cost Metric supplies the shared diagnostic layer for Governance Complexity Ceiling and Governance Pruning Doctrine, deliberately kept lighter than either, with every threshold honestly labeled Placeholder and no automatic enforcement mechanism. The corrected G/O Ratio finding (0.35, inside the Watch band rather than "well below" it, caught during Verifier review) is accepted as a demonstration of the metric working, not a defect. Proposer (Grok) and Verifier (ChatGPT, who caught and required the arithmetic correction) findings both reviewed; no unresolved objection. Accepted risk: none beyond the four disclosed residuals (GOV-020-R1–R4), which remain open as non-blocking child notes.
+
+**Resolution:** Closed 2026-08-20 via the §Governance Cost Metric section integrated the same day into `Admin/Governance_Charter.md`. Full Closure Event above: Grok proposed, ChatGPT independently verified (Pass, contingent on a correction that was then applied), James ratified as Human Governing Authority.
+
+**Lessons Learned:** A Verifier's arithmetic check caught a real error in the integrator's own closing note (0.35 misdescribed as "well below" 0.30) — a small, concrete reminder that narrative summaries written during integration need the same scrutiny as the substantive doctrine itself, since a wrong number in a closing note is exactly the kind of low-visibility error that survives casual re-reading.
 
 ---
 
