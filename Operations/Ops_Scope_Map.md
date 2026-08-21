@@ -18,7 +18,7 @@
 
 ## Purpose
 
-Third folder in the Scope_Map rollout, following `Admin/Adm_Scope_Map.md` (2026-08-07) and `Architecture/Arc_Scope_Map.md` (2026-08-08). Same method throughout: every entry extracted directly from its file's own File State and Scope Boundary sections, not reconstructed from memory. Per James's instruction, errors found during this build were fixed in the same pass rather than only cataloged — see Gaps Exposed below for what was found and fixed.
+Third folder in the Scope_Map rollout, following `Admin/Adm_Scope_Map.md` (2026-08-07) and `Architecture/Arc_Scope_Map.md` (2026-08-08). Same method throughout: every entry extracted directly from its file's own File State and Scope Boundary sections, not reconstructed from memory. Per instruction from the human governing authority, errors found during this build were fixed in the same pass rather than only cataloged — see Gaps Exposed below for what was found and fixed.
 
 ---
 
@@ -96,7 +96,7 @@ Third folder in the Scope_Map rollout, following `Admin/Adm_Scope_Map.md` (2026-
 
 4. **No new hub pattern found distinct from what's already known** — `Architecture/Forge_flow.md` (gate logic/vocabulary) and `Architecture/Facilities.md` (siting, FA-001) are the two most frequently cross-referenced files from this folder, consistent with their already-established roles from the Architecture/ pass, not a new finding.
 
-Three corrections applied this pass (`Gate_05_Separation_Thermal.md`, `Gate_06_Fabrication.md`), consistent with James's instruction to fix errors found along the way rather than only catalog them. No new unknowns registered — all three were stale pointers to an already-existing, already-correct ownership record, not open questions.
+Three corrections applied this pass (`Gate_05_Separation_Thermal.md`, `Gate_06_Fabrication.md`), consistent with instruction from the human governing authority to fix errors found along the way rather than only catalog them. No new unknowns registered — all three were stale pointers to an already-existing, already-correct ownership record, not open questions.
 
 ---
 
