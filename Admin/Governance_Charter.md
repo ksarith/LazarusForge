@@ -18,7 +18,7 @@
 | Verification Ref | Admin/Verification_Gates.md                                      |
 | Last Audit       | 2026-08-05                                                          |
 | Auditor          | Claude — Synthesizer, added two consolidated-reference sections (Human Override Doctrine, Constitutional Amendment Boundaries) and one clarifying sentence on doctrine-vs-procedures ownership; no substantive doctrine changed, corrects a prior Copilot audit's false "doctrine is absent" findings by pointing to where the existing text already lives (human-directed), 2026-08-05; prior: Claude — Sidecar/Resolution Log relocation to `Archive/Logs/Governance_Charter_Changelog.md`, GOV-022 registered (human-directed), 2026-07-23; Claude — Skeptic/Auditor; Gemini — Skeptic/Auditor; Grok — Exploration audit 2026-07-05; Gemini — Exploration audit 2026-07-05; Claude — GOV-011 resolution 2026-07-05; Claude — Skeptic/Auditor, 2026-07-16; Claude — GOV-013 drafted (multi-agent synthesis, human-directed), 2026-07-16; Claude — GOV-013/EDL Track classification confirmed (human-directed), 2026-07-17; ChatGPT — adversarial pass, 2026-07-17; Claude — GOV-014 through GOV-020 verified against source and registered (human-directed), 2026-07-17; Claude — GOV-012 threshold deferral, GOV-013 ratification review, GOV-006 biometric addendum (human-directed), 2026-07-19 |
-| Open Unknowns    | 17 (GOV-014, GOV-016, GOV-020 Resolved — Payment via Specification, 2026-08-20; see `Archive/Logs/Governance_Charter_Changelog.md` Resolution Log for full Closure Events) |
+| Open Unknowns    | 16 (GOV-014, GOV-016, GOV-020, GOV-022 Resolved — Payment via Specification, 2026-08-20/21; see `Archive/Logs/Governance_Charter_Changelog.md` Resolution Log for full Closure Events) |
 | Active Disputes  | 1                                                                   |
 | Highest Risk     | Critical (GOV-013, GOV-015, GOV-018 — see `Archive/Logs/Governance_Charter_Changelog.md`; promotion-blocking risk unchanged from GOV-003/GOV-005) |
 | Sidecar Link     | Archive/Logs/Governance_Charter_Changelog.md#auditor-notes--unknowns |
@@ -807,6 +807,23 @@ All numerical thresholds above are Placeholders. They exist to force an early co
 
 ---
 
+## Operating Principles
+
+### Reversibility
+*GOV-022 resolution vehicle. Payment via Specification — 2026-08-20.*
+
+**Favor reversible decisions until evidence justifies irreversible ones; when irreversibility is necessary, preserve enough information that future stewards can understand why.**
+
+This is not a ninth Tier 1 Axiom — it does not add a new constraint. It names a principle already binding through Axiom P-1 (Preservation of Life) and Axiom Q-3 (Corrigibility) above, and already independently implemented, in different vocabulary, in at least three places: `Operations/Gate_03_Reduction.md` ("irreversibility... governs every design decision within it," constraints specified before positive method selection, for exactly this reason); the Resolved Unknown Discharge Procedure in `Admin/Forge_Audit_Kit.md` (sidecar entries never deleted, only marked Resolved, so the record of why a decision was made outlives the decision's active status); and the Epistemic Ledger (EF-0.3, `Admin/Auditor_Protocols.md`) — "the system's memory of how reality corrected it," five mandatory fields preserving what was believed, what contradicted it, and how the correction was established.
+
+None of those three locations reference each other, P-1, or Q-3. This section exists solely to make that connection discoverable — not to re-explain, re-specify, or add process to any of them.
+
+**Explicit non-goals.** This section does not create a ninth axiom. It does not modify Gate_03_Reduction.md, the Discharge Procedure, or the Epistemic Ledger's own text. It does not create a new audit role, verification gate, or compliance check. It does not require retroactively adding this cross-reference to files that already implement the pattern.
+
+*§GOV-022 — Resolved, Payment via Specification, ratified 2026-08-21. Closes GOV-022 (logged 2026-07-23). Drafted by Claude, 2026-08-20, after three-agent discussion (Grok's initial three-option framing; James's direct question about whether Gate_03 already articulates the principle) led to checking Gate_03_Reduction.md, the Discharge Procedure, and the Epistemic Ledger directly against source rather than accepting either "already sufficiently expressed" or "clearly needed" as given. Found the principle independently reinvented in three places with zero cross-linking between them or to P-1/Q-3 — evidence against Option (c)'s redundancy premise, since redundancy would require one clear expression already covering the ground, not three disconnected ones. Chose Option (a) over (b) because the connection is most useful exactly where the pattern already lives operationally (Gate_03), not primarily as an audit heuristic. Deliberately minimal in length and scope, consistent with the cost-consciousness Governance Complexity Ceiling and Governance Pruning Doctrine (above) now require of any new doctrine addition. Constitutional anchor: Axiom P-1, Axiom Q-3, ASM-006 (Tier 1 Axiom sparseness — explicitly not proposed as a ninth axiom). Full Closure Event — Proposer (Claude), Verifier (ChatGPT, Pass across eight dimensions — reversed its own initial preference for Option (c) once the source investigation became available, and asked that the reversal itself be preserved as Lessons Learned), Human Ratification (James, Human Governing Authority) — recorded in `Archive/Logs/Governance_Charter_Changelog.md`'s GOV-022 sidecar entry. Human-directed.*
+
+---
+
 ## Autonomous Governance Constraints
 
 Autonomous systems must not:
@@ -893,6 +910,7 @@ Governance stability matters because audit meaning must survive across repositor
 | 2026-05-23 | Audit Review  | Implicit enforcement assumptions                    | Governance policy mistaken for executable control              | Doctrine and enforcement layers must remain distinct                                      | Replicated | Yes                 |
 | 2026-05-23 | Audit Review  | Forge_Audit_Kit.md placed above Auditor_Protocols.md in tier hierarchy | Derived document outranked its source | A derived condensed reference cannot sit constitutionally above its source document. Tier ordering corrected. | Replicated | No |
 | 2026-05-23 | Modeling      | Axiom set mixing Protections and Prohibitions in single list | Structural distinction between what system must preserve vs. what it must never do was lost | Protections Clause and Prohibitions Clause separated — mirrors Bill of Rights / Preamble distinction | Analogous | Yes |
+| 2026-08-20 | Multi-Agent Closure Event | Closed GOV-014, GOV-016, GOV-020 in one integration pass, then GOV-022 the same session after direct questioning of whether Gate_03 already articulated reversibility | Nothing failed in the first three; GOV-022's initial "reject as redundant" lean (from both Grok and ChatGPT) turned out wrong once source was actually checked | Redundancy requires one clear expression covering the ground — three independent reinventions of the same principle with zero cross-linking is the opposite finding, evidence of a missing index rather than existing coverage. A verifier reversing its own prior substantive judgment on the record, not just declining to self-verify, is itself worth preserving as a pattern | Analogous | No |
 
 ---
 
