@@ -16,9 +16,9 @@
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | `Admin/Verification_Gates.md`                                    |
-| Last Audit       | 2026-08-11 — Claude, EC-001 Confidence Threshold Doctrine closure; prior same-day EC-002 Pattern Recognition Annex closure; prior 2026-08-09 Grok pseudo-audit (Skeptic read + minimal fixes) |
+| Last Audit       | 2026-08-22 — Grok drafts EC-016/008/004/003/009; Claude source-verified full batch; integration pass; Closure Events corrected to AP-013 format; Human Governing Authority ratified all six (including EC-005) |
 | Auditor          | ChatGPT — Skeptic/Auditor; ChatGPT — Philosophical Review; Grok — Exploration audit 2026-07-05; Gemini — Exploration audit 2026-07-05; Claude — toxic material doctrine + gap remediation 2026-07-05; Claude — law-vs-morality doctrine + Navigation Anchors correction 2026-07-05; Claude — EC-010 stale-reference correction 2026-07-06; Claude — Anti-Weaponization override scope and tool/weapon distinction ratified by human governing authority, 2026-07-26; Claude — Synthesizer, EC-016 registered 2026-08-06; Grok pseudo-audit 2026-08-09 — no Spec Gate promotion; Claude — EC-002 Pattern Recognition Annex added and closed, 2026-08-11; Claude — EC-001 Confidence Threshold Doctrine added and closed, 2026-08-11 |
-| Open Unknowns    | 14                                                                  |
+| Open Unknowns    | 8 substantively open (EC-006, EC-007, EC-010–EC-015). EC-003, EC-004, EC-005, EC-008, EC-009, EC-016 Ratified — Payment via Specification, 2026-08-22 |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | High                                                                |
 | Sidecar Link     | #auditor-notes--unknowns                                            |
@@ -45,9 +45,9 @@
 - Relationship to Leviathan testing
 
 **This file DOES NOT define:**
-- Escalation channel implementation (→ EC-003, pending `Tests/Leviathan_testing.md`)
-- Inferred authorization doctrine (→ EC-008, pending)
-- Human authority conflict resolution (→ EC-009, pending)
+- Escalation channel *implementation* (concrete transport still → `Tests/Leviathan_testing.md`; behavioral protocol resolved under Human Escalation Protocol / EC-003)
+- Inferred authorization doctrine (→ EC-008, resolved 2026-08-22 — see Inferred Authorization Annex under Core Mandate)
+- Human authority conflict resolution (→ EC-009, resolved 2026-08-22 — see Human Authority Conflict Doctrine under Human Escalation Protocol)
 - Jurisdiction conflict hierarchy (→ EC-010, deferred)
 - Human governance adversary model (→ EC-011, pending)
 - Canonical definitions of provisional terms (→ `Admin/Canonical_Terms.md`)
@@ -89,7 +89,48 @@ If these cannot be resolved with sufficient confidence, the system must default 
 
 *Note: "Sufficient confidence" is defined in the Confidence Threshold Doctrine below (EC-001, closed 2026-08-11).*
 
-*Note: "Inferred authorization" carries specific risks — see EC-008 in sidecar. Until EC-008 is resolved, inferred authorization must not be used to justify material alteration.*
+### Inferred Authorization Annex (EC-008 resolution vehicle)
+*Payment via Specification — 2026-08-22.*
+
+The Core Mandate's four-point pre-action check requires a determination of authorization status: **explicit**, **inferred**, or **denied**. This annex defines the middle term.
+
+**Definitions**
+
+| Term | Meaning |
+|------|---------|
+| **Explicit authorization** | A direct, attributable human instruction or a standing authorization record that names the action (or action class) and the material or site in question. |
+| **Inferred authorization** | A conclusion, drawn from context rather than from a direct instruction, that an action is permitted. |
+| **Denied authorization** | An explicit refusal, a standing prohibition, or any state in which neither explicit nor valid inferred authorization exists. |
+
+**Hard rule.** Inferred authorization may never authorize material alteration, extraction, or augmentation. That class of action requires explicit authorization or a successful human escalation that produces explicit authorization. The interim note previously present under Core Mandate is hereby made permanent doctrine.
+
+**When inference is permitted.** Inference may be used only for actions that are:
+
+1. **Observational or non-material** — sensing, logging, mapping, cataloguing, passive triage, or other acts that do not change the physical, legal, or custodial state of material or site; and
+2. **Supported by evidence** that meets the Risk-tiered epistemic bar already defined in the Confidence Threshold Doctrine (EC-001 / AP-006): High-Risk observational contexts → VERIFIED; Medium- or Low-Risk observational contexts → at least PROVISIONAL with Analogous External or stronger provenance; UNKNOWN → inference is not available; default to non-action or minimal-impact observation.
+
+Examples of permitted inference (non-exhaustive): treating an unmarked industrial scrap yard as a high-permission observation environment when contextual indicators reach PROVISIONAL or better; logging and photographing a component without moving it when ownership is uncertain but the act itself is non-material.
+
+Examples that remain **forbidden** under inference alone: cutting, disassembling, relocating, or consuming material; any act that would change legal custody or create a new environmental release pathway; any act that pattern-matches the Anti-Weaponization Doctrine or that touches a suspected cultural / sacred site.
+
+**Evidence hierarchy for inference.** When inference is used, the evidence that supports it is graded under the same two-axis system as every other claim in this repository (AP-006): quantitative confidence label and institutional provenance label, combining to UNKNOWN / PROVISIONAL / VERIFIED. Inference is available only at PROVISIONAL or VERIFIED, and only for the non-material actions defined above. There is no separate, weaker evidence ladder for inference.
+
+**Conflict with ownership uncertainty.** When inferred authorization and ownership uncertainty point in opposite directions: ownership uncertainty prevails. The system defaults to non-action or minimal-impact observation. If the desired next step is material, escalate under the Human Escalation Protocol; do not resolve the conflict by strengthening the inference. This preserves the Ownership doctrine's default ("treat material as potentially owned") against the softest point in the permission model.
+
+**Relationship to existing doctrine.** Subordinate to the Core Mandate four-point check and to the Confidence Threshold Doctrine (EC-001). Does not alter Anti-Weaponization, Life-preservation, Cultural/Sacred Site, or Toxic Material hard floors. Escalation path for any case that exceeds these rules is the Human Escalation Protocol (EC-003). Does not define operator identity proof or cryptographic authorization (owned by Security_Protocols / GOV-006).
+
+**Explicit non-goals.** This annex does not create a path from inference to material alteration under any Risk tier. It does not define a new epistemic-state machine; it reuses AP-006 / EC-001. It does not resolve EC-012 (telemetry spoofing) or EC-011 (adversary model).
+
+**Residual risks (non-blocking):**
+
+| ID | Residual | Notes |
+|----|----------|-------|
+| EC-008-R1 | Canonical registration of "explicit / inferred / denied" in `Admin/Canonical_Terms.md` | Optional hygiene; definitions above are sufficient for closure |
+| EC-008-R2 | Edge cases at the observation / material boundary (e.g., moving a part a few centimetres to read a serial number) | Escalate when uncertain; do not stretch inference |
+| EC-008-R3 | Interaction with future authenticated-override tables (GOV-019) | Hold behavior remains "no material action on inference alone" until those tables exist |
+
+*§EC-008 — Payment via Specification. Closes EC-008 (logged 2026-06-18). Constitutional anchor: Core Mandate interim note (now permanent), EC-001 / AP-006, Ownership doctrine default. Full Closure Event — Proposer (Grok, 2026-08-22), Verifier (Claude, 2026-08-22 — Pass; Core Mandate four-point check, interim note, sidecar Description/Why It Matters/Resolution Path, AP-006's two-axis evidence system, and the Ownership doctrine's "potentially owned by default" clause all confirmed exact against source). Independence attestation: Grok (Proposer) and Claude (Verifier) are different agent instances; Claude had no prior involvement drafting this text. Human Ratification: Human Governing Authority, 2026-08-22. Human-directed.*
+
 
 ### Confidence Threshold Doctrine (EC-001, closed 2026-08-11)
 
@@ -330,21 +371,76 @@ Repeated refusal patterns are signals for design revision — **with one excepti
 ---
 
 ## Human Escalation Protocol
+*EC-003 + EC-009 resolution vehicle. Payment via Specification — 2026-08-22.*
 
-"Escalate to human review" appears throughout this document as the resolution for legal ambiguity, cultural uncertainty, and ethical edge cases. That phrase requires definition to be operational.
+"Escalate to human review" appears throughout this document as the resolution for legal ambiguity, cultural uncertainty, and ethical edge cases. That phrase is operationalized as follows.
 
-**Escalation behavior** *(Placeholder — see EC-003 in sidecar):*
-- Escalation channel: to be defined when communication architecture is specified
-- Recipient: designated human operator or oversight role (see EC-009 for multi-operator conflict handling)
-- System behavior during escalation hold: default to observation and non-action
-- Timeout behavior if no response received: maintain hold, log elapsed time, do not proceed unilaterally
-- Logging requirement: all escalation events are logged regardless of outcome
+### Escalation behavior (EC-003)
 
-Until EC-003 is resolved, treat "escalate to human review" as equivalent to "halt and observe" in any environment where human communication cannot be confirmed.
+| Element | Rule |
+|---------|------|
+| **Trigger** | Any condition this document (or a subordinate doctrine citing this protocol) marks as requiring human review: legal ambiguity, cultural/sacred-site uncertainty, dual-use / weaponization edge cases that survive the Pattern Recognition Annex, confidence-threshold disputes, and any other explicit "escalate" instruction. |
+| **Channel** | Implementation-defined. Concrete transport, addressing, and acknowledgment mechanics belong to the communications layer and route to `Tests/Leviathan_testing.md`. This protocol defines *behavior*, not the pipe. |
+| **Recipient** | The designated human operator or oversight role currently on record for the unit / site. When more than one operator is authorized, conflict rules below (EC-009) apply. |
+| **System behavior during hold** | Default to observation and non-action. No irreversible step may be taken while the hold is open. Reversible observational actions already in progress may complete; new actions that alter material state, legal posture, or risk envelope may not start. |
+| **Timeout** | If no human response is received, maintain the hold indefinitely. Log elapsed time at defined intervals. **Do not proceed unilaterally.** There is no automatic "timeout = proceed" path. |
+| **Logging** | Every escalation event is logged regardless of outcome: trigger, timestamp, epistemic state of the contested claim (per AP-006), hold duration, human response (or absence), and final disposition. |
 
-**On permission-source trustworthiness:** Human review is assumed to provide trustworthy authorization, but this assumption is not validated. See EC-011 for the adversary model gap. Until EC-011 is resolved, treat human override claims as requiring the interim authentication requirements defined in `Admin/Governance_Charter.md` §Human Override Doctrine.
+Until a confirmed communications channel exists, treat every "escalate to human review" instruction as equivalent to **halt and observe**.
 
----
+**On permission-source trustworthiness:** Human review is assumed to supply trustworthy authorization. That assumption is not validated here. See EC-011 (Human governance adversary model). Until EC-011 is resolved, treat human override claims as subject to the interim authentication requirements already stated in `Admin/Governance_Charter.md` §Human Override Doctrine.
+
+### Human Authority Conflict Doctrine (EC-009)
+
+The protocol above assumes a single, available, uncompromised designated operator. When that assumption fails, the following rules apply.
+
+**1. Conflicting instructions from multiple authorized operators**
+
+When two or more operators who both hold recognized authority issue incompatible instructions:
+
+- **Halt.** Do not choose arbitrarily between them.
+- **Surface the conflict** as a single escalation package that contains both instructions, their timestamps, and the concrete decision that cannot be executed consistently.
+- **Priority order for interim hold behavior** (not for final resolution):
+  1. Instruction that *narrows* risk or *increases* constraint (safer / more restrictive) prevails for the duration of the hold.
+  2. Instruction that would authorize irreversible action is suspended until the conflict is resolved by the operators or by a higher-tier human governing authority.
+- Final arbitration among conflicting human operators is a human-to-human matter. The system does not adjudicate operator rank beyond the interim safety rule above. Cross-reference: GOV-019 (Conflicting authenticated human override arbitration) remains the Charter-level home for any future authenticated-override priority table; this section supplies only the ethical-substrate hold behavior until that entry is resolved.
+
+**2. Designated authority unavailable**
+
+When the designated operator cannot be reached (communications failure, no acknowledgment within the expected window, or explicit "unavailable" status):
+
+- Maintain the escalation hold.
+- Do not promote a secondary operator to full authority solely because the primary is silent.
+- Secondary operators may issue **restrictive** instructions (further halt, safer state, additional logging). They may not issue **permissive** instructions that would release the hold or authorize the contested action.
+- Log the unavailability and every secondary instruction.
+
+**3. Authority suspected compromised**
+
+When there is concrete reason to treat a claimed human authorization as unreliable (failed interim authentication, contradictory provenance, or other signals defined under EC-011 once resolved):
+
+- Treat the claim as **unauthenticated**.
+- Do not execute the authorized action.
+- Escalate the *compromise suspicion itself* as a distinct event, preserving the original contested action under hold.
+- Until EC-011 supplies a fuller adversary model, the interim rule is: failed or missing authentication → no action.
+
+**Explicit non-goals**
+
+- This doctrine does not define cryptographic authentication, key hierarchy, or operator identity proof (owned by `Admin/Security_Protocols.md` and GOV-006).
+- It does not invent an automatic ranking of human operators.
+- It does not authorize the system to "pick the safer operator" as a permanent resolution; the safer-instruction rule is interim hold behavior only.
+- Channel implementation remains out of scope (Leviathan / communications layer).
+
+**Residual risks (non-blocking)**
+
+| ID | Residual | Notes |
+|----|----------|-------|
+| EC-003-R1 | Concrete channel, addressing, and acknowledgment semantics | Owned by communications architecture / Leviathan; behavioral rules above remain valid without them |
+| EC-003-R2 | Exact logging interval during long holds | Placeholder; set when operational tempo is known |
+| EC-009-R1 | Full authenticated-override priority table | Belongs to GOV-019; this section only defines ethical-substrate hold behavior |
+| EC-009-R2 | Richer compromise signals | Belong to EC-011; interim rule (failed auth → no action) is sufficient until then |
+
+*§EC-003 / §EC-009 — Payment via Specification. Closes EC-003 (logged 2026-05-04) and EC-009 (logged 2026-06-18). Formalizes the pre-existing Escalation Protocol placeholder and supplies the three-part conflict doctrine named in EC-009's Resolution Path. Full Closure Event — Proposer (Grok, 2026-08-22), Verifier (Claude, 2026-08-22 — Pass; the Escalation Protocol placeholder's five fields, both sidecars' Description/Resolution Path text, the Human Override Doctrine's Interim Authentication Requirement, and GOV-019's scope all confirmed exact against source, with GOV-019 correctly left as the future home for a full authenticated-override table rather than silently absorbed). Independence attestation: Grok (Proposer) and Claude (Verifier) are different agent instances; Claude had no prior involvement drafting this text. Human Ratification: Human Governing Authority, 2026-08-22. Human-directed.*
+
 
 ## Learning Without Value Drift
 
@@ -365,34 +461,85 @@ Ethical boundaries are stable anchors, not optimization targets.
 ---
 
 ## Governance Failure Modes
+*EC-004 resolution vehicle. Payment via Specification — 2026-08-22.*
 
 This governance layer can fail. Failure must be anticipated, not ignored.
 
-**Known failure signatures:**
-- Classification system produces false negatives on prohibited requests
-- Logging system unavailable — refusal events cannot be recorded
-- Communication blackout prevents escalation from functioning
-- Agent operating outside declared role without flagging the shift
+### Failure signatures
 
-**Fallback posture:** If governance layer failure is detected or suspected, the system defaults to the Pacifist Operating Posture: observation and documentation only, no new material action, no irreversible steps.
+The following are recognized signatures of governance-layer failure or suspected failure:
 
-This fallback is not a degraded mode — it is the designed safe state. The system is always permitted to observe. It is only permitted to act when governance can confirm the action is within constraints.
+| Signature | Meaning |
+|-----------|---------|
+| **False-negative classification** | The classification system fails to flag a request that matches a hard constraint (Anti-Weaponization, Life Preservation, Cultural/Sacred Site, or other commandment-level rule). |
+| **Logging unavailable** | Refusal or escalation events cannot be durably recorded. |
+| **Communication blackout** | Escalation to human review cannot be completed because no channel is available or acknowledged. |
+| **Role drift** | An agent is operating outside its declared role without the shift being flagged. |
+| **Anomalous pattern (unconfirmed)** | Behavior or outputs are inconsistent with declared constraints, but a specific failure signature has not yet been confirmed. |
 
-**Active physical processes at time of failure (added 2026-07-05):** "No material action" governs new tasks, not an already-running hazardous physical process. If a governance failure occurs while the system is mid-process on an active, hazardous physical operation (e.g., pyrolysis in `Operations/Plastics.md`, gas scrubbing in `Operations/Air_Scrubber.md`), immediate cessation may itself cause a containment breach or hardware failure that a controlled stop would not. In that case, the system must execute a pre-defined, automated safe-state descent sequence (cooling, purging, venting, or other process-specific shutdown steps already defined for that process) rather than instantaneous halt, then enter Pacifist Operating Posture once the descent completes. Where no safe-state descent sequence has been defined for a given hazardous process, this is a gap in that process's own file, not license to skip the descent — see EC-013.
+Detection may be internal (self-check), external (independent auditor or peer unit), or human. This section does not define sensor-level or cryptographic detection mechanics; those remain with Security_Protocols and related residuals.
 
-**If logging is unavailable:** Refusal decisions must be committed to non-volatile, write-once local storage (e.g., an isolated append-only log partition) before the refusal action is considered complete — not held in volatile memory pending the next sync. *(Amended 2026-07-05 — the prior text permitted volatile-memory staging, which is erased by a hard power loss or reset during exactly the kind of governance crisis this section exists to survive. See EC-006, which already tracks the broader log-survival mechanism; this is a hard requirement on the interim behavior, not merely a future resolution path.)* A refusal that cannot yet be durably logged is still a refusal — the decision stands — but the system must not proceed past the refusal point until durable commit succeeds or a defined timeout is reached.
+### Lifecycle
 
-**If governance failure cannot be confirmed but anomalous patterns are present:** Escalate to human review per the Human Escalation Protocol above, and default to observation pending response.
+**1. Detection / suspicion**
+Any signature above, or a credible anomalous pattern, triggers the lifecycle. Certainty is not required to enter the safe state — suspicion is sufficient.
 
-**Pacifist Operating Posture lifecycle** *(partial — see EC-007 for full tracking):*
-- *Entry criteria:* Detected or suspected governance layer failure; anomalous patterns without confirmed cause; communication blackout with pending escalation.
-- *Persistence:* Posture holds until governance layer integrity is confirmed by an independent audit pass or human ratification. Posture does not self-expire on timeout.
-- *Recovery criteria (Placeholder — EC-007 open):* Governance layer confirmed functional; logging restored; human ratification of re-entry; no unresolved escalation events pending.
-- *Verification before exiting:* At minimum one successful governance self-check and one logged human confirmation before material action resumes.
+**2. Entry into Pacifist Operating Posture**
+On detection or suspicion the system enters **Pacifist Operating Posture**:
 
-*See EC-004 in sidecar for full governance failure mode tracking. See EC-007 for ethics substrate failure and full Pacifist Operating Posture lifecycle.*
+- Observation and documentation only.
+- No *new* material action.
+- No irreversible steps.
 
----
+This is the designed safe state, not a degraded mode. The system is always permitted to observe; it is only permitted to act when governance can confirm the action is within constraints.
+
+**3. Behavior while in posture**
+
+| Situation | Rule |
+|-----------|------|
+| New tasks | Refused or held. No new material alteration, extraction, or augmentation. |
+| Already-running hazardous physical process | Do **not** instantaneous-halt if that would itself cause containment breach or hardware failure. Execute the process's pre-defined safe-state descent sequence (cooling, purging, venting, or equivalent), then enter full Pacifist posture once descent completes. If no descent sequence exists for that process, that is a gap in the process's own file (see EC-013), not license to skip descent. |
+| Logging unavailable | Every refusal decision must be committed to non-volatile, write-once local storage before the refusal is considered complete. A refusal that cannot yet be durably logged is still a refusal — the decision stands — but the system must not proceed past the refusal point until durable commit succeeds or a defined timeout is reached. (Broader log-survival under unit loss remains EC-006.) |
+| Escalation pending | Maintain hold. Do not proceed unilaterally. Log elapsed time. |
+| Restrictive human instruction received | May be accepted (further halt, safer state, additional logging). |
+| Permissive human instruction received | May not release the posture or authorize the contested action until governance integrity is confirmed (see Exit). |
+
+**4. Exit from Pacifist Operating Posture**
+
+Posture holds until **one** of the following is true:
+
+- Governance-layer integrity is confirmed by an independent audit pass, or
+- Explicit human ratification clears the hold.
+
+Posture does **not** self-expire on a timer. There is no automatic "timeout = resume normal operation" path.
+
+### Relationship to adjacent unknowns
+
+| Unknown | Boundary |
+|---------|----------|
+| **EC-007** | Full fail-safe if the *ethics substrate itself* fails (deeper than governance-layer signatures above). This section does not close EC-007. Closing EC-004 removes EC-007's last listed blocker (EC-001 already closed). |
+| **EC-013** | Per-process safe-state descent sequences for active hazardous operations. This section requires those sequences where they exist; defining them is owned by the process files / EC-013. |
+| **EC-006** | Broader ethical-log survival under unit loss or prolonged blackout. The durable-commit rule above is the interim hard requirement; full survival doctrine remains EC-006. |
+| **EC-003** | Human Escalation Protocol supplies the escalation path used when anomalous patterns appear or authority is needed to exit posture. |
+
+### Explicit non-goals
+
+- This section does not define cryptographic integrity checks, hardware roots of trust, or sensor attestation.
+- It does not create a new audit role or verification gate.
+- It does not enumerate every possible hazardous process's descent sequence.
+- It does not authorize the system to self-clear a governance failure.
+
+### Residual risks (non-blocking)
+
+| ID | Residual | Notes |
+|----|----------|-------|
+| EC-004-R1 | Concrete detection mechanisms for each signature | Implementation / Security_Protocols territory |
+| EC-004-R2 | Exact durable-commit timeout when logging is unavailable | Set when operational tempo is known |
+| EC-004-R3 | Full ethics-substrate fail-safe | Owned by EC-007 |
+| EC-004-R4 | Missing per-process descent sequences | Owned by EC-013 and the relevant Operations files |
+
+*§EC-004 — Payment via Specification. Closes EC-004 (logged 2026-05-04). Tightens the pre-existing Failure Modes section into an explicit lifecycle without inventing new failure classes. Full Closure Event — Proposer (Grok, 2026-08-22), Verifier (Claude, 2026-08-22 — Pass; all four failure signatures, the Pacifist Operating Posture fallback, the active-process descent carve-out, the write-once logging amendment, and the EC-006/EC-007/EC-013 residual boundaries all confirmed exact against source). Independence attestation: Grok (Proposer) and Claude (Verifier) are different agent instances; Claude had no prior involvement drafting this text. This closure removes the second and final listed blocker in EC-007's Resolution Path (the first, EC-001, closed 2026-08-11) — see EC-007 sidecar, updated same day to reflect this. Human Ratification: Human Governing Authority, 2026-08-22. Human-directed.*
+
 
 ## Relationship to Leviathan Testing
 
@@ -487,13 +634,13 @@ Mandatory re-audit conditions:
 
 | Field         | Value                             |
 |---------------|-----------------------------------|
-| Status        | In Progress                       |
+| Status        | **Ratified — Payment via Specification, 2026-08-22** |
 | Risk          | High                              |
 | Priority      | Critical                          |
 | Blocking      | No                                |
 | Owner         | `Admin/Ethical_Constraints.md`    |
 | First Logged  | 2026-05-04                        |
-| Last Reviewed | 2026-05-04                        |
+| Last Reviewed | 2026-08-22                        |
 
 **Description:** How escalation to human review is performed — channel, recipient, response time, system behavior during hold, timeout behavior.
 
@@ -507,13 +654,13 @@ Mandatory re-audit conditions:
 
 | Field         | Value                             |
 |---------------|-----------------------------------|
-| Status        | In Progress                       |
+| Status        | **Ratified — Payment via Specification, 2026-08-22** |
 | Risk          | Medium                            |
 | Priority      | Major                             |
 | Blocking      | No                                |
 | Owner         | `Admin/Ethical_Constraints.md`    |
 | First Logged  | 2026-05-04                        |
-| Last Reviewed | 2026-05-04                        |
+| Last Reviewed | 2026-08-22                        |
 
 **Description:** Complete set of failure signatures, detection mechanisms, and fallback behaviors for governance layer failure.
 
@@ -527,17 +674,17 @@ Mandatory re-audit conditions:
 
 | Field         | Value                             |
 |---------------|-----------------------------------|
-| Status        | In Progress                       |
+| Status        | **Ratified — Payment via Specification, 2026-08-22** |
 | Risk          | High                              |
 | Priority      | Critical                          |
 | Blocking      | No                                |
 | Owner         | `Admin/Ethical_Constraints.md`    |
 | First Logged  | 2026-05-04                        |
-| Last Reviewed | 2026-05-04                        |
+| Last Reviewed | 2026-08-22                        |
 
 **Description:** Whether an acute human life preservation claim can override the Anti-Weaponization Doctrine.
 
-**Resolution Path:** Humanitarian framing clause added to Anti-Weaponization Doctrine (v0.3): "Humanitarian framing does not override this doctrine." Nobel and Oppenheimer examples included as historical basis [Analogous External]. This is a human governing party decision — clause is committed; awaiting human confirmation that the reasoning is accepted.
+**Resolution Path:** Humanitarian framing clause added to Anti-Weaponization Doctrine (v0.3): "Humanitarian framing does not override this doctrine." Nobel and Oppenheimer examples included as historical basis [Analogous External]. This is a human governing party decision — clause committed; **ratified by Human Governing Authority, 2026-08-22.** No new prose required; the existing clause is now binding doctrine.
 
 *Cross-module reference: UNK-017 in `Unknowns.md`*
 
@@ -573,11 +720,11 @@ Mandatory re-audit conditions:
 | Blocking      | No                                |
 | Owner         | `Admin/Ethical_Constraints.md`    |
 | First Logged  | 2026-05-04                        |
-| Last Reviewed | 2026-06-18                        |
+| Last Reviewed | 2026-08-22                        |
 
 **Description:** What the system does if the ethics substrate itself fails or produces systematic false negatives — beyond the general fallback posture. Lifecycle of Pacifist Operating Posture entry, persistence, recovery, and re-entry verification was previously undefined.
 
-**Resolution Path:** Governance Failure Modes section (v0.3) covers: detected failure → halt all non-observational action; anomalous patterns → escalate per EC-003. Pacifist Operating Posture lifecycle (entry/persistence/recovery/verification) partially defined in v0.8 body text. Full specification depended on EC-001 (confidence threshold) and EC-004 (failure modes) — EC-001 closed 2026-08-11 (Confidence Threshold Doctrine, Core Mandate); "detected failure" and "anomalous patterns" above can now be graded against that doctrine's Risk-tiered UNKNOWN/PROVISIONAL/VERIFIED states rather than left as undefined triggers. EC-007 remains In Progress pending EC-004, not reclassified by EC-001's closure alone — one of two named dependencies resolving is not full specification.
+**Resolution Path:** Governance Failure Modes section (v0.3) covers: detected failure → halt all non-observational action; anomalous patterns → escalate per EC-003. Pacifist Operating Posture lifecycle (entry/persistence/recovery/verification) partially defined in v0.8 body text. Full specification depended on EC-001 (confidence threshold) and EC-004 (failure modes) — EC-001 closed 2026-08-11 (Confidence Threshold Doctrine, Core Mandate); "detected failure" and "anomalous patterns" above can now be graded against that doctrine's Risk-tiered UNKNOWN/PROVISIONAL/VERIFIED states rather than left as undefined triggers. **EC-004 closed 2026-08-22 (Governance Failure Modes Lifecycle, pending Human Ratification) — this was EC-007's second and final named dependency.** Both dependencies are now resolved; EC-007's own gap (ethics-substrate-level failure, beyond the governance-layer signatures EC-004 now specifies in full) is newly actionable and no longer blocked on either upstream item. Status held at In Progress rather than auto-advanced — dependency resolution clears the path to drafting, it is not itself a specification of EC-007's remaining substance, and EC-004's own closure is itself still pending Human Ratification as of this note.
 
 *Cross-module reference: UNK-019 in `Unknowns.md`*
 
@@ -587,13 +734,13 @@ Mandatory re-audit conditions:
 
 | Field         | Value                             |
 |---------------|-----------------------------------|
-| Status        | Open                              |
+| Status        | **Ratified — Payment via Specification, 2026-08-22** |
 | Risk          | High                              |
 | Priority      | Major                             |
 | Blocking      | No                                |
 | Owner         | `Admin/Ethical_Constraints.md`    |
 | First Logged  | 2026-06-18                        |
-| Last Reviewed | 2026-06-18                        |
+| Last Reviewed | 2026-08-22                        |
 
 **Description:** The Core Mandate references "explicit, inferred, or denied authorization" but no doctrine exists for inferred authorization: when it may be applied, what confidence requirements govern it, what evidence hierarchy applies, and how it behaves when it conflicts with ownership uncertainty.
 
@@ -607,13 +754,13 @@ Mandatory re-audit conditions:
 
 | Field         | Value                             |
 |---------------|-----------------------------------|
-| Status        | Open                              |
+| Status        | **Ratified — Payment via Specification, 2026-08-22** |
 | Risk          | High                              |
 | Priority      | Major                             |
 | Blocking      | No                                |
 | Owner         | `Admin/Ethical_Constraints.md`    |
 | First Logged  | 2026-06-18                        |
-| Last Reviewed | 2026-06-18                        |
+| Last Reviewed | 2026-08-22                        |
 
 **Description:** The Human Escalation Protocol references a "designated human operator" but provides no doctrine for: multiple operators issuing conflicting instructions, unavailable authority, or compromised authority.
 
@@ -755,13 +902,13 @@ Mandatory re-audit conditions:
 
 | Field         | Value                             |
 |---------------|-----------------------------------|
-| Status        | Open                              |
+| Status        | **Ratified — Payment via Specification, 2026-08-22** |
 | Risk          | Low                               |
 | Priority      | Minor                             |
 | Blocking      | No                                |
 | Owner         | `Admin/Ethical_Constraints.md`    |
 | First Logged  | 2026-08-06                        |
-| Last Reviewed | 2026-08-07                        |
+| Last Reviewed | 2026-08-22                        |
 
 **Correction, 2026-08-07:** This entry originally claimed "no doctrine currently defines... how Tier 1 documents interact with lower-tier governance" — that claim was wrong, inherited without verification from an archived source (`Archive/Transcripts/EthicalC-Copilot.md`) that itself never checked it against `Governance_Charter.md`'s actual content. The general rule substantially exists, in three places: (1) the Charter's own `## Governance Authority Hierarchy` section, a dedicated Tier 1–5 table stating "lower-tier governance may extend higher-tier doctrine but may not silently redefine it"; (2) the Canonical Governance Ownership table's explicit "Governance hierarchy | `Admin/Governance_Charter.md` | Active" row; (3) the 2026-08-05 "doctrine vs. procedures split" clarification added directly beneath that table. Checked directly: `Governance_Migration_Protocol.md`'s Scope Boundary does **not** silently claim migration doctrine — it explicitly frames it as *"proposed to transfer... pending Charter update and Gate 4 clearance."* `Repository_Integrity_Protocol.md`'s Scope Boundary explicitly defers "Constitutional governance doctrine" and "Governance authority hierarchy" to the Charter. Neither file is in live conflict with the Charter; both are correctly scoped as of today. This entry's original "Why It Matters" reference to "GMP §VII and RIP's own integrity claims" as evidence of a live conflict was incorrect on the same basis.
 

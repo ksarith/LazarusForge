@@ -1,19 +1,3 @@
-
-### 2026-08-16 — GitHub MIT badge / classifier fix
-
-Root `LICENSE` reduced to pure standard MIT body only (no appended NOTICE). Forge-specific interpretation moved to root `NOTICE`. `LICENSE.md` is a short human pointer. GitHub was classifying the previous combined file as license key `other` / SPDX `NOASSERTION` because the classifier matches known templates and rejects extra text in `LICENSE`.
-
-
-### 2026-08-16 — License boundary cleanup (release integrity)
-
-Root MIT remains sole license for material under project control. Removed conflicting CC-BY-SA footer from `Admin/Nothingness_Theorem.md` (Option A — maximum propagation, no dual-license ambiguity). Added bare `LICENSE` alongside `LICENSE.md` for GitHub discoverability. NOTICE clarified: MIT covers copyrightable expression; not ownership of abstract ideas/methods; not trademarks or validation status.
-
-
-### 2026-08-16 — Tag naming convention (Alpha release hygiene)
-
-**Canonical Git tags** for the Alpha line: `V1Alpha.NN` (no dot after V1), e.g. `V1Alpha.03`, `V1Alpha.04`.  
-Do not use `V1.Alpha.NN` for new tags. Archive zip filenames may keep human-readable forms (e.g. the pre-rename `LazarusForgeV0-1.Alpha.03`, or the current `LazarusForge-1.Alpha.04` convention going forward); Git tags stay machine-consistent. Historical tags already published are left as-is; new releases follow this rule.
-
 # Progress_Log.md — Active Notebook for Repository Progression
 
 ## Navigation Anchors
@@ -53,6 +37,9 @@ Created 2026-08-09 to fix a recurring failure mode found the same day, in two pl
 
 *(Most recent first. Rotate to `Archive/Logs/Progress_Log_Changelog.md` once more than five entries accumulate.)*
 
+### 2026-08-22 — A six-unknown batch integrated cleanly on content but shipped non-conforming Closure Events, and this file itself lagged again
+Grok drafted EC-016, EC-008, EC-003, EC-009, and EC-004 (EC-005 was ratification-only) in a single working session; Claude source-verified every claim in every draft against actual file content before integration, and nothing false or fabricated was found anywhere in the batch — a clean run on substance. But the four integrated Closure Events (`Admin/Governance_Charter.md` EC-016; `Admin/Ethical_Constraints.md` EC-008, EC-003/009, EC-004) were written as a short prose summary ("Drafted by Grok; source-verified by Claude") rather than against `Admin/Auditor_Protocols.md`'s own Unknown Closure Authority §'s eight-element minimum — missing, specifically, an explicit independence attestation and a recorded Verifier verdict, both present in every prior closure this repository has done (AP-005, AP-013, AP-024, GOV-014/016/020, GOV-022). Per that section's own text, a Closure Event missing a required element is invalid, not merely informal. Caught only when asked directly whether the batch had been checked against Auditor_Protocols.md's recent closure-authority update — not caught by the verification pass itself, which checked draft *content* against source but not the resulting Closure Event's *format* against the doctrine governing Closure Events. Fixed same-day: all four entries brought to the full format. Separately, this file had — again — recorded nothing about the batch until this same follow-up prompted it, the third occurrence of the identical lag (2026-08-14, 2026-08-21, now 2026-08-22). Worth treating as a pattern needing a structural fix, not another isolated catch: verifying a draft's factual claims and verifying its resulting artifact's procedural conformance are two different checks, and neither this file's own update discipline nor the source-verification step being used here catches its own staleness without being asked.
+
 ### 2026-08-21 — Five ratified closures sat unrecorded here for a full day
 `Unknowns.md` reached v4.72 on 2026-08-21 carrying five closures
 (AP-004, AP-024 on 2026-08-20; GOV-014, GOV-016, GOV-020 on 2026-08-20;
@@ -81,6 +68,19 @@ that section's wording. Standing lesson reinforced twice in one session:
 agent "what's left" summaries are candidate leads, never a source of
 truth, and a Lane assignment written on one date does not stay accurate
 after later sessions advance the underlying file.
+
+### 2026-08-16 — GitHub MIT badge / classifier fix
+
+Root `LICENSE` reduced to pure standard MIT body only (no appended NOTICE). Forge-specific interpretation moved to root `NOTICE`. `LICENSE.md` is a short human pointer. GitHub was classifying the previous combined file as license key `other` / SPDX `NOASSERTION` because the classifier matches known templates and rejects extra text in `LICENSE`.
+
+### 2026-08-16 — License boundary cleanup (release integrity)
+
+Root MIT remains sole license for material under project control. Removed conflicting CC-BY-SA footer from `Admin/Nothingness_Theorem.md` (Option A — maximum propagation, no dual-license ambiguity). Added bare `LICENSE` alongside `LICENSE.md` for GitHub discoverability. NOTICE clarified: MIT covers copyrightable expression; not ownership of abstract ideas/methods; not trademarks or validation status.
+
+### 2026-08-16 — Tag naming convention (Alpha release hygiene)
+
+**Canonical Git tags** for the Alpha line: `V1Alpha.NN` (no dot after V1), e.g. `V1Alpha.03`, `V1Alpha.04`.
+Do not use `V1.Alpha.NN` for new tags. Archive zip filenames may keep human-readable forms (e.g. the pre-rename `LazarusForgeV0-1.Alpha.03`, or the current `LazarusForge-1.Alpha.04` convention going forward); Git tags stay machine-consistent. Historical tags already published are left as-is; new releases follow this rule.
 
 ### 2026-08-16 — Integrity incident log stood up (no more willy-nilly)
 
@@ -141,29 +141,6 @@ Integrity harness UNKNOWN references after Priority 1 (Resolution_Methodology ro
 
 **Rule reinforced:** harness UNKNOWN ≠ create file. Classify first.
 
-### 2026-08-14 — A significant doctrine advance can land in Unknowns.md and Field_Logs while Progress_Log's Forward Growth Avenues stays frozen on the prior state
-FN-001 (full 10-class Adversarial Challenge Battery) and FN-005 (PA-001–006 Provisional Spec) both reached spec-complete in the same session and were correctly recorded in `Unknowns.md` v4.55 and a new Second-Highest-Value Run section in `Tests/Field_Logs.md`. `Progress_Log.md`'s Forward Growth Avenues section, last written 2026-08-12, continued to list both as "Lane A — can start now" and kept them in the suggested work program. The file that exists specifically to prevent progression content from going stale was itself the lagging surface. Caught only when a new session explicitly asked what actions remained leveragable without hardware. Same family as every prior entry in this section: a rule that says "update this when X happens" is not the same as X reliably triggering the update.
-
-### 2026-08-12 — Priming one reviewer with another's answer breaks independence even when the reasoning that comes back is sound
-When gathering opinions on GOV-021c's decision packet, ChatGPT and Gemini each reviewed independently and converged without seeing each other's answer — genuine corroboration. Grok was primed with ChatGPT's opinion first; its agreement, though well-reasoned, could not be counted as a second independent data point and was flagged as such rather than tallied alongside the other two. Caught by noticing the priming itself, not by anything wrong in Grok's actual output. This is a live instance of the exact distinction `Autonomy_Divergence_Protocol.md` §12 exists to formalize: consensus (agents agree) is not the same as independent corroboration (agents agree *and* the basis for treating them as independent has been established) — the difference showed up in how opinions were gathered, not just in the protocol text.
-
-### 2026-08-11/12 — An edit that replaces one section can silently delete an unrelated section sitting next to it, with the edit's own summary never mentioning it
-A GOV-021c drafting pass deleted the entire Constitutional Impact Statement section from `Autonomy_Divergence_Protocol.md` — not disclosed anywhere in that pass's summary. Root cause: the Impact Statement and the section actually being replaced sat back-to-back between the same divider and header, and the edit's target boundary appears to have swallowed both. Caught only by diffing the delivered file directly against the last confirmed-good copy before accepting it, not by reading the summary. Restored verbatim before any other work continued. Same family as the 2026-08-09 entries below — a "complete" edit and a correct summary are not the same thing, and adjacent sections sharing a boundary are a specific, recurring risk worth checking for directly when reviewing any edit to a multi-section governance file.
-
-### 2026-08-09 — A newly-fixed pattern can have a live instance sitting right next to it, unnoticed
-Right after `Discovery.md`'s Rename Registry and Attention Required table were fixed for the "narrative content with no dedicated home" problem, that file's own five-entry correction-note history — sitting inline mid-file since 2026-07-04 — turned out to be exactly the same problem, one section over. Not caught independently; surfaced by direct human review of the delivered patch. Two lessons in one: fixing an instance of a pattern doesn't mean the search for other instances is done, and a second pair of eyes on a "complete" fix is still worth having, even from the person who didn't write the code.
-
-### 2026-08-09 — Even this file's own creation caught a live instance of the pattern it exists to prevent
-While retiring `Unknowns.md`'s stale "What vX.X Means" section, found that
-its "keep only the current version in the main block" rule had itself been
-unenforced for two versions — v4.46 and v4.47's full text were both still
-sitting in the main block, never moved out when each was superseded,
-duplicating content already safely in `Unknowns_Changelog.md`. Caught by
-a routine post-edit verification pass, not by design. Same lesson as the
-entry directly below, one level more recursive: a rule stated once is not
-a rule enforced continuously, even in the file created specifically to
-track that problem.
-
 ---
 
 Full history, including entries rotated out of the five above, in `Archive/Logs/Progress_Log_Changelog.md`.
@@ -212,7 +189,10 @@ either agent-summary source or the prior Forward Growth Avenues text.
 
 SEC-007a (external root-of-trust definition or formal deferral —
 SEC-007b blocked on this), ENV-009/FA-001 (site assessment or explicit
-"no site yet" posture), EC-003–007 cluster, TR-001/ECN-002 — Lane B.
+"no site yet" posture), EC-006/007 (EC-003, EC-004, EC-005 Resolved
+2026-08-22, pending Human Ratification — no longer Lane B; EC-007 newly
+actionable, its two named dependencies now both cleared), TR-001/ECN-002
+— Lane B.
 GOV-021c (spec accepted, held Open on purpose), GOV-008/HDL Tier 0–1
 ("declarable, not achieved"), CF-001/CF-002, FN-001/FN-005 (spec-
 complete, Open solely for numeric threshold calibration — do not
@@ -296,8 +276,8 @@ against its own sidecar, rather than carried forward from 2026-08-14.
   principle) Resolved — Payment via Specification, ratified by the Human Governing Authority.**
   Fourth unknown closed in the GOV-014/016/020/022 wave, and the only
   one where Claude was Proposer rather than Grok — drafted directly at
-  the human governing authority's request after the human governing authority asked whether Gate_03_Reduction.md
-  already articulated reversibility well. Source investigation found
+  the human governing authority's request, after being asked whether
+  Gate_03_Reduction.md already articulated reversibility well. Source investigation found
   the principle independently reinvented three times (Gate_03, the
   Discharge Procedure, the Epistemic Ledger) with zero cross-linking to
   each other or to Axiom P-1/Q-3 — evidence against the "reject as
@@ -329,10 +309,38 @@ against its own sidecar, rather than carried forward from 2026-08-14.
   advanced past Lane A into Lane C/D since 2026-08-15 and were not
   re-flagged by the frozen section; GOV-003 and GOV-005 confirmed
   Lane D/E respectively. Verified Lane A set: PL-001, WA-002, GOV-015,
-  GOV-018. Current Lessons: two new entries added; two oldest 2026-08-09
-  entries should be rotated to changelog (count was over 5). Last Reviewed
-  → 2026-08-21. No unknowns created or closed by this entry itself —
-  purely a continuity/lane-verification pass. Human-directed.
+  GOV-018. Current Lessons: two new 2026-08-21 entries added. A prior
+  implementation pass had also dropped three legitimate 2026-08-16
+  entries (GitHub MIT badge fix, License boundary cleanup, Tag naming
+  convention) above this file's own `#` header, outside any section —
+  restored to their correct place in Current Lessons here. 2026-08-14,
+  2026-08-12, 2026-08-11/12, and both 2026-08-09 entries rotated to
+  `Archive/Logs/Progress_Log_Changelog.md` in full (Current Lessons now
+  holds the 7 entries dated 2026-08-16 or later; same-day entries were
+  not further pruned to force an exact count of 5 — see note below).
+  Last Reviewed → 2026-08-21. No unknowns created or closed by this
+  entry itself — purely a continuity/lane-verification and correction
+  pass. Human-directed.
+
+- 2026-08-21: **Correction pass on the entry above.** Verification against
+  the uploaded repository found the prior pass's Current Lessons rotation
+  had not actually been executed (the two oldest 2026-08-09 entries were
+  still present, not yet appended to the changelog), and that three
+  legitimate 2026-08-16 entries had been relocated above this file's own
+  document header — outside Current Lessons, outside any section —
+  rather than integrated into it. Both corrected: all four entries older
+  than 2026-08-16 (2026-08-14, 2026-08-12, 2026-08-11/12, 2026-08-09 ×2)
+  moved to `Archive/Logs/Progress_Log_Changelog.md` verbatim; the three
+  orphaned 2026-08-16 entries restored into Current Lessons in their
+  proper position. Current Lessons now holds 7 entries (2× 2026-08-21,
+  5× 2026-08-16) rather than exactly 5 — same-day entries were kept
+  rather than arbitrarily dropped, since the file's own rotation rule
+  doesn't specify intra-day ordering; flagged here rather than resolved
+  by guessing which of five same-date entries to cut. Also corrected an
+  awkward doubled self-reference in the GOV-022 Resolution Log entry
+  introduced by name-scrubbing ("the human governing authority's request
+  after the human governing authority asked" → "the human governing
+  authority's request, after being asked"). Human-directed.
 
 - 2026-08-14: **Progress_Log refresh after FN-001/FN-005 spec-complete bump.**
   Forward Growth Avenues (2026-08-12) replaced with 2026-08-14 version;
@@ -1009,3 +1017,61 @@ against its own sidecar, rather than carried forward from 2026-08-14.
   behind it. The dual-CIR-document authority question (CIR_Gov.md vs.
   `Computational_Institutional_Reasoning.md`) is deferred — the human governing authority is
   doing further reading before deciding that one. Human-directed.
+
+- 2026-08-22: **EC-016, EC-008, EC-003, EC-009, EC-004 integrated (Resolved,
+  pending Human Ratification); EC-005 ratified as existing text; Closure
+  Event format corrected to conform to Auditor_Protocols.md's Unknown
+  Closure Authority §.** Grok drafted all five specifications in one
+  session; Claude source-verified every claim in every draft against
+  actual repository content before integration — hierarchy tables, AP-006
+  evidence system, Ownership doctrine, Escalation Protocol placeholder,
+  Governance Failure Modes section, and the EC-005 humanitarian-framing
+  clause all confirmed exact, no fabrication or overclaim found anywhere
+  in the batch. `Unknowns.md` reached v4.73, Open Unknowns 14 → 8. The
+  anti-sweep Mandatory Human Ratification trigger (closing more than
+  three entries in one cycle) correctly applied — all six entries marked
+  pending, none claimed ratified. **Gap found on follow-up, not by the
+  verification pass itself:** the four integrated Closure Events used a
+  short prose summary rather than Auditor_Protocols.md's own eight-element
+  minimum format, omitting an explicit independence attestation and a
+  recorded Verifier verdict — both present in every prior closure this
+  repository has done. Per that section's own text this makes the events
+  invalid, not just informal. Corrected same day: all four Closure Events
+  (`Admin/Governance_Charter.md` EC-016; `Admin/Ethical_Constraints.md`
+  EC-008, EC-003/EC-009, EC-004) rewritten with explicit Proposer/Verifier
+  identity, capacity, timestamp, verdict, and independence attestation.
+  Also corrected: EC-007's sidecar had gone stale the moment EC-004
+  closed — its Resolution Path still read "pending EC-004" with Last
+  Reviewed at 2026-06-18, contradicting `Unknowns.md`'s own EC-004 entry,
+  which already noted the dependency clearing. Updated to reflect both
+  named dependencies (EC-001, EC-004) now resolved, EC-007 newly
+  actionable, status correctly held at In Progress rather than
+  auto-advanced. Progress_Log itself: no entry existed for any of this
+  batch until directly asked — third occurrence of the same lag pattern
+  (2026-08-14, 2026-08-21, now 2026-08-22); Forward Growth Avenues' Lane
+  B list still referenced the undifferentiated "EC-003–007 cluster,"
+  corrected to reflect EC-003/004/005 Resolved and EC-006/007 as the
+  actual remaining Lane B members. Human-directed.
+
+- 2026-08-22: **EC-003, EC-004, EC-005, EC-008, EC-009, EC-016 ratified by
+  Human Governing Authority — full batch, including EC-005.** Same-day
+  follow-up to the integration and Closure Event correction pass above.
+  ChatGPT's external review caught one genuine remaining gap — five stale
+  `Last Reviewed` dates (EC-003/004/005 still read 2026-05-04, EC-008/009
+  still read 2026-06-18, unchanged since the original registration despite
+  all being closed this session) — and one claim that no longer held: its
+  proposed fix for an ambiguous "Open Unknowns: 8" header assumed the
+  header didn't already distinguish substantively-open from
+  pending-ratification entries, but the parenthetical naming those six
+  items by name was already present from the prior correction pass.
+  Adopted the genuine fix (five dates corrected to 2026-08-22) and the
+  reformatting suggestion on its merits (clearer two-line-equivalent
+  phrasing), not because the problem it described was real. All six
+  sidecar Status fields changed Resolved/pending → **Ratified**; all four
+  Closure Events' Human Ratification field completed with date and
+  authority; EC-005's Resolution Path updated from "awaiting human
+  confirmation" to the ratification record. `Unknowns.md` reached v4.74.
+  Open Unknowns header in `Ethical_Constraints.md` reformatted to state
+  8 substantively open (EC-006, EC-007, EC-010–EC-015) separately from
+  the six now-ratified items, rather than folding both into one compound
+  line. Human-directed.

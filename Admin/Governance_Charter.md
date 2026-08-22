@@ -303,6 +303,40 @@ This obligation terminates only upon verified Q-2 structural separation (GOV-008
 
 Lower-tier governance may extend higher-tier doctrine but may not silently redefine it.
 
+
+### Pending Ownership Declaration Convention
+*EC-016 resolution vehicle. Payment via Specification — 2026-08-22.*
+
+Lower-tier files may propose ownership of, or authority over, doctrine that sits adjacent to Tier 1. They may not declare that ownership as already active.
+
+When a lower-tier file asserts a claim over material that the Canonical Governance Ownership table assigns (or would assign) to a Tier 1 owner, the claim must be marked explicitly as one of:
+
+- **Proposed** — the lower-tier file is offering the text for eventual transfer or recognition; or
+- **Pending** — the claim is held until a named gate, Charter update, or human ratification clears.
+
+The marker must appear in the file's Scope Boundary (or equivalent ownership statement) and must name the condition that converts the claim from proposed/pending to active.
+
+Until that condition is met, the Canonical Governance Ownership table and the Tier 1 owner remain authoritative. Lower-tier text written under a proposed/pending marker is advisory only and cannot be cited as binding doctrine against a Tier 1 rule.
+
+**Canonical example (already correct practice):**
+`Admin/Governance_Migration_Protocol.md` §VII frames its ownership-transfer language as proposed, gated on Charter update and Gate 4 clearance. That pattern is the reference implementation of this convention.
+
+**What this convention does not do**
+
+- It does not alter the existing Tier 1–5 table or the rule that lower-tier governance may not silently redefine higher-tier doctrine.
+- It does not create a new verification gate or audit role.
+- It does not require retroactive rewriting of files that already defer correctly (e.g., `Repository_Integrity_Protocol.md`).
+- It does not resolve dual-ownership conflicts; the 2026-08-07 narrowing of EC-016 confirmed none are live.
+
+**Residual risks (non-blocking):**
+
+| ID | Residual | Notes |
+|----|----------|-------|
+| EC-016-R1 | Existing lower-tier files that pre-date this convention may still lack an explicit proposed/pending marker | No live conflict identified. Cleanup is optional hygiene, not a closure condition. Most natural first candidate for any later optional pass: `Admin/Integrity_Incident_Log.md` (makes a real closure-ownership claim grounded in RIP-007, but does not yet use the proposed/pending vocabulary). |
+
+*§EC-016 — Payment via Specification. Closes EC-016 (logged 2026-08-06, narrowed 2026-08-07). Constitutional anchor: this section's existing hierarchy rule and Canonical Governance Ownership table. Full Closure Event — Proposer (Grok, 2026-08-22), Verifier (Claude, 2026-08-22 — Pass; the hierarchy table, the "may not silently redefine" sentence, the Canonical Governance Ownership table, and GMP's "proposed... pending Charter update and Gate 4" phrasing all confirmed exact against source; the four post-narrowing files checked and found already conforming, no gap). Independence attestation: Grok (Proposer) and Claude (Verifier) are different agent instances; Claude had no prior involvement drafting this text. Human Ratification: Human Governing Authority, 2026-08-22. Human-directed.*
+
+
 `Admin/Forge_Audit_Kit.md` is explicitly derived from `Admin/Auditor_Protocols.md`. A derived condensed reference cannot sit constitutionally above its source document. Tier 3 reflects this relationship.
 
 ---
