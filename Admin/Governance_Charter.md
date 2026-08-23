@@ -14,13 +14,13 @@
 |------------------|---------------------------------------------------------------------|
 | Status           | Draft                                                               |
 | Body Stability   | Transitional                                                        |
-| Spec Gates       | 6/6 vs. `Admin/Verification_Gates.md` — execution quality (see GOV-011, resolved 2026-07-05); promotion separately blocked by open unknowns (GOV-003, GOV-005) and Enforcement Checkpoint 2 — Bootstrap Paradox |
+| Spec Gates       | 6/6 vs. `Admin/Verification_Gates.md` — execution quality (see GOV-011, resolved 2026-07-05); promotion separately blocked by open unknowns (GOV-005) and Enforcement Checkpoint 2 — Bootstrap Paradox; GOV-003 Resolved 2026-08-23 (specification-level architecture only — constitutional Enforceability under compromise remains blocked on SEC-007b, not a promotion-readiness change) |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-08-21                                                          |
-| Auditor          | Claude — Synthesizer, added two consolidated-reference sections (Human Override Doctrine, Constitutional Amendment Boundaries) and one clarifying sentence on doctrine-vs-procedures ownership; no substantive doctrine changed, corrects a prior Copilot audit's false "doctrine is absent" findings by pointing to where the existing text already lives (human-directed), 2026-08-05; prior: Claude — Sidecar/Resolution Log relocation to `Archive/Logs/Governance_Charter_Changelog.md`, GOV-022 registered (human-directed), 2026-07-23; Claude — Skeptic/Auditor; Gemini — Skeptic/Auditor; Grok — Exploration audit 2026-07-05; Gemini — Exploration audit 2026-07-05; Claude — GOV-011 resolution 2026-07-05; Claude — Skeptic/Auditor, 2026-07-16; Claude — GOV-013 drafted (multi-agent synthesis, human-directed), 2026-07-16; Claude — GOV-013/EDL Track classification confirmed (human-directed), 2026-07-17; ChatGPT — adversarial pass, 2026-07-17; Claude — GOV-014 through GOV-020 verified against source and registered (human-directed), 2026-07-17; Claude — GOV-012 threshold deferral, GOV-013 ratification review, GOV-006 biometric addendum (human-directed), 2026-07-19 |
-| Open Unknowns    | 16 (GOV-014, GOV-016, GOV-020, GOV-022 Resolved — Payment via Specification, 2026-08-20/21; see `Archive/Logs/Governance_Charter_Changelog.md` Resolution Log for full Closure Events) |
+| Last Audit       | 2026-08-23                                                          |
+| Auditor          | Claude — GOV-003 (Integrity Enforcement Architecture) integrated: Charter section added applying the existing Declared/Detectable/Reviewable/Enforceable ladder (not replacing it) to integrity enforcement, with the external-anchor requirement scoped to constitutional integrity under compromise; drafted by Grok, revised once after a ChatGPT Skeptic Conditional Pass, Accepted pending one narrow source-verification (SEC-002 authority-chain characterization, confirmed accurate against source), human-ratified (human-directed), 2026-08-23; prior: Claude — GOV-015 (Constitutional Interpretation Capture) and GOV-018 (Governance Fork Reconciliation) integrated: Charter sections added, GOV-018 operative Track added to `Admin/Governance_Migration_Protocol.md`, four new terms registered in `Admin/Canonical_Terms.md`; drafted by Grok, Skeptic-passed by ChatGPT (GOV-015 one revision, GOV-018 two revisions), human-ratified (human-directed), 2026-08-23; prior: Claude — Synthesizer, added two consolidated-reference sections (Human Override Doctrine, Constitutional Amendment Boundaries) and one clarifying sentence on doctrine-vs-procedures ownership; no substantive doctrine changed, corrects a prior Copilot audit's false "doctrine is absent" findings by pointing to where the existing text already lives (human-directed), 2026-08-05; prior: Claude — Sidecar/Resolution Log relocation to `Archive/Logs/Governance_Charter_Changelog.md`, GOV-022 registered (human-directed), 2026-07-23; Claude — Skeptic/Auditor; Gemini — Skeptic/Auditor; Grok — Exploration audit 2026-07-05; Gemini — Exploration audit 2026-07-05; Claude — GOV-011 resolution 2026-07-05; Claude — Skeptic/Auditor, 2026-07-16; Claude — GOV-013 drafted (multi-agent synthesis, human-directed), 2026-07-16; Claude — GOV-013/EDL Track classification confirmed (human-directed), 2026-07-17; ChatGPT — adversarial pass, 2026-07-17; Claude — GOV-014 through GOV-020 verified against source and registered (human-directed), 2026-07-17; Claude — GOV-012 threshold deferral, GOV-013 ratification review, GOV-006 biometric addendum (human-directed), 2026-07-19 |
+| Open Unknowns    | 13 (GOV-003, GOV-014, GOV-015, GOV-016, GOV-018, GOV-020, GOV-022 Resolved — Payment via Specification, 2026-08-20/21/23; see `Archive/Logs/Governance_Charter_Changelog.md` Resolution Log for full Closure Events) |
 | Active Disputes  | 1                                                                   |
-| Highest Risk     | Critical (GOV-013, GOV-015, GOV-018 — see `Archive/Logs/Governance_Charter_Changelog.md`; promotion-blocking risk unchanged from GOV-003/GOV-005) |
+| Highest Risk     | Critical (GOV-013 — see `Archive/Logs/Governance_Charter_Changelog.md`; promotion-blocking risk unchanged from GOV-005; GOV-003/GOV-015/GOV-018 Resolved 2026-08-23, no longer contributing to Highest Risk) |
 | Sidecar Link     | Archive/Logs/Governance_Charter_Changelog.md#auditor-notes--unknowns |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
@@ -412,6 +412,72 @@ Silent authority inheritance is prohibited.
 Governance doctrine must not imply stronger enforcement capability than currently exists.
 
 The Tier 1 Axioms are currently Declared and Detectable. Enforcement architecture is the subject of GOV-003 and remains the primary maturation target for this charter.
+
+---
+
+## Integrity Enforcement Architecture
+*GOV-003 resolution vehicle. Payment via Specification — 2026-08-23.*
+
+Repository Integrity Doctrine (below) states integrity expectations. This section states the enforcement architecture: which layer owns which function, how those layers hand off, and how the maturity ladder above applies when assessing integrity enforcement capability. This Charter defines architecture and constraints; executable mechanics live in subordinate protocols (deliberate doctrine-vs-procedures split).
+
+**This section does not redefine the maturity vocabulary.** The constitutional ladder remains Declared → Detectable → Reviewable → Enforceable, as already used in this Charter and in `Admin/Repository_Integrity_Protocol.md`. GOV-003 assigns meaning to each rung for integrity enforcement; it does not collapse or replace rungs.
+
+**Problem.** Tier 1 Axioms and integrity expectations have been Declared. Detection, review, and response doctrine now exist across `Admin/Repository_Integrity_Protocol.md` (RIP), `Admin/Security_Protocols.md`, and `Admin/Ethical_Constraints.md`. Without an explicit architecture, those pieces do not compose into a coherent enforcement system, and it remains unclear what is still missing for constitutional Enforceability under compromise versus what is already specified at lower rungs.
+
+**Maturity ladder — integrity enforcement view.**
+
+| Rung | Meaning for integrity enforcement | Evidence that a control is on this rung |
+|------|-----------------------------------|----------------------------------------|
+| Declared | The requirement or expectation is stated in binding doctrine | Text exists in Charter, Ethical_Constraints, or an owned protocol and is in force as specification |
+| Detectable | Violation or failure can be recognized by a defined signal or audit path | Named detection criteria, audit procedure, or signal set exists (even if thresholds are Placeholder) |
+| Reviewable | Detection produces a traceable evidentiary / review path and assigned response authority | Incident can be logged, investigated, and routed to a defined owner; response authority is named (suspension, escalation, human review) even if full recovery under compromise is not yet available |
+| Enforceable | An effective response can be imposed and recovery performed for the scope claimed | Depends on scope — see below |
+
+**Scope of Enforceable (do not overgeneralize).** Ordinary procedural enforcement — human-ordered halt, refusal of a prohibited action, suspension under Security_Protocols SEC-002, preservation of a known-good version, rejection of a governance transition — may be Enforceable in its own scope without an external cryptographic anchor. Constitutional integrity enforcement against a compromised enforcement chain — the highest-order case this architecture exists to survive — reaches Enforceable only when an external root-of-trust meeting Security_Protocols SEC-007a R1–R6 (or an equivalent external recovery anchor) is instantiated in the operating environment, so response and recovery do not depend solely on the compromised chain's self-attestation. Suspicion, suspension, and human-ordered halt remain available and mandatory where doctrine already requires them — they establish Reviewable (and, for ordinary procedural scope, Enforceable) controls; they do not by themselves complete constitutional Enforceability under compromise.
+
+**Aggregate posture — asymmetric maturity, honest.**
+
+| Layer | Current character |
+|-------|-------------------|
+| Charter expectations | Declared |
+| Detection doctrine (SEC-009, related signals) | Substantially Detectable |
+| RIP manual audit / review paths | Reviewable in covered elements |
+| SEC detection → response chain (SEC-009 / SEC-002) | Specified and ratified — Reviewable; ordinary suspension/revocation Enforceable in procedural scope (confirmed against SEC-002's actual authority chain: suspension is mandatory and self-executing on a valid signal, revocation and re-admission run through named Human Governing Authority authority with no self-clear path — verified at GOV-003 integration, 2026-08-23) |
+| External anchor requirements (SEC-007a) | Declared (ratified) |
+| External anchor implementation (SEC-007b) | Absent |
+| Constitutional integrity enforcement under compromise | Not Enforceable — blocked on SEC-007b instantiation |
+
+This is an asymmetric maturity system, not a single uniform rung for "all integrity."
+
+**Enforcement stack (ownership map).**
+
+| Function | Owner | Architecture status |
+|----------|--------|---------------------|
+| Constitutional expectations | This Charter — Repository Integrity Doctrine; Tier 1 Axioms; Ethical_Constraints hard floors | Declared |
+| Integrity baselines, violation classification, recovery procedures (procedural) | `Admin/Repository_Integrity_Protocol.md` (RIP) | Declared / Detectable / Reviewable in covered areas |
+| Compromise detection (key/node) | SEC-009 — signals D1–D6 → suspicion | Detectable (ratified) |
+| Compromise response (suspend / revoke / re-admit) | SEC-002 | Reviewable + procedurally Enforceable in ordinary scope (ratified) |
+| External root-of-trust requirements | SEC-007a — R1–R6 | Declared (ratified) |
+| External root-of-trust instantiation | SEC-007b | Open — physical / operational; blocks constitutional Enforceable under compromise |
+| Ethics-substrate systematic failure | EC-007 — Substrate Fail-Safe | Detectable + Reviewable response path (ratified) |
+| Human escalation / authority conflict | EC-003 / EC-009 | Declared / Detectable / Reviewable (ratified) |
+| Operational auditor conduct | AP-007 and `Admin/Auditor_Protocols.md` generally | Linked layer; not a substitute for constitutional enforcement |
+| Integrity incident logging | Integrity_Incident_Log / RIP-007 ownership rules | Procedural support for Reviewable |
+
+**Architectural invariants.** Detection without a defined owner for response is incomplete architecture. Response that can be rewritten or cleared solely by the same chain under suspicion is incomplete constitutional Enforceability under compromise (SEC-007a R1–R6 exist to break that loop; SEC-007b supplies the real-world anchor). Doctrine vs procedures: this section assigns ownership and maturity meaning; it does not replace RIP tables, SEC signal lists, or EC fail-safe thresholds.
+
+**Explicit non-goals.** Does not implement HSM, offline snapshot procedures, or Phase 3 crypto. Does not re-specify SEC-007a/009/002, EC-007, or RIP violation ladders. Does not claim the operating environment currently has an external anchor. Does not redefine Declared / Detectable / Reviewable / Enforceable. Does not assert that every Enforceable control in the repository requires an external root-of-trust. Does not resolve GOV-005 or bootstrap paradox checkpoints. Does not make promotion automatic when this section is ratified.
+
+**Residual risks, logged as child notes and not blocking this section's Payment via Specification:**
+
+| ID | Residual | Notes |
+|----|----------|-------|
+| GOV-003-R1 | External root-of-trust instantiation (SEC-007b) | Primary blocker for constitutional Enforceability under compromise; requirements already SEC-007a |
+| GOV-003-R2 | RIP Spec Gate / open-unknown maturity | Procedural depth; does not redefine this architecture map |
+| GOV-003-R3 | Security_Protocols Phase 3 execution detail | Implementation layer under SEC ownership |
+| GOV-003-R4 | End-to-end exercise of constitutional detection → response → recovery against a live anchor | Validation, not specification; withhold constitutional "Enforceable under compromise" until then |
+
+*§GOV-003 — Resolved, Payment via Specification, ratified 2026-08-23. Closes GOV-003 (logged 2026-07-17). Drafted by Grok, revised once after a ChatGPT Skeptic Conditional Pass (restored the Charter's existing four-rung ladder rather than a competing three-rung model; scoped the external-anchor requirement to constitutional integrity enforcement under compromise rather than all enforcement generally; aggregate posture corrected to respect RIP's Reviewable progress), then Accepted pending one narrow source-verification (SEC-002's "procedurally Enforceable in ordinary scope" characterization) — confirmed accurate against SEC-002's actual authority-chain text at integration. Constitutional anchor: Governance Enforcement States (above), which this section applies without redefining. Full Closure Event — Proposer (Grok), Skeptic + Verifier (ChatGPT, Conditional Pass then Accept), Human Ratification (Human Governing Authority) — recorded in `Archive/Logs/Governance_Charter_Changelog.md`'s GOV-003 sidecar entry. Human-directed.*
 
 ---
 
@@ -838,6 +904,103 @@ All numerical thresholds above are Placeholders. They exist to force an early co
 | GOV-020-R4 | Multi-repository or companion-doctrine cost accounting undefined | Deferred until such repositories exist |
 
 *§GOV-020 — Resolved, Payment via Specification, ratified 2026-08-20. Closes GOV-020 (logged 2026-07-17). Drafted by Grok as a candidate specification 2026-08-20. Current repository scale (107 total Markdown files, 83 non-archived, 29 in `Admin/`, confirmed at integration) checked against this section's own soft bands — the resulting G/O Ratio is approximately 0.35 (29 ÷ 83), placing the repository inside the 0.30 Watch band but below the 0.40 discussion threshold. This is an early demonstration of the metric doing its job, not a reason to reject the specification: the bands are explicitly Placeholder diagnostic thresholds awaiting real operational data, not a target to stay under. (Corrected 2026-08-20 — the original closing note here incorrectly stated the ratio sat "well below" 0.30; caught during independent verification.) Constitutional anchor: the Charter's own proportionality principle; deliberately kept lighter in scope and length than Governance Complexity Ceiling and Governance Pruning Doctrine, the two sections it measures. Full Closure Event — Proposer (Grok), Verifier (ChatGPT, Pass contingent on the arithmetic correction above, then applied), Human Ratification (Human Governing Authority) — recorded in `Archive/Logs/Governance_Charter_Changelog.md`'s GOV-020 sidecar entry. Human-directed.*
+
+---
+
+## Constitutional Interpretation Capture — Aggregate Drift Detection
+*GOV-015 resolution vehicle. Payment via Specification — 2026-08-23.*
+
+This Charter already prevents self-certification, silent amendment, tier inversion, and lineage destruction at the Tier 1 text level. `Admin/Governance_Migration_Protocol.md` GMP-005 covers single-file reinterpretation of an Axiom (a Tier-2 change that alters Tier-1 interpretation or enforcement bounds becomes constitutionally significant; Resolved).
+
+This section covers the remaining attack class: distributed cumulative effect — a coalition or uncoordinated accumulation that never edits Tier 1 text, but produces enough subordinate doctrine that the practical interpretation of an Axiom drifts from its textual meaning until Tier 1 is intact on paper and irrelevant in practice. GMP-005 cannot detect that class: each file may be locally permissible while the aggregate is not.
+
+**Three distinctions (specification layer).**
+
+| Kind | What it is | Required for GOV-015? |
+|------|------------|------------------------|
+| Textual conflict | Subordinate wording directly contradicts Tier 1 text | May support a review; not the primary object |
+| Interpretive drift | Subordinate rules collectively establish an interpretation under which conduct the Axiom forbids is treated as permissible, or conduct it requires is treated as optional — without a recorded Charter amendment | Yes — this is the detection object |
+| Operational drift | Actual field behavior repeatedly follows that interpretation | No — not required to open or complete a specification-level Interpretation Drift Review |
+
+At current maturity, the repository works in the specification layer. The subordinate corpus is sufficient evidence to conduct a specification-level review; the review itself establishes whether that authorization constitutes interpretive drift. Operational statistics are not required and must not be pretended.
+
+**Problem.** Every individual subordinate file can pass its own audit while the aggregate treatment of an Axiom hollows it out. Governance Complexity Ceiling bounds volume; Governance Pruning Doctrine enables removal; Governance Cost Metric measures cost; the Governance Authority Hierarchy forbids silent redefinition by a lower tier. None of them states: several individually permissible subordinate provisions can collectively produce a prohibited interpretation.
+
+**Trigger vs finding (keep separate).** Trigger — enough evidence exists to open an Interpretation Drift Review. Finding — the review concludes that collective subordinate treatment conflicts with the named Axiom's text. A trigger does not prove drift. Only a completed review produces a finding.
+
+**Minimum triggers (open a review).** Any one of the following is sufficient to open an Interpretation Drift Review:
+
+| ID | Trigger | Role |
+|----|---------|------|
+| A1 — Pattern accumulation | Multiple subordinate instruments (doctrines, procedures, routing rules, or exception clauses), across more than one file, collectively establish a materially conflicting authorization, constraint, exception, or routing pattern relative to a named Tier 1 Axiom or Ethical_Constraints hard floor | Sufficient to investigate — not proof of drift |
+| A2 — Routing inversion | Subordinate doctrine systematically routes decisions that the Axiom assigns to human ratification or hard refusal into automated or lower-tier discretion, across more than one instrument | Same |
+| A3 — Explicit challenge | Human Governing Authority, or an independent auditor under Auditor_Protocols, formally asserts that practical interpretation of a named Axiom has drifted from its text | External / constitutional challenge; no count required |
+
+**Implementation note (not constitutional).** A provisional heuristic for A1 is "≥ 3 distinct active subordinate instruments in different files contributing to the same conflicting pattern." That number is a Placeholder operational aid only. It does not define interpretive drift and may be revised without Charter amendment. Suspicion under A1 with fewer instruments, or an A3 challenge, remains sufficient to open a review.
+
+**Review behavior (not amendment).** An Interpretation Drift Review names the Axiom (or hard floor) and the subordinate patterns alleged to establish a conflicting interpretation. It does not rewrite Tier 1 text and does not resolve by "updating interpretation" to match subordinate practice. Outcomes are limited to: No drift (record and close — trigger was insufficient or patterns do not conflict with text); Subordinate correction (specified lower-tier files must be amended or retired so collective treatment realigns with text, per the hierarchy and Pending Ownership Declaration); Charter amendment path (if the subordinate interpretation is judged correct and Tier 1 text wrong, that is a Tier 1 amendment under existing Governance Migration / Constitutional Amendment rules — human ratification mandatory, no autonomous initiation); or Escalate (if review cannot complete without broader integrity or compromise investigation — cross-ref Security_Protocols SEC-009/SEC-002, Ethical_Constraints EC-007 as applicable). A finding of drift requires the review to establish that collective subordinate treatment conflicts with Tier 1 text — not merely that multiple files contain similar or overlapping language. Review authority: Human Governing Authority, or an independent audit process that cannot be satisfied solely by the authors of the subordinate doctrines under challenge.
+
+**Relationship to existing doctrine.** GMP-005 is single-document reinterpretation / constitutional-impact classification — distinct and already Resolved; GOV-015 is distributed cumulative effect only. Governance Complexity Ceiling reduces stealth volume but does not detect interpretive drift. Governance Pruning Doctrine is the tool for subordinate-correction outcomes. Governance Cost Metric is optional diagnostic input, not required for triggers. GOV-018 (Fork Reconciliation, below) requires a GOV-015 review under its F4 if drift and fork co-occur; this section does not absorb fork doctrine. Pending Ownership Declaration blocks silent ownership claims while corrections are pending.
+
+**Explicit non-goals.** Does not add a new Axiom. Does not create continuous automated semantic analysis of the whole corpus. Does not authorize agents to amend Tier 1 to match practice. Does not replace per-file audit or GMP-005. Does not require operational or field evidence to open or complete a specification-level review. Does not treat the provisional "≥ 3" heuristic as a constitutional constant.
+
+**Residual risks, logged as child notes and not blocking this section's Payment via Specification:**
+
+| ID | Residual | Why left open |
+|----|----------|---------------|
+| GOV-015-R1 | Provisional A1 heuristic (≥ 3 instruments) | Implementation aid only; revise with experience; not required for A3 or for a reasoned A1 with fewer instruments |
+| GOV-015-R2 | Rubric for "same conflicting pattern" / "materially conflicting" | Qualitative judgment inside the review; no taxonomy pretended |
+| GOV-015-R3 | Co-occurrence with GOV-018 (fork + drift) | Escalate / run GOV-015 in parallel per GOV-018's F4; do not merge doctrines |
+
+*§GOV-015 — Resolved, Payment via Specification, ratified 2026-08-23. Closes GOV-015 (logged 2026-07-27). Drafted by Grok as a candidate specification, revised once after a ChatGPT Skeptic pass (trigger/finding separation, textual/interpretive/operational distinction, ≥3 heuristic demoted from definitional to provisional), then accepted by ChatGPT on confirmation pass with one non-blocking wording note (subordinate corpus is evidence sufficient to conduct a review, not evidence sufficient to itself constitute drift — reflected in the final wording above). Constitutional anchor: Governance Authority Hierarchy and Governance Complexity Ceiling/Anti-Theater doctrine (above); correctly distinguished from, not a duplicate of, GMP-005. Full Closure Event — Proposer (Grok), Skeptic + Verifier (ChatGPT, two-pass — Revise then Accept), Human Ratification (Human Governing Authority) — recorded in `Archive/Logs/Governance_Charter_Changelog.md`'s GOV-015 sidecar entry. Human-directed.*
+
+---
+
+## Governance Fork Reconciliation
+*GOV-018 resolution vehicle, Charter layer. Payment via Specification — 2026-08-23. Operative procedure skeleton in `Admin/Governance_Migration_Protocol.md`.*
+
+`Admin/Governance_Migration_Protocol.md` defines how a single lineage evolves (Track A/B, amendment procedure). It does not define what happens when lineages diverge and later must be reconciled.
+
+**Governance fork (definition).** A governance fork exists when two or more lineages make competing claims of constitutional continuity with this Charter's Tier 1 surface, and that competition cannot be resolved through ordinary single-lineage migration. A fork is a governance condition, not a git implementation detail. It does not require that either lineage have completed independent audit, multi-agent quorum, or full validation machinery — audit and validation are part of reconciliation, not gates on whether the condition exists. This is consistent with the repository's existing pattern that specification-complete and validation-complete are sequenced states (see GOV-021c in `Admin/Autonomy_Divergence_Protocol.md`).
+
+**Claim vs legitimacy.**
+
+| Status | Meaning |
+|--------|---------|
+| Claimed lineage | A lineage asserts continuity with Tier 1. Assertion alone. |
+| Recognized lineage | The claim has been accepted into a reconciliation process under this doctrine (inventory, classify, etc.) without yet deciding the successor surface. Procedural, not constitutional. |
+| Ratified constitutional lineage | Human Governing Authority has ratified a successor package — or an explicit continued-fork arrangement — as the active constitutional surface (or as an approved forked state). |
+
+Neither side acquires legitimacy merely by declaring itself a lineage. Neither side becomes the sole successor by unilateral assertion, volume of commits, or control of a hosting surface (see F1).
+
+**Active constitutional surface.** The set of texts treated as binding Tier 1 constitutional content (Charter Axioms and immediately implementing hard floors such as Ethical_Constraints commandments) for the institution at a given time. Distinct from a claimed or recognized lineage package. Only Human Governing Authority ratification after a fork reconciliation (or ordinary single-lineage process) makes a surface "active." Not a synonym for "whatever is in main."
+
+**Principles.**
+
+| # | Principle | Meaning |
+|---|-----------|---------|
+| F1 — No silent winner | Neither lineage may declare itself the sole successor by unilateral assertion, volume of commits, or control of a particular hosting surface | Prevents capture-by-presence |
+| F2 — Tier 1 Axiom text is not automatically merged | When lineages differ in the wording of Tier 1 Axiom text, that conflict is not resolved by textual diff-merge or by agent procedure. Conflicting Axiom propositions require Human Governing Authority resolution under existing amendment rules. Agents may not "reconcile" Axiom text | Protects axiom sparseness and human sovereignty over constitutional content |
+| F3 — Subordinate doctrine is reconcilable | Divergence below Tier 1 may be reconciled by procedure: inventory, classify, align or retire, without treating either lineage's entire subordinate corpus as automatically void or automatically superior | Keeps the problem tractable |
+| F4 — Interpretation drift rules still apply | If reconciliation would normalize aggregate practical interpretation that drifts from Axiom text, GOV-015 (Interpretation Drift Review, above) applies. Fork merge is not a back door to interpretation capture | Links to GOV-015 |
+| F5 — Human ratification of the active constitutional surface | Selecting or changing which package is the active constitutional surface — whether Axiom text is identical across lineages or not — requires explicit Human Governing Authority ratification before it binds. Absence of objection is not ratification | Protects human sovereignty over constitutional succession; covers both "same text, competing lineage" and "different text" cases without collapsing them into F2 |
+| F6 — Lineage preservation | Both pre-reconciliation lineages remain archived and citable. Reconciliation produces a successor state; it does not erase history | Institutional memory |
+
+**F2 vs F5 (do not conflate).** F2 applies when the content of Tier 1 Axioms diverges. F5 applies whenever reconciliation designates which package is binding going forward — including when Axiom text is identical and only lineage/continuity is contested. F2 does not by itself choose a successor surface; F5 does not authorize agents to rewrite Axiom text. These principles constrain any operative fork-reconciliation procedure; they do not define git workflow, hosting, or merge tooling.
+
+**Relationship to existing doctrine.** GOV-015 (above) — aggregate interpretive drift must be respected during fork merge, per F4. Governance Complexity Ceiling / Pruning Doctrine — tools for subordinate alignment/retirement during reconciliation. Governance Migration Protocol Track A/B — single-lineage evolution, the normal path; this section is the multi-lineage exception. GOV-005 — long-term constitutional stability, a related horizon but not a substitute for fork rules. GOV-021c / Epistemic Quorum Doctrine — validation machinery may inform reconciliation quality; not a prerequisite for the fork condition existing.
+
+**Explicit non-goals.** Does not define network partition healing (Security_Protocols SEC-001) or key reconciliation (SEC-002). Does not authorize agents to pick a winner under time pressure. Does not treat "absence of objection" as ratification. Does not grant constitutional standing by self-declaration alone. Does not require independent audit as a precondition for recognizing that a fork condition exists. The operative procedure skeleton (inventory → classify → propose successor → human ratification → archive) lives in `Admin/Governance_Migration_Protocol.md` as a new Track, not in this Charter section — deliberately kept thin, not a full fork-management manual.
+
+**Residual risks, logged as child notes and not blocking this section's Payment via Specification:**
+
+| ID | Residual | Why left open |
+|----|----------|---------------|
+| GOV-018-R1 | Full Migration Protocol Track text (templates, checklists) | Expand later if needed; skeleton + these principles are sufficient for constitutional closure |
+| GOV-018-R2 | Multi-party (>2) lineage reconciliation | Same principles; procedure detail deferred until needed |
+| GOV-018-R3 | Hosting/legal identity of "which repo is canonical" | Outside pure governance doctrine; human/legal residual |
+
+*§GOV-018 — Resolved, Payment via Specification, ratified 2026-08-23. Closes GOV-018 (logged 2026-07-27). Drafted by Grok as a candidate specification, revised twice after ChatGPT Skeptic passes (v2: claim≠legitimacy distinction, fork condition without independent-audit prerequisite; v3: explicit F2/F5 split for Axiom-text divergence vs. active-surface selection, vocabulary staged for Canonical_Terms.md), then accepted by ChatGPT on confirmation pass. Operative procedure skeleton drafted for `Admin/Governance_Migration_Protocol.md` in the same closure. Constitutional anchor: human sovereignty over Tier 1 content and succession (existing amendment rules); correctly linked to, not duplicative of, GOV-015 via F4. Full Closure Event — Proposer (Grok), Skeptic + Verifier (ChatGPT, three-pass — Revise, Revise, Accept), Human Ratification (Human Governing Authority) — recorded in `Archive/Logs/Governance_Charter_Changelog.md`'s GOV-018 sidecar entry. Human-directed.*
 
 ---
 

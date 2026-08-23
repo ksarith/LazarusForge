@@ -1594,6 +1594,34 @@ Claude — Synthesizer/Auditor, human-directed, 2026-07-26.*
 
 ---
 
+## Fork Reconciliation Track (GOV-018)
+*Operative procedure skeleton. Constitutional principles (fork definition, claim/recognized/ratified lineage states, active constitutional surface, F1–F6) are declared in `Admin/Governance_Charter.md` under Governance Fork Reconciliation — this Track executes them and does not restate them. Payment via Specification — 2026-08-23.*
+
+Track A and Track B above define how a single lineage evolves. This Track is the multi-lineage exception: it applies only when two or more lineages make competing claims of constitutional continuity with the Charter's Tier 1 surface and ordinary single-lineage migration (Track A/B) cannot resolve the competition.
+
+**Entry condition.** A lineage may be treated as recognized for inventory purposes under this Track without that recognition constituting ratification of its legitimacy (Charter: Claim vs legitimacy).
+
+**Steps (minimum).**
+
+1. **Inventory** — For each claimed lineage: Tier 1 text identity/hash, active subordinate governance files, open Critical unknowns, pending ownership claims. Record claims as claims, not as findings.
+2. **Classify divergence** —
+   - T1-text divergence (Axiom wording differs): stop agent procedure on content; Human Governing Authority only, per Charter F2. Surface-selection still requires F5 if a successor package is later designated.
+   - Subordinate-only divergence: continue to step 3.
+   - Interpretive drift (collective practical interpretation vs text): open a GOV-015 Interpretation Drift Review in parallel; do not merge past an unresolved drift finding, per Charter F4.
+   - Same Axiom text, competing continuity claim: no F2 content merge required; proceed to step 3; F5 still required to designate the active constitutional surface.
+3. **Propose successor set** — Subordinate files aligned to a single coherent reading of Tier 1; retire or mark Pending those that cannot align, using the existing Governance Authority Hierarchy and Pending Ownership Declaration Convention.
+4. **No automatic preference** for the lineage with more files, more commits, current hosting control, or louder claim, per Charter F1.
+5. **Human ratification** of the active constitutional surface — or of an explicit continued-fork decision, per Charter F5. Only after this step does a lineage become a ratified constitutional lineage.
+6. **Archive** both prior lineages as citable history, per Charter F6; record the reconciliation event in the appropriate changelog / Resolution Log.
+
+**Explicit non-goals.** Does not define network partition healing (Security_Protocols SEC-001) or key reconciliation (SEC-002). Does not authorize agents to pick a winner under time pressure. Does not treat absence of objection as ratification. Does not grant constitutional standing by self-declaration alone. Does not require independent audit as a precondition for recognizing that a fork condition exists (Charter). This Track is deliberately a minimum skeleton, not a full fork-management manual; templates, checklists, and multi-party (>2) procedure detail are deferred (GOV-018-R1, GOV-018-R2 in the Charter).
+
+**Relationship to existing Tracks.** Track A/B remain the normal, single-lineage path. This Track activates only on genuine multi-lineage competing-continuity conditions, which do not currently exist in this repository — this is anticipatory doctrine, consistent with the repository's practice of specifying institutional response before the triggering condition arises (cf. GOV-021c).
+
+*§GOV-018 operative procedure — Resolved alongside the Charter-level closure above. See `Admin/Governance_Charter.md`'s GOV-018 sidecar note for full closure attribution (Proposer, Skeptic/Verifier passes, Human Ratification).*
+
+---
+
 ## Relationship to Existing Documents
 
 - `Admin/Governance_Charter.md` — Tier 1 constitutional source; Governance

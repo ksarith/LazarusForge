@@ -539,6 +539,47 @@ are the open resolution vehicles. The canonical definition here does not
 constitute resolution of either entry — it registers the vocabulary;
 the implementation work remains in the owning sidecar.* See CT-009.
 
+**Active Constitutional Surface**
+The set of texts treated as binding Tier 1 constitutional content (Charter
+Axioms and immediately implementing hard floors such as Ethical_Constraints
+commandments) for the institution at a given time. Distinct from a claimed
+or recognized lineage package (below). Only Human Governing Authority
+ratification after a fork reconciliation (or ordinary single-lineage
+process) makes a surface "active." Not a synonym for "whatever is in
+main" — a technical repository state (default branch, hosting account,
+commit history) is not automatically the constitutional surface. Defined
+and governed by Governance Fork Reconciliation in
+`Admin/Governance_Charter.md` (GOV-018).
+
+**Claimed Lineage**
+A governance lineage that asserts continuity with this repository's Tier 1
+constitutional surface. Assertion alone; carries no legitimacy by itself.
+See Recognized Lineage and Ratified Constitutional Lineage, below, for the
+states a claim may progress to under the Fork Reconciliation Track
+(`Admin/Governance_Migration_Protocol.md`). Defined under GOV-018.
+
+**Recognized Lineage**
+A claimed lineage that has been accepted into a fork-reconciliation process
+(inventory, classification) without yet being ratified as the active
+constitutional surface. Procedural, not constitutional — recognition for
+inventory purposes does not itself confer legitimacy. Defined under GOV-018.
+
+**Ratified Constitutional Lineage**
+A lineage (or an explicit continued-fork arrangement) whose package has
+been ratified by the Human Governing Authority as the active constitutional
+surface, or as an approved forked state. The terminal state in the Claimed
+→ Recognized → Ratified progression. Defined under GOV-018.
+
+*Implementation status: all four terms registered as canonical vocabulary
+at GOV-018 closure (2026-08-23), alongside Governance Fork Reconciliation
+in `Admin/Governance_Charter.md` and the Fork Reconciliation Track in
+`Admin/Governance_Migration_Protocol.md`. No overlapping or competing
+terms found elsewhere in the repository at registration time; the nearest
+neighbors — "active constitutional invariant" (`Admin/Auditor_Protocols.md`)
+and "constitutional state" (`Admin/Security_Protocols.md`) — are used in
+narrower rollback/recovery contexts and are not renamed or superseded by
+this entry.*
+
 ---
 
 ### 5. Explicit Term Exclusions — Anti-Drift Guardrails
