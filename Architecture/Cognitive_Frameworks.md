@@ -1015,14 +1015,14 @@ layer exactly as to any other agent.
 
 | Field         | Value                                                        |
 |---------------|--------------------------------------------------------------|
-| Status        | Open                                                         |
+| Status        | In Progress                                                   |
 | Risk          | High                                                         |
 | Priority      | Critical                                                     |
 | Type          | Technical                                                    |
 | Blocking      | Yes — no Specification-level autonomous architecture may be approved without a defined watchdog minimum standard |
 | Owner         | Operations/Electronics.md                                    |
 | First Logged  | 2026-05-09                                                   |
-| Last Reviewed | 2026-05-09                                                   |
+| Last Reviewed | 2026-08-22                                                   |
 
 **Description:** Minimum required watchdog behaviors
 and enforcement mechanisms for autonomous Forge
@@ -1047,6 +1047,12 @@ approved. Owner is `Operations/Electronics.md` —
 watchdog circuit design belongs in the electronics
 hardware layer. This file owns the minimum behavior
 requirements; Electronics.md owns the implementation.
+**Parameters defined 2026-08-22 per `Operations/Electronics.md`: heartbeat
+window τ = 50ms (Analogous confidence, derived from analog deep-sea relay
+precedent — see that file's "Why 50ms" note). Remains Blocking until first
+hardware prototype validates at Measured confidence — this sidecar had
+gone stale relative to `Unknowns.md`'s active-index record, which already
+reflected this progress; corrected here to match.**
 Payment via Specification — once Electronics.md
 defines and validates a watchdog implementation,
 update Layer 1 in Section II with concrete parameters.
