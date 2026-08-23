@@ -1075,3 +1075,100 @@ against its own sidecar, rather than carried forward from 2026-08-14.
   8 substantively open (EC-006, EC-007, EC-010–EC-015) separately from
   the six now-ratified items, rather than folding both into one compound
   line. Human-directed.
+
+- 2026-08-22: **EC-007 (Substrate Fail-Safe) integrated — Resolved,
+  pending Human Ratification.** Newly actionable after EC-004's closure
+  cleared its second dependency (see 2026-08-22 entry above). Drafted by
+  Grok with T1–T4 mandatory-entry thresholds as explicit, locked-method
+  Placeholders — `Tests/Field_Logs.md` is intake-only, no operational
+  history exists to derive real numbers from yet, and Grok's own
+  follow-up explicitly rejected inventing "derived" numbers from empty
+  logs as the false-precision failure this repository's provenance
+  discipline exists to prevent. Claude source-verified the full draft
+  against live repository content before finalization; no discrepancy
+  found. **Two-round Skeptic/Evidence pass, not treated as simple
+  convergence:** round one produced a split verdict — one conditional
+  pass requiring three amendments (T2 diagnostic-observation exception,
+  T4 self-test diagnostic-only clarification, a narrow recovery-
+  diagnostics carve-out from the operational halt so Exit conditions
+  remain reachable rather than deadlocked), one unconditional pass that
+  engaged only the first of the three points. The unconditional pass's
+  silence on the other two was treated as an incomplete review, not as
+  agreement that those points didn't matter. All three amendments made,
+  plus a fourth (re-derivation trigger rephrased as eligibility rather
+  than a forced mid-incident rewrite, since T1's own entry threshold and
+  the recalibration trigger share the same number and could otherwise
+  read as circular). Round two: both Grok and ChatGPT independently
+  confirmed all points resolved, unconditional Pass, no further
+  substantive changes recommended — genuine convergence this time, both
+  reviews actually engaging with every point. Integrated as a new
+  subsection after Governance Failure Modes in
+  `Admin/Ethical_Constraints.md`; EC-007 sidecar Status and Resolution
+  Path updated; Open Unknowns header corrected 8 → 7 substantively open.
+  `Unknowns.md` reached v4.75. Threshold values remain explicitly
+  Placeholder and do not acquire implied empirical status through
+  ratification — noted directly in the Closure Event text itself, not
+  left implicit. Human-directed.
+
+- 2026-08-22: **EC-007 (Substrate Fail-Safe) ratified by Human Governing
+  Authority.** Same-day follow-up to the EC-007 integration above. Sidecar
+  Status moved Resolved/pending → Ratified; Closure Event's Human
+  Ratification field completed; Open Unknowns header consolidated to list
+  EC-007 alongside the six other 2026-08-22 ratifications rather than as
+  a separate pending line. `Unknowns.md` reached v4.76. This closes the
+  full EC-series batch worked this session: EC-003, EC-004, EC-005,
+  EC-007, EC-008, EC-009, EC-016 — seven Tier 1 unknowns drafted,
+  source-verified, integrated, and ratified in one continuous working
+  session, with EC-007 additionally carrying a genuine two-round
+  Skeptic/Evidence disagreement that was resolved on the merits rather
+  than averaged over. Threshold values (3, 10, 2, 50) in EC-007 remain
+  explicitly Placeholder — ratification does not promote them to Measured
+  or any other evidence tier; noted directly in the Closure Event text so
+  a future reader can't mistake ratification for empirical calibration.
+  Human-directed.
+
+- 2026-08-22: **SEC-007a, SEC-009, SEC-002 integrated into
+  `Admin/Security_Protocols.md` — Resolved, pending Human Ratification.**
+  First non-EC-series campaign this session, same tractability-first
+  approach applied to security/enforcement doctrine. Grok drafted all
+  three; Claude source-verified every citation before finalization —
+  Trust Boundary Declaration, III.4, EC-004's descent analogy, GOV-006,
+  RIP-001 all confirmed exact. SEC-009 required a real correction: its
+  first draft's D4 signal cited CF-001 as the source of a behavioral-
+  divergence threshold, but CF-001 is hardware-watchdog containment, a
+  different mechanism entirely; corrected to defer to the existing
+  `Challenges/Emergence.md` EM-001 unknown instead of proposing a
+  duplicate, with CF-001's own In-Progress/τ=50ms status corrected in
+  the same pass after being found stale against `Unknowns.md`
+  (`Architecture/Cognitive_Frameworks.md`'s CF-001 sidecar was itself
+  fixed separately, same day). **Two-round Skeptic/Evidence pass, not
+  simple convergence-on-first-read:** ChatGPT reviewed all three as a
+  connected chain first — PASS on SEC-009 and SEC-007a, CONDITIONAL PASS
+  on SEC-002 requiring one amendment (raising a SEC-009 signal confers
+  no downstream investigation/clearance/revocation/re-admission
+  authority, since SEC-009's D6 lets any party raise a signal). Amendment
+  made. Grok then reviewed independently against the live repository
+  state (correctly citing CF-001's corrected status, not a stale
+  version) — unconditional PASS on all three, explicitly confirming the
+  SEC-002 amendment closed the gap and that the SEC-009→SEC-002 handoff
+  is 1:1 with no seam defects. Genuine convergence this time — contrast
+  with EC-007's first Skeptic round, where one reviewer's silence on two
+  of three points had to be caught and re-done. Integrated: SEC-007a
+  placed after the Trust Boundary Declaration; SEC-009 and SEC-002 both
+  placed expanding III.4 into one continuous detection→response chain.
+  `Security_Protocols.md` Open Unknowns: 13 → 10 substantively open.
+  `Unknowns.md` reached v4.77. Human-directed.
+
+- 2026-08-22: **SEC-007a, SEC-009, SEC-002 ratified by Human Governing
+  Authority.** Same-day follow-up to the Security_Protocols integration
+  above. All three sidecar Status fields moved Resolved/pending →
+  Ratified; all three Closure Events' Human Ratification field completed;
+  `Security_Protocols.md`'s Open Unknowns header consolidated to list the
+  three ratifications directly rather than as a separate pending line.
+  `Unknowns.md` reached v4.78. This closes the full Security_Protocols
+  campaign worked this session — three enforcement/constitutional
+  unknowns drafted, source-verified, corrected once (SEC-009's D4
+  reference to CF-001), reviewed through two independent Skeptic/Evidence
+  rounds with genuine convergence, integrated, and ratified, mirroring
+  the EC-series campaign's full cycle earlier in the session.
+  Human-directed.

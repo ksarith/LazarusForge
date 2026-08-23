@@ -28,9 +28,9 @@
 | Body Stability   | Volatile                                                            |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | `Admin/Verification_Gates.md`                                    |
-| Last Audit       | 2026-06-19                                                          |
+| Last Audit       | 2026-08-22 — Grok drafts SEC-007a/009/002; Claude source-verifies; two-round Skeptic/Evidence pass (ChatGPT, Grok); integration pass |
 | Auditor          | Gemini — Skeptic/Auditor; Grok — Skeptic/Auditor; ChatGPT — Skeptic/Auditor; Claude — Synthesizer |
-| Open Unknowns    | 13                                                                  |
+| Open Unknowns    | 10 substantively open (SEC-001, SEC-003, SEC-004, SEC-005, SEC-006, SEC-007b, SEC-008, SEC-010, SEC-011, SEC-012). SEC-002, SEC-007a, SEC-009 Ratified — Payment via Specification, 2026-08-22 |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | High                                                                |
 | Sidecar Link     | #auditor-notes--unknowns                                            |
@@ -153,6 +153,104 @@ and `Admin/Ethical_Constraints.md` EC-011 (Human governance adversary model
 undefined). Until EC-011 is resolved, apply the interim authentication
 requirements from `Admin/Governance_Charter.md` §Human Override Doctrine to
 all Constitutional-class decisions.
+
+---
+
+### External Root-of-Trust — Constitutional Requirements *(SEC-007a resolution vehicle)*
+
+The Trust Boundary Declaration states the philosophical rule: cryptographic
+verification confirms identity and integrity; it does not confer governance
+legitimacy.
+
+This section states the **mechanical requirement** that makes that rule
+enforceable against the highest-order failure mode: a compromised authority
+chain that rewrites governance, signs the rewrite, and validates the
+rewrite through its own enforcement pipeline (circular self-certification).
+
+#### Problem
+
+Governance defines legitimacy. Cryptography enforces it. Integrity systems
+may depend on both. Without an anchor **outside** that loop, a sufficiently
+compromised chain can:
+
+1. Rewrite Tier 1 or hard-line doctrine
+2. Sign the rewrite with keys the same chain controls
+3. Accept the signature as proof of legitimacy
+
+No amount of internal signature checking breaks that cycle.
+
+#### Constitutional requirements
+
+An external root-of-trust, for the purposes of this repository, must
+satisfy **all** of the following:
+
+| # | Requirement | Meaning |
+|---|-------------|---------|
+| **R1 — Externality** | The anchor **cannot be modified through the repository execution environment**. No agent, automated process, or online node that participates in ordinary Forge operation may alter, replace, or re-sign the anchor. | Breaks the self-modification path |
+| **R2 — Independence from the enforcement pipeline** | Validation of the anchor must not depend solely on keys, policies, or integrity checks that the compromised chain could itself have rewritten. At least one verification path must terminate outside the ordinary governance–crypto–integrity stack. | Breaks circular validation |
+| **R3 — Constitutional scope** | The anchor must be capable of covering (directly or by clear chain) the Tier 1 constitutional surface — at minimum the Governance Charter axioms and the Ethical_Constraints hard floors — so that a rewrite of those texts is detectable against the anchor. | Protects what matters most |
+| **R4 — Human-ratified establishment and change** | Initial establishment of the anchor, and any subsequent change to it, requires explicit Human Governing Authority ratification. No autonomous process may create, rotate, or retire the constitutional anchor. | Preserves human sovereignty over the root |
+| **R5 — Recoverability under compromise** | There must exist a defined recovery path that uses the anchor (or a human-ratified record bound to it) to restore a known-good constitutional state after suspected compromise of the online enforcement chain. Recovery must not require trusting the compromised chain's current self-attestation. | Makes the anchor useful under the failure mode it exists to survive |
+| **R6 — Tamper-evidence** | Unauthorized alteration or substitution of the anchor must be detectable. Silent replacement without detection is a failed anchor. | Integrity of the anchor itself |
+
+Meeting R1–R6 is necessary for an artifact to count as an external
+root-of-trust under this doctrine. Physical form is out of scope here
+(SEC-007b). **Scope boundary (Skeptic-confirmed):** R4 defends against a
+compromised online enforcement chain rewriting governance; it does not by
+itself defend against a compromised Human Governing Authority. This
+section is not a universal trust theorem — that boundary is stated
+honestly rather than papered over.
+
+#### Minimum viable instantiations (illustrative, not exclusive)
+
+Any one of the following *can* satisfy R1–R6 if implemented to the
+requirements above; none is mandatory at this layer:
+
+- Offline signed constitutional snapshot (e.g. GPG-signed export of Tier 1
+  text + axioms), held outside all automated repository nodes, with
+  verification that does not rely solely on online keys
+- Hardware security module (or equivalent) holding root keys that cannot
+  be rewritten by the repository runtime
+- Human-ratified recovery record stored outside all automated systems,
+  bound to a known-good constitutional hash
+
+RIP-001's GPG-signed Git release tags provide a **tamper-evident archival
+substrate** that a dedicated anchor could build on. They do **not** by
+themselves satisfy R1–R6 as a full external root-of-trust; a dedicated
+anchor remains a distinct requirement.
+
+#### What this section does not do
+
+- It does not choose or design the physical realization (SEC-007b).
+- It does not define key generation ceremonies, HSM product selection, or
+  air-gap procedures.
+- It does not replace the Trust Boundary Declaration; it supplies the
+  mechanical requirements the Declaration's philosophy implies.
+- It does not claim that an external anchor currently exists in the
+  operating environment. Until SEC-007b (or an equivalent instantiation)
+  is achieved, the system continues to depend on human discipline and
+  document integrity — the residual risk this entry has always named.
+
+#### Relationship to adjacent unknowns
+
+| Unknown | Boundary |
+|---------|----------|
+| **SEC-007b** | Physical implementation of an anchor that meets R1–R6. Blocked on this entry until constitutional requirements are specified. |
+| **GOV-003** | Integrity enforcement architecture — consumer of an external anchor, not the definer of its constitutional properties. |
+| **GOV-005** | Long-term constitutional stability — related horizon; not a substitute for R1–R6. |
+| **RIP-001** | Prior-state archival (Resolved) — useful substrate; not a complete external root-of-trust by itself. |
+| **GOV-006 / SEC human-override auth** | Operator authentication — distinct from constitutional anchor requirements. |
+
+#### Residual risks (non-blocking)
+
+| ID | Residual | Notes |
+|----|----------|-------|
+| SEC-007a-R1 | No instantiation yet exists in the operating environment | Expected; closed by SEC-007b progress, not by further prose here |
+| SEC-007a-R2 | Exact binding format between anchor and Tier 1 text (hash tree, full snapshot, etc.) | Implementation detail for the chosen instantiation |
+| SEC-007a-R3 | Multi-anchor or succession rules if the first anchor is lost | Deferred until at least one anchor exists |
+| SEC-007a-R4 | R4 defends against a compromised online enforcement chain; it does not by itself defend against a compromised Human Governing Authority | Scope boundary, not a defect — confirmed by two independent Skeptic/Evidence reviewers |
+
+*§SEC-007a — Payment via Specification. Closes SEC-007a (logged prior to 2026-08-22, exact date per Unknowns.md). Defines the constitutional requirements (R1–R6) an external root-of-trust must satisfy to break circular self-certification; physical realization remains SEC-007b. Full Closure Event — Proposer (Grok, 2026-08-22), Verifier (Claude, 2026-08-22 — Pass; Trust Boundary Declaration wording, circular-dependency note, and RIP-001 status all confirmed exact against source). Independence attestation: Grok (Proposer) and Claude (Verifier) are different agent instances. Skeptic/Evidence pass: two independent rounds, ChatGPT then Grok, both unconditional PASS, no required changes on either round — genuine convergence, both reviewers engaging with all criteria (contrast with EC-007's initial split verdict, where the second round required a follow-up because one reviewer had gone silent on two of three points). Mandatory Human Ratification required before this closure is binding — this file is constitutional/enforcement doctrine. Human Ratification: Human Governing Authority, 2026-08-22. Human-directed.*
 
 ---
 
@@ -422,9 +520,238 @@ see SEC-004.
 
 A node whose key material is suspected compromised must be suspended from
 cluster participation pending investigation. Suspension is reversible;
-revocation is permanent. *(Full revocation doctrine is undefined — see
-SEC-002.)* Criteria for generating compromise suspicion are undefined —
-see SEC-009.
+revocation is permanent. Detection criteria are specified below
+(SEC-009); full response doctrine is specified below (SEC-002).
+
+---
+
+### Compromise Detection Criteria *(SEC-009 resolution vehicle)*
+
+Section III.4 requires that a node whose key material is **suspected
+compromised** be suspended pending investigation. This section defines how
+that suspicion is generated.
+
+Detection produces **suspicion**, not automatic permanent revocation.
+Suspension is reversible; revocation remains governed by SEC-002.
+
+#### Detection signals
+
+Any one of the following is sufficient to generate **compromise suspicion**
+and trigger mandatory suspension under III.4:
+
+| ID | Signal | Meaning |
+|----|--------|---------|
+| **D1 — Checksum / state disagreement** | Material disagreement between a node's presented state (or key-bound artifact) and a prior signed reference state that the verifying party holds | Integrity break relative to known-good history |
+| **D2 — Attestation failure on admission** | Node fails cluster-admission attestation (or equivalent join-time proof) when attestation is required | Node cannot prove expected key/identity posture at the gate |
+| **D3 — Timestamp anomaly** | Timestamps on signed artifacts or protocol messages fall outside defined tolerance relative to verifier time or peer consensus (cross-ref SEC-006) | Clock manipulation, replay window abuse, or impossible ordering |
+| **D4 — Behavioral divergence** | Node behavior diverges from its declared role or expected pattern in a way that is observable even when signatures still verify (e.g. persistent out-of-role requests, repeated privilege-scope expansion, systematic refusal-pattern evasion) | Possible key misuse or node capture |
+| **D5 — Anomalous override pattern** | Override or high-privilege requests show unusual timing, repetition, scope, or provenance that does not match the operator's established pattern (cross-ref interim guidance already pointing anomalous overrides to human review) | Possible compromised override path or coerced operator |
+| **D6 — External / independent report** | A human operator, independent auditor, or peer unit logs a reasoned compromise concern against the node or its key material | External observation does not require internal statistical confidence |
+
+Meeting **any one** of D1–D6 generates suspicion and requires suspension.
+Multiple concurrent signals increase urgency of investigation; they are not
+required for entry into the suspended state.
+
+**Note on D4:** No calibrated behavioral-divergence threshold currently
+exists. `Architecture/Cognitive_Frameworks.md`'s CF-001 is a hardware
+watchdog minimum standard (`Operations/Electronics.md`) — a different
+layer and mechanism, correctly not the source of this threshold. CF-001
+is **In Progress**, not untouched: its heartbeat-window parameter
+(τ = 50ms, Analogous confidence) is already defined, and it remains
+Blocking only pending first-hardware-prototype validation at Measured
+confidence. `Challenges/Emergence.md`'s **EM-001 is the existing
+registered unknown for this exact question** ("Behavioral opacity
+detection threshold — at what measurable divergence does watchdog
+escalation trigger?"), and it is itself explicitly dependent on CF-001
+resolution before it can be specified. D4 therefore inherits a two-hop
+dependency chain — D4 → EM-001 → CF-001 — and operates on qualitative
+judgment until that chain resolves. This is not a gap needing a new
+unknown; it is an existing one this section correctly defers to rather
+than duplicates.
+
+#### Suspicion vs confirmation
+
+| State | Meaning | Immediate effect |
+|-------|---------|------------------|
+| **Suspected** | At least one detection signal has fired | Mandatory suspension (III.4); investigation opens; reversible |
+| **Confirmed compromised** | Investigation (human and/or independent audit path) concludes key material or node authority is compromised | Permanent revocation path under SEC-002 |
+
+This section does **not** define the investigation procedure or the
+revocation authority chain — those belong to SEC-002. It only defines the
+entry condition into the suspected state.
+
+#### Counting and scope rules
+
+- **Distinct events:** Repeated identical observations of the same
+  underlying fault count as one signal instance for urgency scoring; they
+  still sustain suspicion until cleared.
+- **Tolerance values** (timestamp skew for D3; behavioral magnitude/duration
+  for D4): Placeholder where not already defined. D3 defers numeric
+  tolerance to SEC-006 when available. D4 defers to EM-001, itself pending
+  CF-001. Suspicion may still be raised on reasoned judgment; numeric
+  tightening is residual to the chain above, not to this section.
+- **No silent self-clear:** A node does not clear its own suspicion by
+  presenting a later valid signature. Clearance of suspicion (return to
+  full participation without revocation) requires the investigation
+  outcome defined under SEC-002.
+
+#### Relationship to adjacent unknowns
+
+| Unknown | Boundary |
+|---------|----------|
+| **SEC-002** | Revocation and compromise *response* (suspension handling, permanent revocation, re-admission). This section only generates the suspicion that feeds it. |
+| **SEC-006** | Timestamp trust under degraded clock — supplies tolerance doctrine for D3. |
+| **SEC-001** | Quorum recovery under partition — affects how detection signals propagate; does not define the signals. |
+| **SEC-008** | Signature replay protection — related failure mode; replay may *cause* D3 or D5 patterns but is specified separately. |
+| **SEC-003** | Key rotation period — lifecycle hygiene, not detection. |
+| **GOV-006** | Human override authentication — anomalous override patterns (D5) may implicate override nodes; revocation safeguards for those nodes remain GOV-006 / SEC-002. |
+| **CF-001** | Hardware watchdog minimum standard (`Operations/Electronics.md`), In Progress — τ = 50ms parameter defined, Blocking only on hardware validation. Not the home for D4's threshold directly — that is EM-001 — but the upstream dependency EM-001 itself is blocked on. |
+| **EM-001** | (`Challenges/Emergence.md`) The actual registered unknown for D4's calibrated behavioral-divergence threshold. D4 operates qualitatively until EM-001 resolves; EM-001 itself is blocked on CF-001. This section does not attempt to resolve or duplicate EM-001. |
+
+#### Explicit non-goals
+
+- This section does not define cryptographic primitives, attestation
+  protocols, or watchdog implementations.
+- It does not authorize automatic permanent revocation on signal alone.
+- It does not set final numeric tolerances for D3 (owned by SEC-006) or D4
+  (owned by EM-001, transitively CF-001).
+- It does not absorb SEC-002's response doctrine.
+- It does not overload CF-001 with a software behavioral-pattern role
+  CF-001 does not have.
+- It does not register a new unknown for D4's threshold — EM-001 already
+  exists and is the correct owner.
+
+#### Residual risks (non-blocking)
+
+| ID | Residual | Notes |
+|----|----------|-------|
+| SEC-009-R1 | Numeric tolerances for timestamp skew (D3) | Owned by SEC-006; qualitative suspicion remains valid until calibrated |
+| SEC-009-R2 | Concrete attestation profile for D2 | Implementation / cluster-admission design |
+| SEC-009-R3 | Urgency scoring when multiple signals fire | Optional operational refinement; not required for closure |
+| SEC-009-R4 | Calibrated behavioral-divergence threshold for D4 | Not a new unknown — tracks existing `Challenges/Emergence.md` EM-001, itself dependent on CF-001 resolution. D4 remains valid on qualitative judgment in the meantime; this residual closes automatically when EM-001 does, not through separate work here. |
+| SEC-009-R5 | D2 doesn't distinguish "node fails the attestation proof" from "node cannot complete the proof because infrastructure is unavailable" | Both reasonably trigger suspension under current wording; the distinction matters for how much the resulting suspicion should be weighted as evidence of compromise during investigation (SEC-002), not for whether suspension is warranted. Skeptic-flagged, non-blocking. |
+
+*§SEC-009 — Payment via Specification. Closes SEC-009 (logged prior to 2026-08-22, exact date per Unknowns.md). Defines D1–D6 compromise-detection signals and the suspicion/confirmation split feeding SEC-002. Full Closure Event — Proposer (Grok, 2026-08-22), Verifier (Claude, 2026-08-22 — Pass). Independence attestation: Grok (Proposer) and Claude (Verifier) are different agent instances. Revision history: Option A's D4 cross-reference to CF-001 was identified as a mismatch (CF-001 is hardware-watchdog containment, not a behavioral-divergence definition); Option B corrected this to defer to the existing EM-001 unknown rather than proposing a duplicate; CF-001's actual In-Progress/τ=50ms status was folded in on same-day follow-up after being found stale in an earlier check. Skeptic/Evidence pass: two independent rounds, ChatGPT then Grok, both unconditional PASS, no required changes on either round. Mandatory Human Ratification required before this closure is binding — this file is enforcement doctrine. Human Ratification: Human Governing Authority, 2026-08-22. Human-directed.*
+
+---
+
+### Key Revocation and Compromise Response Doctrine *(SEC-002 resolution vehicle)*
+
+SEC-009 defines how **suspicion** is generated (signals D1–D6). This
+section defines the **response**: states, authority, behavior under
+suspension, permanent revocation, and re-admission.
+
+#### States and transitions
+
+| State | Entry | Effect | Exit |
+|-------|--------|--------|------|
+| **Active** | Normal admission / cleared investigation | Full cluster participation under current key material | → Suspended on any SEC-009 signal |
+| **Suspended** | Any SEC-009 detection signal (D1–D6), or explicit human order | Removed from cluster participation for privileged acts; investigation opens | → Active (cleared) or → Revoked (confirmed) |
+| **Revoked** | Investigation concludes compromise, or Human Governing Authority orders immediate revocation | Permanent for that key identity; key must not verify as valid | Only via formal **re-admission** under a **new** key identity |
+
+There is no silent path from Suspended back to Active on the basis of a
+later valid signature from the same key. There is no automated
+Active → Revoked path without an investigation record, except an
+explicit, logged Human Governing Authority order of immediate revocation.
+
+#### Authority chain
+
+| Action | Who may authorize | Notes |
+|--------|-------------------|--------|
+| **Suspend** | Any party that validly raises a SEC-009 signal; or a human operator | Entry into suspension is mandatory on signal; does not require multi-party consensus. **A valid SEC-009 signal is sufficient to trigger mandatory suspension, but the party raising the signal acquires no authority over investigation, clearance, revocation, or re-admission by virtue of raising that signal.** Raising a signal and holding downstream authority are distinct; this table's remaining rows govern the latter regardless of who triggered entry. |
+| **Clear suspension** (→ Active, no revocation) | Investigation outcome of no compromise; human operator confirmation **required** when the triggering signal was D5 (anomalous override) or D6 (external report) | Clearing is not self-attestation by the suspended node |
+| **Revoke** | Human Governing Authority; or a multi-party quorum if later defined under GOV-006 for override-capable nodes | Never unilateral by the suspect node; never by automated self-check alone |
+| **Immediate revoke** (skip prolonged investigation) | Human Governing Authority only, with logged rationale | Use when delay itself is the dominant risk |
+| **Re-admit after revocation** | Human Governing Authority, after re-admission criteria below are met | New key material only; revoked key stays denied |
+
+#### Behavior while Suspended
+
+- The suspended key must not be accepted for new privileged or
+  governance-relevant acts.
+- Peers that have received the suspension signal must refuse such acts
+  from that key.
+- In-flight non-privileged work may complete if abrupt stop increases
+  risk (same spirit as EC-004 active-process descent); no *new*
+  privileged work starts.
+- **Propagation:** Best-effort to all reachable peers. Under partition,
+  every node that has received the signal applies local suspension
+  immediately; reconciliation of partitioned views is SEC-001 territory
+  (residual).
+- **Investigation hold:** Preserve logs, attestation history, and the
+  SEC-009 signal record. A subsequent valid signature from the same key
+  does **not** clear suspicion (aligned with SEC-009 "no silent self-clear").
+- **Duration:** Suspension persists until cleared or escalated to
+  revocation. No automatic timeout → Active.
+
+#### Confirmed compromise → Revocation
+
+Revocation is permanent for the **key identity** found compromised.
+
+1. Investigation (human and/or independent audit path) concludes
+   compromise, **or** Human Governing Authority orders immediate
+   revocation.
+2. Key identity is recorded as revoked and must fail verification
+   thereafter.
+3. Propagation follows the same best-effort rule as suspension;
+   partitioned nodes apply on first receipt (SEC-001 residual for
+   partition semantics).
+4. **Override-capable nodes** (surface governed by GOV-006): until
+   GOV-006 specifies additional safeguards, **Human Governing Authority
+   ratification is mandatory** for any revocation of an override-capable
+   node. This interim rule is hard.
+
+Revocation does not by itself define recovery of constitutional state
+under root-level compromise; that remains SEC-007a/b.
+
+#### Re-admission after revocation
+
+Re-admission is admission of a **new** key identity, not reactivation of
+the revoked key. All of the following are required:
+
+1. **New key material** generated under the trusted initialization rules
+   in force at the time (SEC-005 residual until defined; interim:
+   human-supervised generation consistent with existing restrictive
+   interpretation in this file).
+2. **Revoked key remains denied** — must not verify as valid under any
+   peer's acceptance rules.
+3. **Explicit Human Governing Authority approval** of the re-admission.
+4. **Successful admission attestation** under the new key (SEC-009 D2
+   path clean at admission time).
+
+Failure of any one item blocks re-admission.
+
+#### Relationship to adjacent unknowns
+
+| Unknown | Boundary |
+|---------|----------|
+| **SEC-009** | Detection signals (D1–D6) that enter Suspended. This section does not redefine them. |
+| **SEC-001** | Quorum recovery and propagation under terminal partition. |
+| **SEC-003** | Routine key rotation schedule (not compromise-driven). |
+| **SEC-005** | Trusted initialization environment for new key material. |
+| **SEC-006** | Timestamp tolerance (upstream of SEC-009 D3). |
+| **SEC-007a/b** | External root-of-trust and recovery when the root itself is in question. |
+| **GOV-006** | Full override-node revocation safeguards; interim mandatory human ratification stated above until then. |
+| **SEC-008** | Signature replay protection — related failure mode; specified separately. |
+
+#### Explicit non-goals
+
+- This section does not define cryptographic revocation-list formats,
+  CRLs, or network transport.
+- It does not set partition-quorum mathematics (SEC-001).
+- It does not define trusted init ceremonies (SEC-005).
+- It does not replace SEC-009 detection criteria.
+- It does not authorize a suspended or revoked node to clear itself.
+
+#### Residual risks (non-blocking)
+
+| ID | Residual | Notes |
+|----|----------|-------|
+| SEC-002-R1 | Propagation timeout / partition reconciliation details | Owned by SEC-001 |
+| SEC-002-R2 | Full override-node revocation safeguards | Owned by GOV-006; interim human-ratification rule applies until then |
+| SEC-002-R3 | Trusted init details for re-admission key generation | Owned by SEC-005 |
+| SEC-002-R4 | Concrete revocation-record / denied-list format | Implementation detail |
+
+*§SEC-002 — Payment via Specification. Closes SEC-002 (logged prior to 2026-08-22, exact date per Unknowns.md). Defines the Active/Suspended/Revoked state machine, authority chain, and re-admission requirements consuming SEC-009's detection signals. Full Closure Event — Proposer (Grok, 2026-08-22), Verifier (Claude, 2026-08-22 — Pass). Independence attestation: Grok (Proposer) and Claude (Verifier) are different agent instances. Skeptic/Evidence pass: two independent rounds. Round one (ChatGPT) returned CONDITIONAL PASS, requiring one amendment — explicit statement that raising a SEC-009 signal (including D6, which any party may raise) confers no downstream authority over investigation, clearance, revocation, or re-admission; incorporated into the Suspend row above. Mandatory Human Ratification required before this closure is binding — this file is enforcement doctrine. Human Ratification: Human Governing Authority, 2026-08-22. Human-directed.*
 
 ---
 
@@ -535,14 +862,14 @@ human-supervised bootstrap bypass (see Phase Implementation Ordering note).
 
 | Field         | Value                              |
 |---------------|------------------------------------|
-| Status        | Open                               |
+| Status        | **Ratified — Payment via Specification, 2026-08-22** |
 | Risk          | High                               |
 | Priority      | Major                              |
 | Type          | Security / Governance              |
 | Blocking      | No                                 |
 | Owner         | `Admin/Security_Protocols.md`      |
 | First Logged  | 2026-05-27                         |
-| Last Reviewed | 2026-05-28                         |
+| Last Reviewed | 2026-08-22                         |
 
 **Description:** The repository lacks defined procedures for key revocation
 following confirmed or suspected compromise. Distinction between reversible
@@ -693,14 +1020,14 @@ primary context where clock sync is lost.
 
 | Field         | Value                              |
 |---------------|-------------------------------------|
-| Status        | Open                                |
+| Status        | **Ratified — Payment via Specification, 2026-08-22** |
 | Risk          | High                                |
 | Priority      | Critical                            |
 | Type          | Architecture / Governance           |
 | Blocking      | No                                  |
 | Owner         | `Admin/Security_Protocols.md` (constitutional layer) |
 | First Logged  | 2026-05-28 (as SEC-007)             |
-| Last Reviewed | 2026-07-02                          |
+| Last Reviewed | 2026-08-22                          |
 | Split From    | SEC-007, vertically split 2026-07-02 |
 | Design Lineage | PAT-001 (see External Design Lineage above) |
 
@@ -811,14 +1138,14 @@ body as the interim declaration.
 
 | Field         | Value                              |
 |---------------|------------------------------------|
-| Status        | Open                               |
+| Status        | **Ratified — Payment via Specification, 2026-08-22** |
 | Risk          | High                               |
 | Priority      | Major                              |
 | Type          | Security / Technical               |
 | Blocking      | No                                 |
 | Owner         | `Admin/Security_Protocols.md`      |
 | First Logged  | 2026-06-19                         |
-| Last Reviewed | 2026-06-19                         |
+| Last Reviewed | 2026-08-22                         |
 
 **Description:** Section III.4 specifies that a node whose key material is
 "suspected compromised" must be suspended, but provides no doctrine for how

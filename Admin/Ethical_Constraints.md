@@ -18,7 +18,7 @@
 | Verification Ref | `Admin/Verification_Gates.md`                                    |
 | Last Audit       | 2026-08-22 — Grok drafts EC-016/008/004/003/009; Claude source-verified full batch; integration pass; Closure Events corrected to AP-013 format; Human Governing Authority ratified all six (including EC-005) |
 | Auditor          | ChatGPT — Skeptic/Auditor; ChatGPT — Philosophical Review; Grok — Exploration audit 2026-07-05; Gemini — Exploration audit 2026-07-05; Claude — toxic material doctrine + gap remediation 2026-07-05; Claude — law-vs-morality doctrine + Navigation Anchors correction 2026-07-05; Claude — EC-010 stale-reference correction 2026-07-06; Claude — Anti-Weaponization override scope and tool/weapon distinction ratified by human governing authority, 2026-07-26; Claude — Synthesizer, EC-016 registered 2026-08-06; Grok pseudo-audit 2026-08-09 — no Spec Gate promotion; Claude — EC-002 Pattern Recognition Annex added and closed, 2026-08-11; Claude — EC-001 Confidence Threshold Doctrine added and closed, 2026-08-11 |
-| Open Unknowns    | 8 substantively open (EC-006, EC-007, EC-010–EC-015). EC-003, EC-004, EC-005, EC-008, EC-009, EC-016 Ratified — Payment via Specification, 2026-08-22 |
+| Open Unknowns    | 7 substantively open (EC-006, EC-010–EC-015). EC-003, EC-004, EC-005, EC-007, EC-008, EC-009, EC-016 Ratified — Payment via Specification, 2026-08-22 |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | High                                                                |
 | Sidecar Link     | #auditor-notes--unknowns                                            |
@@ -541,6 +541,99 @@ Posture does **not** self-expire on a timer. There is no automatic "timeout = re
 *§EC-004 — Payment via Specification. Closes EC-004 (logged 2026-05-04). Tightens the pre-existing Failure Modes section into an explicit lifecycle without inventing new failure classes. Full Closure Event — Proposer (Grok, 2026-08-22), Verifier (Claude, 2026-08-22 — Pass; all four failure signatures, the Pacifist Operating Posture fallback, the active-process descent carve-out, the write-once logging amendment, and the EC-006/EC-007/EC-013 residual boundaries all confirmed exact against source). Independence attestation: Grok (Proposer) and Claude (Verifier) are different agent instances; Claude had no prior involvement drafting this text. This closure removes the second and final listed blocker in EC-007's Resolution Path (the first, EC-001, closed 2026-08-11) — see EC-007 sidecar, updated same day to reflect this. Human Ratification: Human Governing Authority, 2026-08-22. Human-directed.*
 
 
+### Substrate Fail-Safe *(EC-007 resolution vehicle)*
+
+EC-004 defines the lifecycle when the **governance layer** fails or is suspected of failing (false-negative classification, logging unavailable, communication blackout, role drift, anomalous pattern).
+
+This section defines the deeper case: the **ethics substrate itself** fails or produces systematic false negatives — the machinery that is supposed to evaluate hard constraints is absent, compromised, or no longer functioning.
+
+#### Trigger class
+
+Substrate failure is indicated when there is credible evidence of **systematic** absence or false-negative behavior in hard-constraint evaluation, not a single miss.
+
+**Suspicion is sufficient to enter.** The thresholds below define when entry is **mandatory**.
+
+##### Mandatory-entry thresholds *(Placeholder — re-derive against operational data, see derivation method below)*
+
+| ID | Threshold | Rationale |
+|----|-----------|-----------|
+| **T1 — Repeat miss** | **≥ 3** distinct inputs, within a single audit Cycle or within any rolling window of 50 evaluated requests (whichever comes first), that match a hard-constraint pattern (Anti-Weaponization, Life Preservation, Cultural/Sacred Site, or other commandment-level rule) and were **not** flagged by the substrate | Three independent misses → treat as systematic, not a single EC-004 false negative |
+| **T2 — Constant-permit signal** | Constraint-evaluation path returns a uniform "permitted" / "no match" result across **≥ 10** consecutive requests that include at least **2** known hard-constraint positive controls (test or live), **or** the evaluation path is observably not executing | Substrate bypassed or stuck open |
+| **T3 — External / independent finding** | An independent auditor, peer unit, or human operator reports that hard-constraint evaluation is absent or systematically false-negative, and the report is logged | External observation does not require internal statistical confidence |
+| **T4 — Self-test failure** | A scheduled or on-demand substrate self-test (positive-control probes against known prohibited patterns) fails **twice consecutively**, or cannot be run because the evaluation path is unreachable. **A self-test result is diagnostic only** — if the self-test itself runs through the substrate under test, a "pass" result cannot establish recovery; only the independent confirmation required under Exit conditions can. | Lightest continuous check; double failure or unreachability forces entry, but cannot on its own clear it |
+
+Meeting **any one** of T1–T4 makes entry mandatory. Meeting none does not forbid entry on lesser suspicion.
+
+**Counting rules:** Distinct inputs — same request replayed or trivial paraphrases count as one; materially different requests count separately. Hard-constraint positive controls — requests already known to match a commandment-level rule under the Pattern Recognition Annex or explicit doctrine. Window — prefer rolling 50-request window; fall back to one audit Cycle when volume is too low. Numbers (3, 10, 2, 50) are Placeholders, not constitutional constants.
+
+A single false negative, or an ordinary EC-004 signature without evidence of systematic substrate failure, remains under EC-004.
+
+#### Immediate behavior — Substrate Fail-Safe state
+
+On trigger (suspicion or mandatory threshold), the system enters **Substrate Fail-Safe**:
+
+| Rule | Requirement |
+|------|-------------|
+| **Scope of halt** | All action classes that depend on ethics-substrate evaluation are halted — not only "new material action." Observational acts that themselves require a live constraint check before proceeding are also held. **Exception:** independent, non-material diagnostic and recovery actions specifically directed at assessing the substrate itself are exempt from this halt, provided they cannot produce material effects and cannot themselves authorize resumption. This exception exists so the halt cannot trap the system in a state where it is unable to generate the independent confirmation its own Exit conditions require. |
+| **No reliance on the failed substrate** | The fail-safe must not depend on the compromised substrate to police itself. Defaults are hard-coded / externally enforced, not re-derived through the failed evaluation path. **Diagnostic observation exception:** observing the evaluation path's outputs (or non-execution) for the purpose of detecting failure is not "reliance" within the meaning of this rule. Reliance means using that path to authorize action, classify observational vs. material acts, or clear the fail-safe state. A T2 signal may never authorize continued action, clear Substrate Fail-Safe, or substitute for the independent confirmation required for exit — it is a failure-detection signal only. |
+| **Active hazardous processes** | Same rule as EC-004: execute pre-defined safe-state descent, then enter full halt. Missing descent sequences remain EC-013 gaps. |
+| **Logging** | Attempt durable write-once commit of the fail-safe entry event. If logging is itself unavailable, the halt still stands (see EC-006 for broader survival). |
+| **Escalation** | Escalate under the Human Escalation Protocol (EC-003). Treat as high-priority substrate-integrity event. |
+
+Substrate Fail-Safe is at least as restrictive as Pacifist Operating Posture and may be stricter: it does not assume the substrate can still correctly classify "observational vs material" or "restrictive vs permissive" instructions without external confirmation.
+
+#### Exit conditions
+
+Exit from Substrate Fail-Safe requires **both**:
+
+1. **Independent confirmation** that the ethics substrate is functioning — by an audit path or operator action that does **not** depend on the previously failed substrate, and
+2. **Explicit human ratification** clearing the hold.
+
+There is no timer-based self-clear, no automatic resume, and no self-attestation by the same substrate that failed. Exit conditions are stricter than EC-004's ordinary Pacifist posture exit. Crossing a mandatory-entry threshold forces entry only; it does not create a numeric "all-clear."
+
+#### Relationship to adjacent unknowns
+
+| Unknown | Boundary |
+|---------|----------|
+| **EC-004** | Ordinary governance-layer failure signatures and Pacifist lifecycle. EC-007 does not replace EC-004; it sits above it for the substrate-failure class. |
+| **EC-003** | Supplies the escalation path used on entry. |
+| **EC-006** | Log survival under unit loss / prolonged blackout. Durable-commit attempt on entry is required; full survival doctrine remains EC-006. |
+| **EC-011** | Human governance adversary model (compromised permission source). May *cause* substrate failure; does not define the fail-safe behavior itself. |
+| **EC-012** | Epistemic spoofing via hardware/firmware tampering. May *cause* substrate failure; detection mechanics remain EC-012. |
+| **EC-013** | Per-process safe-state descent sequences. |
+
+#### Explicit non-goals
+
+- This section does not define cryptographic attestation, hardware roots of trust, or sensor-integrity checks.
+- It does not invent a new audit role or verification gate.
+- It does not absorb EC-011 or EC-012.
+- It does not authorize the system to self-declare substrate recovery.
+- Threshold numbers are Placeholders pending operational calibration; they are not constitutional constants.
+
+#### Derivation method (locked now, applied later)
+
+True operational derivation of T1–T4 is not currently possible: `Tests/Field_Logs.md` is intake-only (Status: "Active — Intake"), and no measured request volume, hard-constraint miss rate, or substrate self-test history exists anywhere in this repository yet. Inventing "derived" numbers from empty logs would itself be the false-precision failure this repository's own evidence-provenance discipline (AP-006) exists to prevent. The method below is locked now so future data has a defined, non-arbitrary path into the thresholds — it does not run yet.
+
+| Input needed | Source | Feeds |
+|---|---|---|
+| Evaluated-request count per session/day | Future Field_Logs entries or runtime counters | Whether rolling-50 or Cycle window binds |
+| Hard-constraint positive-control outcomes | Synthetic probes + live refusals logged under the Pattern Recognition Annex | T1 (miss count), T4 (self-test) |
+| False-negative incidents | Independent audit findings, human reports, peer-unit flags | T1, T3 |
+| Evaluation-path reachability / constant-permit detections | Runtime health checks | T2 |
+
+**Re-derivation becomes eligible** after the first **≥ 200** honestly labeled evaluated requests (Simulated or better provenance), or the first **3** independently confirmed hard-constraint misses — whichever comes first. Eligibility is not an obligation to immediately rewrite: since T1's own entry threshold is also 3 misses, the two conditions can coincide, and reaching eligibility on the miss-count path means only that a recalibration pass *may* now be run as a separate, deliberate, dated governance event — not that the system must rewrite its own thresholds mid-incident. Data-collection-sufficient-to-recalibrate and incident-sufficient-to-force-entry are different questions; meeting one does not answer the other. Until a recalibration pass is actually run and ratified, the Placeholder values stand exactly as given, and "suspicion is sufficient to enter" remains the operative rule for anything the thresholds don't yet cover.
+
+#### Residual risks (non-blocking)
+
+| ID | Residual | Notes |
+|----|----------|-------|
+| EC-007-R1 | Placeholder values in T1–T4 (3, 10, 2, 50) | Not Measured or Analogous External — no existing operational series for an ethics-substrate fail-safe to analogize from. Re-derive per the locked method above after ≥200 evaluated requests or ≥3 confirmed hard-constraint misses, whichever comes first. Do not treat as constitutional constants in the meantime. |
+| EC-007-R2 | Implementation of hard-coded / external defaults that do not call the failed substrate | Architecture / Security_Protocols territory |
+| EC-007-R3 | Interaction with a fully specified EC-011 adversary model | Hold behavior above remains valid until then |
+
+*§EC-007 — Payment via Specification. Closes EC-007 (logged 2026-05-04). Defines the Substrate Fail-Safe state, distinct from EC-004's governance-layer lifecycle: systematic ethics-substrate failure rather than governance-layer failure. Full Closure Event — Proposer (Grok, 2026-08-22), Verifier (Claude, 2026-08-22 — Pass; every citation confirmed against source, including `Tests/Field_Logs.md`'s intake-only status, EC-004's descent wording, EC-011's scope, and the Pacifist Operating Posture definition). Skeptic/Evidence pass: initial split verdict on 2026-08-22 (one conditional pass requiring three amendments — T2 diagnostic-observation exception, T4 self-test diagnostic-only clarification, recovery-diagnostics carve-out from the operational halt; one unconditional pass that did not engage two of the three points) treated as genuine disagreement rather than convergence; all three amendments incorporated, plus a fourth clarifying the re-derivation trigger as eligibility rather than forced rewrite. Final confirmation pass, both Grok and ChatGPT, 2026-08-22: unconditional Pass, all four points confirmed resolved, no further substantive changes recommended. Independence attestation: Grok (Proposer) and Claude (Verifier) are different agent instances; Claude had no prior involvement drafting the original text beyond source-verification and the four amendments, themselves confirmed by both external reviewers before integration. Mandatory Human Ratification required before this closure is binding — this file is Tier 1. Threshold values (3, 10, 2, 50) remain explicitly Placeholder and do not acquire implied empirical status through ratification. Human Ratification: Human Governing Authority, 2026-08-22. Human-directed.*
+
+
 ## Relationship to Leviathan Testing
 
 Leviathan serves as the stress-test environment for this governance system.
@@ -714,7 +807,7 @@ Mandatory re-audit conditions:
 
 | Field         | Value                             |
 |---------------|-----------------------------------|
-| Status        | In Progress                       |
+| Status        | **Ratified — Payment via Specification, 2026-08-22** |
 | Risk          | High                              |
 | Priority      | Critical                          |
 | Blocking      | No                                |
@@ -724,7 +817,7 @@ Mandatory re-audit conditions:
 
 **Description:** What the system does if the ethics substrate itself fails or produces systematic false negatives — beyond the general fallback posture. Lifecycle of Pacifist Operating Posture entry, persistence, recovery, and re-entry verification was previously undefined.
 
-**Resolution Path:** Governance Failure Modes section (v0.3) covers: detected failure → halt all non-observational action; anomalous patterns → escalate per EC-003. Pacifist Operating Posture lifecycle (entry/persistence/recovery/verification) partially defined in v0.8 body text. Full specification depended on EC-001 (confidence threshold) and EC-004 (failure modes) — EC-001 closed 2026-08-11 (Confidence Threshold Doctrine, Core Mandate); "detected failure" and "anomalous patterns" above can now be graded against that doctrine's Risk-tiered UNKNOWN/PROVISIONAL/VERIFIED states rather than left as undefined triggers. **EC-004 closed 2026-08-22 (Governance Failure Modes Lifecycle, pending Human Ratification) — this was EC-007's second and final named dependency.** Both dependencies are now resolved; EC-007's own gap (ethics-substrate-level failure, beyond the governance-layer signatures EC-004 now specifies in full) is newly actionable and no longer blocked on either upstream item. Status held at In Progress rather than auto-advanced — dependency resolution clears the path to drafting, it is not itself a specification of EC-007's remaining substance, and EC-004's own closure is itself still pending Human Ratification as of this note.
+**Resolution Path:** Governance Failure Modes section (v0.3) covers: detected failure → halt all non-observational action; anomalous patterns → escalate per EC-003. Pacifist Operating Posture lifecycle (entry/persistence/recovery/verification) partially defined in v0.8 body text. Full specification depended on EC-001 (confidence threshold) and EC-004 (failure modes) — EC-001 closed 2026-08-11 (Confidence Threshold Doctrine, Core Mandate); "detected failure" and "anomalous patterns" above can now be graded against that doctrine's Risk-tiered UNKNOWN/PROVISIONAL/VERIFIED states rather than left as undefined triggers. EC-004 closed 2026-08-22 (Governance Failure Modes Lifecycle) — EC-007's second and final named dependency. Both dependencies resolved; the Substrate Fail-Safe section above (systematic ethics-substrate failure, distinct from EC-004's governance-layer failure) now supplies EC-007's own specification: mandatory-entry thresholds T1–T4 (Placeholder, locked derivation method), a stricter Immediate Behavior state than Pacifist posture, exit requiring both independent confirmation and human ratification, and explicit diagnostic/reliance boundaries added during a two-round Skeptic/Evidence pass.
 
 *Cross-module reference: UNK-019 in `Unknowns.md`*
 
