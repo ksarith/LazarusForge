@@ -28,9 +28,9 @@
 | Body Stability   | Volatile                                                            |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-05-27 (Grok — Skeptic/Auditor); revised 2026-06-08             |
-| Auditor          | Grok — Skeptic/Auditor                                              |
-| Open Unknowns    | 5                                                                   |
+| Last Audit       | 2026-08-23 — PL-001 Resolved, Payment via Specification (Halogenated Polymer Triage Protocol added, class-split for PVC/Cl-Br vs. PTFE/fluoropolymer screening; Blocking Yes retained pending PL-001-R1 empirical validation); prior: 2026-05-27 (Grok — Skeptic/Auditor); revised 2026-06-08; PL-001 disposal-destination convergence pass 2026-08-15 (not reflected in this header at the time) |
+| Auditor          | Claude — PL-001 protocol drafted by Grok, revised once after a Claude Skeptic pass (Beilstein/fluorine reliability gap identified and corrected), human-ratified (human-directed), 2026-08-23; prior: Grok — Skeptic/Auditor |
+| Open Unknowns    | 4 substantively open (PL-002, PL-003, PL-004, PL-005). PL-001 Resolved — Payment via Specification, 2026-08-23 |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | High                                                                |
 | Sidecar Link     | #auditor-notes--unknowns                                            |
@@ -95,7 +95,7 @@ doctrine required to handle pyrolysis off-gases and halogenated contamination.
 | ASM-001 | Sourced plastic feedstock will contain unrecognized or highly degraded multi-layer polymers        | Consumer and industrial salvage is fundamentally mixed; high-purity sorting cannot be guaranteed at v0 | High | First operational triage cycle characterizes actual feedstock purity distribution |
 | ASM-002 | Mechanical recycling yields diminish rapidly after multiple heat cycles                            | Polymers shorten and degrade during mechanical re-extrusion; chemical breakdown path required for persistence | High | Operational filament-drawing data shows acceptable yield beyond current assumed threshold |
 | ASM-003 | Waste heat from Spin Chamber or external sources can bootstrap reactor thermal demand              | Analogous — industrial waste heat recovery practice; cross-reference `Operations/Gate_05_Separation_Thermal.md` SC-007 | Low | SC-007 resolved — exhaust heat load characterized and available capacity confirmed |
-| ASM-004 | Halogenated plastics (PVC, Teflon) are identifiable and rejectable at triage before reactor entry  | Beilstein test and density sorting are established detection methods | Low | PL-001 resolved — triage protocol validated against representative feedstock sample |
+| ASM-004 | Halogenated plastics (PVC, Teflon) are identifiable and rejectable at triage before reactor entry  | Class-split screening: Beilstein test + density for PVC/Cl-Br; labeling + density band for PTFE/fluoropolymers (Beilstein does not clear fluorine) | Low | PL-001 Resolved 2026-08-23 — protocol specified; hot-run clearance still requires PL-001-R1 empirical validation against representative feedstock |
 | ASM-005 | Pyrolytic oil from mixed plastic feedstock is usable as heating fuel or generator input without significant refining | Analogous — small-scale pyrolysis literature; oil quality varies by feedstock | Low | PL-003 resolved — oil stability and contaminant profile characterized |
 
 ---
@@ -254,14 +254,14 @@ that bypasses halogenated feedstock rejection at triage. Cross-reference:
 
 | Field         | Value                                            |
 |---------------|--------------------------------------------------|
-| Status        | Open                                             |
+| Status        | Resolved — Payment via Specification, ratified 2026-08-23 |
 | Risk          | High                                             |
 | Priority      | Critical                                         |
 | Type          | Chemical Safety                                  |
-| Blocking      | Yes (before any hot operational runs)            |
+| Blocking      | Yes (before any hot operational runs — specification closure does not clear this; see PL-001-R1) |
 | Owner         | Operations/Plastics.md                           |
 | First Logged  | 2026-05-26                                       |
-| Last Reviewed | 2026-08-15                                       |
+| Last Reviewed | 2026-08-23                                       |
 
 **Description:** PVC and other halogenated plastics release hydrochloric acid (HCl)
 gas and toxic dioxins when subjected to pyrolysis temperatures. Even small quantities
@@ -272,16 +272,64 @@ repeated cycles and easily bypasses basic carbon filtration, creating both a
 structural failure risk and a toxic environmental hazard. Dioxin release is a
 severe long-term health and contamination risk.
 
-**Resolution Path:** Define and validate a triage rejection protocol before first
-hot run — minimum: Beilstein test (copper wire, green flame = halogen present)
-and density sorting (PVC ~1.4 g/cm³). Cross-reference `Operations/Gate_01_Intake.md`
-GI-003 for augmented detection capability. Verify that `Operations/Air_Scrubber.md`
-alkaline buffering stage (cross-reference AS-003) is capable of neutralizing
-accidental acid gas bypass from imperfect triage rejection. Payment via
-Specification once triage protocol is validated against a representative
-feedstock sample and scrubber alkaline stage is confirmed.
+**Halogenated Polymer Triage Protocol** *(PL-001 resolution vehicle — specification layer)*
 
-**Grok review 2026-08-15:** Path adequate. Beilstein + density sorting are concrete v0 methods; GI-003 and AS-003 cross-refs are real and correctly load-bearing. Blocking Yes before any hot run is correct. **Grok approved (path adequate).** Remains Open — triage protocol still needs definition + validation; do not run hot pyrolysis until closed.
+PVC, PTFE (Teflon), and other halogenated plastics must not enter the pyrolysis reactor. This protocol defines the minimum decision procedure at triage. It does not claim field validation. Hot operational runs remain blocked until residual PL-001-R1 is closed.
+
+*Scope.* In scope: identification and reject/hold decisions for suspected halogenated feedstock before reactor entry; routing of confirmed or unresolved halogenated material. Out of scope: Air Scrubber design (AS-003); Gate_01 augmented kit selection (GI-003); final long-term disposal chemistry (EC-014 / GR-003). Destination: positive or unresolved halogenated material → `Operations/Gate_02_Triage.md` Contaminated bin (non-decontaminable hold). No parallel sink.
+
+*Two polymer classes (do not conflate).* Beilstein is a halide flame test biased toward chlorine/bromine — a negative result does not reliably rule out fluorine. Screening therefore splits by class:
+
+| Class | Examples | What works | What does not clear |
+|-------|----------|------------|-------------------------|
+| Chlorinated / brominated | PVC (often recycling code 3), many vinyls | Beilstein (green flame) + density ~1.4 g/cm³ | — |
+| Fluoropolymers | PTFE / Teflon, related F-polymers | Labeling, product form, density ~2.1–2.2 g/cm³ | Beilstein negative — fluorine does not reliably give the same diagnostic green-flame response; a negative Beilstein is not a "no halogen" certificate for this class |
+
+Pass (halogen screen) requires that both classes have been addressed with a method appropriate to each — not "Beilstein negative ⇒ clear all halogen risk."
+
+*Preconditions.* Triage before any material is charged to the pyrolysis reactor. Operator can attempt density comparison and, for the Cl/Br path, Beilstein under local site rules. If required tests for the suspected class cannot be performed → treat lot as Unresolved → Contaminated bin (do not pass to reactor).
+
+*Decision sequence.* Perform in order. Stop at first decisive Reject. Document outcome for the lot.
+
+| Step | Action | Decision |
+|------|--------|----------|
+| 1. Visual / marking screen | Recycling codes (e.g. 3 = PVC), "vinyl," "PTFE," "Teflon," fluoropolymer product types, known halogenated articles | Labeled PVC-class or PTFE-class → Reject → Contaminated bin. Otherwise continue. |
+| 2. Density sort (class-aware) | PVC-class band: ~1.4 g/cm³. PTFE-class band: ~2.1–2.2 g/cm³ (distinctly heavier than PVC and common polyolefins). Common PE/PP ~0.9 g/cm³ | Density consistent with PVC-class → suspect chlorinated → Step 3a. Density consistent with PTFE-class → suspect fluoropolymer → Step 3b (not 3a alone). Light polyolefin-class density does not by itself clear halogen risk if labeling/form still suggests halogen polymer. Cannot test density → note; apply Step 3 by class if labeling/form suggests halogen polymer; if fully unknown mixed and untestable → Unresolved. |
+| 3a. Beilstein (chlorinated / brominated path only) | Clean copper wire, heat, contact sample, return to flame. Green flame → halogen (Cl/Br-class) | Green → Reject → Contaminated bin. Negative → Cl/Br Beilstein path does not indicate chlorinated/brominated halogen; continue only for that path. Ambiguous / weak / dirty wire / unsure → Unresolved → Contaminated bin. |
+| 3b. Fluoropolymer path (PTFE-class) | Do not clear on Beilstein negative. Use labeling, product form, and PTFE-class density band | Labeled or density-consistent PTFE-class → Reject → Contaminated bin. Suspected but unconfirmed → Unresolved → Contaminated bin. Never issue Pass for fluoropolymer suspicion on Beilstein alone. |
+| 4. Mixed-lot rule | Lot contains mixed streams | If any significant fraction is Reject or Unresolved → whole lot holds to Contaminated bin or re-sort until halogenated fraction is removed and remaining fraction is re-screened under Steps 1–3. Do not average risk across the batch. |
+| 5. Pass (halogen screen only) | PVC/Cl-Br path does not indicate reject (3a) and PTFE path does not indicate reject/unresolved (3b), using methods appropriate to each class | May proceed along ordinary Plastics triage toward later stages only under wider Gate/Plastics rules. This Pass is necessary, not sufficient, for a hot run. |
+
+*Outcome table.*
+
+| Outcome | Meaning | Route |
+|---------|---------|--------|
+| Reject | Halogen indicated for PVC/Cl-Br path and/or PTFE path | Contaminated bin (non-decontaminable) |
+| Unresolved | Test impossible, ambiguous Beilstein (3a), PTFE suspicion without clear clear/reject, or mixed lot not fully separated | Contaminated bin until resolved or re-sorted |
+| Pass (halogen screen) | Both classes screened with appropriate methods; no reject/unresolved halogen indication | Continue other triage; not authorization for hot pyrolysis |
+
+Default under doubt: Unresolved → Contaminated bin. When in doubt, do not heat.
+
+**Hard rule:** a negative Beilstein result clears only the chlorinated/brominated Beilstein path. It must not be treated as a universal "no halogen" result and must not be used to clear fluoropolymer suspicion.
+
+*Interface with GI-003 and AS-003.* GI-003 (Gate_01 augmented detection): optional enrichment. If present and indicates halogenated hazard → Reject or Unresolved per that indication. If absent/Open, this protocol's class-aware Steps 1–3 remain the minimum path — do not wait on GI-003. AS-003 (scrubber alkaline / saturation): not a triage step. Defense in depth if imperfect rejection allows acid gas toward the scrubber. Confirmation is part of PL-001-R1, not a prerequisite to write or execute this reject protocol.
+
+**Explicit non-goals.** Does not set reactor temperature profiles or scrubber hardware design. Does not authorize hot pyrolysis when this protocol is specified but not validated. Does not define Contaminated-bin final disposal (EC-014 / GR-003 / Gate_02). Does not replace Gate_01 intake procedures; it specializes halogen screening for the plastics → pyrolysis path. Does not claim Beilstein is diagnostic for fluorine.
+
+**Residual risks, logged as child notes and not blocking this section's Payment via Specification — Blocking Yes remains until PL-001-R1 clears:**
+
+| ID | Residual | Notes |
+|----|----------|-------|
+| PL-001-R1 | Empirical validation against a representative feedstock sample (include fluoropolymer challenge material when available) and confirmation that scrubber alkaline stage can handle accidental acid-gas bypass from imperfect rejection | Required before any hot operational run; specification alone does not clear Blocking Yes |
+| PL-001-R2 | Operator training / false-negative rate under real contamination levels | Field data; adjust sequence only via dated revision after evidence |
+| PL-001-R3 | GI-003 kit maturity | Parallel; may strengthen Step 1–3 later without blocking this minimum protocol |
+| PL-001-R4 | Stronger field fluoropolymer identification method when available | Until then: density band + label + hold-on-doubt (3b) is the specified minimum |
+
+*§PL-001 — Resolved, Payment via Specification, ratified 2026-08-23. Closes PL-001 (logged 2026-05-26). Drafted by Grok, revised once after a Claude Skeptic pass identified that the Beilstein test is chlorine/bromine-biased and unreliable for fluorine — the original draft would have let a negative Beilstein result clear PTFE/fluoropolymer suspicion, exactly the false-negative failure mode this unknown exists to prevent. Revision split screening by polymer class (PVC/Cl-Br via Beilstein+density; PTFE/fluoropolymer via labeling+density band, explicitly never cleared by Beilstein alone) and rewrote the Pass condition as a conjunction requiring both classes screened, not a single shared threshold. Constitutional/doctrinal anchor: none required — this is an operational safety protocol, not governance doctrine; destination and cross-references verified against `Operations/Gate_02_Triage.md`'s existing Contaminated bin (2026-08-15 extension) and this file's own GI-003/AS-003 cross-references before integration. Full Closure Event — Proposer (Grok), Skeptic + Verifier (Claude, one revision then Accept), Human Ratification (Human Governing Authority) — recorded in this file's own Resolution Log, below. Blocking Yes remains in force for hot operational runs pending PL-001-R1 empirical validation; specification closure and operational clearance are deliberately distinct events. Human-directed.*
+
+**Prior history (retained):**
+
+**Grok review 2026-08-15:** Path adequate. Beilstein + density sorting are concrete v0 methods; GI-003 and AS-003 cross-refs are real and correctly load-bearing. Blocking Yes before any hot run is correct. **Grok approved (path adequate).** Remains Open — triage protocol still needs definition + validation; do not run hot pyrolysis until closed. *(Superseded 2026-08-23 — protocol now written; Blocking Yes carried forward unchanged.)*
 
 **Spec-depth pass, 2026-08-15 (digital-only — no equipment exists yet):** Verified against source before acting on Grok's shared-cluster proposal. This file's "specialist disposal" destination and `Challenges/Waste.md` WA-002's "routed per WA-004/GR-003" were two different sentences pointing at the same undefined place — neither named a real path. Resolved by extending `Operations/Gate_02_Triage.md` TS-002's existing Contaminated bin non-decontaminable state (built earlier this session) to explicitly cover compositional hazards, not only surface contamination — no new destination invented, an existing one reused. Both files now converge on the same named hold. Does not change PL-001's disposition status or Blocking Yes — final disposal still correctly awaits EC-014/GR-003.
 
@@ -425,6 +473,8 @@ char composition is characterized and a routing decision tree is defined.
 
 ### Resolution Log
 
+- 2026-08-23: **PL-001 (Halogenated Polymer Contamination) Resolved — Payment via Specification, ratified by Human Governing Authority.** Grok drafted a full class-aware Halogenated Polymer Triage Protocol. Claude Skeptic pass caught a real chemistry gap before integration: the Beilstein test is a chlorine/bromine-biased halide flame test and does not reliably detect fluorine, so the initial draft's single shared Beilstein-negative-clears-all logic would have let PTFE/fluoropolymer contamination pass triage undetected — exactly the false-negative failure mode PL-001 exists to prevent. Grok revised: screening split into a PVC/Cl-Br path (Beilstein + ~1.4 g/cm³ density) and a separate PTFE/fluoropolymer path (labeling + product form + ~2.1–2.2 g/cm³ density band, explicitly never cleared by Beilstein alone), with the Pass condition rewritten as a conjunction requiring both classes screened. Destination (Gate_02 Contaminated bin) and GI-003/AS-003 cross-references verified unchanged and accurate against source before integration. Full Closure Event — Proposer (Grok), Skeptic + Verifier (Claude, one revision then Accept), Human Ratification (Human Governing Authority). Four residuals (PL-001-R1 through R4) remain open as non-blocking child notes; PL-001-R1 (empirical validation against representative feedstock, including fluoropolymer challenge material) keeps Blocking Yes in force for hot operational runs — specification closure and operational clearance are deliberately distinct events, consistent with this repository's GOV-003 precedent. Open Unknowns: 5 substantively open → 4 (PL-002–005); PL-001 Resolved.
+
 - 2026-08-15: **Grok resolution-path review (Operations continuation — Plastics).** All five PL unknowns reviewed against source. Every Resolution Path judged adequate; residual evidence needs (triage validation, reactor design, first-run characterization) correctly retained. Cross-refs (GI-003, AS-003, Energy.md, Gate_02, GR-003) verified real. Markers added; Last Reviewed → 2026-08-15 on all five. **No PL-* closed.** Open Unknowns remain 5. Blocking status unchanged (PL-001 and PL-002 Yes). Human-directed.
 
 - 2026-08-15: **PL-001's disposal destination named — points to
@@ -474,8 +524,8 @@ Mandatory re-audit conditions for this document:
 - Halogenated polymer triage rejection protocol bypassed or made optional
 - Syngas routed directly to Air Scrubber without upstream combustion stage
 - Char residue treated as inert and disposed of without characterization
-- PL-001 triage protocol introduced without Beilstein test or equivalent
-  halogen detection method
+- PL-001 triage protocol bypassed for either polymer class, or Beilstein
+  treated as sufficient to clear fluoropolymer/PTFE-class suspicion
 - Reactor fabricated without pressure relief system per PL-002
 - Pyrolytic oil used in motor-generators without PL-003 characterization
 - Mechanical repurposing path used for visibly degraded or unknown-identity polymer
