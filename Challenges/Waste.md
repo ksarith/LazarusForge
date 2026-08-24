@@ -60,7 +60,7 @@ This file exists to establish that waste is a design choice — a system that ma
 | ID | Assumption | Basis | Confidence | Expiry Trigger |
 |---|---|---|---|---|
 | ASM-001 | Triage decisions can reliably distinguish embedded functional complexity from bulk material at the point of intake | Core design philosophy (triage-before-reduction); no formal preservation metric yet exists (WA-001 open) | Low | WA-001 resolved with a formal embedded-complexity preservation metric |
-| ASM-002 | Operators can reliably identify hazardous fractions (asbestos, heavy metals, BFRs) in mixed, unsorted waste streams without a validated identification protocol | Engineering Requirements assumes this capability; WA-002 explicitly notes no validated protocol or training standard exists | Low | WA-002 resolved with a validated identification protocol |
+| ASM-002 | Operators can reliably identify hazardous fractions (asbestos, heavy metals, BFRs) in mixed, unsorted waste streams | Engineering Requirements assumes this capability; WA-002 Resolved 2026-08-23 — identification protocol, training standard, and lab-arrangement structure specified; feedstock validation remains open (WA-002-R1) | Low | Confidence unchanged pending WA-002-R1 empirical validation |
 | ASM-003 | The Forge's presence in a community can integrate with, rather than displace, existing informal waste recovery workers | Long-Term Objective's stated intent; WA-003 explicitly notes no integration framework yet exists | Low | WA-003 resolved with an informal-sector integration doctrine |
 
 ---
@@ -137,17 +137,74 @@ Current approaches active in the repository:
 
 ---
 
-## Hazardous Fraction Identification Protocol (WA-002 spec-depth pass, 2026-08-15)
+## Hazardous Fraction Identification Protocol (WA-002)
 
 **Digital-only — no equipment exists yet to validate this against real feedstock.** Written at Analogous confidence, drawing on established industrial hygiene and electronics-recycling field practice, not asserted as a validated protocol. This is a screening and isolation standard, not a laboratory-grade identification method — its purpose is to get a presumptively hazardous item safely isolated, not to certify its composition.
 
 *Asbestos-containing materials:* Identification is presumptive by material type and manufacture era, not by visual confirmation — asbestos fibers cannot be conclusively identified without polarized light microscopy, so field protocol is presumption-and-isolation, never confirm-and-clear. Presumptive triggers: pre-1980s pipe or duct insulation wrap, 9"×9" vinyl floor tile, textured ceiling coating, flat fibrous-cement sheet siding or roofing. Any presumptive match is never cut, drilled, sanded, or broken (mechanical disturbance is what releases fibers) — isolated intact, tagged, and routed per WA-004/`Gate_03_Reduction.md` GR-003 disposal doctrine, both still Open. This protocol does not resolve where a confirmed-hazardous item ultimately goes; it only gets it safely out of the active stream.
 
-*Heavy-metal-bearing components:* Identifiable by component type rather than material inspection, which is more reliable than the asbestos case. CRT glass (any cathode-ray tube unit) presumptively contains significant lead in the funnel glass. Pre-2006 solder joints on circuit boards are presumptively lead-based (dull gray, versus RoHS lead-free solder's different finish) — presumption by manufacture date where visible, not a required visual test. Mercury tilt switches (older thermostats, some older appliances) are identifiable by a sealed glass tube containing a visible silver bead. NiCd battery chemistry is cadmium-bearing and identifiable from cell markings.
+*Heavy-metal-bearing components:* Identifiable by component type rather than material inspection, which is more reliable than the asbestos case. CRT glass (any cathode-ray tube unit) presumptively contains significant lead in the funnel glass. Pre-2006 solder joints on circuit boards are presumptively lead-based (dull gray, versus RoHS lead-free solder's different finish) — presumption by manufacture date where visible, not a required visual test; this is hazard presumption by component and provenance, not a claim that an operator can identify the composition of an individual solder joint from date or appearance alone. Mercury tilt switches (older thermostats, some older appliances) are identifiable by a sealed glass tube containing a visible silver bead. NiCd battery chemistry is cadmium-bearing and identifiable from cell markings.
 
-*Brominated flame retardants (BFRs):* Genuinely the hardest category — BFR-containing plastic is not visually distinguishable from non-BFR plastic. This does not need a new detection method: `Operations/Plastics.md` PL-001 already establishes the Beilstein test (copper wire flame test) as a validated halogen-detection method for its own halogenated-polymer rejection doctrine (PVC, Teflon). Bromine is a halogen — the same test that flags chlorinated plastics for Plastics.md's purposes will also flag brominated ones. WA-002 reuses that existing method rather than inventing a parallel one; the two files should converge on describing this as one shared detection step, not two separately-maintained ones. As a presumptive default in the absence of testing, pre-RoHS-era electronics housings and circuit boards are treated as presumptively BFR-bearing — fail closed, consistent with the file's own stated principle of treating hazardous fractions as the normal condition, not an edge case.
+*Brominated flame retardants (BFRs):* Genuinely the hardest category — BFR-containing plastic is not visually distinguishable from non-BFR plastic. This does not need a new detection method: `Operations/Plastics.md` PL-001 establishes the Beilstein test (copper wire flame test) as its established qualitative halogen screen for halogenated-polymer rejection doctrine (PVC and other chlorinated/brominated plastics — PL-001's own class-split explicitly does not extend this to fluoropolymers). Bromine is in the same halogen family Beilstein reliably flags — the same test that flags chlorinated plastics for Plastics.md's purposes will also flag brominated ones. WA-002 reuses that existing method rather than inventing a parallel one; the two files converge on describing this as one shared detection step, not two separately-maintained ones. Beilstein's adequacy for this Forge's actual mixed feedstock is not itself established — that remains subject to WA-002-R1 and PL-001's own validation residual, not asserted here. As a presumptive default in the absence of testing, pre-RoHS-era electronics housings and circuit boards are treated as presumptively BFR-bearing — fail closed, consistent with the file's own stated principle of treating hazardous fractions as the normal condition, not an edge case.
 
-**What this pass does not resolve:** a formal training/certification standard for operators (still needed — this protocol gives content to train on, not a training program itself); confirmatory lab-testing arrangements for presumptive-positive items; and disposition once isolated, which is WA-004/GR-003's still-open territory, not this protocol's job. WA-002 moves from a bare table-row description to a real identification protocol at the doctrine level — it stays **Open**, since validation against real feedstock is exactly the operational data this session cannot produce without equipment.
+**2026-08-15 pass status (historical):** this pass moved WA-002 from a bare table-row description to a real identification protocol at the doctrine level, but explicitly left three things unresolved: a formal training/certification standard for operators, confirmatory lab-testing arrangements for presumptive-positive items, and disposition once isolated (WA-004/GR-003's territory). The first two are addressed below, 2026-08-23. Disposition remains WA-004/GR-003's unresolved territory, untouched here.
+
+### Operator Qualification & Confirmatory Lab Arrangements (WA-002, 2026-08-23)
+
+*Specification layer — builds on the identification protocol above without rewriting it.*
+
+**Epistemic boundary (do not collapse):**
+
+| Claim type | Status after this section |
+|------------|-------------------------|
+| Specification of intended institutional response | Yes — this text |
+| Operators are already qualified / labs are contracted | No |
+| Identification protocol validated on Forge feedstock | No (WA-002-R1) |
+| ASM-002 (reliable field ID) Measured | No |
+
+Completion of a training record is not evidence that the identification protocol has been empirically validated.
+
+**A. Operator training / demonstration standard.** Purpose: ensure unsupervised use of the Hazardous Fraction Identification Protocol means presumption-and-isolation, not false confirm-and-clear. Required demonstration outcomes:
+
+| ID | Outcome |
+|----|---------|
+| T1 | Lists asbestos presumptive triggers (pre-1980s pipe/duct wrap, 9"×9" vinyl floor tile, textured ceiling coat, fibrous-cement siding/roofing) and states: never confirm-and-clear by eye; never cut, drill, sand, or break presumptive ACM |
+| T2 | Applies hazard presumption by component/provenance for heavy-metal risk — CRT units (funnel glass lead risk), unknown or pre-RoHS-era electronics treated as potentially lead-bearing in solder/joints, mercury tilt switches (visible bead), NiCd markings. Does not claim to identify the composition of an individual solder joint from date or appearance alone |
+| T3 | Applies BFR presumption for pre-RoHS electronics housings/boards when untested; uses Beilstein as the doctrine's shared qualitative halogen screen with PL-001 for bromine-class indication; does not treat Beilstein as a fluorine/PTFE clear (PL-001 class-split) |
+| T4 | States default under doubt: isolate → Contaminated bin; hazardous fractions treated as the normal condition, not an edge case |
+| T5 | Names Gate_02 Contaminated bin as the hold path under this protocol; final disposition is not this protocol's job (WA-004/GR-003) |
+| T6 | Knows when to stop and escalate (ambiguous lot, ACM disturbance risk, mixed stream they cannot separate safely) |
+
+Unsupervised application of the identification protocol requires a documented record that the person has been taken through T1–T6 (site-defined format: checklist, brief, or observed drill). Untrained persons may assist only under direct supervision of someone who holds that record; they do not make isolate/pass-screening decisions alone. That record is a control on who may apply the protocol, not evidence that the protocol works on real waste.
+
+Explicit non-goals: not a regulatory license or external certification scheme; not PPE doctrine (Safety_Protocols); not authorization to perform PLM or wet chemistry in the field; not a claim of empirical protocol validity.
+
+**B. Confirmatory lab-arrangement structure.** Purpose: structure hold + request + result handling when external analysis is sought, without requiring on-site lab capacity today.
+
+| Situation | Arrangement posture |
+|-----------|---------------------|
+| Asbestos presumptive match | Field rule: isolate, do not disturb. Lab microscopy may inform long-term disposition under WA-004/GR-003 only |
+| Heavy-metal component/provenance presumption (CRT, Hg switch, marked NiCd, unknown/pre-RoHS electronics as potentially lead-bearing) | Isolation decision does not require lab; presumption is enough to hold |
+| BFR/halogen screen ambiguous or disputed | Lab or specialist analysis may be requested; bulk stays Contaminated hold until resolved |
+| Disposition authority requests confirmation | Hold + request structured here; disposition choice remains WA-004/GR-003 |
+
+**Authority boundary (hard rule):** a laboratory result is evidence supplied to the disposition authority. It does not itself authorize release, processing, mechanical disturbance, or return to the active recovery stream.
+
+Minimum arrangement elements: (1) Hold state — Contaminated bin (or equivalent sealed, labeled isolation) for the entire pending period, no silent return to feedstock; (2) Record — lot/tag ID, presumption category (T1–T3), date isolated, who applied the protocol, question asked of the lab; (3) Chain of custody — release from bin, recipient, sample ID, twin tag on held bulk where feasible; (4) Result handling — confirms hazard → remain Contaminated/disposition under WA-004/GR-003; clears a specific suspicion → may clear only that suspicion if disposition doctrine allows, does not auto-authorize process (asbestos-class items are not cleared to dust-producing or recovery process on paperwork alone); inconclusive → still hazardous, stay held; (5) No lab available — isolation protocol applies in full; lack of confirmation never becomes "treat as clean."
+
+Explicit non-goals: does not name required vendors or method lists (regional residual WA-002-R3); does not create lab capacity; does not resolve WA-004/GR-003 endpoints.
+
+**Residuals, logged as child notes — WA-002-R1 keeps this unknown functionally blocking for operational reliance despite specification closure:**
+
+| ID | Class | Meaning |
+|----|--------|---------|
+| WA-002-R1 | Epistemic / empirical | Does the identification protocol perform adequately against representative mixed feedstock? Blocks claims of operational reliability; keeps this unknown functionally Blocking for any operational reliance beyond specification |
+| WA-002-R2 | Operational implementation | How a future site delivers T1–T6 and sets a re-demonstration interval — not a reason to leave the specification incomplete |
+| WA-002-R3 | Deployment logistics | Which labs/methods exist in a jurisdiction — not a specification blocker |
+
+Only R1 is the epistemic residual for "protocol works in the field." R2/R3 are deployment residuals, not blockers on this specification's completeness.
+
+*§WA-002 — Resolved, Payment via Specification, ratified 2026-08-23. Closes WA-002 (logged prior to 2026-05; identification-protocol content added 2026-08-15, training/lab-arrangement sections added 2026-08-23). Drafted by Grok, revised once after a ChatGPT Skeptic pass that caught two overclaims relative to source: (1) the original training draft described pre-2006 solder identification as an operator competency rather than hazard presumption, strengthening what the underlying 2026-08-15 protocol already correctly hedged as "presumption by manufacture date... not a required visual test"; (2) Beilstein was described as a "validated" method in a Forge-specific sense the repository's own PL-001 doctrine does not support. Both corrected in the revision integrated here, and the same correction applied to this file's own pre-existing BFR paragraph above, which had carried the same overclaim before this pass. Also added: an explicit authority-boundary rule (lab result is evidence supplied to disposition authority, not itself an authorization) and a three-way residual classing (R1 epistemic/blocking, R2/R3 deployment/non-blocking) — both new doctrine, consistent with but not previously stated in this repository. Full Closure Event — Proposer (Grok), Skeptic + Verifier (ChatGPT, one revision then Accept), Human Ratification (Human Governing Authority) — recorded in this file's own Resolution Log, below. Consistent with this repository's PL-001/GOV-003 precedent: specification-level closure with a named empirical residual (WA-002-R1) that keeps real-world reliance functionally blocked, rather than leaving the unknown itself nominally Open despite complete specification. Human-directed.*
 
 ---
 
@@ -186,11 +243,11 @@ The river does not waste water. The forest does not waste leaves. Waste, in thos
 | ID | Description | Status | Risk |
 |---|---|---|---|
 | WA-001 | Embedded complexity preservation metric — no formal measure exists for whether triage decisions are successfully preserving functional complexity versus routing prematurely to reduction. Needed before Gate_02 promotion from Exploration. | Open | Major |
-| WA-002 | Hazardous fraction identification reliability — the triage workflow assumes operator ability to identify asbestos, heavy metals, and BFR-containing materials. A field identification protocol now exists (see Hazardous Fraction Identification Protocol section above, 2026-08-15) at Analogous confidence; no validated training standard or feedstock-validated protocol exists yet. Isolated items route to `Operations/Gate_02_Triage.md` TS-002's Contaminated bin (non-decontaminable state, 2026-08-15 shared-destination extension) — the same named path `Operations/Plastics.md` PL-001 uses, not a separately-implied one — pending WA-004/GR-003 for final disposition. Cross-ref CE-004, `Operations/Plastics.md` PL-001 (shared Beilstein halogen-detection method), `Operations/Gate_03_Reduction.md` GR-007 (uses this protocol's presumptive-match categories for equipment retirement). | Open | Critical |
+| WA-002 | **Resolved — Payment via Specification, ratified 2026-08-23.** Hazardous fraction identification reliability — the triage workflow assumes operator ability to identify asbestos, heavy metals, and BFR-containing materials. Full specification now exists: identification protocol (2026-08-15) plus operator training/demonstration standard and confirmatory lab-arrangement structure (2026-08-23) — see Hazardous Fraction Identification Protocol section above. Isolated items route to `Operations/Gate_02_Triage.md` TS-002's Contaminated bin (non-decontaminable state) — the same named path `Operations/Plastics.md` PL-001 uses — pending WA-004/GR-003 for final disposition. Cross-ref CE-004, `Operations/Plastics.md` PL-001 (shared Beilstein halogen screen, Cl/Br class only), `Operations/Gate_03_Reduction.md` GR-007. WA-002-R1 (feedstock validation) keeps this unknown functionally blocking for operational reliance despite specification closure — same pattern as PL-001. | Resolved | Critical |
 | WA-003 | Informal sector integration doctrine — no framework exists for how the Forge interfaces with, supports, or avoids displacing existing informal waste recovery workers. Structural gap at community deployment scale. | Open | Major |
 | WA-004 | Negative-value waste fraction disposal — materials that cannot be recovered and are hazardous to store require a disposal doctrine. Owned by `Operations/Gate_03_Reduction.md` GR-003 (real disposal categories written 2026-08-15, applying `Admin/Resolution_Methodology.md`) — this row tracks the same doctrine from the Challenges/ side, not a second one. | Open | Critical |
 
-*WA-002 and WA-004 are Critical — no sustained mixed-waste operations without hazardous fraction identification and negative-value disposal doctrine.*
+*WA-002 (Resolved 2026-08-23, WA-002-R1 keeps operational reliance blocked pending feedstock validation) and WA-004 (Open, Critical) — no sustained mixed-waste operations without validated hazardous fraction identification and negative-value disposal doctrine.*
 
 *All four entries (WA-001–004) are registered in `Unknowns.md`.*
 
@@ -202,7 +259,9 @@ The river does not waste water. The forest does not waste leaves. Waste, in thos
 
 ## Resolution Log
 
-- 2026-08-15 (third entry, same day): **WA-004 given a real owner — `Operations/Gate_03_Reduction.md`
+- 2026-08-23: **WA-002 (Hazardous Fraction Identification Reliability) Resolved — Payment via Specification, ratified by Human Governing Authority.** Grok drafted an Operator Qualification & Confirmatory Lab Arrangements section extending the existing 2026-08-15 identification protocol. A ChatGPT Skeptic pass caught two overclaims relative to source before integration: the training draft's solder-identification language had strengthened the file's own existing "presumption by manufacture date... not a required visual test" hedge into an implied operator competency to identify composition; and Beilstein was described as "validated" in a Forge-specific sense unsupported by `Operations/Plastics.md` PL-001's own doctrine. Both corrected in the integrated revision — the same correction was also applied to this file's pre-existing BFR paragraph, which had carried the same "validated" overclaim since before this session. Added: an explicit training/demonstration standard (T1–T6), a confirmatory lab-arrangement structure with a hard authority-boundary rule (lab result is evidence supplied to disposition authority, not itself an authorization), and a three-way residual classing distinguishing the epistemic/blocking residual (WA-002-R1, feedstock validation) from non-blocking deployment residuals (WA-002-R2 training delivery, WA-002-R3 regional lab logistics). Full Closure Event — Proposer (Grok), Skeptic + Verifier (ChatGPT, one revision then Accept), Human Ratification (Human Governing Authority). Resolved consistent with this repository's PL-001/GOV-003 precedent: specification-level closure with WA-002-R1 keeping real-world operational reliance functionally blocked, rather than leaving the unknown nominally Open despite a complete specification.
+
+
   GR-003 wrote actual disposal categories, first applied case of
   `Admin/Resolution_Methodology.md`.** WA-004's row updated from "no owning
   file currently covers this" to name GR-003 explicitly. Both files now
