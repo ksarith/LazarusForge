@@ -82,18 +82,22 @@ GOV-XXX sidecar entry and the full Resolution Log — lives here now.
 
 | Field         | Value                           |
 |---------------|---------------------------------|
-| Status        | In Progress                     |
+| Status        | Resolved                        |
 | Risk          | High                            |
 | Priority      | Critical                        |
 | Type          | Governance / Security           |
-| Blocking      | Yes                             |
+| Blocking      | No — Resolved 2026-08-23        |
 | Owner         | `Admin/Governance_Charter.md`   |
 | First Logged  | 2026-05-23                      |
-| Last Reviewed | 2026-05-23                      |
+| Last Reviewed | 2026-08-23                      |
 
 **Description:** Integrity expectations exist constitutionally, but executable integrity enforcement architecture is undefined. Tier 1 Axioms are currently Declared and Detectable — not yet Enforceable.
 
 **Why It Matters:** Repository integrity protections remain performative rather than operational until enforcement architecture exists. This is the primary maturation gap between a governance document and a governance system.
+
+**Resolution:** Resolved by Payment via Specification, ratified by Human Governing Authority 2026-08-23. New Charter section "Integrity Enforcement Architecture" (immediately following Governance Enforcement States) applies the existing Declared/Detectable/Reviewable/Enforceable ladder to integrity enforcement without redefining it, maps ownership across `Admin/Repository_Integrity_Protocol.md`, Security_Protocols SEC-009/SEC-002/SEC-007a/SEC-007b, and Ethical_Constraints EC-007/EC-003/EC-009, and scopes the external-root-of-trust requirement specifically to constitutional integrity enforcement against a compromised chain — ordinary procedural enforcement (human halt, SEC-002 suspension) is classed as Enforceable in its own scope without an anchor.
+
+**Full Closure Event:** Proposer — Grok (candidate specification). Skeptic/Verifier — ChatGPT: initial draft returned Conditional Pass (draft had proposed a competing three-rung ladder that would have contradicted this Charter's existing four-rung Governance Enforcement States and RIP's existing per-element Reviewable claims — corrected before integration); revised draft Accepted pending one narrow source-verification of SEC-002's authority-chain characterization. Verification — Claude confirmed against SEC-002's actual text (mandatory automatic suspension on signal; revocation/re-admission through named Human Governing Authority authority with no self-clear path) at integration, 2026-08-23. Human Ratification — Human Governing Authority. Residuals GOV-003-R1 through R4 logged in the Charter section as non-blocking child notes; GOV-003-R1 (external root-of-trust instantiation, SEC-007b) is the named primary blocker for constitutional Enforceability under compromise and remains open. This closure is specification-level only and does not claim operational validation.
 
 **Resolution Path:** `Admin/Repository_Integrity_Protocol.md` v0.1 created as executing resolution path — defines integrity baselines, violation classification ladder, recovery procedures, and automation migration path. Full Enforceability requires `Admin/Security_Protocols.md` Phase 3. Cross-reference AP-007 (`Admin/Auditor_Protocols.md`) — constitutional enforcement and operational auditor doctrine are distinct but linked layers.
 
@@ -459,20 +463,24 @@ independently — a shared mechanism may serve both.
 
 | Field         | Value                           |
 |---------------|----------------------------------|
-| Status        | Open                             |
+| Status        | Resolved                         |
 | Risk          | High                              |
 | Priority      | Critical                         |
 | Type          | Governance / Security            |
-| Blocking      | No                                |
+| Blocking      | No — Resolved 2026-08-23         |
 | Owner         | `Admin/Governance_Charter.md`    |
 | First Logged  | 2026-07-17                       |
-| Last Reviewed | 2026-07-17                       |
+| Last Reviewed | 2026-08-23                       |
 
 **Description:** This Charter prevents self-certification, self-auditing, silent amendment, tier inversion, and lineage destruction at the Tier 1 text level. It does not defend against a coalition that never touches Tier 1 Axiom text at all, but instead creates a large number of subordinate files that collectively reinterpret what the Axioms mean in practice — Tier 1 stays textually intact while becoming practically irrelevant. Confirmed by direct search: no existing section addresses interpretation-drift-by-volume as a distinct attack class from the single-file reinterpretation GMP-005 already covers.
 
 **Why It Matters:** this is the most severe of the seven findings in this pass. It's a Constitutional Capture vector that doesn't require breaking any existing rule — every individual subordinate file could pass its own audit while the aggregate effect hollows out Tier 1. The Charter's current model assumes lower-tier documents behave honestly in aggregate; nothing structurally enforces that assumption.
 
 **Resolution Path:** Payment via Specification — likely requires some form of aggregate drift detection (does the *practical* meaning of an Axiom, inferred from how subordinate doctrine collectively treats it, still match its *textual* meaning), not just per-file review. Cross-reference `Admin/Governance_Migration_Protocol.md` GMP-005 (single-file reinterpretation, resolved) — this is the same failure mode at aggregate scale, unresolved. Cross-reference GOV-014 (complexity ceiling) — a bounded doctrine count makes this attack harder to execute unnoticed, though it doesn't resolve the underlying gap by itself.
+
+**Resolution:** Resolved by Payment via Specification, ratified 2026-08-23. New Charter section "Constitutional Interpretation Capture — Aggregate Drift Detection" (following Integrity Enforcement Architecture) separates trigger from finding, distinguishes textual/interpretive/operational drift (only interpretive drift is the detection object; operational evidence is explicitly not required), and demotes the "≥3 instruments" figure from GMP-005's proposed A1 trigger to a non-constitutional provisional heuristic. Correctly kept distinct from, not duplicative of, GMP-005 (single-file reinterpretation, already Resolved).
+
+**Full Closure Event:** Proposer — Grok. Skeptic/Verifier — ChatGPT, two-pass: first pass required separating trigger from finding, replacing "routinely treated" with normative (not operational) language, and demoting the ≥3 heuristic; second pass Accepted with one non-blocking wording note (the subordinate corpus is evidence sufficient to conduct a review, not evidence sufficient to itself constitute drift — reflected in the integrated wording). Human Ratification — Human Governing Authority. Residuals GOV-015-R1 through R3 logged in the Charter section as non-blocking child notes.
 
 *Surfaced by ChatGPT — adversarial pass (Battery 3, Constitutional Capture), 2026-07-17; verified against source and registered by Claude — Synthesizer/Auditor, human-directed.*
 
@@ -544,20 +552,24 @@ independently — a shared mechanism may serve both.
 
 | Field         | Value                           |
 |---------------|----------------------------------|
-| Status        | Open                             |
+| Status        | Resolved                         |
 | Risk          | High                              |
 | Priority      | Critical                         |
 | Type          | Governance                       |
-| Blocking      | No                                |
+| Blocking      | No — Resolved 2026-08-23         |
 | Owner         | `Admin/Governance_Charter.md`    |
 | First Logged  | 2026-07-17                       |
-| Last Reviewed | 2026-07-17                       |
+| Last Reviewed | 2026-08-23                       |
 
 **Description:** `Admin/Governance_Migration_Protocol.md` has well-developed doctrine for a single lineage's governance evolving over time (Track A/B, amendment procedure). It has no doctrine for two independently-valid, independently-audited constitutional lineages diverging (a repository fork) and later needing reconciliation. Confirmed by direct search of both this file and the Migration Protocol — no fork or merge terminology appears in either.
 
 **Why It Matters:** rated Critical alongside GOV-015 — both are gaps only visible once you assume the system succeeds and scales, rather than gaps in current single-instance operation. A fork scenario with two constitutionally valid but divergent lineages has no defined reconciliation path, which could itself become a source of governance capture or paralysis if it ever occurs.
 
 **Resolution Path:** Payment via Specification — likely belongs in `Admin/Governance_Migration_Protocol.md` as a new Track or procedure, not this file, given that file's ownership of migration doctrine generally. Genuinely long-horizon; not urgent at current v0 single-instance scale, but cheaper to design before a fork exists than after.
+
+**Resolution:** Resolved by Payment via Specification, ratified 2026-08-23. Charter principles (fork definition; Claimed/Recognized/Ratified lineage states; Active Constitutional Surface; F1–F6) added to `Admin/Governance_Charter.md` §Governance Fork Reconciliation. Operative procedure (inventory → classify → propose successor → human ratification → archive) added as a new Fork Reconciliation Track in `Admin/Governance_Migration_Protocol.md`. Four new terms registered in `Admin/Canonical_Terms.md`, checked against existing vocabulary first — no competing term found; nearest neighbors ("active constitutional invariant" in Auditor_Protocols, "constitutional state" in Security_Protocols) are narrower-scoped and left untouched, with a cross-reference added at the Auditor_Protocols usage to prevent future conflation.
+
+**Full Closure Event:** Proposer — Grok. Skeptic/Verifier — ChatGPT, three-pass: v1→v2 required distinguishing claim from ratified legitimacy and removing independent audit as a prerequisite for a fork condition to exist (grounded in the repository's own GOV-021c specification/validation sequencing precedent); v2→v3 required an explicit F2 (content divergence) vs F5 (active-surface succession) split, since identical-Axiom-text-but-competing-lineage cases needed a home that wasn't Axiom amendment; v3 Accepted. Human Ratification — Human Governing Authority. Residuals GOV-018-R1 through R3 logged in the Charter section as non-blocking child notes.
 
 *Surfaced by ChatGPT — adversarial pass (Battery 6, Fork Attack), 2026-07-17; verified against source (confirmed absent from both this file and Governance_Migration_Protocol.md) and registered by Claude — Synthesizer/Auditor, human-directed.*
 
