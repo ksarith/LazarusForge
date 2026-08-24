@@ -37,7 +37,18 @@ Created 2026-08-09 to fix a recurring failure mode found the same day, in two pl
 
 *(Most recent first. Rotate to `Archive/Logs/Progress_Log_Changelog.md` once more than five entries accumulate.)*
 
-### 2026-08-22 — A six-unknown batch integrated cleanly on content but shipped non-conforming Closure Events, and this file itself lagged again
+### 2026-08-23 — WA-002 closed; a closure-convention inconsistency caught and resolved by explicit human decision rather than silently picking one
+Grok extended `Challenges/Waste.md`'s existing WA-002 identification protocol with a training/demonstration standard and confirmatory lab-arrangement structure. A ChatGPT Skeptic pass caught two source overclaims before integration (solder identification framed as competency rather than presumption; Beilstein framed as Forge-validated rather than an established-but-unvalidated screen) — both corrected, and the same pre-existing overclaim found and fixed in this file's own older BFR paragraph while integrating. Separately, ChatGPT's own recommended disposition for WA-002 was to leave it Open/Critical after this specification work, which would have created a live inconsistency: PL-001 and GOV-003, both closed earlier this same session with a materially identical shape (full specification, one named empirical residual), were both marked Resolved with the residual keeping practical blocking force. Flagged to the human governing authority before integrating rather than picking either convention unilaterally; confirmed to proceed using the PL-001/GOV-003 convention for consistency. Recorded here because this is exactly the class of problem GOV-015 (aggregate interpretation drift via subordinate doctrine, closed earlier this session) describes in the abstract — two structurally identical closures using different status conventions, here caught within the same session rather than drifting apart across future ones.
+
+
+Grok drafted a Halogenated Polymer Triage Protocol for PL-001. Initial version used one shared rule: Beilstein-negative clears halogen suspicion. A Claude Skeptic pass caught that this is chemically wrong for one of the two target polymer classes — Beilstein is a chlorine/bromine-biased flame test and does not reliably detect fluorine, so PTFE/Teflon contamination could pass a Beilstein-negative screen undetected under the original logic, exactly the failure PL-001 exists to prevent (HCl/dioxin release, reactor corrosion). This is the same category of catch as GOV-003's ladder conflict earlier this session — a draft that looked complete and Skeptic-ready failed on a substantive check, not a formatting one — but in a different domain (chemistry, not governance doctrine), which is worth noting: the standing verify-before-integrate discipline generalizes across domains, and should not be treated as governance-specific. Revised draft split screening by polymer class, closed cleanly. Integrated 2026-08-23; Blocking Yes retained pending PL-001-R1 empirical validation, same specification/validation split as GOV-003.
+
+
+Following GOV-003/GOV-015/GOV-018 closure, ChatGPT's cross-check flagged a stale "Open Unknowns 20" summary inside `Admin/Governance_Charter.md`'s own `## Auditor Notes & Unknowns` narrative block — accurate, and fixed same-day. That catch prompted a broader question: if one stale claim survived a closure pass, could there be others? A full mechanical sweep was run across all 82 files carrying a `## File State` block, extracting every `Highest Risk` field that named a specific unknown ID and checking that ID's actual status in `Unknowns.md`. Result: exactly one genuine error found — `Admin/Governance_Charter.md`'s Highest Risk field still named **GOV-013** as Critical/open; GOV-013 was in fact ratified 2026-07-19, over a month before this session, with its own "RATIFIED" section already in the Charter body. The stale field had been carried forward silently through at least the 2026-08-21 and 2026-08-23 header updates, including one made earlier this same session, without anyone (agent or human) checking it against the ratified section sitting a few hundred lines below it in the same file. Fixed same-day: Highest Risk field now correctly names GOV-005 as the sole open Critical. Every other Highest Risk ID reference in the repository (GOV-008, CLF-003/006, EN-001, SR-001, RE-UNK-001/005, LW-UNK-001/003, CIR-001) was checked and confirmed accurate — this was not a systemic problem, but it was a real one, caught only because a second agent's routine cross-check happened to look in that direction.
+
+Separately, this same sweep surfaced that `Admin/Progress_Log.md`'s "Explicit non-work for now" list (2026-08-21) had specifically flagged "working GOV-003 as if its resolution path were specification-only" as a thing not to do — written before GOV-003 was closed today via specification. Reviewed against what was actually integrated: the closure did not claim full Enforceability: it scoped itself explicitly to architecture-level specification, left external root-of-trust instantiation (SEC-007b) as the named blocking residual (GOV-003-R1), and a ChatGPT Skeptic pass independently forced exactly that scoping distinction (ordinary procedural enforcement vs. constitutional enforcement under compromise) before Accept. Human governing authority confirmed directly: GOV-003 is "as much work as we can do currently without further testing" and letting the closure stand is safe, with further work flagged for when more information (a real SEC-007b instantiation) is available — see GOV-003-R1/R4 in the Charter section and this entry. Recorded here so the reconciliation is on record rather than the tension being silently dropped.
+
+
 Grok drafted EC-016, EC-008, EC-003, EC-009, and EC-004 (EC-005 was ratification-only) in a single working session; Claude source-verified every claim in every draft against actual file content before integration, and nothing false or fabricated was found anywhere in the batch — a clean run on substance. But the four integrated Closure Events (`Admin/Governance_Charter.md` EC-016; `Admin/Ethical_Constraints.md` EC-008, EC-003/009, EC-004) were written as a short prose summary ("Drafted by Grok; source-verified by Claude") rather than against `Admin/Auditor_Protocols.md`'s own Unknown Closure Authority §'s eight-element minimum — missing, specifically, an explicit independence attestation and a recorded Verifier verdict, both present in every prior closure this repository has done (AP-005, AP-013, AP-024, GOV-014/016/020, GOV-022). Per that section's own text, a Closure Event missing a required element is invalid, not merely informal. Caught only when asked directly whether the batch had been checked against Auditor_Protocols.md's recent closure-authority update — not caught by the verification pass itself, which checked draft *content* against source but not the resulting Closure Event's *format* against the doctrine governing Closure Events. Fixed same-day: all four entries brought to the full format. Separately, this file had — again — recorded nothing about the batch until this same follow-up prompted it, the third occurrence of the identical lag (2026-08-14, 2026-08-21, now 2026-08-22). Worth treating as a pattern needing a structural fix, not another isolated catch: verifying a draft's factual claims and verifying its resulting artifact's procedural conformance are two different checks, and neither this file's own update discipline nor the source-verification step being used here catches its own staleness without being asked.
 
 ### 2026-08-21 — Five ratified closures sat unrecorded here for a full day
@@ -171,10 +182,15 @@ either agent-summary source or the prior Forward Growth Avenues text.
 
 ### Lane A — verified this session, do next
 
-- **PL-001** (Halogenated polymer contamination, `Operations/Plastics.md`, Critical, Open) — no spec-depth pass yet; genuine prose-only doctrine work available.
-- **WA-002** (Hazardous fraction identification reliability, `Challenges/Waste.md`, Critical, Open) — same; doctrine chain sketch not yet written.
-- **GOV-015** (Constitutional interpretation capture — aggregate drift by subordinate-doctrine volume, `Admin/Governance_Charter.md`, Critical, Blocking No) — Resolution Path is aggregate drift-detection specification; no hardware or field-data dependency found in sidecar.
-- **GOV-018** (Governance fork reconciliation undefined, `Admin/Governance_Charter.md`, Critical, Blocking No) — Resolution Path is a new Track/procedure in `Admin/Governance_Migration_Protocol.md`; pure specification, explicitly "cheaper to design before a fork exists."
+*(No items currently — WA-002 Resolved 2026-08-23, see below. Re-populate on next planning pass.)*
+
+### Resolved this session (2026-08-23) — no longer Lane A/D, remove from active work queues
+
+- **WA-002** (Hazardous fraction identification reliability) — Resolved, Payment via Specification, ratified 2026-08-23. See `Challenges/Waste.md` §Hazardous Fraction Identification Protocol / Operator Qualification & Confirmatory Lab Arrangements. Specification-only, same pattern as PL-001/GOV-003: full protocol, training standard, and lab-arrangement structure defined, but WA-002-R1 (feedstock validation) keeps operational reliance functionally blocked.
+- **PL-001** (Halogenated polymer contamination) — Resolved, Payment via Specification, ratified 2026-08-23. See `Operations/Plastics.md` §PL-001 Halogenated Polymer Triage Protocol. Specification-only, same pattern as GOV-003: full protocol defined, but Blocking Yes remains for hot operational runs pending PL-001-R1 empirical validation.
+- **GOV-015** (Constitutional interpretation capture) — Resolved, Payment via Specification, ratified 2026-08-23. See `Admin/Governance_Charter.md` §Constitutional Interpretation Capture.
+- **GOV-018** (Governance fork reconciliation) — Resolved, Payment via Specification, ratified 2026-08-23. See `Admin/Governance_Charter.md` §Governance Fork Reconciliation and `Admin/Governance_Migration_Protocol.md`'s new Fork Reconciliation Track.
+- **GOV-003** (Integrity enforcement architecture) — Resolved, Payment via Specification, ratified 2026-08-23, despite this file's own 2026-08-21 Lane D placement and "explicit non-work" caution against treating it as specification-only. Reconciled, not overridden — see 2026-08-23 Current Lessons entry above. Closure is architecture-only; SEC-007b (external root-of-trust physical instantiation) remains the named open blocker (GOV-003-R1) for constitutional Enforceability under compromise, and is genuinely Lane C/E work (needs hardware) once revisited.
 
 ### Reclassified out of Lane A this session (were listed Lane A as of 2026-08-14; verified against sidecar 2026-08-21)
 
@@ -182,8 +198,7 @@ either agent-summary source or the prior Forward Growth Avenues text.
 - **GI-002** → **Lane C.** 2026-08-15 pass wrote discharge procedures by category; remains Open because the file's own promotion bar is "written and tested," and testing needs a first operational run.
 - **GF-007** → **Lane C.** 2026-08-15 pass resolved FA-002 clearance radius via NFPA 51B; remaining piece needs validation the sidecar says "this session cannot produce."
 - **CE-006** → **Lane C/D.** Quantitative scrubber chemistry and a vessel sketch exist; blocked on "no vessel built, AS-003 uncalibrated" — explicit hardware gap, same category as CLF-003.
-- **GOV-003** → **Lane D** (new to this list). Resolution Path (`Admin/Security_Protocols.md` Phase 3) is "Blocked by [Phase] 1 and 2" and gated by SEC-ASM-003 on GOV-008 — chains directly into the same hardware wall as GOV-008 itself, one hop removed.
-- **GOV-005** → **Lane E** (new to this list). Resolution Path states plainly: "No fast resolution path — requires operational time." Not a specification gap; do not attempt to close on prose.
+- **GOV-005** → **Lane E.** Resolution Path states plainly: "No fast resolution path — requires operational time." Not a specification gap; do not attempt to close on prose. Confirmed still accurate 2026-08-23 — the sole remaining open Critical in `Admin/Governance_Charter.md`.
 
 ### Lane B / C / D / E — carried forward from 2026-08-14, not reverified this session
 
@@ -213,23 +228,33 @@ Treating an agent "what's left" summary as source without checking the
 sidecar first — this session found two live errors that would have
 misdirected work if adopted as given. Re-listing TS-002/GI-002/GF-007/
 CE-006 as "Lane A — can start now" (reclassified to C/D above,
-2026-08-21). Working GOV-003 or GOV-005 as if their resolution paths
-were specification-only.
+2026-08-21). Working GOV-005 as if its resolution path were
+specification-only (GOV-003 closed 2026-08-23 on this same caution —
+reconciled, see Current Lessons — the caution otherwise stands for
+GOV-005). Trusting a file's own Highest Risk / Open Unknowns header
+field without checking it against `Unknowns.md` after any closure —
+this session found one stale Highest Risk reference (GOV-013,
+ratified 2026-07-19, still listed as open Critical) that had survived
+at least two prior header updates.
 
 ### Suggested work program (next 3–5 sessions)
 
-1. PL-001 + WA-002 doctrine drafting — Lane A
-2. GOV-015 aggregate drift-detection specification draft — Lane A
-3. GOV-018 fork-reconciliation procedure draft for
-   `Admin/Governance_Migration_Protocol.md` — Lane A
-4. Human packet: SEC-007a options + ENV-009/FA-001 posture (inherited
+1. WA-002 and PL-001 both Resolved 2026-08-23 — see Current Lessons and Resolution Logs. Lane A currently empty; next planning pass should identify new candidates (e.g. re-verify Lane B/C/D/E items below against their own sidecars, per item 5).
+2. GOV-015, GOV-018, GOV-003 all Resolved 2026-08-23 — removed from this
+   list; see Current Lessons and Resolution Log below.
+3. Human packet: SEC-007a options + ENV-009/FA-001 posture (inherited
    from prior list, unchanged) — Lane B
-5. Progress_Log continuity check after any further doctrine advance —
-   this file has now demonstrated the same lag twice (2026-08-14,
-   2026-08-21); worth deciding whether a standing trigger (e.g.
+4. Progress_Log continuity check after any further doctrine advance —
+   this file has now demonstrated the same lag three times (2026-08-14,
+   2026-08-21, 2026-08-22); worth deciding whether a standing trigger (e.g.
    "no unknown closes without a same-session Progress_Log entry") is
    worth ratifying as doctrine rather than relying on the next session
    to ask.
+5. Header-hygiene check after any closure: confirm every touched file's
+   own `Highest Risk` / `Open Unknowns` File State fields against
+   `Unknowns.md`, not just the closed file's own header — GOV-013's
+   stale reference (2026-08-23 Current Lessons) survived because this
+   check wasn't standing practice.
 
 Parallel optional: any Lane B/C/D/E item above once actually reverified
 against its own sidecar, rather than carried forward from 2026-08-14.

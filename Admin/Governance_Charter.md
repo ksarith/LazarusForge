@@ -20,7 +20,7 @@
 | Auditor          | Claude — GOV-003 (Integrity Enforcement Architecture) integrated: Charter section added applying the existing Declared/Detectable/Reviewable/Enforceable ladder (not replacing it) to integrity enforcement, with the external-anchor requirement scoped to constitutional integrity under compromise; drafted by Grok, revised once after a ChatGPT Skeptic Conditional Pass, Accepted pending one narrow source-verification (SEC-002 authority-chain characterization, confirmed accurate against source), human-ratified (human-directed), 2026-08-23; prior: Claude — GOV-015 (Constitutional Interpretation Capture) and GOV-018 (Governance Fork Reconciliation) integrated: Charter sections added, GOV-018 operative Track added to `Admin/Governance_Migration_Protocol.md`, four new terms registered in `Admin/Canonical_Terms.md`; drafted by Grok, Skeptic-passed by ChatGPT (GOV-015 one revision, GOV-018 two revisions), human-ratified (human-directed), 2026-08-23; prior: Claude — Synthesizer, added two consolidated-reference sections (Human Override Doctrine, Constitutional Amendment Boundaries) and one clarifying sentence on doctrine-vs-procedures ownership; no substantive doctrine changed, corrects a prior Copilot audit's false "doctrine is absent" findings by pointing to where the existing text already lives (human-directed), 2026-08-05; prior: Claude — Sidecar/Resolution Log relocation to `Archive/Logs/Governance_Charter_Changelog.md`, GOV-022 registered (human-directed), 2026-07-23; Claude — Skeptic/Auditor; Gemini — Skeptic/Auditor; Grok — Exploration audit 2026-07-05; Gemini — Exploration audit 2026-07-05; Claude — GOV-011 resolution 2026-07-05; Claude — Skeptic/Auditor, 2026-07-16; Claude — GOV-013 drafted (multi-agent synthesis, human-directed), 2026-07-16; Claude — GOV-013/EDL Track classification confirmed (human-directed), 2026-07-17; ChatGPT — adversarial pass, 2026-07-17; Claude — GOV-014 through GOV-020 verified against source and registered (human-directed), 2026-07-17; Claude — GOV-012 threshold deferral, GOV-013 ratification review, GOV-006 biometric addendum (human-directed), 2026-07-19 |
 | Open Unknowns    | 13 (GOV-003, GOV-014, GOV-015, GOV-016, GOV-018, GOV-020, GOV-022 Resolved — Payment via Specification, 2026-08-20/21/23; see `Archive/Logs/Governance_Charter_Changelog.md` Resolution Log for full Closure Events) |
 | Active Disputes  | 1                                                                   |
-| Highest Risk     | Critical (GOV-013 — see `Archive/Logs/Governance_Charter_Changelog.md`; promotion-blocking risk unchanged from GOV-005; GOV-003/GOV-015/GOV-018 Resolved 2026-08-23, no longer contributing to Highest Risk) |
+| Highest Risk     | Critical (GOV-005 — long-term constitutional stability, no fast resolution path, requires operational cycles; sole remaining open Critical in this file as of 2026-08-23. Corrected same-day from a stale reference to GOV-013, which was ratified 2026-07-19 — see this file's own Post-Exit Monitoring Doctrine section, above — and had been carried forward incorrectly through at least two prior header updates; caught by a full sweep of every File State Highest Risk field in the repository against `Unknowns.md`, prompted by an earlier stale-reference catch this same session. GOV-003/GOV-015/GOV-018 Resolved 2026-08-23, no longer contributing to Highest Risk) |
 | Sidecar Link     | Archive/Logs/Governance_Charter_Changelog.md#auditor-notes--unknowns |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
@@ -1126,9 +1126,20 @@ Sidecar relocated to `Archive/Logs/Governance_Charter_Changelog.md` as of
 the large majority of it was Resolution Log history. See that file for
 every GOV-XXX entry (including GOV-022, the currently open item on
 Reversibility as a candidate cross-cutting operating principle) and the
-full version history. Current counts: Open Unknowns 20, Highest Risk
-Critical (GOV-013, GOV-015, GOV-018, GOV-022 not yet risk-rated pending
-placement decision).
+full version history. Current counts, reconciled 2026-08-23: Open
+Unknowns 13 (GOV-003, GOV-014, GOV-015, GOV-016, GOV-018, GOV-020,
+GOV-022 Resolved since the 2026-08-11 pseudo-audit below — see File
+State header above and `Archive/Logs/Governance_Charter_Changelog.md`
+for full Closure Events). Highest Risk Critical (GOV-005 only — sole
+remaining open Critical; GOV-013 was ratified 2026-07-19 and does not
+belong in this line, corrected 2026-08-23 after an earlier version of
+this same paragraph carried the error forward; GOV-003/GOV-015/GOV-018
+no longer contributing as of 2026-08-23 — see File State header). The
+"20" and "GOV-013, GOV-015, GOV-018" language in the 2026-08-11 entry
+directly below is historical —
+left as-is as a dated record, not corrected in place, per this file's
+own practice of not rewriting past Resolution Log entries to match
+current state.
 
 ---
 
