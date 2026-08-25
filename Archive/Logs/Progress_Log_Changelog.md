@@ -3,6 +3,116 @@
 Split out 2026-08-09, following the precedent already established by `Unknowns_Changelog.md`, `AUDIT_HARNESS_CHANGELOG.md`, and `Forge_Audit_Kit_Changelog.md`. `Progress_Log.md` keeps the five most recent entries in full; this file holds every entry that's rotated out. No information is removed when an entry rotates — every entry below is preserved verbatim from `Progress_Log.md` at the time it moved.
 
 ---
+### 2026-08-22 — EC-series batch (EC-003/004/008/009/016) integrated cleanly on content but shipped non-conforming Closure Events, and this file itself lagged a third time
+*(Entry recovered 2026-08-24 — this content existed in `Progress_Log.md` since 2026-08-22 but had lost its section header at some point before that date, leaving it as an orphaned, unheaded paragraph tacked onto the end of the Current Lessons block. Found and given a proper header during the same 2026-08-24 pass that fixed the rest of this file's rotation backlog. Content below is unchanged from what was recovered, aside from adding this note and the header.)*
+
+Grok drafted EC-016, EC-008, EC-003, EC-009, and EC-004 (EC-005 was ratification-only) in a single working session; Claude source-verified every claim in every draft against actual file content before integration, and nothing false or fabricated was found anywhere in the batch — a clean run on substance. But the four integrated Closure Events (`Admin/Governance_Charter.md` EC-016; `Admin/Ethical_Constraints.md` EC-008, EC-003/009, EC-004) were written as a short prose summary ("Drafted by Grok; source-verified by Claude") rather than against `Admin/Auditor_Protocols.md`'s own Unknown Closure Authority §'s eight-element minimum — missing, specifically, an explicit independence attestation and a recorded Verifier verdict, both present in every prior closure this repository has done (AP-005, AP-013, AP-024, GOV-014/016/020, GOV-022). Per that section's own text, a Closure Event missing a required element is invalid, not merely informal. Caught only when asked directly whether the batch had been checked against Auditor_Protocols.md's recent closure-authority update — not caught by the verification pass itself, which checked draft *content* against source but not the resulting Closure Event's *format* against the doctrine governing Closure Events. Fixed same-day: all four entries brought to the full format. Separately, this file had — again — recorded nothing about the batch until this same follow-up prompted it, the third occurrence of the identical lag (2026-08-14, 2026-08-21, now 2026-08-22). Worth treating as a pattern needing a structural fix, not another isolated catch: verifying a draft's factual claims and verifying its resulting artifact's procedural conformance are two different checks, and neither this file's own update discipline nor the source-verification step being used here catches its own staleness without being asked.
+
+---
+### 2026-08-21 — Five ratified closures sat unrecorded here for a full day
+`Unknowns.md` reached v4.72 on 2026-08-21 carrying five closures
+(AP-004, AP-024 on 2026-08-20; GOV-014, GOV-016, GOV-020 on 2026-08-20;
+GOV-022 on 2026-08-21) with zero corresponding entries in this file.
+Caught the same way as the 2026-08-14 entry below it — a session asking
+"what's left" from outside, not this file's own rotation discipline
+triggering on the ratifications. Same family, same root cause restated:
+a file that exists to prevent progression content from going stale is
+not itself exempt from going stale.
+
+### 2026-08-21 — Two independent external "what's left" summaries both misstated GOV-022's status, one also misdirected effort toward a hardware-blocked item
+Asked ChatGPT and Grok directly what work remained. Both listed GOV-022
+as needing its Operating Principles subsection drafted; source
+(`Unknowns.md` v4.72, `Admin/Governance_Charter.md` GOV table,
+`Archive/Logs/Governance_Charter_Changelog.md` sidecar) shows it Resolved
+and ratified the day before. One summary also named GOV-003 as a live
+Critical target without checking that its own Resolution Path
+(`Admin/Security_Protocols.md` Phase 3) is explicitly "Blocked by
+[Phase] 1 and 2" and gated by SEC-ASM-003 on GOV-008 — the same
+no-second-physical-host wall already blocking GOV-008 itself. Separately,
+a source-verification pass on the six items the frozen 2026-08-14 Forward
+Growth Avenues still listed as Lane A found four (TS-002, GI-002, GF-007,
+CE-006) had already been advanced past Lane A by spec-depth passes on
+2026-08-15, landing on genuine hardware/validation gaps not reflected in
+that section's wording. Standing lesson reinforced twice in one session:
+agent "what's left" summaries are candidate leads, never a source of
+truth, and a Lane assignment written on one date does not stay accurate
+after later sessions advance the underlying file.
+
+### 2026-08-16 — GitHub MIT badge / classifier fix
+
+Root `LICENSE` reduced to pure standard MIT body only (no appended NOTICE). Forge-specific interpretation moved to root `NOTICE`. `LICENSE.md` is a short human pointer. GitHub was classifying the previous combined file as license key `other` / SPDX `NOASSERTION` because the classifier matches known templates and rejects extra text in `LICENSE`.
+
+### 2026-08-16 — License boundary cleanup (release integrity)
+
+Root MIT remains sole license for material under project control. Removed conflicting CC-BY-SA footer from `Admin/Nothingness_Theorem.md` (Option A — maximum propagation, no dual-license ambiguity). Added bare `LICENSE` alongside `LICENSE.md` for GitHub discoverability. NOTICE clarified: MIT covers copyrightable expression; not ownership of abstract ideas/methods; not trademarks or validation status.
+
+### 2026-08-16 — Tag naming convention (Alpha release hygiene)
+
+**Canonical Git tags** for the Alpha line: `V1Alpha.NN` (no dot after V1), e.g. `V1Alpha.03`, `V1Alpha.04`.
+Do not use `V1.Alpha.NN` for new tags. Archive zip filenames may keep human-readable forms (e.g. the pre-rename `LazarusForgeV0-1.Alpha.03`, or the current `LazarusForge-1.Alpha.04` convention going forward); Git tags stay machine-consistent. Historical tags already published are left as-is; new releases follow this rule.
+
+### 2026-08-16 — Integrity incident log stood up (no more willy-nilly)
+
+`Admin/Integrity_Incident_Log.md` created as the canonical append-only home for RIP integrity incidents. Major and Constitutional response steps in Repository_Integrity_Protocol.md now point here; Minor compound-drift (≥3 audits) also logs here. Ownership table implements RIP-007 minimum (Minor → detecting auditor; Major → human operator; Constitutional → human governing party only). File-local Resolution Logs remain for remediation detail; Progress_Log remains for continuity lessons; Field_Logs remains for physical/multi-agent evidence. Prior scattered incidents were not retroactively fabricated into the log. Routing + Adm_Scope_Map registered.
+
+### 2026-08-16 — Priority 2 cross-reference debt classified (no files invented)
+
+Integrity harness UNKNOWN references after Priority 1 (Resolution_Methodology routed; Auditor_Protocols templates at v0.37) classified into five bins. **No new doctrine files created** to silence the harness.
+
+**1. Real active file → route / fix path (done or already routed)**
+| Target | Action |
+|--------|--------|
+| `Admin/Resolution_Methodology.md` | Routed in Priority 1 |
+| `Archive/Logs/AUDIT_HARNESS_CHANGELOG.md` | Live refs in Unknowns.md pointed at wrong `Admin/` path → corrected to Archive/Logs/ |
+| `Archive/Logs/Forge_Audit_Kit_Changelog.md` | Same path correction |
+
+**2. Renamed file → use Rename Registry (do not re-create old name)**
+| Stale name | Canonical | Notes |
+|------------|-----------|--------|
+| `Verification_Gates_LF.md` | `Admin/Verification_Gates.md` | Rename Registry 2026-08-09; remaining hits are rename *history*, leave |
+| `Forge_Network.md` / `Architecture/Forge_Network.md` | `Architecture/Forge_Net.md` | Historical log strings in Forge_Net itself |
+| `Triage.md` | `Operations/Gate_02_Triage.md` | Via Component_Triage_System → Gate_02 |
+| `energy_v0.md` class | `Operations/Energy.md` | Already registered |
+
+**3. Historical / intentional nonexistent — do not create**
+| Target | Classification |
+|--------|----------------|
+| `Operations/Waste_Handling.md` | **Intentionally not created** — Resolution_Methodology §2 / GR-003 pass chose GR-003 as owner instead of a third file. Citations that discuss the *decision not to create it* are correct. |
+| `Operations/Leviathan.md` | Concept lives in `Tests/Leviathan_testing.md` + vision lineage; no Operations/Leviathan.md was ever a live doctrine file in this tree |
+| `Operations/Metals.md` | Never created; metals handling is distributed (Gate_04/05, Chemistry, CLF) |
+| `Architecture/Characterization.md` | Never created; characterization content lives in owning domain files |
+| `Architecture/Chemistry_Electrochemistry.md` | Never split out; electrochemistry stays in Chemistry.md |
+| `Architecture/Cognitive_Canonicalization.md` | Never created |
+| `Architecture/Advanced_Engineering.md` / `Performance_Engineering.md` | Never created as peers |
+| `Admin/Constitutional_Core.md` / `Statutory_Parameters.md` | CIR_Gov aspirational layer refs — not live files; do not invent under CIR |
+| `Admin/Evidence_Management_System.md` | Never created; evidence doctrine is Verification_Gates + Field_Logs + Evidence Classification |
+| `Admin/Integrity_Incident_Log.md` | Named in RIP but never stood up as a file; process gap, not a missing upload |
+| `Admin/Test_Protocols.md` / `Tests/Verification_Methods.md` | Never created; coverage is Verification_Gates + Auditor_Protocols |
+| `Rogue_unit_management.md` | Concept/name only; no file; Leviathan/ADP territory |
+| `Challenges/Energy.md` | Superseded by `Challenges/Energy_Scarcity.md` |
+| `Physical_Site_Requirements.md` | Folded into Facilities / FA-* unknowns |
+| `Propulsion_Economy_isru/zero_g_fabrication.md` | Astroid-miner companion path, not Forge live tree |
+| `filename.md` | Placeholder example string in Canonical_Terms — not a real ref |
+| `Admin/Discovery.md` | Discovery.md is root, not under Admin/ |
+| `GOV_RATIFICATION_LOG.md` | Not a file; ratification lives in Governance_Charter_Changelog |
+| `Admin/ID_Scheme.md` | Transcript-only mention |
+
+**4. Actual missing artifact → Unknown (not invented here)**
+| Target | Disposition |
+|--------|-------------|
+| `Admin/Integrity_Incident_Log.md` | Process named by RIP without a file — candidate future Unknown or explicit "log lives in Progress_Log / sidecar" doctrine, not a silent create |
+| None of the others warrant a new Unknown solely to satisfy the harness |
+
+**5. Companion / external**
+| Target | Notes |
+|--------|--------|
+| `Propulsion_Economy_isru/...` | Astroid-miner archive material; not Forge Routing scope |
+
+**Rule reinforced:** harness UNKNOWN ≠ create file. Classify first.
+
+
+---
+
 
 ### Superseded — ## Forward Growth Avenues (2026-08-11)
 
