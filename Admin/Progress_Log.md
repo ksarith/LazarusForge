@@ -37,120 +37,30 @@ Created 2026-08-09 to fix a recurring failure mode found the same day, in two pl
 
 *(Most recent first. Rotate to `Archive/Logs/Progress_Log_Changelog.md` once more than five entries accumulate.)*
 
+### 2026-08-24 — WA-004 discharged; a much larger hygiene gap found underneath a small question, and a concrete process fix adopted, not just a retrospective note
+What started as "close WA-004" (a near-formality — its own text had said for weeks that it just tracks GR-003) surfaced two real, pre-existing problems in `Unknowns.md` while checking for the right closure vocabulary: (1) **Size Management Rule 2 violation** — the file's own explicit rule says Resolved entries "leave the Active Index immediately," but 26 Resolved entries across many sessions (not just today's six) were sitting in the active tables with full paragraph descriptions, including several from mid-July. (2) **Version-history stacking** — the file's own header says "this block now keeps only the current version," but 20 full version entries (v4.63–v4.82) had accumulated instead of being migrated to `Unknowns_Changelog.md` one at a time as intended, despite every single one of those 20 entries' own closing line claiming "vN migrated to changelog intact." That claim was false for 20 consecutive versions and nobody — agent or human — checked it.
+
+Both fixed same-day: 26 rows removed with pointer notes added, 20 versions migrated to the changelog, `Unknowns.md` restored to matching its own stated rules. Neither problem affected any owning file's actual doctrine — both were purely navigation-layer staleness in the index file.
+
+**The concrete question this raised: prose reminders embedded in content aren't sufficient by themselves.** The "vN migrated to changelog intact" line is a good instinct — document the expectation right where the next editor will see it — but it kept getting copy-pasted forward as true even after the underlying action stopped happening, which is worse than silence: it creates false confidence that gets inherited by whoever reads it next, including a prior instance of me earlier today, who read that note and treated it as evidence the file was already properly maintained rather than checking it.
+
+**Process fix adopted, not just noted:** when closing any unknown from here forward, the closure checklist includes an explicit Unknowns.md hygiene step — confirm the closed row is either removed per Rule 2 (with a pointer note) or has a clear reason not to be, and confirm the version-history block still holds only the current version before considering the closure complete. This is the same shape as the header-hygiene habit adopted after the GOV-013 catch (2026-08-23) — checking a file's self-maintenance claims against its actual content, not just checking the substance of the change itself. Rather than trusting a prose note to prompt this later, it's now part of what "done" means for a closure, same session it was needed.
+
+**Second, self-referential instance of the exact same failure class, caught the same day:** while reconstructing this file's own entry list to add the note above, four prior entries from earlier today (GOV-013 sweep, PL-001, WA-002, GR-003 — see below) were found to have been silently lost during an earlier edit to this same file, rather than preserved as intended — an edit that appended new content without cleanly removing what it was meant to replace, leaving duplicated and orphaned paragraph fragments below. Reconstructed from the conversation transcript, deduplicated, and rebuilt cleanly. This file's own stated rotation rule ("rotate once more than five entries accumulate") had also never actually been exercised — same shape as Unknowns.md's version-stacking bug, just in a different file, and a genuinely orphaned entry from 2026-08-22 (EC-series batch, below the fold, never given a proper header) was found and recovered in the same pass. The two 2026-08-21 entries, the 2026-08-22 EC-series entry, and the five 2026-08-16 entries all moved to `Archive/Logs/Progress_Log_Changelog.md`; this file trimmed to the current five. The honest reading: a rule written down and never followed is not meaningfully different from no rule, and checking "does the file actually match what it claims about itself, including its own internal consistency after an edit" needs to be a standing step, not a one-time correction — the process fix above now covers verifying an edit actually landed as intended, not only Unknowns.md-specific hygiene.
+
+### 2026-08-24 — GR-003 closed; a field-convention deviation caught by checking Grok's draft against the actual post-closure text of PL-001/WA-002/GOV-003, not just against stated intent
+Grok drafted a full closure patch for GR-003, correctly identifying it as a narrower, more surgical gap than PL-001/WA-002 had been — the 2026-08-15 architectural pass had already supplied the two-outcome model and five-category structure; only concrete hold-duration and container values were missing. The draft's technical content (RCRA-analog accumulation limits, container specifications, biological hold duration) checked out. One process deviation was caught before integration: the draft annotated Risk and Priority fields as "(residual)" and "→ residual only" after closure, which is new notation not used in any of the three prior closures this session — verified directly against Plastics.md and Waste.md's actual post-closure header text (both kept Risk/Priority unchanged, Critical stays Critical). Corrected before integration. Also fixed in the same pass: GR-007's and PYC-003's own stale cross-references, both of which still described WA-002/GR-003 as blocking dependencies after those unknowns resolved. This is a smaller version of the same discipline as the GOV-003 ladder catch and the WA-002 closure-convention question — checking a draft's self-consistency against established precedent, not just its internal logic, before treating it as ready.
+
 ### 2026-08-23 — WA-002 closed; a closure-convention inconsistency caught and resolved by explicit human decision rather than silently picking one
 Grok extended `Challenges/Waste.md`'s existing WA-002 identification protocol with a training/demonstration standard and confirmatory lab-arrangement structure. A ChatGPT Skeptic pass caught two source overclaims before integration (solder identification framed as competency rather than presumption; Beilstein framed as Forge-validated rather than an established-but-unvalidated screen) — both corrected, and the same pre-existing overclaim found and fixed in this file's own older BFR paragraph while integrating. Separately, ChatGPT's own recommended disposition for WA-002 was to leave it Open/Critical after this specification work, which would have created a live inconsistency: PL-001 and GOV-003, both closed earlier this same session with a materially identical shape (full specification, one named empirical residual), were both marked Resolved with the residual keeping practical blocking force. Flagged to the human governing authority before integrating rather than picking either convention unilaterally; confirmed to proceed using the PL-001/GOV-003 convention for consistency. Recorded here because this is exactly the class of problem GOV-015 (aggregate interpretation drift via subordinate doctrine, closed earlier this session) describes in the abstract — two structurally identical closures using different status conventions, here caught within the same session rather than drifting apart across future ones.
 
-
+### 2026-08-23 — PL-001 closed; a chemistry-domain false-negative gap caught before integration, not after
 Grok drafted a Halogenated Polymer Triage Protocol for PL-001. Initial version used one shared rule: Beilstein-negative clears halogen suspicion. A Claude Skeptic pass caught that this is chemically wrong for one of the two target polymer classes — Beilstein is a chlorine/bromine-biased flame test and does not reliably detect fluorine, so PTFE/Teflon contamination could pass a Beilstein-negative screen undetected under the original logic, exactly the failure PL-001 exists to prevent (HCl/dioxin release, reactor corrosion). This is the same category of catch as GOV-003's ladder conflict earlier this session — a draft that looked complete and Skeptic-ready failed on a substantive check, not a formatting one — but in a different domain (chemistry, not governance doctrine), which is worth noting: the standing verify-before-integrate discipline generalizes across domains, and should not be treated as governance-specific. Revised draft split screening by polymer class, closed cleanly. Integrated 2026-08-23; Blocking Yes retained pending PL-001-R1 empirical validation, same specification/validation split as GOV-003.
 
-
+### 2026-08-23 — Systematic sweep found one real stale reference (GOV-013) outside the file it originated in, plus routine post-closure staleness; GOV-003's standing caution reconciled, not silently dropped
 Following GOV-003/GOV-015/GOV-018 closure, ChatGPT's cross-check flagged a stale "Open Unknowns 20" summary inside `Admin/Governance_Charter.md`'s own `## Auditor Notes & Unknowns` narrative block — accurate, and fixed same-day. That catch prompted a broader question: if one stale claim survived a closure pass, could there be others? A full mechanical sweep was run across all 82 files carrying a `## File State` block, extracting every `Highest Risk` field that named a specific unknown ID and checking that ID's actual status in `Unknowns.md`. Result: exactly one genuine error found — `Admin/Governance_Charter.md`'s Highest Risk field still named **GOV-013** as Critical/open; GOV-013 was in fact ratified 2026-07-19, over a month before this session, with its own "RATIFIED" section already in the Charter body. The stale field had been carried forward silently through at least the 2026-08-21 and 2026-08-23 header updates, including one made earlier this same session, without anyone (agent or human) checking it against the ratified section sitting a few hundred lines below it in the same file. Fixed same-day: Highest Risk field now correctly names GOV-005 as the sole open Critical. Every other Highest Risk ID reference in the repository (GOV-008, CLF-003/006, EN-001, SR-001, RE-UNK-001/005, LW-UNK-001/003, CIR-001) was checked and confirmed accurate — this was not a systemic problem, but it was a real one, caught only because a second agent's routine cross-check happened to look in that direction.
 
 Separately, this same sweep surfaced that `Admin/Progress_Log.md`'s "Explicit non-work for now" list (2026-08-21) had specifically flagged "working GOV-003 as if its resolution path were specification-only" as a thing not to do — written before GOV-003 was closed today via specification. Reviewed against what was actually integrated: the closure did not claim full Enforceability: it scoped itself explicitly to architecture-level specification, left external root-of-trust instantiation (SEC-007b) as the named blocking residual (GOV-003-R1), and a ChatGPT Skeptic pass independently forced exactly that scoping distinction (ordinary procedural enforcement vs. constitutional enforcement under compromise) before Accept. Human governing authority confirmed directly: GOV-003 is "as much work as we can do currently without further testing" and letting the closure stand is safe, with further work flagged for when more information (a real SEC-007b instantiation) is available — see GOV-003-R1/R4 in the Charter section and this entry. Recorded here so the reconciliation is on record rather than the tension being silently dropped.
-
-
-Grok drafted EC-016, EC-008, EC-003, EC-009, and EC-004 (EC-005 was ratification-only) in a single working session; Claude source-verified every claim in every draft against actual file content before integration, and nothing false or fabricated was found anywhere in the batch — a clean run on substance. But the four integrated Closure Events (`Admin/Governance_Charter.md` EC-016; `Admin/Ethical_Constraints.md` EC-008, EC-003/009, EC-004) were written as a short prose summary ("Drafted by Grok; source-verified by Claude") rather than against `Admin/Auditor_Protocols.md`'s own Unknown Closure Authority §'s eight-element minimum — missing, specifically, an explicit independence attestation and a recorded Verifier verdict, both present in every prior closure this repository has done (AP-005, AP-013, AP-024, GOV-014/016/020, GOV-022). Per that section's own text, a Closure Event missing a required element is invalid, not merely informal. Caught only when asked directly whether the batch had been checked against Auditor_Protocols.md's recent closure-authority update — not caught by the verification pass itself, which checked draft *content* against source but not the resulting Closure Event's *format* against the doctrine governing Closure Events. Fixed same-day: all four entries brought to the full format. Separately, this file had — again — recorded nothing about the batch until this same follow-up prompted it, the third occurrence of the identical lag (2026-08-14, 2026-08-21, now 2026-08-22). Worth treating as a pattern needing a structural fix, not another isolated catch: verifying a draft's factual claims and verifying its resulting artifact's procedural conformance are two different checks, and neither this file's own update discipline nor the source-verification step being used here catches its own staleness without being asked.
-
-### 2026-08-21 — Five ratified closures sat unrecorded here for a full day
-`Unknowns.md` reached v4.72 on 2026-08-21 carrying five closures
-(AP-004, AP-024 on 2026-08-20; GOV-014, GOV-016, GOV-020 on 2026-08-20;
-GOV-022 on 2026-08-21) with zero corresponding entries in this file.
-Caught the same way as the 2026-08-14 entry below it — a session asking
-"what's left" from outside, not this file's own rotation discipline
-triggering on the ratifications. Same family, same root cause restated:
-a file that exists to prevent progression content from going stale is
-not itself exempt from going stale.
-
-### 2026-08-21 — Two independent external "what's left" summaries both misstated GOV-022's status, one also misdirected effort toward a hardware-blocked item
-Asked ChatGPT and Grok directly what work remained. Both listed GOV-022
-as needing its Operating Principles subsection drafted; source
-(`Unknowns.md` v4.72, `Admin/Governance_Charter.md` GOV table,
-`Archive/Logs/Governance_Charter_Changelog.md` sidecar) shows it Resolved
-and ratified the day before. One summary also named GOV-003 as a live
-Critical target without checking that its own Resolution Path
-(`Admin/Security_Protocols.md` Phase 3) is explicitly "Blocked by
-[Phase] 1 and 2" and gated by SEC-ASM-003 on GOV-008 — the same
-no-second-physical-host wall already blocking GOV-008 itself. Separately,
-a source-verification pass on the six items the frozen 2026-08-14 Forward
-Growth Avenues still listed as Lane A found four (TS-002, GI-002, GF-007,
-CE-006) had already been advanced past Lane A by spec-depth passes on
-2026-08-15, landing on genuine hardware/validation gaps not reflected in
-that section's wording. Standing lesson reinforced twice in one session:
-agent "what's left" summaries are candidate leads, never a source of
-truth, and a Lane assignment written on one date does not stay accurate
-after later sessions advance the underlying file.
-
-### 2026-08-16 — GitHub MIT badge / classifier fix
-
-Root `LICENSE` reduced to pure standard MIT body only (no appended NOTICE). Forge-specific interpretation moved to root `NOTICE`. `LICENSE.md` is a short human pointer. GitHub was classifying the previous combined file as license key `other` / SPDX `NOASSERTION` because the classifier matches known templates and rejects extra text in `LICENSE`.
-
-### 2026-08-16 — License boundary cleanup (release integrity)
-
-Root MIT remains sole license for material under project control. Removed conflicting CC-BY-SA footer from `Admin/Nothingness_Theorem.md` (Option A — maximum propagation, no dual-license ambiguity). Added bare `LICENSE` alongside `LICENSE.md` for GitHub discoverability. NOTICE clarified: MIT covers copyrightable expression; not ownership of abstract ideas/methods; not trademarks or validation status.
-
-### 2026-08-16 — Tag naming convention (Alpha release hygiene)
-
-**Canonical Git tags** for the Alpha line: `V1Alpha.NN` (no dot after V1), e.g. `V1Alpha.03`, `V1Alpha.04`.
-Do not use `V1.Alpha.NN` for new tags. Archive zip filenames may keep human-readable forms (e.g. the pre-rename `LazarusForgeV0-1.Alpha.03`, or the current `LazarusForge-1.Alpha.04` convention going forward); Git tags stay machine-consistent. Historical tags already published are left as-is; new releases follow this rule.
-
-### 2026-08-16 — Integrity incident log stood up (no more willy-nilly)
-
-`Admin/Integrity_Incident_Log.md` created as the canonical append-only home for RIP integrity incidents. Major and Constitutional response steps in Repository_Integrity_Protocol.md now point here; Minor compound-drift (≥3 audits) also logs here. Ownership table implements RIP-007 minimum (Minor → detecting auditor; Major → human operator; Constitutional → human governing party only). File-local Resolution Logs remain for remediation detail; Progress_Log remains for continuity lessons; Field_Logs remains for physical/multi-agent evidence. Prior scattered incidents were not retroactively fabricated into the log. Routing + Adm_Scope_Map registered.
-
-### 2026-08-16 — Priority 2 cross-reference debt classified (no files invented)
-
-Integrity harness UNKNOWN references after Priority 1 (Resolution_Methodology routed; Auditor_Protocols templates at v0.37) classified into five bins. **No new doctrine files created** to silence the harness.
-
-**1. Real active file → route / fix path (done or already routed)**
-| Target | Action |
-|--------|--------|
-| `Admin/Resolution_Methodology.md` | Routed in Priority 1 |
-| `Archive/Logs/AUDIT_HARNESS_CHANGELOG.md` | Live refs in Unknowns.md pointed at wrong `Admin/` path → corrected to Archive/Logs/ |
-| `Archive/Logs/Forge_Audit_Kit_Changelog.md` | Same path correction |
-
-**2. Renamed file → use Rename Registry (do not re-create old name)**
-| Stale name | Canonical | Notes |
-|------------|-----------|--------|
-| `Verification_Gates_LF.md` | `Admin/Verification_Gates.md` | Rename Registry 2026-08-09; remaining hits are rename *history*, leave |
-| `Forge_Network.md` / `Architecture/Forge_Network.md` | `Architecture/Forge_Net.md` | Historical log strings in Forge_Net itself |
-| `Triage.md` | `Operations/Gate_02_Triage.md` | Via Component_Triage_System → Gate_02 |
-| `energy_v0.md` class | `Operations/Energy.md` | Already registered |
-
-**3. Historical / intentional nonexistent — do not create**
-| Target | Classification |
-|--------|----------------|
-| `Operations/Waste_Handling.md` | **Intentionally not created** — Resolution_Methodology §2 / GR-003 pass chose GR-003 as owner instead of a third file. Citations that discuss the *decision not to create it* are correct. |
-| `Operations/Leviathan.md` | Concept lives in `Tests/Leviathan_testing.md` + vision lineage; no Operations/Leviathan.md was ever a live doctrine file in this tree |
-| `Operations/Metals.md` | Never created; metals handling is distributed (Gate_04/05, Chemistry, CLF) |
-| `Architecture/Characterization.md` | Never created; characterization content lives in owning domain files |
-| `Architecture/Chemistry_Electrochemistry.md` | Never split out; electrochemistry stays in Chemistry.md |
-| `Architecture/Cognitive_Canonicalization.md` | Never created |
-| `Architecture/Advanced_Engineering.md` / `Performance_Engineering.md` | Never created as peers |
-| `Admin/Constitutional_Core.md` / `Statutory_Parameters.md` | CIR_Gov aspirational layer refs — not live files; do not invent under CIR |
-| `Admin/Evidence_Management_System.md` | Never created; evidence doctrine is Verification_Gates + Field_Logs + Evidence Classification |
-| `Admin/Integrity_Incident_Log.md` | Named in RIP but never stood up as a file; process gap, not a missing upload |
-| `Admin/Test_Protocols.md` / `Tests/Verification_Methods.md` | Never created; coverage is Verification_Gates + Auditor_Protocols |
-| `Rogue_unit_management.md` | Concept/name only; no file; Leviathan/ADP territory |
-| `Challenges/Energy.md` | Superseded by `Challenges/Energy_Scarcity.md` |
-| `Physical_Site_Requirements.md` | Folded into Facilities / FA-* unknowns |
-| `Propulsion_Economy_isru/zero_g_fabrication.md` | Astroid-miner companion path, not Forge live tree |
-| `filename.md` | Placeholder example string in Canonical_Terms — not a real ref |
-| `Admin/Discovery.md` | Discovery.md is root, not under Admin/ |
-| `GOV_RATIFICATION_LOG.md` | Not a file; ratification lives in Governance_Charter_Changelog |
-| `Admin/ID_Scheme.md` | Transcript-only mention |
-
-**4. Actual missing artifact → Unknown (not invented here)**
-| Target | Disposition |
-|--------|-------------|
-| `Admin/Integrity_Incident_Log.md` | Process named by RIP without a file — candidate future Unknown or explicit "log lives in Progress_Log / sidecar" doctrine, not a silent create |
-| None of the others warrant a new Unknown solely to satisfy the harness |
-
-**5. Companion / external**
-| Target | Notes |
-|--------|--------|
-| `Propulsion_Economy_isru/...` | Astroid-miner archive material; not Forge Routing scope |
-
-**Rule reinforced:** harness UNKNOWN ≠ create file. Classify first.
 
 ---
 
@@ -184,8 +94,10 @@ either agent-summary source or the prior Forward Growth Avenues text.
 
 *(No items currently — WA-002 Resolved 2026-08-23, see below. Re-populate on next planning pass.)*
 
-### Resolved this session (2026-08-23) — no longer Lane A/D, remove from active work queues
+### Resolved this session (2026-08-23/24) — no longer Lane A/D, remove from active work queues
 
+- **WA-004** (Negative-value waste fraction disposal) — Resolved, Discharge via Consolidation, ratified 2026-08-24. See `Challenges/Waste.md` Resolution Log. Never a separate specification problem — discharged to `Operations/Gate_03_Reduction.md` GR-003, which it had tracked since 2026-08-15. This was PYC-003's third named dependency — its own status was updated twice more today before this was caught (see next entry and Current Lessons above): PYC-003 now shows all three dependencies specification-complete, correctly still Blocking on WA-002-R1/GR-003-R1's residuals rather than on missing doctrine.
+- **GR-003** (Biological and chemical waste disposal doctrine) — Resolved, Payment via Specification, ratified 2026-08-24. See `Operations/Gate_03_Reduction.md` §GR-003. Second applied case of `Admin/Resolution_Methodology.md` — 2026-08-15 pass supplied the architectural two-outcome model, this pass filled concrete hold-duration/container values. GR-003-R1 (jurisdiction-dependent regulation) keeps operational reliance blocked.
 - **WA-002** (Hazardous fraction identification reliability) — Resolved, Payment via Specification, ratified 2026-08-23. See `Challenges/Waste.md` §Hazardous Fraction Identification Protocol / Operator Qualification & Confirmatory Lab Arrangements. Specification-only, same pattern as PL-001/GOV-003: full protocol, training standard, and lab-arrangement structure defined, but WA-002-R1 (feedstock validation) keeps operational reliance functionally blocked.
 - **PL-001** (Halogenated polymer contamination) — Resolved, Payment via Specification, ratified 2026-08-23. See `Operations/Plastics.md` §PL-001 Halogenated Polymer Triage Protocol. Specification-only, same pattern as GOV-003: full protocol defined, but Blocking Yes remains for hot operational runs pending PL-001-R1 empirical validation.
 - **GOV-015** (Constitutional interpretation capture) — Resolved, Payment via Specification, ratified 2026-08-23. See `Admin/Governance_Charter.md` §Constitutional Interpretation Capture.
