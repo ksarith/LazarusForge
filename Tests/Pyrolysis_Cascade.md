@@ -156,18 +156,18 @@ No test may be run that violates the hard preconditions in Scope Boundary.
 
 | Field | Value |
 |-------|-------|
-| Status | Open |
+| Status | Open — one of two dependencies cleared |
 | Risk | Critical |
 | Priority | Blocking |
 | Type | Safety / Technical |
 | Blocking | Yes — blocks all hot thermal work under this file |
 | Owner | Tests/Pyrolysis_Cascade.md (dependency); resolution owned by Plastics.md / Chemistry.md |
 | First Logged | 2026-08-04 |
-| Last Reviewed | 2026-08-04 |
+| Last Reviewed | 2026-08-23 |
 
-**Description:** The cascade assumes a feedstock that is either free of, or controlled for, halogenated polymers. PL-001 and CE-003 remain open.
+**Description:** The cascade assumes a feedstock that is either free of, or controlled for, halogenated polymers. PL-001 Resolved 2026-08-23 (Payment via Specification — `Operations/Plastics.md`'s class-split triage protocol; PL-001-R1 empirical validation still open). CE-003 (field polymer identification reliability) remains Open.
 
-**Resolution Path:** Payment via Specification + Validation on the owning files. This entry closes only when those unknowns close or when this file is rewritten to require exclusively pre-certified halogen-free feedstock.
+**Resolution Path:** Payment via Specification + Validation on the owning files. This entry closes only when both PL-001 and CE-003 close (or the underlying feedstock assumption is refactored). PL-001's specification-level closure does not itself clear this dependency — CE-003 remains the outstanding blocker, and PL-001's own PL-001-R1 residual means even a fully-closed CE-003 would not yet clear this entry's Blocking status for hot thermal work without feedstock validation.
 
 ---
 
@@ -193,17 +193,18 @@ No test may be run that violates the hard preconditions in Scope Boundary.
 
 | Field | Value |
 |-------|-------|
-| Status | Open |
+| Status | Open — all three specification-level dependencies cleared; blocked on their residuals, not on missing doctrine |
 | Risk | Critical |
 | Priority | Blocking |
 | Type | Safety |
 | Blocking | Yes |
-| Owner | Dependency on WA-002, GR-003, WA-004 |
+| Owner | Dependency on WA-002 (Resolved), GR-003 (Resolved), WA-004 (Resolved — Discharge via Consolidation to GR-003) |
 | First Logged | 2026-08-04 |
+| Last Reviewed | 2026-08-24 |
 
-**Description:** Mixed salvage and thermal residues generate hazardous and negative-value fractions whose identification and disposition are still open.
+**Description:** Mixed salvage and thermal residues generate hazardous and negative-value fractions whose identification and disposition are still open. WA-002 (hazardous fraction identification) Resolved 2026-08-23. GR-003 (disposal doctrine, Operations/ side) Resolved 2026-08-24 — `Operations/Gate_03_Reduction.md`'s five-category doctrine with concrete hold-duration and container values. WA-004 (disposal doctrine, Challenges/ side) Resolved 2026-08-24 — Discharge via Consolidation to GR-003, since it was always the same doctrine tracked from the other file, not a second one.
 
-**Resolution Path:** Payment via Specification on the owning unknowns.
+**Resolution Path:** All three named dependencies are now specification-complete. This entry does **not** auto-close, because the specifications themselves carry live residuals that are exactly what this entry is meant to guard: WA-002-R1 (feedstock validation, empirical) and GR-003-R1 (jurisdiction-dependent regulation, cannot close by specification) both remain open and both keep real-world reliance blocked. Blocking stays Yes for hot thermal work — the doctrine chain is now complete on paper, but this entry's purpose was always to gate on real operational readiness, not on the existence of a specification. Re-review when either residual clears.
 
 ---
 
@@ -294,6 +295,8 @@ No test may be run that violates the hard preconditions in Scope Boundary.
 ---
 
 ### Resolution Log
+
+- 2026-08-23: **Dependency sync — PYC-001 and PYC-003 updated to reflect PL-001 and WA-002 both closing (Resolved, Payment via Specification) earlier this session.** Neither PYC entry closes: PYC-001 still requires CE-003 (field polymer ID reliability, Open); PYC-003 still requires GR-003 and WA-004 (disposal doctrine, both Open). Both entries' Status fields updated to note "one of N dependencies cleared" rather than leaving stale text implying all listed dependencies were still untouched. Blocking status unchanged on both (Yes). No unknown closed by this entry — hygiene only, prompted by this session's broader practice of checking whether a closure elsewhere in the repository leaves stale references behind. Human-directed.
 
 - 2026-08-11: **Pseudo-audit (Grok, same limits).** Findings only; Spec Gates
   left locked at 0/6. (1) Open Unknowns **8** = PYC-001–008, matches local +
