@@ -33,7 +33,7 @@
 | Verification Ref | Admin/Verification_Gates.md                                      |
 | Last Audit       | 2026-05-15; revised 2026-06-08                                      |
 | Auditor          | Claude — Retrofit/Auditor                                           |
-| Open Unknowns    | 8                                                                   |
+| Open Unknowns    | 7                                                                   |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | High                                                                |
 | Sidecar Link     | #auditor-notes--unknowns                                            |
@@ -85,7 +85,9 @@ Indicators.*
 - Facility siting, clearance, and noise requirements
   (`Architecture/Facilities.md` — FA-001)
 - Biological or chemical waste disposal beyond
-  containment doctrine (not yet assigned — GR-003)
+  containment doctrine (GR-003 — Resolved via Payment via
+  Specification 2026-08-24; residual jurisdiction/regulatory
+  and physical-validation gaps remain, see GR-003-R1–R3)
 
 ---
 
@@ -593,30 +595,29 @@ operational parameters.
 ---
 
 ### GR-003 — Biological and chemical waste disposal
-doctrine not assigned
+doctrine
 
 | Field         | Value                                            |
 |---------------|--------------------------------------------------|
-| Status        | Open                                             |
-| Risk          | High                                             |
+| Status        | Resolved — Payment via Specification, ratified 2026-08-24 |
+| Risk          | High                                              |
 | Priority      | Critical                                         |
 | Type          | Technical / Safety / Governance                  |
-| Blocking      | No                                               |
+| Blocking      | No — unchanged; this was always an accumulation/governance gap, not a start-interlock |
 | Owner         | Operations/Gate_03_Reduction.md                  |
 | First Logged  | 2026-05-15                                       |
-| Last Reviewed | 2026-08-15                                       |
+| Last Reviewed | 2026-08-24                                       |
 
 **Description:** Material that cannot be processed
 through normal Reduction due to biological or chemical
-contamination has no defined disposal path in the
-repository. What happens after isolation — controlled
-disposal, specialist handling, hazmat routing — has
-no owner. Cross-reference `Operations/Gate_02_Triage.md`
-TS-002 (2026-08-15 pass) — Station 0's non-decontaminable
-disposition state holds pending this unknown's resolution
-rather than inventing a second disposal path; both files
-are waiting on the same missing doctrine, not two
-separate ones.
+contamination previously had no defined disposal path.
+Doctrine is now fully specified at Analogous confidence
+(category structure, two-outcome model, hold durations,
+container types, labeling, and deterministic escalation).
+Cross-reference `Operations/Gate_02_Triage.md` TS-002
+Station 0 non-decontaminable disposition and
+`Challenges/Waste.md` WA-004 — both now point at real
+doctrine rather than a hollow citation.
 
 **Why It Matters:** Contaminated material that cannot
 be processed cannot be held indefinitely. Without a
@@ -625,48 +626,35 @@ an improvised decision is made under pressure.
 Improvised hazmat decisions are a primary source of
 environmental and safety incidents.
 
-**Resolution Path:**
-- Define minimum disposal categories:
-  - Chemical contamination — solvent, heavy metal,
-    flux residue disposal paths
-  - Biological contamination — organic matter,
-    fluid disposal paths
-  - Radiological — specialist handling required
-- Define holding doctrine — maximum hold duration,
-  container requirements, labeling
-- Define escalation path — when does disposal
-  require specialist involvement?
-- Jurisdiction-dependent regulatory requirements
-  must be researched for each deployment context
-- Consider creating `Operations/Waste_Handling.md`
-  to own this doctrine across all modules
-- Payment via Specification — once disposal
-  categories and paths are defined, move to
-  Section 2 prohibited inputs as Analogous.
-- Cross-reference: Operations/Gate_01_Intake.md
-  GI-005, Admin/Ethical_Constraints.md.
+**Resolution (2026-08-24 — Payment via Specification):** Architectural basis remains the 2026-08-15 pass: `Admin/Ethical_Constraints.md`'s active-release vs. passive-encapsulation distinction implies exactly two real outcomes — permanent passive containment (only for material whose hazard is structurally bound) or external specialist hand-off. No third "the Forge processes it" option exists. This pass fills the two gaps the 2026-08-15 pass explicitly left open: concrete hold-duration values and container-type requirements per category.
 
-**Grok review 2026-08-14:** Path adequate. Category list + hold doctrine + escalation + jurisdiction note are the right structure; suggestion of a dedicated Waste_Handling.md is reasonable. Blocking No is consistent with prior audit (accumulation/governance gap, not start-interlock). **Grok approved (path adequate).** Remains Open — disposal doctrine still needs writing; Critical priority correctly retained.
+**Categories and concrete holding doctrine (Analogous-confidence — drawn from RCRA generator accumulation practice, industrial temporary-storage guidelines, lab holding tables, ACM handling norms, and biosafety waste practice; not Forge-validated, remains equipment-gated and jurisdiction-gated):**
 
-**Spec-depth pass, 2026-08-15, applying `Admin/Resolution_Methodology.md` (first cited applied case) — digital-only, no equipment exists yet:**
+1. **Heavy-metal-bearing, intact** (CRT glass, leaded solder joints, mercury switches, etc., per WA-002 protocol). Container: rigid, closed, compatible (steel or HDPE drum/bin or equivalent), good condition, no free liquids; secondary containment (greater of 10% of total volume or 100% of largest container) if any free-liquid risk. Interim hold: ≤180 days from isolation date (SQG analog) — the accumulation clock stops once Ethical_Constraints passive-encapsulation criteria are confirmed and the item is placed in a designated long-term passive location. Fragmentation, crushing, or any breach of intended containment immediately reclassifies to specialist hand-off.
 
-*§2 (reuse-before-invent):* Checked whether a dedicated `Operations/Waste_Handling.md` was still warranted, per the prior path's own suggestion. It isn't — this file is already the owner both `Challenges/Waste.md` WA-004 and `Operations/Gate_02_Triage.md` TS-002 point at as "WA-004/GR-003." Splitting the doctrine into a third file would fragment a destination other files already converge on. GR-003 stays the owner; WA-004's row updated to name it explicitly rather than the paired reference.
+2. **Chemical — solvent, flux, liquid residue.** Container: sealed, liquid-tight, chemically compatible (glass or solvent-rated HDPE/fluoropolymer; never ordinary steel for many organics); closed except when adding/removing; secondary containment mandatory. Interim hold: ≤90 days (LQG analog), preferably ≤30 days for volatiles. No long-term on-site passive path exists — volatility is itself an active-release risk. Always specialist hand-off; clock starts at isolation, not delayed for convenience.
 
-*§3 (verify-before-accept), architectural basis:* `Admin/Ethical_Constraints.md`'s active-release vs. passive-encapsulation distinction (verified against source, not restated from memory) implies disposal here has exactly two real outcomes, not an open-ended list — permanent passive containment (only for material whose hazard is structurally bound, not something the Forge did to it) or external specialist hand-off (everything else). There is no third "the Forge processes it" option: this is by definition material `Gate_03_Reduction.md`'s normal Reduction already couldn't handle.
+3. **Asbestos-containing materials (intact, undisturbed).** Container: sealed, labeled ACM packaging (double-bagged heavy-gauge polyethylene or rigid sealed ACM container). No disturbance, cutting, or abrasion. Interim hold: ≤180 days. Permanent passive containment permitted under the same intact/undisturbed + Ethical_Constraints criteria as heavy metals. Any disturbance (documented at intake or occurring later) removes the passive option.
 
-*§4 (digital/equipment-gated split), categories:*
+4. **Biological — organic matter, fluid.** Container: sealed, leak-proof biohazard-rated containers (rigid secondary preferred for fluids); refrigerated (≤6°C) for putrescible material where practical. Interim hold: shortest of any category — ≤7 days for putrescible material, ≤30 days absolute maximum even for non-putrescible. Decomposition itself changes the hazard profile; hold duration is part of the hazard. Specialist hand-off is not delayed for convenience.
 
-- **Heavy-metal-bearing, intact:** CRT glass, leaded solder joints, mercury switches (per `Challenges/Waste.md` WA-002's identification protocol) — intact components qualify for the Ethical_Constraints permitted case (bulk mass, function does not require release) and may hold under long-term passive containment on-site. **Fragmentation changes this** — a crushed CRT is not the same hazard as an intact one; any breach of intended containment moves an item out of this category into specialist hand-off.
-- **Chemical — solvent, flux, liquid residue:** Volatile by nature — cannot qualify for passive containment the way a solid heavy-metal item can, since volatility is itself an active-release risk regardless of intent. Sealed liquid containment only, and always routes to specialist hand-off — there is no long-term on-site holding path for this subcategory.
-- **Asbestos-containing materials:** Intact, undisturbed material (per WA-002's presumption-and-isolation protocol) qualifies for passive containment similarly to heavy metals; any disturbance already documented at intake removes that option.
-- **Biological — organic matter, fluid:** The one category where hold duration itself is the hazard, not just the material — decomposition changes the hazard profile over time in a way the other categories don't. Maximum hold duration here should be the shortest of any category; specialist hand-off should not be delayed pending convenience the way a stable solid might tolerate.
-- **Radiological:** Deliberately **not** given the same Analogous-confidence disposal doctrine as the categories above. The repository has no in-house radiological handling capability beyond `Gate_01_Intake.md` GI-003's Geiger counter, which is detection-only. This category holds under strictest isolation and escalates to specialist/external authority immediately — no disposal pathway is claimed here, and none should be until real capability exists.
+5. **Radiological.** Strictest isolation available with the detection-only capability that exists (GI-003 Geiger). No disposal pathway, no Analogous-confidence container or duration doctrine is claimed here — the repository has no in-house radiological handling capability beyond detection. Immediate escalation to specialist/external authority.
 
-*Holding doctrine:* Container and duration requirements are category-specific per the above, not uniform. Labeling reuses `Gate_02_Triage.md` TS-002's existing provenance tag schema (`contamination_type` already includes chemical/biological/radiological/unknown) rather than inventing a parallel tag format.
+**Cross-cutting holding rules (all categories):** Labeling reuses `Gate_02_Triage.md` TS-002's existing provenance tag schema (`contamination_type` already covers chemical/biological/radiological/unknown) plus accumulation-start date, category, and a "pending specialist" or "passive-containment candidate" flag. Containers remain closed except when actively adding or removing; weekly visual inspection of accumulation areas (RCRA analog). Incompatible wastes segregated. Satellite-to-central quantity triggers follow ordinary RCRA satellite limits (≈55 gal non-acute / 1 qt or 1 kg acute) as a practical ceiling until jurisdiction-specific rules are known.
 
-*Escalation path:* Any item that cannot qualify for permanent passive containment under the criteria above requires specialist involvement — this is not a judgment call made case-by-case, it follows directly from which category the item falls into.
+**Escalation path:** Deterministic by category, not case-by-case judgment — any item that cannot qualify for permanent passive containment under the criteria above requires specialist involvement.
 
-*What stays explicitly Open:* Jurisdiction-dependent regulatory requirements for specialist hand-off — correctly deferred, not researched here. Physical validation of any hold duration or container spec — equipment-gated. GR-003 remains **Open**, Blocking No unchanged — this pass gives it real categories derived from an existing hard floor rather than an invented list, but doctrine, not operational readiness.
+**Residual risks, logged as child notes and not blocking this section's Payment via Specification:**
+
+| ID | Residual | Notes |
+|----|----------|-------|
+| GR-003-R1 | Jurisdiction-dependent regulatory requirements for specialist hand-off (manifesting, licensed TSDF acceptance criteria, state/provincial overlays, transport rules, record-retention periods) | Cannot be closed by specification; keeps full operational reliance blocked despite specification closure |
+| GR-003-R2 | Physical validation of any container or duration number | Equipment-gated |
+| GR-003-R3 | Confirmation that permanent passive locations satisfy the full Ethical_Constraints minimum requirements, including the end-of-life/decommissioning path that does not release material | Not yet exercised against a real item |
+
+*§GR-003 — Resolved, Payment via Specification, ratified 2026-08-24. Closes GR-003 (logged 2026-05-15; architectural category structure and two-outcome model established 2026-08-15 under `Admin/Resolution_Methodology.md`'s first applied case; this pass, the methodology's second applied case, fills the concrete hold-duration and container-type values the 2026-08-15 pass explicitly left open). Drafted by Grok. Constitutional/doctrinal anchor: `Admin/Ethical_Constraints.md`'s active-release vs. passive-encapsulation distinction, unchanged from the 2026-08-15 architectural pass. Full Closure Event — Proposer (Grok), Human Ratification (Human Governing Authority) — recorded in this file's own Resolution Log, below. GR-003-R1 (jurisdiction-dependent regulation) keeps full operational reliance blocked despite specification closure, consistent with this repository's PL-001/WA-002/GOV-003 precedent; Risk and Priority fields left unchanged (High/Critical) per that same convention rather than annotated as "residual only," since the specification itself — not the priority rating — is what closes. Human-directed.*
+
+**2026-08-15 architectural pass (historical — superseded above, retained for provenance):** Established the reuse-before-invent decision against a dedicated `Operations/Waste_Handling.md` (rejected — this file already the convergent owner both WA-004 and TS-002 point at), the Ethical_Constraints active-release/passive-encapsulation architectural basis for the two-outcome model, and the original category list without concrete hold-duration or container values. Full detail in this file's Resolution Log, below.
 
 ---
 
@@ -833,7 +821,7 @@ process nicety, hence Critical priority.
 
 **Resolution Path (refreshed 2026-08-16 under `Admin/Resolution_Methodology.md`):** Three retirement categories defined 2026-08-15 against WA-002's identification protocol — A (decontaminate-and-return, non-hazardous exposure with a defined cleaning method), B (retire by default on WA-002 presumptive-hazard match — usable today without waiting on WA-002 validation), C (retire, confirmed hazardous, no cleaning method). **Category C disposition now named:** route under GR-003's two-outcome disposal model (permanent passive containment only if the contamination is structurally bound and the equipment remains intact; otherwise external specialist hand-off). Default-retire posture retained for any confirmed hazardous contamination until a defined decontamination procedure exists for that exposure type. Remaining equipment-gated work: validated cleaning methods for Category A edge cases, physical confirmation protocols that move an item from B (presumptive) to C (confirmed), and jurisdiction-specific rules for specialist hand-off. Payment via Specification once Category C disposition has been exercised against at least one real retired item and cleaning methods for common Category A exposures are documented — not on further paper category work alone.
 
-**Grok review 2026-08-14:** Path adequate and correctly conservative (default-retire until doctrine exists). Downstream-of-WA-002 dependency is honestly named; Critical priority is justified. **Grok approved (path adequate).** Remains Open — categories still need definition; partially blocked on WA-002.
+**Grok review 2026-08-14:** Path adequate and correctly conservative (default-retire until doctrine exists). Downstream-of-WA-002 dependency is honestly named; Critical priority is justified. **Grok approved (path adequate).** Remains Open — categories still need definition; WA-002 dependency noted as historical context: WA-002 Resolved 2026-08-23, so this is no longer a live blocker (see the 2026-08-16 Resolution Path above, which already names Category C's real disposition independent of WA-002's own residual).
 
 **Spec-depth pass, 2026-08-15 (digital-only — no equipment exists yet):** `Challenges/Waste.md` WA-002 gained a real Hazardous Fraction Identification Protocol this same session (asbestos presumption-and-isolation, heavy-metal component typing, BFR detection reusing `Operations/Plastics.md` PL-001's Beilstein test). That gives this entry's categories something concrete to sort against, rather than the generic "hazardous residue" language the description used before.
 
@@ -898,6 +886,8 @@ actually deciding between.
 ---
 
 ### Resolution Log
+
+- 2026-08-24: **GR-003 closed — Payment via Specification (`Admin/Resolution_Methodology.md`'s second applied case).** Grok filled the two gaps the 2026-08-15 architectural pass explicitly left open: concrete hold-duration values and container-type requirements per category, at Analogous confidence (RCRA generator accumulation practice, industrial temporary-storage guidelines, lab holding tables, ACM handling norms, biosafety waste practice). Architectural two-outcome model and five-category structure from 2026-08-15 retained unchanged — this was a surgical fill, not a re-derivation. Three residuals named: GR-003-R1 (jurisdiction-dependent regulation, cannot be closed by specification, keeps full operational reliance blocked), GR-003-R2 (physical validation, equipment-gated), GR-003-R3 (confirmation that permanent passive locations satisfy full Ethical_Constraints minimum requirements). Risk/Priority fields (High/Critical) left unchanged rather than annotated, matching the PL-001/WA-002/GOV-003 convention — a first draft of this closure had deviated from that convention (appending "(residual)"/"→ residual only" to the fields) and was corrected before integration, along with GR-007's stale "partially blocked on WA-002" note (WA-002 Resolved 2026-08-23) found in the same pass. Full Closure Event — Proposer (Grok), Human Ratification (Human Governing Authority). Open Unknowns: 8 → 7. Scope Boundary bullet and File State header updated. Cross-references (WA-004, GR-007 Category C, TS-002 Station 0) already pointed at real doctrine after the 2026-08-15 pass — no further changes needed there. Human-directed.
 
 - 2026-08-16: **GR-007 — Resolution_Methodology fourth applied case (equipment retirement / safety-governance domain).**
   §1 found Category C's prior "disposition pending WA-004/GR-003" citation
