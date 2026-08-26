@@ -1156,10 +1156,11 @@ doctrine (2026-07-31) — Ksp values, scaling prediction, hard-water
 treatment, and floc/sludge diagnosis are now documented. Two items remain
 before full Resolution: (1) quantitative Ksp validation against actual
 Forge feedstock streams rather than order-of-magnitude literature values;
-(2) sludge disposal routing to GR-003 — note `Operations/Gate_03_Reduction.md`
-currently shows GR-003 itself as "not yet assigned," so this dependency is
-presently blocked on that file, not on Chemistry.md. Remains In Progress,
-not Resolved, until both close.
+(2) sludge disposal routing to GR-003 — `Operations/Gate_03_Reduction.md`'s
+GR-003 is now Resolved (2026-08-24, Payment via Specification; corrected
+2026-08-25 from a stale "not yet assigned" claim that predated that
+closure), so this half of the dependency is no longer blocked on that
+file. Remains In Progress, not Resolved, pending item (1) only.
 
 ---
 
