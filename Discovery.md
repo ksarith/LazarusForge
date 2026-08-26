@@ -54,8 +54,11 @@ load path.
 2. **Physical plausibility before elegance** — a specification that cannot
    survive Gate 2 (Physical Plausibility) is not progress, regardless of
    how complete its governance framing is. EN-001, FA-001, and the
-   hazardous-fraction unknowns (WA-002, PL-001, WW-005) are physical-layer
-   objectives that do not get superseded by governance-layer work.
+   hazardous-fraction unknowns (WA-002, PL-001 — both Resolved via
+   Payment via Specification 2026-08-23; empirical validation residuals
+   WA-002-R1/PL-001-R1 keep real-world reliance blocked — and WW-005,
+   still Open) are physical-layer objectives that do not get superseded
+   by governance-layer work.
 3. **Honest unknowns over false certainty** — the Unknown Budget floor
    exists because a specification with zero open unknowns is more likely
    incomplete than finished. Closing unknowns without evidence is a
@@ -203,7 +206,7 @@ Tests/                                      — Test frameworks and deployment p
     ├── Cognitive_Salvage_Layer.md          — Heuristic salvage pipeline; consensus-aggregated machinery wisdom; NOVEL/CANDIDATE_NOVEL promotion gate; GH-001 through GH-012
     ├── Hydrologic_Resource_Cascade.md      — Flood-driven sediment recovery basin; sequential hydraulic sorting zones; episodic operation doctrine; HR-UNK-001 through HR-UNK-002 (formal); HR-003 through HR-010 (research questions)
     ├── Chaos_Dynamics.md                   — Exploration/R&D pipeline doctrine; Sandbox (Level ≤4 hypothesis generation) → Promotion Gate → EXP-ID → physical testing → Engineering derating; resolution vehicle for EN-005; feeder for EN-001a
-    └── Pyrolysis_Cascade.md                — Staged thermal cascade (pyrolysis → high-temp reduction) for pre-triaged salvage; explicitly dependency-gated on PL-001/CE-003 (halogen), GR-002 (reduction method), FA-001 (site), EN-001 (structural); PYC-001 through PYC-008
+    └── Pyrolysis_Cascade.md                — Staged thermal cascade (pyrolysis → high-temp reduction) for pre-triaged salvage; explicitly dependency-gated on PL-001 (Resolved 2026-08-23, PL-001-R1 residual)/CE-003 (Open — halogen), GR-002 (reduction method), FA-001 (site), EN-001 (structural); PYC-001 through PYC-008
     └── Field_Logs.md                       — Append-only intake for physical test runs and cross-agent field data; not a specification, no Spec Gates apply
 
 Challenges/                                 — Problem layer: why these capabilities exist
@@ -292,7 +295,7 @@ Discovery.md is a navigation map — task tracking belongs in Unknowns.md.
 
 | File | Status | Spec Gates | Highest Risk |
 |------|--------|-----------|--------------|
-| `Admin/Governance_Charter.md` | Draft | 6/6 vs. `Admin/Verification_Gates.md` — execution quality (see GOV-011, resolved 2026-07-05); promotion separately blocked by open unknowns (GOV-003, GOV-005) and Enforcement Checkpoint 2 — Bootstrap Paradox | Critical (GOV-013, GOV-015, GOV-018 — see `Archive/Logs/Governance_Charter_Changelog.md`; promotion-blocking risk unchanged from GOV-003/GOV-005) |
+| `Admin/Governance_Charter.md` | Draft | 6/6 vs. `Admin/Verification_Gates.md` — execution quality (see GOV-011, resolved 2026-07-05); promotion separately blocked by open unknowns (GOV-005) and Enforcement Checkpoint 2 — Bootstrap Paradox; GOV-003 Resolved 2026-08-23 (specification-level architecture only — no promotion-readiness change) | Critical (GOV-005 — sole remaining open Critical in that file; GOV-013 ratified 2026-07-19, GOV-015/GOV-018/GOV-003 Resolved 2026-08-23 — see `Archive/Logs/Governance_Charter_Changelog.md`; this row corrected 2026-08-25 to match that file's own File State, which had drifted out of sync with this summary table) |
 | `Admin/Ethical_Constraints.md` | Exploration | 0/6 | High |
 | `Admin/Auditor_Protocols.md` | Draft | 4/6 (G1, G3, G4, G6 clear — G3 cleared 2026-08-03 via AP-017 Resolved; G5 conditional on cross-ref fixes below; G2 N/A — no physical/quantitative claims of its own) | High |
 | `Admin/Forge_Audit_Kit.md` | Draft | 0/6 | — |

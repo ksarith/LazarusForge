@@ -517,7 +517,7 @@ original framing and is worth naming plainly:
 None of this is drift away from the founding idea. It is the founding idea taken more
 seriously than a workshop floor alone could demand.
 
-The primary remaining gaps are: enforcement architecture (GOV-003, In Progress),
+The primary remaining gaps are: long-term constitutional stability (GOV-005),
 human override authentication (GOV-006), and the operational hardware unknowns tracked
 in `Unknowns.md`. The verification doctrine layer (`Admin/Auditor_Protocols.md`) has
 reached v0.29, adding a Mission Drift Review mechanism and Audit Phase Separation
