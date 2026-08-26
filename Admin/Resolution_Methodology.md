@@ -1,6 +1,6 @@
 # Resolution_Methodology.md
 
-**Version 0.7 — 2026-08-16**
+**Version 0.8 — 2026-08-25**
 
 ---
 
@@ -18,8 +18,8 @@
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | N/A — this file is a named reference for demonstrated patterns, not a specification or gate |
 | Verification Ref | Admin/Verification_Gates.md                                         |
-| Last Audit       | 2026-08-16 (v0.7 release-layer refinements)                         |
-| Auditor          | Grok — human-directed draft from 2026-08-15 session patterns        |
+| Last Audit       | 2026-08-25 (Fifth Applied Case registered — GR-003 concrete values, applied 2026-08-24; had gone unregistered here and mislabeled elsewhere for a full session before being caught) |
+| Auditor          | Claude — Fifth Applied Case registered, mislabeling corrected in four downstream citations (human-directed), 2026-08-25; prior: Grok — human-directed draft from 2026-08-15 session patterns |
 | Open Unknowns    | 0                                                                   |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | Low                                                                 |
@@ -217,6 +217,24 @@ None yet. Candidate for future review: any attempt to turn this reference into a
 *§5:* Ops_Scope_Map already refreshed 2026-08-16; no new Scope Boundary contradiction found.
 
 **What this case added:** First application that closed a *downstream dependency* opened by an earlier methodology case (GR-003 → GR-007 Category C). Demonstrates the method compounds: filling one hollow citation unblocks the next.
+
+---
+
+## Fifth Applied Case
+
+**GR-003 concrete hold-duration and container-type values** (`Operations/Gate_03_Reduction.md`). Applied 2026-08-24.
+
+*§1:* Confirmed the specific gap was real and narrowly scoped — the First Applied Case (2026-08-15) had already supplied the architectural two-outcome model and five-category structure; only concrete hold-duration values and container-type requirements per category remained unwritten, exactly as that case's own closing note said.
+
+*§2:* No new category structure or disposal model invented — filled the existing five-category frame (heavy-metal, chemical, asbestos, biological, radiological) with concrete values rather than restructuring it.
+
+*§3:* Values drawn from and checked against real external analogs (RCRA generator accumulation practice, industrial temporary-storage guidelines, lab holding tables, ACM handling norms, biosafety waste practice) at Analogous confidence, not asserted as Forge-validated.
+
+*§4:* A first draft deviated from an established convention — this repository's PL-001/WA-002/GOV-003 pattern of leaving Risk/Priority fields unchanged on closure — by annotating them as "(residual)"/"→ residual only." Caught and corrected before integration by checking against those three files' actual post-closure text, not just their stated intent. Category structure closes Resolved via Payment via Specification; three residuals (GR-003-R1 jurisdiction-dependent regulation, R2 physical validation, R3 Ethical_Constraints permanent-placement confirmation) keep full operational reliance blocked. Stays functionally blocked pending R1; does not stay **Open** the way GR-007 did in the Fourth case — the distinction is that this case closed the specification itself, where GR-007 remained an unresolved doctrine gap.
+
+*§5:* This case was mislabeled "second applied case" (GF-007's actual case number) at the time of integration, in four places — `Gate_03_Reduction.md`'s own closure note and Resolution Log entry, `Unknowns_Changelog.md`'s v4.83 record, and `Admin/Progress_Log.md` — and this file itself was never updated to register the case at all. Found and corrected 2026-08-25, during a systematic cross-reference sweep prompted directly by the question "have we closed all angles of previous work" — not caught by any of the verification passes run at the time of the original closure.
+
+**What this case added:** First applied case to demonstrate that the method's own tracking apparatus — this file's ordinal case numbering — can itself drift out of sync with the work it records. The underlying doctrine work was real and correctly executed; the citation of it was wrong everywhere it appeared, for a full session, because nothing checked this file against its own citations until asked to.
 
 ---
 

@@ -91,7 +91,7 @@ Pilot for a per-folder scope-map pattern, proposed 2026-08-07 as a fix for a kno
 **Does not (arrow):** Full auditor doctrine, full EF text, full Adversarial Battery (all `Auditor_Protocols.md`) - unknown registry (`Unknowns.md`) - file ownership (`Discovery.md`) - governance hierarchy (`Governance_Charter.md`).
 
 ### `Admin/Governance_Charter.md`
-**Status:** Draft · 6/6 (execution quality; promotion separately blocked by GOV-003/GOV-005 + Enforcement Checkpoint 2) · 20 Open Unknowns · Risk: Critical
+**Status:** Draft · 6/6 (execution quality; promotion separately blocked by GOV-005 + Enforcement Checkpoint 2 — GOV-003 Resolved 2026-08-23, no longer a promotion blocker) · 13 Open Unknowns (corrected 2026-08-25 from a stale "20" carried in this file; see that file's own File State header) · Risk: Critical
 **Does:** Tier 1 constitutional axioms; governance authority hierarchy; canonical governance ownership; bootstrap/Genesis Phase doctrine; migration doctrine; human override doctrine.
 **Does not (arrow):** Runtime execution, crypto implementation, CI/CD (out of scope entirely) - canonical terminology (`Canonical_Terms.md`) - auditor behavior (`Auditor_Protocols.md`) - condensed reference (`Forge_Audit_Kit.md`).
 FLAG: Single most load-bearing file in the repository — six other files in this folder alone (`GMP`, `RIP`, `CIR_Gov`, `Hardware_Diversity_Ladder`, `Security_Protocols`, `Ethical_Constraints`) explicitly defer authority questions back to this one.
