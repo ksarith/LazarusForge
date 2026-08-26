@@ -78,6 +78,47 @@ in a v0-scoped file (Gate 4 — Scope Alignment).
 
 ---
 
+## Recent Governance Developments
+
+*Added 2026-08-26 — `README.md`'s landing-page Status section deliberately
+stays brief and points here for detail. This section exists so that
+pointer is actually honored, not just asserted.*
+
+Six mechanisms govern how the repository actually decides things, not
+just what it believes:
+
+- **Unknown Closure Authority** — who may propose and verify closing an
+  open unknown, and when human ratification is mandatory.
+  `Admin/Auditor_Protocols.md` §Unknown Closure Authority.
+- **Verification Termination Threshold** — when an audit cycle may stop
+  without claiming false certainty, rather than continuing indefinitely.
+  `Admin/Auditor_Protocols.md` §Verification Termination Threshold.
+- **Dispute Handling Protocol** — the three-tier path for resolving
+  disagreement between auditors rather than letting it stall a closure.
+  `Admin/Auditor_Protocols.md` §Dispute Handling Protocol.
+- **Human Attestation Provenance Protocol** — how a human ratification is
+  itself recorded and verified, not merely asserted.
+  `Admin/Auditor_Protocols.md` §Human Attestation Provenance Protocol.
+- **Governance Complexity Ceiling** and **Governance Pruning Doctrine** —
+  bound the governance layer's own size and give it a removal mechanism,
+  so governance doesn't grow without limit the way the material pipeline
+  is prevented from doing. `Admin/Governance_Charter.md` §Governance
+  Complexity Ceiling / §Governance Pruning Doctrine.
+- **Reversibility** — named 2026-08-21 as a cross-cutting Operating
+  Principle connecting three mechanisms that had been independently
+  reinvented without reference to one another: Gate_03's
+  point-of-no-return doctrine, sidecar permanence, and the Epistemic
+  Ledger. `Admin/Governance_Charter.md` §Operating Principles /
+  Reversibility.
+
+These sit alongside `Admin/Governance_Charter.md`'s constitutional layer
+(Eight Tier 1 Axioms) and are not a replacement for it — they're the
+procedural machinery that makes the constitutional layer operable across
+agent successions rather than dependent on any one session remembering
+how things are supposed to work.
+
+---
+
 ## How to Use This File
 
 > **Scope entries are navigation summaries only.**
