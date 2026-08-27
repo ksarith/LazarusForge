@@ -12,7 +12,7 @@
 | Open Unknowns    | 0                                                                     |
 | Owning Domain    | Archive/                                                              |
 | Last Reviewed    | 2026-08-09 (migrated from Discovery.md)                             |
-| Ethical Anchor   | Attempt to do no harm. Defer to `Admin/Ethical_Constraints.md` if present. |
+| Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
 ---
 
