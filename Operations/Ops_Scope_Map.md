@@ -12,7 +12,7 @@
 | Open Unknowns    | 0 (surfaces existing unknowns from owning files; creates none)      |
 | Owning Domain    | Operations/                                                          |
 | Last Reviewed    | 2026-08-15                                                           |
-| Ethical Anchor   | Attempt to do no harm. Defer to `Admin/Ethical_Constraints.md` if present. |
+| Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
 ---
 
