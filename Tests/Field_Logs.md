@@ -14,7 +14,7 @@
 | Owning Domain    | Tests/                                                               |
 | Last Reviewed    | 2026-08-15                                                           |
 | Sidecar Link     | N/A                                                                  |
-| Ethical Anchor   | Attempt to do no harm. Defer to `Admin/Ethical_Constraints.md` if present. |
+| Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
 ---
 
