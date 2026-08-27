@@ -242,6 +242,60 @@ def version_string_pass(root, all_files, findings):
                                          f"match File State version v{current_version}."))
 
 
+def unknowns_summary_pass(root, all_files, findings):
+    """
+    Counts active (Open / In Progress / Reopened) rows in Unknowns.md's
+    per-topic tables, bucketed by the table's own Priority (Promo) column
+    value (Critical / Major / Minor / Blocking / Other).
+
+    Scope, stated honestly: this counts what the Priority (Promo) column
+    itself says. It does NOT reconcile against each owning file's own
+    "Blocking: Yes/No" sidecar field — that field lives in 80+ separate
+    files and cross-checking it here would be a much larger undertaking
+    than this pass is scoped for. A row whose Priority column literally
+    reads "Blocking" is counted as Blocking; a row whose owning file sets
+    Blocking: Yes but whose Priority column here says "Major" is counted
+    as Major. This is a real, current limitation, not a rounding error —
+    noted in the output so it isn't mistaken for a reconciled count.
+
+    Only counts rows inside this file's own topic tables (the standard
+    "| ID | Title | Owning File | Status | Subtype | Priority (Promo) |"
+    format). Resolved entries do not appear in these tables per this
+    file's own Size Management Rule 2 (see Unknowns.md itself) and are
+    correctly excluded by construction, not by filtering Status here.
+    """
+    unknowns_path = os.path.join(root, "Unknowns.md")
+    if not os.path.exists(unknowns_path):
+        findings.append(Finding("WARNING", "UNKNOWNS_SUMMARY", "Unknowns.md",
+                                 "Unknowns.md not found — cannot summarize active unknowns."))
+        return {"total": 0, "by_priority": {}, "by_status": {}}
+
+    with open(unknowns_path, encoding="utf-8") as f:
+        lines = f.readlines()
+
+    row_re = re.compile(r'^\|\s*([A-Z]{2,8}-[\dR]{2,}[a-z]?)\s*\|(.*)\|(.*)\|(.*)\|(.*)\|(.*)\|\s*$')
+    by_priority = {}
+    by_status = {}
+    total = 0
+
+    for line in lines:
+        m = row_re.match(line.rstrip('\n'))
+        if not m:
+            continue
+        status = m.group(4).strip()
+        priority = m.group(6).strip()
+        if status.lower() in ("status", "---") or not status:
+            continue  # header / separator row
+        if "resolved" in status.lower():
+            continue  # should not appear per Rule 2, but skip defensively rather than miscount
+        total += 1
+        by_status[status] = by_status.get(status, 0) + 1
+        bucket = priority if priority in ("Critical", "Major", "Minor", "Blocking") else (priority or "Unlabeled")
+        by_priority[bucket] = by_priority.get(bucket, 0) + 1
+
+    return {"total": total, "by_priority": by_priority, "by_status": by_status}
+
+
 def run(root):
     findings = []
     all_files = walk_repo(root)
@@ -251,6 +305,7 @@ def run(root):
     unknown_pass(root, all_files, findings)
     reference_pass(root, all_files, findings)
     version_string_pass(root, all_files, findings)
+    unknowns_summary = unknowns_summary_pass(root, all_files, findings)
 
     by_severity = {"CRITICAL": [], "WARNING": [], "NOTE": []}
     for f in findings:
@@ -264,6 +319,7 @@ def run(root):
         "aliases_source": _ALIASES_SOURCE,
         "summary": {sev: len(items) for sev, items in by_severity.items()},
         "findings": [f.to_dict() for f in findings],
+        "unknowns_summary": unknowns_summary,
     }
     return report
 
@@ -285,14 +341,85 @@ def print_summary(report):
             print()
 
 
+def print_health_summary(report):
+    """
+    Tier 1 + Tier 2 health summary, added 2026-08-27 per a scoped
+    dashboard request. Tier 1 = PASS/FAIL per existing check category,
+    derived from CRITICAL/WARNING counts already in this report — no
+    new checking logic, just a threshold read on what the five passes
+    above already found. Tier 2 = active-unknown counts from
+    Unknowns.md's own Priority column, via unknowns_summary_pass.
+
+    Deliberately does NOT include a "Governance state" / "Physical
+    validation" / overall "ALPHA readiness" badge. Those would require
+    inventing a threshold this repository's own doctrine does not
+    define anywhere, which is exactly the kind of manufactured-looking-
+    mechanical number this repo's own Placeholder/Analogous confidence
+    discipline exists to prevent. If that judgment is wanted, it
+    belongs to a human, as an explicitly-dated, explicitly-manual
+    field — not this function.
+    """
+    by_cat = {}
+    for f in report["findings"]:
+        by_cat.setdefault(f["category"], []).append(f)
+
+    categories = [
+        ("REGISTRY", "Registry (Routing.md coverage)"),
+        ("CONSTITUTION", "Metadata / Ethical Anchor"),
+        ("STRUCTURE", "Metadata / File State consistency"),
+        ("DUPLICATE_ID", "Sidecar ID uniqueness"),
+        ("REFERENCE", "Cross-reference resolution"),
+        ("VERSION_STRING", "Version-citation freshness"),
+    ]
+
+    print("=" * 46)
+    print("REPOSITORY HEALTH —", report["repo_root"])
+    print("=" * 46)
+    print()
+    print(f"Files scanned: {report['files_scanned']}")
+    print(f"Aliases source: {report['aliases_source']}")
+    print()
+    print("--- Tier 1: mechanical checks (PASS/FAIL) ---")
+    for cat_key, cat_label in categories:
+        items = by_cat.get(cat_key, [])
+        crit = sum(1 for i in items if i["severity"] == "CRITICAL")
+        warn = sum(1 for i in items if i["severity"] == "WARNING")
+        status = "FAIL" if crit else ("REVIEW" if warn else "PASS")
+        note = f" ({crit} critical, {warn} warning)" if (crit or warn) else ""
+        print(f"  {cat_label:<38} {status}{note}")
+    print()
+    print("--- Tier 2: active unknowns (from Unknowns.md's own tables) ---")
+    us = report["unknowns_summary"]
+    print(f"  Total active (Open/In Progress/Reopened): {us['total']}")
+    for bucket in ("Critical", "Blocking", "Major", "Minor", "Unlabeled"):
+        if bucket in us["by_priority"]:
+            print(f"    {bucket:<12} {us['by_priority'][bucket]}")
+    other = {k: v for k, v in us["by_priority"].items()
+             if k not in ("Critical", "Blocking", "Major", "Minor", "Unlabeled")}
+    if other:
+        print(f"    (other Priority-column values found: {other})")
+    print()
+    print("  Note: 'Blocking' here reflects this table's own Priority")
+    print("  column value, not a cross-check of each owning file's")
+    print("  Blocking: Yes/No sidecar field. See function docstring.")
+    print()
+    print("Not included: no generated \"ALPHA readiness\" or \"Governance")
+    print("state\" badge. See print_health_summary() docstring for why.")
+    print("=" * 46)
+
+
 if __name__ == "__main__":
     if len(sys.argv) < 2:
-        print("Usage: python integrity_check.py <repo_root> [--json output.json]")
+        print("Usage: python integrity_check.py <repo_root> [--json output.json] [--health]")
         sys.exit(1)
 
     repo_root = sys.argv[1]
     report = run(repo_root)
-    print_summary(report)
+
+    if "--health" in sys.argv:
+        print_health_summary(report)
+    else:
+        print_summary(report)
 
     if "--json" in sys.argv:
         idx = sys.argv.index("--json")

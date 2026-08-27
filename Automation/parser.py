@@ -379,10 +379,33 @@ class MetadataParser:
 
     def _parse_markdown_tables(self, lines: List[str]) -> Tuple[bool, Dict[str, FieldValue]]:
         fields: Dict[str, FieldValue] = {}
+        # Fixed 2026-08-27 (second pass): scanning blindly from line 0 let
+        # a changelog file's own per-entry sidecar tables (e.g. an
+        # individual "| Status | Resolved |" row belonging to one logged
+        # unknown among many) get mistaken for the file's own top-level
+        # File State declaration, purely because a "status" key showed up
+        # somewhere in the first 60 lines. Every genuine File State block
+        # in this repository is preceded by a literal "## File State"
+        # heading (confirmed against File_Template.md and multiple real
+        # files) — anchor the scan to that heading instead of scanning from
+        # the top of the file. Files with no such heading (changelogs,
+        # README, Routing) correctly detect nothing, without needing to
+        # special-case any filename.
+        file_state_idx = None
+        for idx, line in enumerate(lines[:80]):
+            if line.strip().lower().startswith("## file state"):
+                file_state_idx = idx
+                break
+        if file_state_idx is None:
+            return False, {}
+
         # Widened from the original top-30-lines window: a file with an
         # Operational Safety Advisory block (File_Template.md §1) between
         # Navigation Anchors and File State can push the table past line 30.
-        for idx, line in enumerate(lines[:60]):
+        # Window is now relative to the found heading, not the file start.
+        scan_start = file_state_idx
+        scan_end = min(file_state_idx + 60, len(lines))
+        for idx, line in enumerate(lines[scan_start:scan_end], start=scan_start):
             line_str = line.strip()
             if line_str.startswith("|") and line_str.endswith("|"):
                 parts = [p.strip() for p in line_str.split("|")[1:-1]]
@@ -402,14 +425,47 @@ class MetadataParser:
                     fields[clean_key] = FieldValue(
                         value=clean_val, source="markdown_table", line=idx + 1, raw=line_str
                     )
+        # Retained as a second safeguard alongside the heading anchor above
+        # (belt-and-suspenders, cheap to keep): a table found after a
+        # "## File State" heading that still lacks any "status" row would
+        # be unusual enough to warrant treating it as undetected rather
+        # than guessing.
+        if "status" not in fields:
+            return False, {}
         return len(fields) > 0, fields
 
     # -- Legacy inline -----------------------------------------------------
 
     def _parse_legacy_inline(self, lines: List[str]) -> Tuple[bool, Dict[str, FieldValue]]:
         fields: Dict[str, FieldValue] = {}
-        for idx, line in enumerate(lines[:30]):
+        # Fixed 2026-08-27 (third pass, same underlying bug as
+        # _parse_markdown_tables above): "Status:\s*(\w+)" matched inside
+        # ordinary prose narrative — e.g. a changelog sentence ending
+        # "...Lessons Learned: ... Status: Resolved." — and got treated as
+        # a genuine legacy metadata declaration. Two guards, matching the
+        # markdown_table fix's reasoning: (1) anchor to an actual
+        # "## File State" heading, since a genuine legacy-format file
+        # declaring inline metadata is exactly the kind of file that
+        # would still carry that heading even without a table under it;
+        # (2) require the matched line be short and simple (a real header
+        # line looks like "Status: Active", not a 400-character paragraph
+        # that happens to contain the substring "Status: Resolved." near
+        # its end) — this second guard catches the same failure even in
+        # a hypothetical file that has both a heading and prose nearby.
+        file_state_idx = None
+        for idx, line in enumerate(lines[:80]):
+            if line.strip().lower().startswith("## file state"):
+                file_state_idx = idx
+                break
+        if file_state_idx is None:
+            return False, {}
+
+        scan_start = file_state_idx
+        scan_end = min(file_state_idx + 30, len(lines))
+        for idx, line in enumerate(lines[scan_start:scan_end], start=scan_start):
             line_str = line.strip()
+            if len(line_str) > 80:
+                continue  # too long to plausibly be a standalone header line
             for key, patterns in self.LEGACY_PATTERNS.items():
                 if key in fields:
                     continue
