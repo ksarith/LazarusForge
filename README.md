@@ -78,13 +78,28 @@ In fact, disagreement backed by evidence is one of the most useful forms of part
 
 The Forge currently has:
 
-- a complete seven-gate operational architecture;
+- a defined seven-gate operational architecture (architectural model
+  complete; physical validation is a separate, ongoing question — see below);
 - a formal governance and audit framework;
 - a live registry of unresolved questions;
-- experimental pathways covering material, water, biological, energy, and knowledge recovery;
-- explicit separation between specified doctrine and experimentally validated capability.
+- experimental pathways covering material, water, biological, energy, and
+  knowledge recovery;
+- explicit separation between specified doctrine and experimentally
+  validated capability.
 
-**Important:** much of the system remains experimental. An architectural specification is not evidence that the corresponding physical capability has been demonstrated.
+**Not yet demonstrated:**
+
+- physical validation of most gates at production scale;
+- energy-independent or net-positive economics;
+- autonomous operation without human oversight;
+- self-replication;
+- any off-world or interstellar capability. These appear in the long-term
+  vision below as a research trajectory, not a current claim.
+
+**Important:** much of the system remains experimental. An architectural
+specification is not evidence that the corresponding physical capability
+has been demonstrated. This distinction — specified versus demonstrated —
+is load-bearing throughout the repository, not just in this section.
 
 For the detailed development state, see [`Unknowns.md`](Unknowns.md) and [`Discovery.md`](Discovery.md).  
 Primary remaining gaps include long-term constitutional stability (GOV-005), human override authentication (GOV-006), and the operational hardware unknowns tracked in `Unknowns.md`.
