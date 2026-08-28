@@ -7,7 +7,7 @@ Lazarus Forge is an open, salvage-first framework for turning discarded material
 
 It combines salvage-first engineering, local manufacturing, resilience, experimental testing, and unusually strict epistemic governance.
 
-The Forge does not optimize for efficiency. Efficiency without resilience creates fragile systems. The Forge willingly sacrifices speed and optimization in exchange for **recoverability, redundancy, auditability, and graceful degradation.**
+The Forge does not optimize for efficiency alone. Efficiency without resilience creates fragile systems. The Forge willingly sacrifices local speed and optimization when doing so increases **recoverability, redundancy, auditability, and graceful degradation.**
 
 The deepest goal is this:
 
@@ -95,6 +95,26 @@ The Forge currently has:
 - self-replication;
 - any off-world or interstellar capability. These appear in the long-term
   vision below as a research trajectory, not a current claim.
+
+**What is real right now, at a glance:**
+
+| Capability | State |
+|---|---|
+| Seven-gate operational architecture | Specified |
+| Salvage-first doctrine | Specified |
+| Governance and audit framework | Specified, in active use |
+| Experimental pathways (material, water, biological, energy, knowledge) | Active / experimental |
+| Physical gate validation at scale | Incomplete |
+| Energy independence | Not demonstrated |
+| Autonomous operation | Not demonstrated |
+| Self-replication | Not demonstrated |
+| Off-world / interstellar deployment | Research trajectory |
+
+This table is a manual, human-facing orientation — a fast answer to "what's
+actually real." It is distinct from `Automation/integrity_check.py --health`,
+which mechanically checks repository consistency (metadata, cross-references,
+active unknowns) and does not attempt to judge physical readiness; neither
+replaces the other.
 
 **Important:** much of the system remains experimental. An architectural
 specification is not evidence that the corresponding physical capability
