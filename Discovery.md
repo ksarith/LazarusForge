@@ -1,5 +1,6 @@
 # Discovery.md — LazarusForge
 **Navigation layer for the active working repository.**
+**Last updated: 2026-08-29**
 
 ---
 

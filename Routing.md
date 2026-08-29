@@ -1,6 +1,6 @@
 # Routing.md — LazarusForge
 **Canonical Navigation and Link Mapping Index.**
-**Last updated: 2026-08-10**
+**Last updated: 2026-08-16**
 
 ---
 
