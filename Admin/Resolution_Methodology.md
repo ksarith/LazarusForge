@@ -1,6 +1,6 @@
 # Resolution_Methodology.md
 
-**Version 0.8 — 2026-08-25**
+**Version 0.9 — 2026-08-28**
 
 ---
 
@@ -18,8 +18,8 @@
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | N/A — this file is a named reference for demonstrated patterns, not a specification or gate |
 | Verification Ref | Admin/Verification_Gates.md                                         |
-| Last Audit       | 2026-08-25 (Fifth Applied Case registered — GR-003 concrete values, applied 2026-08-24; had gone unregistered here and mislabeled elsewhere for a full session before being caught) |
-| Auditor          | Claude — Fifth Applied Case registered, mislabeling corrected in four downstream citations (human-directed), 2026-08-25; prior: Grok — human-directed draft from 2026-08-15 session patterns |
+| Last Audit       | 2026-08-28 (Patterns 6–9 added: specification/operational-clearance split; discharge-vs-specification; verify-closure-format-against-precedent; self-maintenance verification — distilled from the 2026-08-23 through 2026-08-27 session's closures and hygiene fixes, none of which had been captured here despite being real, repeatable, and independently rediscovered rather than cited each time) |
+| Auditor          | Claude — Patterns 6–9 drafted and registered, citation examples added (human-directed, prompted by an explicit question: what should following agents know that isn't yet in Progress_Log.md or here), 2026-08-28; prior: Claude — Fifth Applied Case registered, mislabeling corrected in four downstream citations (human-directed), 2026-08-25; prior: Grok — human-directed draft from 2026-08-15 session patterns |
 | Open Unknowns    | 0                                                                   |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | Low                                                                 |
@@ -103,6 +103,38 @@ The per-folder Scope_Maps (`Ops_Scope_Map.md`, `Adm_Scope_Map.md`, etc.) have al
 
 **Move:** After a material session on a folder, either refresh the Scope_Map entry for the changed files or explicitly note the map as stale relative to the session date. Do not treat an unreviewed Scope_Map as current navigation.
 
+### 6. Specification / Operational-Clearance Split
+
+Closing an unknown via Payment via Specification does not mean the underlying capability is ready for real-world reliance. Keep the two states explicitly distinct: mark the unknown Resolved once the doctrine itself is complete, but name a residual (conventionally R1) that keeps real-world Blocking force in place until the actual empirical, jurisdictional, or physical gap is closed.
+
+**Demonstrated cases:** GOV-003 (Integrity Enforcement Architecture — architecture specified, SEC-007b instantiation left as the named blocker), PL-001 (Halogenated Polymer Triage Protocol — protocol specified, PL-001-R1 feedstock validation left open, Blocking Yes retained for hot runs), WA-002 (identification protocol, training standard, and lab-arrangement structure specified, WA-002-R1 feedstock validation left open), GR-003 (five-category disposal doctrine with concrete hold-duration/container values specified, GR-003-R1 jurisdiction-dependent regulation left open) — all four closed the same way, independently verified against each other for consistency (see Pattern 8) rather than reinvented per file.
+
+**Move:** When drafting a closure, ask "does this specification actually make the capability safe/ready to use today, or does it only make the *plan* for using it complete?" If the latter, close Resolved and name the residual explicitly — don't leave the unknown nominally Open just because real-world validation hasn't happened, and don't claim full readiness just because the paper is done. Risk and Priority fields stay unchanged on this kind of closure (see Pattern 8) — the specification closing is not itself a de-escalation.
+
+### 7. Discharge via Consolidation vs. Payment via Specification
+
+Before drafting a new specification for an unknown, check whether it is actually a duplicate of another unknown's tracking, not a distinct problem needing its own doctrine. If the underlying question is already owned and resolved elsewhere, the correct disposition is Discharge via Consolidation to the canonical entry, not a second specification pass.
+
+**Demonstrated case:** WA-004 ("negative-value waste fraction disposal") had said in its own text for weeks that it tracked `Operations/Gate_03_Reduction.md` GR-003's doctrine from the Challenges/ side, "not a second one." Once GR-003 itself closed (concrete hold-duration/container values specified), the honest move for WA-004 was not to write a second specification but to discharge it to GR-003 — matching the repository's own prior precedent (`Operations/Gate_02_Triage.md` TS-004 → `Admin/Canonical_Terms.md` CT-002, `Admin/Forge_Audit_Kit.md`'s Resolved Unknown Discharge Procedure). One difference from that precedent worth noting: TS-004's canonical target (CT-002) was still Open at the time of discharge; WA-004's target (GR-003) was already Resolved, so WA-004's discharge carried GR-003's residuals by reference rather than tracking its own.
+
+**Move:** Before treating a gap as needing a new specification, check the unknown's own cross-references and the owning file's Discharge Procedure doctrine for an existing canonical entry covering the same ground. If one exists, discharge to it rather than duplicating work — and if the canonical entry is itself Resolved, say so explicitly rather than leaving the discharged entry's status ambiguous.
+
+### 8. Verify Closure Format Against Precedent Text, Not Assumed Convention
+
+Distinct from Pattern 3 (which verifies factual claims): a drafted closure's *structure* — which fields change, which stay fixed, what gets annotated — should be checked against the actual post-closure text of prior real closures, not against a remembered or assumed description of the convention.
+
+**Demonstrated case:** A draft closure for GR-003 annotated the Risk and Priority fields as "(residual)" and "→ residual only" after closure. This was new notation, not used in any of the three prior closures that same session (GOV-003, PL-001, WA-002), all of which left Risk and Priority unchanged on closure per Pattern 6. Caught by opening `Operations/Plastics.md` and `Challenges/Waste.md` directly and reading their actual post-closure header text, not by recalling what the convention was supposed to be.
+
+**Move:** When integrating a drafted closure, open at least one prior real closure of the same kind and diff the drafted structure against it directly — field names, which fields change vs. stay fixed, annotation style — before trusting that the draft follows established convention.
+
+### 9. Self-Maintenance Verification (Prose and Code)
+
+A file that states its own maintenance rules (rotation limits, size caps, "most recent first" ordering, category lists, canonical version blocks) must be checked against its own actual content after any edit — not assumed compliant because the rule is written down. This applies equally to prose documentation and to source code; a Python module's category-string list is the same kind of self-claim as a changelog's stated rotation threshold, and both can silently drift from what the file actually does.
+
+**Demonstrated cases:** `Unknowns.md` stated Resolved entries "leave the Active Index immediately" (Size Management Rule 2) and that its version-history block "keeps only the current version" — both had silently stopped being true, 26 stale rows and 20 stacked versions respectively, for weeks, with each new version's own closing line falsely claiming compliance. `Admin/Progress_Log.md` failed to preserve its own stated "most recent first" ordering and five-entry rotation limit on five separate occasions across one week, including once while a fix for a *previous* instance of the same failure was being written. `Automation/integrity_check.py`'s health-dashboard used two category-name strings (`UNKNOWN_ID`, `VERSION`) that did not match any `Finding` category actually produced anywhere in the codebase, silently showing a false PASS while 11 genuine CRITICAL findings sat completely unrepresented — caught only by programmatically cross-referencing the dashboard's category list against every `Finding(...)` call in the source, not by reading the code and judging it correct.
+
+**Move:** After editing any file that makes a claim about its own structure or behavior — a stated rule, a category list, a canonical string, an ordering invariant — re-derive that claim mechanically (grep, count, re-run) rather than trusting that the edit landed as intended. For code specifically: run a syntax check after every edit, and when a check or dashboard produces a comfortable "all clear" result, verify that result actually covers everything it claims to, rather than trusting a clean summary at face value.
+
 ---
 
 ## How to Cite
@@ -114,6 +146,10 @@ These patterns are intended to be referenced by short name in Resolution Logs, F
 - “Applied §3 (verify-before-accept): primary-source check on every claim in the proposal before implementation.”
 - “Applied §4 (digital/equipment-gated split): left capacity unsized; remains Open pending GI-002 vessel assumptions.”
 - “Applied §5 (scope-map stale-pointer): Ops_Scope_Map last reviewed 2026-08-08; flagged for refresh after today’s Operations edits.”
+- “Applied §6 (specification/operational-clearance split): closed GR-003 Resolved via Payment via Specification; GR-003-R1 keeps jurisdiction-dependent reliance blocked.”
+- “Applied §7 (discharge vs. specification): WA-004 discharged to GR-003 rather than drafting a second disposal specification.”
+- “Applied §8 (verify closure format against precedent): checked Risk/Priority fields against Plastics.md and Waste.md's actual post-closure text before integrating.”
+- “Applied §9 (self-maintenance verification): re-ran the health check after editing its own category list, rather than trusting the edit was correct.”
 
 Citation is optional. The value is that the move is named and therefore reusable without re-deriving the rationale each time.
 
