@@ -1,7 +1,7 @@
 # Routing.md — LazarusForge
 **Canonical Navigation and Link Mapping Index.**
-**Last updated: 2026-08-16**
-**No map changes since 2026-08-16: no files added, removed, or rerouted. Header intentionally not bumped past that date; do not read a static header here as staleness while Discovery.md/Unknowns.md advance independently.**
+**Last updated: 2026-08-30**
+**No map changes 2026-08-16 through 2026-08-29: no files added, removed, or rerouted in that window. One addition on 2026-08-30: `Admin/INTEGRITY_SWEEP_PROMPT.md` registered (new file, exemption class 6 per File_Template.md — operational prompt, not doctrine).**
 
 ---
 
@@ -58,6 +58,7 @@ Last scope clarification: 2026-08-10 (integrity cleanup pass).
 | `Admin/Progress_Log.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForge/refs/heads/main/Admin/Progress_Log.md) | [Repo](https://github.com/ksarith/LazarusForge/blob/main/Admin/Progress_Log.md) | Explicit |
 | `Admin/Nothingness_Theorem.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForge/refs/heads/main/Admin/Nothingness_Theorem.md) | [Repo](https://github.com/ksarith/LazarusForge/blob/main/Admin/Nothingness_Theorem.md) | Explicit |
 | `Admin/PROBE_INVOCATION.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForge/refs/heads/main/Admin/PROBE_INVOCATION.md) | [Repo](https://github.com/ksarith/LazarusForge/blob/main/Admin/PROBE_INVOCATION.md) | Explicit |
+| `Admin/INTEGRITY_SWEEP_PROMPT.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForge/refs/heads/main/Admin/INTEGRITY_SWEEP_PROMPT.md) | [Repo](https://github.com/ksarith/LazarusForge/blob/main/Admin/INTEGRITY_SWEEP_PROMPT.md) | Explicit |
 | `Admin/Repository_Integrity_Protocol.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForge/refs/heads/main/Admin/Repository_Integrity_Protocol.md) | [Repo](https://github.com/ksarith/LazarusForge/blob/main/Admin/Repository_Integrity_Protocol.md) | Explicit |
 | `Admin/Repository_Structure.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForge/refs/heads/main/Admin/Repository_Structure.md) | [Repo](https://github.com/ksarith/LazarusForge/blob/main/Admin/Repository_Structure.md) | Explicit |
 | `Admin/Resolution_Methodology.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForge/refs/heads/main/Admin/Resolution_Methodology.md) | [Repo](https://github.com/ksarith/LazarusForge/blob/main/Admin/Resolution_Methodology.md) | Explicit |

@@ -1,6 +1,6 @@
 # Discovery.md — LazarusForge
 **Navigation layer for the active working repository.**
-**Last updated: 2026-08-29**
+**Last updated: 2026-08-30**
 
 ---
 
@@ -193,6 +193,7 @@ Admin/                                      — Governance, protocols, and doctr
     ├── Autonomy_Divergence_Protocol.md     — Graduated response to observed autonomous-subsystem divergence; Draft — PROPOSED NOT RATIFIED
     ├── Governance_Migration_Protocol.md    — Tier 1 Axiom amendment procedures
     ├── PROBE_INVOCATION.md                 — Copy-paste cold-start template for Mission Drift Review (AP-030); not doctrine, an operational prompt
+    ├── INTEGRITY_SWEEP_PROMPT.md            — Copy-paste morning integrity audit prompt for scheduled automation; not doctrine, an operational prompt
     ├── Hardware_Diversity_Ladder.md         — Four-tier path to a hardware-diverse GOV-008 quorum; Draft, declarable-not-achieved
     ├── Progress_Log.md                      — Active notebook: rolling lessons/continuity tracking (2026-08-09)
     └── BATTERY_SEED.md                      — Frozen prompt block for a genuine AP-017 cold-session Adversarial Battery run
@@ -360,6 +361,7 @@ Discovery.md is a navigation map — task tracking belongs in Unknowns.md.
 | `Admin/Governance_Migration_Protocol.md` | Exploration | 0/6 | High |
 | `Admin/Autonomy_Divergence_Protocol.md` | Draft — PROPOSED NOT RATIFIED | 6/6 (GOV-021b Resolved 2026-08-11; CIS Track A independently confirmed 2026-08-12; sole remaining ratification blocker is GOV-021c, §12, deliberately held Open pending live multi-agent evidence — not a defect in the specification) | High (governs response to AI governance/objective divergence) |
 | `Admin/PROBE_INVOCATION.md` | Draft | N/A — operational prompt template, not a doctrine or specification claim | — |
+| `Admin/INTEGRITY_SWEEP_PROMPT.md` | Draft | N/A — operational prompt template, not a doctrine or specification claim | — |
 | `Admin/Hardware_Diversity_Ladder.md` | Draft — Proposed implementation reference only | 0/6 | unlabeled |
 | `Admin/Progress_Log.md` | Active — Living Document | N/A — progression log, not a specification | N/A |
 | `Admin/BATTERY_SEED.md` | Draft | N/A — operational prompt template, not a doctrine or specification claim | — |

@@ -3,7 +3,7 @@
 
 **Full version history in `Unknowns_Changelog.md` (2026-07-19 cleanup pass, following the precedent set by `Archive/Logs/AUDIT_HARNESS_CHANGELOG.md` and `Archive/Logs/Forge_Audit_Kit_Changelog.md`; scrubbed to current-version-only 2026-07-28 — the "current plus last four in full" window was itself compressed further, since the Audit Trail below now carries the compressed record for every version back to v1.0, and the changelog carries full text for all of them. This block now keeps only the current version.)**
 
-**Version 4.87 — 2026-08-30. Corrected stale "GOV-003 In Progress" line (contradicted its own Resolved 2026-08-23 status) and annotated the Trust & Integrity Dependency Cluster tree to match GOV-003/SEC-007a Resolved status already reflected elsewhere in this file. Cross-referenced against owning sidecars (Governance_Charter.md, Security_Protocols.md, Waste.md) to confirm WA-002/GOV-003/SEC-007a closures were genuine before editing — all three ratified. No doctrine changed, navigation-layer staleness only. v4.84–v4.86 migrated to `Unknowns_Changelog.md` in this pass, correcting a three-version migration lag — same class of process gap named in v4.84's own entry.**
+**Version 4.89 — 2026-08-30. RE-UNK-006 registered — new unknown (post-abundance human behavioral drift, `Challenges/Return_To_Eden.md`), not a correction. Speculative-by-design entry raised directly by the human governing authority; see that file's own Resolution Log for the full framing and candidate-direction list. Open Unknowns count there: 5 → 6.**
 
 ---
 
@@ -93,10 +93,10 @@ FA-001 (Site not confirmed)
 EN-001 (Validated safety factors for salvaged materials)
 └── All structural specification promotions blocked
 
-WA-002 (Hazardous fraction identification)
-└── All mixed-waste operations blocked
+WA-002 (Hazardous fraction identification — Resolved 2026-08-23, residual WA-002-R1 keeps operational reliance blocked)
+└── All mixed-waste operations blocked pending WA-002-R1
 
-PL-001 (Halogenated polymer contamination)
+PL-001 (Halogenated polymer contamination — Resolved 2026-08-23, residual PL-001-R1 keeps operational reliance blocked)
 └── CE-003 (Field polymer identification)
         └── All hot pyrolysis runs blocked
 
@@ -495,6 +495,7 @@ GH-009 (Emergent heuristic conflict — N² interaction scaling)
 | RE-UNK-003 | Tier-to-tier advancement criteria undefined — no explicit pass/fail gate logic for progression between Tiers I–IV | `Challenges/Return_To_Eden.md` | Open | Active | Major |
 | RE-UNK-004 | Upstream/downstream dependency map absent — Discovery.md Scope Map portion reconciled directly against source file 2026-07-05 (prior entry was inferred and partly incorrect). **Correction 2026-07-11:** the parenthetical claim that Navigation Anchors/File State "still does not exist" is stale — both are present and complete in the file (verified directly). The actual gap is narrower than originally stated: `Challenges/Return_To_Eden.md` has no dedicated Upstream Dependencies / Downstream Dependents section (the format other Challenges/ Solution-Track files use); stays Open until that section is added. | `Challenges/Return_To_Eden.md` | Open | Active | Minor |
 | RE-UNK-005 | Eden Index baseline reference values undefined — $B_{d,0}$, $\Omega_{r,0}$, $W_{out,0}$, $\Phi_{ext,0}$ required by normalized formulation (v1.0.2) but have no measurement protocol; co-blocking dependency of RE-UNK-001 | `Challenges/Return_To_Eden.md` | Open | Active | Blocking (Tier I gate) |
+| RE-UNK-006 | Post-abundance human behavioral drift — achieved abundance may shift psychology/expectations in ways distinct from §6.2's entropy/friction framing; four candidate directions logged (complacency, hedonic redefinition of "enough," generational drift, or the inverse — abundance freeing attention toward stewardship), none asserted as likely. Deliberately speculative-by-design, not spec-closable — resolution vehicle is sustained observation/study, not a single closure event. | `Challenges/Return_To_Eden.md` | Open | Active | Minor |
 
 *RE-UNK-001 and RE-UNK-005 are co-blocking at Tier I gate — both must be resolved before $I_E$ can be computed. Non-blocking at Exploration.*
 *RE-UNK-002 and RE-UNK-003 become blocking at Tier I gate review; non-blocking at Exploration.*
