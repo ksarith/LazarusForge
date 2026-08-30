@@ -1,6 +1,7 @@
 # Routing.md — LazarusForge
 **Canonical Navigation and Link Mapping Index.**
 **Last updated: 2026-08-16**
+**No map changes since 2026-08-16: no files added, removed, or rerouted. Header intentionally not bumped past that date; do not read a static header here as staleness while Discovery.md/Unknowns.md advance independently.**
 
 ---
 

@@ -3,9 +3,7 @@
 
 **Full version history in `Unknowns_Changelog.md` (2026-07-19 cleanup pass, following the precedent set by `Archive/Logs/AUDIT_HARNESS_CHANGELOG.md` and `Archive/Logs/Forge_Audit_Kit_Changelog.md`; scrubbed to current-version-only 2026-07-28 — the "current plus last four in full" window was itself compressed further, since the Audit Trail below now carries the compressed record for every version back to v1.0, and the changelog carries full text for all of them. This block now keeps only the current version.)**
 
-**Version 4.85 — 2026-08-29. GOV-DS-001 registered in Active Disputes Registry and CIR-GOV-001 registered in Active Index — both were open in their owning files (`Admin/Governance_Charter.md`, `Admin/CIR_Gov.md`) but missing from this file; caught by cross-agent audit verification against source. No status changes to either item, registration only.** Prior: WA-004 Resolved — Discharge via Consolidation, ratified by Human Governing Authority. Plus: Size Management Rule 2 and version-compression cleanup (26 stale Resolved rows removed from the active index; 20 stacked version entries migrated to the changelog).** WA-004 was never a second disposal problem — it has tracked `Operations/Gate_03_Reduction.md` GR-003 from the Challenges/ side since the 2026-08-15 pass that first wrote GR-003's doctrine. With GR-003 now closed (v4.83, this same day), WA-004 discharged to it per this repository's existing Discharge via Consolidation precedent (`Operations/Gate_02_Triage.md` TS-004 → `Admin/Canonical_Terms.md` CT-002) — see `Challenges/Waste.md` Resolution Log. Unlike that precedent, the canonical target here (GR-003) is itself already Resolved, so WA-004 carries GR-003's residuals by reference rather than tracking its own. A first pass at this note incorrectly claimed `Tests/Pyrolysis_Cascade.md` PYC-003 needed no update from this discharge — wrong: WA-004 was one of PYC-003's three named dependencies, and its discharge means all three are now specification-complete. Caught and corrected same-day; see PYC-003's own entry, now updated to reflect all three dependencies cleared while Blocking correctly remains Yes on the live WA-002-R1/GR-003-R1 residuals.
-
-Separately, this pass found and fixed two accumulated hygiene problems in this file, both predating today: (1) 26 Resolved entries — spanning EC-003/004/005/007/008/009/016, GOV-003/014/015/016/018/020/022, SEC-002/007a/009, AP-004/005/013/024, WA-002, SD-UNK-008/009/010/012/013/014/015, GR-003, PL-001 — were sitting in the active index tables with full paragraph descriptions instead of being removed per this file's own Size Management Rule 2 ("Resolved entries leave the Active Index immediately... the Audit Trail's brief resolution notes are the only navigation-layer record maintained here"). All 26 removed and replaced with short pointer notes to each owning file's Resolution Log, matching the file's own established style (see the ECN-003/GMP-005 precedent). (2) This version-history block had stacked 20 full version entries (v4.63–v4.82) instead of keeping only the current one, despite each entry's own text since v4.62 claiming "vN migrated to changelog intact" — that migration step had silently stopped happening 20 versions ago and nobody caught it until now. All 20 migrated into `Unknowns_Changelog.md` in this pass. Neither problem affected any owning file's actual doctrine — both were purely navigation-layer staleness in this index. Full account and the process fix applied going forward: Progress_Log Current Lessons, 2026-08-24.
+**Version 4.87 — 2026-08-30. Corrected stale "GOV-003 In Progress" line (contradicted its own Resolved 2026-08-23 status) and annotated the Trust & Integrity Dependency Cluster tree to match GOV-003/SEC-007a Resolved status already reflected elsewhere in this file. Cross-referenced against owning sidecars (Governance_Charter.md, Security_Protocols.md, Waste.md) to confirm WA-002/GOV-003/SEC-007a closures were genuine before editing — all three ratified. No doctrine changed, navigation-layer staleness only. v4.84–v4.86 migrated to `Unknowns_Changelog.md` in this pass, correcting a three-version migration lag — same class of process gap named in v4.84's own entry.**
 
 ---
 
@@ -76,10 +74,10 @@ Critical and Blocking unknowns only. Shows which entries block others — not a 
 **Trust & Integrity**
 ```
 UNK-009 (External root-of-trust — cross-module)
-├── GOV-003 (Integrity enforcement architecture)
+├── GOV-003 (Integrity enforcement architecture — Resolved 2026-08-23, no longer a live span component)
 ├── GOV-005 (Constitutional stability unproven)
-└── SEC-007a (External root-of-trust — constitutional layer)
-        ├── SEC-007b (External root-of-trust — physical implementation; blocked pending SEC-007a)
+└── SEC-007a (External root-of-trust — constitutional layer — Resolved 2026-08-22)
+        ├── SEC-007b (External root-of-trust — physical implementation; sole remaining blocker, not "pending SEC-007a")
         └── GMP-004 (Ratification authentication gap)
 ```
 
@@ -870,6 +868,7 @@ GH-009 (Emergent heuristic conflict — N² interaction scaling)
 | CF-DS-001 | Centralized vs. distributed cognition | `Architecture/Cognitive_Frameworks.md` | Single executive AI vs. fleet consensus | High | **Resolved 2026-07-26 — scope-dependent hybrid** |
 | CF-DS-002 | Human override authority scope | `Architecture/Cognitive_Frameworks.md` | Absolute override vs. bounded override (see `Admin/Ethical_Constraints.md`) | High | **Resolved 2026-07-26 — Bounded Override** |
 | GOV-DS-001 | Whether constitutional governance should contain executable enforcement mechanics | `Admin/Governance_Charter.md` | Constitutional abstraction vs. hardcoded governance automation | High | Open |
+| DS-001 | Whether autonomous auditors should ever be allowed to reopen hard-stopped abandoned paths | `Admin/Auditor_Protocols.md` | Full prohibition vs. conditional supervised reopening | High | Open |
 
 *CF-DS-001 resolved as neither named extreme — Frameworks E and F apply at different decision scales per the new Authority Scope Boundary in `Architecture/Cognitive_Frameworks.md` §III, generalizing `Tests/Support_Raft.md`'s existing comms-blackout doctrine.*
 *CF-DS-002 ratified directly by human governing authority — hard floors in `Admin/Ethical_Constraints.md` (Anti-Weaponization, Life Preservation, Cultural Sites) sit above the human governing authority's own direct order, not only above subordinate agents. Full doctrine in `Admin/Ethical_Constraints.md` v0.13. Per Size Management Rule 2, both entries will drop from this registry entirely on the next version pass; kept visible with Resolved status this pass since the resolution is new.*
@@ -887,7 +886,7 @@ GH-009 (Emergent heuristic conflict — N² interaction scaling)
 
 FL-001 and several EC entries have been In Progress since v1.1 — approaching two-cycle threshold. Flag for Full Stop Review trigger assessment at next audit opening if still unresolved.
 
-GOV-003 In Progress — Repository_Integrity_Protocol.md is the executing resolution path. GOV-005 remains Critical with no fast resolution path. GOV-007 In Progress — Genesis Phase Protocol executing; full resolution depends on GOV-008. GOV-008 exit condition not yet met.
+GOV-003 Resolved 2026-08-23 (Payment via Specification) — Repository_Integrity_Protocol.md was the executing resolution path; RIP itself remains the ongoing procedural-depth item (GOV-003-R2). GOV-005 remains Critical with no fast resolution path. GOV-007 In Progress — Genesis Phase Protocol executing; full resolution depends on GOV-008. GOV-008 exit condition not yet met.
 
 **RIP-001 Resolved** — Git release tag system (V0.6–V0.97, GPG-signed) fulfills prior-state archival at v0 scale. Discharged via Lessons Learned 2026-06-28. Full resolution detail in Admin/Repository_Integrity_Protocol.md sidecar.
 
