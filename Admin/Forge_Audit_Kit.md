@@ -1,5 +1,5 @@
 # Forge_Audit_Kit.md
-**Version 1.14**
+**Version 1.15**
 
 ---
 
@@ -16,13 +16,13 @@
 | Status         | Draft                                                               |
 | Spec Gates     | 0/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                    |
-| Last Audit     | 2026-07-28                                                          |
-| Auditor        | Claude — Synthesizer; Claude — v1.10 reduction + Expiry Watch redesign (human-directed); Claude — self-audit + v1.11 (FAK-010/011/012, First Battery) — 2026-07-14; Claude — v1.12 Verification Gates trim (human-directed), derivation versions corrected, 2026-07-17; Claude — v1.13 Pragmatic Accuracy principle added (human-directed), 2026-07-26; Claude — v1.14 CIR- prefix registered, FAK-013 stale changelog path corrected (human-directed), 2026-07-28 |
+| Last Audit     | 2026-08-30                                                          |
+| Auditor        | Claude — Synthesizer; Claude — v1.10 reduction + Expiry Watch redesign (human-directed); Claude — self-audit + v1.11 (FAK-010/011/012, First Battery) — 2026-07-14; Claude — v1.12 Verification Gates trim (human-directed), derivation versions corrected, 2026-07-17; Claude — v1.13 Pragmatic Accuracy principle added (human-directed), 2026-07-26; Claude — v1.14 CIR- prefix registered, FAK-013 stale changelog path corrected (human-directed), 2026-07-28; Claude — v1.15 derivation refresh against Auditor_Protocols.md v0.41/Unknowns.md v4.87 (human-directed) — Rules 9/10 (AP-033/AP-035) added to AI Contribution Rules, a real content gap rather than a version-string lag; token ceiling note and role declaration string updated to v0.41; kit's own char-count drift against its 12,000 Drift Indicator ceiling noted, not newly introduced (tracked as FAK-005, Open since v1.3) |
 | Open Unknowns  | 5 — see Sidecar Link                                                |
 | Sidecar Link   | Archive/Logs/Forge_Audit_Kit_Changelog.md#sidecar--auditor-notes--unknowns |
 | Ethical Anchor | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
-**Derived from:** `Admin/Auditor_Protocols.md` v0.24 | `Admin/Verification_Gates.md` v0.7 | `Unknowns.md` v4.21
+**Derived from:** `Admin/Auditor_Protocols.md` v0.41 | `Admin/Verification_Gates.md` v0.7 | `Unknowns.md` v4.87
 
 When this file contradicts a full source document, the full source document prevails.
 
@@ -166,7 +166,7 @@ Substantive notes required — bare checkmarks are not verification. Full text: 
 
 ## AI Contribution Rules
 
-Role declaration required: *"Operating as [Role] per Auditor_Protocols.md v0.24"*
+Role declaration required: *"Operating as [Role] per Auditor_Protocols.md v0.41"*
 
 Valid roles: Skeptic/Auditor | Systems/Auditor | Evidence/Auditor | Ethical/Auditor | Synthesizer | Engineer | Connective Tissue
 
@@ -178,6 +178,8 @@ Valid roles: Skeptic/Auditor | Systems/Auditor | Evidence/Auditor | Ethical/Audi
 6. Inter-Agent Consistency — open with Assumption Extraction.
 7. Repository Structure Awareness — use canonical folder-prefixed paths.
 8. Epistemic State Labeling — claims that cannot reach VERIFIED must be labeled PROVISIONAL or UNKNOWN. Do not collapse epistemic states under optimization pressure.
+9. Resolution Claims Require Governance Access (AP-033) — no contribution may mark, or by structure imply, that any unknown has advanced toward Resolved/Closed status without confirmed access to `Admin/Auditor_Protocols.md`'s own Resolution Taxonomy at the time of writing. Without that access, proposed closure mechanisms are candidate methodology only — never status.
+10. External Pseudo-Audit Scope and Logging Destination (AP-035) — a pseudo-audit (Spec Gates/Verification thresholds locked, no ratification authority) may not assert inventory/file/content claims without stating direct verification against the payload; may not invent a local ID prefix for cross-module unknowns; may not generate a freestanding ledger file as the primary record. Findings go first in the owning file's own sidecar; only genuinely cross-module findings get a `Unknowns.md` entry, added by an agent with confirmed sidecar access.
 
 ---
 
@@ -280,7 +282,7 @@ Load this file plus the document under audit. That is the baseline for every rou
 
 Load additional files only when the audit focus requires them — each adds tokens. Candidates: `Admin/Auditor_Protocols.md` (full role doctrine, full EF constitutional text, full Adversarial Battery), `Unknowns.md` (full unknown detail), `Discovery.md` (path lookup, Rename Registry), target file's upstream architecture files.
 
-**Token ceiling note:** `Admin/Auditor_Protocols.md` is approximately 157,000 characters at v0.24 (measured directly via harness fetch, 2026-07-21 — prior figure of ~100,000 was stale, likely last checked before AP-018 through AP-024 were added). Load it only when auditing the file itself, onboarding a new agent, or when full EF constitutional text is required for an interpretive dispute. This kit is the runtime reference for all other sessions.
+**Token ceiling note:** `Admin/Auditor_Protocols.md` is approximately 146,700 characters at v0.41 (measured directly via harness fetch, 2026-08-30 — prior figure of ~157,000 was itself measured at v0.24; the file has grown in content — Rules 9/10, AP-033/034/035 — while trimming duplicated version-history narrative elsewhere, netting slightly smaller despite more doctrine). Load it only when auditing the file itself, onboarding a new agent, or when full EF constitutional text is required for an interpretive dispute. This kit is the runtime reference for all other sessions.
 
 **Load full source documents instead of this kit when:** auditing `Admin/Auditor_Protocols.md` itself · onboarding a new agent · full unknown entry detail required · EF section interpretive dispute.
 
@@ -330,13 +332,8 @@ Cycle/CURRENT_CYCLE finding).
 Full history: `Archive/Logs/Forge_Audit_Kit_Changelog.md` (relocated out of this
 kit at v1.10 — add new entries there, not here).
 
-Most recent: v1.13 (2026-07-26) — Governing Principles gained a fifth
-line: "Correct a flawed premise only when it threatens the task's
-outcome — not for its own sake." Names explicitly what "Infinite audit
-recursion is a governance failure mode" (below it) already gestured at
-without stating as a standalone principle. Sourced from a cross-agent
-prompt-design discussion (Grok/Gemini/ChatGPT), adapted rather than
-adopted wholesale — see `Admin/Auditor_Protocols.md` v0.29 Resolution
-Log for the same discussion's larger output (Mission Drift Review) and
-why its proposed evidence-tag scheme was declined as a duplicate
-vocabulary.
+Most recent: v1.15 (2026-08-30) — Derivation refresh against `Admin/Auditor_Protocols.md`
+v0.41 (was v0.24) and `Unknowns.md` v4.87 (was v4.21). Rules 9 (AP-033)
+and 10 (AP-035) added to AI Contribution Rules — a real content gap, not
+just version lag. Token ceiling note and role declaration string updated.
+Full account in `Archive/Logs/Forge_Audit_Kit_Changelog.md`.
