@@ -19,12 +19,12 @@
 | :--- | :--- |
 | Status | Exploration |
 | Challenges Subtype | Solution-Track |
-| Body Stability | Volatile — five open unknowns (RE-UNK-001 through 005) directly affect the Eden Index formula's operability; the mathematical formulation itself is explicitly labeled PROVISIONAL pending instrument specification |
+| Body Stability | Volatile — six open unknowns (RE-UNK-001 through 006) affect this file; RE-UNK-001–005 affect the Eden Index formula's operability directly (the mathematical formulation itself is explicitly labeled PROVISIONAL pending instrument specification), RE-UNK-006 is a standing speculative/observational question about post-abundance human behavior, deliberately not spec-closable |
 | Spec Gates | None cleared (G1–G2 conditional, G4–G6 cleared per 2026-06-30 audit — see Last Audit) |
 | Verification Ref | `Admin/Verification_Gates.md` |
 | Ethical Anchor | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 | Auditor | Grok + ChatGPT — dual Exploration audit, 2026-06-30 |
-| Open Unknowns | 5 (RE-UNK-001 through RE-UNK-005) |
+| Open Unknowns | 6 (RE-UNK-001 through RE-UNK-006) |
 | Active Disputes | 0 |
 | Highest Risk | RE-UNK-001 — Eden Index variables lack defined measurement protocols; index is formally specified but not yet operationally measurable. RE-UNK-005 is a direct dependency. |
 | Sidecar Link | #auditor-notes--unknowns |
@@ -156,6 +156,8 @@ As the Lazarus Forge catalog expands, this file serves as the definitive archite
 
 ### Resolution Log
 
+- 2026-08-30: **RE-UNK-006 registered — post-abundance human behavioral drift, distinct from §6.2's entropy/friction framing.** Raised directly by the human governing authority: achieving genuine abundance (the file's own stated goal) may itself shift human psychology and expectations in ways §6.2's "human variables as friction against an optimized system" framing does not model — success-induced drift rather than degradation-induced drift, and possibly the inverse effect in either direction. Explicitly registered as speculative-by-design rather than spec-closable, per the human governing authority's own framing on registration ("uncertain how this will evolve... potential paths should be anticipated") and consistent with the Challenges/ folder's "define problems, don't freeze solutions" principle. Four candidate directions logged as open branches, none asserted as likely: complacency/reduced stewardship motivation, hedonic redefinition of "enough," generational drift in resource-discipline transmission, and the inverse — abundance freeing attention toward stewardship that scarcity had crowded out. Open Unknowns 5 → 6; Body Stability note updated to distinguish the five formula-operability unknowns from this one, which is not a formula or engineering blocker at any current Tier.
+
 - 2026-08-10: **Pseudo-audit (Grok, same limits).** Findings only. (1) Open
   Unknowns **5** = RE-UNK-001–005, matches File State and `Unknowns.md`.
   (2) RE-UNK-001 and RE-UNK-005 correctly nuanced: Blocking for Tier I gate
@@ -222,9 +224,19 @@ As the Lazarus Forge catalog expands, this file serves as the definitive archite
 | Resolution Vehicle | Experiments.md — baseline characterization protocol (site-entry measurement campaign); cross-ref Admin/Environmental_Constraints.md (site characterization), Tests/Living_Waters.md ($\Omega_r$ proxy candidates), Challenges/Water.md ($W_{out}$ baselines) |
 | First Cycle | 11 |
 
----
+### RE-UNK-006
+| Field | Value |
+| :--- | :--- |
+| ID | RE-UNK-006 |
+| Description | Achieved abundance may itself shift human psychology and behavior in ways this file does not yet model. Section 6.2 (Human Drift and Governance Decay) treats human variables as a source of friction/entropy against an otherwise-optimized system — the antidote framing is governance enforcement holding a baseline steady. This entry names a distinct, arguably opposite dynamic: when scarcity is genuinely solved and people are given what they need, expectations, motivation, and the felt meaning of "enough" can shift in response to that success itself, not to system degradation. Plausible divergent directions, none asserted as likely, all worth watching for: (a) complacency or reduced stewardship motivation once the original scarcity pressure that motivated careful resource use is gone; (b) hedonic adjustment — "enough" gets redefined upward as a moving target rather than staying fixed at the level that was originally sufficient; (c) generational drift, where only those who lived through the pre-abundance state retain the original relationship to resource discipline, and that context doesn't transmit automatically; (d) the inverse — abundance freeing attention and effort toward stewardship and long-horizon thinking that scarcity itself had crowded out. These are not mutually exclusive and may operate on different timescales or coexist. No claim is made here about which, if any, will occur — this file has no basis yet for that prediction, and manufacturing one would be exactly the kind of overclaim this repository's epistemic discipline exists to catch. |
+| Subtype | Active |
+| Status | Open |
+| Blocking | Non-blocking at any current Tier. Not an engineering blocker — a standing, deliberately open question about a system-level effect that can only be observed once abundance conditions actually exist somewhere to observe. |
+| Resolution Vehicle | Deliberately not scoped to a specification task — closing this on prose alone would misrepresent it as solved. Consistent with the Challenges/ folder's own "define problems, don't freeze solutions" principle (`Discovery.md`), the intended path is sustained observation and speculative study as real Eden-adjacent conditions (or close analogs — historical post-scarcity communities, resource-abundant intentional communities, UBI/abundance-economics literature) become available to examine, not a single closure event. Cross-reference: §6.2 (adjacent but distinct — entropy/friction vs. success-induced drift); `Admin/Autonomy_Divergence_Protocol.md` (a structurally similar problem in a different domain: detecting drift in a system's own operating assumptions after conditions change); future dedicated study, if one is ever warranted, likely belongs in `Tests/` rather than as an expansion of this file. |
+| First Cycle | 11 |
+| Notation | Speculative-by-design entry — the human governing authority's own stated framing on registration: "I am uncertain of how this will evolve... addressing the potential paths is something that should be anticipated." Revisit and add to the candidate-path list above as new observations or literature surface; do not attempt to collapse it to a single predicted outcome. |
 
-## Abandoned Paths
+---
 
 | Date | Path | Why Abandoned | Reconsider? |
 |---|---|---|---|
