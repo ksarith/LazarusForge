@@ -70,6 +70,41 @@ That check has now been run. `AUDIT_HARNESS.py` line 368: `CURRENT_CYCLE = 10   
 
 ## Version History
 
+- 2026-08-30: **v1.15 — Derivation refresh, three versions stale.**
+  `Admin/Auditor_Protocols.md` had drifted from v0.24 (this kit's citation)
+  to v0.41 (actual current) — roughly 17 versions and five weeks of
+  unreflected governance work, including AP-033 and AP-035. `Unknowns.md`
+  had drifted from v4.21 to v4.87 — 66 versions. `Admin/Verification_Gates.md`
+  checked and found unchanged at v0.7, no action needed there. Beyond the
+  version strings themselves, checked AI Contribution Rules against the
+  source's current rule list and found a real content gap, not just
+  citation staleness: the kit only carried Rules 1–8; Rule 9 (AP-033,
+  Resolution Claims Require Governance Access — no contribution may imply
+  an unknown has advanced toward Resolved without confirmed sidecar
+  access) and Rule 10 (AP-035, External Pseudo-Audit Scope and Logging
+  Destination — pseudo-audits may not fabricate inventory claims, invent
+  local ID prefixes, or generate a freestanding ledger as primary record)
+  had been added to the source since v0.24 and never propagated here.
+  Condensed versions of both added. Token ceiling note (`Admin/Auditor_Protocols.md`
+  character count) updated from the stale v0.24 measurement (~157,000
+  chars) to a fresh v0.41 measurement (~146,700 chars) — smaller despite
+  more doctrine, since intervening passes trimmed duplicated version-history
+  narrative elsewhere in that file while adding real rule content. Role
+  declaration example string updated to cite v0.41. Open Unknowns count
+  (5: FAK-001, FAK-005, FAK-006, FAK-009, plus the Cycle/CURRENT_CYCLE
+  finding flagged for `Canonical_Terms.md`) checked against this file's
+  own sidecar below and confirmed still accurate — no change needed there.
+  Checked and left alone: this kit's own character count (23,727) remains
+  well over its own 12,000 Drift Indicator ceiling — pre-existing, tracked
+  as FAK-005 (Open since v1.3, ceiling parameter itself never revisited),
+  not newly introduced by this pass and out of scope for a version-derivation
+  refresh specifically. Prompted directly by the human governing authority
+  after noticing prior agents have been inconsistent about keeping
+  changelogs current alongside source-file edits generally — this kit's
+  own derivation lag is itself a clean instance of exactly that pattern,
+  caught only because it was checked directly against source rather than
+  assumed current from its own header.
+
 - 2026-07-28: **v1.14 — Governance Sidecar ID Reference gained a `CIR-`
   row** (`Admin/Computational Institutional Reasoning`), registered as
   part of renaming that file's colliding local "GOV-008" tracker to
