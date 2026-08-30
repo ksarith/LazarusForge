@@ -12,6 +12,10 @@ Split out from `Unknowns.md` 2026-07-19, following the precedent already establi
 
 **Version 4.86 — 2026-08-30. DS-001 registered in Active Disputes Registry — open in `Admin/Auditor_Protocols.md` (File State Active Disputes = 1) but missing from this file; caught by cross-agent audit verification against source. No status change, registration only. Note: this version's own migration to changelog was itself delayed until v4.87's pass — same class of process gap named in v4.84, caught this time by the human governing authority rather than internal review.**
 
+**Version 4.87 — 2026-08-30. Corrected stale "GOV-003 In Progress" line (contradicted its own Resolved 2026-08-23 status) and annotated the Trust & Integrity Dependency Cluster tree to match GOV-003/SEC-007a Resolved status already reflected elsewhere in this file. Cross-referenced against owning sidecars (Governance_Charter.md, Security_Protocols.md, Waste.md) to confirm WA-002/GOV-003/SEC-007a closures were genuine before editing — all three ratified. No doctrine changed, navigation-layer staleness only. v4.84–v4.86 migrated to `Unknowns_Changelog.md` in this pass, correcting a three-version migration lag — same class of process gap named in v4.84's own entry.**
+
+**Version 4.88 — 2026-08-30. Annotated the Safety-Critical Processing Dependency Cluster tree (WA-002, PL-001) as Resolved with residuals — same class of stale cluster-tree bug v4.87 fixed for Trust & Integrity (GOV-003/SEC-007a). Cross-referenced against Waste.md/Plastics.md before editing — both closures genuine and ratified. No doctrine changed, navigation-layer staleness only. Caught by cross-agent audit verification (Grok, new kit-sourced prompt) against source.**
+
 
 ---
 
