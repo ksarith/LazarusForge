@@ -16,6 +16,8 @@ Split out from `Unknowns.md` 2026-07-19, following the precedent already establi
 
 **Version 4.88 — 2026-08-30. Annotated the Safety-Critical Processing Dependency Cluster tree (WA-002, PL-001) as Resolved with residuals — same class of stale cluster-tree bug v4.87 fixed for Trust & Integrity (GOV-003/SEC-007a). Cross-referenced against Waste.md/Plastics.md before editing — both closures genuine and ratified. No doctrine changed, navigation-layer staleness only. Caught by cross-agent audit verification (Grok, new kit-sourced prompt) against source.**
 
+**Version 4.89 — 2026-08-30. RE-UNK-006 registered — new unknown (post-abundance human behavioral drift, `Challenges/Return_To_Eden.md`), not a correction. Speculative-by-design entry raised directly by the human governing authority; see that file's own Resolution Log for the full framing and candidate-direction list. Open Unknowns count there: 5 → 6.**
+
 
 ---
 
