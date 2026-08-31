@@ -15,8 +15,8 @@
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | `Admin/Verification_Gates.md`                                    |
 | Last Audit       | 2026-08-23 — Fork Reconciliation Track added (GOV-018 operative procedure, executing the Charter-level principles ratified the same day in `Admin/Governance_Charter.md`); prior: 2026-06-19; revised through at least 2026-07-05 internally (GMP-005/GMP-009 dated later than this header — header was not kept current, see Resolution Log); Claude — GOV-013 cross-reference added, 2026-07-16; Claude — GMP-005/GMP-009 resolved, Track A/B redefined by constitutional impact (human-directed), 2026-07-17; Claude — GMP-011/GMP-012 registered, GMP-004 GPG precedent noted, GMP-006/007/008 consolidation noted, Lessons Learned populated, Open Unknowns count corrected, GMP-003 date typo fixed (human-directed, external review reviewed and scoped), 2026-07-25; Claude — §VI Epistemic Quorum Doctrine added, GMP-003 partially mitigated, GMP-013 registered (human-directed, external synthesis reviewed and rescoped away from GOV-008 conflation), 2026-07-26; Claude — Polish pass on EQD integration per external review, GOV-008 mirror note added (human-directed), 2026-07-27; Claude — Quorum Compliance Trend subsection added to §VI, GMP-013 updated as its second schema consumer (human-directed), 2026-07-26; Claude — §VII Bootstrap Quorum Doctrine added as a candidate GOV-008 specification, drafted to satisfy the higher governance-independence bar §VI's own Non-goal clause distinguishes from EQD's epistemic-independence bar (human-directed, external draft reviewed and refined), 2026-07-31; Claude — Skeptic/Auditor review of §VII integrated: substrate-gap warning added to VII.6 (hardware diversity currently declarable, not achieved), four near-term action items recorded, GMP-011 interim rule adopted from candidate to operative, TR-GOV-001 hardware-ladder reference parked in Trajectories.md with explicit non-claim language (human-directed, external review and implementation guidance verified against Electronics.md TMR doctrine before integration), 2026-07-31; Claude — Skeptic/Auditor cold pass (independent instance, no prior session context — see `Admin/BATTERY_SEED.md`-style bundling) findings integrated: VII.1's "physical/logical isolation" ambiguity resolved to state unambiguously that the v1 bar is physical hardware diversity, logical-only does not satisfy it; VII.3.4/5 gained an explicit GMP-004 cross-reference naming the ratification-authentication gap they inherit (human-directed, cold-pass findings verified against source before integration), 2026-08-03 |
-| Auditor          | Claude — Fork Reconciliation Track added, executing GOV-018's Charter-level principles (F1–F6, claim/recognized/ratified lineage states); drafted by Grok, Skeptic-passed by ChatGPT (three revisions), human-ratified (human-directed), 2026-08-23; prior: ChatGPT — Skeptic/Auditor; Gemini — Skeptic/Auditor; Grok — Skeptic/Auditor; Claude — Synthesizer; Claude — GMP-009 cross-referenced to GOV-013 (human-directed), 2026-07-16; Claude — GMP-005/GMP-009 resolved (multi-agent proposal, human-directed), 2026-07-17; Claude — Synthesizer/Auditor, external review triage (human-directed), 2026-07-25; Claude — Synthesizer/Auditor, EQD adoption with GOV-008 conflation caught and corrected (human-directed), 2026-07-26; Claude — Synthesizer/Auditor, polish pass (human-directed), 2026-07-27; Claude — Synthesizer/Auditor, Quorum Compliance Trend added, GOV-008 conflation re-checked and explicitly guarded a second time (human-directed), 2026-07-26; Claude — Synthesizer/Auditor, §VII drafted from an external candidate spec, verified against GOV-008's actual sidecar Resolution Path (`Archive/Logs/Governance_Charter_Changelog.md`) and §VI's Non-goal clause before integration, human-directed, 2026-07-31; Claude — Synthesizer, cold-pass corrective merge (human-directed), 2026-08-03 |
-| Open Unknowns    | 10                                                                  |
+| Auditor          | Claude — GMP-010 Closure Event: §VIII Evidence-Sufficiency Gate integrated (Payment via Specification), drafted by Grok, Skeptic-passed with seven amendments by ChatGPT, revision independently re-verified by Claude, human-ratified (human-directed), 2026-08-30; prior: Claude — Fork Reconciliation Track added, executing GOV-018's Charter-level principles (F1–F6, claim/recognized/ratified lineage states); drafted by Grok, Skeptic-passed by ChatGPT (three revisions), human-ratified (human-directed), 2026-08-23; prior: ChatGPT — Skeptic/Auditor; Gemini — Skeptic/Auditor; Grok — Skeptic/Auditor; Claude — Synthesizer; Claude — GMP-009 cross-referenced to GOV-013 (human-directed), 2026-07-16; Claude — GMP-005/GMP-009 resolved (multi-agent proposal, human-directed), 2026-07-17; Claude — Synthesizer/Auditor, external review triage (human-directed), 2026-07-25; Claude — Synthesizer/Auditor, EQD adoption with GOV-008 conflation caught and corrected (human-directed), 2026-07-26; Claude — Synthesizer/Auditor, polish pass (human-directed), 2026-07-27; Claude — Synthesizer/Auditor, Quorum Compliance Trend added, GOV-008 conflation re-checked and explicitly guarded a second time (human-directed), 2026-07-26; Claude — Synthesizer/Auditor, §VII drafted from an external candidate spec, verified against GOV-008's actual sidecar Resolution Path (`Archive/Logs/Governance_Charter_Changelog.md`) and §VI's Non-goal clause before integration, human-directed, 2026-07-31; Claude — Synthesizer, cold-pass corrective merge (human-directed), 2026-08-03 |
+| Open Unknowns    | 9                                                                   |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | High                                                                |
 | Sidecar Link     | #auditor-notes--unknowns                                            |
@@ -491,7 +491,7 @@ Quorum size alone is insufficient — three reviewers converging on the same sha
 
 **Dissent & Escalation:** Minority views are appended to the record, never discarded. A Split Decision automatically escalates to human arbitration — it does not default to either advancing or blocking.
 
-**Resolution status of GMPs this doctrine touches:** Adopting this doctrine is Payment via Specification, not Payment via Implementation. No GMP entry moves to Resolved solely because this section exists — GMP-003 is strengthened but remains Open pending actual multi-reviewer practice against a real Track B proposal; GMP-010 is partially addressed (a cross-verification standard now exists) but remains Open pending tooling. Machine-readable quorum metadata for `Automation/AUDIT_HARNESS.py` is future automation scope, not drafted here — see GMP-013.
+**Resolution status of GMPs this doctrine touches:** Adopting this doctrine is Payment via Specification, not Payment via Implementation. No GMP entry moves to Resolved solely because this section exists — GMP-003 is strengthened but remains Open pending actual multi-reviewer practice against a real Track B proposal; GMP-010 is addressed by §VIII's Evidence-Sufficiency Gate (Resolved 2026-08-30) — automated cross-reference detection remains an explicit GMP-010-R1 residual and future tooling scope. Machine-readable quorum metadata for `Automation/AUDIT_HARNESS.py` is future automation scope, not drafted here — see GMP-013.
 
 ### Quorum Compliance Trend (Persistent Improvement, Not a Threshold)
 
@@ -618,6 +618,99 @@ Any registry implementing this must be append-only, versioned, and auditable und
 **What this does not do:** does not move GOV-008, VII, or CIR-GOV-001 off their current Status; does not authorize building a registry now; does not supersede VII.1–VII.4's requirements or VII.5's escalation rule, which remain the sole quorum and interim-failure doctrine. This subsection exists so a data-model sketch isn't lost, not because the quorum definition itself needed a second version.
 
 ---
+
+## VIII. Evidence-Sufficiency Gate (ESG) for Directed Approaches
+
+**Status:** Operative doctrine (Payment via Specification for GMP-010, ratified 2026-08-30).
+**Scope:** Applies to any claim, design decision, or mechanism that has been logged as a *Directed Approach* and that other files may treat as load-bearing before the claim has earned Verified / Resolved / Ratified weight.
+
+**Non-goal (binding):** This gate is not Track A/B ratification, not a substitute for primary-source verification of ratified doctrine, and not an enforcement tool. It is a minimum bar that prevents a Directed Approach from being *treated* as settled by silence.
+
+### VIII.1 Definition — Directed Approach
+
+A **Directed Approach** is a human- or agent-logged design decision, mechanism choice, or factual/mechanistic claim that:
+
+1. Has been explicitly recorded in a repository file (typically under a sidecar, Resolution Log, or dedicated "directed approach" note), **and**
+2. Has **not** yet reached Verified, Resolved, or Ratified status under the owning file's own maturity rules, **and**
+3. Is available to be cited by other files as a basis for further work.
+
+Canonical example: the 2026-07-17 CE-006 directed approach in `Architecture/Chemistry.md` (Stage E KMnO₄ bed as Cl₂ containment), later shown factually incorrect and corrected 2026-07-19.
+
+A Directed Approach carries lower epistemic weight than ratified doctrine by definition. Silence after logging does not upgrade that weight.
+
+### VIII.2 Gate Requirements
+
+Before any other file may cite a Directed Approach as settled enough to build on, all three of the following must be true:
+
+**ESG-1 — Source diversity check (core factual/mechanistic claims)**
+Where a Directed Approach contains **externally testable factual or mechanistic claims for which independent primary evidence is reasonably available**, those claims must have been checked against **at least two independent primary sources**.
+
+- **Primary source** means first-hand technical evidence appropriate to the claim, such as:
+  - manufacturer documentation for manufacturer-specific behavior,
+  - an original experimental or research publication for experimentally established behavior,
+  - applicable standards-body text for normative requirements,
+  - or an equivalent first-hand technical source.
+- Peer-reviewed secondary literature (review articles, textbooks, summaries) does **not** automatically count as primary.
+- Independence is judged by origin, not by agreement: two sources that derive from the same manufacturer datasheet count as one.
+- A single primary source is insufficient against an adversary who can plant or compromise one source.
+
+**Explicit scope limit:** ESG-1 does **not** require two external sources to validate a novel design choice, repository-generated mechanism, proprietary component with only one authoritative manufacturer source, newly synthesized interface contract, or any claim for which independent primary evidence is not reasonably available. Such claims remain provisional and follow the applicable verification/validation path of their owning file. The gate exists to prevent premature elevation of *externally testable* claims, not to create a permanent deadlock on legitimate invention.
+
+The check itself must be recorded in the Directed Approach's owning file (sidecar, Resolution Log entry, or dedicated verification note) with the sources named.
+
+**ESG-2 — Explicit provisional-status citation**
+Any cross-reference from another file into a Directed Approach must carry an explicit provisional-status marker in the citing text. Acceptable forms include:
+
+- "directed approach (provisional — ESG not yet passed)"
+- "directional decision, not a completed one" (the form already used in the recoverable CE-006 case)
+- equivalent language that cannot be read as settled fact by a later reader who has not seen the owning sidecar.
+
+Omission of the marker is itself a process defect. A citation that reads as settled fact while the target remains a Directed Approach is non-compliant with this gate.
+
+**ESG-3 — Prohibition on load-bearing reliance until gate passage**
+No file may treat a Directed Approach as **load-bearing** until ESG-1 (where applicable) and ESG-2 are satisfied **and** the owning file records gate passage.
+
+**Operational test for "load-bearing":**
+A Directed Approach is load-bearing where downstream work would materially depend on its remaining true such that changing or removing it would require substantive revision of that downstream work, invalidate a safety or control assumption, or alter a subsequent design decision.
+
+Until gate passage is recorded, downstream files may reference the Directed Approach only under ESG-2 provisional language and may not build irreversible or load-bearing structure on it.
+
+Recording gate passage requires a dated note in the owning file's sidecar or Resolution Log stating:
+
+- which independent primary sources were checked (or an explicit statement that ESG-1 does not apply because independent primary evidence is not reasonably available),
+- the date of the check,
+- who performed it,
+- and that the claims survived without material contradiction (or that the claim is novel / single-source and remains provisional).
+
+### VIII.3 What the Gate Does Not Do
+
+- It does **not** convert a Directed Approach into ratified doctrine. Gate passage only removes the prohibition on load-bearing reliance; full maturity still follows the owning file's ordinary rules.
+- It does **not** replace Track A/B process for constitutional or high-impact changes.
+- It does **not** require full multi-agent EQD quorum (§VI) for every Directed Approach. EQD remains the higher bar for governance review; ESG is the lighter bar for ordinary design decisions.
+- It does **not** itself implement mechanical enforcement. A harness flag that surfaces cross-references into non-Verified / Directed Approach targets is desirable and is explicitly deferred to tooling scope (see Residual below and GMP-013).
+
+### VIII.4 Residual and Explicit Non-Claims
+
+**GMP-010-R1 — Mechanical enforcement (Open)**
+`Automation/AUDIT_HARNESS.py` (or successor) does not yet flag cross-references into files or sidecars whose status is still Directed Approach / non-Verified. Converting the multi-agent cross-verification habit into a structural check remains Automation implementation scope. This residual does not block Payment-via-Specification closure of GMP-010; it is the same class of residual already recognized for GMP-013.
+
+**Wrong-by-design category (flagged, not invented)**
+No existing doctrine distinguishes wrong-by-accident from wrong-by-design for *external* input (a claim, a source, or an AI collaborator's output that is wrong in a way that specifically benefits some party). The 2026-07-19 adversarial hardening note recorded this as a genuine uncovered category. It is left flagged rather than solved speculatively; a future unknown may be opened if the pattern recurs.
+
+**Risk and Priority fields on GMP-010 remain High / Major.** Specification closure is not a de-escalation (Resolution_Methodology Pattern 6 / 8).
+
+### VIII.5 Relationship to Existing Doctrine
+
+- Strengthens, does not replace, the provisional-status discipline already demonstrated in the recoverable CE-006 case.
+- Aligns with the evidence-diversity-over-raw-confidence principle in `Admin/Autonomy_Divergence_Protocol.md` §4, applying the same logic to sourcing of Directed Approaches.
+- Complements EQD (§VI): EQD raises the quality of *governance review*; ESG prevents *premature load-bearing reliance* on unverified design decisions.
+- Does not touch GOV-008 or §VII; the Non-goal clauses of those sections remain intact.
+
+*Drafted by Grok as a Closure Proposal (Revision 1 addressed seven amendments from an independent ChatGPT Skeptic pass: closure-status conflation, primary-source definition, ESG-1 scope limit for novel claims, an operational "load-bearing" test, the required §VI concurrent edit, preserving the wrong-by-design flag, and preserving GMP-010-R1). Revision independently re-verified by Claude against all seven requested amendments before integration — a distinct pass from ChatGPT's amendment-request review, per the AP-004/AP-013 precedent's own stated lesson that these are related but separate checks. Human-ratified 2026-08-30.*
+
+---
+
+
 
 ## Lessons Learned
 
@@ -1062,14 +1155,14 @@ own entries for the classification applied.
 
 | Field         | Value                                      |
 |---------------|--------------------------------------------|
-| Status        | Open                                       |
+| Status        | Resolved — Payment via Specification       |
 | Risk          | High                                       |
 | Priority      | Major                                      |
 | Type          | Governance / Epistemic                     |
 | Blocking      | No                                         |
 | Owner         | `Admin/Governance_Migration_Protocol.md`   |
 | First Logged  | 2026-07-19                                 |
-| Last Reviewed | 2026-07-19                                 |
+| Last Reviewed | 2026-08-30                                 |
 
 **Description:** This repository has no defined gate between a human-directed
 approach being logged (e.g., `Architecture/Chemistry.md` CE-006's 2026-07-17
@@ -1145,6 +1238,24 @@ against an adversary who can plant or compromise a single source:
 grounded in the CE-006 case as a real, not hypothetical, instance of the
 failure mode. Logged rather than left as conversational insight, per human
 governing authority's direction that this is worth tracking formally.*
+
+**Closure Event (2026-08-30):**
+- **Unknown:** GMP-010
+- **Proposed status:** Resolved
+- **Payment type:** Specification
+- **Basis:** §VIII Evidence-Sufficiency Gate (`Admin/Governance_Migration_Protocol.md`, integrated 2026-08-30) lifts the Resolution Path and adversarial-hardening addendum above into dedicated operative doctrine, with amendments beyond the original sidecar text: primary-source definition tightened to exclude peer-reviewed secondary literature from automatically counting as primary; ESG-1's two-source requirement explicitly scoped to externally testable claims where independent primary evidence is reasonably available, with novel/proprietary/repository-generated claims explicitly exempted from the requirement rather than deadlocked by it; "load-bearing" given a concrete three-part operational test; the wrong-by-design category preserved as flagged-not-invented per the original addendum; GMP-010-R1 preserved as the mechanical-enforcement residual. §VI's pre-existing "remains Open pending tooling" sentence rewritten in the same pass so it does not contradict this closure.
+- **Proposer:** Grok — Synthesizer, 2026-08-30 (drafted the original integration proposal; produced Revision 1 addressing seven amendments requested in a prior ChatGPT Skeptic pass)
+- **Verifier:** Claude — Verifier, 2026-08-30. Independent verification pass performed against the revised text, distinct from ChatGPT's amendment-request review, checking each of the seven requested amendments was actually implemented (not merely claimed) and cross-checking every factual claim in the proposal against live source: §VII/Lessons Learned placement boundary confirmed with no numbering collision; Description/Why It Matters retained verbatim against the pre-closure sidecar; the CE-006 canonical example's dates, mechanism, and "found by chance via manufacturer datasheet" account confirmed exactly against `Architecture/Chemistry.md`'s own record; the `Admin/Autonomy_Divergence_Protocol.md` §4.2 cross-reference confirmed to exist and be correctly titled; the Resolution_Methodology Pattern 6/8 "specification closure is not a de-escalation" citation confirmed accurate and correctly followed (Risk/Priority unchanged, matching the GOV-003/PL-001/WA-002/GR-003 closure precedent); the GMP-013 "same class of residual" claim confirmed consistent with GMP-013's own Resolution Path. Verdict: **Pass — Ready for Human Ratification.** No substantive defect found; all seven ChatGPT-requested amendments confirmed correctly implemented in the revised §VIII text.
+- **Independence attestation:** Grok (Proposer), ChatGPT (pre-integration Skeptic pass on the original draft, requested seven amendments), and Claude (Verifier of the revised draft against those seven amendments) are three different agent instances. Per the AP-004 Closure Event precedent's own stated lesson, the independent-review cycle that produces amendments and the independent-verification cycle that clears the Closure Event are related but distinct passes — ChatGPT's role here was the former, Claude's the latter, kept separate rather than letting one stand in for both.
+- **Human ratification:** **Required** — GMP-010 is Risk: High, triggering Mandatory Human Ratification under `Admin/Auditor_Protocols.md`'s Unknown Closure Authority ("Risk = Critical/High").
+- **Recording location:** this sidecar entry (primary, complete); `Unknowns.md` Active Index entry removed, Audit Trail note added, same pass.
+- **Human ratification record:** Ratified by Human Governing Authority, 2026-08-30 ("I am ready to ratify the amended draft"). Rationale: the amended §VIII correctly incorporates all seven ChatGPT-requested amendments, most importantly resolving the original draft's internal contradiction (a sidecar marked Resolved while the accompanying text said "does not self-close, ready for ratification") and scoping the two-source evidence requirement so it cannot be weaponized against legitimate novel invention. Proposer (Grok) and Verifier (Claude) findings both reviewed; no unresolved objection. Accepted risk: none identified beyond the disclosed GMP-010-R1 residual (mechanical enforcement, Automation scope) and the deliberately-flagged-not-solved wrong-by-design category.
+
+**Resolution:** Closed 2026-08-30 via §VIII Evidence-Sufficiency Gate, integrated the same day into `Admin/Governance_Migration_Protocol.md`. Full Closure Event above: Grok proposed (with a self-produced Revision 1 addressing seven amendments requested by ChatGPT's prior Skeptic pass), Claude independently verified the revision against those seven amendments (Pass, ready for ratification), the Human Governing Authority ratified.
+
+**Residual:** GMP-010-R1 — mechanical harness flag for cross-references into non-Verified / Directed Approach targets remains Open (Automation scope; same class as GMP-013). Risk and Priority fields intentionally unchanged per Resolution_Methodology Pattern 6/8 — specification closure is not a de-escalation.
+
+**Lessons Learned:** This is the first GMP-file unknown closed under the AP-013 Unknown Closure Authority doctrine, and the first Closure Event where the human governing authority's own ratification message doubled as the trigger for a from-scratch independent Verifier pass rather than a pre-existing one — worth naming, since it confirms the closure discipline holds even when a human has already expressed readiness to ratify: readiness to ratify is not itself the Verifier pass, and the two were kept genuinely separate here rather than treating the human's confidence as a substitute for the missing independent check.
 
 ---
 

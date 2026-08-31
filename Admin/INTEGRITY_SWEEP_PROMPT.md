@@ -1,5 +1,5 @@
 # INTEGRITY_SWEEP_PROMPT.md
-**Version 1.0**
+**Version 1.0.1**
 
 ## File State
 
@@ -47,7 +47,7 @@ Run a LazarusForge repository integrity audit against the live canonical repo an
 Canonical base (use for all raw fetches unless checking the legacy alias once):
 https://raw.githubusercontent.com/ksarith/LazarusForge/refs/heads/main/
 
-Legacy alias to check once for identity (not Major if content is the same family):
+Legacy alias to check once for identity (not Major if content is the same family; this is a historical repo name, not a version of the current project):
 https://raw.githubusercontent.com/ksarith/LazarusForgeV0/refs/heads/main/Routing.md
 
 Calendar window for "last 3 days": today and the two prior calendar days (use the current date when the automation runs).
@@ -60,7 +60,7 @@ Follow the repo's own rules where possible:
 5. Check Active Disputes and any open unknown IDs declared in File State against Unknowns.md Active Index / Active Disputes Registry (parity gaps are Major if an open dispute or open sidecar ID is missing from Unknowns).
 6. For any file's File State "Open Unknowns" count, don't just trust the header number — count the sidecar's own non-Resolved entries directly (Open + In Progress) and compare. A mismatch here is a real finding even when every individual ID is correctly registered elsewhere — it means the count itself is stale, not that anything is missing.
 7. For any file with its own "Last Reviewed"/"Last Audit" field, check that field's date against the newest dated entry in the file's own body (Current Lessons, Resolution Log, etc.). A body entry dated more recently than the header is a header-lag finding, worth surfacing even when nothing else is wrong.
-8. Check Unknowns.md's own Dependency Cluster trees for the same class of staleness: an ID drawn as a live blocker in a cluster diagram while the Active Index shows it Resolved is a real finding (cross-reference the owning file before reporting — confirm the closure is genuine and ratified, not just that the Active Index says so).
+8. Check Unknowns.md's own Dependency Cluster trees for the same class of staleness: an ID drawn as a live blocker in a cluster diagram while the Active Index shows it Resolved is a real finding (cross-reference the owning file before reporting — confirm the closure is genuine and ratified, not just that the Active Index says so). Never report a cluster ID as "live" or "resolved" from the cluster tree text alone — always open the owning sidecar (or Unknowns Active Index status) before grading.
 9. Note freshness strings (Routing Last updated, Unknowns version, Discovery Last updated/Version if any).
 10. List what changed in the last 3 days (GitHub commits API since window start if available; otherwise dated body text in opened files).
 11. List Blocking/Critical unknowns from Unknowns.md watches; only claim sidecar parity for files actually opened.
@@ -94,4 +94,5 @@ End with a one-paragraph bottom line: constitutional clean? biggest real finding
 
 ## Resolution Log
 
+- 2026-08-30: v1.0.1 — two small hardening edits, both Grok-proposed after reviewing v1.0 against a live run, both accepted without modification: (1) the V0 legacy-alias line now glosses explicitly that it's a historical repo name, not a project version, to prevent a future reader from misreading the identity check as a version check; (2) step 8's Dependency Cluster staleness check gained an explicit instruction never to grade an ID as live/resolved from the cluster tree text alone — always open the owning sidecar or Unknowns Active Index first. Grok's third suggestion (promoting Status from Draft to "Active — Operational Template") held pending confirmation the automation is actually pulling from this file rather than a hand-copied config; not applied here.
 - 2026-08-30: v1.0 — first draft, human-directed. Prompt text itself was not newly written here; it was iteratively refined across several live morning-audit sessions run through an external automation surface (Grok), with three rounds of correction made directly by the human governing authority in response to real findings from those runs: (1) point step 1 at `Admin/Forge_Audit_Kit.md` rather than fetching `Admin/Auditor_Protocols.md`/`Admin/File_Template.md` directly, cutting daily fetch volume by roughly 6x; (2) step 6, a File-State-count-vs-sidecar cross-check, added after a real RIP Open Unknowns miscount (9 claimed vs 8 actual) that ID-presence-only parity checking would not have caught; (3) step 7, a header-vs-body freshness check, added after a real Progress_Log Last Reviewed lag against its own body. Step 8 (Dependency Cluster staleness) added in this draft based on a fourth live finding the same day this file was created — a kit-sourced audit run correctly caught a second instance of the same cluster-tree staleness class already fixed once in `Unknowns.md` v4.87 (Trust & Integrity: GOV-003/SEC-007a) recurring in a different cluster (Safety-Critical: WA-002/PL-001) — worth naming as its own repeatable check rather than treating each recurrence as a one-off. This file's own existence is itself a response to a stated operational constraint: manual copy-paste into the automation's config has a roughly 100KB device-side limit, and the prompt text is well under that, but keeping it live only inside the automation's own config screen meant it couldn't be diffed, versioned, or recovered independently — the same class of problem this repository already solved for doctrine files with a git history, applied here to an operational asset instead.
