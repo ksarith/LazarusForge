@@ -3,7 +3,7 @@
 
 **Full version history in `Unknowns_Changelog.md` (2026-07-19 cleanup pass, following the precedent set by `Archive/Logs/AUDIT_HARNESS_CHANGELOG.md` and `Archive/Logs/Forge_Audit_Kit_Changelog.md`; scrubbed to current-version-only 2026-07-28 — the "current plus last four in full" window was itself compressed further, since the Audit Trail below now carries the compressed record for every version back to v1.0, and the changelog carries full text for all of them. This block now keeps only the current version.)**
 
-**Version 4.90 — 2026-08-30. GMP-010 Resolved (Payment via Specification) — §VIII Evidence-Sufficiency Gate integrated into `Admin/Governance_Migration_Protocol.md`. Removed from Active Index, added to Resolved pointer list. First GMP-file unknown closed under the AP-013 Unknown Closure Authority doctrine: Grok (Proposer) drafted, ChatGPT's Skeptic pass requested seven amendments, Grok revised, Claude (Verifier) independently confirmed all seven amendments correctly implemented before Human Ratification — Mandatory per Risk: High. Full Closure Event recorded in `Governance_Migration_Protocol.md`'s own GMP-010 sidecar entry.**
+**Version 4.92 — 2026-08-31. GMP-006 Resolved (Payment via Specification) — §III.A Track B Amendment Lifecycle (State Machine) integrated into `Admin/Governance_Migration_Protocol.md`. Removed from Active Index, added to Resolved pointer list. The most extensively reviewed Closure Event to date: two Grok drafting rounds, two ChatGPT Skeptic passes, two Claude Verifier rounds — the second Verifier round catching a real Phase 2→Phase 3 authority overreach (the reviewer was granted an advancement power §III never actually establishes) plus two stale cross-references that would have contradicted the closure. Human-ratified though not Mandatory at Risk: Medium. GMP-007 now specifiable against a real Withdrawn state; GMP-008 remains cadence-deferred. Full Closure Event recorded in `Governance_Migration_Protocol.md`'s own GMP-006 sidecar entry.**
 
 ---
 
@@ -242,7 +242,7 @@ GH-009 (Emergent heuristic conflict — N² interaction scaling)
 | SEC-011 | Long-duration cryptographic continuity undefined — entropy exhaustion, operator succession, algorithm migration at Leviathan-class timescales — Design Lineage: PAT-004 (Observe status; 2-cycle Expiry Watch) | `Admin/Security_Protocols.md` | Open | — | Major |
 | SEC-012 | Asymmetric cryptographic execution overhead on resource-constrained salvaged silicon (8/16-bit MCUs) — risk of localized DoS or protocol bypass under Logic-Zero recovery; cross-ref Operations/Electronics.md EL-006 | `Admin/Security_Protocols.md` | Open | — | Major |
 
-*The following are Resolved and do not appear in this active index per Size Management Rule 2 — full closure detail is in each owning file's own sidecar/Resolution Log: EC-003, EC-004, EC-005, EC-007, EC-008, EC-009, EC-016 (all `Admin/Ethical_Constraints.md`, 2026-08-22), GOV-003 (`Admin/Governance_Charter.md`, 2026-08-23), GOV-014 (same file, 2026-08-20), GOV-015 (same file, 2026-08-23), GOV-016 (same file, 2026-08-20), GOV-018 (same file + `Admin/Governance_Migration_Protocol.md`, 2026-08-23), GOV-020 (same file, 2026-08-20), GOV-022 (same file, 2026-08-21), SEC-002 (`Admin/Security_Protocols.md`, 2026-08-22), SEC-007a (same file, 2026-08-22), SEC-009 (same file, 2026-08-22), GMP-010 (`Admin/Governance_Migration_Protocol.md`, 2026-08-30, §VIII Evidence-Sufficiency Gate). See Audit Trail in `Archive/Logs/Unknowns_Changelog.md` for the brief resolution note on each.*
+*The following are Resolved and do not appear in this active index per Size Management Rule 2 — full closure detail is in each owning file's own sidecar/Resolution Log: EC-003, EC-004, EC-005, EC-007, EC-008, EC-009, EC-016 (all `Admin/Ethical_Constraints.md`, 2026-08-22), GOV-003 (`Admin/Governance_Charter.md`, 2026-08-23), GOV-014 (same file, 2026-08-20), GOV-015 (same file, 2026-08-23), GOV-016 (same file, 2026-08-20), GOV-018 (same file + `Admin/Governance_Migration_Protocol.md`, 2026-08-23), GOV-020 (same file, 2026-08-20), GOV-022 (same file, 2026-08-21), SEC-002 (`Admin/Security_Protocols.md`, 2026-08-22), SEC-007a (same file, 2026-08-22), SEC-009 (same file, 2026-08-22), GMP-010 (`Admin/Governance_Migration_Protocol.md`, 2026-08-30, §VIII Evidence-Sufficiency Gate), GI-004 (`Operations/Gate_01_Intake.md`, 2026-08-31, §7.1 Minimum Intake Record superset schema), GI-006 (same file, 2026-08-31, §7.3 Chain-of-Custody Integrity — joint Closure Event with GI-004), GMP-006 (`Admin/Governance_Migration_Protocol.md`, 2026-08-31, §III.A Track B Amendment Lifecycle — State Machine). See Audit Trail in `Archive/Logs/Unknowns_Changelog.md` for the brief resolution note on each.*
 
 ### Governance & Verification
 
@@ -593,9 +593,7 @@ GH-009 (Emergent heuristic conflict — N² interaction scaling)
 | GI-001 | Reference database content and coverage not defined | `Operations/Gate_01_Intake.md` | Open | — | Major |
 | GI-002 | Energetic material discharge doctrine not defined | `Operations/Gate_01_Intake.md` | Open | — | Critical |
 | GI-003 | Augmented hazard detection capability not specified | `Operations/Gate_01_Intake.md` | Open | — | Critical |
-| GI-004 | Intake tagging schema not cross-validated against grain system | `Operations/Gate_01_Intake.md` | Open | — | Major |
 | GI-005 | Pre-Intake protocol for special handling not defined | `Operations/Gate_01_Intake.md` | Open | — | Major |
-| GI-006 | Intake chain-of-custody integrity not defined | `Operations/Gate_01_Intake.md` | Open | — | Major |
 | GI-007 | Digital contamination and hostile firmware handling not defined | `Operations/Gate_01_Intake.md` | Open | — | Critical |
 
 ### Network
@@ -693,7 +691,6 @@ GH-009 (Emergent heuristic conflict — N² interaction scaling)
 |---|---|---|---|---|---|
 | GMP-003 | Adversarial review underspecified at v0 single-contributor | `Admin/Governance_Migration_Protocol.md` | Open | — | Major |
 | GMP-004 | Ratification authentication gap mirrors GOV-006 | `Admin/Governance_Migration_Protocol.md` | Open | — | Major |
-| GMP-006 | Concurrent amendment handling undefined | `Admin/Governance_Migration_Protocol.md` | Open | — | Major |
 | GMP-007 | Amendment withdrawal procedure undefined | `Admin/Governance_Migration_Protocol.md` | Open | — | Minor |
 | GMP-002 | Canonical Governance Ownership transfer not yet recorded in Charter | `Admin/Governance_Migration_Protocol.md` | Open | — | Minor |
 | GMP-008 | Stale proposal expiration policy undefined | `Admin/Governance_Migration_Protocol.md` | Open | — | Minor |
