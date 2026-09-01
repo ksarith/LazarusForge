@@ -14,9 +14,9 @@
 | Body Stability   | Volatile                                                            |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | `Admin/Verification_Gates.md`                                    |
-| Last Audit       | 2026-08-23 — Fork Reconciliation Track added (GOV-018 operative procedure, executing the Charter-level principles ratified the same day in `Admin/Governance_Charter.md`); prior: 2026-06-19; revised through at least 2026-07-05 internally (GMP-005/GMP-009 dated later than this header — header was not kept current, see Resolution Log); Claude — GOV-013 cross-reference added, 2026-07-16; Claude — GMP-005/GMP-009 resolved, Track A/B redefined by constitutional impact (human-directed), 2026-07-17; Claude — GMP-011/GMP-012 registered, GMP-004 GPG precedent noted, GMP-006/007/008 consolidation noted, Lessons Learned populated, Open Unknowns count corrected, GMP-003 date typo fixed (human-directed, external review reviewed and scoped), 2026-07-25; Claude — §VI Epistemic Quorum Doctrine added, GMP-003 partially mitigated, GMP-013 registered (human-directed, external synthesis reviewed and rescoped away from GOV-008 conflation), 2026-07-26; Claude — Polish pass on EQD integration per external review, GOV-008 mirror note added (human-directed), 2026-07-27; Claude — Quorum Compliance Trend subsection added to §VI, GMP-013 updated as its second schema consumer (human-directed), 2026-07-26; Claude — §VII Bootstrap Quorum Doctrine added as a candidate GOV-008 specification, drafted to satisfy the higher governance-independence bar §VI's own Non-goal clause distinguishes from EQD's epistemic-independence bar (human-directed, external draft reviewed and refined), 2026-07-31; Claude — Skeptic/Auditor review of §VII integrated: substrate-gap warning added to VII.6 (hardware diversity currently declarable, not achieved), four near-term action items recorded, GMP-011 interim rule adopted from candidate to operative, TR-GOV-001 hardware-ladder reference parked in Trajectories.md with explicit non-claim language (human-directed, external review and implementation guidance verified against Electronics.md TMR doctrine before integration), 2026-07-31; Claude — Skeptic/Auditor cold pass (independent instance, no prior session context — see `Admin/BATTERY_SEED.md`-style bundling) findings integrated: VII.1's "physical/logical isolation" ambiguity resolved to state unambiguously that the v1 bar is physical hardware diversity, logical-only does not satisfy it; VII.3.4/5 gained an explicit GMP-004 cross-reference naming the ratification-authentication gap they inherit (human-directed, cold-pass findings verified against source before integration), 2026-08-03 |
-| Auditor          | Claude — GMP-010 Closure Event: §VIII Evidence-Sufficiency Gate integrated (Payment via Specification), drafted by Grok, Skeptic-passed with seven amendments by ChatGPT, revision independently re-verified by Claude, human-ratified (human-directed), 2026-08-30; prior: Claude — Fork Reconciliation Track added, executing GOV-018's Charter-level principles (F1–F6, claim/recognized/ratified lineage states); drafted by Grok, Skeptic-passed by ChatGPT (three revisions), human-ratified (human-directed), 2026-08-23; prior: ChatGPT — Skeptic/Auditor; Gemini — Skeptic/Auditor; Grok — Skeptic/Auditor; Claude — Synthesizer; Claude — GMP-009 cross-referenced to GOV-013 (human-directed), 2026-07-16; Claude — GMP-005/GMP-009 resolved (multi-agent proposal, human-directed), 2026-07-17; Claude — Synthesizer/Auditor, external review triage (human-directed), 2026-07-25; Claude — Synthesizer/Auditor, EQD adoption with GOV-008 conflation caught and corrected (human-directed), 2026-07-26; Claude — Synthesizer/Auditor, polish pass (human-directed), 2026-07-27; Claude — Synthesizer/Auditor, Quorum Compliance Trend added, GOV-008 conflation re-checked and explicitly guarded a second time (human-directed), 2026-07-26; Claude — Synthesizer/Auditor, §VII drafted from an external candidate spec, verified against GOV-008's actual sidecar Resolution Path (`Archive/Logs/Governance_Charter_Changelog.md`) and §VI's Non-goal clause before integration, human-directed, 2026-07-31; Claude — Synthesizer, cold-pass corrective merge (human-directed), 2026-08-03 |
-| Open Unknowns    | 9                                                                   |
+| Last Audit       | 2026-08-31 — GMP-006 Closure Event: §III.A Track B Amendment Lifecycle (State Machine) integrated (Payment via Specification); prior: 2026-08-23 — Fork Reconciliation Track added (GOV-018 operative procedure, executing the Charter-level principles ratified the same day in `Admin/Governance_Charter.md`); prior: 2026-06-19; revised through at least 2026-07-05 internally (GMP-005/GMP-009 dated later than this header — header was not kept current, see Resolution Log); Claude — GOV-013 cross-reference added, 2026-07-16; Claude — GMP-005/GMP-009 resolved, Track A/B redefined by constitutional impact (human-directed), 2026-07-17; Claude — GMP-011/GMP-012 registered, GMP-004 GPG precedent noted, GMP-006/007/008 consolidation noted, Lessons Learned populated, Open Unknowns count corrected, GMP-003 date typo fixed (human-directed, external review reviewed and scoped), 2026-07-25; Claude — §VI Epistemic Quorum Doctrine added, GMP-003 partially mitigated, GMP-013 registered (human-directed, external synthesis reviewed and rescoped away from GOV-008 conflation), 2026-07-26; Claude — Polish pass on EQD integration per external review, GOV-008 mirror note added (human-directed), 2026-07-27; Claude — Quorum Compliance Trend subsection added to §VI, GMP-013 updated as its second schema consumer (human-directed), 2026-07-26; Claude — §VII Bootstrap Quorum Doctrine added as a candidate GOV-008 specification, drafted to satisfy the higher governance-independence bar §VI's own Non-goal clause distinguishes from EQD's epistemic-independence bar (human-directed, external draft reviewed and refined), 2026-07-31; Claude — Skeptic/Auditor review of §VII integrated: substrate-gap warning added to VII.6 (hardware diversity currently declarable, not achieved), four near-term action items recorded, GMP-011 interim rule adopted from candidate to operative, TR-GOV-001 hardware-ladder reference parked in Trajectories.md with explicit non-claim language (human-directed, external review and implementation guidance verified against Electronics.md TMR doctrine before integration), 2026-07-31; Claude — Skeptic/Auditor cold pass (independent instance, no prior session context — see `Admin/BATTERY_SEED.md`-style bundling) findings integrated: VII.1's "physical/logical isolation" ambiguity resolved to state unambiguously that the v1 bar is physical hardware diversity, logical-only does not satisfy it; VII.3.4/5 gained an explicit GMP-004 cross-reference naming the ratification-authentication gap they inherit (human-directed, cold-pass findings verified against source before integration), 2026-08-03 |
+| Auditor          | Claude — GMP-006 Closure Event: §III.A Track B Amendment Lifecycle (State Machine) integrated (Payment via Specification), drafted by Grok across two revisions, Skeptic-passed by ChatGPT across two passes (Conditional Pass then Pass), independently re-verified by Claude across two rounds (caught a real Phase 2→Phase 3 authority overreach not inherited from §III, plus two stale cross-references), human-ratified (human-directed), 2026-08-31; prior: Claude — GMP-010 Closure Event: §VIII Evidence-Sufficiency Gate integrated (Payment via Specification), drafted by Grok, Skeptic-passed with seven amendments by ChatGPT, revision independently re-verified by Claude, human-ratified (human-directed), 2026-08-30; prior: Claude — Fork Reconciliation Track added, executing GOV-018's Charter-level principles (F1–F6, claim/recognized/ratified lineage states); drafted by Grok, Skeptic-passed by ChatGPT (three revisions), human-ratified (human-directed), 2026-08-23; prior: ChatGPT — Skeptic/Auditor; Gemini — Skeptic/Auditor; Grok — Skeptic/Auditor; Claude — Synthesizer; Claude — GMP-009 cross-referenced to GOV-013 (human-directed), 2026-07-16; Claude — GMP-005/GMP-009 resolved (multi-agent proposal, human-directed), 2026-07-17; Claude — Synthesizer/Auditor, external review triage (human-directed), 2026-07-25; Claude — Synthesizer/Auditor, EQD adoption with GOV-008 conflation caught and corrected (human-directed), 2026-07-26; Claude — Synthesizer/Auditor, polish pass (human-directed), 2026-07-27; Claude — Synthesizer/Auditor, Quorum Compliance Trend added, GOV-008 conflation re-checked and explicitly guarded a second time (human-directed), 2026-07-26; Claude — Synthesizer/Auditor, §VII drafted from an external candidate spec, verified against GOV-008's actual sidecar Resolution Path (`Archive/Logs/Governance_Charter_Changelog.md`) and §VI's Non-goal clause before integration, human-directed, 2026-07-31; Claude — Synthesizer, cold-pass corrective merge (human-directed), 2026-08-03 |
+| Open Unknowns    | 8                                                                   |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | High                                                                |
 | Sidecar Link     | #auditor-notes--unknowns                                            |
@@ -53,7 +53,7 @@
 - Auditor operational behavior during migration review
   (→ `Admin/Auditor_Protocols.md`)
 - Amendment withdrawal procedure (→ GMP-007, pending)
-- Concurrent amendment handling (→ GMP-006, pending)
+- Concurrent amendment handling — Resolved 2026-08-31, §III.A Track B Amendment Lifecycle (→ GMP-006)
 - Proposal expiration policy (→ GMP-008, pending)
 
 ---
@@ -392,6 +392,177 @@ After ratification, the amendment is recorded and committed.
 
 5. `Unknowns.md` updated if the amendment resolves or affects any
    open cross-module unknowns
+
+## III.A Track B Amendment Lifecycle — State Machine
+
+**Status:** Operative doctrine (Payment via Specification for GMP-006, ratified 2026-08-31).
+**Closure target:** Serialization of concurrent Track B proposals.
+**Non-goal:** Does not fully specify withdrawal (GMP-007), expiration
+(GMP-008), or supersession doctrine; those remain sibling residuals or
+deferred work. Does not grant adversarial reviewers new terminal or
+advancement authority beyond what §III already states.
+
+### III.A.1 Core invariant — Serialization corridor
+
+1. Multiple Track B proposals may exist in **Draft** or **Phase 1**.
+2. At most one Track B proposal may occupy **Phase 2 or Phase 3**.
+3. A proposal may **not** enter Phase 2 while another occupies Phase 2
+   or Phase 3.
+4. Serialization prevents concurrent Track B proposals from bypassing
+   interaction review. Each subsequent proposal remains subject to the
+   existing Phase 1 cross-reference map and failure-mode analysis,
+   **including consideration of already-Recorded amendments**.
+   Serialization does **not** eliminate sequential interaction effects
+   after ratification.
+5. A proposal that requires substantive combination with another must be
+   consolidated into a **new** package before Phase 2, or handled through
+   explicit supersession doctrine (not fully specified here).
+
+**Serialization gate:** No transition into Phase 2 is legal unless the
+Phase 2/3 corridor is unoccupied. The serialization corridor is a
+repository-wide invariant for Track B proposals, not merely a property
+of a single proposal's own state record.
+
+**Corridor occupied — Phase 1 complete:**
+If the serialization corridor is occupied when a Phase 1 package becomes
+complete, the proposal **remains in Phase 1**. Completion does not create
+an automatic transition, reservation, priority claim, queue position, or
+expiration event. The proposal may enter Phase 2 only when the
+serialization gate is subsequently clear **and** the ordinary Phase 1 →
+Phase 2 requirements remain satisfied (complete package, reviewer
+assigned).
+
+### III.A.2 States
+
+| State | Meaning | Terminal? |
+|-------|---------|-----------|
+| Draft | Informal work product; not yet a formal Track B proposal | No |
+| Phase 1 | Formal assembly per §III Phase 1 | No |
+| Phase 2 | Adversarial review per §III Phase 2 in progress | No |
+| Phase 3 | Before Human Governing Authority for ratification (§III Phase 3) | No |
+| Recorded | Human-ratified and Phase 4 recording requirements complete | Yes |
+| Returned | Sent back for rework | No |
+| Rejected | Terminal negative decision | Yes |
+| Withdrawn | Terminated before Recorded (detail → GMP-007) | Yes |
+| Expired | Stalled past policy limit (detail → GMP-008) | Yes |
+| Superseded | Replaced by a later proposal (full doctrine deferred) | Yes |
+
+This machine sits **on top of** existing §III Phase 1–4 requirements; it
+does not replace them. **Corridor release:** Phase 4 recording does not
+itself occupy the Phase 2/3 serialization corridor; however, a proposal
+remains unavailable for concurrent Track B processing until its
+transition to Recorded is complete — the corridor is released upon
+Recorded, not upon Human ratification alone.
+
+### III.A.3 Transitions
+
+```
+Draft ──assembly complete──► Phase 1
+Draft ──withdraw──► Withdrawn
+Draft ──expire──► Expired
+
+Phase 1 ──package complete
+        + reviewer assigned
+        + serialization gate clear──► Phase 2
+Phase 1 ──(gate occupied)──► remains Phase 1
+Phase 1 ──withdraw──► Withdrawn
+Phase 1 ──expire──► Expired
+
+Phase 2 ──review complete without blocking return;
+        package presented to Human Authority──► Phase 3
+Phase 2 ──Return for rework──► Returned
+Phase 2 ──recommend rejection
+        (out-of-scope / hard-floor)──► (see Rejection authority)
+Phase 2 ──withdraw──► Withdrawn
+Phase 2 ──expire──► Expired
+
+Phase 3 ──Human ratify + Phase 4 records complete──► Recorded
+Phase 3 ──Human return──► Returned
+Phase 3 ──Human reject──► Rejected
+Phase 3 ──withdraw──► Withdrawn   [Human Authority only]
+
+Returned ──rework complete──► Phase 1
+Returned ──withdraw──► Withdrawn
+Returned ──expire──► Expired
+```
+
+**Phase 2 → Phase 3 (authority inherited from §III, not newly granted):**
+Adversarial review is a **precondition** for human ratification (§III:
+"Before human ratification, the proposal must pass adversarial review").
+The reviewer does **not** advance the proposal into Phase 3. When review
+completes without a blocking return, the engineer/assembler **presents**
+the package to the Human Governing Authority; Phase 3 begins when that
+presentation is made under §III Phase 3. The reviewer's successful
+review makes the proposal *eligible* for Phase 3; it does not execute
+the transition.
+
+**Forbidden (examples):**
+Phase 2/3 → Draft; Recorded → any other state (further change is a new
+proposal); terminal → Phase 2/3 without restart; any agent-only path
+into Recorded; Phase 1 → Phase 2 while corridor occupied.
+
+### III.A.4 Authority
+
+| Action | Authority |
+|--------|-----------|
+| Draft → Phase 1 | Engineer / assembler |
+| Phase 1 → Phase 2 | Engineer + assigned reviewer, **and** serialization gate clear |
+| Phase 2 review outcome | Adversarial reviewer per §III mandate (attempt to break; return for rework; or complete review without blocking return) |
+| Phase 2 → Phase 3 | **Not a reviewer power.** Eligibility after non-blocking review complete; transition occurs when the package is presented to Human Governing Authority under §III Phase 3 |
+| Final Rejected | Human Governing Authority (reviewer may recommend rejection under existing hard-floor/scope rules; this section grants no new terminal rejection power) |
+| Phase 3 → Recorded / Returned / Rejected | **Human Governing Authority only** (Recorded also requires §III Phase 4 records) |
+| Withdraw before Phase 3 | Proposer (own proposal) or Human Authority |
+| Withdraw in Phase 3 | **Human Authority only** |
+| Expire | GMP-008 or Human Authority (not fully specified here) |
+| Supersede | Not fully specified. Naming an earlier proposal as intended-superseded is allowed when filing; **final** supersession of a proposal in Phase 2/3 requires the authority that controls that stage. Unilateral engineer supersession of another's Phase 2/3 proposal is forbidden. |
+
+### III.A.5 History — append-only
+
+State transitions are append-only. Prior states, reviews, rationales, and
+proposal identifiers are not erased. Withdrawn, Expired, Rejected, and
+Superseded proposals remain in the audit trail.
+
+### III.A.6 Deadlock / starvation (design note)
+
+A proposal may remain in Phase 3 pending Human Authority action while
+other proposals accumulate in Phase 1. That is **not** a state-machine
+deadlock: the corridor is occupied by design until Human Authority
+disposes of the Phase 3 item (ratify → Recorded, return, reject, or
+withdraw). Starvation of Phase 1 proposals is a **human-attention**
+matter, not resolved by automatic preemption or expiration in this
+section. No existing governance doctrine imposes a time-bound obligation
+on Human Authority's ratification decisions as of this writing (checked
+against `Admin/Governance_Charter.md` and this file directly) — if such
+an obligation is adopted later, it must be reconciled with this design
+note explicitly rather than silently overriding it. GMP-008 may later
+address stalled Phase 1/2 proposals; it should not silently expire a
+Phase 3 item awaiting human ratification without explicit Human
+Authority policy.
+
+### III.A.7 Explicit non-claims and residuals
+
+| Item | Disposition |
+|------|-------------|
+| Full withdrawal procedure | GMP-007 (Open) |
+| Expiration policy | GMP-008 (Open; may remain cadence-deferred) |
+| Complete supersession doctrine | Deferred |
+| New reviewer terminal or Phase-3-advancement power | **Not granted** |
+| Elimination of sequential post-ratification interaction risk | Not claimed |
+| Live Track B operational exercise | Residual after paper closure |
+| Automatic priority/queue among waiting Phase 1 proposals | Not created |
+
+Hard floors in §III remain outside amendment scope unchanged.
+
+*Drafted by Grok as a Closure Proposal (Revision 1 addressed Claude's
+live-§III verification findings: Phase 2→Phase 3 authority overreach
+corrected, two stale cross-references flagged for concurrent edit.
+Revision 2 addressed ChatGPT's remaining Skeptic items: the Phase 4
+corridor-release sentence added, the "repository-wide invariant" framing
+added, and three items — existing time-bound ratification obligations,
+other stale concurrency-permissive language, the overlapping-proposal
+scenario — independently checked against live source by Claude and
+confirmed clean or already correctly handled by the existing invariants).
+Human-ratified 2026-08-31.*
 
 ### Hard Floor — Outside Amendment Scope
 
@@ -762,7 +933,8 @@ triggers specific to this file:*
   Gate 4 clearance
 - ASM-002 confidence level upgraded from Medium / Estimated without
   operational evidence
-- Concurrent amendments proceed without GMP-006 resolution
+- A Track B proposal enters Phase 2 while another proposal already
+  occupies Phase 2 or Phase 3 (§III.A serialization corridor violation)
 - Ethical Anchor field absent, altered, or does not match canonical string
 - Verification Ref field changed from `Admin/Verification_Gates.md`
 - §VI Epistemic Quorum Doctrine's Non-goal clause is weakened, removed,
@@ -999,14 +1171,14 @@ Status: Resolved — Discharge via Specification.
 
 | Field         | Value                                      |
 |---------------|--------------------------------------------|
-| Status        | Open                                       |
+| Status        | Resolved — Payment via Specification       |
 | Risk          | Medium                                     |
 | Priority      | Major                                      |
 | Type          | Governance                                 |
 | Blocking      | No                                         |
 | Owner         | `Admin/Governance_Migration_Protocol.md`   |
 | First Logged  | 2026-06-19                                 |
-| Last Reviewed | 2026-06-19                                 |
+| Last Reviewed | 2026-08-31                                 |
 
 **Description:** No doctrine exists for handling multiple simultaneous
 Track B proposals. Questions unanswered: can multiple amendments be
@@ -1032,6 +1204,37 @@ Recorded, with Withdrawn/Expired/Rejected/Returned/Superseded
 transitions). Flagged here as the shared resolution target for all
 three; not designed in this pass — that's real design work belonging
 to whichever of the three is picked up first, not a documentation fix.
+
+**Proposed Resolution (superseded by Closure Event below):** §III.A
+Track B Amendment Lifecycle — State Machine. Serialization corridor
+(multi Draft/Phase 1; single Phase 2/3); explicit gate; completed
+Phase 1 remains in Phase 1 while corridor occupied (no
+reservation/priority/expiration from mere completion). Phase 2 → Phase
+3 authority corrected against live §III: review is precondition;
+reviewer does not advance into Phase 3; presentation to Human Authority
+begins Phase 3; Recorded includes Phase 4 recording, and the corridor
+releases only upon the transition to Recorded, not upon ratification
+alone. Withdrawal phase-scoped; rejection recommend-only for reviewer
+unless existing doctrine already grants terminal power. Append-only
+history. Deadlock/starvation noted as human-attention, not automatic
+preemption — confirmed no existing governance doctrine imposes a
+conflicting time-bound ratification obligation.
+
+**Closure Event (2026-08-31):**
+- **Unknown:** GMP-006
+- **Proposed status:** Resolved
+- **Payment type:** Specification
+- **Basis:** §III.A Track B Amendment Lifecycle — State Machine (`Admin/Governance_Migration_Protocol.md`, integrated 2026-08-31), summarized in the Proposed Resolution above. Two stale cross-references that would have contradicted this closure — an index line and a Drift Indicator entry, both still describing GMP-006 as pending — corrected in the same pass.
+- **Proposer:** Grok — Synthesizer, 2026-08-31. Drafted the original state machine, produced Revision 1 addressing five amendments from a ChatGPT Skeptic pass (Phase 1 concurrency permitted, Superseded authority narrowed, serialization gate made explicit and conditional, withdrawal authority clarified by phase, reviewer rejection narrowed to recommend-only, serialization's claim scoped to concurrent-review bypass only, append-only history added), then produced Revision 2 addressing Claude's independent live-§III verification findings (Phase 2→Phase 3 authority corrected — not a reviewer-executed transition; two stale cross-references flagged) and ChatGPT's final Skeptic-pass items (Phase 4 corridor-release sentence, "repository-wide invariant" framing).
+- **Verifier:** Claude — Verifier, 2026-08-31. Two rounds of independent verification against live source, not merely reviewing the drafts' own claims: (1) read `§III` directly and confirmed the existing text names no actor with authority to advance a proposal from Phase 2 to Phase 3 — Grok's original authority table had granted this to the reviewer without it being inherited from existing doctrine, a real overreach caught before integration; separately confirmed no existing §III language assumes concurrent Phase 2/3 proposals, so §III.A introduces no contradiction; separately found two stale cross-references (an index line, a Drift Indicator entry) that neither draft's integration notes had caught, which would have contradicted a closure if left unfixed. (2) Searched `Governance_Migration_Protocol.md` and `Governance_Charter.md` directly for any existing time-bound ratification obligation that could conflict with §III.A.6's "human-attention, not automatic preemption" design note — none found, clean; searched the full file for any other concurrency-permissive language beyond the two already-caught stale references — none found, clean. Verdict: **Pass — Ready for Human Ratification**, with the two stale cross-reference fixes and the Phase 2→Phase 3 authority correction folded in before this Closure Event.
+- **Independence attestation:** Grok (Proposer), ChatGPT (two rounds of pre-integration Skeptic passes — Conditional Pass then Pass-with-minor-clarification), and Claude (Verifier, two rounds of independent live-source checks distinct from both agents' review passes) are three different agent instances. Same separated-passes pattern as GMP-010 and GI-004/GI-006.
+- **Human ratification:** Not Mandatory under `Admin/Auditor_Protocols.md`'s Unknown Closure Authority (Risk: Medium, not Critical/High) — offered and accepted anyway.
+- **Recording location:** this sidecar entry (primary, complete); `Unknowns.md` Active Index entry removed, Audit Trail note added, same pass.
+- **Human ratification record:** Ratified by Human Governing Authority, 2026-08-31 ("Let's ratify this. A little cleanup is fine."). Proposer (Grok) and Verifier (Claude) findings both reviewed across multiple rounds; no unresolved objection. Human governing authority noted intent to relay this outcome back to Grok and ChatGPT before further work.
+
+**Resolution:** Closed 2026-08-31 via §III.A Track B Amendment Lifecycle — State Machine, integrated the same day into `Admin/Governance_Migration_Protocol.md`. This closure went through the most extensive multi-round review of any Closure Event to date in this repository: two Grok drafting passes, two ChatGPT Skeptic passes (Conditional Pass, then Pass), and two Claude Verifier passes, each catching genuine issues the prior round had missed (Phase 1 concurrency too strict; unbounded Superseded authority; automatic Phase 1→Phase 2 advancement contradicting the serialization gate; an invented Phase 2→Phase 3 reviewer-advancement authority not actually present in §III; two stale cross-references; a missing corridor-release clarification for Phase 4). Full Closure Event above.
+
+**Residuals:** GMP-007 (full withdrawal procedure — now specifiable against a real Withdrawn state), GMP-008 (expiration policy — may remain cadence-deferred), complete supersession doctrine (deferred, not invented), and operational exercise of the state machine on a live Track B proposal (confidence residual, not a closure blocker) all remain Open. Risk and Priority intentionally unchanged.
 
 ---
 

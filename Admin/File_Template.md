@@ -83,6 +83,7 @@ The full File Template is **not** applied to every file in the repository. Forci
 6. **Operational seeds and invocation templates**
    - `Admin/BATTERY_SEED.md`
    - `Admin/PROBE_INVOCATION.md`
+   - `Admin/INTEGRITY_SWEEP_PROMPT.md`
    These are prompt / battery / invocation payloads, not governed specification documents.
 
 7. **Automation source**
