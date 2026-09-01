@@ -29,9 +29,9 @@
 | Body Stability   | Volatile                                                            |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-05-19                                                          |
-| Auditor          | Claude — Skeptic/Auditor (actioning ChatGPT audit 2026-05-19)       |
-| Open Unknowns    | 7                                                                   |
+| Last Audit       | 2026-08-31 — GI-004/GI-006 joint Closure Event (§7 rewritten as §7.1–7.4; see Resolution Log below); prior: 2026-05-19 |
+| Auditor          | Claude — GI-004/GI-006 joint Closure Event: §7 rewritten (Minimum Intake Record schema, superset rule, chain-of-custody doctrine), drafted by Grok, Skeptic-passed with five amendments by ChatGPT, revision independently re-verified by Claude, human-ratified (human-directed), 2026-08-31; prior: Claude — Skeptic/Auditor (actioning ChatGPT audit 2026-05-19)       |
+| Open Unknowns    | 5                                                                   |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | Medium                                                              |
 | Sidecar Link     | #auditor-notes--unknowns                                            |
@@ -130,7 +130,7 @@ would receive no intake data to learn from.
 | ASM-003 | Physical documents arriving with items contain recoverable information worth scanning — degradation is the exception, not the rule | Scan-on-arrival doctrine; document arrival is rare but signals owner care | Low | Scan yield data from first operational cycle shows documents are consistently too degraded to be useful |
 | ASM-004 | Operators can identify most hazardous materials through visual inspection and basic testing at Intake | Safety screening doctrine; visual indicators exist for common hazards | Low | Intake safety incident occurs from a hazard that visual inspection cannot detect — detection capability must be augmented |
 | ASM-005 | Items arrive in processable condition — not requiring special handling before entering the Intake protocol | Entry protocol — no pre-Intake triage exists | Medium | Item arrives in condition that cannot safely enter Intake without prior intervention — triggers pre-Intake protocol creation |
-| ASM-006 | Provenance data recorded at Intake is compatible with the grain system format in Admin/Ship_of_Theseus.md | Tagging doctrine — grain system format not yet specified | Low | Grain system format defined — Intake tagging schema must be cross-validated and updated to match |
+| ASM-006 | The §7.1 Minimum Intake Record schema, ratified as a superset of grain-system boundary fields (GI-004 Resolved 2026-08-31), remains compatible once the grain system format itself is specified | Tagging doctrine — Intake-side schema now defined; grain system format not yet specified (ST-001/ST-002) | Low | Grain system format defined — Intake tagging schema must be cross-validated and updated to match; if the actual format needs a field beyond the superset, ASM-006 fails and the schema requires revision |
 | ASM-007 | Fastener and small component recovery during Intake processing is net-positive at v0 scale — handling overhead is justified by component value | Junk drawer doctrine; inter-forge trade ecology | Low | Operational data shows recovery overhead exceeds component value at v0 scale — recovery threshold adjusted upward |
 
 *Four Low confidence assumptions reflect genuine uncertainty
@@ -139,10 +139,12 @@ and grain system compatibility. ASM-004 is the most safety-
 critical — visual inspection cannot detect lead, radiation,
 or many chemical contaminants. Detection capability beyond
 human visual inspection should be treated as a prerequisite
-for unsupervised Intake operation. ASM-006 is load-bearing
-for the Admin/Ship_of_Theseus.md grain system — Intake
-tagging and grain format must be cross-validated before
-either is treated as stable.*
+for unsupervised Intake operation. ASM-006's remaining risk
+narrowed 2026-08-31 with GI-004's closure — the Intake-side
+schema is now a ratified superset contract, not an open
+question; what remains untested is whether the eventual grain
+system format (ST-001/ST-002, still Open) stays within that
+superset once specified.*
 
 ---
 
@@ -468,55 +470,149 @@ it when scale demands — not before.*
 
 ## 7. Item Tagging and Provenance
 
-Every item that completes Intake receives a unique
-identifier and a provenance record. This is the
-starting point for the grain system in
-`Admin/Ship_of_Theseus.md`.
+Every item that completes Intake receives a unique identifier and a
+provenance record. This is the starting point for the grain system in
+`Admin/Ship_of_Theseus.md` and the first link in the unbroken provenance
+chain required by the Ship of Theseus doctrine.
 
-**Minimum intake record at v0:**
-- Unique item identifier (sequential or hash-based)
-- Date and location of intake
-- Item description — what it is, condition on arrival
-- Identification status — known, partial, unknown
-- Hazard screening outcome — clear, hold, or flagged
-- Physical document status — none, scanned, attached
-- Parts list reference — linked if generated
-- Operator identifier — who performed Intake
-- Intake notes — anything unusual worth recording
+### 7.1 Minimum Intake Record (v0 schema)
 
-**Tagging method at v0:**
-- Physical tag attached to item (durable label,
-  cable tie tag, or equivalent)
-- Digital record created in local system
-- Record contributed to `Architecture/Forge_Net.md`
-  when connectivity allows
+The Intake record is the authoritative origin record for every item that
+enters the Forge. Required fields at v0:
 
-**Grain system compatibility:**
-Intake tagging format must be cross-validated against
-`Admin/Ship_of_Theseus.md` grain system requirements
-before either is treated as stable. See ASM-006,
-GI-004.
+| Field | Description | Notes |
+|-------|-------------|-------|
+| `item_id` | Unique item identifier | Sequential or hash-based; never reused (see §7.3) |
+| `intake_datetime` | Date and time of intake | ISO 8601 preferred; local clock acceptable at v0 |
+| `intake_location` | Site or station identifier | Free text at v0 if no site code system exists |
+| `item_description` | What it is and condition on arrival | Operator judgment; sufficient for later re-identification |
+| `identification_status` | `known` / `partial` / `unknown` | Drives Unknown Item Protocol (§8) |
+| `hazard_outcome` | `clear` / `hold` / `flagged` | Result of safety screening (§2) |
+| `document_status` | `none` / `scanned` / `attached` | Physical document handling (§3) |
+| `parts_list_ref` | Link or ID of generated parts list, if any | Optional; null if none generated |
+| `operator_id` | Actor who performed Intake | See accountability note below |
+| `intake_notes` | Free-text anomalies | Anything unusual worth recording |
+| `grain_link` | Reference to grain sample ID, if a grain was taken | Null until grain protocol (ST-001) is active; field reserved |
 
-**Chain of custody integrity:**
-The tag is the physical link between the item and
-its record. Tag loss or detachment breaks the
-provenance chain at its first link. Provisional
-doctrine pending GI-006 resolution:
-- Tags must be physically durable and attached
-  securely — not adhesive labels on oily or wet
-  surfaces, not paper tags on items that will
-  be moved repeatedly
-- If a tag is lost before the item completes
-  gate routing: stop, re-identify the item
-  against intake records, re-tag before routing
-- Duplicate identifier prevention — tag numbers
-  are sequential and never reused, even after
-  an item is fully processed
-- Record/item reconciliation — at handoff to
-  `Operations/Gate_02_Triage.md`, the physical tag is verified
-  against the digital record before the item
-  proceeds. Mismatches are held, not routed.
-- Cross-reference: GI-006, `Admin/Ship_of_Theseus.md`
+**operator_id accountability:**
+`operator_id` identifies the actor performing the Intake action. Where an
+agent acts under human authorization, the responsible human authority is
+additionally recorded according to the applicable delegation/attestation
+protocol (`Admin/Auditor_Protocols.md` AP-024 and its open residuals
+AP-024-R1/R2). This clause does not invent a new delegation regime; it
+requires that existing attestation doctrine be applied so provenance does
+not become ambiguous at the point of origin.
+
+**Superset rule (GI-004):**
+The Intake schema is a **superset** of the fields any future grain-system
+implementation may require at the Intake boundary. Grain-system doctrine
+(`Admin/Ship_of_Theseus.md`, `Admin/Canonical_Terms.md` Grain System entry)
+may not demand fields that Intake does not collect. If a future grain
+protocol needs an additional boundary field, that field is added to this
+schema first; grain requirements are never reduced to match a thinner
+Intake record.
+
+**Explicit non-claim:**
+This schema does **not** resolve ST-001 (grain storage and tracking
+protocol), ST-002 (QR documentation standard), or CT-009 (implementation
+consistency). Those remain Open. The canonical Grain System definition
+in `Admin/Canonical_Terms.md` registers vocabulary only; implementation
+work stays in the owning sidecars.
+
+### 7.2 Tagging Method (v0)
+
+- Physical tag attached to the item (durable label, cable-tie tag, or
+  equivalent — durability requirements in §7.3).
+- Digital record created in the local system using the §7.1 schema.
+- Record contributed to `Architecture/Forge_Net.md` when connectivity
+  allows; absence of connectivity does not block Intake completion
+  (degraded-operation doctrine remains in force).
+
+### 7.3 Chain-of-Custody Integrity (GI-006)
+
+The physical tag is the **primary operational link** between the item and
+its digital record at the start of the provenance chain. Loss or
+detachment of the tag breaks ordinary operational linkage and triggers
+the recovery protocol below. The following controls are operative
+doctrine, not provisional guidance.
+
+**Tag durability**
+Tags must remain attached and legible under the storage and handling
+conditions expected between Intake and Gate_02 handoff (and through
+subsequent gates until the item is consumed, exported, or retired).
+Adhesive labels on oily, wet, or heavily contaminated surfaces are not
+acceptable. Paper tags on items that will be moved repeatedly are not
+acceptable. Acceptable classes at v0: cable-tie tags with printed or
+stamped ID, embossed metal tags, or equivalent mechanically retained
+markers. Exact material selection is an operational decision; the
+durability *requirement* is doctrinal. Empirical survival under Forge
+conditions is not claimed here.
+
+**Lost-tag re-identification**
+If a tag is lost or becomes illegible before the item completes gate
+routing:
+
+1. Stop routing the item.
+2. Attempt re-identification against Intake records using
+   `item_description`, `intake_datetime`, `intake_location`, remaining
+   physical characteristics, and operator knowledge.
+3. **Success criterion:** Re-identification succeeds only when the
+   available characteristics are sufficient to distinguish the item from
+   other plausible candidates in the Intake records. If more than one
+   plausible candidate remains, re-identification **fails**.
+4. On success: re-tag with a **new** `item_id` (never reuse the lost ID),
+   record the linkage between old and new ID in `intake_notes` (or a
+   dedicated re-tag log), and resume.
+5. On failure: hold the item under Unknown Item Protocol (§8); do not
+   invent provenance.
+
+**Identifier namespace**
+`item_id` values are never reused, including after an item has been
+fully processed, exported, destroyed, or retired. Sequential allocation
+or collision-resistant hashing are both acceptable; the invariant is
+no-reuse. This is compatible with Gate_02's practice of minting a new
+Event_ID on re-triage and linking back to prior history.
+
+**Gate_02 handoff reconciliation**
+At handoff to `Operations/Gate_02_Triage.md`:
+
+1. Physical tag is verified against the digital Intake record
+   (`item_id` match, description plausible).
+2. Match → item may proceed.
+3. Mismatch or missing tag → item is held; it is not routed forward.
+4. Reconciliation outcome is logged (pass / hold + reason).
+
+This is a hard stop, not a warning. Throughput pressure does not
+override it.
+
+Gate_02 reciprocal posture (verified against live text, 2026-08-31):
+provenance-loss failure mode requires "Mandatory tag system; re-triage
+if tag absent." Intake refuses to hand off a broken chain; Gate_02
+refuses to continue one.
+
+**Cross-reference:**
+`Admin/Ship_of_Theseus.md` (grain system depends on unbroken chain from
+Intake); ASM-006 (compatibility assumption); GI-004 (schema alignment);
+`Operations/Gate_02_Triage.md` (tag-absent → re-triage).
+
+### 7.4 Relationship to Grain System and Residuals
+
+- Intake initiates the provenance chain; the grain system extends and
+  anchors it.
+- Taking a physical grain sample (1 g baseline) is governed by ST-001
+  when that protocol exists. Until then, `grain_link` remains null and
+  no grain is required for Intake completion.
+- Human-readable provenance presentation (QR or equivalent) is governed
+  by ST-002 when that standard exists.
+- CT-009 continues to track consistency between the Canonical_Terms
+  definition and ST-001/ST-002 implementation.
+
+**Operational residual (confidence, not closure blocker):**
+Once the doctrine above is ratified, the unknowns close on Payment via
+Specification. Moving the owning sections from Internally Derived /
+Analogous to higher confidence labels requires exercise through an
+operational cycle — the same pattern already accepted for GU-002 and
+related closures. That residual does not keep GI-004 or GI-006 Open.
 
 ---
 
@@ -811,14 +907,14 @@ and operator health risk downstream.
 
 | Field         | Value                                            |
 |---------------|--------------------------------------------------|
-| Status        | Open                                             |
+| Status        | Resolved — Payment via Specification             |
 | Risk          | Medium                                           |
 | Priority      | Major                                            |
 | Type          | Technical / Architectural                        |
 | Blocking      | No                                               |
 | Owner         | Operations/Gate_01_Intake.md                     |
 | First Logged  | 2026-05-15                                       |
-| Last Reviewed | 2026-08-14                                       |
+| Last Reviewed | 2026-08-31                                       |
 
 **Description:** The intake tagging schema has not
 been cross-validated against the grain system
@@ -850,7 +946,23 @@ first link.
 - Cross-reference: ASM-006,
   `Admin/Ship_of_Theseus.md`.
 
-**Grok review 2026-08-14:** Path adequate. Correctly requires Intake schema to be a superset of grain requirements rather than the reverse; joint resolution with GI-006 is noted. **Grok approved (path adequate).** Remains Open — actual cross-check against Ship_of_Theseus grain fields still required.
+**Grok review 2026-08-14:** Path adequate. Correctly requires Intake schema to be a superset of grain requirements rather than the reverse; joint resolution with GI-006 is noted. **Grok approved (path adequate).**
+
+**Closure Event (2026-08-31):**
+- **Unknown:** GI-004
+- **Proposed status:** Resolved
+- **Payment type:** Specification
+- **Basis:** §7.1 Minimum Intake Record (`Operations/Gate_01_Intake.md`, integrated 2026-08-31) defines the v0 schema as an explicit superset of fields any future grain-system implementation may require at the Intake boundary — grain doctrine may not demand fields Intake does not collect. Field `grain_link` reserved for ST-001 activation. `operator_id` accountability clarified with cross-reference to AP-024 and its open residuals. ST-001, ST-002, and CT-009 remain explicitly Open — this closure specifies the Intake-side contract only, not full grain implementation.
+- **Proposer:** Grok — Synthesizer, 2026-08-31 (drafted the original joint proposal with GI-006; produced Revision 1 addressing five amendments requested in a prior ChatGPT Skeptic pass)
+- **Verifier:** Claude — Verifier, 2026-08-31. Independent pass against the revised text, checking each of ChatGPT's five requested amendments was genuinely implemented, and cross-checking every load-bearing factual claim against live source: `Operations/Gate_02_Triage.md`'s reciprocal provenance-loss language ("Mandatory tag system; re-triage if tag absent") confirmed exact; AP-024-R1/R2 residuals confirmed to exist as cited; the Event_ID-mints-new-on-re-triage practice confirmed in `Gate_02_Triage.md`'s own text; the full prior §7 text read line-by-line to confirm the replacement is a clean superset with nothing silently dropped. Verdict: **Pass — Ready for Human Ratification.** No substantive defect found.
+- **Independence attestation:** Grok (Proposer), ChatGPT (pre-integration Skeptic pass on the original draft, requested five amendments: operator_id accountability, "sole link" wording, falsifiable re-ID criterion, Gate_02 language verification, ID-namespace compatibility verification), and Claude (Verifier of the revised draft) are three different agent instances. Same separated-passes pattern as the GMP-010 Closure Event.
+- **Human ratification:** Not Mandatory under `Admin/Auditor_Protocols.md`'s Unknown Closure Authority (Risk: Medium, not Critical/High) — offered and accepted anyway.
+- **Recording location:** this sidecar entry (primary, complete); `Unknowns.md` Active Index entry removed, Audit Trail note added, same pass.
+- **Human ratification record:** Ratified by Human Governing Authority, 2026-08-31 ("I give the ratification. This material isn't high risk work."). Proposer (Grok) and Verifier (Claude) findings both reviewed; no unresolved objection.
+
+**Resolution:** Closed 2026-08-31 via §7.1's Minimum Intake Record schema, integrated the same day into `Operations/Gate_01_Intake.md`. Full Closure Event above.
+
+**Residuals:** ST-001 (grain storage and tracking protocol), ST-002 (QR documentation standard), CT-009 (Grain System implementation consistency), and an operational-cycle confidence upgrade (Internally Derived/Analogous → higher, same pattern as GU-002) all remain Open. AP-024-R1/R2 (identity/delegation infrastructure) remain Open as they affect agent-performed Intake attestation. Risk and Priority intentionally unchanged.
 
 ---
 
@@ -911,14 +1023,14 @@ primary source of workplace incidents.
 
 | Field         | Value                                            |
 |---------------|--------------------------------------------------|
-| Status        | Open                                             |
+| Status        | Resolved — Payment via Specification             |
 | Risk          | Medium                                           |
 | Priority      | Major                                            |
 | Type          | Technical / Governance                           |
 | Blocking      | No                                               |
 | Owner         | Operations/Gate_01_Intake.md                     |
 | First Logged  | 2026-05-19                                       |
-| Last Reviewed | 2026-08-14                                       |
+| Last Reviewed | 2026-08-31                                       |
 
 **Description:** Intake establishes provenance,
 hazard status, and grain initiation for every item.
@@ -952,7 +1064,23 @@ chain — Intake is where that chain starts.
   doctrine is defined and tested, move to Section 7
   as Analogous.
 
-**Grok review 2026-08-14:** Path adequate. Tag durability, re-identification, no-reuse IDs, and Gate_02 reconciliation are the correct integrity controls; joint resolution note with GI-004 is sound. **Grok approved (path adequate).** Remains Open — doctrine still needs to be written; may resolve jointly with GI-004.
+**Grok review 2026-08-14:** Path adequate. Tag durability, re-identification, no-reuse IDs, and Gate_02 reconciliation are the correct integrity controls; joint resolution note with GI-004 is sound. **Grok approved (path adequate).**
+
+**Closure Event (2026-08-31):**
+- **Unknown:** GI-006
+- **Proposed status:** Resolved
+- **Payment type:** Specification
+- **Basis:** §7.3 Chain-of-Custody Integrity (`Operations/Gate_01_Intake.md`, integrated 2026-08-31) promotes the prior provisional controls to operative doctrine: tag durability requirement, lost-tag re-identification protocol with a falsifiable success criterion (distinguishable from other plausible candidates in Intake records; more than one plausible candidate = fail, no invented numerical confidence score), never-reuse identifier namespace confirmed compatible with `Gate_02_Triage.md`'s own Event_ID-mints-new-on-re-triage practice, and hard-stop Gate_02 handoff reconciliation. "The tag is the physical link" reworded to "primary operational link" to remove the internal contradiction with the lost-tag recovery path, which necessarily uses secondary characteristics (description, datetime, location, operator knowledge) as a controlled recovery mechanism. Cross-checked against the §7.1 schema so every control references fields that actually exist. Joint with GI-004.
+- **Proposer:** Grok — Synthesizer, 2026-08-31 (drafted the original joint proposal with GI-004; produced Revision 1 addressing five amendments requested in a prior ChatGPT Skeptic pass)
+- **Verifier:** Claude — Verifier, 2026-08-31. Independent pass against the revised text, confirming all five ChatGPT-requested amendments were genuinely implemented (not merely claimed) and re-checking the same load-bearing citations verified for the joint GI-004 Closure Event: `Gate_02_Triage.md`'s reciprocal provenance-loss language, the Event_ID re-triage practice, and the full prior §7 chain-of-custody bullet list read against the replacement to confirm every existing control survived in the new doctrine, just formalized. Verdict: **Pass — Ready for Human Ratification.** No substantive defect found.
+- **Independence attestation:** Grok (Proposer), ChatGPT (pre-integration Skeptic pass, requested five amendments — see GI-004's Closure Event for the full list), and Claude (Verifier of the revised draft) are three different agent instances. Same separated-passes pattern as GMP-010 and GI-004.
+- **Human ratification:** Not Mandatory under `Admin/Auditor_Protocols.md`'s Unknown Closure Authority (Risk: Medium, not Critical/High) — offered and accepted anyway, jointly with GI-004.
+- **Recording location:** this sidecar entry (primary, complete); `Unknowns.md` Active Index entry removed, Audit Trail note added, same pass.
+- **Human ratification record:** Ratified by Human Governing Authority, 2026-08-31 ("I give the ratification. This material isn't high risk work."). Proposer (Grok) and Verifier (Claude) findings both reviewed; no unresolved objection.
+
+**Resolution:** Closed 2026-08-31 via §7.3's Chain-of-Custody Integrity doctrine, integrated the same day into `Operations/Gate_01_Intake.md`, jointly with GI-004. Full Closure Event above.
+
+**Residuals:** Operational-cycle exercise of the chain-of-custody controls (confidence upgrade only, not a closure blocker — same pattern as GU-002) and exact tag material selection (an operational decision under the stated durability requirement, not a doctrinal gap) both remain Open. Risk and Priority intentionally unchanged.
 
 ---
 
