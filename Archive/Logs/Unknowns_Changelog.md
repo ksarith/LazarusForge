@@ -18,6 +18,10 @@ Split out from `Unknowns.md` 2026-07-19, following the precedent already establi
 
 **Version 4.89 — 2026-08-30. RE-UNK-006 registered — new unknown (post-abundance human behavioral drift, `Challenges/Return_To_Eden.md`), not a correction. Speculative-by-design entry raised directly by the human governing authority; see that file's own Resolution Log for the full framing and candidate-direction list. Open Unknowns count there: 5 → 6.**
 
+**Version 4.90 — 2026-08-30. GMP-010 Resolved (Payment via Specification) — §VIII Evidence-Sufficiency Gate integrated into `Admin/Governance_Migration_Protocol.md`. Removed from Active Index, added to Resolved pointer list. First GMP-file unknown closed under the AP-013 Unknown Closure Authority doctrine: Grok (Proposer) drafted, ChatGPT's Skeptic pass requested seven amendments, Grok revised, Claude (Verifier) independently confirmed all seven amendments correctly implemented before Human Ratification — Mandatory per Risk: High. Full Closure Event recorded in `Governance_Migration_Protocol.md`'s own GMP-010 sidecar entry.**
+
+**Version 4.91 — 2026-08-31. GI-004 and GI-006 jointly Resolved (Payment via Specification) — `Operations/Gate_01_Intake.md` §7 rewritten as §7.1–7.4 (Minimum Intake Record superset schema, chain-of-custody doctrine). Both removed from Active Index, added to Resolved pointer list. First Medium-risk (non-Mandatory-ratification) Closure Event carried through the AP-013 doctrine: Grok (Proposer) drafted, ChatGPT's Skeptic pass requested five amendments, Grok revised, Claude (Verifier) independently confirmed all five amendments correctly implemented, Human Ratification given though not Mandatory at this risk tier. ASM-006 (`Operations/Gate_01_Intake.md`) updated in the same pass to reflect the Intake-side schema is now defined; remaining uncertainty is grain-format specification (ST-001/ST-002), not Intake format. Full Closure Events recorded in Gate_01_Intake.md's own GI-004/GI-006 sidecar entries.**
+
 
 ---
 
