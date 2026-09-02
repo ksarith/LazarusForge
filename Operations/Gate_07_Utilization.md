@@ -29,9 +29,9 @@
 | Body Stability   | Volatile                                                            |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-05-19; revised 2026-06-08                                      |
-| Auditor          | Claude — Retrofit/Auditor                                           |
-| Open Unknowns    | 5                                                                   |
+| Last Audit       | 2026-09-01 — GU-002 Closure Event: §5 rewritten as an explicit retirement interface contract (Payment via Specification); prior: 2026-05-19; revised 2026-06-08 |
+| Auditor          | Claude — GU-002 Closure Event: §5.1–5.6 retirement handoff interface contract integrated, drafted by Grok across two revisions, Skeptic-passed by ChatGPT (four amendments, then confirmed Skeptic-ready), independently re-verified by Claude (caught understated tag-absent language and a stale Drift Indicator entry), human-ratified (human-directed), 2026-09-01; prior: Claude — Retrofit/Auditor |
+| Open Unknowns    | 4                                                                   |
 | Active Disputes  | 1                                                                   |
 | Highest Risk     | Low                                                                 |
 | Sidecar Link     | #auditor-notes--unknowns                                            |
@@ -417,50 +417,122 @@ at the next fabrication planning cycle.
 
 ## 5. Retirement Handoff
 
-When a part leaves service — by planned end of
-life, failure, upgrade, or loss — its utilization
-record closes and a retirement handoff initiates
-re-entry into the gate flow.
+When a part leaves service — by planned end of life, failure, upgrade,
+loss, or external retirement — its utilization record closes and a
+retirement handoff makes the retired part **eligible** for Gate_02
+re-entry under the applicable retirement / re-triage procedure
+(`Operations/Gate_02_Triage.md`).
 
-**Retirement triggers:**
+Whether receipt of the handoff **automatically** triggers re-triage
+(e.g. Station 0) or requires **operator initiation** remains governed by
+Active Dispute DS-001 on `Operations/Gate_02_Triage.md`. This section
+does not resolve that dispute.
 
-| Trigger | Next Step |
-|---|---|
-| Planned end of life — service life reached | Close record, assess for Gate_02 re-entry |
-| Failure — part no longer functional | Close record, route to Gate_02 with failure classification |
-| Upgrade — replaced by better part | Close record, assess retired part for Gate_02 re-entry |
-| Loss — part cannot be located | Close record with loss notation, log tag number as missing |
-| External retirement — part retired outside forge | Request retirement data if available, close record with gap notation |
+### 5.1 Retirement triggers
 
-**Retirement handoff record minimum content:**
-- Part identifier and complete utilization record
-- Retirement trigger and date
-- Actual service life
-- Performance summary — met, exceeded, or fell
-  short of expectations
-- Failure classification if applicable
-- Fabrication output tag status — intact,
-  damaged, or lost
-- Recommended Gate_02 entry classification:
-  - Functional — route to Gate A assessment
-  - Repairable — route to Gate B assessment
-  - Material only — route to Gate D / Reduction
-  - Hazardous — hold for specialist assessment
-  - Lost — no physical item to route
+| Trigger | Next step |
+|---------|-----------|
+| Planned end of life — service life reached | Close record; part becomes eligible for Gate_02 re-entry |
+| Failure — part no longer functional | Close record; handoff includes failure classification; eligible for Gate_02 re-entry |
+| Upgrade — replaced by better part | Close record; eligible for Gate_02 re-entry |
+| Loss — part cannot be located | Close record with loss notation; log tag number as missing |
+| External retirement — part retired outside forge | Request retirement data if available; close record with gap notation |
 
-**Retirement handoff doctrine:**
-- Gate_07 recommends the Gate_02 entry
-  classification. Gate_02 makes the routing
-  decision. Gate_07 does not override Gate_02.
-- A part retired due to failure is not
-  automatically routed to Reduction — it may
-  have repairable or repurposable value.
-  Gate_02 assessment determines this.
-- The fabrication output tag travels with the
-  retired part to Gate_02. If the tag is lost,
-  log it. Gate_02 can still route the part —
-  but the traceability chain is broken and
-  the feedback value is reduced.
+### 5.2 Retirement handoff record — minimum content (interface contract)
+
+| Field | Description |
+|-------|-------------|
+| `part_id` | Part identifier (same identity family as utilization / fabrication output tag where one exists) |
+| `utilization_record_ref` | Reference to the utilization record **when available**; otherwise record the absence or known gap explicitly (external retirement, sparse logging, lost history) |
+| `retirement_trigger` | One of the triggers in §5.1 |
+| `retirement_date` | Date of retirement decision / event |
+| `actual_service_life` | Duration or cycle count from deployment to retirement, if known; else explicit unknown |
+| `performance_summary` | Met / exceeded / fell short of expectations (operator judgment at v0) |
+| `failure_classification` | Required if trigger = Failure; else null. Free text at v0 pending GU-001 metric schema |
+| `tag_status` | `intact` / `damaged` / `lost` |
+| `recommended_gate02_class` | Advisory only — see §5.3 |
+| `handoff_notes` | Anomalies, gaps, external-retirement data status |
+
+**Non-claim:** This contract is the Gate_07 → Gate_02 retirement interface.
+It does not define Gate_02 station logic, tiers, or Embedded Value
+Preservation. It does not resolve GU-001.
+
+**Cross-validation framing:** Validated against Gate_02's existing routing,
+provenance, re-triage, and degraded-input doctrine, with a reciprocal
+reception contract defined on the Gate_02 side. Gate_02 did not previously
+publish a formal Gate_07 retirement-intake schema; this closure **establishes**
+that interface rather than comparing two pre-existing schemas.
+
+### 5.3 Recommended Gate_02 classification (advisory)
+
+Gate_07 emits a **recommendation** only. Labels indicate intended *sense*
+for operator clarity; they do not assign a gate or bind Gate_02:
+
+| `recommended_gate02_class` | Intended sense |
+|----------------------------|----------------|
+| `functional` | Candidate for Gate A–style assessment |
+| `repairable` | Candidate for Gate B–style assessment |
+| `material_only` | Candidate for Gate D / Reduction–style assessment |
+| `hazardous` | Candidate for hold / specialist assessment before ordinary routing |
+| `lost` | No physical item to route; record-only close |
+
+Flow: Gate_07 classification → Gate_02 assessment → Gate_02 decision.
+Not: Gate_07 classification → gate assignment.
+
+Gate_02 may accept, modify, or reject the recommendation. Disagreement is
+not a process defect by itself.
+
+### 5.4 Authority boundary (record / recommend / decide)
+
+- **Gate_07** owns the utilization record and the handoff recommendation.
+- **Gate_02** owns the routing decision.
+- Gate_07 does not issue binding routing decisions and does not override
+  Gate_02.
+- A part retired due to failure is not automatically routed to Reduction;
+  repairable or repurposable value remains Gate_02's call.
+
+This section establishes the record / recommendation / decision authority
+boundary. It does **not** resolve whether retirement handoff automatically
+triggers re-triage or requires operator initiation — that remains Active
+Dispute DS-001 on `Operations/Gate_02_Triage.md`.
+
+It also does not close Active Dispute DS-001 on this file (fitness-for-purpose
+ownership). Standing practice on this file remains: Gate_07 produces records
+and recommendations; Gate_02 decides. That dispute stays Open with its own
+revisit trigger (three consecutive recommendation/decision disagreements).
+
+### 5.5 Tag and degraded handoff
+
+- The fabrication output / provenance tag travels with the retired part
+  to Gate_02 when a physical item exists.
+- **Physical tag lost or damaged:** Set `tag_status` accordingly and log it.
+  Gate_02's existing mandatory rule applies: provenance-loss failure mode
+  requires a mandatory tag system and **re-triage if tag absent**
+  (`Operations/Gate_02_Triage.md`). Within that re-triage path, feedback
+  and traceability value from the utilization chain are reduced; the
+  handoff record (when present) still supplies context. This section does
+  not weaken or make optional Gate_02's tag-absent obligation.
+- **Handoff record missing or sparse:** If a retired part is under
+  Gate_02's attention without a usable Gate_07 handoff *record*, Gate_02
+  proceeds under its own triage doctrine and logs a degraded handoff.
+  Absence of the digital handoff record does **not**, by itself, create an
+  automatic hold; other hold rules (hazard, tag-absent, unknown item, etc.)
+  continue to apply on their own terms.
+
+**Separation from DS-001 (Gate_02):** The degraded-handoff-record rule
+governs **missing documentation only**. It does not determine whether
+receipt of a retired part automatically initiates re-triage; that question
+remains Open under Gate_02's DS-001. Tag-absent re-triage remains mandatory
+under existing Gate_02 doctrine regardless of that dispute.
+
+### 5.6 Residuals
+
+- Operational exercise through at least one real retirement cycle upgrades
+  confidence (e.g. toward Analogous); not a precondition for
+  Payment-via-Specification closure of GU-002.
+- ASM-006 remains empirical until operational data exists.
+- GU-001 remains Open; richer performance fields may later extend this
+  contract without invalidating the minimum set.
 
 ---
 
@@ -577,14 +649,14 @@ cross-validated with Gate_02_Triage
 
 | Field         | Value                                            |
 |---------------|--------------------------------------------------|
-| Status        | Open                                             |
+| Status        | Resolved — Payment via Specification             |
 | Risk          | Medium                                           |
 | Priority      | Major                                            |
 | Type          | Technical / Architectural                        |
 | Blocking      | No                                               |
 | Owner         | Operations/Gate_07_Utilization.md                |
 | First Logged  | 2026-05-19                                       |
-| Last Reviewed | 2026-08-15                                       |
+| Last Reviewed | 2026-09-01                                       |
 
 **Description:** The retirement handoff record
 format and recommended classification scheme have
@@ -611,6 +683,40 @@ retirement cycle.
   Section 5 as Analogous.
 - Cross-reference: Operations/Gate_02_Triage.md,
   DS-001.
+
+**Proposed Resolution (superseded by Closure Event below):** §5 rewritten
+as an explicit retirement interface contract (gap-tolerant fields;
+advisory classification mapped as *candidates for* Gate A/B/D–style
+assessment; recommend/decide authority; tag and degraded-handoff rules).
+Reciprocal reception doctrine added to Gate_02. Cross-validation framed
+as alignment with Gate_02's existing routing/provenance/re-triage/
+degraded-input doctrine plus creation of the reciprocal contract, since
+Gate_02 had no formal Gate_07 retirement-intake schema to compare
+against. Tag-absent language explicitly tied to Gate_02's existing
+mandatory re-triage-if-tag-absent rule rather than described as
+discretionary.
+
+**DS-001 hygiene:** Does not resolve Gate_02's DS-001 (automatic vs.
+operator-initiated re-triage). Does not close Gate_07's own DS-001
+(fitness-for-purpose ownership). Re-entry language uses "eligible for"
+re-entry, not "initiates" re-entry, so the interface contract cannot be
+read as silently deciding the automatic-vs-operator question.
+
+**Closure Event (2026-09-01):**
+- **Unknown:** GU-002
+- **Proposed status:** Resolved
+- **Payment type:** Specification
+- **Basis:** §5.1–5.6 (`Operations/Gate_07_Utilization.md`, integrated 2026-09-01) plus the reciprocal "Retirement handoff from Gate_07 (GU-002 interface)" subsection (`Operations/Gate_02_Triage.md`, same date). Establishes the record/recommend/decide interface contract, gap-tolerant field schema, advisory classification mapping, and tag/degraded-handoff behavior — the latter explicitly distinguishing a missing digital handoff record (no automatic hold) from a missing physical tag (Gate_02's existing mandatory re-triage-if-tag-absent rule applies unweakened). A stale Drift Indicator entry in this file, which still described the handoff format as "unvalidated," was corrected in the same pass to reflect specification-level cross-validation while preserving the operational-cycle confidence residual.
+- **Proposer:** Grok — Synthesizer, 2026-09-01. Drafted the original interface contract (Direction B, joint Gate_07/Gate_02), produced Revision 1 addressing four amendments from a ChatGPT Skeptic pass (removing an "DS-001 Position B encoded" claim that risked silently deciding Gate_02's actual DS-001; separating handoff-record availability from re-triage-initiation authority; correcting the cross-validation framing since no pre-existing Gate_02 retirement-intake schema existed to validate against; making `utilization_record_ref` gap-tolerant), then produced Revision 2 addressing Claude's independent finding that §5.5's tag-loss language ("Gate_02 may route") read as discretionary against Gate_02's own existing "mandatory tag system; re-triage if tag absent" rule.
+- **Verifier:** Claude — Verifier, 2026-09-01. Independently confirmed the two-DS-001 characterization against live source (Gate_02's DS-001 concerns automatic-vs-operator re-triage, Medium risk; Gate_07's DS-001 concerns fitness-for-purpose ownership, Low risk, already carrying a "Position B is standing practice" note from Grok's 2026-08-15 review) — both distinct disputes are correctly left untouched by this closure. Searched `Gate_02_Triage.md` directly for any existing hold rule tied to a missing *handoff record* (as opposed to a missing tag) — none found, so the degraded-record-path language weakens nothing pre-existing. Found the existing "Mandatory tag system; re-triage if tag absent" rule and confirmed the original draft's "Gate_02 may route" tag-loss language understated it — a real finding, addressed in Revision 2. Independently found a second, unrelated stale reference (the Drift Indicator entry) that neither agent's integration notes had caught, the same class of gap fixed for GMP-006's cross-references. Verdict: **Pass — Ready for Human Ratification.**
+- **Independence attestation:** Grok (Proposer), ChatGPT (pre-integration Skeptic pass, four amendments requested, then a second pass confirming Revision 1 Skeptic-ready), and Claude (Verifier, findings on the tag-absent wording and the stale Drift Indicator, both independent of either agent's own review) are three different agent instances. Same separated-passes pattern as GMP-010, GI-004/GI-006, and GMP-006.
+- **Human ratification:** Not Mandatory under `Admin/Auditor_Protocols.md`'s Unknown Closure Authority (Risk: Medium, not Critical/High) — offered and accepted anyway.
+- **Recording location:** this sidecar entry (primary, complete); `Unknowns.md` Active Index entry removed, Audit Trail note added, same pass.
+- **Human ratification record:** Ratified by Human Governing Authority, 2026-09-01 ("Good deal! Let's get this ratified too."). Proposer (Grok) and Verifier (Claude) findings both reviewed; no unresolved objection.
+
+**Resolution:** Closed 2026-09-01 via §5.1–5.6 and the Gate_02 reciprocal subsection, integrated the same day. Full Closure Event above.
+
+**Residuals:** Operational exercise of at least one real retirement handoff (confidence upgrade only, same pattern as GI-004/GI-006), ASM-006 empirical validation, GU-001 (metric schema may later enrich the fields defined here), Gate_02's DS-001 (automatic vs. operator-initiated re-triage), and Gate_07's own DS-001 (fitness-for-purpose ownership) all remain Open. Risk and Priority intentionally unchanged.
 
 ---
 
@@ -785,7 +891,7 @@ Gate_07_Utilization:
 | Retired parts routed directly to Reduction without Gate_02 assessment | Permanently abandoned path — retired parts are not exhausted parts. Gate_02 assessment is mandatory before Reduction |
 | Feedback path tagging abandoned in favor of unstructured free-text records | Explicit feedback path tagging is permanent doctrine — unstructured records do not route to the decisions they can improve |
 | GU-001 schema remains undefined when cross-forge utilization comparison is attempted | Schema compatibility is prerequisite for cross-forge learning — comparison without compatible schemas produces misleading patterns |
-| GU-002 retirement handoff format remains unvalidated at first operational retirement | Handoff format must be cross-validated with Gate_02 before first retirement — incompatible formats make utilization record noise at handoff |
+| GU-002 gap-tolerant format specified but never exercised through a real retirement cycle | Handoff format cross-validated with Gate_02 as of 2026-09-01 (Payment via Specification); operational-cycle confidence upgrade remains a separate, non-blocking residual — do not treat first-exercise gaps as a specification defect |
 | Safety-critical parts per GF-006 not flagged for shorter inspection intervals | Silent failure risk is higher for load-bearing parts — standard inspection interval is insufficient |
 | Real-time monitoring introduced as replacement for event-driven logging before v2 instrumentation capability | Continuous monitoring is v2+ capability — introducing before power budget and sensor capability are validated creates infrastructure dependency |
 | FRT logging omitted from cycle close | FRT records are a required output of each cycle close — omission breaks the system health measurement chain and TR-001 input path |

@@ -326,6 +326,39 @@ Every item reaching Material Recovery disposition must pass a structured hold re
 | Unsafe repurpose routing | Component repurposed beyond safe degradation threshold | Strategic tier override at Triage Terminal |
 | Provenance loss | Component history lost between triage events | Mandatory tag system; re-triage if tag absent |
 
+### Retirement handoff from Gate_07 (GU-002 interface)
+
+When a part is under triage in connection with utilization retirement,
+`Operations/Gate_07_Utilization.md` §5 defines the retirement handoff
+record and an advisory `recommended_gate02_class`.
+
+**Reception**
+- Gate_02 accepts the handoff record as **input context** for routing.
+- The recommendation is **advisory**. Gate_02 makes the routing decision
+  under existing Gate A–D (and related) doctrine after its own assessment.
+- Gate_02 does not treat Gate_07's recommendation as a completed triage
+  outcome or as automatic gate assignment.
+
+**Missing or sparse handoff *record***
+- If a retired part is under Gate_02's attention without a usable Gate_07
+  handoff record, Gate_02 proceeds under ordinary triage doctrine and logs
+  a degraded handoff.
+- Absence of the handoff record does not, by itself, create an automatic
+  hold; other hold rules continue to apply on their own terms.
+- This rule governs documentation quality only. It does **not** resolve
+  Active Dispute DS-001 on this file (automatic re-triage on retirement
+  handoff vs operator-initiated re-triage only).
+
+**Physical tag absent**
+- Unchanged from existing doctrine: provenance loss → mandatory tag system;
+  **re-triage if tag absent**. GU-002 does not soften that rule. A present
+  Gate_07 handoff record may still inform the re-triage; it does not
+  substitute for the tag or waive re-triage.
+
+**Authority**
+- Gate_07 records and recommends; Gate_02 decides routing after assessment.
+- Cross-reference: `Operations/Gate_07_Utilization.md` §5.
+
 ---
 
 ## IX. Data & Learning Loop
