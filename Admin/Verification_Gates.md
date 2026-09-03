@@ -14,10 +14,10 @@
 |------------------|---------------------------------------------------------------------|
 | Status           | Draft                                                               |
 | Body Stability   | Transitional                                                        |
-| Spec Gates       | 2/6                                                                 |
+| Spec Gates       | 6/6                                                                 |
 | Verification Ref | Self (this file is the verification reference)                      |
-| Last Audit       | 2026-07-10                                                          |
-| Auditor          | ChatGPT — Skeptic/Auditor (findings actioned by Claude); Claude — EMS merge integration and VG-002/AP-021 resolution cascade (human-directed), 2026-07-10 |
+| Last Audit       | 2026-07-10; revised 2026-09-03 — Grok audit (G1–G6 all Pass; Tier 1 Axiom Verification provisional — Governance_Charter.md not loaded that session); Spec Gates promoted 2/6→6/6 per audit recommendation; Claude — Tier 1 Axiom Verification follow-up completed same day with Governance_Charter.md loaded: self-approval prohibition confirmed derived from Axiom Q-2 (Separation of Powers), evidence/reality-grounding requirements confirmed derived from Axiom Q-1, override-doctrine exclusion of Tier 1/Anti-Weaponization confirmed verbatim-consistent with Charter's Relationship to Existing Documents section; no axiom text drift, no override-scope widening; provisional caveat closed (human-directed) |
+| Auditor          | ChatGPT — Skeptic/Auditor (findings actioned by Claude); Claude — EMS merge integration and VG-002/AP-021 resolution cascade (human-directed), 2026-07-10; Grok — Skeptic/Auditor, full G1–G6 pass, 2026-09-03 |
 | Open Unknowns    | 0                                                                   |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | High                                                                |

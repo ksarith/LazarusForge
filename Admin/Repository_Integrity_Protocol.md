@@ -14,9 +14,9 @@
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 2/6                                                                 |
 | Verification Ref | `Admin/Verification_Gates.md`                                    |
-| Last Audit       | 2026-06-19; revised 2026-06-27; revised 2026-07-02; revised 2026-07-08 (two passes); revised 2026-07-09; revised 2026-07-16; revised 2026-07-24; revised 2026-07-29; revised 2026-08-30 |
-| Auditor          | Gemini — Skeptic/Auditor; ChatGPT — Skeptic/Auditor; Grok — Skeptic/Auditor; Claude — Synthesizer/Auditor; Claude — Registration Latency addition (human-directed) 2026-07-08; Claude — Phase 0 manual execution tier added (human-directed) 2026-07-08; Gemini — Exploration audit 2026-07-08 (Archive contradiction, cross-ref, RIP-009, Phase 0 anchor); Claude — fixes integrated + RIP-008 severity correction (human-directed) 2026-07-09; Claude — Post-Exit Monitoring Reversion Mechanism added for GOV-013 (human-directed), 2026-07-16; Claude — Integrity Confidence/Drift Trend format, Protocol Validation/RIP-010, Status section v0.8 omission fixed (human-directed, external ideation reviewed and scoped down), 2026-07-24; Claude — stale "PROPOSED, NOT RATIFIED" / "once ratified" GOV-013 references corrected to reflect the Charter's actual 2026-07-19 ratification (human-directed), 2026-07-29; Claude — Open Unknowns count corrected 9→8: three sidecar entries (RIP-001, RIP-004, RIP-008) are Resolved and were still counted in File State despite the header itself listing only the eight genuinely open/in-progress IDs (RIP-002/003/005/006/007/009/010/011), matching Unknowns.md's 8 rows exactly — count was stale, not a missing registration (human-directed, caught by cross-agent audit verification), 2026-08-30 |
-| Open Unknowns    | 8                                                                   |
+| Last Audit       | 2026-06-19; revised 2026-06-27; revised 2026-07-02; revised 2026-07-08 (two passes); revised 2026-07-09; revised 2026-07-16; revised 2026-07-24; revised 2026-07-29; revised 2026-08-30; revised 2026-09-03 |
+| Auditor          | Gemini — Skeptic/Auditor; ChatGPT — Skeptic/Auditor; Grok — Skeptic/Auditor; Claude — Synthesizer/Auditor; Claude — Registration Latency addition (human-directed) 2026-07-08; Claude — Phase 0 manual execution tier added (human-directed) 2026-07-08; Gemini — Exploration audit 2026-07-08 (Archive contradiction, cross-ref, RIP-009, Phase 0 anchor); Claude — fixes integrated + RIP-008 severity correction (human-directed) 2026-07-09; Claude — Post-Exit Monitoring Reversion Mechanism added for GOV-013 (human-directed), 2026-07-16; Claude — Integrity Confidence/Drift Trend format, Protocol Validation/RIP-010, Status section v0.8 omission fixed (human-directed, external ideation reviewed and scoped down), 2026-07-24; Claude — stale "PROPOSED, NOT RATIFIED" / "once ratified" GOV-013 references corrected to reflect the Charter's actual 2026-07-19 ratification (human-directed), 2026-07-29; Claude — Open Unknowns count corrected 9→8: three sidecar entries (RIP-001, RIP-004, RIP-008) are Resolved and were still counted in File State despite the header itself listing only the eight genuinely open/in-progress IDs (RIP-002/003/005/006/007/009/010/011), matching Unknowns.md's 8 rows exactly — count was stale, not a missing registration (human-directed, caught by cross-agent audit verification), 2026-08-30; ChatGPT audit (REVISE/G6-BLOCKED, RIP-AUD-001–004) — Claude source-verified and applied surgical corrections: RIP-003 closed (Integrity_Incident_Log.md already fulfilled it), RIP-002 corrected from "not yet implemented" to "partially implemented" (3 of 6 checks confirmed live in AUDIT_HARNESS.py), Archive/Git-tag procedural contradiction resolved, RIP-005's stale Security_Protocols v0.5 anchor removed. Open Unknowns 8→7 (human-directed), 2026-09-03 |
+| Open Unknowns    | 7                                                                   |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | High                                                                |
 | Sidecar Link     | #auditor-notes--unknowns                                            |
@@ -327,11 +327,11 @@ This is the highest-risk recovery scenario and the primary reason systematic arc
 
 ### Preventing the "No Prior State" Scenario
 
-The version preservation protocol above is the prevention. But given that current patterns override rather than archive, here are the minimum viable practices at v0:
+The version preservation protocol above is the prevention, and Git release tags remain the primary mechanism — this subsection does not override that. *(Corrected 2026-09-03 per ChatGPT audit finding RIP-AUD-003: this subsection previously instructed an unconditional local-copy step that read as a second, competing primary rule alongside §Version Preservation Protocol's tag-primary framing. It is fallback guidance, not a parallel requirement.)*
 
 **Before any revision session:**
-- Copy the current file to a dated archive filename
-- Takes thirty seconds — prevents the highest-risk recovery scenario entirely
+- Confirm a covering Git release tag exists at or after the version being revised. If it does, no further action is needed here.
+- If no covering tag exists, either cut one before proceeding, or — for an operator working offline or between tagged releases — copy the current file to a dated archive filename as a secondary fallback. Takes thirty seconds and prevents the highest-risk recovery scenario entirely until a tag can be cut.
 
 **In multi-agent sessions:**
 - Treat each agent's output as an intermediate archived state
@@ -548,26 +548,38 @@ Mandatory re-audit conditions for this document:
 
 ---
 
-### RIP-002 — AUDIT_HARNESS.py Phase 1 checks not yet implemented
+### RIP-002 — AUDIT_HARNESS.py Phase 1 checks partially implemented
 
 | Field         | Value                                   |
 |---------------|-------------------------------------------|
-| Status        | Open                                    |
+| Status        | Open — partially implemented            |
 | Risk          | Medium                                  |
 | Priority      | Major                                   |
 | Type          | Technical / Governance                  |
 | Blocking      | No                                      |
 | Owner         | `Admin/Repository_Integrity_Protocol.md`|
 | First Logged  | 2026-05-23                              |
-| Last Reviewed | 2026-05-23                              |
+| Last Reviewed | 2026-09-03                              |
 
-**Description:** Phase 1 automation checks (Ethical Anchor string match, File State field presence, cross-reference resolution, FROZEN marker validation, navigation file spot-check, sidecar↔`Unknowns.md` registration parity) are defined here but not yet implemented in `Automation/AUDIT_HARNESS.py`.
+**Description:** Six Phase 1 automation checks are defined here for `Automation/AUDIT_HARNESS.py`. As of 2026-09-03, verified directly against the live harness source:
 
-**Why It Matters:** Phase 1 checks are the most tractable automation target — no cryptographic tooling required. Delay means these remain human-only checks subject to fatigue and omission.
+*Implemented* (present in `AUDIT_HARNESS.py`, explicitly labeled "Phase 1 enforcement," and actually executed):
+- Ethical Anchor exact-match check
+- File State required-field presence check
+- Cross-reference resolution check
 
-**Partial mitigation — 2026-07-08:** A Phase 0 tier was added (see Automation Migration Path above) — the daily morning repository audit prompt now fetches this file directly and applies the Phase 1 check list manually against every file it opens, on a repeating daily cadence with mandatory explicit reporting. This is not automation and does not close this unknown — it reduces exposure between now and Phase 1 implementation by replacing ad hoc, easily-omitted spot-checking with a defined, repeating, forcing-function-backed manual process. Status remains Open; downgraded from unmitigated to partially mitigated.
+*Not yet implemented:*
+- FROZEN marker validation
+- Navigation file spot-check
+- Sidecar↔`Unknowns.md` registration parity check
 
-**Resolution Path:** Deferred via Specification — implement Phase 1 checks in `Automation/AUDIT_HARNESS.py`. This file is the specification. Checks are ordered by implementation tractability: Ethical Anchor match first, then File State fields, then cross-reference resolution, then navigation file spot-check, then sidecar↔`Unknowns.md` registration parity (added to this ordering 2026-07-08, see RIP-008).
+**Why It Matters:** Phase 1 checks are the most tractable automation target — no cryptographic tooling required. Delay on the remaining three means they stay human-only checks subject to fatigue and omission. This unknown itself was, until this correction, an instance of the exact drift class it exists to prevent — implementation had advanced without the tracking metadata catching up.
+
+**Partial mitigation — 2026-07-08:** A Phase 0 tier was added (see Automation Migration Path above) — the daily morning repository audit prompt now fetches this file directly and applies the Phase 1 check list manually against every file it opens, on a repeating daily cadence with mandatory explicit reporting. This runs independently of, and does not substitute for, actual `AUDIT_HARNESS.py` implementation.
+
+**Correction — 2026-09-03:** Following ChatGPT audit finding RIP-AUD-002, Claude verified `Automation/AUDIT_HARNESS.py` directly and confirmed three of the six specified checks are implemented and running, not zero. Status and description corrected from "not yet implemented" to "partially implemented" above. Not closed — three checks remain outstanding.
+
+**Resolution Path:** Deferred via Specification for the remaining three checks — implement FROZEN marker validation, navigation file spot-check, and sidecar↔`Unknowns.md` registration parity in `Automation/AUDIT_HARNESS.py`. This file remains the specification for all six; the first three are complete.
 
 ---
 
@@ -575,20 +587,20 @@ Mandatory re-audit conditions for this document:
 
 | Field         | Value                                   |
 |---------------|-------------------------------------------|
-| Status        | Open                                    |
+| Status        | Resolved — Discharge via Lessons Learned |
 | Risk          | Medium                                  |
 | Priority      | Major                                   |
 | Type          | Governance                              |
 | Blocking      | No                                      |
 | Owner         | `Admin/Repository_Integrity_Protocol.md`|
 | First Logged  | 2026-05-23                              |
-| Last Reviewed | 2026-06-19                              |
+| Last Reviewed | 2026-09-03                              |
 
 **Description:** Constitutional violations require a Cross-Module entry in `Unknowns.md`, but no dedicated integrity incident log exists and no incident ownership chain is defined (who closes incidents — human operator, auditor, or constitutional authority). Multiple Constitutional violations would accumulate as cross-module unknowns without a dedicated tracking structure.
 
 **Why It Matters:** Integrity incident history is institutional memory — it must be queryable and distinct from standard unknowns to be useful for pattern detection. Undefined ownership means incidents may linger unresolved. See RIP-007 for incident ownership tracking.
 
-**Resolution Path:** Deferred via Specification — canonical home is now `Admin/Integrity_Incident_Log.md` (created 2026-08-16). File-local sidecars and Unknowns.md remain for detail and cross-module index entries. Resolve residual RIP-007 cadence concurrently.
+**Resolution:** The location problem is solved. `Admin/Integrity_Incident_Log.md` was created 2026-08-16 and explicitly identifies itself as the canonical append-only home for integrity incidents, with an Ownership table supplying the minimum authority model. File-local sidecars and `Unknowns.md` remain for detail and cross-module index entries. Closed 2026-09-03 following ChatGPT audit finding RIP-AUD-001 (this entry had been left Open with a resolution path that already described the fix as done — a semantic-state defect, not a substantive gap). The remaining residual — escalation timing, review cadence, and the human-operator/audit-lead distinction — is not a location problem and belongs entirely to RIP-007, which remains Open for that reason.
 
 ---
 
@@ -626,11 +638,13 @@ Mandatory re-audit conditions for this document:
 | First Logged  | 2026-05-23                              |
 | Last Reviewed | 2026-06-19                              |
 
-**Description:** Phase 3 integrity enforcement (cryptographic verification, authority authentication, append-only log enforcement) depends on `Admin/Security_Protocols.md` reaching sufficient cryptographic implementation maturity. File exists at v0.5 (2026-06-19) but Phase 3 implementation does not yet exist.
+**Description:** Phase 3 integrity enforcement (cryptographic verification, authority authentication, append-only log enforcement) depends on `Admin/Security_Protocols.md` reaching sufficient cryptographic implementation maturity. Phase 3 implementation does not yet exist.
 
 **Why It Matters:** Without Phase 3, the repository cannot reach fully Enforceable integrity state. Human override authenticity (GOV-006) also depends on this file's Phase 3 output.
 
-**Resolution Path:** Deferred via Trajectory — Phase 3 is scoped to a future version when cryptographic tooling is available. `Admin/Security_Protocols.md` v0.5 is the specification input when that work begins. Status updated from Open to In Progress — file now exists and its SEC- unknowns are tracking implementation gaps.
+**Correction — 2026-09-03:** Per ChatGPT audit finding RIP-AUD-004, the prior text anchored this dependency to "Security_Protocols.md v0.5 (2026-06-19)" — stale, since that file has since advanced substantially (SEC-002, SEC-007a, SEC-009 closures; detection/revocation architecture; external-root-of-trust treatment; most recently a 2026-09-03 state-synchronization pass). Removed the version-number anchor rather than updating it to a new fixed number, since the same staleness would recur at the next Security_Protocols revision.
+
+**Resolution Path:** Deferred via Trajectory — Phase 3 is scoped to a future version when cryptographic tooling is available. `Admin/Security_Protocols.md`'s current cryptographic implementation state is the specification input when that work begins; check that file directly rather than relying on a version number recorded here. Status remains In Progress — file exists and its SEC- unknowns are tracking implementation gaps.
 
 ---
 
@@ -882,12 +896,14 @@ Mandatory re-audit conditions for this document:
 - `Routing.md` — programmatic path routing; now a protected element alongside Discovery.md
 - `Admin/Repository_Structure.md` — hardcoded folder-prefixed layout used as Navigation file spot-check baseline in Phase 1
 - `Automation/AUDIT_HARNESS.py` — primary automation target for Phase 1 and Phase 2 checks defined here, including the new sidecar↔index parity check
-- `Admin/Security_Protocols.md` — exists at v0.5 (2026-06-19); Phase 3 cryptographic enforcement dependency; SEC- unknowns track implementation gaps
+- `Admin/Security_Protocols.md` — Phase 3 cryptographic enforcement dependency; SEC- unknowns track implementation gaps; check that file directly for current version (see RIP-005 correction, 2026-09-03 — version number no longer pinned here to avoid recurring staleness)
 - `Admin/Governance_Migration_Protocol.md` — exists; Tier 1 Axiom amendment procedures cross-reference
 
 ---
 
 ## Status
+
+Version 0.10 — ChatGPT audit (REVISE/G6-BLOCKED) metadata-synchronization pass, RIP-AUD-001–004, source-verified and applied by Claude (human-directed), 2026-09-03. RIP-003 closed — `Integrity_Incident_Log.md` (created 2026-08-16) had already resolved the location problem while the entry itself remained Open. RIP-002 corrected from "not yet implemented" to "partially implemented" — three of six specified `AUDIT_HARNESS.py` checks (Ethical Anchor match, File State fields, cross-reference resolution) confirmed live in the harness source; three remain (FROZEN validation, navigation spot-check, sidecar↔Unknowns parity). §Preventing the "No Prior State" Scenario's unconditional local-copy instruction reconciled with §Version Preservation Protocol's tag-primary framing — local copy is now explicitly fallback for uncovered/offline cases, not a competing primary rule. RIP-005 and the Status cross-reference list's stale `Security_Protocols.md v0.5` anchor removed in favor of "check the file directly." Open Unknowns 8 → 7. No constitutional or architectural change; response ladder, STATE_HOLD, reconstruction restrictions, and Tier 1 protections untouched.
 
 Version 0.9 — Integrity Confidence / Drift Trend report format added to Phase 0 (closes the effectiveness-measurement gap this file previously had no way to answer); Protocol Validation (Integrity Fire Drill) subsection added and RIP-010 logged, scoped to a minimal first pass after trimming a larger external proposal against this file's own v0 constraints; Status section corrected to include the previously-missing v0.8 entry below (2026-07-24).
 

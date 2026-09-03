@@ -16,7 +16,7 @@
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | `Admin/Verification_Gates.md`                                    |
-| Last Audit       | 2026-08-22 — Grok drafts EC-016/008/004/003/009; Claude source-verified full batch; integration pass; Closure Events corrected to AP-013 format; Human Governing Authority ratified all six (including EC-005) |
+| Last Audit       | 2026-09-03 — ChatGPT audit (REVISE/G6-BLOCKED, EC-AUD-001–003); Claude source-verified findings and applied surgical corrections: Version metadata synced to v0.16, ratified count corrected from six to seven (EC-007 included), obsolete EC-001–EC-007 Drift Indicator retired. Prior: 2026-08-22 — Grok drafts EC-016/008/004/003/009; Claude source-verified full batch; integration pass; Closure Events corrected to AP-013 format; Human Governing Authority ratified all seven (EC-003, EC-004, EC-005, EC-007, EC-008, EC-009, EC-016) |
 | Auditor          | ChatGPT — Skeptic/Auditor; ChatGPT — Philosophical Review; Grok — Exploration audit 2026-07-05; Gemini — Exploration audit 2026-07-05; Claude — toxic material doctrine + gap remediation 2026-07-05; Claude — law-vs-morality doctrine + Navigation Anchors correction 2026-07-05; Claude — EC-010 stale-reference correction 2026-07-06; Claude — Anti-Weaponization override scope and tool/weapon distinction ratified by human governing authority, 2026-07-26; Claude — Synthesizer, EC-016 registered 2026-08-06; Grok pseudo-audit 2026-08-09 — no Spec Gate promotion; Claude — EC-002 Pattern Recognition Annex added and closed, 2026-08-11; Claude — EC-001 Confidence Threshold Doctrine added and closed, 2026-08-11 |
 | Open Unknowns    | 7 substantively open (EC-006, EC-010–EC-015). EC-003, EC-004, EC-005, EC-007, EC-008, EC-009, EC-016 Ratified — Payment via Specification, 2026-08-22 |
 | Active Disputes  | 0                                                                   |
@@ -665,7 +665,7 @@ Mandatory re-audit conditions:
 - Anti-Weaponization Doctrine text modified or humanitarian override exception reintroduced
 - "Capability never outruns permission" removed or qualified
 - Pacifist Operating Posture removed or reclassified as degraded mode rather than safe state
-- EC-001 through EC-007 cluster approaches two-cycle threshold without documented resolution progress
+- EC-006 (the sole remaining Open item from the original EC-001–EC-007 cluster) approaches two-cycle threshold without documented resolution progress *(retired the compound EC-001–EC-007 form 2026-09-03 — six of seven in that original cluster are now resolved/ratified; the indicator now tracks the actual remaining condition instead of a mostly-closed historical grouping)*
 - Inferred authorization used to justify material alteration before EC-008 is resolved
 - Human override claims accepted without interim authentication requirements before `Admin/Security_Protocols.md` reaches Provisional Spec
 - Lessons Learned confidence labels removed or all entries homogenized to same provenance level
@@ -1126,7 +1126,9 @@ The following terms appear in this document without canonical definitions. They 
 
 ## Status
 
-Version 0.15 — Exploration
+Version 0.16 — Exploration
+
+- 2026-09-03: **v0.16 — ChatGPT audit (REVISE/G6-BLOCKED) metadata-synchronization pass; no doctrine change.** Findings EC-AUD-001–003 verified by Claude against source and corrected: (1) Version metadata was stale — header still read v0.15 despite seven post-v0.15 Resolution Log closures on 2026-08-22 (EC-003/004/005/007/008/009/016); bumped to v0.16, this entry added. (2) File State "ratified all six (including EC-005)" was a miscount — EC-007 was ratified in that same 2026-08-22 human-ratification event and had been left out; corrected to "all seven," IDs listed explicitly. (3) Drift Indicators still hard-coded the compound "EC-001 through EC-007 cluster approaches two-cycle threshold" condition, which no longer reflects current state (six of seven now resolved/ratified); retired in favor of tracking EC-006, the actual remaining open item from that original cluster. No EC closures reopened; no Anti-Weaponization or other Tier-1 floor language touched; EC-007's Placeholder thresholds unchanged. Human-directed.
 
 **What must remain constant:** capability never outruns permission.
 
