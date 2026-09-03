@@ -28,8 +28,8 @@
 | Body Stability   | Volatile                                                            |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | `Admin/Verification_Gates.md`                                    |
-| Last Audit       | 2026-08-22 — Grok drafts SEC-007a/009/002; Claude source-verifies; two-round Skeptic/Evidence pass (ChatGPT, Grok); integration pass |
-| Auditor          | Gemini — Skeptic/Auditor; Grok — Skeptic/Auditor; ChatGPT — Skeptic/Auditor; Claude — Synthesizer |
+| Last Audit       | 2026-09-03 — Grok surgical state-synchronization repair after ChatGPT REVISE/G6-BLOCKED audit (SEC-AUD-001–006): FROZEN markers added; Scope Boundary SEC-009 updated; Human-Factors note synchronized; PAT-001/PAT-002 statuses updated; RIP-001 dependency language corrected; bottom Version 0.8 Status block replaced with current + historical record. No security architecture redesigned; SEC-002/007a/009 closures preserved. Prior: 2026-08-22 |
+| Auditor          | Grok — 2026-09-03 integrity repair (see Last Audit). Prior: Gemini / Grok / ChatGPT / Claude multi-agent history retained in Resolution Log |
 | Open Unknowns    | 10 substantively open (SEC-001, SEC-003, SEC-004, SEC-005, SEC-006, SEC-007b, SEC-008, SEC-010, SEC-011, SEC-012). SEC-002, SEC-007a, SEC-009 Ratified — Payment via Specification, 2026-08-22 |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | High                                                                |
@@ -51,7 +51,7 @@
 - Incident logging requirements for authentication events including replay
   protection requirements
 - Degraded-operation security doctrine notes
-- Compromise detection doctrine (pending — SEC-009)
+- Compromise detection doctrine (SEC-009 — Ratified, Payment via Specification, 2026-08-22)
 
 **This file DOES NOT define:**
 - Component-level infiltration prevention for salvaged hardware — governed by
@@ -110,6 +110,7 @@ implementation has a governed target to build against.
 ---
 
 ## Trust Boundary Declaration
+<!-- FROZEN: 2026-09-03 — Trust Boundary Declaration (cryptographic verification ≠ governance legitimacy). Do not weaken or reorder without formal amendment. -->
 
 **This principle governs all sections of this document and must be read first.**
 
@@ -157,6 +158,7 @@ all Constitutional-class decisions.
 ---
 
 ### External Root-of-Trust — Constitutional Requirements *(SEC-007a resolution vehicle)*
+<!-- FROZEN: 2026-09-03 — SEC-007a constitutional requirements (R1–R6). Ratified 2026-08-22. Residual physical layer is SEC-007b. Do not weaken without formal amendment. -->
 
 The Trust Boundary Declaration states the philosophical rule: cryptographic
 verification confirms identity and integrity; it does not confer governance
@@ -310,8 +312,8 @@ at next Canonical_Terms.md audit.*
 
 | PAT-ID | Target Unknown | External Source | Problem | External Pattern | Forge Decision | Validation Needed | Status | Rationale |
 |---|---|---|---|---|---|---|---|---|
-| PAT-001 | SEC-007a | NIST SP 800-57 / FIPS 140-3; PKI root anchor governance | External root-of-trust — constitutional requirements for the anchor | Hardened, centralized HSMs + formal cryptographic key lifecycles | **Modify** | Constitutional ratification (human governing authority) | Decision Drafted | Adopts the principle that an anchor must be unmodifiable through the system it anchors. Departs from assuming permanent trusted hardware exists — Forge's anchor must survive salvage/bootstrap conditions. Constitutional floor requires human ratification, not technical proof alone; ties to the circular self-certification risk named in the Trust Boundary Declaration. |
-| PAT-002 | SEC-007b | TCG / IETF secure and measured boot; air-gapped bootstrapping via manufacturer device certificates | External root-of-trust — physical implementation (offline HSM/EEPROM or equivalent) | Cryptographic signature validation baked into pristine, vendor-provisioned silicon | **Modify** | Hardware-in-the-loop testing; multi-agent review | Decision Drafted | Adopts measured-boot and air-gap principles. Departs from assuming manufacturer-issued device provenance — salvaged hardware carries none; bridges the gap with multi-operator physical validation tokens. Blocked pending SEC-007a; physical anchor design must implement whatever constitutional floor SEC-007a defines. |
+| PAT-001 | SEC-007a | NIST SP 800-57 / FIPS 140-3; PKI root anchor governance | External root-of-trust — constitutional requirements for the anchor | Hardened, centralized HSMs + formal cryptographic key lifecycles | **Modify** | Constitutional ratification (human governing authority) | Ratified — Payment via Specification, 2026-08-22 | Adopts the principle that an anchor must be unmodifiable through the system it anchors. Departs from assuming permanent trusted hardware exists — Forge's anchor must survive salvage/bootstrap conditions. Constitutional floor requires human ratification, not technical proof alone; ties to the circular self-certification risk named in the Trust Boundary Declaration. SEC-007a closed; residual physical implementation is SEC-007b. |
+| PAT-002 | SEC-007b | TCG / IETF secure and measured boot; air-gapped bootstrapping via manufacturer device certificates | External root-of-trust — physical implementation (offline HSM/EEPROM or equivalent) | Cryptographic signature validation baked into pristine, vendor-provisioned silicon | **Modify** | Hardware-in-the-loop testing; multi-agent review | Decision Drafted (open) | Adopts measured-boot and air-gap principles. Departs from assuming manufacturer-issued device provenance — salvaged hardware carries none; bridges the gap with multi-operator physical validation tokens. SEC-007a is now closed; SEC-007b is the remaining physical-layer open Unknown and is no longer blocked on an unresolved SEC-007a. |
 | PAT-003 | SEC-005 | NIST SP 800-90; TPM/vTPM attestation, secure/measured boot | Trusted initialization environment for key generation | Isolated, high-entropy automated clean-room execution environments | **Modify** | Multi-agent review; operational deployment during Genesis Phase | Decision Drafted | Departs from clean-room and hardware-attestation-as-default assumptions. Interim definition uses human-supervised, air-gapped generation on Logic-Zero-verified hardware only (current restrictive interpretation, Section III.2). Formal closure gated on CT-004 (`Admin/Canonical_Terms.md`). |
 | PAT-004 | SEC-011 | NIST post-quantum migration guidance; IETF hybrid classical+PQC transition patterns | Long-duration cryptographic continuity — entropy exhaustion, algorithm migration at Leviathan-class timescales | Phased migration to lattice-based post-quantum primitives | **Observe**, with a mandated extension | Future research; Observe entry, 2-cycle Expiry Watch | Researching | Monitors PQC convergence rather than standardizing early — industry has not converged and Forge cannot assume continuous access to current PQC infrastructure decades out. Extension: mandates an explicit low-overhead symmetric-key fallback path under entropy exhaustion. **Note:** this fallback is not covered by SEC-012 (SEC-012 is registered for asymmetric-crypto execution overhead on salvaged silicon — a different problem). If a symmetric-fallback-tree unknown is wanted, log it as a new ID (proposed SEC-013) rather than folding it into SEC-012. Routed to `Admin/Trajectories.md` as v1→v2 item. |
 
@@ -385,9 +387,7 @@ system defined in `Admin/Repository_Integrity_Protocol.md` RIP-001.
 This binding guarantees transactional uniqueness and prevents replay of
 a valid intercepted signature block within the same session window or
 across closely timed network partitions before log sync completes.
-*(Placeholder — implementation pending RIP-001 resolution. Until operational,
-treat each override as session-unique by requiring a second-operator
-confirmation that the override is a new request, not a replay.)*
+*(Placeholder — RIP-001 is Resolved as an archival substrate; the SEC-008 replay-protection mechanism itself remains open and is the remaining blocker. Until the SEC-008 mechanism is operational, treat each override as session-unique by requiring a second-operator confirmation that the override is a new request, not a replay.)*
 
 **5. Degraded-Operation Security Doctrine Note**
 
@@ -411,11 +411,12 @@ directed at operators holding tokens, and timing attacks on multi-signature
 processes are not addressed at current maturity. Cross-reference:
 - `Admin/Safety_Protocols.md` §V — operator impairment recognition
 - `Admin/Ethical_Constraints.md` EC-011 — human governance adversary model
-- SEC-008 — compromise detection criteria (pending)
+- SEC-009 — compromise detection criteria (Ratified, Payment via Specification, 2026-08-22); SEC-008 remains open for signature replay protection
+- `Admin/Ethical_Constraints.md` EC-011 — human governance adversary model (still open)
 
-Until SEC-008 and EC-011 are resolved, treat anomalous override patterns
+Until EC-011 is resolved, treat anomalous override patterns
 (unusual timing, repeated requests, out-of-character scope) as escalation
-triggers to human review.
+triggers to human review. SEC-009 detection signals are available for use under the SEC-002 state machine.
 
 ---
 
@@ -453,7 +454,7 @@ be claimed before Phases 1 and 2 are complete:
 | Phase | Prerequisite                                      | Status             |
 |-------|---------------------------------------------------|--------------------|
 | 1     | Structural checks in AUDIT_HARNESS.py             | Open — RIP-002     |
-| 2     | Comparison checks requiring archived prior states | Open — RIP-001     |
+| 2     | Comparison checks requiring archived prior states | RIP-001 Resolved (archival substrate); SEC-008 mechanism still open |
 | 3     | Cryptographic verification — this file            | Blocked by 1 and 2 |
 
 Governance Enforcement State must not advance beyond actual implemented
@@ -1128,9 +1129,7 @@ binding mechanism.
 **Resolution Path:** Add mandatory requirement to SEC-REG-001: all override
 signatures must bind a cryptographic nonce, a monotonically increasing session
 counter, or a specific block-hash from RIP-001 prior-state archival. Interim
-procedure (pending RIP-001): require second-operator confirmation that the
-override is a new request, not a replay. SEC-REG-001-A added to Section I.4
-body as the interim declaration.
+procedure: RIP-001 is Resolved as archival substrate; SEC-008 replay mechanism remains open. Until SEC-008 is operational, require second-operator confirmation that the override is a new request, not a replay. SEC-REG-001-A added to Section I.4 body as the interim declaration.
 
 ---
 
@@ -1447,18 +1446,14 @@ than working around.
 
 ## Status
 
+**Current (2026-09-03):** File-level maturity remains Draft / Spec Gates 0/6. Individual subsections SEC-002, SEC-007a, and SEC-009 are Ratified (Payment via Specification, 2026-08-22). Open substantive Unknowns: SEC-001, SEC-003, SEC-004, SEC-005, SEC-006, SEC-007b, SEC-008, SEC-010, SEC-011, SEC-012. Promotion blockers are the open set above plus GOV-008; SEC-007a and SEC-009 are no longer promotion blockers.
+
+**Historical record (Version 0.8, retained for lineage — do not treat as current):**
 Version 0.8 — SEC-DS-001 (Grok/Gemini G3/G6 dispute) logged and resolved via
 `Admin/Forge_Audit_Kit.md` v1.5 (2026-07-02). SEC-007 sidecar split into
 SEC-007a/SEC-007b, reconciling with
 `Unknowns.md` v4.4/v4.5 (2026-07-02); underlying audit maturity unchanged
-since four-agent pass (2026-06-19).
-
-**Gate status:** G1 cleared, G2 cleared, G3 cleared (Exploration-appropriate),
-G4 cleared, G5 cleared, G6 cleared. No gates blocked at Exploration stage.
-Promotion to Candidate Specification blocked by SEC-007a/SEC-007b (external
-root-of-trust — constitutional and physical layers),
-SEC-005/CT-004 (trusted initialization environment), GOV-008 (minimum quorum),
-and SEC-009 (compromise detection criteria).
+since four-agent pass (2026-06-19). At that time the bottom block recorded G1–G6 cleared at Exploration stage and listed SEC-007a/b, SEC-005/CT-004, GOV-008, and SEC-009 as promotion blockers. Those statements are superseded by the Current block above and by the 2026-08-22 File State / sidecars.
 
 **What must remain constant:**
 

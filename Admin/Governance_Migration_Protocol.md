@@ -12,17 +12,15 @@
 |------------------|---------------------------------------------------------------------|
 | Status           | Exploration                                                         |
 | Body Stability   | Volatile                                                            |
-| Spec Gates       | 0/6                                                                 |
+| Spec Gates       | 0/6 — file-level maturity remains Exploration because the protocol still contains unresolved and unimplemented migration capabilities (GMP-002 ownership transfer, GMP-004 ratification authentication, GMP-007/008, etc.). Individual subsections may nevertheless be operative or Payment-via-Specification closed (notably §III.A GMP-006 state machine, §VIII Evidence-Sufficiency Gate, Fork Reconciliation Track, §VI EQD). 0/6 does **not** mean the body is merely hypothetical. |
 | Verification Ref | `Admin/Verification_Gates.md`                                    |
-| Last Audit       | 2026-08-31 — GMP-006 Closure Event: §III.A Track B Amendment Lifecycle (State Machine) integrated (Payment via Specification); prior: 2026-08-23 — Fork Reconciliation Track added (GOV-018 operative procedure, executing the Charter-level principles ratified the same day in `Admin/Governance_Charter.md`); prior: 2026-06-19; revised through at least 2026-07-05 internally (GMP-005/GMP-009 dated later than this header — header was not kept current, see Resolution Log); Claude — GOV-013 cross-reference added, 2026-07-16; Claude — GMP-005/GMP-009 resolved, Track A/B redefined by constitutional impact (human-directed), 2026-07-17; Claude — GMP-011/GMP-012 registered, GMP-004 GPG precedent noted, GMP-006/007/008 consolidation noted, Lessons Learned populated, Open Unknowns count corrected, GMP-003 date typo fixed (human-directed, external review reviewed and scoped), 2026-07-25; Claude — §VI Epistemic Quorum Doctrine added, GMP-003 partially mitigated, GMP-013 registered (human-directed, external synthesis reviewed and rescoped away from GOV-008 conflation), 2026-07-26; Claude — Polish pass on EQD integration per external review, GOV-008 mirror note added (human-directed), 2026-07-27; Claude — Quorum Compliance Trend subsection added to §VI, GMP-013 updated as its second schema consumer (human-directed), 2026-07-26; Claude — §VII Bootstrap Quorum Doctrine added as a candidate GOV-008 specification, drafted to satisfy the higher governance-independence bar §VI's own Non-goal clause distinguishes from EQD's epistemic-independence bar (human-directed, external draft reviewed and refined), 2026-07-31; Claude — Skeptic/Auditor review of §VII integrated: substrate-gap warning added to VII.6 (hardware diversity currently declarable, not achieved), four near-term action items recorded, GMP-011 interim rule adopted from candidate to operative, TR-GOV-001 hardware-ladder reference parked in Trajectories.md with explicit non-claim language (human-directed, external review and implementation guidance verified against Electronics.md TMR doctrine before integration), 2026-07-31; Claude — Skeptic/Auditor cold pass (independent instance, no prior session context — see `Admin/BATTERY_SEED.md`-style bundling) findings integrated: VII.1's "physical/logical isolation" ambiguity resolved to state unambiguously that the v1 bar is physical hardware diversity, logical-only does not satisfy it; VII.3.4/5 gained an explicit GMP-004 cross-reference naming the ratification-authentication gap they inherit (human-directed, cold-pass findings verified against source before integration), 2026-08-03 |
-| Auditor          | Claude — GMP-006 Closure Event: §III.A Track B Amendment Lifecycle (State Machine) integrated (Payment via Specification), drafted by Grok across two revisions, Skeptic-passed by ChatGPT across two passes (Conditional Pass then Pass), independently re-verified by Claude across two rounds (caught a real Phase 2→Phase 3 authority overreach not inherited from §III, plus two stale cross-references), human-ratified (human-directed), 2026-08-31; prior: Claude — GMP-010 Closure Event: §VIII Evidence-Sufficiency Gate integrated (Payment via Specification), drafted by Grok, Skeptic-passed with seven amendments by ChatGPT, revision independently re-verified by Claude, human-ratified (human-directed), 2026-08-30; prior: Claude — Fork Reconciliation Track added, executing GOV-018's Charter-level principles (F1–F6, claim/recognized/ratified lineage states); drafted by Grok, Skeptic-passed by ChatGPT (three revisions), human-ratified (human-directed), 2026-08-23; prior: ChatGPT — Skeptic/Auditor; Gemini — Skeptic/Auditor; Grok — Skeptic/Auditor; Claude — Synthesizer; Claude — GMP-009 cross-referenced to GOV-013 (human-directed), 2026-07-16; Claude — GMP-005/GMP-009 resolved (multi-agent proposal, human-directed), 2026-07-17; Claude — Synthesizer/Auditor, external review triage (human-directed), 2026-07-25; Claude — Synthesizer/Auditor, EQD adoption with GOV-008 conflation caught and corrected (human-directed), 2026-07-26; Claude — Synthesizer/Auditor, polish pass (human-directed), 2026-07-27; Claude — Synthesizer/Auditor, Quorum Compliance Trend added, GOV-008 conflation re-checked and explicitly guarded a second time (human-directed), 2026-07-26; Claude — Synthesizer/Auditor, §VII drafted from an external candidate spec, verified against GOV-008's actual sidecar Resolution Path (`Archive/Logs/Governance_Charter_Changelog.md`) and §VI's Non-goal clause before integration, human-directed, 2026-07-31; Claude — Synthesizer, cold-pass corrective merge (human-directed), 2026-08-03 |
-| Open Unknowns    | 8                                                                   |
+| Last Audit       | 2026-09-03 — Grok surgical integrity repair after ChatGPT REVISE/G6-BLOCKED audit (GMP-AUD-001–007): FROZEN markers added; File State normalized with explicit subsection-vs-file maturity clarification; Last Audit collapsed to clean record (prior multi-month narrative retained in Resolution Log / sidecar); explicit Charter-precedence rule added pending GMP-002; subsection status markers for §VI/VII/VIII. No migration architecture redesigned. Prior full history in Resolution Log. |
+| Auditor          | Grok — 2026-09-03 integrity repair (see Last Audit). Prior Closure Events and multi-agent history retained in Resolution Log and Archive. |
+| Open Unknowns    | 8 (GMP-002, GMP-003, GMP-004, GMP-007, GMP-008, GMP-011 In Progress, GMP-012, GMP-013) |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | High                                                                |
 | Sidecar Link     | #auditor-notes--unknowns                                            |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
-
----
 
 ## Scope Boundary
 
@@ -85,6 +83,8 @@ as the higher-tier authority. The Charter's Governance Migration Doctrine
 section remains the source of constraints; this file is the executing
 candidate procedure. See GMP-002.
 
+**Explicit precedence rule (pending GMP-002 closure):** Until Gate 4 clearance and the Charter ownership-table amendment occur, any conflict between this file and `Admin/Governance_Charter.md` is resolved in favor of the Charter. This rule is machine-checkable and overrides any procedural detail in this file that would otherwise diverge.
+
 **Honest v0 acknowledgment:** At v0 with a single human contributor and
 no multi-agent quorum, the Tier 1 amendment process is largely theoretical.
 Its value now is structural: defining the process before it is needed
@@ -107,6 +107,7 @@ argument arises.
 ---
 
 ## I. Two Migration Tracks
+<!-- FROZEN: 2026-09-03 — Constitutional-impact classification rule and Track A/B distinction. Do not relocate or weaken classification criteria without formal amendment. -->
 
 All governance migration in LazarusForge falls into one of two tracks.
 The tracks are not interchangeable. Applying the wrong track to a migration
@@ -394,6 +395,7 @@ After ratification, the amendment is recorded and committed.
    open cross-module unknowns
 
 ## III.A Track B Amendment Lifecycle — State Machine
+<!-- FROZEN: 2026-09-03 — GMP-006 state machine (Payment via Specification, human-ratified 2026-08-31). Residual on GMP-004 authentication. Do not edit without formal amendment. -->
 
 **Status:** Operative doctrine (Payment via Specification for GMP-006, ratified 2026-08-31).
 **Closure target:** Serialization of concurrent Track B proposals.
@@ -627,6 +629,8 @@ in this file's Resolution Log for Track B amendments.
 ---
 
 ## VI. Epistemic Quorum Doctrine (EQD)
+<!-- STATUS: Operative / Payment-via-Specification closed elements present. File-level maturity remains Exploration. -->
+<!-- FROZEN: 2026-09-03 — EQD core distinctions (epistemic vs governance independence). Do not weaken without formal amendment. -->
 
 **Purpose:** Strengthen the epistemic reliability of governance review — the quality of reasoning and evidence behind a proposal — for Track B constitutional proposals, adversarial review, and high-risk unknown evaluation.
 
@@ -679,6 +683,7 @@ Quorum size alone is insufficient — three reviewers converging on the same sha
 ---
 
 ## VII. Bootstrap Quorum Doctrine (GOV-008 Candidate Specification) — Proposed, Not Ratified
+<!-- STATUS: Candidate specification only. Explicitly does NOT resolve GOV-008. Hardware/runtime diversity currently declarable, not achieved. Payment via Specification only. -->
 
 **Read §VI's Non-goal clause first.** This section exists specifically because that clause is real: EQD (§VI) satisfies epistemic independence — diverse reasoning and evidence review — and explicitly does **not** satisfy governance independence, the actual bar GOV-008 sets. This section is an attempt at the latter. It must be held to that higher bar throughout, not quietly graded on EQD's curve. If any part of this section reads like a repackaged EQD quorum, that is a drafting error, not an acceptable substitute.
 
@@ -791,6 +796,8 @@ Any registry implementing this must be append-only, versioned, and auditable und
 ---
 
 ## VIII. Evidence-Sufficiency Gate (ESG) for Directed Approaches
+<!-- STATUS: Operative / Payment via Specification (GMP-010, human-ratified 2026-08-30). Residual GMP-010-R1 (mechanical enforcement) remains open. -->
+<!-- FROZEN: 2026-09-03 — ESG core distinctions and load-bearing definition. Do not weaken without formal amendment. -->
 
 **Status:** Operative doctrine (Payment via Specification for GMP-010, ratified 2026-08-30).
 **Scope:** Applies to any claim, design decision, or mechanism that has been logged as a *Directed Approach* and that other files may treat as load-bearing before the claim has earned Verified / Resolved / Ratified weight.

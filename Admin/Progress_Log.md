@@ -11,7 +11,7 @@
 | Spec Gates       | N/A — this file is a progression log, not a specification           |
 | Open Unknowns    | 0 (references existing unknowns; creates none)                      |
 | Owning Domain    | Admin/                                                               |
-| Last Reviewed    | 2026-08-30                                                           |
+| Last Reviewed    | 2026-09-03                                                           |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
 ---
@@ -1148,3 +1148,36 @@ against its own sidecar, rather than carried forward from 2026-08-14.
   rounds with genuine convergence, integrated, and ratified, mirroring
   the EC-series campaign's full cycle earlier in the session.
   Human-directed.
+
+### 2026-09-03 — Dual integrity repair after ChatGPT REVISE/G6-BLOCKED audits of Governance_Charter.md and Governance_Migration_Protocol.md
+Grok independently confirmed both ChatGPT audits (all primary findings held under source check). Applied surgical repairs only — no constitutional or migration architecture redesign:
+
+**Governance_Charter.md**
+- Added FROZEN markers to Tier 1 Axioms, Integrity Enforcement Architecture (GOV-003), and Repository Integrity Doctrine.
+- Corrected two stale GOV-003 status references to post-2026-08-23 closure language (residual only SEC-007b).
+- Corrected GOV-016 "not yet ratified" sentence.
+- Replaced Checkpoint 5 "four-tier system" with current two-axis epistemic architecture language.
+- Updated File State Last Audit / Auditor fields.
+
+**Governance_Migration_Protocol.md**
+- Normalized File State: kept Exploration/0/6 but added explicit clarification that individual subsections may be operative/Payment-via-Specification closed.
+- Collapsed overloaded Last Audit field to clean record (prior narrative remains in Resolution Log).
+- Added explicit Charter-precedence rule pending GMP-002.
+- Added FROZEN markers to Two Migration Tracks, III.A state machine, EQD, ESG.
+- Added subsection STATUS markers for §VI / §VII / §VIII.
+- Updated Open Unknowns listing to name the eight items.
+
+Human-directed. No new Unknowns opened. Ready for re-audit of these two files or next high-coupling targets.
+
+### 2026-09-03 (second entry) — Security_Protocols.md state-synchronization repair after ChatGPT REVISE/G6-BLOCKED audit
+Grok independently confirmed the ChatGPT findings (stale bottom Status block, SEC-009 pending references, PAT-001/002 drift, RIP-001 dependency language, missing FROZEN markers). Note: the reported duplicate Trust Boundary heading was not present in the live Alpha 10 file (only one heading exists). Applied surgical repairs only:
+
+- Scope Boundary: SEC-009 marked Ratified.
+- Human-Factors note: SEC-009 closed; SEC-008 remains open; EC-011 still open.
+- PAT-001 Status → Ratified 2026-08-22; PAT-002 no longer "Blocked pending SEC-007a".
+- RIP-001 references updated to distinguish resolved archival substrate from still-open SEC-008 mechanism.
+- Bottom Version 0.8 / G1–G6 Status block replaced with explicit Current + Historical record.
+- FROZEN markers added to Trust Boundary Declaration and SEC-007a resolution vehicle.
+- File State Last Audit / Auditor updated.
+
+No reopen of SEC-002, SEC-007a, or SEC-009. No new Unknowns. No artificial Spec Gates advancement. Human-directed.

@@ -460,15 +460,15 @@ This elaboration changes nothing about the Hard constraint, the refuse/escalate/
 
 If and when this document is ratified, the drafting recommendation is to partition it into two files under `Admin/`:
 
-**`Admin/Constitutional_Core.md` (Immutable, pending ratification)**
+**`Admin/Constitutional_Core.md` (proposed future file — does not exist yet; Immutable once created and ratified)**
 Contents: Part 0.1 (Constitutional Principles), Part 1 (Axioms A1–A6), Part 2 (Verification Algebra), Part 3 (Predicate Definitions), Part 5 (Kernel Transition Logic).
 Governance Boundary: Invariant across build variations. Requires full manual consensus ratification to modify — same bar as `Governance_Charter.md` Tier-1 Axioms.
 
-**`Admin/Statutory_Parameters.md` (Tunable, pending ratification)**
+**`Admin/Statutory_Parameters.md` (proposed future file — does not exist yet; Tunable once created and ratified)**
 Contents: Part 0.2 (Implementation Parameters: `ε`, `W`, `Ψ_class`, `θ_p`, `Δ_max`, `d(n)`), interface sampling frequency thresholds, challenge decay scales.
 Governance Boundary: Tunable via build configuration or automated calibration runs without violating constitutional guarantees.
 
-This split is **not executed** — this single file preserves the whole architecture intact until ratification makes the split meaningful. Splitting an unratified document into "immutable" and "tunable" files would be a category error: nothing here is binding yet, so nothing is truly immutable yet either.
+This split is **not executed** — the two named paths currently 404 and are not live doctrine. This single file preserves the whole architecture intact until ratification makes the split meaningful. Splitting an unratified document into "immutable" and "tunable" files would be a category error: nothing here is binding yet, so nothing is truly immutable yet either. Integrity sweeps should treat the two names as forward references, not missing live files.
 
 ---
 

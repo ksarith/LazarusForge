@@ -16,8 +16,8 @@
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 6/6 vs. `Admin/Verification_Gates.md` — execution quality (see GOV-011, resolved 2026-07-05); promotion separately blocked by open unknowns (GOV-005) and Enforcement Checkpoint 2 — Bootstrap Paradox; GOV-003 Resolved 2026-08-23 (specification-level architecture only — constitutional Enforceability under compromise remains blocked on SEC-007b, not a promotion-readiness change) |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-08-25                                                          |
-| Auditor          | Claude — ChatGPT full Charter audit against `Admin/Forge_Audit_Kit.md` and `Admin/Auditor_Protocols.md` integrated: three epistemic-metadata corrections (GC-AUD-001 retired "Estimated" label on Genesis review horizon relabeled — corrected to Analogous, not ChatGPT's proposed Placeholder, per AP-021's explicit Analogous-or-Simulated-only rule, verified against source before integrating; GC-AUD-002 Assumptions table's legacy "High" column replaced with the two-axis Confidence/Provenance system per Auditor_Protocols.md §AP-006; GC-AUD-003 Open Unknowns File State field reworded so resolved IDs cannot be misread as members of the active count). No constitutional doctrine changed — audit explicitly confirmed G3–G6 pass and the governance architecture itself (GOV-003 ladder, GOV-022 non-axiomatic status, doctrine/procedure split, honest GOV-005/GOV-008/SEC-007b blockers) as sound; findings were concentrated in verification-language hygiene, not substance. Same pass also found and fixed two further stale claims in this file's own Auditor Notes section unrelated to the audit itself: a duplicate of the GC-AUD-003 misread pattern, and GOV-022 described as "the currently open item on Reversibility" despite being Resolved since 2026-08-21 — carried forward through at least two intervening edits before being caught here (human-directed), 2026-08-25; prior: Claude — GOV-003 (Integrity Enforcement Architecture) integrated: Charter section added applying the existing Declared/Detectable/Reviewable/Enforceable ladder (not replacing it) to integrity enforcement, with the external-anchor requirement scoped to constitutional integrity under compromise; drafted by Grok, revised once after a ChatGPT Skeptic Conditional Pass, Accepted pending one narrow source-verification (SEC-002 authority-chain characterization, confirmed accurate against source), human-ratified (human-directed), 2026-08-23; prior: Claude — GOV-015 (Constitutional Interpretation Capture) and GOV-018 (Governance Fork Reconciliation) integrated: Charter sections added, GOV-018 operative Track added to `Admin/Governance_Migration_Protocol.md`, four new terms registered in `Admin/Canonical_Terms.md`; drafted by Grok, Skeptic-passed by ChatGPT (GOV-015 one revision, GOV-018 two revisions), human-ratified (human-directed), 2026-08-23; prior: Claude — Synthesizer, added two consolidated-reference sections (Human Override Doctrine, Constitutional Amendment Boundaries) and one clarifying sentence on doctrine-vs-procedures ownership; no substantive doctrine changed, corrects a prior Copilot audit's false "doctrine is absent" findings by pointing to where the existing text already lives (human-directed), 2026-08-05; prior: Claude — Sidecar/Resolution Log relocation to `Archive/Logs/Governance_Charter_Changelog.md`, GOV-022 registered (human-directed), 2026-07-23; Claude — Skeptic/Auditor; Gemini — Skeptic/Auditor; Grok — Exploration audit 2026-07-05; Gemini — Exploration audit 2026-07-05; Claude — GOV-011 resolution 2026-07-05; Claude — Skeptic/Auditor, 2026-07-16; Claude — GOV-013 drafted (multi-agent synthesis, human-directed), 2026-07-16; Claude — GOV-013/EDL Track classification confirmed (human-directed), 2026-07-17; ChatGPT — adversarial pass, 2026-07-17; Claude — GOV-014 through GOV-020 verified against source and registered (human-directed), 2026-07-17; Claude — GOV-012 threshold deferral, GOV-013 ratification review, GOV-006 biometric addendum (human-directed), 2026-07-19 |
+| Last Audit       | 2026-09-03 — Grok surgical integrity repair after ChatGPT REVISE/G6-BLOCKED audit (GC-AUD-004/005/006/007): added FROZEN markers to Tier 1 Axioms, Integrity Enforcement Architecture, and Repository Integrity Doctrine; corrected two stale GOV-003 status references to post-2026-08-23 closure language retaining only SEC-007b residual; corrected GOV-016 "not yet ratified" sentence; replaced Checkpoint 5 "four-tier system" with current two-axis epistemic architecture language. No constitutional doctrine changed. Prior: 2026-08-25 |
+| Auditor          | Grok — 2026-09-03 integrity repair (see Last Audit); prior full audit history retained in Archive/Logs/Governance_Charter_Changelog.md and earlier Auditor field snapshots |
 | Open Unknowns    | 13 (active Charter-owned entries in `Unknowns.md` — resolved IDs are not members of this count). Recently resolved in this file: GOV-003, GOV-014, GOV-015, GOV-016, GOV-018, GOV-020, GOV-022 — Payment via Specification, 2026-08-20/21/23; full Closure Events in `Archive/Logs/Governance_Charter_Changelog.md` Resolution Log only. |
 | Active Disputes  | 1                                                                   |
 | Highest Risk     | Critical (GOV-005 — long-term constitutional stability, no fast resolution path, requires operational cycles; sole remaining open Critical in this file as of 2026-08-23. Corrected same-day from a stale reference to GOV-013, which was ratified 2026-07-19 — see this file's own Post-Exit Monitoring Doctrine section, above — and had been carried forward incorrectly through at least two prior header updates; caught by a full sweep of every File State Highest Risk field in the repository against `Unknowns.md`, prompted by an earlier stale-reference catch this same session. GOV-003/GOV-015/GOV-018 Resolved 2026-08-23, no longer contributing to Highest Risk) |
@@ -86,6 +86,8 @@ This file defines the constitutional governance structure of LazarusForge. It ex
 # Governance Charter
 
 ## Tier 1 Axioms — Self-Evident Primitives
+
+<!-- FROZEN: 2026-09-03 — Tier 1 Axioms (P-1–P-4, Q-1–Q-4). Do not edit without full formal amendment cycle under Governance Migration Protocol Track B + human ratification. -->
 
 These axioms are declared, not derived. They are not subject to runtime evaluation, agent debate, or optimization pressure from within the system. They function as epistemic circuit breakers: any reasoning path that attempts to recurse beneath, redefine, or override them triggers `STATE_HOLD` and mandatory escalation to human review.
 
@@ -413,11 +415,12 @@ Silent authority inheritance is prohibited.
 
 Governance doctrine must not imply stronger enforcement capability than currently exists.
 
-The Tier 1 Axioms are currently Declared and Detectable. Enforcement architecture is the subject of GOV-003 and remains the primary maturation target for this charter.
+The Tier 1 Axioms are currently Declared and Detectable. GOV-003 (Integrity Enforcement Architecture) was resolved and human-ratified 2026-08-23 as Payment via Specification; the architecture itself is now in place. Constitutional Enforceability under compromise remains blocked on SEC-007b (external root-of-trust instantiation) — that residual is the current maturation target, not the architecture itself.
 
 ---
 
 ## Integrity Enforcement Architecture
+<!-- FROZEN: 2026-09-03 — GOV-003 Integrity Enforcement Architecture (Payment via Specification, human-ratified 2026-08-23). Residual only: SEC-007b. Do not edit architecture without formal amendment. -->
 *GOV-003 resolution vehicle. Payment via Specification — 2026-08-23.*
 
 Repository Integrity Doctrine (below) states integrity expectations. This section states the enforcement architecture: which layer owns which function, how those layers hand off, and how the maturity ladder above applies when assessing integrity enforcement capability. This Charter defines architecture and constraints; executable mechanics live in subordinate protocols (deliberate doctrine-vs-procedures split).
@@ -550,7 +553,7 @@ All meaningful claims must distinguish:
 
 Repository coherence is not equivalent to operational truth. Axiom Q-1 makes this a constitutional requirement. Full doctrine: `Admin/Auditor_Protocols.md` §AP-006 (institutional truth provenance hierarchy), accessible via `Admin/Forge_Audit_Kit.md` §Truth Provenance Labels.
 
-During Genesis Phase, the external grounding required by Axiom Q-1 may be satisfied by signed human validation logs created outside the runtime session. Provenance labeling requirements are not relaxed — all claims must still be labeled using the four-tier system.
+During Genesis Phase, the external grounding required by Axiom Q-1 may be satisfied by signed human validation logs created outside the runtime session. Provenance labeling requirements are not relaxed — all claims must still be labeled using the current two-axis epistemic architecture (quantitative confidence labels + institutional provenance labels) defined in `Admin/Auditor_Protocols.md` §AP-006.
 
 ---
 
@@ -728,6 +731,7 @@ Fallback does not apply to Tier 1 Axioms — if the charter itself becomes unava
 ---
 
 ## Repository Integrity Doctrine
+<!-- FROZEN: 2026-09-03 — Repository Integrity Doctrine expectations. Executable mechanics remain in subordinate protocols. Do not weaken without formal amendment. -->
 
 Repository integrity includes:
 - governance lineage preservation
@@ -739,7 +743,7 @@ Repository integrity includes:
 
 This charter defines integrity expectations, not integrity implementation mechanics.
 
-Executable integrity systems belong to subordinate implementation protocols. The gap between declared and enforceable integrity is the subject of GOV-003.
+Executable integrity systems belong to subordinate implementation protocols. GOV-003 closed the architectural gap between declared and enforceable integrity (Payment via Specification, ratified 2026-08-23). Constitutional Enforceability under compromise remains residual on SEC-007b.
 
 ---
 
@@ -823,7 +827,7 @@ A Complexity Review is a time-bounded, documented process (target ≤ 14 days) t
 
 Failure to complete a triggered Complexity Review within the allowed window places the affected sub-tree under STATE_HOLD for further governance expansion until the review is closed.
 
-**Relationship to existing doctrine.** This ceiling is subordinate to, and does not replace, Governance Closure Doctrine or Governance Anti-Theater Doctrine above. It operationalizes the already-stated principle that governance complexity must remain proportional to operational value. Actual retirement of obsolete doctrine is owned by GOV-016 — not yet ratified as of this section's integration, so the Prune outcome above is a forward reference, not yet executable; Justify & Retain, Consolidate, and Defer with Watch remain available in the meantime. Quantitative cost/benefit measurement is owned by GOV-020. This section supplies only the accumulation bound and the review trigger.
+**Relationship to existing doctrine.** This ceiling is subordinate to, and does not replace, Governance Closure Doctrine or Governance Anti-Theater Doctrine above. It operationalizes the already-stated principle that governance complexity must remain proportional to operational value. Actual retirement of obsolete doctrine is owned by GOV-016 (resolved and human-ratified 2026-08-20 as Payment via Specification). The Prune outcome is therefore executable under the GOV-016 specification; Justify & Retain, Consolidate, and Defer with Watch remain available. Quantitative cost/benefit measurement is owned by GOV-020. This section supplies only the accumulation bound and the review trigger.
 
 **Explicit non-goals.** This section does not define a fixed numerical quota that may never be exceeded. It does not create a new audit role or new verification gate. It does not authorize automatic deletion of any file — sidecar permanence rules remain intact. It does not apply to engineering, test, or operational files outside the governance ownership boundary.
 
