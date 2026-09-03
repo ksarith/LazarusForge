@@ -17,13 +17,13 @@
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 4/6 (G1, G3, G4, G6 clear — G3 cleared 2026-08-03 via AP-017 Resolved; G5 conditional on cross-ref fixes below; G2 N/A — no physical/quantitative claims of its own) |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-08-02                                                          |
-| Auditor          | Grok — human-directed, 2026-08-10: Rule 10 (AP-035) added to AI Contribution Protocols — External Pseudo-Audit Scope and Logging Destination. Spec Gates and Open Unknowns count unchanged (14). Prior: Claude — Synthesizer/Auditor, 2026-08-03: GMP §VII to Challenge Class 10 high-coupling table; Sidecar SHA-256 refreshed; AP-033/Rule 9 (v0.35); AP-017 Resolved (v0.34) — see `Archive/Logs/Auditor_Protocols_Logs.md` Resolution Log for full audit history. |
+| Last Audit       | 2026-09-02 — self-application audit corrected five internal drift points (see Auditor field below); prior: 2026-08-02 |
+| Auditor          | Claude — self-application audit (human-directed, prompted by an external Grok review): reconciled the sidecar summary's stale "14 open" line (still listing AP-013/AP-005/AP-004/AP-024 as open four Closure Events after each was actually Resolved) down to the correct 10 matching this File State; updated both Version String Registry citations (Role Declaration example, Observability sign-off template) from a stale "v0.37" to the current v0.41; rewrote the Status block, which was five versions behind at "0.36"; refreshed Sidecar SHA-256 against current archive content, flagging that the prior hash predated four Closure Events and the gap went undetected for roughly two weeks; found and explicitly flagged — rather than silently filled — an undocumented gap: versions 0.39, 0.40, and 0.41 have no changelog entry anywhere in this file or the archive, 2026-09-02. Prior: Grok — human-directed, 2026-08-10: Rule 10 (AP-035) added to AI Contribution Protocols — External Pseudo-Audit Scope and Logging Destination. Spec Gates and Open Unknowns count unchanged (14). Prior: Claude — Synthesizer/Auditor, 2026-08-03: GMP §VII to Challenge Class 10 high-coupling table; Sidecar SHA-256 refreshed; AP-033/Rule 9 (v0.35); AP-017 Resolved (v0.34) — see `Archive/Logs/Auditor_Protocols_Logs.md` Resolution Log for full audit history. |
 | Open Unknowns    | 10 (AP-013 Resolved 2026-08-19; AP-005 Resolved 2026-08-19; AP-004 Resolved 2026-08-20; AP-024 Resolved — Payment via Specification, 2026-08-20; see `Archive/Logs/Auditor_Protocols_Logs.md` Resolution Log for full Closure Events) |
 | Active Disputes  | 1                                                                   |
 | Highest Risk     | High                                                                |
 | Sidecar Link     | Archive/Logs/Auditor_Protocols_Logs.md#auditor-notes--unknowns     |
-| Sidecar SHA-256  | `891eacd9d3e2a4031da1d6650909572c385ace673ce942571e3fcf6362fe55c8` as of 2026-08-03 (§VII added to high-coupling table) — heuristic integrity check, not a cryptographic guarantee; see §Sidecar Format. (Not refreshed this pass; Rule 10 addition does not alter sidecar content hashes of prior unknowns.) |
+| Sidecar SHA-256  | `f338b1c1ad4d205a328321bc3b098f5fcdec25e2f3dc7d1817a00f67a1824c72` as of 2026-09-02 (refreshed during self-application audit; supersedes the 2026-08-03 hash, which predated the AP-013/AP-005/AP-004/AP-024 Closure Events of 2026-08-19/20 that modified archive content — that gap went unflagged for roughly two weeks, the exact kind of divergence this field exists to catch) — heuristic integrity check, not a cryptographic guarantee; see §Sidecar Format. |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
 **Version String Registry** (self-referential citations outside File State — update on every version bump; required per `Admin/File_Template.md` §Self-Referential Version Strings):
@@ -410,7 +410,7 @@ Not a standalone auditor class — a mode declaration for agents contributing in
 
 All contributors — human and autonomous — must declare their operating role before contributing:
 
-> *"Operating as [Role] per Auditor_Protocols.md v0.37"*
+> *"Operating as [Role] per Auditor_Protocols.md v0.41"*
 
 **Valid roles:** Skeptic/Auditor | Systems/Auditor | Evidence/Auditor | Ethical/Auditor | Synthesizer | Engineer | Connective Tissue
 
@@ -1315,7 +1315,7 @@ Any cross-repo dependency must be documented in both repositories with a stated 
 - Sign-off statement
 
 **Standard sign-off:**
-> *"Verified under Auditor_Protocols v0.37 — gates [list] cleared, gates [list] blocked ([reason]), [N] unknowns logged, [N] overrides. Adversarial classes applied: [list]. Auditor: [Role/Agent]"*
+> *"Verified under Auditor_Protocols v0.41 — gates [list] cleared, gates [list] blocked ([reason]), [N] unknowns logged, [N] overrides. Adversarial classes applied: [list]. Auditor: [Role/Agent]"*
 
 ---
 
@@ -1475,14 +1475,18 @@ file's own body — matching the precedent already established for
 Every other file in the repository keeps its sidecar in-body; this is
 the second documented exception, not a new general rule.
 
-Current: 14 open — AP-002, AP-003, AP-004, AP-005, AP-007, AP-008,
-AP-010, AP-011, AP-013, AP-018, AP-019, AP-024, AP-029, AP-030
+Current: 10 open — AP-002, AP-003, AP-007, AP-008,
+AP-010, AP-011, AP-018, AP-019, AP-029, AP-030
 (verified by direct count against the archive, matching File State
-above; AP-017 Resolved 2026-08-03 — Payment via Validation, the
+above; AP-013 Resolved 2026-08-19, AP-005 Resolved 2026-08-19, AP-004
+Resolved 2026-08-20, and AP-024 Resolved 2026-08-20 — Payment via
+Specification — removed from this list on 2026-09-02 after this
+summary was found still listing all four as open, four Closure Events
+after the fact; AP-017 Resolved 2026-08-03 — Payment via Validation, the
 independence-mechanism closure this Version's own edit records; AP-031
 registered 2026-07-29 and Resolved same day — deferred;
 AP-032 registered 2026-08-02 and Resolved same day — protocol rule
-added; none of these three is counted among these 14 Open entries). See the archive for exact statuses, descriptions, and
+added; none of these is counted among these 10 Open entries). See the archive for exact statuses, descriptions, and
 resolution paths. Active Disputes below remains in-body, distinct
 from the sidecar — disputes are interpretation conflicts tracked at
 the document level, not per-unknown entries.
@@ -1635,9 +1639,9 @@ cycles.
 
 ## Status
 
-**Version 0.36 — Draft, Body Stability Transitional.** Full audit history: `Archive/Logs/Auditor_Protocols_Logs.md` Resolution Log. This section previously carried a duplicate, stale copy of early version history (v0.14 through v0.16) that was never updated after the file moved past those versions — trimmed 2026-07-23 as pure duplication of content the archive's Resolution Log already carries in full; see that log's v0.28 entry.
+**Version 0.41 — Draft, Body Stability Transitional.** Full audit history: `Archive/Logs/Auditor_Protocols_Logs.md` Resolution Log. This section previously carried a duplicate, stale copy of early version history (v0.14 through v0.16) that was never updated after the file moved past those versions — trimmed 2026-07-23 as pure duplication of content the archive's Resolution Log already carries in full; see that log's v0.28 entry.
 
-**Note (2026-08-19):** this Status block was already lagging the file's own header version (header at v0.37, this block still describing v0.36) before this edit — a pre-existing gap, not addressed here beyond this note. v0.37 (2026-08-10) added Rule 10 (AP-035). v0.38 (2026-08-19) integrated the AP-013 Unknown Closure Authority candidate specification into §Unknowns Registry — see that section's own Resolution Log line for full provenance. Full history remains in `Archive/Logs/Auditor_Protocols_Logs.md`.
+**Note (2026-09-02):** this Status block was corrected from a stale "0.36" (itself already three versions behind the "0.37" it was flagged against on 2026-08-19, and now five behind the current 0.41 header) as part of a broader self-application audit that found the block, the Role Declaration example, and the Observability sign-off template had all drifted independently despite the Version String Registry existing specifically to prevent this. v0.37 (2026-08-10) added Rule 10 (AP-035). v0.38 (2026-08-19) integrated the AP-013 Unknown Closure Authority candidate specification into §Unknowns Registry. **Versions 0.39, 0.40, and 0.41 have no recorded history in this file or in `Archive/Logs/Auditor_Protocols_Logs.md`** — the header advanced to 0.41 with no changelog entry documenting what changed in any of the three intervening bumps. The archive does record four Closure Events dated 2026-08-19/20 (AP-013, AP-005, AP-004, AP-024) that plausibly correspond to some or all of that range, but nothing ties a specific closure to a specific version number, so that mapping is not asserted here as fact. This gap should be treated as an open item, not silently filled in — a future pass with access to whichever session produced those version bumps should reconstruct and record the missing entries rather than have this note simply reworded to imply the history exists. Full history remains in `Archive/Logs/Auditor_Protocols_Logs.md`.
 
 **What must remain constant:**
 
