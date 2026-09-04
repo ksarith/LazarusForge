@@ -14,7 +14,7 @@
 | Body Stability   | Volatile                                                            |
 | Spec Gates       | 0/6 — file-level maturity remains Exploration because the protocol still contains unresolved and unimplemented migration capabilities (GMP-002 ownership transfer, GMP-004 ratification authentication, GMP-007/008, etc.). Individual subsections may nevertheless be operative or Payment-via-Specification closed (notably §III.A GMP-006 state machine, §VIII Evidence-Sufficiency Gate, Fork Reconciliation Track, §VI EQD). 0/6 does **not** mean the body is merely hypothetical. |
 | Verification Ref | `Admin/Verification_Gates.md`                                    |
-| Last Audit       | 2026-09-03 — Grok surgical integrity repair after ChatGPT REVISE/G6-BLOCKED audit (GMP-AUD-001–007): FROZEN markers added; File State normalized with explicit subsection-vs-file maturity clarification; Last Audit collapsed to clean record (prior multi-month narrative retained in Resolution Log / sidecar); explicit Charter-precedence rule added pending GMP-002; subsection status markers for §VI/VII/VIII. No migration architecture redesigned. Prior full history in Resolution Log. |
+| Last Audit       | 2026-09-03 — Grok surgical integrity repair after ChatGPT REVISE/G6-BLOCKED audit (GMP-AUD-001–007): FROZEN markers added; File State normalized with explicit subsection-vs-file maturity clarification; Last Audit collapsed to clean record (prior multi-month narrative retained in Resolution Log / sidecar); explicit Charter-precedence rule added pending GMP-002; subsection status markers for §VI/VII/VIII. No migration architecture redesigned. Prior full history in Resolution Log. Same day, following a Grok verification audit: Claude corrected GMP-002's own Description, which had wrongly claimed the Charter's ownership table already listed this file as owner — the live Charter table still names itself as owner (confirmed by direct check), contradicting this file's own accurate Scope Boundary text on the same point. |
 | Auditor          | Grok — 2026-09-03 integrity repair (see Last Audit). Prior Closure Events and multi-agent history retained in Resolution Log and Archive. |
 | Open Unknowns    | 8 (GMP-002, GMP-003, GMP-004, GMP-007, GMP-008, GMP-011 In Progress, GMP-012, GMP-013) |
 | Active Disputes  | 0                                                                   |
@@ -991,13 +991,9 @@ Unknowns.md v3.4 reflects corrected status.
 | Blocking      | No                                         |
 | Owner         | `Admin/Governance_Migration_Protocol.md`   |
 | First Logged  | 2026-06-05                                 |
-| Last Reviewed | 2026-06-19                                 |
+| Last Reviewed | 2026-09-03                                 |
 
-**Description:** The Charter's Canonical Governance Ownership table
-lists governance migration doctrine as owned by this file (updated in
-Governance_Charter.md v0.7), but the ownership transfer is not yet
-formally operative — this file must reach Gate 4 clearance
-(Provisional Specification maturity) before the transfer is complete.
+**Description:** The Charter's Canonical Governance Ownership table currently lists governance migration doctrine as owned by `Admin/Governance_Charter.md` itself (Active) — it has **not** yet been updated to name this file as owner, formally or otherwise. This file is the *proposed* future owner (see Scope Boundary above), contingent on two things happening: this file reaching Gate 4 clearance (Provisional Specification maturity), and a Charter amendment actually updating that table row. Neither has occurred. **Correction, 2026-09-03 (Claude, human-directed):** this entry previously claimed the Charter's table "lists governance migration doctrine as owned by this file... updated in Governance_Charter.md v0.7" — that was inaccurate and directly contradicted this file's own Scope Boundary section describing the same table correctly. Verified against the live Charter before correcting; found by source-verifying a same-day Grok audit that had cited this entry at length without checking its Charter claim against the Charter.
 
 **Why It Matters:** Premature ownership transfer creates authority void
 during this file's Exploration phase. The dual-truth-state (transfer
@@ -1005,9 +1001,11 @@ declared complete while not yet recorded / ratified) has been resolved
 by scoping transfer as proposed and pending.
 
 **Resolution Path:** On next audit pass of `Admin/Governance_Charter.md`
-after this file reaches Provisional Specification, confirm ownership
-transfer in Canonical Governance Ownership table. Until then, Charter
-remains the higher-tier authority fallback.
+after this file reaches Provisional Specification, amend that file's
+Canonical Governance Ownership table to name this file as owner. Until
+then, Charter remains the higher-tier authority fallback, and its
+table accurately reflects that — nothing here is currently out of sync
+with the Charter to fix on the Charter side.
 
 ---
 
