@@ -30,7 +30,7 @@
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 2/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-08-09 — Grok pseudo-audit (Skeptic read + minimal fixes); prior: body 2026-07-17; §XII drafted 2026-08-02 still not Gate-1 audited |
+| Last Audit       | 2026-09-01 — GU-002 reciprocal retirement-handoff subsection integrated (interface with Gate_07); prior: 2026-08-09 Grok pseudo-audit (Skeptic read + minimal fixes); body 2026-07-17; §XII drafted 2026-08-02 |
 | Auditor          | ChatGPT — Synthesizer; Claude — Engineer; Claude — Embedded Value Preservation cross-reference added (human-directed), 2026-07-17; Copilot — drafted TIL/TAL/TCM/TMV + CIR-Triage extension (human-directed), 2026-08-02; Claude — verified against source and `Admin/Verification_Gates.md`, corrective merge (human-directed), 2026-08-02; Grok pseudo-audit 2026-08-09 — no Spec Gate promotion |
 | Open Unknowns    | 7                                                                   |
 | Active Disputes  | 1                                                                   |
