@@ -425,7 +425,7 @@ re-entry under the applicable retirement / re-triage procedure
 
 Whether receipt of the handoff **automatically** triggers re-triage
 (e.g. Station 0) or requires **operator initiation** remains governed by
-Active Dispute DS-001 on `Operations/Gate_02_Triage.md`. This section
+Active Dispute TS-DS-001 on `Operations/Gate_02_Triage.md`. This section
 does not resolve that dispute.
 
 ### 5.1 Retirement triggers
@@ -494,9 +494,9 @@ not a process defect by itself.
 This section establishes the record / recommendation / decision authority
 boundary. It does **not** resolve whether retirement handoff automatically
 triggers re-triage or requires operator initiation — that remains Active
-Dispute DS-001 on `Operations/Gate_02_Triage.md`.
+Dispute TS-DS-001 on `Operations/Gate_02_Triage.md`.
 
-It also does not close Active Dispute DS-001 on this file (fitness-for-purpose
+It also does not close Active Dispute GU-DS-001 on this file (fitness-for-purpose
 ownership). Standing practice on this file remains: Gate_07 produces records
 and recommendations; Gate_02 decides. That dispute stays Open with its own
 revisit trigger (three consecutive recommendation/decision disagreements).
@@ -519,10 +519,10 @@ revisit trigger (three consecutive recommendation/decision disagreements).
   automatic hold; other hold rules (hazard, tag-absent, unknown item, etc.)
   continue to apply on their own terms.
 
-**Separation from DS-001 (Gate_02):** The degraded-handoff-record rule
+**Separation from TS-DS-001 (Gate_02):** The degraded-handoff-record rule
 governs **missing documentation only**. It does not determine whether
 receipt of a retired part automatically initiates re-triage; that question
-remains Open under Gate_02's DS-001. Tag-absent re-triage remains mandatory
+remains Open under Gate_02's TS-DS-001. Tag-absent re-triage remains mandatory
 under existing Gate_02 doctrine regardless of that dispute.
 
 ### 5.6 Residuals
@@ -582,9 +582,9 @@ under existing Gate_02 doctrine regardless of that dispute.
 
 | ID | Dispute Summary | Positions in Conflict | Risk | Status | Owner |
 |----|-----------------|-----------------------|------|--------|-------|
-| DS-001 | Whether Gate_07 should own fitness-for-purpose assessment or strictly after action review | Position A: Gate_07 assesses whether a part remains fit for continued service at each maintenance event — keeps assessment close to performance data. Position B: Fitness-for-purpose is a routing decision belonging at Gate_02_Triage — Gate_07 owns the record, Gate_02 owns the decision | Low | Open | Operations/Gate_07_Utilization.md |
+| GU-DS-001 | Whether Gate_07 should own fitness-for-purpose assessment or strictly after action review | Position A: Gate_07 assesses whether a part remains fit for continued service at each maintenance event — keeps assessment close to performance data. Position B: Fitness-for-purpose is a routing decision belonging at Gate_02_Triage — Gate_07 owns the record, Gate_02 owns the decision | Low | Open | Operations/Gate_07_Utilization.md |
 
-*DS-001 reflects a genuine boundary tension between
+*GU-DS-001 reflects a genuine boundary tension between
 observation and decision. Position B is the current
 standing doctrine — Gate_07 produces records, Gate_02
 makes routing decisions. This keeps the after action
@@ -663,7 +663,7 @@ format and recommended classification scheme have
 not been cross-validated against Gate_02_Triage
 intake requirements.
 
-*Grok review 2026-08-15: Resolution Path correct; Gate_02_Triage.md exists and DS-001 standing doctrine (Gate_07 records, Gate_02 decides) is consistent. No closure.*
+*Grok review 2026-08-15: Resolution Path correct; Gate_02_Triage.md exists and GU-DS-001 standing doctrine (Gate_07 records, Gate_02 decides) is consistent. No closure.*
 
 **Why It Matters:** If the recommendation format
 is incompatible with Gate_02's decision logic,
@@ -682,7 +682,7 @@ retirement cycle.
   one operational retirement cycle, move to
   Section 5 as Analogous.
 - Cross-reference: Operations/Gate_02_Triage.md,
-  DS-001.
+  GU-DS-001.
 
 **Proposed Resolution (superseded by Closure Event below):** §5 rewritten
 as an explicit retirement interface contract (gap-tolerant fields;
@@ -696,8 +696,8 @@ against. Tag-absent language explicitly tied to Gate_02's existing
 mandatory re-triage-if-tag-absent rule rather than described as
 discretionary.
 
-**DS-001 hygiene:** Does not resolve Gate_02's DS-001 (automatic vs.
-operator-initiated re-triage). Does not close Gate_07's own DS-001
+**DS-001 hygiene:** Does not resolve Gate_02's TS-DS-001 (automatic vs.
+operator-initiated re-triage). Does not close Gate_07's own GU-DS-001
 (fitness-for-purpose ownership). Re-entry language uses "eligible for"
 re-entry, not "initiates" re-entry, so the interface contract cannot be
 read as silently deciding the automatic-vs-operator question.
@@ -707,8 +707,8 @@ read as silently deciding the automatic-vs-operator question.
 - **Proposed status:** Resolved
 - **Payment type:** Specification
 - **Basis:** §5.1–5.6 (`Operations/Gate_07_Utilization.md`, integrated 2026-09-01) plus the reciprocal "Retirement handoff from Gate_07 (GU-002 interface)" subsection (`Operations/Gate_02_Triage.md`, same date). Establishes the record/recommend/decide interface contract, gap-tolerant field schema, advisory classification mapping, and tag/degraded-handoff behavior — the latter explicitly distinguishing a missing digital handoff record (no automatic hold) from a missing physical tag (Gate_02's existing mandatory re-triage-if-tag-absent rule applies unweakened). A stale Drift Indicator entry in this file, which still described the handoff format as "unvalidated," was corrected in the same pass to reflect specification-level cross-validation while preserving the operational-cycle confidence residual.
-- **Proposer:** Grok — Synthesizer, 2026-09-01. Drafted the original interface contract (Direction B, joint Gate_07/Gate_02), produced Revision 1 addressing four amendments from a ChatGPT Skeptic pass (removing an "DS-001 Position B encoded" claim that risked silently deciding Gate_02's actual DS-001; separating handoff-record availability from re-triage-initiation authority; correcting the cross-validation framing since no pre-existing Gate_02 retirement-intake schema existed to validate against; making `utilization_record_ref` gap-tolerant), then produced Revision 2 addressing Claude's independent finding that §5.5's tag-loss language ("Gate_02 may route") read as discretionary against Gate_02's own existing "mandatory tag system; re-triage if tag absent" rule.
-- **Verifier:** Claude — Verifier, 2026-09-01. Independently confirmed the two-DS-001 characterization against live source (Gate_02's DS-001 concerns automatic-vs-operator re-triage, Medium risk; Gate_07's DS-001 concerns fitness-for-purpose ownership, Low risk, already carrying a "Position B is standing practice" note from Grok's 2026-08-15 review) — both distinct disputes are correctly left untouched by this closure. Searched `Gate_02_Triage.md` directly for any existing hold rule tied to a missing *handoff record* (as opposed to a missing tag) — none found, so the degraded-record-path language weakens nothing pre-existing. Found the existing "Mandatory tag system; re-triage if tag absent" rule and confirmed the original draft's "Gate_02 may route" tag-loss language understated it — a real finding, addressed in Revision 2. Independently found a second, unrelated stale reference (the Drift Indicator entry) that neither agent's integration notes had caught, the same class of gap fixed for GMP-006's cross-references. Verdict: **Pass — Ready for Human Ratification.**
+- **Proposer:** Grok — Synthesizer, 2026-09-01. Drafted the original interface contract (Direction B, joint Gate_07/Gate_02), produced Revision 1 addressing four amendments from a ChatGPT Skeptic pass (removing an "TS-DS-001 Position B encoded" claim that risked silently deciding Gate_02's actual TS-DS-001; separating handoff-record availability from re-triage-initiation authority; correcting the cross-validation framing since no pre-existing Gate_02 retirement-intake schema existed to validate against; making `utilization_record_ref` gap-tolerant), then produced Revision 2 addressing Claude's independent finding that §5.5's tag-loss language ("Gate_02 may route") read as discretionary against Gate_02's own existing "mandatory tag system; re-triage if tag absent" rule.
+- **Verifier:** Claude — Verifier, 2026-09-01. Independently confirmed the two-dispute characterization against live source (Gate_02's TS-DS-001 concerns automatic-vs-operator re-triage, Medium risk; Gate_07's GU-DS-001 concerns fitness-for-purpose ownership, Low risk, already carrying a "Position B is standing practice" note from Grok's 2026-08-15 review) — both distinct disputes are correctly left untouched by this closure. Searched `Gate_02_Triage.md` directly for any existing hold rule tied to a missing *handoff record* (as opposed to a missing tag) — none found, so the degraded-record-path language weakens nothing pre-existing. Found the existing "Mandatory tag system; re-triage if tag absent" rule and confirmed the original draft's "Gate_02 may route" tag-loss language understated it — a real finding, addressed in Revision 2. Independently found a second, unrelated stale reference (the Drift Indicator entry) that neither agent's integration notes had caught, the same class of gap fixed for GMP-006's cross-references. Verdict: **Pass — Ready for Human Ratification.**
 - **Independence attestation:** Grok (Proposer), ChatGPT (pre-integration Skeptic pass, four amendments requested, then a second pass confirming Revision 1 Skeptic-ready), and Claude (Verifier, findings on the tag-absent wording and the stale Drift Indicator, both independent of either agent's own review) are three different agent instances. Same separated-passes pattern as GMP-010, GI-004/GI-006, and GMP-006.
 - **Human ratification:** Not Mandatory under `Admin/Auditor_Protocols.md`'s Unknown Closure Authority (Risk: Medium, not Critical/High) — offered and accepted anyway.
 - **Recording location:** this sidecar entry (primary, complete); `Unknowns.md` Active Index entry removed, Audit Trail note added, same pass.
@@ -716,7 +716,7 @@ read as silently deciding the automatic-vs-operator question.
 
 **Resolution:** Closed 2026-09-01 via §5.1–5.6 and the Gate_02 reciprocal subsection, integrated the same day. Full Closure Event above.
 
-**Residuals:** Operational exercise of at least one real retirement handoff (confidence upgrade only, same pattern as GI-004/GI-006), ASM-006 empirical validation, GU-001 (metric schema may later enrich the fields defined here), Gate_02's DS-001 (automatic vs. operator-initiated re-triage), and Gate_07's own DS-001 (fitness-for-purpose ownership) all remain Open. Risk and Priority intentionally unchanged.
+**Residuals:** Operational exercise of at least one real retirement handoff (confidence upgrade only, same pattern as GI-004/GI-006), ASM-006 empirical validation, GU-001 (metric schema may later enrich the fields defined here), Gate_02's TS-DS-001 (automatic vs. operator-initiated re-triage), and Gate_07's own GU-DS-001 (fitness-for-purpose ownership) all remain Open. Risk and Priority intentionally unchanged.
 
 ---
 
@@ -841,7 +841,7 @@ different owning file. FRT floor calibration closes both.
 
 ### Resolution Log
 
-- 2026-08-15: **Grok review round (Gate_07 sequence continuation).** All 5 GU unknowns (GU-001–005) reviewed. Last Reviewed bumped; review markers added. Cross-refs verified real (FN-001 still Open/spec-complete per Unknowns.md v4.55, GI-006, Gate_02_Triage.md, GF-006, TR-002, Trajectories.md, Ship_of_Theseus.md). DS-001 standing doctrine (Gate_07 records / Gate_02 decides) consistent. Zero closures, zero Blocking flips, zero Priority changes. Spec Gates left locked at 0/6. Human-directed.
+- 2026-08-15: **Grok review round (Gate_07 sequence continuation).** All 5 GU unknowns (GU-001–005) reviewed. Last Reviewed bumped; review markers added. Cross-refs verified real (FN-001 still Open/spec-complete per Unknowns.md v4.55, GI-006, Gate_02_Triage.md, GF-006, TR-002, Trajectories.md, Ship_of_Theseus.md). GU-DS-001 standing doctrine (Gate_07 records / Gate_02 decides) consistent. Zero closures, zero Blocking flips, zero Priority changes. Spec Gates left locked at 0/6. Human-directed.
 
 - 2026-08-10: **Pseudo-audit (Grok, same limits).** Findings only; Spec Gates
   left locked at 0/6. (1) Open Unknowns **5** = GU-001–005, matches local +
@@ -865,7 +865,7 @@ different owning file. FRT floor calibration closes both.
 | Date | Path | Why Abandoned | Reconsider? |
 |------|------|---------------|-------------|
 | 2026-05-19 | Utilization as terminal stage — parts enter service and system moves on without structured feedback | Terminal stage produces parts but no learning. Precision ceiling stagnates, wire quality problems repeat, self-replication loop has no performance signal. The forge that does not debrief does not improve | No — after action review doctrine is permanent |
-| 2026-05-19 | Gate_07 making retirement routing decisions | Retirement routing is a triage decision belonging at Gate_02_Triage where full gate logic applies. Gate_07 owns the record and recommendation — not the decision | Reconsider if operational experience shows Gate_02 consistently lacks context for retirement decisions — see DS-001 trigger condition |
+| 2026-05-19 | Gate_07 making retirement routing decisions | Retirement routing is a triage decision belonging at Gate_02_Triage where full gate logic applies. Gate_07 owns the record and recommendation — not the decision | Reconsider if operational experience shows Gate_02 consistently lacks context for retirement decisions — see GU-DS-001 trigger condition |
 | 2026-05-19 | Automatic Reduction routing for all retired parts | Retired part may be functional in reduced application, repairable, or hazardous. Automatic Reduction wastes recovery value and contradicts preserve-before-destruction doctrine | No — Gate_02 assessment of retired parts is permanent doctrine |
 | 2026-05-19 | Continuous real-time monitoring as v0 utilization doctrine | Sensor infrastructure and automated monitoring require capability that does not exist at v0 bootstrap. Treating real-time monitoring as baseline makes utilization conditional on infrastructure that may never exist at small forge scale | Reconsider at v2+ when sensor capability and power budget justify continuous monitoring |
 | 2026-05-19 | Failure records treated as negative outcomes to minimize | Minimizing failure records produces a forge that appears to succeed but does not learn. A culture that discourages failure logging produces silent failure accumulation | No — failure logging culture is permanent doctrine |
@@ -887,7 +887,7 @@ Gate_07_Utilization:
 |---------|--------|
 | Parts enter service without utilization records opened at deployment | After action review doctrine requires records open at deployment — retroactive logging loses deployment context |
 | Failure records not logged because failure was minor or embarrassing | Failure logging culture is permanent doctrine — all failures regardless of severity. Selective logging produces false confidence and silent failure accumulation |
-| Gate_07 begins making retirement routing decisions without DS-001 resolution | Permanently abandoned path — Gate_07 recommends, Gate_02 decides. Boundary change requires explicit audit cycle and DS-001 resolution |
+| Gate_07 begins making retirement routing decisions without GU-DS-001 resolution | Permanently abandoned path — Gate_07 recommends, Gate_02 decides. Boundary change requires explicit audit cycle and GU-DS-001 resolution |
 | Retired parts routed directly to Reduction without Gate_02 assessment | Permanently abandoned path — retired parts are not exhausted parts. Gate_02 assessment is mandatory before Reduction |
 | Feedback path tagging abandoned in favor of unstructured free-text records | Explicit feedback path tagging is permanent doctrine — unstructured records do not route to the decisions they can improve |
 | GU-001 schema remains undefined when cross-forge utilization comparison is attempted | Schema compatibility is prerequisite for cross-forge learning — comparison without compatible schemas produces misleading patterns |

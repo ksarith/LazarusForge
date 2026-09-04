@@ -346,7 +346,7 @@ record and an advisory `recommended_gate02_class`.
 - Absence of the handoff record does not, by itself, create an automatic
   hold; other hold rules continue to apply on their own terms.
 - This rule governs documentation quality only. It does **not** resolve
-  Active Dispute DS-001 on this file (automatic re-triage on retirement
+  Active Dispute TS-DS-001 on this file (automatic re-triage on retirement
   handoff vs operator-initiated re-triage only).
 
 **Physical tag absent**
@@ -632,7 +632,7 @@ See TS-005 through TS-008 below for tracked unknowns against this section.
 
 | ID     | Summary                                                                                   | Positions in Conflict                                                        | Risk   | Status | Owner                    |
 |--------|-------------------------------------------------------------------------------------------|------------------------------------------------------------------------------|--------|--------|--------------------------|
-| DS-001 | Whether retirement handoff from Gate_07_Utilization should trigger automatic re-triage or require operator decision | Automatic re-entry at Station 0 vs. operator-initiated re-triage only | Medium | Open   | Operations/Gate_02_Triage.md |
+| TS-DS-001 | Whether retirement handoff from Gate_07_Utilization should trigger automatic re-triage or require operator decision | Automatic re-entry at Station 0 vs. operator-initiated re-triage only | Medium | Open   | Operations/Gate_02_Triage.md |
 
 ---
 
@@ -931,7 +931,7 @@ until a scoring owner and cadence are assigned and logged here.
   is unchanged and now has a concrete mechanism behind it. No Spec Gate
   change; no TS-* count change. Human-directed.
 
-- 2026-08-09: **Pseudo-audit (Grok — Skeptic/Auditor read + minimal Synthesizer fixes; human-directed).** Correction: TS-002 Blocking No → Yes — file's own "Why It Matters" calls contamination bypass the highest-risk triage failure mode with operator-harm potential; Unknowns.md already indexed Priority Blocking; local Blocking field understated the substance. **Findings (not closed):** F-G2-001 — Open Unknowns 7 = TS-001,002,003,005,006,007,008 (TS-004 Resolved discharge retained); count matches. F-G2-002 — Spec Gates 2/6 left unchanged; §XII explicitly does not raise gate count; no independent Gate evidence package re-verified this pass. F-G2-003 — DS-001 (retirement handoff auto vs operator re-triage) remains Open Active Dispute. F-G2-004 — TS-005–008 correctly non-blocking while §XII proposed/unaudited. Spec Gates **unchanged** 2/6. Status **unchanged** Draft.
+- 2026-08-09: **Pseudo-audit (Grok — Skeptic/Auditor read + minimal Synthesizer fixes; human-directed).** Correction: TS-002 Blocking No → Yes — file's own "Why It Matters" calls contamination bypass the highest-risk triage failure mode with operator-harm potential; Unknowns.md already indexed Priority Blocking; local Blocking field understated the substance. **Findings (not closed):** F-G2-001 — Open Unknowns 7 = TS-001,002,003,005,006,007,008 (TS-004 Resolved discharge retained); count matches. F-G2-002 — Spec Gates 2/6 left unchanged; §XII explicitly does not raise gate count; no independent Gate evidence package re-verified this pass. F-G2-003 — TS-DS-001 (retirement handoff auto vs operator re-triage) remains Open Active Dispute. F-G2-004 — TS-005–008 correctly non-blocking while §XII proposed/unaudited. Spec Gates **unchanged** 2/6. Status **unchanged** Draft.
 
 - 2026-08-02: **§XII.1a TIL v0 Log Specification added (Event_ID format,
   closed-loop fate tracking, multi-Forge deferral note), human-directed.**
@@ -980,7 +980,7 @@ until a scoring owner and cadence are assigned and logged here.
 - May 2026: Failure Modes section added.
 - May 2026: Interfaces section added.
 - May 2026: Station 4 anti-overfitting protection added.
-- 2026-05-23: Retrofitted to File_Template.md structure. Safety Advisory, File State table, Scope Boundary, File Purpose, Assumptions table, Abandoned Paths, Drift Indicators added. DS-001 (retirement handoff dispute) added to Active Disputes. Stale flat filenames corrected to canonical folder-prefixed paths throughout. Lessons Learned reformatted to full table with Evidence Type and Confidence columns. Sidecar unknowns reformatted to structured table format.
+- 2026-05-23: Retrofitted to File_Template.md structure. Safety Advisory, File State table, Scope Boundary, File Purpose, Assumptions table, Abandoned Paths, Drift Indicators added. TS-DS-001 (retirement handoff dispute) added to Active Disputes. Stale flat filenames corrected to canonical folder-prefixed paths throughout. Lessons Learned reformatted to full table with Evidence Type and Confidence columns. Sidecar unknowns reformatted to structured table format.
 - 2026-06-06: Navigation Anchors block added. Verification Ref corrected to Admin/Verification_Gates.md. Electronics.md cross-reference corrected to Operations/Electronics.md. Duplicate separator removed. Interfaces table updated — Precision.md and Facilities.md added as upstream references. CT-002 cross-reference entry added to sidecar. Open Unknowns updated 3 → 4.
 - 2026-07-12: Reordered Abandoned Paths and Drift Indicators to after Auditor Notes & Unknowns, per template order — they previously sat between Active Disputes and Auditor Notes & Unknowns. No other content changed. Same fix applied same day to `Operations/Air_Scrubber.md` and `Operations/Energy.md`.
 
@@ -1009,7 +1009,7 @@ Mandatory re-audit conditions for this document:
 - Gate Correspondence table diverges from `Architecture/Forge_flow.md` gate definitions
 - Stale flat filenames present in cross-references
 - Human/AI Oversight Gate requirement removed for Strategic or Critical tier components
-- DS-001 resolved without explicit audit cycle and cross-validation with Gate_07_Utilization.md
+- TS-DS-001 resolved without explicit audit cycle and cross-validation with Gate_07_Utilization.md
 - Ethical Anchor field absent, altered, or does not match canonical string
 - §XII (TIL/TAL/TCM/TMV) cited as binding, constitutional, or CIR-integrated without GOV-008 existing and CIR_Gov.md being ratified
 - §XII treated as having raised this file's Spec Gates count without an actual gate pass on record
