@@ -1,6 +1,6 @@
 # Discovery.md — LazarusForge
 **Navigation layer for the active working repository.**
-**Last updated: 2026-08-30**
+**Last updated: 2026-09-04**
 
 ---
 
@@ -338,17 +338,18 @@ Discovery.md is a navigation map — task tracking belongs in Unknowns.md.
 
 | File | Status | Spec Gates | Highest Risk |
 |------|--------|-----------|--------------|
-| `Admin/Governance_Charter.md` | Draft | 6/6 vs. `Admin/Verification_Gates.md` — execution quality (see GOV-011, resolved 2026-07-05); promotion separately blocked by open unknowns (GOV-005) and Enforcement Checkpoint 2 — Bootstrap Paradox; GOV-003 Resolved 2026-08-23 (specification-level architecture only — no promotion-readiness change) | Critical (GOV-005 — sole remaining open Critical in that file; GOV-013 ratified 2026-07-19, GOV-015/GOV-018/GOV-003 Resolved 2026-08-23 — see `Archive/Logs/Governance_Charter_Changelog.md`; this row corrected 2026-08-25 to match that file's own File State, which had drifted out of sync with this summary table) |
+| `Admin/Governance_Charter.md` | Draft | 6/6 vs. `Admin/Verification_Gates.md` — execution quality (see GOV-011, resolved 2026-07-05); promotion separately blocked by open unknowns (GOV-005) and Enforcement Checkpoint 2 — Bootstrap Paradox; GOV-003 Resolved 2026-08-23 (specification-level architecture only — no promotion-readiness change) | High (GOV-005 — sole remaining open item with Priority: Critical in that file; its own Risk field reads High, matching the convention that this column mirrors Risk not Priority — corrected 2026-09-04, this row previously said "Critical," carrying forward a Risk/Priority conflation from that file's own header that was fixed 2026-09-03; GOV-013 ratified 2026-07-19, GOV-015/GOV-018/GOV-003 Resolved 2026-08-23 — see `Archive/Logs/Governance_Charter_Changelog.md`) |
 | `Admin/Ethical_Constraints.md` | Exploration | 0/6 | High |
-| `Admin/Auditor_Protocols.md` | Draft | 4/6 (G1, G3, G4, G6 clear — G3 cleared 2026-08-03 via AP-017 Resolved; G5 conditional on cross-ref fixes below; G2 N/A — no physical/quantitative claims of its own) | High |
+| `Admin/Auditor_Protocols.md` | Draft | 5/6 (G1, G3, G4, G5, G6 clear — G3 cleared 2026-08-03 via AP-017 Resolved; G5 cleared 2026-09-03, cross-ref sweep found and fixed one remaining unprefixed-path defect; G2 N/A — no physical/quantitative claims of its own) | High |
 | `Admin/Forge_Audit_Kit.md` | Draft | 0/6 | — |
-| `Admin/Verification_Gates.md` | Draft | 2/6 | High |
+| `Admin/Verification_Gates.md` | Draft | 6/6 — Spec Gates 2/6→6/6 2026-09-03 per Grok audit recommendation, Tier 1 Axiom Verification follow-up completed same day (Governance_Charter.md loaded, no drift found); Status remains Draft — 6/6 reflects execution quality only, not promotion readiness | High |
 | `Admin/File_Template.md` | Exploration / Draft / Specification | 0/6 | Low / Medium / High |
 | `Admin/Canonical_Terms.md` | Draft | 0/6 | Low |
 | `Admin/Engineer_Protocols.md` | Draft | 2/6 | High |
 | `Admin/Safety_Protocols.md` | Exploration | 0/6 | High |
 | `Admin/Security_Protocols.md` | Draft | 0/6 | High |
 | `Admin/Repository_Integrity_Protocol.md` | Draft | 2/6 | High |
+| `Admin/Integrity_Incident_Log.md` | Active — Intake Log | N/A — this file is a log, not a specification | Medium (empty since creation 2026-08-16; format sound but untested under live load — added to this table 2026-09-04, was missing despite being registered in `Routing.md` since creation) |
 | `Admin/Repository_Structure.md` | Exploration | 0/6 | Low |
 | `Admin/Ship_of_Theseus.md` | Exploration | 0/6 | Medium |
 | `Admin/Trajectories.md` | Exploration | 1/6 | Medium |

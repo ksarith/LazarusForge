@@ -1,7 +1,7 @@
 # Routing.md — LazarusForge
 **Canonical Navigation and Link Mapping Index.**
-**Last updated: 2026-08-30**
-**No map changes 2026-08-16 through 2026-08-29: no files added, removed, or rerouted in that window. One addition on 2026-08-30: `Admin/INTEGRITY_SWEEP_PROMPT.md` registered (new file, exemption class 6 per File_Template.md — operational prompt, not doctrine).**
+**Last updated: 2026-09-04**
+**No map changes 2026-08-31 through 2026-09-04: the governance File State / Spec Gates / Highest Risk synchronizations across Verification_Gates.md, Auditor_Protocols.md, Governance_Charter.md, Governance_Migration_Protocol.md, Ethical_Constraints.md, Security_Protocols.md, Repository_Integrity_Protocol.md, Unknowns.md, and Progress_Log.md in that window were content-only — no files added, removed, or rerouted. Two Active Disputes IDs disambiguated in-place 2026-09-04 (`Operations/Gate_02_Triage.md` and `Operations/Gate_07_Utilization.md` local disputes renamed to TS-DS-001/GU-DS-001 respectively) — same paths, no map change. Prior: one addition on 2026-08-30 (`Admin/INTEGRITY_SWEEP_PROMPT.md`, exemption class 6).**
 
 ---
 
