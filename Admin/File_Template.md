@@ -89,6 +89,15 @@ The full File Template is **not** applied to every file in the repository. Forci
 7. **Automation source**
    - All files under `Automation/` (`.py` and any accompanying docs that are pure implementation)
 
+8. **Challenges/ Problem-Statement subtype**
+   - `Challenges/Biofouling.md`
+   - `Challenges/Critical_Minerals.md`
+   - `Challenges/Emergence.md`
+   - `Challenges/Planned_Obsolescence.md`
+   - `Challenges/Waste.md`
+   - `Challenges/Water.md`
+   These carry a File State table but Spec Gates is N/A by subtype design — they define problems, not specifications to be gated toward promotion. Confirmed as an intentional, already-reviewed exemption via a 2026-08-10 pseudo-audit pass on each file (see each file's own Resolution Log: "Spec Gates N/A for Challenges Problem-Statement subtype"), not an oversight. Added here 2026-09-04 to close a documentation gap: the exemption existed in practice and in each file's own record but was never listed in this canonical class list, which had allowed a later fabricated claim (that these files were "missing" the field entirely, an accidental early-cohort gap) to go unchecked against this file before being repeated. `Challenges/Return_To_Eden.md` and `Challenges/Closed_Loop_Feedstock.md` are Solution-Track subtype, not Problem-Statement, and are not exempt — they carry real Spec Gates values.
+
 **Non-exempt (template applies on retrofit and for new files):**  
 All other files under `Admin/`, `Architecture/`, `Operations/`, `Challenges/`, and `Tests/` that carry doctrine, protocols, specifications, or gate definitions.
 

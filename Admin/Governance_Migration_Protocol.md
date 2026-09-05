@@ -12,11 +12,11 @@
 |------------------|---------------------------------------------------------------------|
 | Status           | Exploration                                                         |
 | Body Stability   | Volatile                                                            |
-| Spec Gates       | 0/6 — file-level maturity remains Exploration because the protocol still contains unresolved and unimplemented migration capabilities (GMP-002 ownership transfer, GMP-004 ratification authentication, GMP-007/008, etc.). Individual subsections may nevertheless be operative or Payment-via-Specification closed (notably §III.A GMP-006 state machine, §VIII Evidence-Sufficiency Gate, Fork Reconciliation Track, §VI EQD). 0/6 does **not** mean the body is merely hypothetical. |
+| Spec Gates       | 0/6 — file-level maturity remains Exploration because the protocol still contains unresolved and unimplemented migration capabilities (GMP-002 ownership transfer, GMP-004 ratification authentication, etc.). Individual subsections may nevertheless be operative or Payment-via-Specification closed (notably §III.A GMP-006 state machine, §III.B GMP-012 repeal/rollback, §III.C GMP-007 withdrawal, §III.D GMP-008 expiration, §VIII Evidence-Sufficiency Gate, Fork Reconciliation Track, §VI EQD). 0/6 does **not** mean the body is merely hypothetical. |
 | Verification Ref | `Admin/Verification_Gates.md`                                    |
-| Last Audit       | 2026-09-03 — Grok surgical integrity repair after ChatGPT REVISE/G6-BLOCKED audit (GMP-AUD-001–007): FROZEN markers added; File State normalized with explicit subsection-vs-file maturity clarification; Last Audit collapsed to clean record (prior multi-month narrative retained in Resolution Log / sidecar); explicit Charter-precedence rule added pending GMP-002; subsection status markers for §VI/VII/VIII. No migration architecture redesigned. Prior full history in Resolution Log. Same day, following a Grok verification audit: Claude corrected GMP-002's own Description, which had wrongly claimed the Charter's ownership table already listed this file as owner — the live Charter table still names itself as owner (confirmed by direct check), contradicting this file's own accurate Scope Boundary text on the same point. |
-| Auditor          | Grok — 2026-09-03 integrity repair (see Last Audit). Prior Closure Events and multi-agent history retained in Resolution Log and Archive. |
-| Open Unknowns    | 8 (GMP-002, GMP-003, GMP-004, GMP-007, GMP-008, GMP-011 In Progress, GMP-012, GMP-013) |
+| Last Audit       | 2026-09-03 — Grok surgical integrity repair after ChatGPT REVISE/G6-BLOCKED audit (GMP-AUD-001–007): FROZEN markers added; File State normalized with explicit subsection-vs-file maturity clarification; Last Audit collapsed to clean record (prior multi-month narrative retained in Resolution Log / sidecar); explicit Charter-precedence rule added pending GMP-002; subsection status markers for §VI/VII/VIII. No migration architecture redesigned. Prior full history in Resolution Log. Same day, following a Grok verification audit: Claude corrected GMP-002's own Description, which had wrongly claimed the Charter's ownership table already listed this file as owner — the live Charter table still names itself as owner (confirmed by direct check), contradicting this file's own accurate Scope Boundary text on the same point. Revised 2026-09-05, three passes: §III.B Repeal/Rollback (GMP-012), §III.C Withdrawal (GMP-007), and §III.D Expiration (GMP-008) — all three drafted by Grok, each independently Skeptic-reviewed by Claude against live §III.A source (III.A.4's Withdraw/Expire authority rows, III.A.6's human-attention design note, and GMP-008's own original three-audit-cycle default all confirmed accurate, no invented authority, no blocking findings), and each Ratified by Human Governing Authority same day. The GMP-006/007/008 amendment-lifecycle cluster is now fully closed. |
+| Auditor          | Grok — 2026-09-03 integrity repair; Grok — 2026-09-05 §III.B/§III.C/§III.D drafts (GMP-012/007/008); Claude — 2026-09-05 Skeptic passes + merge integrity checks (all three). Prior Closure Events and multi-agent history retained in Resolution Log and Archive. |
+| Open Unknowns    | 5 (GMP-002, GMP-003, GMP-004, GMP-011 In Progress, GMP-013). GMP-012, GMP-007, and GMP-008 all Ratified 2026-09-05. |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | High                                                                |
 | Sidecar Link     | #auditor-notes--unknowns                                            |
@@ -50,9 +50,9 @@
   (→ `Admin/Repository_Integrity_Protocol.md`)
 - Auditor operational behavior during migration review
   (→ `Admin/Auditor_Protocols.md`)
-- Amendment withdrawal procedure (→ GMP-007, pending)
+- Amendment withdrawal procedure (→ §III.C / GMP-007, Ratified 2026-09-05)
 - Concurrent amendment handling — Resolved 2026-08-31, §III.A Track B Amendment Lifecycle (→ GMP-006)
-- Proposal expiration policy (→ GMP-008, pending)
+- Proposal expiration policy (→ §III.D / GMP-008, Ratified 2026-09-05)
 
 ---
 
@@ -399,10 +399,12 @@ After ratification, the amendment is recorded and committed.
 
 **Status:** Operative doctrine (Payment via Specification for GMP-006, ratified 2026-08-31).
 **Closure target:** Serialization of concurrent Track B proposals.
-**Non-goal:** Does not fully specify withdrawal (GMP-007), expiration
-(GMP-008), or supersession doctrine; those remain sibling residuals or
-deferred work. Does not grant adversarial reviewers new terminal or
-advancement authority beyond what §III already states.
+**Non-goal:** Does not fully specify expiration (GMP-008) or supersession
+among *unrecorded* proposals; those remain sibling residuals or deferred
+work. Withdrawal of **pre-Recorded** proposals is specified in §III.C
+(GMP-007, Ratified). Repeal of **Recorded** amendments is specified in
+§III.B (GMP-012, Ratified). Does not grant adversarial reviewers new
+terminal or advancement authority beyond what §III already states.
 
 ### III.A.1 Core invariant — Serialization corridor
 
@@ -445,8 +447,8 @@ assigned).
 | Recorded | Human-ratified and Phase 4 recording requirements complete | Yes |
 | Returned | Sent back for rework | No |
 | Rejected | Terminal negative decision | Yes |
-| Withdrawn | Terminated before Recorded (detail → GMP-007) | Yes |
-| Expired | Stalled past policy limit (detail → GMP-008) | Yes |
+| Withdrawn | Terminated before Recorded (detail → §III.C / GMP-007, Ratified) | Yes |
+| Expired | Stalled past policy limit (detail → §III.D / GMP-008, Ratified) | Yes |
 | Superseded | Replaced by a later proposal (full doctrine deferred) | Yes |
 
 This machine sits **on top of** existing §III Phase 1–4 requirements; it
@@ -515,7 +517,7 @@ into Recorded; Phase 1 → Phase 2 while corridor occupied.
 | Phase 3 → Recorded / Returned / Rejected | **Human Governing Authority only** (Recorded also requires §III Phase 4 records) |
 | Withdraw before Phase 3 | Proposer (own proposal) or Human Authority |
 | Withdraw in Phase 3 | **Human Authority only** |
-| Expire | GMP-008 or Human Authority (not fully specified here) |
+| Expire | §III.D / GMP-008 (Ratified, provisional window) or Human Authority |
 | Supersede | Not fully specified. Naming an earlier proposal as intended-superseded is allowed when filing; **final** supersession of a proposal in Phase 2/3 requires the authority that controls that stage. Unilateral engineer supersession of another's Phase 2/3 proposal is forbidden. |
 
 ### III.A.5 History — append-only
@@ -545,9 +547,10 @@ Authority policy.
 
 | Item | Disposition |
 |------|-------------|
-| Full withdrawal procedure | GMP-007 (Open) |
-| Expiration policy | GMP-008 (Open; may remain cadence-deferred) |
-| Complete supersession doctrine | Deferred |
+| Full withdrawal procedure | §III.C / GMP-007 (Ratified, 2026-09-05) |
+| Expiration policy | §III.D / GMP-008 (Ratified, 2026-09-05; numeric window provisional) |
+| Complete supersession doctrine among unrecorded proposals | Deferred |
+| Repeal/rollback of **Recorded** amendments | §III.B / GMP-012 (Ratified, 2026-09-05) |
 | New reviewer terminal or Phase-3-advancement power | **Not granted** |
 | Elimination of sequential post-ratification interaction risk | Not claimed |
 | Live Track B operational exercise | Residual after paper closure |
@@ -593,6 +596,242 @@ ethical constraints in autonomous systems. It remains closed regardless
 of argument quality. This is not subject to amendment.
 
 ---
+
+## III.B Repeal and Rollback of Recorded Track B Amendments
+<!-- STATUS: RATIFIED 2026-09-05 — Payment via Specification for GMP-012, Human Governing Authority ratification recorded. -->
+<!-- FROZEN: 2026-09-05 — do not weaken the no-emergency-shortcut rule or the Track B parity requirement without formal amendment. -->
+
+> **RATIFIED 2026-09-05.** Human Governing Authority ratification is recorded in this section’s own Closure Event (§III.B.7) and in GMP-012’s sidecar entry below. This section is binding Track B procedure for repeal/rollback of Recorded amendments.
+
+**Status:** Ratified (closes GMP-012).  
+**Closure target:** Define the only lawful path for undoing or replacing a **Recorded** Track B amendment.  
+**Non-goals:** Does not create an emergency-repeal track. Does not authorize silent restoration of prior text. Does not alter Hard Floor items (they remain outside amendment scope entirely). Does not fully specify supersession among *unrecorded* proposals (still deferred per §III.A.7).
+
+### III.B.1 Core rule — Repeal is Track B
+
+1. A **Recorded** Track B amendment is terminal under §III.A.2. The state machine forbids `Recorded → any other state`. Further change is always a **new** proposal.
+2. Any action that would **repeal**, **roll back**, **restore pre-amendment text**, or **replace** the operative effect of a Recorded Track B amendment **is itself a Track B amendment**.
+3. That new proposal follows the ordinary §III Phase 1–4 procedure and the §III.A lifecycle (serialization corridor, EQD where applicable, Human Governing Authority ratification, Phase 4 recording).
+4. There is **no** emergency, expedited, or single-authority shortcut for repeal. An emergency-repeal path would recreate, at smaller scale, the capture risk Track B exists to prevent.
+
+### III.B.2 Restoration vs replacement (Phase 1 judgment)
+
+When assembling a repeal/rollback package, Phase 1 must choose and document one of:
+
+| Mode | Meaning | Recording requirement |
+|------|---------|------------------------|
+| **Restore** | Re-instate the exact pre-amendment text from the append-only archive / Resolution Log snapshot taken at the original Phase 4 recording | Cite the original proposal ID, ratification record, and archived text hash or verbatim archive pointer |
+| **Replace** | Enact new text that is not identical to the pre-amendment state | Full Phase 1 package as for any other Track B change; must still name the Recorded amendment being displaced |
+| **Partial repeal** | Narrow or strike only specified operative effects while leaving other effects of the same Recorded amendment in force | Explicit effect map: what remains, what is struck, downstream files affected |
+
+**Intervening Recorded amendments constraint (Restore):** A Restore operation restores the target amendment’s pre-amendment state **only to the extent** that doing so does not silently erase, invalidate, or bypass **later** Recorded amendments that affect the same constitutional surface. Where intervening Recorded amendments exist (e.g. A → B → C, and the package targets B), Phase 1 must explicitly account for their interaction and must use **Partial repeal** or **Replace** rather than bare Restore whenever a pure pre-B text reinstatement would wipe or contradict still-Recorded effects of C (or any later Recorded amendment). Restore is never a license to collapse the post-target Recorded chain.
+
+Phase 1 does **not** pre-commit the repository to always prefer Restore. Choice of mode is a documented judgment under the same evidence and failure-mode duties as any Track B Phase 1 package. Improvisation under pressure without a Phase 1 package is forbidden.
+
+### III.B.3 Interaction with Hard Floor and serialization
+
+- A repeal/rollback proposal that would weaken, narrow, or create exceptions to Hard Floor constraints (§III Hard Floor) is **out of scope** and must be Rejected on that basis — same as any other Track B proposal.
+- A repeal/rollback proposal occupies the Phase 2/3 serialization corridor like any other Track B proposal. It does not jump the queue.
+- Sequential interaction risk after prior Recorded amendments remains real (§III.A.1 point 4). Phase 1 for a repeal package must map interactions with **other** still-Recorded amendments, not only with the single target.
+
+### III.B.4 History — append-only (no silent undo)
+
+1. The original Recorded amendment’s ratification record, prior text, reviews, and proposal identifier **remain** in the audit trail.
+2. Repeal does not delete, rewrite, or “un-record” history. Phase 4 for the repeal proposal records the new operative state and points at the displaced Recorded entry.
+3. Downstream files updated under the original amendment’s compatibility class must be listed again in the repeal package’s compatibility declaration (§IV).
+
+### III.B.5 Authority
+
+| Action | Authority |
+|--------|-----------|
+| Propose repeal/rollback package | Engineer / assembler (same as any Track B Draft → Phase 1) |
+| Advance through Phase 2/3 | Same authority matrix as §III.A.4 |
+| Ratify repeal | **Human Governing Authority only** |
+| “Emergency” or agent-only repeal | **Forbidden** |
+
+### III.B.6 Explicit non-claims and residuals
+
+| Item | Disposition |
+|------|-------------|
+| Emergency or wartime repeal shortcut | **Not created** — rejected by design |
+| Automatic rollback on audit failure | **Not created** |
+| Full supersession doctrine among unrecorded proposals | Still deferred (§III.A.7) |
+| GMP-007 withdrawal (pre-Recorded only) | §III.C (Ratified); withdrawal cannot apply to Recorded |
+| GMP-008 expiration of stalled pre-Recorded proposals | Separate unknown |
+| Live operational exercise of a real repeal | Residual after paper closure |
+
+### III.B.7 Closure statement (GMP-012)
+
+*§III.B — Payment via Specification for GMP-012 (surfaced 2026-07-25). Minimum candidate in the original Resolution Path adopted and expanded: repeal is Track B; no separate emergency track; Restore vs Replace is Phase 1 judgment. Aligns with §III.A invariant that Recorded is terminal and further change is a new proposal. Drafted by Grok, 2026-09-05; Claude ran an independent Skeptic pass same day, verifying every §III.A cross-reference (III.A.1 point 4, III.A.2 terminal-state table, III.A.4, III.A.7) and the Hard Floor claim directly against source — all confirmed accurate, no blocking findings. Human Governing Authority ratified 2026-09-05.*
+
+---
+
+## III.C Withdrawal of Pre-Recorded Track B Proposals
+<!-- STATUS: RATIFIED 2026-09-05 — Payment via Specification for GMP-007, Human Governing Authority ratification recorded. -->
+<!-- FROZEN: 2026-09-05 — do not weaken the Phase-3 Human-only rule, the no-partial-resumption rule, or the Recorded-boundary without formal amendment. -->
+
+> **RATIFIED 2026-09-05.** Human Governing Authority ratification is recorded in this section’s own Closure Event (§III.C.7) and in GMP-007’s sidecar entry below. This section is binding Track B procedure for withdrawal of pre-Recorded proposals.
+
+**Status:** Ratified (closes GMP-007).  
+**Closure target:** Define the only lawful path for terminating a Track B proposal **before** it reaches **Recorded**.  
+**Non-goals:** Does not apply to **Recorded** amendments (those use §III.B repeal). Does not define expiration of stalled proposals (GMP-008). Does not grant reviewers terminal withdrawal power. Does not create automatic withdrawal on audit failure.
+
+### III.C.1 Core rule — Withdrawal is terminal and pre-Recorded only
+
+1. **Withdrawn** is a terminal state under §III.A.2. A proposal that has transitioned to Withdrawn is closed for lifecycle purposes.
+2. Withdrawal applies **only** to proposals that have **not** reached **Recorded**. Once Recorded, the lawful path is §III.B (repeal/rollback as a new Track B proposal) — not withdrawal.
+3. Withdrawal is **not** rejection, return, expiration, or supersession. Those remain distinct §III.A outcomes.
+4. There is **no** silent abandonment. A proposal that stops advancing without a recorded withdrawal (or other terminal transition) remains in its last non-terminal state until disposition.
+
+### III.C.2 Who may withdraw (authority matrix)
+
+| Current state | Who may withdraw | Notes |
+|---------------|------------------|--------|
+| Draft | Proposer (own proposal) or Human Governing Authority | Informal work product; still requires logged rationale if the item was already tracked |
+| Phase 1 | Proposer (own proposal) or Human Governing Authority | |
+| Phase 2 | Proposer (own proposal) or Human Governing Authority | Corridor-release rules apply (§III.C.4) |
+| Phase 3 | **Human Governing Authority only** | Proposer may **request** withdrawal; may not execute it |
+| Returned | Proposer (own proposal) or Human Governing Authority | Same as Phase 1 after rework path |
+| Recorded | **Forbidden** | Use §III.B |
+| Already terminal (Withdrawn / Expired / Rejected / Superseded) | **N/A** | No second terminal transition |
+
+Adversarial reviewers may **recommend** withdrawal or rejection; they do **not** execute withdrawal. This preserves the §III.A.4 rule that reviewers lack terminal power.
+
+### III.C.3 Required record (no silent withdraw)
+
+Every withdrawal **must** record, in append-only form:
+
+1. Proposal identifier  
+2. State at time of withdrawal  
+3. Authority that executed the withdrawal (proposer vs Human Governing Authority)  
+4. Rationale (non-empty; may be brief)  
+5. Timestamp / audit-cycle reference  
+
+The proposal identifier, prior states, reviews, and rationale **remain** in the audit trail (§III.A.5). Withdrawal does not erase history.
+
+**Abandoned Paths:** Where this file or the Charter maintains an Abandoned Paths register for terminated governance proposals, the withdrawn proposal **must** be entered there (or a pointer recorded to the owning Resolution Log entry that serves that role). Reopening is not accomplished by deleting the Abandoned Paths entry.
+
+### III.C.4 Serialization corridor release
+
+If the withdrawn proposal occupied the Phase 2/3 serialization corridor, the corridor **releases** upon transition to Withdrawn — same practical effect as Rejected or Recorded for corridor occupancy. Waiting Phase 1 proposals do **not** auto-advance; they still require package-complete + reviewer assigned + gate clear (§III.A.3).
+
+### III.C.5 Reopening — Phase 1 only, no partial resumption
+
+1. A Withdrawn proposal may be pursued again **only** by starting a **new** Draft → Phase 1 assembly.  
+2. **No partial resumption** from the pre-withdrawal Phase 2/3 package. Prior text may be **cited** as source material; it is not live state.  
+3. The new proposal receives a **new** proposal identifier. The Withdrawn record stays terminal and linked for lineage.
+
+### III.C.6 Explicit non-claims and residuals
+
+| Item | Disposition |
+|------|-------------|
+| Withdrawal of **Recorded** amendments | **Forbidden here** — §III.B only |
+| Automatic withdrawal on stall | **Not created** — see GMP-008 for expiration |
+| Reviewer-executed withdrawal | **Not granted** |
+| Proposer withdrawal in Phase 3 | **Not granted** — Human Authority only |
+| Live operational exercise of withdrawal | Residual after paper closure |
+| Interaction with future GMP-008 timers | Boundary: expiration is a distinct terminal path; both may exist |
+
+### III.C.7 Closure statement (GMP-007)
+
+*§III.C — Payment via Specification for GMP-007 (surfaced 2026-06-19). Original Resolution Path adopted against the live §III.A machine (Withdrawn state, phase-gated authority, append-only history already present): logged rationale, Abandoned Paths entry, reopen only via fresh Phase 1, no partial resumption, Recorded boundary explicit. Drafted by Grok, 2026-09-05; Claude ran an independent Skeptic pass same day, verifying every §III.A cross-reference (III.A.3, III.A.4 authority table, III.A.5) directly against source — confirmed the withdrawal authority matrix matches III.A.4's own pre-existing Withdraw rows, no invented authority, no blocking findings. Human Governing Authority ratified 2026-09-05.*
+
+---
+
+
+## III.D Expiration of Stalled Pre-Recorded Track B Proposals
+<!-- STATUS: RATIFIED 2026-09-05 — Payment via Specification for GMP-008, Human Governing Authority ratification recorded. -->
+<!-- FROZEN: 2026-09-05 — do not weaken the Phase-3 non-auto-expire rule or the Recorded boundary without formal amendment. -->
+
+> **RATIFIED 2026-09-05.** Human Governing Authority ratification is recorded in this section’s own Closure Event (§III.D.8) and in GMP-008’s sidecar entry below. This section is binding Track B procedure for expiration of stalled pre-Recorded proposals.
+
+**Status:** Ratified (closes GMP-008).  
+**Closure target:** Define when and how a stalled pre-Recorded Track B proposal becomes **Expired**.  
+**Non-goals:** Does not apply to **Recorded** amendments (§III.B). Does not replace withdrawal (§III.C). Does not impose a time-bound duty on Human Authority to ratify Phase 3 items (see §III.A.6). Does not invent a full governance cadence calendar (residual until Trajectories / operational tempo is established).
+
+### III.D.1 Core rule — Expiration is terminal and pre-Recorded only
+
+1. **Expired** is a terminal state under §III.A.2.  
+2. Expiration applies **only** to proposals that have **not** reached **Recorded**.  
+3. Expiration is **not** withdrawal, rejection, return, or supersession. Those remain distinct outcomes.  
+4. Expiration addresses **stall** (no qualifying advancement for a defined window). Withdrawal addresses **deliberate termination** with rationale (§III.C).
+
+### III.D.2 Default stall window (provisional)
+
+**Provisional default (from original GMP-008 Resolution Path):** a proposal in Draft, Phase 1, Phase 2, or Returned **expires** if it undergoes **no qualifying advancement** across **three consecutive full audit cycles**.
+
+**Qualifying advancement** (any one resets the stall count):
+
+| Event | Resets stall? |
+|-------|----------------|
+| Draft → Phase 1 | Yes |
+| Phase 1 → Phase 2 | Yes |
+| Phase 2 → Phase 3 | Yes |
+| Phase 2 → Returned (blocking return for rework) | Yes |
+| Returned → Phase 1 (rework complete) | Yes |
+| Substantive package revision logged while remaining in the same phase | Yes (must be recorded; trivial typo fixes do not count) |
+| Mere passage of time / re-listing without change | No |
+
+**Provisional status of the numeric window:** Three full audit cycles is the **stated default** until a repository governance cadence is established (original Resolution Path: Trajectories.md v1 milestone / operational tempo). Human Governing Authority may adopt a different standing window by explicit recorded policy **without** treating that change as a Tier 1 Axiom amendment — it is a procedural parameter of this section. Changing the *structure* of expiration (who may expire, Phase 3 rule, Recorded boundary) remains ordinary Track B.
+
+Until cadence instrumentation exists, “full audit cycle” means a completed repository integrity / audit pass of the kind recorded in `Admin/Progress_Log.md` or an equivalent dated audit heading — not an informal chat turn.
+
+### III.D.3 Phase 3 special rule (no silent expire of Human attention)
+
+A proposal in **Phase 3** (awaiting Human Governing Authority disposition) **does not** auto-expire under the default stall window.
+
+Rationale: §III.A.6 already treats Phase 3 occupancy as human-attention, not state-machine deadlock. Auto-expiring a package pending human ratification would invent a time-bound ratification duty that Charter and this file do not impose.
+
+**Human Governing Authority may** still:
+
+- Withdraw the Phase 3 item (§III.C), or  
+- Reject it, or  
+- Explicitly expire it by recorded decision (optional; not required)
+
+No agent may auto-expire Phase 3.
+
+### III.D.4 Authority
+
+| Action | Authority |
+|--------|-----------|
+| Record auto-expiration under §III.D.2 after the stall window is met | Engineer / assembler or auditor verifying the stall count against Progress_Log / audit headings — **declarative record**, not a new terminal power over content |
+| Early expiration (before window) | **Human Governing Authority**, or proposer **request** with Human confirmation if the proposal is not solely the proposer’s Draft |
+| Extend / pause stall count for a named proposal | **Human Governing Authority** only (recorded) |
+| Change the standing numeric window | **Human Governing Authority** standing policy (see §III.D.2) |
+| Expire Phase 3 | **Human Governing Authority** only (optional); no auto-expire |
+| Expire **Recorded** | **Forbidden** — use §III.B |
+
+### III.D.5 Required record and corridor release
+
+Every expiration **must** record: proposal ID, state at expiration, stall-count basis (or Human decision reference), authority, timestamp / audit-cycle reference.
+
+Append-only history preserved (§III.A.5).
+
+If the expired proposal occupied the Phase 2/3 serialization corridor, the corridor **releases** upon Expired — same occupancy effect as Withdrawn, Rejected, or Recorded. Waiting Phase 1 proposals do not auto-advance.
+
+**Abandoned Paths:** Enter the expired proposal (or pointer) where this repository maintains that register for terminated governance proposals.
+
+### III.D.6 Reopening
+
+Same as withdrawal: a new Draft → Phase 1 assembly only; **no partial resumption**; new proposal identifier; prior Expired record remains terminal and linked for lineage.
+
+### III.D.7 Explicit non-claims and residuals
+
+| Item | Disposition |
+|------|-------------|
+| Binding multi-year cadence calendar | **Not created** — residual until operational tempo / Trajectories milestone |
+| Auto-expire of Phase 3 | **Forbidden** |
+| Expiration of Recorded amendments | **Forbidden** — §III.B |
+| Substitution for withdrawal | **Not claimed** — deliberate stop uses §III.C |
+| Live operational exercise of auto-expiration | Residual after paper closure |
+| Exact shared definition of “audit cycle” across all future tools | Residual; Progress_Log-dated audit heading is the v0 anchor |
+
+### III.D.8 Closure statement (GMP-008)
+
+*§III.D — Payment via Specification for GMP-008 (surfaced 2026-06-19). Original Resolution Path’s suggested default (three full audit cycles) adopted as **provisional** stall window; procedure and Phase 3 non-auto-expire rule specified now so the state machine’s Expired transitions are not improvisation. Cadence residual disclosed honestly rather than inventing a false calendar. Aligns with §III.A.6 human-attention note. Drafted by Grok, 2026-09-05; Claude ran an independent Skeptic pass same day, verifying the §III.A.6 citation, the "three full audit cycles" default against GMP-008’s own original Resolution Path text (verbatim match, not invented), the pre-existing §III.A.4 Expire authority row, and Trajectories.md’s existence — all confirmed accurate, no blocking findings. Human Governing Authority ratified 2026-09-05.*
+
+---
+
 
 ## IV. Migration Compatibility Classification
 
@@ -1239,7 +1478,7 @@ conflicting time-bound ratification obligation.
 
 **Resolution:** Closed 2026-08-31 via §III.A Track B Amendment Lifecycle — State Machine, integrated the same day into `Admin/Governance_Migration_Protocol.md`. This closure went through the most extensive multi-round review of any Closure Event to date in this repository: two Grok drafting passes, two ChatGPT Skeptic passes (Conditional Pass, then Pass), and two Claude Verifier passes, each catching genuine issues the prior round had missed (Phase 1 concurrency too strict; unbounded Superseded authority; automatic Phase 1→Phase 2 advancement contradicting the serialization gate; an invented Phase 2→Phase 3 reviewer-advancement authority not actually present in §III; two stale cross-references; a missing corridor-release clarification for Phase 4). Full Closure Event above.
 
-**Residuals:** GMP-007 (full withdrawal procedure — now specifiable against a real Withdrawn state), GMP-008 (expiration policy — may remain cadence-deferred), complete supersession doctrine (deferred, not invented), and operational exercise of the state machine on a live Track B proposal (confidence residual, not a closure blocker) all remain Open. Risk and Priority intentionally unchanged.
+**Residuals:** complete supersession doctrine among unrecorded proposals (deferred, not invented), and operational exercise of the state machine on a live Track B proposal (confidence residual, not a closure blocker) remain Open. GMP-007 (Ratified 2026-09-05 via §III.C) and GMP-008 (Ratified 2026-09-05 via §III.D) have both closed — the full GMP-006/007/008 amendment-lifecycle cluster is now Ratified. Risk and Priority intentionally unchanged.
 
 ---
 
@@ -1247,31 +1486,41 @@ conflicting time-bound ratification obligation.
 
 | Field         | Value                                      |
 |---------------|--------------------------------------------|
-| Status        | Open                                       |
+| Status        | Ratified — Payment via Specification       |
 | Risk          | Low                                        |
 | Priority      | Minor                                      |
 | Type          | Governance                                 |
 | Blocking      | No                                         |
 | Owner         | `Admin/Governance_Migration_Protocol.md`   |
 | First Logged  | 2026-06-19                                 |
-| Last Reviewed | 2026-06-19                                 |
+| Last Reviewed | 2026-09-05                                 |
 
-**Description:** Current Track B states are: ratify, reject, or return
-to Phase 1. No explicit "withdraw" or "abandon" state exists for a
-proposal that the engineer or human governing party wishes to terminate
-before reaching Phase 3.
+**Description:** Track B lacked an explicit withdrawal procedure for a
+proposal the proposer or Human Governing Authority wished to terminate
+before Recorded. (The §III.A state machine already named a Withdrawn
+terminal state and phase-gated authority after GMP-006; full procedure
+remained open.)
 
-**Why It Matters:** Without a withdrawal procedure, abandoned proposals
-linger in an ambiguous state — neither progressing nor formally closed.
-This creates noise in the unknowns tracking and may conflict with GMP-006
-serialization if introduced.
+**Why It Matters:** Without a defined procedure, abandoned proposals
+linger ambiguous — neither progressing nor formally closed — and can
+interact poorly with serialization.
 
-**Resolution Path:** Add withdrawal state to Track B state machine when
-GMP-006 is resolved. Withdrawal requires a logged rationale and must
-move the proposal to Abandoned Paths. A withdrawn proposal may be
-reopened only by restarting Phase 1 from scratch — no partial resumption.
-See GMP-006's consolidation note — this and GMP-008 resolve together
-with it, not separately.
+**Resolution:** §III.C Withdrawal of Pre-Recorded Track B Proposals
+(this file, Ratified 2026-09-05). Core rules: Withdrawn is terminal and
+**pre-Recorded only**; phase-gated authority (Human-only in Phase 3,
+matching §III.A.4's own pre-existing Withdraw rows); logged rationale +
+Abandoned Paths entry; corridor release on withdraw from Phase 2/3;
+reopen only via new Phase 1 (no partial resumption). Recorded changes
+use §III.B, not withdrawal.
+
+**Residuals (do not block Ratified status):**
+| ID | Residual | Why left open |
+|----|----------|---------------|
+| GMP-007-R1 | Live operational exercise of a real withdrawal | No Track B proposal has yet been withdrawn under this procedure; paper closure only |
+| GMP-007-R2 | Interaction with GMP-008 expiration timers | Expiration remains a distinct terminal path; both may coexist once GMP-008 closes |
+| GMP-007-R3 | Abandoned Paths register format across files | Entry required; exact shared schema deferred if no single register exists yet |
+
+*Surfaced 2026-06-19. Specifiable after GMP-006 (2026-08-31). Specification drafted by Grok 2026-09-05 from the original Resolution Path against live §III.A. Claude ran an independent Skeptic pass 2026-09-05, verifying III.A.3/III.A.4/III.A.5 cross-references directly against source — the withdrawal authority matrix matches III.A.4's own pre-existing Withdraw rows exactly, no invented authority, no blocking findings. Human Governing Authority ratified 2026-09-05.*
 
 ---
 
@@ -1279,16 +1528,16 @@ with it, not separately.
 
 | Field         | Value                                      |
 |---------------|--------------------------------------------|
-| Status        | Open                                       |
+| Status        | Ratified — Payment via Specification       |
 | Risk          | Low                                        |
 | Priority      | Minor                                      |
 | Type          | Governance                                 |
 | Blocking      | No                                         |
 | Owner         | `Admin/Governance_Migration_Protocol.md`   |
 | First Logged  | 2026-06-19                                 |
-| Last Reviewed | 2026-06-19                                 |
+| Last Reviewed | 2026-09-05                                 |
 
-**Description:** No expiration rule exists for proposals that stall
+**Description:** No expiration rule existed for proposals that stall
 in Phase 1 or Phase 2. A proposal could theoretically persist indefinitely,
 accumulating stale context while blocking serialization (GMP-006).
 
@@ -1297,11 +1546,25 @@ expiration window depends on audit frequency and operational tempo. At
 v0 with very low amendment frequency, this is low risk; at higher tempo
 it could become a governance friction point.
 
-**Resolution Path:** Defer to when governance cadence is established
-(Trajectories.md v1 milestone). Suggested default when defined: proposals
-not advanced within three full audit cycles expire automatically and must
-restart Phase 1. Cross-reference GMP-006 (serialization) and GMP-007
-(withdrawal) — all three form the amendment lifecycle state machine.
+**Resolution:** §III.D Expiration of Stalled Pre-Recorded Track B
+Proposals (this file, Ratified 2026-09-05). Core rules: Expired is
+terminal and **pre-Recorded only**; provisional default is three
+consecutive full audit cycles with no qualifying advancement (the
+original suggested default, adopted as-is); Phase 3 never auto-expires
+(matches §III.A.6's human-attention design note); Human Governing
+Authority may extend, early-expire, or change the standing window by
+recorded policy without that counting as a Tier 1 Axiom amendment.
+Cadence residual (the numeric window's long-term validity) disclosed
+honestly rather than inventing a false operational calendar.
+
+**Residuals (do not block Ratified status):**
+| ID | Residual | Why left open |
+|----|----------|---------------|
+| GMP-008-R1 | Binding multi-year cadence calendar | Not created — residual until Trajectories.md's operational tempo milestone is reached; no false calendar invented |
+| GMP-008-R2 | Live operational exercise of a real expiration | No Track B proposal has yet stalled long enough to test this; paper closure only |
+| GMP-008-R3 | Exact shared definition of "audit cycle" across future tooling | Progress_Log-dated audit heading is the v0 anchor; may need revisiting once automation exists |
+
+*Surfaced 2026-06-19, cross-referencing GMP-006/GMP-007 as one amendment-lifecycle cluster. Specification drafted by Grok 2026-09-05, same day as §III.B/§III.C, completing that cluster. Claude ran an independent Skeptic pass 2026-09-05: verified the "three full audit cycles" default against this entry's own original Resolution Path text (verbatim match, not invented), the §III.A.6 human-attention citation, the pre-existing §III.A.4 Expire authority row, and Trajectories.md's existence — all confirmed accurate, no blocking findings. Human Governing Authority ratified 2026-09-05.*
 
 ---
 
@@ -1523,40 +1786,41 @@ registered by Claude — Synthesizer/Auditor, human-directed, 2026-07-25.*
 
 | Field         | Value                                      |
 |---------------|--------------------------------------------|
-| Status        | Open                                       |
+| Status        | Ratified — Payment via Specification       |
 | Risk          | Medium                                     |
 | Priority      | Minor                                      |
 | Type          | Governance                                 |
 | Blocking      | No                                         |
 | Owner         | `Admin/Governance_Migration_Protocol.md`   |
 | First Logged  | 2026-07-25                                 |
-| Last Reviewed | 2026-07-25                                 |
+| Last Reviewed | 2026-09-05                                 |
 
 **Description:** Track B's Phase 1–4 procedure defines how a Tier 1
-Axiom amendment gets ratified. Nothing defines what happens if a
+Axiom amendment gets ratified. Nothing defined what happens if a
 ratified amendment later proves harmful — is reversal a fresh Track B
 amendment reversing the text, a restoration from the pre-amendment
 archived state, or does it require a distinct emergency procedure?
 
 **Why It Matters:** Without this, a bad ratification has no defined
-exit other than treating repeal as a brand-new amendment through the
-full Phase 1–4 cycle — which may be the right answer, but that has
-never been stated, so an actual future repeal would be improvising
-under pressure rather than following a settled procedure.
+exit other than improvising under pressure rather than following a
+settled procedure.
 
-**Resolution Path:** Deferred via Specification. Minimum candidate:
-repeal is itself a Track B amendment (same Phase 1–4 procedure,
-same human ratification requirement) — no separate emergency track,
-since an emergency-repeal shortcut would itself be a smaller-scale
-version of the same capture risk Track B exists to prevent. Restoration
-of pre-amendment text vs. drafting new replacement text is a case-by-case
-Phase 1 judgment, not something to pre-specify. Not designed further
-here.
+**Resolution:** §III.B Repeal and Rollback of Recorded Track B Amendments
+(this file, Ratified 2026-09-05). Core rule: repeal/rollback/restore/replace
+of a **Recorded** Track B amendment is itself Track B; no emergency
+shortcut; Restore vs Replace vs Partial repeal is documented Phase 1
+judgment; append-only history preserved; Hard Floor remains out of
+scope. Aligns with §III.A invariant that Recorded is terminal and
+further change is a new proposal.
 
-*Surfaced via external audit review (ChatGPT), checked against Section
-III's actual Phase 1–4 text before registration — confirmed no rollback
-path exists anywhere in the current procedure; registered by
-Claude — Synthesizer/Auditor, human-directed, 2026-07-25.*
+**Residuals (do not block Ratified status):**
+| ID | Residual | Why left open |
+|----|----------|---------------|
+| GMP-012-R1 | Live operational exercise of a real repeal | No Recorded Tier 1 amendment has yet been repealed; paper closure only |
+| GMP-012-R2 | Full supersession doctrine among *unrecorded* proposals | Still deferred per §III.A.7; distinct from Recorded repeal |
+| GMP-012-R3 | Interaction with future GMP-007/008 once those close | Withdrawal/expiration apply only pre-Recorded; boundary already stated in §III.B.6 |
+
+*Surfaced 2026-07-25 (ChatGPT external audit; Claude registered). Specification drafted by Grok 2026-09-05 from the original Resolution Path minimum candidate, expanded into §III.B and checked against live §III.A state machine (Recorded terminal; forbidden Recorded→other; serialization; Hard Floor). Claude ran an independent Skeptic pass 2026-09-05, verifying every §III.A cross-reference and the Hard Floor claim directly against source — all confirmed accurate, no blocking findings. Human Governing Authority ratified 2026-09-05.*
 
 ---
 
