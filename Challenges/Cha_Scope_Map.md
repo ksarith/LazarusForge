@@ -11,7 +11,7 @@
 | Spec Gates       | N/A — this file is a cross-reference index, not a specification     |
 | Open Unknowns    | 0 (surfaces existing unknowns from owning files; creates none)      |
 | Owning Domain    | Challenges/                                                          |
-| Last Reviewed    | 2026-08-08                                                           |
+| Last Reviewed    | 2026-09-04                                                           |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
 ---
@@ -31,7 +31,7 @@ Fourth folder in the Scope_Map rollout, following Admin/ (2026-08-07), Architect
 **Does not own (arrow):** Sacrificial shell design (`Tests/Support_Raft.md`) · anode material selection (`Architecture/Geck_forge_seed.md` GK-002) · hydrodynamic drag/boundary layer (`Architecture/Friction_Dynamics.md` §5.1-5.2) · abrasive wear (`Friction_Dynamics.md` §7.2) · galvanic corrosion (`Support_Raft.md` SR-001) · metal fraction recovery (`Gate_04...`, `Gate_05...`) · polymer texture fabrication (`Plastics.md`) · fouling-as-network-signal (`Tests/Leviathan_testing.md`).
 
 ### `Challenges/Closed_Loop_Feedstock.md`
-**Subtype:** Solution-Track · Status: Exploration · 0/6 · 10 Open Unknowns (CLF-001-010) · Risk: silent contamination cascades / toolhead destruction (CLF-003/CLF-006)
+**Subtype:** Solution-Track · Status: Exploration · 0/6 · 9 Open Unknowns (CLF-001–004, 006–009, 011; CLF-005/010 Resolved) · Risk: silent contamination cascades / toolhead destruction (CLF-003/CLF-006)
 **Owns:** Persistence Yield ($Y_p$) telemetry model; cross-gate salvage-to-feedstock coordination heuristics; recursive improvement doctrine; §2a Embedded Value Preservation principle (ratified 2026-07-17).
 **Does not own (arrow):** Mechanical sorting (`Gate_04...`, `Gate_05...`) · thermal/chemical parameters (`Architecture/Thermal_Systems.md`, `Architecture/Chemistry.md`) · toolpath/fabrication (`Gate_06_Fabrication.md`) · toxic/hazardous handling (`Admin/Ethical_Constraints.md`, `Gate_03_Reduction.md` GR-003).
 Note: this file's own Scope Boundary is `## 2. Scope Boundary` — a numbered heading, unlike the unnumbered `## Scope Boundary` convention every Admin/Architecture/Operations file uses. Extraction initially missed it entirely on first pass because of this; corrected before this entry was written. Not itself an error worth fixing — Challenges/ files consistently use numbered section headings throughout (§1 Crisis, §2 Scope, §3 Dependencies, etc.), it's a real structural convention for this folder, not drift. Worth remembering for any future automated tooling that greps for Scope Boundary headings, though: an unqualified `## Scope Boundary` search will silently miss every Challenges/ file that numbers its headings.
@@ -62,7 +62,7 @@ Note: this file's own Scope Boundary is `## 2. Scope Boundary` — a numbered he
 **Does not own (arrow):** Thermal desoldering/integrity verification, Logic-Zero re-baselining, counterfeit detection (all `Operations/Electronics.md`, EL-008 for the last) · thermal delamination (`Gate_02_Triage.md` Station 1) · polymer enclosure upcycling (`Plastics.md`) · provenance/identity doctrine (`Admin/Ship_of_Theseus.md`) · toxic stream handling (`Air_Scrubber.md`, `Electronics.md`).
 
 ### `Challenges/Return_To_Eden.md`
-**Subtype:** Solution-Track · Status: Exploration · Gates: None cleared (G1-G2 conditional, G4-G6 cleared per 2026-06-30 audit) · 5 Open Unknowns (RE-UNK-001-005) · Risk: RE-UNK-001 (Eden Index variables formally specified but not operationally measurable; RE-UNK-005 directly dependent)
+**Subtype:** Solution-Track · Status: Exploration · Gates: None cleared (G1-G2 conditional, G4-G6 cleared per 2026-06-30 audit) · 6 Open Unknowns (RE-UNK-001–006) · Risk: RE-UNK-001 (Eden Index variables formally specified but not operationally measurable; RE-UNK-005 directly dependent)
 **Owns (In-Scope):** Eden Index ($I_E$) as cross-system evaluation heuristic; four Technical Challenge Tiers; Primary Challenge Metrics as index-level pass/fail criteria; the systemic "toward or away from Eden" heuristic question applied at architecture level.
 **Does not own (arrow):** Hardware/mechanical implementation (`Air_Scrubber.md`, `Plastics.md`, `Woodworking.md`) · governance mechanics (`Admin/Governance_Charter.md`, `Admin/Auditor_Protocols.md`) · chemical/analytical assay (`Architecture/Chemistry.md`) · water-quality remediation (`Tests/Living_Waters.md`) · measurement instrument spec (`Experiments.md`, pending RE-UNK-001/005).
 **Explicitly states its own limit:** "This file sets the objective function; it does not prescribe how any individual module hits it."

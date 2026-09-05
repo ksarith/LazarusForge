@@ -28,7 +28,7 @@
 | Active Disputes | 0 |
 | Highest Risk | RE-UNK-001 — Eden Index variables lack defined measurement protocols; index is formally specified but not yet operationally measurable. RE-UNK-005 is a direct dependency. |
 | Sidecar Link | #auditor-notes--unknowns |
-| Last Audit | 2026-06-30 (Grok + ChatGPT dual audit; G1–G2 conditional, G4–G6 cleared; dimensional consistency corrected v1.0.1 → v1.0.2) |
+| Last Audit | 2026-08-30 (RE-UNK-006 registration); prior 2026-06-30 dual audit (Grok + ChatGPT; G1–G2 conditional, G4–G6 cleared; dimensional consistency corrected v1.0.1 → v1.0.2) |
 
 ---
 
