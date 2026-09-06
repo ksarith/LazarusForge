@@ -18,7 +18,7 @@
 | **Status** | Active |
 | **Challenges Subtype** | Problem-Statement |
 | **Version** | v0.1 |
-| **Last Updated** | 2026-07-19 |
+| **Last Updated** | 2026-09-06 (ES-001/ES-002 cross-referenced to `Architecture/Local_Governance_Framework.md`; prior 2026-07-19) |
 | **Owner** | Challenges/ |
 | **Verification Ref** | `Admin/Verification_Gates.md` |
 | **Ethical Anchor** | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
@@ -160,8 +160,8 @@ The grid does not have to be the only shape reliable power can take.
 
 | ID | Description | Status | Risk |
 |---|---|---|---|
-| ES-001 | Community-facing energy surplus routing mechanism undefined — no Forge file currently defines how, or whether, generated surplus beyond internal operational need could be delivered to a surrounding community. Directly blocks ASM-002 and ASM-003. | Open | Major |
-| ES-002 | Economic legibility threshold for community-facing systems undefined — no defined method exists for confirming a deployed system's maintenance cost is actually sustainable for the community it serves, as distinct from the Forge's own economics. Feeds `Admin/Economics.md` EC-002. | Open | Major |
+| ES-001 | Community-facing energy surplus routing mechanism undefined — no Forge file currently defines how, or whether, generated surplus beyond internal operational need could be delivered to a surrounding community. Directly blocks ASM-002 and ASM-003. Disposition model and standing requirements deferred to `Architecture/Local_Governance_Framework.md` (added 2026-09-06) — no particular model presumed. | Open | Major |
+| ES-002 | Economic legibility threshold for community-facing systems undefined — no defined method exists for confirming a deployed system's maintenance cost is actually sustainable for the community it serves, as distinct from the Forge's own economics. Feeds `Admin/Economics.md` EC-002. Standing/decision-rights layer: `Architecture/Local_Governance_Framework.md` LGF-001 (added 2026-09-06). | Open | Major |
 | ES-003 | Intermittency communication doctrine undefined — no defined standard exists for how a deployed system should represent its own duty cycle and storage limitations to a community relying on it, to avoid false parity with always-on grid expectations. | Open | Minor |
 
 *ES-001 is the load-bearing unknown for this file's Long-Term Objective — without a surplus-routing mechanism, "energy-neutral or net-contributor to the surrounding community" remains aspirational rather than actionable.*

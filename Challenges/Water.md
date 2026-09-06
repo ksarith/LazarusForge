@@ -18,7 +18,7 @@
 | **Status** | Active |
 | **Challenges Subtype** | Problem-Statement |
 | **Version** | v0.3 |
-| **Last Updated** | 2026-07-11 |
+| **Last Updated** | 2026-09-06 (WS-004 cross-referenced to `Architecture/Local_Governance_Framework.md`; prior 2026-07-11) |
 | **Owner** | Challenges/ |
 | **Verification Ref** | `Admin/Verification_Gates.md` |
 | **Ethical Anchor** | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
@@ -166,7 +166,7 @@ The river does not arrive from a central warehouse. It rises from the land it ha
 | WS-001 | Optimal energy harvesting configurations for high-humidity, low-kinetic environments — no validated design for off-grid filtration power in still-air, high-humidity contexts. Feeds TH-001 sizing. | Open | Major |
 | WS-002 | Heavy metal stabilization chemistry for tropical climates — long-term stability of isolated heavy metal outputs in high-temperature, high-humidity storage not characterized. | Open | Major |
 | WS-003 | Stratification diminishing returns threshold — contamination levels at which stratification-based approaches reach declining effectiveness versus alternative pathways not defined. | Open | Major |
-| WS-004 | Community adoption and maintenance protocol — the social and institutional layer that determines whether a technically sound system is actually used and maintained. No owning file currently defines this. | Open | Major |
+| WS-004 | Community adoption and maintenance protocol — the social and institutional layer that determines whether a technically sound system is actually used and maintained. No owning file currently defines this. See `Architecture/Local_Governance_Framework.md` for the standing/decision-rights interface this should build on (added 2026-09-06). | Open | Major |
 
 *TH-003 (atmospheric moisture yield) is the Blocking unknown for Living Waters condensation deployment — tracked in `Unknowns.md` under Thermal Systems cluster.*
 *All four WS entries (WS-001–004) are registered in `Unknowns.md`.*

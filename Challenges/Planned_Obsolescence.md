@@ -18,7 +18,7 @@
 | **Status** | Active |
 | **Challenges Subtype** | Problem-Statement |
 | **Version** | v0.3 |
-| **Last Updated** | 2026-07-11 |
+| **Last Updated** | 2026-09-06 (PO-004 cross-referenced to `Architecture/Local_Governance_Framework.md`; prior 2026-07-11) |
 | **Owner** | Challenges/ |
 | **Verification Ref** | `Admin/Verification_Gates.md` |
 | **Ethical Anchor** | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
@@ -174,7 +174,7 @@ The Forge is part of what changes the world around them.
 | PO-001 | Legal boundary doctrine for firmware re-baselining — the Forge's position that firmware lock is a material property, not a legal boundary, is philosophically grounded but operationally untested. No legal review has been performed. Context-dependent and jurisdiction-variable. | Open | Major |
 | PO-002 | Potting compound removal chemistry — no validated thermal or chemical protocol exists for removing epoxy potting from electronics without damaging enclosed components. Blocks non-destructive recovery of potted assemblies. | Open | Major |
 | PO-003 | Proprietary connector adapter coverage — no systematic inventory of proprietary connector types in likely salvage streams exists. Standardized interface bridging is aspirational without this. | Open | Minor |
-| PO-004 | Community re-baselining skill transfer standard — the goal of returning repairability to communities requires a training and documentation standard. No owning file currently defines this. | Open | Major |
+| PO-004 | Community re-baselining skill transfer standard — the goal of returning repairability to communities requires a training and documentation standard. No owning file currently defines this. See `Architecture/Local_Governance_Framework.md` for the standing interface this should build on (added 2026-09-06). | Open | Major |
 
 *All four PO entries (PO-001–004) are registered in `Unknowns.md`.*
 
