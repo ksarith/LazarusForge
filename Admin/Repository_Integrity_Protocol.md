@@ -14,9 +14,9 @@
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 2/6                                                                 |
 | Verification Ref | `Admin/Verification_Gates.md`                                    |
-| Last Audit       | 2026-06-19; revised 2026-06-27; revised 2026-07-02; revised 2026-07-08 (two passes); revised 2026-07-09; revised 2026-07-16; revised 2026-07-24; revised 2026-07-29; revised 2026-08-30; revised 2026-09-03; revised 2026-09-04 |
-| Auditor          | Gemini — Skeptic/Auditor; ChatGPT — Skeptic/Auditor; Grok — Skeptic/Auditor; Claude — Synthesizer/Auditor; Claude — Registration Latency addition (human-directed) 2026-07-08; Claude — Phase 0 manual execution tier added (human-directed) 2026-07-08; Gemini — Exploration audit 2026-07-08 (Archive contradiction, cross-ref, RIP-009, Phase 0 anchor); Claude — fixes integrated + RIP-008 severity correction (human-directed) 2026-07-09; Claude — Post-Exit Monitoring Reversion Mechanism added for GOV-013 (human-directed), 2026-07-16; Claude — Integrity Confidence/Drift Trend format, Protocol Validation/RIP-010, Status section v0.8 omission fixed (human-directed, external ideation reviewed and scoped down), 2026-07-24; Claude — stale "PROPOSED, NOT RATIFIED" / "once ratified" GOV-013 references corrected to reflect the Charter's actual 2026-07-19 ratification (human-directed), 2026-07-29; Claude — Open Unknowns count corrected 9→8: three sidecar entries (RIP-001, RIP-004, RIP-008) are Resolved and were still counted in File State despite the header itself listing only the eight genuinely open/in-progress IDs (RIP-002/003/005/006/007/009/010/011), matching Unknowns.md's 8 rows exactly — count was stale, not a missing registration (human-directed, caught by cross-agent audit verification), 2026-08-30; ChatGPT audit (REVISE/G6-BLOCKED, RIP-AUD-001–004) — Claude source-verified and applied surgical corrections: RIP-003 closed (Integrity_Incident_Log.md already fulfilled it), RIP-002 corrected from "not yet implemented" to "partially implemented" (3 of 6 checks confirmed live in AUDIT_HARNESS.py), Archive/Git-tag procedural contradiction resolved, RIP-005's stale Security_Protocols v0.5 anchor removed. Open Unknowns 8→7 (human-directed), 2026-09-03; Claude — ran the first Integrity Fire Drill (RIP-010), planting Minor + Major violations in a disposable copy of `Challenges/Biofouling.md` per §Protocol Validation scope: Minor caught cleanly via ordinary Gate 5 checking, Major (deleted Resolution Log entry) not organically detectable — no internal contradiction resulted from the deletion. RIP-010 closed per its own "close once outcome is logged" rule; the detection gap registered separately as RIP-012 rather than folded back in. Open Unknowns unchanged at 7 (RIP-010 closed, RIP-012 opened) (human-directed), 2026-09-04 |
-| Open Unknowns    | 7                                                                   |
+| Last Audit       | 2026-06-19; revised 2026-06-27; revised 2026-07-02; revised 2026-07-08 (two passes); revised 2026-07-09; revised 2026-07-16; revised 2026-07-24; revised 2026-07-29; revised 2026-08-30; revised 2026-09-03; revised 2026-09-04; revised 2026-09-05 |
+| Auditor          | Gemini — Skeptic/Auditor; ChatGPT — Skeptic/Auditor; Grok — Skeptic/Auditor; Claude — Synthesizer/Auditor; Claude — Registration Latency addition (human-directed) 2026-07-08; Claude — Phase 0 manual execution tier added (human-directed) 2026-07-08; Gemini — Exploration audit 2026-07-08 (Archive contradiction, cross-ref, RIP-009, Phase 0 anchor); Claude — fixes integrated + RIP-008 severity correction (human-directed) 2026-07-09; Claude — Post-Exit Monitoring Reversion Mechanism added for GOV-013 (human-directed), 2026-07-16; Claude — Integrity Confidence/Drift Trend format, Protocol Validation/RIP-010, Status section v0.8 omission fixed (human-directed, external ideation reviewed and scoped down), 2026-07-24; Claude — stale "PROPOSED, NOT RATIFIED" / "once ratified" GOV-013 references corrected to reflect the Charter's actual 2026-07-19 ratification (human-directed), 2026-07-29; Claude — Open Unknowns count corrected 9→8: three sidecar entries (RIP-001, RIP-004, RIP-008) are Resolved and were still counted in File State despite the header itself listing only the eight genuinely open/in-progress IDs (RIP-002/003/005/006/007/009/010/011), matching Unknowns.md's 8 rows exactly — count was stale, not a missing registration (human-directed, caught by cross-agent audit verification), 2026-08-30; ChatGPT audit (REVISE/G6-BLOCKED, RIP-AUD-001–004) — Claude source-verified and applied surgical corrections: RIP-003 closed (Integrity_Incident_Log.md already fulfilled it), RIP-002 corrected from "not yet implemented" to "partially implemented" (3 of 6 checks confirmed live in AUDIT_HARNESS.py), Archive/Git-tag procedural contradiction resolved, RIP-005's stale Security_Protocols v0.5 anchor removed. Open Unknowns 8→7 (human-directed), 2026-09-03; Claude — ran the first Integrity Fire Drill (RIP-010), planting Minor + Major violations in a disposable copy of `Challenges/Biofouling.md` per §Protocol Validation scope: Minor caught cleanly via ordinary Gate 5 checking, Major (deleted Resolution Log entry) not organically detectable — no internal contradiction resulted from the deletion. RIP-010 closed per its own "close once outcome is logged" rule; the detection gap registered separately as RIP-012 rather than folded back in. Open Unknowns unchanged at 7 (RIP-010 closed, RIP-012 opened) (human-directed), 2026-09-04; §Lightweight Revision Anchors and Deletion Detection drafted by Grok (closes RIP-011/RIP-012 jointly), independently Skeptic-reviewed by Claude — caught and Grok fixed a real scope-boundary issue (first draft mislabeled the new check as amending Gate 5, which is canonically owned by `Admin/Verification_Gates.md`; revised to RIP's own Phase 1 vocabulary) — and Ratified by Human Governing Authority, 2026-09-05. Open Unknowns 7→5 |
+| Open Unknowns    | 5                                                                   |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | High                                                                |
 | Sidecar Link     | #auditor-notes--unknowns                                            |
@@ -126,6 +126,90 @@ This section defines the human workflow required before any revision to a govern
 
 ---
 
+### Lightweight Revision Anchors and Deletion Detection (RIP-011 / RIP-012)
+<!-- STATUS: RATIFIED 2026-09-05 — Payment via Specification for RIP-011 and RIP-012, Human Governing Authority ratification recorded. -->
+<!-- FROZEN: 2026-09-05 — do not weaken the forward-only append-only rule or the mandatory comparison-when-baseline-exists rule without formal amendment. -->
+
+> **RATIFIED 2026-09-05.** Human Governing Authority ratification is recorded in this subsection’s own Closure Event and in the RIP-011/RIP-012 sidecar entries below. This subsection is binding integrity procedure.
+
+**Status:** Ratified (jointly closes RIP-011 and RIP-012).  
+**Closure targets:** (1) Make the Version Preservation lightweight anchor **actually specified and usable**; (2) Make silent Resolution Log deletion **structurally or procedurally detectable** in ordinary audit, not dependent on auditor memory.
+
+#### 1. Problem restatement (from drill + verification)
+
+- §Version Preservation already said “record hash if tooling available, else line count and open unknowns count.” Verified: almost no file implements that (RIP-011).
+- Resolution Logs are append-only **by baseline**, but a single-file audit with no prior snapshot cannot notice a clean deletion that leaves no internal contradiction (RIP-012; confirmed by RIP-010 Fire Drill).
+
+#### 2. Structural rule — forward-only lightweight anchors
+
+**Applies to:** Governance-bearing files that maintain a **Resolution Log** (Admin/ protocols and any file whose doctrine changes are logged there). Optional but encouraged for other files with Resolution Logs.
+
+**When:** On every **substantive** revision that adds a Resolution Log entry (same threshold as “After Revising” item 1 — doctrine, scope, unknowns, or structure; not pure typos).
+
+**Record in the new Resolution Log entry** (or an immediately adjacent one-line anchor block) at least:
+
+| Field | Required? | Notes |
+|-------|-----------|--------|
+| `rl_entry_count_after` | **Yes** | Integer count of Resolution Log entries **after** this entry is added |
+| `file_line_count_after` | **Yes** (if no content hash) | Total file line count after the revision |
+| `open_unknowns_after` | **Yes** when File State has Open Unknowns | Matches File State after the revision |
+| `content_hash_after` | **Yes if tooling available**; else omit | e.g. SHA-256 of file bytes; not required when unavailable |
+| `prior_rl_entry_count` | **Yes when a prior anchor exists** | Enables deletion detection without full archive load |
+
+**Forward-only:** No requirement to backfill anchors for historical entries. Pre-anchor history remains trust-on-lineage + git tags / archive when available (RIP-001).
+
+**Append-only interaction:** Anchors are part of the log stream. Deleting an older entry without rewriting later anchors produces a **count discontinuity** (later `prior_rl_entry_count` / `rl_entry_count_after` chain breaks) — that discontinuity is a detectable Major-class signal under §Resolution Logs.
+
+#### 3. Procedural rule — comparison when a baseline exists
+
+**Mandatory RIP Phase 1 integrity sub-step** (this file’s own Phase 0/Phase 1 Protected Element check vocabulary — **not** a change to `Admin/Verification_Gates.md` Gate 5, which remains path-resolution only) for any audited file that has a Resolution Log:
+
+1. **If a prior baseline is available** (git parent of the path, tagged release snapshot, archived dated copy, or last-audited agent snapshot of the same path):  
+   - Compare **Resolution Log entry count** (and, when present, last entry date/ID and anchor fields).  
+   - Flag **Major** if count decreased, an entry present in baseline is absent, or anchor chain is discontinuous without a logged justification.  
+   - Flag **Constitutional** if evidence supports deliberate erasure (existing ladder).
+
+2. **If no prior baseline is available** (fresh path, offline session without parent, first audit of a file):  
+   - Record in the audit notes: `Resolution Log deletion check: N/A — no prior baseline`.  
+   - This is **not** a free pass to skip other Protected Element checks; it only marks the deletion-comparison sub-step as inapplicable for this pass.
+
+3. **Auditor memory is not a control.** “Seems shorter than I recall” is not the specified detection method.
+
+#### 4. Scope boundaries
+
+| In scope | Out of scope (residuals) |
+|----------|---------------------------|
+| Forward-only anchors on substantive Resolution Log revisions | Full retroactive hash of entire repo history |
+| Mandatory comparison **when baseline exists** | Requiring continuous online git for every chat session |
+| Governance-bearing + Resolution Log files as the required set | Mandatory anchors on every typo commit |
+| Alignment with existing Major/Constitutional ladder | New violation classes |
+| Optional content hash when tooling exists | Claiming cryptographic root-of-trust (that remains SEC-007b / related) |
+
+#### 5. Relationship of the two unknowns
+
+| Unknown | What this subsection supplies |
+|---------|-------------------------------|
+| **RIP-011** | Concrete meaning of “lightweight integrity anchor” and when it must appear |
+| **RIP-012** | How deletion is noticed: anchor discontinuity **and/or** mandatory baseline comparison |
+
+Closing one without the other would leave either structure without process, or process without a durable signal. Joint closure is intentional.
+
+#### 6. Residuals (do not block Payment via Specification)
+
+| ID | Residual |
+|----|----------|
+| RIP-011-R1 | Repo-wide compliance ramp — files without anchors until their next substantive revision |
+| RIP-011-R2 | Automation of anchor write/verify in `AUDIT_HARNESS.py` (implementation, not doctrine) |
+| RIP-012-R1 | Sessions with truly no baseline still cannot prove absence of pre-baseline deletion |
+| RIP-012-R2 | Constitutional-class planted-deletion drill (deferred from RIP-010 original scope) |
+
+#### 7. Closure statement
+
+*Lightweight Revision Anchors and Deletion Detection — Payment via Specification for **RIP-011** and **RIP-012**. Adopts forward-only anchors + mandatory comparison-when-baseline-exists; refuses memory-as-control and false full-history crypto. Drafted by Grok, 2026-09-05, against live §Version Preservation, §Resolution Logs Protected Element, and RIP-010 drill outcome. Claude ran an independent Skeptic pass same day: first flagged that the initial draft mislabeled its new check as a “Gate 5” amendment when Gate 5 is canonically owned and defined by `Admin/Verification_Gates.md` (confirmed its actual Test/Pass criteria are path-resolution only, nothing about Resolution Log integrity) — Grok revised to correctly frame this as RIP’s own Phase 1 vocabulary, no `Verification_Gates.md` amendment needed or claimed. Also verified the §Version Preservation and §Resolution Logs source citations directly (both accurate) and confirmed the gap being filled is real: the original Resolution Logs detection method already assumed archived-version comparison but never specified the no-baseline case, which is exactly what this subsection adds. No further blocking findings. Human Governing Authority ratified 2026-09-05.*
+
+---
+
+
 ## Protected Elements and Integrity Baselines
 
 For each protected element, this section defines what "intact" looks like in a checkable way.
@@ -148,7 +232,7 @@ For each protected element, this section defines what "intact" looks like in a c
 
 **Intact condition:** Entry count equals or exceeds prior version count. Dates are sequential. No prior entries modified.
 
-**Detection method:** Compare entry count between current and archived version. Read entries for date sequencing. Flag any entry present in prior version that is absent or modified in current version.
+**Detection method:** (1) When a prior baseline exists — compare Resolution Log entry count, last entry identity/date, and lightweight anchor fields per §Lightweight Revision Anchors and Deletion Detection (RIP-011 / RIP-012). Flag count decrease, missing baseline entries, or discontinuous anchors without logged justification. (2) When no baseline exists — record `deletion check: N/A — no prior baseline` for that sub-step; do not treat auditor memory as the control. (3) Read entries for date sequencing when inspecting content.
 
 **Violation class:** Major (accidental omission) or Constitutional (deliberate erasure).
 
@@ -767,22 +851,28 @@ Mandatory re-audit conditions for this document:
 
 | Field         | Value                                   |
 |---------------|-------------------------------------------|
-| Status        | Open                                    |
+| Status        | Ratified — Payment via Specification    |
 | Risk          | Low                                     |
 | Priority      | Minor                                   |
 | Type          | Technical / Governance                  |
 | Blocking      | No                                      |
 | Owner         | `Admin/Repository_Integrity_Protocol.md`|
 | First Logged  | 2026-08-06                              |
-| Last Reviewed | 2026-08-06                              |
+| Last Reviewed | 2026-09-05                              |
 
-**Description:** §Version Preservation Protocol (line 109 of this file) requires every revision to record the prior state's hash if tooling is available, or the final line count and open-unknowns count as a lightweight integrity anchor if not. Verified against the live repository: outside this file, only three files anywhere reference "hash" or "line count" — `Operations/Electronics.md` (SHA256 in an unrelated hardware-watchdog-token context) and `Admin/Computational_Institutional_Reasoning.md` (line count used as a debt-accounting proxy, also unrelated). No file's Resolution Log entries actually carry a hash or line-count anchor for the revision being logged. The count of files implementing this file's own §109 rule, checked directly rather than assumed, is zero.
+**Description:** §Version Preservation Protocol (line 109 of this file) requires every revision to record the prior state's hash if tooling is available, or the final line count and open-unknowns count as a lightweight integrity anchor if not. Verified against the live repository: outside this file, only three files anywhere reference "hash" or "line count," none of them implementing this rule. The count of files implementing §109, checked directly, was zero.
 
-**Why It Matters:** Every Resolution Log entry across the repository — including entries added today — records what changed but not a value anyone could use to verify a file hasn't silently drifted from what its own log claims. This is exactly the gap RIP §109 exists to close, and it has gone unimplemented since this file's creation without being tracked as a discrete unknown.
+**Why It Matters:** Every Resolution Log entry across the repository recorded what changed but not a value anyone could use to verify a file hasn't silently drifted from what its own log claims.
 
-**Resolution Path:** Not resolved here — deciding what "lightweight" means in practice (line count only, or open-unknowns count too; applied to every revision or only Major/Constitutional-class ones; retroactive or forward-only) is a real design choice, not a default to fall into. Left open for a deliberate scoping pass rather than resolved by assumption.
+**Resolution:** §Lightweight Revision Anchors and Deletion Detection (this file, Ratified 2026-09-05, joint with RIP-012). Specifies the required forward-only fields (`rl_entry_count_after`, `file_line_count_after`, `open_unknowns_after` when applicable, optional `content_hash_after`), when they apply (substantive Resolution Log revisions on governance-bearing files), and explicit non-retroactive scope — no backfill required for historical entries.
 
-*Surfaced during a review of `Archive/Transcripts/RIP_GMP-Copilot.md`, an archived multi-agent audit thread — the thread's broader four-category compliance audit was found to be almost entirely unverified "likely" hedging rather than checked findings (its one concrete claim, GMP's Last Audit staleness, was true when written but has since been resolved through ordinary session work), but this specific claim was checked directly against the live repository and confirmed accurate. Registered by Claude — Synthesizer, human-directed, 2026-08-06.*
+**Residuals (do not block Ratified status):**
+| ID | Residual | Why left open |
+|----|----------|---------------|
+| RIP-011-R1 | Repo-wide compliance ramp | Anchors appear on each file's next substantive revision, not retroactively |
+| RIP-011-R2 | Automation of anchor write/verify in `AUDIT_HARNESS.py` | Implementation work, not doctrine |
+
+*Surfaced during a review of `Archive/Transcripts/RIP_GMP-Copilot.md`, an archived multi-agent audit thread — the thread's broader four-category compliance audit was found to be almost entirely unverified "likely" hedging rather than checked findings, but this specific claim was checked directly against the live repository and confirmed accurate. Registered by Claude — Synthesizer, human-directed, 2026-08-06. Specification drafted by Grok 2026-09-05, jointly with RIP-012, correctly identified as one design problem with two faces (structural anchor + procedural comparison). Claude ran an independent Skeptic pass 2026-09-05 and caught a real scope-boundary issue in the first draft — it labeled the new check a "Gate 5" amendment, but Gate 5 is canonically owned and defined by `Admin/Verification_Gates.md` (confirmed its actual criteria are path-resolution only); Grok's revision correctly reframed it as RIP's own Phase 1 vocabulary with no `Verification_Gates.md` amendment claimed. No further blocking findings. Human Governing Authority ratified 2026-09-05.*
 
 ---
 
@@ -790,22 +880,28 @@ Mandatory re-audit conditions for this document:
 
 | Field         | Value                                   |
 |---------------|-------------------------------------------|
-| Status        | Open                                    |
+| Status        | Ratified — Payment via Specification    |
 | Risk          | Low                                     |
 | Priority      | Minor                                   |
 | Type          | Technical / Governance                  |
 | Blocking      | No                                      |
 | Owner         | `Admin/Repository_Integrity_Protocol.md`|
 | First Logged  | 2026-09-04                              |
-| Last Reviewed | 2026-09-04                              |
+| Last Reviewed | 2026-09-05                              |
 
-**Description:** The Major Violation ladder names "Resolution Log entry deleted" as a canonical example, and its response steps (halt promotion, log incident, restore from archive) all presuppose the deletion has already been noticed. Nothing in this file or `Admin/Auditor_Protocols.md`'s Gate procedures actually specifies how a single-session, single-file audit is supposed to *notice* one in the first place, if the deletion has no side effect elsewhere in the file (no version-field mismatch, no now-orphaned reference, nothing the file's own current state contradicts). Confirmed directly via the RIP-010 Integrity Fire Drill: a planted Resolution Log deletion in a disposable test file was not caught by an otherwise-careful audit pass, because nothing else in the file changed as a result of the deletion.
+**Description:** The Major Violation ladder names "Resolution Log entry deleted" as a canonical example, and its response steps presuppose the deletion has already been noticed. Nothing in this file specified how a single-session, single-file audit is supposed to *notice* one if the deletion has no side effect elsewhere in the file. Confirmed via the RIP-010 Integrity Fire Drill: a planted deletion in a disposable test file was not caught, because nothing else in the file changed as a result.
 
-**Why It Matters:** Detection currently depends entirely on either auditor vigilance/memory ("this seems shorter than I recall") or an external prior snapshot being compared as a matter of routine — and no current audit checklist requires that comparison. A silent, clean deletion of institutional memory is exactly the failure mode RIP exists to prevent, and it is currently the least detectable violation on the entire ladder despite being classified Major.
+**Why It Matters:** Detection depended entirely on auditor vigilance/memory or an external prior snapshot being compared as a matter of routine — and no audit checklist required that comparison. A silent, clean deletion of institutional memory is exactly the failure mode RIP exists to prevent, and it was the least detectable violation on the entire ladder despite being classified Major.
 
-**Resolution Path:** Not resolved here — the honest fix likely requires either (a) a lightweight per-revision anchor that would make a missing entry structurally visible (this overlaps significantly with RIP-011's still-unscoped hash/line-count anchor — the two may end up sharing one resolution), or (b) making prior-snapshot comparison an explicit, mandatory Gate 5 sub-step rather than an assumed background practice. Both are real design choices belonging to a deliberate scoping pass, not a default. Left open; flagged as closely related to RIP-011 for whoever scopes either.
+**Resolution:** §Lightweight Revision Anchors and Deletion Detection (this file, Ratified 2026-09-05, joint with RIP-011). Mandatory RIP Phase 1 comparison sub-step when a prior baseline exists (entry count, last entry identity/date, anchor chain); explicit `N/A — no prior baseline` recording when one doesn't, rather than silently skipping the check; auditor memory explicitly excluded as a control.
 
-*Surfaced by Claude running the RIP-010 Integrity Fire Drill (human-directed), 2026-09-04 — a genuine result of actually running the drill rather than assuming it would pass, per this file's own "log the outcome regardless of pass or fail" instruction.*
+**Residuals (do not block Ratified status):**
+| ID | Residual | Why left open |
+|----|----------|---------------|
+| RIP-012-R1 | True no-baseline sessions (fresh path, offline, first audit) | Comparison sub-step is N/A by design in these cases — not a gap, a scope boundary |
+| RIP-012-R2 | Constitutional-class deletion drill | Still deferred from RIP-010's original scope |
+
+*Surfaced by Claude running the RIP-010 Integrity Fire Drill (human-directed), 2026-09-04. Specification drafted by Grok 2026-09-05, jointly with RIP-011. Claude ran an independent Skeptic pass 2026-09-05 — see RIP-011's entry for the scope-boundary finding shared by both. Human Governing Authority ratified 2026-09-05.*
 
 ---
 
