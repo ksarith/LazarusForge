@@ -29,9 +29,9 @@
 | Body Stability   | Volatile                                                            |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-05-18; revised 2026-06-08                                      |
-| Auditor          | Claude — Skeptic/Auditor (actioning ChatGPT audit 2026-05-18)       |
-| Open Unknowns    | 5                                                                   |
+| Last Audit       | 2026-09-06 — Priority-1 surgical pass (ChatGPT Architecture audit): epistemic/institutional weight taxonomy; PA-002 retargeted off DV-003; FN-004 transport language cleaned; FN-001/FN-005 sidecar descriptions aligned with Provisional Specs. (ChatGPT's claimed Ethical Anchor path defect was checked against `Admin/File_Template.md` and found false — the canonical string has no `Admin/` prefix; the field was already correct and was left unchanged after a brief incorrect edit was caught and reverted same day.) Prior body work 2026-08 (DV-001–006, PA-001–006, 10-class Battery). Prior header: 2026-05-18 / 2026-06-08. |
+| Auditor          | Grok — 2026-09-06 Priority-1 surgical pass; Claude — same-day correction (reverted an incorrect Ethical Anchor edit). Prior: Claude — Skeptic/Auditor (ChatGPT 2026-05-18); Grok — 2026-08-14 full Battery. |
+| Open Unknowns    | 5 (FN-001–005; structure specified, calibration open — see sidecars) |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | Medium                                                              |
 | Sidecar Link     | #auditor-notes--unknowns                                            |
@@ -300,14 +300,38 @@ pass through a validation layer:
   conform to expected format and schema?
 - **Consistency check** — does the contribution conflict
   with existing high-confidence entries?
-- **Source weighting** — is the contributing forge's
-  trust weight sufficient for this contribution type?
+- **Source process check** — does the contributing node's
+  **node reliability** history (see §2.5.0) support treating
+  this contribution type as process-worthy? This is **not**
+  a multiplier on claim confidence (DV-003).
 - **Redundancy check** — does the contribution duplicate
   existing entries without adding new information?
 
 Contributions that fail validation are held for review,
 not discarded. A failed validation is a signal, not a
 rejection.
+
+**§2.5.0 Epistemic and Institutional Weight Taxonomy**
+*(Priority-1 correction, 2026-09-06 — resolves the trust-model
+split surfaced by Architecture audit.)*
+
+Three quantities appear in this file and **must not be treated
+as interchangeable**:
+
+| Quantity | Meaning | Primary home |
+|----------|---------|--------------|
+| **Claim confidence** | How strongly the network should believe a *proposition*, given evidence properties | **DV-003** |
+| **Node reliability** | How reliably a *forge* has behaved as observer / contributor / process participant over time | Access control, incentives, process gating (PA-002, §4) — **not** DV-003 |
+| **Governance weight** | How much *institutional influence* a forge has in collective decisions | §5 Cluster Governance — **not** factual truth |
+
+**Hard rules:**
+
+1. **Node reliability MUST NOT directly increase the epistemic confidence of a claim.** DV-003 remains evidence-property-only; node identity is recorded for auditability only.
+2. **Governance weight MUST NOT determine factual truth.** Popularity, membership, or influence cannot promote a claim past evidence thresholds.
+3. **“Trust score” in older prose** is deprecated as a single variable. Prefer the three terms above. Where legacy text still says “trust score,” interpret as **node reliability** unless the sentence is clearly about claim confidence or governance weight.
+4. The three may **correlate in practice** (a reliable node may more often supply good evidence) but correlation is an empirical outcome, not an algebraic multiplier into DV-003.
+
+This taxonomy is structural doctrine. Numeric calibration of reliability and governance weight remains open with FN-001 / FN-005.
 
 **Core design rule:** every synchronization event must be
 able to answer, from its accompanying metadata alone: what
@@ -341,8 +365,9 @@ same_cluster / different_region / different_generation),
 a timestamp, and an `integrity_hash` where available.
 A claim may not be promoted beyond Provisional on the
 basis of a single node's self-report, regardless of that
-node's trust score — promotion requires evidence
-diversity. Consistent with the provenance ceiling rule
+node's **node reliability** — promotion requires evidence
+diversity (DV-003: reliability does not multiply confidence).
+Consistent with the provenance ceiling rule
 in Admin/Auditor_Protocols.md §Evidence Classification
 and Institutional Truth Provenance Hierarchy (AP-006):
 no internally-derived claim may be represented as
@@ -480,7 +505,7 @@ validated; see ASM-007):**
 |---|---|
 | Accurate intake records | Priority access to shared knowledge base updates |
 | Parts lists from disassembly | Trade credit redeemable for components from other forges |
-| Repair logs with outcome data | Reputation weighting increase — higher trust score |
+| Repair logs with outcome data | Node-reliability weighting increase (not claim confidence) |
 | Cognitive save state contribution | Access to higher-tier knowledge base entries |
 | Data hosting | Trade credit proportional to hosted volume and uptime |
 | Cluster coordination | Federation authority — voice in cross-cluster decisions |
@@ -490,8 +515,8 @@ validated; see ASM-007):**
   accuracy earns no credit
 - Contribution cross-validated against network consensus
   before credit awarded
-- Trust score can decrease for low-quality or
-  inconsistent contributions
+- Node reliability can decrease for low-quality or
+  inconsistent contributions (still does not rewrite DV-003)
 - Gaming detection: anomalous contribution patterns
   flagged for human review *(Placeholder — detection
   criteria not yet defined; see FN-003)*
@@ -671,11 +696,14 @@ leaves the local node). Untagged data defaults to
 
 **PA-002 — Access control mechanism.** Read access to
 `cluster`-tier data is gated by cluster membership plus
-trust score, reusing FN-001/DV-003's trust model rather
-than defining a second one. `public` tier requires no
-gating. `private` tier is never network-readable at any
-trust score — it is a local-only field, not a permission
-level that a sufficiently trusted node can unlock.
+**node reliability** (see §2.5.0) — **not** by DV-003 claim
+confidence. DV-003 answers “how strongly should we believe
+this proposition?”; PA-002 answers “may this node read this
+tier?” Those are different questions and must not share one
+score. `public` tier requires no gating. `private` tier is
+never network-readable at any reliability level — it is a
+local-only field, not a permission level that a sufficiently
+reliable node can unlock.
 
 **PA-003 — Anonymization.** Where identity is not
 operationally necessary (e.g. aggregate contribution
@@ -712,10 +740,10 @@ layer (see FN-005 sidecar, Security implications).
 
 *(Provisional Spec — PA-001 through PA-006 define the
 structure of privacy classification and access control;
-numeric trust-score thresholds for PA-002 remain
+numeric **node-reliability** thresholds for PA-002 remain
 Placeholder pending first operational data, same status
 FN-001/DV-001–006 held before their Battery pass. See
-FN-005 sidecar for status.)*
+FN-005 sidecar for status. §2.5.0 taxonomy applies.)*
 
 Cross-reference: Admin/Ethical_Constraints.md
 Anti-Weaponization Doctrine, ASM-006, FN-001/DV-002,
@@ -817,27 +845,28 @@ in Discovery.md. Folder-prefixed names take precedence.*
 | First Logged  | 2026-05-15                                       |
 | Last Reviewed | 2026-08-14                                       |
 
-**Description:** The data validation layer (Section 2.5)
-is described doctrinally but validation criteria —
-structural schema, consistency thresholds, source
-weighting rules — are not yet defined.
+**Description:** Section 2.5 now carries a **Provisional Spec**
+(DV-001–006, 2026-07/08). **Structure is specified**; what
+remains open is **operational calibration** — numeric
+thresholds, decay intervals, anomaly signatures — plus
+alignment of any residual “trust score” language with
+§2.5.0 (claim confidence ≠ node reliability ≠ governance
+weight). FN-001 stays Open until calibration and any
+remaining Battery residuals are closed.
 
-**Why It Matters:** Without defined validation criteria
-the data validation layer cannot function. Contributions
-propagate to the shared knowledge base without meaningful
-filtering, making the network vulnerable to corrupted
-or falsified data from the first connection. This is
-the primary technical prerequisite for network security.
+**Why It Matters:** Without calibrated thresholds the
+validation layer cannot be operationalized safely at
+first network connection. Structural doctrine alone does
+not finish the unknown.
 
 **Resolution Path:**
-- Define minimum structural schema for each contribution
-  type — intake records, parts lists, repair logs,
-  cognitive save states.
+- *(Done at structure level)* DV-001–006 Provisional Spec;
+  §2.5.0 weight taxonomy (2026-09-06).
 - Define consistency threshold — what confidence level
   in existing entries triggers a conflict flag on a
-  new contribution.
-- Define source weighting rules — how trust score
-  affects contribution authority by type.
+  new contribution *(still Placeholder)*.
+- Define **node-reliability** process gates for contribution
+  *types* without multiplying into DV-003 claim confidence.
 - **Minority-report preservation** — a contribution
   that conflicts with high-confidence existing entries
   must not be silently discarded. Conflicting
@@ -1020,12 +1049,14 @@ inflate each other's trust weights.
 | Blocking      | No                                               |
 | Owner         | Architecture/Forge_Net.md                    |
 | First Logged  | 2026-05-15                                       |
-| Last Reviewed | 2026-05-15                                       |
+| Last Reviewed | 2026-09-06                                       |
 
 **Description:** The physical transport layer carrying
-data between forge instances is not yet specified.
-Options range from internet-dependent protocols to
-infrastructure-independent alternatives.
+data between forge instances is not yet **selected**.
+Architecture constrains *classes* of transport (low-
+bandwidth / infrastructure-independent vs supplementary IP)
+and the sync doctrine they imply; concrete radio/regulatory
+choices remain open.
 
 **Why It Matters:** The transport layer determines
 sync frequency, bandwidth constraints, latency
@@ -1035,39 +1066,43 @@ in Section 2.2 — event-driven rather than continuous
 low-bandwidth transport. If high-bandwidth transport
 is available the doctrine may be overly conservative.
 
-**Candidate transport options for v0:**
-- Low-bandwidth radio mesh — ham radio or equivalent
-  operating in ranges inaudible to humans. License-free
-  bands available in many jurisdictions. Long range,
-  no infrastructure dependency, proven in disaster
-  recovery mesh networks. Bandwidth constraint makes
-  event-driven sync mandatory. *(Analogous)*
-- WiFi mesh — short range, higher bandwidth, no
-  infrastructure dependency within range. Suitable
-  for physically proximate forge clusters. *(Analogous)*
-- Sneakernet — physical media transferred between
-  forges. Zero connectivity requirement. Suitable
-  for fully isolated forge instances. Highest latency,
-  lowest complexity. *(Analogous)*
-- Internet-dependent protocols — highest bandwidth,
-  requires external infrastructure. Not suitable as
-  primary transport — external dependency violates
-  local-primary doctrine. Valid as supplementary
-  layer only.
+**Architectural constraint (what FN-004 actually drives):**
+Low or intermittent bandwidth and infrastructure independence
+favor **event-driven** synchronization and **local-primary**
+operation (Section 2.2). High continuous bandwidth would relax
+urgency of that doctrine, not reverse local-primary.
+
+**Candidate transport *classes* for v0** (examples only —
+no specific radio service, regulatory regime, frequency, or
+bandwidth figure is selected here):
+- **Infrastructure-independent low-bandwidth radio** mesh or
+  point-to-point (regulatory and band choices are deployment-
+  local; not specified in this Architecture file). *(Analogous)*
+- **Local RF / 802.11-class mesh** within physical proximity —
+  higher bandwidth, still infrastructure-light within range.
+  *(Analogous)*
+- **Physical media / sneakernet** — zero live connectivity;
+  highest latency, lowest complexity; always a valid fallback.
+  *(Analogous)*
+- **Conventional IP / internet** — highest bandwidth; external
+  infrastructure dependency. **Supplementary only**, not primary
+  transport under local-primary doctrine.
 
 **Resolution Path:**
-- Select primary v0 transport based on deployment
-  context — terrestrial forges likely WiFi mesh or
-  radio; isolated forges sneakernet as fallback.
-- Document bandwidth constraints of selected transport
-  and validate sync doctrine against those constraints.
-- Sneakernet must always be a valid fallback — no
-  transport selection should make sneakernet impossible.
-- Payment via Specification — once transport selected
-  and sync doctrine validated against bandwidth
-  constraints, move to Section 2.2 as Analogous.
-- Cross-reference: Tests/Leviathan_testing.md
-  delay-tolerant networking doctrine.
+- Select primary v0 transport class from deployment context;
+  document actual bandwidth/latency of the chosen stack in
+  Operations or a transport appendix — not by embedding
+  premature hardware claims here.
+- Validate Section 2.2 sync doctrine against those measured
+  constraints.
+- Sneakernet must remain a valid fallback.
+- Payment via Specification — once a class is selected and
+  sync doctrine validated against real constraints, refine
+  Section 2.2 confidence labels accordingly.
+- Cross-reference: Tests/Leviathan_testing.md delay-tolerant
+  networking doctrine.
+- Last Reviewed: 2026-09-06 (Priority-1 transport language
+  cleanup; no technology selected).
 
 ---
 
@@ -1082,13 +1117,14 @@ is available the doctrine may be overly conservative.
 | Blocking      | Yes — prerequisite for first network connection |
 | Owner         | Architecture/Forge_Net.md                    |
 | First Logged  | 2026-05-15                                       |
-| Last Reviewed | 2026-08-14                                       |
+| Last Reviewed | 2026-09-06                                       |
 
-**Description:** What data is shared across the network,
-what remains private to each forge instance, and how
-access is controlled between forge instances is not
-yet specified. Data privacy is the foundation of
-network security.
+**Description:** Section 6 now carries a **Provisional Spec**
+(PA-001–006, 2026-08-14). **Structure is specified**; what
+remains open is **calibration** of PA-002 **node-reliability**
+thresholds (not DV-003 claim confidence — see §2.5.0) and
+any residual Battery items. FN-005 stays Open / Blocking
+until those close.
 
 **Why It Matters:** An open network with no privacy
 doctrine is a surveillance network. Forge instances
@@ -1140,22 +1176,24 @@ Provisional Spec, decomposed into PA-001 (classification
 schema), PA-002 (access control mechanism), PA-003
 (anonymization), PA-004 (revocation), PA-005 (location
 precision doctrine), and PA-006 (ethical review gate).
-Deliberately reuses FN-001/DV-003's trust model for PA-002
-rather than defining a second one, and DV-006's escalation
-posture for PA-006, to keep the two validation/privacy
-layers from drifting into inconsistent doctrine. The
-public Unknown ID remains FN-005 until the package
-survives its own G3 Adversarial Battery pass and PA-002's
-trust-score thresholds are calibrated against first
-operational data — same remaining-work shape FN-001 is
-in. Structural schema, access gating logic, anonymization
-scope, revocation handling, and the ethical review gate
-are specified; only the numeric threshold is Placeholder.
-See Resolution Log.
+**Correction 2026-09-06:** Earlier text claimed PA-002
+“reused FN-001/DV-003's trust model.” That was the
+trust/confidence collision. PA-002 now gates on **node
+reliability** (§2.5.0); DV-003 remains claim-confidence-
+from-evidence only. DV-006's escalation posture is still
+reused for PA-006. The public Unknown ID remains FN-005
+until PA-002 **node-reliability** thresholds are calibrated
+against first operational data — same remaining-work shape
+as FN-001. Structural schema, access gating logic,
+anonymization, revocation, and ethical review gate are
+specified; numeric reliability threshold is Placeholder.
+See Resolution Log and §2.5.0.
 
 ---
 
 ### Resolution Log
+
+- 2026-09-06: **Priority-1 surgical pass (Architecture audit integration).** (1) §2.5.0 Epistemic and Institutional Weight Taxonomy — claim confidence ≠ node reliability ≠ governance weight; hard rules that reliability must not multiply DV-003 and governance weight must not determine truth; “trust score” deprecated as a single variable. (2) PA-002 retargeted to node reliability; removed false “reuses DV-003 trust model” claim. (3) FN-004 candidate transport rewritten as open *classes* — removed ham/license-free/inaudible-to-humans language; architectural bandwidth → event-driven sync constraint preserved. (4) FN-001/FN-005 Descriptions updated: structure specified, calibration open. (5) File State Last Audit/Auditor refreshed. (6) ChatGPT's claimed G5 Ethical Anchor path defect was checked against `Admin/File_Template.md` and found false — the canonical string has no `Admin/` prefix; a same-day draft that "corrected" the field was caught and reverted before this pass finalized. Spec Gates remain 0/6 (Exploration; calibration and further Architecture expansion still open). No Network Invariants mega-expansion in this pass. Human-directed; drafted by Grok from ChatGPT audit Priority 1–4, corrected by Claude.
 
 - 2026-08-14 (second entry, same day): **FN-005 Provisional Spec
   drafted — PA-001 through PA-006, paired with FN-001 per Forward
