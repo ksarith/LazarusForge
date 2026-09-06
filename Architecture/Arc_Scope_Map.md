@@ -11,7 +11,7 @@
 | Spec Gates       | N/A — this file is a cross-reference index, not a specification     |
 | Open Unknowns    | 0 (surfaces existing unknowns from owning files; creates none)      |
 | Owning Domain    | Architecture/                                                       |
-| Last Reviewed    | 2026-08-08                                                           |
+| Last Reviewed    | 2026-09-06                                                           |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
 ---
@@ -77,6 +77,12 @@ Note: gained an `## Authority & Tier Classification` preface 2026-08-07 (verifie
 **Does:** Minimum viable seed to instantiate a new Forge; core G.E.C.K. module list and criticality rationale; procurement doctrine; precision-as-capability-threshold (introductory); marine variant module list (exploratory); success criteria and v1 scaling pathway. **Owns UNK-008** (welding wire spec/qualification, reassigned here 2026-07-19) — see Forge_flow.md's stale cross-reference above.
 **Does not (arrow):** Detailed G.E.C.K. module engineering specs · full precision doctrine (`Precision.md`) · Leviathan/deep-marine systems (`Admin/Trajectories.md`) · energy infrastructure beyond portable minimum (`Operations/Energy.md`) · component taxonomy (`Components.md`).
 
+### `Architecture/Local_Governance_Framework.md`
+**Status:** Exploration · 0/6 · 7 Open Unknowns · Risk: Major (defining interface constraints on paper without enforceable standing or exit rights for the host community)
+**Does:** Minimum institutional interface between a Forge node and its host community; design constraints preventing technical capability from silently becoming unilateral authority or structural dependence; requirement that internal closure precede externalization claims; rule that surplus disposition is a locally ratifiable, revisable decision with no model presumed.
+**Does not (arrow):** Tier 1 Axioms, Human Override Doctrine, constitutional amendment (`Admin/Governance_Charter.md`) · Anti-Weaponization, Life Preservation, toxic-material hard floors (`Admin/Ethical_Constraints.md`) · node-internal technical governance, watchdogs, multi-agent consensus (`Cognitive_Frameworks.md`, `Admin/Auditor_Protocols.md`, `Admin/Verification_Gates.md`) · specific surplus-routing mechanisms or economic models (`Challenges/Energy_Scarcity.md`, `Admin/Economics.md`) · concrete local institutional forms (context-specific, downstream).
+**Added 2026-09-06:** first draft, subordinate to Governance_Charter.md and Ethical_Constraints.md per its own §Core Design Constraints LGF-P7. Supplies the institutional-interface layer that `Challenges/Water.md` WS-004, `Waste.md` WA-003, `Planned_Obsolescence.md` PO-004, and `Energy_Scarcity.md` ES-001/ES-002 had each been gesturing at independently.
+
 ### `Architecture/Mechanical_Structures.md`
 **Status:** Draft · 2/6 · 4 Open Unknowns · Risk: High
 **Does:** Structural frame rigidity/damp-filling standards; thermal expansion mitigation and coordinate delta compensation; kinematic protection loops, shunt current monitoring, torsional alignment interlocks; sacrificial shear pins; falsifiable mechanical performance metrics; contamination/bearing protection doctrine.
@@ -135,3 +141,15 @@ No new unknowns registered. Finding 1 is a one-line factual correction candidate
   side). Unlike Admin/, no files in this folder lack a Scope Boundary
   section — noted as a genuine structural difference between folders, not
   assumed. No new unknowns registered. Human-directed.
+
+- 2026-09-06: **`Architecture/Local_Governance_Framework.md` added — 13th
+  file in this folder.** New v0.1-draft file, drafted by Grok following a
+  cross-cutting observation surfaced during a Challenges/ audit sweep: the
+  "generate surplus, then share it" pattern recurring across Water.md,
+  Waste.md, Critical_Minerals.md, Energy_Scarcity.md, and Return_To_Eden.md
+  was an unexamined ideological default rather than a derived engineering
+  necessity. This file supplies an institutional-interface layer rather
+  than picking a disposition model — LGF-001 through LGF-007 registered in
+  `Unknowns.md`. All five referenced Challenges cross-IDs (WS-004, WA-003,
+  PO-004, ES-001, ES-002) verified against source before adoption.
+  Human-directed.
