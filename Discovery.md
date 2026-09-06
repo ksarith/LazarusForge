@@ -1,6 +1,6 @@
 # Discovery.md — LazarusForge
 **Navigation layer for the active working repository.**
-**Last updated: 2026-09-04**
+**Last updated: 2026-09-06**
 
 ---
 
@@ -215,6 +215,7 @@ Architecture/                               — System architecture and foundati
     ├── Components.md                       — Critical vs useful component taxonomy
     ├── Facilities.md                       — Physical environment constraints; siting prerequisites
     ├── Geck_forge_seed.md                  — Minimum viable seed specification
+    ├── Local_Governance_Framework.md       — Node/host-community institutional interface (v0.1-draft)
     ├── Engineering.md                      — First-principles intellectual backbone
     ├── Precision.md                        — Precision ceiling doctrine; tolerance tiers; metrology
     ├── Mechanical_Structures.md            — Salvaged-frame kinematic and structural doctrine
@@ -379,6 +380,7 @@ Discovery.md is a navigation map — task tracking belongs in Unknowns.md.
 | `Architecture/Components.md` | Exploration | 0/6 | Low |
 | `Architecture/Facilities.md` | Exploration | 0/6 | High |
 | `Architecture/Geck_forge_seed.md` | Exploration | 0/6 | Medium |
+| `Architecture/Local_Governance_Framework.md` | Exploration | 0/6 | Major (defining interface constraints on paper without enforceable standing or exit rights for the host community) |
 | `Architecture/Engineering.md` | Draft | 3/6 | High |
 | `Architecture/Precision.md` | Exploration | 0/6 | High |
 | `Architecture/Mechanical_Structures.md` | Draft | 2/6 | High |

@@ -1,7 +1,8 @@
 # Routing.md — LazarusForge
 **Canonical Navigation and Link Mapping Index.**
-**Last updated: 2026-09-04**
-**No map changes 2026-08-31 through 2026-09-04: the governance File State / Spec Gates / Highest Risk synchronizations across Verification_Gates.md, Auditor_Protocols.md, Governance_Charter.md, Governance_Migration_Protocol.md, Ethical_Constraints.md, Security_Protocols.md, Repository_Integrity_Protocol.md, Unknowns.md, and Progress_Log.md in that window were content-only — no files added, removed, or rerouted. Two Active Disputes IDs disambiguated in-place 2026-09-04 (`Operations/Gate_02_Triage.md` and `Operations/Gate_07_Utilization.md` local disputes renamed to TS-DS-001/GU-DS-001 respectively) — same paths, no map change. Prior: one addition on 2026-08-30 (`Admin/INTEGRITY_SWEEP_PROMPT.md`, exemption class 6).**
+**Last updated: 2026-09-06**
+**Addition 2026-09-06: `Architecture/Local_Governance_Framework.md` (new v0.1-draft file) registered.**
+**No other map changes 2026-08-31 through 2026-09-06: the governance File State / Spec Gates / Highest Risk synchronizations across Verification_Gates.md, Auditor_Protocols.md, Governance_Charter.md, Governance_Migration_Protocol.md, Ethical_Constraints.md, Security_Protocols.md, Repository_Integrity_Protocol.md, Unknowns.md, and Progress_Log.md in that window were content-only — no files added, removed, or rerouted. Two Active Disputes IDs disambiguated in-place 2026-09-04 (`Operations/Gate_02_Triage.md` and `Operations/Gate_07_Utilization.md` local disputes renamed to TS-DS-001/GU-DS-001 respectively) — same paths, no map change. Prior: one addition on 2026-08-30 (`Admin/INTEGRITY_SWEEP_PROMPT.md`, exemption class 6).**
 
 ---
 
@@ -78,6 +79,7 @@ Last scope clarification: 2026-08-10 (integrity cleanup pass).
 | `Architecture/Forge_flow.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForge/refs/heads/main/Architecture/Forge_flow.md) | [Repo](https://github.com/ksarith/LazarusForge/blob/main/Architecture/Forge_flow.md) | Explicit |
 | `Architecture/Friction_Dynamics.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForge/refs/heads/main/Architecture/Friction_Dynamics.md) | [Repo](https://github.com/ksarith/LazarusForge/blob/main/Architecture/Friction_Dynamics.md) | Explicit |
 | `Architecture/Geck_forge_seed.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForge/refs/heads/main/Architecture/Geck_forge_seed.md) | [Repo](https://github.com/ksarith/LazarusForge/blob/main/Architecture/Geck_forge_seed.md) | Explicit |
+| `Architecture/Local_Governance_Framework.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForge/refs/heads/main/Architecture/Local_Governance_Framework.md) | [Repo](https://github.com/ksarith/LazarusForge/blob/main/Architecture/Local_Governance_Framework.md) | Explicit |
 | `Architecture/Mechanical_Structures.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForge/refs/heads/main/Architecture/Mechanical_Structures.md) | [Repo](https://github.com/ksarith/LazarusForge/blob/main/Architecture/Mechanical_Structures.md) | Explicit |
 | `Architecture/Precision.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForge/refs/heads/main/Architecture/Precision.md) | [Repo](https://github.com/ksarith/LazarusForge/blob/main/Architecture/Precision.md) | Explicit |
 | `Architecture/Thermal_Systems.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForge/refs/heads/main/Architecture/Thermal_Systems.md) | [Repo](https://github.com/ksarith/LazarusForge/blob/main/Architecture/Thermal_Systems.md) | Explicit |
