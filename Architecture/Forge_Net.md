@@ -125,7 +125,7 @@ corrupted or malicious data.
 
 | ID | Assumption | Basis | Confidence | Expiry Trigger |
 |---|---|---|---|---|
-| ASM-001 | Individual forge instances can operate fully independently when network connectivity fails — local cache is sufficient for continued operation | Local-primary doctrine; Leviathan delay-tolerant networking analog | Medium | First network partition test demonstrates unacceptable capability degradation without connectivity |
+| ASM-001 | Individual forge instances can operate within the **§1.2 Offline Operational Envelope** when network connectivity fails — local cache and local authority suffice for **Must continue** functions; network-enhanced functions may degrade or queue | Local-primary doctrine; NI-1; Leviathan DTN analog; Integration Hooks Critical/Standard/Optional | Medium | Partition test shows a **Must continue** function fails or requires remote state (unacceptable degradation under §1.2) |
 | ASM-002 | Physical proximity between forge instances correlates sufficiently with useful network topology — nearby forges form natural clusters | Cluster formation doctrine; terrestrial deployment assumption | Low | Network topology analysis reveals proximity is a poor predictor of useful cluster membership |
 | ASM-003 | Contribution quality is measurable and can produce reliable trust weightings across forge instances | Trust weighting doctrine — metrics not yet defined | Low | Quality metrics defined and validated against known-good and known-bad contribution samples |
 | ASM-004 | The shared knowledge base grows more accurate over time as contributions accumulate — net contribution is positive | Wikipedia model analog; assumes good-faith contributors outnumber bad actors | Low | Falsified or low-quality data degrades network knowledge quality — requires detection and correction mechanisms |
@@ -196,12 +196,68 @@ home of the mechanism; do not invent parallel rules here.
 **Related boundaries (not separate invariants in this cut, but load-bearing):**
 
 - **Claim confidence ≠ node reliability ≠ governance weight** — §2.5.0 taxonomy (hard rules 1–2).
-- **Safety-critical decisions must not rest solely on network consensus** — local-primary + DV-006 human escalation; full operational bound is Priority-5 / ASM-001 work.
+- **Safety-critical decisions must not rest solely on network consensus** — local-primary + DV-006 human escalation; operational envelope in §1.2.
 - **Irreversible governance or security actions retain human override** — DV-006, PA-006.
 
 **Non-goals of this subsection:** Does not define connection-state machines, sync object classes, contamination horizons, capability advertisement, or retirement. Those remain later Architecture expansion items. Does not replace FN-001–005 calibration work.
 
 *Drafted 2026-09-06 as consolidation of existing doctrine for auditability (“does this mechanism violate an invariant?”). Candidate until Human / multi-agent review.*
+
+### 1.2 Offline Operational Envelope (ASM-001 bound)
+<!-- STATUS: Candidate doctrine — bounds “fully independently”; does not invent new Gates or energy policy. -->
+
+**Purpose:** ASM-001 claims a forge can operate fully independently when connectivity fails. That claim is only meaningful if “fully independently” has an **operational envelope**: what **must continue**, what **may degrade**, and what **stops or queues**.
+
+This subsection is the bound. It implements **NI-1** in testable form and aligns with the energy-scarcity classification already noted under Integration Hooks (Critical / Standard / Optional).
+
+#### Must continue (local authority)
+
+| Function | Offline requirement |
+|----------|---------------------|
+| **Local cache read** | Queries against the local cache remain available; staleness is acceptable (§2.1). |
+| **Local intake / logging** | New observations, intake records, gate decision logs, and repair notes can be written locally. |
+| **Local safety authority** | Safety-critical stop / refuse / escalate decisions remain local. They **must not** wait on network consensus (DV-006; NI-8). |
+| **Human override** | Human governing authority can halt or reverse irreversible local actions without network availability. |
+| **Local-only private data** | `private`-tier data remains local; offline status does not change its tier (NI-7). |
+
+These match the Integration Hooks **Critical** class: local cache operation and intake record logging are never suspended for connectivity loss (energy scarcity may still constrain *power*, which is a different axis — see Operations/Energy.md / EV-001).
+
+#### May degrade (still local, reduced quality)
+
+| Function | Offline behavior |
+|----------|------------------|
+| **Knowledge freshness** | Cache may be stale; operate on last-synced content (§2.1: “Staleness is acceptable. Operating without data is not.”). |
+| **Cross-forge parts / repair knowledge** | Only what is already in local cache; no live pull. |
+| **Node reliability / governance weight updates** | Frozen at last known values until reconnect; no live reputation economy. |
+| **Cognitive heuristics** | Local save states remain usable; **network** save-state sync does not run (Optional under energy hooks). |
+| **Confidence in network-origin claims** | Remote-sourced entries do not gain freshness; treat as potentially stale under DV-003 decay when calibrated. |
+
+#### Stops or queues (network-dependent)
+
+| Function | Offline behavior |
+|----------|------------------|
+| **Bidirectional sync** | Push/pull deferred; outbound contributions **queue** locally for later sync (§2.2). |
+| **Cluster / federation governance participation** | No live votes or cross-node decisions; local governance only (NI-8). |
+| **Resource discovery / inter-forge trade matching** | Unavailable until connectivity returns. |
+| **Network-scale anomaly detection** | Suspended (Optional class under Integration Hooks). |
+| **Promotion of claims that require multi-node evidence diversity** | Local self-report alone still cannot promote beyond Provisional (DV-002); offline does not relax that rule. |
+
+#### Explicit non-claims
+
+- Does **not** claim all seven Operations Gates are fully specified for offline mode — only that Architecture forbids making their **ordinary** operation depend on live network state (NI-1). Gate-level offline procedures remain Operations work.
+- Does **not** claim energy independence or continuous power (README / Energy.md).
+- Does **not** claim the local cache is complete or current — only that it is the primary authority while offline.
+- Does **not** define partition detection, reintegration, or split-brain reconciliation (later Architecture / GOV-021 adjacency).
+
+#### Relationship to ASM-001
+
+| Field | Updated reading |
+|-------|-----------------|
+| Assumption | A forge can operate within **this envelope** when connectivity fails |
+| “Fully independently” | Means **Must continue** rows hold; not that network-enhanced functions remain at online quality |
+| Expiry trigger | Partition test shows **Must continue** functions fail or require remote state — that falsifies the bound |
+
+*Drafted 2026-09-07. Candidate until review. Pointers only; no new unknown ID required unless calibration demands one.*
 
 ---
 
@@ -1223,6 +1279,8 @@ See Resolution Log and §2.5.0.
 ---
 
 ### Resolution Log
+
+- 2026-09-07: **§1.2 Offline Operational Envelope (ASM-001 bound) drafted.** Must continue / May degrade / Stops or queues tables; ties NI-1, §2.1 staleness doctrine, DV-002/006, NI-7/8, and Integration Hooks Critical class. ASM-001 assumption text updated to reference the envelope. Explicit non-claims (not full Gate offline specs, not energy independence, not partition state machine). Candidate. Human-directed; drafted by Grok.
 
 - 2026-09-06 (later): **§1.1 Network Invariants (NI-1–NI-8) drafted.** Consolidation only — eight testable statements with pointers to existing mechanism homes (File Purpose, §2.1, DV-002–005, PA-001/002, §1/§5). No new mechanisms; non-goals explicit (state machines, sync classes, contamination, retirement deferred). Related boundaries point at §2.5.0 and DV-006/PA-006 without inventing parallel rules. Candidate doctrine pending review. Human-directed; drafted by Grok.
 
