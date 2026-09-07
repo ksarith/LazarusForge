@@ -172,6 +172,37 @@ control over shared knowledge or network governance. Authority
 emerges from demonstrated contribution and reliability, not
 from assignment or ownership.
 
+### 1.1 Network Invariants
+<!-- STATUS: Candidate doctrine — consolidates existing scattered principles into testable statements; not a new mechanism layer. -->
+
+These invariants are **constraints on any future mechanism**, not
+a second copy of §2.5 / §6. A proposed network feature that
+violates an invariant is out of scope for this architecture
+unless the invariant is amended through ordinary Track B /
+Architecture review. Each statement points at the existing
+home of the mechanism; do not invent parallel rules here.
+
+| ID | Invariant | Mechanism home |
+|----|-----------|----------------|
+| **NI-1** | **Local survivability.** Loss of network connectivity must not make ordinary local operation depend on remote state. A forge continues core function from local cache and local authority. | File Purpose; §1; §2.1 Local Cache |
+| **NI-2** | **Propagation is not authority.** A claim does not gain epistemic weight merely by being replicated, majority-held, or widely synchronized. | §2.5 DV-003; Lessons Learned (consensus ≠ truth) |
+| **NI-3** | **Provenance survives synchronization.** Every synchronized contribution retains observer, evidence, and integrity metadata sufficient to answer the §2.5 core design questions. | §2.5 DV-002; core design rule |
+| **NI-4** | **Contradictions are preserved, not erased.** Conflicting contributions are held and logged; silent suppression of minority evidence is an integrity violation. | §2.5 DV-004 |
+| **NI-5** | **Knowledge state is recoverable.** Accepted contributions carry reversible transaction identity; corruption response is quarantine and rollback of the ledger path, not silent rewrite. | §2.5 DV-005 |
+| **NI-6** | **No indispensable node.** Continuity of the ecology must not require any single forge, cluster, or hosting node. | §1 Philosophy; §3.3 Data Hosting (no single-host dependency) |
+| **NI-7** | **Private does not become public by trust accumulation.** `private`-tier data never becomes network-readable because a node’s reliability or governance weight increased. | §6 PA-001 fail-closed; PA-002 (reliability gates access, not tier elevation) |
+| **NI-8** | **Participation is not command over local operation.** Network membership, cluster role, or federation coordination must not grant unilateral authority to override another forge’s local operation or safety decisions. | §1; §5 Cluster Governance; autonomy boundary |
+
+**Related boundaries (not separate invariants in this cut, but load-bearing):**
+
+- **Claim confidence ≠ node reliability ≠ governance weight** — §2.5.0 taxonomy (hard rules 1–2).
+- **Safety-critical decisions must not rest solely on network consensus** — local-primary + DV-006 human escalation; full operational bound is Priority-5 / ASM-001 work.
+- **Irreversible governance or security actions retain human override** — DV-006, PA-006.
+
+**Non-goals of this subsection:** Does not define connection-state machines, sync object classes, contamination horizons, capability advertisement, or retirement. Those remain later Architecture expansion items. Does not replace FN-001–005 calibration work.
+
+*Drafted 2026-09-06 as consolidation of existing doctrine for auditability (“does this mechanism violate an invariant?”). Candidate until Human / multi-agent review.*
+
 ---
 
 ## 2. Data Layer
@@ -1193,7 +1224,9 @@ See Resolution Log and §2.5.0.
 
 ### Resolution Log
 
-- 2026-09-06: **Priority-1 surgical pass (Architecture audit integration).** (1) §2.5.0 Epistemic and Institutional Weight Taxonomy — claim confidence ≠ node reliability ≠ governance weight; hard rules that reliability must not multiply DV-003 and governance weight must not determine truth; “trust score” deprecated as a single variable. (2) PA-002 retargeted to node reliability; removed false “reuses DV-003 trust model” claim. (3) FN-004 candidate transport rewritten as open *classes* — removed ham/license-free/inaudible-to-humans language; architectural bandwidth → event-driven sync constraint preserved. (4) FN-001/FN-005 Descriptions updated: structure specified, calibration open. (5) File State Last Audit/Auditor refreshed. (6) ChatGPT's claimed G5 Ethical Anchor path defect was checked against `Admin/File_Template.md` and found false — the canonical string has no `Admin/` prefix; a same-day draft that "corrected" the field was caught and reverted before this pass finalized. Spec Gates remain 0/6 (Exploration; calibration and further Architecture expansion still open). No Network Invariants mega-expansion in this pass. Human-directed; drafted by Grok from ChatGPT audit Priority 1–4, corrected by Claude.
+- 2026-09-06 (later): **§1.1 Network Invariants (NI-1–NI-8) drafted.** Consolidation only — eight testable statements with pointers to existing mechanism homes (File Purpose, §2.1, DV-002–005, PA-001/002, §1/§5). No new mechanisms; non-goals explicit (state machines, sync classes, contamination, retirement deferred). Related boundaries point at §2.5.0 and DV-006/PA-006 without inventing parallel rules. Candidate doctrine pending review. Human-directed; drafted by Grok.
+
+- 2026-09-06: **Priority-1 surgical pass (Architecture audit integration).** (1) §2.5.0 Epistemic and Institutional Weight Taxonomy — claim confidence ≠ node reliability ≠ governance weight; hard rules that reliability must not multiply DV-003 and governance weight must not determine truth; “trust score” deprecated as a single variable. (2) PA-002 retargeted to node reliability; removed false “reuses DV-003 trust model” claim. (3) FN-004 candidate transport rewritten as open *classes* — removed ham/license-free/inaudible-to-humans language; architectural bandwidth → event-driven sync constraint preserved. (4) FN-001/FN-005 Descriptions updated: structure specified, calibration open. (5) File State Last Audit/Auditor refreshed. (6) ChatGPT's claimed G5 Ethical Anchor path defect was checked against `Admin/File_Template.md` and found false — the canonical string has no `Admin/` prefix; a same-day draft that "corrected" the field was caught and reverted before this pass finalized. Spec Gates remain 0/6 (Exploration; calibration and further Architecture expansion still open). Human-directed; drafted by Grok from ChatGPT audit Priority 1–4, corrected by Claude.
 
 - 2026-08-14 (second entry, same day): **FN-005 Provisional Spec
   drafted — PA-001 through PA-006, paired with FN-001 per Forward

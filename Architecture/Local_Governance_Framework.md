@@ -18,11 +18,12 @@
 | **Status** | Exploration |
 | **Architecture Subtype** | Institutional Interface |
 | **Version** | v0.1-draft |
-| **Last Updated** | 2026-09-06 |
+| **Last Updated** | 2026-09-07 (Active Disputes field added — missing from initial File State table; caught by a Grok morning-report sweep; prior 2026-09-06) |
 | **Owner** | Architecture/ |
 | **Verification Ref** | `Admin/Verification_Gates.md` |
 | **Ethical Anchor** | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 | **Spec Gates** | 0/6 |
+| **Active Disputes** | 0 |
 | **Body Stability** | Volatile — first draft; no physical or institutional testing |
 | **Open Unknowns** | See §Open Unknowns (LGF-001–LGF-007) |
 | **Highest Risk** | Defining interface constraints on paper without enforceable standing or exit rights for the host community |
