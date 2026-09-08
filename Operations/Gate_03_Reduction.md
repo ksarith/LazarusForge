@@ -9,8 +9,8 @@
 ---
 
 > ⚠️ **Operational Safety Advisory**
-> Gate_03_Reduction is the only fully irreversible step
-> in the Lazarus Forge operational flow. Once an item
+> Gate_03_Reduction sits at R4 — the flow's highest-consequence
+> boundary (material transformation). Once an item
 > enters Reduction, it cannot be recovered as a discrete
 > object. Three conditions are hard prerequisites before
 > Reduction begins: the Air Scrubber must be operational
@@ -93,14 +93,14 @@ Indicators.*
 
 ## File Purpose
 
-Gate_03_Reduction is the only fully irreversible step
-in the Lazarus Forge operational flow. It receives
+Gate_03_Reduction sits at R4 — the flow's highest-consequence
+boundary (material transformation). It receives
 items that have failed all recovery gates — functional
 use, repair, repurpose, and material recovery through
 purification — and reduces them to feedstock through
 shredding, cutting, or milling. Once an item enters
 Reduction, it cannot be recovered as a discrete object.
-This irreversibility is the defining characteristic of
+This R4 status is the defining characteristic of
 this gate and governs every design decision within it.
 
 Reduction is not a failure state. It is the correct
@@ -130,7 +130,7 @@ constraints are binding now. The positive specification
 envelope — follows operational experience.
 
 If this file disappeared, the repository would have
-no governing doctrine for its only irreversible step.
+no governing doctrine for its R4 boundary.
 Items routed to Reduction would be processed without
 safety prerequisites, without contamination protocols,
 and without a defined output envelope for downstream
@@ -142,19 +142,19 @@ modules to rely on.
 
 | ID | Assumption | Basis | Confidence | Expiry Trigger |
 |---|---|---|---|---|
-| ASM-001 | Items reaching Reduction have genuinely failed all prior gates — gate logic is sufficiently deterministic to be trusted at the point of irreversibility | Forge_flow.md gate sequence; FL-001 In Progress | Low | FL-001 resolved — gate logic determinism validated across all boundary cases |
+| ASM-001 | Items reaching Reduction have genuinely failed all prior gates — gate logic is sufficiently deterministic to be trusted at the R4 boundary | Forge_flow.md gate sequence; FL-001 In Progress | Low | FL-001 resolved — gate logic determinism validated across all boundary cases |
 | ASM-002 | Upstream hazard screening at Gate_01_Intake caught all energetic and chemical hazards before items reach Reduction | GI-002 and GI-003 prerequisite doctrine; Intake screening effectiveness | Low | GI-002 and GI-003 resolved and validated — augmented detection confirmed reliable |
 | ASM-003 | The Air Scrubber is operational and verified before Reduction begins — particulate and exhaust are contained | Air_Scrubber.md doctrine — "if the scrubber cannot verify safe operation, the Forge does not run" | Medium | Air Scrubber verification integrated into Reduction startup sequence |
 | ASM-004 | Reduced output particle size and geometry are controllable enough to remain within Gate_04_Separation_Mechanical.md provisional input envelope | Output envelope dependency — method not yet selected, control not yet validated | Low | Reduction method selected and output envelope validated against Gate_04 inputs |
 | ASM-005 | Dust and fines generated during Reduction are capturable by available containment infrastructure — particulate does not escape the processing environment | Particulate handling doctrine; Air Scrubber integration | Low | First operational run characterizes actual particulate generation rate and containment effectiveness |
-| ASM-006 | Human operator is present during all Reduction operations at v0 — automated shutdown cannot substitute for human judgment at the point of no return | v0 human-judgment primary doctrine | Medium | Automated Reduction with validated safety interlocks demonstrated and approved per GR-005 |
+| ASM-006 | Human operator is present during all Reduction operations at v0 — automated shutdown cannot substitute for human judgment at the R4 boundary | v0 human-judgment primary doctrine | Medium | Automated Reduction with validated safety interlocks demonstrated and approved per GR-005 |
 | ASM-007 | Contamination discovered during Reduction is recognizable as contamination — operators can identify when to stop processing | Contamination discovery protocol; assumes detectable indicators exist | Low | First operational cycle characterizes what contamination discovery actually looks like in practice |
 
 *ASM-001 and ASM-002 are the most consequential —
 gate logic determinism and upstream hazard screening
 are both unresolved at v0. Together they represent
 the risk that a misrouted or inadequately screened
-item reaches the only irreversible step in the system.
+item reaches the R4 boundary.
 Both resolve through FL-001 and GI-002/GI-003
 respectively. Until they do, human presence (ASM-006)
 and Air Scrubber verification (ASM-003) are the
@@ -724,10 +724,11 @@ not defined
 automated Reduction without continuous human presence
 is permitted have not been defined.
 
-**Why It Matters:** Reduction's irreversibility makes
-automation introduction the highest-stakes capability
-transition in the Forge system. Introducing automation
-prematurely removes the primary compensating control
+**Why It Matters:** Reduction sits at R4, the flow's
+highest-consequence boundary. This makes automation
+introduction the highest-stakes capability transition
+in the Forge system. Introducing automation prematurely
+removes the primary compensating control
 for unresolved upstream screening and gate logic gaps.
 
 **Resolution Path:**
@@ -887,6 +888,8 @@ actually deciding between.
 
 ### Resolution Log
 
+- 2026-09-08: **HP-001 completion — R4 terminology alignment (Grok-proposed, Claude-verified before applying).** Reworded nine occurrences of the un-graded "only fully irreversible step / only irreversible step / point of irreversibility / point of no return" phrasing to align with the R0-R4 taxonomy now in Forge_flow.md's Defined Terms: Safety Advisory, File Purpose opening, "if this file disappeared" sentence, ASM-001, ASM-006 (this one found independently — not in Grok's original 8-item diff, same category), Assumptions footnote, GR-005 Why It Matters, both Local Drift Trigger rows, and the 2026-05-15 Abandoned Path note. All 8 of Grok's cited passages verified against the live file before editing — exact matches. No safety intent changed: human presence remains the primary compensating control pending GR-005, automation remains gated behind the same prerequisite list, contamination-stop doctrine unchanged, no hard prerequisite (Air Scrubber, energetic materials) touched. This closes the residual scope Forge_flow.md's HP-001 entry left open on 2026-09-08. Human-directed.
+
 - 2026-08-24: **GR-003 closed — Payment via Specification (`Admin/Resolution_Methodology.md`'s Fifth Applied Case — corrected 2026-08-25 from an earlier mislabeling as "second," which is GF-007's case).** Grok filled the two gaps the 2026-08-15 architectural pass explicitly left open: concrete hold-duration values and container-type requirements per category, at Analogous confidence (RCRA generator accumulation practice, industrial temporary-storage guidelines, lab holding tables, ACM handling norms, biosafety waste practice). Architectural two-outcome model and five-category structure from 2026-08-15 retained unchanged — this was a surgical fill, not a re-derivation. Three residuals named: GR-003-R1 (jurisdiction-dependent regulation, cannot be closed by specification, keeps full operational reliance blocked), GR-003-R2 (physical validation, equipment-gated), GR-003-R3 (confirmation that permanent passive locations satisfy full Ethical_Constraints minimum requirements). Risk/Priority fields (High/Critical) left unchanged rather than annotated, matching the PL-001/WA-002/GOV-003 convention — a first draft of this closure had deviated from that convention (appending "(residual)"/"→ residual only" to the fields) and was corrected before integration, along with GR-007's stale "partially blocked on WA-002" note (WA-002 Resolved 2026-08-23) found in the same pass. Full Closure Event — Proposer (Grok), Human Ratification (Human Governing Authority). Open Unknowns: 8 → 7. Scope Boundary bullet and File State header updated. Cross-references (WA-004, GR-007 Category C, TS-002 Station 0) already pointed at real doctrine after the 2026-08-15 pass — no further changes needed there. Human-directed.
 
 - 2026-08-16: **GR-007 — Resolution_Methodology fourth applied case (equipment retirement / safety-governance domain).**
@@ -969,7 +972,7 @@ actually deciding between.
 | 2026-05-15 | Single universal Reduction method for all feedstock classes | Different material classes have fundamentally different Reduction behaviors — ductile metals deform rather than fracture under milling, brittle materials shatter unpredictably under cutting, flexible materials tangle rotors under shredding. A single method produces poor output quality and creates safety risks for the classes it handles badly | Reconsider only if operational data shows one method handles v0 feedstock distribution adequately — requires characterization data from first operational cycle |
 | 2026-05-15 | Reduction as default routing for difficult-to-classify items | Difficulty in classification is a gate logic problem, not a Reduction trigger. Routing ambiguous items to Reduction resolves the classification problem by destroying the item — this is the wrong resolution. Ambiguous items route to Human/AI Oversight Gate | No — Oversight Gate routing for ambiguous items is permanent doctrine |
 | 2026-05-15 | Open-air Reduction without enclosure | Particulate escape risk, operator respiratory exposure, and exhaust contamination of the surrounding environment are all unacceptable. Enclosure is not optional — it is a prerequisite for Air Scrubber integration to function | No — enclosed Reduction is permanent doctrine |
-| 2026-05-15 | Automated Reduction at v0 without resolved upstream prerequisites | FL-001 gate logic determinism, GI-002 energetic discharge, and GI-003 augmented detection are all unresolved at v0. Human presence compensates for these gaps. Removing human presence before the gaps are resolved eliminates the primary safety compensating control at the only irreversible step in the system | Reconsider only when FL-001, GI-002, GI-003, GR-001, and GR-004 are all resolved and safety interlocks are validated — see GR-005 |
+| 2026-05-15 | Automated Reduction at v0 without resolved upstream prerequisites | FL-001 gate logic determinism, GI-002 energetic discharge, and GI-003 augmented detection are all unresolved at v0. Human presence compensates for these gaps. Removing human presence before the gaps are resolved eliminates the primary safety compensating control at the R4 boundary | Reconsider only when FL-001, GI-002, GI-003, GR-001, and GR-004 are all resolved and safety interlocks are validated — see GR-005 |
 | 2026-05-15 | Reduction output routed directly to Gate_05_Separation_Thermal without Gate_04 mechanical separation | Skipping Gate_04 sends unclassified mixed material directly to the Spin Chamber, increasing contamination risk, reducing segregation effectiveness, and defeating the purpose of the mechanical separation stage. Gate_04 exists to protect Gate_05 from exactly this scenario | No — sequential gate routing is permanent doctrine |
 
 ---
@@ -986,8 +989,8 @@ additional local triggers specific to Gate_03_Reduction:
 | Trigger | Reason |
 |---------|--------|
 | Reduction begins without Air Scrubber verification | Air Scrubber operational status is a hard prerequisite — no exceptions. If scrubber cannot verify, Reduction does not start |
-| Reduction begins without human operator present before GR-005 resolution | Human presence is the primary compensating control for unresolved upstream gaps — removing it before GR-005 criteria are met eliminates the only irreversible-step safety backstop |
-| Contamination discovery protocol bypassed under throughput pressure | Contamination discovered during Reduction must trigger immediate stop — throughput pressure is never a valid override at the only irreversible step |
+| Reduction begins without human operator present before GR-005 resolution | Human presence is the primary compensating control for unresolved upstream gaps — removing it before GR-005 criteria are met eliminates the R4 safety backstop |
+| Contamination discovery protocol bypassed under throughput pressure | Contamination discovered during Reduction must trigger immediate stop — throughput pressure is never a valid override at the R4 boundary |
 | Prohibited input list revised without GR-003 review | Waste disposal doctrine and prohibited input list must stay synchronized — a new prohibited category without a disposal path creates an unresolvable hold condition |
 | Output envelope revised without GR-001 cross-validation against Gate_04 inputs | Output envelope changes propagate directly to Gate_04 performance — unilateral revision without cross-validation creates hidden downstream incompatibility |
 | Reduction method changed without GR-002 update and GR-004 particulate re-characterization | Method change invalidates particulate profile and output envelope — Air Scrubber sizing and Gate_04 input assumptions both require revalidation |

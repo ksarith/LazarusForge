@@ -55,6 +55,10 @@
 - Minimum viable triage configuration for Gen-1 Forge
 - Guiding axioms
 - Interface map to upstream and downstream modules
+- Human review criteria for "Unknown Bulk" items received from
+  Gate_04's Fail-to-bin protocol (pending — see TS-009)
+- Battery chemistry sorting algorithms, deferred from
+  `Operations/Energy.md` (pending — see TS-010)
 - §XII: a proposed, unaudited intelligence/arbitration/capability/maturity
   extension to the above (TIL, TAL, TCM, TMV) — candidate doctrine only,
   not yet load-bearing
@@ -637,6 +641,51 @@ See TS-005 through TS-008 below for tracked unknowns against this section.
 ---
 
 ## Auditor Notes & Unknowns
+
+### TS-009 — "Unknown Bulk" review criteria undefined
+
+| Field         | Value                          |
+|---------------|--------------------------------|
+| Status        | Open                           |
+| Risk          | Medium                         |
+| Priority      | Major                          |
+| Type          | Cross-Module                   |
+| Blocking      | No                             |
+| Owner         | Operations/Gate_02_Triage.md   |
+| First Logged  | 2026-09-08                      |
+| Last Reviewed | 2026-09-08                      |
+
+**Description:** `Operations/Gate_04_Separation_Mechanical.md`'s
+Scope Boundary points human review of its "Unknown Bulk" output
+classification to this file, but this file never uses the term
+or defines review criteria for it. Found during HP-006 cross-layer
+reconciliation (Forge_flow.md Held Proposals).
+
+**Why It Matters:** Without defined criteria, Unknown Bulk items
+from Gate_04 have no documented reception process at Gate_02 —
+an orphaned handoff between two otherwise well-reconciled files.
+
+### TS-010 — Battery chemistry sorting algorithms undefined
+
+| Field         | Value                          |
+|---------------|--------------------------------|
+| Status        | Open                           |
+| Risk          | Low                            |
+| Priority      | Minor                          |
+| Type          | Cross-Module                   |
+| Blocking      | No                             |
+| Owner         | Operations/Gate_02_Triage.md   |
+| First Logged  | 2026-09-08                      |
+| Last Reviewed | 2026-09-08                      |
+
+**Description:** `Operations/Energy.md`'s Scope Boundary defers
+battery chemistry sorting algorithms to this file, but this file
+contains no chemistry-sorting content. Found during HP-006
+cross-layer reconciliation.
+
+**Why It Matters:** Battery handling at triage currently has no
+documented chemistry-sorting logic despite an explicit upstream
+pointer claiming this file owns it.
 
 ### TS-001 — "Sufficient for forge duty" threshold undefined
 

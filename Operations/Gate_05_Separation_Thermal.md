@@ -51,6 +51,8 @@
 - Failure philosophy and acceptable/unacceptable failure modes
 - The Spin Chamber's role as a material contributor to
   self-replication (not the self-replication architecture itself)
+- Reconciliation of thermal inputs against Gate_04's "Class C"
+  output classification (pending — see SC-010)
 
 **This file DOES NOT define:**
 - Upstream feedstock preparation
@@ -427,6 +429,31 @@ in the sidecar, not disputes. Revisit after first operational run.*
 ---
 
 ## Auditor Notes & Unknowns
+
+### SC-010 — "Class C" terminology not reconciled against Gate_04
+
+| Field         | Value                          |
+|---------------|--------------------------------|
+| Status        | Open                           |
+| Risk          | Low                            |
+| Priority      | Minor                          |
+| Type          | Cross-Module                   |
+| Blocking      | No                             |
+| Owner         | Operations/Gate_05_Separation_Thermal.md |
+| First Logged  | 2026-09-08                      |
+| Last Reviewed | 2026-09-08                      |
+
+**Description:** `Operations/Gate_04_Separation_Mechanical.md`
+defines a Class A/B/C/Unknown Bulk/Fail output classification and
+points Class C material to this file for thermal processing, but
+this file describes thermal inputs generically and never uses the
+"Class C" term. Found during HP-006 cross-layer reconciliation
+(Forge_flow.md Held Proposals).
+
+**Why It Matters:** Terminology drift between the two files makes
+it unclear whether Gate_05's thermal inputs and Gate_04's Class C
+output are actually the same material category, or a coincidental
+gap in cross-referencing.
 
 ### SC-001 — RPM envelope validation
 
