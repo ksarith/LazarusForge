@@ -10,8 +10,8 @@
 
 > ⚠️ **Operational Safety Advisory**
 > This document governs decision logic that leads to irreversible
-> actions. Reduction is the only fully irreversible step in the
-> Forge flow — once an item is shredded or milled, it cannot be
+> actions. Reduction sits at R4 — the flow's highest-consequence
+> boundary — once an item is shredded or milled, it cannot be
 > recovered as a discrete object. Gate logic errors at any stage
 > can accelerate material toward reduction prematurely.
 >
@@ -63,6 +63,9 @@
 - Termination conditions for items exiting the system
 - Human/AI Oversight Gate logic and want/need policy
 - Purification stage definition — governs DS-001 terminology dispute
+- Self-replication architecture or loop closure logic, as pointed
+  to from `Operations/Gate_05_Separation_Thermal.md` (pending —
+  see FL-003)
 
 **This file DOES NOT define:**
 - Detailed hardware specifications for any module
@@ -186,13 +189,15 @@ Relevant categories at v0:
   gate logic applies
 - Physical/radiological — radiation-emitting materials.
   Rare but unacceptable in any processing stream. Triggers
-  immediate Human/AI Oversight Gate escalation
+  immediate Human/AI Oversight Gate escalation (Oversight
+  exit: **Escalate**)
 
 *This list is not exhaustive. Unforeseen contamination
 categories are expected over operational lifetime. When
 a new contamination type is encountered that does not fit
 existing categories, it routes to the Human/AI Oversight
-Gate and a new category is logged. The system is designed
+Gate and a new category is logged (Oversight exit:
+**Reclassify**). The system is designed
 to learn from what it cannot yet classify.*
 
 **Inert waste** — Material with no remaining functional,
@@ -203,6 +208,25 @@ conventional disposal.
 its absence limits a higher-priority function. This distinction
 governs the Human/AI Oversight Gate and Fabrication priority
 order.
+
+**Irreversibility Levels** — Added 2026-09-08 to replace a flat
+irreversible/not-irreversible split with graded consequence.
+This taxonomy governs Forge_flow.md's own reversibility notes
+below. It is *not yet* extended to Operations/Gate_03_Reduction.md
+or any other file — that remains held (HP-001 residual scope).
+
+| Level | Meaning |
+|---|---|
+| R0 | Fully reversible — no material consequence |
+| R1 | Reversible with labor or reassembly |
+| R2 | Recoverable but altered (e.g. calibration/tolerance drift) |
+| R3 | Discrete-object identity lost (disassembly into components) |
+| R4 | Material transformation — Reduction and beyond |
+
+*R4 remains the flow's highest-consequence boundary and the*
+*point past which Oversight cannot recover a discrete item —*
+*that governing role is unchanged by this taxonomy, only made*
+*gradable below it.*
 
 ---
 
@@ -216,7 +240,7 @@ Triage station outcomes map to these gates. See
 | A | Original function in original context? | Component Library |
 | B | Repairable within current tooling? | Repair & Learn |
 | C | Useful in reduced/different application? | Repurpose |
-| D | Material recovery value remaining? | Reduction |
+| D | Is Reduction the correct residual path? | Reduction |
 | Oversight | Any credible active need? | Hold or Reduction |
 
 ---
@@ -252,11 +276,13 @@ Fabrication → Utilization → Feedback
 - Operator unavailable → hold pending Oversight review
 - Component Library full/unmaintained → treated as Gate C items
 
-**Oversight Gate exits (currently binary — see Held Proposals HP-002*
-*for a proposed richer exit model, not yet adopted):**
-- Genuine need confirmed → assign with defined review date (returns
-  to held/stock state, re-enters Oversight logic at review date)
-- No genuine need → Reduction proceeds
+**Oversight Gate exits (formalized 2026-09-08, HP-002 — see the*
+*Human/AI Oversight Gate section for the full mapping):**
+- Return to Flow — exception resolved, re-enters normal routing
+- Hold — deferred with a defined review point
+- Reclassify — new category logged, re-enters via that classification
+- Escalate — exceeds this flow's own decision authority
+- Terminate — no genuine need confirmed, Reduction proceeds
 
 **Feedback loop:** Utilization → Feedback targets Classification
 rules, repair heuristics, tolerance thresholds, and tooling
@@ -331,30 +357,65 @@ Assemblies that cannot function as a whole may be disassembled
 here — each component re-enters at Gate A independently.*
 
 ### Gate D — Material Recovery Viability
-**Test:** Does this item have a viable material-recovery pathway
-under current Forge capability? Structural, chemical, or thermal
-damage prevents any functional use AND material is not recoverable
-through Purification.
-**If YES (no viable pathway remains) →** Reduction
-**If NO (a pathway may still exist) →** Human/AI Oversight Gate
+**Test:** Is Reduction the correct residual path for material recovery
+under current Forge capability?
+(i.e., all functional, repair, and repurpose paths have been exhausted,
+and the only remaining viable recovery route is size-reduction followed
+by Separation / Purification.)
+**If YES →** Reduction
+**If NO (a non-Reduction recovery path may still exist, or recovery is
+genuinely impossible / prohibited) →** Human/AI Oversight Gate
 
-*Renamed 2026-09-08 from "Truly Exhausted?" for testability — the*
-*original YES/NO routing is unchanged. Note: the compound test's*
-*polarity ("material is not recoverable through Purification" as*
-*part of the condition that routes TO Reduction, which itself feeds*
-*Purification) reads ambiguously on close reading and was not*
-*resolved here — see Held Proposals HP-004.*
+*Rewritten 2026-09-08 to resolve the polarity ambiguity flagged in
+HP-004. The prior compound test mixed functional exhaustion with a
+negative claim about Purification recoverability, creating a circular
+reading (Reduction both "no pathway remains" and the necessary first
+step of the primary pathway). The new positive framing matches actual
+doctrine: Reduction is the residual R4 path that feeds Separation /
+Purification. Oversight remains the correct exit for true edge cases.
+Renamed from "Truly Exhausted?" to "Material Recovery Viability"
+earlier the same day for testability — that rename is unaffected.*
 
-### Human/AI Oversight Gate
+### Human/AI Oversight Gate — Exception-Resolution State
+
+*Reframed 2026-09-08 (HP-002). This section formalizes exit states*
+*that were already scattered across this document's contamination,*
+*degraded-operation, and Gate D logic — no routing behavior below*
+*is new. Each exit cites where its behavior already existed prior*
+*to this reframe.*
+
+The Oversight Gate is entered from multiple triggers, not only
+Gate D failure: contamination discovered mid-process, radiological
+or other unforeseen hazard categories, operator unavailability,
+and Gate D's want/need evaluation. It resolves to one of five
+named exits:
+
+- **Return to Flow** — the exception is resolved and the item
+  re-enters normal gate routing (e.g. sensor drift corrected and
+  classification resumes; see Degraded Operation)
+- **Hold** — deferred pending a future condition, with a defined
+  review point (genuine need confirmed at Gate D; operator
+  unavailable pending return; contamination pending
+  characterization — see Degraded Operation)
+- **Reclassify** — a new category is logged and the item re-enters
+  via that classification (unforeseen contamination category — see
+  Contamination Categories)
+- **Escalate** — the decision exceeds this flow's own authority
+  (radiological or other hazard requiring external protocol — see
+  Contamination Categories)
+- **Terminate** — no genuine need confirmed; Reduction proceeds
+  (Gate D want/need evaluation, below)
+
+This gate prevents both hoarding and premature destruction.
+
+**Gate D want/need evaluation (Hold vs. Terminate exits):**
 Review items that failed Gates A–D but where reduction feels
 premature. Evaluate against active needs only — not
 hypothetical future uses. Apply the want/need policy
 (see Defined Terms).
 
-- If a genuine need exists: assign with a defined review date
-- If no genuine need exists: Reduction proceeds
-
-This gate prevents both hoarding and premature destruction.
+- If a genuine need exists: **Hold** — assign with a defined review date
+- If no genuine need exists: **Terminate** — Reduction proceeds
 
 **Minimum criteria for "genuine need" (Exploration-level
 heuristics — must become testable before Specification):**
@@ -388,14 +449,14 @@ the judgment auditable, not to remove it.*
 - Track provenance and test results
 - Feeds Fabrication directly
 - Requires maintained Component Library — see ASM-004
-- *Reversibility: components remain individually recoverable*
+- *Reversibility: R0 — components remain individually recoverable*
 
 ### Repair & Learn
 - Attempt repair
 - Log failure mode and fix
 - Update heuristics
 - Outputs to Component Library or Repurpose
-- *Reversibility: disassembly may affect calibration or
+- *Reversibility: R2 — disassembly may affect calibration or
   tolerances — log pre-repair state*
 
 ### Repurpose (Lower Precision)
@@ -404,13 +465,16 @@ the judgment auditable, not to remove it.*
 - Feeds Fabrication
 
 ### Reduction
-**Irreversible step — point of no return for the item as
-a discrete object**
+**R4 — point of no return for the item as a discrete object**
 - Shredding, cutting, or milling
 - Size reduction only (no melting yet)
 - Reduction module specification owned by
   Operations/Gate_03_Reduction.md — see FL-002, UNK-007
-- *This is the only fully irreversible step in the flow*
+- *Reversibility: R4 — the flow's highest-consequence boundary.*
+  *Operations/Gate_03_Reduction.md still describes this step as*
+  *"the only irreversible step" in its own safety doctrine (GR-005,*
+  *ASM-001) — that language is intentionally untouched pending*
+  *separate review; see HP-001 in Held Proposals.*
 
 **Operations/Gate_03_Reduction.md exists and carries constraints-first
 doctrine (contamination shutdown, prohibited inputs, output envelope,
@@ -536,14 +600,17 @@ gate logic. Log backlog rate as diagnostic signal.
 **Sensor drift** — Classification confidence degrades
 without obvious cause. Resolution: tighten thresholds,
 increase Unknown Bulk routing, identify and correct
-sensor issue before resuming normal operation. Mirrors
+sensor issue before resuming normal operation (Oversight
+exit: **Return to Flow**). Mirrors
 `Operations/Gate_04_Separation_Mechanical.md` degraded
 mode doctrine.
 
 **Contamination discovery mid-process** — Contamination
 identified after gate routing has begun. Resolution:
 stop processing, escalate to Human/AI Oversight Gate,
-log new contamination category if not previously defined.
+log new contamination category if not previously defined
+(Oversight exit: **Hold**, or **Reclassify** if a new
+category is logged).
 Do not continue routing contaminated material downstream.
 
 **Tooling inventory stale** — Gate B evaluations become
@@ -554,7 +621,7 @@ routing under uncertainty. See ASM-003.
 
 **Operator unavailable** — Human/AI Oversight Gate
 requires human presence. Resolution: hold items pending
-Oversight Gate review. Do not route to Reduction in
+Oversight Gate review (Oversight exit: **Hold**). Do not route to Reduction in
 operator absence unless automated shutdown doctrine
 explicitly permits it.
 
@@ -790,9 +857,9 @@ creates inconsistency across forge instances.
   real-world operation will surface new boundary conditions
   that must be logged and resolved.
 - Gate D renamed "Material Recovery Viability" 2026-09-08 for
-  testability — routing logic unchanged. A latent polarity
-  ambiguity in the compound test was noticed, not resolved;
-  see Held Proposals HP-004.
+  testability, then rewritten same day (HP-004, Option A) to a
+  single positive test — the compound-test polarity ambiguity
+  is resolved. Routing outcomes unchanged throughout.
 - Last Reviewed field corrected 2026-09-08 — had drifted stale
   against this file's own Resolution Log, which recorded
   substantive audits (2026-08-08, 2026-08-10) after the field's
@@ -825,8 +892,8 @@ emergency shutdown). Its output envelope has not yet been
 cross-validated against Operations/Gate_04_Separation_Mechanical.md's
 provisional feedstock envelope (Inputs section).
 
-**Why It Matters:** Reduction is the only fully irreversible
-step in the Forge flow. It is also the upstream dependency
+**Why It Matters:** Reduction sits at R4, the flow's highest-
+consequence boundary. It is also the upstream dependency
 for the Material Separation Gate — the Gate's provisional
 feedstock envelope, RPM bands, sensor calibration, and jam
 risk all depend on knowing what Reduction actually produces.
@@ -846,6 +913,68 @@ against an unconfirmed input.
 - Payment via Specification — once the output envelope is
   cross-validated against Operations/Gate_04_Separation_Mechanical.md
   Inputs section.
+
+---
+
+### FL-003 — Self-replication architecture ownership undefined
+
+| Field         | Value                                            |
+|---------------|--------------------------------------------------|
+| Status        | Open                                              |
+| Risk          | Low                                               |
+| Priority      | Minor                                             |
+| Type          | Architectural / Cross-Module                      |
+| Blocking      | No                                                |
+| Owner         | Architecture/Forge_flow.md                          |
+| First Logged  | 2026-09-08                                        |
+| Last Reviewed | 2026-09-08                                        |
+
+**Description:** `Operations/Gate_05_Separation_Thermal.md`'s Scope
+Boundary points self-replication architecture and loop closure
+logic to this file (jointly with Geck_forge_seed.md), but this
+file's own Scope Boundary never claims that ownership and contains
+no self-replication content. Found during HP-006 cross-layer
+reconciliation.
+
+**Why It Matters:** Self-replication is referenced as a downstream
+goal from at least one operational file, but nothing in the
+architecture layer currently owns defining what that architecture
+actually is — an orphaned handoff.
+
+---
+
+### FL-004 — Tooling inventory (ASM-003) has no owning file
+
+| Field         | Value                                            |
+|---------------|--------------------------------------------------|
+| Status        | Open                                              |
+| Risk          | Medium                                            |
+| Priority      | Major                                             |
+| Type          | Operational / Cross-Module                        |
+| Blocking      | No (but blocks full FL-001 / Gate B determinism)  |
+| Owner         | Architecture/Forge_flow.md                          |
+| First Logged  | 2026-09-08                                        |
+| Last Reviewed | 2026-09-08                                        |
+
+**Description:** ASM-003's Expiry Trigger requires tooling inventory
+specification and maintenance doctrine to be "assigned to an owning
+file." Checked `Architecture/Components.md` as the candidate — it is
+a system-component taxonomy (Critical/Useful/Bootstrap), not a live
+tool list, contains no tooling-inventory content, and doesn't claim
+this ownership. No file currently does. Found while reviewing a
+proposal to draft `Operations/Tooling_Inventory.md` for this purpose
+(see Held Proposals HP-007) — not yet created.
+
+**Why It Matters:** Gate B's "within current tooling capability" test
+cannot be fully deterministic without a real, owned, maintained
+inventory to evaluate against — this is a live gap in FL-001's own
+determinism claim, not just a documentation nicety.
+
+**Resolution Path:**
+- Decide ownership (candidate: new `Operations/Tooling_Inventory.md`,
+  per HP-007's drafted skeleton — not yet adopted).
+- Once an owning file exists and is first populated, update ASM-003's
+  Expiry Trigger and this entry.
 
 ---
 
@@ -892,6 +1021,28 @@ deferred, not closed.
 ---
 
 ### Resolution Log
+
+- 2026-09-08 (seventh pass): **FL-004 and HP-007 logged (not actioned).** Verified Grok's ASM-003-vs-Components.md gap finding against source: Components.md is a system-component taxonomy (Critical/Useful/Bootstrap), contains no tooling-inventory content, and doesn't claim ASM-003's ownership. Registered the gap as FL-004 (Open) here and in Unknowns.md v5.03. Logged the drafted `Operations/Tooling_Inventory.md` skeleton as HP-007 in Held Proposals — file not created. Per James: "let's get it logged, for now" — deliberately a logging-only pass. Human-directed.
+
+- 2026-09-08 (sixth pass): **HP-004 resolved (Grok-drafted Option A, Claude-verified before applying).** Rewrote Gate D from a double-negated compound test to a single positive question: "Is Reduction the correct residual path for material recovery under current Forge capability?" Routing outcomes unchanged. Checked both side effects Grok's own writeup flagged: Gate Correspondence table row updated to match ("Is Reduction the correct residual path?"); worked Examples 1 and 2 checked against the new framing and found already consistent — neither needed edits, since both already routed material to Reduction on the basis of "material recovery value remains," not the old inverted clause. FL-001 Resolution Path updated to reflect the rewrite. Human-directed.
+
+- 2026-09-08 (fifth pass): **HP-002 adopted.** Reviewed the Oversight Gate section against every place it's actually invoked in the document (Gate D failure, contamination mid-process, radiological hazard, operator unavailable, unforeseen contamination category) and found the five proposed exits already existed as scattered, unnamed case-specific behavior — this was a naming/consolidation pass, not new gate logic, so it did not trigger the "gate logic modified without FL-001 resolution" concern originally flagged when this was held. Formalized as Return to Flow / Hold / Reclassify / Escalate / Terminate; tagged all five scattered instances with their exit name; the two previously-binary Gate D outcomes (assign-with-review-date, Reduction) are now explicitly Hold and Terminate respectively, with identical underlying logic. No routing rule changed. Flow State/Transition Model section updated to match. Human-directed.
+
+- 2026-09-08 (fourth pass): **HP-006 first pass complete.** Cross-checked every "DOES NOT define → see X" pointer across Forge_flow.md, Gate_02/03/04/05, Energy.md, and Forge_Net.md against the receiving file's actual DOES-define claims and body text (not just Scope Boundary summaries). Most reconciled cleanly. Found four orphaned handoffs — a term used/pointed-to on one side with zero acknowledgment on the receiving side: "Unknown Bulk" (Gate_04→Gate_02), "Class C" (Gate_04→Gate_05), battery chemistry sorting (Energy.md→Gate_02), self-replication architecture (Gate_05→Forge_flow.md, this file). Registered as TS-009, TS-010, SC-010, FL-003 in each owning file's sidecar and in Unknowns.md v5.02; added one-line stub acknowledgments to each receiving file's Scope Boundary. Did not require HP-005 first — the dependency noted when HP-006 was logged applies to gate-determinism validation, not ownership cross-checking, which turned out to be a tractable independent pass since every file already had self-declared Scope Boundary sections. Human-directed.
+
+- 2026-09-08 (third pass): **HP-001 closed.** Grok proposed the R4-aligned rewording for Gate_03_Reduction.md's GR-005/ASM-001 safety-doctrine language. Claude verified all 8 cited passages against the live file before applying (exact matches) and found one additional un-graded occurrence, ASM-006, not in Grok's original diff — same category, included. Applied to Gate_03_Reduction.md; see that file's own 2026-09-08 Resolution Log entry for the full list. No safety intent changed. HP-001 row updated to Closed.
+
+- 2026-09-08 (second pass): **HP-001 partially adopted.** Added
+  Irreversibility Levels taxonomy (R0-R4) to Defined Terms.
+  Applied to Forge_flow.md only: tagged Component Library (R0)
+  and Repair & Learn (R2) reversibility notes; reworded three
+  descriptive "only fully irreversible step" occurrences (Safety
+  Advisory, Reduction outcome path, FL-002 Why It Matters) to R4
+  framing. Deliberately did NOT touch Operations/Gate_03_Reduction.md
+  — GR-005 and ASM-001 there anchor human-presence safety
+  requirements to the un-graded phrase, and that's a safety-doctrine
+  edit requiring separate explicit review, not a vocabulary
+  extension. HP-001 row updated to reflect partial status.
 
 - 2026-09-08: **Refinement pass on ChatGPT proposal (Claude-verified
   subset only).** Added Flow State/Transition Model section —
@@ -997,12 +1148,13 @@ deferred, not closed.
 
 | ID | Proposal | Why Held | Logged |
 |----|----------|----------|--------|
-| HP-001 | Irreversibility Levels taxonomy (R0-R4) replacing the flat "Reduction is the only irreversible step" model with graded reversibility | Bigger than a Forge_flow.md-local refinement — Defined Terms changes propagate repo-wide per this file's own Notes section; would also touch Repair & Learn, Reduction, FL-002, and Operations/Gate_03_Reduction.md. Needs its own scoping pass before it's a contained edit | 2026-09-08 |
-| HP-002 | Reframe Human/AI Oversight Gate as a formal multi-exit exception-state (return to flow / hold / reclassify / escalate / terminate) instead of the current binary hold-or-Reduction outcome | Would expand existing gate logic, not just document it — falls under the "Gate logic modified without FL-001 resolution" drift trigger. Current binary model works; richer model unproven against real operation | 2026-09-08 |
+| HP-001 | ~~Irreversibility Levels taxonomy (R0-R4)~~ **Fully adopted 2026-09-08.** Taxonomy in Defined Terms; applied throughout Forge_flow.md (Component Library R0, Repair & Learn R2, three descriptive occurrences reworded to R4). Gate_03_Reduction.md's GR-005/ASM-001 safety-doctrine language also aligned to R4 (Grok-proposed, Claude-verified against source before applying; one additional occurrence, ASM-006, found and included). No safety intent changed — see Gate_03_Reduction.md Resolution Log 2026-09-08 entry | Closed | 2026-09-08 |
+| HP-002 | ~~Reframe Human/AI Oversight Gate as a formal multi-exit exception-state~~ **Adopted 2026-09-08.** Found the five exits weren't new — they were already scattered as specific-case behavior (sensor drift, contamination mid-process, radiological escalation, operator unavailable, Gate D want/need) with no common naming. Formalized as Return to Flow / Hold / Reclassify / Escalate / Terminate; each scattered instance tagged with its exit name; no routing rule changed | Was a genuine consolidation, not new logic — did not require the caution originally flagged | 2026-09-08 |
 | HP-003 | Elevate the KPI-subordination sentence ("the KPI measures what the system does — the gates govern what the system should do") to a named "Flow Invariant" category | Not clear this is an existing structural category under File_Template.md conventions — needs that checked before introducing a new category that could look canonical elsewhere in the repo | 2026-09-08 |
-| HP-004 | Gate D's compound test reads ambiguous on close reading: "material is not recoverable through Purification" sits inside the condition that routes items TO Reduction, which itself feeds Purification downstream | Noticed during the 2026-09-08 Gate D rename pass; not resolved there since fixing it would be a logic change, not a rename. Candidate for FL-001 boundary-case work | 2026-09-08 |
+| HP-004 | ~~Gate D's compound test reads ambiguous~~ **Resolved 2026-09-08 (Option A rewrite).** Rewrote as a single positive question ("Is Reduction the correct residual path?") instead of the double-negated compound test. Routing outcomes unchanged — same items still route the same places — only the test's phrasing changed. Gate Correspondence table row aligned to match; worked Examples 1 and 2 checked and already consistent with the new framing, no edit needed there | Was flagged as needing FL-001 treatment since it's a logic-adjacent change — treated with that care: verified against Gate Correspondence table and both existing worked examples before closing, not a silent edit | 2026-09-08 |
 | HP-005 | FL-001 boundary-determinism matrix across functional-assembly / partially-functional / repairable-not-worth-repairing / repurpose-vs-recovery / contaminated / unknown-material / scarce-component / obsolete-but-functional / incomplete-evidence / conflicting-assessment cases | Substantial standalone effort toward FL-001 closure — real candidate for a dedicated future session, not a side effect of this one | 2026-09-08 |
-| HP-006 | Cross-layer reconciliation pass against Gate_02/03/04/05, Energy.md, and Forge_Net.md to determine which document actually owns each decision | Depends on HP-005 groundwork and touches five other files — needs its own session, not bundled here | 2026-09-08 |
+| HP-006 | ~~Cross-layer reconciliation pass~~ **First pass complete 2026-09-08.** Cross-checked every Scope Boundary pointer across Forge_flow.md, Gate_02/03/04/05, Energy.md, Forge_Net.md — reconciled cleanly overall (including good triangulation on shared owners like Energy.md/Facilities.md). Found four orphaned handoffs, spun off as new Unknowns: TS-009, TS-010, SC-010, FL-003 (see Unknowns.md v5.02). Did not require HP-005/FL-001 closure first — ownership cross-checking was independent of gate-determinism validation | Closed as a pass; residual work now lives in the four spun-off Unknowns, not here | 2026-09-08 |
+| HP-007 | Create `Operations/Tooling_Inventory.md` — a drafted skeleton exists (Exploration status, Scope Boundary, ASM-001/002/003 sidecar, empty inventory tables by category, TI-001 unknown for initial population) to satisfy FL-004 (ASM-003's ownership gap). Gap itself verified real and logged as FL-004; the file to fix it is not yet created | New-file creation, not a documentation edit — logged per James's "let's get it logged, for now" rather than committed to this session. Also mixes with `Architecture/Components.md`'s existing taxonomy — a short cross-reference note there would need to land alongside it | 2026-09-08 |
 
 ---
 
