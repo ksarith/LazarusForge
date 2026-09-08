@@ -1,8 +1,8 @@
 # Routing.md — LazarusForge
 **Canonical Navigation and Link Mapping Index.**
-**Last updated: 2026-09-06**
-**Addition 2026-09-06: `Architecture/Local_Governance_Framework.md` (new v0.1-draft file) registered.**
-**No other map changes 2026-08-31 through 2026-09-06: the governance File State / Spec Gates / Highest Risk synchronizations across Verification_Gates.md, Auditor_Protocols.md, Governance_Charter.md, Governance_Migration_Protocol.md, Ethical_Constraints.md, Security_Protocols.md, Repository_Integrity_Protocol.md, Unknowns.md, and Progress_Log.md in that window were content-only — no files added, removed, or rerouted. Two Active Disputes IDs disambiguated in-place 2026-09-04 (`Operations/Gate_02_Triage.md` and `Operations/Gate_07_Utilization.md` local disputes renamed to TS-DS-001/GU-DS-001 respectively) — same paths, no map change. Prior: one addition on 2026-08-30 (`Admin/INTEGRITY_SWEEP_PROMPT.md`, exemption class 6).**
+**Last updated: 2026-09-08**
+**Addition 2026-09-08: `Admin/Agent_Verification_Event.md` (new process-doctrine file) and `Archive/Transcripts/Forge_Net_Gemini_FN001_FN005_Mapping.md` (relocated from `Architecture/` — memo-only, never Architecture doctrine) both registered.**
+**Prior: 2026-09-06 addition of `Architecture/Local_Governance_Framework.md` (v0.1-draft file). No other map changes 2026-08-31 through 2026-09-06: the governance File State / Spec Gates / Highest Risk synchronizations across Verification_Gates.md, Auditor_Protocols.md, Governance_Charter.md, Governance_Migration_Protocol.md, Ethical_Constraints.md, Security_Protocols.md, Repository_Integrity_Protocol.md, Unknowns.md, and Progress_Log.md in that window were content-only — no files added, removed, or rerouted. Two Active Disputes IDs disambiguated in-place 2026-09-04 (`Operations/Gate_02_Triage.md` and `Operations/Gate_07_Utilization.md` local disputes renamed to TS-DS-001/GU-DS-001 respectively) — same paths, no map change.**
 
 ---
 
@@ -39,6 +39,7 @@ Last scope clarification: 2026-08-10 (integrity cleanup pass).
 | `CONTRIBUTING.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForge/refs/heads/main/CONTRIBUTING.md) | [Repo](https://github.com/ksarith/LazarusForge/blob/main/CONTRIBUTING.md) | Explicit |
 | **Admin/ Layer** | | | |
 | `Admin/Adm_Scope_Map.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForge/refs/heads/main/Admin/Adm_Scope_Map.md) | [Repo](https://github.com/ksarith/LazarusForge/blob/main/Admin/Adm_Scope_Map.md) | Explicit |
+| `Admin/Agent_Verification_Event.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForge/refs/heads/main/Admin/Agent_Verification_Event.md) | [Repo](https://github.com/ksarith/LazarusForge/blob/main/Admin/Agent_Verification_Event.md) | Explicit |
 | `Admin/Auditor_Protocols.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForge/refs/heads/main/Admin/Auditor_Protocols.md) | [Repo](https://github.com/ksarith/LazarusForge/blob/main/Admin/Auditor_Protocols.md) | Explicit |
 | `Admin/Autonomy_Divergence_Protocol.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForge/refs/heads/main/Admin/Autonomy_Divergence_Protocol.md) | [Repo](https://github.com/ksarith/LazarusForge/blob/main/Admin/Autonomy_Divergence_Protocol.md) | Explicit |
 | `Admin/BATTERY_SEED.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForge/refs/heads/main/Admin/BATTERY_SEED.md) | [Repo](https://github.com/ksarith/LazarusForge/blob/main/Admin/BATTERY_SEED.md) | Explicit |
@@ -143,6 +144,7 @@ Last scope clarification: 2026-08-10 (integrity cleanup pass).
 | `Archive/Transcripts/Gate2chat.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForge/refs/heads/main/Archive/Transcripts/Gate2chat.md) | [Repo](https://github.com/ksarith/LazarusForge/blob/main/Archive/Transcripts/Gate2chat.md) | Explicit |
 | `Archive/Transcripts/Gov-Copilot.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForge/refs/heads/main/Archive/Transcripts/Gov-Copilot.md) | [Repo](https://github.com/ksarith/LazarusForge/blob/main/Archive/Transcripts/Gov-Copilot.md) | Explicit |
 | `Archive/Transcripts/GrokGeckMaybeOverflowToo.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForge/refs/heads/main/Archive/Transcripts/GrokGeckMaybeOverflowToo.md) | [Repo](https://github.com/ksarith/LazarusForge/blob/main/Archive/Transcripts/GrokGeckMaybeOverflowToo.md) | Explicit |
+| `Archive/Transcripts/Forge_Net_Gemini_FN001_FN005_Mapping.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForge/refs/heads/main/Archive/Transcripts/Forge_Net_Gemini_FN001_FN005_Mapping.md) | [Repo](https://github.com/ksarith/LazarusForge/blob/main/Archive/Transcripts/Forge_Net_Gemini_FN001_FN005_Mapping.md) | Explicit |
 | `Archive/Transcripts/Pyrolysis_Cascade-Copilot.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForge/refs/heads/main/Archive/Transcripts/Pyrolysis_Cascade-Copilot.md) | [Repo](https://github.com/ksarith/LazarusForge/blob/main/Archive/Transcripts/Pyrolysis_Cascade-Copilot.md) | Explicit |
 | `Archive/Transcripts/Pyrolysis_Cascade-Grok.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForge/refs/heads/main/Archive/Transcripts/Pyrolysis_Cascade-Grok.md) | [Repo](https://github.com/ksarith/LazarusForge/blob/main/Archive/Transcripts/Pyrolysis_Cascade-Grok.md) | Explicit |
 | `Archive/README.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForge/refs/heads/main/Archive/README.md) | [Repo](https://github.com/ksarith/LazarusForge/blob/main/Archive/README.md) | Explicit |

@@ -1,6 +1,6 @@
 # Discovery.md — LazarusForge
 **Navigation layer for the active working repository.**
-**Last updated: 2026-09-06**
+**Last updated: 2026-09-08**
 
 ---
 
@@ -172,6 +172,7 @@ Admin/                                      — Governance, protocols, and doctr
     ├── Adm_Scope_Map.md                     — Per-file scope/dependency index for this folder (2026-08-07)
     ├── Governance_Charter.md               — Constitutional tier; 8 Axioms (Tier 1)
     ├── Ethical_Constraints.md              — Embedded AI governance & anti-weaponization (Tier 1)
+    ├── Agent_Verification_Event.md         — Claim-reliability schema for multi-agent verification (Candidate)
     ├── Auditor_Protocols.md                — Verification doctrine; 10-phase sequence (Tier 2)
     ├── Forge_Audit_Kit.md                  — Condensed routine multi-agent cycle reference (Tier 3)
     ├── Verification_Gates.md            — Canonical 6 document promotion gates
@@ -341,6 +342,7 @@ Discovery.md is a navigation map — task tracking belongs in Unknowns.md.
 |------|--------|-----------|--------------|
 | `Admin/Governance_Charter.md` | Draft | 6/6 vs. `Admin/Verification_Gates.md` — execution quality (see GOV-011, resolved 2026-07-05); promotion separately blocked by open unknowns (GOV-005) and Enforcement Checkpoint 2 — Bootstrap Paradox; GOV-003 Resolved 2026-08-23 (specification-level architecture only — no promotion-readiness change) | High (GOV-005 — sole remaining open item with Priority: Critical in that file; its own Risk field reads High, matching the convention that this column mirrors Risk not Priority — corrected 2026-09-04, this row previously said "Critical," carrying forward a Risk/Priority conflation from that file's own header that was fixed 2026-09-03; GOV-013 ratified 2026-07-19, GOV-015/GOV-018/GOV-003 Resolved 2026-08-23 — see `Archive/Logs/Governance_Charter_Changelog.md`) |
 | `Admin/Ethical_Constraints.md` | Exploration | 0/6 | High |
+| `Admin/Agent_Verification_Event.md` | Candidate / Exploration | 0/6 | Low — process schema, explicitly barred from feeding claim confidence (§2.5.0) |
 | `Admin/Auditor_Protocols.md` | Draft | 5/6 (G1, G3, G4, G5, G6 clear — G3 cleared 2026-08-03 via AP-017 Resolved; G5 cleared 2026-09-03, cross-ref sweep found and fixed one remaining unprefixed-path defect; G2 N/A — no physical/quantitative claims of its own) | High |
 | `Admin/Forge_Audit_Kit.md` | Draft | 0/6 | — |
 | `Admin/Verification_Gates.md` | Draft | 6/6 — Spec Gates 2/6→6/6 2026-09-03 per Grok audit recommendation, Tier 1 Axiom Verification follow-up completed same day (Governance_Charter.md loaded, no drift found); Status remains Draft — 6/6 reflects execution quality only, not promotion readiness | High |
