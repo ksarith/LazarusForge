@@ -31,7 +31,7 @@
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-08-08 (Scope Boundary corrections — UNK-008 stale reference, vocabulary asymmetry); prior: 2026-06-11 |
+| Last Audit       | 2026-09-08 (Flow State/Transition Model added, Gate D reframed, FL-001 sidecar/Resolution Log desync corrected); prior: 2026-08-08 |
 | Auditor          | Claude — Retrofit/Auditor                                           |
 | Open Unknowns    | 2                                                                   |
 | Active Disputes  | 1                                                                   |
@@ -221,6 +221,53 @@ Triage station outcomes map to these gates. See
 
 ---
 
+## Flow State / Transition Model
+
+*Added 2026-09-08. This section is a structural consolidation, not new*
+*doctrine — every state and transition below is already established*
+*elsewhere in this document (Gate Correspondence, ASM-007, the Outcome*
+*Paths, and the Human/AI Oversight Gate section). It exists so the flow*
+*can be read as a state-transition system, not only as a linear*
+*checklist.*
+
+**States:** Intake → Classification → Gate A → Gate B → Gate C →
+Gate D → Human/AI Oversight Gate → {Component Library, Repair & Learn,
+Repurpose, Reduction, Purification} → Fabrication → Utilization →
+Feedback
+
+**Primary sequence:** Intake → Classification → Gate A → Gate B →
+Gate C → Gate D → Oversight (on Gate D failure) → an Outcome Path →
+Fabrication → Utilization → Feedback
+
+**Re-entry transitions (per ASM-007):**
+- Disassembly at Gate C or Gate D spawns independent components, each
+  of which re-enters at **Gate A** — not a bypass of gate order, a
+  restart of it per component.
+
+**Exception transitions (per Degraded Operation & Failure Modes):**
+- Jammed triage → Unknown Bulk hold (not Reduction)
+- Sensor drift → tightened thresholds / increased Unknown Bulk routing
+- Mid-process contamination discovery → stop, escalate to Oversight
+- Stale tooling inventory → Gate B defaults to NO (routes to Gate C)
+- Operator unavailable → hold pending Oversight review
+- Component Library full/unmaintained → treated as Gate C items
+
+**Oversight Gate exits (currently binary — see Held Proposals HP-002*
+*for a proposed richer exit model, not yet adopted):**
+- Genuine need confirmed → assign with defined review date (returns
+  to held/stock state, re-enters Oversight logic at review date)
+- No genuine need → Reduction proceeds
+
+**Feedback loop:** Utilization → Feedback targets Classification
+rules, repair heuristics, tolerance thresholds, and tooling
+priorities — i.e., feedback alters future routing at Classification
+and Gate B, not a literal re-entry of the same item.
+
+**Terminal states:** active use, stored stock, inert waste (post-
+Reduction, all prior gates failed).
+
+---
+
 ## 1. Intake
 
 **Purpose:** Introduce salvage items into the system with
@@ -283,12 +330,20 @@ tests material integrity. These are distinct tests.
 Assemblies that cannot function as a whole may be disassembled
 here — each component re-enters at Gate A independently.*
 
-### Gate D — Truly Exhausted?
-**Test:** Structural, chemical, or thermal damage prevents
-any functional use AND material is not recoverable through
-Purification
-**If YES →** Reduction
-**If NO →** Human/AI Oversight Gate
+### Gate D — Material Recovery Viability
+**Test:** Does this item have a viable material-recovery pathway
+under current Forge capability? Structural, chemical, or thermal
+damage prevents any functional use AND material is not recoverable
+through Purification.
+**If YES (no viable pathway remains) →** Reduction
+**If NO (a pathway may still exist) →** Human/AI Oversight Gate
+
+*Renamed 2026-09-08 from "Truly Exhausted?" for testability — the*
+*original YES/NO routing is unchanged. Note: the compound test's*
+*polarity ("material is not recoverable through Purification" as*
+*part of the condition that routes TO Reduction, which itself feeds*
+*Purification) reads ambiguously on close reading and was not*
+*resolved here — see Held Proposals HP-004.*
 
 ### Human/AI Oversight Gate
 Review items that failed Gates A–D but where reduction feels
@@ -695,7 +750,7 @@ module enters scope.*
 | Blocking      | Yes — blocks promotion to Specification          |
 | Owner         | Architecture/Forge_flow.md                         |
 | First Logged  | May 2026                                         |
-| Last Reviewed | 2026-05-16                                       |
+| Last Reviewed | 2026-09-08                                       |
 
 **Description:** Whether gate logic (A→B→C→D) produces
 deterministic routing for all item types at boundary cases
@@ -734,6 +789,14 @@ creates inconsistency across forge instances.
 - Remaining: Adversarial scenarios cover five cases —
   real-world operation will surface new boundary conditions
   that must be logged and resolved.
+- Gate D renamed "Material Recovery Viability" 2026-09-08 for
+  testability — routing logic unchanged. A latent polarity
+  ambiguity in the compound test was noticed, not resolved;
+  see Held Proposals HP-004.
+- Last Reviewed field corrected 2026-09-08 — had drifted stale
+  against this file's own Resolution Log, which recorded
+  substantive audits (2026-08-08, 2026-08-10) after the field's
+  prior 2026-05-16 value.
 - Payment via Specification — once all boundary cases
   have worked examples producing deterministic outcomes
   across multiple operators, move validated gate logic
@@ -830,6 +893,24 @@ deferred, not closed.
 
 ### Resolution Log
 
+- 2026-09-08: **Refinement pass on ChatGPT proposal (Claude-verified
+  subset only).** Added Flow State/Transition Model section —
+  pure consolidation of existing states/transitions, no new logic.
+  Gate D renamed "Truly Exhausted?" → "Material Recovery Viability"
+  for testability; original routing polarity preserved exactly;
+  a latent test-polarity ambiguity was noticed and logged (not
+  fixed) as HP-004. FL-001 sidecar Last Reviewed corrected from
+  stale 2026-05-16 to 2026-09-08 to match actual Resolution Log
+  activity. Six other ChatGPT-proposed items (irreversibility
+  levels R0-R4, Oversight multi-exit reframe, KPI-as-Flow-Invariant,
+  Gate D polarity fix, FL-001 boundary matrix, cross-layer
+  reconciliation pass) logged in new Held Proposals section below —
+  not adopted, not started. Human-directed; ChatGPT's claims
+  independently checked against source before any action (one
+  overreach found: "contamination-handling actions could presumably
+  alter material condition" was unsupported speculation, excluded
+  from rationale).
+
 - 2026-08-10: **Pseudo-audit (Grok, same limits).** Findings only; Spec Gates
   left locked at 0/6. (1) Open Unknowns **2** = FL-001, FL-002, matches local +
   `Unknowns.md`. (2) FL-001 correctly **Blocking Yes** (blocks promotion to
@@ -903,6 +984,25 @@ deferred, not closed.
   naming convention documented. Status remains In Progress —
   additional boundary cases expected from operational runs.
   Last Reviewed updated to 2026-05-16.
+
+---
+
+## Held Proposals (Not Committed)
+
+*Ideas worth preserving but not yet scoped or started — distinct*
+*from Auditor Notes & Unknowns (active, blocking or trackable gaps)*
+*and from Abandoned Paths (considered and rejected). A Held entry is*
+*neither. Promote to a numbered Unknown (FL-*) when someone commits*
+*to scoping it; move to Abandoned Paths if reconsidered and rejected.*
+
+| ID | Proposal | Why Held | Logged |
+|----|----------|----------|--------|
+| HP-001 | Irreversibility Levels taxonomy (R0-R4) replacing the flat "Reduction is the only irreversible step" model with graded reversibility | Bigger than a Forge_flow.md-local refinement — Defined Terms changes propagate repo-wide per this file's own Notes section; would also touch Repair & Learn, Reduction, FL-002, and Operations/Gate_03_Reduction.md. Needs its own scoping pass before it's a contained edit | 2026-09-08 |
+| HP-002 | Reframe Human/AI Oversight Gate as a formal multi-exit exception-state (return to flow / hold / reclassify / escalate / terminate) instead of the current binary hold-or-Reduction outcome | Would expand existing gate logic, not just document it — falls under the "Gate logic modified without FL-001 resolution" drift trigger. Current binary model works; richer model unproven against real operation | 2026-09-08 |
+| HP-003 | Elevate the KPI-subordination sentence ("the KPI measures what the system does — the gates govern what the system should do") to a named "Flow Invariant" category | Not clear this is an existing structural category under File_Template.md conventions — needs that checked before introducing a new category that could look canonical elsewhere in the repo | 2026-09-08 |
+| HP-004 | Gate D's compound test reads ambiguous on close reading: "material is not recoverable through Purification" sits inside the condition that routes items TO Reduction, which itself feeds Purification downstream | Noticed during the 2026-09-08 Gate D rename pass; not resolved there since fixing it would be a logic change, not a rename. Candidate for FL-001 boundary-case work | 2026-09-08 |
+| HP-005 | FL-001 boundary-determinism matrix across functional-assembly / partially-functional / repairable-not-worth-repairing / repurpose-vs-recovery / contaminated / unknown-material / scarce-component / obsolete-but-functional / incomplete-evidence / conflicting-assessment cases | Substantial standalone effort toward FL-001 closure — real candidate for a dedicated future session, not a side effect of this one | 2026-09-08 |
+| HP-006 | Cross-layer reconciliation pass against Gate_02/03/04/05, Energy.md, and Forge_Net.md to determine which document actually owns each decision | Depends on HP-005 groundwork and touches five other files — needs its own session, not bundled here | 2026-09-08 |
 
 ---
 
