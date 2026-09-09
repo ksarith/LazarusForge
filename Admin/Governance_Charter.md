@@ -16,8 +16,8 @@
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 6/6 vs. `Admin/Verification_Gates.md` — execution quality (see GOV-011, resolved 2026-07-05); promotion separately blocked by open unknowns (GOV-005) and Enforcement Checkpoint 2 — Bootstrap Paradox; GOV-003 Resolved 2026-08-23 (specification-level architecture only — constitutional Enforceability under compromise remains blocked on SEC-007b, not a promotion-readiness change) |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-09-03 — Grok surgical integrity repair after ChatGPT REVISE/G6-BLOCKED audit (GC-AUD-004/005/006/007): added FROZEN markers to Tier 1 Axioms, Integrity Enforcement Architecture, and Repository Integrity Doctrine; corrected two stale GOV-003 status references to post-2026-08-23 closure language retaining only SEC-007b residual; corrected GOV-016 "not yet ratified" sentence; replaced Checkpoint 5 "four-tier system" with current two-axis epistemic architecture language. No constitutional doctrine changed. Same day, following a Grok verification audit: Claude corrected the Highest Risk field, which read "Critical" — that sweep had fixed which ID the field cited (GOV-013→GOV-005) but carried forward a Risk/Priority conflation already present in the field (GOV-005's own Risk field reads High; "Critical" was its Priority value). Prior: 2026-08-25 |
-| Auditor          | Grok — 2026-09-03 integrity repair (see Last Audit); prior full audit history retained in Archive/Logs/Governance_Charter_Changelog.md and earlier Auditor field snapshots |
+| Last Audit       | 2026-09-08 — Claude added Deployment Localization Doctrine (new section, ordinary doctrine, no Tier 1 Axiom or enforcement-tier change) generalizing the Reference Deployment Context / Site Initialization Checklist pattern originated in `Architecture/Facilities.md`, per explicit human request following a review conversation about `Operations/Tooling_Inventory.md`. No existing doctrine, axiom, or enforcement mechanism modified — pure addition, logged per Governance Migration Doctrine's untracked-mutation prohibition. Prior: 2026-09-03 — Grok surgical integrity repair after ChatGPT REVISE/G6-BLOCKED audit (GC-AUD-004/005/006/007): added FROZEN markers to Tier 1 Axioms, Integrity Enforcement Architecture, and Repository Integrity Doctrine; corrected two stale GOV-003 status references to post-2026-08-23 closure language retaining only SEC-007b residual; corrected GOV-016 "not yet ratified" sentence; replaced Checkpoint 5 "four-tier system" with current two-axis epistemic architecture language. No constitutional doctrine changed. Same day, following a Grok verification audit: Claude corrected the Highest Risk field, which read "Critical" — that sweep had fixed which ID the field cited (GOV-013→GOV-005) but carried forward a Risk/Priority conflation already present in the field (GOV-005's own Risk field reads High; "Critical" was its Priority value). Prior: 2026-08-25 |
+| Auditor          | Claude — 2026-09-08 Deployment Localization Doctrine addition (see Last Audit); prior full audit history retained in Archive/Logs/Governance_Charter_Changelog.md and earlier Auditor field snapshots |
 | Open Unknowns    | 13 (active Charter-owned entries in `Unknowns.md` — resolved IDs are not members of this count). Recently resolved in this file: GOV-003, GOV-014, GOV-015, GOV-016, GOV-018, GOV-020, GOV-022 — Payment via Specification, 2026-08-20/21/23; full Closure Events in `Archive/Logs/Governance_Charter_Changelog.md` Resolution Log only. |
 | Active Disputes  | 1                                                                   |
 | Highest Risk     | High (GOV-005 — long-term constitutional stability, no fast resolution path, requires operational cycles; sole remaining open Critical-*Priority* item in this file as of 2026-08-23 — its own Risk field reads High, tied with GOV-006 and GOV-008, matching the repository-wide convention that this field mirrors Risk, not Priority. Corrected 2026-09-03: the 2026-09-03 sweep that fixed this field's stale GOV-013 reference carried forward "Critical" as the value without checking it against GOV-005's own sidecar entry — GOV-005's Risk field has always read High; "Critical" was GOV-005's Priority field value, conflated with Risk. Caught by Claude source-verifying a same-day Grok audit that repeated the Risk/Priority conflation as fact without checking either field. GOV-003/GOV-015/GOV-018 Resolved 2026-08-23, no longer contributing to Highest Risk) |
@@ -693,6 +693,51 @@ Internally coherent reasoning must never be silently upgraded into operational t
 
 ---
 
+## Deployment Localization Doctrine
+
+*Not a Tier 1 Axiom. Ordinary doctrine — amendable through standard
+governance revision, no human-ratification threshold triggered.*
+
+This repository is shared and forked across independent Forge
+builds worldwide. No file's site-specific, instance-specific, or
+session-specific data may be treated as canonical or globally
+representative — including data originating from this repository's
+own primary maintainer, or from any human or AI agent's working
+session.
+
+Any file containing parameters that vary by physical deployment
+(climate, available tooling, energy source, local regulation,
+material supply, and similar) must:
+
+- declare an explicit baseline value set — a named, visible
+  stand-in for real data, not an implied default
+- state plainly that the baseline is illustrative, not an answer
+- provide a structured substitution mechanism (a checklist, a
+  per-file data table, or equivalent) where a builder records their
+  own deployment's actual values
+- mark every place a baseline-derived value appears in the body, so
+  a reader can find what to substitute without re-reading the whole
+  file
+- treat divergence between deployments' substituted values as
+  expected and correct — never as a defect to reconcile toward
+  uniformity
+
+**Established conforming examples:**
+- `Architecture/Facilities.md` — Reference Deployment Context (RDC)
+  + Site Initialization Checklist (Section VII); this doctrine
+  generalizes a pattern that file originated
+- `Operations/Tooling_Inventory.md` — per-deployment tooling tables,
+  explicit File Purpose statement (retrofitted 2026-09-08 to
+  reference this doctrine)
+
+This doctrine governs file content, not governance mechanism. It
+creates no new enforcement tier and does not touch the Integrity
+Enforcement Architecture or Enforcement Checkpoints. It exists to
+prevent one builder's real-world data from quietly becoming treated
+as the reference example for every fork of this repository.
+
+---
+
 ## Governance Migration Doctrine
 
 Governance evolves through explicit migration rather than silent replacement.
@@ -1234,6 +1279,8 @@ Mandatory re-audit conditions for this document:
 - `Admin/Repository_Structure.md` — canonical target for repository structure doctrine; created 2026-06-06
 - `Admin/Security_Protocols.md` — canonical target for authority authentication and integrity enforcement; created prior to 2026-05-28; GOV-006 and RIP-005 resolution path
 - `Admin/Governance_Migration_Protocol.md` — canonical target for Tier 1 Axiom amendment procedures; created 2026-06-06; GOV-001 resolution path
+- `Architecture/Facilities.md` — originating example of the Deployment Localization Doctrine's RDC/substitution pattern
+- `Operations/Tooling_Inventory.md` — second conforming example of the Deployment Localization Doctrine
 - `Lazarus-Forge-` — companion doctrine repository; source of principles refined into practice here
 - `Astroid-miner` [PLANNED] — planned repository; deferred to Leviathan milestone; do not treat as active dependency
 
