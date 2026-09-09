@@ -11,7 +11,7 @@
 | Spec Gates       | N/A — this file is a progression log, not a specification           |
 | Open Unknowns    | 0 (references existing unknowns; creates none)                      |
 | Owning Domain    | Admin/                                                               |
-| Last Reviewed    | 2026-09-06                                                           |
+| Last Reviewed    | 2026-09-08                                                           |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
 ---
@@ -37,6 +37,13 @@ Created 2026-08-09 to fix a recurring failure mode found the same day, in two pl
 
 *(Most recent first. Rotate to `Archive/Logs/Progress_Log_Changelog.md` once more than five entries accumulate.)*
 
+### 2026-09-08/09 — Two days of Forge_flow.md refinement across three external agents; every proposal verified against live source before adoption, several genuinely improved, one flagged as bigger than its own drafter's framing suggested
+Following an unsolicited ChatGPT refinement proposal for `Architecture/Forge_flow.md`, this session ran a long sequence of held-proposal work (HP-001 through HP-016) rather than adopting any single agent's plan wholesale. Every proposal was checked against live text before acceptance, several with real findings along the way: a Grok GR-005/ASM-001 diff for the R0-R4 taxonomy rollout was missing one occurrence (ASM-006) its own diff hadn't caught; a drafted `Operations/Tooling_Inventory.md` skeleton was missing two File_Template.md-required sections (Lessons Learned, Active Disputes) even though the template's own Minimal Valid File Example includes both; and a Gate B "Secondary Test" (justified-effort evaluation) was correctly identified as genuinely new gate logic — not the rename/consolidation pattern every other same-day change followed — and applied with a deliberately stronger provisional warning than its own drafter proposed, per explicit human direction, plus a Blocking Unknown (FL-005) rather than a routine Open one.
+
+A distinct thread proved as valuable as the file edits themselves: a human-raised design point that this repository is shared and forked across independent Forge builds, so no single deployment's real-world data — including the maintainer's own — should be treated as canonical. That principle was first applied as wording fixes, then (on reflection) formalized as a new Deployment Localization Doctrine in `Admin/Governance_Charter.md`, explicitly marked as ordinary doctrine rather than a Tier 1 Axiom, generalizing a Reference Deployment Context pattern that `Architecture/Facilities.md` had already originated independently. Neither file had previously cross-referenced the other despite solving the same problem.
+
+The session closed with a risk-ranked, ChatGPT-authored roadmap (refined and sequenced by Grok) toward making the flow "a testable state-transition specification" — logged in full as HP-008 through HP-016 rather than actioned wholesale, with the lowest-risk slice (a Gate Decision Contracts table, explicit UNKNOWN transitions, a formal re-entry contract) implemented immediately and the two items flagged as genuine new logic (three-valued gate logic, a Split transition primitive) explicitly held pending real Gate B operational data. Worth naming: a follow-up Grok review of an integrity report, submitted after that implementation, still described the Gate Decision Contracts table as "ready to apply on request" — a live instance of the stale-base problem this log has recorded before, this time from the reviewing agent not knowing about work completed one turn earlier in the same session rather than from a stale file snapshot. Human-directed throughout; several turns had a specific "verify accuracy, don't apply automatically" instruction rather than a blanket approval.
+
 ### 2026-09-06 — Forge_Net Priority-1 surgical pass (Architecture audit); one claimed finding turned out fabricated
 ChatGPT Architecture audit of `Architecture/Forge_Net.md` found G6 trust-model split (DV-003 claim confidence vs PA-002/§4 “trust score”), G2 transport overclaim, and File State/sidecar lag — all confirmed genuine against source. It also claimed a G5 Ethical Anchor path defect (`Ethical_Constraints.md` should read `Admin/Ethical_Constraints.md`) — checked against `Admin/File_Template.md` directly and found false; the canonical Ethical Anchor string has no `Admin/` prefix anywhere in the repository, and the field was already correct. Grok's Priority-1 pass initially applied the incorrect “fix” anyway; caught and reverted same day before finalizing. Genuine Priority-1 pass applied: §2.5.0 three-way taxonomy (claim confidence ≠ node reliability ≠ governance weight); PA-002 retargeted to node reliability; FN-004 transport rewritten as open classes; FN-001/FN-005 descriptions aligned with existing DV-/PA- specs; File State refreshed. Network Invariants / state model / conflict taxonomy deferred to a later Architecture expansion. Spec Gates remain 0/6. Human-directed.
 
@@ -53,14 +60,6 @@ Six turned up something real the audit itself missed, each a different failure c
 
 Worth naming as the session's real lesson, distinct from any single finding: an audit that reads as thorough and cites real counts/IDs correctly can still repeat a false claim sitting in its own baseline material, because checking whether a document's *narrative* is internally consistent is a different operation from checking whether its *specific factual claims* hold against the thing it's citing — Forge_Audit_Kit's version number was real, just stale; GMP-002's ownership claim was well-formed prose, just false; the Charter's "Critical" was a real field value, just the wrong field. None of these were hallucinations in the sense of inventing something from nothing — they were correct-shaped claims that had drifted from or misread their own source, which is a harder class to catch by reading alone. Also worth naming: this is not a claim that Grok/ChatGPT's audits were low-quality — the header-level counts, IDs, and cross-references in all eleven audits were independently confirmed exact almost everywhere checked; the misses were narrow and specific, not systemic sloppiness.
 
-### 2026-09-02 — Grok audited `Admin/Auditor_Protocols.md` against itself; found the governing document's own metadata had drifted from its body, and a deeper check found an undocumented version gap neither audit caught
-Grok ran a full self-application audit of `Auditor_Protocols.md` — the file that defines this repository's audit discipline, audited against its own rules. Findings: the relocated-sidecar summary still listed AP-013, AP-005, AP-004, and AP-024 as open ("14 open") despite the File State header explicitly marking all four Resolved weeks earlier; the Version String Registry's own two mandatory citations (Role Declaration example, Observability sign-off template) were still at "v0.37" against a "v0.41" header; the Status block was five versions behind at "0.36"; and the Sidecar SHA-256 hash predated four Closure Events that had modified the archive it's supposed to protect against divergence.
-
-Verified each claim against live source before correcting anything — the sidecar's stale count checked out exactly (removing the four now-Resolved IDs from the list leaves exactly 10, matching the header). While fixing the Status block, found something neither the external audit nor the file itself had caught: versions 0.39, 0.40, and 0.41 have **no recorded history anywhere** — not in this file, not in the relocated archive. The header simply advanced to 0.41 with no changelog entry for any of the three intervening bumps. Rather than paper over that with a plausible-sounding reconstruction, left it explicitly flagged as an open gap in the Status block itself — fabricating a changelog entry to make the drift look resolved would have been a worse failure than the drift itself, in a document whose entire purpose is catching exactly that kind of confidence-outrunning-verification.
-
-All five findings corrected: sidecar count (14→10), both Version String Registry citations, the Status block (rewritten, with the 0.39–0.41 gap named rather than hidden), and the sidecar hash refreshed against current archive content (computed directly via `sha256sum`, not estimated). No `Unknowns.md` entry needed — this was internal self-consistency drift within one file, not a new or closed unknown, matching the precedent set by the earlier RIP-count and Chemistry-Last-Audit fixes.
-
----
 
 Full history, including entries rotated out of the five above, in `Archive/Logs/Progress_Log_Changelog.md`.
 
@@ -199,6 +198,14 @@ Parallel optional: any Lane B/C/D/E item above once actually reverified
 against its own sidecar, rather than carried forward from 2026-08-14.
 
 ## Resolution Log
+
+- 2026-09-08: Added 2026-09-08/09 Forge_flow.md refinement lesson to
+  Current Lessons (Open Maintenance Task from a Grok integrity-report
+  review, flagging this file's Last Reviewed as stale at 2026-09-06
+  with no lesson covering the session's Forge_flow consolidations —
+  checked and confirmed accurate). Rotated 2026-09-02 (Auditor_Protocols
+  self-audit) into `Archive/Logs/Progress_Log_Changelog.md` to keep
+  Current Lessons at five entries. Last Reviewed updated. Human-directed.
 
 - 2026-08-20: **AP-004 (cross-auditor disagreement resolution) Resolved
   — Payment via Specification, ratified by the Human Governing Authority.** Grok proposed (with
