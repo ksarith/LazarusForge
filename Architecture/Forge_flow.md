@@ -1152,7 +1152,11 @@ determinism claim, not just a documentation nicety.
 - ~~Decide ownership~~ Done 2026-09-08 —
   `Operations/Tooling_Inventory.md` created.
 - Once the inventory is first populated, close this entry and update
-  ASM-003's Expiry Trigger.
+  ASM-003's Expiry Trigger — for that deployment's own copy of these
+  files. This repository is shared across independent Forge builds;
+  no single population of the inventory closes this for anyone but
+  the instance that performed it (see Tooling_Inventory.md's File
+  Purpose and TI-001).
 
 ---
 
@@ -1188,7 +1192,13 @@ before this pass.
 - Log every Secondary Test decision with operator rationale from
   first use (per Gate B's own instruction).
 - After a meaningful sample of real decisions, check for
-  operator-to-operator divergence.
+  operator-to-operator divergence *within a single deployment*.
+  This is about the same Forge's operators reaching consistent
+  outcomes on the same evidence — it is not a call for uniformity
+  across different sites, whose tooling, scarcity conditions, and
+  active needs genuinely differ (see Tooling_Inventory.md's File
+  Purpose). Cross-site divergence in Secondary Test outcomes is
+  expected and not itself evidence of a determinism problem.
 - Before Specification: convert to a testable threshold (effort
   bands, measured scarcity cutoffs, or equivalent) per Gate B's own
   provisional note.
@@ -1241,6 +1251,8 @@ deferred, not closed.
 ---
 
 ### Resolution Log
+
+- 2026-09-08 (twelfth pass): **Per-deployment clarification (human-raised).** James pointed out that this repository is shared and forked across independent Forge builds — his own real-world data (or any single session's) is not globally representative and must never be treated as canonical. Checked the repo for an existing named principle covering this — none found, though the concept appears scattered across a dozen files. James chose to fix the specific wording now (Tooling_Inventory.md, FL-004, FL-005) rather than formalize a new invariant. Clarified: FL-004's Resolution Path now states population closes the entry per-deployment, not globally; FL-005's Resolution Path now specifies operator-divergence checks are within-site, and cross-site divergence in Secondary Test outcomes is expected, not a determinism problem. Human-directed.
 
 - 2026-09-08 (eleventh pass): **HP-003 adopted as a 4-invariant Flow Invariants section.** Checked File_Template.md for an existing "Invariant" convention — none exists in the template itself — but found real precedent in `Architecture/Forge_Net.md`'s §1.1 Network Invariants (NI-1 through NI-8, Grok-drafted, consolidation-only, Candidate-doctrine status marker), so this doesn't introduce an unprecedented category. Given the choice between the original narrow scope (just the KPI sentence) and matching Forge_Net's multi-invariant consolidation, human chose the latter. Added §1.1 Flow Invariants after the Flow State/Transition Model section: FI-1 (KPI subordination, the original HP-003 target), FI-2 (uncertainty defaults to hold — from Degraded Operation's standing rule), FI-3 (discrete items only — ASM-007), FI-4 (Reduction as residual path — Operational Safety Advisory). Each points at its existing mechanism home rather than restating the rule, matching Forge_Net's own discipline. Human-directed.
 

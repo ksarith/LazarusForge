@@ -73,7 +73,7 @@
 - Nonburnable flooring as a hard prerequisite for hot operations
 - Airflow topology doctrine (negative pressure zones, exhaust routing hierarchy)
 - Triangle workstation layout principle
-- **Reference Deployment Context (RDC)** — a declared climate and site baseline used throughout this file. Builders must substitute their own deployment parameters before any sizing or scheduling decisions. See Section VII — Site Initialization Checklist.
+- **Reference Deployment Context (RDC)** — a declared climate and site baseline used throughout this file. Builders must substitute their own deployment parameters before any sizing or scheduling decisions. See Section VII — Site Initialization Checklist. This RDC + Checklist pattern is now the named repo-wide requirement in `Admin/Governance_Charter.md`'s Deployment Localization Doctrine (2026-09-08) — this file is that doctrine's originating example.
 - Utility access doctrine (grid power, water, egress)
 - Hazard zone separation principles
 - Floor loading classification guidance for heavy equipment
@@ -566,6 +566,11 @@ resolved. Discovery.md Cross-Module Unknowns table updated. FA-005 closed.
 ---
 
 ### Resolution Log
+
+- 2026-09-08: Cross-referenced this file's RDC + Site Initialization
+  Checklist pattern to the new Deployment Localization Doctrine in
+  `Admin/Governance_Charter.md` — this file is that doctrine's
+  originating example; no structural change here. Human-directed.
 
 - 2026-08-15: **FA-002 spec-depth pass — digital-only, no equipment exists.**
   Reached via `Operations/Gate_06_Fabrication.md` GF-007, whose fuel-separation
