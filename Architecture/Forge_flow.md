@@ -263,10 +263,41 @@ Feedback
 Gate C → Gate D → Oversight (on Gate D failure) → an Outcome Path →
 Fabrication → Utilization → Feedback
 
+**Per-gate transitions, UNKNOWN made explicit (added 2026-09-08,
+HP-009 partial — this makes FI-2 mechanically visible at every gate
+rather than relying on the reader to apply the invariant; gate body
+text and decision logic are unchanged, see 1.2 Gate Decision
+Contracts):**
+- Gate A — PASS → Component Library · FAIL → Gate B · UNKNOWN → Hold
+- Gate B — PASS → Repair & Learn · FAIL → Gate C · UNKNOWN → Hold
+  (or Primary defaults to FAIL under the stale-tooling degraded rule)
+- Gate C — PASS → Repurpose · FAIL → Gate D · UNKNOWN → Hold
+- Gate D — PASS → Reduction · FAIL (alt. pathway may exist) →
+  Oversight · UNKNOWN → Hold
+- Oversight — see the five named exits below; default under
+  uncertainty is Hold
+
 **Re-entry transitions (per ASM-007):**
 - Disassembly at Gate C or Gate D spawns independent components, each
   of which re-enters at **Gate A** — not a bypass of gate order, a
   restart of it per component.
+
+**Re-entry contract (added 2026-09-08, HP-015).** ASM-007 and FI-3
+already establish that components re-enter at Gate A; this makes
+what "re-enter" requires explicit:
+1. A new item identity is assigned to the component.
+2. Parent (source assembly) provenance is retained.
+3. The material/component relationship to the parent is recorded.
+4. Prior gate history — of the parent assembly — is retained for
+   audit, but is historical record only.
+5. **The parent assembly's prior assessment does not automatically
+   carry forward.** A component extracted from a failed assembly
+   does not inherit the assembly's failure state.
+6. A fresh Gate A assessment is performed on the component itself,
+   using its own function evidence — not the parent's.
+Point 5 is the one this document previously implied but never
+stated outright; a motor pulled from a non-functional fan is
+evaluated as a motor, not as "part of a failed fan."
 
 **Exception transitions (per Degraded Operation & Failure Modes):**
 - Jammed triage → Unknown Bulk hold (not Reduction)
@@ -276,8 +307,8 @@ Fabrication → Utilization → Feedback
 - Operator unavailable → hold pending Oversight review
 - Component Library full/unmaintained → treated as Gate C items
 
-**Oversight Gate exits (formalized 2026-09-08, HP-002 — see the*
-*Human/AI Oversight Gate section for the full mapping):**
+**Oversight Gate exits (formalized 2026-09-08, HP-002 — see the
+Human/AI Oversight Gate section for the full mapping):**
 - Return to Flow — exception resolved, re-enters normal routing
 - Hold — deferred with a defined review point
 - Reclassify — new category logged, re-enters via that classification
@@ -318,6 +349,33 @@ adopted 2026-09-08 as FI-1 within this broader four-invariant table
 rather than in isolation, following Forge_Net.md's own precedent of
 consolidating several existing scattered principles at once rather
 than naming just one.
+
+---
+
+## 1.2 Gate Decision Contracts
+
+*Added 2026-09-08 (HP-008). Formalization of existing gate logic*
+*only (Gates A-D + Oversight, Gate Correspondence, Defined Terms,*
+*FI-2, ASM-003/007, and the provisional notes on Gate B). No new*
+*decision rules or outcome paths are introduced. Uncertainty always*
+*defaults to Hold (FI-2) and is never interpreted as a failed gate.*
+
+| Gate | Required Inputs | Decision Question | Permitted Outputs | Uncertainty Output |
+|------|-----------------|-------------------|-------------------|--------------------|
+| **A** | Function evidence in the original (or equivalent) application context | Does the item still perform its original function, or an equivalent function, in the same application context? | **YES** → Component Library (R0)<br>**NO** → Gate B | Insufficient function evidence → **Hold**. Never treat "unknown function" as NO. |
+| **B** | Failure localization + accessibility evidence + live Tooling Inventory state (ASM-003 / FL-004) | **Primary (all three required):** Is the failure localized **and** accessible **and** within current tooling capability?<br>**Secondary (only if Primary passes):** Is estimated repair effort justified by recovered functional value **or** learning value **or** measured scarcity/strategic value? | **Primary FAIL** (any condition) → Gate C<br>**Primary PASS + Secondary YES** → Repair & Learn (R2)<br>**Primary PASS + Secondary NO** → Gate C | Missing Primary input, or Secondary judgment that cannot be justified with logged rationale → **Hold**. Under the explicit stale-tooling degraded-operation rule, Primary defaults to FAIL (routes to Gate C). Secondary Test is provisional, qualitative, and must be logged (FL-005); it never routes directly to Reduction. |
+| **C** | Application / use evidence for a different or reduced function | Can the item (or a portion of it) serve a useful function in a different or reduced application? | **YES** → Repurpose as Lower-Precision Component<br>**NO** → Gate D<br>(Disassembly of an assembly is permitted; each resulting component re-enters at Gate A per ASM-007 / FI-3) | Insufficient evidence of any useful reduced function → **Hold**. Indeterminate material identity is **not** a Gate C failure. |
+| **D** | Material integrity + recovery-pathway evidence under current Forge capability | Is Reduction the correct residual path for material recovery (all higher-value paths exhausted, and size-reduction followed by Separation / Purification is the only remaining viable route)? | **YES** → Reduction (R4)<br>**NO** (alternative recovery path may still exist, or recovery is genuinely impossible / prohibited) → Human/AI Oversight Gate | Insufficient material or recovery evidence → **Hold**. True edge cases (hazard, conflicting evidence, genuine impossibility) → Oversight, never forced Reduction. |
+| **Oversight** | Exception evidence (mid-process contamination, radiological/hazard category, operator unavailability, Gate D want/need evaluation, unforeseen contamination category, etc.) | Does a credible active need exist, and is the exception within this flow's decision authority? | **Return to Flow**<br>**Hold** (with defined review point)<br>**Reclassify**<br>**Escalate**<br>**Terminate** (→ Reduction) | Default under uncertainty is **Hold**. Escalate only when authority is exceeded. Terminate only when no genuine need is confirmed against the explicit minimum criteria. |
+
+*Notes*
+- Gate B Secondary Test remains Exploration-grade and unvalidated
+  (FL-005); every decision must carry operator rationale until
+  operational data exists.
+- "Indeterminate evidence MUST NOT be interpreted as a failed gate"
+  is the operative reading of FI-2 for all rows.
+- This table does not alter the sequential order, the five Oversight
+  exits, the R0-R4 taxonomy, or any Outcome Path.
 
 ---
 
@@ -1252,6 +1310,10 @@ deferred, not closed.
 
 ### Resolution Log
 
+- 2026-09-08 (fourteenth pass): **First implementation package from ChatGPT's Alpha 13 roadmap: HP-008, HP-009 (partial), HP-015.** Grok refined ChatGPT's 10-item roadmap into a risk-ranked sequence and recommended these three as a "mutually reinforcing, no new decision rules" first package. Verified Grok's draft decision-contract table against live Gate A-D/Oversight text before inserting — accurate, pure extraction. Added §1.2 Gate Decision Contracts after Flow Invariants (HP-008); added explicit PASS/FAIL/UNKNOWN per-gate transitions to the Flow State/Transition Model, gate body text untouched (HP-009, scoped slice only — full version stays open, tied to HP-010); added a numbered 6-point re-entry contract after the ASM-007 re-entry transitions bullet (HP-015) — only point 5 (no automatic inheritance of the parent assembly's failure state) was genuinely new specificity, the other five were already implied. Also fixed a pre-existing stray-asterisk markdown formatting glitch in the Oversight Gate exits bullet, encountered while editing that section. HP-010, HP-012, and the rest of the roadmap remain held per Grok's own sequencing (HP-010/HP-012 explicitly gated on Gate B observational data; HP-016 gated on this package plus HP-010/HP-012 being stable first). Human-directed.
+
+- 2026-09-08 (thirteenth pass, on Alpha 13): **ChatGPT's Alpha 13 roadmap logged as HP-008 through HP-016, not actioned.** ChatGPT reviewed the released Alpha 13 tree and proposed ten changes toward making Forge_flow.md "a testable state-transition specification": a per-gate decision contract, explicit UNKNOWN transitions, three-valued gate logic with an evidence-sufficiency check, per-transition ownership, a Split primitive, lifecycle-loop strengthening, terminal-state distinctions, a formal re-entry contract, and a boundary matrix to eventually replace the growing example collection. Verified the file-size claim (82,271 bytes) and the specific claims about existing content (FI-1, R0-R4, five Oversight exits, Example 6) against the live file — all accurate. James chose to log the whole roadmap as held proposals rather than start any of it this session. Two items (three-valued logic, Split primitive) flagged as genuine new logic requiring the same caution as the Gate B Secondary Test; one item (boundary matrix) flagged as structurally bigger than it reads, likely requiring restructuring of Examples 1-7 rather than pure addition. ChatGPT's own "what I'd leave alone" list (don't expand KPI/FI-1, don't extend R0-R4 without Operations data, don't add more Oversight exits, don't make Gate B mathematical yet) already matches where this file stands — no action needed there. Human-directed.
+
 - 2026-09-08 (twelfth pass): **Per-deployment clarification (human-raised).** James pointed out that this repository is shared and forked across independent Forge builds — his own real-world data (or any single session's) is not globally representative and must never be treated as canonical. Checked the repo for an existing named principle covering this — none found, though the concept appears scattered across a dozen files. James chose to fix the specific wording now (Tooling_Inventory.md, FL-004, FL-005) rather than formalize a new invariant. Clarified: FL-004's Resolution Path now states population closes the entry per-deployment, not globally; FL-005's Resolution Path now specifies operator-divergence checks are within-site, and cross-site divergence in Secondary Test outcomes is expected, not a determinism problem. Human-directed.
 
 - 2026-09-08 (eleventh pass): **HP-003 adopted as a 4-invariant Flow Invariants section.** Checked File_Template.md for an existing "Invariant" convention — none exists in the template itself — but found real precedent in `Architecture/Forge_Net.md`'s §1.1 Network Invariants (NI-1 through NI-8, Grok-drafted, consolidation-only, Candidate-doctrine status marker), so this doesn't introduce an unprecedented category. Given the choice between the original narrow scope (just the KPI sentence) and matching Forge_Net's multi-invariant consolidation, human chose the latter. Added §1.1 Flow Invariants after the Flow State/Transition Model section: FI-1 (KPI subordination, the original HP-003 target), FI-2 (uncertainty defaults to hold — from Degraded Operation's standing rule), FI-3 (discrete items only — ASM-007), FI-4 (Reduction as residual path — Operational Safety Advisory). Each points at its existing mechanism home rather than restating the rule, matching Forge_Net's own discipline. Human-directed.
@@ -1393,6 +1455,15 @@ deferred, not closed.
 | HP-005 | ~~FL-001 boundary-determinism matrix~~ **Partially complete 2026-09-08.** Examples 4-7 added, closing repairable-not-worth-it, repurpose-vs-recovery, unknown material, and incomplete/conflicting evidence. Remaining gap: complex multi-component assemblies beyond Example 1's drill case — flagged in Lessons Learned as still needed. **Update, same day:** the Gate B cost/effort threshold noted here as "optional/unadopted" was adopted a few passes later as a Secondary Test — see Gate B section's Provisional notice and the tenth-pass Resolution Log entry. Example 4 updated to match | Residual scope is now narrower still — complex assemblies is the one clearly-open item; Gate B's new Secondary Test is adopted but explicitly flagged Provisional/unvalidated, not closed | 2026-09-08 |
 | HP-006 | ~~Cross-layer reconciliation pass~~ **First pass complete 2026-09-08.** Cross-checked every Scope Boundary pointer across Forge_flow.md, Gate_02/03/04/05, Energy.md, Forge_Net.md — reconciled cleanly overall (including good triangulation on shared owners like Energy.md/Facilities.md). Found four orphaned handoffs, spun off as new Unknowns: TS-009, TS-010, SC-010, FL-003 (see Unknowns.md v5.02). Did not require HP-005/FL-001 closure first — ownership cross-checking was independent of gate-determinism validation | Closed as a pass; residual work now lives in the four spun-off Unknowns, not here | 2026-09-08 |
 | HP-007 | ~~Create `Operations/Tooling_Inventory.md`~~ **Done 2026-09-08.** Grok created the file from the drafted skeleton; Claude reviewed it (clean diff against the rest of the repo — only this one new file), found and fixed two File_Template.md gaps (missing Lessons Learned and Active Disputes sections, both required even when empty), added the Components.md cross-reference stub the original draft had prepared but not applied, updated FL-004 to reflect the file's existence, and mirrored TI-001 into Unknowns.md. Inventory tables remain unpopulated — see TI-001 in that file, which stays open until first physical count | Closed as a pass; residual work (first physical inventory, owner assignment) lives in TI-001, not here | 2026-09-08 |
+| HP-008 | ~~Per-gate "decision contract" table~~ **Adopted 2026-09-08 as §1.2 Gate Decision Contracts.** Pure extraction from live text — Required Inputs/Decision Question/Permitted Outputs/Uncertainty Output for Gates A-D and Oversight. No new routing rules; verified against the live text before insertion | Low-risk, consolidation-flavored — formalizes what's mostly already implied per gate. ChatGPT's Alpha 13 roadmap, ranked lowest-risk by both ChatGPT and Claude | 2026-09-08 |
+| HP-009 | ~~Explicit UNKNOWN branch~~ **Partially adopted 2026-09-08** (the scoped "recommended first package" slice). Added explicit PASS/FAIL/UNKNOWN per-gate transitions to the Flow State/Transition Model. Gate body text and decision logic untouched — this only makes FI-2 mechanically visible. Full HP-009 (deeper transition-model formalization) remains open if more is wanted later | Closely tied to HP-010 (three-valued logic) — the full version is better scoped together with that; this slice deliberately stayed inside the "no new decision rules" boundary | 2026-09-08 |
+| HP-010 | Three-valued gate logic (YES / NO / INDETERMINATE) plus an Evidence Sufficiency Check preceding each gate's actual test | Genuine new logic, same risk category as the Gate B Secondary Test (FL-005) — would touch every gate's decision structure, not just Gate B. Needs the same explicit go-ahead and provisional framing that Secondary Test got | 2026-09-08 |
+| HP-011 | Explicit per-transition ownership table (Flow owns routing / Operations owns evidence-gathering procedure / Admin owns authority constraints / Architecture owns invariants), e.g. for Gate B → Repair & Learn | Builds directly on this session's HP-006 cross-layer reconciliation work — plausible medium-risk consolidation, but scope (every transition, not just the four HP-006 found) is larger than a quick pass | 2026-09-08 |
+| HP-012 | Explicit "Split" transition primitive — a gate may divide an input into independently routable outputs when portions have materially different recovery states (e.g. Example 5's aluminum extrusion) | New mechanism, not consolidation — Example 5 currently handles this via prose ("cut and sent to Reduction; good length to Component Library") without a named primitive. Real logic addition | 2026-09-08 |
+| HP-013 | Strengthen the lifecycle model around "Fabrication is not terminal" — Salvage → Recovery → Components/Material → Fabrication → New Item → Utilization → Feedback → Future Recovery as the explicit loop, not just a linear flow ending at outcome paths | Conceptual/structural, touches how the whole document frames itself — bigger than a single-section edit | 2026-09-08 |
+| HP-014 | Formal distinction between "terminal for current processing" (exits flow, eligible for future re-entry — stored stock, Component Library) and "terminal for recovery" (no further pathway exists — post-Reduction waste) | Resolves a real semantic tension already present between the Outcome Paths and Terminal States sections; likely low-to-medium risk, mostly clarification | 2026-09-08 |
+| HP-015 | ~~Formal "re-entry contract"~~ **Adopted 2026-09-08.** Added a numbered 6-point contract after the Flow State/Transition Model's re-entry transitions bullet. Five of six points were already implied by ASM-007/FI-3; point 5 ("prior assessment does not automatically carry forward — no inheritance of the parent's failure state") was the genuinely underspecified piece, now explicit | ASM-007 already implies most of this; the "does not inherit assembly's failure state" point is the one genuinely underspecified piece worth making explicit | 2026-09-08 |
+| HP-016 | Replace/supplement the growing prose-example collection (currently 7) with a systematic boundary matrix (condition × Gate A-D/Oversight outcome × expected route) for FL-001 closure | Structurally bigger than it sounds — could mean restructuring Examples 1-7, not just adding a table. ChatGPT itself frames this as "the destination," not a small next step | 2026-09-08 |
 
 ---
 
