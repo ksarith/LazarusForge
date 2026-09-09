@@ -294,6 +294,33 @@ Reduction, all prior gates failed).
 
 ---
 
+## 1.1 Flow Invariants
+<!-- STATUS: Candidate doctrine — consolidates existing scattered
+principles into testable statements; not a new mechanism layer.
+Pattern matches Architecture/Forge_Net.md §1.1 Network Invariants. -->
+
+These invariants are **constraints on any future mechanism**, not
+a second copy of the sections that already state them. A proposed
+gate-logic change or new outcome path that violates an invariant is
+out of scope for this architecture unless the invariant is amended
+through ordinary review. Each statement points at the existing home
+of the rule; do not invent parallel rules here.
+
+| ID | Invariant | Mechanism home |
+|----|-----------|-----------------|
+| **FI-1** | **The KPI does not govern.** The KPI measures what the system does; the gates govern what the system should do. Irreversibility doctrine overrides efficiency optimization at all times. | v0 Key Performance Indicator — KPI subordination note |
+| **FI-2** | **Uncertainty defaults to hold, never to irreversible action.** The system is designed to absorb uncertainty, not resolve it through Reduction or any other R4 action. | Degraded Operation & Failure Modes — standing rule |
+| **FI-3** | **Gate logic applies to discrete items only.** No fixed assembly is gated as a permanent unit; disassembly is itself a Gate C or Gate D decision, and every resulting component re-enters at Gate A independently. | ASM-007; Flow State/Transition Model re-entry transitions |
+| **FI-4** | **Reduction is the residual path, not the default path.** R4 is the flow's highest-consequence boundary — reached only when every higher-value path (Gates A-C) has failed. | Operational Safety Advisory; Reduction outcome path |
+
+HP-003 (Held Proposals) proposed elevating the KPI sentence alone;
+adopted 2026-09-08 as FI-1 within this broader four-invariant table
+rather than in isolation, following Forge_Net.md's own precedent of
+consolidating several existing scattered principles at once rather
+than naming just one.
+
+---
+
 ## 1. Intake
 
 **Purpose:** Introduce salvage items into the system with
@@ -340,10 +367,51 @@ in the same application context
 **If NO →** Gate B
 
 ### Gate B — Repairable?
-**Test:** Failure is localized, accessible, and within current
-tooling capability — see ASM-003
+
+> ⚠️ **Provisional — Exploration-grade, unvalidated against real
+> operation.** Unlike this file's other 2026-09-08 changes, this one
+> is *new logic*, not a rename or consolidation of existing
+> behavior. Before this addition, any item passing the three
+> conditions below went to Repair & Learn — full stop. Now, some of
+> those same items will route to Gate C instead. That is a genuine
+> behavior change, and it has not been tested against a single real
+> item. Treat every Secondary Test outcome as suspect until the
+> first operational cycle either confirms or contradicts it.
+
+**Primary Test (all three required):**
+- Failure is localized
+- Failure is accessible
+- Repair is within current tooling capability (see ASM-003 and the
+  live Tooling Inventory — FL-004, not yet populated)
+
+**If any primary condition fails →** Gate C
+
+**Secondary Test (only if primary passes):**
+Is the estimated repair effort justified by at least one of:
+- Recovered functional value (item returns to Component Library or
+  active use)
+- Learning value (failure mode is novel or high-frequency and the
+  repair will improve future heuristics)
+- Scarcity or strategic value (measured, not assumed)
+
 **If YES →** Repair & Learn
-**If NO →** Gate C
+**If NO →** Gate C (technically possible but not justified)
+
+*At Exploration stage the secondary test is qualitative and
+operator-judged — there is no scoring formula, no effort threshold
+in minutes or hours, and no calibration data. Every secondary-test
+decision must be logged with the operator's rationale, both to
+build the missing data and so a future audit can catch systematic
+bias (e.g. one operator's threshold differing sharply from
+another's). Before Specification the secondary test must become
+testable (effort bands, measured scarcity thresholds, or an
+equivalent simple score) — until it is, FL-001 cannot claim Gate B
+determinism regardless of how clean this wording reads. The
+secondary test never routes an item directly to Reduction; Gate C
+remains the next sequential step, so the irreversibility doctrine is
+unaffected even if this heuristic proves wrong in practice. See also
+Queue Economics in Operations/Gate_02_Triage.md for prioritization
+inside the Repair & Learn queue.*
 
 ### Gate C — Graceful Downgrade Possible?
 **Test:** Can the item serve a useful function in a different
@@ -719,6 +787,106 @@ active operational requirements, not hypothetical value.*
 
 ---
 
+**Example 4 — Repairable but not worth it**
+Item: Bench grinder. Motor still spins, one grinding
+wheel is missing, the second is cracked, switch
+intermittent. Replacement wheels and switch are
+available in the Component Library; total repair
+labor is estimated at 45 minutes.
+- Gate A: Fails as a complete unit — original function
+  is compromised (missing/cracked wheels, unreliable
+  switch).
+- Gate B Primary Test: Passes — the failures are
+  localized, accessible, and repair is within current
+  tooling capability.
+- Gate B Secondary Test: Repair effort (45 min, common
+  parts) is justified by recovered functional value —
+  the grinder returns to active use. Passes.
+- Route: Repair & Learn. The intermittent switch and
+  cracked wheel become documented repair cases.
+- If an operator instead judges the Secondary Test as
+  NO (e.g. no active need for a grinder and no learning
+  value — this failure mode is already well documented):
+  routes to Gate C instead, with the operator's rationale
+  logged per Gate B's Secondary Test doctrine.
+*Key principle: Gate B's Primary Test is purely
+technical; its Secondary Test makes the "not worth it"
+judgment an explicit, logged gate decision rather than
+an unlogged queue-priority opinion. This example predates
+the Secondary Test's 2026-09-08 addition — updated the
+same day to match; see the Provisional notice on Gate B
+itself.*
+
+---
+
+**Example 5 — Repurpose vs. material recovery tension**
+Item: Aluminum extrusion, 1.2 m long, one end crushed,
+rest undamaged. Could serve as structural stock or jig
+material (Gate C), or be reduced to clean aluminum
+feedstock (Gate D → Reduction → Purification).
+- Gate A: Fails — original function is gone.
+- Gate B: Fails — crush damage is not repairable to
+  original geometry within current tooling.
+- Gate C: Passes — the undamaged length is immediately
+  useful as lower-precision stock or fixture material.
+- Route: Repurpose. The crushed end may be cut and sent
+  to Reduction; the good length enters the Component
+  Library as usable stock.
+- If no current fabrication need exists for aluminum
+  stock of that section: still route to Repurpose, or
+  Oversight Hold with a defined review date — not
+  immediate Reduction. Functional stock outranks pure
+  material recovery while it exists.
+*Key principle: Gate C functional value outranks
+material recovery when both are viable. Reduction is
+the residual path (see Gate D), not the preferred one.*
+
+---
+
+**Example 6 — Unknown or incompletely identified material**
+Item: Mixed plastic-metal assembly. Housing material is
+unmarked, no datasheet, no clear polymer identification;
+metal inserts of unknown alloy.
+- Gates A–C: Indeterminate — original function and
+  reduced-application potential cannot be assessed
+  without material identity.
+- Gate D: Also indeterminate — an unidentified polymer
+  or alloy could contaminate downstream Purification, so
+  whether Reduction is the correct residual path cannot
+  be answered yet.
+- Route: Unknown Bulk hold (or Human/AI Oversight Gate,
+  exit: Hold). Do not guess. Log the identification gap.
+  Item stays held until material characterization is
+  performed or, if provenance allows, returned to source.
+- Only after positive identification: re-enter the full
+  gate sequence from Gate A.
+*Key principle: Incomplete evidence produces a hold,
+never a forced gate decision. Determinism requires known
+inputs, not assumed ones.*
+
+---
+
+**Example 7 — Incomplete evidence / conflicting operator assessments**
+Item: Hydraulic pump. One operator reports the seals as
+failed and the unit as scrap; a second reports the seals
+serviceable and recommends Repair. No pressure test has
+been performed — visual inspection only.
+- Gate B: Cannot be evaluated deterministically — the
+  failure state itself is disputed and unmeasured.
+- Response: Escalate to Human/AI Oversight Gate (exit:
+  Hold), or Unknown Bulk hold. Perform the minimal
+  diagnostic (pressure test or controlled seal
+  inspection) before any gate decision.
+- After diagnostic: re-enter at the appropriate gate
+  with the measured state.
+- If diagnostic capacity does not exist: hold. Do not
+  default to Reduction under uncertainty.
+*Key principle: Conflicting assessments or missing
+measurements produce a hold plus a diagnostic action —
+never a majority vote or a forced gate outcome.*
+
+---
+
 ## Adversarial Routing Scenarios
 
 These scenarios test gate logic under pressure conditions.
@@ -853,6 +1021,12 @@ creates inconsistency across forge instances.
 - Remaining: Gate C/D boundary worked example covers
   shattered cast iron — additional complex assembly examples
   may be needed before full determinism is claimed.
+- 2026-09-08: Examples 4-7 added (repairable-not-worth-it,
+  repurpose-vs-recovery tension, unknown material,
+  incomplete/conflicting evidence) — closes four of the
+  gap cells identified under HP-005. Complex
+  multi-component assemblies beyond Example 1's drill case
+  remain the one uncovered cell — see HP-005.
 - Remaining: Adversarial scenarios cover five cases —
   real-world operation will surface new boundary conditions
   that must be logged and resolved.
@@ -963,7 +1137,11 @@ a system-component taxonomy (Critical/Useful/Bootstrap), not a live
 tool list, contains no tooling-inventory content, and doesn't claim
 this ownership. No file currently does. Found while reviewing a
 proposal to draft `Operations/Tooling_Inventory.md` for this purpose
-(see Held Proposals HP-007) — not yet created.
+(see Held Proposals HP-007). **Update 2026-09-08 (second entry):**
+`Operations/Tooling_Inventory.md` created (Grok-drafted from the
+HP-007 skeleton, Claude-reviewed and template-corrected). Ownership
+question is now answered; inventory tables remain unpopulated (see
+that file's TI-001) — this entry stays Open until first population.
 
 **Why It Matters:** Gate B's "within current tooling capability" test
 cannot be fully deterministic without a real, owned, maintained
@@ -971,8 +1149,50 @@ inventory to evaluate against — this is a live gap in FL-001's own
 determinism claim, not just a documentation nicety.
 
 **Resolution Path:**
-- Decide ownership (candidate: new `Operations/Tooling_Inventory.md`,
-  per HP-007's drafted skeleton — not yet adopted).
+- ~~Decide ownership~~ Done 2026-09-08 —
+  `Operations/Tooling_Inventory.md` created.
+- Once the inventory is first populated, close this entry and update
+  ASM-003's Expiry Trigger.
+
+---
+
+### FL-005 — Gate B Secondary Test unvalidated against real operation
+
+| Field         | Value                                            |
+|---------------|--------------------------------------------------|
+| Status        | Open                                              |
+| Risk          | Medium                                            |
+| Priority      | Major                                             |
+| Type          | Gate Logic                                        |
+| Blocking      | Yes — blocks FL-001 Gate B determinism claim      |
+| Owner         | Architecture/Forge_flow.md                          |
+| First Logged  | 2026-09-08                                        |
+| Last Reviewed | 2026-09-08                                        |
+
+**Description:** Gate B's Secondary Test (justified-effort
+evaluation, added 2026-09-08) is new gate logic, not a
+documentation consolidation like this file's other 2026-09-08
+changes. It has not been exercised against a single real item.
+The judgment criteria (recovered value / learning value / scarcity)
+are qualitative and operator-judged, with no scoring formula or
+threshold yet — see the Provisional notice on Gate B itself.
+
+**Why It Matters:** Two operators could reasonably reach different
+Secondary Test outcomes for the same item, which is exactly the
+non-determinism FL-001 exists to close. Adding the test closes one
+documentation gap (Example 4 previously claimed no such test
+existed) but opens a new determinism question that did not exist
+before this pass.
+
+**Resolution Path:**
+- Log every Secondary Test decision with operator rationale from
+  first use (per Gate B's own instruction).
+- After a meaningful sample of real decisions, check for
+  operator-to-operator divergence.
+- Before Specification: convert to a testable threshold (effort
+  bands, measured scarcity cutoffs, or equivalent) per Gate B's own
+  provisional note.
+- Cross-module reference: HP-005 in Held Proposals.
 - Once an owning file exists and is first populated, update ASM-003's
   Expiry Trigger and this entry.
 
@@ -1021,6 +1241,12 @@ deferred, not closed.
 ---
 
 ### Resolution Log
+
+- 2026-09-08 (eleventh pass): **HP-003 adopted as a 4-invariant Flow Invariants section.** Checked File_Template.md for an existing "Invariant" convention — none exists in the template itself — but found real precedent in `Architecture/Forge_Net.md`'s §1.1 Network Invariants (NI-1 through NI-8, Grok-drafted, consolidation-only, Candidate-doctrine status marker), so this doesn't introduce an unprecedented category. Given the choice between the original narrow scope (just the KPI sentence) and matching Forge_Net's multi-invariant consolidation, human chose the latter. Added §1.1 Flow Invariants after the Flow State/Transition Model section: FI-1 (KPI subordination, the original HP-003 target), FI-2 (uncertainty defaults to hold — from Degraded Operation's standing rule), FI-3 (discrete items only — ASM-007), FI-4 (Reduction as residual path — Operational Safety Advisory). Each points at its existing mechanism home rather than restating the rule, matching Forge_Net's own discipline. Human-directed.
+
+- 2026-09-08 (ninth pass): **Gate B Secondary Test adopted, flagged more heavily provisional than the source proposal (Grok's Option 1).** Unlike this file's other same-day changes, this is genuine new gate logic — items that previously passed Gate B unconditionally can now route to Gate C instead, based on a qualitative "justified effort" judgment. Applied Grok's exact Option 1 wording as the base, then added a stronger Provisional/unvalidated notice per explicit human direction ("apply, but flag it more heavily as Exploration-grade/provisional"). Updated Example 4, which had asserted Gate B does NOT test cost/effort — now stale given the new Secondary Test, rewritten to walk through Primary Test then Secondary Test explicitly. Registered FL-005 (Blocking) for the test's unvalidated status, both here and Unknowns.md v5.04. HP-005 updated to note the Gate B threshold moved from "unadopted" to "adopted but provisional." Human-directed; explicitly chose the more-cautious framing over applying the source draft as-is.
+
+- 2026-09-08 (eighth pass): **HP-005 partially complete — Examples 4-7 added.** Grok drafted the case content (bench grinder/repairable-not-worth-it, aluminum extrusion/repurpose-vs-recovery, mixed plastic-metal/unknown material, hydraulic pump/incomplete-conflicting evidence), verified and adapted before insertion: fixed an internal inconsistency in the repair-cost example (its own Key Principle said cost/effort is a secondary signal, not a Gate B test, but the body draft had briefly implied otherwise — corrected to match); added HP-002's Oversight exit tags (Hold) where relevant for consistency with the formalized exit model. Inserted as Examples 4-7 after Example 3. FL-001 Resolution Path and HP-005 updated — remaining gap is complex multi-component assemblies beyond Example 1, and an optional (unadopted) Gate B cost/effort threshold. Human-directed.
 
 - 2026-09-08 (seventh pass): **FL-004 and HP-007 logged (not actioned).** Verified Grok's ASM-003-vs-Components.md gap finding against source: Components.md is a system-component taxonomy (Critical/Useful/Bootstrap), contains no tooling-inventory content, and doesn't claim ASM-003's ownership. Registered the gap as FL-004 (Open) here and in Unknowns.md v5.03. Logged the drafted `Operations/Tooling_Inventory.md` skeleton as HP-007 in Held Proposals — file not created. Per James: "let's get it logged, for now" — deliberately a logging-only pass. Human-directed.
 
@@ -1150,11 +1376,11 @@ deferred, not closed.
 |----|----------|----------|--------|
 | HP-001 | ~~Irreversibility Levels taxonomy (R0-R4)~~ **Fully adopted 2026-09-08.** Taxonomy in Defined Terms; applied throughout Forge_flow.md (Component Library R0, Repair & Learn R2, three descriptive occurrences reworded to R4). Gate_03_Reduction.md's GR-005/ASM-001 safety-doctrine language also aligned to R4 (Grok-proposed, Claude-verified against source before applying; one additional occurrence, ASM-006, found and included). No safety intent changed — see Gate_03_Reduction.md Resolution Log 2026-09-08 entry | Closed | 2026-09-08 |
 | HP-002 | ~~Reframe Human/AI Oversight Gate as a formal multi-exit exception-state~~ **Adopted 2026-09-08.** Found the five exits weren't new — they were already scattered as specific-case behavior (sensor drift, contamination mid-process, radiological escalation, operator unavailable, Gate D want/need) with no common naming. Formalized as Return to Flow / Hold / Reclassify / Escalate / Terminate; each scattered instance tagged with its exit name; no routing rule changed | Was a genuine consolidation, not new logic — did not require the caution originally flagged | 2026-09-08 |
-| HP-003 | Elevate the KPI-subordination sentence ("the KPI measures what the system does — the gates govern what the system should do") to a named "Flow Invariant" category | Not clear this is an existing structural category under File_Template.md conventions — needs that checked before introducing a new category that could look canonical elsewhere in the repo | 2026-09-08 |
+| HP-003 | ~~Elevate the KPI-subordination sentence to a named "Flow Invariant" category~~ **Adopted 2026-09-08 as part of a 4-invariant Flow Invariants section (§1.1)**, matching real repo precedent found in Architecture/Forge_Net.md's Network Invariants (NI-1-8) — same consolidation-only pattern, same Candidate-doctrine status marker. Scope expanded from the single KPI sentence to include three other candidate rules already stated elsewhere (uncertainty-defaults-to-hold, discrete-items-only, Reduction-as-residual-path), per explicit human direction to match Forge_Net's multi-invariant pattern rather than adopt just one | Was flagged as needing a File_Template.md convention check before use — checked: no "Invariant" concept exists in the template itself, but real precedent exists elsewhere in the repo (Forge_Net.md), so this doesn't introduce an unprecedented category | 2026-09-08 |
 | HP-004 | ~~Gate D's compound test reads ambiguous~~ **Resolved 2026-09-08 (Option A rewrite).** Rewrote as a single positive question ("Is Reduction the correct residual path?") instead of the double-negated compound test. Routing outcomes unchanged — same items still route the same places — only the test's phrasing changed. Gate Correspondence table row aligned to match; worked Examples 1 and 2 checked and already consistent with the new framing, no edit needed there | Was flagged as needing FL-001 treatment since it's a logic-adjacent change — treated with that care: verified against Gate Correspondence table and both existing worked examples before closing, not a silent edit | 2026-09-08 |
-| HP-005 | FL-001 boundary-determinism matrix across functional-assembly / partially-functional / repairable-not-worth-repairing / repurpose-vs-recovery / contaminated / unknown-material / scarce-component / obsolete-but-functional / incomplete-evidence / conflicting-assessment cases | Substantial standalone effort toward FL-001 closure — real candidate for a dedicated future session, not a side effect of this one | 2026-09-08 |
+| HP-005 | ~~FL-001 boundary-determinism matrix~~ **Partially complete 2026-09-08.** Examples 4-7 added, closing repairable-not-worth-it, repurpose-vs-recovery, unknown material, and incomplete/conflicting evidence. Remaining gap: complex multi-component assemblies beyond Example 1's drill case — flagged in Lessons Learned as still needed. **Update, same day:** the Gate B cost/effort threshold noted here as "optional/unadopted" was adopted a few passes later as a Secondary Test — see Gate B section's Provisional notice and the tenth-pass Resolution Log entry. Example 4 updated to match | Residual scope is now narrower still — complex assemblies is the one clearly-open item; Gate B's new Secondary Test is adopted but explicitly flagged Provisional/unvalidated, not closed | 2026-09-08 |
 | HP-006 | ~~Cross-layer reconciliation pass~~ **First pass complete 2026-09-08.** Cross-checked every Scope Boundary pointer across Forge_flow.md, Gate_02/03/04/05, Energy.md, Forge_Net.md — reconciled cleanly overall (including good triangulation on shared owners like Energy.md/Facilities.md). Found four orphaned handoffs, spun off as new Unknowns: TS-009, TS-010, SC-010, FL-003 (see Unknowns.md v5.02). Did not require HP-005/FL-001 closure first — ownership cross-checking was independent of gate-determinism validation | Closed as a pass; residual work now lives in the four spun-off Unknowns, not here | 2026-09-08 |
-| HP-007 | Create `Operations/Tooling_Inventory.md` — a drafted skeleton exists (Exploration status, Scope Boundary, ASM-001/002/003 sidecar, empty inventory tables by category, TI-001 unknown for initial population) to satisfy FL-004 (ASM-003's ownership gap). Gap itself verified real and logged as FL-004; the file to fix it is not yet created | New-file creation, not a documentation edit — logged per James's "let's get it logged, for now" rather than committed to this session. Also mixes with `Architecture/Components.md`'s existing taxonomy — a short cross-reference note there would need to land alongside it | 2026-09-08 |
+| HP-007 | ~~Create `Operations/Tooling_Inventory.md`~~ **Done 2026-09-08.** Grok created the file from the drafted skeleton; Claude reviewed it (clean diff against the rest of the repo — only this one new file), found and fixed two File_Template.md gaps (missing Lessons Learned and Active Disputes sections, both required even when empty), added the Components.md cross-reference stub the original draft had prepared but not applied, updated FL-004 to reflect the file's existence, and mirrored TI-001 into Unknowns.md. Inventory tables remain unpopulated — see TI-001 in that file, which stays open until first physical count | Closed as a pass; residual work (first physical inventory, owner assignment) lives in TI-001, not here | 2026-09-08 |
 
 ---
 

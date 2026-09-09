@@ -44,6 +44,11 @@
 - Precision ceiling doctrine, tolerance tiers, or metrology methodology
   (→ `Architecture/Precision.md`)
 - Cross-module governance or repository-level unknowns
+- The live operational tooling inventory used by Gate B's "within
+  current tooling capability" test — this file defines system-level
+  Critical/Useful/Bootstrap components only, not a hand-tool/machine
+  inventory
+  (→ `Operations/Tooling_Inventory.md`)
 
 ---
 
@@ -329,6 +334,13 @@ tolerance requirements emerge from actual loop closure attempts, not pre-specifi
 ---
 
 ### Resolution Log
+
+- 2026-09-08: Added a Scope Boundary "DOES NOT define" cross-reference
+  to `Operations/Tooling_Inventory.md`, the new file satisfying
+  `Architecture/Forge_flow.md`'s FL-004 (tooling-inventory ownership
+  gap). Clarifies that this file's Critical/Useful/Bootstrap taxonomy
+  is not a hand-tool/machine inventory. No other content changed.
+  Human-directed.
 
 - 2026-08-10: **Pseudo-audit (Grok, same limits).** Findings only; Spec Gates
   left locked at 0/6. (1) Open Unknowns **2** = CO-001, CO-002, matches local +
