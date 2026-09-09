@@ -31,9 +31,9 @@
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-09-08 (Flow State/Transition Model added, Gate D reframed, FL-001 sidecar/Resolution Log desync corrected); prior: 2026-08-08 |
+| Last Audit       | 2026-09-08/09 — fifteen resolution-log passes across two days: R0-R4 taxonomy (HP-001, propagated to Gate_03_Reduction.md), Oversight multi-exit formalization (HP-002), Flow Invariants §1.1 (HP-003), Gate D polarity rewrite (HP-004), boundary-case Examples 4-7 (HP-005 partial), cross-layer reconciliation spinning off FL-003/FL-004 (HP-006), Tooling_Inventory.md creation (HP-007), per-deployment wording + Deployment Localization Doctrine, Gate B Secondary Test + FL-005, Gate Decision Contracts §1.2 + explicit UNKNOWN transitions + re-entry contract (HP-008/009/015), terminal-state distinction (HP-014); FL-001 remains Blocking. Open Unknowns count corrected 2→6 same pass (stale since before FL-003/004/005 were added — a Grok status summary had repeated the stale value without recounting). Prior: 2026-08-08 |
 | Auditor          | Claude — Retrofit/Auditor                                           |
-| Open Unknowns    | 2                                                                   |
+| Open Unknowns    | 7                                                                   |
 | Active Disputes  | 1                                                                   |
 | Highest Risk     | Medium                                                              |
 | Sidecar Link     | #auditor-notes--unknowns                                            |
@@ -320,8 +320,22 @@ rules, repair heuristics, tolerance thresholds, and tooling
 priorities — i.e., feedback alters future routing at Classification
 and Gate B, not a literal re-entry of the same item.
 
-**Terminal states:** active use, stored stock, inert waste (post-
-Reduction, all prior gates failed).
+**Terminal states (refined 2026-09-08, HP-014):** This document
+distinguishes two senses of "terminal" that the Outcome Paths section
+below previously left implicit:
+- **Terminal for current processing** — exits this pass through the
+  flow, but remains eligible for future re-entry. Covers active use,
+  stored stock (Oversight Hold), and the Component Library. Nothing
+  about these states forecloses the item or its material recovering
+  further value later.
+- **Terminal for recovery** — no further recovery pathway exists
+  under current Forge capability. Covers only inert waste, the state
+  reached after Reduction (R4) and, where applicable, Purification.
+This resolves the prior tension between the Outcome Paths section
+(which describes Component Library and Repurpose as feeding
+Fabrication, i.e. not really endpoints) and this line's older,
+flatter "active use, stored stock, inert waste" list, which did not
+distinguish the two senses.
 
 ---
 
@@ -376,6 +390,33 @@ than naming just one.
   is the operative reading of FI-2 for all rows.
 - This table does not alter the sequential order, the five Oversight
   exits, the R0-R4 taxonomy, or any Outcome Path.
+
+---
+
+## 1.3 Transition Ownership
+
+*Added 2026-09-08 (HP-011). Scoped to the four main gates + Oversight*
+*per the held-proposal sequencing. Distinguishes who owns what for*
+*each transition: this file owns the routing decision; other files*
+*own the procedure that produces the evidence a decision consumes,*
+*or the procedure a routing outcome triggers downstream. Verified*
+*against existing cross-references rather than newly assigned —*
+*two real gaps found and logged rather than guessed at (below).*
+
+| Transition | Flow owns (routing decision) | Operations owns (evidence-gathering / downstream procedure) | Architecture/Admin owns (invariant or authority) |
+|------------|-------------------------------|----------------------------------------------------------------|----------------------------------------------------|
+| Gate A | This file — function test, PASS/FAIL/UNKNOWN routing | `Gate_02_Triage.md` — triage station assessment producing function evidence (Gate Correspondence) | — |
+| Gate B | This file — Primary/Secondary test, routing | `Gate_02_Triage.md` — failure localization/accessibility evidence; `Tooling_Inventory.md` — live tooling-capability state (ASM-003/FL-004) | ASM-003 (this file) — the tooling-known assumption itself |
+| Gate C | This file — reduced-application test, routing; disassembly decision | `Gate_02_Triage.md` — reduced-application evidence | ASM-007/FI-3 (this file) — re-entry contract governs what happens after |
+| Gate D | This file — residual-path test, routing | `Gate_02_Triage.md` — material/recovery evidence gathering for the decision itself; `Gate_03_Reduction.md` — the Reduction procedure once Gate D routes YES | FL-002 (this file) — Reduction↔Gate_04 output envelope cross-validation, still pending |
+| Oversight | This file — five-exit resolution, want/need criteria | **Not yet assigned to any Operations file — see FL-006.** | **Not yet assigned — see FL-006.** Escalate's "exceeds this flow's own decision authority" implies an authority structure this repository has not yet named an owner for. |
+
+Gate D's row is the subtlest: `Gate_02_Triage.md` gathers the
+evidence Gate D's test consumes; `Gate_03_Reduction.md` owns what
+happens physically once that test routes to Reduction. These are
+different responsibilities that the pre-existing cross-references
+already kept separate — this table only makes the separation
+visible.
 
 ---
 
@@ -576,6 +617,8 @@ the judgment auditable, not to remove it.*
 - Feeds Fabrication directly
 - Requires maintained Component Library — see ASM-004
 - *Reversibility: R0 — components remain individually recoverable*
+- *Terminal for current processing, not for recovery — eligible for*
+  *re-entry via Fabrication or future assessment (HP-014).*
 
 ### Repair & Learn
 - Attempt repair
@@ -589,6 +632,8 @@ the judgment auditable, not to remove it.*
 - Assign to reduced-spec use cases
 - Examples: jigs, fixtures, structural members
 - Feeds Fabrication
+- *Terminal for current processing, not for recovery — feeds*
+  *Fabrication rather than ending the item's usable life (HP-014).*
 
 ### Reduction
 **R4 — point of no return for the item as a discrete object**
@@ -601,6 +646,11 @@ the judgment auditable, not to remove it.*
   *"the only irreversible step" in its own safety doctrine (GR-005,*
   *ASM-001) — that language is intentionally untouched pending*
   *separate review; see HP-001 in Held Proposals.*
+- *Terminal for recovery in the sense that matters most — R4 is the*
+  *point past which the item cannot be recovered as a discrete*
+  *object. The material itself continues to Separation/Purification*
+  *and only reaches the actual "inert waste" terminal-for-recovery*
+  *state afterward, once nothing further is extractable (HP-014).*
 
 **Operations/Gate_03_Reduction.md exists and carries constraints-first
 doctrine (contamination shutdown, prohibited inputs, output envelope,
@@ -1261,8 +1311,45 @@ before this pass.
   bands, measured scarcity cutoffs, or equivalent) per Gate B's own
   provisional note.
 - Cross-module reference: HP-005 in Held Proposals.
-- Once an owning file exists and is first populated, update ASM-003's
-  Expiry Trigger and this entry.
+
+---
+
+### FL-006 — Oversight has no assigned Operations or authority owner
+
+| Field         | Value                                            |
+|---------------|--------------------------------------------------|
+| Status        | Open                                              |
+| Risk          | Low                                               |
+| Priority      | Minor                                             |
+| Type          | Cross-Module / Governance                          |
+| Blocking      | No                                                 |
+| Owner         | Architecture/Forge_flow.md                          |
+| First Logged  | 2026-09-08                                        |
+| Last Reviewed | 2026-09-08                                        |
+
+**Description:** Found while building §1.3 Transition Ownership
+(HP-011). Gates A-D each have a clear Operations owner for their
+evidence-gathering procedure (`Gate_02_Triage.md`, plus
+`Tooling_Inventory.md` for Gate B). Oversight does not — no
+Operations file is named as the owner of gathering exception
+evidence (contamination reports, scarcity data, etc.), and no
+Admin file is named as the owner of the authority structure that
+Oversight's Escalate exit implicitly assumes ("exceeds this flow's
+own decision authority" — exceeds *whose* authority is not stated).
+
+**Why It Matters:** This is a real ownership gap, not a documentation
+nicety — Oversight is the gate closest to human judgment and highest
+consequence besides Reduction itself, and it currently has no
+operational or governance home outside this file.
+
+**Resolution Path:**
+- Determine whether an existing Admin file (Governance_Charter.md,
+  Safety_Protocols.md, or similar) already implicitly covers
+  operator decision authority and simply hasn't been cross-referenced
+  here — check before assuming a new file is needed.
+- If no existing owner fits, this may need its own lightweight
+  Operations or Admin file, similar in spirit to how HP-007 resolved
+  FL-004.
 
 ---
 
@@ -1309,6 +1396,12 @@ deferred, not closed.
 ---
 
 ### Resolution Log
+
+- 2026-09-09 (seventeenth pass): **HP-011 adopted as §1.3 Transition Ownership.** Scoped to the four main gates + Oversight per Grok's own sequencing note. Built from existing cross-references — Gate Correspondence's "triage station outcomes map to these gates" pointer to `Gate_02_Triage.md`, Gate B's ASM-003/Tooling_Inventory.md dependency, Gate D's split between `Gate_02_Triage.md` (evidence) and `Gate_03_Reduction.md` (downstream procedure) — not newly invented. Found two real things while building it: (1) Oversight has no assigned Operations or Admin owner at all, registered as FL-006 (Open, Minor) both here and Unknowns.md v5.07; (2) FL-005's Resolution Path had a stray closing line that actually belonged to FL-004's topic, a leftover from an earlier insertion — removed. Open Unknowns count updated 6→7 to include FL-006. Human-directed.
+
+- 2026-09-09 (sixteenth pass): **File State housekeeping.** Grok's status summary repeated the header's "Open Unknowns: 2" as fact without recounting — actual count of Open unknowns owned by this file is 6 (FL-001 through FL-005, all confirmed Status: Open, plus DS-001 in Active Disputes). Corrected. Also bumped Last Audit, stale since the original 2026-09-08 entry despite fifteen subsequent resolution-log passes the same two days — Grok's own report flagged this as "minor housekeeping" and it checked out. Active Disputes (1) and Spec Gates (0/6) verified accurate, no change needed there. Human-directed (review requested, not a specific instruction — findings actioned directly since both were simple factual corrections).
+
+- 2026-09-08 (fifteenth pass): **HP-014 adopted.** Defined "terminal for current processing" (exits this pass through the flow, eligible for future re-entry) vs "terminal for recovery" (no further recovery pathway under current capability) in the Flow State/Transition Model's Terminal states line, replacing the flatter "active use, stored stock, inert waste" list. Tagged Component Library and Repurpose as terminal-for-current-processing; tagged Reduction as terminal-for-recovery, with a self-caught correction mid-edit — Reduction (R4) is the point past which the item can't be recovered as a discrete object, but the actual "inert waste" endpoint is reached after Purification, not at Reduction itself; the first draft of the tag overstated this and was fixed before finalizing. Human-directed.
 
 - 2026-09-08 (fourteenth pass): **First implementation package from ChatGPT's Alpha 13 roadmap: HP-008, HP-009 (partial), HP-015.** Grok refined ChatGPT's 10-item roadmap into a risk-ranked sequence and recommended these three as a "mutually reinforcing, no new decision rules" first package. Verified Grok's draft decision-contract table against live Gate A-D/Oversight text before inserting — accurate, pure extraction. Added §1.2 Gate Decision Contracts after Flow Invariants (HP-008); added explicit PASS/FAIL/UNKNOWN per-gate transitions to the Flow State/Transition Model, gate body text untouched (HP-009, scoped slice only — full version stays open, tied to HP-010); added a numbered 6-point re-entry contract after the ASM-007 re-entry transitions bullet (HP-015) — only point 5 (no automatic inheritance of the parent assembly's failure state) was genuinely new specificity, the other five were already implied. Also fixed a pre-existing stray-asterisk markdown formatting glitch in the Oversight Gate exits bullet, encountered while editing that section. HP-010, HP-012, and the rest of the roadmap remain held per Grok's own sequencing (HP-010/HP-012 explicitly gated on Gate B observational data; HP-016 gated on this package plus HP-010/HP-012 being stable first). Human-directed.
 
@@ -1458,10 +1551,10 @@ deferred, not closed.
 | HP-008 | ~~Per-gate "decision contract" table~~ **Adopted 2026-09-08 as §1.2 Gate Decision Contracts.** Pure extraction from live text — Required Inputs/Decision Question/Permitted Outputs/Uncertainty Output for Gates A-D and Oversight. No new routing rules; verified against the live text before insertion | Low-risk, consolidation-flavored — formalizes what's mostly already implied per gate. ChatGPT's Alpha 13 roadmap, ranked lowest-risk by both ChatGPT and Claude | 2026-09-08 |
 | HP-009 | ~~Explicit UNKNOWN branch~~ **Partially adopted 2026-09-08** (the scoped "recommended first package" slice). Added explicit PASS/FAIL/UNKNOWN per-gate transitions to the Flow State/Transition Model. Gate body text and decision logic untouched — this only makes FI-2 mechanically visible. Full HP-009 (deeper transition-model formalization) remains open if more is wanted later | Closely tied to HP-010 (three-valued logic) — the full version is better scoped together with that; this slice deliberately stayed inside the "no new decision rules" boundary | 2026-09-08 |
 | HP-010 | Three-valued gate logic (YES / NO / INDETERMINATE) plus an Evidence Sufficiency Check preceding each gate's actual test | Genuine new logic, same risk category as the Gate B Secondary Test (FL-005) — would touch every gate's decision structure, not just Gate B. Needs the same explicit go-ahead and provisional framing that Secondary Test got | 2026-09-08 |
-| HP-011 | Explicit per-transition ownership table (Flow owns routing / Operations owns evidence-gathering procedure / Admin owns authority constraints / Architecture owns invariants), e.g. for Gate B → Repair & Learn | Builds directly on this session's HP-006 cross-layer reconciliation work — plausible medium-risk consolidation, but scope (every transition, not just the four HP-006 found) is larger than a quick pass | 2026-09-08 |
+| HP-011 | ~~Explicit per-transition ownership table~~ **Adopted 2026-09-09 as §1.3 Transition Ownership**, scoped to the four main gates + Oversight per Grok's own sequencing. Verified against existing cross-references (Gate Correspondence's "triage station outcomes map to these gates" statement) rather than newly assigned. Found and registered a real gap: Oversight has no assigned Operations or Admin owner (FL-006). Also found and fixed a stray-line content bug in FL-005 left over from an earlier insertion | Builds directly on this session's HP-006 cross-layer reconciliation work — plausible medium-risk consolidation, but scope (every transition, not just the four HP-006 found) is larger than a quick pass | 2026-09-08 |
 | HP-012 | Explicit "Split" transition primitive — a gate may divide an input into independently routable outputs when portions have materially different recovery states (e.g. Example 5's aluminum extrusion) | New mechanism, not consolidation — Example 5 currently handles this via prose ("cut and sent to Reduction; good length to Component Library") without a named primitive. Real logic addition | 2026-09-08 |
 | HP-013 | Strengthen the lifecycle model around "Fabrication is not terminal" — Salvage → Recovery → Components/Material → Fabrication → New Item → Utilization → Feedback → Future Recovery as the explicit loop, not just a linear flow ending at outcome paths | Conceptual/structural, touches how the whole document frames itself — bigger than a single-section edit | 2026-09-08 |
-| HP-014 | Formal distinction between "terminal for current processing" (exits flow, eligible for future re-entry — stored stock, Component Library) and "terminal for recovery" (no further pathway exists — post-Reduction waste) | Resolves a real semantic tension already present between the Outcome Paths and Terminal States sections; likely low-to-medium risk, mostly clarification | 2026-09-08 |
+| HP-014 | ~~Formal distinction between "terminal for current processing" and "terminal for recovery"~~ **Adopted 2026-09-08.** Rewrote the Flow State/Transition Model's Terminal states line to define both senses explicitly; tagged Component Library and Repurpose as terminal-for-current-processing (re-entry eligible), Reduction as terminal-for-recovery (with a correction mid-edit: Reduction is the point of no return, but the actual inert-waste endpoint is reached after Purification, not at Reduction itself) | Resolves a real semantic tension already present between the Outcome Paths and Terminal States sections; likely low-to-medium risk, mostly clarification | 2026-09-08 |
 | HP-015 | ~~Formal "re-entry contract"~~ **Adopted 2026-09-08.** Added a numbered 6-point contract after the Flow State/Transition Model's re-entry transitions bullet. Five of six points were already implied by ASM-007/FI-3; point 5 ("prior assessment does not automatically carry forward — no inheritance of the parent's failure state") was the genuinely underspecified piece, now explicit | ASM-007 already implies most of this; the "does not inherit assembly's failure state" point is the one genuinely underspecified piece worth making explicit | 2026-09-08 |
 | HP-016 | Replace/supplement the growing prose-example collection (currently 7) with a systematic boundary matrix (condition × Gate A-D/Oversight outcome × expected route) for FL-001 closure | Structurally bigger than it sounds — could mean restructuring Examples 1-7, not just adding a table. ChatGPT itself frames this as "the destination," not a small next step | 2026-09-08 |
 
