@@ -56,6 +56,21 @@ It is deliberately narrow: a living operational reference, not an architecture d
 
 Without this file, Gate B decisions remain operator-dependent mental models and the conservative degraded-mode rule (“if inventory is stale → Gate B = NO”) has nothing concrete to check against.
 
+**This file is per-deployment, not canonical.** This repository is
+shared and forked across independent Forge builds. Whatever gets
+populated into the Current Inventory tables below reflects one
+deployment's actual tools — never treat a populated copy as a
+reference example, a default loadout, or a global answer for what
+"current Forge capability" means. Every Forge instance maintains its
+own copy of this file against its own tools. Divergence between
+sites is expected and correct, not a defect to converge away. This
+file follows `Admin/Governance_Charter.md`'s Deployment Localization
+Doctrine (2026-09-08), which generalizes the Reference Deployment
+Context pattern `Architecture/Facilities.md` established for the
+same problem: the Current Inventory tables below are this file's
+substitution mechanism, equivalent to that file's Site
+Initialization Checklist.
+
 ---
 
 ## Assumptions
@@ -179,16 +194,37 @@ Without this file, Gate B decisions remain operator-dependent mental models and 
 
 **Why It Matters:** Until the list is real and owned, ASM-003 in Forge_flow.md and FL-004 remain open assumptions. Gate B cannot claim full determinism.
 
-**Resolution Path:**
+**Resolution Path (per deployment):**
+- This is closed once, locally, by each Forge instance — never once
+  globally on this repository's behalf. A populated inventory from
+  one build/session/agent does not resolve TI-001 for any other
+  deployment; it only resolves it for that one instance's own copy
+  of this file.
 - Assign a named owner.
-- Perform first physical inventory and populate the tables.
+- Perform a first physical inventory at that site and populate the
+  tables.
 - Record the date of first population in the Resolution Log below.
-- Notify Architecture/Forge_flow.md so ASM-003 Expiry Trigger and FL-004 can be updated.
-- Add the short cross-reference note to Architecture/Components.md Scope Boundary or Bootstrap Doctrine section.
+- Notify Architecture/Forge_flow.md so ASM-003 Expiry Trigger and FL-004 can be updated — for that instance's own fork/copy.
+- Add the short cross-reference note to Architecture/Components.md Scope Boundary or Bootstrap Doctrine section, if not already present.
 
 ---
 
 ## Resolution Log
+
+- 2026-09-08 (third follow-up): Cross-referenced this file's File
+  Purpose to the new Deployment Localization Doctrine in
+  `Admin/Governance_Charter.md`, generalized from
+  `Architecture/Facilities.md`'s Reference Deployment Context
+  pattern. This file's Current Inventory tables are now explicitly
+  named as this file's substitution mechanism under that doctrine.
+  Human-directed.
+
+- 2026-09-08 (second follow-up): Added explicit per-deployment /
+  non-canonical language to File Purpose and to TI-001's Resolution
+  Path, per human-raised concern that this repository is shared
+  across independent Forge builds and no single site's data (James's
+  own included) should be treated as a reference example or global
+  answer. Wording only — no structural change. Human-directed.
 
 - 2026-09-08 (Claude review pass): Reviewed the Grok-created file
   against `Architecture/Forge_flow.md` (clean — only this file was
