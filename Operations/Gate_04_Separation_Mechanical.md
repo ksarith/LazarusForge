@@ -30,9 +30,9 @@
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-05-15; revised 2026-06-08                                      |
+| Last Audit       | 2026-09-09 — MG-009 added, diverged duplicate Resolution Log merged; prior: 2026-08-14 (Claude Round 4 review), 2026-08-10 (Grok pseudo-audit), 2026-06-08 rename fixes, 2026-05-15 |
 | Auditor          | Claude — Retrofit/Auditor                                           |
-| Open Unknowns    | 8                                                                   |
+| Open Unknowns    | 9                                                                   |
 | Active Disputes  | 1                                                                   |
 | Highest Risk     | Medium                                                              |
 | Sidecar Link     | #auditor-notes--unknowns                                            |
@@ -912,8 +912,88 @@ Open — cleaning interval and housing spec still need Gen-0 data.
 
 ---
 
+### MG-009 — Provisional feedstock envelope table has drifted from Gate_03's mirror table
+
+| Field         | Value                                            |
+|---------------|--------------------------------------------------|
+| Status        | Open                                             |
+| Risk          | Low                                               |
+| Priority      | Minor                                             |
+| Type          | Technical / Cross-Module                          |
+| Blocking      | No                                               |
+| Owner         | Operations/Gate_04_Separation_Mechanical.md                   |
+| First Logged  | 2026-09-09                                       |
+| Last Reviewed | 2026-09-09                                       |
+
+**Description:** This file's provisional feedstock envelope table
+(Inputs section) and `Operations/Gate_03_Reduction.md`'s §4
+provisional output envelope table are meant to be the same interim
+constraint set viewed from each side, but have drifted: this file's
+"Prohibited geometries" row phrases the 200mm threshold ambiguously
+(unclear whether it applies to "long thin rods" and "wire coils" or
+only "flexible sheet"); Gate_03's equivalent row gives rods an
+explicit 200mm threshold. This file has a "Tangling threshold" row
+(no flexible/fibrous material >100mm) that Gate_03 lacks; Gate_03 has
+a "Contamination state" row (no free liquid, no active fuming) that
+this file lacks. Found while scoping FL-002 in
+`Architecture/Forge_flow.md`.
+
+**Why It Matters:** Both tables are explicitly provisional
+placeholders, so this is lower severity than a validated-spec
+mismatch — but while they stand in for each other, drift between
+them defeats the purpose of having a mirrored stopgap.
+
+**Resolution Path:**
+- Not fixed directly — logged per explicit human direction rather
+  than corrected, since both tables are placeholders pending
+  FL-002/GR-002 (Reduction method selection) regardless.
+- Closes automatically when FL-002 is resolved — the drifted
+  placeholders get replaced by a validated envelope, not reconciled
+  with each other.
+- Cross-module reference: GR-009 in Operations/Gate_03_Reduction.md
+  (same finding, registered on both sides); FL-002 in
+  Architecture/Forge_flow.md.
+
+---
+
 ### Resolution Log
 
+- 2026-05-15: MG-001 through MG-005 — Migrated from prose
+  Unknowns Registry to structured sidecar format. Content
+  preserved; format updated to template standard.
+- 2026-05-15: MG-006 — New entry. Siting and safety
+  requirements gap identified during retrofit audit.
+  Mirrors SC-006 in Gate_05_Separation_Thermal.md. Cross-module
+  UNK escalation recommended alongside SC-006.
+- 2026-05-15: MG-007 — New entry. Rotor jam and entanglement
+  recovery behavior undefined. Logged following Grok and
+  ChatGPT independent audit convergence.
+- 2026-05-15: MG-008 — New entry. Sensor fouling from
+  conductive and abrasive fines. Silent failure mode
+  identified by ChatGPT audit. Sensor fouling doctrine
+  added to Sensor Cross-Check section.
+- 2026-06-08: Navigation Anchors block added. Title corrected
+  from `Material Separation Gate (v0)` to
+  `Gate_04_Separation_Mechanical`. Verification Ref corrected
+  from `Forge_Audit_Kit.md` to `Admin/Verification_Gates.md`
+  (PC-001). Facilities.md upstream reference added to Scope
+  Boundary and Integration Hooks (PC-002). All stale filenames
+  corrected throughout: Spin_Chamber_v0.md →
+  Gate_05_Separation_Thermal.md, Component_Triage_System.md →
+  Gate_02_Triage.md, Air_Scrubber_v0.md → Air_Scrubber.md,
+  energy_v0.md → Energy.md, Support_Raft_v0.md →
+  Support_Raft.md, leviathan_testing.md →
+  Leviathan_testing.md, Trajectories_LF.md → Trajectories.md,
+  Lazarus_forge_v0_flow.md → Forge_flow.md. Sidecar Owner
+  fields corrected from Material_Separation_Gate_v0.md to
+  Operations/Gate_04_Separation_Mechanical.md. MG-006
+  resolution path updated — UNK-006 resolved by
+  Architecture/Facilities.md.
+- 2026-08-10: **Pseudo-audit (Grok, same limits).** Findings only; Spec Gates
+  left locked at 0/6. (1) Open Unknowns **8** = MG-001–008, matches local +
+  `Unknowns.md`. (2) No Blocking understatement of operational-safety type.
+  (3) MG-006 siting gap mirrors SC-006 (noted, not escalated this pass).
+  (4) No MG-* closed. Human-directed.
 - 2026-08-14: **Claude resolution-path review (Round 4 — Operations,
   continuing the sequence from Grok's Rounds 1-3).** All eight MG
   unknowns reviewed against source. Every Resolution Path judged
@@ -924,27 +1004,24 @@ Open — cleaning interval and housing spec still need Gen-0 data.
   each path; Last Reviewed → 2026-08-14 on all eight. **No MG-*
   closed.** Open Unknowns remain 8. Blocking status unchanged (all
   No). Human-directed.
-
-- 2026-08-10: **Pseudo-audit (Grok, same limits).** Findings only; Spec Gates
-  left locked at 0/6. (1) Open Unknowns **8** = MG-001–008, matches local +
-  `Unknowns.md`. (2) No Blocking understatement of operational-safety type.
-  (3) MG-006 siting gap mirrors SC-006 (noted, not escalated this pass).
-  (4) No MG-* closed. Human-directed.
-
-- 2026-05-15: MG-001 through MG-005 — Migrated from prose
-  Unknowns Registry to structured sidecar format. Content
-  preserved; format updated to template standard.
-- 2026-05-15: MG-006 — New entry. Siting and safety
-  requirements gap identified during retrofit audit.
-  Mirrors SC-006 in Spin_Chamber_v0.md. Recommend
-  cross-module UNK escalation alongside SC-006.
-- 2026-05-15: MG-007 — New entry. Rotor jam and entanglement
-  recovery behavior undefined. Logged following Grok and
-  ChatGPT independent audit convergence.
-- 2026-05-15: MG-008 — New entry. Sensor fouling from
-  conductive and abrasive fines. Silent failure mode
-  identified by ChatGPT audit. Sensor fouling doctrine
-  added to Sensor Cross-Check section.
+- 2026-09-09: **MG-009 added** (provisional feedstock envelope table
+  drifted from Gate_03_Reduction.md's mirror table — found while
+  scoping FL-002 in Architecture/Forge_flow.md; logged rather than
+  fixed directly, closes automatically when FL-002 resolves). **Same
+  pass: merged a diverged duplicate Resolution Log section.** This
+  file had two copies of its Resolution Log — one positioned here,
+  before Abandoned Paths (missing the 2026-06-08 rename-fix entry,
+  still citing stale `Spin_Chamber_v0.md`), and one at the very end
+  of the file, after Drift Indicators (missing the 2026-08-10 and
+  2026-08-14 entries). They had diverged into separate lineages
+  after the 06-08 split rather than one ever being a clean duplicate
+  of the other. Merged chronologically into this single copy at this
+  position — matching the canonical order confirmed against
+  `Gate_02_Triage.md`, `Energy.md`, and `Air_Scrubber.md` (Auditor
+  Notes → Resolution Log → Abandoned Paths → Drift Indicators). The
+  end-of-file copy deleted. First merge attempt placed the content at
+  the wrong end of the file; caught against the three confirmed
+  files and corrected before finalizing. Human-directed.
 
 ---
 
@@ -986,38 +1063,3 @@ Material Separation Gate:
 Section 10 apply without exception. Local triggers above are
 additive, not substitutes.*
 
----
-
-### Resolution Log
-
-- 2026-05-15: MG-001 through MG-005 — Migrated from prose
-  Unknowns Registry to structured sidecar format. Content
-  preserved; format updated to template standard.
-- 2026-05-15: MG-006 — New entry. Siting and safety
-  requirements gap identified during retrofit audit.
-  Mirrors SC-006 in Gate_05_Separation_Thermal.md. Cross-module
-  UNK escalation recommended alongside SC-006.
-- 2026-05-15: MG-007 — New entry. Rotor jam and entanglement
-  recovery behavior undefined. Logged following Grok and
-  ChatGPT independent audit convergence.
-- 2026-05-15: MG-008 — New entry. Sensor fouling from
-  conductive and abrasive fines. Silent failure mode
-  identified by ChatGPT audit. Sensor fouling doctrine
-  added to Sensor Cross-Check section.
-- 2026-06-08: Navigation Anchors block added. Title corrected
-  from `Material Separation Gate (v0)` to
-  `Gate_04_Separation_Mechanical`. Verification Ref corrected
-  from `Forge_Audit_Kit.md` to `Admin/Verification_Gates.md`
-  (PC-001). Facilities.md upstream reference added to Scope
-  Boundary and Integration Hooks (PC-002). All stale filenames
-  corrected throughout: Spin_Chamber_v0.md →
-  Gate_05_Separation_Thermal.md, Component_Triage_System.md →
-  Gate_02_Triage.md, Air_Scrubber_v0.md → Air_Scrubber.md,
-  energy_v0.md → Energy.md, Support_Raft_v0.md →
-  Support_Raft.md, leviathan_testing.md →
-  Leviathan_testing.md, Trajectories_LF.md → Trajectories.md,
-  Lazarus_forge_v0_flow.md → Forge_flow.md. Sidecar Owner
-  fields corrected from Material_Separation_Gate_v0.md to
-  Operations/Gate_04_Separation_Mechanical.md. MG-006
-  resolution path updated — UNK-006 resolved by
-  Architecture/Facilities.md.

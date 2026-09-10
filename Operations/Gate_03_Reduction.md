@@ -31,9 +31,9 @@
 | Body Stability   | Volatile                                                            |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-05-15; revised 2026-06-08                                      |
+| Last Audit       | 2026-09-09 — GR-009 added (provisional envelope table drift vs Gate_04); prior: 2026-09-08 HP-001 R4 terminology alignment; 2026-05-15; revised 2026-06-08 |
 | Auditor          | Claude — Retrofit/Auditor                                           |
-| Open Unknowns    | 7                                                                   |
+| Open Unknowns    | 8                                                                   |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | High                                                                |
 | Sidecar Link     | #auditor-notes--unknowns                                            |
@@ -886,7 +886,55 @@ actually deciding between.
 
 ---
 
+### GR-009 — Provisional output envelope table has drifted from Gate_04's mirror table
+
+| Field         | Value                                            |
+|---------------|--------------------------------------------------|
+| Status        | Open                                             |
+| Risk          | Low                                               |
+| Priority      | Minor                                             |
+| Type          | Technical / Cross-Module                          |
+| Blocking      | No                                                |
+| Owner         | Operations/Gate_03_Reduction.md                  |
+| First Logged  | 2026-09-09                                        |
+| Last Reviewed | 2026-09-09                                        |
+
+**Description:** This file's §4 provisional output envelope table
+and `Operations/Gate_04_Separation_Mechanical.md`'s provisional
+feedstock envelope table (Inputs section) are meant to be the same
+interim constraint set viewed from each side, but have drifted:
+this file's "Prohibited output geometries" row gives an explicit
+200mm threshold for "Long thin rods"; Gate_04's equivalent row
+phrases it ambiguously (unclear whether the 200mm threshold applies
+to rods and coils or only to sheet). This file has a "Contamination
+state" row (no free liquid, no active fuming) that Gate_04 lacks;
+Gate_04 has a "Tangling threshold" row (no flexible/fibrous material
+>100mm) that this file lacks. Found while scoping FL-002 in
+`Architecture/Forge_flow.md`.
+
+**Why It Matters:** Both tables are explicitly provisional
+placeholders standing in for a real cross-validated envelope, so
+this is lower severity than a validated-spec mismatch would be — but
+while they stand in for each other, drift between them defeats the
+purpose of having a mirrored stopgap at all.
+
+**Resolution Path:**
+- Not fixed directly — James chose to log rather than fix, since
+  both tables are placeholders pending FL-002/GR-002 (method
+  selection) regardless.
+- When FL-002 is finally closed (Reduction method selected, real
+  cross-validation performed), this entry closes automatically —
+  the drifted placeholders will be replaced by the validated
+  envelope, not reconciled with each other.
+- Cross-module reference: MG-009 in
+  Operations/Gate_04_Separation_Mechanical.md (same finding,
+  registered on both sides); FL-002 in Architecture/Forge_flow.md.
+
+---
+
 ### Resolution Log
+
+- 2026-09-09: **GR-009 added.** Found while scoping FL-002 in `Architecture/Forge_flow.md`: this file's §4 provisional output envelope table and `Operations/Gate_04_Separation_Mechanical.md`'s provisional feedstock envelope table (Inputs section) — meant to mirror each other as the interim stopgap pending Reduction method selection (GR-002) — have drifted (ambiguous 200mm-threshold phrasing on prohibited geometries; each file has one parameter row the other lacks). Logged as GR-009 rather than fixed directly, per explicit human direction; closes automatically when FL-002 resolves. Mirror entry MG-009 registered in Gate_04_Separation_Mechanical.md. Open Unknowns: 7 → 8. Human-directed.
 
 - 2026-09-08: **HP-001 completion — R4 terminology alignment (Grok-proposed, Claude-verified before applying).** Reworded nine occurrences of the un-graded "only fully irreversible step / only irreversible step / point of irreversibility / point of no return" phrasing to align with the R0-R4 taxonomy now in Forge_flow.md's Defined Terms: Safety Advisory, File Purpose opening, "if this file disappeared" sentence, ASM-001, ASM-006 (this one found independently — not in Grok's original 8-item diff, same category), Assumptions footnote, GR-005 Why It Matters, both Local Drift Trigger rows, and the 2026-05-15 Abandoned Path note. All 8 of Grok's cited passages verified against the live file before editing — exact matches. No safety intent changed: human presence remains the primary compensating control pending GR-005, automation remains gated behind the same prerequisite list, contamination-stop doctrine unchanged, no hard prerequisite (Air Scrubber, energetic materials) touched. This closes the residual scope Forge_flow.md's HP-001 entry left open on 2026-09-08. Human-directed.
 
