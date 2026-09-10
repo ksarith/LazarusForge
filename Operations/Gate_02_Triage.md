@@ -30,7 +30,7 @@
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 2/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-09-01 — GU-002 reciprocal retirement-handoff subsection integrated (interface with Gate_07); prior: 2026-08-09 Grok pseudo-audit (Skeptic read + minimal fixes); body 2026-07-17; §XII drafted 2026-08-02 |
+| Last Audit       | 2026-09-09 — §XII.1b added (TIL extended with Gate B Secondary Test fields, serving Forge_flow.md's FL-005); prior: 2026-09-01 — GU-002 reciprocal retirement-handoff subsection integrated (interface with Gate_07); prior: 2026-08-09 Grok pseudo-audit (Skeptic read + minimal fixes); body 2026-07-17; §XII drafted 2026-08-02 |
 | Auditor          | ChatGPT — Synthesizer; Claude — Engineer; Claude — Embedded Value Preservation cross-reference added (human-directed), 2026-07-17; Copilot — drafted TIL/TAL/TCM/TMV + CIR-Triage extension (human-directed), 2026-08-02; Claude — verified against source and `Admin/Verification_Gates.md`, corrective merge (human-directed), 2026-08-02; Grok pseudo-audit 2026-08-09 — no Spec Gate promotion |
 | Open Unknowns    | 7                                                                   |
 | Active Disputes  | 1                                                                   |
@@ -524,6 +524,58 @@ file — if a unified triage+fabrication ID scheme is wanted later, it
 belongs in `Admin/Canonical_Terms.md`, which already owns the Component
 Library Schema question, not in this file's TIL note.
 
+### XII.1b Gate B Secondary Test extension fields — proposed
+
+*Added 2026-09-09, Grok-drafted schema, Claude-adapted to extend this*
+*section rather than duplicate it, human-directed. Same
+candidate/not-audited status as the rest of §XII. Serves*
+*`Architecture/Forge_flow.md`'s FL-005 — Gate B's Secondary Test*
+*(justified-effort evaluation) is unvalidated against real operation*
+*and its own text requires every decision to be logged with operator*
+*rationale. This is that log, as an extension of §XII.1a's existing*
+*fields rather than a new parallel schema — a prior draft proposed a*
+*standalone observation form before checking whether one already*
+*existed here; it did.*
+
+**When a triage event's Outcome is Gate B, and Gate B's Primary Test
+passed** (i.e. the Secondary Test was actually reached), record these
+fields in addition to the standard XII.1a set:
+
+| Field | Type / Guidance | Maps to existing field? |
+|-------|------------------|---------------------------|
+| `Primary_Test_Detail` | Which of the three Primary conditions were evaluated (localized / accessible / within tooling) and their individual results | New — `Tests_Performed` in XII.1a is too general to capture this |
+| `Estimated_Repair_Effort` | As the operator actually used it — a qualitative band ("<30 min", "1-2h", "half day", "multi-day/specialist") | New |
+| `Recovered_Value` | Yes / No / Partial + short note | New |
+| `Learning_Value` | Yes / No + note (novel or high-frequency failure mode?) | New |
+| `Scarcity_Value` | Measured / Assumed / None + evidence cited — per Gate B's own "measured, not assumed" rule | New |
+| `Secondary_Test_Result` | YES → Repair & Learn, or NO → Gate C | Maps to existing `Outcome` field — do not duplicate, this is the same value already captured there |
+| `Rationale` | Free text, must reference at least one of the three axes above | Maps to existing `Notes` field — use `Notes` for this, do not add a separate column |
+| `Alternative_Operator_Decision` | Optional. Same item reviewed by a second operator, or the same operator's counterfactual at half/double the estimated effort | New — highest-value single field for surfacing inter-operator divergence, per FL-005 |
+| `Tooling_Inventory_Snapshot` | Reference/version of the live inventory used for the Primary tooling-capability check | New — ties this record to FL-004/ASM-003 |
+
+`Later_Fate` (already in XII.1a) is what closes the loop for this
+extension too — no separate outcome-tracking field is needed.
+
+**Required vs optional, matching XII.1a's own pattern:** only
+`Secondary_Test_Result` and `Rationale` are required (they map onto
+XII.1a's own required `Outcome` and recommended `Notes` fields).
+Everything else is free-text and optional at v0 — an incomplete
+record with a decision and a rationale is still useful; this
+extension does not raise XII.1a's own bar for what counts as a
+usable log entry.
+
+**Meaningful-sample guidance (not a hard threshold):** 15-25 records
+from a single deployment before any qualitative review; 40-60 spanning
+at least two operators and two item categories before drawing
+conclusions. Per `Operations/Tooling_Inventory.md`'s File Purpose,
+none of this data — nor any threshold later derived from it — is
+canonical across deployments; it only closes FL-005 for the
+deployment that collected it.
+
+**Explicit non-goals, same as FL-005's own Resolution Path:** no
+forced numeric scoring at v0; no cross-site uniformity requirement;
+never route a Secondary Test outcome directly to Reduction.
+
 ### XII.2 Triage Arbitration Layer (TAL) — proposed
 
 A candidate resource-allocation scheme for triage under constraint, modeled
@@ -926,6 +978,21 @@ until a scoring owner and cadence are assigned and logged here.
 ---
 
 ### Resolution Log
+
+- 2026-09-09: **§XII.1b added — TIL extended with Gate B Secondary
+  Test fields, serving `Architecture/Forge_flow.md`'s FL-005.** Grok
+  drafted a standalone observation schema for Gate B's Secondary Test
+  before checking whether a log format already existed in this file;
+  it did (§XII.1a's TIL v0 Log Specification). Adapted the draft to
+  extend TIL's existing fields rather than duplicate them —
+  `Secondary_Test_Result` maps onto TIL's `Outcome`, `Rationale` maps
+  onto `Notes`, and `Later_Fate` closes the loop for both. Only the
+  genuinely new fields (Primary Test detail, estimated effort, the
+  three justification axes, alternative-operator review, tooling
+  snapshot reference) were added as new columns. Same
+  candidate/not-audited status as the rest of §XII — this does not
+  make TIL operative, and does not close FL-005; it makes FL-005's
+  observation phase startable. Human-directed.
 
 - 2026-08-15 (third entry, same day): **Non-decontaminable state's GR-003
   reference updated — points to real disposal categories, not an empty
