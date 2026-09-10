@@ -263,6 +263,30 @@ Feedback
 Gate C → Gate D → Oversight (on Gate D failure) → an Outcome Path →
 Fabrication → Utilization → Feedback
 
+**Lifecycle loop (added 2026-09-09, HP-013 — framing only, no new
+routing rule).** The primary sequence above reads as a line because
+it describes one item's single pass through the flow. The Forge
+itself does not terminate there. Fabrication's own text already
+states it is "not terminal" (§5); what that means concretely is that
+fabricated items enter Utilization, and — per
+`Operations/Gate_02_Triage.md`'s existing re-triage doctrine —
+"components that fail in Forge service re-enter triage at Station 0"
+just as any other salvaged item would. The actual lifecycle is a
+loop, not a line:
+
+Salvage → [this flow's gates] → Components / Material → Fabrication
+→ New Item → Utilization → (eventual failure) → Future Salvage → ...
+
+Feedback (§7) closes the *doctrine* loop — it updates classification
+rules, repair heuristics, tolerance thresholds, and tooling
+priorities for future decisions. Re-triage closes the *material*
+loop — it's what actually brings a specific fabricated item's
+components back through Gate A once that item eventually fails.
+These are two different mechanisms that together make the whole
+system circular rather than terminating at Fabrication or
+Utilization. Neither mechanism is new here; this note only names the
+loop they jointly form.
+
 **Per-gate transitions, UNKNOWN made explicit (added 2026-09-08,
 HP-009 partial — this makes FI-2 mechanically visible at every gate
 rather than relying on the reader to apply the invariant; gate body
@@ -693,7 +717,10 @@ repurposed parts
 **Outputs:** Tools, fixtures, replacement components,
 infrastructure for future Forge growth
 
-Fabrication is **not terminal**.
+Fabrication is **not terminal**. See the Flow State/Transition
+Model's Lifecycle loop note — fabricated items eventually re-enter
+this flow's gates via `Operations/Gate_02_Triage.md`'s existing
+re-triage doctrine, closing the loop rather than ending at Utilization.
 
 Priority order:
 1. Tools or components the Forge currently lacks
@@ -1298,7 +1325,10 @@ before this pass.
 
 **Resolution Path:**
 - Log every Secondary Test decision with operator rationale from
-  first use (per Gate B's own instruction).
+  first use (per Gate B's own instruction). **2026-09-09: the log
+  format itself now exists** — `Operations/Gate_02_Triage.md` §XII.1b
+  extends the existing TIL v0 Log Specification with Gate-B-specific
+  fields, rather than a new standalone schema.
 - After a meaningful sample of real decisions, check for
   operator-to-operator divergence *within a single deployment*.
   This is about the same Forge's operators reaching consistent
@@ -1396,6 +1426,10 @@ deferred, not closed.
 ---
 
 ### Resolution Log
+
+- 2026-09-09 (nineteenth pass): **HP-013 adopted.** Added a Lifecycle loop note to the Flow State/Transition Model, naming two mechanisms that already existed but were never connected: Feedback (§7, already in this file) closes the doctrine loop, and re-triage (already in `Gate_02_Triage.md` — "components that fail in Forge service re-enter triage at Station 0") closes the material loop. Together they make the system circular rather than terminating at Fabrication/Utilization, as ChatGPT's original HP-013 proposal argued. Strengthened §5's "Fabrication is not terminal" line with a pointer to the new note. Framing only — no new routing rule, no gate logic touched. Caught and fixed a self-introduced stray-asterisk formatting glitch (same class as the one fixed in an earlier pass) before finalizing. Human-directed.
+
+- 2026-09-09 (eighteenth pass): **FL-005 observation log format now exists (not FL-005 closed).** Grok drafted a scoping analysis for Gate B Secondary Test observation data plus an inter-operator bias-pattern analysis (both correctly framed as prospective — no real data exists yet). Its own scoping question ("is there already a log format to extend?") went unchecked by its author; checked it here — `Operations/Gate_02_Triage.md` already has a TIL v0 Log Specification (§XII.1a) with substantial field overlap. Extended it as §XII.1b rather than creating a parallel schema. FL-005's Resolution Path updated with a pointer to the new spec. FL-005 itself remains Open — the log format existing is a prerequisite for closing it, not the closure. Human-directed.
 
 - 2026-09-09 (seventeenth pass): **HP-011 adopted as §1.3 Transition Ownership.** Scoped to the four main gates + Oversight per Grok's own sequencing note. Built from existing cross-references — Gate Correspondence's "triage station outcomes map to these gates" pointer to `Gate_02_Triage.md`, Gate B's ASM-003/Tooling_Inventory.md dependency, Gate D's split between `Gate_02_Triage.md` (evidence) and `Gate_03_Reduction.md` (downstream procedure) — not newly invented. Found two real things while building it: (1) Oversight has no assigned Operations or Admin owner at all, registered as FL-006 (Open, Minor) both here and Unknowns.md v5.07; (2) FL-005's Resolution Path had a stray closing line that actually belonged to FL-004's topic, a leftover from an earlier insertion — removed. Open Unknowns count updated 6→7 to include FL-006. Human-directed.
 
@@ -1553,7 +1587,7 @@ deferred, not closed.
 | HP-010 | Three-valued gate logic (YES / NO / INDETERMINATE) plus an Evidence Sufficiency Check preceding each gate's actual test | Genuine new logic, same risk category as the Gate B Secondary Test (FL-005) — would touch every gate's decision structure, not just Gate B. Needs the same explicit go-ahead and provisional framing that Secondary Test got | 2026-09-08 |
 | HP-011 | ~~Explicit per-transition ownership table~~ **Adopted 2026-09-09 as §1.3 Transition Ownership**, scoped to the four main gates + Oversight per Grok's own sequencing. Verified against existing cross-references (Gate Correspondence's "triage station outcomes map to these gates" statement) rather than newly assigned. Found and registered a real gap: Oversight has no assigned Operations or Admin owner (FL-006). Also found and fixed a stray-line content bug in FL-005 left over from an earlier insertion | Builds directly on this session's HP-006 cross-layer reconciliation work — plausible medium-risk consolidation, but scope (every transition, not just the four HP-006 found) is larger than a quick pass | 2026-09-08 |
 | HP-012 | Explicit "Split" transition primitive — a gate may divide an input into independently routable outputs when portions have materially different recovery states (e.g. Example 5's aluminum extrusion) | New mechanism, not consolidation — Example 5 currently handles this via prose ("cut and sent to Reduction; good length to Component Library") without a named primitive. Real logic addition | 2026-09-08 |
-| HP-013 | Strengthen the lifecycle model around "Fabrication is not terminal" — Salvage → Recovery → Components/Material → Fabrication → New Item → Utilization → Feedback → Future Recovery as the explicit loop, not just a linear flow ending at outcome paths | Conceptual/structural, touches how the whole document frames itself — bigger than a single-section edit | 2026-09-08 |
+| HP-013 | ~~Strengthen the lifecycle model~~ **Adopted 2026-09-09.** Added a Lifecycle loop note to the Flow State/Transition Model distinguishing the doctrine loop (Feedback, §7) from the material loop (re-triage, already in `Gate_02_Triage.md`) — both existed already, neither was previously named as forming a loop. Strengthened §5's "Fabrication is not terminal" line with a pointer. Framing only, no new routing rule, scoped smaller than originally feared (didn't require touching every section) | Conceptual/structural, touches how the whole document frames itself — bigger than a single-section edit | 2026-09-08 |
 | HP-014 | ~~Formal distinction between "terminal for current processing" and "terminal for recovery"~~ **Adopted 2026-09-08.** Rewrote the Flow State/Transition Model's Terminal states line to define both senses explicitly; tagged Component Library and Repurpose as terminal-for-current-processing (re-entry eligible), Reduction as terminal-for-recovery (with a correction mid-edit: Reduction is the point of no return, but the actual inert-waste endpoint is reached after Purification, not at Reduction itself) | Resolves a real semantic tension already present between the Outcome Paths and Terminal States sections; likely low-to-medium risk, mostly clarification | 2026-09-08 |
 | HP-015 | ~~Formal "re-entry contract"~~ **Adopted 2026-09-08.** Added a numbered 6-point contract after the Flow State/Transition Model's re-entry transitions bullet. Five of six points were already implied by ASM-007/FI-3; point 5 ("prior assessment does not automatically carry forward — no inheritance of the parent's failure state") was the genuinely underspecified piece, now explicit | ASM-007 already implies most of this; the "does not inherit assembly's failure state" point is the one genuinely underspecified piece worth making explicit | 2026-09-08 |
 | HP-016 | Replace/supplement the growing prose-example collection (currently 7) with a systematic boundary matrix (condition × Gate A-D/Oversight outcome × expected route) for FL-001 closure | Structurally bigger than it sounds — could mean restructuring Examples 1-7, not just adding a table. ChatGPT itself frames this as "the destination," not a small next step | 2026-09-08 |
