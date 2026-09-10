@@ -1219,6 +1219,12 @@ against an unconfirmed input.
   best available constraint.
 - Cross-module reference: UNK-007 in Unknowns.md,
   MG-007 in Operations/Gate_04_Separation_Mechanical.md.
+- **2026-09-09:** scoped this entry — confirmed still blocked on
+  Reduction method selection (GR-002, not yet resolved). Found the
+  two provisional envelope tables that stand in for the real
+  cross-validation have themselves drifted from each other; logged
+  as GR-009 / MG-009 rather than fixed, since both are placeholders
+  regardless. Not a step toward closing FL-002 itself.
 - Payment via Specification — once the output envelope is
   cross-validated against Operations/Gate_04_Separation_Mechanical.md
   Inputs section.
@@ -1426,6 +1432,8 @@ deferred, not closed.
 ---
 
 ### Resolution Log
+
+- 2026-09-09 (twentieth pass): **FL-002 scoped, not closed.** Confirmed still blocked on GR-002 (Reduction method not yet selected). Found the two provisional envelope tables standing in for real cross-validation (Gate_03's §4, Gate_04's Inputs section) have drifted from each other; logged as GR-009/MG-009 in both files' sidecars and Unknowns.md v5.08, per explicit human direction to log rather than fix. Also found and fixed, while placing MG-009: `Gate_04_Separation_Mechanical.md` had its entire Resolution Log duplicated into two diverged copies. Merged chronologically; first merge attempt placed the result at the wrong end of the file (matching a since-superseded assumption about section order) and was self-corrected after checking the confirmed-canonical order in three other files. Human-directed.
 
 - 2026-09-09 (nineteenth pass): **HP-013 adopted.** Added a Lifecycle loop note to the Flow State/Transition Model, naming two mechanisms that already existed but were never connected: Feedback (§7, already in this file) closes the doctrine loop, and re-triage (already in `Gate_02_Triage.md` — "components that fail in Forge service re-enter triage at Station 0") closes the material loop. Together they make the system circular rather than terminating at Fabrication/Utilization, as ChatGPT's original HP-013 proposal argued. Strengthened §5's "Fabrication is not terminal" line with a pointer to the new note. Framing only — no new routing rule, no gate logic touched. Caught and fixed a self-introduced stray-asterisk formatting glitch (same class as the one fixed in an earlier pass) before finalizing. Human-directed.
 
