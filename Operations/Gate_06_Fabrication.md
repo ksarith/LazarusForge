@@ -32,7 +32,7 @@
 | Body Stability   | Volatile                                                            |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-08-08 (Scope Boundary UNK-008 stale reference corrected); prior: 2026-05-19; revised 2026-06-08 |
+| Last Audit       | 2026-09-10 (WAAM/wire-arc DED recognized as future extension of the qualified-wire path §1/§6/§7; LPBF/bound-metal forward-looking note added; Grok-drafted, Claude-verified against source before applying); prior: 2026-08-08; prior: 2026-05-19; revised 2026-06-08 |
 | Auditor          | Claude — Skeptic/Auditor (actioning ChatGPT audit 2026-05-19)       |
 | Open Unknowns    | 7                                                                   |
 | Active Disputes  | 1                                                                   |
@@ -79,6 +79,9 @@ High risk which reflects process irreversibility.*
   Gate_05_Separation_Thermal.md
 - Integration with Utilization as the downstream
   performance validation stage
+- Recognition that qualified welding wire enables
+  future wire-arc additive (WAAM) processes once the
+  method itself is qualified under Section 6
 
 **This file DOES NOT define:**
 - Wire extrusion nozzle design and draw speed
@@ -229,6 +232,29 @@ growth, and network knowledge determine what comes
 next. New methods enter through the qualification
 framework in Section 6 — not through informal
 adoption.
+
+Once internal welding wire is qualified (SC-004 / UNK-008
+residual scope), wire-arc directed energy deposition
+(WAAM / wire-arc DED) becomes a natural extension of the
+same process family. It uses the identical feedstock the
+forge is already producing and qualifying, requires no
+powder handling infrastructure, and is suited to large
+structural rebuilds, repair of complex geometries, and
+near-net shapes from recovered alloys. WAAM is not a
+bootstrap method; it is a higher-value use of already-
+qualified wire once arc welding itself is proven. Entry
+remains governed by the qualification framework in
+Section 6.
+
+*Forward-looking note, added 2026-09-10 following a review*
+*of AM developments since this file was drafted: low-cost*
+*laser powder-bed fusion (LPBF) and bound-metal/binder-jet*
+*systems have become meaningfully cheaper (sub-$20k class*
+*kits emerging 2026-2027) since this doctrine was written.*
+*They remain infrastructure- and powder-handling intensive*
+*and are not bootstrap-ready for a first-generation forge —*
+*this is a possible later capability, not a change to v0*
+*scope or method priority.*
 
 ---
 
@@ -549,7 +575,12 @@ a qualification framework. Informal adoption —
 using a method before it is qualified — is not
 permitted. An unqualified method has unknown
 capability, unknown failure modes, and unknown
-safety requirements.
+safety requirements. This includes any directed-
+energy or additive process that uses the forge's
+welding wire (WAAM / wire-arc DED) or recovered
+powder — qualification is not waived simply because
+the feedstock is already accepted for conventional
+arc welding.
 
 **Qualification prerequisites for any new method:**
 1. Safety requirements identified and PPE confirmed
@@ -681,6 +712,26 @@ For these applications, externally sourced wire
 with known composition is required until internal
 wire qualification improves.
 Cross-reference: UNK-008, SC-004, ASM-001, ASM-005.
+
+**Wire qualification for WAAM / wire-arc DED (future
+extension):**
+The same wire that qualifies for structural arc welding
+is the starting feedstock for wire-arc additive processes.
+Additional characterization required before WAAM use
+includes:
+- Consistent feed behavior under continuous deposition
+  (not just intermittent stick or MIG duty cycles)
+- Acceptable interlayer bonding and residual-stress
+  behavior on multi-pass builds using the forge's actual
+  alloy range
+- Post-deposition dimensional control strategy consistent
+  with the add-to-excess / mill-to-spec philosophy
+
+Until those characterizations exist, WAAM remains an
+unqualified method under Section 6 even if the wire itself
+is already accepted for conventional welding. No change to
+the purchase-what-cannot-be-produced doctrine or to
+external-wire bootstrap rules.
 
 ---
 
@@ -1247,6 +1298,8 @@ the fire risk profile is materially different.
 ---
 
 ### Resolution Log
+
+- 2026-09-10: **Metal-additive-manufacturing developments recognized (Grok-drafted, Claude-verified before applying).** James asked whether AM's evolution since this file was drafted warranted updated language; Grok proposed three minimal insertions recognizing WAAM/wire-arc DED as a natural future extension of the existing qualified-wire path — all three anchor locations verified against live text before applying (§1's "Arc welding opens the door" paragraph, §7's wire-qualification cross-reference line, §6's opening sentence). Confirmed no existing additive/WAAM/LPBF content anywhere in this file or Geck_forge_seed.md — genuinely new territory, not a duplicate. Added: a WAAM-recognition paragraph in §1 plus a Claude-added LPBF/bound-metal forward-looking note (clearly marked non-bootstrap, infrastructure-dependent) per explicit human direction to go slightly further than Grok's draft; a WAAM wire-characterization subsection in §7; a clarifying sentence in §6 confirming additive/directed-energy processes aren't exempt from qualification just because the wire itself is qualified; one discoverability line in Scope Boundary. No change to arc-welding-first bootstrap priority, SC-004/UNK-008 ownership, ASM-001/005, or PPE/safety doctrine. Human-directed.
 
 - 2026-08-15 (third entry, same day): **Ventilation/fire interaction item
   closed — fifth of five, second applied case of `Admin/Resolution_Methodology.md`.**
