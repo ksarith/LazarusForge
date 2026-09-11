@@ -33,7 +33,7 @@
 | Verification Ref | Admin/Verification_Gates.md                                      |
 | Last Audit       | 2026-09-08/09 — fifteen resolution-log passes across two days: R0-R4 taxonomy (HP-001, propagated to Gate_03_Reduction.md), Oversight multi-exit formalization (HP-002), Flow Invariants §1.1 (HP-003), Gate D polarity rewrite (HP-004), boundary-case Examples 4-7 (HP-005 partial), cross-layer reconciliation spinning off FL-003/FL-004 (HP-006), Tooling_Inventory.md creation (HP-007), per-deployment wording + Deployment Localization Doctrine, Gate B Secondary Test + FL-005, Gate Decision Contracts §1.2 + explicit UNKNOWN transitions + re-entry contract (HP-008/009/015), terminal-state distinction (HP-014); FL-001 remains Blocking. Open Unknowns count corrected 2→6 same pass (stale since before FL-003/004/005 were added — a Grok status summary had repeated the stale value without recounting). Prior: 2026-08-08 |
 | Auditor          | Claude — Retrofit/Auditor                                           |
-| Open Unknowns    | 7                                                                   |
+| Open Unknowns    | 8                                                                   |
 | Active Disputes  | 1                                                                   |
 | Highest Risk     | Medium                                                              |
 | Sidecar Link     | #auditor-notes--unknowns                                            |
@@ -1389,6 +1389,61 @@ operational or governance home outside this file.
 
 ---
 
+### FL-007 — Gate D/Oversight authority boundary is unstated
+
+| Field         | Value                                            |
+|---------------|--------------------------------------------------|
+| Status        | Open                                              |
+| Risk          | Low                                               |
+| Priority      | Minor                                             |
+| Type          | Architectural                                      |
+| Blocking      | No                                                 |
+| Owner         | Architecture/Forge_flow.md                          |
+| First Logged  | 2026-09-10                                        |
+| Last Reviewed | 2026-09-10                                        |
+
+**Description:** Raised by ChatGPT reviewing the 2026-09-10 working
+tree, verified against live text. The Oversight Gate's "Gate D
+want/need evaluation" is explicitly scoped to items that already
+*passed* Gate D — i.e. Gate D already determined Reduction is the
+correct residual path for material recovery. Oversight is then asked
+to potentially override that outcome via the Hold exit, using a
+completely different judgment axis: whether a genuine retained-use
+need exists, not whether material recovery is viable. The text never
+states whether Oversight has authority to override Gate D's
+material-recovery determination, or only authority to delay
+execution of a determination it doesn't contest. "No genuine need
+confirmed" (Oversight's Terminate criterion) and "Reduction is the
+correct residual path" (Gate D's own criterion) are conceptually
+different judgments that the current text allows to look
+interchangeable at the Terminate exit.
+
+**Why It Matters:** If Oversight is silently assumed to have
+override authority over Gate D's material-recovery determination,
+that's a real gap in what Gate D's own "YES" outcome actually means
+— it would no longer be a final material-recovery determination, only
+a recommendation Oversight can freely second-guess on unrelated
+grounds. If Oversight does NOT have that authority, the current
+Hold/Terminate framing needs to be read strictly as "when to execute
+Reduction," never as "whether to execute it" — worth stating
+explicitly rather than leaving implicit.
+
+**Resolution Path:**
+- Do not resolve by editing gate logic yet — this needs a decision
+  about what authority Oversight actually has, not a wording fix.
+- Candidate framing to evaluate: Oversight's Hold/Terminate choice at
+  this entry point is a *timing* decision only (when Reduction
+  executes), not a *reversal* of Gate D's material-recovery
+  determination — Gate D already said Reduction is correct; Oversight
+  only decides whether execution happens now or after a review
+  period. If that framing is adopted, "no genuine need confirmed →
+  Terminate" should be reworded to make clear it triggers previously-
+  determined Reduction, not a fresh material-recovery judgment.
+- Related to FL-006 (Oversight's authority structure has no named
+  owner at all) — resolving that first may clarify this too.
+
+---
+
 ### DS-001 — Purification stage terminology (cross-reference)
 
 | Field         | Value                                            |
@@ -1432,6 +1487,8 @@ deferred, not closed.
 ---
 
 ### Resolution Log
+
+- 2026-09-10 (twenty-first pass): **FL-007 registered.** ChatGPT reviewed the 2026-09-10 working tree (verified: file size 108,850 bytes, all quoted passages accurate) and raised a real architectural ambiguity: Oversight's "Gate D want/need evaluation" is scoped to items that already passed Gate D's material-recovery determination, then can override that outcome via the Hold exit using a different judgment axis (retained-use need vs material-recovery viability) — the text never states whether this is override authority or only timing authority. Logged rather than resolved, per ChatGPT's own conservative recommendation and matching the standing practice of not editing gate logic to fix an unsettled authority question. Related to FL-006, cross-referenced both directions. Open Unknowns 7→8. Human-directed.
 
 - 2026-09-09 (twentieth pass): **FL-002 scoped, not closed.** Confirmed still blocked on GR-002 (Reduction method not yet selected). Found the two provisional envelope tables standing in for real cross-validation (Gate_03's §4, Gate_04's Inputs section) have drifted from each other; logged as GR-009/MG-009 in both files' sidecars and Unknowns.md v5.08, per explicit human direction to log rather than fix. Also found and fixed, while placing MG-009: `Gate_04_Separation_Mechanical.md` had its entire Resolution Log duplicated into two diverged copies. Merged chronologically; first merge attempt placed the result at the wrong end of the file (matching a since-superseded assumption about section order) and was self-corrected after checking the confirmed-canonical order in three other files. Human-directed.
 
