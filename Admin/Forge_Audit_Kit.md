@@ -16,13 +16,13 @@
 | Status         | Draft                                                               |
 | Spec Gates     | 0/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                    |
-| Last Audit     | 2026-08-30; revised 2026-09-03 — Grok audit (all six gates cleared); Claude source-verification found one miss: derivation citation to `Unknowns.md` v4.87 was stale (live version v4.93 as of 2026-09-01, two days pre-audit) — the kit's own Drift Indicators name this exact condition and neither Grok's audit nor the file's Open Unknowns caught it. Logged as FAK-014, citation refreshed (human-directed) |
-| Auditor        | Claude — Synthesizer; Claude — v1.10 reduction + Expiry Watch redesign (human-directed); Claude — self-audit + v1.11 (FAK-010/011/012, First Battery) — 2026-07-14; Claude — v1.12 Verification Gates trim (human-directed), derivation versions corrected, 2026-07-17; Claude — v1.13 Pragmatic Accuracy principle added (human-directed), 2026-07-26; Claude — v1.14 CIR- prefix registered, FAK-013 stale changelog path corrected (human-directed), 2026-07-28; Claude — v1.15 derivation refresh against Auditor_Protocols.md v0.41/Unknowns.md v4.87 (human-directed) — Rules 9/10 (AP-033/AP-035) added to AI Contribution Rules, a real content gap rather than a version-string lag; token ceiling note and role declaration string updated to v0.41; kit's own char-count drift against its 12,000 Drift Indicator ceiling noted, not newly introduced (tracked as FAK-005, Open since v1.3); Grok — Skeptic/Auditor, 2026-09-03, all six gates cleared; Claude — FAK-014 logged and derivation citation refreshed to Unknowns.md v4.93 (human-directed), 2026-09-03 |
-| Open Unknowns  | 6 — see Sidecar Link                                                |
+| Last Audit     | 2026-09-10 — Claude, prompted by James asking whether this kit "might need a polish" after an unrelated `Unknowns.md` changelog-migration fix. Derivation citation to `Unknowns.md` had gone stale a third time (v4.93 → live v5.10) — the same recurring pattern FAK-014 already named as structurally unfixed. Citation refreshed; logged as FAK-015 rather than folded into FAK-014, matching the precedent FAK-014 itself set relative to FAK-007. Also found and fixed: the "Current: N open" summary line in Auditor Notes & Unknowns had never been updated when FAK-014 was added (still said 5, File State said 6) — now 7, both fields agree; prior: 2026-08-30; revised 2026-09-03 — Grok audit (all six gates cleared); Claude source-verification found one miss: derivation citation to `Unknowns.md` v4.87 was stale (live version v4.93 as of 2026-09-01, two days pre-audit) — the kit's own Drift Indicators name this exact condition and neither Grok's audit nor the file's Open Unknowns caught it. Logged as FAK-014, citation refreshed (human-directed) |
+| Auditor        | Claude — Synthesizer; Claude — v1.10 reduction + Expiry Watch redesign (human-directed); Claude — self-audit + v1.11 (FAK-010/011/012, First Battery) — 2026-07-14; Claude — v1.12 Verification Gates trim (human-directed), derivation versions corrected, 2026-07-17; Claude — v1.13 Pragmatic Accuracy principle added (human-directed), 2026-07-26; Claude — v1.14 CIR- prefix registered, FAK-013 stale changelog path corrected (human-directed), 2026-07-28; Claude — v1.15 derivation refresh against Auditor_Protocols.md v0.41/Unknowns.md v4.87 (human-directed) — Rules 9/10 (AP-033/AP-035) added to AI Contribution Rules, a real content gap rather than a version-string lag; token ceiling note and role declaration string updated to v0.41; kit's own char-count drift against its 12,000 Drift Indicator ceiling noted, not newly introduced (tracked as FAK-005, Open since v1.3); Grok — Skeptic/Auditor, 2026-09-03, all six gates cleared; Claude — FAK-014 logged and derivation citation refreshed to Unknowns.md v4.93 (human-directed), 2026-09-03; Claude — v1.17 FAK-015 logged (third occurrence of the same citation-staleness pattern), derivation citation refreshed to Unknowns.md v5.10, "Current: N open" summary line desync fixed (human-directed), 2026-09-10 |
+| Open Unknowns  | 7 — see Sidecar Link                                                |
 | Sidecar Link   | Archive/Logs/Forge_Audit_Kit_Changelog.md#sidecar--auditor-notes--unknowns |
 | Ethical Anchor | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
-**Derived from:** `Admin/Auditor_Protocols.md` v0.41 | `Admin/Verification_Gates.md` v0.7 | `Unknowns.md` v4.93
+**Derived from:** `Admin/Auditor_Protocols.md` v0.41 | `Admin/Verification_Gates.md` v0.7 | `Unknowns.md` v5.10
 
 When this file contradicts a full source document, the full source document prevails.
 
@@ -321,9 +321,9 @@ sidecar entries live in the owning file; every other file in the
 repository keeps its sidecar in-body. Adversarial Battery record for
 this kit is in the same file, §Adversarial Battery Record.
 
-Current: 5 open (FAK-001, FAK-005, FAK-006, FAK-009, and one flagged for
-`Canonical_Terms.md` rather than resolved here — see Battery record,
-Cycle/CURRENT_CYCLE finding).
+Current: 7 open (FAK-001, FAK-005, FAK-006, FAK-009, FAK-014, FAK-015,
+and one flagged for `Canonical_Terms.md` rather than resolved here —
+see Battery record, Cycle/CURRENT_CYCLE finding).
 
 ---
 
@@ -332,7 +332,14 @@ Cycle/CURRENT_CYCLE finding).
 Full history: `Archive/Logs/Forge_Audit_Kit_Changelog.md` (relocated out of this
 kit at v1.10 — add new entries there, not here).
 
-Most recent: v1.16 (2026-09-03) — FAK-014 logged: derivation citation
+Most recent: v1.17 (2026-09-10) — FAK-015 logged: derivation citation
+to `Unknowns.md` had gone stale a third time (v4.93 → live v5.10),
+the same recurring pattern FAK-014 already named as structurally
+unfixed. Citation refreshed to v5.10. Also fixed a desynced summary
+line that had never counted FAK-014. Open Unknowns 6 → 7.
+Full account in `Archive/Logs/Forge_Audit_Kit_Changelog.md`.
+
+Prior: v1.16 (2026-09-03) — FAK-014 logged: derivation citation
 to `Unknowns.md` had gone stale a second time (v4.87 → live v4.93,
 missed by a same-day Grok audit that cleared all six gates without
 catching it) despite the kit's own Drift Indicators naming this exact
