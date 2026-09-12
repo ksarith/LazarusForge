@@ -31,9 +31,9 @@
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-09-08/09 — fifteen resolution-log passes across two days: R0-R4 taxonomy (HP-001, propagated to Gate_03_Reduction.md), Oversight multi-exit formalization (HP-002), Flow Invariants §1.1 (HP-003), Gate D polarity rewrite (HP-004), boundary-case Examples 4-7 (HP-005 partial), cross-layer reconciliation spinning off FL-003/FL-004 (HP-006), Tooling_Inventory.md creation (HP-007), per-deployment wording + Deployment Localization Doctrine, Gate B Secondary Test + FL-005, Gate Decision Contracts §1.2 + explicit UNKNOWN transitions + re-entry contract (HP-008/009/015), terminal-state distinction (HP-014); FL-001 remains Blocking. Open Unknowns count corrected 2→6 same pass (stale since before FL-003/004/005 were added — a Grok status summary had repeated the stale value without recounting). Prior: 2026-08-08 |
+| Last Audit       | 2026-09-10 — ChatGPT ran a full multi-phase audit (Phases 1-6: structural validation, scope validation, assumption extraction, internal coherence, cross-module consistency, evidence validation) under Auditor_Protocols.md v0.41; Claude verified every substantive claim against live source before acting. Six mechanical fixes applied directly (Lessons Learned heading restored over a pre-existing orphaned table, stale Gate Correspondence Oversight row corrected, FL-003 self-contradiction fixed, "Eight sequential decision gates" reworded, §1.3 bare filenames fully-qualified, illustrative example values labeled non-measured). Six new Unknowns registered (FL-008 through FL-013); FL-007 strengthened with cross-file evidence. One new finding beyond the audit itself: FL-001's Resolution Path cites a Gate_02_Triage.md worked example that doesn't exist (FL-009). One error caught in the audit's own output (EV-011 misattributed a quote's section). Prior: 2026-09-08/09 — fifteen resolution-log passes across two days: R0-R4 taxonomy (HP-001, propagated to Gate_03_Reduction.md), Oversight multi-exit formalization (HP-002), Flow Invariants §1.1 (HP-003), Gate D polarity rewrite (HP-004), boundary-case Examples 4-7 (HP-005 partial), cross-layer reconciliation spinning off FL-003/FL-004 (HP-006), Tooling_Inventory.md creation (HP-007), per-deployment wording + Deployment Localization Doctrine, Gate B Secondary Test + FL-005, Gate Decision Contracts §1.2 + explicit UNKNOWN transitions + re-entry contract (HP-008/009/015), terminal-state distinction (HP-014). Prior: 2026-08-08 |
 | Auditor          | Claude — Retrofit/Auditor                                           |
-| Open Unknowns    | 8                                                                   |
+| Open Unknowns    | 13                                                                  |
 | Active Disputes  | 1                                                                   |
 | Highest Risk     | Medium                                                              |
 | Sidecar Link     | #auditor-notes--unknowns                                            |
@@ -54,7 +54,14 @@
   on that point.
 - v0 scope, inputs, and explicit non-goals
 - Defined Terms for all shared operational vocabulary
-- Eight sequential decision gates (Intake through Utilization)
+- Ten sequential processing stages (Intake through Utilization),
+  of which five are actual decision points — Gates A-D and
+  Human/AI Oversight. Distinct from Operations/Gate_01 through
+  Gate_07 (operational modules) and from Verification Gates 1-6
+  (document audit/promotion gates) — corrected 2026-09-10
+  (ChatGPT audit, P5-012/S2-007) from "Eight sequential decision
+  gates," which conflated this file's own decision-gate count
+  with the unrelated operational-module numbering
 - Gate Correspondence table mapping triage outcomes to gates
 - Outcome paths and reversibility notes for each path
 - Fabrication priority order and want/need policy
@@ -241,7 +248,7 @@ Triage station outcomes map to these gates. See
 | B | Repairable within current tooling? | Repair & Learn |
 | C | Useful in reduced/different application? | Repurpose |
 | D | Is Reduction the correct residual path? | Reduction |
-| Oversight | Any credible active need? | Hold or Reduction |
+| Oversight | Any credible active need? | Return to Flow / Hold / Reclassify / Escalate / Terminate — see Oversight Gate section and §1.2 for the full contract (row corrected 2026-09-10, ChatGPT audit IC-004/P5-013 — previously read "Hold or Reduction," stale since HP-002 formalized five exits) |
 
 ---
 
@@ -429,14 +436,14 @@ than naming just one.
 
 | Transition | Flow owns (routing decision) | Operations owns (evidence-gathering / downstream procedure) | Architecture/Admin owns (invariant or authority) |
 |------------|-------------------------------|----------------------------------------------------------------|----------------------------------------------------|
-| Gate A | This file — function test, PASS/FAIL/UNKNOWN routing | `Gate_02_Triage.md` — triage station assessment producing function evidence (Gate Correspondence) | — |
-| Gate B | This file — Primary/Secondary test, routing | `Gate_02_Triage.md` — failure localization/accessibility evidence; `Tooling_Inventory.md` — live tooling-capability state (ASM-003/FL-004) | ASM-003 (this file) — the tooling-known assumption itself |
-| Gate C | This file — reduced-application test, routing; disassembly decision | `Gate_02_Triage.md` — reduced-application evidence | ASM-007/FI-3 (this file) — re-entry contract governs what happens after |
-| Gate D | This file — residual-path test, routing | `Gate_02_Triage.md` — material/recovery evidence gathering for the decision itself; `Gate_03_Reduction.md` — the Reduction procedure once Gate D routes YES | FL-002 (this file) — Reduction↔Gate_04 output envelope cross-validation, still pending |
+| Gate A | This file — function test, PASS/FAIL/UNKNOWN routing | `Operations/Gate_02_Triage.md` — triage station assessment producing function evidence (Gate Correspondence) | — |
+| Gate B | This file — Primary/Secondary test, routing | `Operations/Gate_02_Triage.md` — failure localization/accessibility evidence; `Operations/Tooling_Inventory.md` — live tooling-capability state (ASM-003/FL-004) | ASM-003 (this file) — the tooling-known assumption itself |
+| Gate C | This file — reduced-application test, routing; disassembly decision | `Operations/Gate_02_Triage.md` — reduced-application evidence | ASM-007/FI-3 (this file) — re-entry contract governs what happens after |
+| Gate D | This file — residual-path test, routing | `Operations/Gate_02_Triage.md` — material/recovery evidence gathering for the decision itself; `Operations/Gate_03_Reduction.md` — the Reduction procedure once Gate D routes YES | FL-002 (this file) — Reduction↔Gate_04 output envelope cross-validation, still pending |
 | Oversight | This file — five-exit resolution, want/need criteria | **Not yet assigned to any Operations file — see FL-006.** | **Not yet assigned — see FL-006.** Escalate's "exceeds this flow's own decision authority" implies an authority structure this repository has not yet named an owner for. |
 
-Gate D's row is the subtlest: `Gate_02_Triage.md` gathers the
-evidence Gate D's test consumes; `Gate_03_Reduction.md` owns what
+Gate D's row is the subtlest: `Operations/Gate_02_Triage.md` gathers the
+evidence Gate D's test consumes; `Operations/Gate_03_Reduction.md` owns what
 happens physically once that test routes to Reduction. These are
 different responsibilities that the pre-existing cross-references
 already kept separate — this table only makes the separation
@@ -828,6 +835,23 @@ Oversight Gate review (Oversight exit: **Hold**). Do not route to Reduction in
 operator absence unless automated shutdown doctrine
 explicitly permits it.
 
+**Oversight itself unavailable or saturated** — added
+2026-09-10, FL-013, closing the loop with
+`Operations/Gate_01_Intake.md`'s existing provisional
+guidance rather than restating it. Distinct from "Operator
+unavailable" above (a single momentary absence) — this
+covers the Oversight Gate as a destination running behind
+or backlogged. Resolution: items awaiting Oversight review
+remain in hold and do not route forward while waiting; if
+the Oversight queue exceeds a defined threshold, new
+escalations are logged and queued, safety-critical first,
+then age of hold *(threshold itself — Placeholder, defined
+operationally)*; held items do not expire — a correctly
+held item is always better than a prematurely routed one.
+See `Operations/Gate_01_Intake.md`'s "Oversight Gate
+escalation capacity" for the full provisional doctrine this
+entry adopts by reference.
+
 **Component Library full or unmaintained** — Gate A
 outputs have no reliable destination. Resolution:
 treat as Gate C items until library capacity is restored.
@@ -862,6 +886,85 @@ When referencing an unknown, use the local sidecar ID as
 primary. Use UNK-* only when the unknown has been formally
 escalated to cross-module status in Unknowns.md.
 Legacy UNK-* identifiers are preserved as aliases only.
+
+---
+
+## G1 Fallacy Checklist — Applied 2026-09-10
+
+*Per Admin/Auditor_Protocols.md's Fallacy Checklist. Applied*
+*against this file's current content, not asserted from the*
+*Resolution Log's historical reasoning checks — those record*
+*individual findings, not a documented full-battery pass. This is*
+*that pass. Disposition per item, findings routed to existing*
+*Unknowns where applicable rather than duplicated here.*
+
+1. **Magic Energy** — PASS. This file makes no energy-availability
+   claims; defers to Operations/Energy.md throughout. KPI is
+   explicitly Placeholder, doesn't assume a demand baseline exists.
+2. **Friction Blindness** — PASS / not applicable at this layer.
+   This is a routing/decision document, not a mechanical spec;
+   friction, wear, and thermal losses are Operations-layer concerns
+   (Gate_03/04/05), correctly deferred.
+3. **Energy Density Paradox** — PASS. No quantified recovery-vs-cost
+   claim is made anywhere in this file to violate.
+4. **Semantic Drift** — REVISE. Spec Gates (0/6) has never been
+   silently advanced; no unknown has been marked Resolved without
+   basis. But this file is repo-wide overloaded terminology's
+   epicenter — see FL-012 ("Gate" meaning four different things).
+   Also worth naming: this file is itself named as the Semantic
+   Drift reference standard other files get checked against
+   (Fallacy Checklist item 4's own text) — a heavier-than-usual
+   obligation to stay internally consistent, several instances of
+   which needed correction this session (FL-003, Gate
+   Correspondence, "eight sequential gates" — all now fixed).
+5. **Scope Creep Disguised as Refinement** — PASS. New capability
+   (Gate B's Secondary Test) was explicitly labeled as new logic
+   with a Provisional warning, not framed as mere consolidation.
+   Every other 2026-09-08/09/10 addition was verified against
+   existing content before being framed as formalization.
+6. **Hallucinated Files or Cross-References** — REVISE. All
+   Operations/Admin cross-references checked this session resolve
+   to real files — except one: FL-009 (a claimed
+   `Gate_02_Triage.md` worked example that doesn't exist).
+7. **Confidence Without Basis** — REVISE, minor. The KPI is properly
+   Placeholder. But Examples 4/5's illustrative values (45 min,
+   1.2 m) were labeled "illustrative, not measured" rather than
+   with one of the five canonical labels (Measured / Replicated /
+   Simulated / Analogous / Placeholder) — per this item's own rule,
+   unlabeled numbers default to Placeholder, and constructed example
+   inputs for a worked scenario don't cleanly fit any of the five
+   existing categories. Treat as Placeholder by default; the
+   five-label taxonomy may need a sixth category for illustrative
+   scenario inputs, but that's a repo-wide Admin/Auditor_Protocols.md
+   question, not something to invent locally here.
+8. **Lifecycle Truncation** — PASS, with a caveat. Degraded
+   Operation & Failure Modes exists as its own section. End-of-Life
+   is covered via the Lifecycle loop (HP-013) and Termination
+   Conditions. "Maintenance Access" has no literal matching section,
+   but is functionally satisfied by the Resolution Log and Drift
+   Indicators, which serve that role for a document rather than a
+   physical module.
+9. **Incomplete by Omission** — REVISE. Already-logged omissions:
+   Oversight's evidence/authority ownership (FL-006), the Gate
+   D/Oversight authority boundary (FL-007), Embedded Value
+   Preservation's ownership (FL-011). No new omission found beyond
+   what's already captured.
+10. **The Turd Problem** — REVISE. Stripped to one sentence: "An item
+    that fails Gates A-D and has no genuine retained-use need gets
+    reduced to feedstock; every other outcome preserves it at the
+    highest value level a gate can confirm." That sentence does not
+    yet fully survive adversarial reduction — it depends on
+    unresolved authority semantics (does Oversight's need-evaluation
+    genuinely gate Reduction, or can it be bypassed/overridden per
+    FL-007, and does FI-2's Hold guarantee actually hold under the
+    stale-tooling exception per FL-008). The foundation is sound;
+    the sentence isn't yet fully defensible word-for-word.
+
+**G1 disposition: REVISE.** No fallacy found that isn't already
+captured by an existing Unknown (FL-006, FL-007, FL-008, FL-009,
+FL-012) except item 7's minor labeling-taxonomy gap, noted above but
+not escalated to a new Unknown — it's a five-label-system question
+for Admin/Auditor_Protocols.md, not a Forge_flow.md defect.
 
 ---
 
@@ -910,7 +1013,15 @@ No active fabrication queue item requires it. A newer
 digital equivalent exists in the Component Library.
 - Gates A through D: All pass technically — item is
   functional, repairable, repurposable, and material
-  is recoverable.
+  is recoverable. *(Clarified 2026-09-10, ChatGPT audit*
+  *EV-011: this describes the item's properties*
+  *hypothetically satisfying each gate's test in isolation,*
+  *for the purpose of this example's premise — not a claim*
+  *that gate routing is cumulative. In actual routing, Gate*
+  *A alone would pass this item straight to Component*
+  *Library; Gates B-D are never reached. This example*
+  *exists specifically to set up the Oversight want/need*
+  *question, not to describe normal sequential flow.)*
 - Human/AI Oversight Gate: Is there a genuine need?
   Apply minimum criteria — no active queue dependency,
   substitute exists, no measured scarcity, no failure
@@ -923,6 +1034,9 @@ active operational requirements, not hypothetical value.*
 ---
 
 **Example 4 — Repairable but not worth it**
+*(Illustrative scenario input — 45 min is a constructed*
+*example value, not a measured shop-floor result. Labeled*
+*2026-09-10, ChatGPT audit EV-006.)*
 Item: Bench grinder. Motor still spins, one grinding
 wheel is missing, the second is cracked, switch
 intermittent. Replacement wheels and switch are
@@ -955,6 +1069,9 @@ itself.*
 ---
 
 **Example 5 — Repurpose vs. material recovery tension**
+*(Illustrative scenario input — 1.2 m is a constructed example*
+*dimension, not a Forge-tested limit. Labeled 2026-09-10,*
+*ChatGPT audit EV-007.)*
 Item: Aluminum extrusion, 1.2 m long, one end crushed,
 rest undamaged. Could serve as structural stock or jig
 material (Gate C), or be reduced to clean aluminum
@@ -1081,6 +1198,85 @@ are data — they feed FL-001 resolution.
 
 ---
 
+## G3 Adversarial Challenge Battery — Class Mapping (2026-09-10)
+
+*Per Admin/Auditor_Protocols.md: "Partial application (selected*
+*challenge classes) is acceptable for Exploration-stage documents.*
+*Document which classes were applied and why others were deferred."*
+*This is that documentation — mapping the five scenarios above and*
+*this file's other adversarial content against the ten defined*
+*classes, rather than treating five authored scenarios as if they*
+*were a comprehensive battery.*
+
+**Applied (3 of 10):**
+- **Class 3 — Incentive Corruption:** Scenario 1 (throughput
+  pressure) directly matches this class's own named example
+  ("throughput over safety"). Countermeasure named: route to
+  Unknown Bulk hold, log backlog rate, throughput is not a gate
+  condition.
+- **Class 4 — Semantic Drift Attacks:** FL-008 is the concrete
+  scenario — FI-2's "never to irreversible action" wording supports
+  two operator-legitimate readings against the stale-tooling
+  exception. Logged as an unknown rather than silently resolved,
+  per this class's own minimum requirement.
+- **Class 5 — Unknown Unknown Pressure Tests:** Example 6 (Boundary-
+  Case Worked Examples — unidentified plastic-metal assembly)
+  directly covers this: routes to Unknown Bulk hold rather than
+  guessing or routing an unknown forward as a known.
+
+**Deferred (7 of 10) — Exploration-stage, not yet exercised:**
+- **Class 1 — Assumption Inversion** (name three hidden assumptions,
+  what happens when each fails) — not yet exercised as a dedicated
+  scenario; Phase 3's "hidden assumptions" pass (A3-001 through
+  A3-007) is adjacent but wasn't structured against this class's
+  specific minimum requirement.
+- **Class 2 — Failure Amplification** (trace one failure through two
+  downstream consequences) — not yet exercised.
+- **Class 6 — Recursive Justification Loops** (what external reality
+  check exists beyond self-reference) — not yet exercised. Worth
+  naming: this is a live risk for the audit process itself, not just
+  the document — an audit that only checks documents against other
+  documents in the same repository is exactly the loop this class
+  warns about. This file's claims are ultimately checked against
+  physical reality only once real Gate B data and Reduction method
+  selection exist (FL-005, FL-002) — until then, internal consistency
+  is the strongest test available, not a substitute for it.
+- **Class 7 — Human Fatigue and Cognitive Erosion** (12-hour
+  repetition, shift handoff, normalization of deviance) — not yet
+  exercised; requires real operational conditions this Exploration-
+  stage document has no basis to model.
+- **Class 8 — Malicious Actor Simulation** (intentional abuse by a
+  knowledgeable actor) — not yet exercised.
+- **Class 9 — Epistemic Corruption** (systematic degradation through
+  well-intentioned but incorrect contributions) — not yet exercised
+  within this file's own content, though notable: the *audit
+  process* around this file has been actively managing exactly this
+  risk (independent source-verification of every agent claim this
+  session, catching several confident-but-wrong claims) — the
+  countermeasure exists at the process level, not yet documented as
+  a property of the specification itself.
+- **Class 10 — Systemic Coupling and Cascade** (if this module fails,
+  what fails with it, second, third) — not yet exercised.
+
+**G3 disposition: REVISE.** Three classes genuinely applied with
+concrete scenarios meeting their stated minimum requirements; seven
+honestly deferred rather than claimed via the five existing
+scenarios stretched to fit. No new Unknowns created for the deferred
+classes — per the protocol's own caution against overproducing
+governance artifacts, and because "not yet exercised" is an honest
+Exploration-stage status, not itself a defect requiring a tracked
+Unknown until a concrete gap is found within a class.
+
+---
+
+## Lessons Learned
+
+*Section heading added 2026-09-10 (F1-001, ChatGPT audit). The*
+*table below already existed with real content — it was orphaned*
+*without its own heading, sitting directly under Adversarial*
+*Routing Scenarios. No content changed, only the missing structural*
+*element (required by Admin/File_Template.md §7).*
+
 | Date | Evidence Type | What Was Tried | What Failed | What Was Learned | Confidence | Revalidation Needed |
 |------|---------------|----------------|-------------|------------------|------------|---------------------|
 | May 2026 | Audit Review | Gate A "equivalent function" left undefined | Created overlap with Gate C — same item could route to either | Gate A requires function in original application context; Gate C handles all reduced or different applications. Definitions must be mutually exclusive at every boundary | Analogous | No — definition is stable |
@@ -1136,7 +1332,11 @@ creates inconsistency across forge instances.
 - Gate Correspondence table added — partial resolution.
 - Motor worked example added to Operations/Gate_02_Triage.md
   (65% torque → Gate A fail, Gate C pass) — partial
-  resolution.
+  resolution. **Discrepancy found 2026-09-10 (ChatGPT audit**
+  **EV-008, extended by Claude): no "torque" or "65%" content**
+  **currently exists anywhere in Operations/Gate_02_Triage.md —**
+  **this cross-reference may be broken, not just an illustrative-**
+  **value labeling issue. See FL-009.**
 - Assembly disassembly clarification added 2026-05-15 —
   Gate C decision on assembly spawns independent Gate A
   evaluations per component. See ASM-007 and Lessons
@@ -1231,7 +1431,7 @@ against an unconfirmed input.
 
 ---
 
-### FL-003 — Self-replication architecture ownership undefined
+### FL-003 — Self-replication architecture ownership assigned but incomplete
 
 | Field         | Value                                            |
 |---------------|--------------------------------------------------|
@@ -1246,19 +1446,47 @@ against an unconfirmed input.
 
 **Description:** `Operations/Gate_05_Separation_Thermal.md`'s Scope
 Boundary points self-replication architecture and loop closure
-logic to this file (jointly with Geck_forge_seed.md), but this
-file's own Scope Boundary never claims that ownership and contains
-no self-replication content. Found during HP-006 cross-layer
-reconciliation.
+logic to this file (jointly with Geck_forge_seed.md). **Update
+2026-09-10 (ChatGPT audit, S2-002/P5-007):** this file's Scope
+Boundary was updated during the original HP-006 pass to acknowledge
+the pending ownership claim (see "Self-replication architecture or
+loop closure logic... (pending — see FL-003)") — this Description
+was never updated to match and had drifted into direct
+self-contradiction, still saying the Scope Boundary "never claims
+that ownership" when it explicitly does, with a pending qualifier.
+The real state is: ownership is now claimed, but not yet
+operationally meaningful — the Scope Boundary stub is an
+acknowledgment, not an architectural definition. Found during HP-006
+cross-layer reconciliation; contradiction found during the
+2026-09-10 ChatGPT audit.
 
 **Why It Matters:** Self-replication is referenced as a downstream
 goal from at least one operational file, but nothing in the
 architecture layer currently owns defining what that architecture
 actually is — an orphaned handoff.
 
+**Resolution Path** (sharpened 2026-09-10, ChatGPT Phase 9 — the
+original path implicitly framed this as "find an owner," which is
+now done; the residual path is different):
+1. Ownership is assigned (this file + Geck_forge_seed.md) — done.
+2. Define required architecture boundaries: input/output boundaries,
+   dependency boundaries, safety constraints, relationship to the
+   material loop, relationship to Fabrication, re-entry/seed
+   semantics.
+3. Reconcile Forge_flow.md against Geck_forge_seed.md — determine
+   which file owns which piece rather than assuming both own
+   everything jointly.
+4. Identify missing implementation contracts.
+5. Close when the architecture is sufficiently specified against
+   the boundaries named in step 2 — not merely when a paragraph
+   exists.
+Do not treat "ownership named" as equivalent to "architecture
+defined." Those are different closure conditions, and only the
+first is currently satisfied.
+
 ---
 
-### FL-004 — Tooling inventory (ASM-003) has no owning file
+### FL-004 — Tooling inventory owned but unpopulated — not yet usable as Gate B evidence
 
 | Field         | Value                                            |
 |---------------|--------------------------------------------------|
@@ -1289,15 +1517,25 @@ cannot be fully deterministic without a real, owned, maintained
 inventory to evaluate against — this is a live gap in FL-001's own
 determinism claim, not just a documentation nicety.
 
-**Resolution Path:**
+**Resolution Path** (strengthened 2026-09-10, ChatGPT Phase 9 —
+population alone is not a sufficient closure condition):
 - ~~Decide ownership~~ Done 2026-09-08 —
   `Operations/Tooling_Inventory.md` created.
-- Once the inventory is first populated, close this entry and update
-  ASM-003's Expiry Trigger — for that deployment's own copy of these
-  files. This repository is shared across independent Forge builds;
-  no single population of the inventory closes this for anyone but
-  the instance that performed it (see Tooling_Inventory.md's File
-  Purpose and TI-001).
+- Closure requires all of, not just population:
+  1. Inventory populated with real tools.
+  2. A named human owner (still `[to be assigned]` as of 2026-09-10
+     — see that file's TI-001).
+  3. A maintenance/update mechanism established and actually
+     followed, not merely stated.
+  4. The inventory demonstrated usable as live Gate B evidence — a
+     populated table that's stale, disputed, or disconnected from
+     actual equipment doesn't satisfy ASM-003's "known and
+     maintained" requirement even if every row has a value.
+- Update ASM-003's Expiry Trigger once all four are satisfied — for
+  that deployment's own copy of these files. This repository is
+  shared across independent Forge builds; no single population of
+  the inventory closes this for anyone but the instance that
+  performed it (see Tooling_Inventory.md's File Purpose and TI-001).
 
 ---
 
@@ -1355,8 +1593,8 @@ before this pass.
 | Field         | Value                                            |
 |---------------|--------------------------------------------------|
 | Status        | Open                                              |
-| Risk          | Low                                               |
-| Priority      | Minor                                             |
+| Risk          | Medium (raised from Low 2026-09-10 — ChatGPT Phase 8: the Escalate exit invokes an authority structure this repository has not named, which is a separation-of-powers interface gap, not an administrative filing problem) |
+| Priority      | Major (raised from Minor 2026-09-10)               |
 | Type          | Cross-Module / Governance                          |
 | Blocking      | No                                                 |
 | Owner         | Architecture/Forge_flow.md                          |
@@ -1365,8 +1603,8 @@ before this pass.
 
 **Description:** Found while building §1.3 Transition Ownership
 (HP-011). Gates A-D each have a clear Operations owner for their
-evidence-gathering procedure (`Gate_02_Triage.md`, plus
-`Tooling_Inventory.md` for Gate B). Oversight does not — no
+evidence-gathering procedure (`Operations/Gate_02_Triage.md`, plus
+`Operations/Tooling_Inventory.md` for Gate B). Oversight does not — no
 Operations file is named as the owner of gathering exception
 evidence (contamination reports, scarcity data, etc.), and no
 Admin file is named as the owner of the authority structure that
@@ -1378,14 +1616,29 @@ nicety — Oversight is the gate closest to human judgment and highest
 consequence besides Reduction itself, and it currently has no
 operational or governance home outside this file.
 
-**Resolution Path:**
+**Resolution Path** (split 2026-09-10, ChatGPT Phase 9 — the
+original single path risked solving the easier half while leaving
+the more consequential half looking resolved):
+
+*A. Evidence ownership* (who gathers/maintains queue state,
+substitute availability, scarcity evidence, failure-rate evidence,
+dependency information):
+- Determine whether an existing Operations file already implicitly
+  covers this and simply hasn't been cross-referenced here.
+- If not, this may need its own lightweight Operations file, similar
+  in spirit to how HP-007 resolved FL-004.
+
+*B. Authority ownership* (who is actually authorized to decide when
+this flow's own authority ends — what Escalate invokes):
 - Determine whether an existing Admin file (Governance_Charter.md,
-  Safety_Protocols.md, or similar) already implicitly covers
-  operator decision authority and simply hasn't been cross-referenced
-  here — check before assuming a new file is needed.
-- If no existing owner fits, this may need its own lightweight
-  Operations or Admin file, similar in spirit to how HP-007 resolved
-  FL-004.
+  Safety_Protocols.md, or similar) already implicitly covers operator
+  decision authority and simply hasn't been cross-referenced here.
+- This is the more consequential half and directly intersects FL-007
+  — resolving A without B would leave Oversight looking staffed
+  while its actual decision authority remains unnamed.
+
+Whether A and B become separate Unknown IDs once resolved is a
+governance decision, not something to split unilaterally here.
 
 ---
 
@@ -1394,9 +1647,9 @@ operational or governance home outside this file.
 | Field         | Value                                            |
 |---------------|--------------------------------------------------|
 | Status        | Open                                              |
-| Risk          | Low                                               |
-| Priority      | Minor                                             |
-| Type          | Architectural                                      |
+| Risk          | Medium (raised from Low 2026-09-10 — confirmed to touch Admin/Ethical_Constraints.md's High-Risk/VERIFIED authorization requirement, not purely internal architecture) |
+| Priority      | Major (raised from Minor 2026-09-10)               |
+| Type          | Architectural / Ethical Interface                  |
 | Blocking      | No                                                 |
 | Owner         | Architecture/Forge_flow.md                          |
 | First Logged  | 2026-09-10                                        |
@@ -1441,10 +1694,289 @@ explicitly rather than leaving implicit.
   determined Reduction, not a fresh material-recovery judgment.
 - Related to FL-006 (Oversight's authority structure has no named
   owner at all) — resolving that first may clarify this too.
+- **Update 2026-09-10 (ChatGPT audit, IC-002/IC-003/IC-007/P5-004/**
+  **P5-017):** this question is now confirmed to propagate across
+  three files, not just this one. `Operations/Gate_03_Reduction.md`
+  explicitly permits Reduction via two separate entry conditions —
+  "the item passed Gates A-D and failed all four... or has been
+  explicitly routed by the Human/AI Oversight Gate" — meaning the
+  downstream execution file already encodes Oversight as an
+  independent Reduction-authorizing path, not merely a timing
+  decision on Gate D's determination. That's evidence toward
+  reading B (Oversight has real override/authorization authority),
+  not reading A, though this file's own text still doesn't confirm
+  which was intended. Also newly relevant: `Admin/Ethical_Constraints.md`
+  requires explicit authorization (not inferred) for irreversible
+  material action, and rates it High-Risk requiring VERIFIED status
+  — meaning this isn't purely an internal architecture question
+  anymore. Three concepts need to be kept distinct going forward:
+  routing ("this item belongs on the Reduction pathway"),
+  authorization ("Reduction may begin"), and execution readiness
+  (`Gate_03_Reduction.md`'s own hard prerequisites — human presence,
+  no active contamination, etc., which are well-specified). This
+  file currently only clearly specifies the third.
+- **Closure sequence (added 2026-09-10, ChatGPT Phase 9 — the prior**
+  **framing above was correct in spirit but not stated as an**
+  **explicit, ordered closure test):**
+  1. Define Gate D's authority (does YES mean a final determination,
+     or a recommendation?).
+  2. Define Oversight's authority (can it independently authorize
+     Reduction, or only control timing/exceptions around a
+     determination Gate D already made?).
+  3. Define whether Oversight can create an alternate Reduction
+     route distinct from the normal A→B→C→D route — the evidence in
+     `Gate_03_Reduction.md`'s dual entry conditions suggests it
+     currently can, whether or not that was deliberate.
+  4. Define the authorization boundary explicitly: routing ≠
+     authorization ≠ execution readiness, and state which of the
+     three this file's own language actually establishes at each
+     step.
+  5. Reconcile `Operations/Gate_03_Reduction.md` against whatever
+     answer steps 1-4 produce.
+  6. Reconcile `Admin/Ethical_Constraints.md`'s explicit-authorization
+     requirement against the answer.
+  7. Update the Flow State/Transition Model and Gate Correspondence
+     table to match — only after 1-6, not before.
+  Only close FL-007 once all seven are satisfied. Partial progress
+  (e.g. answering 1-2 without 5-6) should not be recorded as closure.
 
 ---
 
-### DS-001 — Purification stage terminology (cross-reference)
+### FL-008 — FI-2's "never to irreversible action" scope is ambiguous against the stale-tooling exception
+
+| Field         | Value                                            |
+|---------------|--------------------------------------------------|
+| Status        | Open                                              |
+| Risk          | Medium                                            |
+| Priority      | Major                                             |
+| Type          | Architectural / Invariant                          |
+| Blocking      | No                                                 |
+| Owner         | Architecture/Forge_flow.md                          |
+| First Logged  | 2026-09-10                                        |
+| Last Reviewed | 2026-09-10                                        |
+
+**Description:** Raised by ChatGPT (IC-001), verified against live
+text. FI-2 states "uncertainty defaults to hold, never to
+irreversible action." The Degraded Operation section's stale-tooling
+rule instead converts UNKNOWN into a defined FAIL (routing to Gate
+C, not Hold). Under a narrow, literal reading of FI-2 ("never to
+irreversible action"), this doesn't actually violate the invariant —
+Gate C is not R4/irreversible, so the specific guarantee FI-2 makes
+is technically preserved. But a natural, equally available reading
+treats "defaults to hold" as the substantive promise, in which case
+the stale-tooling rule is a live exception to a stated invariant
+that claims to have none. The text does not disambiguate which
+reading is intended.
+
+**Why It Matters:** An invariant whose own wording supports two
+different readings is a real defect independent of which reading
+turns out correct — a careful reader (this audit) reached the
+stricter reading and flagged a contradiction that may or may not
+actually exist depending on interpretation. That ambiguity itself
+should not survive in a document aiming to be a testable
+state-transition specification.
+
+**Resolution Path:**
+- Decide which reading is intended and tighten FI-2's wording to
+  make it unambiguous — either narrow it explicitly ("never routes
+  directly to Reduction or other R4 action" — permitting non-Hold,
+  non-irreversible exceptions like Gate C), or tighten the
+  stale-tooling rule to route to Hold instead of Gate C-via-FAIL if
+  the stricter reading is intended.
+- Do not resolve by silently picking one reading — this changes
+  what the invariant actually promises and should be a deliberate
+  choice, not a documentation cleanup.
+
+---
+
+### FL-009 — Cross-reference to a Gate_02_Triage.md worked example may be broken
+
+| Field         | Value                                            |
+|---------------|--------------------------------------------------|
+| Status        | Open                                              |
+| Risk          | Low                                               |
+| Priority      | Minor                                             |
+| Type          | Cross-Module / G5 Cross-reference Integrity        |
+| Blocking      | No                                                 |
+| Owner         | Architecture/Forge_flow.md                          |
+| First Logged  | 2026-09-10                                        |
+| Last Reviewed | 2026-09-10                                        |
+
+**Description:** FL-001's own Resolution Path (twice) states a
+"motor worked example added to Operations/Gate_02_Triage.md (65%
+torque → Gate A fail, Gate C pass)." Verified: no occurrence of
+"torque" or "65%" exists anywhere in the current
+`Operations/Gate_02_Triage.md`. Found while checking ChatGPT's
+EV-008 finding (which only flagged the value as needing an
+illustrative label) — the deeper issue is the referenced content
+may not exist at all, or may have existed and been removed without
+this cross-reference being updated.
+
+**Why It Matters:** This file's own Resolution Log is treated as a
+trustworthy historical record throughout this repository's audit
+practice. A confirmed-false "this was added" claim, sitting
+un-caught since presumably 2026-05-15, undermines that trust exactly
+where it matters — in the record used to establish what evidence
+actually exists.
+
+**Resolution Path:**
+- Check `Operations/Gate_02_Triage.md`'s own history/resolution log
+  for whether this example was ever actually added and later
+  removed, or never added despite the claim.
+- If never added: either add it now (if still useful) or correct
+  the Resolution Path text to stop claiming it exists.
+- If it existed and was removed: note when/why in both files.
+
+---
+
+### FL-010 — Pattern-triggered Oversight escalation has no state-machine representation
+
+| Field         | Value                                            |
+|---------------|--------------------------------------------------|
+| Status        | Open                                              |
+| Risk          | Low                                               |
+| Priority      | Minor                                             |
+| Type          | Architectural / Cross-Module                       |
+| Blocking      | No                                                 |
+| Owner         | Architecture/Forge_flow.md                          |
+| First Logged  | 2026-09-10                                        |
+| Last Reviewed | 2026-09-10                                        |
+
+**Description:** Raised by ChatGPT (P5-001a). `Operations/Gate_01_Intake.md`
+allows five consecutive unresolved unknown items to trigger
+Oversight regardless of individual item status — a sensible
+escalation mechanism, but one this file's formal Oversight model
+(entered from Gate D failure or specific per-item exception
+triggers) doesn't represent. Unclear whether this creates an
+Oversight state for the affected items, for the operator/process, or
+both — the state machine as currently written is item-level only.
+
+**Why It Matters:** Not a contradiction, but a real gap between what
+the formal model represents and a real escalation path that already
+exists downstream.
+
+**Resolution Path:**
+- Decide whether pattern-triggered escalation needs its own entry
+  in the Flow State/Transition Model or is better left as
+  Gate_01-owned operational doctrine that feeds into the existing
+  Oversight model without needing separate formal representation.
+
+---
+
+### FL-011 — Embedded Value Preservation checkpoint's ownership is unclear
+
+| Field         | Value                                            |
+|---------------|--------------------------------------------------|
+| Status        | Open                                              |
+| Risk          | Low                                               |
+| Priority      | Minor                                             |
+| Type          | Cross-Module / Interface                           |
+| Blocking      | No                                                 |
+| Owner         | Architecture/Forge_flow.md                          |
+| First Logged  | 2026-09-10                                        |
+| Last Reviewed | 2026-09-10                                        |
+
+**Description:** Raised by ChatGPT (P5-003/IC-006). `Operations/Gate_02_Triage.md`
+introduces an "Embedded Value Preservation" check before full
+Reduction, which is sensible and aligned with salvage-first doctrine
+— but this file's Gate D contract (§1.2) doesn't explicitly
+incorporate it. Unclear whether this is an implementation detail
+Gate_02/Gate_03 own internally, or a mandatory condition of Gate D's
+own decision that this file has simply failed to represent.
+
+**Why It Matters:** These are architecturally different answers —
+one means Gate D's contract is complete and this is downstream
+detail; the other means Gate D's contract is itself incomplete.
+
+**Resolution Path:**
+- Resolve during a dedicated Gate_02/Gate_03 audit rather than by
+  guessing here — this file's Gate D language should not change
+  until that ownership question is answered.
+
+---
+
+### FL-012 — "Gate" terminology is overloaded across at least four distinct systems repository-wide
+
+| Field         | Value                                            |
+|---------------|--------------------------------------------------|
+| Status        | Open                                              |
+| Risk          | Medium                                            |
+| Priority      | Major                                             |
+| Type          | Cross-Module / Terminology                         |
+| Blocking      | No                                                 |
+| Owner         | Architecture/Forge_flow.md                          |
+| First Logged  | 2026-09-10                                        |
+| Last Reviewed | 2026-09-10                                        |
+
+**Description:** Raised by ChatGPT (P5-012), broader than the single
+"Eight sequential decision gates" sentence already corrected in this
+file's Scope Boundary. The repository uses "Gate" for four distinct
+things: `Operations/Gate_01_Intake.md` through
+`Operations/Gate_07_Utilization.md` (operational
+modules), this file's Gate A-D (decision logic), the Human/AI
+Oversight Gate (exception-resolution state), and Verification Gates
+1-6 (document audit/promotion gates, defined in
+`Admin/Verification_Gates.md`). `Verification_Gates.md` already
+documents its own distinction carefully, but nothing repository-wide
+ties all four usages together or warns a reader unfamiliar with the
+convention.
+
+**Why It Matters:** This is exactly the kind of collision that lets
+an auditor (human or AI) answer the wrong question by matching the
+wrong "Gate" system to a claim. The specific sentence in this file
+that triggered this finding is fixed; the underlying repository-wide
+overload is not.
+
+**Resolution Path:**
+- Consider whether `Admin/Canonical_Terms.md` should carry an
+  explicit disambiguation entry for "Gate" the way it does for
+  cross-reference path formatting — this is bigger than one file's
+  fix and shouldn't be resolved unilaterally here.
+
+---
+
+### FL-013 — Oversight unavailability/saturation is not represented as a system-level degraded state
+
+| Field         | Value                                            |
+|---------------|--------------------------------------------------|
+| Status        | **Resolved — Payment via Specification, 2026-09-10** |
+| Risk          | Low                                               |
+| Priority      | Minor                                             |
+| Type          | Architectural / Cross-Module                       |
+| Blocking      | No                                                 |
+| Owner         | Architecture/Forge_flow.md                          |
+| First Logged  | 2026-09-10                                        |
+| Last Reviewed | 2026-09-10                                        |
+
+**Description:** Raised by ChatGPT (P5-014). `Operations/Gate_01_Intake.md`
+recognizes that Oversight itself may be unavailable or saturated,
+with a conservative fallback (remain held, do not route forward) —
+consistent with this file's own doctrine. But this file currently
+treats Oversight as though it's always an available state-transition
+destination; the "Oversight unavailable → indefinite hold" case
+isn't represented as its own degraded-mode entry the way stale
+tooling, sensor drift, and other exception conditions are.
+
+**Why It Matters:** Not a contradiction — Gate_01's fallback is
+already conservative and correct — but a real gap between the
+formal model and an operational reality the repository has already
+anticipated elsewhere.
+
+**Resolution Path:**
+- Consider adding "Oversight unavailable" to the Degraded Operation
+  & Failure Modes section's existing list, mirroring Gate_01's
+  already-correct fallback.
+- **Update 2026-09-10 (downstream audit pass, Gate_01_Intake.md):**
+  confirmed and sharpened. Gate_01's own text explicitly states "No
+  doctrine exists for Oversight saturation" and provides provisional
+  guidance — items remain in hold, queue by priority (safety-critical
+  first, then age), no expiration — correctly cross-referencing this
+  file ("Architecture/Forge_flow.md Human/AI Oversight Gate
+  doctrine"). But the reference is one-directional: this file has
+  nothing pointing back. The fix is now concrete, not speculative —
+  add a Degraded Operation entry here that adopts Gate_01's
+  provisional guidance by reference rather than restating it, closing
+  the loop both files already half-built independently.
 
 | Field         | Value                                            |
 |---------------|--------------------------------------------------|
@@ -1487,6 +2019,12 @@ deferred, not closed.
 ---
 
 ### Resolution Log
+
+- 2026-09-10 (twenty-fourth pass): **FL-013 resolved via downstream audit into Operations/Gate_01_Intake.md.** Per the ChatGPT audit's own recommendation to move downstream using this file's findings as baseline. Verified Gate_01's File State (Open Unknowns 5 correctly matches GI-001/002/003/005/007; GI-004/006 correctly Resolved), confirmed zero bare canonical-path violations there, and confirmed several of ChatGPT's Phase 5 claims (P5-001, P5-001a, P5-014) accurate against live text. Found that Gate_01 already has provisional "Oversight saturation" doctrine (items remain held, priority-queued, no expiration) that correctly cross-references this file — but nothing here pointed back. Added a new "Oversight itself unavailable or saturated" entry to the Degraded Operation & Failure Modes section, adopting Gate_01's doctrine by reference rather than restating it, closing FL-013. Removed from Active Index in Unknowns.md per Size Management Rule 2 (Resolved entries are removed, not marked in place — same discipline that caught RIP-003/RIP-010 earlier). Open Unknowns 14→13. Human-directed.
+
+- 2026-09-10 (twenty-third pass): **ChatGPT's Phases 7-10 (Drift Detection, Unknown Classification, Resolution Pathway Assessment, Verification Gates) processed — largely stale on arrival.** This batch ran against the pre-twenty-second-pass snapshot; most of its "confirmed" findings (stale Last Audit, stale Gate Correspondence, "eight sequential decision gates," bare filenames/G5) were already fixed the prior pass — verified directly rather than assumed, including a full-file re-check confirming zero bare canonical-path violations remain anywhere, not just in the sections touched previously. Also caught a real arithmetic inconsistency in the audit's own Phase 10 scorecard: its prose claimed "2/6 PASS... 2 FAIL and 2 REVISE" while its own table showed 1 PASS/2 FAIL/3 REVISE (G1/G2/G6 REVISE, G3/G5 FAIL, G4 PASS) — Spec Gates left at 0/6 rather than propagating either count, since recording a formal G1-G6 tally is a governance action this pass didn't attempt. Genuinely new and actioned: FL-004's title corrected (was still "has no owning file" despite the file existing — now names the real residual question); FL-006's Risk/Priority raised Low/Minor→Medium/Major, matching FL-007's prior treatment, per Phase 8's argument that Oversight's authority gap is a separation-of-powers question, not filing; FL-003/FL-004/FL-006/FL-007's Resolution Paths all sharpened per Phase 9's stricter "would executing this path actually close the Unknown" test — FL-006 split into evidence-ownership vs authority-ownership sub-paths, FL-007 restructured into an explicit seven-step closure sequence. G1 Fallacy Checklist and G3 Adversarial Challenge Battery formally documented for the first time (new sections added) rather than left as historical Resolution-Log reasoning checks — both honestly REVISE, findings routed to FL-006/007/008/009/012 rather than duplicated; G3 applied 3 of 10 classes with concrete scenarios meeting their stated minimum requirements, deferred the other 7 rather than stretching existing scenarios to cover them. No Open Unknowns count change — this pass strengthened existing entries, didn't add new ones. Human-directed throughout.
+
+- 2026-09-10 (twenty-second pass): **ChatGPT's six-phase audit (Phases 1-6, Auditor_Protocols.md v0.41) batch-processed.** Every substantive claim verified against live source before action — all checked out except one location error in the audit's own output (EV-011 misattributed a real, accurately-quoted sentence to "Termination Conditions"; it's actually in Example 3). Six mechanical/structural fixes applied directly: restored the missing `## Lessons Learned` heading over a table that already existed with real content but had been orphaned without one (F1-001); corrected the Gate Correspondence table's stale Oversight row, unchanged since before HP-002 formalized the five exits (IC-004/P5-013); fixed FL-003's Description, which had drifted into contradicting the Scope Boundary update made during HP-006 (S2-002); reworded "Eight sequential decision gates" to stop conflating this file's 5 decision gates with the unrelated Gate_01-07 operational modules (P5-012/S2-007); fully-qualified §1.3's bare filenames per Canonical_Terms.md (G5, Finding 9) — caught and fixed the identical violation appearing in my own new FL-012 entry while writing it; labeled Examples 4/5's illustrative values (45 min, 1.2 m) as non-measured (EV-006/007) and clarified Example 3's "all pass technically" phrasing (EV-011). FL-007 strengthened with cross-file evidence from `Gate_03_Reduction.md` and `Ethical_Constraints.md` (Risk Low→Medium, Priority Minor→Major). Six new Unknowns registered — FL-008 (FI-2's invariant wording is ambiguous against the stale-tooling exception), FL-009 (a genuinely new finding beyond the audit itself: FL-001's Resolution Path cites a `Gate_02_Triage.md` worked example that doesn't exist), FL-010 (pattern-triggered Oversight escalation unrepresented), FL-011 (Embedded Value Preservation ownership unclear), FL-012 (repo-wide "Gate" terminology overload), FL-013 (Oversight-unavailable degraded state unrepresented) — all mirrored in Unknowns.md v5.11. Open Unknowns 8→14. Human-directed throughout; explicit instruction to log rather than silently resolve the open architectural questions.
 
 - 2026-09-10 (twenty-first pass): **FL-007 registered.** ChatGPT reviewed the 2026-09-10 working tree (verified: file size 108,850 bytes, all quoted passages accurate) and raised a real architectural ambiguity: Oversight's "Gate D want/need evaluation" is scoped to items that already passed Gate D's material-recovery determination, then can override that outcome via the Hold exit using a different judgment axis (retained-use need vs material-recovery viability) — the text never states whether this is override authority or only timing authority. Logged rather than resolved, per ChatGPT's own conservative recommendation and matching the standing practice of not editing gate logic to fix an unsettled authority question. Related to FL-006, cross-referenced both directions. Open Unknowns 7→8. Human-directed.
 
