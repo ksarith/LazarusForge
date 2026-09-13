@@ -3,7 +3,7 @@
 
 **Full version history in `Unknowns_Changelog.md` (2026-07-19 cleanup pass, following the precedent set by `Archive/Logs/AUDIT_HARNESS_CHANGELOG.md` and `Archive/Logs/Forge_Audit_Kit_Changelog.md`; scrubbed to current-version-only 2026-07-28 — the "current plus last four in full" window was itself compressed further, since the Audit Trail below now carries the compressed record for every version back to v1.0, and the changelog carries full text for all of them. This block now keeps only the current version.)**
 
-**Version 5.13 — 2026-09-10. Downstream audit pass into Operations/Gate_01_Intake.md, per Forge_flow.md's own audit conclusion.** Verified File State (Open Unknowns 5 matched actual GI-001/002/003/005/007 Open count, GI-004/006 correctly Resolved), confirmed zero bare canonical-path violations, and confirmed several of ChatGPT's Phase 5 claims about this file (P5-001, P5-001a, P5-014) accurate against live text. Found concrete evidence resolving FL-013: Gate_01_Intake.md already has provisional "Oversight saturation" doctrine, correctly cross-referencing Forge_flow.md, but the reference was one-directional. Closed the loop — added a "Oversight itself unavailable or saturated" entry to Forge_flow.md's Degraded Operation section, adopting Gate_01's doctrine by reference. FL-013 Resolved (Payment via Specification), removed from Active Index per Size Management Rule 2. Open Unknowns 14→13. Human-directed.
+**Version 5.14 — 2026-09-10. Grok's correction-grep results processed — verified before applying, 2 of 4 checkable claims real, 2 false.** Confirmed and fixed: SEC-007b's sidecar (`Security_Protocols.md`) and Active Index row still said "blocked pending SEC-007a" three weeks after SEC-007a's 2026-08-22 ratification — corrected both, plus Last Reviewed. Confirmed and fixed: a self-note about `Tests/Hydrologic_Resource_Cascade.md` still described its File State as declaring "Open Unknowns: 8," but that field had already been corrected to "2 Formal / 6 Unregistered" — note updated to reflect current state as historical context, not a live discrepancy. Found false: Grok's claim that Forge_flow.md's Open Unknowns count needed 13→12 (math omitted DS-001; 13 was already correct) and that Progress_Log's Forward Growth Avenues still lists GMP-006/010/GI-004/006/GU-002 as active (the section already marks all five "Resolved... No longer a Lane A candidate"). Neither false claim was actioned. Human-directed; verification requested before any fix.
 
 ---
 
@@ -250,7 +250,7 @@ GH-009 (Emergent heuristic conflict — N² interaction scaling)
 | SEC-004 | Key lifecycle doctrine incomplete | `Admin/Security_Protocols.md` | Open | — | Major |
 | SEC-005 | Trusted initialization environment undefined — Design Lineage: PAT-003 | `Admin/Security_Protocols.md` | Open | — | Major |
 | SEC-006 | Timestamp trust under degraded clock | `Admin/Security_Protocols.md` | Open | — | Major |
-| SEC-007b | External root-of-trust — physical hardware implementation, e.g. offline HSM/EEPROM (owning layer: Operations) — vertically split from SEC-007 2026-07-02; blocked pending SEC-007a — Design Lineage: PAT-002 | `Admin/Security_Protocols.md` | Open | — | Critical |
+| SEC-007b | External root-of-trust — physical hardware implementation, e.g. offline HSM/EEPROM (owning layer: Operations) — vertically split from SEC-007 2026-07-02; SEC-007a Ratified 2026-08-22, SEC-007b is now the sole remaining blocker on the split, not pending it — Design Lineage: PAT-002 | `Admin/Security_Protocols.md` | Open | — | Critical |
 | SEC-008 | Signature replay protection mechanism undefined | `Admin/Security_Protocols.md` | Open | — | Major |
 | SEC-010 | Cryptographic algorithm migration doctrine undefined | `Admin/Security_Protocols.md` | Open | — | Major |
 | SEC-011 | Long-duration cryptographic continuity undefined — entropy exhaustion, operator succession, algorithm migration at Leviathan-class timescales — Design Lineage: PAT-004 (Observe status; 2-cycle Expiry Watch) | `Admin/Security_Protocols.md` | Open | — | Major |
@@ -840,7 +840,13 @@ GH-009 (Emergent heuristic conflict — N² interaction scaling)
 *HR-UNK-001 Critical — entire resource recovery premise rests on hydraulic sorting effectiveness.*
 *HR-UNK-002 Critical — safety-critical; contaminated sediment zones may require remediation rather than resource extraction.*
 *Additional HR unknowns (HR-003 through HR-010) are research questions in the file body; formal sidecar registration deferred to first audit pass.*
-*Known discrepancy: Tests/Hydrologic_Resource_Cascade.md File State declares "Open Unknowns: 8," but only HR-UNK-001 and HR-UNK-002 carry formal sidecar entries as of 2026-06-28. Correct the File State field to 2 on next commit to that file, or register HR-003 through HR-008 formally to match the declared count.*
+*Historical note: Tests/Hydrologic_Resource_Cascade.md's File State*
+*previously declared "Open Unknowns: 8" against only two formal sidecar*
+*entries (HR-UNK-001/002) as of 2026-06-28. The File State field has*
+*since been corrected to "2 Formal / 6 Unregistered (HR-003–HR-010*
+*pending sidecar registration)," which accurately reflects the same*
+*underlying gap without the count contradiction — this note is retained*
+*as historical context, not a live discrepancy (verified 2026-09-10).*
 
 ### Philosophical / Foundational
 
