@@ -1075,10 +1075,10 @@ physical site exists.
 | Risk          | High                                |
 | Priority      | Critical                            |
 | Type          | Architecture / Hardware             |
-| Blocking      | No — blocked pending SEC-007a       |
+| Blocking      | No — sole remaining blocker on the SEC-007 split; SEC-007a Ratified 2026-08-22 |
 | Owner         | `Admin/Security_Protocols.md` (owning layer: Operations) |
 | First Logged  | 2026-05-28 (as SEC-007)             |
-| Last Reviewed | 2026-07-02                          |
+| Last Reviewed | 2026-09-10                          |
 | Split From    | SEC-007, vertically split 2026-07-02 |
 | Design Lineage | PAT-002 (see External Design Lineage above) |
 
@@ -1093,8 +1093,10 @@ vendor-provisioned silicon) do not directly apply — see PAT-002.
 physical mechanism that actually implements it. This is the bridge between
 governance doctrine and salvage-environment reality.
 
-**Resolution Path:** Blocked pending SEC-007a — physical design cannot be
-finalized until the constitutional floor it implements is defined. Cross-ref
+**Resolution Path:** SEC-007a Ratified 2026-08-22 — the constitutional floor
+this entry implements is now defined. SEC-007b is the sole remaining
+blocker on the original SEC-007 split, not a dependency waiting on SEC-007a.
+Physical design work can now proceed. Cross-ref
 `Operations/Electronics.md` for salvaged-hardware constraints and Logic-Zero
 node admission. Requires hardware-in-the-loop testing and multi-agent review
 per PAT-002's Validation Needed field before advancing past Decision Drafted.
@@ -1279,6 +1281,8 @@ than working around.
 ---
 
 ### Resolution Log
+
+- 2026-09-10: **SEC-007b sidecar corrected — "blocked pending SEC-007a" had gone stale.** SEC-007a Ratified 2026-08-22; this sidecar's Blocking field, Resolution Path, and Last Reviewed date still described SEC-007b as waiting on it, three weeks after ratification. Grok's correction-grep flagged this; Claude verified the SEC-007a ratification date against its own FROZEN marker and PAT-001's entry before fixing. Corrected all three live fields; the file's own historical Resolution Log entry describing the original 2026-07-02 split (accurate as of that date) left untouched. Mirrored in Unknowns.md's Active Index row. Human-directed.
 
 - 2026-08-10: **SEC-007a deferral trigger cross-linked (Claude review + Grok
   apply).** Blocking remains No (constitutional item; no automated agent may
