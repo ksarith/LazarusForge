@@ -33,7 +33,7 @@
 | Verification Ref | Admin/Verification_Gates.md                                      |
 | Last Audit       | 2026-09-10 — ChatGPT ran a full multi-phase audit (Phases 1-6: structural validation, scope validation, assumption extraction, internal coherence, cross-module consistency, evidence validation) under Auditor_Protocols.md v0.41; Claude verified every substantive claim against live source before acting. Six mechanical fixes applied directly (Lessons Learned heading restored over a pre-existing orphaned table, stale Gate Correspondence Oversight row corrected, FL-003 self-contradiction fixed, "Eight sequential decision gates" reworded, §1.3 bare filenames fully-qualified, illustrative example values labeled non-measured). Six new Unknowns registered (FL-008 through FL-013); FL-007 strengthened with cross-file evidence. One new finding beyond the audit itself: FL-001's Resolution Path cites a Gate_02_Triage.md worked example that doesn't exist (FL-009). One error caught in the audit's own output (EV-011 misattributed a quote's section). Prior: 2026-09-08/09 — fifteen resolution-log passes across two days: R0-R4 taxonomy (HP-001, propagated to Gate_03_Reduction.md), Oversight multi-exit formalization (HP-002), Flow Invariants §1.1 (HP-003), Gate D polarity rewrite (HP-004), boundary-case Examples 4-7 (HP-005 partial), cross-layer reconciliation spinning off FL-003/FL-004 (HP-006), Tooling_Inventory.md creation (HP-007), per-deployment wording + Deployment Localization Doctrine, Gate B Secondary Test + FL-005, Gate Decision Contracts §1.2 + explicit UNKNOWN transitions + re-entry contract (HP-008/009/015), terminal-state distinction (HP-014). Prior: 2026-08-08 |
 | Auditor          | Claude — Retrofit/Auditor                                           |
-| Open Unknowns    | 13                                                                  |
+| Open Unknowns    | 12                                                                  |
 | Active Disputes  | 1                                                                   |
 | Highest Risk     | Medium                                                              |
 | Sidecar Link     | #auditor-notes--unknowns                                            |
@@ -411,7 +411,7 @@ than naming just one.
 | **B** | Failure localization + accessibility evidence + live Tooling Inventory state (ASM-003 / FL-004) | **Primary (all three required):** Is the failure localized **and** accessible **and** within current tooling capability?<br>**Secondary (only if Primary passes):** Is estimated repair effort justified by recovered functional value **or** learning value **or** measured scarcity/strategic value? | **Primary FAIL** (any condition) → Gate C<br>**Primary PASS + Secondary YES** → Repair & Learn (R2)<br>**Primary PASS + Secondary NO** → Gate C | Missing Primary input, or Secondary judgment that cannot be justified with logged rationale → **Hold**. Under the explicit stale-tooling degraded-operation rule, Primary defaults to FAIL (routes to Gate C). Secondary Test is provisional, qualitative, and must be logged (FL-005); it never routes directly to Reduction. |
 | **C** | Application / use evidence for a different or reduced function | Can the item (or a portion of it) serve a useful function in a different or reduced application? | **YES** → Repurpose as Lower-Precision Component<br>**NO** → Gate D<br>(Disassembly of an assembly is permitted; each resulting component re-enters at Gate A per ASM-007 / FI-3) | Insufficient evidence of any useful reduced function → **Hold**. Indeterminate material identity is **not** a Gate C failure. |
 | **D** | Material integrity + recovery-pathway evidence under current Forge capability | Is Reduction the correct residual path for material recovery (all higher-value paths exhausted, and size-reduction followed by Separation / Purification is the only remaining viable route)? | **YES** → Reduction (R4)<br>**NO** (alternative recovery path may still exist, or recovery is genuinely impossible / prohibited) → Human/AI Oversight Gate | Insufficient material or recovery evidence → **Hold**. True edge cases (hazard, conflicting evidence, genuine impossibility) → Oversight, never forced Reduction. |
-| **Oversight** | Exception evidence (mid-process contamination, radiological/hazard category, operator unavailability, Gate D want/need evaluation, unforeseen contamination category, etc.) | Does a credible active need exist, and is the exception within this flow's decision authority? | **Return to Flow**<br>**Hold** (with defined review point)<br>**Reclassify**<br>**Escalate**<br>**Terminate** (→ Reduction) | Default under uncertainty is **Hold**. Escalate only when authority is exceeded. Terminate only when no genuine need is confirmed against the explicit minimum criteria. |
+| **Oversight** | Exception evidence (mid-process contamination, radiological/hazard category, operator unavailability, Gate D want/need evaluation, unforeseen contamination category, etc.) | Does a credible active need exist, and is the exception within this flow's decision authority? | **Return to Flow**<br>**Hold** (with defined review point)<br>**Reclassify**<br>**Escalate**<br>**Terminate** (→ Reduction authorized) | Default under uncertainty is **Hold**. Escalate only when authority is exceeded. Terminate authorizes Reduction independently of Gate D YES (Reading A, adopted 2026-09-12); execution still requires Gate_03 readiness checks. |
 
 *Notes*
 - Gate B Secondary Test remains Exploration-grade and unvalidated
@@ -421,6 +421,10 @@ than naming just one.
   is the operative reading of FI-2 for all rows.
 - This table does not alter the sequential order, the five Oversight
   exits, the R0-R4 taxonomy, or any Outcome Path.
+- **Terminate authorization (2026-09-12):** Routing ≠ authorization ≠
+  execution readiness. Gate D YES and Oversight Terminate are both
+  valid independent authorizations for Reduction; Gate_03 owns
+  execution readiness. See Oversight section for bounded discretion.
 
 ---
 
@@ -601,10 +605,38 @@ named exits:
 - **Escalate** — the decision exceeds this flow's own authority
   (radiological or other hazard requiring external protocol — see
   Contamination Categories)
-- **Terminate** — no genuine need confirmed; Reduction proceeds
-  (Gate D want/need evaluation, below)
+- **Terminate** — no genuine need confirmed; Reduction is
+  **authorized** and proceeds (Gate D want/need evaluation,
+  below). Under Reading A (adopted 2026-09-12), Terminate is an
+  independent authorization path for R4, parallel to Gate D YES —
+  not merely a timing release of a prior Gate D determination.
 
 This gate prevents both hoarding and premature destruction.
+
+**Routing ≠ authorization ≠ execution readiness (adopted 2026-09-12):**
+Three distinct concepts must not be collapsed:
+1. **Routing** — the item belongs on the Reduction pathway.
+2. **Authorization** — Reduction is authorized to begin.
+3. **Execution readiness** — physical prerequisites are satisfied
+   (owned by `Operations/Gate_03_Reduction.md`: Air Scrubber
+   verified, human present, no energetics, no active contamination).
+
+Gate D YES is one valid authorization for Reduction. Oversight
+Terminate is a second, independent authorization when no genuine
+need is confirmed. Neither decision itself executes Reduction;
+Gate_03 still enforces execution readiness. This reading confirms
+Gate_03's existing dual entry corridor ("failed A–D, or explicitly
+routed by Oversight") rather than narrowing it.
+
+**Bounded discretion (ideological flexibility):**
+Oversight retains bounded discretion to authorize Reduction in
+additional exception circumstances not fully anticipated by the
+current criteria, provided the decision is logged with rationale,
+remains consistent with the want/need policy and
+`Admin/Ethical_Constraints.md`, and does not bypass Gate_03's
+execution-readiness checks. Such uses are expected to be rare;
+repeated or patterned exceptions are themselves grounds for review
+of the criteria. No exhaustive exception catalogue is maintained.
 
 **Gate D want/need evaluation (Hold vs. Terminate exits):**
 Review items that failed Gates A–D but where reduction feels
@@ -613,7 +645,8 @@ hypothetical future uses. Apply the want/need policy
 (see Defined Terms).
 
 - If a genuine need exists: **Hold** — assign with a defined review date
-- If no genuine need exists: **Terminate** — Reduction proceeds
+- If no genuine need exists: **Terminate** — Reduction is authorized
+  and proceeds (independent authorization path; see above)
 
 **Minimum criteria for "genuine need" (Exploration-level
 heuristics — must become testable before Specification):**
@@ -1646,16 +1679,26 @@ governance decision, not something to split unilaterally here.
 
 | Field         | Value                                            |
 |---------------|--------------------------------------------------|
-| Status        | Open                                              |
-| Risk          | Medium (raised from Low 2026-09-10 — confirmed to touch Admin/Ethical_Constraints.md's High-Risk/VERIFIED authorization requirement, not purely internal architecture) |
-| Priority      | Major (raised from Minor 2026-09-10)               |
+| Status        | **Resolved** — Reading A adopted 2026-09-12 (Payment via Specification) |
+| Risk          | Medium (historical; raised from Low 2026-09-10)  |
+| Priority      | Major (historical; raised from Minor 2026-09-10) |
 | Type          | Architectural / Ethical Interface                  |
 | Blocking      | No                                                 |
 | Owner         | Architecture/Forge_flow.md                          |
 | First Logged  | 2026-09-10                                        |
-| Last Reviewed | 2026-09-10                                        |
+| Last Reviewed | 2026-09-12                                        |
 
-**Description:** Raised by ChatGPT reviewing the 2026-09-10 working
+**Closure (2026-09-12):** Reading A adopted. Oversight Terminate is an
+independent authorization path for Reduction (R4), parallel to Gate D
+YES. Routing ≠ authorization ≠ execution readiness stated explicitly
+in the Oversight section and Decision Contract notes. Gate_03's dual
+entry corridor is confirmed rather than narrowed. Bounded discretion
+proviso added for unanticipated exceptions (logged, rare, Ethical_Constraints-
+consistent, no bypass of Gate_03 readiness). Escalate ownership (FL-006
+authority half) remains open and is not required to close this entry.
+Removed from Active Index on next Unknowns pass per Size Management Rule 2.
+
+**Description (historical):** Raised by ChatGPT reviewing the 2026-09-10 working
 tree, verified against live text. The Oversight Gate's "Gate D
 want/need evaluation" is explicitly scoped to items that already
 *passed* Gate D — i.e. Gate D already determined Reduction is the
@@ -2019,6 +2062,8 @@ deferred, not closed.
 ---
 
 ### Resolution Log
+
+- 2026-09-12 (twenty-fifth pass): **FL-007 resolved — Reading A adopted for Terminate authority.** Human directed that Oversight Terminate is an independent authorization path for Reduction (parallel to Gate D YES), with ideological flexibility for rare unanticipated exceptions rather than an exhaustive catalogue. Applied: (1) Terminate exit and Gate D want/need evaluation reworded to "Reduction is authorized"; (2) explicit "routing ≠ authorization ≠ execution readiness" doctrine added to Oversight section; (3) bounded-discretion proviso added (logged, Ethical_Constraints-consistent, no Gate_03 readiness bypass); (4) Decision Contract Oversight row and notes updated to match; (5) FL-007 marked Resolved (Payment via Specification). Gate_03 dual entry corridor confirmed rather than narrowed. FL-006 authority-ownership half remains Open (Escalate destination still unnamed). Open Unknowns 13→12. Human-directed.
 
 - 2026-09-10 (twenty-fourth pass): **FL-013 resolved via downstream audit into Operations/Gate_01_Intake.md.** Per the ChatGPT audit's own recommendation to move downstream using this file's findings as baseline. Verified Gate_01's File State (Open Unknowns 5 correctly matches GI-001/002/003/005/007; GI-004/006 correctly Resolved), confirmed zero bare canonical-path violations there, and confirmed several of ChatGPT's Phase 5 claims (P5-001, P5-001a, P5-014) accurate against live text. Found that Gate_01 already has provisional "Oversight saturation" doctrine (items remain held, priority-queued, no expiration) that correctly cross-references this file — but nothing here pointed back. Added a new "Oversight itself unavailable or saturated" entry to the Degraded Operation & Failure Modes section, adopting Gate_01's doctrine by reference rather than restating it, closing FL-013. Removed from Active Index in Unknowns.md per Size Management Rule 2 (Resolved entries are removed, not marked in place — same discipline that caught RIP-003/RIP-010 earlier). Open Unknowns 14→13. Human-directed.
 
