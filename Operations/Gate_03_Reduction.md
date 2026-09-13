@@ -181,6 +181,16 @@ are true:
 5. No active contamination discovery is in progress —
    see Section 5
 
+*Authorization note (2026-09-12, aligns with Forge_flow
+Reading A):* Condition 1's two corridors are both valid
+**authorization** paths. Gate D YES (via full A–D failure)
+and Oversight Terminate (explicit routing) each authorize
+Reduction independently. Conditions 2–5 are **execution
+readiness** — they do not authorize; they must still be
+satisfied before Reduction begins. Routing ≠ authorization ≠
+execution readiness. See `Architecture/Forge_flow.md`
+Oversight section.
+
 If any condition is not met, Reduction does not begin.
 A hold is not a failure. A hold is the correct response
 to an unmet prerequisite.

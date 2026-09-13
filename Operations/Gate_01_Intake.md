@@ -31,7 +31,7 @@
 | Verification Ref | Admin/Verification_Gates.md                                      |
 | Last Audit       | 2026-08-31 — GI-004/GI-006 joint Closure Event (§7 rewritten as §7.1–7.4; see Resolution Log below); prior: 2026-05-19 |
 | Auditor          | Claude — GI-004/GI-006 joint Closure Event: §7 rewritten (Minimum Intake Record schema, superset rule, chain-of-custody doctrine), drafted by Grok, Skeptic-passed with five amendments by ChatGPT, revision independently re-verified by Claude, human-ratified (human-directed), 2026-08-31; prior: Claude — Skeptic/Auditor (actioning ChatGPT audit 2026-05-19)       |
-| Open Unknowns    | 5                                                                   |
+| Open Unknowns    | 6                                                                   |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | Medium                                                              |
 | Sidecar Link     | #auditor-notes--unknowns                                            |
@@ -233,6 +233,27 @@ held at Intake until the blocking condition is resolved.
 Intake is not a throughput gate — it is a safety gate.
 Speed is never a success metric here.
 
+**Intake completion / handoff preconditions (2026-09-12):**
+An item may be handed to Gate_02 only when all of the
+following are true:
+1. Safety screening has been completed.
+2. No unresolved hazard requires Intake containment
+   (hazard_outcome is CLEAR or FLAGGED with recorded
+   conditions; HOLD blocks handoff).
+3. Identification state is recorded as known, partial,
+   or unknown.
+4. The Minimum Intake Record (§7.1) exists.
+5. A unique physical identifier is attached.
+6. The physical identifier reconciles with the record.
+7. Any required hold/flag state is explicitly recorded.
+8. The item is physically in a condition permitted for
+   Gate_02 processing.
+
+Identification completeness is **not** itself a universal
+handoff requirement. Safety status and provenance integrity
+are. Cross-reference: identity-vs-hazard independence rule
+in §2; `Architecture/Forge_flow.md` FI-2.
+
 **Degraded operation doctrine:**
 Intake assumes digital infrastructure — scanning,
 database lookup, digital record retention, network
@@ -265,6 +286,29 @@ Safety screening is the most critical function of Intake.
 Hazards missed here propagate through every downstream
 gate. The cost of a missed hazard is always higher than
 the cost of a hold.
+
+**Identity vs hazard independence (2026-09-12):**
+Identification uncertainty and safety uncertainty are
+independent states. An item may proceed with a partial or
+unknown identification **only when** required Intake safety
+screening has established a safe-to-proceed condition.
+Unresolved hazard status always produces a hold, regardless
+of identification status. Unknown identity ≠ unknown hazard.
+
+**Hazard-outcome states (operational definitions):**
+| State | Meaning |
+|---|---|
+| **CLEAR** | Required Intake safety checks completed with no unresolved condition **within the capabilities of the screening performed**. Not a claim of absolute safety. |
+| **FLAGGED** | A known or suspected condition is explicitly recorded; controlled movement may still be permitted under the recorded condition. |
+| **HOLD** | Item may not proceed until the blocking condition is resolved or an authorized Oversight disposition is established. |
+
+**Detection-limit rule:**
+Failure to detect a hazard is not evidence that the hazard
+is absent when the applicable detection method is known to
+have insufficient sensitivity. Where required detection
+capability is unavailable, the item's hazard state remains
+unresolved and the item is held or escalated per the
+applicable protocol. Cross-reference: ASM-004, GI-003.
 
 **Hazard categories to screen at Intake:**
 
@@ -1136,7 +1180,47 @@ hazards are not yet acknowledged in the system.
 
 ---
 
+### GI-008 — Intake record integrity / false-clear handling (candidate)
+
+| Field         | Value                                            |
+|---------------|--------------------------------------------------|
+| Status        | Open                                             |
+| Risk          | Medium                                           |
+| Priority      | Major                                            |
+| Type          | Operational / Epistemic                          |
+| Blocking      | No                                               |
+| Owner         | Operations/Gate_01_Intake.md                     |
+| First Logged  | 2026-09-12                                       |
+| Last Reviewed | 2026-09-12                                       |
+
+**Description:** Physical chain-of-custody (GI-006, resolved)
+ensures the physical item matches the record. It does not
+ensure the *information* entered into the record is trustworthy.
+An operator can enter `hazard_outcome = clear` incorrectly or
+maliciously; the physical tag remains intact while the epistemic
+state is corrupted. Raised by ChatGPT Gate_01 audit (G3 Classes
+3/8/9).
+
+**Why It Matters:** A false CLEAR can authorize downstream
+processing of an unscreened or hazardous item. The physical
+integrity system would still report success.
+
+**Resolution Path (deliberately narrow):**
+- Establish the principle: a recorded safety result cannot be
+  stronger than the evidence supporting it (visual inspection →
+  visual-screened, not chemically cleared; database match →
+  identification evidence, not physical-condition evidence).
+- Do **not** invent mandatory dual-person review of ordinary
+  Intake before an actual failure mode demonstrates need.
+- Log near-miss / incident feedback into screening doctrine
+  improvement (hazard-learning loop).
+- Revisit only if operational data shows false-clear events.
+
+---
+
 ### Resolution Log
+
+- 2026-09-12: **ChatGPT Gate_01 audit priorities applied.** Identity-vs-hazard independence rule; CLEAR/FLAGGED/HOLD operational definitions; detection-limit rule; Intake completion/handoff preconditions; GI-008 (record integrity / false-clear) registered as candidate. No Spec Gates change; GI-002 remains Blocking. Human-directed.
 
 - 2026-08-15 (second entry, same day): **GI-003 wired as a supporting
   dependency into the shared PL-001/WA-002/TS-002 detection-and-routing
