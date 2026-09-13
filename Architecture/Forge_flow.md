@@ -1632,7 +1632,7 @@ before this pass.
 | Blocking      | No                                                 |
 | Owner         | Architecture/Forge_flow.md                          |
 | First Logged  | 2026-09-08                                        |
-| Last Reviewed | 2026-09-08                                        |
+| Last Reviewed | 2026-09-12 — field had drifted stale (still read 2026-09-08 despite the 09-10 Risk/Priority raise and the 09-12 FL-007 resolution's direct cross-reference to this entry's remaining authority-ownership half) |
 
 **Description:** Found while building §1.3 Transition Ownership
 (HP-011). Gates A-D each have a clear Operations owner for their
@@ -1672,6 +1672,16 @@ this flow's own authority ends — what Escalate invokes):
 
 Whether A and B become separate Unknown IDs once resolved is a
 governance decision, not something to split unilaterally here.
+
+**Proposed Resolution — Authority half only (drafted 2026-09-13 in
+`LazarusForge-1_Alpha_14_working_2026-09-13a.zip`; located and
+verified verbatim by Claude 2026-09-13) — pending skeptical pass:**
+Until an Admin file is explicitly assigned as owner of the authority
+structure Escalate invokes, Escalate requires human operator judgment
+recorded against `Admin/Ethical_Constraints.md` and remains a
+Hold-safe exit. No new authority structure is invented by this note.
+Evidence-ownership half (A) remains fully Open. Status of FL-006
+remains Open until both halves have skeptical confirmation.
 
 ---
 
@@ -1830,6 +1840,19 @@ state-transition specification.
   what the invariant actually promises and should be a deliberate
   choice, not a documentation cleanup.
 
+**Proposed Resolution (drafted 2026-09-13 in
+`LazarusForge-1_Alpha_14_working_2026-09-13a.zip`; located and
+verified verbatim by Claude 2026-09-13) — pending skeptical pass:**
+Narrow FI-2 to: "Uncertainty defaults to Hold and never routes to
+irreversible (R4) action." Keep the stale-tooling degraded rule as
+written (Primary defaults to FAIL → Gate C) — Gate C is not R4, so
+the irreversible-action guarantee is preserved under this reading.
+Add explicit notes under FI-2 and the Gate B Decision Contract:
+"Stale-tooling → Gate C is a permitted non-Hold, non-R4 degraded
+exception; it does not authorize Reduction." Status remains Open
+until the skeptical pass confirms this is the intended reading, not
+a silently-picked one.
+
 ---
 
 ### FL-009 — Cross-reference to a Gate_02_Triage.md worked example may be broken
@@ -1870,6 +1893,17 @@ actually exists.
   the Resolution Path text to stop claiming it exists.
 - If it existed and was removed: note when/why in both files.
 
+**Proposed Resolution (drafted 2026-09-13 in
+`LazarusForge-1_Alpha_14_working_2026-09-13a.zip`; located and
+verified verbatim by Claude 2026-09-13) — pending skeptical pass:**
+Strike the claim from FL-001's Resolution Path (and any Resolution
+Log entries that repeat it). The "65% torque" worked example is
+confirmed absent from `Operations/Gate_02_Triage.md` — zero matches
+for "torque" in that file. Do not invent historical existence; a
+short, labeled illustrative example may be added later if still
+useful, as a separate, optional action. Status remains Open until
+the text correction is applied and verified.
+
 ---
 
 ### FL-010 — Pattern-triggered Oversight escalation has no state-machine representation
@@ -1904,6 +1938,20 @@ exists downstream.
   Gate_01-owned operational doctrine that feeds into the existing
   Oversight model without needing separate formal representation.
 
+**Proposed Resolution (drafted 2026-09-13 in
+`LazarusForge-1_Alpha_14_working_2026-09-13a.zip`; located and
+verified verbatim by Claude 2026-09-13) — pending skeptical pass:**
+Add under Exception transitions / Oversight entry triggers: "Pattern-
+triggered escalation (e.g., five consecutive unresolved unknowns at
+Intake per `Operations/Gate_01_Intake.md`) enters Oversight as a
+process-level exception. Affected items remain under individual Hold
+until the process exception is resolved; the state machine records
+both the process trigger and the per-item Holds." The "five
+consecutive unknown items" trigger is confirmed verbatim in
+Gate_01_Intake.md. Status remains Open until the sentence is
+inserted and cross-checked once more against any future changes to
+Gate_01's trigger language.
+
 ---
 
 ### FL-011 — Embedded Value Preservation checkpoint's ownership is unclear
@@ -1935,6 +1983,17 @@ detail; the other means Gate D's contract is itself incomplete.
 - Resolve during a dedicated Gate_02/Gate_03 audit rather than by
   guessing here — this file's Gate D language should not change
   until that ownership question is answered.
+
+**Proposed Resolution (drafted 2026-09-13 in
+`LazarusForge-1_Alpha_14_working_2026-09-13a.zip`; located and
+verified verbatim by Claude 2026-09-13) — pending skeptical pass:**
+Assign ownership: Embedded Value Preservation checkpoint is an
+Operations implementation detail owned by
+`Operations/Gate_02_Triage.md`. It is **not** a mandatory condition
+of the Gate D Decision Contract. Forge_flow notes the checkpoint by
+cross-reference only; Gate D's contract remains complete without
+incorporating it as a required input. Status remains Open until
+Gate_02 confirms the assignment is accurate.
 
 ---
 
@@ -1975,6 +2034,20 @@ overload is not.
   explicit disambiguation entry for "Gate" the way it does for
   cross-reference path formatting — this is bigger than one file's
   fix and shouldn't be resolved unilaterally here.
+
+**Proposed Resolution (drafted 2026-09-13 in
+`LazarusForge-1_Alpha_14_working_2026-09-13a.zip`; located and
+verified verbatim by Claude 2026-09-13) — pending skeptical pass:**
+Add a standing terminology note (Defined Terms or Scope Boundary
+footer): "'Gate' is used in four distinct senses in this repository:
+(1) operational modules Gate_01–Gate_07, (2) decision gates A–D
+within this file, (3) the Human/AI Oversight Gate, (4) Verification
+Gates 1–6 (document audit/promotion, `Admin/Verification_Gates.md`).
+Context or full path disambiguates; prefer the full form on first
+use in any section." Recommend `Admin/Canonical_Terms.md` also carry
+the entry long-term; this file can host the local note without
+waiting. Status remains Open until the note is placed and
+Canonical_Terms ownership is confirmed or explicitly deferred.
 
 ---
 
