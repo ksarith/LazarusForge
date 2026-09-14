@@ -11,7 +11,7 @@
 | Spec Gates       | N/A — this file is a cross-reference index, not a specification     |
 | Open Unknowns    | 0 (surfaces existing unknowns from owning files; creates none)      |
 | Owning Domain    | Architecture/                                                       |
-| Last Reviewed    | 2026-09-06                                                           |
+| Last Reviewed    | 2026-09-13                                                           |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
 ---
@@ -39,7 +39,7 @@ Note: gained an `## Authority & Tier Classification` preface 2026-08-07 (verifie
 ### `Architecture/Components.md`
 **Status:** Exploration · 0/6 · 2 Open Unknowns · Risk: Low
 **Does:** Component taxonomy v0-v3; Critical/Useful/Bootstrap classification; Bootstrap Doctrine and Graduation Rule; dual-use annotation standard.
-**Does not (arrow):** Electronics/software/biological/optical fabrication systems · individual component engineering specs · G.E.C.K. manifest (`Geck_forge_seed.md`) · precision/tolerance doctrine (`Precision.md`) · cross-module governance.
+**Does not (arrow):** Electronics/software/biological/optical fabrication systems · individual component engineering specs · G.E.C.K. manifest (`Geck_forge_seed.md`) · precision/tolerance doctrine (`Precision.md`) · cross-module governance · the live operational tooling inventory used by Gate B's "within current tooling capability" test — this file is system-level Critical/Useful/Bootstrap classification only, not a hand-tool/machine inventory (`Operations/Tooling_Inventory.md`).
 
 ### `Architecture/Engineering.md`
 **Status:** Draft · 3/6 · 7 Open Unknowns · Risk: High
@@ -118,6 +118,15 @@ No new unknowns registered. Finding 1 is a one-line factual correction candidate
 ---
 
 ## Resolution Log
+
+- 2026-09-13: **Content-accuracy pass (not just coverage) run against all 13 files' live
+  Scope Boundary sections — part of a repository-wide pass across all five
+  `*_Scope_Map.md` files.** One drift found: `Components.md`'s own Scope
+  Boundary had gained an explicit disclaimer of `Operations/Tooling_Inventory.md`
+  ownership (added when that file was created) that this map's entry never
+  picked up. Fixed. All other 12 entries verified word-for-content against
+  their target files' current Scope Boundary text — no further drift found;
+  this folder remains structurally the cleanest of the five. Human-directed.
 
 - 2026-08-08: **Both findings from this file's initial build (stale UNK-008
   reference, asymmetric vocabulary acknowledgment) fixed same-day in

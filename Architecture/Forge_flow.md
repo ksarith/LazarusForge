@@ -1674,14 +1674,32 @@ Whether A and B become separate Unknown IDs once resolved is a
 governance decision, not something to split unilaterally here.
 
 **Proposed Resolution — Authority half only (drafted 2026-09-13 in
-`LazarusForge-1_Alpha_14_working_2026-09-13a.zip`; located and
-verified verbatim by Claude 2026-09-13) — pending skeptical pass:**
-Until an Admin file is explicitly assigned as owner of the authority
-structure Escalate invokes, Escalate requires human operator judgment
-recorded against `Admin/Ethical_Constraints.md` and remains a
-Hold-safe exit. No new authority structure is invented by this note.
-Evidence-ownership half (A) remains fully Open. Status of FL-006
-remains Open until both halves have skeptical confirmation.
+`LazarusForge-1_Alpha_14_working_2026-09-13a.zip`; skeptical pass by
+ChatGPT 2026-09-13 — Revise materially — cross-checked by Grok,
+verified by Claude — pending test against Ethical_Constraints.md's
+own Escalation text before any Status flip):**
+Until an Admin-owned authority structure is explicitly defined,
+Escalate remains a Hold-safe transition requiring designated
+human/oversight judgment under the existing Human Escalation
+Protocol (`Admin/Ethical_Constraints.md` EC-003). The case record
+carries the applicable authority and decision basis for that
+specific Escalate instance; `Ethical_Constraints.md` remains the
+governing *ethical constraint source*, not the case-specific
+authority registry. No new authority structure is invented by this
+note. Evidence-ownership half (A) remains fully Open. Status of
+FL-006 remains Open until both halves have skeptical confirmation.
+**Revision note:** the original draft said Escalate judgment is
+"recorded against `Admin/Ethical_Constraints.md`" — flagged on
+skeptical pass as architecturally unclean. That file's own text
+(line 48) explicitly disclaims owning escalation-channel
+*implementation*, pointing instead to the Human Escalation Protocol
+it defines (EC-003) for behavior and to `Tests/Leviathan_testing.md`
+for transport. Making it the case-specific authority record risked
+conflating three distinct things: ethical authority, operational
+authority, and case-specific human disposition. The revised language
+keeps Ethical_Constraints.md as the ethical-constraint source while
+letting the case record — not this file — carry the actual authority
+and decision basis for any given Escalate.
 
 ---
 
@@ -1841,17 +1859,27 @@ state-transition specification.
   choice, not a documentation cleanup.
 
 **Proposed Resolution (drafted 2026-09-13 in
-`LazarusForge-1_Alpha_14_working_2026-09-13a.zip`; located and
-verified verbatim by Claude 2026-09-13) — pending skeptical pass:**
-Narrow FI-2 to: "Uncertainty defaults to Hold and never routes to
-irreversible (R4) action." Keep the stale-tooling degraded rule as
-written (Primary defaults to FAIL → Gate C) — Gate C is not R4, so
-the irreversible-action guarantee is preserved under this reading.
-Add explicit notes under FI-2 and the Gate B Decision Contract:
-"Stale-tooling → Gate C is a permitted non-Hold, non-R4 degraded
-exception; it does not authorize Reduction." Status remains Open
-until the skeptical pass confirms this is the intended reading, not
-a silently-picked one.
+`LazarusForge-1_Alpha_14_working_2026-09-13a.zip`; skeptical pass by
+ChatGPT 2026-09-13, revised per that pass, cross-checked by Grok,
+verified by Claude — pending test against Gate B/FI-2 text before
+any Status flip):**
+Narrow FI-2 to: "Uncertainty defaults to Hold. An explicitly defined
+degraded-mode exception may permit a non-R4 transition, but that
+transition does not itself constitute authorization for R4 action.
+Any later R4 decision requires its own applicable evidence and
+decision contract." Keep the stale-tooling degraded rule as written
+(Primary defaults to FAIL → Gate C). Add explicit notes under FI-2
+and the Gate B Decision Contract to this effect.
+**Revision note:** the original draft's closing clause — "it does
+not authorize Reduction" — was rejected on skeptical pass. Gate C is
+not R4, but Gate C can lead to Gate D, and Gate D can authorize
+Reduction; claiming the stale-tooling path "does not authorize
+Reduction" would be a false safety guarantee, since a stale-tooling
+entry could still participate in a path that later reaches R4
+through its own proper authorization. The revised language above
+preserves the degraded-mode exception without immunizing anything
+downstream. Status remains Open until this wording is tested against
+the live FI-2/Gate B text, not merely reviewed in isolation.
 
 ---
 
@@ -1894,15 +1922,23 @@ actually exists.
 - If it existed and was removed: note when/why in both files.
 
 **Proposed Resolution (drafted 2026-09-13 in
-`LazarusForge-1_Alpha_14_working_2026-09-13a.zip`; located and
-verified verbatim by Claude 2026-09-13) — pending skeptical pass:**
-Strike the claim from FL-001's Resolution Path (and any Resolution
-Log entries that repeat it). The "65% torque" worked example is
-confirmed absent from `Operations/Gate_02_Triage.md` — zero matches
-for "torque" in that file. Do not invent historical existence; a
-short, labeled illustrative example may be added later if still
-useful, as a separate, optional action. Status remains Open until
-the text correction is applied and verified.
+`LazarusForge-1_Alpha_14_working_2026-09-13a.zip`; skeptical pass by
+ChatGPT 2026-09-13 — Accept — cross-checked by Grok, verified by
+Claude — pending test against FL-001's actual Resolution Log text
+before any Status flip):**
+Do not silently strike the "65% torque" claim from FL-001's
+Resolution Log. Instead, annotate it in three parts: (1) historical
+claim — the prior entry stated a worked example existed in
+`Operations/Gate_02_Triage.md`; (2) current verification — this
+cannot be confirmed; zero matches for "torque" in that file as of
+2026-09-13; (3) current disposition — the claim is withdrawn as
+evidence of resolution. A short, labeled illustrative example may be
+added later if still useful, as a separate, optional action. Status
+remains Open until this annotation is applied and verified.
+**Revision note:** the original draft proposed striking the claim
+outright. Skeptical pass preferred preservation — deleting it would
+erase the audit trail of what a prior pass believed to be true,
+which is itself useful history distinct from present fact.
 
 ---
 
@@ -1939,18 +1975,26 @@ exists downstream.
   Oversight model without needing separate formal representation.
 
 **Proposed Resolution (drafted 2026-09-13 in
-`LazarusForge-1_Alpha_14_working_2026-09-13a.zip`; located and
-verified verbatim by Claude 2026-09-13) — pending skeptical pass:**
-Add under Exception transitions / Oversight entry triggers: "Pattern-
-triggered escalation (e.g., five consecutive unresolved unknowns at
-Intake per `Operations/Gate_01_Intake.md`) enters Oversight as a
-process-level exception. Affected items remain under individual Hold
-until the process exception is resolved; the state machine records
-both the process trigger and the per-item Holds." The "five
-consecutive unknown items" trigger is confirmed verbatim in
-Gate_01_Intake.md. Status remains Open until the sentence is
-inserted and cross-checked once more against any future changes to
-Gate_01's trigger language.
+`LazarusForge-1_Alpha_14_working_2026-09-13a.zip`; skeptical pass by
+ChatGPT 2026-09-13 — Accept with wording tweak — cross-checked by
+Grok, verified by Claude — pending test against the live Exception
+transitions / Oversight entry-triggers text before any Status flip):**
+Add under Exception transitions / Oversight entry triggers:
+"Pattern-triggered escalation (e.g., five consecutive unresolved
+unknowns at Intake per `Operations/Gate_01_Intake.md`) triggers a
+process-level Oversight review; affected items remain individually
+held until the process exception is resolved." The "three consecutive
+→ second review" and "five consecutive → Oversight escalation"
+triggers are both confirmed verbatim in Gate_01_Intake.md. Status
+remains Open until the sentence is inserted and cross-checked once
+more against any future changes to Gate_01's trigger language.
+**Revision note:** the original draft's phrase "enters Oversight as
+a process-level exception" was revised to "triggers a process-level
+Oversight review" — the original wording risked reading as a second,
+parallel Oversight state machine distinct from the one Forge_flow
+already defines. The revised phrasing keeps this as one Oversight
+mechanism with two ways to reach it (item-level and process-level),
+not two mechanisms.
 
 ---
 
@@ -1985,15 +2029,28 @@ detail; the other means Gate D's contract is itself incomplete.
   until that ownership question is answered.
 
 **Proposed Resolution (drafted 2026-09-13 in
-`LazarusForge-1_Alpha_14_working_2026-09-13a.zip`; located and
-verified verbatim by Claude 2026-09-13) — pending skeptical pass:**
-Assign ownership: Embedded Value Preservation checkpoint is an
-Operations implementation detail owned by
-`Operations/Gate_02_Triage.md`. It is **not** a mandatory condition
-of the Gate D Decision Contract. Forge_flow notes the checkpoint by
-cross-reference only; Gate D's contract remains complete without
-incorporating it as a required input. Status remains Open until
-Gate_02 confirms the assignment is accurate.
+`LazarusForge-1_Alpha_14_working_2026-09-13a.zip`; skeptical pass by
+ChatGPT 2026-09-13 — Likely accept, strongly source-supported —
+cross-checked by Grok, verified by Claude — pending Gate_02 audit
+confirmation before any Status flip):**
+Assign ownership: Embedded Value Preservation is an Operations
+execution-stage procedure owned by `Operations/Gate_02_Triage.md`
+(its own text: Principle 9, applied after triage has already failed
+a unit and before full Reduction, not reopening the pass/fail triage
+decision). Replace this file's current sentence — "Gate D routing to
+Material Recovery includes an Embedded Value Preservation check" —
+with: "The Gate D → Material Recovery transition is subject to the
+Embedded Value Preservation procedure defined by
+`Operations/Gate_02_Triage.md` before full Reduction. This is an
+execution-stage preservation requirement, not an additional Gate-D
+decision predicate." Gate D's Decision Contract remains complete
+without incorporating EVP as a required input. Status remains Open
+until Gate_02 confirms the assignment is accurate.
+**Revision note:** the original draft's "cross-reference only"
+phrasing was imprecise — the current Forge_flow sentence it targets
+reads as though EVP were a formal Gate-D condition. The replacement
+sentence above states the execution-stage/decision-predicate
+distinction directly rather than implying it.
 
 ---
 
@@ -2036,18 +2093,27 @@ overload is not.
   fix and shouldn't be resolved unilaterally here.
 
 **Proposed Resolution (drafted 2026-09-13 in
-`LazarusForge-1_Alpha_14_working_2026-09-13a.zip`; located and
-verified verbatim by Claude 2026-09-13) — pending skeptical pass:**
+`LazarusForge-1_Alpha_14_working_2026-09-13a.zip`; skeptical pass by
+ChatGPT 2026-09-13 — Accept — cross-checked by Grok, verified by
+Claude — pending Canonical_Terms.md placement before any Status
+flip):**
 Add a standing terminology note (Defined Terms or Scope Boundary
 footer): "'Gate' is used in four distinct senses in this repository:
 (1) operational modules Gate_01–Gate_07, (2) decision gates A–D
 within this file, (3) the Human/AI Oversight Gate, (4) Verification
 Gates 1–6 (document audit/promotion, `Admin/Verification_Gates.md`).
-Context or full path disambiguates; prefer the full form on first
-use in any section." Recommend `Admin/Canonical_Terms.md` also carry
-the entry long-term; this file can host the local note without
-waiting. Status remains Open until the note is placed and
-Canonical_Terms ownership is confirmed or explicitly deferred.
+Prefer qualified forms where ambiguity is possible (e.g.
+`Operations/Gate_03_Reduction.md`, Decision Gate D, Verification
+Gate 3) — do not rely on surrounding context alone to disambiguate."
+Recommend `Admin/Canonical_Terms.md` also carry the entry long-term;
+this file can host the local note without waiting. Status remains
+Open until the note is placed and Canonical_Terms ownership is
+confirmed or explicitly deferred.
+**Revision note:** "context or full path disambiguates" was replaced
+with "prefer qualified forms where ambiguity is possible" — a bare
+"Gate 3" is still ambiguous even when a paragraph reads as though
+its meaning is obvious; qualified forms remove the ambiguity instead
+of relying on a reader correctly inferring it.
 
 ---
 
