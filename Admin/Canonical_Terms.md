@@ -18,7 +18,7 @@
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
 | Last Audit       | 2026-08-23                                                          |
-| Auditor          | Claude — four new terms registered (Active Constitutional Surface, Claimed/Recognized/Ratified Constitutional Lineage) at GOV-018 closure, checked against existing vocabulary first — no competing term found (human-directed); prior: Claude — Synthesizer/Auditor (2026-06-24); Claude — Cycle definition + version-string correction (2026-07-05); Claude — CT-011 resolution 2026-07-05 |
+| Auditor          | Claude — "Disambiguation: Uses of 'Gate'" section added (FL-012, human-directed), 2026-09-14; prior: Claude — four new terms registered (Active Constitutional Surface, Claimed/Recognized/Ratified Constitutional Lineage) at GOV-018 closure, checked against existing vocabulary first — no competing term found (human-directed); prior: Claude — Synthesizer/Auditor (2026-06-24); Claude — Cycle definition + version-string correction (2026-07-05); Claude — CT-011 resolution 2026-07-05 |
 | Open Unknowns    | 9                                                                   |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | Low                                                                 |
@@ -207,6 +207,33 @@ watchdog independence, and circular-optimization-loop prevention — those
 requirements are scoped to that sense and do not automatically transfer to
 a general mechanical or thermal emergent-behavior claim without their own
 justification.
+
+---
+
+## Disambiguation: Uses of "Gate" (added 2026-09-14, FL-012)
+
+The word "Gate" covers four genuinely distinct concepts in this
+repository. They are not interchangeable, and a bare "Gate 3" or
+"the Gate" is ambiguous even when a surrounding paragraph seems to
+make the meaning obvious.
+
+| Usage | Meaning | Canonical Home |
+|-------|---------|-----------------|
+| Operational Module | One of seven sequential physical/procedural stages an item passes through | `Operations/Gate_01_Intake.md` through `Operations/Gate_07_Utilization.md` |
+| Decision Gate | One of four routing decisions (A–D) within the Forge's core flow logic | `Architecture/Forge_flow.md` §1.2 Gate Decision Contracts |
+| Oversight Gate | The Human/AI exception-resolution state — five exits (Return to Flow, Hold, Reclassify, Escalate, Terminate) | `Architecture/Forge_flow.md`'s Human/AI Oversight Gate section |
+| Verification Gate | One of six document audit/promotion stages a file passes through toward Specification-grade | `Admin/Verification_Gates.md` |
+
+Prefer qualified forms where ambiguity is possible — e.g.
+`Operations/Gate_03_Reduction.md`, "Decision Gate D," "Verification
+Gate 3" — rather than relying on surrounding context to disambiguate
+a bare "Gate" reference. This is the same discipline this file
+already applies to "canonical" and "emergence": a high-collision word
+gets a standing entry, not an assumption that context will carry it.
+
+Cross-reference: `Architecture/Forge_flow.md`'s Defined Terms section
+carries a local copy of this entry for readers working in that file
+directly; this entry is the canonical, repository-wide version.
 
 ---
 
