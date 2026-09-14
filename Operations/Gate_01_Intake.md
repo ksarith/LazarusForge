@@ -310,6 +310,16 @@ capability is unavailable, the item's hazard state remains
 unresolved and the item is held or escalated per the
 applicable protocol. Cross-reference: ASM-004, GI-003.
 
+**Record provenance rule (added 2026-09-14, GI-008):**
+A recorded safety result cannot exceed the evidence supporting
+it, and the record must preserve the provenance needed to
+determine what was actually observed, by what method, on which
+item, and under what detection limitations. Physical
+chain-of-custody intact (GI-006) confirms the item matches the
+record — it does not by itself confirm the *entered data* is
+trustworthy; those are distinct guarantees. No dual-authorization
+or dual-signoff machinery is implied or required by this rule.
+
 **Hazard categories to screen at Intake:**
 
 | Category | Examples | Visual Indicators | Detection Limit |
@@ -1184,7 +1194,7 @@ hazards are not yet acknowledged in the system.
 
 | Field         | Value                                            |
 |---------------|--------------------------------------------------|
-| Status        | Open                                             |
+| Status        | Open — text applied 2026-09-14 (Record provenance rule added to §2 Safety Screening, immediately after the detection-limit rule), pending human re-verification before Resolved |
 | Risk          | Medium                                           |
 | Priority      | Major                                            |
 | Type          | Operational / Epistemic                          |
@@ -1241,6 +1251,12 @@ that the *entered data* is trustworthy — a provenance/integrity gap,
 not just an evidence-strength one. The extended sentence above adds
 the provenance requirement the original draft's principle didn't
 by itself cover.
+**Owning-file test pass (2026-09-14):** confirmed both named
+placement targets are real sections in this file — `## 2. Safety
+Screening` (line 283) and `### 7.1 Minimum Intake Record` (line
+522) — not proposed/hypothetical locations. The CLEAR definition and
+detection-limit rule cited above both live under §2, making that the
+better of the two placements; §7.1 is schema, not doctrine prose.
 
 ---
 
