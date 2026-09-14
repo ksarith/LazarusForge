@@ -1217,19 +1217,30 @@ integrity system would still report success.
 - Revisit only if operational data shows false-clear events.
 
 **Proposed Resolution (drafted 2026-09-13 in
-`LazarusForge-1_Alpha_14_working_2026-09-13a.zip`; located and
-verified verbatim by Claude 2026-09-13) — pending skeptical pass:**
-Adopt the principle as standing doctrine under Safety Screening /
-Minimum Intake Record notes: "A recorded safety result cannot be
-stronger than the evidence supporting it. Visual inspection yields
-visual-screened, not chemically cleared. Database match yields
-identification evidence, not physical-condition evidence. Instrument
-measurement is only as strong as the instrument and procedure
-actually support." This formalizes the first bullet of this entry's
-own Resolution Path into placed text — no dual-authorization
-machinery is added, consistent with the second bullet's explicit
-prohibition. Status remains Open until the sentence is placed and a
-skeptical pass confirms it does not over-constrain ordinary Intake.
+`LazarusForge-1_Alpha_14_working_2026-09-13a.zip`; skeptical pass by
+ChatGPT 2026-09-13 — Accept the principle, but extend toward record
+provenance — cross-checked by Grok, verified by Claude — pending
+placement and a check that it doesn't over-constrain ordinary Intake
+before any Status flip):**
+Adopt as standing doctrine under Safety Screening / Minimum Intake
+Record notes: "A recorded safety result cannot exceed the evidence
+supporting it, and the record must preserve the provenance needed to
+determine what was actually observed, by what method, on which item,
+and under what detection limitations." No dual-authorization or
+dual-signoff machinery is added. Status remains Open until the
+sentence is placed and a skeptical pass confirms it does not
+over-constrain ordinary Intake.
+**Revision note:** the original draft's evidence-strength principle
+("cannot be stronger than the evidence supporting it") is largely
+already present in this file's CLEAR definition ("within the
+capabilities of the screening performed... not a claim of absolute
+safety") and its detection-limit rule. GI-008's own Description
+frames the actual unknown differently: physical chain-of-custody
+(GI-006, resolved) confirms the item matches the record, but not
+that the *entered data* is trustworthy — a provenance/integrity gap,
+not just an evidence-strength one. The extended sentence above adds
+the provenance requirement the original draft's principle didn't
+by itself cover.
 
 ---
 

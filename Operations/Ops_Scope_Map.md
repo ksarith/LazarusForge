@@ -11,7 +11,7 @@
 | Spec Gates       | N/A — this file is a cross-reference index, not a specification     |
 | Open Unknowns    | 0 (surfaces existing unknowns from owning files; creates none)      |
 | Owning Domain    | Operations/                                                          |
-| Last Reviewed    | 2026-08-15                                                           |
+| Last Reviewed    | 2026-09-13                                                           |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
 ---
@@ -79,6 +79,12 @@ Third folder in the Scope_Map rollout, following `Admin/Adm_Scope_Map.md` (2026-
 **Does:** Salvaged polymer triage routing; low-pressure oxygen-free pyrolysis conceptual framework; batch-fed reaction chamber/condenser array design requirements; off-gas containment boundaries; char/residue handling.
 **Does not (arrow):** Per-polymer temperature profiles · custom extrusion/filament-drawing mechanical blueprints · fractional distillation specs · Air Scrubber hardware (`Air_Scrubber.md`) · intake hazard screening (`Gate_01_Intake.md`) · contamination routing (`Gate_02_Triage.md`) · energy accounting (`Energy.md`) · facility siting (FA-001) · operator PPE (`Admin/Safety_Protocols.md`).
 
+### `Operations/Tooling_Inventory.md`
+**Status:** Exploration · 0/6 · 1 Open Unknown · Risk: Medium
+**Does:** The live operational tooling inventory used by Gate B ("within current tooling capability"); ownership and maintenance cadence for that inventory; the conservative default rule when the inventory is stale or incomplete; distinction between this operational inventory and the system-component taxonomy in `Architecture/Components.md`.
+**Does not (arrow):** System-level Critical/Useful/Bootstrap component taxonomy (`Architecture/Components.md`) · detailed machine specifications, tolerances, or process parameters · G.E.C.K. consumables and redundancy stock (`Architecture/Geck_forge_seed.md`) · Gate logic itself (`Architecture/Forge_flow.md`) · repair methods or repair heuristics beyond the inventory reference (`Architecture/Forge_flow.md` Gate B and `Operations/Gate_02_Triage.md`).
+**Note:** Added to this map 2026-09-13 — created 2026-09-08 from the HP-007 skeleton, after this map's prior 2026-08-15 Last Reviewed date; missed by the original build for that reason, not excluded deliberately.
+
 ### `Operations/Woodworking.md`
 **Status:** Draft · 0/6 · 5 Open Unknowns · Risk: High
 **Does:** Timber sourcing hierarchy; felling/chainsaw safety; green wood handling/anisotropic behavior/drying; structural woodgrain deployment; power/hand tool milling for irregular stock; CNC/router fixturing; heat treatment/surface modification; joinery/adhesive/finishing doctrine; waste valorization through papermaking.
@@ -101,6 +107,26 @@ Three corrections applied this pass (`Gate_05_Separation_Thermal.md`, `Gate_06_F
 ---
 
 ## Resolution Log
+
+- 2026-09-13: **Content-accuracy pass run against all 13 files' live Scope
+  Boundary sections, as a follow-up to the coverage fix below.** Found and
+  fixed one further issue: this map's own `Tooling_Inventory.md` entry (added
+  earlier the same day) had missed a 5th Does-not bullet — repair methods
+  beyond the inventory reference — present in the file's actual Scope
+  Boundary. All 12 other entries checked clean against source; Operations/
+  entries already carried their own prior correction annotations
+  (Gate_03/Gate_05/Gate_06) and none had drifted further. Human-directed.
+
+- 2026-09-13: **Coverage gap found and fixed — `Tooling_Inventory.md` had no entry.**
+  Found during a folder-wide file-vs-scope-map cross-reference (all five
+  `*_Scope_Map.md` files checked against their folders' actual contents).
+  The file was created 2026-09-08 from the HP-007 skeleton, after this
+  map's prior 2026-08-15 build — genuinely missed, not deliberately
+  excluded. Entry added (alphabetically after `Plastics.md`), extracted
+  from the file's own Scope Boundary. No other Operations/ file found
+  missing. Full Does/Does-not content-accuracy pass (checking every
+  existing entry against its target's live Scope Boundary text, not
+  just coverage) not yet run. Human-directed.
 
 - 2026-08-15: **Re-checked against a full day of Operations edits (Gate_02,
   Gate_03, Gate_06, Air_Scrubber) — one small drift found and fixed.**
