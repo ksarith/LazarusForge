@@ -1,6 +1,6 @@
 # Discovery.md — LazarusForge
 **Navigation layer for the active working repository.**
-**Last updated: 2026-09-13 — `Operations/Tooling_Inventory.md` added to the Operations/ tree and File Maturity Snapshot (created 2026-09-08, missing since; found via scope-map cross-reference, not a full re-audit of this file against the repository).**
+**Last updated: 2026-09-13 — Agent Orientation gained a 6th point (stated repo facts, including other agents' claims about repo state, go stale — verify against live source), drawn directly from this session's scope-map accuracy pass and provenance-dispute findings.**
 
 ---
 
@@ -140,7 +140,7 @@ how things are supposed to work.
 
 **Read this section before contributing anything to the repository.**
 
-This repository operates as a governed epistemic system, not a free-form document collection. Agents that treat it as a simple knowledge base will hallucinate files, invent authority, and produce outputs that conflict with committed specifications. The following five points prevent the most common failure modes.
+This repository operates as a governed epistemic system, not a free-form document collection. Agents that treat it as a simple knowledge base will hallucinate files, invent authority, and produce outputs that conflict with committed specifications. The following six points prevent the most common failure modes.
 
 **1. Mandatory session opening sequence**
 Every session begins with: (a) load `Admin/Forge_Audit_Kit.md` — this is the runtime reference for all audit and contribution work; (b) declare your role before writing anything (`Skeptic/Auditor`, `Synthesizer`, `Engineer`, `Evidence/Auditor`, or `Connective Tissue`); (c) run the Audit Opening Checklist from the kit — Tier 1 Axiom verification and Epistemic Foundation integrity check are non-negotiable first steps.
@@ -156,6 +156,9 @@ Every meaningful claim in this repository carries one of three epistemic states:
 
 **5. The philosophical substrate**
 The Forge's operating principles derive from two foundational documents: the Tier 1 Axioms in `Admin/Governance_Charter.md` (the constitutional floor) and the Nothingness Theorem in `Admin/Nothingness_Theorem.md` (the philosophical substrate). The theorem's core insight — that waste is not zero, that maintenance is thermodynamically equivalent to creation, and that distributed disagreement is the primary engine of error correction — underlies the salvage-first doctrine, the multi-agent audit architecture, and the anti-sacralization principle. A third foundational document, `Admin/Computational_Institutional_Reasoning.md`, formalizes the system's epistemic governance mathematically — Unknown Conservation, Governance Stability, Epistemic Debt Instability, and Institutional Memory Dominance are proven as theorems there, and the non-linear Verification Algebra (Physical Grounding Gate, Provenance Ceiling Gate, Adversarial Multiplier) that governs claim maturity throughout this repository is specified in full there. Agents are not required to read either document, but those who do will find they explain why the system is structured the way it is.
+
+**6. Stated repo facts go stale — verify against live source, not against what a file or another agent claims**
+Open-Unknowns counts, Status fields, cross-references, and scope-map summaries are all snapshots, not live queries — they drift the moment the file they describe changes and nobody circles back to update the pointer. This is a different failure mode from Fallacy 6 (Hallucinated Files, point 2 above): the file is real, the claim about it just isn't current anymore. A single folder-wide accuracy pass (2026-09-13) found ten such drifts, including one governance-critical file whose scope-map entry overstated its own open-question count by more than double. The same caution applies to claims *other agents* make about repository state — provenance, "this was already covered," "the count is N" — however confidently stated, however many agents agree. Multi-agent convergence is signal, not proof. Before accepting a factual claim about what the repo currently contains or says, check it against the live file, not against the claim itself.
 
 ---
 
