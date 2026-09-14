@@ -1,6 +1,6 @@
 # Discovery.md — LazarusForge
 **Navigation layer for the active working repository.**
-**Last updated: 2026-09-08**
+**Last updated: 2026-09-13 — `Operations/Tooling_Inventory.md` added to the Operations/ tree and File Maturity Snapshot (created 2026-09-08, missing since; found via scope-map cross-reference, not a full re-audit of this file against the repository).**
 
 ---
 
@@ -239,6 +239,7 @@ Operations/                                 — Physical modules and operational
     ├── Energy.md                           — Incremental power bootstrap & load profiles
     ├── Air_Scrubber.md                     — 5-stage negative-pressure containment subsystem
     ├── Plastics.md                         — Polymer triage & 3-stage pyrolysis framework
+    ├── Tooling_Inventory.md                — Live operational tooling inventory backing Gate B's "within tooling capability" check
     └── Woodworking.md                      — Salvaged urban timber milling & drying schedules
 
 Tests/                                      — Test frameworks and deployment platforms
@@ -402,6 +403,7 @@ Discovery.md is a navigation map — task tracking belongs in Unknowns.md.
 | `Operations/Energy.md` | Draft | 1/6 | High |
 | `Operations/Air_Scrubber.md` | Draft | 3/6 | High |
 | `Operations/Plastics.md` | Exploration | 0/6 | High |
+| `Operations/Tooling_Inventory.md` | Exploration | 0/6 | Medium |
 | `Operations/Woodworking.md` | Draft | 0/6 | High |
 | `Tests/Support_Raft.md` | Exploration | 0/6 | High — SR-001 (galvanic corrosion) is Open/High and required before v1.0; a hull that corrodes faster than modeled threatens the whole anchor-node concept |
 | `Tests/Leviathan_testing.md` | Exploration | 0/6 | High |

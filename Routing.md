@@ -1,7 +1,8 @@
 # Routing.md — LazarusForge
 **Canonical Navigation and Link Mapping Index.**
-**Last updated: 2026-09-08**
-**Addition 2026-09-08: `Admin/Agent_Verification_Event.md` (new process-doctrine file) and `Archive/Transcripts/Forge_Net_Gemini_FN001_FN005_Mapping.md` (relocated from `Architecture/` — memo-only, never Architecture doctrine) both registered.**
+**Last updated: 2026-09-13**
+**Addition 2026-09-13: `Operations/Tooling_Inventory.md` (created 2026-09-08 from HP-007, missing from this map since) registered — found while checking that file's coverage during a scope-map cross-reference. Not a full re-audit of this table against every repository file.**
+**Prior: 2026-09-08 addition of `Admin/Agent_Verification_Event.md` (new process-doctrine file) and `Archive/Transcripts/Forge_Net_Gemini_FN001_FN005_Mapping.md` (relocated from `Architecture/` — memo-only, never Architecture doctrine) both registered.**
 **Prior: 2026-09-06 addition of `Architecture/Local_Governance_Framework.md` (v0.1-draft file). No other map changes 2026-08-31 through 2026-09-06: the governance File State / Spec Gates / Highest Risk synchronizations across Verification_Gates.md, Auditor_Protocols.md, Governance_Charter.md, Governance_Migration_Protocol.md, Ethical_Constraints.md, Security_Protocols.md, Repository_Integrity_Protocol.md, Unknowns.md, and Progress_Log.md in that window were content-only — no files added, removed, or rerouted. Two Active Disputes IDs disambiguated in-place 2026-09-04 (`Operations/Gate_02_Triage.md` and `Operations/Gate_07_Utilization.md` local disputes renamed to TS-DS-001/GU-DS-001 respectively) — same paths, no map change.**
 
 ---
@@ -97,6 +98,7 @@ Last scope clarification: 2026-08-10 (integrity cleanup pass).
 | `Operations/Gate_07_Utilization.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForge/refs/heads/main/Operations/Gate_07_Utilization.md) | [Repo](https://github.com/ksarith/LazarusForge/blob/main/Operations/Gate_07_Utilization.md) | Explicit |
 | `Operations/Ops_Scope_Map.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForge/refs/heads/main/Operations/Ops_Scope_Map.md) | [Repo](https://github.com/ksarith/LazarusForge/blob/main/Operations/Ops_Scope_Map.md) | Explicit |
 | `Operations/Plastics.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForge/refs/heads/main/Operations/Plastics.md) | [Repo](https://github.com/ksarith/LazarusForge/blob/main/Operations/Plastics.md) | Explicit |
+| `Operations/Tooling_Inventory.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForge/refs/heads/main/Operations/Tooling_Inventory.md) | [Repo](https://github.com/ksarith/LazarusForge/blob/main/Operations/Tooling_Inventory.md) | Explicit |
 | `Operations/Woodworking.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForge/refs/heads/main/Operations/Woodworking.md) | [Repo](https://github.com/ksarith/LazarusForge/blob/main/Operations/Woodworking.md) | Explicit |
 | **Challenges/ Layer** | | | |
 | `Challenges/Biofouling.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForge/refs/heads/main/Challenges/Biofouling.md) | [Repo](https://github.com/ksarith/LazarusForge/blob/main/Challenges/Biofouling.md) | Explicit |
