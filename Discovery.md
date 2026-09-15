@@ -242,7 +242,7 @@ Operations/                                 — Physical modules and operational
     ├── Energy.md                           — Incremental power bootstrap & load profiles
     ├── Air_Scrubber.md                     — 5-stage negative-pressure containment subsystem
     ├── Plastics.md                         — Polymer triage & 3-stage pyrolysis framework
-    ├── Tooling_Inventory.md                — Live operational tooling inventory backing Gate B's "within tooling capability" check
+    ├── Tooling_Inventory.md                — Live operational tooling inventory backing Decision Point B's "within tooling capability" check
     └── Woodworking.md                      — Salvaged urban timber milling & drying schedules
 
 Tests/                                      — Test frameworks and deployment platforms
