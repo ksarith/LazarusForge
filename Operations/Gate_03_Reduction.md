@@ -172,7 +172,7 @@ are true:
 
 1. The item has passed through Gates A, B, C, and D
    in sequence and failed all four — or has been
-   explicitly routed by the Human/AI Oversight Gate
+   explicitly routed by the Oversight State
 2. The Air Scrubber is operational and has verified
    safe operating conditions — see ASM-003
 3. A human operator is present — see ASM-006
@@ -183,7 +183,7 @@ are true:
 
 *Authorization note (2026-09-12, aligns with Forge_flow
 Reading A):* Condition 1's two corridors are both valid
-**authorization** paths. Gate D YES (via full A–D failure)
+**authorization** paths. Decision Point D YES (via full A–D failure)
 and Oversight Terminate (explicit routing) each authorize
 Reduction independently. Conditions 2–5 are **execution
 readiness** — they do not authorize; they must still be
@@ -199,10 +199,10 @@ to an unmet prerequisite.
 - A throughput management tool — backlogs do not
   justify routing items to Reduction prematurely
 - A default for items that are difficult to classify —
-  difficulty routes to Human/AI Oversight Gate,
+  difficulty routes to Oversight State,
   not Reduction
 - A response to storage constraints — full Component
-  Library or holding areas route to Oversight Gate,
+  Library or holding areas route to Oversight State,
   not Reduction
 - Reversible — once begun, the item cannot be
   recovered as a discrete object
@@ -332,7 +332,7 @@ and the exhaust stream.
    ventilation
 5. Log the discovery — what was found, at what
    point in processing, what the item was
-6. Escalate to Human/AI Oversight Gate — do not
+6. Escalate to Oversight State — do not
    make disposal decisions without human review
 7. Equipment inspection before restart — confirm
    no contamination remains in the processing
@@ -448,7 +448,7 @@ requires explicit human authorization.
 ## 8. Integration Hooks
 
 - `Architecture/Forge_flow.md` — governing gate
-  sequence; Reduction is Gate D outcome path
+  sequence; Reduction is Decision Point D outcome path
 - `Operations/Gate_01_Intake.md` — upstream
   safety screening; GI-002 and GI-003 are
   prerequisites for safe Reduction operation
@@ -1053,7 +1053,7 @@ additional local triggers specific to Gate_03_Reduction:
 | Output envelope revised without GR-001 cross-validation against Gate_04 inputs | Output envelope changes propagate directly to Gate_04 performance — unilateral revision without cross-validation creates hidden downstream incompatibility |
 | Reduction method changed without GR-002 update and GR-004 particulate re-characterization | Method change invalidates particulate profile and output envelope — Air Scrubber sizing and Gate_04 input assumptions both require revalidation |
 | Open-air Reduction introduced without enclosure | Permanently abandoned path — reverting requires explicit human authorization, documented justification, and Air Scrubber integration review |
-| Ambiguous or difficult-to-classify items routed to Reduction without Oversight Gate review | Permanently abandoned path — classification difficulty routes to Oversight Gate, never directly to Reduction |
+| Ambiguous or difficult-to-classify items routed to Reduction without Oversight State review | Permanently abandoned path — classification difficulty routes to Oversight State, never directly to Reduction |
 | Melt-and-draw wire production introduced without clean single-class feedstock confirmation | Abandoned path with conditional reconsider — introduction requires confirmed feedstock purity, wire quality characterization, and explicit route through Admin/Trajectories.md and SC-004 |
 | Highest Risk label downgraded without first operational cycle data and GI-002 and GI-003 resolution | High risk reflects current unresolved upstream gaps — downgrade requires operational evidence that those gaps are closed, not assumption |
 

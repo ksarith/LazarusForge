@@ -470,9 +470,9 @@ for operator clarity; they do not assign a gate or bind Gate_02:
 
 | `recommended_gate02_class` | Intended sense |
 |----------------------------|----------------|
-| `functional` | Candidate for Gate A–style assessment |
-| `repairable` | Candidate for Gate B–style assessment |
-| `material_only` | Candidate for Gate D / Reduction–style assessment |
+| `functional` | Candidate for Decision Point A–style assessment |
+| `repairable` | Candidate for Decision Point B–style assessment |
+| `material_only` | Candidate for Decision Point D / Reduction–style assessment |
 | `hazardous` | Candidate for hold / specialist assessment before ordinary routing |
 | `lost` | No physical item to route; record-only close |
 

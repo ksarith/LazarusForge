@@ -49,7 +49,7 @@
 - Gate correspondence table linking triage outcomes to Forge_flow.md gates
 - Queue economics doctrine — queues as active allocations
 - Five modular triage stations (Station 0 through Station 4)
-- Triage Terminal and Human/AI Oversight Gate behavior
+- Triage Terminal and Oversight State behavior
 - Failure modes and mitigations specific to triage
 - Data and learning loop requirements
 - Minimum viable triage configuration for Gen-1 Forge
@@ -136,7 +136,7 @@ Never destroy or disassemble a component if a non-invasive test can establish vi
 Begin with the fastest, lowest-energy test. Escalate only when value is plausible.
 
 **3. Human–Machine Hybrid**
-Human judgment informs classification — it does not bypass the Gate A–D routing sequence defined in `Architecture/Forge_flow.md`.
+Human judgment informs classification — it does not bypass the Decision Points A–D routing sequence defined in `Architecture/Forge_flow.md`.
 
 **4. Energy & Time Accounting**
 Each test has a known energy/time cost. A component must justify deeper testing.
@@ -158,7 +158,7 @@ Triage operates on two axes simultaneously:
 Components requiring rare materials, specialized tooling, high precision manufacturing, or fragile supply chains should require higher confidence before irreversible material recovery is authorized.
 
 **9. Embedded Value Preservation (added 2026-07-17, ratified — `Challenges/Closed_Loop_Feedstock.md` §2a)**
-This principle governs a step Principle 8 doesn't reach: what happens to a component that *fails* triage as a whole. Before a Gate D item proceeds to full material reduction, check whether it contains sub-components that already embody significant manufacturing effort — precision bearings, laminated motor cores, magnet wire, shafts, threaded fasteners — and are separable at lower cost than the value they represent. Extract and preserve those intact; reduce only what's left. Reduction remains the default for the unit as a whole once it has failed triage — this principle narrows what gets reduced, it doesn't reopen the pass/fail decision itself. See §IV Routing table below for where this check occurs.
+This principle governs a step Principle 8 doesn't reach: what happens to a component that *fails* triage as a whole. Before a Decision Point D item proceeds to full material reduction, check whether it contains sub-components that already embody significant manufacturing effort — precision bearings, laminated motor cores, magnet wire, shafts, threaded fasteners — and are separable at lower cost than the value they represent. Extract and preserve those intact; reduce only what's left. Reduction remains the default for the unit as a whole once it has failed triage — this principle narrows what gets reduced, it doesn't reopen the pass/fail decision itself. See §IV Routing table below for where this check occurs.
 
 ---
 
@@ -193,7 +193,7 @@ The more advanced the artifact, the more condensed civilization may be inside it
 | Common | Easily reproduced locally | Standard gate routing |
 | Constrained | Reproducible with moderate infrastructure | Elevated retention tolerance |
 | Strategic | Requires advanced tooling or supply chains | High confidence required before material recovery |
-| Critical | Currently irreproducible within Forge capability | Preservation strongly preferred; escalate to Human/AI Oversight Gate |
+| Critical | Currently irreproducible within Forge capability | Preservation strongly preferred; escalate to Oversight State |
 
 These tiers influence queue priority, destruction authorization, provenance retention depth, and repurpose restrictions — without making the system bureaucratic.
 
@@ -205,16 +205,16 @@ Triage stations map to the gate logic in `Architecture/Forge_flow.md`:
 
 | Triage Outcome | Flow Gate | Routing |
 |---|---|---|
-| Station pass — original function confirmed | Gate A pass | Component Library |
-| Station pass — function only in reduced/different application | Gate C pass | Repurpose |
-| Station partial — failure localized, within current tooling | Gate B pass | Repair & Learn queue |
-| Station partial — failure exceeds current tooling capability | Gate B fail → Gate C | Assess for downgrade or Triage Terminal |
-| Station fail — no function, material recovery value present | Gate D | Material Recovery (Reduction path) |
-| Station fail — no function, no material recovery value | Gate D + Oversight | Triage Terminal |
+| Station pass — original function confirmed | Decision Point A pass | Component Library |
+| Station pass — function only in reduced/different application | Decision Point C pass | Repurpose |
+| Station partial — failure localized, within current tooling | Decision Point B pass | Repair & Learn queue |
+| Station partial — failure exceeds current tooling capability | Decision Point B fail → Decision Point C | Assess for downgrade or Triage Terminal |
+| Station fail — no function, material recovery value present | Decision Point D | Material Recovery (Reduction path) |
+| Station fail — no function, no material recovery value | Decision Point D + Oversight | Triage Terminal |
 
-*Gate D routing to Material Recovery includes an Embedded Value Preservation check (Principle 9) before full reduction — separable high-value sub-components (bearings, cores, magnet wire, shafts, fasteners) are extracted and preserved intact first; only the remainder proceeds to `Operations/Gate_03_Reduction.md`.*
+*Decision Point D routing to Material Recovery includes an Embedded Value Preservation check (Principle 9) before full reduction — separable high-value sub-components (bearings, cores, magnet wire, shafts, fasteners) are extracted and preserved intact first; only the remainder proceeds to `Operations/Gate_03_Reduction.md`.*
 
-*Worked example:* A pump motor rated 500W runs at 320W under standard pump load — Gate A fail. The same motor drives a ventilation fan at 40% duty — Gate C pass (repurpose to ventilation duty).
+*Worked example:* A pump motor rated 500W runs at 320W under standard pump load — Decision Point A fail. The same motor drives a ventilation fan at 40% duty — Decision Point C pass (repurpose to ventilation duty).
 
 ---
 
@@ -233,7 +233,7 @@ Every component entering a repair or repurpose queue must carry:
 If a queue reaches capacity, the lowest-value items are reassessed before new items are admitted. Queue saturation is a signal that the Forge's repair or repurpose throughput is insufficient — log it as a Forge health indicator.
 
 **Queue decay:**
-Items that exceed their reassessment interval without action are automatically flagged for Human/AI Oversight Gate review. The default downgrade path is: repair queue → repurpose queue → material recovery. Human judgment required to hold above the default path.
+Items that exceed their reassessment interval without action are automatically flagged for Oversight State review. The default downgrade path is: repair queue → repurpose queue → material recovery. Human judgment required to hold above the default path.
 
 **Provenance granularity:**
 Provenance chains should preserve enough history to identify recurring failure patterns without imposing unsustainable logging burden. Minimum at v0: original source, triage date, station outcomes, any repair events. Richer provenance for Strategic and Critical tier components.
@@ -268,7 +268,7 @@ Priority items: motors, transformers, batteries, inverters, PCBs, solenoids
 **Pass Guidance:**
 ≥ ~70% of expected performance or "sufficient for forge duty" *(Placeholder — see TS-001)*
 
-Gate A vs Gate C distinction: performance in original application = Gate A. Performance only in reduced application = Gate C.
+Decision Point A vs Decision Point C distinction: performance in original application = Decision Point A. Performance only in reduced application = Decision Point C.
 
 Strategic tier override: a motor at 40% performance that requires rare-earth magnets may warrant Strategic Hold regardless of functional gate outcome.
 
@@ -290,12 +290,12 @@ Runtime: 5–15 minutes *(Placeholder)*
 
 | Result | Condition | Routing |
 |---|---|---|
-| Pass | Performs original or equivalent function | Component Library (Gate A) |
-| Partial | Failure localized, within current tooling | Repair & Learn (Gate B) |
-| Partial | Failure exceeds current tooling | Assess for downgrade (Gate C) |
-| Fail | No function, material has recovery value | Material Recovery — Reduction (Gate D) |
+| Pass | Performs original or equivalent function | Component Library (Decision Point A) |
+| Partial | Failure localized, within current tooling | Repair & Learn (Decision Point B) |
+| Partial | Failure exceeds current tooling | Assess for downgrade (Decision Point C) |
+| Fail | No function, material has recovery value | Material Recovery — Reduction (Decision Point D) |
 | Fail | No function, no recovery value | Triage Terminal |
-| Any | Strategic or Critical tier | Escalate to Human/AI Oversight Gate regardless of functional result |
+| Any | Strategic or Critical tier | Escalate to Oversight State regardless of functional result |
 
 ---
 
@@ -309,7 +309,7 @@ Refines borderline calls. Does not override clear Pass or clear Fail from Statio
 
 ## VII. Triage Terminal
 
-Every item reaching Material Recovery disposition must pass a structured hold review before irreversible processing begins. This is the Human/AI Oversight Gate from `Architecture/Forge_flow.md` at the triage exit.
+Every item reaching Material Recovery disposition must pass a structured hold review before irreversible processing begins. This is the Oversight State from `Architecture/Forge_flow.md` at the triage exit.
 
 - If a credible, active use case exists: assign with defined review date
 - If Strategic or Critical tier: require explicit human authorization before material recovery proceeds
@@ -339,7 +339,7 @@ record and an advisory `recommended_gate02_class`.
 **Reception**
 - Gate_02 accepts the handoff record as **input context** for routing.
 - The recommendation is **advisory**. Gate_02 makes the routing decision
-  under existing Gate A–D (and related) doctrine after its own assessment.
+  under existing Decision Points A–D (and related) doctrine after its own assessment.
 - Gate_02 does not treat Gate_07's recommendation as a completed triage
   outcome or as automatic gate assignment.
 
@@ -404,7 +404,7 @@ Recurring failure patterns on specific component types are flagged for classific
 
 **Status: Candidate architecture. Drafted 2026-08-02 (Copilot, human-directed).
 Has not passed Gate 1 (Fallacy Check) or any other canonical Verification
-Gate. Nothing in this section changes Stations 0–4, the Gate A–D routing
+Gate. Nothing in this section changes Stations 0–4, the Decision Points A–D routing
 table in §IV, or Principle 9 — it proposes an additional layer that would,
 if validated, sit alongside them. Payment via Specification only: presence
 of this section is not evidence of operational capability.**
@@ -426,7 +426,7 @@ Converts triage events into structured knowledge that could, once
 validated, improve pass/fail decisions and threshold calibration.
 
 - **Would record per event:** component class, station path, tests
-  performed, outcome (Gate A/B/C/D), later in-service failures/re-triage.
+  performed, outcome (Decision Point A/B/C/D), later in-service failures/re-triage.
 - **Would derive:** failure-mode distributions per class, repair-success
   likelihoods, repurpose-suitability bands, contamination incidence per
   source stream, strategic-scarcity trends.
@@ -450,7 +450,7 @@ rest of §XII: it does not make TIL operative, it makes TIL *startable*.*
 **Fields (single flat table — spreadsheet or paper log, transcribed
 weekly):** Event_ID, Triage_Date, Component_Class, Source_Stream,
 Strategic_Tier, Station_Path, Tests_Performed, Measured_Performance,
-Outcome (Gate A/B/C/D/Hold/Terminal), Embedded_Value_Actions (if Gate D),
+Outcome (Decision Point A/B/C/D/Hold/Terminal), Embedded_Value_Actions (if Decision Point D),
 Operator, Energy_Time_Cost (optional), Later_Fate, Notes. Most fields are
 free-text at v0; only Event_ID, Triage_Date, Strategic_Tier, Station_Path,
 Outcome, and Operator are required.
@@ -524,12 +524,12 @@ file — if a unified triage+fabrication ID scheme is wanted later, it
 belongs in `Admin/Canonical_Terms.md`, which already owns the Component
 Library Schema question, not in this file's TIL note.
 
-### XII.1b Gate B Secondary Test extension fields — proposed
+### XII.1b Decision Point B Secondary Test extension fields — proposed
 
 *Added 2026-09-09, Grok-drafted schema, Claude-adapted to extend this*
 *section rather than duplicate it, human-directed. Same
 candidate/not-audited status as the rest of §XII. Serves*
-*`Architecture/Forge_flow.md`'s FL-005 — Gate B's Secondary Test*
+*`Architecture/Forge_flow.md`'s FL-005 — Decision Point B's Secondary Test*
 *(justified-effort evaluation) is unvalidated against real operation*
 *and its own text requires every decision to be logged with operator*
 *rationale. This is that log, as an extension of §XII.1a's existing*
@@ -537,7 +537,7 @@ candidate/not-audited status as the rest of §XII. Serves*
 *standalone observation form before checking whether one already*
 *existed here; it did.*
 
-**When a triage event's Outcome is Gate B, and Gate B's Primary Test
+**When a triage event's Outcome is Decision Point B, and Decision Point B's Primary Test
 passed** (i.e. the Secondary Test was actually reached), record these
 fields in addition to the standard XII.1a set:
 
@@ -547,8 +547,8 @@ fields in addition to the standard XII.1a set:
 | `Estimated_Repair_Effort` | As the operator actually used it — a qualitative band ("<30 min", "1-2h", "half day", "multi-day/specialist") | New |
 | `Recovered_Value` | Yes / No / Partial + short note | New |
 | `Learning_Value` | Yes / No + note (novel or high-frequency failure mode?) | New |
-| `Scarcity_Value` | Measured / Assumed / None + evidence cited — per Gate B's own "measured, not assumed" rule | New |
-| `Secondary_Test_Result` | YES → Repair & Learn, or NO → Gate C | Maps to existing `Outcome` field — do not duplicate, this is the same value already captured there |
+| `Scarcity_Value` | Measured / Assumed / None + evidence cited — per Decision Point B's own "measured, not assumed" rule | New |
+| `Secondary_Test_Result` | YES → Repair & Learn, or NO → Decision Point C | Maps to existing `Outcome` field — do not duplicate, this is the same value already captured there |
 | `Rationale` | Free text, must reference at least one of the three axes above | Maps to existing `Notes` field — use `Notes` for this, do not add a separate column |
 | `Alternative_Operator_Decision` | Optional. Same item reviewed by a second operator, or the same operator's counterfactual at half/double the estimated effort | New — highest-value single field for surfacing inter-operator divergence, per FL-005 |
 | `Tooling_Inventory_Snapshot` | Reference/version of the live inventory used for the Primary tooling-capability check | New — ties this record to FL-004/ASM-003 |
@@ -588,7 +588,7 @@ depending on that unvalidated layer, not on a proven one.
   Principle 9 extraction) > T₃ operational utility (Station 1–3 testing,
   Repair & Learn routing) > T₄ opportunistic (extended characterization).
 - **Proposed rule:** if T₁ capacity cannot be maintained, hold everything
-  at Station 0 — no escalation, no Gate D routing. This is consistent with
+  at Station 0 — no escalation, no Decision Point D routing. This is consistent with
   the existing Safety Advisory at the top of this file ("when in doubt,
   hold at Station 0") rather than a new invention.
 - **Not yet defined:** what "triage capacity" is measured in, or how it
@@ -602,8 +602,8 @@ actual capability rather than operator optimism.
 
 - **Domains:** testing, repair, repurpose, decontamination, embedded-value
   extraction — each with a v0/v1/v2+ maturity ladder.
-- **Proposed governance hook:** Gate B (Repair & Learn) is only meaningful
-  if repair capability is above the minimum rung; Gate D destruction of a
+- **Proposed governance hook:** Decision Point B (Repair & Learn) is only meaningful
+  if repair capability is above the minimum rung; Decision Point D destruction of a
   component with extractable embedded value (Principle 9) is inappropriate
   if extraction capability can't actually reach it yet. This formalizes
   something Principle 9 and the Gate Correspondence table already imply
@@ -615,10 +615,10 @@ A candidate quantitative maturity score across five dimensions — evidence
 quality, repair feasibility, contamination confidence, provenance
 completeness, strategic recoverability — each 0–3, averaged to a 0–1 score.
 
-- **Proposed rule:** Gate D destruction of a Strategic or Critical tier
+- **Proposed rule:** Decision Point D destruction of a Strategic or Critical tier
   item would require evidence quality ≥1, repair feasibility ≥1, and
   strategic recoverability ≥1. This is a candidate quantification of the
-  Human/AI Oversight Gate requirement §IV and §VIII already impose for
+  Oversight State requirement §IV and §VIII already impose for
   Strategic/Critical tier items — it is not a new authority, and it does
   not lower the existing bar.
 - **Not yet defined:** who scores these dimensions, how often, or with
@@ -756,7 +756,7 @@ pointer claiming this file owns it.
 performance for forge-duty components remains incompletely defined.
 
 **Why It Matters:** Without a calibrated threshold, triage decisions at the
-Gate A/C boundary rely entirely on operator judgment — reproducibility and
+Decision Point A/C boundary rely entirely on operator judgment — reproducibility and
 cross-operator consistency cannot be verified.
 
 **Resolution Path:** Working definition added: "A component is sufficient if
@@ -823,8 +823,8 @@ Full decontamination protocol still needed. Cross-reference
 | First Logged  | May 2026                       |
 | Last Reviewed | 2026-08-14                     |
 
-**Description:** Deterministic routing for all item types at Gate A/C and
-Gate C/D boundaries remains incomplete. Strategic tier override creates
+**Description:** Deterministic routing for all item types at Decision Point A/C and
+Decision Point C/D boundaries remains incomplete. Strategic tier override creates
 additional boundary cases requiring worked examples.
 
 **Why It Matters:** Non-deterministic boundary cases produce inconsistent
@@ -936,7 +936,7 @@ Do not implement TAL ahead of that.
 repurpose, decontamination, and embedded-value extraction has not been
 checked against what tooling actually exists at the Forge's current stage.
 
-**Why It Matters:** An overstated capability rung could make Gate B/C/D
+**Why It Matters:** An overstated capability rung could make Decision Point B/C/D
 routing look more justified than the Forge can actually deliver on.
 
 **Resolution Path:** Populate the v0 rung of each domain against
@@ -966,14 +966,14 @@ one is designated to assign these scores, at what cadence, or against what
 evidence standard.
 
 **Why It Matters:** An unscored or self-scored maturity vector attached to
-a destruction-authorization rule (Gate D for Strategic/Critical tier) would
+a destruction-authorization rule (Decision Point D for Strategic/Critical tier) would
 be worse than no vector at all — it would look quantitative without being
 verifiable.
 
-**Resolution Path:** Do not cite TMV scores in any actual Gate D decision
+**Resolution Path:** Do not cite TMV scores in any actual Decision Point D decision
 until a scoring owner and cadence are assigned and logged here.
 
-**Grok review 2026-08-14:** Path adequate and correctly conservative — an unscored maturity vector on a destruction-authorization rule would be worse than none. **Grok approved (path adequate).** Remains Open — scoring owner + cadence still required before any Gate D citation.
+**Grok review 2026-08-14:** Path adequate and correctly conservative — an unscored maturity vector on a destruction-authorization rule would be worse than none. **Grok approved (path adequate).** Remains Open — scoring owner + cadence still required before any Decision Point D citation.
 
 ---
 
@@ -1124,12 +1124,12 @@ Mandatory re-audit conditions for this document:
 - False-positive doctrine reversed — destruction confidence lowered below retention confidence during bootstrap
 - Gate Correspondence table diverges from `Architecture/Forge_flow.md` gate definitions
 - Stale flat filenames present in cross-references
-- Human/AI Oversight Gate requirement removed for Strategic or Critical tier components
+- Human/AI Oversight State requirement removed for Strategic or Critical tier components
 - TS-DS-001 resolved without explicit audit cycle and cross-validation with Gate_07_Utilization.md
 - Ethical Anchor field absent, altered, or does not match canonical string
 - §XII (TIL/TAL/TCM/TMV) cited as binding, constitutional, or CIR-integrated without GOV-008 existing and CIR_Gov.md being ratified
 - §XII treated as having raised this file's Spec Gates count without an actual gate pass on record
-- TMV scores or TCM capability rungs cited in an actual Gate D decision without a scoring owner assigned (TS-008) or a v0-tooling check performed (TS-007)
+- TMV scores or TCM capability rungs cited in an actual Decision Point D decision without a scoring owner assigned (TS-008) or a v0-tooling check performed (TS-007)
 
 **Compound Drift Rule:** If multiple indicators activate simultaneously, halt
 autonomous audit progression and escalate for human review.

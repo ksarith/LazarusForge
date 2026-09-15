@@ -220,8 +220,8 @@ and Fabrication in the Forge flow:
 
 Electronic components are not exempt from the gate
 sequence. A salvaged IC that cannot perform its
-original function routes to Gate C (repurpose to
-simpler task) or Gate D (material recovery — copper,
+original function routes to Decision Point C (repurpose to
+simpler task) or Decision Point D (material recovery — copper,
 rare earth elements) just like any other component.
 
 **Electronics as trust-anchor:**

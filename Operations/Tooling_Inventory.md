@@ -5,7 +5,7 @@
 ## Navigation Anchors
 * **Context Core:** [Discovery.md](https://raw.githubusercontent.com/ksarith/LazarusForge/refs/heads/main/Discovery.md)
 * **Network Routing:** [Routing.md](https://raw.githubusercontent.com/ksarith/LazarusForge/refs/heads/main/Routing.md)
-* **Gate B reference:** [Architecture/Forge_flow.md](../Architecture/Forge_flow.md) — ASM-003, Defined Term “Within tooling capability”, FL-004
+* **Decision Point B reference:** [Architecture/Forge_flow.md](../Architecture/Forge_flow.md) — ASM-003, Defined Term “Within tooling capability”, FL-004
 
 ---
 
@@ -30,7 +30,7 @@
 ## Scope Boundary
 
 **This file DOES define:**
-- The live operational tooling inventory used by Gate B (“within current tooling capability”)
+- The live operational tooling inventory used by Decision Point B (“within current tooling capability”)
 - Ownership and maintenance cadence for that inventory
 - The conservative default rule when the inventory is stale or incomplete
 - Distinction between this operational inventory and the system-component taxonomy in Architecture/Components.md
@@ -44,17 +44,17 @@
 - Gate logic itself
   (→ Architecture/Forge_flow.md)
 - Repair methods or repair heuristics beyond the inventory reference
-  (→ Architecture/Forge_flow.md Gate B and Operations/Gate_02_Triage.md)
+  (→ Architecture/Forge_flow.md Decision Point B and Operations/Gate_02_Triage.md)
 
 ---
 
 ## File Purpose
 
-Gate B in Forge_flow.md evaluates whether a failure is “within current tooling capability.” That evaluation is only deterministic if a known, maintained list of tools actually available to operators exists. This file is that list and its governing rules.
+Decision Point B in Forge_flow.md evaluates whether a failure is “within current tooling capability.” That evaluation is only deterministic if a known, maintained list of tools actually available to operators exists. This file is that list and its governing rules.
 
 It is deliberately narrow: a living operational reference, not an architecture document. It exists to satisfy ASM-003 and FL-004.
 
-Without this file, Gate B decisions remain operator-dependent mental models and the conservative degraded-mode rule (“if inventory is stale → Gate B = NO”) has nothing concrete to check against.
+Without this file, Decision Point B decisions remain operator-dependent mental models and the conservative degraded-mode rule (“if inventory is stale → Decision Point B = NO”) has nothing concrete to check against.
 
 **This file is per-deployment, not canonical.** This repository is
 shared and forked across independent Forge builds. Whatever gets
@@ -77,7 +77,7 @@ Initialization Checklist.
 
 | ID      | Assumption                                                                 | Basis                          | Confidence | Expiry Trigger                                      |
 |---------|----------------------------------------------------------------------------|--------------------------------|------------|-----------------------------------------------------|
-| ASM-001 | The inventory below is the sole reference Gate B may use                   | Forge_flow.md ASM-003 / FL-004 | High       | Inventory ownership reassigned or doctrine changed  |
+| ASM-001 | The inventory below is the sole reference Decision Point B may use                   | Forge_flow.md ASM-003 / FL-004 | High       | Inventory ownership reassigned or doctrine changed  |
 | ASM-002 | Operators will update the inventory when tools are added, lost, or fail    | Maintenance cadence (below)    | Medium     | First operational cycle shows update failures       |
 | ASM-003 | Absence of a tool from this list is treated as “not available”             | Conservative default rule      | High       | Explicit override doctrine adopted                  |
 
@@ -86,10 +86,10 @@ Initialization Checklist.
 ## Governing Rules
 
 1. **Sole reference**  
-   Gate B decisions use only the inventory in this file. Projected, planned, or “we could buy” tools are invisible to Gate B.
+   Decision Point B decisions use only the inventory in this file. Projected, planned, or “we could buy” tools are invisible to Decision Point B.
 
 2. **Conservative default**  
-   If the inventory is known to be stale, incomplete, or under dispute, Gate B evaluates to **NO** (item routes to Gate C). See Forge_flow.md degraded-operation doctrine and ASM-003.
+   If the inventory is known to be stale, incomplete, or under dispute, Decision Point B evaluates to **NO** (item routes to Decision Point C). See Forge_flow.md degraded-operation doctrine and ASM-003.
 
 3. **Update cadence**  
    - After any tool is added, removed, fails, or is taken out of service → update within one operational shift.  
@@ -101,8 +101,8 @@ Initialization Checklist.
    This file lists the concrete tools and machines that operators actually have on hand for repair and triage decisions.  
    The two documents are complementary, not interchangeable.
 
-5. **Relationship to Gate B secondary test**  
-   When Gate B’s secondary “justified effort” test is applied, the “within current tooling capability” clause is evaluated exclusively against this inventory.
+5. **Relationship to Decision Point B secondary test**  
+   When Decision Point B’s secondary “justified effort” test is applied, the “within current tooling capability” clause is evaluated exclusively against this inventory.
 
 ---
 
@@ -110,7 +110,7 @@ Initialization Checklist.
 
 *Populate with actual tools present at the deployment site. Categories are suggestions only; add or remove rows as needed. Status values: Available / Degraded / Out of Service / Missing.*
 
-*Empty tables are intentional at file creation. First physical inventory and population should occur before any claim that Gate B is fully deterministic. See TI-001.*
+*Empty tables are intentional at file creation. First physical inventory and population should occur before any claim that Decision Point B is fully deterministic. See TI-001.*
 
 ### Hand Tools & Bench
 | Tool / Item                         | Qty | Status     | Notes / Last Verified |
@@ -185,14 +185,14 @@ Initialization Checklist.
 | Risk          | Medium                                           |
 | Priority      | Major                                            |
 | Type          | Operational                                      |
-| Blocking      | No (but blocks full FL-001 / Gate B determinism) |
+| Blocking      | No (but blocks full FL-001 / Decision Point B determinism) |
 | Owner         | Operations/Tooling_Inventory.md                  |
 | First Logged  | 2026-09-08                                       |
 | Last Reviewed | 2026-09-08                                       |
 
 **Description:** The inventory tables above are structural placeholders. No actual tool list has been populated and no human owner has been assigned.
 
-**Why It Matters:** Until the list is real and owned, ASM-003 in Forge_flow.md and FL-004 remain open assumptions. Gate B cannot claim full determinism.
+**Why It Matters:** Until the list is real and owned, ASM-003 in Forge_flow.md and FL-004 remain open assumptions. Decision Point B cannot claim full determinism.
 
 **Resolution Path (per deployment):**
 - This is closed once, locally, by each Forge instance — never once

@@ -53,7 +53,7 @@
 - Item tagging and provenance recording at entry
 - Parts list generation doctrine for known assemblies
 - Unknown item hold and inspect protocol before
-  escalation to Human/AI Oversight Gate
+  escalation to Oversight State
 - Fastener and small component recovery doctrine —
   preserve before reduction
 - Integration with Architecture/Forge_Net.md reference
@@ -173,7 +173,7 @@ the system's first safety barrier.
 - **Mandatory escalation after repeated unknowns**
   — five consecutive unknown items without
   resolution triggers escalation to Human/AI
-  Oversight Gate regardless of individual item
+  Oversight State regardless of individual item
   status. Pattern recognition, not just item
   assessment.
 - **Stop Intake authority** — any operator may
@@ -350,7 +350,7 @@ or dual-signoff machinery is implied or required by this rule.
   Cross-reference: GI-007, `Operations/Electronics.md`,
   `Architecture/Forge_Net.md`
 - New hazard categories not listed above route to
-  Human/AI Oversight Gate and trigger a new category
+  Oversight State and trigger a new category
   entry per `Architecture/Forge_flow.md` contamination
   doctrine
 
@@ -443,8 +443,8 @@ downstream gates must account for.*
 
 For identified assemblies, a preliminary parts list
 documents the recoverable components before disassembly
-begins. This is Gate A intelligence arriving before
-Gate A — knowing what's inside before opening the item.
+begins. This is Decision Point A intelligence arriving before
+Decision Point A — knowing what's inside before opening the item.
 
 **Parts list doctrine at v0:**
 - Human judgment primary — operator generates list
@@ -472,9 +472,9 @@ structural certainty. Explicit limits at v0:
 - No dependency on database completeness — if the
   database has no entry, the parts list is blank
   until the operator fills it from knowledge
-- "Gate A intelligence arriving before Gate A"
+- "Decision Point A intelligence arriving before Decision Point A"
   means helpful context, not predictive certainty.
-  Gate A makes the actual routing decision.
+  Decision Point A makes the actual routing decision.
 
 **Parts list minimum content:**
 - Item identifier (linked to intake tag)
@@ -692,7 +692,7 @@ Gate.
 5. If partial identification achieved: proceed with
    incomplete record, flag gaps explicitly
 6. If no identification after hold and inspect:
-   escalate to Human/AI Oversight Gate with full
+   escalate to Oversight State with full
    inspection notes
 7. Do not route unknown items to gate logic without
    at least partial identification — gate decisions
@@ -708,12 +708,12 @@ contaminated items but with distinct roles:
 - **Gate_02_Triage owns** routing classification —
   once Intake has established the hazard state,
   Triage determines the downstream path
-- **Human/AI Oversight Gate owns** unresolved
+- **Oversight State owns** unresolved
   hazard arbitration — contaminated-but-valuable
   items requiring partial disassembly or deferred
   classification escalate here, not to Triage
 
-**Oversight Gate escalation capacity:**
+**Oversight State escalation capacity:**
 The unknown item protocol assumes Oversight is
 available when needed. No doctrine exists for
 Oversight saturation. Provisional guidance:
@@ -727,7 +727,7 @@ Oversight saturation. Provisional guidance:
   a correctly held item is always better than a
   prematurely routed one
 - Cross-reference: `Architecture/Forge_flow.md`
-  Human/AI Oversight Gate doctrine
+  Oversight State doctrine
 
 **Unknown item as network contribution:**
 An unidentified item that is eventually identified
