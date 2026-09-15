@@ -33,7 +33,7 @@
 | Verification Ref | Admin/Verification_Gates.md                                      |
 | Last Audit       | 2026-09-10 — ChatGPT ran a full multi-phase audit (Phases 1-6: structural validation, scope validation, assumption extraction, internal coherence, cross-module consistency, evidence validation) under Auditor_Protocols.md v0.41; Claude verified every substantive claim against live source before acting. Six mechanical fixes applied directly (Lessons Learned heading restored over a pre-existing orphaned table, stale Gate Correspondence Oversight row corrected, FL-003 self-contradiction fixed, "Eight sequential decision gates" reworded, §1.3 bare filenames fully-qualified, illustrative example values labeled non-measured). Six new Unknowns registered (FL-008 through FL-013); FL-007 strengthened with cross-file evidence. One new finding beyond the audit itself: FL-001's Resolution Path cites a Gate_02_Triage.md worked example that doesn't exist (FL-009). One error caught in the audit's own output (EV-011 misattributed a quote's section). Prior: 2026-09-08/09 — fifteen resolution-log passes across two days: R0-R4 taxonomy (HP-001, propagated to Gate_03_Reduction.md), Oversight multi-exit formalization (HP-002), Flow Invariants §1.1 (HP-003), Gate D polarity rewrite (HP-004), boundary-case Examples 4-7 (HP-005 partial), cross-layer reconciliation spinning off FL-003/FL-004 (HP-006), Tooling_Inventory.md creation (HP-007), per-deployment wording + Deployment Localization Doctrine, Gate B Secondary Test + FL-005, Gate Decision Contracts §1.2 + explicit UNKNOWN transitions + re-entry contract (HP-008/009/015), terminal-state distinction (HP-014). Prior: 2026-08-08 |
 | Auditor          | Claude — Retrofit/Auditor                                           |
-| Open Unknowns    | 12                                                                  |
+| Open Unknowns    | 8                                                                   |
 | Active Disputes  | 1                                                                   |
 | Highest Risk     | Medium                                                              |
 | Sidecar Link     | #auditor-notes--unknowns                                            |
@@ -55,8 +55,8 @@
 - v0 scope, inputs, and explicit non-goals
 - Defined Terms for all shared operational vocabulary
 - Ten sequential processing stages (Intake through Utilization),
-  of which five are actual decision points — Gates A-D and
-  Human/AI Oversight. Distinct from Operations/Gate_01 through
+  of which five are actual decision points — Decision Points A–D and
+  Oversight State. Distinct from Operations/Gate_01 through
   Gate_07 (operational modules) and from Verification Gates 1-6
   (document audit/promotion gates) — corrected 2026-09-10
   (ChatGPT audit, P5-012/S2-007) from "Eight sequential decision
@@ -68,7 +68,7 @@
 - Feedback and learning doctrine for v0
 - Primary KPI definition (value recovered per kWh consumed)
 - Termination conditions for items exiting the system
-- Human/AI Oversight Gate logic and want/need policy
+- Oversight State logic and want/need policy
 - Purification stage definition — governs DS-001 terminology dispute
 - Self-replication architecture or loop closure logic, as pointed
   to from `Operations/Gate_05_Separation_Thermal.md` (pending —
@@ -132,12 +132,12 @@ definitions of the same terms.
 | ID      | Assumption | Basis | Confidence | Expiry Trigger |
 |---------|------------|-------|------------|----------------|
 | ASM-001 | Items entering the system have been safety-screened before gate logic applies — hazards, pressure, and charge assessed at Intake | Intake section — screening listed but prerequisites not defined | Medium | Intake safety screening formally specified |
-| ASM-002 | Human operator is available and capable of overriding gate decisions at any point in the flow | Human/AI Oversight Gate — override assumed available | Medium | Autonomous operation validated and human override formally optional |
-| ASM-003 | The Forge's current tooling inventory is known, maintained, and available as a live reference for Gate B evaluation | Gate B — "within current tooling capability" requires known tooling state | Medium | Tooling inventory specification and maintenance doctrine assigned to an owning file |
-| ASM-004 | A Component Library exists and is maintained to receive and track Gate A outputs | Outcome Paths — Component Library assumed to exist as a functional system | Medium | Component Library specification assigned to an owning file |
+| ASM-002 | Human operator is available and capable of overriding gate decisions at any point in the flow | Oversight State — override assumed available | Medium | Autonomous operation validated and human override formally optional |
+| ASM-003 | The Forge's current tooling inventory is known, maintained, and available as a live reference for Decision Point B evaluation | Decision Point B — "within current tooling capability" requires known tooling state | Medium | Tooling inventory specification and maintenance doctrine assigned to an owning file |
+| ASM-004 | A Component Library exists and is maintained to receive and track Decision Point A outputs | Outcome Paths — Component Library assumed to exist as a functional system | Medium | Component Library specification assigned to an owning file |
 | ASM-005 | Feedback from operational runs reaches classification rules in a timely enough cycle to improve gate decisions | Section 7 — learning assumed to close the loop | Low | Learning cycle time defined and validated against operational cadence |
 | ASM-006 | Value in the primary KPI is eventually definable in measurable units — directional validity assumed until then | KPI section — explicitly Placeholder | Low | KPI definition resolved per Operations/Energy.md and operational baseline |
-| ASM-007 | Gate logic applies to discrete items, not fixed assemblies. Assemblies may be disassembled — each resulting component re-enters the gate sequence independently at Gate A. Disassembly is itself a Gate C or Gate D decision on the assembly, not a bypass of sequential order | Gate logic architecture; fan/motor worked example | Medium | Parallel or non-sequential gate processing validated as superior at scale |
+| ASM-007 | Gate logic applies to discrete items, not fixed assemblies. Assemblies may be disassembled — each resulting component re-enters the gate sequence independently at Decision Point A. Disassembly is itself a Decision Point C or Decision Point D decision on the assembly, not a bypass of sequential order | Gate logic architecture; fan/motor worked example | Medium | Parallel or non-sequential gate processing validated as superior at scale |
 
 *ASM-005 and ASM-006 are Low confidence — both depend on operational
 data that does not yet exist. ASM-003 and ASM-004 identify ownerless
@@ -165,28 +165,26 @@ informs FL-001 resolution.*
 
 ## Defined Terms
 
-**"Gate" (added 2026-09-14, FL-012)** — Used in four distinct senses
-in this repository: (1) operational modules Gate_01–Gate_07, (2)
-decision gates A–D within this file, (3) the Human/AI Oversight
-Gate, (4) Verification Gates 1–6 (document audit/promotion,
-`Admin/Verification_Gates.md`). Prefer qualified forms where
-ambiguity is possible (e.g. `Operations/Gate_03_Reduction.md`,
-Decision Gate D, Verification Gate 3) — do not rely on surrounding
-context alone to disambiguate. See also `Admin/Canonical_Terms.md`'s
+**"Gate" / Decision Point / Oversight State (updated 2026-09-14 rename pass)** — Four distinct senses remain, two of which are now renamed in this file for clarity:
+(1) operational modules **Gate_01–Gate_07** (unchanged),
+(2) **Decision Points A–D** (formerly "Decision Gates A–D" / "Gate A–D"),
+(3) **Oversight State** (formerly "Human/AI Oversight Gate"),
+(4) **Verification Gates 1–6** (unchanged; document audit/promotion, `Admin/Verification_Gates.md`).
+Prefer qualified forms where ambiguity is possible (e.g. `Operations/Gate_03_Reduction.md`, Decision Point D, Verification Gate 3). See also `Admin/Canonical_Terms.md`'s
 "Disambiguation: Uses of 'Gate'" section for the repository-wide
 canonical version of this entry.
 
 **Functional** — Performs a useful role in a specific application
-context. An item is functional at Gate A if it works in its
-original application. An item is functional at Gate C if it
+context. An item is functional at Decision Point A if it works in its
+original application. An item is functional at Decision Point C if it
 can work in a reduced application.
 
-**Equivalent function (Gate A)** — Performing the same task as
+**Equivalent function (Decision Point A)** — Performing the same task as
 the original in the same application context. If function is
 only achievable in a different or reduced application, the item
-does not pass Gate A — it routes to Gate C.
+does not pass Decision Point A — it routes to Decision Point C.
 
-**Within tooling capability (Gate B)** — Evaluated against the
+**Within tooling capability (Decision Point B)** — Evaluated against the
 Forge's current tooling inventory, not projected future
 capability. Requires a known, maintained tooling inventory —
 see ASM-003.
@@ -207,14 +205,14 @@ Relevant categories at v0:
   gate logic applies
 - Physical/radiological — radiation-emitting materials.
   Rare but unacceptable in any processing stream. Triggers
-  immediate Human/AI Oversight Gate escalation (Oversight
+  immediate Oversight State escalation (Oversight
   exit: **Escalate**)
 
 *This list is not exhaustive. Unforeseen contamination
 categories are expected over operational lifetime. When
 a new contamination type is encountered that does not fit
-existing categories, it routes to the Human/AI Oversight
-Gate and a new category is logged (Oversight exit:
+existing categories, it routes to the Oversight State
+and a new category is logged (Oversight exit:
 **Reclassify**). The system is designed
 to learn from what it cannot yet classify.*
 
@@ -224,7 +222,7 @@ conventional disposal.
 
 **Want vs. Need (policy term)** — A want becomes a need when
 its absence limits a higher-priority function. This distinction
-governs the Human/AI Oversight Gate and Fabrication priority
+governs the Oversight State and Fabrication priority
 order.
 
 **Irreversibility Levels** — Added 2026-09-08 to replace a flat
@@ -259,7 +257,7 @@ Triage station outcomes map to these gates. See
 | B | Repairable within current tooling? | Repair & Learn |
 | C | Useful in reduced/different application? | Repurpose |
 | D | Is Reduction the correct residual path? | Reduction |
-| Oversight | Any credible active need? | Return to Flow / Hold / Reclassify / Escalate / Terminate — see Oversight Gate section and §1.2 for the full contract (row corrected 2026-09-10, ChatGPT audit IC-004/P5-013 — previously read "Hold or Reduction," stale since HP-002 formalized five exits) |
+| Oversight | Any credible active need? | Return to Flow / Hold / Reclassify / Escalate / Terminate — see Oversight State section and §1.2 for the full contract (row corrected 2026-09-10, ChatGPT audit IC-004/P5-013 — previously read "Hold or Reduction," stale since HP-002 formalized five exits) |
 
 ---
 
@@ -268,17 +266,17 @@ Triage station outcomes map to these gates. See
 *Added 2026-09-08. This section is a structural consolidation, not new*
 *doctrine — every state and transition below is already established*
 *elsewhere in this document (Gate Correspondence, ASM-007, the Outcome*
-*Paths, and the Human/AI Oversight Gate section). It exists so the flow*
+*Paths, and the Oversight State section). It exists so the flow*
 *can be read as a state-transition system, not only as a linear*
 *checklist.*
 
-**States:** Intake → Classification → Gate A → Gate B → Gate C →
-Gate D → Human/AI Oversight Gate → {Component Library, Repair & Learn,
+**States:** Intake → Classification → Decision Point A → Decision Point B → Decision Point C →
+Decision Point D → Oversight State → {Component Library, Repair & Learn,
 Repurpose, Reduction, Purification} → Fabrication → Utilization →
 Feedback
 
-**Primary sequence:** Intake → Classification → Gate A → Gate B →
-Gate C → Gate D → Oversight (on Gate D failure) → an Outcome Path →
+**Primary sequence:** Intake → Classification → Decision Point A → Decision Point B →
+Decision Point C → Decision Point D → Oversight (on Decision Point D failure) → an Outcome Path →
 Fabrication → Utilization → Feedback
 
 **Lifecycle loop (added 2026-09-09, HP-013 — framing only, no new
@@ -299,7 +297,7 @@ Feedback (§7) closes the *doctrine* loop — it updates classification
 rules, repair heuristics, tolerance thresholds, and tooling
 priorities for future decisions. Re-triage closes the *material*
 loop — it's what actually brings a specific fabricated item's
-components back through Gate A once that item eventually fails.
+components back through Decision Point A once that item eventually fails.
 These are two different mechanisms that together make the whole
 system circular rather than terminating at Fabrication or
 Utilization. Neither mechanism is new here; this note only names the
@@ -308,24 +306,24 @@ loop they jointly form.
 **Per-gate transitions, UNKNOWN made explicit (added 2026-09-08,
 HP-009 partial — this makes FI-2 mechanically visible at every gate
 rather than relying on the reader to apply the invariant; gate body
-text and decision logic are unchanged, see 1.2 Gate Decision
+text and decision logic are unchanged, see 1.2 Decision Point
 Contracts):**
-- Gate A — PASS → Component Library · FAIL → Gate B · UNKNOWN → Hold
-- Gate B — PASS → Repair & Learn · FAIL → Gate C · UNKNOWN → Hold
+- Decision Point A — PASS → Component Library · FAIL → Decision Point B · UNKNOWN → Hold
+- Decision Point B — PASS → Repair & Learn · FAIL → Decision Point C · UNKNOWN → Hold
   (or Primary defaults to FAIL under the stale-tooling degraded rule)
-- Gate C — PASS → Repurpose · FAIL → Gate D · UNKNOWN → Hold
-- Gate D — PASS → Reduction · FAIL (alt. pathway may exist) →
+- Decision Point C — PASS → Repurpose · FAIL → Decision Point D · UNKNOWN → Hold
+- Decision Point D — PASS → Reduction · FAIL (alt. pathway may exist) →
   Oversight · UNKNOWN → Hold
 - Oversight — see the five named exits below; default under
   uncertainty is Hold
 
 **Re-entry transitions (per ASM-007):**
-- Disassembly at Gate C or Gate D spawns independent components, each
-  of which re-enters at **Gate A** — not a bypass of gate order, a
+- Disassembly at Decision Point C or Decision Point D spawns independent components, each
+  of which re-enters at **Decision Point A** — not a bypass of gate order, a
   restart of it per component.
 
 **Re-entry contract (added 2026-09-08, HP-015).** ASM-007 and FI-3
-already establish that components re-enter at Gate A; this makes
+already establish that components re-enter at Decision Point A; this makes
 what "re-enter" requires explicit:
 1. A new item identity is assigned to the component.
 2. Parent (source assembly) provenance is retained.
@@ -335,7 +333,7 @@ what "re-enter" requires explicit:
 5. **The parent assembly's prior assessment does not automatically
    carry forward.** A component extracted from a failed assembly
    does not inherit the assembly's failure state.
-6. A fresh Gate A assessment is performed on the component itself,
+6. A fresh Decision Point A assessment is performed on the component itself,
    using its own function evidence — not the parent's.
 Point 5 is the one this document previously implied but never
 stated outright; a motor pulled from a non-functional fan is
@@ -345,9 +343,9 @@ evaluated as a motor, not as "part of a failed fan."
 - Jammed triage → Unknown Bulk hold (not Reduction)
 - Sensor drift → tightened thresholds / increased Unknown Bulk routing
 - Mid-process contamination discovery → stop, escalate to Oversight
-- Stale tooling inventory → Gate B defaults to NO (routes to Gate C)
+- Stale tooling inventory → Decision Point B defaults to NO (routes to Decision Point C)
 - Operator unavailable → hold pending Oversight review
-- Component Library full/unmaintained → treated as Gate C items
+- Component Library full/unmaintained → treated as Decision Point C items
 - Pattern-triggered escalation (e.g., five consecutive unresolved
   unknowns at Intake per `Operations/Gate_01_Intake.md`) triggers a
   process-level Oversight review; affected items remain individually
@@ -355,8 +353,8 @@ evaluated as a motor, not as "part of a failed fan."
   FL-010 — this is one Oversight mechanism reached two ways,
   item-level and process-level, not two mechanisms)
 
-**Oversight Gate exits (formalized 2026-09-08, HP-002 — see the
-Human/AI Oversight Gate section for the full mapping):**
+**Oversight State exits (formalized 2026-09-08, HP-002 — see the
+Oversight State section for the full mapping):**
 - Return to Flow — exception resolved, re-enters normal routing
 - Hold — deferred with a defined review point
 - Reclassify — new category logged, re-enters via that classification
@@ -366,7 +364,7 @@ Human/AI Oversight Gate section for the full mapping):**
 **Feedback loop:** Utilization → Feedback targets Classification
 rules, repair heuristics, tolerance thresholds, and tooling
 priorities — i.e., feedback alters future routing at Classification
-and Gate B, not a literal re-entry of the same item.
+and Decision Point B, not a literal re-entry of the same item.
 
 **Terminal states (refined 2026-09-08, HP-014):** This document
 distinguishes two senses of "terminal" that the Outcome Paths section
@@ -402,8 +400,8 @@ of the rule; do not invent parallel rules here.
 | ID | Invariant | Mechanism home |
 |----|-----------|-----------------|
 | **FI-1** | **The KPI does not govern.** The KPI measures what the system does; the gates govern what the system should do. Irreversibility doctrine overrides efficiency optimization at all times. | v0 Key Performance Indicator — KPI subordination note |
-| **FI-2** | **Uncertainty defaults to Hold. An explicitly defined degraded-mode exception may permit a non-R4 transition, but that transition does not itself constitute authorization for R4 action. Any later R4 decision requires its own applicable evidence and decision contract.** The system is designed to absorb uncertainty, not resolve it through Reduction or any other R4 action except through that action's own proper authorization. | Degraded Operation & Failure Modes — standing rule (narrowed 2026-09-14, FL-008 — see Gate B's Secondary Test note for the parallel statement of this same principle) |
-| **FI-3** | **Gate logic applies to discrete items only.** No fixed assembly is gated as a permanent unit; disassembly is itself a Gate C or Gate D decision, and every resulting component re-enters at Gate A independently. | ASM-007; Flow State/Transition Model re-entry transitions |
+| **FI-2** | **Uncertainty defaults to Hold. An explicitly defined degraded-mode exception may permit a non-R4 transition, but that transition does not itself constitute authorization for R4 action. Any later R4 decision requires its own applicable evidence and decision contract.** The system is designed to absorb uncertainty, not resolve it through Reduction or any other R4 action except through that action's own proper authorization. | Degraded Operation & Failure Modes — standing rule (narrowed 2026-09-14, FL-008 — see Decision Point B's Secondary Test note for the parallel statement of this same principle) |
+| **FI-3** | **Gate logic applies to discrete items only.** No fixed assembly is gated as a permanent unit; disassembly is itself a Decision Point C or Decision Point D decision, and every resulting component re-enters at Decision Point A independently. | ASM-007; Flow State/Transition Model re-entry transitions |
 | **FI-4** | **Reduction is the residual path, not the default path.** R4 is the flow's highest-consequence boundary — reached only when every higher-value path (Gates A-C) has failed. | Operational Safety Advisory; Reduction outcome path |
 
 HP-003 (Held Proposals) proposed elevating the KPI sentence alone;
@@ -414,24 +412,24 @@ than naming just one.
 
 ---
 
-## 1.2 Gate Decision Contracts
+## 1.2 Decision Point Contracts
 
 *Added 2026-09-08 (HP-008). Formalization of existing gate logic*
-*only (Gates A-D + Oversight, Gate Correspondence, Defined Terms,*
-*FI-2, ASM-003/007, and the provisional notes on Gate B). No new*
+*only (Decision Points A–D + Oversight, Gate Correspondence, Defined Terms,*
+*FI-2, ASM-003/007, and the provisional notes on Decision Point B). No new*
 *decision rules or outcome paths are introduced. Uncertainty always*
 *defaults to Hold (FI-2) and is never interpreted as a failed gate.*
 
 | Gate | Required Inputs | Decision Question | Permitted Outputs | Uncertainty Output |
 |------|-----------------|-------------------|-------------------|--------------------|
-| **A** | Function evidence in the original (or equivalent) application context | Does the item still perform its original function, or an equivalent function, in the same application context? | **YES** → Component Library (R0)<br>**NO** → Gate B | Insufficient function evidence → **Hold**. Never treat "unknown function" as NO. |
-| **B** | Failure localization + accessibility evidence + live Tooling Inventory state (ASM-003 / FL-004) | **Primary (all three required):** Is the failure localized **and** accessible **and** within current tooling capability?<br>**Secondary (only if Primary passes):** Is estimated repair effort justified by recovered functional value **or** learning value **or** measured scarcity/strategic value? | **Primary FAIL** (any condition) → Gate C<br>**Primary PASS + Secondary YES** → Repair & Learn (R2)<br>**Primary PASS + Secondary NO** → Gate C | Missing Primary input, or Secondary judgment that cannot be justified with logged rationale → **Hold**. Under the explicit stale-tooling degraded-operation rule, Primary defaults to FAIL (routes to Gate C). Secondary Test is provisional, qualitative, and must be logged (FL-005); it never routes directly to Reduction. |
-| **C** | Application / use evidence for a different or reduced function | Can the item (or a portion of it) serve a useful function in a different or reduced application? | **YES** → Repurpose as Lower-Precision Component<br>**NO** → Gate D<br>(Disassembly of an assembly is permitted; each resulting component re-enters at Gate A per ASM-007 / FI-3) | Insufficient evidence of any useful reduced function → **Hold**. Indeterminate material identity is **not** a Gate C failure. |
-| **D** | Material integrity + recovery-pathway evidence under current Forge capability | Is Reduction the correct residual path for material recovery (all higher-value paths exhausted, and size-reduction followed by Separation / Purification is the only remaining viable route)? | **YES** → Reduction (R4)<br>**NO** (alternative recovery path may still exist, or recovery is genuinely impossible / prohibited) → Human/AI Oversight Gate | Insufficient material or recovery evidence → **Hold**. True edge cases (hazard, conflicting evidence, genuine impossibility) → Oversight, never forced Reduction. |
-| **Oversight** | Exception evidence (mid-process contamination, radiological/hazard category, operator unavailability, Gate D want/need evaluation, unforeseen contamination category, etc.) | Does a credible active need exist, and is the exception within this flow's decision authority? | **Return to Flow**<br>**Hold** (with defined review point)<br>**Reclassify**<br>**Escalate**<br>**Terminate** (→ Reduction authorized) | Default under uncertainty is **Hold**. Escalate only when authority is exceeded. Terminate authorizes Reduction independently of Gate D YES (Reading A, adopted 2026-09-12); execution still requires Gate_03 readiness checks. |
+| **A** | Function evidence in the original (or equivalent) application context | Does the item still perform its original function, or an equivalent function, in the same application context? | **YES** → Component Library (R0)<br>**NO** → Decision Point B | Insufficient function evidence → **Hold**. Never treat "unknown function" as NO. |
+| **B** | Failure localization + accessibility evidence + live Tooling Inventory state (ASM-003 / FL-004) | **Primary (all three required):** Is the failure localized **and** accessible **and** within current tooling capability?<br>**Secondary (only if Primary passes):** Is estimated repair effort justified by recovered functional value **or** learning value **or** measured scarcity/strategic value? | **Primary FAIL** (any condition) → Decision Point C<br>**Primary PASS + Secondary YES** → Repair & Learn (R2)<br>**Primary PASS + Secondary NO** → Decision Point C | Missing Primary input, or Secondary judgment that cannot be justified with logged rationale → **Hold**. Under the explicit stale-tooling degraded-operation rule, Primary defaults to FAIL (routes to Decision Point C). Secondary Test is provisional, qualitative, and must be logged (FL-005); it never routes directly to Reduction. |
+| **C** | Application / use evidence for a different or reduced function | Can the item (or a portion of it) serve a useful function in a different or reduced application? | **YES** → Repurpose as Lower-Precision Component<br>**NO** → Decision Point D<br>(Disassembly of an assembly is permitted; each resulting component re-enters at Decision Point A per ASM-007 / FI-3) | Insufficient evidence of any useful reduced function → **Hold**. Indeterminate material identity is **not** a Decision Point C failure. |
+| **D** | Material integrity + recovery-pathway evidence under current Forge capability | Is Reduction the correct residual path for material recovery (all higher-value paths exhausted, and size-reduction followed by Separation / Purification is the only remaining viable route)? | **YES** → Reduction (R4)<br>**NO** (alternative recovery path may still exist, or recovery is genuinely impossible / prohibited) → Oversight State | Insufficient material or recovery evidence → **Hold**. True edge cases (hazard, conflicting evidence, genuine impossibility) → Oversight, never forced Reduction. |
+| **Oversight** | Exception evidence (mid-process contamination, radiological/hazard category, operator unavailability, Decision Point D want/need evaluation, unforeseen contamination category, etc.) | Does a credible active need exist, and is the exception within this flow's decision authority? | **Return to Flow**<br>**Hold** (with defined review point)<br>**Reclassify**<br>**Escalate**<br>**Terminate** (→ Reduction authorized) | Default under uncertainty is **Hold**. Escalate only when authority is exceeded. Terminate authorizes Reduction independently of Decision Point D YES (Reading A, adopted 2026-09-12); execution still requires Gate_03 readiness checks. |
 
 *Notes*
-- Gate B Secondary Test remains Exploration-grade and unvalidated
+- Decision Point B Secondary Test remains Exploration-grade and unvalidated
   (FL-005); every decision must carry operator rationale until
   operational data exists.
 - "Indeterminate evidence MUST NOT be interpreted as a failed gate"
@@ -439,7 +437,7 @@ than naming just one.
 - This table does not alter the sequential order, the five Oversight
   exits, the R0-R4 taxonomy, or any Outcome Path.
 - **Terminate authorization (2026-09-12):** Routing ≠ authorization ≠
-  execution readiness. Gate D YES and Oversight Terminate are both
+  execution readiness. Decision Point D YES and Oversight Terminate are both
   valid independent authorizations for Reduction; Gate_03 owns
   execution readiness. See Oversight section for bounded discretion.
 
@@ -457,14 +455,14 @@ than naming just one.
 
 | Transition | Flow owns (routing decision) | Operations owns (evidence-gathering / downstream procedure) | Architecture/Admin owns (invariant or authority) |
 |------------|-------------------------------|----------------------------------------------------------------|----------------------------------------------------|
-| Gate A | This file — function test, PASS/FAIL/UNKNOWN routing | `Operations/Gate_02_Triage.md` — triage station assessment producing function evidence (Gate Correspondence) | — |
-| Gate B | This file — Primary/Secondary test, routing | `Operations/Gate_02_Triage.md` — failure localization/accessibility evidence; `Operations/Tooling_Inventory.md` — live tooling-capability state (ASM-003/FL-004) | ASM-003 (this file) — the tooling-known assumption itself |
-| Gate C | This file — reduced-application test, routing; disassembly decision | `Operations/Gate_02_Triage.md` — reduced-application evidence | ASM-007/FI-3 (this file) — re-entry contract governs what happens after |
-| Gate D | This file — residual-path test, routing | `Operations/Gate_02_Triage.md` — material/recovery evidence gathering for the decision itself; `Operations/Gate_03_Reduction.md` — the Reduction procedure once Gate D routes YES | FL-002 (this file) — Reduction↔Gate_04 output envelope cross-validation, still pending |
+| Decision Point A | This file — function test, PASS/FAIL/UNKNOWN routing | `Operations/Gate_02_Triage.md` — triage station assessment producing function evidence (Gate Correspondence) | — |
+| Decision Point B | This file — Primary/Secondary test, routing | `Operations/Gate_02_Triage.md` — failure localization/accessibility evidence; `Operations/Tooling_Inventory.md` — live tooling-capability state (ASM-003/FL-004) | ASM-003 (this file) — the tooling-known assumption itself |
+| Decision Point C | This file — reduced-application test, routing; disassembly decision | `Operations/Gate_02_Triage.md` — reduced-application evidence | ASM-007/FI-3 (this file) — re-entry contract governs what happens after |
+| Decision Point D | This file — residual-path test, routing | `Operations/Gate_02_Triage.md` — material/recovery evidence gathering for the decision itself; `Operations/Gate_03_Reduction.md` — the Reduction procedure once Decision Point D routes YES | FL-002 (this file) — Reduction↔Gate_04 output envelope cross-validation, still pending |
 | Oversight | This file — five-exit resolution, want/need criteria | **Not yet assigned to any Operations file — see FL-006.** | **Authority half resolved 2026-09-14 (FL-006):** until an Admin-owned authority structure is explicitly defined, Escalate is a Hold-safe transition requiring designated human/oversight judgment under the existing Human Escalation Protocol (`Admin/Ethical_Constraints.md` EC-003 — its Recipient and Logging rows already are the case-record mechanism this needs; no new structure invented). Ethical_Constraints.md remains the ethical-constraint source, not a case-specific authority registry. **Re-verification note (2026-09-14):** EC-003's Recipient row identifies the recipient as whoever is "currently on record" for the unit/site, but the mechanism that establishes and authenticates who is on record is a separate, still-open Charter-level gap (`Admin/Governance_Charter.md`'s Human Override Doctrine: "Override authenticity validation mechanisms remain unresolved (GOV-006) and must not be implicitly assumed"). This resolution correctly describes the escalation *procedure*; it does not resolve, and should not be read as resolving, the underlying identity-authentication question — that remains GOV-006's open scope. **Evidence-ownership half remains Open — see FL-006.** |
 
-Gate D's row is the subtlest: `Operations/Gate_02_Triage.md` gathers the
-evidence Gate D's test consumes; `Operations/Gate_03_Reduction.md` owns what
+Decision Point D's row is the subtlest: `Operations/Gate_02_Triage.md` gathers the
+evidence Decision Point D's test consumes; `Operations/Gate_03_Reduction.md` owns what
 happens physically once that test routes to Reduction. These are
 different responsibilities that the pre-existing cross-references
 already kept separate — this table only makes the separation
@@ -477,7 +475,7 @@ separable high-value sub-components are extracted and preserved
 intact first. This is an Operations execution-stage preservation
 requirement, applied within the "material/recovery evidence
 gathering" cell above; it is not an additional Gate-D decision
-predicate, and this table's Gate D row remains complete without
+predicate, and this table's Decision Point D row remains complete without
 listing it as a required input.
 
 ---
@@ -513,28 +511,28 @@ Classification may be **overridden by human operator**.
 
 ---
 
-## 3. Decision Gates (Ordered, Mandatory)
+## 3. Decision Points (Ordered, Mandatory)
 
 *Gate logic applies to discrete items, not fixed assemblies.
-Assemblies may be disassembled at Gate C or Gate D — each
+Assemblies may be disassembled at Decision Point C or Decision Point D — each
 resulting component re-enters the gate sequence independently
-at Gate A. Disassembly is a Gate C decision on the assembly
+at Decision Point A. Disassembly is a Decision Point C decision on the assembly
 as a whole, not a bypass of sequential gate order. See ASM-007.*
 
-### Gate A — Still Functional?
+### Decision Point A — Still Functional?
 **Test:** Performs original function, or equivalent function
 in the same application context
 **If YES →** Component Library
-**If NO →** Gate B
+**If NO →** Decision Point B
 
-### Gate B — Repairable?
+### Decision Point B — Repairable?
 
 > ⚠️ **Provisional — Exploration-grade, unvalidated against real
 > operation.** Unlike this file's other 2026-09-08 changes, this one
 > is *new logic*, not a rename or consolidation of existing
 > behavior. Before this addition, any item passing the three
 > conditions below went to Repair & Learn — full stop. Now, some of
-> those same items will route to Gate C instead. That is a genuine
+> those same items will route to Decision Point C instead. That is a genuine
 > behavior change, and it has not been tested against a single real
 > item. Treat every Secondary Test outcome as suspect until the
 > first operational cycle either confirms or contradicts it.
@@ -545,7 +543,7 @@ in the same application context
 - Repair is within current tooling capability (see ASM-003 and the
   live Tooling Inventory — FL-004, not yet populated)
 
-**If any primary condition fails →** Gate C
+**If any primary condition fails →** Decision Point C
 
 **Secondary Test (only if primary passes):**
 Is the estimated repair effort justified by at least one of:
@@ -556,7 +554,7 @@ Is the estimated repair effort justified by at least one of:
 - Scarcity or strategic value (measured, not assumed)
 
 **If YES →** Repair & Learn
-**If NO →** Gate C (technically possible but not justified)
+**If NO →** Decision Point C (technically possible but not justified)
 
 *At Exploration stage the secondary test is qualitative and
 operator-judged — there is no scoring formula, no effort threshold
@@ -566,27 +564,27 @@ build the missing data and so a future audit can catch systematic
 bias (e.g. one operator's threshold differing sharply from
 another's). Before Specification the secondary test must become
 testable (effort bands, measured scarcity thresholds, or an
-equivalent simple score) — until it is, FL-001 cannot claim Gate B
+equivalent simple score) — until it is, FL-001 cannot claim Decision Point B
 determinism regardless of how clean this wording reads. The
-secondary test never routes an item directly to Reduction; Gate C
+secondary test never routes an item directly to Reduction; Decision Point C
 remains the next sequential step, so the irreversibility doctrine is
 unaffected even if this heuristic proves wrong in practice (this is
 the same principle FI-2 states as the standing rule — see §1.1). See
 also Queue Economics in Operations/Gate_02_Triage.md for
 prioritization inside the Repair & Learn queue.*
 
-### Gate C — Graceful Downgrade Possible?
+### Decision Point C — Graceful Downgrade Possible?
 **Test:** Can the item serve a useful function in a different
 or reduced application?
 **If YES →** Repurpose as Lower-Precision Component
-**If NO →** Gate D
+**If NO →** Decision Point D
 
-*Note: Gate C tests functional downgrade potential. Gate D
+*Note: Decision Point C tests functional downgrade potential. Decision Point D
 tests material integrity. These are distinct tests.
 Assemblies that cannot function as a whole may be disassembled
-here — each component re-enters at Gate A independently.*
+here — each component re-enters at Decision Point A independently.*
 
-### Gate D — Material Recovery Viability
+### Decision Point D — Material Recovery Viability
 **Test:** Is Reduction the correct residual path for material recovery
 under current Forge capability?
 (i.e., all functional, repair, and repurpose paths have been exhausted,
@@ -594,7 +592,7 @@ and the only remaining viable recovery route is size-reduction followed
 by Separation / Purification.)
 **If YES →** Reduction
 **If NO (a non-Reduction recovery path may still exist, or recovery is
-genuinely impossible / prohibited) →** Human/AI Oversight Gate
+genuinely impossible / prohibited) →** Oversight State
 
 *Rewritten 2026-09-08 to resolve the polarity ambiguity flagged in
 HP-004. The prior compound test mixed functional exhaustion with a
@@ -606,25 +604,25 @@ Purification. Oversight remains the correct exit for true edge cases.
 Renamed from "Truly Exhausted?" to "Material Recovery Viability"
 earlier the same day for testability — that rename is unaffected.*
 
-### Human/AI Oversight Gate — Exception-Resolution State
+### Oversight State — Exception-Resolution State
 
 *Reframed 2026-09-08 (HP-002). This section formalizes exit states*
 *that were already scattered across this document's contamination,*
-*degraded-operation, and Gate D logic — no routing behavior below*
+*degraded-operation, and Decision Point D logic — no routing behavior below*
 *is new. Each exit cites where its behavior already existed prior*
 *to this reframe.*
 
-The Oversight Gate is entered from multiple triggers, not only
-Gate D failure: contamination discovered mid-process, radiological
+The Oversight State is entered from multiple triggers, not only
+Decision Point D failure: contamination discovered mid-process, radiological
 or other unforeseen hazard categories, operator unavailability,
-and Gate D's want/need evaluation. It resolves to one of five
+and Decision Point D's want/need evaluation. It resolves to one of five
 named exits:
 
 - **Return to Flow** — the exception is resolved and the item
   re-enters normal gate routing (e.g. sensor drift corrected and
   classification resumes; see Degraded Operation)
 - **Hold** — deferred pending a future condition, with a defined
-  review point (genuine need confirmed at Gate D; operator
+  review point (genuine need confirmed at Decision Point D; operator
   unavailable pending return; contamination pending
   characterization — see Degraded Operation)
 - **Reclassify** — a new category is logged and the item re-enters
@@ -634,10 +632,10 @@ named exits:
   (radiological or other hazard requiring external protocol — see
   Contamination Categories)
 - **Terminate** — no genuine need confirmed; Reduction is
-  **authorized** and proceeds (Gate D want/need evaluation,
+  **authorized** and proceeds (Decision Point D want/need evaluation,
   below). Under Reading A (adopted 2026-09-12), Terminate is an
-  independent authorization path for R4, parallel to Gate D YES —
-  not merely a timing release of a prior Gate D determination.
+  independent authorization path for R4, parallel to Decision Point D YES —
+  not merely a timing release of a prior Decision Point D determination.
 
 This gate prevents both hoarding and premature destruction.
 
@@ -649,7 +647,7 @@ Three distinct concepts must not be collapsed:
    (owned by `Operations/Gate_03_Reduction.md`: Air Scrubber
    verified, human present, no energetics, no active contamination).
 
-Gate D YES is one valid authorization for Reduction. Oversight
+Decision Point D YES is one valid authorization for Reduction. Oversight
 Terminate is a second, independent authorization when no genuine
 need is confirmed. Neither decision itself executes Reduction;
 Gate_03 still enforces execution readiness. This reading confirms
@@ -666,8 +664,8 @@ execution-readiness checks. Such uses are expected to be rare;
 repeated or patterned exceptions are themselves grounds for review
 of the criteria. No exhaustive exception catalogue is maintained.
 
-**Gate D want/need evaluation (Hold vs. Terminate exits):**
-Review items that failed Gates A–D but where reduction feels
+**Decision Point D want/need evaluation (Hold vs. Terminate exits):**
+Review items that failed Decision Points A–D but where reduction feels
 premature. Evaluate against active needs only — not
 hypothetical future uses. Apply the want/need policy
 (see Defined Terms).
@@ -755,7 +753,7 @@ cross-validation is FL-002's remaining scope. Until it closes:
 - Do not assume dust, fines, or contamination are handled
   without explicit doctrine
 - Contamination discovered during reduction triggers
-  immediate stop and Human/AI Oversight Gate escalation
+  immediate stop and Oversight State escalation
 - Emergency shutdown leaves material in whatever state
   it is in — no assumption of safe intermediate states
 - The provisional feedstock envelope in
@@ -878,21 +876,21 @@ mode doctrine.
 
 **Contamination discovery mid-process** — Contamination
 identified after gate routing has begun. Resolution:
-stop processing, escalate to Human/AI Oversight Gate,
+stop processing, escalate to Oversight State,
 log new contamination category if not previously defined
 (Oversight exit: **Hold**, or **Reclassify** if a new
 category is logged).
 Do not continue routing contaminated material downstream.
 
-**Tooling inventory stale** — Gate B evaluations become
+**Tooling inventory stale** — Decision Point B evaluations become
 unreliable if tooling inventory is not maintained.
-Resolution: Gate B defaults to NO (routes to Gate C)
+Resolution: Decision Point B defaults to NO (routes to Decision Point C)
 when tooling inventory is uncertain. Conservative
 routing under uncertainty. See ASM-003.
 
-**Operator unavailable** — Human/AI Oversight Gate
+**Operator unavailable** — Oversight State
 requires human presence. Resolution: hold items pending
-Oversight Gate review (Oversight exit: **Hold**). Do not route to Reduction in
+Oversight State review (Oversight exit: **Hold**). Do not route to Reduction in
 operator absence unless automated shutdown doctrine
 explicitly permits it.
 
@@ -901,7 +899,7 @@ explicitly permits it.
 `Operations/Gate_01_Intake.md`'s existing provisional
 guidance rather than restating it. Distinct from "Operator
 unavailable" above (a single momentary absence) — this
-covers the Oversight Gate as a destination running behind
+covers the Oversight State as a destination running behind
 or backlogged. Resolution: items awaiting Oversight review
 remain in hold and do not route forward while waiting; if
 the Oversight queue exceeds a defined threshold, new
@@ -909,13 +907,13 @@ escalations are logged and queued, safety-critical first,
 then age of hold *(threshold itself — Placeholder, defined
 operationally)*; held items do not expire — a correctly
 held item is always better than a prematurely routed one.
-See `Operations/Gate_01_Intake.md`'s "Oversight Gate
+See `Operations/Gate_01_Intake.md`'s "Oversight State
 escalation capacity" for the full provisional doctrine this
 entry adopts by reference.
 
-**Component Library full or unmaintained** — Gate A
+**Component Library full or unmaintained** — Decision Point A
 outputs have no reliable destination. Resolution:
-treat as Gate C items until library capacity is restored.
+treat as Decision Point C items until library capacity is restored.
 Do not route to Reduction because the library is full.
 
 *Degraded operation doctrine: when in doubt, hold.
@@ -979,7 +977,7 @@ Legacy UNK-* identifiers are preserved as aliases only.
    which needed correction this session (FL-003, Gate
    Correspondence, "eight sequential gates" — all now fixed).
 5. **Scope Creep Disguised as Refinement** — PASS. New capability
-   (Gate B's Secondary Test) was explicitly labeled as new logic
+   (Decision Point B's Secondary Test) was explicitly labeled as new logic
    with a Provisional warning, not framed as mere consolidation.
    Every other 2026-09-08/09/10 addition was verified against
    existing content before being framed as formalization.
@@ -1011,7 +1009,7 @@ Legacy UNK-* identifiers are preserved as aliases only.
    Preservation's ownership (FL-011). No new omission found beyond
    what's already captured.
 10. **The Turd Problem** — REVISE. Stripped to one sentence: "An item
-    that fails Gates A-D and has no genuine retained-use need gets
+    that fails Decision Points A–D and has no genuine retained-use need gets
     reduced to feedstock; every other outcome preserves it at the
     highest value level a gate can confirm." That sentence does not
     yet fully survive adversarial reduction — it depends on
@@ -1038,37 +1036,37 @@ outcomes. Each example shows the correct route and why.
 **Example 1 — Functional motor in non-functional assembly**
 Item: Cordless drill. Housing cracked, battery unsafe,
 chuck worn, but motor functional and copper windings intact.
-- Gate A: Drill as a whole — fails. Cannot perform original
+- Decision Point A: Drill as a whole — fails. Cannot perform original
   function safely.
-- Gate C: Drill as a whole — disassembly warranted. Motor
+- Decision Point C: Drill as a whole — disassembly warranted. Motor
   is useful in reduced application. Housing and battery
-  route to Gate D.
-- Gate D: Housing — structural damage, no functional use,
+  route to Decision Point D.
+- Decision Point D: Housing — structural damage, no functional use,
   material recoverable. Routes to Reduction.
-- Gate D: Battery — unsafe, not recoverable through
+- Decision Point D: Battery — unsafe, not recoverable through
   standard purification. Routes to contamination handling.
-- Gate A (re-entry): Motor — functional as a component.
+- Decision Point A (re-entry): Motor — functional as a component.
   Routes to Component Library.
-- Gate A (re-entry): Copper windings — functional as
+- Decision Point A (re-entry): Copper windings — functional as
   material stock. Routes to Component Library or Repurpose.
-*Key principle: assemblies disassemble at Gate C.
-Components re-enter independently at Gate A.*
+*Key principle: assemblies disassemble at Decision Point C.
+Components re-enter independently at Decision Point A.*
 
-**Example 2 — No function but recoverable material (Gate C/D boundary)**
+**Example 2 — No function but recoverable material (Decision Point C/D boundary)**
 Item: Shattered cast iron pan. No functional use in any
 application. Material is cast iron — recoverable through
 Purification.
-- Gate A: Fails — no original function possible.
-- Gate B: Fails — not repairable.
-- Gate C: Fails — no useful function in reduced application.
+- Decision Point A: Fails — no original function possible.
+- Decision Point B: Fails — not repairable.
+- Decision Point C: Fails — no useful function in reduced application.
   A shattered pan cannot serve as a jig, fixture, or
   structural member.
-- Gate D: Passes — material recovery value remains.
+- Decision Point D: Passes — material recovery value remains.
   Cast iron routes to Reduction then Purification.
-*Key principle: Gate C tests function, Gate D tests
-material. An item can fail Gate C and pass Gate D.*
+*Key principle: Decision Point C tests function, Decision Point D tests
+material. An item can fail Decision Point C and pass Decision Point D.*
 
-**Example 3 — Ambiguous Oversight Gate (want vs. need)**
+**Example 3 — Ambiguous Oversight State (want vs. need)**
 Item: Vintage oscilloscope. Functional but obsolete.
 No active fabrication queue item requires it. A newer
 digital equivalent exists in the Component Library.
@@ -1083,13 +1081,13 @@ digital equivalent exists in the Component Library.
   *Library; Gates B-D are never reached. This example*
   *exists specifically to set up the Oversight want/need*
   *question, not to describe normal sequential flow.)*
-- Human/AI Oversight Gate: Is there a genuine need?
+- Oversight State: Is there a genuine need?
   Apply minimum criteria — no active queue dependency,
   substitute exists, no measured scarcity, no failure
   rate evidence. Retention is a want, not a need.
 - Route: Repurpose or Reduction depending on Component
   Library capacity.
-*Key principle: Oversight Gate evaluates need against
+*Key principle: Oversight State evaluates need against
 active operational requirements, not hypothetical value.*
 
 ---
@@ -1103,13 +1101,13 @@ wheel is missing, the second is cracked, switch
 intermittent. Replacement wheels and switch are
 available in the Component Library; total repair
 labor is estimated at 45 minutes.
-- Gate A: Fails as a complete unit — original function
+- Decision Point A: Fails as a complete unit — original function
   is compromised (missing/cracked wheels, unreliable
   switch).
-- Gate B Primary Test: Passes — the failures are
+- Decision Point B Primary Test: Passes — the failures are
   localized, accessible, and repair is within current
   tooling capability.
-- Gate B Secondary Test: Repair effort (45 min, common
+- Decision Point B Secondary Test: Repair effort (45 min, common
   parts) is justified by recovered functional value —
   the grinder returns to active use. Passes.
 - Route: Repair & Learn. The intermittent switch and
@@ -1117,14 +1115,14 @@ labor is estimated at 45 minutes.
 - If an operator instead judges the Secondary Test as
   NO (e.g. no active need for a grinder and no learning
   value — this failure mode is already well documented):
-  routes to Gate C instead, with the operator's rationale
-  logged per Gate B's Secondary Test doctrine.
-*Key principle: Gate B's Primary Test is purely
+  routes to Decision Point C instead, with the operator's rationale
+  logged per Decision Point B's Secondary Test doctrine.
+*Key principle: Decision Point B's Primary Test is purely
 technical; its Secondary Test makes the "not worth it"
 judgment an explicit, logged gate decision rather than
 an unlogged queue-priority opinion. This example predates
 the Secondary Test's 2026-09-08 addition — updated the
-same day to match; see the Provisional notice on Gate B
+same day to match; see the Provisional notice on Decision Point B
 itself.*
 
 ---
@@ -1135,12 +1133,12 @@ itself.*
 *ChatGPT audit EV-007.)*
 Item: Aluminum extrusion, 1.2 m long, one end crushed,
 rest undamaged. Could serve as structural stock or jig
-material (Gate C), or be reduced to clean aluminum
-feedstock (Gate D → Reduction → Purification).
-- Gate A: Fails — original function is gone.
-- Gate B: Fails — crush damage is not repairable to
+material (Decision Point C), or be reduced to clean aluminum
+feedstock (Decision Point D → Reduction → Purification).
+- Decision Point A: Fails — original function is gone.
+- Decision Point B: Fails — crush damage is not repairable to
   original geometry within current tooling.
-- Gate C: Passes — the undamaged length is immediately
+- Decision Point C: Passes — the undamaged length is immediately
   useful as lower-precision stock or fixture material.
 - Route: Repurpose. The crushed end may be cut and sent
   to Reduction; the good length enters the Component
@@ -1150,9 +1148,9 @@ feedstock (Gate D → Reduction → Purification).
   Oversight Hold with a defined review date — not
   immediate Reduction. Functional stock outranks pure
   material recovery while it exists.
-*Key principle: Gate C functional value outranks
+*Key principle: Decision Point C functional value outranks
 material recovery when both are viable. Reduction is
-the residual path (see Gate D), not the preferred one.*
+the residual path (see Decision Point D), not the preferred one.*
 
 ---
 
@@ -1163,16 +1161,16 @@ metal inserts of unknown alloy.
 - Gates A–C: Indeterminate — original function and
   reduced-application potential cannot be assessed
   without material identity.
-- Gate D: Also indeterminate — an unidentified polymer
+- Decision Point D: Also indeterminate — an unidentified polymer
   or alloy could contaminate downstream Purification, so
   whether Reduction is the correct residual path cannot
   be answered yet.
-- Route: Unknown Bulk hold (or Human/AI Oversight Gate,
+- Route: Unknown Bulk hold (or Oversight State,
   exit: Hold). Do not guess. Log the identification gap.
   Item stays held until material characterization is
   performed or, if provenance allows, returned to source.
 - Only after positive identification: re-enter the full
-  gate sequence from Gate A.
+  gate sequence from Decision Point A.
 *Key principle: Incomplete evidence produces a hold,
 never a forced gate decision. Determinism requires known
 inputs, not assumed ones.*
@@ -1184,9 +1182,9 @@ Item: Hydraulic pump. One operator reports the seals as
 failed and the unit as scrap; a second reports the seals
 serviceable and recommends Repair. No pressure test has
 been performed — visual inspection only.
-- Gate B: Cannot be evaluated deterministically — the
+- Decision Point B: Cannot be evaluated deterministically — the
   failure state itself is disputed and unmeasured.
-- Response: Escalate to Human/AI Oversight Gate (exit:
+- Response: Escalate to Oversight State (exit:
   Hold), or Unknown Bulk hold. Perform the minimal
   diagnostic (pressure test or controlled seal
   inspection) before any gate decision.
@@ -1223,7 +1221,7 @@ need exists, assign a defined review date. If review date
 passes without a need emerging, route to Reduction or
 return to owner if provenance allows. Emotional value
 does not override gate logic — but it is a legitimate
-signal to escalate to the Oversight Gate rather than
+signal to escalate to the Oversight State rather than
 auto-routing.
 
 **Scenario 3 — Contaminated high-value material**
@@ -1241,17 +1239,17 @@ doctrine. The Air Scrubber exists precisely for this case.
 Situation: A rare motor controller arrives. One channel
 is failed, two are functional. No substitute exists in
 the Component Library. Scarcity is real and measured.
-Correct response: Gate C — disassemble. Functional
+Correct response: Decision Point C — disassemble. Functional
 channels route to Component Library. Failed channel
-routes to Gate D. Scarcity justifies careful disassembly
+routes to Decision Point D. Scarcity justifies careful disassembly
 over bulk Reduction. Document scarcity evidence in
 the Component Library entry.
 
 **Scenario 5 — Operator disputes gate outcome**
 Situation: Two operators disagree about whether an item
-passes Gate C. One argues it has reduced-application
+passes Decision Point C. One argues it has reduced-application
 value; the other argues it does not.
-Correct response: Escalate to Human/AI Oversight Gate.
+Correct response: Escalate to Oversight State.
 Log the disagreement and the resolution rationale.
 If the dispute reveals a genuine boundary ambiguity,
 log a new boundary-case worked example. Gate disputes
@@ -1299,7 +1297,7 @@ are data — they feed FL-001 resolution.
   the document — an audit that only checks documents against other
   documents in the same repository is exactly the loop this class
   warns about. This file's claims are ultimately checked against
-  physical reality only once real Gate B data and Reduction method
+  physical reality only once real Decision Point B data and Reduction method
   selection exist (FL-005, FL-002) — until then, internal consistency
   is the strongest test available, not a substitute for it.
 - **Class 7 — Human Fatigue and Cognitive Erosion** (12-hour
@@ -1392,7 +1390,7 @@ creates inconsistency across forge instances.
 **Resolution Path:**
 - Gate Correspondence table added — partial resolution.
 - Motor worked example added to Operations/Gate_02_Triage.md
-  (65% torque → Gate A fail, Gate C pass) — partial
+  (65% torque → Decision Point A fail, Decision Point C pass) — partial
   resolution. **Historical claim:** this entry stated a worked
   example existed in Operations/Gate_02_Triage.md. **Current
   verification (2026-09-10, ChatGPT audit EV-008, extended by
@@ -1430,7 +1428,7 @@ creates inconsistency across forge instances.
 - Remaining: Adversarial scenarios cover five cases —
   real-world operation will surface new boundary conditions
   that must be logged and resolved.
-- Gate D renamed "Material Recovery Viability" 2026-09-08 for
+- Decision Point D renamed "Material Recovery Viability" 2026-09-08 for
   testability, then rewritten same day (HP-004, Option A) to a
   single positive test — the compound-test polarity ambiguity
   is resolved. Routing outcomes unchanged throughout.
@@ -1551,7 +1549,7 @@ first is currently satisfied.
 
 ---
 
-### FL-004 — Tooling inventory owned but unpopulated — not yet usable as Gate B evidence
+### FL-004 — Tooling inventory owned but unpopulated — not yet usable as Decision Point B evidence
 
 | Field         | Value                                            |
 |---------------|--------------------------------------------------|
@@ -1559,7 +1557,7 @@ first is currently satisfied.
 | Risk          | Medium                                            |
 | Priority      | Major                                             |
 | Type          | Operational / Cross-Module                        |
-| Blocking      | No (but blocks full FL-001 / Gate B determinism)  |
+| Blocking      | No (but blocks full FL-001 / Decision Point B determinism)  |
 | Owner         | Architecture/Forge_flow.md                          |
 | First Logged  | 2026-09-08                                        |
 | Last Reviewed | 2026-09-08                                        |
@@ -1577,7 +1575,7 @@ HP-007 skeleton, Claude-reviewed and template-corrected). Ownership
 question is now answered; inventory tables remain unpopulated (see
 that file's TI-001) — this entry stays Open until first population.
 
-**Why It Matters:** Gate B's "within current tooling capability" test
+**Why It Matters:** Decision Point B's "within current tooling capability" test
 cannot be fully deterministic without a real, owned, maintained
 inventory to evaluate against — this is a live gap in FL-001's own
 determinism claim, not just a documentation nicety.
@@ -1592,7 +1590,7 @@ population alone is not a sufficient closure condition):
      — see that file's TI-001).
   3. A maintenance/update mechanism established and actually
      followed, not merely stated.
-  4. The inventory demonstrated usable as live Gate B evidence — a
+  4. The inventory demonstrated usable as live Decision Point B evidence — a
      populated table that's stale, disputed, or disconnected from
      actual equipment doesn't satisfy ASM-003's "known and
      maintained" requirement even if every row has a value.
@@ -1604,7 +1602,7 @@ population alone is not a sufficient closure condition):
 
 ---
 
-### FL-005 — Gate B Secondary Test unvalidated against real operation
+### FL-005 — Decision Point B Secondary Test unvalidated against real operation
 
 | Field         | Value                                            |
 |---------------|--------------------------------------------------|
@@ -1612,18 +1610,18 @@ population alone is not a sufficient closure condition):
 | Risk          | Medium                                            |
 | Priority      | Major                                             |
 | Type          | Gate Logic                                        |
-| Blocking      | Yes — blocks FL-001 Gate B determinism claim      |
+| Blocking      | Yes — blocks FL-001 Decision Point B determinism claim      |
 | Owner         | Architecture/Forge_flow.md                          |
 | First Logged  | 2026-09-08                                        |
 | Last Reviewed | 2026-09-08                                        |
 
-**Description:** Gate B's Secondary Test (justified-effort
+**Description:** Decision Point B's Secondary Test (justified-effort
 evaluation, added 2026-09-08) is new gate logic, not a
 documentation consolidation like this file's other 2026-09-08
 changes. It has not been exercised against a single real item.
 The judgment criteria (recovered value / learning value / scarcity)
 are qualitative and operator-judged, with no scoring formula or
-threshold yet — see the Provisional notice on Gate B itself.
+threshold yet — see the Provisional notice on Decision Point B itself.
 
 **Why It Matters:** Two operators could reasonably reach different
 Secondary Test outcomes for the same item, which is exactly the
@@ -1634,7 +1632,7 @@ before this pass.
 
 **Resolution Path:**
 - Log every Secondary Test decision with operator rationale from
-  first use (per Gate B's own instruction). **2026-09-09: the log
+  first use (per Decision Point B's own instruction). **2026-09-09: the log
   format itself now exists** — `Operations/Gate_02_Triage.md` §XII.1b
   extends the existing TIL v0 Log Specification with Gate-B-specific
   fields, rather than a new standalone schema.
@@ -1647,7 +1645,7 @@ before this pass.
   Purpose). Cross-site divergence in Secondary Test outcomes is
   expected and not itself evidence of a determinism problem.
 - Before Specification: convert to a testable threshold (effort
-  bands, measured scarcity cutoffs, or equivalent) per Gate B's own
+  bands, measured scarcity cutoffs, or equivalent) per Decision Point B's own
   provisional note.
 - Cross-module reference: HP-005 in Held Proposals.
 
@@ -1667,9 +1665,9 @@ before this pass.
 | Last Reviewed | 2026-09-12 — field had drifted stale (still read 2026-09-08 despite the 09-10 Risk/Priority raise and the 09-12 FL-007 resolution's direct cross-reference to this entry's remaining authority-ownership half) |
 
 **Description:** Found while building §1.3 Transition Ownership
-(HP-011). Gates A-D each have a clear Operations owner for their
+(HP-011). Decision Points A–D each have a clear Operations owner for their
 evidence-gathering procedure (`Operations/Gate_02_Triage.md`, plus
-`Operations/Tooling_Inventory.md` for Gate B). Oversight does not — no
+`Operations/Tooling_Inventory.md` for Decision Point B). Oversight does not — no
 Operations file is named as the owner of gathering exception
 evidence (contamination reports, scarcity data, etc.), and no
 Admin file is named as the owner of the authority structure that
@@ -1745,7 +1743,7 @@ cross-reference above.
 
 ---
 
-### FL-007 — Gate D/Oversight authority boundary is unstated
+### FL-007 — Decision Point D/Oversight authority boundary is unstated
 
 | Field         | Value                                            |
 |---------------|--------------------------------------------------|
@@ -1759,7 +1757,7 @@ cross-reference above.
 | Last Reviewed | 2026-09-12                                        |
 
 **Closure (2026-09-12):** Reading A adopted. Oversight Terminate is an
-independent authorization path for Reduction (R4), parallel to Gate D
+independent authorization path for Reduction (R4), parallel to Decision Point D
 YES. Routing ≠ authorization ≠ execution readiness stated explicitly
 in the Oversight section and Decision Contract notes. Gate_03's dual
 entry corridor is confirmed rather than narrowed. Bounded discretion
@@ -1811,11 +1809,11 @@ explicitly rather than leaving implicit.
   **P5-017):** this question is now confirmed to propagate across
   three files, not just this one. `Operations/Gate_03_Reduction.md`
   explicitly permits Reduction via two separate entry conditions —
-  "the item passed Gates A-D and failed all four... or has been
-  explicitly routed by the Human/AI Oversight Gate" — meaning the
+  "the item passed Decision Points A–D and failed all four... or has been
+  explicitly routed by the Oversight State" — meaning the
   downstream execution file already encodes Oversight as an
   independent Reduction-authorizing path, not merely a timing
-  decision on Gate D's determination. That's evidence toward
+  decision on Decision Point D's determination. That's evidence toward
   reading B (Oversight has real override/authorization authority),
   not reading A, though this file's own text still doesn't confirm
   which was intended. Also newly relevant: `Admin/Ethical_Constraints.md`
@@ -1831,11 +1829,11 @@ explicitly rather than leaving implicit.
 - **Closure sequence (added 2026-09-10, ChatGPT Phase 9 — the prior**
   **framing above was correct in spirit but not stated as an**
   **explicit, ordered closure test):**
-  1. Define Gate D's authority (does YES mean a final determination,
+  1. Define Decision Point D's authority (does YES mean a final determination,
      or a recommendation?).
   2. Define Oversight's authority (can it independently authorize
      Reduction, or only control timing/exceptions around a
-     determination Gate D already made?).
+     determination Decision Point D already made?).
   3. Define whether Oversight can create an alternate Reduction
      route distinct from the normal A→B→C→D route — the evidence in
      `Gate_03_Reduction.md`'s dual entry conditions suggests it
@@ -1859,7 +1857,7 @@ explicitly rather than leaving implicit.
 
 | Field         | Value                                            |
 |---------------|--------------------------------------------------|
-| Status        | Open — text applied 2026-09-14; re-verified same day: Gate D's own test ("all functional, repair, and repurpose paths have been exhausted") is independent of arrival path and never references tooling status, confirming stale-tooling entry alone cannot supply Reduction's authorization. Ready to close on human ratification. |
+| Status        | **Resolved** — FI-2 narrowed, Decision Point D independence re-verified 2026-09-14 (Ratified by James) |
 | Risk          | Medium                                            |
 | Priority      | Major                                             |
 | Type          | Architectural / Invariant                          |
@@ -1874,7 +1872,7 @@ irreversible action." The Degraded Operation section's stale-tooling
 rule instead converts UNKNOWN into a defined FAIL (routing to Gate
 C, not Hold). Under a narrow, literal reading of FI-2 ("never to
 irreversible action"), this doesn't actually violate the invariant —
-Gate C is not R4/irreversible, so the specific guarantee FI-2 makes
+Decision Point C is not R4/irreversible, so the specific guarantee FI-2 makes
 is technically preserved. But a natural, equally available reading
 treats "defaults to hold" as the substantive promise, in which case
 the stale-tooling rule is a live exception to a stated invariant
@@ -1893,9 +1891,9 @@ state-transition specification.
 - Decide which reading is intended and tighten FI-2's wording to
   make it unambiguous — either narrow it explicitly ("never routes
   directly to Reduction or other R4 action" — permitting non-Hold,
-  non-irreversible exceptions like Gate C), or tighten the
-  stale-tooling rule to route to Hold instead of Gate C-via-FAIL if
-  the stricter reading is intended.
+  non-irreversible exceptions like Decision Point C), or tighten the
+  stale-tooling rule to route to Hold instead of Decision Point
+  C-via-FAIL if the stricter reading is intended.
 - Do not resolve by silently picking one reading — this changes
   what the invariant actually promises and should be a deliberate
   choice, not a documentation cleanup.
@@ -1903,33 +1901,33 @@ state-transition specification.
 **Proposed Resolution (drafted 2026-09-13 in
 `LazarusForge-1_Alpha_14_working_2026-09-13a.zip`; skeptical pass by
 ChatGPT 2026-09-13, revised per that pass, cross-checked by Grok,
-verified by Claude, tested against Gate B/FI-2 text on owning-file
+verified by Claude, tested against Decision Point B/FI-2 text on owning-file
 test pass 2026-09-14 — confirmed compatible):**
 Narrow FI-2 to: "Uncertainty defaults to Hold. An explicitly defined
 degraded-mode exception may permit a non-R4 transition, but that
 transition does not itself constitute authorization for R4 action.
 Any later R4 decision requires its own applicable evidence and
 decision contract." Keep the stale-tooling degraded rule as written
-(Primary defaults to FAIL → Gate C). Add explicit notes under FI-2
-and the Gate B Decision Contract to this effect.
+(Primary defaults to FAIL → Decision Point C). Add explicit notes under FI-2
+and the Decision Point B Decision Contract to this effect.
 **Revision note:** the original draft's closing clause — "it does
-not authorize Reduction" — was rejected on skeptical pass. Gate C is
-not R4, but Gate C can lead to Gate D, and Gate D can authorize
+not authorize Reduction" — was rejected on skeptical pass. Decision Point C is
+not R4, but Decision Point C can lead to Decision Point D, and Decision Point D can authorize
 Reduction; claiming the stale-tooling path "does not authorize
 Reduction" would be a false safety guarantee, since a stale-tooling
 entry could still participate in a path that later reaches R4
 through its own proper authorization. The revised language above
 preserves the degraded-mode exception without immunizing anything
 downstream. Status remains Open until this wording is tested against
-the live FI-2/Gate B text, not merely reviewed in isolation.
+the live FI-2/Decision Point B text, not merely reviewed in isolation.
 **Owning-file test pass (2026-09-14):** confirmed compatible. The
-existing Gate B "Repairable?" section (Secondary Test) already
+existing Decision Point B "Repairable?" section (Secondary Test) already
 carries closely related language: "the secondary test never routes
-an item directly to Reduction; Gate C remains the next sequential
+an item directly to Reduction; Decision Point C remains the next sequential
 step, so the irreversibility doctrine is unaffected even if this
 heuristic proves wrong in practice." That sentence makes the same
 narrow claim as the revised FI-2 language above — a routing decision
-into Gate C is not itself an R4 authorization — without the rejected
+into Decision Point C is not itself an R4 authorization — without the rejected
 draft's broader "does not authorize Reduction" overclaim. The two
 should be cross-referenced when applied, not left as two independent
 statements of the same principle.
@@ -1940,7 +1938,7 @@ statements of the same principle.
 
 | Field         | Value                                            |
 |---------------|--------------------------------------------------|
-| Status        | Open — text applied 2026-09-14 at both locations (FL-001 Resolution Path, historical Resolution Log entry), pending human re-verification before Resolved |
+| Status        | **Resolved** — historical claim annotated (both locations) rather than deleted, disposition withdrawn 2026-09-14 (Ratified by James) |
 | Risk          | Low                                               |
 | Priority      | Minor                                             |
 | Type          | Cross-Module / G5 Cross-reference Integrity        |
@@ -1951,7 +1949,7 @@ statements of the same principle.
 
 **Description:** FL-001's own Resolution Path (twice) states a
 "motor worked example added to Operations/Gate_02_Triage.md (65%
-torque → Gate A fail, Gate C pass)." Verified: no occurrence of
+torque → Decision Point A fail, Decision Point C pass)." Verified: no occurrence of
 "torque" or "65%" exists anywhere in the current
 `Operations/Gate_02_Triage.md`. Found while checking ChatGPT's
 EV-008 finding (which only flagged the value as needing an
@@ -2009,7 +2007,7 @@ all. Applying this resolution means both locations, not just one.
 
 | Field         | Value                                            |
 |---------------|--------------------------------------------------|
-| Status        | Open — text applied 2026-09-14; re-verified same day: Gate_01's trigger, Forge_flow's process-level trigger, and individual-item Hold behavior all confirmed to agree (one wording correction made — "verbatim" overstated, actually paraphrased-but-consistent). Ready to close on human ratification. |
+| Status        | **Resolved** — process-level Oversight trigger added, three-way consistency re-verified 2026-09-14 (Ratified by James) |
 | Risk          | Low                                               |
 | Priority      | Minor                                             |
 | Type          | Architectural / Cross-Module                       |
@@ -2022,7 +2020,7 @@ all. Applying this resolution means both locations, not just one.
 allows five consecutive unresolved unknown items to trigger
 Oversight regardless of individual item status — a sensible
 escalation mechanism, but one this file's formal Oversight model
-(entered from Gate D failure or specific per-item exception
+(entered from Decision Point D failure or specific per-item exception
 triggers) doesn't represent. Unclear whether this creates an
 Oversight state for the affected items, for the operator/process, or
 both — the state machine as currently written is item-level only.
@@ -2089,7 +2087,7 @@ process-level trigger, individual-item Hold behavior) agree.
 
 | Field         | Value                                            |
 |---------------|--------------------------------------------------|
-| Status        | Open — text applied 2026-09-14 (§1.2 explanatory paragraph extended, not the originally-proposed nonexistent-sentence replacement), pending human re-verification before Resolved |
+| Status        | **Resolved** — EVP ownership assigned to Gate_02_Triage.md as an execution-stage requirement, 2026-09-14 (Ratified by James) |
 | Risk          | Low                                               |
 | Priority      | Minor                                             |
 | Type          | Cross-Module / Interface                           |
@@ -2101,18 +2099,18 @@ process-level trigger, individual-item Hold behavior) agree.
 **Description:** Raised by ChatGPT (P5-003/IC-006). `Operations/Gate_02_Triage.md`
 introduces an "Embedded Value Preservation" check before full
 Reduction, which is sensible and aligned with salvage-first doctrine
-— but this file's Gate D contract (§1.2) doesn't explicitly
+— but this file's Decision Point D contract (§1.2) doesn't explicitly
 incorporate it. Unclear whether this is an implementation detail
-Gate_02/Gate_03 own internally, or a mandatory condition of Gate D's
+Gate_02/Gate_03 own internally, or a mandatory condition of Decision Point D's
 own decision that this file has simply failed to represent.
 
 **Why It Matters:** These are architecturally different answers —
-one means Gate D's contract is complete and this is downstream
-detail; the other means Gate D's contract is itself incomplete.
+one means Decision Point D's contract is complete and this is downstream
+detail; the other means Decision Point D's contract is itself incomplete.
 
 **Resolution Path:**
 - Resolve during a dedicated Gate_02/Gate_03 audit rather than by
-  guessing here — this file's Gate D language should not change
+  guessing here — this file's Decision Point D language should not change
   until that ownership question is answered.
 
 **Proposed Resolution (drafted 2026-09-13 in
@@ -2125,11 +2123,11 @@ execution-stage procedure owned by `Operations/Gate_02_Triage.md`
 (its own text: Principle 9, applied after triage has already failed
 a unit and before full Reduction, not reopening the pass/fail triage
 decision; see that file's line ~215 for the accurate source
-sentence, which needs no change). Add to *this* file's §1.2 Gate D
+sentence, which needs no change). Add to *this* file's §1.2 Decision Point D
 Decision Contract row: "Embedded Value Preservation
 (`Operations/Gate_02_Triage.md` Principle 9) is an execution-stage
 preservation requirement applied before full Reduction, not an
-additional Gate-D decision predicate — Gate D's own contract remains
+additional Gate-D decision predicate — Decision Point D's own contract remains
 complete without it as a required input." Status remains Open until
 Gate_02 confirms the assignment is accurate.
 **Revision note:** the prior version of this block instructed
@@ -2139,7 +2137,7 @@ is real and accurate, and lives in `Operations/Gate_02_Triage.md`
 (confirmed at line 215), not in Forge_flow.md. Forge_flow.md has no
 such sentence to replace; grepping this file for "Embedded Value"
 turns up only FL-011's own Description, which correctly identifies
-the actual problem as an *omission* — §1.2's Gate D row says nothing
+the actual problem as an *omission* — §1.2's Decision Point D row says nothing
 about EVP at all. The fix is now framed as an addition to that row,
 not a replacement of nonexistent text, and Gate_02_Triage.md is left
 untouched since its sentence was never wrong.
@@ -2164,8 +2162,8 @@ untouched since its sentence was never wrong.
 file's Scope Boundary. The repository uses "Gate" for four distinct
 things: `Operations/Gate_01_Intake.md` through
 `Operations/Gate_07_Utilization.md` (operational
-modules), this file's Gate A-D (decision logic), the Human/AI
-Oversight Gate (exception-resolution state), and Verification Gates
+modules), this file's Decision Point A–D (decision logic), the Human/AI
+Oversight State (exception-resolution state), and Verification Gates
 1-6 (document audit/promotion gates, defined in
 `Admin/Verification_Gates.md`). `Verification_Gates.md` already
 documents its own distinction carefully, but nothing repository-wide
@@ -2192,10 +2190,10 @@ test pass 2026-09-14):**
 Add a standing terminology note (Defined Terms or Scope Boundary
 footer): "'Gate' is used in four distinct senses in this repository:
 (1) operational modules Gate_01–Gate_07, (2) decision gates A–D
-within this file, (3) the Human/AI Oversight Gate, (4) Verification
+within this file, (3) the Oversight State, (4) Verification
 Gates 1–6 (document audit/promotion, `Admin/Verification_Gates.md`).
 Prefer qualified forms where ambiguity is possible (e.g.
-`Operations/Gate_03_Reduction.md`, Decision Gate D, Verification
+`Operations/Gate_03_Reduction.md`, Decision Point D, Verification
 Gate 3) — do not rely on surrounding context alone to disambiguate."
 Recommend `Admin/Canonical_Terms.md` also carry the entry long-term
 as a new "Disambiguation: Uses of 'Gate'" section, matching the
@@ -2249,7 +2247,7 @@ anticipated elsewhere.
   doctrine exists for Oversight saturation" and provides provisional
   guidance — items remain in hold, queue by priority (safety-critical
   first, then age), no expiration — correctly cross-referencing this
-  file ("Architecture/Forge_flow.md Human/AI Oversight Gate
+  file ("Architecture/Forge_flow.md Oversight State
   doctrine"). But the reference is one-directional: this file has
   nothing pointing back. The fix is now concrete, not speculative —
   add a Degraded Operation entry here that adopts Gate_01's
@@ -2297,6 +2295,10 @@ deferred, not closed.
 ---
 
 ### Resolution Log
+
+- 2026-09-14 (rename pass, second tranche): **Gate_02_Triage.md operative body** renamed to Decision Point A–D / Oversight State; Lessons Learned and Auditor Notes left under historical names. Light pass on Gate_07, Tooling_Inventory, Discovery, Progress_Log, Electronics, Ops_Scope_Map. Canonical_Terms Disambiguation already updated in tranche 1. Archive/ untouched. FL-012 still Open pending final consistency sweep.
+
+- 2026-09-14 (rename pass, first tranche): **Decision Gates A–D → Decision Points A–D; Human/AI Oversight Gate → Oversight State.** Operative body of this file updated; Resolution Log historical narrative left under original names (same discipline as FL-009 — do not rewrite history). Gate_01–Gate_07 and Verification Gates 1–6 unchanged. Defined Terms FL-012 note updated to reflect the rename. Cross-file follow-up still required (Gate_02, Gate_01, Gate_03, Canonical_Terms, Ethical_Constraints, Discovery). FL-012 remains Open until Canonical_Terms Disambiguation section matches. Human-directed.
 
 - 2026-09-12 (twenty-fifth pass): **FL-007 resolved — Reading A adopted for Terminate authority.** Human directed that Oversight Terminate is an independent authorization path for Reduction (parallel to Gate D YES), with ideological flexibility for rare unanticipated exceptions rather than an exhaustive catalogue. Applied: (1) Terminate exit and Gate D want/need evaluation reworded to "Reduction is authorized"; (2) explicit "routing ≠ authorization ≠ execution readiness" doctrine added to Oversight section; (3) bounded-discretion proviso added (logged, Ethical_Constraints-consistent, no Gate_03 readiness bypass); (4) Decision Contract Oversight row and notes updated to match; (5) FL-007 marked Resolved (Payment via Specification). Gate_03 dual entry corridor confirmed rather than narrowed. FL-006 authority-ownership half remains Open (Escalate destination still unnamed). Open Unknowns 13→12. Human-directed.
 
@@ -2510,9 +2512,9 @@ Lazarus Forge operational flow document:
 | Purification stage definition revised without DS-001 resolution and repository-wide propagation | DS-001 is the active terminology dispute — any change here must update Operations/Gate_04_Separation_Mechanical.md, Unknowns.md, and any other file referencing the stage |
 | Gate logic modified without FL-001 resolution | FL-001 is In Progress — gate changes before boundary cases are resolved risk introducing new non-determinism |
 | Reduction module specified without FL-002 closure and cross-validation against Operations/Gate_04_Separation_Mechanical.md Inputs section | FL-002 and UNK-007 must resolve together — a Reduction spec that doesn't match the Gate's provisional feedstock envelope creates a hidden dependency failure |
-| Human/AI Oversight Gate removed or made optional | The Oversight Gate is the system's primary safeguard against premature irreversible action — removal requires explicit human authorization and full audit cycle |
+| Human/AI Oversight State removed or made optional | The Oversight State is the system's primary safeguard against premature irreversible action — removal requires explicit human authorization and full audit cycle |
 | Contamination category list revised without open learning system clause preserved | The open learning system clause is the doctrine that handles unforeseen contamination — removing it closes the list and creates blind spots |
-| Want/need policy definition changed without downstream file review | Want/need policy governs Fabrication priority and Oversight Gate decisions — changes propagate to Operations/Gate_02_Triage.md and Architecture/Geck_forge_seed.md at minimum |
+| Want/need policy definition changed without downstream file review | Want/need policy governs Fabrication priority and Oversight State decisions — changes propagate to Operations/Gate_02_Triage.md and Architecture/Geck_forge_seed.md at minimum |
 | KPI definition promoted from Placeholder without Operations/Energy.md baseline established | KPI is explicitly Placeholder pending measurable value definition and energy accounting — premature promotion is a confidence without basis violation |
 | ASM-007 assembly disassembly clarification removed from body without Lessons Learned update | The clarification resolves a real ambiguity — silent removal would reopen the gate logic overlap that was deliberately closed |
 | Gate sequence made non-sequential or parallel without full audit cycle | Sequential gate order is the core architectural assumption — parallel processing changes the entire decision logic and must be treated as a major version change |

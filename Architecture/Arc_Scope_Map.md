@@ -39,7 +39,7 @@ Note: gained an `## Authority & Tier Classification` preface 2026-08-07 (verifie
 ### `Architecture/Components.md`
 **Status:** Exploration · 0/6 · 2 Open Unknowns · Risk: Low
 **Does:** Component taxonomy v0-v3; Critical/Useful/Bootstrap classification; Bootstrap Doctrine and Graduation Rule; dual-use annotation standard.
-**Does not (arrow):** Electronics/software/biological/optical fabrication systems · individual component engineering specs · G.E.C.K. manifest (`Geck_forge_seed.md`) · precision/tolerance doctrine (`Precision.md`) · cross-module governance · the live operational tooling inventory used by Gate B's "within current tooling capability" test — this file is system-level Critical/Useful/Bootstrap classification only, not a hand-tool/machine inventory (`Operations/Tooling_Inventory.md`).
+**Does not (arrow):** Electronics/software/biological/optical fabrication systems · individual component engineering specs · G.E.C.K. manifest (`Geck_forge_seed.md`) · precision/tolerance doctrine (`Precision.md`) · cross-module governance · the live operational tooling inventory used by Decision Point B's "within current tooling capability" test — this file is system-level Critical/Useful/Bootstrap classification only, not a hand-tool/machine inventory (`Operations/Tooling_Inventory.md`).
 
 ### `Architecture/Engineering.md`
 **Status:** Draft · 3/6 · 7 Open Unknowns · Risk: High

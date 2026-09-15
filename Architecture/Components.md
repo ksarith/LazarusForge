@@ -44,7 +44,7 @@
 - Precision ceiling doctrine, tolerance tiers, or metrology methodology
   (→ `Architecture/Precision.md`)
 - Cross-module governance or repository-level unknowns
-- The live operational tooling inventory used by Gate B's "within
+- The live operational tooling inventory used by Decision Point B's "within
   current tooling capability" test — this file defines system-level
   Critical/Useful/Bootstrap components only, not a hand-tool/machine
   inventory

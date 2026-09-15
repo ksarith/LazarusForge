@@ -110,7 +110,7 @@ using local means.
 
 The Forge loop that defines sufficiency: **intake → triage → process → verify → learn →
 repeat.** A G.E.C.K. is sufficient if it allows this loop to close, even in degraded or
-partial form. Components that allow the loop to close in a reduced application are Gate C
+partial form. Components that allow the loop to close in a reduced application are Decision Point C
 passes — useful, not critical. Components whose absence breaks the loop entirely are
 critical.
 
