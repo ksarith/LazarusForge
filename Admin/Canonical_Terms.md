@@ -210,26 +210,24 @@ justification.
 
 ---
 
-## Disambiguation: Uses of "Gate" (added 2026-09-14, FL-012)
+## Disambiguation: Uses of "Gate" (added 2026-09-14, FL-012; terms updated 2026-09-14 rename pass)
 
-The word "Gate" covers four genuinely distinct concepts in this
-repository. They are not interchangeable, and a bare "Gate 3" or
-"the Gate" is ambiguous even when a surrounding paragraph seems to
-make the meaning obvious.
+Four genuinely distinct concepts. Two were renamed in the 2026-09-14
+pass to reduce collision; Operational Modules and Verification Gates
+kept the word "Gate."
 
-| Usage | Meaning | Canonical Home |
-|-------|---------|-----------------|
-| Operational Module | One of seven sequential physical/procedural stages an item passes through | `Operations/Gate_01_Intake.md` through `Operations/Gate_07_Utilization.md` |
-| Decision Gate | One of four routing decisions (A–D) within the Forge's core flow logic | `Architecture/Forge_flow.md` §1.2 Gate Decision Contracts |
-| Oversight Gate | The Human/AI exception-resolution state — five exits (Return to Flow, Hold, Reclassify, Escalate, Terminate) | `Architecture/Forge_flow.md`'s Human/AI Oversight Gate section |
-| Verification Gate | One of six document audit/promotion stages a file passes through toward Specification-grade | `Admin/Verification_Gates.md` |
+| Usage | Preferred term | Meaning | Canonical Home |
+|-------|----------------|---------|-----------------|
+| Operational Module | **Gate_01–Gate_07** (unchanged) | Sequential physical/procedural stages an item passes through | `Operations/Gate_01_Intake.md` through `Operations/Gate_07_Utilization.md` |
+| Decision routing test | **Decision Point A–D** (formerly Decision Gate / Gate A–D) | One of four routing decisions in the Forge's core flow logic | `Architecture/Forge_flow.md` §1.2 Decision Point Contracts |
+| Exception-resolution state | **Oversight State** (formerly Human/AI Oversight Gate) | Five exits: Return to Flow, Hold, Reclassify, Escalate, Terminate | `Architecture/Forge_flow.md` Oversight State section |
+| Document audit/promotion | **Verification Gate 1–6** (unchanged) | Stages a file passes through toward Specification-grade | `Admin/Verification_Gates.md` |
 
 Prefer qualified forms where ambiguity is possible — e.g.
-`Operations/Gate_03_Reduction.md`, "Decision Gate D," "Verification
-Gate 3" — rather than relying on surrounding context to disambiguate
-a bare "Gate" reference. This is the same discipline this file
-already applies to "canonical" and "emergence": a high-collision word
-gets a standing entry, not an assumption that context will carry it.
+`Operations/Gate_03_Reduction.md`, "Decision Point D," "Verification
+Gate 3" — rather than relying on surrounding context. Historical
+Resolution Log entries retain the names in use at the time of writing
+(same discipline as FL-009).
 
 Cross-reference: `Architecture/Forge_flow.md`'s Defined Terms section
 carries a local copy of this entry for readers working in that file
