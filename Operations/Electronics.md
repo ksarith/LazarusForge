@@ -36,7 +36,7 @@
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-08-09 — Grok pseudo-audit (Skeptic read + minimal fixes); prior: 2026-08-02 corrective merge; 2026-08-02 Threat Model/Heartbeat Token still not Gate-1 audited |
+| Last Audit       | 2026-09-14 — v0 Logic-Zero Run Sheet added (Proposed/Placeholder, under Firmware Trust Doctrine) and CF-006 cross-reference added to EL-006's Resolution Path (Security_Protocols.md's "signature-verified bootstrap" claim overstates this file's current v0 hash-based doctrine — logged there, not fixed here). No change to EL-006's Status/Risk/Priority. Prior: 2026-08-09 — Grok pseudo-audit (Skeptic read + minimal fixes); prior: 2026-08-02 corrective merge; 2026-08-02 Threat Model/Heartbeat Token still not Gate-1 audited |
 | Auditor          | Claude — Retrofit/Auditor; Gemini — Synthesizer (CF-001 parameters); Copilot — drafted Threat Model/Trust Boundary/Firmware Provenance Log restructure (human-directed), 2026-08-02; Grok — drafted Heartbeat Token Cryptography spec and reviewed Copilot's draft (human-directed), 2026-08-02; Claude — verified against source, corrective merge (human-directed), 2026-08-02; Grok pseudo-audit 2026-08-09 — no Spec Gate promotion |
 | Open Unknowns    | 9                                                                   |
 | Active Disputes  | 0                                                                   |
@@ -468,6 +468,65 @@ verification is a future capability. At v0, hash
 verification of known-good firmware images is the
 minimum acceptable practice. Cryptographic
 infrastructure is a trajectory item. See EL-006.
+
+---
+
+### v0 Logic-Zero Run Sheet (Proposed / Placeholder — added 2026-09-14)
+
+*Drafted to make the five-step Logic-Zero wipe protocol above
+executable without improvisation, and to define what evidence
+"first MCU batch validation" (EL-006's Payment via Specification
+condition) actually requires. Proposed/Placeholder — not doctrine
+until skeptical pass and human direction; not yet executed. James
+has no physical equipment as of this drafting (standing constraint
+since 2026-08-15) — this sheet is inert until hardware exists to
+run it against. Tests procedure compliance, not image honesty; does
+not establish cryptographic firmware trust or close EL-006.*
+
+**Preconditions (fill before any run):**
+
+| # | Item | Notes |
+|---|------|-------|
+| P1 | Device under test — MCU family/package, intake Device ID | |
+| P2 | Donor board ID (or "unknown donor") | |
+| P3 | Known-good image identity — filename/version/source, who approved it as verified source | Must be filled; "verified source" is otherwise ambiguous |
+| P4 | Expected firmware hash — algorithm, scope (full flash vs. region), canonical hex string | |
+| P5 | Tools — programmer/reader model, erase/write/read-back/hash software | |
+| P6 | Operator ID | |
+| P7 | Date/time (UTC) | |
+
+If P3–P5 cannot be filled, do not start — document as a blocked
+precondition, not a failed wipe.
+
+**Procedure (matches the five-step protocol above):** identify
+programmable → full erase (declare success criteria before running)
+→ reflash only the P3 image → verify hash against P4 → complete all
+six provenance log fields (Device ID, Donor Board, Wipe Method,
+Firmware Hash, Operator, Timestamp). Locked/non-wipeable devices:
+material recovery only, do not attempt bypass, log the encounter
+for EL-006's resolution path (existing rule, unchanged).
+
+**Outcomes:** **S** (all steps succeeded) — proceeds under existing
+triage rules as v0-procedure-complete, *not* as cryptographic trust.
+**F** (fail at erase/reflash/hash, or incomplete log) — do not
+integrate; Hold or scrap per existing rules. **L** (locked/non-
+integrable) — material recovery only. **B** (blocked before start,
+P3–P5 missing) — a precondition gap, not a device failure.
+
+**First-batch evidence rule:** at least one Outcome S on a declared
+device context, with the Resolution Log stating the exact
+device/tools/hash definition used *and* explicit limitations on
+generalization (e.g. "exercised on STM32F103 only; not generalized
+to all salvage MCUs"). One success demonstrates initial
+executability, not general reliability — those are different
+evidence grades and must not be conflated. Analogous promotion of
+v0 *practice* (EL-006's Payment via Specification path) requires
+this plus human direction, and still does not close EL-006.
+
+**Never claim from this sheet alone:** Measured firmware trust,
+SEC-007b progress, or universal MCU applicability. See CF-006 for
+the related, separately-tracked discrepancy about what "per
+Electronics.md doctrine" can honestly be claimed to require.
 
 ### Desoldering Protocols — Non-Destructive Harvesting
 
@@ -1304,7 +1363,7 @@ insufficient — unknown until characterized.
 | Blocking      | Yes — prerequisite for first salvaged MCU integration |
 | Owner         | Operations/Electronics.md                        |
 | First Logged  | 2026-05-09                                       |
-| Last Reviewed | 2026-08-15                                       |
+| Last Reviewed | 2026-09-14 — CF-006 cross-reference added (see Resolution Path); no change to Status/Risk/Priority |
 
 **Description:** The cryptographic key management
 infrastructure and root-of-trust architecture
@@ -1333,6 +1392,12 @@ trust boundary has a known gap.
   practice is validated against first MCU batch,
   move to Section II as Analogous. Full resolution
   deferred to v1+ cryptographic infrastructure.
+- Cross-reference CF-006 (`Admin/Security_Protocols.md`,
+  registered 2026-09-14) — that file's Zero-Trust Cluster
+  Admission section currently attributes signature-verified
+  bootstrap to this file's doctrine, which overstates the v0
+  hash-based floor above. Not this file's discrepancy to fix
+  unilaterally; see CF-006's Resolution Path.
 
 ---
 
