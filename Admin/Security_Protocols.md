@@ -30,7 +30,7 @@
 | Verification Ref | `Admin/Verification_Gates.md`                                    |
 | Last Audit       | 2026-09-03 — Grok surgical state-synchronization repair after ChatGPT REVISE/G6-BLOCKED audit (SEC-AUD-001–006): FROZEN markers added; Scope Boundary SEC-009 updated; Human-Factors note synchronized; PAT-001/PAT-002 statuses updated; RIP-001 dependency language corrected; bottom Version 0.8 Status block replaced with current + historical record. No security architecture redesigned; SEC-002/007a/009 closures preserved. Prior: 2026-08-22 |
 | Auditor          | Grok — 2026-09-03 integrity repair (see Last Audit). Prior: Gemini / Grok / ChatGPT / Claude multi-agent history retained in Resolution Log |
-| Open Unknowns    | 10 substantively open (SEC-001, SEC-003, SEC-004, SEC-005, SEC-006, SEC-007b, SEC-008, SEC-010, SEC-011, SEC-012). SEC-002, SEC-007a, SEC-009 Ratified — Payment via Specification, 2026-08-22 |
+| Open Unknowns    | 10 substantively open (SEC-001, SEC-003, SEC-004, SEC-005, SEC-006, SEC-007b, SEC-008, SEC-010, SEC-011, SEC-012), plus CF-006 (new, cross-module, 2026-09-14). SEC-002, SEC-007a, SEC-009 Ratified — Payment via Specification, 2026-08-22 |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | High                                                                |
 | Sidecar Link     | #auditor-notes--unknowns                                            |
@@ -1280,7 +1280,83 @@ than working around.
 
 ---
 
+### CF-006 — "Signature-verified bootstrap" claim overstates Electronics.md's current firmware-trust doctrine
+
+| Field         | Value                              |
+|---------------|-------------------------------------|
+| Status        | Open                               |
+| Risk          | Medium                             |
+| Priority      | Major                              |
+| Type          | Cross-Module / Semantic Drift       |
+| Blocking      | No — does not block first MCU batch; does block honest claims that node admission already rests on signature verification per Electronics |
+| Owner         | `Admin/Security_Protocols.md` (claim language); `Operations/Electronics.md` (actual v0 procedure) |
+| First Logged  | 2026-09-14                         |
+| Last Reviewed | 2026-09-14                         |
+
+**Description:** This file's Zero-Trust Cluster Admission section states that
+a node has passed "Logic-Zero wipe and **signature-verified bootstrap load**
+per `Operations/Electronics.md` doctrine" as a precondition for cluster
+admission. `Operations/Electronics.md`'s own Firmware Trust Doctrine and
+EL-006 specify the current v0 floor as **hash** verification of a known-good
+image, with cryptographic signing and a full root-of-trust explicitly
+deferred to v1+ (EL-006 Resolution Path; SEC-007b, physical realization,
+remains Open). No live SEC-007a/b implementation was found that makes
+operational signature verification the current Electronics requirement.
+
+**Why It Matters:** This file attributes to Electronics.md a stronger
+mechanism than Electronics.md currently defines. A reader or agent could
+treat "per Electronics.md doctrine" as confirmation that signature
+verification is already the v0 floor, silently promoting interim hash
+practice toward cryptographic trust — the exact boundary EL-006 exists to
+hold open. Node-admission language may currently overstate the trust
+condition actually established at component recovery.
+
+**Resolution Path:**
+- Locate every live occurrence of "signature-verified" tied to
+  Electronics.md in this file and any dependents.
+- Establish provenance: which pass introduced the signature language,
+  and whether it represents an intended future state or a mistaken
+  present-state claim.
+- Identify any file that assumes signature verification is already
+  required for node admission or bootstrap.
+- Owner decision (not a silent edit): either (A) align this file's
+  language to current Electronics v0 (hash + Logic-Zero + log) and mark
+  signature verification as contingent on SEC-007b / EL-006 v1+; or (B)
+  if signature verification was intentional present-state policy, update
+  Electronics under Payment via Specification only once the mechanism
+  actually exists; or (C) split the language — component recovery states
+  Electronics v0, node admission may state a stronger *future*
+  requirement only if explicitly labeled non-operational until SEC-007b.
+- Record the decision in both files' Resolution Logs with cross-references.
+- Do not silently rewrite either file's wording while this entry is Open —
+  the discrepancy itself is evidence; fixing it without provenance would
+  erase the record of how it arose.
+
+**Evidence notes:** Checked directly against the live Alpha_14
+post-rename tree, 2026-09-14. Electronics.md v0 steps and "Signed
+firmware (future — EL-006)" language confirmed; SEC-007a Ratified,
+SEC-007b Open. Surfaced during a skeptical review of a proposed
+EL-006↔SEC-007 cross-layer binding draft (ChatGPT), not during a full
+Security_Protocols audit — the surrounding review remains Proposed and
+has not been inserted into either file.
+
+---
+
 ### Resolution Log
+
+- 2026-09-14: **CF-006 registered — "signature-verified bootstrap" claim
+  overstates Electronics.md's current firmware-trust doctrine.** Surfaced
+  during ChatGPT's skeptical review of a proposed (not inserted) EL-006↔
+  SEC-007 cross-layer binding draft; Claude independently re-verified the
+  discrepancy against live source before registration — confirmed this
+  file's Zero-Trust Cluster Admission section attributes signature
+  verification to Electronics.md as current doctrine, while Electronics.md's
+  own EL-006 explicitly defers signature verification to v1+ and specifies
+  hash verification as the current v0 floor. Logged, not silently fixed —
+  the discrepancy itself is evidence; four-part Resolution Path requires
+  establishing provenance and dependents before any wording change. Mirrored
+  in Unknowns.md's Active Index and cross-referenced from Electronics.md's
+  EL-006 entry. Human-directed.
 
 - 2026-09-10: **SEC-007b sidecar corrected — "blocked pending SEC-007a" had gone stale.** SEC-007a Ratified 2026-08-22; this sidecar's Blocking field, Resolution Path, and Last Reviewed date still described SEC-007b as waiting on it, three weeks after ratification. Grok's correction-grep flagged this; Claude verified the SEC-007a ratification date against its own FROZEN marker and PAT-001's entry before fixing. Corrected all three live fields; the file's own historical Resolution Log entry describing the original 2026-07-02 split (accurate as of that date) left untouched. Mirrored in Unknowns.md's Active Index row. Human-directed.
 
