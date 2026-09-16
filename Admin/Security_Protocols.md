@@ -30,7 +30,7 @@
 | Verification Ref | `Admin/Verification_Gates.md`                                    |
 | Last Audit       | 2026-09-03 — Grok surgical state-synchronization repair after ChatGPT REVISE/G6-BLOCKED audit (SEC-AUD-001–006): FROZEN markers added; Scope Boundary SEC-009 updated; Human-Factors note synchronized; PAT-001/PAT-002 statuses updated; RIP-001 dependency language corrected; bottom Version 0.8 Status block replaced with current + historical record. No security architecture redesigned; SEC-002/007a/009 closures preserved. Prior: 2026-08-22 |
 | Auditor          | Grok — 2026-09-03 integrity repair (see Last Audit). Prior: Gemini / Grok / ChatGPT / Claude multi-agent history retained in Resolution Log |
-| Open Unknowns    | 10 substantively open (SEC-001, SEC-003, SEC-004, SEC-005, SEC-006, SEC-007b, SEC-008, SEC-010, SEC-011, SEC-012), plus CF-006 (new, cross-module, 2026-09-14). SEC-002, SEC-007a, SEC-009 Ratified — Payment via Specification, 2026-08-22 |
+| Open Unknowns    | 10 substantively open (SEC-001, SEC-003, SEC-004, SEC-005, SEC-006, SEC-007b, SEC-008, SEC-010, SEC-011, SEC-012). SEC-002, SEC-007a, SEC-009 Ratified — Payment via Specification, 2026-08-22. CF-006 Resolved 2026-09-15 (Option A) |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | High                                                                |
 | Sidecar Link     | #auditor-notes--unknowns                                            |
@@ -483,16 +483,23 @@ This section does not redefine that doctrine. It defines the administrative
 authentication layer that sits above it: how nodes that have passed
 Electronics.md validation are admitted into the trusted cluster.
 
-A node that has passed Logic-Zero wipe and signature-verified bootstrap load
-per Electronics.md doctrine is a candidate for cluster admission. Admission
-itself requires the node identity verification procedures below.
+A node that has passed Logic-Zero wipe, hash verification against a
+known-good image, and complete provenance logging per Electronics.md's
+v0 Firmware Trust Doctrine is a candidate for cluster admission.
+Signature-verified bootstrap load is the v1+ target (Electronics.md
+EL-006) and requires a physical external root-of-trust that does not
+yet exist (SEC-007b, Open) — admission criteria will be strengthened
+to require it once that anchor is real, not before. Admission itself
+requires the node identity verification procedures below.
 
 **1. Zero-Trust Cluster Admission**
 
 No salvaged or newly initialized node may join the local mesh or operational
 network without completing both layers:
-- Component-level trust: Logic-Zero wipe and signature-verified bootstrap
-  load per `Operations/Electronics.md` EL-006 doctrine
+- Component-level trust: Logic-Zero wipe, hash verification, and
+  provenance logging per `Operations/Electronics.md` EL-006 v0
+  doctrine (signature-verified bootstrap is the v1+ target, contingent
+  on SEC-007b — see the note above)
 - Node-level identity: key-pair registration and cluster admission handshake
   per this section
 
@@ -1100,6 +1107,11 @@ Physical design work can now proceed. Cross-ref
 `Operations/Electronics.md` for salvaged-hardware constraints and Logic-Zero
 node admission. Requires hardware-in-the-loop testing and multi-agent review
 per PAT-002's Validation Needed field before advancing past Decision Drafted.
+Design-lineage background research (TCG measured/secure boot, DICE
+attestation, RATS endorsement models, and candidate physical forms) filed
+2026-09-15 at `Archive/Transcripts/SEC007b_design_research_2026-09-15.md` —
+reference material for when physical design work starts; does not select a
+form or change this entry's Status.
 
 ---
 
@@ -1284,14 +1296,14 @@ than working around.
 
 | Field         | Value                              |
 |---------------|-------------------------------------|
-| Status        | Open                               |
-| Risk          | Medium                             |
-| Priority      | Major                              |
+| Status        | **Resolved** — Option A applied 2026-09-15 (Ratified by James) |
+| Risk          | Medium (historical)                |
+| Priority      | Major (historical)                 |
 | Type          | Cross-Module / Semantic Drift       |
-| Blocking      | No — does not block first MCU batch; does block honest claims that node admission already rests on signature verification per Electronics |
+| Blocking      | No — does not block first MCU batch; did block honest claims that node admission already rests on signature verification per Electronics |
 | Owner         | `Admin/Security_Protocols.md` (claim language); `Operations/Electronics.md` (actual v0 procedure) |
 | First Logged  | 2026-09-14                         |
-| Last Reviewed | 2026-09-14                         |
+| Last Reviewed | 2026-09-15 — Resolved, Option A applied |
 
 **Description:** This file's Zero-Trust Cluster Admission section states that
 a node has passed "Logic-Zero wipe and **signature-verified bootstrap load**
@@ -1332,6 +1344,27 @@ condition actually established at component recovery.
   the discrepancy itself is evidence; fixing it without provenance would
   erase the record of how it arose.
 
+**Resolution (2026-09-15):** Provenance established (Grok investigation,
+verified by Claude against this file's own Resolution Log): Security_Protocols.md
+explicitly abandoned owning firmware trust doctrine on 2026-05-26 ("Electronics.md
+already owns component-level infiltration prevention; dual ownership creates
+scope conflict") — the same week EL-006 was first logged in Electronics.md
+specifying hash, not signature, as the v0 floor. No dated entry anywhere in
+this file's history says "introduced signature-verified bootstrap as present-state
+Electronics requirement." This file's own Drift Indicators section independently
+names "scope boundary revised to absorb firmware trust doctrine from Electronics.md
+without explicit Electronics.md scope boundary revision" as a mandatory re-audit
+condition — exactly the pattern this discrepancy matches. Most consistent reading:
+mistaken or aspirational present-tense language, not a deliberate, ratified
+policy requiring Electronics to already perform signature verification.
+**Option A applied, Ratified by James 2026-09-15:** both operative sentences
+(node-admission narrative and the Zero-Trust Cluster Admission bullet) rewritten
+to state the actual v0 floor (Logic-Zero wipe + hash verification + provenance
+log) with signature-verified bootstrap explicitly named as the v1+ target,
+contingent on SEC-007b (physical root-of-trust, still Open). No mechanism was
+invented; nothing was silently rewritten — the provenance investigation and
+owner decision preceded the edit, per this entry's own Resolution Path.
+
 **Evidence notes:** Checked directly against the live Alpha_14
 post-rename tree, 2026-09-14. Electronics.md v0 steps and "Signed
 firmware (future — EL-006)" language confirmed; SEC-007a Ratified,
@@ -1343,6 +1376,26 @@ has not been inserted into either file.
 ---
 
 ### Resolution Log
+
+- 2026-09-15: **CF-006 resolved — Option A applied.** Grok investigated
+  provenance (verified by Claude): the 2026-05-26 abandoned-path entry
+  ("Electronics.md already owns component-level infiltration prevention;
+  dual ownership creates scope conflict") and this file's own Drift
+  Indicators clause ("scope boundary revised to absorb firmware trust
+  doctrine from Electronics.md without explicit Electronics.md scope
+  boundary revision") both point the same direction — the
+  signature-verified phrasing was mistaken or aspirational present-tense
+  language, not a deliberate ratified policy. James ratified Option A.
+  Both operative sentences (node-admission narrative, Zero-Trust Cluster
+  Admission bullet) rewritten to state the actual v0 floor — Logic-Zero
+  wipe + hash verification + provenance log — with signature-verified
+  bootstrap named explicitly as the v1+ target contingent on SEC-007b
+  (still Open). CF-006 Status → Resolved; original Description and
+  Resolution Path left intact above, per this file's own preserve-history
+  discipline (see the FL-009 precedent this repo already follows
+  elsewhere). Mirrored in `Operations/Electronics.md`'s EL-006 entry and
+  `Unknowns.md`'s Active Index. Human-directed (explicit ratification
+  after the provenance investigation was presented).
 
 - 2026-09-14: **CF-006 registered — "signature-verified bootstrap" claim
   overstates Electronics.md's current firmware-trust doctrine.** Surfaced
