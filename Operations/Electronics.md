@@ -36,7 +36,7 @@
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-09-14 — v0 Logic-Zero Run Sheet added (Proposed/Placeholder, under Firmware Trust Doctrine) and CF-006 cross-reference added to EL-006's Resolution Path (Security_Protocols.md's "signature-verified bootstrap" claim overstates this file's current v0 hash-based doctrine — logged there, not fixed here). No change to EL-006's Status/Risk/Priority. Prior: 2026-08-09 — Grok pseudo-audit (Skeptic read + minimal fixes); prior: 2026-08-02 corrective merge; 2026-08-02 Threat Model/Heartbeat Token still not Gate-1 audited |
+| Last Audit       | 2026-09-15 — CF-006 resolved (Option A, Ratified by James): `Security_Protocols.md`'s "signature-verified bootstrap" language corrected to state this file's actual v0 hash-based floor; no change required to this file's own doctrine. Prior: 2026-09-14 — v0 Logic-Zero Run Sheet added (Proposed/Placeholder, under Firmware Trust Doctrine) and CF-006 cross-reference added to EL-006's Resolution Path. No change to EL-006's Status/Risk/Priority. Prior: 2026-08-09 — Grok pseudo-audit (Skeptic read + minimal fixes); prior: 2026-08-02 corrective merge; 2026-08-02 Threat Model/Heartbeat Token still not Gate-1 audited |
 | Auditor          | Claude — Retrofit/Auditor; Gemini — Synthesizer (CF-001 parameters); Copilot — drafted Threat Model/Trust Boundary/Firmware Provenance Log restructure (human-directed), 2026-08-02; Grok — drafted Heartbeat Token Cryptography spec and reviewed Copilot's draft (human-directed), 2026-08-02; Claude — verified against source, corrective merge (human-directed), 2026-08-02; Grok pseudo-audit 2026-08-09 — no Spec Gate promotion |
 | Open Unknowns    | 9                                                                   |
 | Active Disputes  | 0                                                                   |
@@ -524,8 +524,8 @@ v0 *practice* (EL-006's Payment via Specification path) requires
 this plus human direction, and still does not close EL-006.
 
 **Never claim from this sheet alone:** Measured firmware trust,
-SEC-007b progress, or universal MCU applicability. See CF-006 for
-the related, separately-tracked discrepancy about what "per
+SEC-007b progress, or universal MCU applicability. See CF-006
+(Resolved 2026-09-15) for the related discrepancy about what "per
 Electronics.md doctrine" can honestly be claimed to require.
 
 ### Desoldering Protocols — Non-Destructive Harvesting
@@ -1363,7 +1363,7 @@ insufficient — unknown until characterized.
 | Blocking      | Yes — prerequisite for first salvaged MCU integration |
 | Owner         | Operations/Electronics.md                        |
 | First Logged  | 2026-05-09                                       |
-| Last Reviewed | 2026-09-14 — CF-006 cross-reference added (see Resolution Path); no change to Status/Risk/Priority |
+| Last Reviewed | 2026-09-15 — CF-006 resolved (see cross-reference below); no change to this Unknown's own Status/Risk/Priority |
 
 **Description:** The cryptographic key management
 infrastructure and root-of-trust architecture
@@ -1393,11 +1393,13 @@ trust boundary has a known gap.
   move to Section II as Analogous. Full resolution
   deferred to v1+ cryptographic infrastructure.
 - Cross-reference CF-006 (`Admin/Security_Protocols.md`,
-  registered 2026-09-14) — that file's Zero-Trust Cluster
-  Admission section currently attributes signature-verified
-  bootstrap to this file's doctrine, which overstates the v0
-  hash-based floor above. Not this file's discrepancy to fix
-  unilaterally; see CF-006's Resolution Path.
+  registered 2026-09-14, **Resolved 2026-09-15**) — that file's
+  Zero-Trust Cluster Admission section previously attributed
+  signature-verified bootstrap to this file's doctrine, overstating the
+  v0 hash-based floor above. Resolved via Option A: Security_Protocols.md's
+  language now states the actual v0 floor and names signature-verified
+  bootstrap as this file's v1+ target, contingent on SEC-007b. No change
+  to this file's own doctrine was required.
 
 ---
 
