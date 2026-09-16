@@ -17,7 +17,7 @@
 | Body Stability | Volatile |
 | Spec Gates | 0/6 |
 | Verification Ref | Admin/Verification_Gates.md |
-| Last Audit | 2026-07-30 |
+| Last Audit | 2026-09-15 — CF-006-class sibling scan (Grok) found the Underground Chamber sensor line over-attributed a fixed "triple-redundant" count to Cognitive_Frameworks.md, which actually documents (May 2026 Lessons Learned) that quantity-based TMR was tried, failed against correlated errors, and was superseded by a diversity requirement. Corrected to match; prior: 2026-07-30 |
 | Auditor | Claude (Synthesizer), Gemini (Auditor), ChatGPT (Synthesizer), Grok (Synthesizer); Gemini — Skeptic/Auditor Exploration audit, Claude — Synthesizer/Auditor (verification against source, corrections applied), 2026-07-28; Grok — Skeptic/Auditor Exploration audit, Claude — Synthesizer/Auditor (verified against source, SD-UNK-015 registered, SD-UNK-007 resolution path corrected), 2026-07-28; 2026-07-30 Phase 0 hygiene — Ethical Anchor canonicalized, SD-UNK-013/014/015 mirrored to Unknowns.md (Synthesizer); 2026-07-30 Phase 1 Resolution Pass — open unknowns 15 → 8 (Synthesizer); 2026-07-30 — Tier 3 Living_Waters interface expanded (distillation + sorption desorption); SD-UNK-010 note expanded, count unchanged (Synthesizer) |
 | Open Unknowns | 8 |
 | Active Disputes | 0 |
@@ -358,7 +358,12 @@ Consistent with Forge doctrine: physical boundaries and passive mechanisms take 
 **Underground Chamber**
 - Passive weighted pressure-relief vents prevent catastrophic pressure buildup from steam spike or fluid breach.
 - Acoustic emission monitoring for structural shifting — anomalous readings trigger defocused state at surface collection array.
-- Temperature sensors at multiple chamber depths — triple-redundant per Architecture/Cognitive_Frameworks.md doctrine; sensors lie, cross-reference is required.
+- Temperature sensors at multiple chamber depths — diverse sensing
+  methods per Architecture/Cognitive_Frameworks.md doctrine (redundancy
+  requires diversity, not quantity — see that file's May 2026 Lessons
+  Learned entry on correlated TMR failure); a fixed count of identical
+  sensors is not by itself the requirement. Sensors lie; cross-reference
+  is required.
 
 **Thermal Runaway Definition**
 - Chamber temperature exceeds host geology fracturing threshold: immediate full shutoff, both pathways.
