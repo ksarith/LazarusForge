@@ -33,7 +33,7 @@
 | Verification Ref | Admin/Verification_Gates.md                                      |
 | Last Audit       | 2026-09-10 — ChatGPT ran a full multi-phase audit (Phases 1-6: structural validation, scope validation, assumption extraction, internal coherence, cross-module consistency, evidence validation) under Auditor_Protocols.md v0.41; Claude verified every substantive claim against live source before acting. Six mechanical fixes applied directly (Lessons Learned heading restored over a pre-existing orphaned table, stale Gate Correspondence Oversight row corrected, FL-003 self-contradiction fixed, "Eight sequential decision gates" reworded, §1.3 bare filenames fully-qualified, illustrative example values labeled non-measured). Six new Unknowns registered (FL-008 through FL-013); FL-007 strengthened with cross-file evidence. One new finding beyond the audit itself: FL-001's Resolution Path cites a Gate_02_Triage.md worked example that doesn't exist (FL-009). One error caught in the audit's own output (EV-011 misattributed a quote's section). Prior: 2026-09-08/09 — fifteen resolution-log passes across two days: R0-R4 taxonomy (HP-001, propagated to Gate_03_Reduction.md), Oversight multi-exit formalization (HP-002), Flow Invariants §1.1 (HP-003), Gate D polarity rewrite (HP-004), boundary-case Examples 4-7 (HP-005 partial), cross-layer reconciliation spinning off FL-003/FL-004 (HP-006), Tooling_Inventory.md creation (HP-007), per-deployment wording + Deployment Localization Doctrine, Gate B Secondary Test + FL-005, Gate Decision Contracts §1.2 + explicit UNKNOWN transitions + re-entry contract (HP-008/009/015), terminal-state distinction (HP-014). Prior: 2026-08-08 |
 | Auditor          | Claude — Retrofit/Auditor                                           |
-| Open Unknowns    | 8                                                                   |
+| Open Unknowns    | 7                                                                   |
 | Active Disputes  | 1                                                                   |
 | Highest Risk     | Medium                                                              |
 | Sidecar Link     | #auditor-notes--unknowns                                            |
@@ -2148,7 +2148,7 @@ untouched since its sentence was never wrong.
 
 | Field         | Value                                            |
 |---------------|--------------------------------------------------|
-| Status        | Open — text applied 2026-09-14 (local note in this file's Defined Terms, plus a new Disambiguation section in `Admin/Canonical_Terms.md` — Canonical_Terms ownership confirmed, not deferred), pending human re-verification before Resolved |
+| Status        | **Resolved** — Gate terminology rename completed and fully swept 2026-09-14/15 (Ratified by James — "closed with much prejudice") |
 | Risk          | Medium                                            |
 | Priority      | Major                                             |
 | Type          | Cross-Module / Terminology                         |
