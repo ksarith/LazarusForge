@@ -36,7 +36,7 @@
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-09-15 — CF-006 resolved (Option A, Ratified by James): `Security_Protocols.md`'s "signature-verified bootstrap" language corrected to state this file's actual v0 hash-based floor; no change required to this file's own doctrine. Prior: 2026-09-14 — v0 Logic-Zero Run Sheet added (Proposed/Placeholder, under Firmware Trust Doctrine) and CF-006 cross-reference added to EL-006's Resolution Path. No change to EL-006's Status/Risk/Priority. Prior: 2026-08-09 — Grok pseudo-audit (Skeptic read + minimal fixes); prior: 2026-08-02 corrective merge; 2026-08-02 Threat Model/Heartbeat Token still not Gate-1 audited |
+| Last Audit       | 2026-09-16 — v0 Logic-Zero Run Sheet's P3–P5 gaps filled with Provisional Defaults (Placeholder): known-good image identity/approval/naming, SHA-256 as the v0 hash algorithm with full-chip scope, minimum tool capability and erase success criteria. All three explicitly Open until first actual hardware designation — no image, hash, or tool chain claimed to exist yet. Prior: 2026-09-15 — CF-006 resolved (Option A, Ratified by James): `Security_Protocols.md`'s "signature-verified bootstrap" language corrected to state this file's actual v0 hash-based floor; no change required to this file's own doctrine. Prior: 2026-09-14 — v0 Logic-Zero Run Sheet added (Proposed/Placeholder, under Firmware Trust Doctrine) and CF-006 cross-reference added to EL-006's Resolution Path. No change to EL-006's Status/Risk/Priority. Prior: 2026-08-09 — Grok pseudo-audit (Skeptic read + minimal fixes); prior: 2026-08-02 corrective merge; 2026-08-02 Threat Model/Heartbeat Token still not Gate-1 audited |
 | Auditor          | Claude — Retrofit/Auditor; Gemini — Synthesizer (CF-001 parameters); Copilot — drafted Threat Model/Trust Boundary/Firmware Provenance Log restructure (human-directed), 2026-08-02; Grok — drafted Heartbeat Token Cryptography spec and reviewed Copilot's draft (human-directed), 2026-08-02; Claude — verified against source, corrective merge (human-directed), 2026-08-02; Grok pseudo-audit 2026-08-09 — no Spec Gate promotion |
 | Open Unknowns    | 9                                                                   |
 | Active Disputes  | 0                                                                   |
@@ -497,6 +497,71 @@ not establish cryptographic firmware trust or close EL-006.*
 
 If P3–P5 cannot be filled, do not start — document as a blocked
 precondition, not a failed wipe.
+
+**P3–P5 Provisional Defaults (Placeholder — added 2026-09-16, not
+doctrine until skeptical pass and human direction; inert until
+hardware exists):**
+
+*These defaults make the sheet executable once a first known-good
+image and programmer are available. They do not claim any image or
+tool has already been validated — every field below stays Open until
+its first actual designation.*
+
+**P3 — Known-good image identity.** Source class at v0: (a) a clean
+build from Forge-controlled source under documented conditions, or
+(b) a vendor release that has itself been hash-verified from a clean
+workstation and designated by named approval. Approval authority:
+a named human operator, or a multi-agent proposal with human
+ratification — the approving identity is recorded in the provenance
+log and in the first-batch Resolution Log entry. Recommended naming:
+`KG-<MCU-family>-<purpose>-<YYYYMMDD>-<short-hash>.bin` (e.g.
+`KG-STM32F103-blink-20260916-a1b2c3d4.bin`). No known-good image
+exists yet for any MCU family; "verified source" without a named
+approver and date is Outcome B, not a completed P3.
+
+**P4 — Expected firmware hash.** Algorithm: SHA-256 — widely
+available, collision-resistant enough for v0 integrity checking, and
+independent of specialized hardware; MD5 and SHA-1 are explicitly
+disallowed. Scope: full-chip, as written by the programmer;
+region-selective hashing is permitted only when the programmer tool
+forces a region and that exact region is documented in the run
+record. Canonical form: lowercase hexadecimal, no separators or `0x`
+prefix, full 64 characters. The actual hex string is filled at the
+moment a known-good image is designated for a given MCU
+family/purpose — it is not a constant across families. A run with a
+blank P4 field or a disallowed algorithm is Outcome B.
+
+**P5 — Tools.** Minimum capability: any programmer/reader that can
+perform full-chip erase, write, and read-back on the target family,
+plus a local SHA-256 implementation on the operator workstation
+(`sha256sum`, OpenSSL, or equivalent). Illustrative, not mandatory,
+tool chains: ST-Link/OpenOCD for STM32-class, avrdude for AVR,
+esptool for ESP — exact model, programmer firmware version, and host
+software are logged per run. Erase success criteria, declared before
+the erase step: the programmer reports successful mass-erase/chip-
+erase, and a subsequent blank-check or read-back confirms the erased
+state (typically 0xFF); the exact command sequence and expected
+output go in the run notes. No tool chain is ratified yet — the
+first successful Outcome S logs the exact chain used and treats it
+as provisional; a second independent method or tool confirming the
+same hash is required before that chain is treated as generalized
+for the MCU family.
+
+**Relationship to the first-batch evidence rule:** any Outcome S
+used toward EL-006's Payment via Specification condition must cite
+the exact P3 image identity, P4 algorithm and hex, and P5 tool chain
+that produced it, plus explicit generalization limits (e.g.
+"exercised on STM32F103 only").
+
+**Open questions, deferred to hardware arrival:** preferred first
+MCU family for the initial known-good image (STM32F103 is the
+worked example above — confirm or change when the time comes);
+whether a Forge-built minimal test image is preferred over a vendor
+release for that first designation; whether a second independent
+hash tool is required before any generalization claim, or a single
+verified chain suffices for the first Payment via Specification
+claim. None of these need answering now — they're recorded so the
+sheet doesn't need re-deriving from scratch when hardware exists.
 
 **Procedure (matches the five-step protocol above):** identify
 programmable → full erase (declare success criteria before running)
@@ -1363,7 +1428,7 @@ insufficient — unknown until characterized.
 | Blocking      | Yes — prerequisite for first salvaged MCU integration |
 | Owner         | Operations/Electronics.md                        |
 | First Logged  | 2026-05-09                                       |
-| Last Reviewed | 2026-09-15 — CF-006 resolved (see cross-reference below); no change to this Unknown's own Status/Risk/Priority |
+| Last Reviewed | 2026-09-16 — Run Sheet's P3–P5 gaps filled with Placeholder defaults (SHA-256, image-approval process, minimum tooling); Blocking/Status unchanged — first-batch validation still requires actual hardware |
 
 **Description:** The cryptographic key management
 infrastructure and root-of-trust architecture
