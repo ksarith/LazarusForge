@@ -1111,7 +1111,17 @@ Design-lineage background research (TCG measured/secure boot, DICE
 attestation, RATS endorsement models, and candidate physical forms) filed
 2026-09-15 at `Archive/Transcripts/SEC007b_design_research_2026-09-15.md` —
 reference material for when physical design work starts; does not select a
-form or change this entry's Status.
+form or change this entry's Status. **Updated 2026-09-16 (Part 5):** R1–R6
+candidate-matrix framing and R5 recovery-procedure hypotheses for four of
+the five candidate forms (vendor secure-boot MCUs excluded as
+incompatible with Logic-Zero); still no candidate selected, matrix shape
+exists but is not yet filled in. **Updated 2026-09-17 (Part 6):** matrix
+filled in for all five candidates (no candidate scores an unqualified
+Pass on all of R1–R6; #5 eliminated, #1/#2 leading); Candidate 1's
+Conditional cells deepened into numbered open questions. New finding:
+the operator-identity assumption running through R4/R5 has the same
+shape as GOV-006 (Governance_Charter.md, still Open) — flagged as a soft
+dependency for whichever candidate's ceremony design is picked up next.
 
 ---
 
