@@ -507,3 +507,126 @@ whether the "Insufficient Evidence" outcome triggers more often than the
 checklist currently assumes; (4) name GOV-006 explicitly as a soft
 dependency in whichever candidate's ceremony design gets picked up next,
 rather than letting it surface as a surprise later.
+
+---
+
+## Part 7 — Skeptical pass on the Part 6 matrix, and a tabletop
+recovery walkthrough for Candidate 1 (added 2026-09-17/18, Class B+D)
+
+Two stints, filed together. **No candidate selected. SEC-007b remains
+Open / Decision Drafted.** Claude verified the load-bearing citation
+before filing: Electronics.md's five non-integrable classes
+(locked-bootloader MCUs, unknown-provenance secure elements, unknown-
+provenance TPMs, opaque-firmware network controllers, SoCs with
+undocumented coprocessors) match ChatGPT's citation exactly.
+
+### Skeptical pass on the Part 6 matrix — corrections, not a reversal
+
+The core Part 6 conclusion survives: no candidate earns an unqualified
+Pass across all six requirements. But several individual cells and one
+framing choice needed tightening:
+
+**Candidate 5 reframed — this is the most important correction.** Part 6
+said "Multiple Fails." The sharper distinction: a locked MCU could
+arguably satisfy R1 on its own technical merits (the repository can't
+rewrite its locked boot mechanism) — so "fails everything" overstates
+the case. The decisive issue isn't a string of R-requirement failures,
+it's that the trust model conflicts with the ratified Electronics
+non-integrable-class doctrine verified above. Corrected framing:
+**eliminated from the constitutional-anchor role for Forge-inadmissibility,
+not for failing R1–R6 technically.** This preserves a distinction worth
+keeping generally: "doesn't satisfy R" and "satisfies some property but
+is inadmissible to the Forge" are different findings.
+
+**R4 corrected across every candidate.** Several cells had read as Pass
+because a signature, an HSM, or a token scheme technically enforces
+*something*. But none of them can establish that the actor behind the
+key/device/token is the legitimate Human Governing Authority — that's
+the GOV-006 gap Part 6 already flagged, now applied consistently: every
+candidate's R4 moves to Conditional/Needs HITL, not just Candidate 1's.
+
+**Candidate 1 R1** softened Pass→Conditional (offline arrangement *can*
+satisfy externality; choosing GPG doesn't make it automatic).
+**Candidate 2 R6** softened from "strong if write-once is real" to
+Conditional — immutability and substitution-detection are different
+properties; a write-once device can still be physically swapped for
+another.
+
+**"Offline" elevated from a Candidate 1 note to a matrix-wide rule:**
+air-gap ≠ trustworthy verification environment; offline media ≠
+authentic physical anchor; a valid signature ≠ legitimate authority.
+All three distinctions apply to every candidate that uses any of those
+mechanisms, not just the one where they were first noticed.
+
+**"Strongest" language softened.** Not "Candidate 1 is the strongest
+solution" but "Candidate 1 currently has the clearest low-hardware path
+to a complete recovery hypothesis; Candidate 2 has potentially strong
+physical immutability properties but requires a separately bound
+recoverable text record." Neither is demonstrated complete.
+
+**Candidate 4** — resisted letting PAT-002's existing mention of
+multi-operator tokens make this candidate look more developed than it
+is. PAT-002 is Decision Drafted, not a ratified implementation;
+mentioning the concept isn't the same as having a working design.
+Candidate 4 still needs token-to-anchor binding, operator legitimacy,
+threshold rules, revocation, recovery procedure, and substitution
+detection before it can be scored past all-Conditional.
+
+**Disposition:** matrix survives adversarial review with scoring-language
+corrections, no reversal. No candidate selected; no Security_Protocols
+body change; no SEC-007b Status advancement.
+
+### Tabletop recovery walkthrough — Candidate 1, exercised against a hypothetical
+
+Pure paper exercise, zero hardware cost, run against the Part 5
+checklist. Scenario: Tier 1 files diverge from last known-good hashes,
+online GPG signatures still verify against keys the online keyring
+presents as valid, no operator claims authorization, SEC-009-style
+compromise signals present. Human Governing Authority declares the
+online chain untrusted and initiates Candidate 1 recovery.
+
+**Result: the hypothesized path does not currently produce a successful
+recovery.** It repeatedly terminates in *Insufficient Evidence* — not as
+an edge case, but as the dominant outcome — at exactly the points the
+matrix predicted: key-to-ceremony binding (§0.3, §3.2) is unresolved
+before recovery even starts; physical media identity/anti-substitution
+controls (§2) were never established at creation time; verification-
+environment trustworthiness (§3.3) can't be shown beyond "it's
+air-gapped"; a clean rebuild environment (§0.5, §5) doesn't exist and
+inherits the same open questions if built ad hoc. The one step that
+cleanly reached Proceed on its own terms was extracting a full-text
+reference (§4) — the hash-only sub-variant would have hit Insufficient
+Evidence here too. Re-admission (§6) was never cleanly reached because
+earlier gates weren't cleared; the constitutional-consistency vs.
+system-integrity distinction held conceptually but had nothing to test
+it against in this run. Honest closure (§7): recovery attempted,
+signature verified, but binding/media-identity/environment-trust/clean-
+rebuild could not be established — online chain remains untrusted, no
+node re-admission authorized.
+
+**This is a successful research outcome, not a failed candidate.** The
+procedure was concretely testable on paper, and it correctly surfaced
+that Insufficient Evidence is the common case for this hypothesis as
+currently specified, not a rare edge condition. It does not prove
+Candidate 1 impossible, does not select or reject it, and does not close
+SEC-007b — it confirms the Part 6/skeptical-pass Conditional scores were
+earned rather than being cautious hedging.
+
+### Stint disposition
+
+Class B+D, two stints filed together. Skeptical pass: matrix corrected,
+survives. Tabletop: Candidate 1's recovery hypothesis is executable as a
+decision tree but currently terminates in Insufficient Evidence at
+multiple load-bearing steps — no successful recovery demonstrated in
+this run. **No candidate selected. SEC-007b Status (Open) and PAT-002's
+lineage (Decision Drafted) unchanged.**
+
+**Cheapest next tests, if this thread continues (all paper-only, no
+hardware):** (1) define a minimal key-to-ceremony binding record format;
+(2) define minimal media identity/custody rules; (3) bound what "clean
+rebuild environment" means at v0, even narrowly. **Alternative:** pause
+SEC-007b design work here — both it and EL-006 are Open/Critical/Blocking
+and ultimately gated on hardware that doesn't exist yet; this thread can
+continue producing well-reasoned research indefinitely without ever
+closing, and that's worth naming plainly rather than treating each new
+stint as automatic progress toward resolution.
