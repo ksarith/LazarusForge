@@ -241,6 +241,50 @@ Bootstrap assumptions must never silently become permanent governance authority.
 
 ---
 
+### GOV-007 — Current-State Consolidation (added 2026-09-18)
+
+| Field | Value |
+|-------|-------|
+| Status | In Progress (Active) |
+| Risk | High |
+| Priority | Major |
+| Owner | This file |
+| First Logged | Unknowns.md-only, exact date not separately tracked prior to this sidecar |
+| Last Reviewed | 2026-09-18 |
+
+**Disposition of this entry:** Current-state consolidation, not new doctrine. Maps the Bootstrap/Genesis doctrine above (which already exists and is substantial) to what is and is not established for *this* repository's operating conditions. Proposed instance-state interpretations are pending human direction and are not themselves rules. Does not close GOV-007, does not rewrite the Genesis Phase Protocol. Genesis Phase entry is now declared (Decision Record below); exit has not occurred.
+
+**Verified from live doctrine (this file):** Bootstrap/Genesis doctrine exists and is substantial (provisional-authority rules, Bootstrap Paradox acknowledgment, Genesis Phase Protocol, four exit pathways, post-exit obligations). Axiom Q-2 does not relax during initialization. Q-2 separation methods during absence of multi-agent quorum are (a) signed external record, (b) second human operator, (c) pre-committed static configuration — same-session self-authorization satisfies none of them. Four exit pathways exist, each requiring explicit human ratification; exit is instance-specific (closes Genesis Phase for the declaring forge instance only, per this section's own text above). Pathway 1 depends on GOV-008. Post-Exit Monitoring Doctrine (Pathway 2/3) is RATIFIED 2026-07-19. Enforcement Checkpoint 2 is BLOCKED — Bootstrap Paradox, and cannot clear until a pathway is satisfied and ratified. GOV-006, GMP-004, and EC-011 remain Open — this file's "human ratification" language does not resolve override, ratification, or authority-adversary authenticity, and GOV-007 consumes that fact rather than implicitly discharging it.
+
+**Instance facts (evidence boundary — observations, not new rules):** No second physical host is present (consistent with GOV-008's recorded "declarable, not achieved" block). No second human operator is presently demonstrated as available for Q-2 separation method (b). No first operational run or confirmed site is established (FA-001 remains Open/Critical — "Site not confirmed"), so Pathway 4's clock origin has not occurred. No structured GOV-007 sidecar existed prior to this entry, comparable to the ones EC-011/EC-012/GMP-004 already carry (GOV-006 itself also has no such sidecar — its gap lives only in this file's prose and Unknowns.md's Active Index, so GOV-007 is not uniquely lacking relative to GOV-006 specifically, only relative to EC-011/EC-012/GMP-004).
+
+**Gaps (why GOV-007 stays In Progress):**
+- **G1 — RESOLVED 2026-09-18 (see Decision Record below).**
+- **G2 — No recorded election of near-term exit/review posture.** Pathways exist in doctrine; no instance-specific election of which is realistic has been made.
+- **G3 — Standing daily Genesis posture under-specified.** This doctrine is detailed on initialization actions and on exit; thinner on the exact standing posture between those two points. Substantive residual, not merely a documentation gap.
+- **G4 — Pathway 1 and monitoring termination coupled to GOV-008.** Real dependency (see GOV-008's own Unknowns.md entry); GOV-007 must not absorb or redefine GOV-008.
+- **G5 — Second-human Q-2 branch not presently demonstrated.** Available documented separation mechanisms for present conditions are (a) and (c), subject to their existing requirements — a condition-of-use observation, not a rule change. Same residual already named for GOV-006/GMP-004/EC-011.
+- **G6 — This sidecar itself was the missing piece** relative to EC-011/EC-012/GMP-004's structured format; now added.
+- **G7 — Instance boundary, partially reframed 2026-09-18 (see Decision Record — Question 5, below).** Not fully resolved.
+
+**Interpretations deliberately not promoted to fact:** "Pathway 4 is activatable by paper decision alone" is not stated here — Pathway 4's review-horizon mechanism exists, but its clock origin ("first operational run") has not occurred or been established (FA-001 Open); a human could declare a horizon now, but that is not the same as a functioning exit mechanism whose trigger condition has been met.
+
+**Decision Record — Question 1 (RATIFIED 2026-09-18, human governing authority):**
+
+> **Is this instance formally declared to be in Genesis Phase? YES.** This instance has been operating under Genesis Phase constraints since governance-bearing agent work began (project start, May 2026); no exit pathway has been satisfied or ratified. This resolves an apparent ambiguity between two distinct senses of "runtime" in this doctrine: a **runtime session** (an individual agent working session — the unit the Q-2 separation rules above are written about) is distinct from **"first operational run"** (tied to FA-001, hot physical operations, the site). Governance-bearing agent work — drafting, auditing, and human-ratifying doctrine across multiple agent runtime sessions — is not a precursor to Genesis Phase; it is the literal Genesis Phase process the doctrine above describes, conducted by a single agent (or rotating agents) under human ratification because multi-agent quorum does not structurally exist yet. "First operational run" (Pathway 4's clock trigger) has not occurred, pending FA-001 site confirmation — the instance is inside Genesis Phase, pre-first-operational-run, which is where the doctrine expects most early Genesis Phase instances to be. This declaration does not select an exit pathway (Question 2), does not set a Pathway 4 horizon (Question 3), and does not resolve G3/G7 (Questions 4/5).
+
+**Decision Record — Question 5 (PARTIAL, 2026-09-18, human governing authority):**
+
+> **What counts as "this instance" for the exit language above? Partially answered — specified/demonstrated split named as the real shape of the question, not fully resolved.** `README.md`'s Current Status section already treats this distinction as load-bearing project-wide: "An architectural specification is not evidence that the corresponding physical capability has been demonstrated," and its own capability table scores the governance and audit framework as **Specified, in active use** while physical gate validation at scale is **Incomplete**. Applied to G7: the instance has a **specified boundary** that is effectively settled now — this repository, its Human Governing Authority, and the doctrine it carries, independent of physical site. It does not yet have a **demonstrated boundary** — that is earned incrementally, not declared, starting with a single completed gate cycle on real material (a melt-down and a re-fabrication) as the smallest unit of demonstrated capability, and building toward the larger, separate threshold of a multi-computer, multi-agent operational run — the kind of event that would make governance work independently observable rather than attested to by one human, and that is closer to what Pathway 1 and GOV-008's quorum actually require. Explicitly not claiming completeness of this answer: agent intellect on questions like this will likely outpace this human's ability to fully resolve them alone, and asserting a final, closed boundary now would be theater rather than honesty. This is filed as the honest current shape of the question, not its closure. G2 (pathway election) and G3 (standing daily posture) may be answerable against the specified boundary now; they should not be deferred waiting for the demonstrated boundary to exist.
+
+**Human decisions still required (not recommendations framed as facts):** ~~(1)~~ Resolved above. (2) What exit/review posture is selected? (3) Is a Pathway 4 horizon declared now, or explicitly deferred until first operational run/site confirmation (FA-001)? (4) What standing daily Genesis posture is intended where this doctrine is silent (G3)? ~~(5)~~ Partially reframed above (specified boundary named; demonstrated boundary intentionally left open, to be earned rather than declared).
+
+**Scope fences:** GOV-008 owns quorum and hardware/runtime diversity — GOV-007 consumes Pathway 1 and monitoring-termination from it, does not redefine it. GOV-006/GMP-004/EC-011 remain independently Open; this doctrine's "human ratification" language does not silently discharge them. FA-001/`Trajectories.md` own site confirmation and v1/first-operational-run gates that Pathway 3 and Pathway 4's clock depend on.
+
+**Core finding:** GOV-007 is not primarily missing Genesis doctrine — substantial doctrine already exists above. What is missing is an explicit, auditable mapping from that doctrine to the current Forge instance (pathway posture, standing daily rules — declaration and the specified half of instance boundary now resolved; the demonstrated half deliberately left open, to be earned rather than declared). That is a narrower, more tractable residual than "bootstrap governance authority initialization undefined" read as a blank page. No Payment-via-Specification; no new exit pathway invented; no claim that Genesis Phase has been exited. Cross-agent: Grok drafted the initial consolidation and the current-state pull; ChatGPT ran a skeptical pass that caught two semantic-promotion overreaches (the "by default" and "paper decision alone" readings) and added G7; James (Human Governing Authority) resolved the runtime-session/first-operational-run ambiguity for Question 1 and, separately, connected G7 to `README.md`'s existing specified/demonstrated distinction for Question 5, explicitly declining to force a complete answer rather than assert false closure; Claude source-verified every cited claim against live text before filing.
+
+---
+
 ## Post-Exit Monitoring Doctrine (Pathway 2/3) — RATIFIED
 
 > **STATUS: RATIFIED, 2026-07-19 (human governing authority).** This
