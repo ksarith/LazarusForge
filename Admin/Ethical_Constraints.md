@@ -895,13 +895,21 @@ Mandatory re-audit conditions:
 | Blocking      | No                                |
 | Owner         | `Admin/Ethical_Constraints.md`    |
 | First Logged  | 2026-06-18                        |
-| Last Reviewed | 2026-06-18                        |
+| Last Reviewed | 2026-09-18                        |
 
 **Description:** The permission model implicitly trusts human review as a trustworthy authorization source. No doctrine exists for: operator coercion, operator corruption, override abuse, or captured governance where the human authority layer itself has been compromised.
 
 **Why It Matters:** "Capability never outruns permission" depends entirely on permission sources being trustworthy. If the permission source is adversarial or compromised, the doctrine provides no protection. This is the foundational assumption underlying the entire escalation architecture.
 
 **Resolution Path:** Add adversary model section or annex covering: (1) indicators of operator coercion or compromise; (2) system behavior when override patterns are anomalous; (3) minimum independent validation requirements before high-stakes overrides are accepted. Cross-reference `Admin/Governance_Charter.md` §GOV-006 (human override authenticity) and `Admin/Security_Protocols.md`. Until resolved, apply interim authentication requirements from `Admin/Governance_Charter.md` §Human Override Doctrine to all Constitutional-class decisions.
+
+**Problem statement (added 2026-09-18):**
+
+- **Where the assumption is load-bearing:** this file's own permission model; `Security_Protocols.md` SEC-ASM-006 ("human operators acting as ratification authorities are not compromised, coerced, or impaired") and its Trust Boundary Declaration; the GOV-006/GMP-004 interim authentication rule (evidentiary stop-gaps precisely because this question is unresolved); every SEC-007b R4 cell (Conditional/Needs HITL, since legitimate Human Governing Authority identity isn't established independently of GOV-006 *and* EC-011); the Charter's Human Override Doctrine.
+- **What the interim posture does and does not cover:** the GOV-006 interim rule (second human / external signature / dated external record) is the only live mitigation — evidentiary not preventive, declarative-only, silent on coercion (a coerced legitimate operator can still produce a formally correct artifact), silent on impairment (Safety_Protocols.md §V is named but not yet a substitute for an adversary model).
+- **Open design questions:** observable coercion/corruption/impairment indicators; required system response when they appear; avoiding verifier infinite regress; minimum independent validation and its interaction with the GOV-006 interim rule; solo-operator residual (no second human currently available to serve as an independent check — same residual already named for GOV-006/GMP-004); relationship to SEC-007a's residual that R4 "does not by itself defend against a compromised Human Governing Authority."
+- **Scope fences:** GOV-006 answers whether an instruction originated from the claimed human authority; EC-011 answers whether that authority is itself trustworthy — distinct questions, kept separate. EC-012 is a different attack surface (telemetry/firmware spoofing vs. permission-source compromise) and is not collapsed into this entry.
+- No adversary-model architecture proposed; no Payment-via-Specification. Status remains Open. Cross-agent: ChatGPT drafted the problem statement, Grok reviewed and recommended it as the next thread, Claude source-verified and filed it.
 
 ---
 
@@ -915,7 +923,7 @@ Mandatory re-audit conditions:
 | Blocking      | No                                |
 | Owner         | `Admin/Ethical_Constraints.md`    |
 | First Logged  | 2026-07-05                        |
-| Last Reviewed | 2026-07-05                        |
+| Last Reviewed | 2026-09-18                        |
 
 **Description:** The entire constraint substrate depends on the integrity of incoming telemetry — pattern-matching (EC-002), confidence assessment (EC-001), and governance-failure detection all implicitly treat sensor/firmware data as ground truth. If underlying hardware telemetry or firmware is compromised, an adversary could mask a prohibited action as permitted (e.g., a weapon-assembly toolhead profile spoofed to read as an agricultural pump) without tripping any doctrine defined here, because the doctrine has no way to distinguish trustworthy telemetry from tampered telemetry.
 
@@ -924,6 +932,15 @@ Mandatory re-audit conditions:
 **Resolution Path:** Define an explicit requirement for hardware-root-of-trust validation and cryptographic sensor attestation before telemetry is treated as authoritative for constraint evaluation. Cross-reference `Admin/Security_Protocols.md` for the mechanism; this file should state the requirement and defer implementation there, consistent with this file's existing pattern for EC-003/EC-011.
 
 *Surfaced by Gemini (Skeptic/Auditor), 2026-07-05 Exploration audit.*
+
+**Problem statement (added 2026-09-18):**
+
+- **Currently covered (indirectly):** Logic-Zero wipe + hash verification on programmable devices before integration (EL-006 v0 floor) reduces the chance a newly admitted MCU is already running hostile firmware; non-integrable classes route some high-risk devices away from the Component Library entirely. Neither addresses telemetry honesty *after* admission.
+- **Not covered:** ongoing attestation of in-service sensor data; cryptographic proof that a reported toolhead/process/location identity is the true one; any doctrine-level rule that unattested telemetry must be treated as untrusted (or reduced-confidence) for High-Risk decisions; detection of runtime firmware/sensor-path compromise after initial admission.
+- **Open design questions:** minimum hardware-root-of-trust or attestation required before telemetry may be treated as authoritative for High-Risk evaluation; required system behavior when attestation is missing/failed/unavailable; interaction with salvaged, inherently non-attestable sensors (honest limitation vs. hard ban); avoiding asking EC-001/EC-002 to solve attestation rather than receive it as a precondition; degraded/offline-attestation residual (same class as SEC-007b's clean-rebuild-environment residual); confirming the Ethical_Constraints-states-requirement / Security_Protocols-owns-mechanism split remains intended.
+- **Scope fences:** distinct from EC-011 (permission-source compromise, not telemetry); distinct from EL-006/SEC-007b (component and constitutional roots of trust address admission-time and constitutional-anchor trust, not ongoing sensor/firmware honesty); distinct from EC-001/EC-002 (those grade confidence and match patterns against inputs — attestation is a precondition on those inputs, not a task for them to solve).
+- This completes the matched EC-011/EC-012 pair — permission-source compromise and telemetry compromise are now both explicit, non-assumable gaps rather than one named and one silently assumed.
+- No attestation architecture proposed; no Payment-via-Specification. Status remains Open. A separate proposal — an explicit procedural rule that unattested or anomalous telemetry used for a High-Risk constraint decision shall not be treated as authoritative and must escalate to human consideration — was raised alongside this problem statement but deliberately **not filed here**: it would be a live doctrine addition (not a problem-statement note) and, per this repository's own precedent for EC-003/EC-009/EC-008/GMP-006-008, needs its own drafted sidecar treatment, independent Skeptic review, and explicit Human Ratification before it takes effect. Filed pending that separate stint. Cross-agent: ChatGPT drafted both the problem statement and the procedural proposal, Grok reviewed and explained the gap, Claude source-verified and filed the problem statement only.
 
 ---
 

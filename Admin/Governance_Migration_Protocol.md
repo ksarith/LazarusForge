@@ -1305,7 +1305,7 @@ proposal to test against.
 | Blocking      | No                                         |
 | Owner         | `Admin/Governance_Migration_Protocol.md`   |
 | First Logged  | 2026-06-05                                 |
-| Last Reviewed | 2026-06-05                                 |
+| Last Reviewed | 2026-09-18                                 |
 
 **Description:** Section III Phase 3 notes the authentication gap for
 ratification records — until `Admin/Security_Protocols.md` reaches
@@ -1340,6 +1340,14 @@ disproportionate to a single-contributor v0 project — consistent with
 this repository's existing rejection of cryptographic enforcement
 before its time (see Abandoned Paths, `Admin/Repository_Integrity_Protocol.md`).
 Full design remains owned by `Admin/Security_Protocols.md`, not this file.
+
+**Solo-operator residual and scope fences (added 2026-09-18):**
+
+- **Solo-operator residual.** With no second human operator live in the current operating environment, the interim authentication rule's "second human confirmation" path is practically unavailable. Current coverage therefore reduces to (a) external cryptographic signature from an orthogonal system or (b) dated physical/digital record created outside the repository. This is a condition-of-use note, not a change to the interim rule itself. The second-human path remains valid the moment a second operator is present or GOV-007/GOV-008 resolve.
+- **Scope fence with GOV-006.** GOV-006 addresses authenticity of *operational human overrides*. GMP-004 addresses authenticity of *ratification records* for governance amendments / Track B changes. The acts are distinct; the unknowns are independently owned. A future shared technical mechanism (via Security_Protocols.md) may serve both, but closure of one does not automatically close the other.
+- **Scope fence with GOV-019.** GOV-019 addresses arbitration among multiple *already-authenticated* overrides or acts that conflict. GMP-004 stops at single-record authenticity and does not define conflict handling.
+- **Enforcement posture.** Same as GOV-006: the interim requirement is declarative-only. No live gate exists; enforcement remains retrospective / reputational until Security_Protocols.md reaches Provisional Specification.
+- **Precedent unchanged.** RIP-001 GPG-signed Git release tags remain the lower-friction implementation lead when work begins; this does not resolve GMP-004.
 
 ---
 

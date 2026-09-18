@@ -1122,6 +1122,16 @@ Conditional cells deepened into numbered open questions. New finding:
 the operator-identity assumption running through R4/R5 has the same
 shape as GOV-006 (Governance_Charter.md, still Open) — flagged as a soft
 dependency for whichever candidate's ceremony design is picked up next.
+**Updated 2026-09-17/18 (Part 7):** skeptical pass corrected the matrix
+(no reversal) — Candidate 5 reframed as Forge-inadmissible under live
+non-integrable-class doctrine rather than "fails R1-R6"; R4 corrected to
+Conditional/Needs HITL across all candidates on the GOV-006 dependency;
+"offline ≠ trustworthy" elevated to a matrix-wide rule. A paper tabletop
+walkthrough of Candidate 1's recovery hypothesis against a hypothetical
+compromise scenario repeatedly hit Insufficient Evidence at the predicted
+points (key-to-ceremony binding, media identity, clean rebuild
+environment) — confirms the Conditional scores were earned, not
+demonstrating the candidate is impossible. Still no candidate selected.
 
 ---
 
