@@ -85,6 +85,12 @@ Third folder in the Scope_Map rollout, following `Admin/Adm_Scope_Map.md` (2026-
 **Does not (arrow):** System-level Critical/Useful/Bootstrap component taxonomy (`Architecture/Components.md`) · detailed machine specifications, tolerances, or process parameters · G.E.C.K. consumables and redundancy stock (`Architecture/Geck_forge_seed.md`) · Gate logic itself (`Architecture/Forge_flow.md`) · repair methods or repair heuristics beyond the inventory reference (`Architecture/Forge_flow.md` Decision Point B and `Operations/Gate_02_Triage.md`).
 **Note:** Added to this map 2026-09-13 — created 2026-09-08 from the HP-007 skeleton, after this map's prior 2026-08-15 Last Reviewed date; missed by the original build for that reason, not excluded deliberately.
 
+### `Operations/Exception_Evidence.md`
+**Status:** Proposed · 0/6 · FL-006-A (structural owner named; population and demonstrated maintenance still open) · Risk: Medium
+**Does:** Evidence-control specification and index for Oversight State's exception evidence portfolio — defines evidence classes (episodic packages + standing reference), required fields, deposit and handoff rules, freshness/provenance expectations, and pointers to where authoritative records live. Fills the Operations cell in `Architecture/Forge_flow.md`'s HP-011 Transition Ownership table that was previously blank (FL-006 half A). Carries an explicit anti-policy rule: evidence in or referenced by this file is not a decision, authorization, routing instruction, or policy.
+**Does not (arrow):** Store the entire operational evidence universe — episodic packet bodies and standing data live in the operational records this file *points to* · decide want/need policy (stays in `Architecture/Forge_flow.md`) · own routing or Escalate authority (FL-006 half B, separately owned by EC-003) · resolve GOV-006 or GMP-004 · replace `Gate_01_Intake.md` or `Gate_02_Triage.md` procedures.
+**Note:** Created 2026-09-18. Upstream gates deposit to this file's control schema; they do not own the Oversight evidence portfolio. Operational maintainer pending (same honesty as `Tooling_Inventory.md` / TI-001). FL-006 remains Open.
+
 ### `Operations/Woodworking.md`
 **Status:** Draft · 0/6 · 5 Open Unknowns · Risk: High
 **Does:** Timber sourcing hierarchy; felling/chainsaw safety; green wood handling/anisotropic behavior/drying; structural woodgrain deployment; power/hand tool milling for irregular stock; CNC/router fixturing; heat treatment/surface modification; joinery/adhesive/finishing doctrine; waste valorization through papermaking.
