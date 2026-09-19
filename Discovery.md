@@ -1,6 +1,7 @@
 # Discovery.md — LazarusForge
 **Navigation layer for the active working repository.**
-**Last updated: 2026-09-13 — Agent Orientation gained a 6th point (stated repo facts, including other agents' claims about repo state, go stale — verify against live source), drawn directly from this session's scope-map accuracy pass and provenance-dispute findings.**
+**Last updated: 2026-09-18 — Two new files added to repository and registered in `Routing.md`: `Operations/Exception_Evidence.md` (evidence-control specification and index for Oversight State's exception evidence portfolio, FL-006 half A structural owner) and `Tests/Multi_Agent_Quorum_Trial.md` (concrete three-physical-computer quorum trial protocol, operationalizes `Admin/Governance_Migration_Protocol.md` §VII). Both added to the repository maturity snapshot below. `Routing.md` completeness verified: 143 entries.**
+**Prior: 2026-09-13 — Agent Orientation gained a 6th point (stated repo facts, including other agents' claims about repo state, go stale — verify against live source), drawn directly from this session's scope-map accuracy pass and provenance-dispute findings.**
 
 ---
 
@@ -407,6 +408,7 @@ Discovery.md is a navigation map — task tracking belongs in Unknowns.md.
 | `Operations/Air_Scrubber.md` | Draft | 3/6 | High |
 | `Operations/Plastics.md` | Exploration | 0/6 | High |
 | `Operations/Tooling_Inventory.md` | Exploration | 0/6 | Medium |
+| `Operations/Exception_Evidence.md` | Proposed | 0/6 | Medium — FL-006 half A structural owner; evidence-control spec and index for Oversight State; operational maintainer and population still pending |
 | `Operations/Woodworking.md` | Draft | 0/6 | High |
 | `Tests/Support_Raft.md` | Exploration | 0/6 | High — SR-001 (galvanic corrosion) is Open/High and required before v1.0; a hull that corrodes faster than modeled threatens the whole anchor-node concept |
 | `Tests/Leviathan_testing.md` | Exploration | 0/6 | High |
@@ -417,6 +419,7 @@ Discovery.md is a navigation map — task tracking belongs in Unknowns.md.
 | `Tests/Hydrologic_Resource_Cascade.md` | Exploration | 0/6 | High |
 | `Tests/Chaos_Dynamics.md` | Exploration | 0/6 | Medium — gatekeeps the evidentiary pipeline feeding EN-001/EN-001a; misuse risk if sandbox output is cited past its Level ≤4 ceiling |
 | `Tests/Pyrolysis_Cascade.md` | Draft — Exploration | 0/6 (not yet audited) | High (thermal processing of mixed salvage; halogen & hazardous-fraction exposure) |
+| `Tests/Multi_Agent_Quorum_Trial.md` | Proposed Protocol | 0/6 | High — governs who can cause a state transition on canonical main; no trial run yet; operationalizes §VII without amending it |
 | `Challenges/Water.md` | Active | — | — |
 | `Challenges/Biofouling.md` | Active | — | — |
 | `Challenges/Waste.md` | Active | — | — |
