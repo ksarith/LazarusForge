@@ -109,6 +109,8 @@ household items beats an ambitious run that never gets submitted.
 
 If you're looking for the single most useful thing to attempt: **three physically separate computers, each running a different agent (different model family on each), attempting to establish the quorum `Admin/Governance_Migration_Protocol.md` §VII defines — while one or more of them actively proposes real doctrine improvements to this repository.**
 
+**Protocol (added 2026-09-18):** `Tests/Multi_Agent_Quorum_Trial.md` now defines the concrete machine baseline, role assignment, Git branch/promotion-authority model, required non-collusion probe, and pass/fail parameters for this run — run it under that protocol and log the result here rather than improvising the setup from this paragraph alone.
+
 This is `Hardware_Diversity_Ladder.md` Tier 2 (Three-Host Architectural Diversity) attempted for real, not declared. It is also the first real evidence input `GOV-008` (still Open) has ever had a chance to receive. It will very likely fail to reach full quorum on the first attempt — that's fine and expected; a documented failure against Tier 2's actual requirements (distinct architectures, independent power, any-two-survive-loss-of-third) is exactly the kind of evidence this file exists to capture. Log it here regardless of outcome.
 
 ---
@@ -170,6 +172,14 @@ This case sits at the Minimum Quorum Matrix's **High-Risk Unknowns** row specifi
 
 ## Resolution Log
 
+- 2026-09-18: **Cross-referenced `Tests/Multi_Agent_Quorum_Trial.md`** into the
+  Suggested Starter / three-computer section — that new file now defines the
+  concrete machine baseline, role assignment, Git authority model, required
+  non-collusion probe, and §VII.3 pass/fail scoring for the run this file
+  had previously only described in two sentences. No change to this file's
+  own Scope Boundary — it remains results-intake only; the new file is
+  where the protocol itself lives. Human-directed, following a ChatGPT
+  multi-agent-readiness assessment of the same experiment.
 - 2026-08-17: **Suggested Starter section added — lowest-barrier entry point
   for contributors without hardware or multi-agent access.** The existing
   Highest-Value Run sections both assume resources most readers won't have.

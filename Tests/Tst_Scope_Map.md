@@ -11,7 +11,7 @@
 | Spec Gates       | N/A — this file is a cross-reference index, not a specification     |
 | Open Unknowns    | 0 (surfaces existing unknowns from owning files; creates none)      |
 | Owning Domain    | Tests/                                                               |
-| Last Reviewed    | 2026-08-08                                                           |
+| Last Reviewed    | 2026-09-18                                                           |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
 ---
@@ -59,6 +59,12 @@ Note: "2 Formal / 6 Unregistered" Open Unknowns is a distinct pattern from every
 **Does not (arrow):** Power sourcing specs (`Energy.md`) · PPE/handling doctrine (`Admin/Safety_Protocols.md`) · marine deployment ethics/brine disposal (`Admin/Ethical_Constraints.md`) · recovered salt/mineral valuation (`Admin/Economics.md`) · formal Site Characterization to Pathway Selection framework — declared future work, not yet written (LW-UNK-008, confirmed against `Unknowns.md`: "formal framework not yet written," matches this file's own description exactly).
 Note: the only file in this folder carrying a Critical risk rating with an explicit "immediate safety consequences if bypassed" justification, not just a severity label.
 
+### `Tests/Multi_Agent_Quorum_Trial.md`
+**Status:** Proposed Protocol — Not Yet Run · 0/6 (protocol, not spec) · 0 Open Unknowns (registered) · Risk: High — governs who can cause a state transition on canonical `main`; a loose trial here is a race-condition and governance-bypass risk, not just a documentation gap
+**Does:** Operationalizes `Admin/Governance_Migration_Protocol.md` §VII (Bootstrap Quorum, GOV-008 candidate) into a runnable three-machine protocol — machine/agent baseline, role assignment incl. §VII.2's 2026-09-18 role-rotation clause, Git branch/promotion-authority topology, a required Non-collusion probe, human-ratification constraints (inherits GMP-004's unresolved authentication gap in full, does not close it), failure/recovery scenarios, and pass/fail scoring against §VII.3's five-item quorum-achieved checklist.
+**Does not:** Amend §VII or resolve GOV-008/GMP-004; replace `Tests/Field_Logs.md`'s results-logging role — a run under this protocol still gets logged there, cross-referenced by name.
+Note: created 2026-09-18, filling a gap ChatGPT's multi-agent-readiness assessment identified directly — §VII specifies what a quorum *is* but nothing in the repository specified how three physical machines actually coordinate to attempt one. No trial has been run against it yet.
+
 ### `Tests/Pyrolysis_Cascade.md`
 **Status:** Draft — Exploration · 0/6 (not yet audited) · 8 Open Unknowns (PYC-001-008) · Risk: High (thermal processing of mixed salvage; halogen/hazardous-fraction exposure)
 **Does:** Staged thermal cascade architecture (primary pyrolysis to secondary high-temp reduction with heat integration); candidate material-separation pathways; explicit dependency surface on upstream triage/reduction/hazard/site/energy/scrubber doctrine; test concepts and measurement priorities.
@@ -97,10 +103,13 @@ Note: the only file in this folder carrying a Critical risk rating with an expli
 
 No corrections were needed in this folder, same as Challenges/ — no stale cross-references, no missing sections, nothing requiring a fix. Two folders now clean in a row after Operations/'s three corrections.
 
+**Addendum, 2026-09-18:** `Multi_Agent_Quorum_Trial.md` added as an 11th file — not part of the original 2026-08-08 build, so the counts and findings above describe that original ten-file set and are left as the historical record of that pass rather than silently rewritten. The new file is a protocol/test-design document (operationalizing `Admin/Governance_Migration_Protocol.md` §VII's quorum criteria into a runnable three-machine trial), not a domain-content file like the original ten, and has 0 Open Unknowns registered by design (several DECISION NEEDED items are left open in the file itself rather than formally registered). `Field_Logs.md`'s "still empty" status (item 4 above) is unchanged — this file gives Field_Logs.md something concrete to log against, but does not itself constitute a submission.
+
 ---
 
 ## Resolution Log
 
+- 2026-09-18: **`Multi_Agent_Quorum_Trial.md` added and indexed** — see Addendum above. This entry's own summary (Status/Does/Does Not) is written fresh for the new file, not extracted from a pre-existing source the way the original ten were, since the file was created same-day. Human-directed, following a ChatGPT multi-agent-readiness assessment of the three-computer experiment `CONTRIBUTING.md` already names as highest-value.
 - 2026-08-08: **File created — fifth folder in the Scope_Map rollout**,
   following Admin/ (2026-08-07), Architecture/, Operations/, and
   Challenges/ (all 2026-08-08). All 10 Tests/ files' Status/Spec
