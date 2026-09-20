@@ -954,7 +954,7 @@ Mandatory re-audit conditions:
 | Blocking      | No                                |
 | Owner         | `Admin/Ethical_Constraints.md`    |
 | First Logged  | 2026-07-05                        |
-| Last Reviewed | 2026-07-05                        |
+| Last Reviewed | 2026-09-20                        |
 
 **Description:** Governance Failure Modes now distinguishes "no new material action" from "orderly safe-state descent for an already-running hazardous process" (added 2026-07-05, this audit). But no hazardous-process file (`Operations/Plastics.md`, `Operations/Air_Scrubber.md`, etc.) yet defines what its own descent sequence actually is — the distinction exists here as a requirement with nothing yet to point to.
 
@@ -963,6 +963,31 @@ Mandatory re-audit conditions:
 **Resolution Path:** Each Operations/ file governing an active hazardous physical process must define its own safe-state descent sequence (cooling, purging, venting, or equivalent) and register it in its own sidecar, cross-referenced back here. This file states the requirement; it does not own the process-specific sequences. Track completion per-file rather than closing this entry until all currently-active hazardous process files have one.
 
 *Surfaced by Gemini (Skeptic/Auditor), 2026-07-05 Exploration audit — the "Kinetic Inertia vs. Passive Posture" contradiction.*
+
+**Current-state note (2026-09-18):** This is not a blank-page unknown — the doctrine is defined above. The gap is unfilled operational slots in the process files that doctrine points at. Verified against live source before filing.
+
+**Candidate hazardous-process file scan (2026-09-18, v548 tree):**
+
+| File | Hazardous active process? | EC-013 descent sequence registered? |
+|------|---------------------------|--------------------------------------|
+| `Operations/Plastics.md` | **Yes** — pyrolysis/reactor runs; toxic/flammable off-gas; oxygen exclusion; scrubber coupling | **Yes — Proposed/Placeholder (2026-09-20)** — §EC-013 Descent Sequence filed under Path A (EL-006-P3–P5 style). Blocking for hot runs retained. Does not close this tracker. |
+| `Operations/Air_Scrubber.md` | **Yes** — forced ventilation/scrubbing during hot-zone and pyrolysis operations | **No** — operational interlocks (Fault 04/thermal/fire-vent-halt) are process-fault safety logic, not a full governance-failure descent sequence; fire-vent-halt must override any descent step that would continue forced airflow |
+| `Operations/Gate_05_Separation_Thermal.md` | **Likely** — thermal separation processes | **No** |
+| `Operations/Gate_03_Reduction.md` | **Conditional** — when energized/hazardous mid-cycle | **No** |
+| `Operations/Gate_06_Fabrication.md` | **Partial** — welding fumes, forced ventilation, hot work | **No** |
+
+**Key distinction (not EC-013's problem to solve, but must not be confused with it):** process interlocks (Fault 04, thermal divert, fire → halt forced vent immediately) are Layer A always-on safety logic. EC-013 descent sequences are Layer B ordered wind-down when governance says stop. Layer B must obey Layer A — specifically, the Air_Scrubber fire-vent-halt override must win over any descent step that would keep forced airflow running. Layer A ≠ Layer B; neither substitutes for the other.
+
+**Scope fences:**
+- EC-011: compromised *permission source*; EC-013: physics still has inertia after governance correctly says stop. Orthogonal.
+- EC-012: compromised *telemetry*; EC-013: physical wind-down of honest process under governance entry. Orthogonal.
+- EC-003: human escalation path; EC-013: ordered physical descent of an already-running reactor/scrubber. Descent may trigger EC-003; they are not the same thing.
+
+**Minimum contents of a compliant sequence (from live requirement only):** trigger (governance failure while process is active); ordered steps (stop feed/ramp → preserve containment → managed heat-down → off-gas path → purge when safe → isolation); fire/interlock hard overrides; completion criteria (when full Pacifist may apply); logging (durable record of steps/skips); non-goals (no self-clear, no "skip if undefined," specified ≠ demonstrated).
+
+**Open questions:** (1) Scope set — which files are "currently active hazardous" for EC-013 tracking? (2) Trigger authority — auto vs human initiation? (3) Missing-sequence residual behavior — what must happen when no sequence is defined (hold energy state? human-only manual descent? refuse to start until sequence exists)? (4) Can existing emergency/shutdown rows be extended into the EC-013 section, or must governance-failure descent be a separate named section? (5) Closure rule — EC-013 closes only when every file in the agreed active set has a registered sequence or explicit scope-out.
+
+**Status:** Requirement live; first per-process implementation filed. `Operations/Plastics.md` §EC-013 Descent Sequence registered 2026-09-20 as Proposed/Placeholder (Path A). Remaining files in the candidate set still lack registered sequences. Per-file sequences are spec-specifiable before equipment exists (same as EL-006 P3–P5 and PL-001 style) and carry Blocking-for-hot-runs until first hot-run validation. No Payment-via-Specification on this tracker entry alone — EC-013 closes only when every file in the agreed active set has a registered sequence or explicit scope-out. Cross-agent history: Grok pulled current state and drafted gap matrix (2026-09-18); ChatGPT drafted an earlier Plastics descent section for review; Claude source-verified the 2026-09-18 sidecar update; Grok filed the Plastics sequence as Proposed/Placeholder 2026-09-20 (Path A, human-directed).
 
 ---
 
