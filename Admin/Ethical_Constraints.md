@@ -956,7 +956,7 @@ Mandatory re-audit conditions:
 | First Logged  | 2026-07-05                        |
 | Last Reviewed | 2026-09-20                        |
 
-**Description:** Governance Failure Modes now distinguishes "no new material action" from "orderly safe-state descent for an already-running hazardous process" (added 2026-07-05, this audit). But no hazardous-process file (`Operations/Plastics.md`, `Operations/Air_Scrubber.md`, etc.) yet defines what its own descent sequence actually is — the distinction exists here as a requirement with nothing yet to point to.
+**Description:** Governance Failure Modes now distinguishes "no new material action" from "orderly safe-state descent for an already-running hazardous process" (added 2026-07-05, this audit). Three candidate files now have Proposed/Placeholder sequences (Plastics, Air_Scrubber, Gate_05); Gate_03 and Gate_06 remain unregistered. The distinction is live requirement with partial operational coverage.
 
 **Why It Matters:** Without a defined descent sequence per process, "execute the safe-state descent" has no operational content and a governance failure mid-process could default back to instant-halt behavior by omission, which is exactly the hazard this section was amended to prevent.
 
@@ -971,8 +971,8 @@ Mandatory re-audit conditions:
 | File | Hazardous active process? | EC-013 descent sequence registered? |
 |------|---------------------------|--------------------------------------|
 | `Operations/Plastics.md` | **Yes** — pyrolysis/reactor runs; toxic/flammable off-gas; oxygen exclusion; scrubber coupling | **Yes — Proposed/Placeholder (2026-09-20)** — §EC-013 Descent Sequence filed under Path A (EL-006-P3–P5 style). Blocking for hot runs retained. Does not close this tracker. |
-| `Operations/Air_Scrubber.md` | **Yes** — forced ventilation/scrubbing during hot-zone and pyrolysis operations | **No** — operational interlocks (Fault 04/thermal/fire-vent-halt) are process-fault safety logic, not a full governance-failure descent sequence; fire-vent-halt must override any descent step that would continue forced airflow |
-| `Operations/Gate_05_Separation_Thermal.md` | **Likely** — thermal separation processes | **No** |
+| `Operations/Air_Scrubber.md` | **Yes** — forced ventilation/scrubbing during hot-zone and pyrolysis operations | **Yes — Proposed/Placeholder (2026-09-20)** — §EC-013 Descent Sequence filed under Path A. Layer A interlocks (Fault 04/thermal/fire-vent-halt) remain hard overrides; Blocking for hot runs retained. Does not close this tracker. |
+| `Operations/Gate_05_Separation_Thermal.md` | **Likely** — thermal separation processes (Spin Chamber; molten metal, induction, rotation) | **Yes — Proposed/Placeholder (2026-09-20)** — §EC-013 Descent Sequence filed under Path A. Stop-spin-before-cool and hot-idle preference preserved; Blocking for hot runs retained. Does not close this tracker. |
 | `Operations/Gate_03_Reduction.md` | **Conditional** — when energized/hazardous mid-cycle | **No** |
 | `Operations/Gate_06_Fabrication.md` | **Partial** — welding fumes, forced ventilation, hot work | **No** |
 
@@ -987,7 +987,7 @@ Mandatory re-audit conditions:
 
 **Open questions:** (1) Scope set — which files are "currently active hazardous" for EC-013 tracking? (2) Trigger authority — auto vs human initiation? (3) Missing-sequence residual behavior — what must happen when no sequence is defined (hold energy state? human-only manual descent? refuse to start until sequence exists)? (4) Can existing emergency/shutdown rows be extended into the EC-013 section, or must governance-failure descent be a separate named section? (5) Closure rule — EC-013 closes only when every file in the agreed active set has a registered sequence or explicit scope-out.
 
-**Status:** Requirement live; first per-process implementation filed. `Operations/Plastics.md` §EC-013 Descent Sequence registered 2026-09-20 as Proposed/Placeholder (Path A). Remaining files in the candidate set still lack registered sequences. Per-file sequences are spec-specifiable before equipment exists (same as EL-006 P3–P5 and PL-001 style) and carry Blocking-for-hot-runs until first hot-run validation. No Payment-via-Specification on this tracker entry alone — EC-013 closes only when every file in the agreed active set has a registered sequence or explicit scope-out. Cross-agent history: Grok pulled current state and drafted gap matrix (2026-09-18); ChatGPT drafted an earlier Plastics descent section for review; Claude source-verified the 2026-09-18 sidecar update; Grok filed the Plastics sequence as Proposed/Placeholder 2026-09-20 (Path A, human-directed).
+**Status:** Requirement live; three per-process implementations filed. `Operations/Plastics.md`, `Operations/Air_Scrubber.md`, and `Operations/Gate_05_Separation_Thermal.md` §EC-013 Descent Sequences registered 2026-09-20 as Proposed/Placeholder (Path A). Remaining files in the candidate set (Gate_03 conditional, Gate_06 partial) still lack registered sequences. Per-file sequences are spec-specifiable before equipment exists (same as EL-006 P3–P5 and PL-001 style) and carry Blocking-for-hot-runs until first hot-run validation. No Payment-via-Specification on this tracker entry alone — EC-013 closes only when every file in the agreed active set has a registered sequence or explicit scope-out. Cross-agent history: Grok pulled current state and drafted gap matrix (2026-09-18); ChatGPT drafted an earlier Plastics descent section for review; Claude source-verified the 2026-09-18 sidecar update; Grok filed Plastics, Air_Scrubber, and Gate_05 sequences as Proposed/Placeholder 2026-09-20 (Path A, human-directed).
 
 ---
 
