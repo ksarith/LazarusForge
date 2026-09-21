@@ -36,9 +36,9 @@
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 3/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-05-31                                                          |
-| Auditor          | Gemini                                                              |
-| Open Unknowns    | 5                                                                   |
+| Last Audit       | 2026-09-20 — EC-013 Air_Scrubber safe-state descent sequence filed as Proposed/Placeholder (§EC-013 Descent Sequence). Blocking for hot runs retained until first hot-run validation. Prior: 2026-05-31 |
+| Auditor          | Grok — EC-013 descent section drafted and filed as Proposed/Placeholder (Path A, human-directed 2026-09-20); prior: Gemini |
+| Open Unknowns    | 5 substantively open. EC-013 sequence registered as Proposed/Placeholder (does not close EC-013 tracker). |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | High                                                                |
 | Sidecar Link     | #auditor-notes--unknowns                                            |
@@ -1028,6 +1028,52 @@ operation and the Gate 4 harness are unaffected by this gap.
 
 ---
 
+## §EC-013 Descent Sequence — Air Scrubber (Proposed / Placeholder)
+
+**STATUS: Proposed / Placeholder.** Filed 2026-09-20 under Path A (EL-006-P3–P5 style), same pattern as `Operations/Plastics.md` §EC-013. This section is visible doctrine and registers the second per-process EC-013 sequence. It does **not** carry operational force for hot runs until a Skeptic pass and first hot-run validation have occurred. **Blocking for hot operational runs remains in force.** Specified ≠ demonstrated.
+
+**Cross-reference:** `Admin/Ethical_Constraints.md` EC-013 (requirement owner); EC-004 Governance Failure Modes; `Operations/Plastics.md` §EC-013 (companion sequence — pyrolysis is a primary upstream load). Layer A process-fault interlocks in this file’s own Sensor Layout & Automated Failure Interlocks table (System Fault 04, Thermal Fault, Acidic Ingress E-Stop, **Fire Event — Hot Zone → forced ventilation halts immediately**) are always-on safety logic and are **not** substituted by this sequence. Layer B (this sequence) must obey Layer A; the fire-vent-halt override wins over any step that would keep forced airflow running while a Hot Zone fire is active.
+
+### Trigger
+Governance failure (or explicit human/governance command to enter safe-state) while the Air Scrubber is actively supporting a hazardous process — i.e., forced ventilation / wet scrubbing / polishing path is live in service of pyrolysis, milling, hot-zone work, or any other operation that relies on the scrubber’s capture path.
+
+### Ordered steps (Layer B)
+1. **Signal upstream processes to stop new thermal/chemical load** — Issue (or confirm) halt of downstream heating elements and new feedstock introduction on any coupled process (e.g., Plastics pyrolysis reactor). Do not open new material paths into the scrubber.
+2. **Preserve capture path integrity while load declines** — Keep Stages A–E in their current controlled configuration while upstream heat and vapor generation ramp down. Do not bypass fractional condensation or wet stages. Do not switch to an unmonitored auxiliary path except under Layer A fault logic already defined in this file.
+3. **Managed load reduction** — Allow upstream processes to execute their own EC-013 sequences (e.g., Plastics managed heat-down). Scrubber continues capture of residual off-gas until upstream sources are sealed or confirmed idle.
+4. **Sump / media stable-state check** — Confirm Stage D sump pH and temperature are within the bands already used by this file’s interlock table (or log deviation). Do not drain hazardous sumps as part of routine descent unless a Layer A condition or explicit human order requires it.
+5. **Ventilation mode decision under Layer A constraint** — If **no** Fire Event / Fault-04-class condition is active: transition forced ventilation to a controlled low-flow or idle state consistent with negative-pressure boundary doctrine, then isolate. If **any** Fire Event — Hot Zone (or equivalent Layer A fire/thermal critical) is active or asserted: **forced ventilation halts immediately** per this file’s existing interlock row — do not complete a “graceful” airflow step that would feed the fire.
+6. **Isolation and out-of-service mark** — Isolate energy to fans/pumps as appropriate after step 5, record final interlock state, and mark the scrubber out of service until human clearance is recorded.
+
+### Hard overrides (Layer A wins)
+- **Fire Event — Hot Zone** → forced ventilation halts immediately. This overrides steps 2–5 airflow continuity.
+- **System Fault 04** (Media Saturation) → Halt downstream heating elements; force auxiliary air bypass as already specified — may truncate Layer B continuity steps.
+- **Thermal Fault** → Divert feedstocks away from primary thermal reduction units as already specified.
+- **Acidic Ingress E-Stop** → Instantaneous lockout of Pyrolysis Reactor core as already specified.
+- Any other row in this file’s Automated Failure Interlocks table retains its existing priority over Layer B ordered wind-down.
+
+### Completion criteria
+Descent is complete when: (a) upstream hazardous thermal/chemical loads have stopped or are in their own completed descent, (b) scrubber forced ventilation is either in a controlled idle/isolated state **or** has been hard-halted under Layer A fire logic, (c) a durable log of steps taken (and any skipped under Layer A override) exists, and (d) the system may then enter full Pacifist posture per EC-004.
+
+### Logging
+Record trigger, each step executed or skipped (with reason), every Layer A interlock that fired, final fan/pump/sump state, and operator identity. Store outside the agent runtime session if agents participated in the decision.
+
+### Explicit non-goals
+- This sequence does **not** self-clear or authorize restart of the scrubber or upstream processes.
+- Missing or incomplete sequence is **not** license to skip descent or to keep forced airflow running against a Fire Event interlock.
+- Filing this text does **not** close EC-013, clear Blocking for hot runs, or claim any physical validation.
+- This sequence does **not** replace or weaken any row in the Sensor Layout & Automated Failure Interlocks table.
+
+### Residual / open items (tracked, not blocking this filing)
+- Numeric low-flow / idle ventilation setpoints for step 5 (Placeholder until first hardware designation).
+- Exact hand-off timing with Plastics (and other upstream) EC-013 sequences under simultaneous governance failure (to be refined against live multi-process runs).
+- Automatic fire/smoke detection hardware remains unspecified (already noted in the Fire Event interlock row) — manual trigger remains the minimum viable path.
+- First hot-run validation required before this section may be promoted beyond Proposed/Placeholder.
+
+*Filed 2026-09-20, Path A (Proposed/Placeholder), human-directed. Does not constitute Payment via Specification for EC-013; the tracker remains Open until the agreed active set of hazardous-process files each have a registered sequence or explicit scope-out.*
+
+---
+
 ## Drift Indicators
 
 Mandatory re-audit conditions for this document:
@@ -1052,6 +1098,11 @@ Mandatory re-audit conditions for this document:
 - Spec Gates advanced to 4/6 without all four
   protocols achieving Pass status in Test
   Execution Matrix
+- EC-013 descent sequence absent, removed, or
+  treated as operationally binding for hot runs
+  while still marked Proposed/Placeholder
+- Layer A Fire Event interlock weakened or made
+  subordinate to Layer B airflow continuity steps
 
 **Compound Drift Rule:** If multiple indicators
 activate simultaneously, halt autonomous audit

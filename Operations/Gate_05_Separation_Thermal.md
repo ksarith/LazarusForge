@@ -25,9 +25,9 @@
 | Body Stability   | Volatile                                                            |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-08-08 (Scope Boundary DOES-NOT wording corrected to match Lessons Learned); prior: 2026-07-31 (SC-009 registered; SC-004 expanded with Driving Mechanism Options) |
-| Auditor          | Claude — Retrofit/Auditor; Claude — Synthesizer, human-directed (SC-009, SC-004 expansion), 2026-07-31 |
-| Open Unknowns    | 9                                                                   |
+| Last Audit       | 2026-09-20 — EC-013 Gate_05 safe-state descent sequence filed as Proposed/Placeholder (§EC-013 Descent Sequence). Blocking for hot runs retained until first hot-run validation. Prior: 2026-08-08 (Scope Boundary DOES-NOT wording corrected to match Lessons Learned); prior: 2026-07-31 (SC-009 registered; SC-004 expanded with Driving Mechanism Options) |
+| Auditor          | Grok — EC-013 descent section drafted and filed as Proposed/Placeholder (Path A, human-directed 2026-09-20); prior: Claude — Retrofit/Auditor; Claude — Synthesizer, human-directed (SC-009, SC-004 expansion), 2026-07-31 |
+| Open Unknowns    | 9 substantively open. EC-013 sequence registered as Proposed/Placeholder (does not close EC-013 tracker). |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | Medium                                                              |
 | Sidecar Link     | #auditor-notes--unknowns                                            |
@@ -1022,6 +1022,50 @@ G2 scope decision.
 
 ---
 
+## §EC-013 Descent Sequence — Gate_05 Spin Chamber (Proposed / Placeholder)
+
+**STATUS: Proposed / Placeholder.** Filed 2026-09-20 under Path A (EL-006-P3–P5 style), same pattern as `Operations/Plastics.md` and `Operations/Air_Scrubber.md` §EC-013. This section is visible doctrine and registers the third per-process EC-013 sequence. It does **not** carry operational force for hot runs until a Skeptic pass and first hot-run validation have occurred. **Blocking for hot operational runs remains in force.** Specified ≠ demonstrated.
+
+**Cross-reference:** `Admin/Ethical_Constraints.md` EC-013 (requirement owner); EC-004 Governance Failure Modes; this file’s thermal doctrine (§7 Heating & Thermal Strategy, §12 Operating Mode, §14 Failure Philosophy); `Operations/Air_Scrubber.md` Layer A interlocks where off-gas or Hot Zone ventilation is coupled. Layer A process-fault / fire interlocks remain always-on safety logic and are **not** substituted by this sequence. Layer B (this sequence) must obey Layer A.
+
+### Trigger
+Governance failure (or explicit human/governance command to enter safe-state) while the Spin Chamber is in an active hazardous state — i.e., induction power applied at or above hot-idle, melt present, or rotation under load.
+
+### Ordered steps (Layer B)
+1. **Stop new feed** — Cease any further feedstock introduction. Do not open the crucible under positive pressure or while melt temperature is above the defined safe band (Placeholder until first hardware designation).
+2. **Stop rotation before deep cooling** — Ramp RPM to zero (or to a documented safe residual if drive design requires it). Per this file’s thermal doctrine: **stop rotation before cooling**. Do not solidify under spin.
+3. **Ramp induction power** — Reduce power from the processing band (650–720 °C Al class) toward the **hot-idle band** (500–550 °C Al class) or a defined safe hold. Prefer controlled power-down to hot-idle over an abrupt full quench. Full thermal cycling is deliberately avoided in normal doctrine; a governance-failure descent does not invent a new preference for rapid cool-down.
+4. **Preserve containment** — Keep the crucible sealed / contained. Do not skim, tap, or open extraction interfaces as part of routine descent unless a Layer A condition or explicit human order requires it.
+5. **Atmosphere / off-gas path** — If Air_Scrubber or other forced ventilation is coupled: keep the path under its own EC-013 / Layer A rules. **Fire Event — Hot Zone** (or equivalent) forces immediate halt of forced ventilation per `Operations/Air_Scrubber.md`; that override wins over any graceful airflow continuity step.
+6. **Isolation** — Once rotation is stopped and power is at hot-idle or a logged safe hold, isolate drive and induction energy as appropriate, mark the chamber out of service, and require human clearance before restart. No self-clear.
+
+### Hard overrides (Layer A wins)
+- **Fire Event — Hot Zone** (or any Air_Scrubber fire-vent-halt) → forced ventilation halts immediately; may truncate steps that assume continued airflow.
+- **Runaway RPM / melt-breach / explosive-failure path** (once local interlocks exist) → immediate protective action per this file’s Failure Philosophy; Layer B ordered wind-down does not delay that.
+- Any future local interlock table rows in this file retain priority over Layer B continuity steps.
+
+### Completion criteria
+Descent is complete when: (a) rotation is stopped, (b) induction is at hot-idle or a logged safe hold (or fully isolated under human direction), (c) containment is intact and no unlogged open extraction is in progress, (d) a durable log of steps taken (and any skipped under Layer A override) exists, and (e) the system may then enter full Pacifist posture per EC-004.
+
+### Logging
+Record trigger, each step executed or skipped (with reason), Layer A overrides that fired, final RPM / power / temperature band, and operator identity. Store outside the agent runtime session if agents participated in the decision.
+
+### Explicit non-goals
+- This sequence does **not** self-clear or authorize restart.
+- Missing or incomplete sequence is **not** license to skip descent or to cool under spin.
+- Filing this text does **not** close EC-013, clear Blocking for hot runs, or claim any physical validation.
+- This sequence does **not** abandon the hot-idle doctrine in favor of mandatory full thermal cycling; rapid full cool is not the default Layer B path.
+
+### Residual / open items (tracked, not blocking this filing)
+- Numeric safe temperature/pressure/RPM residual bands (Placeholder until first hardware designation; Al-class bands above are Analogous).
+- Exact interaction with SC-001 / SC-005 once RPM envelope and drive imbalance are validated.
+- Hand-off timing with Air_Scrubber EC-013 under simultaneous governance failure + Hot Zone fire.
+- First hot-run validation required before this section may be promoted beyond Proposed/Placeholder.
+
+*Filed 2026-09-20, Path A (Proposed/Placeholder), human-directed. Does not constitute Payment via Specification for EC-013; the tracker remains Open until the agreed active set of hazardous-process files each have a registered sequence or explicit scope-out.*
+
+---
+
 ## Drift Indicators
 
 The following conditions trigger mandatory re-audit of this file.
@@ -1040,6 +1084,8 @@ Spin Chamber:
 | Wire extrusion interface advanced without welding wire specification owner identified | SC-004 must resolve alongside `Architecture/Geck_forge_seed.md` UNK-008 (ownership reassigned there 2026-07-19; the design principle is defined, the full specification is not) |
 | Melt material class expands beyond Al-class without assumptions review | ASM-002 expiry trigger — temperature bands, density values, and crucible material selection all change with material class |
 | Hot idle doctrine abandoned in favor of full thermal cycling | Core thermal doctrine — crucible and coil life assumptions depend on it |
+| EC-013 descent sequence absent, removed, or treated as operationally binding for hot runs while still marked Proposed/Placeholder | Specified ≠ demonstrated; Blocking for hot runs must remain visible |
+| Layer B descent cools under spin or subordinates Fire Event / Air_Scrubber fire-vent-halt | Violates thermal doctrine and Layer A priority |
 
 ### Canonical Drift Triggers
 
