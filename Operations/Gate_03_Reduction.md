@@ -31,9 +31,9 @@
 | Body Stability   | Volatile                                                            |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-09-09 — GR-009 added (provisional envelope table drift vs Gate_04); prior: 2026-09-08 HP-001 R4 terminology alignment; 2026-05-15; revised 2026-06-08 |
-| Auditor          | Claude — Retrofit/Auditor                                           |
-| Open Unknowns    | 8                                                                   |
+| Last Audit       | 2026-09-21 — EC-013 Gate_03 safe-state descent sequence filed as Proposed/Placeholder (§EC-013 Descent Sequence); short extension of §7 Emergency Shutdown. Blocking for hot runs retained. Prior: 2026-09-09 — GR-009 added (provisional envelope table drift vs Gate_04); prior: 2026-09-08 HP-001 R4 terminology alignment; 2026-05-15; revised 2026-06-08 |
+| Auditor          | Grok — EC-013 descent section drafted and filed as Proposed/Placeholder (Path A, human-directed 2026-09-21); prior: Claude — Retrofit/Auditor |
+| Open Unknowns    | 8 substantively open. EC-013 sequence registered as Proposed/Placeholder (does not close EC-013 tracker). |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | High                                                                |
 | Sidecar Link     | #auditor-notes--unknowns                                            |
@@ -1035,6 +1035,50 @@ purpose of having a mirrored stopgap at all.
 
 ---
 
+## §EC-013 Descent Sequence — Gate_03 Reduction (Proposed / Placeholder)
+
+**STATUS: Proposed / Placeholder.** Filed 2026-09-21 under Path A (EL-006-P3–P5 style). Short extension of §7 Emergency Shutdown into an explicit governance-failure descent package. Does **not** carry operational force for hot runs until Skeptic pass and first hot-run validation. **Blocking for hot operational runs remains in force.** Specified ≠ demonstrated.
+
+**Cross-reference:** `Admin/Ethical_Constraints.md` EC-013; EC-004; this file §7 Emergency Shutdown (process-fault / emergency triggers and safe state — Layer A / emergency logic); `Operations/Air_Scrubber.md` (operational prerequisite and fire-vent-halt). Layer A and §7 emergency stops remain always-on; Layer B (this sequence) must obey them.
+
+### Scope of this sequence
+Applies when Reduction is **actively energized and hazardous mid-cycle** (shredder/mill/saw or equivalent running, enclosure live, Air Scrubber required). Does not apply to idle equipment or pre-start verification. GR-002 (method not yet selected) leaves method-specific coast-down details Placeholder — same class of residual as Gate_05’s SC-001/SC-005.
+
+### Trigger
+Governance failure (or explicit human/governance command to enter safe-state) while Reduction is actively running.
+
+### Ordered steps (Layer B)
+1. **Stop the reduction process immediately** — De-energize drive / cutting / milling power. Per §7: material is left in whatever condition it is in; there is no safe intermediate state to target.
+2. **Do not open the enclosure** until all movement has fully stopped (coast-down complete).
+3. **Keep Air Scrubber operational** for exhaust clearance unless a Layer A Fire Event / Fault-04 condition requires fire-vent-halt (Air_Scrubber interlock wins).
+4. **Isolate power** — Confirm drives and tooling energy sources are isolated.
+5. **Hold for air quality** — Do not re-enter the processing area until air quality is confirmed safe (Air Scrubber verification or sufficient ventilation time per §7).
+6. **Log and isolate outputs** — Log trigger, time, processing state at stop, operator present. Item and output isolated pending assessment. **Human authorization required to restart** — operator judgment alone is not sufficient at v0 (§7).
+
+### Hard overrides (Layer A / §7 wins)
+- Any §7 emergency trigger (contamination discovery, smoke/sparks/unusual heat, operator call-stop, Air Scrubber fault, power loss) executes its existing immediate-stop response; Layer B does not delay it.
+- **Fire Event — Hot Zone** / Air_Scrubber fire-vent-halt → forced ventilation may halt immediately; that override wins over step 3’s “keep scrubber running for clearance” preference.
+
+### Completion criteria / safe state
+Matches §7 defined safe state: **Power isolated, enclosure closed, Air Scrubber running for exhaust clearance (unless Layer A fire-halt applied), item and output isolated pending assessment.** Then full Pacifist posture per EC-004 may apply. Durable log required.
+
+### Logging
+Trigger, each step executed or skipped (with reason), Layer A overrides, processing state at stop, operator identity. Store outside agent runtime session if agents participated.
+
+### Explicit non-goals
+- No self-clear or restart without human authorization.
+- Does not replace §7 emergency doctrine.
+- Filing does not close EC-013, clear Blocking for hot runs, or claim physical validation.
+- Does not select a Reduction method (GR-002 remains Open).
+
+### Residuals (not blocking this filing)
+- Method-specific coast-down / particle-ingestion details (Placeholder pending GR-002).
+- First hot-run validation before promotion beyond Proposed/Placeholder.
+
+*Filed 2026-09-21, Path A, human-directed. Tracker remains Open until the agreed active set is complete or scoped out.*
+
+---
+
 ## Drift Indicators
 
 The following conditions trigger mandatory re-audit of
@@ -1047,6 +1091,8 @@ additional local triggers specific to Gate_03_Reduction:
 | Trigger | Reason |
 |---------|--------|
 | Reduction begins without Air Scrubber verification | Air Scrubber operational status is a hard prerequisite — no exceptions. If scrubber cannot verify, Reduction does not start |
+| EC-013 descent sequence absent, removed, or treated as operationally binding for hot runs while still marked Proposed/Placeholder | Specified ≠ demonstrated; Blocking for hot runs must remain visible |
+| Layer B descent opens enclosure before coast-down complete or subordinates Fire Event / Air_Scrubber fire-vent-halt | Violates §7 and Layer A priority |
 | Reduction begins without human operator present before GR-005 resolution | Human presence is the primary compensating control for unresolved upstream gaps — removing it before GR-005 criteria are met eliminates the R4 safety backstop |
 | Contamination discovery protocol bypassed under throughput pressure | Contamination discovered during Reduction must trigger immediate stop — throughput pressure is never a valid override at the R4 boundary |
 | Prohibited input list revised without GR-003 review | Waste disposal doctrine and prohibited input list must stay synchronized — a new prohibited category without a disposal path creates an unresolvable hold condition |
