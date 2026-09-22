@@ -98,6 +98,20 @@ Third folder in the Scope_Map rollout, following `Admin/Adm_Scope_Map.md` (2026-
 
 ---
 
+## EC-013 Descent Sequence Cross-Reference Index
+
+*Discoverability table only — does not alter governance status, close EC-013, or advance any Spec Gates. Index is complete for Cycle 1 only (MAQT-C1-EC013-CROSSREF, 2026-09-22); additional EC-013 descent sequences may be added in future cycles. File location selected per MAQT Cycle 1 Option A ("e.g. in Ops_Scope_Map.md if present") — not a canonical designation. Proposal implemented following Cycle 1 Planner/Skeptic/Auditor review chain; human ratification issued 2026-09-22 outside agent sessions.*
+
+| File | EC-013 section | Status |
+|------|----------------|--------|
+| `Operations/Plastics.md` | §EC-013 Descent Sequence — Plastics / Pyrolysis | Proposed/Placeholder — Blocking for hot runs — does not close EC-013 |
+| `Operations/Air_Scrubber.md` | §EC-013 Descent Sequence — Air Scrubber | Proposed/Placeholder — Blocking for hot runs — does not close EC-013 |
+| `Operations/Gate_05_Separation_Thermal.md` | §EC-013 Descent Sequence — Gate_05 Spin Chamber | Proposed/Placeholder — Blocking for hot runs — does not close EC-013 |
+| `Operations/Gate_03_Reduction.md` | §EC-013 Descent Sequence — Gate_03 Reduction | Proposed/Placeholder — Blocking for hot runs — does not close EC-013 |
+| `Operations/Gate_06_Fabrication.md` | §EC-013 Descent Sequence — Gate_06 Fabrication | Proposed/Placeholder — Blocking for hot runs — does not close EC-013 |
+
+---
+
 ## Gaps Exposed By Building This
 
 1. **Same UNK-008 staleness pattern found in two more files, both fixed same-day.** `Gate_06_Fabrication.md`'s Scope Boundary said welding-wire chemical qualification was "not yet assigned — UNK-008" — wrong since 2026-07-19, when ownership moved to `Geck_forge_seed.md`; the file's own body text (lines 682, 879) already cited UNK-008 correctly elsewhere, only the summary line had drifted. `Gate_05_Separation_Thermal.md`'s Scope Boundary said the same thing more vaguely ("downstream — not yet assigned") — also inconsistent with that file's own Lessons Learned table, which already correctly cited the 2026-07-19 reassignment. Both fixed. Combined with `Forge_flow.md`'s identical error found and fixed yesterday, this makes **three separate files** that had drifted on the exact same fact after the same 2026-07-19 ownership change — worth noting as a pattern: a single ownership reassignment can leave stale pointers scattered across a surprising number of files, none of which cross-check each other.
