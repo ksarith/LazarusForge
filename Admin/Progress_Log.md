@@ -37,6 +37,14 @@ Created 2026-08-09 to fix a recurring failure mode found the same day, in two pl
 
 *(Most recent first. Rotate to `Archive/Logs/Progress_Log_Changelog.md` once more than five entries accumulate.)*
 
+### 2026-09-21 — MAQT §8.9 Handoff Schemas + §8.10 Friction Log added; `MAQT_Role_Cards_and_Cycle1_Task.md` filed as new companion
+ChatGPT reviewed the Cycle 1 standalone pack Grok had drafted and identified one structural gap before running: the role cards defined agent jobs well but left handoffs as "transcript exchange" rather than structured artifacts — meaning agents would have to parse conversations to find review decisions rather than consuming filled forms. Grok added §8.9 (three handoff schemas: Planner→Skeptic/Auditor/Human, Skeptic→Auditor/Human, Auditor→Human — every field named, explicit non-claims on the Auditor form so GOV-008-not-advanced and GMP-004-not-resolved are stated per artifact rather than assumed) and §8.10 (Collaboration Friction Log — required block on every MAQT Field_Logs entry, covering context duplication, serialization, ambiguous handoff, role confusion, evidence retrieval, Git friction, human-intervention points, unexpected behavior, protocol bottlenecks, and proposed automation candidates). The explicit framing in §8.10's note is worth recording: independence and concurrency are separate goals; Cycle 1 prioritizes independence, and serialization pain goes in the friction log so later cycles can test recon/overlap without pretending the first run solved scale. The MAQT_Role_Cards_and_Cycle1_Task.md standalone companion file was also added to the repo as `Tests/MAQT_Role_Cards_and_Cycle1_Task.md` — contains individual role cards (each agent receives only its own), shared operator rules, Cycle 1 task, and the handoff schema forms. Indexed in Tst_Scope_Map.md, Routing.md, and Discovery.md. Grok's explicit disposition: no more doctrine ahead of Cycle 1 — run the trial and observe real friction before adding collaboration architecture.
+
+---
+### 2026-09-21 — EC-013 Gate_03 and Gate_06 descent sequences filed as Proposed/Placeholder (Path A)
+Claude scoped both as real candidates (not scope-outs): Gate_03 is a short extension of §7 Emergency Shutdown; Gate_06 is a short extension of GF-007 hot-work shutdown. Grok drafted and filed both under Path A. Gate_03: governance-failure trigger while Reduction energized mid-cycle; stop → coast-down before open → scrubber for clearance unless Fire Event halt → isolate → air quality hold → human-auth restart; §7 safe state preserved. Gate_06: trigger while arc/hot-work active; de-energize arc → lockout → visual sweep (FA-002 radius) → ventilation under Layer A → cool-down/fire-watch → no unattended restart. Full 2026-09-18 candidate set now registered (5/5). `Unknowns.md` → v5.50. EC-013 tracker remains Open pending Human acceptance of set completeness / Skeptic pass; Blocking retained on all five. Human-directed.
+
+---
 ### 2026-09-20 — EC-013 Gate_05 Spin Chamber descent sequence filed as Proposed/Placeholder (Path A)
 Third per-process EC-013 implementation. Grok drafted and filed `Operations/Gate_05_Separation_Thermal.md` §EC-013 Descent Sequence under the same Path A pattern: trigger (governance failure while induction/melt/rotation active), ordered Layer-B steps (stop feed → stop rotation before cooling → ramp induction toward hot-idle → preserve containment → atmosphere/off-gas under Layer A rules → isolation), explicit respect for thermal doctrine (stop spin before cool; prefer hot-idle over full quench), Layer-A hard overrides (Fire Event / Air_Scrubber fire-vent-halt; runaway RPM / melt-breach paths). File State, Last Audit, Drift Indicators updated. `Admin/Ethical_Constraints.md` EC-013 gap-matrix Gate_05 row and Status note updated (three implementations filed). `Unknowns.md` advanced to v5.49. EC-013 tracker remains Open — Gate_03 / Gate_06 still lack sequences. Human-directed.
 
@@ -53,154 +61,123 @@ James directed Path A (EL-006-P3–P5 placeholder pattern). Grok drafted and fil
 Grok produced a standalone `Multi_Agent_Quorum_Trial.md` with a §8 Preparation Package as a turnkey addition to the protocol created 2026-09-18. Compared against the existing repo file: §1–§7, File State, Scope Boundary, and headers were identical; §8 was new content that filled exactly what the original left open. Merged as §8 rather than keeping it standalone. Added: (1) recommended defaults for all open DECISION NEEDED items (shared remote for proposal passing, human-fixed rotation schedule before trial, Cycle 1 role map M1=Planner/M2=Skeptic/M3=Auditor, 300s liveness timeout, bounded non-constitutional task only); (2) fillable pre-trial worksheet covering baseline, roles, Git authority, probe selection, ratification plan, and failure scenario watch-list; (3) six concrete non-collusion probes ready to inject (stale status claim, incorrect file reference, false Hardware_Diversity_Ladder content claim, unsupported "Measured" threshold, attractive unconstitutional shortcut, document conflict that would falsely advance GOV-008); (4) ready-to-paste Field_Logs skeleton; (5) explicit minimal viable first-run configuration permitting logical-isolation-only as an honest interim measure per §VII.1 — records the limitation rather than pretending physical diversity exists. Last Reviewed updated 2026-09-18→2026-09-20; Tst_Scope_Map.md entry updated. Status unchanged: Proposed Protocol — Not Yet Run; no GOV-008 progress claimed.
 
 ---
-### 2026-09-18 — FL-006 half A: `Operations/Exception_Evidence.md` created as structural evidence-control owner for Oversight State
-Grok analyzed the gap precisely: HP-011 Transition Ownership table's Oversight Operations cell has been blank since the table was first built, while Gates A-D all have named owners; the evidence types FL-006's own Resolution Path names (contamination, scarcity, substitutes, failure rates, dependency info) had no operational home. Three-pass process before anything was filed: Grok's initial owner proposal (new thin file, matching the FL-004/Tooling_Inventory precedent) was good architecturally but needed revision; ChatGPT's skeptical pass accepted the new-file direction but flagged four overreaches — file ≠ operator (the file is the control spec, not the maintainer), control spec ≠ warehouse (packet bodies live in the records the file points to), evidence ≠ decision (explicit anti-policy rule needed), and standing data should be distributed references not consolidated into one ledger; Grok revised incorporating all four; Claude source-verified the proposal against live text before filing. Created `Operations/Exception_Evidence.md` as the evidence-control specification and index: defines evidence classes, required fields (including "why deposited" as an observation, not a quasi-routing instruction — per ChatGPT's catch that "recommended Oversight attention" would silently become a decision channel), deposit rules, freshness expectations, and pointers to where authoritative records live — not a warehouse for the records themselves. HP-011's Oversight Operations cell updated to name the new file; FL-006 sidecar updated with the half-A resolution note. Half B (authority half / EC-003 / GOV-006 dependency) untouched. FL-006 remains Open — structural owner named, population and demonstrated maintenance still ahead.
-
 ---
-### 2026-09-18 — §VII.2 (Bootstrap Quorum, GOV-008 candidate spec) amended: role rotation across quorum cycles added, limitations stated explicitly
-Prompted by a ChatGPT multi-agent-readiness assessment of the three-physical-computer experiment `CONTRIBUTING.md` already names as the highest-value next contribution — verified accurate before engaging with it further (its GMP-004 cross-reference, "declarable, not achieved" framing, and §VII.8 registry schema all checked out against live text). James raised "floating roles" from that conversation, clarified as agents rotating which class they hold across cycles rather than within one. Worked through which version was intended before drafting anything: within-cycle role blending would collide with VII.2's existing per-cycle exclusivity rule and the Coupled-orchestration rule's independence bar; cross-cycle rotation does not. Filed as a scoped addition to §VII.2, immediately following the Coupled-orchestration rule, in this section's own established pattern of small dated patches rather than a rewrite. Deliberately structured around what rotation does *not* solve, at James's own instruction to be clear about the limitations rather than presenting it as a finished mechanism: doesn't satisfy Diversity/Independence tests by itself (same relabeling risk VII.4's vendor-label clause already warns about), doesn't touch Hardware/Runtime Diversity, doesn't itself provide non-collusion detection across rotations, and critically — who determines each cycle's rotation assignment is left explicitly open rather than defaulted, since an assignment mechanism controlled by one party could quietly reintroduce the single point of control this taxonomy exists to prevent. That last point added as a new §VII.6 Open Item rather than silently decided. No change to GOV-008's status, no claim of progress toward Resolved — this section remains Candidate specification, Payment via Specification only, exactly as before. File's own Last Audit field updated to record the change.
+Full history, including entries rotated out of the five above, in `Archive/Logs/Progress_Log_Changelog.md`.---
 
----
-### 2026-09-18 — EC-011 (human governance adversary model) problem statement filed
-ChatGPT drafted the EC-011 problem statement as the natural next thread after GOV-006/GMP-004, and Grok recommended it over three alternatives (SEC-008, FL-006, GOV-019) on the strength that it's the assumption underneath the work just closed — "capability never outruns permission" only holds if the permission-giver is trustworthy, and no doctrine yet exists for a coerced, corrupted, impaired, or captured human authority. Verified against live source before filing: `Ethical_Constraints.md`'s own EC-011 sidecar matched the drafted framing closely; SEC-ASM-006's exact wording in `Security_Protocols.md` and its two named resolution triggers (EC-011, and separately Safety_Protocols.md §V for impairment) checked out; the Human Override Doctrine's own text already draws the GOV-006/EC-011 boundary the document relies on (instruction authenticity vs. authority trustworthiness); the EC-012 fence matches this file's existing EC-003/EC-011 cross-reference pattern rather than inventing a new distinction. Filed by updating EC-011's sidecar in place (Last Reviewed 2026-06-18→2026-09-18, problem statement added as a new subsection, original Description/Why It Matters/Resolution Path left untouched) and the matching Active Index row in Unknowns.md. No adversary-model architecture proposed, no Payment-via-Specification; EC-011 remains Open, Risk High, Priority Major.
+## Forward Growth Avenues (2026-09-21)
 
----
----
-Full history, including entries rotated out of the five above, in `Archive/Logs/Progress_Log_Changelog.md`.
-
-
----
-
-## Forward Growth Avenues (2026-08-21)
-
-**Supersedes the 2026-08-14 version** (full prior text preserved in
-`Archive/Logs/Progress_Log_Changelog.md`). Standing directive from the
-human governing authority: prioritize unknown closure that does not depend
-on real-world/hardware tests — infrastructure is the current limiting
-factor, and work should not be queued against it. Lane-first structure
-below exists specifically to make that filterable at a glance; Tier framing
-dropped this pass in favor of it. Baseline: Alpha.06 (Unknowns v4.72). Every
-item below was checked against its own sidecar this session, not against
-either agent-summary source or the prior Forward Growth Avenues text.
+**Supersedes the 2026-08-21 version** (full prior text preserved in
+`Archive/Logs/Progress_Log_Changelog.md`). Strategic direction ratified by the Human Governing Authority following ChatGPT's operational-proving assessment (2026-09-21): the Forge has accumulated enough governance doctrine that the default question is no longer "what governance should we add?" but "what do we need to prove next, and what is the smallest real-world experiment that produces that evidence?" Three-lane structure replaces the prior Lane A/B/C/D/E taxonomy. Prior Lane A item list is archived in full.
 
 ### Lanes
 
-| Lane | Meaning | Agent-usable? |
-|------|---------|----------------|
-| **A — Spec draft** | Payment-via-Specification depth possible without new hardware | Yes, with human review |
-| **B — Human decision** | Architecture / constitution; unilateral agent close forbidden or empty | Human session |
-| **C — Evidence** | Needs Field_Logs, hardware, or multi-agent run | Observation first |
-| **D — Dependency-blocked** | Upstream unknown must move first | Track only |
-| **E — Exploration hold / no fast path** | Valid Open; low leverage now, or resolution requires elapsed operational time by its own Resolution Path | Don't prioritize now |
+| Lane | Name | Meaning |
+|------|------|---------|
+| **A** | **Make it work** | Multi-agent collaboration, execution harness, Git/worktrees, evidence handoffs, automated checks — the Forge's ability to operate as a system |
+| **B** | **Make it true** | Physical tests, electronics, materials, fabrication, field measurements, empirical validation — mechanical truth that software review cannot supply |
+| **C** | **Make it learn** | Unknowns, provenance, measurements, failure records, model revision, self-assessment metrics — the feedback loop that converts experience into knowledge |
 
-### Lane A — verified 2026-08-30 against live sidecars, do next
+The loop across all three lanes:
 
-*(Repopulated after Grok and ChatGPT independently proposed a Lane A refresh methodology — a scarce-resource reframe, a hard exclusion rule, and a six-step candidate funnel. Both agent notes were treated as a candidate list, not a promotion — every ID below was checked directly against its owning sidecar's Status/Resolution Path/dependency fields before listing here. Two of the ten "Strong candidate" claims across both notes did not survive that check; see Reclassified below.)*
+```
+MAKE → TEST → MEASURE → LEARN → REVISE → MAKE
+```
 
-**Cluster 1 — GMP amendment lifecycle** (`Admin/Governance_Migration_Protocol.md`)
-- **GMP-006** — **Resolved 2026-08-31** (§III.A Track B Amendment Lifecycle — State Machine, Payment via Specification, human-ratified). No longer a Lane A candidate.
-- **GMP-012** (Rollback/repeal doctrine) — Open, Minor. Resolution Path already sketches the candidate answer (repeal is itself a Track B amendment); no upstream dependency. Confirmed clean.
-- **GMP-010** — **Resolved 2026-08-30** (§VIII Evidence-Sufficiency Gate, Payment via Specification, human-ratified). See Current Lessons and `Admin/Governance_Migration_Protocol.md`'s own GMP-010 sidecar for the full Closure Event. No longer a Lane A candidate.
-- **GMP-011** (Track classification dispute) — **In Progress**, not Open — an interim rule is already adopted and operative. Remaining scope ("full design... formal dispute logging format, timeout, repeat-dispute trigger") is genuine, self-contained spec work, but this is a refinement pass on an already-functioning interim rule, not a fresh Open→Resolved closure. Listed here as legitimate but lower-urgency than the three above.
+Governance construction remains available but is no longer the default next step. Each new governance pass must now justify itself against the question: does this produce evidence, or does it produce more doctrine about evidence?
 
-**Cluster 2 — Interface contracts** (`Operations/Gate_01_Intake.md`, `Operations/Gate_07_Utilization.md`)
-- **GI-004** — **Resolved 2026-08-31** (§7.1 Minimum Intake Record, Payment via Specification, joint Closure Event with GI-006, human-ratified). No longer a Lane A candidate.
-- **GI-006** — **Resolved 2026-08-31** (§7.3 Chain-of-Custody Integrity, Payment via Specification, joint Closure Event with GI-004, human-ratified). No longer a Lane A candidate.
-- **GU-002** — **Resolved 2026-09-01** (§5.1–5.6 Retirement Handoff interface contract, Payment via Specification, joint reciprocal doctrine in Gate_02_Triage.md, human-ratified). No longer a Lane A candidate.
+---
 
-**Split — spec-payable in part, Automation-implementation in part (do not fully promote)**
-- **GMP-013** (EQD machine-readable metadata) — Open, Minor. Resolution Path explicitly says "Deferred via Specification... this is `Automation/AUDIT_HARNESS.py` implementation scope." The schema sketch itself (participant role/model list, outcome value, dissent boolean) is Lane A-eligible if someone wants to formalize it from suggestion to definition; the actual tooling is not.
-- **CLF-011** (fir_class gate emit/read + §4b contract) — Open, Major. The §4b batch metadata contract is already drafted (Proposed, not yet ratified) — ratifying that contract is Lane A. The gate-side emit/read logic itself (Gate_04/05/06) is implementation, not doctrine — do not treat CLF-011 as closable by specification alone.
+### Lane A — highest near-term priority
 
-### Reclassified out of Lane A this session (proposed "Strong candidate" or similar by one or both agent notes; did not survive sidecar verification)
+**MAQT Cycle 1 (Multi-Agent Quorum Trial)**
+Protocol file: `Tests/Multi_Agent_Quorum_Trial.md` · Companion: `Tests/MAQT_Role_Cards_and_Cycle1_Task.md`
 
-- **GMP-007** (Amendment withdrawal) → **Lane D.** Both agent notes rated this "Strong candidate" in parallel with GMP-006/008. Its own Resolution Path reads: "Add withdrawal state to Track B state machine **when GMP-006 is resolved**" — genuinely dependency-blocked, not independently payable. Correct treatment: design together with GMP-006 in the same pass, not list separately as a parallel candidate.
-- **GMP-008** (Stale proposal expiration) → **Lane E.** Both agent notes rated this "Strong candidate." Its own Resolution Path reads: "**Defer to when governance cadence is established** (Trajectories.md v1 milestone)" — explicitly not specification-payable now regardless of prose effort; fails the hard exclusion rule both notes themselves proposed. The "GMP-006/007/008 cluster" framing in both notes is accurate for GMP-006 alone; 007 and 008 are dependency- and milestone-blocked respectively.
-- **FL-002** (Reduction output envelope ↔ Gate_04, `Architecture/Forge_flow.md`) → **Lane D.** Listed as "Candidate" by ChatGPT's note. Resolution Path requires cross-validation "once a Reduction method is selected" — **GR-002 (method selection) is itself still Open**, confirmed by direct check. Blocked upstream, not currently payable.
-- **GR-001** (same interface, `Operations/Gate_03_Reduction.md`) → **Lane C/D.** ChatGPT's note listed this only as "Related... may consolidate with FL-002," without flagging that its own Resolution Path requires "characterize actual output distribution... against representative feedstock samples" and explicit promotion to **Measured** (not Analogous) evidence — real hardware/feedstock characterization, not specification. Also blocked on GR-002 (Open) as a stated prerequisite. Neither agent note caught either the evidence requirement or the shared GR-002 dependency — worth flagging as the kind of miss the funnel is supposed to catch.
+Run Cycle 1 as a **requirements-discovery experiment**, not merely a quorum test. The output should not be "PASS/FAIL." It should be the requirements for the Forge's eventual multi-agent operating environment — which claims hold under three independent agents, which break, where the human remains indispensable, which governance rules need mechanical enforcement, which information must cross agent boundaries and in what form.
 
-### Held / ineligible — agent notes' own calls confirmed accurate on recheck
+The §8.10 Collaboration Friction Log in the protocol file is the primary collection mechanism. Fill it honestly regardless of outcome. An informative failure is worth more than a smooth run that reveals nothing.
 
-- **GMP-003** (Adversarial review underspecified) — Open, but Resolution Path requires a real or deliberately simulated Track B proposal to test the new Epistemic Quorum Doctrine standard against; prose alone cannot close it. Both notes correctly called this "Borderline"/soft-dependency — confirmed, hold in Lane C/D.
-- **GMP-004** (Ratification authentication gap) — Open, High risk, but Resolution Path mirrors GOV-006 and is owned by `Admin/Security_Protocols.md`'s cryptographic-authentication work, not this file. Both notes correctly called this "Hold" — confirmed.
-- **GMP-002** (Canonical ownership transfer) — Open, but explicitly gated on `Admin/Governance_Migration_Protocol.md` reaching its own Gate 4 (Provisional Specification) maturity — a whole-file promotion event, not a standalone task. Both notes correctly called this "Ineligible" — confirmed.
+**Specification → mechanism inventory (ongoing)**
+The Forge has accumulated many "The Forge shall..." claims. The next maturity step is "here is the mechanism that makes that true." Priority classification:
 
-### Resolved this session (2026-08-23/24) — no longer Lane A/D, remove from active work queues
+| Claim | Current state | Priority |
+|-------|--------------|---------|
+| Agent cannot self-approve | Procedural | High — failure damages governance |
+| Unknown cannot silently become resolved | Mostly procedural | High |
+| Human retains canonical authority | Procedural | High |
+| Repository integrity can be verified | Relatively mature | Medium |
+| Agent identity is trustworthy | Incomplete | High — MAQT will surface this |
+| Gates actually stop bad transitions | Needs testing | High — Lane B/C |
+| Evidence must be provenance-backed | Partly mechanical | Medium |
+| Quorum is independently established | Incomplete | MAQT is the test |
 
-- **WA-004** (Negative-value waste fraction disposal) — Resolved, Discharge via Consolidation, ratified 2026-08-24. See `Challenges/Waste.md` Resolution Log. Never a separate specification problem — discharged to `Operations/Gate_03_Reduction.md` GR-003, which it had tracked since 2026-08-15. This was PYC-003's third named dependency — its own status was updated twice more today before this was caught (see next entry and Current Lessons above): PYC-003 now shows all three dependencies specification-complete, correctly still Blocking on WA-002-R1/GR-003-R1's residuals rather than on missing doctrine.
-- **GR-003** (Biological and chemical waste disposal doctrine) — Resolved, Payment via Specification, ratified 2026-08-24. See `Operations/Gate_03_Reduction.md` §GR-003. Fifth Applied Case of `Admin/Resolution_Methodology.md` (mislabeled "second" at the time — corrected 2026-08-25; "second" is GF-007's case) — 2026-08-15 pass supplied the architectural two-outcome model, this pass filled concrete hold-duration/container values. GR-003-R1 (jurisdiction-dependent regulation) keeps operational reliance blocked.
-- **WA-002** (Hazardous fraction identification reliability) — Resolved, Payment via Specification, ratified 2026-08-23. See `Challenges/Waste.md` §Hazardous Fraction Identification Protocol / Operator Qualification & Confirmatory Lab Arrangements. Specification-only, same pattern as PL-001/GOV-003: full protocol, training standard, and lab-arrangement structure defined, but WA-002-R1 (feedstock validation) keeps operational reliance functionally blocked.
-- **PL-001** (Halogenated polymer contamination) — Resolved, Payment via Specification, ratified 2026-08-23. See `Operations/Plastics.md` §PL-001 Halogenated Polymer Triage Protocol. Specification-only, same pattern as GOV-003: full protocol defined, but Blocking Yes remains for hot operational runs pending PL-001-R1 empirical validation.
-- **GOV-015** (Constitutional interpretation capture) — Resolved, Payment via Specification, ratified 2026-08-23. See `Admin/Governance_Charter.md` §Constitutional Interpretation Capture.
-- **GOV-018** (Governance fork reconciliation) — Resolved, Payment via Specification, ratified 2026-08-23. See `Admin/Governance_Charter.md` §Governance Fork Reconciliation and `Admin/Governance_Migration_Protocol.md`'s new Fork Reconciliation Track.
-- **GOV-003** (Integrity enforcement architecture) — Resolved, Payment via Specification, ratified 2026-08-23, despite this file's own 2026-08-21 Lane D placement and "explicit non-work" caution against treating it as specification-only. Reconciled, not overridden — see 2026-08-23 Current Lessons entry above. Closure is architecture-only; SEC-007b (external root-of-trust physical instantiation) remains the named open blocker (GOV-003-R1) for constitutional Enforceability under compromise, and is genuinely Lane C/E work (needs hardware) once revisited.
+Note: `Unknowns.md` and every "Proposed/Placeholder" / "Payment via Specification" flag already constitutes this inventory in distributed form. What is missing is a compiled summary — a useful future artifact, not an urgent gap.
 
-### Reclassified out of Lane A this session (were listed Lane A as of 2026-08-14; verified against sidecar 2026-08-21)
+**Residual governance work** — do surgically as surfaced, not as a campaign:
+- GMP-011 (Track classification dispute, In Progress — strongest remaining pure-spec candidate)
+- FL-006 half B (authority/GOV-006 dependency — still blocked, still correct to leave parked)
+- EC-012 procedural escalation rule (drafted, unfiled — needs ratification decision when ready)
+- GOV-007 Q2–Q4 (remaining Genesis Phase decisions — answerable against the specified boundary; low urgency until site conditions change)
 
-- **TS-002** → **Lane D.** 2026-08-15 spec-depth pass wrote the three-way Station 0 decontamination workflow; remaining gap is a numeric pass/fail decontamination standard, which depends on EC-014 (encapsulation standard) and GR-003 (disposal doctrine) — neither owned by this file.
-- **GI-002** → **Lane C.** 2026-08-15 pass wrote discharge procedures by category; remains Open because the file's own promotion bar is "written and tested," and testing needs a first operational run.
-- **GF-007** → **Lane C.** 2026-08-15 pass resolved FA-002 clearance radius via NFPA 51B; remaining piece needs validation the sidecar says "this session cannot produce."
-- **CE-006** → **Lane C/D.** Quantitative scrubber chemistry and a vessel sketch exist; blocked on "no vessel built, AS-003 uncalibrated" — explicit hardware gap, same category as CLF-003.
-- **GOV-005** → **Lane E.** Resolution Path states plainly: "No fast resolution path — requires operational time." Not a specification gap; do not attempt to close on prose. Confirmed still accurate 2026-08-23 — the sole remaining open Critical in `Admin/Governance_Charter.md`.
+---
 
-### Lane B / C / D / E — carried forward from 2026-08-14, not reverified this session
+### Lane B — physical experiments (parallel, not deferred)
 
-SEC-007a (external root-of-trust definition or formal deferral —
-SEC-007b blocked on this), ENV-009/FA-001 (site assessment or explicit
-"no site yet" posture), EC-006/007 (EC-003, EC-004, EC-005 Resolved
-2026-08-22, pending Human Ratification — no longer Lane B; EC-007 newly
-actionable, its two named dependencies now both cleared), TR-001/ECN-002
-— Lane B.
-GOV-021c (spec accepted, held Open on purpose), GOV-008/HDL Tier 0–1
-("declarable, not achieved"), CF-001/CF-002, FN-001/FN-005 (spec-
-complete, Open solely for numeric threshold calibration — do not
-re-list as Lane A) — Lane C. PYC-001/003/004, CLF-004 (blocked on
-CE-006) — Lane D. EV-001, FL-001, CO-001, SC-002, CLF-003, SD-UNK-*,
-SR-001, TF-001, HR-UNK-* — Lane E/Tier 3-equivalent. **Flag:** none of
-these were checked against their own sidecars this session — treat as
-inherited, not verified, until re-checked.
+Physical experimentation should run in parallel with governance and collaboration work, not wait for governance to be "finished." The Forge's ultimate claim is not that it can write excellent Markdown — it is that it can help produce physical capability.
 
-### Explicit non-work for now
+**What can move before FA-001 site confirmation:**
+- Electronics admission testing: Logic-Zero / hash verification on actual salvaged components (EL-006 v0 floor, already specified)
+- Small material characterization: sorting and identification against `Architecture/Chemistry.md` and `Architecture/Components.md` classes
+- MAQT trial itself (the first physical instantiation of multi-agent operation)
 
-Bulk pseudo-audits of remaining Admin files. Closing GOV-021c on
-specification alone. Inventing numeric independence/correlation
-thresholds or FN Battery/PA numeric cutoffs without Field_Logs data.
-Spec Gate campaigns on Exploration files with empty Field_Logs.
-Reopening CLF-010 or GOV-016/GOV-020/GOV-022 (Resolved — leave them).
-Treating an agent "what's left" summary as source without checking the
-sidecar first — this session found two live errors that would have
-misdirected work if adopted as given. Re-listing TS-002/GI-002/GF-007/
-CE-006 as "Lane A — can start now" (reclassified to C/D above,
-2026-08-21). Working GOV-005 as if its resolution path were
-specification-only (GOV-003 closed 2026-08-23 on this same caution —
-reconciled, see Current Lessons — the caution otherwise stands for
-GOV-005). Trusting a file's own Highest Risk / Open Unknowns header
-field without checking it against `Unknowns.md` after any closure —
-this session found one stale Highest Risk reference (GOV-013,
-ratified 2026-07-19, still listed as open Critical) that had survived
-at least two prior header updates.
+**What waits on FA-001:** hot pyrolysis, molten-metal operations, EC-013 hot-run validation, gate cycle on real material (the melt-down/re-fabrication that would constitute the first "demonstrated" Forge instance per GOV-007 Decision 5).
 
-### Suggested work program (next 3–5 sessions)
+A fabricated part either works or it doesn't. Field log entries against real material will do more for the Forge's credibility than any number of additional specification passes.
 
-1. **GMP-010 closed 2026-08-30; GI-004/GI-006 closed jointly 2026-08-31; GMP-006 closed 2026-08-31; GU-002 closed 2026-09-01.** **Lane A current posture:** two verified specification-payable candidates remain (GMP-011/012), plus the 2 split spec/Automation items. GMP-007 is eligible for reconsideration (unblocked by GMP-006) but has not yet gone through the funnel itself. No additional candidates should be promoted until one of the current campaigns is closed, blocked, or reclassified — candidate expansion is deferred; the next action is campaign selection and execution, not list-growing. See Lane A section above and Current Lessons for the GMP-010, GI-004/GI-006, GMP-006, and GU-002 Closure Event accounts.
-2. GOV-015, GOV-018, GOV-003 all Resolved 2026-08-23 — removed from this
-   list; see Current Lessons and Resolution Log below.
-3. Human packet: SEC-007a options + ENV-009/FA-001 posture (inherited
-   from prior list, unchanged) — Lane B
-4. Progress_Log continuity check after any further doctrine advance —
-   this file has now demonstrated the same lag three times (2026-08-14,
-   2026-08-21, 2026-08-22); worth deciding whether a standing trigger (e.g.
-   "no unknown closes without a same-session Progress_Log entry") is
-   worth ratifying as doctrine rather than relying on the next session
-   to ask.
-5. Header-hygiene check after any closure: confirm every touched file's
-   own `Highest Risk` / `Open Unknowns` File State fields against
-   `Unknowns.md`, not just the closed file's own header — GOV-013's
-   stale reference (2026-08-23 Current Lessons) survived because this
-   check wasn't standing practice.
+---
 
-Parallel optional: any Lane B/C/D/E item above once actually reverified
-against its own sidecar, rather than carried forward from 2026-08-14.
+### Lane C — feedback and measurement
+
+The Forge should become capable of auditing its own effectiveness without simply declaring itself effective. Currently underdeveloped relative to Lane A and B work.
+
+**Development metrics (not yet tracked):**
+- Time from question → usable proposal
+- Review cycles per change
+- Rejected proposals vs accepted
+- Discovered contradictions / stale references
+- Human intervention count per cycle
+- Agent-generated defects caught vs missed
+
+**Governance metrics (partially tracked via Unknowns.md):**
+- Unknowns opened / resolved / falsely closed and caught
+- Policy/procedure conflicts discovered
+
+**Physical metrics (pending Lane B activity):**
+- Predicted vs measured performance
+- Material efficiency, failure rate, repairability
+
+**Knowledge/evidence substrate (longer-horizon):**
+The future problem is not "can an AI read the repository?" It is "can an AI reliably determine what is actually known?" The Forge needs increasingly strong separation between: FACT / MEASUREMENT / OBSERVATION / INFERENCE / ASSUMPTION / PROPOSAL / UNKNOWN / DECISION / AUTHORIZATION. This naturally complements existing provenance and epistemic-labeling discipline.
+
+---
+
+### Explicit non-work (updated)
+
+- Treating more governance as the default next step without justification
+- Bulk pseudo-audits of Admin files with no driving question
+- Closing GOV-021c, GOV-005, or GOV-007 Q2–Q4 on specification alone
+- Inventing numeric thresholds without Field_Logs data
+- Spec Gate campaigns on Exploration files with empty Field_Logs
+- Letting security architecture (EL-006 / SEC-007b) expand beyond evidence-driven grounded probes
+- Treating an agent summary as source without checking the sidecar first
+- More collaboration doctrine ahead of running Cycle 1 — the protocol is ready, the next move is the run
+
+---
+
+### Prior Lane A candidate list
+
+The prior verified Lane A funnel (2026-08-21/30, confirmed GMP-006/007/008/010/011/012, CLF-011, GMP-013, and the full reclassification table) is preserved in full in `Archive/Logs/Progress_Log_Changelog.md` under the **2026-08-21 Forward Growth Avenues** section. Items from that list still relevant: GMP-011 (In Progress, lowest-friction remaining spec candidate), CLF-011 §4b contract ratification.
+
+
 
 ## Resolution Log
 
