@@ -419,7 +419,8 @@ Discovery.md is a navigation map — task tracking belongs in Unknowns.md.
 | `Tests/Hydrologic_Resource_Cascade.md` | Exploration | 0/6 | High |
 | `Tests/Chaos_Dynamics.md` | Exploration | 0/6 | Medium — gatekeeps the evidentiary pipeline feeding EN-001/EN-001a; misuse risk if sandbox output is cited past its Level ≤4 ceiling |
 | `Tests/Pyrolysis_Cascade.md` | Draft — Exploration | 0/6 (not yet audited) | High (thermal processing of mixed salvage; halogen & hazardous-fraction exposure) |
-| `Tests/Multi_Agent_Quorum_Trial.md` | Proposed Protocol | 0/6 | High — governs who can cause a state transition on canonical main; no trial run yet; operationalizes §VII without amending it |
+| `Tests/Multi_Agent_Quorum_Trial.md` | Proposed Protocol | 0/6 | High — governs who can cause a state transition on canonical main; no trial run yet; operationalizes §VII without amending it. §8.9/§8.10 added 2026-09-21: handoff schemas + friction log. |
+| `Tests/MAQT_Role_Cards_and_Cycle1_Task.md` | Operator defaults | 0/6 | Medium — companion role-card pack for individual agents; not a governance amendment |
 | `Challenges/Water.md` | Active | — | — |
 | `Challenges/Biofouling.md` | Active | — | — |
 | `Challenges/Waste.md` | Active | — | — |
