@@ -17,8 +17,8 @@
 | Body Stability   | Volatile                                                            |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-08-23                                                          |
-| Auditor          | Claude — "Disambiguation: Uses of 'Gate'" section added (FL-012, human-directed), 2026-09-14; prior: Claude — four new terms registered (Active Constitutional Surface, Claimed/Recognized/Ratified Constitutional Lineage) at GOV-018 closure, checked against existing vocabulary first — no competing term found (human-directed); prior: Claude — Synthesizer/Auditor (2026-06-24); Claude — Cycle definition + version-string correction (2026-07-05); Claude — CT-011 resolution 2026-07-05 |
+| Last Audit       | 2026-09-23                                                          |
+| Auditor          | Claude — Claim-Type Labels registered under §4 (Grok proposer, human-directed), 2026-09-23; prior: Claude — "Disambiguation: Uses of 'Gate'" section added (FL-012, human-directed), 2026-09-14; prior: Claude — four new terms registered (Active Constitutional Surface, Claimed/Recognized/Ratified Constitutional Lineage) at GOV-018 closure, checked against existing vocabulary first — no competing term found (human-directed); prior: Claude — Synthesizer/Auditor (2026-06-24); Claude — Cycle definition + version-string correction (2026-07-05); Claude — CT-011 resolution 2026-07-05 |
 | Open Unknowns    | 9                                                                   |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | Low                                                                 |
@@ -605,6 +605,60 @@ and "constitutional state" (`Admin/Security_Protocols.md`) — are used in
 narrower rollback/recovery contexts and are not renamed or superseded by
 this entry.*
 
+**Claim-Type Labels**
+
+**Status:** Ratified — Payment via Specification, 2026-09-23
+**Orthogonal to:** `Admin/Auditor_Protocols.md` §AP-006's two-axis system
+(Quantitative Confidence Labels + Institutional Provenance Labels).
+
+Nine labels distinguishing *what kind of speech act* a statement is from
+*how well-supported* or *how it was derived*. These labels do not
+replace, weaken, or alter the existing AP-006 confidence/provenance axes
+or the UNKNOWN / PROVISIONAL / VERIFIED epistemic states.
+
+| Label | Definition | Typical relationship to AP-006 axes | Notes / non-goals |
+|---|---|---|---|
+| **FACT** | Asserted as true independent of this repository's internal reasoning | Almost always Measured + Experimentally Verified or Operationally Hardened | External reality claims only. Repository-internal conclusions are never Facts. |
+| **MEASUREMENT** | Quantitative reading obtained from an instrument, process, or calibrated procedure | Measured (or Replicated if independently repeated) | Must name the instrument/process and units when used in Specification text. |
+| **OBSERVATION** | Record of what was seen, sensed, or recorded without further interpretation | Measured or Replicated | Qualitative or quantitative. Does not include conclusions drawn from the record. |
+| **INFERENCE** | Conclusion drawn from one or more other claims | Frequently Analogous or Simulated + Internally Derived | Subject to EC-008 restrictions when used for authorization. |
+| **ASSUMPTION** | Taken as given for the sake of the present argument or design | Usually Placeholder or Internally Derived | Must be extractable (`Admin/Auditor_Protocols.md` Assumption Extraction, Phase 3). Hidden assumptions are defects. |
+| **PROPOSAL** | Suggested design, rule, action, or change not yet decided | Not yet a claim with confidence; may carry no AP-006 labels | Becomes a different label type once decided or rejected. |
+| **UNKNOWN** | Explicit gap in knowledge deliberately tracked | The epistemic state UNKNOWN | Already operationalized in `Unknowns.md`. This label simply names the speech act. |
+| **DECISION** | Binding choice already made (governance, design, or procedural) | Often Payment via Constitutional Decision or equivalent | Distinct from the reasoning that led to it. Record the decision itself, not only the rationale. |
+| **AUTHORIZATION** | Explicit grant of permission to act | Must meet EC-008 / GOV-006 / Human Override requirements | Never inferred from silence or from non-authorization claims. |
+
+**Usage rule (minimal).** When a statement is promoted to Specification
+status, authors should be able to answer two independent questions:
+1. What *kind* of claim is this? (one of the nine labels above)
+2. How well-supported is it, and how was it derived? (AP-006 two-axis
+   labels)
+
+Existing content is not required to be retroactively labeled. New
+Specification-level writing and future audits are expected to keep the
+two questions separate.
+
+**Explicit non-goals.** This entry does not modify AP-006, EC-001,
+EC-008, or any hard floor; does not create a new epistemic-state
+machine; does not require mass re-labeling of historical text; and does
+not elevate any label above the provenance ceiling rule (Internally
+Derived claims remain capped at PROVISIONAL).
+
+*Registered as the minimal Lane C taxonomy pass. A follow-on Medium pass
+— auditing `Ethical_Constraints.md`, `Governance_Charter.md`,
+`Governance_Migration_Protocol.md`, and `Auditor_Protocols.md` for
+existing places where claim-type and confidence/provenance are
+conflated — remains open as future work, not required for this
+entry's Resolved status. Full Closure Event — Proposer (Grok, drafted
+the exploration and the minimal definition block, 2026-09-23), Verifier
+(Claude, 2026-09-23 — Pass; the AP-006 tables, provenance ceiling rule,
+EF-0.3 Epistemic Ledger reference, and Auditor_Protocols Phase 3
+citation all confirmed exact against source; no correction required).
+Independence attestation: Grok (Proposer) and Claude (Verifier) are
+different agent instances; Claude had no prior involvement drafting
+this text. Human Ratification: Human Governing Authority, 2026-09-23.
+Human-directed.*
+
 ---
 
 ### 5. Explicit Term Exclusions — Anti-Drift Guardrails
@@ -1069,6 +1123,18 @@ Auditor_Protocols.md specifically, which is now closed.
 ---
 
 ### Resolution Log
+
+- 2026-09-23: **Claim-Type Labels registered (§4).** Nine-label taxonomy
+  (FACT/MEASUREMENT/OBSERVATION/INFERENCE/ASSUMPTION/PROPOSAL/UNKNOWN/
+  DECISION/AUTHORIZATION) distinguishing claim *type* from AP-006's
+  existing confidence/provenance *axes*. Minimal shape only — definitions
+  plus a two-question usage rule, no retroactive relabeling of existing
+  content and no change to AP-006, EC-001, EC-008, or the provenance
+  ceiling rule. A Medium-shape follow-on (auditing the four highest
+  load-bearing files for existing type/confidence conflation) remains
+  open as separate future work. Proposer (Grok), Verifier (Claude — AP-006
+  tables, EF-0.3 reference, and Phase 3 citation confirmed exact against
+  source). Human-directed.
 
 - 2026-08-17: **"Emergence" disambiguation registered.** Second use of
   the disambiguation pattern established for "Canonical" — this time

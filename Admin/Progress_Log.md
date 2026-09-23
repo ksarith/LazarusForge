@@ -148,7 +148,7 @@ The Forge should become capable of auditing its own effectiveness without simply
 - Material efficiency, failure rate, repairability
 
 **Knowledge/evidence substrate (longer-horizon):**
-The future problem is not "can an AI read the repository?" It is "can an AI reliably determine what is actually known?" The Forge needs increasingly strong separation between: FACT / MEASUREMENT / OBSERVATION / INFERENCE / ASSUMPTION / PROPOSAL / UNKNOWN / DECISION / AUTHORIZATION. This naturally complements existing provenance and epistemic-labeling discipline.
+The future problem is not "can an AI read the repository?" It is "can an AI reliably determine what is actually known?" The Forge needs increasingly strong separation between: FACT / MEASUREMENT / OBSERVATION / INFERENCE / ASSUMPTION / PROPOSAL / UNKNOWN / DECISION / AUTHORIZATION. This naturally complements existing provenance and epistemic-labeling discipline. **Minimal shape ratified 2026-09-23 — see Claim-Type Labels in `Admin/Canonical_Terms.md` §4.** The Medium-shape follow-on (auditing existing high-load files for type/confidence conflation) remains open, longer-horizon work.
 
 ---
 
