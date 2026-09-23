@@ -16,7 +16,7 @@
 | Verification Ref | `Admin/Verification_Gates.md`                                    |
 | Last Audit       | 2026-09-18 — §VII.2 amended (Candidate specification, unratified): role rotation across quorum cycles added as permitted-not-required, with expected limitations stated explicitly (does not satisfy Diversity/Independence tests by itself, does not touch Hardware/Runtime Diversity, rotation-assignment authority left open) rather than presented as a solved mechanism; corresponding open item added to §VII.6. No change to VII.1/VII.3–VII.5's requirements, this section's Status, or GOV-008. Human-directed, following a ChatGPT multi-agent-readiness assessment verified accurate against this section before extending it. Prior: 2026-09-03 — Grok surgical integrity repair after ChatGPT REVISE/G6-BLOCKED audit (GMP-AUD-001–007): FROZEN markers added; File State normalized with explicit subsection-vs-file maturity clarification; Last Audit collapsed to clean record (prior multi-month narrative retained in Resolution Log / sidecar); explicit Charter-precedence rule added pending GMP-002; subsection status markers for §VI/VII/VIII. No migration architecture redesigned. Prior full history in Resolution Log. Same day, following a Grok verification audit: Claude corrected GMP-002's own Description, which had wrongly claimed the Charter's ownership table already listed this file as owner — the live Charter table still names itself as owner (confirmed by direct check), contradicting this file's own accurate Scope Boundary text on the same point. Revised 2026-09-05, three passes: §III.B Repeal/Rollback (GMP-012), §III.C Withdrawal (GMP-007), and §III.D Expiration (GMP-008) — all three drafted by Grok, each independently Skeptic-reviewed by Claude against live §III.A source (III.A.4's Withdraw/Expire authority rows, III.A.6's human-attention design note, and GMP-008's own original three-audit-cycle default all confirmed accurate, no invented authority, no blocking findings), and each Ratified by Human Governing Authority same day. The GMP-006/007/008 amendment-lifecycle cluster is now fully closed. |
 | Auditor          | Grok — 2026-09-03 integrity repair; Grok — 2026-09-05 §III.B/§III.C/§III.D drafts (GMP-012/007/008); Claude — 2026-09-05 Skeptic passes + merge integrity checks (all three). Prior Closure Events and multi-agent history retained in Resolution Log and Archive. |
-| Open Unknowns    | 5 (GMP-002, GMP-003, GMP-004, GMP-011 In Progress, GMP-013). GMP-012, GMP-007, and GMP-008 all Ratified 2026-09-05. |
+| Open Unknowns    | 4 (GMP-002, GMP-003, GMP-004, GMP-013). GMP-011 Resolved (Payment via Specification, ratified 2026-09-23). GMP-012, GMP-007, and GMP-008 all Ratified 2026-09-05. |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | High                                                                |
 | Sidecar Link     | #auditor-notes--unknowns                                            |
@@ -1750,18 +1750,18 @@ governing authority's direction that this is worth tracking formally.*
 
 ---
 
-### GMP-011 — Track classification dispute resolution undefined
+### GMP-011 — Track classification dispute resolution undefined — RESOLVED
 
-| Field         | Value                                      |
-|---------------|--------------------------------------------|
-| Status        | In Progress — interim minimum rule adopted |
-| Risk          | Medium                                     |
-| Priority      | Minor                                      |
-| Type          | Governance                                 |
-| Blocking      | No                                         |
-| Owner         | `Admin/Governance_Migration_Protocol.md`   |
-| First Logged  | 2026-07-25                                 |
-| Last Reviewed | 2026-07-31                                 |
+| Field         | Value                                       |
+|---------------|----------------------------------------------|
+| Status        | Resolved — Payment via Specification         |
+| Risk          | Medium                                       |
+| Priority      | Minor                                        |
+| Type          | Governance                                   |
+| Blocking      | No                                           |
+| Owner         | `Admin/Governance_Migration_Protocol.md`     |
+| First Logged  | 2026-07-25                                   |
+| Last Reviewed | 2026-09-23                                   |
 
 **Description:** GMP-005/GMP-009's constitutional-impact model defines
 *how* a change should be classified Track A vs. Track B, and "when in
@@ -1778,27 +1778,88 @@ that has no defined resolution path could stall indefinitely or get
 settled by whoever argues longest, neither of which is the intended
 constitutional discipline.
 
-**Interim minimum rule (adopted 2026-07-31, per Skeptic/Auditor
-recommendation):** disputed classifications default to Track B for the
-duration of the dispute, consistent with the existing "when in doubt"
-default. Resolution requires explicit human governing authority
-confirmation of the correct track before the proposal may proceed under
-either track's procedure. This is adopted as the operative rule now,
-not left as an undesigned candidate — the review that raised this
-correctly noted that flagging a workable minimum without committing to
-it left needless ambiguity for no real design benefit.
+**Operative Rule (ratified 2026-09-23): Track Classification Dispute
+Resolution**
 
-**Resolution Path:** The interim rule above is sufficient for v0
-single-contributor scale. Full design (formal dispute logging format,
-timeout for human confirmation, whether repeated disputes on the same
-proposal type should trigger a GMP-011-style structural fix rather than
-case-by-case resolution) remains open and is not solved here.
+1. **Default.** Any classification that is disputed after it has been
+   asserted defaults immediately to Track B for the duration of the
+   dispute. No proposal may advance under Track A procedure while the
+   dispute remains open.
+2. **Logging.** The disputing party (or the first agent to notice the
+   conflict) records a one-line entry in the proposal's own Resolution
+   Log or in `Admin/Progress_Log.md` under a "Classification Disputes"
+   heading: `GMP-011 Dispute | Proposal-ID | Asserted Track | Disputing
+   Party | Date | Brief reason`.
+3. **Human confirmation.** Resolution requires an explicit Human
+   Governing Authority statement of the correct track. That statement
+   is appended to the same log entry and is the sole authority that
+   lifts the Track-B default.
+4. **Genesis Phase holding clause.** While this Forge instance remains
+   in Genesis Phase — as declared in `Admin/Governance_Charter.md`
+   (Genesis Phase is currently declared entered; no exit pathway has
+   yet been satisfied or ratified) — clauses 5 and 6 below are
+   suspended:
+   - The 14-day timeout in clause 5 does not apply.
+   - The repeated-dispute structural-review trigger in clause 6 does
+     not apply.
+   - Disputes are resolved solely by the default-to-Track-B rule plus
+     Human confirmation (clauses 1–3).
+
+   This holding clause tracks Genesis Phase status itself, not any
+   single exit pathway — it lifts automatically the moment Human
+   Governing Authority records Genesis Phase as exited via *any* of
+   the Charter's four ratified pathways (Quorum, Track Record,
+   Milestone, or Time-Bounded Review), not only Pathway 1 / GOV-008
+   quorum. No separate amendment to this rule is required for the
+   holding clause to lift. *(Deliberately not anchored to
+   `Governance_Migration_Protocol.md` §VII.5: that section is part of
+   §VII, headed "Proposed, Not Ratified," and its own text states that
+   nothing in §VII relaxes Genesis Phase rules — using it as the basis
+   for a clause that suspends enforcement machinery during Genesis
+   Phase would both cite unratified text as load-bearing and invert
+   what that text actually says. The Charter's Genesis Phase
+   declaration is the ratified, canonical anchor instead.)*
+5. **Timeout (applies once Genesis Phase has ended).** If Human
+   confirmation has not been received within 14 calendar days of the
+   dispute log entry, the proposal is automatically suspended
+   (STATE_HOLD equivalent) until confirmation appears. No automatic
+   Track-A promotion is ever permitted.
+6. **Repeated disputes (applies once Genesis Phase has ended).** Three
+   or more disputes on the same proposal *type* (not the same
+   individual proposal) within any rolling 90-day window trigger a
+   mandatory structural review: the classification criteria themselves
+   (GMP-005 / GMP-009) must be examined for ambiguity and, if
+   necessary, amended under ordinary Track B procedure. The review is
+   logged as a GMP-011-R1 residual and does not itself block the
+   original proposals.
+7. **No new track or emergency path.** This rule creates neither a
+   third track nor an emergency override. It is strictly a temporary
+   re-routing to the more conservative procedure already defined.
+
+**Resolution Path:** Closed via the Operative Rule above, which
+elevates the 2026-07-31 interim minimum rule to a permanent rule and
+resolves all three previously-open design points (dispute logging
+format, human-confirmation timeout, repeated-dispute structural-fix
+trigger) with the lightest machinery consistent with v0
+single-contributor + multi-agent-audit reality, deferring the fuller
+timeout/structural-review discipline until Genesis Phase actually ends
+rather than making it dead-letter machinery in the meantime.
 
 *Surfaced via external audit review (ChatGPT), checked against this
 file's actual Track identification rule and "when in doubt" doctrine
 before registration — confirmed the dispute-after-classification case
 is genuinely uncovered, not already handled by existing language;
-registered by Claude — Synthesizer/Auditor, human-directed, 2026-07-25.*
+registered by Claude — Synthesizer/Auditor, human-directed, 2026-07-25.
+Interim rule adopted 2026-07-31 per Skeptic/Auditor recommendation.
+Resolution drafted by Grok (initial + Genesis-phase holding-clause
+revision), source-verified by Claude against this file's live §VII.5
+text and `Governance_Charter.md`'s Genesis Phase exit-pathway doctrine
+— caught and corrected a citation error in the draft (§VII.5 was cited
+as supporting a relaxation during Genesis Phase; live text says the
+opposite) and a scope error (holding-clause expiry was worded as tied
+only to GOV-008 quorum rather than to any of the Charter's four exit
+pathways) before filing. Ratified by Human Governing Authority,
+2026-09-23.*
 
 ---
 

@@ -105,7 +105,7 @@ The Forge has accumulated many "The Forge shall..." claims. The next maturity st
 Note: `Unknowns.md` and every "Proposed/Placeholder" / "Payment via Specification" flag already constitutes this inventory in distributed form. What is missing is a compiled summary — a useful future artifact, not an urgent gap.
 
 **Residual governance work** — do surgically as surfaced, not as a campaign:
-- GMP-011 (Track classification dispute, In Progress — strongest remaining pure-spec candidate)
+- ~~GMP-011 (Track classification dispute)~~ — Resolved 2026-09-23, Payment via Specification, Operative Rule ratified (includes Genesis Phase holding clause on the timeout/structural-review sub-rules). See `Admin/Governance_Migration_Protocol.md`.
 - FL-006 half B (authority/GOV-006 dependency — still blocked, still correct to leave parked)
 - EC-012 procedural escalation rule (drafted, unfiled — needs ratification decision when ready)
 - GOV-007 Q2–Q4 (remaining Genesis Phase decisions — answerable against the specified boundary; low urgency until site conditions change)
@@ -167,7 +167,7 @@ The future problem is not "can an AI read the repository?" It is "can an AI reli
 
 ### Prior Lane A candidate list
 
-The prior verified Lane A funnel (2026-08-21/30, confirmed GMP-006/007/008/010/011/012, CLF-011, GMP-013, and the full reclassification table) is preserved in full in `Archive/Logs/Progress_Log_Changelog.md` under the **2026-08-21 Forward Growth Avenues** section. Items from that list still relevant: GMP-011 (In Progress, lowest-friction remaining spec candidate), CLF-011 §4b contract ratification.
+The prior verified Lane A funnel (2026-08-21/30, confirmed GMP-006/007/008/010/011/012, CLF-011, GMP-013, and the full reclassification table) is preserved in full in `Archive/Logs/Progress_Log_Changelog.md` under the **2026-08-21 Forward Growth Avenues** section. Items from that list still relevant: CLF-011 §4b contract ratification. (GMP-011, formerly listed here as the lowest-friction remaining spec candidate, Resolved 2026-09-23 — see Residual governance work above.)
 
 
 
