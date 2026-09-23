@@ -717,7 +717,7 @@ GH-009 (Emergent heuristic conflict — N² interaction scaling)
 *GMP-007 (amendment withdrawal procedure) Ratified 2026-09-05 via §III.C — removed from active index per Size Management Rule 2. Full detail in `Admin/Governance_Migration_Protocol.md`'s own sidecar entry.*
 | GMP-002 | Canonical Governance Ownership transfer not yet recorded in Charter | `Admin/Governance_Migration_Protocol.md` | Open | — | Minor |
 *GMP-008 (stale proposal expiration policy) Ratified 2026-09-05 via §III.D — removed from active index per Size Management Rule 2. Full detail in `Admin/Governance_Migration_Protocol.md`'s own sidecar entry. The GMP-006/007/008 amendment-lifecycle cluster is now fully Ratified.*
-| GMP-011 | Track classification dispute resolution undefined — "when in doubt, Track B" covers uncertainty, not disagreement after a classification has been made | `Admin/Governance_Migration_Protocol.md` | Open | — | Minor |
+*GMP-011 (Track classification dispute resolution) Resolved 2026-09-23 — Payment via Specification, Operative Rule ratified. Removed from active index per Size Management Rule 2. Full detail in `Admin/Governance_Migration_Protocol.md`'s own sidecar entry.*
 *GMP-012 (repeal/rollback doctrine for Recorded Track B amendments) Ratified 2026-09-05 via §III.B — removed from active index per Size Management Rule 2. Full detail in `Admin/Governance_Migration_Protocol.md`'s own sidecar entry.*
 | GMP-013 | Epistemic Quorum Doctrine (§VI) has no tooling or machine-readable metadata for `Automation/AUDIT_HARNESS.py` verification | `Admin/Governance_Migration_Protocol.md` | Open | — | Minor |
 
