@@ -940,7 +940,62 @@ Mandatory re-audit conditions:
 - **Open design questions:** minimum hardware-root-of-trust or attestation required before telemetry may be treated as authoritative for High-Risk evaluation; required system behavior when attestation is missing/failed/unavailable; interaction with salvaged, inherently non-attestable sensors (honest limitation vs. hard ban); avoiding asking EC-001/EC-002 to solve attestation rather than receive it as a precondition; degraded/offline-attestation residual (same class as SEC-007b's clean-rebuild-environment residual); confirming the Ethical_Constraints-states-requirement / Security_Protocols-owns-mechanism split remains intended.
 - **Scope fences:** distinct from EC-011 (permission-source compromise, not telemetry); distinct from EL-006/SEC-007b (component and constitutional roots of trust address admission-time and constitutional-anchor trust, not ongoing sensor/firmware honesty); distinct from EC-001/EC-002 (those grade confidence and match patterns against inputs — attestation is a precondition on those inputs, not a task for them to solve).
 - This completes the matched EC-011/EC-012 pair — permission-source compromise and telemetry compromise are now both explicit, non-assumable gaps rather than one named and one silently assumed.
-- No attestation architecture proposed; no Payment-via-Specification. Status remains Open. A separate proposal — an explicit procedural rule that unattested or anomalous telemetry used for a High-Risk constraint decision shall not be treated as authoritative and must escalate to human consideration — was raised alongside this problem statement but deliberately **not filed here**: it would be a live doctrine addition (not a problem-statement note) and, per this repository's own precedent for EC-003/EC-009/EC-008/GMP-006-008, needs its own drafted sidecar treatment, independent Skeptic review, and explicit Human Ratification before it takes effect. Filed pending that separate stint. Cross-agent: ChatGPT drafted both the problem statement and the procedural proposal, Grok reviewed and explained the gap, Claude source-verified and filed the problem statement only.
+- No attestation architecture proposed; no Payment-via-Specification. Status remains Open. A separate proposal — an explicit procedural rule that unattested or anomalous telemetry used for a High-Risk constraint decision shall not be treated as authoritative and must escalate to human consideration — was raised alongside this problem statement but deliberately **not filed here**: it would be a live doctrine addition (not a problem-statement note) and, per this repository's own precedent for EC-003/EC-009/EC-008/GMP-006-008, needs its own drafted sidecar treatment, independent Skeptic review, and explicit Human Ratification before it takes effect. Filed pending that separate stint. Cross-agent: ChatGPT drafted both the problem statement and the procedural proposal, Grok reviewed and explained the gap, Claude source-verified and filed the problem statement only. **Procedural residual resolved 2026-09-23 — see EC-012-PR below. Parent EC-012 remains Open.**
+
+---
+
+### EC-012-PR — Procedural Escalation on Unattested or Anomalous High-Risk Telemetry
+
+| Field         | Value                                              |
+|---------------|-----------------------------------------------------|
+| Status        | Resolved — Payment via Specification                |
+| Risk          | Medium                                              |
+| Priority      | Major                                               |
+| Type          | Governance / Procedural                             |
+| Blocking      | No                                                   |
+| Owner         | `Admin/Ethical_Constraints.md`                       |
+| First Logged  | 2026-09-18 (raised with EC-012 problem statement)    |
+| Last Reviewed | 2026-09-23                                          |
+| Parent        | EC-012 (remains Open)                                |
+
+**Description:** The parent EC-012 unknown identifies that the entire constraint substrate treats telemetry/firmware-reported state as ground truth and has no requirement that it be authenticated. A full attestation architecture is out of scope for pure-spec work and correctly remains Open. This residual supplies only the immediate procedural rule that was raised alongside the 2026-09-18 problem statement but deliberately left unfiled pending its own drafted treatment, Skeptic review, and Human Ratification.
+
+**Why It Matters:** Without an explicit behavioral rule, High-Risk constraint decisions can still proceed on unattested or anomalous telemetry by silence. Closing the procedural gap gives the substrate a conservative default while the larger attestation architecture is designed.
+
+**Operative Rule (ratified 2026-09-23):**
+
+1. **Scope.** This rule applies only when telemetry (sensor data, firmware-reported state, toolhead/process/location identity, or equivalent) is used as an input to a High-Risk constraint decision under this file (Core Mandate four-point check, EC-001 confidence grading, EC-002 pattern matching, Anti-Weaponization, Life-Preservation, or any other hard floor).
+
+2. **Default posture.** Unattested telemetry, telemetry whose attestation has failed or is unavailable, or telemetry that is anomalous relative to the expected physical process **shall not be treated as authoritative** for any High-Risk constraint decision.
+
+3. **Required action.** The system must escalate to Human Governing Authority under the existing Human Escalation Protocol (EC-003). The escalation package must include:
+   - the contested telemetry values,
+   - the High-Risk decision that depends on them,
+   - a clear statement that the telemetry is unattested / failed / anomalous,
+   - and the recommended hold (no material action until human disposition).
+
+4. **Hold behavior.** While the escalation is open, the system maintains the more conservative posture consistent with existing doctrine (halt / observe / no material alteration). No automatic promotion of unattested telemetry to authoritative status is permitted.
+
+5. **Genesis Phase holding clause.** While this Forge instance remains in Genesis Phase — as declared in `Admin/Governance_Charter.md` (Genesis Phase is currently declared entered; no exit pathway has yet been satisfied or ratified) — the escalation itself is still mandatory (clauses 1–4 remain in full force), but any future timeout or automatic-suspension machinery added under this rule remains suspended, and resolution is solely by Human Governing Authority disposition. This holding clause tracks Genesis Phase status itself, not any single exit pathway — it lifts automatically the moment Human Governing Authority records Genesis Phase as exited via *any* of the Charter's four ratified pathways (Quorum, Track Record, Milestone, or Time-Bounded Review), not only Pathway 1 / GOV-008 quorum. No separate amendment is required. *(Deliberately anchored to the Charter's Genesis Phase declaration rather than `Governance_Migration_Protocol.md` §VII.5: that section is part of §VII, headed "Proposed, Not Ratified," and its own text states that nothing in §VII relaxes Genesis Phase rules — citing it as support for a clause that suspends future enforcement machinery during Genesis Phase would both rest on unratified text and invert what that text says. Same correction applied to GMP-011's holding clause, 2026-09-23.)*
+
+6. **Explicit non-goals.** This rule does **not**:
+   - define any attestation architecture, cryptographic scheme, or hardware-root-of-trust mechanism (owned by `Admin/Security_Protocols.md` / `Operations/Electronics.md`);
+   - resolve the parent EC-012 unknown;
+   - alter EC-001, EC-002, EC-008, or EC-011;
+   - create a new track, emergency override, or inferred-authorization path.
+
+7. **Logging.** Every application of this rule is logged with the same fields already required by EC-003 (trigger, timestamp, epistemic state of the contested claim per AP-006, hold duration, human response or absence, and final disposition).
+
+**Relationship to existing doctrine.** Subordinate to the Core Mandate and to EC-003. Does not modify the Anti-Weaponization Doctrine, Life-Preservation Heuristics, or any hard floor. Does not absorb or weaken the parent EC-012 problem statement.
+
+**Residuals (do not block Resolved status):**
+
+| ID | Residual | Why left open |
+|----|----------|----------------|
+| EC-012-PR-R1 | Full attestation architecture and hardware-root-of-trust mechanism | Owned by Security_Protocols / Electronics; remains the open parent EC-012 |
+| EC-012-PR-R2 | Interaction with future degraded/offline-attestation residual once SEC-007b closes | Boundary already stated; no new doctrine required here |
+
+*§EC-012-PR — Payment via Specification. Closes only the procedural-escalation residual raised 2026-09-18. Parent EC-012 remains Open. Full Closure Event — Proposer (Grok, 2026-09-23), Verifier (Claude, 2026-09-23 — Pass; cross-checked against live EC-003 escalation fields — logging schema confirmed exact against source line 387 — the Core Mandate four-point check, and the 2026-09-18 problem-statement language; caught and corrected the same §VII.5 citation error identified and fixed in GMP-011 the same day, before filing). Independence attestation: Grok (Proposer) and Claude (Verifier) are different agent instances; Claude had no prior involvement drafting this text. Human Ratification: Human Governing Authority, 2026-09-23. Human-directed.*
 
 ---
 

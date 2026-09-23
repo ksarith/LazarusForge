@@ -107,7 +107,7 @@ Note: `Unknowns.md` and every "Proposed/Placeholder" / "Payment via Specificatio
 **Residual governance work** — do surgically as surfaced, not as a campaign:
 - ~~GMP-011 (Track classification dispute)~~ — Resolved 2026-09-23, Payment via Specification, Operative Rule ratified (includes Genesis Phase holding clause on the timeout/structural-review sub-rules). See `Admin/Governance_Migration_Protocol.md`.
 - FL-006 half B (authority/GOV-006 dependency — still blocked, still correct to leave parked)
-- EC-012 procedural escalation rule (drafted, unfiled — needs ratification decision when ready)
+- ~~EC-012 procedural escalation rule~~ — Resolved 2026-09-23 as EC-012-PR, Payment via Specification (includes the same corrected Genesis Phase holding-clause pattern used for GMP-011). Parent EC-012 (full attestation architecture) remains Open. See `Admin/Ethical_Constraints.md`.
 - GOV-007 Q2–Q4 (remaining Genesis Phase decisions — answerable against the specified boundary; low urgency until site conditions change)
 
 ---
