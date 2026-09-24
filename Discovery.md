@@ -201,6 +201,7 @@ Admin/                                      — Governance, protocols, and doctr
     ├── INTEGRITY_SWEEP_PROMPT.md            — Copy-paste morning integrity audit prompt for scheduled automation; not doctrine, an operational prompt
     ├── Hardware_Diversity_Ladder.md         — Four-tier path to a hardware-diverse GOV-008 quorum; Draft, declarable-not-achieved
     ├── Progress_Log.md                      — Active notebook: rolling lessons/continuity tracking (2026-08-09)
+    ├── Metrics_Scaffold.md                  — Lane C metric definitions (development/governance); scaffold only, no data yet (2026-09-24)
     └── BATTERY_SEED.md                      — Frozen prompt block for a genuine AP-017 cold-session Adversarial Battery run
 
 Automation/                                 — Scripts supporting verification and integrity checks
@@ -373,6 +374,7 @@ Discovery.md is a navigation map — task tracking belongs in Unknowns.md.
 | `Admin/INTEGRITY_SWEEP_PROMPT.md` | Draft | N/A — operational prompt template, not a doctrine or specification claim | — |
 | `Admin/Hardware_Diversity_Ladder.md` | Draft — Proposed implementation reference only | 0/6 | unlabeled |
 | `Admin/Progress_Log.md` | Active — Living Document | N/A — progression log, not a specification | N/A |
+| `Admin/Metrics_Scaffold.md` | Active — Scaffold Only | N/A — measurement taxonomy, not a specification | N/A — no data collected yet |
 | `Admin/BATTERY_SEED.md` | Draft | N/A — operational prompt template, not a doctrine or specification claim | — |
 | `Automation/AUDIT_HARNESS.py` | Active | — | — |
 | `Automation/audit_lib.py` | Active | — | — |
