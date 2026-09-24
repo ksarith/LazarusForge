@@ -1,5 +1,5 @@
 # Persistent_Cognition_Candidates.md
-**Version 0.2**
+**Version 0.3**
 
 ---
 
@@ -18,7 +18,7 @@
 | Spec Gates       | N/A — candidate-system survey, not a specification to be gated toward promotion |
 | Verification Ref | `Admin/Verification_Gates.md`                                          |
 | Last Audit       | 2026-09-24                                                              |
-| Auditor          | Claude — Synthesizer, human-directed, 2026-09-24: Candidate 3 given a concrete embedded-library mapping (Chroma/LanceDB/sqlite-vec vs. self-hosted/managed/Postgres-extension/distributed classes) and Candidate 1↔4 combinability noted, both per Grok review; prior: Claude — Synthesizer, human-directed, 2026-09-24 (file created) |
+| Auditor          | Claude — Synthesizer, human-directed, 2026-09-24: added Proposed Experiment design (Candidate 3 validation — pre-registered query classes, two-corpus split, scoring dimensions, revised non-linear diagram) from cross-agent (Claude/ChatGPT) refinement; design only, not run; prior: Claude — Synthesizer, human-directed, 2026-09-24: Candidate 3 given concrete embedded-library mapping and Candidate 1↔4 combinability noted, both per Grok review; prior: Claude — Synthesizer, human-directed, 2026-09-24 (file created) |
 | Open Unknowns    | 0 (candidates below are explicitly unevaluated, not filed as unknowns) |
 | Active Disputes  | 0                                                                       |
 | Highest Risk     | Low — no candidate here is adopted; this is survey-only                |
@@ -212,6 +212,56 @@ which cuts against the cross-agent-verification-against-source discipline this r
 already treats as its core quality mechanism. Flagged here as the world option that's
 genuinely insufficient *for this project*, not insufficient in general.
 
+### Proposed experiment — Candidate 3 validation (design only, not yet run)
+
+Cross-agent refinement (Claude, then ChatGPT) converged on a design for testing Candidate 3
+empirically against this repository's own corpus, without adopting anything based on the
+result alone. Not yet executed — recorded here so the design exists before anyone runs it,
+which is the point: pre-registering the query set and scoring before seeing results is what
+makes this a real falsification test rather than a demonstration.
+
+**Sharpened question.** Not "does semantic retrieval outperform normal routing" — that's
+too easy to satisfy with a cherry-picked query. The actual question: can transient semantic
+retrieval recover prior cognitive state, *including rejected reasoning*, that existing
+routing mechanisms (Routing.md, Discovery.md, Scope Maps) fail to recover efficiently.
+
+**Query classes** (drawn from actual Forge history, not invented benchmarks — e.g. "why was
+the §VII.5 framing rejected in GMP-011's holding clause" is a real template): decision
+history, rejected reasoning, unknown history, resolution history, governance reasoning,
+technical reasoning, cross-document reasoning.
+
+**Two retrieval corpora, tested separately:**
+- **Corpus A — distilled knowledge only** (`Cognitive_Salvage_Layer.md`, Lessons Learned
+  sections, other intentionally-distilled material).
+- **Corpus B — cognitive history** (Resolution Logs, proposal/rejection history,
+  `Unknowns.md`, audit findings).
+
+Comparing both separately against ordinary routing/search directly answers whether
+Candidate 3's index needs to cover raw history, distilled heuristics, or both — the
+question the original linear diagram couldn't answer, because it only fed Retrieval from
+Distillation.
+
+**Scoring dimensions** (defined before running, not after): Retrievability (found the
+relevant material?), Precision (did it actually answer the question?), Coverage (recovered
+the important parts of the reasoning, not just a fragment?), Provenance (traces back to an
+authoritative record?), Contradiction exposure (surfaces competing/rejected reasoning, not
+just the winning position?), Effort (search/context-assembly cost, since Candidate 3's
+value may be reducing reconstruction effort rather than finding the undiscoverable).
+
+**Sequence:** (1) freeze the query set — (2) define the two corpora — (3) define scoring —
+(4) run ordinary routing/search — (5) run transient semantic retrieval against both corpora
+— (6) compare — (7) do not adopt anything based on the demonstration alone.
+
+**Immediate next concrete task, not yet started:** pre-register the query set by pulling
+real historical questions from this repository's own Resolution Logs — not invented
+examples.
+
+**Open, deliberately not resolved by this design:** whether Candidate 2 should exist as a
+separate mechanism or as an extension of `Cognitive_Salvage_Layer.md`'s GH-series remains
+undecided. The correct framing (per cross-agent exchange) isn't "is it redundant" but
+whether generalizing an already-open, High-risk, 13-unknown file costs less than a
+narrowly-scoped new one — those can have different answers, and nothing above resolves it.
+
 ### Not addressed here
 
 Dispute-preservation-after-resolution and the archive-to-live distillation loop (both
@@ -252,6 +302,20 @@ constraints change)*
 enough to generate a real implementation unknown yet)*
 
 ### Resolution Log
+
+- 2026-09-24: **v0.3 — Proposed Experiment design added, cross-agent.** Claude critiqued
+  ChatGPT's initial "History → Distillation → Retrieval" diagram as too linear (Retrieval
+  fed only by Distillation, which can't recover rejected reasoning that lives in History)
+  and flagged that a fair Candidate 3 test needs pre-registered queries rather than
+  post-hoc examples. ChatGPT's revision addressed both: sharpened the test question to
+  specifically target rejected-reasoning recovery, split the corpus into Distilled (A) vs.
+  History (B) so the two can be scored separately, added six scoring dimensions beyond
+  simple found/not-found, and reframed retrieval as "a lens over persistent material," not
+  a downstream cognitive stage — which is the more accurate model. Design recorded here in
+  full; **not yet executed.** The Candidate 2 question (generalize `Cognitive_Salvage_
+  Layer.md` vs. create a separate mechanism) was correctly reframed from "is it redundant"
+  to "which costs less architectural risk" and left genuinely open — this file does not
+  resolve it. No candidate adopted; still Exploration status.
 
 - 2026-09-24: **v0.2 — two tightenings from Grok's review applied.** Candidate 3 given
   a concrete embedded-library mapping (Chroma/LanceDB/sqlite-vec/FAISS as the fitting
