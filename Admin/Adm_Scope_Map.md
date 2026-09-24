@@ -11,7 +11,7 @@
 | Spec Gates       | N/A — this file is a cross-reference index, not a specification     |
 | Open Unknowns    | 0 (surfaces existing unknowns from owning files; creates none)      |
 | Owning Domain    | Admin/                                                               |
-| Last Reviewed    | 2026-09-13                                                           |
+| Last Reviewed    | 2026-09-24                                                            |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
 ---
@@ -108,16 +108,22 @@ Pilot for a per-folder scope-map pattern, proposed 2026-08-07 as a fix for a kno
 FLAG: Single most load-bearing file in the repository — six other files in this folder alone (`GMP`, `RIP`, `CIR_Gov`, `Hardware_Diversity_Ladder`, `Security_Protocols`, `Ethical_Constraints`) explicitly defer authority questions back to this one.
 
 ### `Admin/Governance_Migration_Protocol.md`
-**Status:** Exploration · 0/6 · 5 Open Unknowns (GMP-002, GMP-003, GMP-004, GMP-011 In Progress, GMP-013) · Risk: High
+**Status:** Exploration · 0/6 · 4 Open Unknowns (GMP-002, GMP-003, GMP-004, GMP-013) · Risk: High
 **Does:** Tier 2-5 migration procedures; Tier 1 amendment process; Section VII Bootstrap Quorum Doctrine (GOV-008 candidate spec, extended 2026-08-06 VII.8, Class 9/Class 5 patches 2026-08-07).
 **Does not (arrow):** Tier 1 Axioms themselves, constitutional hierarchy (`Governance_Charter.md`) - ratification crypto (`Security_Protocols.md`) - minimum agent quorum *definition* (owned by Charter, specified here) - integrity enforcement mechanics (`Repository_Integrity_Protocol.md`).
 **Explicitly proposed, not claimed:** migration doctrine ownership transfer from `Governance_Charter.md` to this file — "pending Charter update and Gate 4 clearance." This is the pattern EC-016's correction pointed to as worth naming as a reusable convention.
 **Correction 2026-09-13:** this entry previously said 10 Open Unknowns. GMP-007, GMP-008, and GMP-012 were all Ratified 2026-09-05 — corrected to 5.
+**Correction 2026-09-24:** this entry previously said 5 Open Unknowns with GMP-011 In Progress. GMP-011 Resolved 2026-09-23 (Payment via Specification) — corrected to 4. Found stale while registering `Admin/Metrics_Scaffold.md` in this map; fixed directly rather than only flagged.
 
 ### `Admin/Integrity_Incident_Log.md`
 **Status:** Active — Intake Log · N/A · 0 Open Unknowns · Risk: Medium
 **Does:** Canonical append-only home for RIP integrity incidents (Major/Constitutional required); ownership/closure table; standardized fields.
 **Does not (arrow):** Replace file Resolution Logs · Progress_Log lessons · Field_Logs · define violation classes (RIP).
+
+### `Admin/Metrics_Scaffold.md`
+**Status:** Active — Scaffold Only · N/A · 0 Open Unknowns · Risk: N/A — no data collected yet
+**Does:** Define Lane C ("Make it learn") development and governance metrics — what each counts, its unit, start/stop boundary, and log location — plus a minimum viable one-line record format for when a metric is first populated.
+**Does not (arrow):** Collect, compute, or report data itself (taxonomy, not a dashboard) · modify or depend on `Automation/AUDIT_HARNESS.py` / `Automation/integrity_check.py` (integrity layer stays separate from this measurement layer) · duplicate `Unknowns.md`'s Active Index (Unknowns-opened/resolved counts point back there, not restated) · invent numeric targets or thresholds · claim-type a metric's own value (`Admin/Canonical_Terms.md` §4 governs that, separately).
 
 ### `Admin/INTEGRITY_SWEEP_PROMPT.md`
 **Status:** Draft · N/A — operational prompt template, not a doctrine or specification claim · 0 Open Unknowns · Risk: unlabeled in File State
@@ -210,6 +216,13 @@ Findings 1–3 (structural scope gaps) closed 2026-08-09. Findings 4–5 remain 
 ---
 
 ## Resolution Log
+
+- 2026-09-24: **`Admin/Metrics_Scaffold.md` entry added** (new file, Lane C
+  metric definitions). **GMP-011 staleness found and fixed while adding
+  it:** `Governance_Migration_Protocol.md`'s entry still said 5 Open
+  Unknowns with GMP-011 In Progress; GMP-011 Resolved 2026-09-23 —
+  corrected to 4. Not a full re-audit of this map against every file,
+  same caveat as prior narrow-scope updates.
 
 - 2026-09-13: **Content-accuracy pass run against all 30 files' live Scope
   Boundary/File State content — the most consequential pass run against any
