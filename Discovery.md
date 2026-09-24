@@ -252,6 +252,7 @@ Tests/                                      — Test frameworks and deployment p
     ├── Support_Raft.md                     — Stationary marine deployment anchor
     ├── Leviathan_testing.md                — Deep-ocean autonomous stress-testing
     ├── Living_Waters.md                    — Water purification pathways; site-conditioned selection; LW-001 through LW-010
+    ├── Persistent_Cognition_Candidates.md  — Exploratory survey: candidate architectures for durable Forge deliberation/reasoning memory, evaluated against mobile-first/GitHub/Colab constraints; no candidate adopted (2026-09-24)
     ├── Trophic_Forge.md                    — Biological cascade network; light → insect → fish → nutrient → crop → water; bootstrap sequence doctrine
     ├── Solar_Descent.md                    — Underground concentrated solar; SD-001 optical downlink; SD-002 fluid downlink; shared chamber reconvergence
     ├── Cognitive_Salvage_Layer.md          — Heuristic salvage pipeline; consensus-aggregated machinery wisdom; NOVEL/CANDIDATE_NOVEL promotion gate; GH-001 through GH-012
@@ -415,6 +416,7 @@ Discovery.md is a navigation map — task tracking belongs in Unknowns.md.
 | `Tests/Support_Raft.md` | Exploration | 0/6 | High — SR-001 (galvanic corrosion) is Open/High and required before v1.0; a hull that corrodes faster than modeled threatens the whole anchor-node concept |
 | `Tests/Leviathan_testing.md` | Exploration | 0/6 | High |
 | `Tests/Living_Waters.md` | Exploration | 0/6 | Critical — LW-UNK-001 (volatile co-distillation) and LW-UNK-003 (lumen implosion) both carry immediate safety consequences if bypassed |
+| `Tests/Persistent_Cognition_Candidates.md` | Exploration | N/A — candidate survey, not a specification | Low — no candidate adopted |
 | `Tests/Trophic_Forge.md` | Exploration | 0/6 | High |
 | `Tests/Solar_Descent.md` | Exploration | 0/6 | High |
 | `Tests/Cognitive_Salvage_Layer.md` | Exploration | 1/6 | High |
