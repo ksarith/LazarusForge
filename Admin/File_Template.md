@@ -2,6 +2,7 @@
 
 **Standard file structure for LazarusForge documents.**
 Applies to all new files and retrofit audit cycles.
+**Last updated: 2026-09-24 — Two new sections added: "New File Creation Checklist" and "Update Procedure" (registration/rotation/provenance guidance folded in from a Grok-drafted scaffold, Claude-verified against this file's own Sidecar Governance Rules and actual Resolution Log placement before filing). No change to sections 0–11 or Template Exemptions.**
 
 ---
 
@@ -801,7 +802,97 @@ Written for a new auditor who has never seen the repository.
 
 ---
 
-## Meta-Doctrine
+## New File Creation Checklist
+
+The sections above (0–11) and the Minimal Valid File Example already define *what* a new
+file should contain. This checklist covers what the template itself doesn't: getting a new
+file correctly discoverable and registered the same session it's created, so it doesn't
+become an orphan the way `Operations/Tooling_Inventory.md` briefly was (missing from
+`Routing.md` for five days after creation) or require a later sweep to find.
+
+- [ ] Choose the correct directory and a canonical filename (no spaces; follow existing
+      naming in that folder).
+- [ ] Check **Template Exemptions** above first. If the new file falls into an exempt class
+      (Archive/, root nav surface, `CONTRIBUTING.md`, a `*_Scope_Map.md`, or a progression/
+      changelog sidecar), use that class's lighter convention, not the full 0–11 structure.
+- [ ] For a non-exempt file, apply the full skeleton (sections 0–11) or the Minimal Valid
+      File Example as a starting point.
+- [ ] For a pure scaffold, index, or taxonomy file (comparable to `Admin/Metrics_Scaffold.md`
+      or `Admin/Progress_Log.md`): Spec Gates = N/A, Status set honestly (e.g. "Active —
+      Scaffold Only"), and the lighter section set those two files actually use — Navigation
+      Anchors, File State, Purpose, Body/tables, Resolution Log — is sufficient; Scope
+      Boundary/Assumptions/Lessons Learned/Active Disputes/Abandoned Paths/Drift Indicators
+      may be omitted until the file actually needs them.
+- [ ] Register the new file in `Routing.md` (table row + a dated "Last updated" note at the
+      top) **in the same session**, not as a follow-up.
+- [ ] Register it in the relevant `*_Scope_Map.md` (Does / Does not (arrow) entry) and in
+      `Discovery.md` (both the folder tree and, if it carries a Status/Spec Gates/Risk
+      profile, the status table) in the same session.
+- [ ] If the new file introduces any new cross-module unknowns, register them in
+      `Unknowns.md`'s Active Index — a local sidecar entry alone is not sufficient for
+      anything other files may need to reference.
+- [ ] First Resolution Log entry records creation date, what the file does and does not do,
+      and — if drafted by one agent and checked by another — Proposer/Verifier per the
+      provenance convention below.
+
+---
+
+## Update Procedure
+
+Use this whenever an existing governed file is materially changed — content, metadata, or
+structural. This is deliberately lighter than the Retrofit Checklist above, which is for
+bringing a non-compliant *existing* file up to this template; this procedure is for an
+already-compliant file receiving an ordinary edit.
+
+### 1. Pre-update checks
+- Confirm the file is the correct canonical target (check `Routing.md` / `Archive/Rename_Registry.md` if a legacy name appears anywhere in the request).
+- Note the current File State (Status, Spec Gates, Open Unknowns, Last Reviewed) before editing, so the diff is deliberate rather than incidental.
+- Identify whether the change is content-only (Body/Lessons/notes), metadata-only (File State fields, dates), or structural (new section, rotation, split, merge).
+
+### 2. Make the change
+- Edit the Body or relevant section.
+- Update Last Reviewed / Last Audit to the current date.
+- If Status or Open Unknowns count changes, update the File State table in the same pass — not as a follow-up edit.
+- Add an entry to the file's own Resolution Log (`### Resolution Log`, nested under `## Auditor Notes & Unknowns` per Section 9 above — not a standalone top-level section).
+
+### 3. Rotation / consolidation triggers
+Apply the file's own stated rule if it has one (e.g. Progress_Log's "rotate once more than
+five Current Lessons entries accumulate," `Unknowns.md`'s Size Management Rules). Absent a
+file-specific rule, the canonical thresholds are the **Sidecar Governance Rules** already
+defined under Section 9 above:
+
+| Rule | Trigger | Action |
+|------|---------|--------|
+| **10-Entry Rule** | A file's Auditor Notes/Unknowns section exceeds 10 open entries | Resolution Pass required before the next audit cycle |
+| **20% Rule** | The sidecar exceeds 20% of the document's total word count | Halt expansion; consolidate or discharge entries before continuing |
+| **Aging Rule** | An unknown has gone unreviewed 90+ days | Mandatory re-audit |
+
+Rotation mechanics, regardless of which rule triggered it:
+- Move full text to the matching `*_Changelog.md` or an `Archive/` sidecar — never summarize or delete.
+- Leave a short pointer in the live file ("Older entries: see `Archive/Logs/...`") so the history stays findable.
+- Do not rotate a file that is mid-ratification unless the rotation itself is the ratified action.
+
+### 4. Cross-file hygiene (same session)
+- If the change affects `Routing.md`, `Discovery.md`, or a `*_Scope_Map.md`'s own accuracy, update those in the same session, not as a follow-up.
+- If an unknown was opened or closed, confirm `Unknowns.md`'s Active Index — and its version header plus `Archive/Logs/Unknowns_Changelog.md` if it's a version-bump change — reflect it. A stale version citation on a changed file is this repository's single most-repeated failure mode (`Forge_Audit_Kit.md`'s FAK-014 through FAK-016 are four instances of exactly this); check it explicitly rather than assuming it followed automatically.
+- If a Claim-Type Label was involved, that's `Admin/Canonical_Terms.md` §4's usage rule, not this file. If a Lane C metric was involved, that's `Admin/Metrics_Scaffold.md`'s record format. The two are separate homes — don't conflate them.
+
+### 5. Provenance and closure
+When the change is a Resolved/Ratified closure rather than an ordinary edit, the Resolution
+Log entry should carry the same provenance shape already used throughout this repository's
+governance closures (see e.g. `Admin/Governance_Migration_Protocol.md` GMP-011,
+`Admin/Ethical_Constraints.md` EC-012-PR): **Proposer** (who drafted it), **Verifier** (who
+checked it against live source — a different agent instance where practical), and **Human
+Ratification** (Human Governing Authority, with date). This isn't a new rule — it's naming
+the pattern already in consistent use so future sessions don't have to reconstruct it from
+precedent each time.
+
+### 6. Close the update
+- Confirm the File State table is accurate against what actually changed.
+- Confirm a Resolution Log entry exists and, for closures, carries the provenance line above.
+- No automation or tooling is required — the update is complete when the markdown is internally consistent and every cross-file reference to it (Routing/Discovery/Scope Map/Unknowns) has been checked, not merely assumed current.
+
+---
 
 This template exists to resist:
 - Institutional memory loss
