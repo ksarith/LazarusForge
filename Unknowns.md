@@ -3,7 +3,7 @@
 
 **Full version history in `Unknowns_Changelog.md` (2026-07-19 cleanup pass, following the precedent set by `Archive/Logs/AUDIT_HARNESS_CHANGELOG.md` and `Archive/Logs/Forge_Audit_Kit_Changelog.md`; scrubbed to current-version-only 2026-07-28 — the "current plus last four in full" window was itself compressed further, since the Audit Trail below now carries the compressed record for every version back to v1.0, and the changelog carries full text for all of them. This block now keeps only the current version.)**
 
-**Version 5.50 — 2026-09-21. EC-013 Gate_03 and Gate_06 descent sequences filed as Proposed/Placeholder (Path A).** Full 2026-09-18 candidate set now registered (Plastics, Air_Scrubber, Gate_05, Gate_03, Gate_06). Gate_03 is a short extension of §7 Emergency Shutdown; Gate_06 is a short extension of GF-007 hot-work shutdown. Tracker Status remains Open pending Human acceptance of set completeness / Skeptic pass; Blocking for hot runs retained on all five. No claim of EC-013 closure. Cross-agent: Grok filed under explicit Path A direction after Claude scoping.**
+**Version 5.52 — 2026-09-23. EC-012 procedural-escalation residual resolved as EC-012-PR.** `Admin/Ethical_Constraints.md`'s EC-012 problem-statement note updated to point at the new EC-012-PR sidecar (Payment via Specification, ratified). Parent EC-012 (full attestation architecture) remains Open — no change to its status or count. Human-directed.**
 
 ---
 
