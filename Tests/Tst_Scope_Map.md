@@ -11,7 +11,7 @@
 | Spec Gates       | N/A — this file is a cross-reference index, not a specification     |
 | Open Unknowns    | 0 (surfaces existing unknowns from owning files; creates none)      |
 | Owning Domain    | Tests/                                                               |
-| Last Reviewed    | 2026-09-18                                                           |
+| Last Reviewed    | 2026-09-24                                                           |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
 ---
@@ -58,6 +58,11 @@ Note: "2 Formal / 6 Unregistered" Open Unknowns is a distinct pattern from every
 **Does:** Four separation mechanisms (thermal/pressure/phase change/chemical-biological) and ten experimental pathways (LW-001-010); Water Hierarchy tiering purification effort to intended use; site-conditioned pathway selection; sequencing doctrine (purify before atmospheric harvest); partial-advancement promotion criteria.
 **Does not (arrow):** Power sourcing specs (`Energy.md`) · PPE/handling doctrine (`Admin/Safety_Protocols.md`) · marine deployment ethics/brine disposal (`Admin/Ethical_Constraints.md`) · recovered salt/mineral valuation (`Admin/Economics.md`) · formal Site Characterization to Pathway Selection framework — declared future work, not yet written (LW-UNK-008, confirmed against `Unknowns.md`: "formal framework not yet written," matches this file's own description exactly).
 Note: the only file in this folder carrying a Critical risk rating with an explicit "immediate safety consequences if bypassed" justification, not just a severity label.
+
+### `Tests/Persistent_Cognition_Candidates.md`
+**Status:** Exploration · N/A — candidate survey, not a specification · 0 Open Unknowns · Risk: Low
+**Does:** Survey five candidate architectures for making the Forge's deliberation process (not just its ratified decisions) durable across sessions, evaluated specifically against this project's actual operating constraints (mobile-first authorship, session-based Colab runtime, no persistent server, stateless multi-agent text auditors); flags which candidates require no new infrastructure, which require only a Colab-side script, and which assume infrastructure this project doesn't have.
+**Does not (arrow):** Recommend or adopt any candidate — explicitly survey-only · implement anything (no code, schema, or new file format created) · claim verified knowledge of current external memory-augmentation products (flagged Internally Derived/PROVISIONAL per AP-006, not checked against outside sources) · duplicate `Cognitive_Salvage_Layer.md` (Forge task-performance heuristics) or `Admin/Progress_Log.md` (rolling decision continuity) — this file is about the deliberation/dissent those two don't capture.
 
 ### `Tests/Multi_Agent_Quorum_Trial.md`
 **Status:** Proposed Protocol — Not Yet Run · 0/6 (protocol, not spec) · 0 Open Unknowns (registered) · Risk: High — governs who can cause a state transition on canonical `main`; a loose trial here is a race-condition and governance-bypass risk, not just a documentation gap
