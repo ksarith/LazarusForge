@@ -1,5 +1,5 @@
 # Persistent_Cognition_Candidates.md
-**Version 0.7**
+**Version 0.9**
 
 ---
 
@@ -18,7 +18,7 @@
 | Spec Gates       | N/A — candidate-system survey, not a specification to be gated toward promotion |
 | Verification Ref | `Admin/Verification_Gates.md`                                          |
 | Last Audit       | 2026-09-25                                                              |
-| Auditor          | Claude — Synthesizer, human-directed, 2026-09-25: filed null hypothesis, supported/weakly-supported/not-supported/inconclusive decision rule, ground-truth-source-vs-answer clarification, and the FI-1 False Reconstruction failure flag, all per ChatGPT review; pre-registration now closes the confabulation-risk gap ChatGPT identified; prior: Claude — filed inter-rater reliability protocol; prior: Claude — filed step 2/3 (corpus boundaries, scoring thresholds); prior: Claude — pre-registered 14-query set frozen; prior: Claude — Proposed Experiment design (cross-agent Claude/ChatGPT); prior: Claude — Candidate 3 embedded-library mapping (Grok review); prior: Claude — file created |
+| Auditor          | Claude — Synthesizer, human-directed, 2026-09-25: recorded Candidate 6's Memory_Bridge_Test.md result as PASS (verified marker match exact); added Candidate 7 (account-level persistent memory), surfaced but not evaluated, distinct from Candidate 6; prior: Claude — added Candidate 6 pointer to standalone test file, corrected own instinct to register it in-repo; prior: Claude — filed null hypothesis, decision rule, ground-truth clarification, FI-1 flag (ChatGPT review); prior: Claude — filed inter-rater reliability protocol; prior: Claude — filed step 2/3 (corpus boundaries, scoring thresholds); prior: Claude — pre-registered 14-query set frozen; prior: Claude — Proposed Experiment design (cross-agent Claude/ChatGPT); prior: Claude — Candidate 3 embedded-library mapping (Grok review); prior: Claude — file created |
 | Open Unknowns    | 0 (candidates below are explicitly unevaluated, not filed as unknowns) |
 | Active Disputes  | 0                                                                       |
 | Highest Risk     | Low — no candidate here is adopted; this is survey-only                |
@@ -466,6 +466,56 @@ thresholds, and scoring reliability are all locked. No retrieval has been run.
 against the frozen query list and the two corpora now defined above. Steps 1–3 of the
 sequence are complete; steps 4–6 (run routing, run retrieval, compare) have not started.
 
+### Candidate 6 — Device-resident generated files (already in continuous use, not hypothetical)
+
+Surfaced 2026-09-25 from the user's own observation that files generated via `create_file`/
+`present_files` land on-device and get carried forward into later sessions — which is the
+exact mechanism every file exchange in this entire session already depended on, including
+the verified byte-identical `v557 → v558` repo carry-through. Unlike Candidates 1–5, this
+one isn't a proposal being evaluated for cost — it's already run, repeatedly, without
+having been named as a candidate at the time. The open question isn't whether it works,
+it's how far it scales and where it breaks (file-count growth, conflicting versions across
+sessions, whether the human has to track which file is authoritative).
+
+A minimal, isolated test of this mechanism exists as a **standalone file kept deliberately
+outside this repository** — `Memory_Bridge_Test.md`, held on the user's device, not
+committed here. It carries a marker value generated 2026-09-25 and instructions for a
+future, context-free session to attempt recovering it. Kept out of this repo on purpose:
+if its marker were committed here, a future session with repo access could find it in the
+committed text instead of genuinely recovering it from the carried-forward file, which
+would invalidate exactly what the test is trying to isolate.
+
+**Result: PASS, 2026-09-25 (same day, separate conversation, zero shared context).** A
+fresh Claude instance, given only the uploaded file and a plain prompt, correctly reported
+both the marker (`FORGE-BRIDGE-7719-EMBER`) and the second value (three) — values
+confirmed present nowhere except inside that one file. The instance's own account of what
+this does and doesn't prove matched this file's own success/failure criteria exactly: it
+confirmed the mechanism works as a genuine cross-session bridge, and explicitly declined
+to claim anything about scaling, version conflicts, or the human forgetting which file to
+re-upload — those three questions remain exactly as open as before this test ran. One
+caveat on interpretation, surfaced during the run-up to this test: this account's
+persistent memory system means a "fresh" conversation here still carries baseline project
+awareness (the user's name, LazarusForgeV0 context) loaded automatically — not a fully
+clean room. This doesn't invalidate the pass, since the marker itself was confirmed absent
+from memory before the test ran and could only have come from the file, but it does mean
+this specific test environment can't fully isolate "file persistence" from "account-level
+memory" as separate mechanisms — see Candidate 7 below.
+
+### Candidate 7 — Account-level persistent memory (distinct from Candidate 6, surfaced by testing it)
+
+Noticed only because testing Candidate 6 required asking whether a "fresh" session on this
+account is actually context-free. It isn't, fully: this account's memory system loads
+baseline facts (the user's identity, the LazarusForgeV0 project) into new conversations
+automatically, independent of any file being uploaded. That's a third, already-running
+mechanism, distinct from both Candidate 3 (retrieval over content) and Candidate 6 (a
+human manually carrying a specific file forward) — this one requires no file at all, and
+the human takes no action for it to apply.
+
+**Not evaluated here.** Surfaced, not assessed — no cost/fit analysis has been done, no
+test has been designed, and it's unclear from inside this file alone what such a system
+does and doesn't retain, or on what basis. Left as future work rather than assumed to be
+either better or worse than Candidates 3 or 6.
+
 ### Not addressed here
 
 Dispute-preservation-after-resolution and the archive-to-live distillation loop (both
@@ -506,6 +556,37 @@ constraints change)*
 enough to generate a real implementation unknown yet)*
 
 ### Resolution Log
+
+- 2026-09-25: **v0.9 — Candidate 6's test PASSED; Candidate 7 surfaced.** A fresh
+  Claude instance, separate conversation, zero shared context, correctly recovered both
+  the marker (`FORGE-BRIDGE-7719-EMBER`) and the second value (three) from
+  `Memory_Bridge_Test.md` alone — verified as an exact match, not a paraphrase or
+  approximate recall, before recording as a pass. The instance's own stated success/
+  failure reasoning matched the file's own pre-registered criteria without being told
+  what they were. First genuinely completed empirical result in this entire file's
+  history — everything before this was design. One caveat surfaced during the test:
+  this account's own persistent memory system means no session here is a fully clean
+  room (baseline project/user facts load automatically), which doesn't invalidate this
+  particular pass — the marker itself was confirmed absent from memory beforehand — but
+  does mean file-persistence and account-memory can't be fully separated as mechanisms
+  in this specific environment. That observation became Candidate 7 (account-level
+  persistent memory) — surfaced and scoped, explicitly not evaluated, left as future
+  work. Proposer: Claude, verifying a result reported directly by the user from a
+  separate session; Candidate 7 surfaced by Claude during that verification, human-
+  directed throughout.
+
+- 2026-09-25: **v0.8 — Candidate 6 added: device-resident generated files, the only
+  candidate in this file that's already proven rather than proposed.** Prompted by the
+  user's own observation of files appearing on-device throughout this session. Pointed at
+  a standalone test file, `Memory_Bridge_Test.md`, deliberately kept out of this
+  repository — its marker value must stay undiscoverable except by genuine file
+  carry-through, so committing it here would have invalidated the test it runs.
+  Self-correction during filing: initially began registering that test file into
+  `Routing.md`/this repo's zip following this session's normal pattern, caught before
+  completing it, and reversed — the standard "register every new file" discipline this
+  session established (`File_Template.md`'s Creation Checklist) is the wrong move for a
+  file whose entire purpose depends on staying outside the thing it's testing. Proposer:
+  Claude, human-directed by the user's observation.
 
 - 2026-09-25: **v0.7 — four falsifiability/confabulation safeguards added, closing the
   last gaps before execution.** (1) Explicit null hypothesis, so Candidate 3 has a real
