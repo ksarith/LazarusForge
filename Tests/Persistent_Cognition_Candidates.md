@@ -1,5 +1,5 @@
 # Persistent_Cognition_Candidates.md
-**Version 0.5**
+**Version 0.7**
 
 ---
 
@@ -18,7 +18,7 @@
 | Spec Gates       | N/A — candidate-system survey, not a specification to be gated toward promotion |
 | Verification Ref | `Admin/Verification_Gates.md`                                          |
 | Last Audit       | 2026-09-25                                                              |
-| Auditor          | Claude — Synthesizer, human-directed, 2026-09-25: filed step 2 (Corpus A/B boundaries) and step 3 (scoring thresholds + aggregation rules) from Grok drafts; corrected Effort dimension's "separate three-point scale" wording to clarify it shares the same 0–2 orientation as the other five, since the aggregation mean depends on that; prior: Claude — pre-registered 14-query set frozen; prior: Claude — Proposed Experiment design (cross-agent Claude/ChatGPT); prior: Claude — Candidate 3 embedded-library mapping (Grok review); prior: Claude — file created |
+| Auditor          | Claude — Synthesizer, human-directed, 2026-09-25: filed null hypothesis, supported/weakly-supported/not-supported/inconclusive decision rule, ground-truth-source-vs-answer clarification, and the FI-1 False Reconstruction failure flag, all per ChatGPT review; pre-registration now closes the confabulation-risk gap ChatGPT identified; prior: Claude — filed inter-rater reliability protocol; prior: Claude — filed step 2/3 (corpus boundaries, scoring thresholds); prior: Claude — pre-registered 14-query set frozen; prior: Claude — Proposed Experiment design (cross-agent Claude/ChatGPT); prior: Claude — Candidate 3 embedded-library mapping (Grok review); prior: Claude — file created |
 | Open Unknowns    | 0 (candidates below are explicitly unevaluated, not filed as unknowns) |
 | Active Disputes  | 0                                                                       |
 | Highest Risk     | Low — no candidate here is adopted; this is survey-only                |
@@ -225,6 +225,25 @@ too easy to satisfy with a cherry-picked query. The actual question: can transie
 retrieval recover prior cognitive state, *including rejected reasoning*, that existing
 routing mechanisms (Routing.md, Discovery.md, Scope Maps) fail to recover efficiently.
 
+**Null hypothesis (defined 2026-09-25, before any retrieval):** transient semantic
+retrieval does not materially improve recovery of prior cognitive material over ordinary
+repository routing/search, after accounting for provenance, coverage, contradiction
+exposure, and effort. This gives Candidate 3 something it can actually fail — without it,
+a modestly interesting retrieval demonstration could be read as success by default.
+
+**Decision rule (defined before results, not fit to them afterward):** the outcome is
+reported as **supported / weakly supported / not supported / inconclusive for further
+investigation** — never as "adopted." Not supported: Candidate 3 merely improves semantic
+similarity while losing provenance or missing rejected reasoning. Weakly supported:
+improves retrieval/coverage but at substantially higher effort or materially more
+irrelevant material. Supported for further investigation: repeatable improvement on the
+primary dimensions (Coverage, Contradiction exposure) without unacceptable provenance
+degradation. Even a strong result means "worth investigating further" — not "the Forge
+needs a persistent vector store." The transient, disposable-index implementation is itself
+part of what's being tested, not a stepping stone assumed toward something permanent; a
+strong result is evidence for persistent corpus + disposable retrieval index specifically,
+the design this file has favored throughout, not for standing infrastructure.
+
 **Query classes** (drawn from actual Forge history, not invented benchmarks — e.g. "why was
 the §VII.5 framing rejected in GMP-011's holding clause" is a real template): decision
 history, rejected reasoning, unknown history, resolution history, governance reasoning,
@@ -307,10 +326,14 @@ narrowly-scoped new one — those can have different answers, and nothing above 
 #### Pre-registered query set (frozen 2026-09-24 — do not alter after retrieval begins)
 
 Fourteen queries, two per class, pulled from genuine repository history — not invented
-benchmarks. Each carries a ground-truth source location, so Provenance scoring has
-something real to check retrieval results against. Freezing this list here, before either
-retrieval corpus is built or any retrieval is run, is what makes the experiment falsifiable
-rather than a demonstration — per the sequence above, this is step 1.
+benchmarks. Each carries a **ground-truth source location** — not a ground-truth *answer*.
+Provenance scoring checks whether a result traces back to that location; it does not imply
+the repository has one uniquely correct reconstruction of the reasoning. Several of these
+queries — especially the rejected-reasoning class — have the recovery of dissent as their
+entire point, so treating "found the source" as "found the whole, single correct account"
+would defeat the purpose. Freezing this list here, before either retrieval corpus is built
+or any retrieval is run, is what makes the experiment falsifiable rather than a
+demonstration — per the sequence above, this is step 1.
 
 | # | Class | Query | Ground-truth source |
 |---|-------|-------|----------------------|
@@ -377,6 +400,68 @@ exposure and Coverage for the rejected-reasoning queries (#3, #4, and similar).
 and the criteria above. Disagreements between scorers are recorded, not used to alter the
 thresholds. Results are reported per dimension and per corpus — no post-hoc re-weighting.
 
+#### Inter-rater reliability protocol (defined 2026-09-25, before any retrieval)
+
+Scoring of the 14 frozen queries is performed by at least two independent scorers (human
+or agent) who have not seen each other's scores. Locked before any retrieval results
+exist.
+
+**Primary metrics (report for every dimension):** exact agreement % ((identical scores) /
+14) and adjacent agreement % ((scores differing by at most 1 point) / 14).
+
+**Secondary metric (optional):** linearly weighted Cohen's κ per dimension — accounts for
+chance, and treats 0↔1 disagreements as less severe than 0↔2. Preferred over unweighted κ
+or quadratic-weighted κ for this scale; Fleiss'/Krippendorff's α, ICC, and rank-correlation
+measures are all overkill for two raters and 14 items and are deliberately not used, per
+the same "don't pretend the study is larger than it is" discipline as everything else
+pre-registered above.
+
+**Disagreement log (required):** for every cell where scorers don't give an identical
+score, record query number, dimension, score A, score B, and a one-sentence reason. This
+log is the primary diagnostic — the coefficients above are summary numbers only.
+
+**Pre-registered resolution rule:** difference of 1 point → adopt the lower (more
+conservative) score. Difference of 2 points → bring in a third scorer, take the majority;
+if still split, adopt the lower score.
+
+**Blinding:** scorers receive the query text and returned passages without being told
+whether the passages came from ordinary routing, Corpus A, or Corpus B. If full blinding
+is impractical, all three conditions for a given query are scored before moving to the
+next query.
+
+**Interpretation guidance (pre-registered):** exact agreement ≥70% and adjacent ≥90% on a
+dimension is solid for this 14-item set. Contradiction exposure and Coverage are expected
+to be the noisiest dimensions — lower agreement there is informative, not a protocol
+failure. If exact agreement on any dimension falls below ~50%, scoring on that dimension
+pauses until the dimension definition is tightened; the thresholds themselves are not
+altered after results are seen.
+
+**Deliberately not used:** treating the six dimensions as a single summed scale; complex
+multi-rater coefficients unless a third scorer becomes routine rather than occasional; any
+post-hoc re-weighting or threshold adjustment after disagreement patterns are observed.
+
+#### Synthesis integrity — a failure flag, not a scoring dimension (defined 2026-09-25)
+
+Semantic retrieval can surface a passage that reads like a coherent answer while actually
+stitching together fragments from distinct decisions, dates, or contexts that were never
+part of the same reasoning chain — this is more dangerous for a project than an outright
+miss, because it looks like a recovered account rather than an absence. This isn't captured
+by the six scoring dimensions above (a fabricated-but-plausible synthesis could score well
+on Precision and Coverage while being wrong), so it's a separate flag scorers apply
+alongside scoring, not folded into the aggregate:
+
+> **FI-1 — False Reconstruction.** Retrieved material creates a plausible but historically
+> unsupported narrative by combining individually relevant passages from separate contexts.
+
+When FI-1 is raised on a query/condition, that result's scores are still recorded as
+scored, but the query is marked flagged in the results table and excluded from any claim
+that the condition "recovered" that piece of reasoning — a well-scored but FI-1-flagged
+result counts as evidence against Candidate 3 on Contradiction exposure and Provenance
+specifically, not as a pass with an asterisk.
+
+This completes pre-registration of the Candidate 3 experiment — queries, corpora, scoring
+thresholds, and scoring reliability are all locked. No retrieval has been run.
+
 **Not yet done:** running any retrieval — ordinary routing, semantic, or otherwise —
 against the frozen query list and the two corpora now defined above. Steps 1–3 of the
 sequence are complete; steps 4–6 (run routing, run retrieval, compare) have not started.
@@ -421,6 +506,38 @@ constraints change)*
 enough to generate a real implementation unknown yet)*
 
 ### Resolution Log
+
+- 2026-09-25: **v0.7 — four falsifiability/confabulation safeguards added, closing the
+  last gaps before execution.** (1) Explicit null hypothesis, so Candidate 3 has a real
+  failure condition rather than defaulting to "success" on a modestly interesting
+  demonstration. (2) A four-way decision rule (supported / weakly supported / not
+  supported / inconclusive) with concrete criteria for each, deliberately never phrased as
+  "adopted" — preserves the file's non-adoption status even for a strong result, and
+  explicitly notes a strong result would support the transient/disposable-index design
+  already favored throughout this file, not a case for permanent infrastructure. (3)
+  Clarified "ground-truth source location" is not "ground-truth answer" — checked against
+  current file text first; the file was already consistently using the narrower phrasing,
+  so this is a preventive clarification, not a correction of an actual error, added
+  because the whole point of the rejected-reasoning query class is recovering dissent, not
+  declaring one correct account. (4) FI-1 — False Reconstruction: a failure flag (not a
+  seventh scoring dimension) for retrieved material that stitches fragments from unrelated
+  decisions into a plausible-looking but unsupported narrative — the risk that a result
+  could score well on Precision/Coverage while being wrong in a way none of the six
+  dimensions would catch on its own. Pre-registration is now complete on all fronts raised
+  across this file's review history. Proposer: ChatGPT; Verifier/Filer: Claude (confirmed
+  the ground-truth phrasing claim against current text before treating it as a fix rather
+  than a genuine correction). Human-directed.
+
+- 2026-09-25: **v0.6 — inter-rater reliability protocol filed; pre-registration complete.**
+  Exact/adjacent agreement as primary metrics, linearly weighted Cohen's κ as optional
+  secondary, a required disagreement log, blinding procedure, a pre-registered conservative
+  tie-break rule (lower score on 1-point gaps; third scorer + majority, else lower score,
+  on 2-point gaps), and explicit interpretation thresholds (≥70%/≥90% solid; <50% pauses
+  that dimension rather than proceeding). Steps 1–3 (queries, corpora, scoring thresholds)
+  plus this reliability layer are now all locked before any retrieval has been run — the
+  Candidate 3 experiment design is complete. No repo-fact claims required verification;
+  self-contained methodology consistent with everything already filed. Proposer: Grok;
+  Verifier/Filer: Claude. Human-directed.
 
 - 2026-09-25: **v0.5 — steps 2 and 3 filed (corpus boundaries, scoring thresholds).**
   Corpus A (distilled: `Cognitive_Salvage_Layer.md`, Lessons Learned, ratified taxonomy)
