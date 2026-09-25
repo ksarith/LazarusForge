@@ -1,5 +1,5 @@
 # Persistent_Cognition_Candidates.md
-**Version 0.3**
+**Version 0.5**
 
 ---
 
@@ -17,8 +17,8 @@
 | Body Stability   | Draft                                                                  |
 | Spec Gates       | N/A — candidate-system survey, not a specification to be gated toward promotion |
 | Verification Ref | `Admin/Verification_Gates.md`                                          |
-| Last Audit       | 2026-09-24                                                              |
-| Auditor          | Claude — Synthesizer, human-directed, 2026-09-24: added Proposed Experiment design (Candidate 3 validation — pre-registered query classes, two-corpus split, scoring dimensions, revised non-linear diagram) from cross-agent (Claude/ChatGPT) refinement; design only, not run; prior: Claude — Synthesizer, human-directed, 2026-09-24: Candidate 3 given concrete embedded-library mapping and Candidate 1↔4 combinability noted, both per Grok review; prior: Claude — Synthesizer, human-directed, 2026-09-24 (file created) |
+| Last Audit       | 2026-09-25                                                              |
+| Auditor          | Claude — Synthesizer, human-directed, 2026-09-25: filed step 2 (Corpus A/B boundaries) and step 3 (scoring thresholds + aggregation rules) from Grok drafts; corrected Effort dimension's "separate three-point scale" wording to clarify it shares the same 0–2 orientation as the other five, since the aggregation mean depends on that; prior: Claude — pre-registered 14-query set frozen; prior: Claude — Proposed Experiment design (cross-agent Claude/ChatGPT); prior: Claude — Candidate 3 embedded-library mapping (Grok review); prior: Claude — file created |
 | Open Unknowns    | 0 (candidates below are explicitly unevaluated, not filed as unknowns) |
 | Active Disputes  | 0                                                                       |
 | Highest Risk     | Low — no candidate here is adopted; this is survey-only                |
@@ -241,6 +241,48 @@ Candidate 3's index needs to cover raw history, distilled heuristics, or both �
 question the original linear diagram couldn't answer, because it only fed Retrieval from
 Distillation.
 
+#### Corpus boundaries (step 2 — defined 2026-09-25, before any retrieval)
+
+Deliberately narrow, drawn only from material already cited in the frozen query set or
+named in the experiment text above, so the two corpora stay cleanly separable.
+
+**Corpus A — Distilled knowledge only.** Material already intentionally extracted,
+generalized, or promoted out of raw incident history into reusable form.
+
+*Include:* `Tests/Cognitive_Salvage_Layer.md` in full (Heuristic Objects / GH-series and
+any generalized lessons); all Lessons Learned sections repository-wide; Abandoned Paths or
+Drift Indicators entries that state a reusable principle rather than a one-off incident;
+Claim-Type Labels and other ratified taxonomy entries (`Admin/Canonical_Terms.md` §4);
+`Admin/Metrics_Scaffold.md` definitions.
+
+*Exclude from A:* raw Resolution Log narrative; Active or historical `Unknowns.md` table
+rows; File State Auditor lines that merely record a correction event; proposal/rejection
+threads not yet distilled into a reusable heuristic.
+
+**Corpus B — Cognitive history.** Material recording the actual deliberation, correction,
+rejection, or status trajectory, whether or not it has since been distilled.
+
+*Include:* all Resolution Log entries, file-level and sidecar; `Unknowns.md` Active Index
+rows and their problem-statement/resolution-path prose; File State Auditor/Last Audit
+lines documenting corrections or status changes; explicit rejection or "held as
+unratified" notes (the Grok/Copilot GOV-008 patch note, the "CIR v2.0" hold note — both
+already ground-truth sources for queries #3 and #4 above); audit findings and
+verification notes explaining why a change was or wasn't accepted; `Progress_Log.md`
+entries narrating a decision or correction event.
+
+*Exclude from B:* purely forward-looking specification body text that records no past
+decision or rejection; index/navigation files (`Routing.md`, `Discovery.md`, Scope Maps)
+used only as the ordinary-routing baseline; this file itself, `Persistent_Cognition_
+Candidates.md`, to avoid self-contamination of the test.
+
+**Shared rules for both corpora:** the live markdown files remain sole source of truth;
+the experiment builds only a transient index. A passage appears in exactly one corpus — if
+a Lessons Learned section restates a Resolution Log event, the distilled version goes in A
+and the original stays in B. No material created after the query set was frozen
+(2026-09-24) is included. The ordinary-routing baseline (step 4) continues to use
+`Routing.md`, `Discovery.md`, and Scope Maps exactly as they stand — those aren't added to
+either corpus.
+
 **Scoring dimensions** (defined before running, not after): Retrievability (found the
 relevant material?), Precision (did it actually answer the question?), Coverage (recovered
 the important parts of the reasoning, not just a fragment?), Provenance (traces back to an
@@ -261,6 +303,83 @@ separate mechanism or as an extension of `Cognitive_Salvage_Layer.md`'s GH-serie
 undecided. The correct framing (per cross-agent exchange) isn't "is it redundant" but
 whether generalizing an already-open, High-risk, 13-unknown file costs less than a
 narrowly-scoped new one — those can have different answers, and nothing above resolves it.
+
+#### Pre-registered query set (frozen 2026-09-24 — do not alter after retrieval begins)
+
+Fourteen queries, two per class, pulled from genuine repository history — not invented
+benchmarks. Each carries a ground-truth source location, so Provenance scoring has
+something real to check retrieval results against. Freezing this list here, before either
+retrieval corpus is built or any retrieval is run, is what makes the experiment falsifiable
+rather than a demonstration — per the sequence above, this is step 1.
+
+| # | Class | Query | Ground-truth source |
+|---|-------|-------|----------------------|
+| 1 | Decision history | Why does GMP-011's Genesis Phase holding clause anchor to `Governance_Charter.md` rather than to `Governance_Migration_Protocol.md` §VII.5? | `Admin/Governance_Migration_Protocol.md` GMP-011 sidecar, 2026-09-23 |
+| 2 | Decision history | Why was the CE-006 vessel design sketch integrated only after two rounds of correction rather than accepted on the first pass? | `Architecture/Chemistry.md` File State Auditor line, 2026-07-31 |
+| 3 | Rejected reasoning | Why was the independent Grok/Copilot thread's GOV-008 registry patch to `Governance_Charter.md` rejected, and what was preserved from it instead? | `Admin/Governance_Migration_Protocol.md`, 2026-08-06, §VII.8 addition note |
+| 4 | Rejected reasoning | Why was the 2026-07-29 "CIR v2.0" bundle held as unratified draft material rather than applied alongside CIR-F02/CIR-F03? | `Admin/Computational_Institutional_Reasoning.md`, v0.19 Last Audit note |
+| 5 | Unknown history | What was previously unresolved about ENV-007 and ENV-008, and how long had each sat unrevisited before being corrected? | `Admin/Environmental_Constraints.md`, correction note (three intervening audit passes) |
+| 6 | Unknown history | What was GOV-008's status before the §VII.8 registry-schema extension, and did that extension change it? | `Admin/Governance_Migration_Protocol.md`, 2026-08-06 entry ("Open Unknowns unchanged; GOV-008 remains Open") |
+| 7 | Resolution history | How was the Support_Raft induction-loss discrepancy (12% laboratory vs. 20–40% real subsea conditions) resolved and logged? | `Tests/Support_Raft.md`, Lessons Learned, 2026-05-04 |
+| 8 | Resolution history | How was RIP-002's "not yet implemented" status corrected, and what exactly was verified to justify the change? | `Admin/Repository_Integrity_Protocol.md`, v0.10 (RIP-AUD-002 finding, source-verified against `AUDIT_HARNESS.py`) |
+| 9 | Governance reasoning | Why was the Closed_Loop_Feedstock draft's "Resolved 2026-08-03" status claim rejected rather than accepted? | `Challenges/Closed_Loop_Feedstock.md`, line ~566, citing AI Contribution Protocols Rule 8 / AP-032 |
+| 10 | Governance reasoning | Why does AP-033 (Rule 9) require confirmed governance-file access before a contribution can mark an unknown toward Resolved status? | `Admin/Auditor_Protocols.md`, AP-033 — directly applied earlier this session (Claim-Type Labels filing) |
+| 11 | Technical reasoning | What led to CIR-F03's correction of Φ(n)'s trigger condition from S(n)=0 to S(n)≤ε, and why didn't the original CIR-F02 review catch it? | `Admin/Computational_Institutional_Reasoning.md`, v0.20 |
+| 12 | Technical reasoning | Why was `Architecture/Engineering.md`'s unknown-history safety factor corrected from 3× to 6×+? | `Architecture/Engineering.md`, line ~635 |
+| 13 | Cross-document reasoning | Beyond GMP-011, where else does the same failure pattern appear — an unratified section cited as though it supports the opposite of what it actually says? | `Admin/Ethical_Constraints.md` EC-012-PR, 2026-09-23 (explicitly notes the same correction was pre-applied, citing GMP-011) |
+| 14 | Cross-document reasoning | How does CIR §4.3's Provenance Ceiling Gate relate to `Auditor_Protocols.md`'s Institutional Provenance Labels, and where was that relationship first made explicit rather than merely implied? | `Admin/Computational_Institutional_Reasoning.md`, v0.22, 2026-08-07 |
+
+#### Scoring dimensions & pre-registered thresholds (step 3 — defined 2026-09-25, before any retrieval)
+
+Each of the 14 frozen queries is scored on all six dimensions for every retrieval
+condition (ordinary routing, Corpus A, Corpus B). Scorers use only the criteria below —
+no post-hoc adjustment permitted once results are seen.
+
+All six dimensions share one 0–2 ordinal scale, oriented so 2 is always the best outcome
+— this is what makes the arithmetic-mean aggregation below valid across dimensions,
+including Effort, whose anchor labels (Low/Medium/High effort) describe the same 0/1/2
+scale rather than a genuinely different one.
+
+1. **Retrievability** — did the method surface the ground-truth source (or a passage
+   containing it)? 2: ground-truth source present in top results. 1: a closely related
+   file returned, not the specific ground-truth location. 0: ground-truth source absent.
+2. **Precision** — does the returned material actually answer the question asked? 2: a
+   reader can answer correctly from the returned text alone. 1: on-topic but needs
+   additional inference or missing context. 0: off-topic or actively misleading.
+3. **Coverage** — does the returned material recover the important parts of the
+   reasoning, not merely a fragment? 2: all key elements needed to understand the
+   decision/rejection/status change are present. 1: core conclusion present but
+   supporting rationale or rejected alternatives missing. 0: only a superficial fragment.
+4. **Provenance** — can the result be traced to an authoritative record? 2: explicitly
+   identifies or links the ground-truth source location from the query table. 1: content
+   correct but source not clearly identified. 0: source missing, wrong, or fabricated.
+5. **Contradiction exposure** — does the method surface competing or rejected reasoning,
+   not only the final winning position? *(Primary test of whether Candidate 3 recovers
+   the original motivating gap.)* 2: rejected alternatives, correction history, or
+   minority positions bearing on the query are present. 1: some indication a prior view
+   existed, but its content isn't recovered. 0: only the current position is returned.
+6. **Effort** — how much additional search/context-assembly work remains after the
+   method returns results? 2 (Low effort): usable with essentially no further
+   navigation. 1 (Medium effort): one additional targeted lookup or short linked-file
+   read required. 0 (High effort): multiple additional searches or extensive reading
+   still needed — comparable to starting from ordinary routing.
+
+**Aggregation rules (also pre-registered):** per-query score = arithmetic mean of the six
+dimension scores (range 0–2). Per-condition score = mean of the 14 per-query scores.
+Primary comparisons: Corpus A vs. ordinary routing, Corpus B vs. ordinary routing, and
+Corpus A vs. Corpus B specifically on dimensions 3 and 5 — since those two are where the
+original motivating gap (recovering rejected reasoning) would actually show up. No single
+overall pass/fail is declared in advance; the experiment's value is the comparative
+profile across dimensions, particularly whether Corpus B outperforms on Contradiction
+exposure and Coverage for the rejected-reasoning queries (#3, #4, and similar).
+
+**Scoring discipline:** scorers use only the frozen query table, the returned passages,
+and the criteria above. Disagreements between scorers are recorded, not used to alter the
+thresholds. Results are reported per dimension and per corpus — no post-hoc re-weighting.
+
+**Not yet done:** running any retrieval — ordinary routing, semantic, or otherwise —
+against the frozen query list and the two corpora now defined above. Steps 1–3 of the
+sequence are complete; steps 4–6 (run routing, run retrieval, compare) have not started.
 
 ### Not addressed here
 
@@ -302,6 +421,40 @@ constraints change)*
 enough to generate a real implementation unknown yet)*
 
 ### Resolution Log
+
+- 2026-09-25: **v0.5 — steps 2 and 3 filed (corpus boundaries, scoring thresholds).**
+  Corpus A (distilled: `Cognitive_Salvage_Layer.md`, Lessons Learned, ratified taxonomy)
+  and Corpus B (history: Resolution Logs, `Unknowns.md`, audit findings, rejection notes)
+  boundaries defined, deliberately narrow and drawn only from material already named in
+  the frozen query set — includes an explicit rule excluding this file itself from either
+  corpus, to avoid self-contamination. Six scoring dimensions given concrete 0/1/2
+  pass/partial/fail criteria and aggregation rules (per-query mean, per-condition mean,
+  named primary comparisons on dimensions 3 and 5 specifically). One wording correction
+  applied before filing: the Effort dimension's source draft called it "a separate
+  three-point scale," which risked being read as needing different aggregation treatment;
+  clarified that it shares the same 0–2, 2-is-best orientation as the other five
+  dimensions, since the arithmetic-mean aggregation requires that. Steps 1–3 of the
+  sequence are now complete and fully pre-registered; steps 4–6 (run ordinary routing, run
+  retrieval, compare) have not started. An Inter-rater reliability protocol (percent exact/
+  adjacent agreement, a disagreement log, a conservative tie-break rule) was also proposed
+  this session but not yet filed — offered, not yet decided. Proposer: Grok (corpus
+  boundaries, scoring thresholds, inter-rater protocol); Verifier/Filer: Claude
+  (source-consistency check against the frozen query set and existing file content; no
+  new repo-fact claims required verification beyond what steps 1–2 already established).
+  Human-directed.
+
+- 2026-09-24: **v0.4 — pre-registered query set frozen (step 1 of the Candidate 3
+  experiment).** Fourteen queries, two per class across all seven query classes, pulled
+  from genuine repository history by direct grep and source-verified against each cited
+  location before filing — none invented. Sources span `Governance_Migration_Protocol.md`
+  (GMP-011, the rejected Grok/Copilot GOV-008 patch), `Computational_Institutional_
+  Reasoning.md` (the rejected "CIR v2.0" bundle, CIR-F03, the §4.3/AP-006 identity note),
+  `Environmental_Constraints.md`, `Support_Raft.md`, `Repository_Integrity_Protocol.md`,
+  `Closed_Loop_Feedstock.md`, `Auditor_Protocols.md` AP-033, `Engineering.md`, and this
+  session's own EC-012-PR/GMP-011 §VII.5 correction. Each query carries a ground-truth
+  source location for later Provenance scoring. List is now frozen — corpus construction
+  and scoring-threshold definition (steps 2–3) are the next tasks; no retrieval of any
+  kind has been run. Proposer: Claude, human-directed.
 
 - 2026-09-24: **v0.3 — Proposed Experiment design added, cross-agent.** Claude critiqued
   ChatGPT's initial "History → Distillation → Retrieval" diagram as too linear (Retrieval
