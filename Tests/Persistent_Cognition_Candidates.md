@@ -1,5 +1,5 @@
 # Persistent_Cognition_Candidates.md
-**Version 0.10**
+**Version 0.11**
 
 ---
 
@@ -18,7 +18,7 @@
 | Spec Gates       | N/A — candidate-system survey, not a specification to be gated toward promotion |
 | Verification Ref | `Admin/Verification_Gates.md`                                          |
 | Last Audit       | 2026-09-26                                                              |
-| Auditor          | Claude — Synthesizer, human-directed, 2026-09-26: filed Candidate 7's full test design (8-probe battery, hard-failure conditions, interpretation grid with the new Stale-but-confident row) per Grok draft — Grok's own grid update confirmed correct against the actual memory-gap incident before filing; prior: Claude — recorded Candidate 6 PASS, surfaced Candidate 7; prior: Claude — added Candidate 6 pointer to standalone test file; prior: Claude — filed null hypothesis, decision rule, ground-truth clarification, FI-1 flag (ChatGPT review); prior: Claude — filed inter-rater reliability protocol; prior: Claude — filed step 2/3 (corpus boundaries, scoring thresholds); prior: Claude — pre-registered 14-query set frozen; prior: Claude — Proposed Experiment design (cross-agent Claude/ChatGPT); prior: Claude — Candidate 3 embedded-library mapping (Grok review); prior: Claude — file created |
+| Auditor          | Claude — Synthesizer, human-directed, 2026-09-26: recorded Candidate 7's first real run — Deep baseline/current, zero hard failures, read-once-then-retain mechanism observed and documented, one non-hard-failure confabulation-adjacent observation (Ethical_Constraints.md) noted; prior: Claude — filed Candidate 7's full test design (Grok, incl. Stale-but-confident grid row); prior: Claude — recorded Candidate 6 PASS, surfaced Candidate 7; prior: Claude — added Candidate 6 pointer to standalone test file; prior: Claude — filed null hypothesis, decision rule, ground-truth clarification, FI-1 flag (ChatGPT review); prior: Claude — filed inter-rater reliability protocol; prior: Claude — filed step 2/3 (corpus boundaries, scoring thresholds); prior: Claude — pre-registered 14-query set frozen; prior: Claude — Proposed Experiment design (cross-agent Claude/ChatGPT); prior: Claude — Candidate 3 embedded-library mapping (Grok review); prior: Claude — file created |
 | Open Unknowns    | 0 (candidates below are explicitly unevaluated, not filed as unknowns) |
 | Active Disputes  | 0                                                                       |
 | Highest Risk     | Low — no candidate here is adopted; this is survey-only                |
@@ -564,7 +564,28 @@ a new conversation without user action. Does not prove long-term retention acros
 editability, superiority over Candidates 3 or 6, or behavior on any other account. Does not
 change Candidate 3 or 6's status.
 
-**Not yet done:** the actual battery has not been run against any fresh conversation.
+**Result: run 2026-09-26, classified Deep baseline / current (not Stale-but-confident).**
+Zero hard failures. Probes 1–3 answered from lightweight always-present profile/listing
+data; probe 4 (files/protocols) triggered an actual deep memory read, and its content
+correctly persisted for probes 5, 7, 8 — a genuinely useful mechanical finding distinct
+from the original design's assumption of a monolithic baseline: the deep layer is
+triggered by a relevant probe, then retained for the rest of that conversation, not
+uniformly present from the first message. Probe 5 (the staleness detector) returned
+current, correct information (GMP-011/EC-012-PR/Claim-Type Labels, Sept 23-25, correct
+two-item residual list) — direct confirmation the earlier same-day memory fix is actually
+surfacing, not just written. Probe 6 (negative control) correctly returned unknown and
+appropriately asked whether the string related to the Memory Bridge Test, rather than
+guessing — clean pass. One minor, non-hard-failure observation: probe 4's answer named
+`Ethical_Constraints.md` with a confidence not directly traceable to the memory content
+inspected during this file's own design process — plausibly a safe inference from
+EC-numbered references, but not independently confirmed as explicitly stored, and worth
+noting as sitting near the same confabulation risk this design exists to catch, even in an
+otherwise clean run.
+
+**Done:** the battery has been run once, against a fresh conversation, with the result
+above. Not yet done: a second independent run (to check whether the read-once-then-retain
+mechanism and the Deep/current classification replicate), and any run against a
+deliberately-not-updated memory state, since that state no longer exists to test against.
 
 ### Not addressed here
 
@@ -606,6 +627,25 @@ constraints change)*
 enough to generate a real implementation unknown yet)*
 
 ### Resolution Log
+
+- 2026-09-26: **v0.11 — Candidate 7's first real run recorded: Deep baseline / current,
+  zero hard failures.** Run against a fresh conversation (per the user's report: each
+  probe its own prompt within one conversation, no files or prior context given). Probes
+  1–3 answered from always-present profile/listing data; probe 4 triggered an actual deep
+  memory read whose content then correctly persisted through probes 5, 7, 8 — a real
+  mechanical finding not anticipated by the original design (which assumed a monolithic
+  baseline rather than a read-once-then-retain pattern). Probe 5, the staleness detector,
+  returned current and correct information, directly confirming yesterday's memory-gap fix
+  is actually surfacing rather than just written. Probe 6 negative control passed cleanly
+  — correctly unknown, with an appropriate clarifying question rather than a guess. One
+  non-hard-failure observation recorded: probe 4 named `Ethical_Constraints.md` with a
+  confidence not independently traceable to the memory content this file's design process
+  had directly inspected — flagged as sitting near the same confabulation risk this design
+  exists to catch, without itself being a failure. Second independent run and eventual
+  test against a genuinely stale state (no longer available, since the state was already
+  fixed) both remain open for future work. Proposer/run: user-executed; Verifier/Filer:
+  Claude, classified against the pre-registered grid and flagged the one soft observation
+  rather than treating a clean run as needing no scrutiny. Human-directed.
 
 - 2026-09-26: **v0.10 — Candidate 7's full test design filed**, including the
   Stale-but-confident interpretation-grid row Grok added in response to the memory-gap
