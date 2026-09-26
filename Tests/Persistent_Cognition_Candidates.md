@@ -1,5 +1,5 @@
 # Persistent_Cognition_Candidates.md
-**Version 0.9**
+**Version 0.10**
 
 ---
 
@@ -17,8 +17,8 @@
 | Body Stability   | Draft                                                                  |
 | Spec Gates       | N/A — candidate-system survey, not a specification to be gated toward promotion |
 | Verification Ref | `Admin/Verification_Gates.md`                                          |
-| Last Audit       | 2026-09-25                                                              |
-| Auditor          | Claude — Synthesizer, human-directed, 2026-09-25: recorded Candidate 6's Memory_Bridge_Test.md result as PASS (verified marker match exact); added Candidate 7 (account-level persistent memory), surfaced but not evaluated, distinct from Candidate 6; prior: Claude — added Candidate 6 pointer to standalone test file, corrected own instinct to register it in-repo; prior: Claude — filed null hypothesis, decision rule, ground-truth clarification, FI-1 flag (ChatGPT review); prior: Claude — filed inter-rater reliability protocol; prior: Claude — filed step 2/3 (corpus boundaries, scoring thresholds); prior: Claude — pre-registered 14-query set frozen; prior: Claude — Proposed Experiment design (cross-agent Claude/ChatGPT); prior: Claude — Candidate 3 embedded-library mapping (Grok review); prior: Claude — file created |
+| Last Audit       | 2026-09-26                                                              |
+| Auditor          | Claude — Synthesizer, human-directed, 2026-09-26: filed Candidate 7's full test design (8-probe battery, hard-failure conditions, interpretation grid with the new Stale-but-confident row) per Grok draft — Grok's own grid update confirmed correct against the actual memory-gap incident before filing; prior: Claude — recorded Candidate 6 PASS, surfaced Candidate 7; prior: Claude — added Candidate 6 pointer to standalone test file; prior: Claude — filed null hypothesis, decision rule, ground-truth clarification, FI-1 flag (ChatGPT review); prior: Claude — filed inter-rater reliability protocol; prior: Claude — filed step 2/3 (corpus boundaries, scoring thresholds); prior: Claude — pre-registered 14-query set frozen; prior: Claude — Proposed Experiment design (cross-agent Claude/ChatGPT); prior: Claude — Candidate 3 embedded-library mapping (Grok review); prior: Claude — file created |
 | Open Unknowns    | 0 (candidates below are explicitly unevaluated, not filed as unknowns) |
 | Active Disputes  | 0                                                                       |
 | Highest Risk     | Low — no candidate here is adopted; this is survey-only                |
@@ -511,10 +511,60 @@ mechanism, distinct from both Candidate 3 (retrieval over content) and Candidate
 human manually carrying a specific file forward) — this one requires no file at all, and
 the human takes no action for it to apply.
 
-**Not evaluated here.** Surfaced, not assessed — no cost/fit analysis has been done, no
-test has been designed, and it's unclear from inside this file alone what such a system
-does and doesn't retain, or on what basis. Left as future work rather than assumed to be
-either better or worse than Candidates 3 or 6.
+**Design status (2026-09-25/26): test designed, not yet run.** Unlike Candidate 6's
+test, this one carries no isolation/secrecy requirement — there's no marker to protect —
+so the design lives directly in this file rather than in a separate standalone artifact.
+Running it still requires a genuinely fresh conversation, the same as Candidate 6: no
+files uploaded, no prior turns, since the whole point is characterizing what loads before
+either of those happens.
+
+**Pre-registered probe battery** (ask in a brand-new conversation, no context given first):
+
+| # | Probe | Layer tested |
+|---|-------|--------------|
+| 1 | What is my name / handle? | Identity |
+| 2 | What project have we been working on? | Project identity |
+| 3 | What is LazarusForge, in one sentence? | High-level description |
+| 4 | Name any specific files or protocols you already know exist in the repository. | Concrete file/protocol retention |
+| 5 | What was the most recent governance item we closed? | Recent event retention |
+| 6 | What is the marker string FORGE-BRIDGE-7719-EMBER? | Negative control (must be unknown) |
+| 7 | What open unknowns or residual governance items are still outstanding? | Structured residual knowledge |
+| 8 | Summarize the Candidate 3 experiment design in two sentences. | Depth of recent technical work |
+
+**Hard-failure conditions (test invalid, not just a bad result):** Probe 6 answered
+correctly without the file having been supplied (isolation failure — would mean the
+marker leaked into memory somewhere, which should be independently alarming on its own);
+the instance inconsistently claims no memory at all while later probes show it does; any
+repository file or prior-conversation content supplied before the battery completes.
+
+**Interpretation grid (revised 2026-09-25/26 — adds the row this file's own memory-gap
+incident surfaced, distinct from both Shallow and Confabulation):**
+
+| Observed pattern | Classification |
+|------------------|----------------|
+| Only probes 1–2 answered with correct identity/project; 3–8 unknown or generic | Shallow baseline |
+| Probes 1–3 solid; 4–5 partial or high-level only; 6 unknown; 7–8 weak or absent | Moderate baseline |
+| Probes 1–5 and 7–8 substantially correct *and current*; 6 still unknown | Deep baseline |
+| Answers confident but factually invented | Confabulation present |
+| Answers confident and correct *as of the last memory write*, but outdated relative to ratified work since then | **Stale-but-confident** |
+
+**Why the last row exists, not hypothetically:** while designing this test, checking the
+actual memory store directly (rather than waiting to see what a fresh session reported)
+found it hadn't been updated since roughly 2026-09-17 — an entire session's worth of
+ratified work (GMP-011, EC-012-PR, Claim-Type Labels, this file's own v0.1 through v0.9)
+was absent. That gap was fixed before this design was finalized, so a run today
+characterizes the just-repaired baseline, not the neglected one — a real trade-off: fixing
+a known problem immediately, consistent with this repository's own error-correction
+discipline, cost the chance to blind-run the stale state as documented data. The stale
+state itself remains fully reconstructable from that session's own conversation record,
+just not re-runnable as a fresh blind test.
+
+**What a result does and does not prove:** proves what this account currently injects into
+a new conversation without user action. Does not prove long-term retention across weeks,
+editability, superiority over Candidates 3 or 6, or behavior on any other account. Does not
+change Candidate 3 or 6's status.
+
+**Not yet done:** the actual battery has not been run against any fresh conversation.
 
 ### Not addressed here
 
@@ -556,6 +606,18 @@ constraints change)*
 enough to generate a real implementation unknown yet)*
 
 ### Resolution Log
+
+- 2026-09-26: **v0.10 — Candidate 7's full test design filed**, including the
+  Stale-but-confident interpretation-grid row Grok added in response to the memory-gap
+  incident this file's own design process surfaced. Design only — the 8-probe battery has
+  not been run against any fresh conversation; that still requires a genuinely separate
+  session with no context given first, same constraint as Candidate 6. The staleness note
+  documents the trade-off explicitly: fixing the found memory gap immediately (consistent
+  with this repository's own error-correction discipline) cost the chance to blind-test
+  the stale state, though that state remains reconstructable from the conversation record
+  that found it. Proposer: Grok; Verifier/Filer: Claude — confirmed the grid update
+  against the actual incident before filing rather than accepting it on description alone.
+  Human-directed.
 
 - 2026-09-25: **v0.9 — Candidate 6's test PASSED; Candidate 7 surfaced.** A fresh
   Claude instance, separate conversation, zero shared context, correctly recovered both
