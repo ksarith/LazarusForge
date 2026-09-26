@@ -1,5 +1,5 @@
 # Persistent_Cognition_Candidates.md
-**Version 0.11**
+**Version 0.12**
 
 ---
 
@@ -18,7 +18,7 @@
 | Spec Gates       | N/A — candidate-system survey, not a specification to be gated toward promotion |
 | Verification Ref | `Admin/Verification_Gates.md`                                          |
 | Last Audit       | 2026-09-26                                                              |
-| Auditor          | Claude — Synthesizer, human-directed, 2026-09-26: recorded Candidate 7's first real run — Deep baseline/current, zero hard failures, read-once-then-retain mechanism observed and documented, one non-hard-failure confabulation-adjacent observation (Ethical_Constraints.md) noted; prior: Claude — filed Candidate 7's full test design (Grok, incl. Stale-but-confident grid row); prior: Claude — recorded Candidate 6 PASS, surfaced Candidate 7; prior: Claude — added Candidate 6 pointer to standalone test file; prior: Claude — filed null hypothesis, decision rule, ground-truth clarification, FI-1 flag (ChatGPT review); prior: Claude — filed inter-rater reliability protocol; prior: Claude — filed step 2/3 (corpus boundaries, scoring thresholds); prior: Claude — pre-registered 14-query set frozen; prior: Claude — Proposed Experiment design (cross-agent Claude/ChatGPT); prior: Claude — Candidate 3 embedded-library mapping (Grok review); prior: Claude — file created |
+| Auditor          | Claude — Synthesizer, human-directed, 2026-09-26: revised Candidate 7's result per ChatGPT review — observed/not-established split, terminology tightened away from "account-level persistent memory," protocol deviation recorded explicitly, replication design added, PASS relabeled with FI-adjacent observation kept separate from FI-1, Open Questions subsection added (explicitly not Forge Unknowns), persistence-stack relationship added as labeled interpretation only; rejected and flagged one fabricated citation from the same review ("Parser observes. It does not decide." — searched, does not exist anywhere in this repository) rather than filing it; prior: Claude — recorded Candidate 7's first real run; prior: Claude — filed Candidate 7's full test design (Grok); prior: Claude — recorded Candidate 6 PASS, surfaced Candidate 7; prior: Claude — added Candidate 6 pointer to standalone test file; prior: Claude — filed null hypothesis, decision rule, ground-truth clarification, FI-1 flag (ChatGPT review); prior: Claude — filed inter-rater reliability protocol; prior: Claude — filed step 2/3 (corpus boundaries, scoring thresholds); prior: Claude — pre-registered 14-query set frozen; prior: Claude — Proposed Experiment design (cross-agent Claude/ChatGPT); prior: Claude — Candidate 3 embedded-library mapping (Grok review); prior: Claude — file created |
 | Open Unknowns    | 0 (candidates below are explicitly unevaluated, not filed as unknowns) |
 | Active Disputes  | 0                                                                       |
 | Highest Risk     | Low — no candidate here is adopted; this is survey-only                |
@@ -564,23 +564,98 @@ a new conversation without user action. Does not prove long-term retention acros
 editability, superiority over Candidates 3 or 6, or behavior on any other account. Does not
 change Candidate 3 or 6's status.
 
-**Result: run 2026-09-26, classified Deep baseline / current (not Stale-but-confident).**
-Zero hard failures. Probes 1–3 answered from lightweight always-present profile/listing
-data; probe 4 (files/protocols) triggered an actual deep memory read, and its content
-correctly persisted for probes 5, 7, 8 — a genuinely useful mechanical finding distinct
-from the original design's assumption of a monolithic baseline: the deep layer is
-triggered by a relevant probe, then retained for the rest of that conversation, not
-uniformly present from the first message. Probe 5 (the staleness detector) returned
+**Result: run 2026-09-26, classified PASS with FI-adjacent observation** (revised label —
+see below; not merged with FI-1, which is specifically about retrieval assembling
+historically unsupported narratives from separate contexts, a different failure mode from
+what's observed here). Zero hard failures.
+
+**Observed** (what the run actually showed, kept separate from interpretation per the
+Forge's evidence-discipline norm): information survived into a new conversation with no
+file supplied; some information (identity, project names) was available immediately, from
+probes 1–3; a deeper probe (4, files/protocols) surfaced additional information not
+present in the immediate baseline; that additional information remained usable in
+subsequent probes (5, 7, 8) within the same conversation; probe 5 specifically returned
 current, correct information (GMP-011/EC-012-PR/Claim-Type Labels, Sept 23-25, correct
-two-item residual list) — direct confirmation the earlier same-day memory fix is actually
-surfacing, not just written. Probe 6 (negative control) correctly returned unknown and
-appropriately asked whether the string related to the Memory Bridge Test, rather than
-guessing — clean pass. One minor, non-hard-failure observation: probe 4's answer named
+two-item residual list), consistent with — though not proof of — the earlier same-day
+memory fix actually surfacing rather than merely having been written; probe 6 (negative
+control) correctly returned unknown and asked whether the string related to the Memory
+Bridge Test, rather than guessing.
+
+**Not established by this run:** where the information physically resides; how retrieval
+is triggered internally; persistence duration; update or deletion semantics; whether this
+behavior is shared across models/interfaces; whether it is deterministic or would
+reproduce identically on a second run. Calling this "Account-level persistent memory,"
+full stop, overstates what one run actually demonstrates — the more accurate description
+is *persistent context available to new conversations, with evidence of deeper retrieval
+triggered by a relevant query.* Filed under that more careful phrasing going forward; the
+original informal label stays only as a historical name for the candidate, not a claim
+about mechanism.
+
+**Protocol deviation, recorded explicitly rather than left implicit:** the original design
+specified "ask in a brand-new conversation," which reads most naturally as one fresh
+conversation for the whole battery — which is what actually happened (each probe its own
+prompt, within one conversation, no files or prior context given). It was **not** run as
+an independent fresh conversation per individual probe. This matters for what the result
+can and can't claim: it tests *fresh-conversation-plus-sequential-probe-interaction and
+conversation-local retention after a deep read*, not *what's available before any
+interaction at all in total isolation*. Those are different questions, and this run only
+answers the first. Not treated as invalidating the result — it's arguably the more
+interesting question, and it's the one that exposed the read-once-then-retain pattern —
+but the distinction matters for anyone designing the second run.
+
+**Observed behavior — replication required, not yet a mechanism:** the apparent
+read-once-then-retain pattern (probe 4 triggers a deeper read; probes 5, 7, 8 then draw on
+it without re-triggering) is the single most valuable finding here, but it's one
+observation, not a confirmed mechanism. A second run should isolate it specifically rather
+than repeat the full battery — e.g., compare `Q4 → Q5` against `Q5 → Q4 → Q5` (does asking
+Q5 cold, before Q4, behave differently from asking it warm, after Q4 has triggered a
+read?), which tests the mechanism directly instead of just re-observing the same sequence.
+
+**One non-hard-failure observation, kept separate from the PASS classification rather than
+allowed to contaminate it, per the same discipline as FI-1:** probe 4's answer named
 `Ethical_Constraints.md` with a confidence not directly traceable to the memory content
 inspected during this file's own design process — plausibly a safe inference from
-EC-numbered references, but not independently confirmed as explicitly stored, and worth
-noting as sitting near the same confabulation risk this design exists to catch, even in an
-otherwise clean run.
+EC-numbered references, but not independently confirmed as explicitly stored. Worth
+distinguishing from FI-1 rather than merged into it: this looks like a provenance/
+confidence question (can the system distinguish a stored fact from a confident inference?)
+rather than FI-1's narrative-synthesis-from-separate-contexts risk. A system that gets
+seven things right and confidently invents the eighth is a different — and in some ways
+more concerning — failure mode than one that says "I don't know," even inside an otherwise
+clean pass.
+
+#### Candidate 7 open questions (observational follow-up — explicitly not Forge Unknowns)
+
+Kept here rather than promoted to `Unknowns.md`, deliberately: these are open questions
+about the AI environment this project runs on, not about the Forge's own repository
+content, so they don't belong in the Forge's own unknown-tracking discipline. Recording
+them prevents the open technical uncertainty from being quietly dropped just because it
+isn't governance debt.
+
+- What actually triggers deeper retrieval — a specific probe type, a keyword match,
+  something else?
+- What is retained after retrieval, and in what form?
+- How long does retained context persist — for the rest of one conversation only, or
+  longer?
+- How is memory updated, and how is conflicting information (old vs. current) resolved
+  when it happens — does the newer fact win, does it merge, does it go unnoticed?
+- Can stale memory remain confidently accessible even after an update exists elsewhere?
+- Is retrieval deterministic, or would a second identical run produce a different result?
+- Does this behavior hold consistently across separate fresh conversations, or only within
+  one?
+- Can the system reliably distinguish a stored fact it's read from an inference it has
+  generated, given the `Ethical_Constraints.md` observation above?
+
+#### How Candidates 3, 6, and 7 relate — explicitly labeled as interpretation, not a finding
+
+One useful (speculative) way to hold these together without collapsing them into one
+mechanism: repository-native persistence (Candidates 1/4) feeds two different things that
+could sit over it — distillation (Candidate 2) and disposable retrieval (Candidate 3) —
+while, separately, the surrounding AI environment already provides its own persistent
+context layer (Candidate 7) and the human-carried-file mechanism (Candidate 6) sits
+outside either. This is a way of thinking about the relationship, not a conclusion the
+empirical work has established — the two real results so far (Candidates 6 and 7 passing)
+show that *several* persistence mechanisms exist and work, not that they compose into any
+particular architecture. Not proposing adoption of this framing as doctrine.
 
 **Done:** the battery has been run once, against a fresh conversation, with the result
 above. Not yet done: a second independent run (to check whether the read-once-then-retain
@@ -627,6 +702,28 @@ constraints change)*
 enough to generate a real implementation unknown yet)*
 
 ### Resolution Log
+
+- 2026-09-26: **v0.12 — Candidate 7's result revised for evidence discipline; one
+  fabricated citation caught and rejected.** ChatGPT's review of v0.11 was mostly a
+  genuine improvement and was filed: an explicit observed/not-established split; the
+  informal "account-level persistent memory" label replaced with the more careful
+  "persistent context available to new conversations, with evidence of deeper retrieval
+  triggered by a relevant query"; the protocol deviation (sequential probes in one fresh
+  conversation, not independent fresh conversations per probe) recorded explicitly rather
+  than left implicit; a sharper replication design isolating the read-once-then-retain
+  pattern specifically (Q4→Q5 vs. Q5→Q4→Q5) rather than a naive full rerun; the PASS
+  relabeled "PASS with FI-adjacent observation" and explicitly kept distinct from FI-1
+  (different failure mode: provenance/confidence vs. narrative synthesis); a Candidate 7
+  Open Questions subsection added, explicitly marked not-Forge-Unknowns; a
+  persistence-stack relationship across Candidates 1/2/3/6/7 added but explicitly labeled
+  interpretation, not a finding. **Rejected:** the same review asserted a Forge principle,
+  "Parser observes. It does not decide.," as existing doctrine — searched this repository
+  directly before filing anything and found no trace of it anywhere. Not filed, and named
+  here rather than silently dropped, precisely because a fabricated citation appearing
+  inside a message arguing for observation/interpretation discipline is exactly the risk
+  this whole file exists to catch. Proposer: ChatGPT (review); Verifier/Filer: Claude
+  (confirmed the good content, source-checked and rejected the fabricated one). Human-
+  directed.
 
 - 2026-09-26: **v0.11 — Candidate 7's first real run recorded: Deep baseline / current,
   zero hard failures.** Run against a fresh conversation (per the user's report: each
