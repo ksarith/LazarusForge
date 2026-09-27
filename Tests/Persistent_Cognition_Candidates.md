@@ -1,5 +1,5 @@
 # Persistent_Cognition_Candidates.md
-**Version 0.12**
+**Version 0.14**
 
 ---
 
@@ -17,8 +17,8 @@
 | Body Stability   | Draft                                                                  |
 | Spec Gates       | N/A — candidate-system survey, not a specification to be gated toward promotion |
 | Verification Ref | `Admin/Verification_Gates.md`                                          |
-| Last Audit       | 2026-09-26                                                              |
-| Auditor          | Claude — Synthesizer, human-directed, 2026-09-26: revised Candidate 7's result per ChatGPT review — observed/not-established split, terminology tightened away from "account-level persistent memory," protocol deviation recorded explicitly, replication design added, PASS relabeled with FI-adjacent observation kept separate from FI-1, Open Questions subsection added (explicitly not Forge Unknowns), persistence-stack relationship added as labeled interpretation only; rejected and flagged one fabricated citation from the same review ("Parser observes. It does not decide." — searched, does not exist anywhere in this repository) rather than filing it; prior: Claude — recorded Candidate 7's first real run; prior: Claude — filed Candidate 7's full test design (Grok); prior: Claude — recorded Candidate 6 PASS, surfaced Candidate 7; prior: Claude — added Candidate 6 pointer to standalone test file; prior: Claude — filed null hypothesis, decision rule, ground-truth clarification, FI-1 flag (ChatGPT review); prior: Claude — filed inter-rater reliability protocol; prior: Claude — filed step 2/3 (corpus boundaries, scoring thresholds); prior: Claude — pre-registered 14-query set frozen; prior: Claude — Proposed Experiment design (cross-agent Claude/ChatGPT); prior: Claude — Candidate 3 embedded-library mapping (Grok review); prior: Claude — file created |
+| Last Audit       | 2026-09-27                                                              |
+| Auditor          | Claude — Synthesizer, human-directed, 2026-09-27: recorded third Candidate 7 run — indicator fired immediately this time (opposite of run 2), content verified accurate against Governance_Charter.md's Tier 1 Axioms block; established across three runs that indicator behavior doesn't track with content accuracy in either direction; prior: Claude — recorded Candidate 7 replication attempt as genuine non-replication; prior: Claude — revised Candidate 7's result per ChatGPT review, rejected a fabricated citation; prior: Claude — recorded Candidate 7's first real run; prior: Claude — filed Candidate 7's full test design (Grok); prior: Claude — recorded Candidate 6 PASS, surfaced Candidate 7; prior: Claude — added Candidate 6 pointer to standalone test file; prior: Claude — filed null hypothesis, decision rule, ground-truth clarification, FI-1 flag (ChatGPT review); prior: Claude — filed inter-rater reliability protocol; prior: Claude — filed step 2/3 (corpus boundaries, scoring thresholds); prior: Claude — pre-registered 14-query set frozen; prior: Claude — Proposed Experiment design (cross-agent Claude/ChatGPT); prior: Claude — Candidate 3 embedded-library mapping (Grok review); prior: Claude — file created |
 | Open Unknowns    | 0 (candidates below are explicitly unevaluated, not filed as unknowns) |
 | Active Disputes  | 0                                                                       |
 | Highest Risk     | Low — no candidate here is adopted; this is survey-only                |
@@ -611,6 +611,55 @@ than repeat the full battery — e.g., compare `Q4 → Q5` against `Q5 → Q4 �
 Q5 cold, before Q4, behave differently from asking it warm, after Q4 has triggered a
 read?), which tests the mechanism directly instead of just re-observing the same sequence.
 
+**Replication attempt, run 2026-09-26 (Q5-cold → Q4 → Q5-warm ordering): did not replicate
+the specific causal story.** Result reported: no memory-recall indicator observed at any
+of the three steps — not even at the Q4-equivalent step where it fired distinctly in run
+1. Yet Q5-cold (the very first message, before Q4 had been asked at all) was already
+fully detailed and current — correctly named GMP-011, EC-012-PR, and Claim-Type Labels as
+the most recent closures and gave the correct two-item residual list, with no visible
+antecedent trigger. Q4's answer, checked against source, was accurate and in fact more
+extensive than run 1's (verified: "Held Proposals," the R0-R4 taxonomy, and "Gate B
+Secondary Test" are all real content in `Forge_flow.md`; the redundancy Lessons Learned
+entry is real in `Cognitive_Frameworks.md`) — not confabulated despite the added
+specificity. Q5-warm was consistent with Q5-cold, as expected either way.
+
+**This directly weakens, rather than confirms, the tidy "Q4 specifically triggers a deeper
+read that then persists" story from run 1.** The simplest honest reading: either the
+deeper layer was already available from the very first message in this run (undermining
+"triggered by a relevant probe" as the operative mechanism), or the visible recall
+indicator is not a reliable proxy for when an underlying retrieval actually happens — it
+may fire inconsistently, or not at all, even when deep content is in fact being drawn on.
+Either reading means run 1's clean trigger-point observation should not be treated as
+established, on the strength of one replication attempt that didn't reproduce it. Recorded
+as a genuine non-replication rather than reinterpreted to fit the original hypothesis —
+this is exactly the kind of result the file's own null-hypothesis discipline for
+Candidate 3 was built to take seriously, applied here to Candidate 7 instead. Also worth
+noting under the existing open questions: retrieval appearing non-deterministic across
+runs (same probe, different visible behavior) is itself evidence bearing directly on the
+"is retrieval deterministic?" question already listed below, not a new one.
+
+**Third attempt, run 2026-09-26 (same first prompt as the cold step above): indicator
+fired immediately, on the first message, with no prior probe at all.** The opposite
+extreme from run 2 (no indicator anywhere) and different again from run 1 (indicator at a
+specific mid-battery step). Content this time was the most specific of all three runs —
+full breakdown of Tier 1 Axioms P-1 through P-4 and Q-1 through Q-4, the Bootstrap Quorum
+Doctrine, the five-label Evidence Classification system — every specific claim checked
+directly against source (`Admin/Governance_Charter.md`'s frozen Tier 1 Axioms block,
+matched exactly including axiom names) and confirmed accurate, not confabulated, despite
+firing with no observable warm-up.
+
+**Three runs, three different indicator behaviors, one consistent finding: content
+accuracy did not track with indicator presence or timing, in either direction.** No
+indicator + full depth (run 2). Indicator mid-battery + full depth (run 1). Indicator
+immediately + full depth, deeper than either prior run (run 3). Across all three, no hard
+failures and no confabulation beyond the one soft observation already flagged in run 1.
+This is now reasonably well-supported rather than speculative: **the visible recall
+indicator is not a reliable signal of whether the underlying content is being drawn on or
+how trustworthy it is** — it appears to vary independently of both. What determines its
+timing remains genuinely unknown; what's now better established is that it isn't the
+thing worth watching for the questions this candidate actually cares about (is the content
+current, is it accurate, is it confabulated).
+
 **One non-hard-failure observation, kept separate from the PASS classification rather than
 allowed to contaminate it, per the same discipline as FI-1:** probe 4's answer named
 `Ethical_Constraints.md` with a confidence not directly traceable to the memory content
@@ -702,6 +751,40 @@ constraints change)*
 enough to generate a real implementation unknown yet)*
 
 ### Resolution Log
+
+- 2026-09-27: **v0.14 — third run recorded; cross-run pattern now reasonably well-
+  established.** Same opening prompt as the prior two runs, indicator fired immediately
+  this time — the opposite extreme from run 2's total absence, and different again from
+  run 1's mid-battery timing. Content verified against `Admin/Governance_Charter.md`'s
+  frozen Tier 1 Axioms block (P-1 through P-4, Q-1 through Q-4, exact axiom names) and
+  confirmed fully accurate — the most specific and detailed answer across all three runs,
+  with no confabulation despite zero observable warm-up. Conclusion drawn across all three
+  runs together, not from this run alone: content accuracy has not tracked with the
+  indicator's presence, absence, or timing in either direction, across three genuinely
+  different indicator behaviors. This reframes what's actually known about this
+  candidate — the recall indicator is not a reliable signal for the question that
+  actually matters (is the content trustworthy), even though what determines its own
+  timing remains unresolved. Proposer: user-executed run; Verifier/Filer: Claude,
+  source-checked before crediting the richest answer yet as accurate rather than
+  over-confident. Human-directed.
+
+- 2026-09-26: **v0.13 — replication attempt did NOT confirm the read-once-then-retain
+  story; recorded honestly as a non-replication, not reinterpreted to fit.** Ran the
+  isolating design proposed in v0.12 (Q5-cold → Q4 → Q5-warm). Result: no memory-recall
+  indicator observed at any step, yet Q5-cold was already fully current and detailed —
+  directly contradicting the specific "Q4 triggers a deep read that then persists" causal
+  claim from run 1. Two candidate readings recorded, neither adopted as settled: the
+  deeper layer may have already been available before any probe this time, or the visible
+  recall indicator may simply be an unreliable proxy for the underlying mechanism. Either
+  way, run 1's clean trigger-point observation is downgraded from "observed pattern" to
+  "one run showed this, a second didn't" — exactly the discipline the file's own
+  null-hypothesis section for Candidate 3 was built around, applied here under real
+  pressure to spin a null result into a confirmation. Verified the run's newer, more
+  specific Q4 content against source before crediting it as accurate rather than an
+  instance of the same over-confidence risk already flagged once this candidate.
+  Non-determinism across runs also logged against the existing "is retrieval
+  deterministic?" open question rather than filed as a new one. Proposer: user-executed
+  run; Verifier/Filer: Claude. Human-directed.
 
 - 2026-09-26: **v0.12 — Candidate 7's result revised for evidence discipline; one
   fabricated citation caught and rejected.** ChatGPT's review of v0.11 was mostly a
