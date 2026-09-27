@@ -895,7 +895,7 @@ Mandatory re-audit conditions:
 | Blocking      | No                                |
 | Owner         | `Admin/Ethical_Constraints.md`    |
 | First Logged  | 2026-06-18                        |
-| Last Reviewed | 2026-09-18                        |
+| Last Reviewed | 2026-09-27                        |
 
 **Description:** The permission model implicitly trusts human review as a trustworthy authorization source. No doctrine exists for: operator coercion, operator corruption, override abuse, or captured governance where the human authority layer itself has been compromised.
 
@@ -910,6 +910,42 @@ Mandatory re-audit conditions:
 - **Open design questions:** observable coercion/corruption/impairment indicators; required system response when they appear; avoiding verifier infinite regress; minimum independent validation and its interaction with the GOV-006 interim rule; solo-operator residual (no second human currently available to serve as an independent check — same residual already named for GOV-006/GMP-004); relationship to SEC-007a's residual that R4 "does not by itself defend against a compromised Human Governing Authority."
 - **Scope fences:** GOV-006 answers whether an instruction originated from the claimed human authority; EC-011 answers whether that authority is itself trustworthy — distinct questions, kept separate. EC-012 is a different attack surface (telemetry/firmware spoofing vs. permission-source compromise) and is not collapsed into this entry.
 - No adversary-model architecture proposed; no Payment-via-Specification. Status remains Open. Cross-agent: ChatGPT drafted the problem statement, Grok reviewed and recommended it as the next thread, Claude source-verified and filed it.
+
+**Existing floor already in live doctrine (inventory added 2026-09-27, Grok-drafted, Claude source-verified against live text before filing):**
+
+The following is already operative and must be treated as the current floor, not reinvented:
+
+- **Interim anomalous-pattern rule** (`Admin/Security_Protocols.md` §I.6, Human-Factors Attack Surface Note): "Until EC-011 is resolved, treat anomalous override patterns (unusual timing, repeated requests, out-of-character scope) as escalation triggers to human review. SEC-009 detection signals are available for use under the SEC-002 state machine."
+- **Ratified detection signal D5** (`Admin/Security_Protocols.md` §SEC-009, Payment via Specification, 2026-08-22): "Override or high-privilege requests show unusual timing, repetition, scope, or provenance that does not match the operator's established pattern... Possible compromised override path or coerced operator." Any one of D1–D6 generates compromise suspicion and mandatory suspension under SEC-002; clearing a D5 (or D6) suspension requires human operator confirmation, not self-attestation by the suspended node.
+- **Explicit Placeholder assumption** (SEC-ASM-006): "Human operators acting as ratification authorities are not compromised, coerced, or impaired." Resolution path points to EC-011 (adversary model) and `Admin/Safety_Protocols.md` §V (physical/cognitive impairment — orthogonal scope, on-site operator only, not a governance-coercion model).
+- **Human-Factors Attack Surface Note itself**: "The override ratification process assumes operators are uncompromised, uncoerced, and cognitively unimpaired. Side-channel attacks, social engineering directed at operators holding tokens, and timing attacks on multi-signature processes are not addressed at current maturity."
+- **Charter Human Override Doctrine**: overrides must be explicit, preserve lineage, document rationale, declare accepted risk, avoid retroactive erasure. Interim authentication (second human / external cryptographic signature / dated external record) is mandatory for Constitutional-class decisions. GOV-006, GMP-004, and EC-011 explicitly remain Open in the Charter's own text — "human ratification" language does not resolve authority-adversary authenticity.
+
+This floor already supplies a qualitative indicator class, a ratified detection signal that explicitly names coercion, and a mandatory escalation/suspension path. It does not constitute an adversary model.
+
+**Residual gaps not discharged by the floor above (still EC-011's actual scope):**
+
+1. **Recursive trust / compromised reviewer** — both the interim rule and D5 escalate to "human review"; no doctrine addresses the case where the receiving reviewer is itself the compromised party.
+2. **Solo-operator residual** — already named 2026-09-18, shared with GOV-006/GMP-004. Any design assuming a reliable second human leaves this open.
+3. **Quiet / non-anomalous coercion** — coercion producing no detectable pattern deviation (operator complies under pressure while preserving an outwardly normal pattern). D5 and the interim rule are silent on this class.
+4. **Minimum independent validation beyond the GOV-006 interim rule** — the existing stop-gaps remain declarative and evidentiary, not preventive.
+5. **Response doctrine under confirmed or high-confidence coercion** — beyond "escalate to human review" and SEC-002 suspension, no graduated containment, authority-narrowing, or Safe-State trigger specific to a compromised permission source exists yet.
+
+Scope fences unchanged: GOV-006 = origin authenticity; EC-011 = trustworthiness of the authority itself; EC-012 = distinct telemetry surface; Safety_Protocols §V = on-site physical/cognitive impairment, not governance-authority coercion. No adversary-model architecture, thresholds, or Payment-via-Specification proposed by this inventory — it exists so later design work can't silently claim the floor already solved the residual gaps.
+
+**EC-011-R3 — Quiet / Non-Anomalous Coercion (design brief, added 2026-09-27, Grok-drafted, Claude source-verified for internal consistency against the inventory above before filing):**
+
+*Scope:* a Human Governing Authority issues or ratifies a Constitutional-class override while under coercion, yet the request exhibits none of the qualitative markers the live floor already covers (unusual timing, repetition, scope, provenance, or out-of-character pattern). In that case D5 does not fire, the interim anomalous-pattern rule does not fire, and the only remaining check is the GOV-006 evidentiary stop-gap — itself declarative and non-preventive. This residual does not claim quiet coercion is common or easy; it only records that the current floor has no coverage for it, leaving parent Resolution Path item (1) partially open (satisfied for the anomalous case, unaddressed for the non-anomalous case). Items (2) and (3) of the parent path are untouched.
+
+*Design questions posed, none answered here:*
+1. Are there observable signals short of anomalous pattern that could raise suspicion of quiet coercion without requiring continuous biometric or external-feed infrastructure this project doesn't have?
+2. Can the existing GOV-006 interim authentication requirements be strengthened or re-weighted for Constitutional-class decisions in a way that raises the cost of quiet coercion, without itself solving the solo-operator residual?
+3. Is there a useful distinction between coercion the operator is aware of and actively concealing, versus coercion the operator doesn't fully recognize (gradual capture, normalized pressure) — and does that distinction change what the system could detect?
+4. What is the correct default posture when quiet coercion can't be ruled out and no second independent human is available — the intersection with the solo-operator residual — without inventing new automatic machinery that Genesis Phase holding clauses would suspend anyway?
+
+*Explicit non-goals:* does not claim to detect or prevent quiet coercion; does not introduce biometric, continuous-monitoring, or external-feed requirements; does not resolve or absorb the recursive-trust residual or the solo-operator residual; does not define graduated response, authority-narrowing, or Safe-State triggers for confirmed coercion (that belongs to the response-doctrine residual); does not alter D5, the interim anomalous-pattern rule, SEC-002, or GOV-006's interim authentication requirements; does not collapse EC-011 into GOV-006 or EC-012.
+
+None of the four design questions above are to be advanced until a concrete, narrow proposal is ready for Skeptic/Evidence review. The other four residuals (recursive trust, solo-operator, minimum independent validation, response doctrine) remain explicitly listed above so this residual cannot be read as having silently solved them.
 
 ---
 
