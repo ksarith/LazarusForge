@@ -4,7 +4,9 @@
 # Pre-registered design: build → query 14 frozen queries → discard
 # =============================================================================
 # Usage (Colab):
-#   1. Upload LazarusForge_Unified_2026-09-27.zip (or the lf116-merged folder)
+#   1. Upload a LazarusForge release zip (or the extracted folder) to the Colab root.
+#      Any tree containing Routing.md is found automatically; the 2026-09-27 names
+#      below remain as backward-compatible defaults.
 #   2. Runtime → Run all
 #   3. Results are printed and also written to candidate3_results.json
 # =============================================================================
@@ -27,29 +29,57 @@ EMBED_MODEL = "all-MiniLM-L6-v2"
 # ---------------------------------------------------------------------------
 # 1. Locate / extract repo
 # ---------------------------------------------------------------------------
+SOURCE_INFO = {"source_zip": None, "source_zip_sha256": None}   # filled by locate_repo()
+
+def _tree_root(base: Path):
+    """Return the first directory under (or equal to) base that contains Routing.md."""
+    if (base / "Routing.md").is_file():
+        return base
+    for hit in sorted(base.rglob("Routing.md")):
+        if "__MACOSX" not in hit.parts:
+            return hit.parent
+    return None
+
+def _sha256(path: Path) -> str:
+    import hashlib
+    h = hashlib.sha256()
+    with open(path, "rb") as f:
+        for block in iter(lambda: f.read(1 << 20), b""):
+            h.update(block)
+    return h.hexdigest()
+
 def locate_repo():
     cwd = Path.cwd()
-    # already extracted?
+    # 1. Legacy: already-extracted folder with the 2026-09-27 name
     direct = cwd / REPO_ROOT_NAME
     if direct.is_dir():
         return direct
-    # zip present?
-    zpath = cwd / ZIP_NAME
-    if zpath.is_file():
+    # 2. Any already-extracted tree in the working directory (contains Routing.md)
+    for d in sorted(p for p in cwd.iterdir() if p.is_dir() and not p.name.startswith(("_", "."))):
+        if (d / "Routing.md").is_file():
+            return d
+    # 3. A zip: the legacy name first, otherwise any LazarusForge*.zip
+    zips = [cwd / ZIP_NAME] if (cwd / ZIP_NAME).is_file() else []
+    zips += sorted(p for p in cwd.glob("LazarusForge*.zip") if p.name != ZIP_NAME)
+    if len(zips) > 1:
+        print(f"  note: {len(zips)} candidate zips found; using {zips[0].name}")
+    if zips:
+        zpath = zips[0]
         extract_dir = cwd / "_extracted_repo"
         if extract_dir.exists():
             shutil.rmtree(extract_dir)
         extract_dir.mkdir()
         with zipfile.ZipFile(zpath, "r") as z:
             z.extractall(extract_dir)
-        # zip contains unified_build/lf116-merged or just lf116-merged
-        candidates = list(extract_dir.rglob(REPO_ROOT_NAME))
-        if not candidates:
-            raise FileNotFoundError(f"Could not find {REPO_ROOT_NAME} inside zip")
-        return candidates[0]
+        root = _tree_root(extract_dir)
+        if root is None:
+            raise FileNotFoundError(f"No Routing.md found inside {zpath.name}; not a Forge tree")
+        SOURCE_INFO["source_zip"] = zpath.name
+        SOURCE_INFO["source_zip_sha256"] = _sha256(zpath)
+        return root
     raise FileNotFoundError(
-        f"Neither {REPO_ROOT_NAME}/ nor {ZIP_NAME} found in {cwd}. "
-        "Upload the unified zip or the extracted tree first."
+        f"No Forge tree (a folder containing Routing.md) or LazarusForge*.zip found in {cwd}. "
+        "Upload the release zip or the extracted tree first."
     )
 
 # ---------------------------------------------------------------------------
@@ -169,7 +199,7 @@ FROZEN_QUERIES = [
     {"id": 3, "class": "Rejected reasoning",
      "query": "Why was the independent Grok/Copilot thread's GOV-008 registry patch to Governance_Charter.md rejected, and what was preserved from it instead?"},
     {"id": 4, "class": "Rejected reasoning",
-     "query": "Why was the 2026-07-29 CIR v2.0 bundle held as unratified draft material rather than applied alongside CIR-F02/CIR-F03?"},
+     "query": "Why was the 2026-07-29 \"CIR v2.0\" bundle held as unratified draft material rather than applied alongside CIR-F02/CIR-F03?"},
     {"id": 5, "class": "Unknown history",
      "query": "What was previously unresolved about ENV-007 and ENV-008, and how long had each sat unrevisited before being corrected?"},
     {"id": 6, "class": "Unknown history",
@@ -177,9 +207,9 @@ FROZEN_QUERIES = [
     {"id": 7, "class": "Resolution history",
      "query": "How was the Support_Raft induction-loss discrepancy (12% laboratory vs. 20–40% real subsea conditions) resolved and logged?"},
     {"id": 8, "class": "Resolution history",
-     "query": "How was RIP-002's not-yet-implemented status corrected, and what exactly was verified to justify the change?"},
+     "query": "How was RIP-002's \"not yet implemented\" status corrected, and what exactly was verified to justify the change?"},
     {"id": 9, "class": "Governance reasoning",
-     "query": "Why was the Closed_Loop_Feedstock draft's Resolved 2026-08-03 status claim rejected rather than accepted?"},
+     "query": "Why was the Closed_Loop_Feedstock draft's \"Resolved 2026-08-03\" status claim rejected rather than accepted?"},
     {"id": 10, "class": "Governance reasoning",
      "query": "Why does AP-033 (Rule 9) require confirmed governance-file access before a contribution can mark an unknown toward Resolved status?"},
     {"id": 11, "class": "Technical reasoning",
@@ -285,6 +315,10 @@ def main():
         "run_at": datetime.now(timezone.utc).isoformat(),
         "embed_model": EMBED_MODEL,
         "top_k": TOP_K,
+        "repo_root": str(repo),
+        "source_zip": SOURCE_INFO["source_zip"],
+        "source_zip_sha256": SOURCE_INFO["source_zip_sha256"],
+        "md_file_count": sum(1 for _ in repo.rglob("*.md")),
         "queries": [],
     }
 
