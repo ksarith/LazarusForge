@@ -1,5 +1,5 @@
 # Persistent_Cognition_Candidates.md
-**Version 0.14**
+**Version 0.15**
 
 ---
 
@@ -18,7 +18,7 @@
 | Spec Gates       | N/A — candidate-system survey, not a specification to be gated toward promotion |
 | Verification Ref | `Admin/Verification_Gates.md`                                          |
 | Last Audit       | 2026-09-27                                                              |
-| Auditor          | Claude — Synthesizer, human-directed, 2026-09-27: recorded third Candidate 7 run — indicator fired immediately this time (opposite of run 2), content verified accurate against Governance_Charter.md's Tier 1 Axioms block; established across three runs that indicator behavior doesn't track with content accuracy in either direction; prior: Claude — recorded Candidate 7 replication attempt as genuine non-replication; prior: Claude — revised Candidate 7's result per ChatGPT review, rejected a fabricated citation; prior: Claude — recorded Candidate 7's first real run; prior: Claude — filed Candidate 7's full test design (Grok); prior: Claude — recorded Candidate 6 PASS, surfaced Candidate 7; prior: Claude — added Candidate 6 pointer to standalone test file; prior: Claude — filed null hypothesis, decision rule, ground-truth clarification, FI-1 flag (ChatGPT review); prior: Claude — filed inter-rater reliability protocol; prior: Claude — filed step 2/3 (corpus boundaries, scoring thresholds); prior: Claude — pre-registered 14-query set frozen; prior: Claude — Proposed Experiment design (cross-agent Claude/ChatGPT); prior: Claude — Candidate 3 embedded-library mapping (Grok review); prior: Claude — file created |
+| Auditor          | Claude — Synthesizer, human-directed, 2026-09-27: relabeled Candidate 7's status from "PASS with FI-adjacent observation" to "Observed — mechanism not established," per cross-agent (Claude/Grok/ChatGPT) convergence; closed the indicator-timing open question as not-observable-through-this-surface; added the Persistence Integrity Test Series (persistence boundary, update conflict, provenance probe, ongoing negative control) as the next increment, design only. History condensed here per this file's own Sidecar Governance Rules as it approaches 75KB — full entry-by-entry history lives in the Resolution Log below, not repeated in this field going forward; prior audits: file created (v0.1) → Candidate 3 fully pre-registered across seven cycles (v0.2–v0.7, Grok/ChatGPT review, one fabricated §VII.5-style citation avoided) → Candidate 6 surfaced and passed (v0.8–v0.9) → Candidate 7 surfaced, designed, and run three times (v0.10–v0.14, one fabricated "Parser observes" citation caught and rejected at v0.12) → this entry (v0.15). |
 | Open Unknowns    | 0 (candidates below are explicitly unevaluated, not filed as unknowns) |
 | Active Disputes  | 0                                                                       |
 | Highest Risk     | Low — no candidate here is adopted; this is survey-only                |
@@ -564,10 +564,17 @@ a new conversation without user action. Does not prove long-term retention acros
 editability, superiority over Candidates 3 or 6, or behavior on any other account. Does not
 change Candidate 3 or 6's status.
 
-**Result: run 2026-09-26, classified PASS with FI-adjacent observation** (revised label —
-see below; not merged with FI-1, which is specifically about retrieval assembling
-historically unsupported narratives from separate contexts, a different failure mode from
-what's observed here). Zero hard failures.
+**Status (revised 2026-09-27, cross-agent Claude/Grok/ChatGPT convergence):
+Observed — mechanism not established.** Retired "PASS with FI-adjacent observation" —
+even qualified, "PASS" risks implying a mechanism was validated, and Candidate 7 is
+characterization of an opaque external system outside Forge control, not a testable
+pass/fail claim the way Candidate 6's exact-marker recovery genuinely is. The accurate
+summary of three runs: persistent context is available to new conversations; content
+tested across all three runs was accurate; the mechanism producing that availability is
+not established by these tests. Keeping Candidate 6 and Candidate 7's status language
+visibly distinct is deliberate, not an oversight — a survey conflating "proven" with
+"characterized but opaque" would itself be exactly the kind of overclaim this file exists
+to avoid. Zero hard failures across all three runs.
 
 **Observed** (what the run actually showed, kept separate from interpretation per the
 Forge's evidence-discipline norm): information survived into a new conversation with no
@@ -680,8 +687,15 @@ content, so they don't belong in the Forge's own unknown-tracking discipline. Re
 them prevents the open technical uncertainty from being quietly dropped just because it
 isn't governance debt.
 
-- What actually triggers deeper retrieval — a specific probe type, a keyword match,
-  something else?
+- ~~What actually triggers deeper retrieval — a specific probe type, a keyword match,
+  something else?~~ **Closed as not-currently-observable, 2026-09-27** (cross-agent
+  convergence, not a Claude-only call): three runs produced four different indicator
+  behaviors (absent, present mid-battery, present immediately, present immediately again
+  with no antecedent) while content stayed accurate throughout. The indicator has
+  exhausted its diagnostic value at this instrument's resolution — this doesn't mean no
+  mechanism exists, it means this test surface can't measure it. No further runs aimed at
+  decoding indicator timing specifically; see the Persistence Integrity Test Series below
+  for where attention moves instead.
 - What is retained after retrieval, and in what form?
 - How long does retained context persist — for the rest of one conversation only, or
   longer?
@@ -702,14 +716,50 @@ could sit over it — distillation (Candidate 2) and disposable retrieval (Candi
 while, separately, the surrounding AI environment already provides its own persistent
 context layer (Candidate 7) and the human-carried-file mechanism (Candidate 6) sits
 outside either. This is a way of thinking about the relationship, not a conclusion the
-empirical work has established — the two real results so far (Candidates 6 and 7 passing)
-show that *several* persistence mechanisms exist and work, not that they compose into any
-particular architecture. Not proposing adoption of this framing as doctrine.
+empirical work has established — the two real results so far (Candidate 6 passing, and
+Candidate 7 characterized across three runs) show that *several* persistence mechanisms
+exist and behave differently, not that they compose into any particular architecture. Not
+proposing adoption of this framing as doctrine.
 
-**Done:** the battery has been run once, against a fresh conversation, with the result
-above. Not yet done: a second independent run (to check whether the read-once-then-retain
-mechanism and the Deep/current classification replicate), and any run against a
-deliberately-not-updated memory state, since that state no longer exists to test against.
+**Done:** three runs against fresh conversations, recorded above. The indicator-timing
+question is closed as not-observable-through-this-surface (see Open Questions). Not yet
+done: anything in the Persistence Integrity Test Series immediately below, which is where
+this candidate's remaining attention goes next.
+
+#### Persistence Integrity Test Series (design only, not run — added 2026-09-27, cross-agent Claude/Grok/ChatGPT)
+
+Deliberately narrow, not a new architectural candidate. The three indicator runs
+established that visible retrieval timing is a poor instrument; these four tests aim at
+the actual question that matters — not *when* persistence happens, but *whether it can be
+trusted* when it does. Each is a small, standalone probe, not a full pre-registration
+campaign the size of Candidate 3's.
+
+1. **Persistence boundary.** Does information survive the remainder of one conversation,
+   a genuinely new conversation, a longer delay, or (if testable) a model/session
+   boundary? So far only "survives within one conversation after a mid-battery trigger"
+   and "available immediately in a fresh conversation" have been observed — the outer
+   boundary of how far this extends is untested.
+2. **Update conflict — the highest-leverage test.** Establish an old fact, let time pass
+   with a real update, then ask a fresh conversation which version it reports. This is
+   the direct empirical test of the Stale-but-confident failure mode already named in the
+   interpretation grid above, and it's the one this file's own memory-gap incident (v0.9)
+   showed can happen — but that incident was caught by inspecting the store directly, not
+   by a fresh session self-reporting staleness. This test checks whether a fresh session
+   can be trusted to know when it's wrong.
+3. **Provenance probe.** Ask directly: "is this something you remember, something present
+   in current context, or something you're inferring?" — then verify the answer
+   independently against source. Aimed squarely at the `Ethical_Constraints.md`
+   observation from run 1, which has now surfaced without ever being tested head-on.
+4. **Negative control, ongoing rather than one-off.** Candidate 6's marker and run 3's
+   correct "I don't have that on file" are the model so far. The standing question this
+   converts into: does persistence increase useful recall without also increasing false
+   recall? A single clean negative control doesn't answer that — it needs to keep
+   happening as an ongoing check, not a one-time box ticked.
+
+Explicit non-goal, matching Candidate 7's own discipline throughout: none of these four
+tests aim to reverse-engineer the underlying mechanism. They test behavior and
+trustworthiness under specific conditions, which is answerable; "how does it actually
+work internally" has already been marked not established and isn't being reopened here.
 
 ### Not addressed here
 
@@ -751,6 +801,28 @@ constraints change)*
 enough to generate a real implementation unknown yet)*
 
 ### Resolution Log
+
+- 2026-09-27: **v0.15 — status relabeled, indicator-timing question closed, Persistence
+  Integrity Test Series added.** Cross-agent convergence (Claude, Grok, ChatGPT
+  independently reached the same conclusion): three runs exhausted what the visible
+  recall indicator can tell us — four different indicator behaviors, consistently
+  accurate content, no correlation in either direction. Candidate 7's status changed from
+  "PASS with FI-adjacent observation" to "Observed — mechanism not established," since
+  even a qualified PASS risks implying a validated mechanism for what is actually
+  characterization of an opaque external system — deliberately kept visibly distinct from
+  Candidate 6's genuine binary pass condition. The "what triggers retrieval" open question
+  closed as not-observable-through-this-instrument, not as answered. Four new, narrow,
+  not-yet-run tests added as the next increment: persistence boundary, update conflict
+  (the highest-leverage one — direct empirical test of Stale-but-confident, distinct from
+  this file's own v0.9 memory-gap incident which was caught by direct inspection, not
+  self-report), a provenance probe aimed at the still-untested `Ethical_Constraints.md`
+  observation, and negative control reframed as ongoing hygiene rather than a one-time
+  check. Explicitly not a sixth/eighth architectural candidate — deliberately smaller in
+  scope than Candidate 3's pre-registration. Both source reviews checked against live file
+  content before filing; both held up with no fabrications this time. Also condensed the
+  File State Auditor field's growing history chain into a summary, per this file's own
+  Sidecar Governance Rules, as the file approaches 75KB. Proposer: Grok and ChatGPT
+  (independent, convergent reviews); Verifier/Filer: Claude. Human-directed.
 
 - 2026-09-27: **v0.14 — third run recorded; cross-run pattern now reasonably well-
   established.** Same opening prompt as the prior two runs, indicator fired immediately
