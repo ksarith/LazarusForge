@@ -18,7 +18,7 @@
 | Owning Domain | Operations/ |
 | Last Reviewed | 2026-09-18 |
 | Sidecar Link | `Architecture/Forge_flow.md` FL-006 |
-| Ethical Anchor | Attempt to do no harm. Defer to `Admin/Ethical_Constraints.md`. |
+| Ethical Anchor | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
 ---
 
