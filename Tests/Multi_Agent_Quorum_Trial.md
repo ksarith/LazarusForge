@@ -18,7 +18,7 @@
 | Owning Domain    | Tests/                                                               |
 | Last Reviewed    | 2026-09-21 — §8.6–§8.8 role pack/task; §8.9 Handoff Schemas + §8.10 Collaboration Friction Log added (ChatGPT collaboration review). Status unchanged: Proposed Protocol — Not Yet Run. |
 | Sidecar Link     | N/A                                                                  |
-| Ethical Anchor   | Attempt to do no harm. Defer to `Admin/Ethical_Constraints.md`.      |
+| Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present.   |
 
 ---
 

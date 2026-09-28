@@ -23,7 +23,7 @@
 | Active Disputes  | 0                                                                       |
 | Highest Risk     | Low — no candidate here is adopted; this is survey-only                |
 | Sidecar Link     | #auditor-notes--unknowns                                                |
-| Ethical Anchor   | Attempt to do no harm. Defer to `Ethical_Constraints.md` if present.   |
+| Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present.     |
 
 ---
 
