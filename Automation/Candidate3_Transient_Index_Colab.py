@@ -48,24 +48,59 @@ def _sha256(path: Path) -> str:
             h.update(block)
     return h.hexdigest()
 
+def _search_dirs():
+    """Directories to search, in priority order: cwd first, then Colab's
+    local upload folder, then a mounted Google Drive (both possible mount
+    spellings). Only ones that actually exist are searched."""
+    seen, dirs = set(), []
+    for d in [Path.cwd(), Path("/content"),
+              Path("/content/drive/MyDrive"), Path("/content/drive/My Drive")]:
+        if d.is_dir() and d not in seen:
+            seen.add(d)
+            dirs.append(d)
+    return dirs
+
 def locate_repo():
-    cwd = Path.cwd()
+    search_dirs = _search_dirs()
+    drive_mounted = any("drive" in str(d) for d in search_dirs)
+
     # 1. Legacy: already-extracted folder with the 2026-09-27 name
-    direct = cwd / REPO_ROOT_NAME
-    if direct.is_dir():
-        return direct
-    # 2. Any already-extracted tree in the working directory (contains Routing.md)
-    for d in sorted(p for p in cwd.iterdir() if p.is_dir() and not p.name.startswith(("_", "."))):
-        if (d / "Routing.md").is_file():
-            return d
-    # 3. A zip: the legacy name first, otherwise any LazarusForge*.zip
-    zips = [cwd / ZIP_NAME] if (cwd / ZIP_NAME).is_file() else []
-    zips += sorted(p for p in cwd.glob("LazarusForge*.zip") if p.name != ZIP_NAME)
+    for base in search_dirs:
+        direct = base / REPO_ROOT_NAME
+        if direct.is_dir():
+            return direct
+
+    # 2. Any already-extracted tree (contains Routing.md), one level deep
+    for base in search_dirs:
+        for d in sorted(p for p in base.iterdir() if p.is_dir() and not p.name.startswith(("_", "."))):
+            if (d / "Routing.md").is_file():
+                return d
+
+    # 3. Zips: legacy name first if present, else any LazarusForge*.zip,
+    #    searched recursively so a zip nested in a Drive subfolder is still
+    #    found. With several candidates, the most recently modified wins.
+    zips = []
+    for base in search_dirs:
+        legacy = base / ZIP_NAME
+        if legacy.is_file():
+            zips.append(legacy)
+        zips += [p for p in base.rglob("LazarusForge*.zip") if p != legacy]
+    # de-duplicate while keeping first-seen (priority) order, then re-sort by recency
+    zips = list(dict.fromkeys(zips))
+    zips.sort(key=lambda p: p.stat().st_mtime, reverse=True)
+
     if len(zips) > 1:
-        print(f"  note: {len(zips)} candidate zips found; using {zips[0].name}")
+        print(f"  note: {len(zips)} candidate zips found; using the most recently modified:")
+        for z in zips:
+            import datetime
+            mtime = datetime.datetime.fromtimestamp(z.stat().st_mtime).strftime("%Y-%m-%d %H:%M")
+            marker = " <-- selected" if z == zips[0] else ""
+            print(f"    {mtime}  {z}{marker}")
+        print("  (to force a different one, rename it, or delete the others, and re-run)")
+
     if zips:
         zpath = zips[0]
-        extract_dir = cwd / "_extracted_repo"
+        extract_dir = Path.cwd() / "_extracted_repo"
         if extract_dir.exists():
             shutil.rmtree(extract_dir)
         extract_dir.mkdir()
@@ -77,9 +112,15 @@ def locate_repo():
         SOURCE_INFO["source_zip"] = zpath.name
         SOURCE_INFO["source_zip_sha256"] = _sha256(zpath)
         return root
+
+    searched = ", ".join(str(d) for d in search_dirs)
+    hint = ("" if drive_mounted else
+            "\nDrive does not look mounted. In a cell above this script, run:\n"
+            "    from google.colab import drive\n"
+            "    drive.mount('/content/drive')\n")
     raise FileNotFoundError(
-        f"No Forge tree (a folder containing Routing.md) or LazarusForge*.zip found in {cwd}. "
-        "Upload the release zip or the extracted tree first."
+        f"No Forge tree (a folder containing Routing.md) or LazarusForge*.zip found. "
+        f"Searched: {searched}. Upload the release zip, or mount Drive and place it there.{hint}"
     )
 
 # ---------------------------------------------------------------------------
