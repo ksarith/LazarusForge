@@ -1081,3 +1081,59 @@ Json.dumps
     }
   ]
 }
+
+---
+
+## Addendum: ChatGPT cross-check, verified against source (2026-09-29)
+
+Preserved reference material, not doctrine. Above this line: the unmodified Colab console
+output and `candidate3_results.json` from the first Candidate 3 run (2026-09-29,
+`LazarusForge-1_17_Alpha_unified.zip`, sha256 `4106f1f7...b28954`). The results were also
+shown to ChatGPT for an independent read. ChatGPT was working from the console log alone
+(the JSON upload did not go through on that platform), which produced two content-level
+errors this addendum documents, per the repository's cross-agent-verification-against-source
+discipline (not agent convergence).
+
+**Where ChatGPT's read was wrong, checked against the JSON text directly:**
+
+- **Q1 (GMP-011 / §VII.5):** called `Admin/Ethical_Constraints.md` "a clearly poor top hit"
+  on filename alone. The retrieved text is the exact correct answer, verbatim: "Deliberately
+  anchored to the Charter's Genesis Phase declaration rather than
+  Governance_Migration_Protocol.md §VII.5: that section is part of §VII, headed 'Proposed,
+  Not Ratified'..." This is the strongest hit in the run, not a poor one.
+- **Q9 (Closed_Loop_Feedstock "Resolved 2026-08-03" claim):** called `Admin/Progress_Log.md`
+  "promising" on filename alone. The retrieved text is a different, later, real CLF-010
+  ratification, not the rejected 2026-08-03 claim the query asks about. Checked against the
+  live repository: the actual passage is at `Challenges/Closed_Loop_Feedstock.md` line ~565,
+  inside a section the script does collect. Genuine miss, not a promising hit.
+- **Q10 (AP-033 Rule 9):** called the top hit "poor" and stopped there. Rank 3 in the same
+  JSON (already collected; no re-run needed) is `Archive/Logs/Auditor_Protocols_Logs.md`,
+  containing the literal Rule 9 text. Not a retrieval failure — a ranking one, which is
+  exactly the distinction ChatGPT itself proposed checking for, just not applied here.
+- **"Capture Top-5 instead of Top-1"** — already true of the run being reviewed. `top_k=5`
+  was set from the first execution of the script; the gap was that only the console log
+  (top-1 only) had been shared on that platform, not the JSON.
+
+**Where ChatGPT's read held up, checked against the script:**
+
+- **Corpus A membership for Q7/Q13** (its request to verify `Support_Raft.md` and
+  `Governance_Migration_Protocol.md` were legitimately in the distilled corpus): confirmed
+  against `Candidate3_Transient_Index_Colab.py`. Both carry a `## Lessons Learned` section,
+  and Corpus A's collector sweeps every file in the repository for that section beyond its
+  three-file fixed list. Working as designed, not an artifact.
+- **Retrieval-relevance vs. historical-sufficiency as separate scoring dimensions** — sound,
+  and the Q1/Q9 corrections above are a direct demonstration of why the distinction matters:
+  a plausible filename is not the same as checked content.
+- **Compare against ordinary repository routing/search as a baseline** — not yet done, and
+  the one recommendation here that isn't already answered by data already in hand. Logged as
+  the next open step.
+- **"Candidate 3 as a candidate generator feeding existing routing, not a routing
+  replacement"** — reasonable interpretation, consistent with `Architecture/Forge_flow.md`'s
+  "Parser observes. It does not decide."
+
+**Net effect on the Run 1 scoring already filed in `Tests/Persistent_Cognition_Candidates.md`
+v0.16:** unchanged. That entry was written from direct JSON inspection, which already caught
+the Q9 miss and the Q10 rank-3 hit this addendum re-derives; this cross-check corroborates
+it rather than revising it. Filed here as a documented instance of the filename-plausibility
+failure mode the experiment itself is designed to expose, this time in an auditor's read of
+the results rather than in the retrieval system being audited.
