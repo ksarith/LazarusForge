@@ -1,5 +1,5 @@
 # Persistent_Cognition_Candidates.md
-**Version 0.15**
+**Version 0.16**
 
 ---
 
@@ -177,6 +177,53 @@ new external dependency this project doesn't currently have (it currently uses n
 inside its own tooling — `Automation/`'s scripts are self-contained). Also produces no
 benefit between sessions unless someone runs it; it's a tool a session can reach for, not
 a standing capability.
+
+#### Run 1 results (2026-09-29, human-executed in Colab; scored by Claude against this file's frozen table)
+
+First execution of the pre-registered script against `LazarusForge-1_17_Alpha_unified.zip`
+(sha256 `4106f1f7...b28954`, 120 markdown files). Both corpora built as specified (Corpus A:
+67 source slices / 591 chunks; Corpus B: 103 source slices / 3444 chunks); all 14 queries
+ran; `candidate3_results.json` retained with per-query top-5 hits for both corpora. Scored
+here by whether the retrieved *content* — not merely the filename — actually answers the
+query, checked against this table's ground-truth column and, for Q5 and Q9, against the
+live repository directly (see below).
+
+**Corpus B (history) clearly outperformed Corpus A (distilled):** roughly 9 of 14 queries
+returned the correct content at or near rank 1 from Corpus B, against 1 of 14 from Corpus A
+(Q7, where both corpora hit). This is close to the opposite of what a "distillation is
+sufficient" result would look like, though most of these queries are specifically
+resolution-history questions, which is Corpus B's designed strength — this run does not
+speak to how the two corpora would compare on other query classes.
+
+**Retrieval-collapse pattern in Corpus A:** rather than missing randomly, Corpus A returned
+`Admin/Canonical_Terms.md` as the top hit for six queries (1, 3, 6, 8, 10, 14) and
+`Tests/Cognitive_Salvage_Layer.md` for four more (2, 4, 9, 12) — neither file is the correct
+source for any of those ten. Worth investigating as a chunking or corpus-composition effect
+before drawing conclusions from Corpus A's performance either way.
+
+**Two misses checked against the live repository directly, both confirmed genuine (not
+corpus-boundary artifacts):**
+- **Q5 (ENV-007/ENV-008):** neither corpus retrieved `Admin/Environmental_Constraints.md`
+  at all. The ground truth is real and unambiguous — lines ~418-452, sidecar entries
+  corrected 2026-07-06 — so this is a retrieval miss, not an absent source.
+- **Q9 (Closed_Loop_Feedstock "Resolved 2026-08-03" claim):** Corpus B returned adjacent
+  but wrong material (the later, real CLF-010 ratification from `Progress_Log.md`) rather
+  than the actual passage, confirmed present at `Challenges/Closed_Loop_Feedstock.md` line
+  ~565 inside its own Resolution Log — a section this script does collect. Genuine miss.
+
+**Q10 correction to this file's own prior note:** an earlier session flagged Q10 as a
+structural coverage gap on the theory that AP-033's rule body sits outside
+`Auditor_Protocols.md`'s indexed sections. This run shows that reasoning was checking the
+wrong location — the actual Rule 9 explanation was relocated to
+`Archive/Logs/Auditor_Protocols_Logs.md` (a real repository move, not a script omission),
+and Corpus B retrieved it correctly at rank 3. Q10 is a hit; the coverage-gap note was
+itself an error, now superseded by this run.
+
+**Not yet scored:** exact rank position beyond top-1 for partial hits (Q8, Q12), and the
+contradiction-exposure and provenance dimensions specified in the pre-registration above —
+this pass checked content-correctness only. A second run (ideally after investigating the
+Corpus A collapse pattern) would let rank-position and consistency-across-runs be compared
+against this baseline.
 
 ### Candidate 4 — Structured provenance fields, not a new file (cost: near-zero, but touches existing files)
 
