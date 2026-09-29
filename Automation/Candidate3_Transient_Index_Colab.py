@@ -4,9 +4,7 @@
 # Pre-registered design: build → query 14 frozen queries → discard
 # =============================================================================
 # Usage (Colab):
-#   1. Upload a LazarusForge release zip (or the extracted folder) to the Colab root.
-#      Any tree containing Routing.md is found automatically; the 2026-09-27 names
-#      below remain as backward-compatible defaults.
+#   1. Upload LazarusForge_Unified_2026-09-27.zip (or the lf116-merged folder)
 #   2. Runtime → Run all
 #   3. Results are printed and also written to candidate3_results.json
 # =============================================================================
@@ -29,98 +27,29 @@ EMBED_MODEL = "all-MiniLM-L6-v2"
 # ---------------------------------------------------------------------------
 # 1. Locate / extract repo
 # ---------------------------------------------------------------------------
-SOURCE_INFO = {"source_zip": None, "source_zip_sha256": None}   # filled by locate_repo()
-
-def _tree_root(base: Path):
-    """Return the first directory under (or equal to) base that contains Routing.md."""
-    if (base / "Routing.md").is_file():
-        return base
-    for hit in sorted(base.rglob("Routing.md")):
-        if "__MACOSX" not in hit.parts:
-            return hit.parent
-    return None
-
-def _sha256(path: Path) -> str:
-    import hashlib
-    h = hashlib.sha256()
-    with open(path, "rb") as f:
-        for block in iter(lambda: f.read(1 << 20), b""):
-            h.update(block)
-    return h.hexdigest()
-
-def _search_dirs():
-    """Directories to search, in priority order: cwd first, then Colab's
-    local upload folder, then a mounted Google Drive (both possible mount
-    spellings). Only ones that actually exist are searched."""
-    seen, dirs = set(), []
-    for d in [Path.cwd(), Path("/content"),
-              Path("/content/drive/MyDrive"), Path("/content/drive/My Drive")]:
-        if d.is_dir() and d not in seen:
-            seen.add(d)
-            dirs.append(d)
-    return dirs
-
 def locate_repo():
-    search_dirs = _search_dirs()
-    drive_mounted = any("drive" in str(d) for d in search_dirs)
-
-    # 1. Legacy: already-extracted folder with the 2026-09-27 name
-    for base in search_dirs:
-        direct = base / REPO_ROOT_NAME
-        if direct.is_dir():
-            return direct
-
-    # 2. Any already-extracted tree (contains Routing.md), one level deep
-    for base in search_dirs:
-        for d in sorted(p for p in base.iterdir() if p.is_dir() and not p.name.startswith(("_", "."))):
-            if (d / "Routing.md").is_file():
-                return d
-
-    # 3. Zips: legacy name first if present, else any LazarusForge*.zip,
-    #    searched recursively so a zip nested in a Drive subfolder is still
-    #    found. With several candidates, the most recently modified wins.
-    zips = []
-    for base in search_dirs:
-        legacy = base / ZIP_NAME
-        if legacy.is_file():
-            zips.append(legacy)
-        zips += [p for p in base.rglob("LazarusForge*.zip") if p != legacy]
-    # de-duplicate while keeping first-seen (priority) order, then re-sort by recency
-    zips = list(dict.fromkeys(zips))
-    zips.sort(key=lambda p: p.stat().st_mtime, reverse=True)
-
-    if len(zips) > 1:
-        print(f"  note: {len(zips)} candidate zips found; using the most recently modified:")
-        for z in zips:
-            import datetime
-            mtime = datetime.datetime.fromtimestamp(z.stat().st_mtime).strftime("%Y-%m-%d %H:%M")
-            marker = " <-- selected" if z == zips[0] else ""
-            print(f"    {mtime}  {z}{marker}")
-        print("  (to force a different one, rename it, or delete the others, and re-run)")
-
-    if zips:
-        zpath = zips[0]
-        extract_dir = Path.cwd() / "_extracted_repo"
+    cwd = Path.cwd()
+    # already extracted?
+    direct = cwd / REPO_ROOT_NAME
+    if direct.is_dir():
+        return direct
+    # zip present?
+    zpath = cwd / ZIP_NAME
+    if zpath.is_file():
+        extract_dir = cwd / "_extracted_repo"
         if extract_dir.exists():
             shutil.rmtree(extract_dir)
         extract_dir.mkdir()
         with zipfile.ZipFile(zpath, "r") as z:
             z.extractall(extract_dir)
-        root = _tree_root(extract_dir)
-        if root is None:
-            raise FileNotFoundError(f"No Routing.md found inside {zpath.name}; not a Forge tree")
-        SOURCE_INFO["source_zip"] = zpath.name
-        SOURCE_INFO["source_zip_sha256"] = _sha256(zpath)
-        return root
-
-    searched = ", ".join(str(d) for d in search_dirs)
-    hint = ("" if drive_mounted else
-            "\nDrive does not look mounted. In a cell above this script, run:\n"
-            "    from google.colab import drive\n"
-            "    drive.mount('/content/drive')\n")
+        # zip contains unified_build/lf116-merged or just lf116-merged
+        candidates = list(extract_dir.rglob(REPO_ROOT_NAME))
+        if not candidates:
+            raise FileNotFoundError(f"Could not find {REPO_ROOT_NAME} inside zip")
+        return candidates[0]
     raise FileNotFoundError(
-        f"No Forge tree (a folder containing Routing.md) or LazarusForge*.zip found. "
-        f"Searched: {searched}. Upload the release zip, or mount Drive and place it there.{hint}"
+        f"Neither {REPO_ROOT_NAME}/ nor {ZIP_NAME} found in {cwd}. "
+        "Upload the unified zip or the extracted tree first."
     )
 
 # ---------------------------------------------------------------------------
@@ -240,7 +169,7 @@ FROZEN_QUERIES = [
     {"id": 3, "class": "Rejected reasoning",
      "query": "Why was the independent Grok/Copilot thread's GOV-008 registry patch to Governance_Charter.md rejected, and what was preserved from it instead?"},
     {"id": 4, "class": "Rejected reasoning",
-     "query": "Why was the 2026-07-29 \"CIR v2.0\" bundle held as unratified draft material rather than applied alongside CIR-F02/CIR-F03?"},
+     "query": "Why was the 2026-07-29 CIR v2.0 bundle held as unratified draft material rather than applied alongside CIR-F02/CIR-F03?"},
     {"id": 5, "class": "Unknown history",
      "query": "What was previously unresolved about ENV-007 and ENV-008, and how long had each sat unrevisited before being corrected?"},
     {"id": 6, "class": "Unknown history",
@@ -248,19 +177,19 @@ FROZEN_QUERIES = [
     {"id": 7, "class": "Resolution history",
      "query": "How was the Support_Raft induction-loss discrepancy (12% laboratory vs. 20–40% real subsea conditions) resolved and logged?"},
     {"id": 8, "class": "Resolution history",
-     "query": "How was RIP-002's \"not yet implemented\" status corrected, and what exactly was verified to justify the change?"},
+     "query": "How was RIP-002's not-yet-implemented status corrected, and what exactly was verified to justify the change?"},
     {"id": 9, "class": "Governance reasoning",
-     "query": "Why was the Closed_Loop_Feedstock draft's \"Resolved 2026-08-03\" status claim rejected rather than accepted?"},
+     "query": "Why was the Closed_Loop_Feedstock draft's Resolved 2026-08-03 status claim rejected rather than accepted?"},
     {"id": 10, "class": "Governance reasoning",
-     "query": "Why does AP-033 (Rule 9) require confirmed governance-file access before a contribution can mark an unknown toward Resolved status?"},
+     "query": "Why does AP-033 (Rule 9) require confirmed governance-file access before a contribution can be treated as authoritative?"},
     {"id": 11, "class": "Technical reasoning",
-     "query": "What led to CIR-F03's correction of Φ(n)'s trigger condition from S(n)=0 to S(n)≤ε, and why didn't the original CIR-F02 review catch it?"},
+     "query": "What led to CIR-F03's correction of Φ(n)'s trigger condition from S(n)=0 to S(n)≤ε, and why was that change made?"},
     {"id": 12, "class": "Technical reasoning",
-     "query": "Why was Architecture/Engineering.md's unknown-history safety factor corrected from 3× to 6×+?"},
+     "query": "Why was Architecture/Engineering.md's unknown-history safety factor corrected from 3× to a different value?"},
     {"id": 13, "class": "Cross-document reasoning",
      "query": "Beyond GMP-011, where else does the same failure pattern appear — an unratified section cited as though it supports the opposite of what it actually says?"},
     {"id": 14, "class": "Cross-document reasoning",
-     "query": "How does CIR §4.3's Provenance Ceiling Gate relate to Auditor_Protocols.md's Institutional Provenance Labels, and where was that relationship first made explicit rather than merely implied?"},
+     "query": "How does CIR §4.3's Provenance Ceiling Gate relate to Auditor_Protocols.md's Institutional Provenance Labels, and where was that relationship first made explicit?"},
 ]
 
 # ---------------------------------------------------------------------------
@@ -356,10 +285,6 @@ def main():
         "run_at": datetime.now(timezone.utc).isoformat(),
         "embed_model": EMBED_MODEL,
         "top_k": TOP_K,
-        "repo_root": str(repo),
-        "source_zip": SOURCE_INFO["source_zip"],
-        "source_zip_sha256": SOURCE_INFO["source_zip_sha256"],
-        "md_file_count": sum(1 for _ in repo.rglob("*.md")),
         "queries": [],
     }
 
