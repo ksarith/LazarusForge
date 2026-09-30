@@ -142,6 +142,21 @@ FLAG: Single most load-bearing file in the repository — six other files in thi
 **Does:** Core Theorem (absolute nothingness is not an operational state); 8 Axioms; Ontological Spectrum and realization formalism; structural/topological constraints; category-error and rival-interpretation defenses; entropy/info-theoretic/lifecycle interpretations; cognitive/ethical/memetic corollaries.
 **Does not (arrow):** Operational governance rules/predicates (→ CIR, which derives A3/γ2 without promoting this file) - Charter hierarchy - Ethical hard floors - Auditor / ADP protocols - any Spec-Gate-subject specification. Scope Boundary added 2026-08-09 for consistency; Tier 0 exemption unchanged.
 
+### `Admin/Operational_Conventions.md`
+**Status:** Specification — Stable — N/A (reference index, exempt) — Risk: Low
+**Does:** Short, checkable index of mechanical rules already violated at least once in this
+repository's history because the rule lived only inside its adjacent doctrine file —
+cross-repo `[ExternalRepo]` filename tagging, the exact Ethical Anchor string, ID-suffix
+handling, relocated-sidecar locations, `*_Scope_Map.md` registration.
+**Does not (arrow):** Duplicate or restate source doctrine → any of the files it points to
+remain sole authority — own any unknown series, governance tier, or verification gate —
+accept speculative entries (inclusion requires a demonstrated violation, not a theoretical
+one).
+**Note:** Added to this map 2026-09-30, same pass the omission was found while merging a
+second draft of the file; the file itself existed in the repository (registered in
+`Routing.md`, linked from `Discovery.md`) since 2026-09-30 without a Scope_Map entry —
+exactly the failure mode its own Rule 7 documents.
+
 ### `Admin/PROBE_INVOCATION.md`
 **Status:** Draft · N/A (prompt template) · 0 tracked here (see AP-030) · Risk: unlabeled
 **Does:** The exact cold-start copy-paste block for one Mission Drift Review cycle; canonical input file list; required output structure.

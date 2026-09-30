@@ -37,6 +37,45 @@ Created 2026-08-09 to fix a recurring failure mode found the same day, in two pl
 
 *(Most recent first. Rotate to `Archive/Logs/Progress_Log_Changelog.md` once more than five entries accumulate.)*
 
+### 2026-09-30 (second entry, same day) — Cross-checked Grok's independent `Operational_Conventions.md` draft; merged verified improvements, one serious packaging defect found and not carried forward
+Grok produced its own full attempt at the same file and a complete repository zip,
+submitted for comparison. The zip itself was not usable as a master — 28 files missing
+relative to the live tree, including the entire `Operations/` folder and several core
+Admin files (`Governance_Migration_Protocol.md`, `Repository_Integrity_Protocol.md`,
+`Safety_Protocols.md`, `Security_Protocols.md`, `Nothingness_Theorem.md`, others); adopting
+it as-is would have deleted them. Not merged. Content of Grok's `Operational_Conventions.md`
+draft, checked claim-by-claim against source, was however more rigorously sourced than the
+version already in this repository in three specific respects, all verified and merged in:
+(1) the `[ExternalRepo]` tag convention's registration date (2026-08-11) and its real
+debugging origin in `Admin/Autonomy_Divergence_Protocol.md` — the same mistake repeated
+2026-09-29 had already happened once before, which the existing entry didn't say; (2) real,
+source-verified example IDs for the suffix convention (`AP-013-R1`, `EC-012-PR-R1`) in
+place of illustrative-only examples; (3) `Discovery.md` → `Archive/Logs/Discovery_Changelog.md`
+as a second confirmed instance of the relocated-sidecar pattern, not previously listed. Also
+adopted: Grok's genuine finding that this file itself had never been registered in
+`Admin/Adm_Scope_Map.md` per `Admin/File_Template.md`'s New File Creation Checklist — true,
+fixed in the same pass, and written up as this file's own new Rule 7. Not carried forward:
+Grok's version left its own File State `Last Audit`/`Auditor` fields blank — the same class
+of self-violation its own subject matter warns against, left uncorrected in the submitted
+draft. Human-directed (comparison requested); content merge and verification self-directed.
+
+---
+### 2026-09-30 — `Admin/Operational_Conventions.md` created
+New file collecting mechanical, easy-to-violate-silently rules — the `[ExternalRepo]`
+cross-repo filename tag format, the exact Ethical Anchor string, suffixed-ID handling
+(`-R1`/`-PR` are distinct IDs), where a relocated sidecar's real text lives, and the
+`Archive/` duplicate-ID pattern being expected rather than a defect — prompted directly by
+this session's own history of hitting each one. Each entry is a pointer, not a copy of the
+source doctrine; the file is exempt from the full File_Template.md structure as a
+reference index, matching `Discovery.md`/`Routing.md`'s own exemption. Registered in
+`Routing.md`; `Discovery.md`'s Agent Orientation gained a 7th point directing contributors
+there, and its own rolling header was updated (previously two updates behind `Routing.md`,
+a gap flagged but not closed on 2026-09-29 — still not closed generally, only this file's
+own entry was current as of this addition). Human-directed (the previous session's
+proposal to keep this in an existing file was reconsidered as likely to stay equally
+obscure; a dedicated file chosen instead).
+
+---
 ### 2026-09-29 (second entry, same day) — `Automation/integrity_check.py` fixed: two false-positive sources in Sidecar ID uniqueness, self-directed
 All 14 prior CRITICAL findings and the one same-file WARNING finding in
 this check were false positives, both now fixed. (1) Every one of the 14
