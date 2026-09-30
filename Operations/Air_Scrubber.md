@@ -38,7 +38,7 @@
 | Verification Ref | Admin/Verification_Gates.md                                      |
 | Last Audit       | 2026-09-20 — EC-013 Air_Scrubber safe-state descent sequence filed as Proposed/Placeholder (§EC-013 Descent Sequence). Blocking for hot runs retained until first hot-run validation. Prior: 2026-05-31 |
 | Auditor          | Grok — EC-013 descent section drafted and filed as Proposed/Placeholder (Path A, human-directed 2026-09-20); prior: Gemini |
-| Open Unknowns    | 5 substantively open. EC-013 sequence registered as Proposed/Placeholder (does not close EC-013 tracker). |
+| Open Unknowns    | 6 substantively open. EC-013 sequence registered as Proposed/Placeholder (does not close EC-013 tracker). |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | High                                                                |
 | Sidecar Link     | #auditor-notes--unknowns                                            |
@@ -899,7 +899,90 @@ operation and the Gate 4 harness are unaffected by this gap.
 
 ---
 
+### AS-006 — No volumetric airflow / static-pressure duty point specified; fan-family selection unconstrained
+
+| Field         | Value                                            |
+|---------------|---------------------------------------------------|
+| Status        | Open                                               |
+| Risk          | Medium                                             |
+| Priority      | Major                                              |
+| Type          | Technical                                          |
+| Blocking      | No — no fan hardware has been committed to yet     |
+| Owner         | Operations/Air_Scrubber.md                         |
+| First Logged  | 2026-09-29                                         |
+| Last Reviewed | 2026-09-29                                         |
+
+**Description:** This file's Energy Awareness section gives a
+fan/compressor power ballpark (50–150 W, non-binding) and Protocol
+1.4 gives a fault-trigger static-pressure threshold (ΔP ≥ 450 Pa over
+clean baseline across the HEPA/carbon pack), but no volumetric
+airflow rate (CFM / m³/h) or air-changes-per-hour target exists
+anywhere in this file. Power and a fault threshold do not by
+themselves specify a duty point — the same 500 W ceiling is
+consistent with a wide range of flow/pressure combinations, and
+different fan families (axial vs. centrifugal) suit that range very
+differently. Fan-family and sizing decisions currently have no
+number to size against.
+
+**Why It Matters:** Axial fans lose efficiency and gain noise
+sharply as static-pressure resistance rises; centrifugal blowers
+(especially backward-curved) hold efficiency better under filter
+resistance but behave differently at low pressure / high flow. Picking
+a fan family before a duty point exists risks a fan that is quiet in
+isolation but undersized against the media, or one that is adequately
+sized but louder and rougher-running than a correctly-matched
+alternative would have been. Noise and vibration are not separable
+afterthoughts here: continuous operation is required by design (loss
+of airflow is a critical fault, per this file's own doctrine), so
+whatever is selected runs continuously — sound level feeds directly
+into AS-004 (noise exposure/hearing conservation, currently
+Open, Blocking on Protocol 1.4), and sustained vibration is a
+plausible contributor to premature wear on nearby sensors and
+control electronics (Gate 4 harness, differential-pressure
+transducers), though that link is not yet measured or logged as its
+own unknown.
+
+**Resolution Path:**
+- Establish a target volumetric airflow (CFM or m³/h) and, ideally,
+  an air-changes-per-hour figure, sized against the enclosed working
+  volume this scrubber serves — the number this file is currently
+  missing entirely.
+- Cross-reference against `Operations/Energy.md`'s Power Demand stub
+  and AS-001's 500 W ceiling, so flow, pressure, and power are
+  specified together rather than power alone.
+- Once a duty point exists, evaluate fan family (axial vs.
+  centrifugal vs. mixed-flow) against it explicitly, weighing sound
+  output and vibration transmission as selection criteria alongside
+  power draw and static-pressure capability — not as a retrofit after
+  a fan is already chosen. Larger-diameter/lower-RPM options should be
+  weighed here too, since fan noise scales steeply with tip speed at
+  fixed flow.
+- Cross-reference: `Operations/Air_Scrubber.md` AS-001 (power budget,
+  same missing-duty-point problem on the power side); AS-004 (noise
+  exposure measurement — this unknown is about the design-input gap
+  that precedes fan selection, not the post-selection SPL measurement
+  AS-004 already owns; resolving this one well may ease what AS-004
+  eventually measures, but does not close it).
+- Payment via Specification — once a target CFM/ACH figure and a
+  fan-family decision exist, move this file's flow assumptions from
+  absent to Analogous or Measured as appropriate.
+
+---
+
 ### Resolution Log
+
+- 2026-09-29: **AS-006 registered — no volumetric airflow / static-pressure
+  duty point specified.** Surfaced during a session discussion of quieter
+  fan alternatives: this file's power ballpark (50–150 W fan/compressor)
+  and Protocol 1.4's fault-trigger static-pressure threshold (ΔP ≥ 450 Pa)
+  do not together specify a flow duty point, so fan-family selection
+  (axial vs. centrifugal) has no number to size against. Noise and
+  vibration folded into AS-006's Resolution Path as selection criteria to
+  weigh once a duty point exists, rather than filed as separate unknowns —
+  neither is meaningfully evaluable in isolation from the sizing decision
+  they'd inform. Distinct from AS-004 (SPL measurement of an already-
+  installed fan). Open Unknowns 5 → 6, mirrored in `Unknowns.md` v5.54.
+  Human-directed.
 
 - 2026-08-15 (third entry, same day): **Fire Event — Hot Zone interlock row
   added — second applied case of `Admin/Resolution_Methodology.md`.**
