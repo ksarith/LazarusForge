@@ -37,8 +37,35 @@ Created 2026-08-09 to fix a recurring failure mode found the same day, in two pl
 
 *(Most recent first. Rotate to `Archive/Logs/Progress_Log_Changelog.md` once more than five entries accumulate.)*
 
+### 2026-09-29 (second entry, same day) — `Automation/integrity_check.py` fixed: two false-positive sources in Sidecar ID uniqueness, self-directed
+All 14 prior CRITICAL findings and the one same-file WARNING finding in
+this check were false positives, both now fixed. (1) Every one of the 14
+cross-file "duplicates" was a live sidecar entry plus a preserved
+historical snapshot under `Archive/Logs/` or `Archive/Transcripts/` — two
+of the fourteen (`Archive/Transcripts/Configurations.md`) self-declare
+this in their own header ("SUPERSEDED — prior-state snapshot... Correctly
+preserved per RIP prior-state"). Spot-checked two pairs (EV-001, GK-001)
+directly; both confirmed genuine prior-state preservation, not a live
+contradiction — e.g. EV-001's archived copy predates this session's own
+EC-→ECN- prefix rename, matching the live file's later state exactly.
+`unknown_pass()` now excludes `Archive/` from the scan entirely. (2) The
+one same-file WARNING (`EC-012` "duplicate" at two headers in
+`Admin/Ethical_Constraints.md`) was `SIDECAR_ID_RE` truncating suffixed
+IDs at the hyphen — `\b` after the numeric part also matches the boundary
+before a trailing hyphen, so `### EC-012-PR` was captured as plain
+`EC-012`, colliding with the real EC-012 entry. This repo uses that
+suffix pattern deliberately (EC-011-R3, GMP-010-R1, EC-012-PR are each
+distinct entries); the regex now captures trailing `-XXX` suffix segments
+as part of the ID. Sanity-tested against an injected genuine live-file
+duplicate to confirm real detection is unaffected by either fix. Sidecar
+ID uniqueness: FAIL (14 critical, 1 warning) → PASS. No repository
+content changed — findings only, this was the checker itself.
+Self-directed (open discretion), not human-prompted for this specific
+item.
+
+---
 ### 2026-09-29 — AS-006 and UNK-003 filed; Astroid-miner Core-0/1/2 proposal recorded as candidate (TR-AST-001); Candidate 3 Run 1 executed
-Four threads, all human-directed. (1) **AS-006** registered in `Operations/Air_Scrubber.md` — no volumetric airflow/static-pressure duty point exists anywhere in that file despite a power ballpark and a fault-trigger pressure threshold both being present; noise and vibration folded into its Resolution Path as fan-selection criteria rather than filed separately. Mirrored in `Unknowns.md` v5.54. (2) **UNK-003** ("Cross-repo assumption contracts") given its first full sidecar write-up in `Archive/Logs/Auditor_Protocols_Logs.md`, formalizing a Deferred row that predates this file's tracked history — Status unchanged, `Admin/Auditor_Protocols.md` bumped to v0.42 with two now-stale self-citations corrected in the same pass. `Unknowns.md` v5.55. (3) **Candidate 3's first execution** ran against the 1.17 unified release: Corpus B (history) substantially outperformed Corpus A (distilled) on content-checked accuracy; a follow-up ordinary-routing (grep) baseline found the ground truth recoverable in 13 of 14 queries but almost never ranked, clarifying that Candidate 3's real value over routing is in ranking and synthesis-style queries, not raw findability. Logged in `Tests/Persistent_Cognition_Candidates.md` v0.16. A corrected hybrid dense+BM25 variant of the script was verified against Run 1 (byte-identical corpora, exact frozen-query text) before being returned for a second run; results not yet in. (4) **Astroid-miner's "Core-0/1/2" industrial-seed closure framework** (cross-agent proposal, ChatGPT drafted/Grok refined) was checked claim-by-claim against the archived `Astroid-miner-AstroidMinerV0.07-validator-hardened.zip` — every specific claim held up, including the G.E.C.K. quote, `replication_model.py`'s path, and the DEC-001 silicate-pathway deprecation reasoning. Recorded as a candidate idea only, `Admin/Trajectories.md` TR-AST-001 — not adopted, and explicitly gated by UNK-003/the Leviathan milestone (`Tests/Leviathan_testing.md` LT-001 through LT-007, all seven still Open, five of seven unreviewed since original logging). A companion recommendation to import the Forge's evidence-state vocabulary into Astroid-miner was checked against that project's own `MODELS.md` and found to likely collide with an already-working two-axis system there (Authority × Executability) — flagged, not resolved.
+Four threads, all human-directed. (1) **AS-006** registered in `Operations/Air_Scrubber.md` — no volumetric airflow/static-pressure duty point exists anywhere in that file despite a power ballpark and a fault-trigger pressure threshold both being present; noise and vibration folded into its Resolution Path as fan-selection criteria rather than filed separately. Mirrored in `Unknowns.md` v5.54. (2) **UNK-003** ("Cross-repo assumption contracts") given its first full sidecar write-up in `Archive/Logs/Auditor_Protocols_Logs.md`, formalizing a Deferred row that predates this file's tracked history — Status unchanged, `Admin/Auditor_Protocols.md` bumped to v0.42 with two now-stale self-citations corrected in the same pass. `Unknowns.md` v5.55. (3) **Candidate 3's first execution** ran against the 1.17 unified release: Corpus B (history) substantially outperformed Corpus A (distilled) on content-checked accuracy; a follow-up ordinary-routing (grep) baseline found the ground truth recoverable in 13 of 14 queries but almost never ranked, clarifying that Candidate 3's real value over routing is in ranking and synthesis-style queries, not raw findability. Logged in `Tests/Persistent_Cognition_Candidates.md` v0.16. A corrected hybrid dense+BM25 variant of the script was verified against Run 1 (byte-identical corpora, exact frozen-query text) before being returned for a second run; results not yet in. (4) **Astroid-miner's "Core-0/1/2" industrial-seed closure framework** (cross-agent proposal, ChatGPT drafted/Grok refined) was checked claim-by-claim against the archived `Astroid-miner-AstroidMinerV0.07-validator-hardened.zip` — every specific claim held up, including the G.E.C.K. quote, `[Astroid-miner] replication_model.py`'s path, and the DEC-001 silicate-pathway deprecation reasoning. Recorded as a candidate idea only, `Admin/Trajectories.md` TR-AST-001 — not adopted, and explicitly gated by UNK-003/the Leviathan milestone (`Tests/Leviathan_testing.md` LT-001 through LT-007, all seven still Open, five of seven unreviewed since original logging). A companion recommendation to import the Forge's evidence-state vocabulary into Astroid-miner was checked against that project's own `[Astroid-miner] MODELS.md` and found to likely collide with an already-working two-axis system there (Authority × Executability) — flagged, not resolved.
 
 ---
 ### 2026-09-24 — Three residual-governance items ratified same day; Lane C metrics scaffold filed
