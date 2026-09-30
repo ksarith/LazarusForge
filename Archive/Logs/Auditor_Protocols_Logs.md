@@ -927,6 +927,74 @@ This becomes governance metadata rather than prose, auditable the same way Truth
 
 ---
 
+### UNK-003 — Cross-repo assumption contracts (Lazarus Forge ↔ Astroid-miner)
+
+| Field         | Value                                                       |
+|---------------|--------------------------------------------------------------|
+| Status        | Deferred — pending Leviathan milestone                       |
+| Risk          | Low                                                           |
+| Priority      | Minor — no active convergence work blocked on this write-up existing |
+| Type          | Governance                                                     |
+| Blocking      | No                                                             |
+| Owner         | `Admin/Auditor_Protocols.md`                                   |
+| First Logged  | Predates 2026-07-19 (exact original date not recovered — this entry formalizes a pre-existing Deferred row in `Unknowns.md`'s active index that had never received its own sidecar write-up here) |
+| Last Reviewed | 2026-09-29                                                    |
+
+**Description:** Lazarus Forge and Astroid-miner are separate repositories under
+the same human governing authority, both salvage-first industrial/fabrication
+projects, with Astroid-miner extending the Forge's philosophy into a
+zero-gravity, off-world context. No formal contract exists for how an
+assumption, finding, or piece of content from one repository is validated
+before it's treated as applicable to the other — what counts as a genuine
+overlap versus a superficial one, what evidentiary bar a cross-repo claim
+must clear, and who is authorized to accept it.
+
+This entry's Status predates its own write-up: `Unknowns.md`'s active index
+has carried UNK-003 as Deferred (Leviathan milestone) since before the
+2026-07-19 cross-repo merge anchor was designated, meaning the repository's
+own governance anticipated needing this gate before any specific convergence
+had actually been found. This sidecar entry formalizes that pre-existing
+row; it does not change its Status or introduce a new Deferred condition.
+
+**Why It Matters:** Without a contract, cross-repo absorption risks two
+failure modes in opposite directions: (a) treating Astroid-miner content as
+equivalent-authority to ratified Forge doctrine, which `Tests/Leviathan_testing.md`
+§XII explicitly rules out ("Astroid-miner's ideology has not surpassed Lazarus
+Forge's — the reverse is judged true by the human governing authority"); or
+(b) never absorbing genuinely load-bearing findings because no mechanism
+exists to formally recognize when a match has occurred. `Tests/Leviathan_testing.md`
+was designated the resolved gate for this precisely to avoid an ad hoc,
+case-by-case judgment call each time content crosses — Leviathan's own
+findings are the validation layer; only what Leviathan's testing itself
+would not discard "without sentiment" is eligible to be considered.
+
+**Resolution Path:**
+- Not active work — this remains genuinely Deferred, not merely unstarted.
+  The Leviathan milestone gating this entry has not yet been reached; see
+  `Tests/Leviathan_testing.md`'s own Open Unknowns (LT-001 through LT-007)
+  for what still stands between here and that milestone.
+- Two concrete cross-repo instances have already occurred under this
+  entry's Deferred gate without requiring it to resolve first: **TR-MET-002**
+  (`Admin/Trajectories.md`) — Astroid-miner's Induction Heating + EM
+  Levitation technique recorded as supporting detail for a v3+ off-world
+  reactive-metal capability, explicitly not a resolution to any current
+  terrestrial unknown; and **LT-007** (`Tests/Leviathan_testing.md`) —
+  Astroid-miner's `Rogue_unit_management.md` §1.3 Fleet Consensus
+  Validation named as a candidate reference for Leviathan's own undefined
+  peer-unit corrective-action mechanism. Both followed the "surfaces
+  naturally through contact" pattern `Tests/Leviathan_testing.md` §XII
+  describes as the expected default — neither required this entry to be
+  Resolved first, and neither should be read as having resolved it.
+- When the Leviathan milestone is reached: define the actual contract
+  (evidentiary bar, authority hierarchy, recognition mechanism) this entry's
+  Description asks for, informed by whatever pattern TR-MET-002, LT-007, and
+  any further natural-contact instances have established by then.
+- Payment via Specification — once a real contract is defined and at least
+  one instance has been processed through it as a test case (rather than
+  informally, as TR-MET-002 and LT-007 were), move to Resolved.
+
+---
+
 ### Resolution Log
 
 - 2026-08-11: **v0.38 — Cross-reference added, no doctrine change.** §AP-006's
