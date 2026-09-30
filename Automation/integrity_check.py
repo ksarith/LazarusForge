@@ -68,7 +68,14 @@ TOOL_VERSION = "0.1"
 
 # Sidecar ID pattern: matches "### AP-017 — ..." style defining headers,
 # not table rows. Prefix is 2-6 uppercase letters, ID is 3+ digits.
-SIDECAR_ID_RE = re.compile(r'^###\s+([A-Z]{2,6}-\d{3,})\b')
+SIDECAR_ID_RE = re.compile(r'^###\s+([A-Z]{2,6}-\d{3,}(?:-[A-Z0-9]+)*)\b')
+# Includes trailing suffix segments (e.g. "-PR", "-R1", "-R3") in the captured
+# ID. Without this, `\b` after the numeric part also matches on the boundary
+# before a trailing hyphen, so a residual/sub-item like "EC-012-PR" was
+# captured as plain "EC-012" — a false same-file "duplicate" against the
+# real EC-012 (found and fixed 2026-09-29; this repo uses that suffix
+# pattern deliberately, e.g. EC-011-R3, GMP-010-R1, EC-012-PR are each their
+# own distinct entry, not a duplicate of their base ID).
 
 # Self-citation version pattern: "Auditor_Protocols.md v0.23" or
 # "Auditor_Protocols v0.23" (both forms appear in the real repo).
@@ -157,11 +164,29 @@ def metadata_pass(root, all_files, findings):
 
 
 def unknown_pass(root, all_files, findings):
-    """Duplicate sidecar ID detection — defining headers only, not table mentions."""
+    """Duplicate sidecar ID detection — defining headers only, not table mentions.
+
+    Archive/ is excluded from this scan. As of the 1.17 release, every
+    detected cross-file duplicate (14 pairs, checked 2026-09-29) was a live
+    file plus a preserved historical snapshot under Archive/Logs/ or
+    Archive/Transcripts/ — a prior-state copy kept intentionally per this
+    repository's own Repository_Integrity_Protocol.md prior-state doctrine,
+    not a competing live definition. Two of the fourteen archive copies
+    (Archive/Transcripts/Configurations.md) self-declare this in their own
+    header ("SUPERSEDED — prior-state snapshot... Correctly preserved per
+    RIP prior-state"). Excluding Archive/ here still catches the real
+    failure mode this check exists for — the same ID defined twice among
+    live, current files — while no longer flagging preservation-by-design
+    as a critical. If Archive/ ever needs its own duplicate/consistency
+    check against its live counterpart, that should be a separate, lower-
+    severity pass, not this one.
+    """
     id_locations = {}  # id -> list of (file, line_no)
 
     for rel_path, is_extensionless in all_files:
         if is_extensionless:
+            continue
+        if rel_path.startswith("Archive/") or rel_path.startswith("Archive\\"):
             continue
         full_path = os.path.join(root, rel_path)
         try:
