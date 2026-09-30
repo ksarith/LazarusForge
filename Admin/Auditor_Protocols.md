@@ -1,5 +1,5 @@
 # Auditor_Protocols.md
-**Version 0.41**
+**Version 0.42**
 
 ---
 
@@ -17,7 +17,7 @@
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 5/6 (G1, G3, G4, G5, G6 clear — G3 cleared 2026-08-03 via AP-017 Resolved; G5 cleared 2026-09-03, see Last Audit; G2 N/A — no physical/quantitative claims of its own) |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-09-02 — self-application audit corrected five internal drift points (see Auditor field below); revised 2026-09-03 — Grok audit (G1/G3/G4/G6 Pass, G5 conditional, Tier 1 provisional); Claude follow-up same day: (1) Tier 1 Axiom Verification completed with Governance_Charter.md loaded — eight-axiom list, Genesis Phase Protocol role-separation citation, and all Q-1 anchors confirmed verbatim-consistent, no drift, provisional caveat closed; (2) full cross-reference sweep for G5 found one genuine unprefixed-path defect beyond AP-027's prior fix (`Unknowns_Changelog.md` → corrected to `Archive/Logs/Unknowns_Changelog.md`); two other unprefixed same-sentence shorthand mentions and one historical quoted-fabrication reference reviewed and left as-is (not live citations); G5 cleared, Spec Gates 4/6→5/6. Version-history gap (v0.39–0.41) reviewed — already correctly flagged as an explicit open item pending reconstruction in the 2026-09-02 note; left as-is, not invented (human-directed). Prior: 2026-08-02 |
+| Last Audit       | 2026-09-29 — UNK-003 (Cross-repo assumption contracts, owned by this file per `Unknowns.md`'s active index) received its first full sidecar write-up in `Archive/Logs/Auditor_Protocols_Logs.md`, formalizing a Deferred row that predates this file's tracked history. Status unchanged (Deferred — pending Leviathan milestone); Open Unknowns count below intentionally left at 10 rather than incremented to 11, since it is not a new unknown, only a newly-written-up existing one, and whether Deferred items were ever included in that count historically was not established either way — flagged here rather than resolved silently. Human-directed. Prior: 2026-09-02 — self-application audit corrected five internal drift points (see Auditor field below); revised 2026-09-03 — Grok audit (G1/G3/G4/G6 Pass, G5 conditional, Tier 1 provisional); Claude follow-up same day: (1) Tier 1 Axiom Verification completed with Governance_Charter.md loaded — eight-axiom list, Genesis Phase Protocol role-separation citation, and all Q-1 anchors confirmed verbatim-consistent, no drift, provisional caveat closed; (2) full cross-reference sweep for G5 found one genuine unprefixed-path defect beyond AP-027's prior fix (`Unknowns_Changelog.md` → corrected to `Archive/Logs/Unknowns_Changelog.md`); two other unprefixed same-sentence shorthand mentions and one historical quoted-fabrication reference reviewed and left as-is (not live citations); G5 cleared, Spec Gates 4/6→5/6. Version-history gap (v0.39–0.41) reviewed — already correctly flagged as an explicit open item pending reconstruction in the 2026-09-02 note; left as-is, not invented (human-directed). Prior: 2026-08-02 |
 | Auditor          | Claude — self-application audit (human-directed, prompted by an external Grok review): reconciled the sidecar summary's stale "14 open" line (still listing AP-013/AP-005/AP-004/AP-024 as open four Closure Events after each was actually Resolved) down to the correct 10 matching this File State; updated both Version String Registry citations (Role Declaration example, Observability sign-off template) from a stale "v0.37" to the current v0.41; rewrote the Status block, which was five versions behind at "0.36"; refreshed Sidecar SHA-256 against current archive content, flagging that the prior hash predated four Closure Events and the gap went undetected for roughly two weeks; found and explicitly flagged — rather than silently filled — an undocumented gap: versions 0.39, 0.40, and 0.41 have no changelog entry anywhere in this file or the archive, 2026-09-02. Prior: Grok — human-directed, 2026-08-10: Rule 10 (AP-035) added to AI Contribution Protocols — External Pseudo-Audit Scope and Logging Destination. Spec Gates and Open Unknowns count unchanged (14). Prior: Claude — Synthesizer/Auditor, 2026-08-03: GMP §VII to Challenge Class 10 high-coupling table; Sidecar SHA-256 refreshed; AP-033/Rule 9 (v0.35); AP-017 Resolved (v0.34) — see `Archive/Logs/Auditor_Protocols_Logs.md` Resolution Log for full audit history. |
 | Open Unknowns    | 10 (AP-013 Resolved 2026-08-19; AP-005 Resolved 2026-08-19; AP-004 Resolved 2026-08-20; AP-024 Resolved — Payment via Specification, 2026-08-20; see `Archive/Logs/Auditor_Protocols_Logs.md` Resolution Log for full Closure Events) |
 | Active Disputes  | 1                                                                   |
@@ -410,7 +410,7 @@ Not a standalone auditor class — a mode declaration for agents contributing in
 
 All contributors — human and autonomous — must declare their operating role before contributing:
 
-> *"Operating as [Role] per Auditor_Protocols.md v0.41"*
+> *"Operating as [Role] per Auditor_Protocols.md v0.42"*
 
 **Valid roles:** Skeptic/Auditor | Systems/Auditor | Evidence/Auditor | Ethical/Auditor | Synthesizer | Engineer | Connective Tissue
 
@@ -1315,7 +1315,7 @@ Any cross-repo dependency must be documented in both repositories with a stated 
 - Sign-off statement
 
 **Standard sign-off:**
-> *"Verified under Auditor_Protocols v0.41 — gates [list] cleared, gates [list] blocked ([reason]), [N] unknowns logged, [N] overrides. Adversarial classes applied: [list]. Auditor: [Role/Agent]"*
+> *"Verified under Auditor_Protocols v0.42 — gates [list] cleared, gates [list] blocked ([reason]), [N] unknowns logged, [N] overrides. Adversarial classes applied: [list]. Auditor: [Role/Agent]"*
 
 ---
 
