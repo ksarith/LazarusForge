@@ -37,6 +37,27 @@ Created 2026-08-09 to fix a recurring failure mode found the same day, in two pl
 
 *(Most recent first. Rotate to `Archive/Logs/Progress_Log_Changelog.md` once more than five entries accumulate.)*
 
+### 2026-09-30 (third entry, same day) — LT-001 Power Budget Analogous stub filed in `Tests/Leviathan_testing.md`; first content edit to that file this session
+Three-way agent collaboration (Claude verification, Grok research/drafting, human direction).
+Grok surveyed all three analog classes named in LT-001's own resolution path — REMUS family,
+Seaglider, Nereid Under-Ice — across two passes (REMUS first, Seaglider/Nereid after a gap
+was flagged). Every load-bearing figure independently verified against primary sources
+before filing, not taken on the drafting agent's word: REMUS 100 (1 kWh, 20h @ 3kn/9h @ 5kn)
+confirmed against Rutgers' own ops page; REMUS 6000 implied mean draws (~500 W legacy,
+~700 W newer) confirmed by dividing published kWh/hour figures from independent HII/WHOI/
+GEOMAR spec sheets — the arithmetic landing within rounding of two separately-published
+numbers was itself the strongest evidence it wasn't fabricated; Nereid's 18 kWh and 1000 W/
+6-channel payload budget confirmed verbatim against WHOI's current spec page; Seaglider's
+5.25 kWh confirmed against HII's commercial M1 datasheet (a different, newer product
+generation than an older UW academic page's 2.8 kWh figure for an earlier variant — both
+real, not a conflict). New `### Power Budget Stub (Analogous — LT-001)` subsection added
+under §V; LT-001 sidecar given a dated Progress note and `Last Reviewed` touch. Explicitly
+not a closure: Status remains Open, Spec Gates remain 0/6, Open Unknowns remain 7, no
+Closure Event per Rule 9. Degraded-mode bound remains Placeholder — no clean public figure
+exists across all three analog classes, and none was invented. LT-002 (storage degradation
+at depth) remains separately Open. Human-directed.
+
+---
 ### 2026-09-30 (second entry, same day) — Cross-checked Grok's independent `Operational_Conventions.md` draft; merged verified improvements, one serious packaging defect found and not carried forward
 Grok produced its own full attempt at the same file and a complete repository zip,
 submitted for comparison. The zip itself was not usable as a master — 28 files missing
