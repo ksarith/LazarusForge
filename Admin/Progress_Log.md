@@ -37,6 +37,32 @@ Created 2026-08-09 to fix a recurring failure mode found the same day, in two pl
 
 *(Most recent first. Rotate to `Archive/Logs/Progress_Log_Changelog.md` once more than five entries accumulate.)*
 
+### 2026-10-01 — LT-002 Storage Degradation Analogous stub filed in `Tests/Leviathan_testing.md`
+Same three-way pattern as LT-001 (Grok research/drafting, Claude verification, human
+direction). Two claims independently checked against primary literature before filing.
+(1) The hydrostatic-pressure fade mechanism — checked directly against its source study
+(a soft-package Li-ion AUV cell hydrostatic-pressure test, SEM/ex-situ XRD analysis,
+Arrhenius-law Q_loss prediction model) and confirmed accurate word-for-word, including the
+specific ~1.5% early-cycle capacity increase figure (0.1→90 MPa at 0.2C). (2) The general
+cold-accelerates-fade direction, confirmed by multiple independent cycling-aging studies.
+One claim from the drafting pass did **not** survive verification and was dropped rather
+than filed unsourced: a specific "~30% state-of-health loss in ~250 cycles at 4°C" figure
+attributed to an unspecified "NASA-cell-style" test — could not be located in any primary
+source checked. This is noted explicitly in both the stub text and the LT-002 sidecar
+progress note, rather than silently omitted, so the gap is visible to the next reader.
+New `### Storage Degradation Stub (Analogous — LT-002)` subsection added under §V,
+immediately after the LT-001 Power Budget Stub; mandatory housed-vs-pressure-tolerant
+architecture split retained from the draft. Cross-reference corrected during filing: the
+draft said this feeds/does-not-close "EV-003" directly, but EV-003's actual registered
+scope (`Operations/Energy.md`) is thermal containment/ventilation, narrower than
+degradation characterization — retargeted to the Storage Model & Battery Governance
+section that EV-003 is tagged under, with the scope distinction stated explicitly rather
+than implying a tighter match than exists. LT-002 sidecar given a dated Progress note and
+`Last Reviewed` touch (2026-05-04 → 2026-10-01, the first review since original logging).
+Status remains Open, Spec Gates remain 0/6, Open Unknowns remain 7 — no Closure Event.
+LT-001 is unaffected by this entry. Human-directed.
+
+---
 ### 2026-09-30 (third entry, same day) — LT-001 Power Budget Analogous stub filed in `Tests/Leviathan_testing.md`; first content edit to that file this session
 Three-way agent collaboration (Claude verification, Grok research/drafting, human direction).
 Grok surveyed all three analog classes named in LT-001's own resolution path — REMUS family,
