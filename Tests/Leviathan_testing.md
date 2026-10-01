@@ -16,7 +16,7 @@
 | Body Stability   | Volatile                                                            |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-09-30 — Power Budget Analogous stub (LT-001 progress; Status, Spec Gates, Open Unknowns unchanged); human-directed. Prior: 2026-05-04 (Claude — Skeptic/Auditor); revised 2026-06-08 |
+| Last Audit       | 2026-10-01 — Storage Degradation Analogous stub (LT-002 progress; Status, Spec Gates, Open Unknowns unchanged); human-directed. Prior: 2026-09-30 — Power Budget Analogous stub (LT-001 progress); human-directed. Prior: 2026-05-04 (Claude — Skeptic/Auditor); revised 2026-06-08 |
 | Auditor          | Claude — Retrofit/Auditor                                           |
 | Open Unknowns    | 7                                                                   |
 | Active Disputes  | 0                                                                   |
@@ -261,6 +261,53 @@ unmeasured; this stub does not close EV-001).
 
 Autonomy and endurance language in this file may now reference these
 Analogous bounds. Any tighter claim requires new empirical input.
+
+### Storage Degradation Stub (Analogous — LT-002)
+
+How sealed-cell storage behaves at abyssal temperature (2–4°C) and
+depth-relevant pressure, over cycles and calendar time. All figures are
+from public lab or manufacturer studies, independently verified against
+primary sources where checked (see notes below), not measured on a Forge
+platform. Label: **Analogous**. Cross-reference: `Operations/Energy.md`'s
+Storage Model & Battery Governance section [Ref: EV-003] — EV-003's own
+scope is thermal containment/ventilation, narrower than degradation
+characterization; this stub feeds that section but does not close EV-003
+or any other Energy unknown.
+
+| Factor | Observed effect (public literature) | Leviathan implication | Confidence |
+|--------|-------------------------------------|----------------------|------------|
+| **Cold (2–4°C)** | Capacity fade accelerates sharply below room temperature in cycling (independently confirmed: multiple cold-cycling studies document significantly higher fade rates below ~20°C, worsening further below 0°C); exact magnitude varies widely by chemistry and C-rate | LT-001 kWh figures are optimistic unless derated for abyssal T; do not use 25°C datasheet energy as in-water usable energy | Analogous |
+| **Chemistry at cold** | LFP generally more cycle-stable in cold maritime cycling than NCM/NCA (cold-climate maritime comparative literature) | Chemistry choice is load-bearing for "predictable degradation"; NMC/NCA need larger derates or thermal management | Analogous |
+| **Hydrostatic pressure — soft-pack / pressure-compensated** | Early cycles: capacity/voltage *improves* slightly (~1.5% at 0.2C from 0.1–90 MPa — faster Li diffusion under pressure). Late cycles: capacity fade **accelerates**; electrode damage confirmed by SEM/ex-situ XRD; Q_loss prediction model established on Arrhenius law | "Predictable degradation" from 1-atm datasheets is false for pressure-exposed soft-pack cells; late-mission fade is a documented mode, not a rare fault | Analogous — directly confirmed against the source study (soft-package Li-ion AUV cell, hydrostatic pressure test) |
+| **Hydrostatic pressure — pressure-housed** | Cells sit near 1 atm inside bottles/housings (REMUS 6000-class pattern). Dominant stressor is cold + cycling, not hull pressure on the jellyroll; independent literature on deep-sea battery design corroborates cold as the larger practical factor versus pressure for housed designs | Treat degradation as cold/cycle-dominated; do not apply soft-pack pressure-fade curves to housed packs | Analogous |
+| **Pressure-tolerant modules (Nereid/SWE-class)** | Designed for full-ocean-depth direct submergence (commercial pressure-tolerant packs exist in this class); parameters shift under pressure and cold — surface-calibrated state-of-charge estimation needs compensation | Feasible architecture; surface BMS assumptions break without pressure/temperature-aware compensation | Analogous |
+| **Extended calendar aging at depth** | Sparse open data for multi-month cold soak at abyssal pressure then full power. Glider primary packs (Seaglider, see Power Budget Stub above) show long calendar life at low mean power, but different chemistry/duty cycle than rechargeable deep AUV packs | Multi-month dormancy-at-depth remains **Placeholder** | Placeholder |
+
+**Architecture split (required when using this stub):**
+- **Pressure-housed** (REMUS 6000 bottles, similar): apply cold + cycle derates; do not apply soft-pack hydrostatic fade curves.
+- **Pressure-tolerant / oil-compensated** (Nereid-class, soft-pack under pressure): apply both cold derates *and* accelerated late-cycle pressure fade; plan BMS/SoC compensation.
+
+**Verification note:** the hydrostatic-pressure row was checked directly
+against its source study (soft-package Li-ion cell for AUVs, hydrostatic
+pressure test with SEM/XRD analysis and an Arrhenius-law Q_loss model) —
+confirmed accurate, including the specific ~1.5% early-cycle capacity
+increase figure. The general cold-fade direction is confirmed by
+multiple independent cycling-aging studies. One specific figure in an
+earlier draft of this stub (a claimed "~30% state-of-health loss in
+~250 cycles at 4°C" from an unspecified "NASA-cell-style" test) could
+not be independently verified and was not carried into this version —
+omitted rather than asserted without a confirmed source.
+
+**What this stub does not claim:**
+- Measured Forge pack fade curves (none exist yet)
+- A single universal derate % for all depths and chemistries
+- Closure of LT-002, LT-001, or any Energy.md unknown
+- That manufacturer cycle-life/storage-life ratings are deep-ocean validated
+
+Power-budget language that assumes constant capacity over a deep mission
+must either adopt an Analogous cold/pressure derate from this table or
+mark the assumption explicitly. Tighter claims require new empirical
+input.
 
 ---
 
@@ -695,7 +742,20 @@ with LT-002.
 | Blocking      | Yes — feeds LT-001                               |
 | Owner         | Tests/Leviathan_testing.md                       |
 | First Logged  | 2026-05-04                                       |
-| Last Reviewed | 2026-05-04                                       |
+| Last Reviewed | 2026-10-01                                       |
+
+**Progress (2026-10-01):** Literature survey of cold (2–4°C)
+capacity/cycle effects, hydrostatic pressure on soft-pack vs housed
+cells, and pressure-tolerant module practice. Storage Degradation
+Stub added under §V, labeled Analogous, with mandatory housed vs
+pressure-tolerant split; feeds `Operations/Energy.md`'s Storage
+Model & Battery Governance section [Ref: EV-003] without closing it.
+Multi-month abyssal calendar aging left Placeholder. One cited
+figure from an earlier draft (a specific cold-cycling percentage)
+could not be independently verified and was omitted rather than
+carried forward unsourced. Status remains Open — stub is the
+resolution path's literature-review deliverable, not a Closure
+Event. Human-directed.
 
 **Description:** How sealed cell storage behaves
 at operating depths and temperatures (2–4°C)
