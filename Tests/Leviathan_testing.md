@@ -16,7 +16,7 @@
 | Body Stability   | Volatile                                                            |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-05-04 (Claude — Skeptic/Auditor); revised 2026-06-08           |
+| Last Audit       | 2026-09-30 — Power Budget Analogous stub (LT-001 progress; Status, Spec Gates, Open Unknowns unchanged); human-directed. Prior: 2026-05-04 (Claude — Skeptic/Auditor); revised 2026-06-08 |
 | Auditor          | Claude — Retrofit/Auditor                                           |
 | Open Unknowns    | 7                                                                   |
 | Active Disputes  | 0                                                                   |
@@ -215,10 +215,52 @@ Power systems must support:
 - Safe shutdown and isolation
 - Recovery after extended dormancy
 
-*Power envelope unknown: LT-001 tracks the absence
-of any order-of-magnitude power budget for nominal,
-degraded, and dormancy conditions. This is the
-load-bearing gap for all autonomy claims.*
+### Power Budget Stub (Analogous — LT-001)
+
+Order-of-magnitude bounds from the three analog classes named in
+LT-001's resolution path. All figures are public manufacturer or
+operator specifications, independently verified against primary
+sources (manufacturer/operator spec sheets, not secondary summaries),
+not measured on a Forge platform. Label: **Analogous**.
+Cross-reference: `Operations/Energy.md` EV-001 (Forge demand remains
+unmeasured; this stub does not close EV-001).
+
+| Mode | Bounding class | Order-of-magnitude | Analog source |
+|------|----------------|--------------------|-----------------|
+| **Nominal active (deep)** | Propelled deep AUV / hybrid HROV | **10–22 kWh** stored · **~400–1000 W** mean mission draw · **~20–40 h** or **10–40 km** per dive | REMUS 6000 family (11–17.55 kWh, ~22–25 h → ~500–700 W, HII/WHOI/GEOMAR specs); Nereid Under-Ice (18 kWh confirmed, 2000–5000 m depending on config, 10–40 km @ 0.75–1 m/s, WHOI spec page) |
+| **Nominal active (small)** | Portable propelled AUV | **1–5 kWh** · **~80–150 W** mean · **10–30 h** | REMUS 100 (1 kWh, 20 h @ 3 kn / 9 h @ 5 kn, Rutgers ops data) / REMUS 300 (1.5–4.5 kWh modular) |
+| **Dormancy / survival** | Buoyancy glider | **~5.25 kWh** primary · **≪1–2 W** mean · **9+ months** | Seaglider M1 (5.25 kWh Li-ion primary, 5,400+ km, HII commercial datasheet); older UW academic variant 10 MJ (~2.8 kWh) class for comparison |
+| **Degraded / load-shed** | — | **Placeholder** | No clean public mid-band across all three classes; do not invent a number |
+
+**Derivation notes (not doctrine):**
+- REMUS implied mean draw = published energy ÷ published endurance
+  (e.g. 11 kWh / 22 h ≈ 500 W; 17.55 kWh / 25 h ≈ 700 W). Speed
+  dominates: same pack ~2× draw at sprint vs cruise (REMUS 100).
+- Seaglider propulsion is pulsed buoyancy, not continuous thruster —
+  the correct analog for dormancy, not for active falsification with
+  survey sensors and a decision loop. Two confirmed figures exist for
+  different product generations (2.8 kWh older UW academic spec vs.
+  5.25 kWh newer HII commercial M1 spec); both land in the same
+  sub-watt-to-low-single-digit-watt order of magnitude once divided
+  across a multi-month mission, so the conclusion does not depend on
+  which generation is used.
+- Nereid is battery-only (microtether is comms, not power); 18 kWh
+  confirmed directly from WHOI's own current spec page, which also
+  confirms the payload power budget (1000 W total across 6 high-power
+  channels at 100 W each) cited above. Bounds deep intervention-capable
+  work, not multi-month sleep.
+- Deep packs are pressure-housed or pressure-tolerant; public data
+  cover dive-cycle endurance, not multi-month cold/pressure storage
+  fade (that remains LT-002).
+
+**What this stub does not claim:**
+- Measured Forge power demand (EV-001 still Open)
+- Spec Gates advancement or Status change
+- A selected Leviathan architecture or pack size
+- Closure of LT-001, LT-002, or LT-003
+
+Autonomy and endurance language in this file may now reference these
+Analogous bounds. Any tighter claim requires new empirical input.
 
 ---
 
@@ -612,7 +654,15 @@ triggers escalate to human review.
 | Blocking      | Yes — all autonomy and endurance claims depend on this |
 | Owner         | Tests/Leviathan_testing.md                       |
 | First Logged  | 2026-05-04                                       |
-| Last Reviewed | 2026-05-04                                       |
+| Last Reviewed | 2026-09-30                                       |
+
+**Progress (2026-09-30):** Analog survey of all three named classes
+(REMUS, Seaglider, Nereid Under-Ice) completed from public specs,
+independently verified against primary sources. Stub Power Budget
+section added under §V, labeled Analogous, cross-referenced to
+EV-001. Status remains Open — stub presence is the resolution path's
+first deliverable, not a Closure Event. Degraded-mode bound and
+LT-002 storage-fade characterization still outstanding. Human-directed.
 
 **Description:** No order-of-magnitude power budget
 exists for nominal, degraded, and dormancy
