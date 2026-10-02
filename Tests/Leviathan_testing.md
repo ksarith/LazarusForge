@@ -16,7 +16,7 @@
 | Body Stability   | Volatile                                                            |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-10-01 — Storage Degradation Analogous stub (LT-002 progress; Status, Spec Gates, Open Unknowns unchanged); human-directed. Prior: 2026-09-30 — Power Budget Analogous stub (LT-001 progress); human-directed. Prior: 2026-05-04 (Claude — Skeptic/Auditor); revised 2026-06-08 |
+| Last Audit       | 2026-10-01 (second pass, same day) — LT-003 Candidate Autonomy Architectures (A/B, Placeholder) and LE-0 minimum-experiment definition filed under §VIII; Status, Spec Gates, Open Unknowns unchanged; human-directed. Prior: 2026-10-01 — Storage Degradation Analogous stub (LT-002 progress). Prior: 2026-09-30 — Power Budget Analogous stub (LT-001 progress). Earlier history: 2026-05-04 (Claude — Skeptic/Auditor), revised 2026-06-08. |
 | Auditor          | Claude — Retrofit/Auditor                                           |
 | Open Unknowns    | 7                                                                   |
 | Active Disputes  | 0                                                                   |
@@ -473,10 +473,101 @@ Human involvement is limited to observation,
 post-mortem analysis, and high-level goal
 definition. Humans do not steer. They learn.
 
-*Autonomy architecture unknown: LT-003 tracks
-the absence of any named decision-making paradigm
-under test. Without a stated hypothesis, the
-framework risks producing data without insight.*
+### Candidate Autonomy Architectures (LT-003 — Placeholder hypotheses)
+
+No architecture is selected. The following are **test hypotheses** only.
+Each must be falsifiable under Leviathan success criteria (reduced
+uncertainty, identified failure modes — survival optional). Power
+constraints from the §V Power Budget Stub (Analogous) apply:
+
+- Deep active class: ~400–1000 W mean available for propulsion + hotel + sensors
+- Small class: ~80–150 W mean
+- Dormancy: ≪1–2 W continuous (compute must collapse or sleep)
+
+Hotel/compute for autonomy must leave headroom for propulsion and
+sensing; continuous multi-hundred-watt planning stacks are out of
+scope for small-class and dormancy modes.
+
+#### Candidate A — Reactive / behavior-based (subsumption-style)
+
+**Hypothesis:** Layered reactive behaviors with fixed priority
+(e.g. survival > constraint-refusal > fault-isolation > goal progress)
+can produce long-horizon competence without an explicit world model,
+at low continuous compute cost.
+
+| Element | Specification |
+|---------|----------------|
+| **(1) Observable decision loop** | Sense → match highest-priority active behavior → act → repeat. No multi-step plan object. Priority table and active layer are logged each cycle. Cycle rate and which layer won are always inspectable post-mission. |
+| **(2) Failure signature** | (a) Priority inversion or layer starvation (goal layer never runs); (b) oscillation between two layers under noisy sensors; (c) "survive forever, learn nothing" — unit returns with empty insight log while still functional. Distinct from deliberative timeout failure. |
+| **(3) Minimal test scenario** | Single unit, finite energy, one primary survey goal + injected constraint conflict (e.g. ethical/geo bound vs goal). Success metric: conflict is refused or degraded correctly *and* the refusal/degrade path is reconstructable from logs. Failure metric: unit either violates constraint or survives with no usable post-mortem of *why*. |
+
+**Envelope fit:** Compatible with small-class and dormancy budgets if layers are cheap. Deep class can add more sensors without changing the loop shape.
+
+**What would kill this candidate:** Systematic inability to ration for long-horizon goals under ambiguity (always local greedy), or correlated failure across units that all share the same priority table (links to §VII / CF-002).
+
+#### Candidate B — Deliberative / uncertainty-gated planning
+
+**Hypothesis:** An explicit plan or policy over a finite horizon, gated
+by monitored uncertainty and a hard refuse path, produces clearer
+falsification data than pure reaction — at the cost of higher hotel
+load and failure modes around plan rigidity.
+
+| Element | Specification |
+|---------|----------------|
+| **(1) Observable decision loop** | Sense → update belief/uncertainty → plan or replan within horizon → act one step → monitor. Plan object, uncertainty score, and refuse/go decision are logged. Replan triggers (timeout, uncertainty threshold, fault) are explicit. |
+| **(2) Failure signature** | (a) Plan rigidity — continues obsolete plan under poisoned or missing telemetry; (b) replan thrash — burns energy replanning without progress; (c) uncertainty paralysis — refuse/safe-mode with no attempt when a reactive system would still move. Distinct from reactive oscillation. |
+| **(3) Minimal test scenario** | Single unit, same survey goal + **poisoned telemetry injection** (§VII) mid-mission. Success metric: unit detects inconsistency or uncertainty rise, refuses or degrades, and returns a log that separates "sensor lie" from "world change." Failure metric: completes the poisoned plan as if true, or enters unrecoverable compute/energy collapse. |
+
+**Envelope fit:** Needs continuous or burst compute in the tens of watts class on top of sensors — plausible in deep nominal budget, tight or impossible in dormancy without aggressive sleep between plan cycles.
+
+**What would kill this candidate:** Replan cost dominates mission energy before insight is gained, or refuse-gate never fires under conditions where human post-mortem says it should have (false confidence).
+
+#### Explicit non-claims
+
+- Neither candidate is adopted doctrine.
+- Hybrid (reactive floor + deliberative ceiling) is a **third** hypothesis not required for LT-003 minimum progress; may be added later with its own three elements.
+- Learned policy / trained controllers are out of scope until a baseline non-learned candidate has a recorded failure signature under §VII injection (avoids uninterpretable failure).
+- Closing LT-003 requires a Closure Event after test evidence, not after writing this section.
+
+Autonomy language elsewhere in this file may reference Candidate A or B as **Placeholder test hypotheses** only.
+
+### LE-0 — Minimum Experiment Before Vehicle
+
+The baseline Leviathan unit is not defined by what an eventual off-world
+or deep-ocean industrial machine needs. It is defined by what must be
+physically and epistemically present to falsify the assumptions
+currently blocking that machine from being trusted — LT-001 through
+LT-007. LE-0 is the smallest such setup: a bench/tank falsification
+cell, not a vehicle, not a swarm, not a pressure-hull prototype.
+
+| Layer | Minimum present | Attacks |
+|-------|------------------|---------|
+| **Power** | Instrumented pack + logger; cold soak optional; load-shed script | LT-001 (path toward Measured), LT-002 (cold-cycle derate) |
+| **Autonomy** | **One** named candidate (A or B above) with logged decision loop | LT-003 |
+| **Sensing** | Dual sensors + ability to inject false telemetry | §VII / CF-002; feeds LT-004 later |
+| **Evidence** | Timestamped log: power state, active layer/plan, sensor values, refuse/degrade events | LT-006 adjacency; distinguishes hardware vs. reasoning vs. bad-telemetry failure |
+| **Recovery** | Explicit safe-state on low energy / uncertainty / constraint conflict | §VI; not full passive buoyancy yet |
+| **Not required yet** | Pressure hull, swarm, peer trust, acoustic mesh, industrial tooling | Deliberately excluded — avoids designing Leviathan-complete before the unknowns that justify its shape are resolved |
+
+**Minimal scenario (shared across candidates):**
+
+1. Finite energy budget, drawn from the §V Power Budget Stub Analogous bound, derated per the §V Storage Degradation Stub.
+2. One survey-style goal.
+3. One hard constraint conflict (ethical / geo / power).
+4. Optional mid-run poisoned telemetry injection (§VII).
+5. Success = a reconstructable post-mortem that reduces uncertainty about *that candidate* — not survival.
+6. Failure of the unit is allowed. Failure to learn from it is not.
+
+**What LE-0 does not claim:**
+- A selected architecture, pack size, or hull design
+- Closure of LT-001 through LT-007
+- Readiness for pressure, multi-unit, or industrial-scale testing — those follow LE-0, not alongside it
+
+LE-0 exists so "baseline unit" stays an epistemic definition (the
+smallest thing that can produce trustworthy answers to the blocking
+questions) rather than drifting into an industrial one. Astroid-miner's
+candidate mechanisms (e.g. its fleet-consensus reference for LT-007)
+remain inputs to later layers, not inputs to LE-0 itself.
 
 ---
 
@@ -782,7 +873,19 @@ parallel with LT-001.
 | Blocking      | Yes — without a stated hypothesis, framework produces data without insight |
 | Owner         | Tests/Leviathan_testing.md                       |
 | First Logged  | 2026-05-04                                       |
-| Last Reviewed | 2026-05-04                                       |
+| Last Reviewed | 2026-10-01                                       |
+
+**Progress (2026-10-01):** Two candidate architectures filed under §VIII
+as Placeholder hypotheses — Candidate A (reactive / behavior-based) and
+Candidate B (deliberative / uncertainty-gated) — each with observable
+decision loop, failure signature, and minimal test scenario per
+resolution path. Constrained by §V Power Budget Stub (Analogous).
+Hybrid and learned policy deferred. LE-0 (minimum bench/tank
+falsification cell) filed in the same pass, defining the smallest
+setup that attacks LT-001 through LT-003 directly (LT-004–007 remain
+downstream of LE-0, not inputs to it). Status remains Open — naming
+testable hypotheses and the minimum experiment that tests them is the
+resolution path's deliverable, not a Closure Event. Human-directed.
 
 **Description:** No decision-making paradigm is
 named as the test subject. Candidate classes
