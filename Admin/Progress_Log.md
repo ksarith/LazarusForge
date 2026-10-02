@@ -37,6 +37,32 @@ Created 2026-08-09 to fix a recurring failure mode found the same day, in two pl
 
 *(Most recent first. Rotate to `Archive/Logs/Progress_Log_Changelog.md` once more than five entries accumulate.)*
 
+### 2026-10-01 (second entry, same day) — LT-003 Candidate Autonomy Architectures and LE-0 minimum-experiment definition filed in `Tests/Leviathan_testing.md`
+Same three-way pattern, both pieces applied together per human direction. (1) **LT-003**:
+two Placeholder candidate architectures — A (reactive/behavior-based, subsumption-style)
+and B (deliberative/uncertainty-gated) — filed under §VIII, each with the three elements
+LT-003's resolution path requires (observable decision loop, failure signature, minimal
+test scenario). Verified before filing: §VI/§VII/§VIII all real and correctly referenced;
+the "poisoned telemetry injection" mechanism cited for Candidate B's test scenario checked
+against §VII directly and confirmed real (ASM-005), not a stretched reference — §VII
+covers both AI-model-consensus and physical sensor-telemetry injection; the power figures
+cited (400–1000 W deep, 80–150 W small, ≪1–2 W dormancy) checked character-for-character
+against the already-filed §V Power Budget Stub, confirming the drafting pass read the live
+file rather than working from memory. (2) **LE-0**: a new "Minimum Experiment Before
+Vehicle" subsection, also under §VIII — deliberately placed as a subsection rather than a
+new top-level roman-numeral section, after checking whether existing sections are
+cross-referenced by exact number elsewhere in the repo (they are: `Archive/Logs/
+Auditor_Protocols_Logs.md` cites `Tests/Leviathan_testing.md` §XII by number in this
+session's own UNK-003 entry). Inserting a new §-numbered section ahead of §XII would have
+silently broken that reference; the subsection approach avoids the risk entirely. LE-0
+defines the smallest bench/tank falsification cell that attacks LT-001 through LT-003
+specifically — LT-004 through LT-007 are explicitly named as downstream of LE-0, not
+inputs to it, and Astroid-miner's LT-007 candidate reference is named as a later-layer
+input only. Both LT-003's `Last Reviewed` and the file's own `Last Audit` line updated;
+Status remains Open, Spec Gates remain 0/6, Open Unknowns remain 7 — no Closure Event for
+either. LT-001 and LT-002 are unaffected. Human-directed.
+
+---
 ### 2026-10-01 — LT-002 Storage Degradation Analogous stub filed in `Tests/Leviathan_testing.md`
 Same three-way pattern as LT-001 (Grok research/drafting, Claude verification, human
 direction). Two claims independently checked against primary literature before filing.
