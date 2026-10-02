@@ -11,7 +11,7 @@
 | Spec Gates       | N/A — this file is a progression log, not a specification           |
 | Open Unknowns    | 0 (references existing unknowns; creates none)                      |
 | Owning Domain    | Admin/                                                               |
-| Last Reviewed    | 2026-09-24                                                           |
+| Last Reviewed    | 2026-10-02 — corrected for staleness (previously 2026-09-24 despite three 2026-10-01 dated entries already present); content/rotation discipline itself was already current, only this field had not been touched. |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
 ---
@@ -37,6 +37,38 @@ Created 2026-08-09 to fix a recurring failure mode found the same day, in two pl
 
 *(Most recent first. Rotate to `Archive/Logs/Progress_Log_Changelog.md` once more than five entries accumulate.)*
 
+### 2026-10-02 — Grok's repository-wide consistency sweep reviewed; one confirmed fix applied, several findings found mischaracterized on direct check
+An independent agent ran a broader consistency sweep (Unknowns.md Active Index vs owning-
+file sidecars, File State blocks, counts) after the LT-004/005 fix. Each claim checked
+against source before acting, per standing discipline — roughly half held up, half did not.
+**Confirmed and fixed:** `Admin/Progress_Log.md`'s own File State `Last Reviewed` field was
+stale (2026-09-24) despite three 2026-10-01 dated entries already present in the file;
+corrected to 2026-10-02, noted as a metadata-only fix (content/rotation discipline was
+already current). **Confirmed, already on record:** `Admin/Auditor_Protocols.md`'s
+Open-Unknowns count-note re: UNK-003 — matches existing 2026-09-29 Last Audit text exactly,
+not a new finding. **Not confirmed — checked directly and found to be mischaracterized:**
+(1) EV-001/TS-001-003/FL-001 "Priority mapping mismatches" called "same class as the
+recent LT-004/005 fix" — checked each owning-file sidecar directly; all three show
+`Blocking: Yes`, matching `Unknowns.md`'s "Blocking" entries exactly. Unlike LT-004/005,
+nothing here contradicts its source — this is evidence of the vocabulary-mixing pattern
+noted separately, not an instance of wrong data, and does not need the same kind of fix.
+(2) Governance_Charter.md's claimed "13 vs ~14, possible off-by-one" — counted directly:
+exactly 13 GOV-* rows owned by that file in `Unknowns.md`, all Open/In Progress, matching
+the file's own stated count exactly. No discrepancy found. (3) A flagged "residual GOV-005
+text" outside the table — located at `Unknowns.md` line 81; it's inside a clearly labeled
+`## Dependency Clusters` section (an intentional, explicitly-scoped-down dependency-tree
+diagram), not stray or orphaned content. **Confirmed real, not yet acted on:** the
+`Unknowns.md` "Priority (Promo)" column genuinely mixes Blocking-status words, Priority-
+level words, and occasional Risk-like terms across different rows — a real systemic
+observation with likely dozens of affected rows beyond the ones sampled this pass. Not
+normalized in this session: choosing a single semantic for that column and remapping the
+whole Active Index is a real design decision, not a mechanical correction like LT-004/005
+or this entry's Progress_Log fix, and doing it without that decision being made explicitly
+risks introducing new errors across entries not individually re-verified here. Left open
+for explicit direction. Human-directed (sweep commissioned by human; review and correction
+self-directed against the sweep's own findings).
+
+---
 ### 2026-10-01 (third entry, same day) — `Unknowns.md` LT-004/LT-005 "Blocking" inconsistency corrected, caught by independent Skeptic pass
 An independent agent instance ran a Skeptic pass on the LT-001–003/LE-0 update and found a
 pre-existing inconsistency not introduced by that update: `Unknowns.md`'s active index
