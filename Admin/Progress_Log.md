@@ -37,6 +37,26 @@ Created 2026-08-09 to fix a recurring failure mode found the same day, in two pl
 
 *(Most recent first. Rotate to `Archive/Logs/Progress_Log_Changelog.md` once more than five entries accumulate.)*
 
+### 2026-10-01 (third entry, same day) — `Unknowns.md` LT-004/LT-005 "Blocking" inconsistency corrected, caught by independent Skeptic pass
+An independent agent instance ran a Skeptic pass on the LT-001–003/LE-0 update and found a
+pre-existing inconsistency not introduced by that update: `Unknowns.md`'s active index
+listed LT-004 and LT-005 as "Blocking" in its "Priority (Promo)" column, while
+`Tests/Leviathan_testing.md`'s own sidecars — the authoritative source — state
+`Blocking: No` (`Priority: Major`) for both. Verified directly against the live sidecar
+fields before correcting (not taken on the skeptic's word alone): confirmed. The skeptic
+pass also cited a real precedent for this exact failure class — `F-EN-002`
+(`Operations/Energy.md`, 2026-08-09, a prior Blocking-field correction on EV-001) — checked
+and confirmed genuine, not invented. Corrected both rows to "Non-blocking," matching
+`Tests/Leviathan_testing.md`'s own field and `Unknowns.md`'s existing LT-006 convention.
+`Unknowns.md` bumped to v5.56. Narrow fix only: the "Priority (Promo)" column's broader
+vocabulary ambiguity (most LT rows show Blocking-status values; LT-007 shows an actual
+Priority-level value, "Major," in the same column) was not resolved — flagged in the
+version note as a separate, larger question, not addressed here. No Status, Risk, or
+Priority field changed for either entry; this was a transcription-consistency correction
+only. Human-directed (skeptic pass commissioned by human; correction applied by Claude
+after independent re-verification against source).
+
+---
 ### 2026-10-01 (second entry, same day) — LT-003 Candidate Autonomy Architectures and LE-0 minimum-experiment definition filed in `Tests/Leviathan_testing.md`
 Same three-way pattern, both pieces applied together per human direction. (1) **LT-003**:
 two Placeholder candidate architectures — A (reactive/behavior-based, subsumption-style)
