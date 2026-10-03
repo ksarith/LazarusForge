@@ -37,6 +37,56 @@ Created 2026-08-09 to fix a recurring failure mode found the same day, in two pl
 
 *(Most recent first. Rotate to `Archive/Logs/Progress_Log_Changelog.md` once more than five entries accumulate.)*
 
+### 2026-10-03 (eighth entry, same day) — LE-0 build-out in `Tests/Leviathan_testing.md` §VIII
+Expanded the LE-0 minimum-experiment definition into a countable bench/tank procedure without selecting architecture or closing unknowns. Added: six-phase run sheet (Setup → Baseline → Constraint conflict → Energy stress → optional §VII Injection → Post-mortem); minimum evidence schema (timestamp, energy/SoC, mode, candidate A|B, layer/plan_id, sensors, decision, reason_code); instrumentation checklist; result-note template; epistemic outcomes (complete / incomplete / candidate stressed / no learning). Explicit gate: ≥1 complete reconstructable run per candidate before LT-003 advances past Placeholder. Cold soak optional if noted on run card. File State Last Audit, LT-003 Last Reviewed, and Resolution Log updated. Status/Spec Gates/Open Unknowns unchanged. Human-directed. Rotation: sixth Current Lessons entry → oldest (Convention 8 addition) rotated to changelog same pass.
+
+---
+### 2026-10-03 (seventh entry, same day) — `Forge_Audit_Kit.md` "Current: N open" summary line corrected 8 → 9
+Follow-on to FAK-017 (same-day entry above): the sidecar's prose list of open FAK items had
+already been updated to include FAK-017, but the "Current: N open" summary line one
+paragraph below it still read 8, not 9 — the same desync sub-bug FAK-015 fixed once before
+on this exact file (list updated, summary count not). Caught during review, not by a
+scheduled audit; flagged first, correction applied on explicit request. Line corrected to
+"9 open (FAK-001, FAK-005, FAK-006, FAK-009, FAK-014, FAK-015, FAK-016, FAK-017, and one
+flagged for Canonical_Terms.md...)". No other field touched. Human-directed.
+
+---
+### 2026-10-03 (sixth entry, same day) — LT-004, LT-006, LT-007 Placeholder stubs filed in `Tests/Leviathan_testing.md`
+Same drafting discipline as LT-005 (Grok drafts, Claude verifies against source before
+filing). Three stubs filed in one pass per the drafts' own suggested §XIII ordering:
+Trust Model Stub (LT-004, after Extension B), Log Survival Stub (LT-006, after the
+Priority Propagation Stub), Corrective Action Authorization Stub (LT-007, after LT-006,
+before Anti-Pattern Safeguards). Every cross-referenced claim checked against its live
+source before filing, not taken on the drafts' word: Extension B's exact text ("Units may
+exchange failure summaries... Learning is asynchronous and non-binding. No unit may force
+behavioral updates onto another") — verbatim match; Core Principle 4 ("Trust Is Earned,
+Not Assumed") — verbatim match; `Admin/Autonomy_Divergence_Protocol.md` §5's quoted
+principle ("No subsystem may be the sole authority for determining whether another
+subsystem has diverged") — verbatim match, confirmed real, not invented; `Admin/
+Ship_of_Theseus.md` §IV's cryptographic-state-log / cognitive-grain concept — confirmed
+present; Astroid-miner's `rogue-unit-management.md` 80–99% fleet-agreement figure — opened
+the file directly inside the embedded `Archive/Astroid-miner/` zip and confirmed the
+number verbatim, not assumed from the draft's citation. All three sidecars updated with
+dated Progress notes; `Last Reviewed` touched for all three (LT-004 2026-05-04→10-03,
+LT-006 2026-06-08→10-03, LT-007 2026-07-19→10-03) — LT-006 and LT-007 each had this as
+their first review since original logging. One stray duplicate `Last Reviewed` row
+(leftover from LT-004's pre-edit text, missed on a first pass over the str_replace) was
+caught and removed before finalizing. File State `Last Audit` and the in-file Resolution
+Log both updated in one combined entry covering all three. Status remains Open for all
+three (LT-004/006/007), Spec Gates remain 0/6, Open Unknowns remain 7 — no Closure Event,
+no mechanism selected in any of the three, Astroid-miner's figure retained explicitly as
+candidate-only per the drafts' own non-claims. `Unknowns.md` needed no edit — none of the
+three rows' Status or Blocking values changed. Human-directed.
+
+**LT-00x set status after this entry:** LT-001/002/003/004/005/006/007 all now have at
+least a Placeholder or Analogous stub filed; all seven remain Open; none closed. LT-008
+was checked and confirmed not registered (no sidecar, no Resolution Path to expand) —
+correctly not drafted as a stub, since that would be proposing a new unknown rather than
+completing a logged one. Three unauthorized candidate topics were named for a possible
+future LT-008 (unified multi-unit test harness, delay-tolerant contact-window model,
+anti-pattern measurement mechanism) but none adopted — awaiting explicit direction.
+
+---
 ### 2026-10-03 (fifth entry, same day) — Staleness/confusion sweep corrections (Routing, ADP, Repository_Structure, Adm_Scope_Map)
 ChatGPT staleness/confusion sweep findings source-checked by Grok before acting; high/medium items corrected.
 
@@ -48,7 +98,7 @@ ChatGPT staleness/confusion sweep findings source-checked by Grok before acting;
 
 **(4) Adm_Scope_Map.md Last Reviewed.** Field was 2026-09-24 while body already contained 2026-09-30 Operational_Conventions registration. Updated to 2026-10-03 with explicit field-meaning note (last substantive map check/modification, not full-folder re-audit).
 
-**Not rewritten:** Governance_Charter GOV-014/GOV-020 “29 Admin files” — those are explicit *at-integration* measurements inside Resolved closure records; overwriting would falsify history. G/O panel remains recomputable on next Complexity/Pruning Review per section rules.
+**(5–6) Follow-up same day after ChatGPT review of this pass:** Charter numbers left unchanged; temporal labels only — GOV-014/GOV-020 “Current … count/scale” → “at integration (…, confirmed 2026-08-20)” so historical measurements are not labeled current. Discovery.md header chronology gap closed — Prior: 2026-09-24 inserted for Metrics_Scaffold / Persistent_Cognition_Candidates (already in maturity snapshot); “gap is not closed” note removed from 2026-09-29 Prior entry. Convention numbering left alone (cosmetic).
 
 Human-directed after source verification of ChatGPT sweep. Rotation: this addition → six Current Lessons → oldest (2026-10-02 Pass 2 review) rotated to changelog same pass (Convention 8).
 
@@ -61,75 +111,6 @@ Two items from the same self-maintenance checkpoint, both source-verified before
 **(2) FAK-017 logged — fifth occurrence of Forge_Audit_Kit derivation-citation staleness.** `Admin/Forge_Audit_Kit.md` Derived-from line still read `Unknowns.md` v5.27 while live is v5.57 (30 versions). Same pattern previously logged as FAK-014/015/016. Citation refreshed to v5.57; kit version 1.18→1.19; Open Unknowns 8→9; FAK-017 written into `Archive/Logs/Forge_Audit_Kit_Changelog.md` sidecar; Resolution Log most-recent line updated. Status remains Open — the underlying structural question (citation currency has no automated check) is now five occurrences deep and still unresolved.
 
 Both executed under the stricter "quote every field before flagging" discipline from the methodology calibration earlier this session. Human-directed (continue-with-fixes instruction). Rotation rule checked: this addition makes six Current Lessons entries → oldest (2026-10-02 first-entry sweep review) rotated to `Progress_Log_Changelog.md` in the same pass per Convention 8.
-
----
-### 2026-10-03 (third entry, same day) — `Admin/Operational_Conventions.md` Convention 8 added: rotation rules don't self-enforce
-Direct follow-on to the two rotation fixes above. The failure pattern (a file states "keep
-only N most recent / current version, rotate the rest" and the rule goes unenforced until
-someone counts) was checked against `Operational_Conventions.md`'s existing eight — sorry,
-seven — conventions and found to have no entry, despite now being independently confirmed
-on two files in one session and on `Unknowns.md` alone a second time (2026-09-10 precedent
-already in its own changelog). New Convention 8 filed: states the pattern, cites both
-2026-10-03 violations plus the 2026-09-10 precedent as evidence it's recurring rather than
-one-off, and adds an explicit checklist line — count entries against the stated limit and
-rotate in the same session, not as a follow-up — for the next time either file gets a new
-dated/versioned entry. File State `Last Audit` updated. No existing convention altered.
-Human-prompted (direct question after the two fixes), Claude-executed.
-
----
-### 2026-10-03 (second entry, same day) — `Unknowns.md`'s own version-stacking rule violation found and fixed
-Asked directly whether `Archive/Logs/Unknowns_Changelog.md` needed attention after the
-Progress_Log rotation — it did, a different instance of the same bug class. `Unknowns.md`'s
-own stated rule ("this block now keeps only the current version") was being violated: five
-versions (5.53 through 5.57) sat stacked in the live main block instead of one. Checked the
-changelog before touching anything: v5.53 was already correctly archived there; v5.54, v5.55,
-and v5.56 were missing entirely — never migrated. All three inserted into
-`Unknowns_Changelog.md` verbatim, directly after v5.53 (preserving that block's ascending
-order), with a new Migration Note dated 2026-10-03 alongside the existing 2026-09-10 one this
-makes a second instance of. `Unknowns.md`'s main block trimmed to v5.57 only — no content
-changed, only relocated. Same family as the 2026-08-09/2026-09-10 entries already on record
-in `Archive/Logs/Progress_Log_Changelog.md`: a rule that says "update this when X happens" is
-not the same as X reliably triggering the update. Human-prompted (direct question), Claude-
-executed.
-
----
-### 2026-10-03 — Priority Propagation Stub (Placeholder) filed for LT-005 in `Tests/Leviathan_testing.md`
-Same drafting discipline as LT-003 (Placeholder hypotheses, not Analogous — no empirical
-analog exists for delay-tolerant priority propagation the way AUV/battery literature existed
-for LT-001/LT-002). Drafted by Grok, reviewed by Claude before filing. Verified before
-applying: the LT-005 sidecar block (Status/Risk/Priority/Blocking/dates) matched the live
-file exactly; the LT-006 dependency quote ("Logs may need Tier 1 transmission priority —
-depends on LT-005 resolution") checked verbatim against LT-006's actual Resolution Path, not
-paraphrased; placement confirmed structurally correct — immediately after the Knowledge
-Classification subsection and before Anti-Pattern Safeguards in §XIII, adjacent to the Core
-Principle it operationalizes ("Errors Travel Faster Than Optimizations... mechanism
-undefined — LT-005"). New subsection defines four minimum observables for a multi-unit test
-(tier tagging, contact opportunities, differential delivery, failure signature) and three
-falsifiable Placeholder hypotheses (H1 strict priority queue, H2 expedited custody transfer,
-H3 contact-window reservation) — none selected or adopted. Swarm-scale deferral to
-`Admin/Trajectories.md` matches Extension A's existing scope note. LT-005 sidecar updated
-with dated Progress note; `Last Reviewed` 2026-05-04 → 2026-10-03 (first review since
-original logging). File's own `Last Audit` line updated. Status remains Open, Spec Gates
-remain 0/6, Open Unknowns remain 7 — no Closure Event. `Unknowns.md` active-index row for
-LT-005 unchanged (Status/Blocking values unaffected by this stub). LT-001, LT-002, LT-003,
-and LE-0 are unaffected by this entry.
-
-**Also addressed:** the file's own in-document `### Resolution Log` section (distinct from
-this log) had gone unupdated since 2026-07-19 despite three prior edits in the interim
-(LT-001, LT-002, LT-003/LE-0 — all logged here but not mirrored there). Not backfilled
-retroactively; a note was added at the top of that section pointing back to this log's
-2026-09-30 / 2026-10-01 entries, so the gap is visible rather than silently continued again.
-Whether that section should keep being maintained going forward, now that this log is the
-de facto record, is an open question for explicit direction — not resolved by this entry.
-
-**Also:** this file's own Current Lessons section had accumulated 16 dated entries against
-its stated five-entry rotation rule (§ "Size discipline... Keep the current entry plus the
-four most recent"), un-rotated since the file's creation. The eleven oldest entries
-(2026-10-01 LT-002 Storage Degradation stub, through 2026-09-20 EC-013 Gate_05) were moved
-verbatim to `Archive/Logs/Progress_Log_Changelog.md` under a new dated rotation header; text
-unchanged, only relocated. The five most recent — this entry plus the two 2026-10-02 sweep
-reviews and the two remaining 2026-10-01 entries (LT-004/005 fix, LT-003/LE-0) — remain in
-full above. Human-directed.
 
 ---
 Full history, including entries rotated out of the five above, in `Archive/Logs/Progress_Log_Changelog.md`.

@@ -321,9 +321,9 @@ sidecar entries live in the owning file; every other file in the
 repository keeps its sidecar in-body. Adversarial Battery record for
 this kit is in the same file, §Adversarial Battery Record.
 
-Current: 8 open (FAK-001, FAK-005, FAK-006, FAK-009, FAK-014, FAK-015,
-FAK-016, and one flagged for `Canonical_Terms.md` rather than resolved
-here — see Battery record, Cycle/CURRENT_CYCLE finding).
+Current: 9 open (FAK-001, FAK-005, FAK-006, FAK-009, FAK-014, FAK-015,
+FAK-016, FAK-017, and one flagged for `Canonical_Terms.md` rather than
+resolved here — see Battery record, Cycle/CURRENT_CYCLE finding).
 
 ---
 
