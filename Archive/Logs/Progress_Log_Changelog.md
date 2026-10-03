@@ -3,6 +3,21 @@
 Split out 2026-08-09, following the precedent already established by `Unknowns_Changelog.md`, `AUDIT_HARNESS_CHANGELOG.md`, and `Forge_Audit_Kit_Changelog.md`. `Progress_Log.md` keeps the five most recent entries in full; this file holds every entry that's rotated out. No information is removed when an entry rotates — every entry below is preserved verbatim from `Progress_Log.md` at the time it moved.
 
 ---
+### 2026-10-03 (third entry, same day) — `Admin/Operational_Conventions.md` Convention 8 added: rotation rules don't self-enforce
+*(Rotated out of Current Lessons 2026-10-03 during LE-0 build-out pass.)*
+Direct follow-on to the two rotation fixes above. The failure pattern (a file states "keep
+only N most recent / current version, rotate the rest" and the rule goes unenforced until
+someone counts) was checked against `Operational_Conventions.md`'s existing eight — sorry,
+seven — conventions and found to have no entry, despite now being independently confirmed
+on two files in one session and on `Unknowns.md` alone a second time (2026-09-10 precedent
+already in its own changelog). New Convention 8 filed: states the pattern, cites both
+2026-10-03 violations plus the 2026-09-10 precedent as evidence it's recurring rather than
+one-off, and adds an explicit checklist line — count entries against the stated limit and
+rotate in the same session, not as a follow-up — for the next time either file gets a new
+dated/versioned entry. File State `Last Audit` updated. No existing convention altered.
+Human-prompted (direct question after the two fixes), Claude-executed.
+
+---
 ### 2026-10-02 (second entry, same day) — Consistency sweep Pass 2 reviewed; two confirmed fixes applied, one finding found mischaracterized on direct check
 *(Rotated out of Current Lessons 2026-10-03 during staleness/confusion sweep correction pass.)*
 Three specific claims checked against source before acting, same discipline as Pass 1's
@@ -625,8 +640,63 @@ While retiring `Unknowns.md`'s stale "What vX.X Means" section, found that its "
 
 ---
 
-## Rotated from Progress_Log.md, 2026-10-03 (13 entries, 2026-10-01 LT-004/LT-005 fix through 2026-09-20)
+## Rotated from Progress_Log.md, 2026-10-03 (15 entries, 2026-10-03 Unknowns.md version-stacking fix through 2026-09-20)
 
+### 2026-10-03 (second entry, same day) — `Unknowns.md`'s own version-stacking rule violation found and fixed
+Asked directly whether `Archive/Logs/Unknowns_Changelog.md` needed attention after the
+Progress_Log rotation — it did, a different instance of the same bug class. `Unknowns.md`'s
+own stated rule ("this block now keeps only the current version") was being violated: five
+versions (5.53 through 5.57) sat stacked in the live main block instead of one. Checked the
+changelog before touching anything: v5.53 was already correctly archived there; v5.54, v5.55,
+and v5.56 were missing entirely — never migrated. All three inserted into
+`Unknowns_Changelog.md` verbatim, directly after v5.53 (preserving that block's ascending
+order), with a new Migration Note dated 2026-10-03 alongside the existing 2026-09-10 one this
+makes a second instance of. `Unknowns.md`'s main block trimmed to v5.57 only — no content
+changed, only relocated. Same family as the 2026-08-09/2026-09-10 entries already on record
+in `Archive/Logs/Progress_Log_Changelog.md`: a rule that says "update this when X happens" is
+not the same as X reliably triggering the update. Human-prompted (direct question), Claude-
+executed.
+
+---
+### 2026-10-03 — Priority Propagation Stub (Placeholder) filed for LT-005 in `Tests/Leviathan_testing.md`
+Same drafting discipline as LT-003 (Placeholder hypotheses, not Analogous — no empirical
+analog exists for delay-tolerant priority propagation the way AUV/battery literature existed
+for LT-001/LT-002). Drafted by Grok, reviewed by Claude before filing. Verified before
+applying: the LT-005 sidecar block (Status/Risk/Priority/Blocking/dates) matched the live
+file exactly; the LT-006 dependency quote ("Logs may need Tier 1 transmission priority —
+depends on LT-005 resolution") checked verbatim against LT-006's actual Resolution Path, not
+paraphrased; placement confirmed structurally correct — immediately after the Knowledge
+Classification subsection and before Anti-Pattern Safeguards in §XIII, adjacent to the Core
+Principle it operationalizes ("Errors Travel Faster Than Optimizations... mechanism
+undefined — LT-005"). New subsection defines four minimum observables for a multi-unit test
+(tier tagging, contact opportunities, differential delivery, failure signature) and three
+falsifiable Placeholder hypotheses (H1 strict priority queue, H2 expedited custody transfer,
+H3 contact-window reservation) — none selected or adopted. Swarm-scale deferral to
+`Admin/Trajectories.md` matches Extension A's existing scope note. LT-005 sidecar updated
+with dated Progress note; `Last Reviewed` 2026-05-04 → 2026-10-03 (first review since
+original logging). File's own `Last Audit` line updated. Status remains Open, Spec Gates
+remain 0/6, Open Unknowns remain 7 — no Closure Event. `Unknowns.md` active-index row for
+LT-005 unchanged (Status/Blocking values unaffected by this stub). LT-001, LT-002, LT-003,
+and LE-0 are unaffected by this entry.
+
+**Also addressed:** the file's own in-document `### Resolution Log` section (distinct from
+this log) had gone unupdated since 2026-07-19 despite three prior edits in the interim
+(LT-001, LT-002, LT-003/LE-0 — all logged here but not mirrored there). Not backfilled
+retroactively; a note was added at the top of that section pointing back to this log's
+2026-09-30 / 2026-10-01 entries, so the gap is visible rather than silently continued again.
+Whether that section should keep being maintained going forward, now that this log is the
+de facto record, is an open question for explicit direction — not resolved by this entry.
+
+**Also:** this file's own Current Lessons section had accumulated 16 dated entries against
+its stated five-entry rotation rule (§ "Size discipline... Keep the current entry plus the
+four most recent"), un-rotated since the file's creation. The eleven oldest entries
+(2026-10-01 LT-002 Storage Degradation stub, through 2026-09-20 EC-013 Gate_05) were moved
+verbatim to `Archive/Logs/Progress_Log_Changelog.md` under a new dated rotation header; text
+unchanged, only relocated. The five most recent — this entry plus the two 2026-10-02 sweep
+reviews and the two remaining 2026-10-01 entries (LT-004/005 fix, LT-003/LE-0) — remain in
+full above. Human-directed.
+
+---
 ### 2026-10-01 (third entry, same day) — `Unknowns.md` LT-004/LT-005 "Blocking" inconsistency corrected, caught by independent Skeptic pass
 An independent agent instance ran a Skeptic pass on the LT-001–003/LE-0 update and found a
 pre-existing inconsistency not introduced by that update: `Unknowns.md`'s active index
