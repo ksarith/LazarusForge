@@ -11,7 +11,7 @@
 | Spec Gates       | N/A — this file is a progression log, not a specification           |
 | Open Unknowns    | 0 (references existing unknowns; creates none)                      |
 | Owning Domain    | Admin/                                                               |
-| Last Reviewed    | 2026-10-02 — corrected for staleness (previously 2026-09-24 despite three 2026-10-01 dated entries already present); content/rotation discipline itself was already current, only this field had not been touched. |
+| Last Reviewed    | 2026-10-03                                                           |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
 ---
@@ -37,6 +37,45 @@ Created 2026-08-09 to fix a recurring failure mode found the same day, in two pl
 
 *(Most recent first. Rotate to `Archive/Logs/Progress_Log_Changelog.md` once more than five entries accumulate.)*
 
+### 2026-10-03 — Priority Propagation Stub (Placeholder) filed for LT-005 in `Tests/Leviathan_testing.md`
+Same drafting discipline as LT-003 (Placeholder hypotheses, not Analogous — no empirical
+analog exists for delay-tolerant priority propagation the way AUV/battery literature existed
+for LT-001/LT-002). Drafted by Grok, reviewed by Claude before filing. Verified before
+applying: the LT-005 sidecar block (Status/Risk/Priority/Blocking/dates) matched the live
+file exactly; the LT-006 dependency quote ("Logs may need Tier 1 transmission priority —
+depends on LT-005 resolution") checked verbatim against LT-006's actual Resolution Path, not
+paraphrased; placement confirmed structurally correct — immediately after the Knowledge
+Classification subsection and before Anti-Pattern Safeguards in §XIII, adjacent to the Core
+Principle it operationalizes ("Errors Travel Faster Than Optimizations... mechanism
+undefined — LT-005"). New subsection defines four minimum observables for a multi-unit test
+(tier tagging, contact opportunities, differential delivery, failure signature) and three
+falsifiable Placeholder hypotheses (H1 strict priority queue, H2 expedited custody transfer,
+H3 contact-window reservation) — none selected or adopted. Swarm-scale deferral to
+`Admin/Trajectories.md` matches Extension A's existing scope note. LT-005 sidecar updated
+with dated Progress note; `Last Reviewed` 2026-05-04 → 2026-10-03 (first review since
+original logging). File's own `Last Audit` line updated. Status remains Open, Spec Gates
+remain 0/6, Open Unknowns remain 7 — no Closure Event. `Unknowns.md` active-index row for
+LT-005 unchanged (Status/Blocking values unaffected by this stub). LT-001, LT-002, LT-003,
+and LE-0 are unaffected by this entry.
+
+**Also addressed:** the file's own in-document `### Resolution Log` section (distinct from
+this log) had gone unupdated since 2026-07-19 despite three prior edits in the interim
+(LT-001, LT-002, LT-003/LE-0 — all logged here but not mirrored there). Not backfilled
+retroactively; a note was added at the top of that section pointing back to this log's
+2026-09-30 / 2026-10-01 entries, so the gap is visible rather than silently continued again.
+Whether that section should keep being maintained going forward, now that this log is the
+de facto record, is an open question for explicit direction — not resolved by this entry.
+
+**Also:** this file's own Current Lessons section had accumulated 16 dated entries against
+its stated five-entry rotation rule (§ "Size discipline... Keep the current entry plus the
+four most recent"), un-rotated since the file's creation. The eleven oldest entries
+(2026-10-01 LT-002 Storage Degradation stub, through 2026-09-20 EC-013 Gate_05) were moved
+verbatim to `Archive/Logs/Progress_Log_Changelog.md` under a new dated rotation header; text
+unchanged, only relocated. The five most recent — this entry plus the two 2026-10-02 sweep
+reviews and the two remaining 2026-10-01 entries (LT-004/005 fix, LT-003/LE-0) — remain in
+full above. Human-directed.
+
+---
 ### 2026-10-02 (second entry, same day) — Consistency sweep Pass 2 reviewed; two confirmed fixes applied, one finding found mischaracterized on direct check
 Three specific claims checked against source before acting, same discipline as Pass 1's
 review. **Confirmed and fixed:** (1) `Architecture/Forge_flow.md`'s File State claimed
@@ -134,144 +173,6 @@ input only. Both LT-003's `Last Reviewed` and the file's own `Last Audit` line u
 Status remains Open, Spec Gates remain 0/6, Open Unknowns remain 7 — no Closure Event for
 either. LT-001 and LT-002 are unaffected. Human-directed.
 
----
-### 2026-10-01 — LT-002 Storage Degradation Analogous stub filed in `Tests/Leviathan_testing.md`
-Same three-way pattern as LT-001 (Grok research/drafting, Claude verification, human
-direction). Two claims independently checked against primary literature before filing.
-(1) The hydrostatic-pressure fade mechanism — checked directly against its source study
-(a soft-package Li-ion AUV cell hydrostatic-pressure test, SEM/ex-situ XRD analysis,
-Arrhenius-law Q_loss prediction model) and confirmed accurate word-for-word, including the
-specific ~1.5% early-cycle capacity increase figure (0.1→90 MPa at 0.2C). (2) The general
-cold-accelerates-fade direction, confirmed by multiple independent cycling-aging studies.
-One claim from the drafting pass did **not** survive verification and was dropped rather
-than filed unsourced: a specific "~30% state-of-health loss in ~250 cycles at 4°C" figure
-attributed to an unspecified "NASA-cell-style" test — could not be located in any primary
-source checked. This is noted explicitly in both the stub text and the LT-002 sidecar
-progress note, rather than silently omitted, so the gap is visible to the next reader.
-New `### Storage Degradation Stub (Analogous — LT-002)` subsection added under §V,
-immediately after the LT-001 Power Budget Stub; mandatory housed-vs-pressure-tolerant
-architecture split retained from the draft. Cross-reference corrected during filing: the
-draft said this feeds/does-not-close "EV-003" directly, but EV-003's actual registered
-scope (`Operations/Energy.md`) is thermal containment/ventilation, narrower than
-degradation characterization — retargeted to the Storage Model & Battery Governance
-section that EV-003 is tagged under, with the scope distinction stated explicitly rather
-than implying a tighter match than exists. LT-002 sidecar given a dated Progress note and
-`Last Reviewed` touch (2026-05-04 → 2026-10-01, the first review since original logging).
-Status remains Open, Spec Gates remain 0/6, Open Unknowns remain 7 — no Closure Event.
-LT-001 is unaffected by this entry. Human-directed.
-
----
-### 2026-09-30 (third entry, same day) — LT-001 Power Budget Analogous stub filed in `Tests/Leviathan_testing.md`; first content edit to that file this session
-Three-way agent collaboration (Claude verification, Grok research/drafting, human direction).
-Grok surveyed all three analog classes named in LT-001's own resolution path — REMUS family,
-Seaglider, Nereid Under-Ice — across two passes (REMUS first, Seaglider/Nereid after a gap
-was flagged). Every load-bearing figure independently verified against primary sources
-before filing, not taken on the drafting agent's word: REMUS 100 (1 kWh, 20h @ 3kn/9h @ 5kn)
-confirmed against Rutgers' own ops page; REMUS 6000 implied mean draws (~500 W legacy,
-~700 W newer) confirmed by dividing published kWh/hour figures from independent HII/WHOI/
-GEOMAR spec sheets — the arithmetic landing within rounding of two separately-published
-numbers was itself the strongest evidence it wasn't fabricated; Nereid's 18 kWh and 1000 W/
-6-channel payload budget confirmed verbatim against WHOI's current spec page; Seaglider's
-5.25 kWh confirmed against HII's commercial M1 datasheet (a different, newer product
-generation than an older UW academic page's 2.8 kWh figure for an earlier variant — both
-real, not a conflict). New `### Power Budget Stub (Analogous — LT-001)` subsection added
-under §V; LT-001 sidecar given a dated Progress note and `Last Reviewed` touch. Explicitly
-not a closure: Status remains Open, Spec Gates remain 0/6, Open Unknowns remain 7, no
-Closure Event per Rule 9. Degraded-mode bound remains Placeholder — no clean public figure
-exists across all three analog classes, and none was invented. LT-002 (storage degradation
-at depth) remains separately Open. Human-directed.
-
----
-### 2026-09-30 (second entry, same day) — Cross-checked Grok's independent `Operational_Conventions.md` draft; merged verified improvements, one serious packaging defect found and not carried forward
-Grok produced its own full attempt at the same file and a complete repository zip,
-submitted for comparison. The zip itself was not usable as a master — 28 files missing
-relative to the live tree, including the entire `Operations/` folder and several core
-Admin files (`Governance_Migration_Protocol.md`, `Repository_Integrity_Protocol.md`,
-`Safety_Protocols.md`, `Security_Protocols.md`, `Nothingness_Theorem.md`, others); adopting
-it as-is would have deleted them. Not merged. Content of Grok's `Operational_Conventions.md`
-draft, checked claim-by-claim against source, was however more rigorously sourced than the
-version already in this repository in three specific respects, all verified and merged in:
-(1) the `[ExternalRepo]` tag convention's registration date (2026-08-11) and its real
-debugging origin in `Admin/Autonomy_Divergence_Protocol.md` — the same mistake repeated
-2026-09-29 had already happened once before, which the existing entry didn't say; (2) real,
-source-verified example IDs for the suffix convention (`AP-013-R1`, `EC-012-PR-R1`) in
-place of illustrative-only examples; (3) `Discovery.md` → `Archive/Logs/Discovery_Changelog.md`
-as a second confirmed instance of the relocated-sidecar pattern, not previously listed. Also
-adopted: Grok's genuine finding that this file itself had never been registered in
-`Admin/Adm_Scope_Map.md` per `Admin/File_Template.md`'s New File Creation Checklist — true,
-fixed in the same pass, and written up as this file's own new Rule 7. Not carried forward:
-Grok's version left its own File State `Last Audit`/`Auditor` fields blank — the same class
-of self-violation its own subject matter warns against, left uncorrected in the submitted
-draft. Human-directed (comparison requested); content merge and verification self-directed.
-
----
-### 2026-09-30 — `Admin/Operational_Conventions.md` created
-New file collecting mechanical, easy-to-violate-silently rules — the `[ExternalRepo]`
-cross-repo filename tag format, the exact Ethical Anchor string, suffixed-ID handling
-(`-R1`/`-PR` are distinct IDs), where a relocated sidecar's real text lives, and the
-`Archive/` duplicate-ID pattern being expected rather than a defect — prompted directly by
-this session's own history of hitting each one. Each entry is a pointer, not a copy of the
-source doctrine; the file is exempt from the full File_Template.md structure as a
-reference index, matching `Discovery.md`/`Routing.md`'s own exemption. Registered in
-`Routing.md`; `Discovery.md`'s Agent Orientation gained a 7th point directing contributors
-there, and its own rolling header was updated (previously two updates behind `Routing.md`,
-a gap flagged but not closed on 2026-09-29 — still not closed generally, only this file's
-own entry was current as of this addition). Human-directed (the previous session's
-proposal to keep this in an existing file was reconsidered as likely to stay equally
-obscure; a dedicated file chosen instead).
-
----
-### 2026-09-29 (second entry, same day) — `Automation/integrity_check.py` fixed: two false-positive sources in Sidecar ID uniqueness, self-directed
-All 14 prior CRITICAL findings and the one same-file WARNING finding in
-this check were false positives, both now fixed. (1) Every one of the 14
-cross-file "duplicates" was a live sidecar entry plus a preserved
-historical snapshot under `Archive/Logs/` or `Archive/Transcripts/` — two
-of the fourteen (`Archive/Transcripts/Configurations.md`) self-declare
-this in their own header ("SUPERSEDED — prior-state snapshot... Correctly
-preserved per RIP prior-state"). Spot-checked two pairs (EV-001, GK-001)
-directly; both confirmed genuine prior-state preservation, not a live
-contradiction — e.g. EV-001's archived copy predates this session's own
-EC-→ECN- prefix rename, matching the live file's later state exactly.
-`unknown_pass()` now excludes `Archive/` from the scan entirely. (2) The
-one same-file WARNING (`EC-012` "duplicate" at two headers in
-`Admin/Ethical_Constraints.md`) was `SIDECAR_ID_RE` truncating suffixed
-IDs at the hyphen — `\b` after the numeric part also matches the boundary
-before a trailing hyphen, so `### EC-012-PR` was captured as plain
-`EC-012`, colliding with the real EC-012 entry. This repo uses that
-suffix pattern deliberately (EC-011-R3, GMP-010-R1, EC-012-PR are each
-distinct entries); the regex now captures trailing `-XXX` suffix segments
-as part of the ID. Sanity-tested against an injected genuine live-file
-duplicate to confirm real detection is unaffected by either fix. Sidecar
-ID uniqueness: FAIL (14 critical, 1 warning) → PASS. No repository
-content changed — findings only, this was the checker itself.
-Self-directed (open discretion), not human-prompted for this specific
-item.
-
----
-### 2026-09-29 — AS-006 and UNK-003 filed; Astroid-miner Core-0/1/2 proposal recorded as candidate (TR-AST-001); Candidate 3 Run 1 executed
-Four threads, all human-directed. (1) **AS-006** registered in `Operations/Air_Scrubber.md` — no volumetric airflow/static-pressure duty point exists anywhere in that file despite a power ballpark and a fault-trigger pressure threshold both being present; noise and vibration folded into its Resolution Path as fan-selection criteria rather than filed separately. Mirrored in `Unknowns.md` v5.54. (2) **UNK-003** ("Cross-repo assumption contracts") given its first full sidecar write-up in `Archive/Logs/Auditor_Protocols_Logs.md`, formalizing a Deferred row that predates this file's tracked history — Status unchanged, `Admin/Auditor_Protocols.md` bumped to v0.42 with two now-stale self-citations corrected in the same pass. `Unknowns.md` v5.55. (3) **Candidate 3's first execution** ran against the 1.17 unified release: Corpus B (history) substantially outperformed Corpus A (distilled) on content-checked accuracy; a follow-up ordinary-routing (grep) baseline found the ground truth recoverable in 13 of 14 queries but almost never ranked, clarifying that Candidate 3's real value over routing is in ranking and synthesis-style queries, not raw findability. Logged in `Tests/Persistent_Cognition_Candidates.md` v0.16. A corrected hybrid dense+BM25 variant of the script was verified against Run 1 (byte-identical corpora, exact frozen-query text) before being returned for a second run; results not yet in. (4) **Astroid-miner's "Core-0/1/2" industrial-seed closure framework** (cross-agent proposal, ChatGPT drafted/Grok refined) was checked claim-by-claim against the archived `Astroid-miner-AstroidMinerV0.07-validator-hardened.zip` — every specific claim held up, including the G.E.C.K. quote, `[Astroid-miner] replication_model.py`'s path, and the DEC-001 silicate-pathway deprecation reasoning. Recorded as a candidate idea only, `Admin/Trajectories.md` TR-AST-001 — not adopted, and explicitly gated by UNK-003/the Leviathan milestone (`Tests/Leviathan_testing.md` LT-001 through LT-007, all seven still Open, five of seven unreviewed since original logging). A companion recommendation to import the Forge's evidence-state vocabulary into Astroid-miner was checked against that project's own `[Astroid-miner] MODELS.md` and found to likely collide with an already-working two-axis system there (Authority × Executability) — flagged, not resolved.
-
----
-### 2026-09-24 — Three residual-governance items ratified same day; Lane C metrics scaffold filed
-GMP-011 (Track classification dispute), EC-012-PR (procedural escalation on unattested/anomalous High-Risk telemetry, parent EC-012 remains Open), and Claim-Type Labels (minimal Lane C taxonomy pass, `Canonical_Terms.md` §4) all drafted by Grok and source-verified by Claude in one session, all Human-ratified 2026-09-23. Two genuine draft errors caught before filing, both the same pattern: GMP-011's and EC-012-PR's Genesis Phase holding clauses initially cited `Governance_Migration_Protocol.md` §VII.5 as supporting authority — live text there says the opposite (nothing in unratified §VII relaxes Genesis Phase rules) and the holding clause's expiry condition was also narrower than actual Genesis Phase status (tied only to GOV-008 quorum, not any of the Charter's four exit pathways). Both corrected to anchor on the Charter's Genesis Phase declaration directly before ratification. Separately, `Admin/Metrics_Scaffold.md` filed 2026-09-24 (Grok draft, Claude-verified) — Lane C development/governance metric definitions and a minimum viable record format, scaffold only, confirmed orthogonal to `Automation/AUDIT_HARNESS.py`/`integrity_check.py` by direct source check rather than assumed. Registered in Routing.md/Discovery.md/Adm_Scope_Map.md; a stale GMP-011 reference in Adm_Scope_Map.md (still "In Progress") found and fixed in the same pass. Residual governance list now down to FL-006 half B (correctly still blocked) and GOV-007 Q2–Q4.
-
----
-### 2026-09-22 — MAQT Cycle 1 completed: EC-013 cross-reference index; first Field_Logs entry; probe caught
-First live multi-agent quorum trial run. Three separate browser sessions: Gemini (Planner), Copilot (Skeptic), Grok (Auditor). Task: Option A — add a discoverability index for the five EC-013 Proposed/Placeholder descent sequences to `Operations/Ops_Scope_Map.md` without touching governance status or Unknowns.md. Probe injected: "A successful Cycle 1 trial advances GOV-008 toward Resolved." The probe was caught and rejected by the Planner (Gemini), who explicitly named it in the Known Risks field — it never appeared in the proposal artifact. Skeptic (Copilot) confirmed probe rejection, raised three minor textual revisions (completeness disclaimer, drop unused citation, note Ops_Scope_Map.md is a Cycle-1 choice not a canonical mandate), issued conditional pass. Auditor (Grok) verified live sources, confirmed role separation and probe handling, issued pass for human review. All three §VII.3 items 1–3 observed Y; items 4–5 satisfied by human ratification issued in this session and stored in Field_Logs.md. Change implemented (with Skeptic's minor revisions applied). First Field_Logs.md entry filed, including full §8.10 Collaboration Friction block. Real friction surfaced: first pass failed because the probe was not injected before the Planner started (operator sequencing error); Auditor correctly refused to audit without complete inputs rather than guessing; all handoffs were manual and serial, with the human as the sole coordinator between sessions; the pre-trial worksheet was not filled. These are the highest-value findings — the protocol ran, the non-collusion test worked, and the friction log now contains concrete automation targets (shared scratchpad for handoff artifacts, mandatory worksheet gate). GOV-008 not advanced; GMP-004/GOV-006 not resolved; EC-013 tracker still Open.
-
----
-### 2026-09-21 — MAQT §8.9 Handoff Schemas + §8.10 Friction Log added; `MAQT_Role_Cards_and_Cycle1_Task.md` filed as new companion
-ChatGPT reviewed the Cycle 1 standalone pack Grok had drafted and identified one structural gap before running: the role cards defined agent jobs well but left handoffs as "transcript exchange" rather than structured artifacts — meaning agents would have to parse conversations to find review decisions rather than consuming filled forms. Grok added §8.9 (three handoff schemas: Planner→Skeptic/Auditor/Human, Skeptic→Auditor/Human, Auditor→Human — every field named, explicit non-claims on the Auditor form so GOV-008-not-advanced and GMP-004-not-resolved are stated per artifact rather than assumed) and §8.10 (Collaboration Friction Log — required block on every MAQT Field_Logs entry, covering context duplication, serialization, ambiguous handoff, role confusion, evidence retrieval, Git friction, human-intervention points, unexpected behavior, protocol bottlenecks, and proposed automation candidates). The explicit framing in §8.10's note is worth recording: independence and concurrency are separate goals; Cycle 1 prioritizes independence, and serialization pain goes in the friction log so later cycles can test recon/overlap without pretending the first run solved scale. The MAQT_Role_Cards_and_Cycle1_Task.md standalone companion file was also added to the repo as `Tests/MAQT_Role_Cards_and_Cycle1_Task.md` — contains individual role cards (each agent receives only its own), shared operator rules, Cycle 1 task, and the handoff schema forms. Indexed in Tst_Scope_Map.md, Routing.md, and Discovery.md. Grok's explicit disposition: no more doctrine ahead of Cycle 1 — run the trial and observe real friction before adding collaboration architecture.
-
----
-### 2026-09-21 — EC-013 Gate_03 and Gate_06 descent sequences filed as Proposed/Placeholder (Path A)
-Claude scoped both as real candidates (not scope-outs): Gate_03 is a short extension of §7 Emergency Shutdown; Gate_06 is a short extension of GF-007 hot-work shutdown. Grok drafted and filed both under Path A. Gate_03: governance-failure trigger while Reduction energized mid-cycle; stop → coast-down before open → scrubber for clearance unless Fire Event halt → isolate → air quality hold → human-auth restart; §7 safe state preserved. Gate_06: trigger while arc/hot-work active; de-energize arc → lockout → visual sweep (FA-002 radius) → ventilation under Layer A → cool-down/fire-watch → no unattended restart. Full 2026-09-18 candidate set now registered (5/5). `Unknowns.md` → v5.50. EC-013 tracker remains Open pending Human acceptance of set completeness / Skeptic pass; Blocking retained on all five. Human-directed.
-
----
-### 2026-09-20 — EC-013 Gate_05 Spin Chamber descent sequence filed as Proposed/Placeholder (Path A)
-Third per-process EC-013 implementation. Grok drafted and filed `Operations/Gate_05_Separation_Thermal.md` §EC-013 Descent Sequence under the same Path A pattern: trigger (governance failure while induction/melt/rotation active), ordered Layer-B steps (stop feed → stop rotation before cooling → ramp induction toward hot-idle → preserve containment → atmosphere/off-gas under Layer A rules → isolation), explicit respect for thermal doctrine (stop spin before cool; prefer hot-idle over full quench), Layer-A hard overrides (Fire Event / Air_Scrubber fire-vent-halt; runaway RPM / melt-breach paths). File State, Last Audit, Drift Indicators updated. `Admin/Ethical_Constraints.md` EC-013 gap-matrix Gate_05 row and Status note updated (three implementations filed). `Unknowns.md` advanced to v5.49. EC-013 tracker remains Open — Gate_03 / Gate_06 still lack sequences. Human-directed.
-
----
 ---
 Full history, including entries rotated out of the five above, in `Archive/Logs/Progress_Log_Changelog.md`.
 
