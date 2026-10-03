@@ -18,8 +18,8 @@
 | Body Stability   | Stable                                                               |
 | Spec Gates       | N/A — reference index, not a governed doctrine surface               |
 | Verification Ref | Admin/Verification_Gates.md                                          |
-| Last Audit       | 2026-09-30 — file created                                            |
-| Auditor          | Claude — initial compilation, human-directed                         |
+| Last Audit       | 2026-10-03 — Convention 8 added (rotation-rule self-enforcement failure, Progress_Log.md + Unknowns.md). Prior: 2026-09-30 — file created. |
+| Auditor          | Claude — human-directed                                              |
 | Open Unknowns    | 0                                                                     |
 | Active Disputes  | 0                                                                     |
 | Highest Risk     | Low                                                                   |
@@ -159,6 +159,38 @@ doctrine (not a script) still does.
 session work and correctly left unregistered; recorded here so the next check doesn't
 have to re-derive the reasoning from `Routing.md`'s own text.
 **Source of truth:** `Routing.md`, registration-scope note near the top of the file.
+
+### 8. A "keep only the N most recent, rotate the rest" rule does not enforce itself
+
+Several files carry a stated self-maintenance rule of this shape — `Admin/Progress_Log.md`
+("rotate to `Archive/Logs/Progress_Log_Changelog.md` once more than five entries
+accumulate") and `Unknowns.md` ("this block now keeps only the current version," full
+history in `Archive/Logs/Unknowns_Changelog.md`) are the two confirmed instances. Writing
+the rule into the file does not make a new entry trigger the rotation; each addition has
+to actively check the count/version against the stated limit and move the overflow, every
+time, or the file silently grows past its own stated bound with nobody noticing until
+someone counts.
+
+**Violated:** 2026-10-03, both files, independently. `Progress_Log.md` had accumulated 16
+dated entries under its five-entry rule, un-rotated since the file's creation (2026-08-09)
+— eleven moved to `Progress_Log_Changelog.md` in one pass. `Unknowns.md` had five versions
+(5.53–5.57) stacked in its current-version-only block; three of them (5.54–5.56) had never
+even been migrated to `Unknowns_Changelog.md` at all, not just left stacked — a stricter
+failure than Progress_Log's, since the changelog itself had a real gap, not just a
+duplicate. Neither was caught by a scheduled audit; both were found only because a human
+asked a direct question about changelog state after an unrelated piece of work.
+**Not a new defect class:** `Unknowns_Changelog.md`'s own 2026-09-10 migration note records
+this exact pattern happening once before on that same file (14+1 versions stacked, caught
+only when asked directly) — meaning this rule class has now been violated and separately
+re-discovered at least three times (2026-08-09 Progress_Log/Discovery.md origin pair,
+2026-09-10 Unknowns.md, 2026-10-03 both files again) without anyone adding the standing
+checklist item that would catch it earlier next time. This entry is that checklist item.
+**Check before closing any session that added Current Lessons/version entries to either
+file:** count entries against the stated limit; rotate if over, in the same session, not
+as a follow-up.
+**Source of truth:** `Admin/Progress_Log.md`'s own "Size discipline" paragraph; `Unknowns.md`
+line 4 (the block's own stated rule); migration history in both files' `Archive/Logs/`
+changelogs.
 
 ---
 
