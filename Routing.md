@@ -25,9 +25,11 @@ Intentionally excluded from the Master Routing Map (by design, not by oversight)
 - Pure implementation artifacts under `Automation/` (the `.py` sources themselves). Supporting documentation that is doctrine may still appear.
 - Transient or generated artifacts that may appear in working trees but are not committed doctrine.
 
-The difference between the number of paths listed here (~112) and the total number of non-directory files in a full checkout is therefore expected. Agents must not treat a missing entry for an Archive file as registry drift or an integrity failure. If an active (non-Archive) doctrine or protocol file is absent from this table, that *is* a defect and should be logged.
+The difference between the number of paths listed here and the total number of non-directory files in a full checkout is therefore expected (active map size grows as files are registered; Archive/ and Automation sources remain intentionally excluded). Agents must not treat a missing entry for an Archive file as registry drift or an integrity failure. If an active (non-Archive) doctrine or protocol file is absent from this table, that *is* a defect and should be logged.
 
-Last scope clarification: 2026-08-10 (integrity cleanup pass).
+*Path-count note (2026-10-03):* earlier prose carried a hard-coded “~112” figure that had become stale as the active map grew (live table ≈130+ path rows as of this date). The hard-coded number was removed rather than replaced with another brittle count; the authoritative size is the Master Routing Map table below.
+
+Last scope clarification: 2026-10-03 (stale path-count metric removed); prior 2026-08-10 (integrity cleanup pass).
 
 ---
 
