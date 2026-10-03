@@ -3,6 +3,60 @@
 Split out 2026-08-09, following the precedent already established by `Unknowns_Changelog.md`, `AUDIT_HARNESS_CHANGELOG.md`, and `Forge_Audit_Kit_Changelog.md`. `Progress_Log.md` keeps the five most recent entries in full; this file holds every entry that's rotated out. No information is removed when an entry rotates — every entry below is preserved verbatim from `Progress_Log.md` at the time it moved.
 
 ---
+### 2026-10-02 (second entry, same day) — Consistency sweep Pass 2 reviewed; two confirmed fixes applied, one finding found mischaracterized on direct check
+*(Rotated out of Current Lessons 2026-10-03 during staleness/confusion sweep correction pass.)*
+Three specific claims checked against source before acting, same discipline as Pass 1's
+review. **Confirmed and fixed:** (1) `Architecture/Forge_flow.md`'s File State claimed
+`Open Unknowns: 7`; direct tally of its own FL- sidecars found only 6 genuinely open/in-
+progress (FL-001–006), with FL-007 through FL-013 all explicitly marked Resolved —
+corrected to 6 in that file directly, with the correction reasoning noted inline. (2)
+`Unknowns.md`'s AS-001 row showed Priority (Promo) = "Medium," which turned out to match
+`Operations/Air_Scrubber.md`'s AS-001 sidecar `Risk` field, not its `Priority` field
+(Major) — corrected to "Major" in `Unknowns.md` (v5.57). Narrow fix only, matching the same
+restraint as the LT-004/005 and v5.56 corrections: does not decide or normalize the
+column's broader semantics (Blocking-status vs. Priority-level vs., now confirmed, Risk-
+level values all appearing in the same column across different rows) — that design
+decision remains open. **Checked and found not real:** a claimed CF-001 "ownership
+ambiguity" between `Operations/Electronics.md` and `Architecture/Cognitive_Frameworks.md`
+— both sidecars exist as claimed, but `Cognitive_Frameworks.md`'s own copy has an `Owner`
+field explicitly stating `Operations/Electronics.md`, resolving the question within the
+entry itself; not drift, an intentional mirrored copy. No action taken. Human-directed
+(sweep commissioned by human; each finding independently re-verified before correction).
+
+---
+### 2026-10-02 — Grok's repository-wide consistency sweep reviewed; one confirmed fix applied, several findings found mischaracterized on direct check
+*(Rotated out of Current Lessons 2026-10-03 during Convention 8 attribution + FAK-017 pass.)*
+An independent agent ran a broader consistency sweep (Unknowns.md Active Index vs owning-
+file sidecars, File State blocks, counts) after the LT-004/005 fix. Each claim checked
+against source before acting, per standing discipline — roughly half held up, half did not.
+**Confirmed and fixed:** `Admin/Progress_Log.md`'s own File State `Last Reviewed` field was
+stale (2026-09-24) despite three 2026-10-01 dated entries already present in the file;
+corrected to 2026-10-02, noted as a metadata-only fix (content/rotation discipline was
+already current). **Confirmed, already on record:** `Admin/Auditor_Protocols.md`'s
+Open-Unknowns count-note re: UNK-003 — matches existing 2026-09-29 Last Audit text exactly,
+not a new finding. **Not confirmed — checked directly and found to be mischaracterized:**
+(1) EV-001/TS-001-003/FL-001 "Priority mapping mismatches" called "same class as the
+recent LT-004/005 fix" — checked each owning-file sidecar directly; all three show
+`Blocking: Yes`, matching `Unknowns.md`'s "Blocking" entries exactly. Unlike LT-004/005,
+nothing here contradicts its source — this is evidence of the vocabulary-mixing pattern
+noted separately, not an instance of wrong data, and does not need the same kind of fix.
+(2) Governance_Charter.md's claimed "13 vs ~14, possible off-by-one" — counted directly:
+exactly 13 GOV-* rows owned by that file in `Unknowns.md`, all Open/In Progress, matching
+the file's own stated count exactly. No discrepancy found. (3) A flagged "residual GOV-005
+text" outside the table — located at `Unknowns.md` line 81; it's inside a clearly labeled
+`## Dependency Clusters` section (an intentional, explicitly-scoped-down dependency-tree
+diagram), not stray or orphaned content. **Confirmed real, not yet acted on:** the
+`Unknowns.md` "Priority (Promo)" column genuinely mixes Blocking-status words, Priority-
+level words, and occasional Risk-like terms across different rows — a real systemic
+observation with likely dozens of affected rows beyond the ones sampled this pass. Not
+normalized in this session: choosing a single semantic for that column and remapping the
+whole Active Index is a real design decision, not a mechanical correction like LT-004/005
+or this entry's Progress_Log fix, and doing it without that decision being made explicitly
+risks introducing new errors across entries not individually re-verified here. Left open
+for explicit direction. Human-directed (sweep commissioned by human; review and correction
+self-directed against the sweep's own findings).
+
+---
 ## Forward Growth Avenues (2026-08-21) — ARCHIVED 2026-09-21
 
 Superseded by the 2026-09-21 three-lane version in `Admin/Progress_Log.md`. Full text preserved here per the file's own rotation rule.
