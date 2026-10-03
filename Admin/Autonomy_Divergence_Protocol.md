@@ -12,7 +12,7 @@
 |------------------|---------------------------------------------------------------------|
 | Status           | Draft — PROPOSED NOT RATIFIED (Exploration-stage document; Spec Gates and Governance ID are being tracked ahead of formal Candidate-Spec promotion, deliberately, so gate/registration state is visible during drafting rather than assembled retroactively at promotion time) |
 | Body Stability   | Transitional                                                        |
-| Spec Gates       | 6/6 — G1 Fallacy, G2 Physical Plausibility, G3 Adversarial Battery, G4 Scope Alignment, G6 Conflict Check PASSED; G5 Cross-Reference Integrity confirmed PASS 2026-08-11 by directly running `Automation/audit_lib.py`'s actual `parse_routing`/`check_cross_refs` functions (not a hand reimplementation) against this file and the local `Routing.md` registry (112 entries) and `ALIASES` (18 entries) — zero findings |
+| Spec Gates       | 6/6 — G1 Fallacy, G2 Physical Plausibility, G3 Adversarial Battery, G4 Scope Alignment, G6 Conflict Check PASSED; G5 Cross-Reference Integrity confirmed PASS 2026-08-11 by directly running `Automation/audit_lib.py`'s actual `parse_routing`/`check_cross_refs` functions (not a hand reimplementation) against this file and the local `Routing.md` registry (**112 entries at time of verification**; registry has since grown — see Routing.md path-count note 2026-10-03) and `ALIASES` (18 entries, still current) — zero findings |
 | Verification Ref | `Admin/Verification_Gates.md`                                    |
 | First Logged     | 2026-07-19                                                          |
 | Last Audit       | 2026-08-11 (Skeptic/Auditor dual-pass — Claude)                    |
@@ -491,7 +491,8 @@ Earlier discussion in this drafting process considered framing this as an "exit 
   applied.** Ran `parse_routing`, `extract_md_refs`, and `check_cross_refs`
   imported directly from `Automation/audit_lib.py` (not reimplemented)
   against this file's live content, using the local `Routing.md` (112
-  entries) and `AUDIT_HARNESS.py`'s real `ALIASES` dict (18 entries) —
+  entries *at that date*; registry later grew — see Routing.md 2026-10-03
+  path-count note) and `AUDIT_HARNESS.py`'s real `ALIASES` dict (18 entries) —
   bypassing only the network fetch step, which pulls the identical
   `Routing.md` content read locally. Zero findings. This is the actual
   harness logic, genuinely invoked, not another manual regex replication.

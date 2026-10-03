@@ -11,7 +11,7 @@
 | Spec Gates       | N/A — this file is a cross-reference index, not a specification     |
 | Open Unknowns    | 0 (surfaces existing unknowns from owning files; creates none)      |
 | Owning Domain    | Admin/                                                               |
-| Last Reviewed    | 2026-09-24                                                            |
+| Last Reviewed    | 2026-10-03 — metadata catch-up: body already contained 2026-09-30 Operational_Conventions.md registration; Last Reviewed had remained 2026-09-24. Field meaning for this file: last substantive map check/modification (not a claim of full-folder re-audit of every Admin file). Prior: 2026-09-24 |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
 ---

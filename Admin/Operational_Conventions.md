@@ -18,8 +18,8 @@
 | Body Stability   | Stable                                                               |
 | Spec Gates       | N/A — reference index, not a governed doctrine surface               |
 | Verification Ref | Admin/Verification_Gates.md                                          |
-| Last Audit       | 2026-10-03 — Convention 8 added (rotation-rule self-enforcement failure, Progress_Log.md + Unknowns.md). Prior: 2026-09-30 — file created. |
-| Auditor          | Claude — human-directed                                              |
+| Last Audit       | 2026-10-03 (second pass) — Convention 8 Source-of-truth line revised to cite `Admin/Resolution_Methodology.md` §9 as the canonical statement of the pattern (was standing alone). Prior: 2026-10-03 — Convention 8 added (rotation-rule self-enforcement failure, Progress_Log.md + Unknowns.md). Prior: 2026-09-30 — file created. |
+| Auditor          | Grok — Convention 8 attribution fix (human-directed); prior Claude — human-directed |
 | Open Unknowns    | 0                                                                     |
 | Active Disputes  | 0                                                                     |
 | Highest Risk     | Low                                                                   |
@@ -188,9 +188,7 @@ checklist item that would catch it earlier next time. This entry is that checkli
 **Check before closing any session that added Current Lessons/version entries to either
 file:** count entries against the stated limit; rotate if over, in the same session, not
 as a follow-up.
-**Source of truth:** `Admin/Progress_Log.md`'s own "Size discipline" paragraph; `Unknowns.md`
-line 4 (the block's own stated rule); migration history in both files' `Archive/Logs/`
-changelogs.
+**Source of truth / canonical statement of the pattern:** `Admin/Resolution_Methodology.md` §9 ("Self-Maintenance Verification — Prose and Code"), which already documents this exact failure class with richer history (including `Progress_Log.md` failing its own rotation rule five separate times in one week, "including once while a fix for a previous instance of the same failure was being written," and the earlier `Unknowns.md` 26-stale-rows / 20-stacked-versions cases). This Convention 8 entry is the standing checklist pointer into that section, not a parallel doctrine. Supporting local sources: `Admin/Progress_Log.md`'s own "Size discipline" paragraph; `Unknowns.md` line 4 (the block's own stated rule); migration history in both files' `Archive/Logs/` changelogs.
 
 ---
 

@@ -278,7 +278,13 @@ belong at root:
 |------|---------------|
 | `README.md` | Project overview — entry point for all contributors |
 | `Discovery.md` | Navigation layer — spans all folders |
+| `Routing.md` | Canonical path/URL registry — spans all folders (File_Template root navigation/index surface) |
 | `Unknowns.md` | Cross-module unknowns index — spans all folders |
+| `CONTRIBUTING.md` | Contributor / process entry point (File_Template exemption class) |
+| `LICENSE.md` | Legal / license surface — repository-wide; registered in Routing.md |
+| `NOTICE.md` | Attribution / notice surface — repository-wide; registered in Routing.md |
+
+Aligned with `Admin/File_Template.md` Template Exemptions (root navigation/index surface + CONTRIBUTING). LICENSE.md and NOTICE.md are retained at root as standard legal artifacts already present in the Master Routing Map; they are not navigation doctrine but are not treated as placement errors.
 
 **Files that do not belong at root:** Governance files belong in
 Admin/ even if they feel foundational. Architecture files belong in
@@ -553,6 +559,9 @@ triggers specific to this file:*
   in a new file
 - Archive/ directory remains uncreated after a Tier 1 or Specification
   file is revised
-- Root file count exceeds three without a documented root placement
-  justification for each addition
+- Root file count exceeds the documented set in “Current root files and
+  their justification” (above) without a documented root placement
+  justification for each addition — threshold is the live justified set,
+  not a fixed “three” (that figure was stale relative to File_Template
+  exemptions and the actual root as of 2026-10-03)
 - A new folder is created without a RS decision entry in this file

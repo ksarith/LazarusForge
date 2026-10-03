@@ -37,6 +37,32 @@ Created 2026-08-09 to fix a recurring failure mode found the same day, in two pl
 
 *(Most recent first. Rotate to `Archive/Logs/Progress_Log_Changelog.md` once more than five entries accumulate.)*
 
+### 2026-10-03 (fifth entry, same day) — Staleness/confusion sweep corrections (Routing, ADP, Repository_Structure, Adm_Scope_Map)
+ChatGPT staleness/confusion sweep findings source-checked by Grok before acting; high/medium items corrected.
+
+**(1) Routing.md path-count metric.** Scope prose still said “~112”; live Master Routing Map ≈130+ path rows. Hard-coded “~112” removed; replaced with durable wording + 2026-10-03 path-count note. Historical 112 figures elsewhere left as dated history where they describe past verification state.
+
+**(2) Autonomy_Divergence_Protocol.md G5 claim.** Spec Gates field and Resolution Log still presented “112 entries” as if current. Clarified to “112 entries at time of verification (2026-08-11); registry has since grown — see Routing.md path-count note.” ALIASES (18) still current — left unchanged.
+
+**(3) Repository_Structure.md root doctrine.** “Current root files” table listed only README/Discovery/Unknowns; live root and File_Template exemptions also include Routing, CONTRIBUTING, LICENSE, NOTICE. Table expanded to match; drift indicator “exceeds three” updated to “exceeds the documented justified set” so it no longer contradicts File_Template.
+
+**(4) Adm_Scope_Map.md Last Reviewed.** Field was 2026-09-24 while body already contained 2026-09-30 Operational_Conventions registration. Updated to 2026-10-03 with explicit field-meaning note (last substantive map check/modification, not full-folder re-audit).
+
+**Not rewritten:** Governance_Charter GOV-014/GOV-020 “29 Admin files” — those are explicit *at-integration* measurements inside Resolved closure records; overwriting would falsify history. G/O panel remains recomputable on next Complexity/Pruning Review per section rules.
+
+Human-directed after source verification of ChatGPT sweep. Rotation: this addition → six Current Lessons → oldest (2026-10-02 Pass 2 review) rotated to changelog same pass (Convention 8).
+
+---
+### 2026-10-03 (fourth entry, same day) — Convention 8 attribution fix + FAK-017 (Forge_Audit_Kit citation staleness, fifth occurrence)
+Two items from the same self-maintenance checkpoint, both source-verified before acting.
+
+**(1) Convention 8 attribution gap closed.** Claude correctly identified that `Admin/Resolution_Methodology.md` §9 ("Self-Maintenance Verification — Prose and Code") already documents the exact rotation/self-maintenance failure class with richer history than Convention 8 had cited. Convention 8's Source-of-truth line rewritten to point at §9 as the canonical statement; local Progress_Log / Unknowns.md citations retained as supporting. File State Last Audit updated.
+
+**(2) FAK-017 logged — fifth occurrence of Forge_Audit_Kit derivation-citation staleness.** `Admin/Forge_Audit_Kit.md` Derived-from line still read `Unknowns.md` v5.27 while live is v5.57 (30 versions). Same pattern previously logged as FAK-014/015/016. Citation refreshed to v5.57; kit version 1.18→1.19; Open Unknowns 8→9; FAK-017 written into `Archive/Logs/Forge_Audit_Kit_Changelog.md` sidecar; Resolution Log most-recent line updated. Status remains Open — the underlying structural question (citation currency has no automated check) is now five occurrences deep and still unresolved.
+
+Both executed under the stricter "quote every field before flagging" discipline from the methodology calibration earlier this session. Human-directed (continue-with-fixes instruction). Rotation rule checked: this addition makes six Current Lessons entries → oldest (2026-10-02 first-entry sweep review) rotated to `Progress_Log_Changelog.md` in the same pass per Convention 8.
+
+---
 ### 2026-10-03 (third entry, same day) — `Admin/Operational_Conventions.md` Convention 8 added: rotation rules don't self-enforce
 Direct follow-on to the two rotation fixes above. The failure pattern (a file states "keep
 only N most recent / current version, rotate the rest" and the rule goes unenforced until
@@ -104,58 +130,6 @@ verbatim to `Archive/Logs/Progress_Log_Changelog.md` under a new dated rotation 
 unchanged, only relocated. The five most recent — this entry plus the two 2026-10-02 sweep
 reviews and the two remaining 2026-10-01 entries (LT-004/005 fix, LT-003/LE-0) — remain in
 full above. Human-directed.
-
----
-### 2026-10-02 (second entry, same day) — Consistency sweep Pass 2 reviewed; two confirmed fixes applied, one finding found mischaracterized on direct check
-Three specific claims checked against source before acting, same discipline as Pass 1's
-review. **Confirmed and fixed:** (1) `Architecture/Forge_flow.md`'s File State claimed
-`Open Unknowns: 7`; direct tally of its own FL- sidecars found only 6 genuinely open/in-
-progress (FL-001–006), with FL-007 through FL-013 all explicitly marked Resolved —
-corrected to 6 in that file directly, with the correction reasoning noted inline. (2)
-`Unknowns.md`'s AS-001 row showed Priority (Promo) = "Medium," which turned out to match
-`Operations/Air_Scrubber.md`'s AS-001 sidecar `Risk` field, not its `Priority` field
-(Major) — corrected to "Major" in `Unknowns.md` (v5.57). Narrow fix only, matching the same
-restraint as the LT-004/005 and v5.56 corrections: does not decide or normalize the
-column's broader semantics (Blocking-status vs. Priority-level vs., now confirmed, Risk-
-level values all appearing in the same column across different rows) — that design
-decision remains open. **Checked and found not real:** a claimed CF-001 "ownership
-ambiguity" between `Operations/Electronics.md` and `Architecture/Cognitive_Frameworks.md`
-— both sidecars exist as claimed, but `Cognitive_Frameworks.md`'s own copy has an `Owner`
-field explicitly stating `Operations/Electronics.md`, resolving the question within the
-entry itself; not drift, an intentional mirrored copy. No action taken. Human-directed
-(sweep commissioned by human; each finding independently re-verified before correction).
-
----
-### 2026-10-02 — Grok's repository-wide consistency sweep reviewed; one confirmed fix applied, several findings found mischaracterized on direct check
-An independent agent ran a broader consistency sweep (Unknowns.md Active Index vs owning-
-file sidecars, File State blocks, counts) after the LT-004/005 fix. Each claim checked
-against source before acting, per standing discipline — roughly half held up, half did not.
-**Confirmed and fixed:** `Admin/Progress_Log.md`'s own File State `Last Reviewed` field was
-stale (2026-09-24) despite three 2026-10-01 dated entries already present in the file;
-corrected to 2026-10-02, noted as a metadata-only fix (content/rotation discipline was
-already current). **Confirmed, already on record:** `Admin/Auditor_Protocols.md`'s
-Open-Unknowns count-note re: UNK-003 — matches existing 2026-09-29 Last Audit text exactly,
-not a new finding. **Not confirmed — checked directly and found to be mischaracterized:**
-(1) EV-001/TS-001-003/FL-001 "Priority mapping mismatches" called "same class as the
-recent LT-004/005 fix" — checked each owning-file sidecar directly; all three show
-`Blocking: Yes`, matching `Unknowns.md`'s "Blocking" entries exactly. Unlike LT-004/005,
-nothing here contradicts its source — this is evidence of the vocabulary-mixing pattern
-noted separately, not an instance of wrong data, and does not need the same kind of fix.
-(2) Governance_Charter.md's claimed "13 vs ~14, possible off-by-one" — counted directly:
-exactly 13 GOV-* rows owned by that file in `Unknowns.md`, all Open/In Progress, matching
-the file's own stated count exactly. No discrepancy found. (3) A flagged "residual GOV-005
-text" outside the table — located at `Unknowns.md` line 81; it's inside a clearly labeled
-`## Dependency Clusters` section (an intentional, explicitly-scoped-down dependency-tree
-diagram), not stray or orphaned content. **Confirmed real, not yet acted on:** the
-`Unknowns.md` "Priority (Promo)" column genuinely mixes Blocking-status words, Priority-
-level words, and occasional Risk-like terms across different rows — a real systemic
-observation with likely dozens of affected rows beyond the ones sampled this pass. Not
-normalized in this session: choosing a single semantic for that column and remapping the
-whole Active Index is a real design decision, not a mechanical correction like LT-004/005
-or this entry's Progress_Log fix, and doing it without that decision being made explicitly
-risks introducing new errors across entries not individually re-verified here. Left open
-for explicit direction. Human-directed (sweep commissioned by human; review and correction
-self-directed against the sweep's own findings).
 
 ---
 Full history, including entries rotated out of the five above, in `Archive/Logs/Progress_Log_Changelog.md`.
