@@ -37,6 +37,26 @@ Created 2026-08-09 to fix a recurring failure mode found the same day, in two pl
 
 *(Most recent first. Rotate to `Archive/Logs/Progress_Log_Changelog.md` once more than five entries accumulate.)*
 
+### 2026-10-02 (second entry, same day) — Consistency sweep Pass 2 reviewed; two confirmed fixes applied, one finding found mischaracterized on direct check
+Three specific claims checked against source before acting, same discipline as Pass 1's
+review. **Confirmed and fixed:** (1) `Architecture/Forge_flow.md`'s File State claimed
+`Open Unknowns: 7`; direct tally of its own FL- sidecars found only 6 genuinely open/in-
+progress (FL-001–006), with FL-007 through FL-013 all explicitly marked Resolved —
+corrected to 6 in that file directly, with the correction reasoning noted inline. (2)
+`Unknowns.md`'s AS-001 row showed Priority (Promo) = "Medium," which turned out to match
+`Operations/Air_Scrubber.md`'s AS-001 sidecar `Risk` field, not its `Priority` field
+(Major) — corrected to "Major" in `Unknowns.md` (v5.57). Narrow fix only, matching the same
+restraint as the LT-004/005 and v5.56 corrections: does not decide or normalize the
+column's broader semantics (Blocking-status vs. Priority-level vs., now confirmed, Risk-
+level values all appearing in the same column across different rows) — that design
+decision remains open. **Checked and found not real:** a claimed CF-001 "ownership
+ambiguity" between `Operations/Electronics.md` and `Architecture/Cognitive_Frameworks.md`
+— both sidecars exist as claimed, but `Cognitive_Frameworks.md`'s own copy has an `Owner`
+field explicitly stating `Operations/Electronics.md`, resolving the question within the
+entry itself; not drift, an intentional mirrored copy. No action taken. Human-directed
+(sweep commissioned by human; each finding independently re-verified before correction).
+
+---
 ### 2026-10-02 — Grok's repository-wide consistency sweep reviewed; one confirmed fix applied, several findings found mischaracterized on direct check
 An independent agent ran a broader consistency sweep (Unknowns.md Active Index vs owning-
 file sidecars, File State blocks, counts) after the LT-004/005 fix. Each claim checked
