@@ -16,7 +16,7 @@
 | Body Stability   | Volatile                                                            |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-10-01 (second pass, same day) — LT-003 Candidate Autonomy Architectures (A/B, Placeholder) and LE-0 minimum-experiment definition filed under §VIII; Status, Spec Gates, Open Unknowns unchanged; human-directed. Prior: 2026-10-01 — Storage Degradation Analogous stub (LT-002 progress). Prior: 2026-09-30 — Power Budget Analogous stub (LT-001 progress). Earlier history: 2026-05-04 (Claude — Skeptic/Auditor), revised 2026-06-08. |
+| Last Audit       | 2026-10-03 — Priority Propagation Stub (Placeholder) filed under §XIII for LT-005; Status, Spec Gates, Open Unknowns unchanged; human-directed. Prior: 2026-10-01 (second pass, same day) — LT-003 Candidate Autonomy Architectures (A/B, Placeholder) and LE-0 minimum-experiment definition filed under §VIII. Prior: 2026-10-01 — Storage Degradation Analogous stub (LT-002 progress). Prior: 2026-09-30 — Power Budget Analogous stub (LT-001 progress). Earlier history: 2026-05-04 (Claude — Skeptic/Auditor), revised 2026-06-08. |
 | Auditor          | Claude — Retrofit/Auditor                                           |
 | Open Unknowns    | 7                                                                   |
 | Active Disputes  | 0                                                                   |
@@ -716,6 +716,59 @@ selective. Adoption: Experimental only.
 
 Speed kills. Caution scales.
 
+### Priority Propagation Stub (Placeholder — LT-005)
+
+The Core Principle "Errors Travel Faster Than Optimizations" is stated
+in the Networking and Communication Guidelines without an enforcement
+mechanism. This stub does **not** supply that mechanism. It designates
+priority propagation as a primary multi-unit test target and defines
+the minimum observable conditions under which a future test can
+falsify or support candidate mechanisms.
+
+Full mechanism design (queue disciplines, store-and-forward rules,
+custody-transfer semantics, acoustic/optical scheduling, etc.) routes
+to `Admin/Trajectories.md`. Nothing in this stub is binding on
+single-unit LE-0 work.
+
+#### What must be observable in a multi-unit test
+
+| Element | Minimum requirement |
+|---------|---------------------|
+| **Tier tagging** | Every transmitted knowledge item carries an explicit Tier (1 / 2 / 3) at the moment of origin. Tag is logged and immutable for that item's lifetime. |
+| **Contact opportunities** | At least two units experience intermittent, delay-tolerant contact (simulated or real). Contact windows are logged with start/stop timestamps. |
+| **Differential delivery** | After a controlled contact sequence, the receiving unit's store is inspectable for (a) which Tier-1 items arrived, (b) which Tier-3 items arrived, and (c) relative order / latency. |
+| **Failure signature of the principle** | Observable failure modes that would falsify "errors travel faster": (1) Tier-3 items systematically arrive before outstanding Tier-1 items when both were available for transmission; (2) Tier-1 items are dropped or delayed indefinitely while Tier-3 traffic continues; (3) no differential treatment is detectable at all. |
+
+#### Placeholder test hypotheses (not selected)
+
+These are alternative ways the principle *could* be enforced. None is
+adopted. Each is stated only far enough to be falsifiable.
+
+- **H1 — Strict priority queue at every hop.** Tier-1 always dequeues before Tier-2/3. Simple, but can starve lower tiers under persistent Tier-1 load.
+- **H2 — Expedited custody transfer for Tier-1 only.** Tier-1 items receive end-to-end custody semantics; Tier-2/3 remain best-effort. Tests whether custody overhead is affordable only for critical failures.
+- **H3 — Contact-window reservation.** A fraction of each contact window is reserved for Tier-1 before any Tier-3 is sent. Tests whether explicit time-slicing is more robust than pure priority under asymmetric contact.
+
+A multi-unit test that implements any one of the above (or a clearly
+stated alternative) and records the observables in the table above
+constitutes progress on LT-005's Resolution Path. Selection or rejection
+of a hypothesis requires a Closure Event after evidence, not after
+writing this section.
+
+#### Explicit non-claims
+
+- No queueing discipline, custody rule, or scheduling algorithm is
+  selected or recommended.
+- No claim is made that any of H1–H3 is sufficient for swarm-scale
+  (100s–1000s) operation; that remains trajectory-scope.
+- Single-unit LE-0 work is unaffected; priority propagation is
+  undefined and unneeded until multi-unit contact exists.
+- LT-006 (ethical log survival) may later require Tier-1 treatment
+  for refusal logs; that dependency is noted but not resolved here.
+
+**Cross-reference:** Knowledge Classification (Tier definitions above);
+LT-006 Resolution Path; `Admin/Trajectories.md` (full mechanism design
+destination).
+
 ### Anti-Pattern Safeguards
 
 The system must actively resist:
@@ -943,7 +996,16 @@ route to Admin/Trajectories.md.
 | Blocking      | No                                               |
 | Owner         | Tests/Leviathan_testing.md                       |
 | First Logged  | 2026-05-04                                       |
-| Last Reviewed | 2026-05-04                                       |
+| Last Reviewed | 2026-10-03                                       |
+
+**Progress (2026-10-03):** Priority Propagation Stub (Placeholder) filed
+under §XIII immediately after Knowledge Classification. Designates
+priority propagation as a primary multi-unit test target, defines four
+minimum observables, and states three falsifiable Placeholder
+hypotheses (H1–H3). Full mechanism design explicitly routed to
+Admin/Trajectories.md. Status remains Open — stub presence is the
+Resolution Path's first deliverable, not a Closure Event. LT-006
+dependency noted but not advanced. Human-directed.
 
 **Description:** How Tier 1 (critical failure)
 data reaches out-of-contact units faster than
@@ -1020,6 +1082,15 @@ LT-005 resolution.
 ---
 
 ### Resolution Log
+
+- 2026-10-03: Priority Propagation Stub (Placeholder) filed under §XIII for LT-005 —
+  four minimum observables, three falsifiable hypotheses (H1–H3), explicit non-claims.
+  LT-005 Last Reviewed 2026-05-04 → 2026-10-03. Status remains Open; no Closure Event.
+  Human-directed. *(This section had gone un-updated since 2026-07-19 despite three
+  file edits in the interim — LT-001, LT-002, and LT-003/LE-0, all logged in
+  `Admin/Progress_Log.md` but not mirrored here. Not backfilled retroactively; noted
+  here so the gap is visible rather than silently continued. See
+  `Admin/Progress_Log.md`'s 2026-09-30 / 2026-10-01 (×2) entries for that work.)*
 
 - 2026-08-10: **Pseudo-audit (Grok, same limits).** Findings only; Spec Gates
   left locked at 0/6. (1) Open Unknowns **7** = LT-001–007, matches local +
