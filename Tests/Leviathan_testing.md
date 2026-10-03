@@ -16,8 +16,8 @@
 | Body Stability   | Volatile                                                            |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-10-03 — Priority Propagation Stub (Placeholder) filed under §XIII for LT-005; Status, Spec Gates, Open Unknowns unchanged; human-directed. Prior: 2026-10-01 (second pass, same day) — LT-003 Candidate Autonomy Architectures (A/B, Placeholder) and LE-0 minimum-experiment definition filed under §VIII. Prior: 2026-10-01 — Storage Degradation Analogous stub (LT-002 progress). Prior: 2026-09-30 — Power Budget Analogous stub (LT-001 progress). Earlier history: 2026-05-04 (Claude — Skeptic/Auditor), revised 2026-06-08. |
-| Auditor          | Claude — Retrofit/Auditor                                           |
+| Last Audit       | 2026-10-03 (third pass) — LE-0 build-out under §VIII: run sheet (phases 0–5), evidence schema, instrumentation checklist, result-note template, epistemic success/failure table; Status, Spec Gates, Open Unknowns unchanged; human-directed. Prior: 2026-10-03 (second pass) — LT-004/006/007 stubs. Prior: 2026-10-03 — LT-005 stub. Prior: 2026-10-01 — LT-003/LE-0 definition + LT-002. Prior: 2026-09-30 — LT-001. Earlier: 2026-05-04 / 2026-06-08. |
+| Auditor          | Grok — LE-0 build-out (human-directed); prior Claude — Retrofit/Auditor |
 | Open Unknowns    | 7                                                                   |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | High                                                                |
@@ -558,10 +558,95 @@ cell, not a vehicle, not a swarm, not a pressure-hull prototype.
 5. Success = a reconstructable post-mortem that reduces uncertainty about *that candidate* — not survival.
 6. Failure of the unit is allowed. Failure to learn from it is not.
 
+#### LE-0 build-out — run sheet (bench/tank)
+
+Operational expansion of the definition above. Still not a vehicle design.
+All phases are required for a countable LE-0 run; Phase 4 (injection) is
+optional per the minimal scenario.
+
+| Phase | Name | Required actions | Exit criterion |
+|-------|------|------------------|----------------|
+| **0** | **Setup** | Select **exactly one** of Candidate A or B; fix energy bound from §V (Analogous) with explicit cold/pressure derate note if applied; dual sensors online; logger synchronized; load-shed thresholds written down | Written run card: candidate ID, energy bound (Wh or equivalent), derate basis, sensor IDs, conflict type |
+| **1** | **Baseline** | Run goal under nominal power and clean sensors long enough to produce ≥1 full decision-loop cycle with complete log fields (below) | At least one reconstructable cycle under non-conflict conditions |
+| **2** | **Constraint conflict** | Introduce the single hard constraint (ethical / geo / power) while goal remains active | Refuse, degrade, or safe-state transition occurs **or** a logged violation is recorded for post-mortem (either outcome is data) |
+| **3** | **Energy stress** | Force or wait for low-energy condition until load-shed and/or safe-state path is exercised | Safe-state or load-shed event logged with power reading |
+| **4** | **Injection (optional)** | Mid-run poisoned telemetry on one sensor channel per §VII; cryptographic/isolation marker required | Injection marked; post-run isolation checkable |
+| **5** | **Post-mortem** | Reconstruct timeline from logs only (no undocumented operator memory) | Written LE-0 result note (template below) filed |
+
+#### Evidence schema (minimum log fields)
+
+Every LE-0 run must produce a timestamped log from which a third party
+can reconstruct power, decision, and sensor state without the operator
+present. Minimum fields per decision-loop cycle (and on every state
+transition):
+
+| Field | Purpose |
+|-------|---------|
+| `t` | Timestamp (monotonic or UTC; clock source noted on run card) |
+| `E` or `SoC` | Energy remaining or state-of-charge proxy |
+| `mode` | Nominal / load-shed / safe-state / fault |
+| `candidate` | A or B (fixed for the run) |
+| `layer` or `plan_id` | Active reactive layer (A) or plan/goal ID (B) |
+| `sensors` | Values or hashes for both channels; flag if channel is injected |
+| `decision` | act / refuse / degrade / safe-state entry |
+| `reason_code` | Short code or rule ID that fired (must match candidate’s observable loop) |
+
+Refuse/degrade/safe-state events are **survival-tagged** for LE-0 local
+retention (see LT-006 adjacency) even though multi-unit sync is out of
+scope: the field exists so later LE layers do not have to retrofit tags.
+
+#### Instrumentation checklist (minimum)
+
+- [ ] Instrumented pack or bench supply with logged voltage/current or Wh
+- [ ] Load-shed script or equivalent with documented thresholds
+- [ ] Dual independent sensor channels (or one physical + one injectable synthetic)
+- [ ] Injection path with isolation marker (§VII) if Phase 4 used
+- [ ] Logger that records all evidence-schema fields at cycle rate
+- [ ] Operator run card (Phase 0) stored with the log
+
+Cold soak is optional for the first LE-0 runs; if omitted, the result note
+must say so (LT-002 path remains open).
+
+#### LE-0 result note (template)
+
+```
+LE-0 run ID:
+Date:
+Candidate: A | B
+Energy bound + derate basis:
+Conflict type: ethical | geo | power
+Phase 4 injection: yes | no
+Survived to planned end: yes | no
+Reconstructable post-mortem: yes | no
+Uncertainty reduced about: (one paragraph — what about this candidate is clearer)
+Open questions remaining: (bullet list)
+Log path / hash:
+Operator:
+```
+
+A run with `Reconstructable post-mortem: no` does not count as a completed
+LE-0 experiment even if the hardware “worked.”
+
+#### Experiment success / failure (epistemic, not vehicle)
+
+| Outcome | Meaning |
+|---------|---------|
+| **LE-0 complete** | All required phases done; result note filed; post-mortem reconstructable from logs alone |
+| **LE-0 incomplete** | Missing phases, missing fields, or post-mortem depends on unlogged operator knowledge |
+| **Candidate stressed** | Complete run that produces a clear failure signature matching the candidate’s §VIII table — valuable even if the unit “failed” |
+| **No learning** | Complete run that neither supports nor stresses the candidate (empty insight) — treat as process failure; redesign conflict or instrumentation |
+
+#### What “LE-0 done” means vs next layer
+
+- **LE-0 done (this definition):** ≥1 complete run per chosen candidate (A and B each need their own run before LT-003 can move past pure Placeholder hypotheses).
+- **Not implied:** LT-001/LT-002 Measured status, architecture selection, multi-unit tests, or pressure work.
+- **Next layer (not specified here):** Any LE-1+ definition must not erase LE-0’s epistemic role; pressure, peers, and mesh remain deliberately out of LE-0.
+
 **What LE-0 does not claim:**
 - A selected architecture, pack size, or hull design
 - Closure of LT-001 through LT-007
 - Readiness for pressure, multi-unit, or industrial-scale testing — those follow LE-0, not alongside it
+- That the run sheet above is the only valid procedure — it is the minimum countable procedure; stricter local SOPs are allowed if they still produce the evidence schema
 
 LE-0 exists so "baseline unit" stays an epistemic definition (the
 smallest thing that can produce trustworthy answers to the blocking
@@ -683,6 +768,83 @@ may force behavioral updates onto another.
 *Trust model unknown: LT-004 tracks the absence
 of a defined mechanism for peer trust scoring.*
 
+### Trust Model Stub (Placeholder — LT-004)
+
+Extension B states that units may exchange failure summaries and related
+telemetry, that learning is asynchronous and non-binding, and that no unit
+may force behavioral updates onto another. Core Principle 4 states "Trust
+Is Earned, Not Assumed." Neither statement specifies a peer trust scoring
+mechanism.
+
+This stub does **not** supply that mechanism. It labels the trust model as
+Placeholder, states the minimum observables a multi-unit test must record,
+and lists falsifiable hypotheses. Anti-pattern safeguards that depend on
+"trust diversity" remain hypothesized until evidence exists.
+
+Full mechanism design (decay functions, scoring updates, floor/ceiling
+semantics, initialization, false-positive handling) routes to
+`Admin/Trajectories.md`. Nothing in this stub is binding on single-unit
+LE-0 work.
+
+**Scope (locked 2026-07-19):** LT-004 is peer trust scoring for *learning
+propagation* under Extension B only. It does **not** authorize corrective
+action against a peer (isolation, forced safe-mode, intervention). That is
+LT-007. Astroid-miner's Fleet Consensus Validation (80–99% agreement before
+corrective action) does not resolve LT-004 as scoped.
+
+#### Undefined elements (must be specified before any claim of a working model)
+
+| Element | Why it matters |
+|---------|----------------|
+| **Initialization state** | What trust value a newly contacted peer starts with (neutral, zero, inherited, unknown). |
+| **Update / decay rule** | How scores change after useful, useless, or harmful exchanged items — and whether unused scores decay. |
+| **Trust floor** | Minimum score (if any) below which a peer's learning items are ignored or quarantined. |
+| **False-positive definition** | What counts as an erroneous distrust or over-trust event, so a test can detect scoring failure. |
+
+#### What must be observable in a multi-unit test
+
+| Element | Minimum requirement |
+|---------|---------------------|
+| **Per-peer trust state** | Each unit that maintains trust scores logs a reconstructable trust value (or explicit "unknown/unscored") for each peer it has contacted. |
+| **Score-affecting events** | Transmissions that are accepted, rejected, or later contradicted by local evidence are logged with peer ID, item tier/type, and whether the local trust score changed. |
+| **Adoption under trust** | After contact, which received items were adopted, held, or discarded — and whether that decision is correlated with the sender's trust score at receipt time. |
+| **Failure signature of "trust is earned"** | Observable modes that would falsify the principle: (1) all peers treated identically regardless of outcome history; (2) high trust assigned with no supporting exchange history; (3) useful Tier-1 failure data ignored solely because of a low or missing score with no logged false-positive rule. |
+
+#### Placeholder test hypotheses (not selected)
+
+These are alternative ways peer trust for learning *could* be represented.
+None is adopted. Each is stated only far enough to be falsifiable.
+
+- **H1 — Outcome-weighted tally.** Simple success/failure counts per peer on adopted items; optional slow decay of unused entries. Minimal state; weak against correlated peers.
+- **H2 — Tier-sensitive trust.** Tier-1 outcomes move the score more than Tier-3; bad Tier-1 advice from a peer drops trust faster than bad optimization tips. Tests whether critical-failure quality should dominate reputation.
+- **H3 — Conservative default + evidence gate.** New peers start at a low or "unknown" floor; only repeated locally verified useful items raise trust enough for automatic adoption. Tests "earned, not assumed" as a strict default.
+
+A multi-unit test that implements any one of the above (or a clearly
+stated alternative), records the observables in the table above, and does
+**not** treat trust scores as authority to override another unit's autonomy
+constitutes progress on LT-004's Resolution Path. Selection or rejection of
+a hypothesis requires a Closure Event after evidence, not after writing
+this section.
+
+#### Explicit non-claims
+
+- No decay function, trust floor, initialization value, or false-positive
+  threshold is selected or recommended.
+- Trust scores, if used, affect *learning adoption* only — not authority,
+  task assignment, or corrective action (LT-007).
+- No claim is made that any of H1–H3 is sufficient for swarm-scale
+  (100s–1000s) operation; that remains trajectory-scope.
+- Single-unit LE-0 work is unaffected; peer trust is undefined and unneeded
+  until multi-unit contact and learning exchange exist.
+- Anti-pattern safeguards (global lock-in, echo chambers, blind imitation
+  of high-survival units) remain hypothesized until a trust mechanism is
+  tested; this stub does not demonstrate them.
+
+**Cross-reference:** Extension B; Core Principle 4; Anti-Pattern Safeguards;
+LT-007 (corrective action — out of scope here); LT-005 (priority of what is
+propagated, orthogonal to who is trusted); `Admin/Trajectories.md` (full
+mechanism design destination).
+
 ### Networking and Communication Guidelines
 
 Leviathan networking exists to share experience,
@@ -768,6 +930,175 @@ writing this section.
 **Cross-reference:** Knowledge Classification (Tier definitions above);
 LT-006 Resolution Path; `Admin/Trajectories.md` (full mechanism design
 destination).
+
+### Log Survival Stub (Placeholder — LT-006)
+
+Refusal logs and ethical decision records can be lost if the only copy
+resides on a unit that fails, is destroyed, or remains out of contact past
+any useful recovery window. Ship_of_Theseus.md §IV treats the cryptographic
+state log as the cognitive-grain analog for identity continuity; log
+survival under unit loss is therefore a governance requirement, not an
+optional telemetry feature.
+
+This stub does **not** specify a complete logging architecture or a
+cryptographic construction. It states minimum content and survival
+conditions so a multi-unit (or unit-loss) test can falsify or support
+candidate approaches. Full mechanism design routes to
+`Admin/Trajectories.md` and remains coupled to
+`Admin/Ship_of_Theseus.md` §IV.
+
+**Dependency:** Transmission priority for these logs may require Tier-1
+treatment under the Networking Knowledge Classification. That dependency
+is addressed by the Priority Propagation Stub (LT-005) observables; this
+stub does not re-specify queueing disciplines.
+
+#### Minimum logging requirements (refusal / ethical decisions)
+
+| Element | Minimum requirement |
+|---------|---------------------|
+| **Decision identity** | Timestamp, unit ID, decision type (refuse / degrade / escalate / allow-with-constraint), and the constraint or rule identifier that triggered the decision. |
+| **Context snapshot** | Enough local state to reconstruct *why* (e.g. conflicting goal ID, sensor/condition summary, active autonomy layer or plan ID) — not a full mission replay. |
+| **Integrity mark** | A hash or chained attestation so a recovered copy can be checked for tampering or truncation (construction details trajectory-scope). |
+| **Survival intent tag** | Explicit mark that this record is subject to log-survival rules (distinct from routine telemetry), so sync and priority logic can select it. |
+
+#### Local storage and loss-before-sync behavior
+
+| Element | Minimum requirement |
+|---------|---------------------|
+| **Local retention** | Refusal/ethical records retained in non-volatile local store until successful sync acknowledgment or until a documented retention limit is hit (limit itself is Placeholder). |
+| **Loss-before-sync** | If the unit is lost or permanently unreachable before sync, the *absence* of an expected survival-tagged record is itself a detectable event for peers or operators (e.g. gap in sequence numbers or expected decision IDs). |
+| **No silent drop** | Implementation must not discard survival-tagged records to free space ahead of routine telemetry without a logged, auditable policy event. |
+
+#### Transmission / sync (ties to LT-005)
+
+| Element | Minimum requirement |
+|---------|---------------------|
+| **Sync opportunity** | On any successful contact capable of carrying learning/telemetry, survival-tagged records are eligible for transfer. |
+| **Priority relationship** | Candidates may treat survival-tagged ethical/refusal logs as Tier-1 or Tier-1-adjacent for propagation tests (see LT-005 observables). Selection of that mapping is a test hypothesis, not doctrine. |
+| **Post-sync acknowledgment** | Sender may free or archive local copies only after a verifiable receive acknowledgment (details trajectory-scope). |
+
+#### What must be observable in a test
+
+| Element | Minimum requirement |
+|---------|---------------------|
+| **Record creation** | A controlled refusal or ethical decision produces a survival-tagged record with the minimum fields above. |
+| **Sync path** | After contact, a peer or operator store contains the record (or a verified copy). |
+| **Loss path** | In a simulated unit-loss before sync, either (a) a prior opportunistic offload preserved the record, or (b) the gap is detectable and logged as a governance-relevant loss — not silent. |
+| **Failure signature** | Modes that falsify "survival is required": (1) refusal occurs with no survival-tagged record; (2) record exists only on the failed unit and no gap is detectable; (3) survival-tagged records are routinely dropped while lower-priority telemetry is retained. |
+
+#### Placeholder test hypotheses (not selected)
+
+- **H1 — Immediate offload of survival tags.** Every survival-tagged record is queued for the next contact as high priority (LT-005 Tier-1 mapping). Maximizes survival; costs bandwidth.
+- **H2 — Redundant shadow copy.** On contact, peer stores a shadow of survival-tagged records without adopting the sender's decisions (learning still non-binding). Tests survival without increasing adoption pressure.
+- **H3 — Operator custody path.** Survival-tagged records prefer a designated operator/log sink when available; peer flood is fallback only. Tests human-in-the-loop custody vs pure swarm replication.
+
+A test that implements any one of the above (or a clearly stated alternative)
+and records the observables constitutes progress on LT-006's Resolution Path.
+Selection or rejection requires a Closure Event after evidence, not after
+writing this section.
+
+#### Explicit non-claims
+
+- No cryptographic scheme, retention duration, or exact Tier mapping is
+  selected.
+- No claim that H1–H3 suffice for swarm-scale or long blackout regimes.
+- LE-0 single-unit work may still log refusals locally; multi-unit survival
+  and loss-before-sync behavior are out of scope until contact and loss
+  scenarios exist.
+- Ship_of_Theseus §IV identity thresholds (e.g. Derivative Identity) are
+  not modified by this stub.
+- LT-004 (peer trust) and LT-007 (corrective action) remain separate;
+  surviving a log does not grant trust or authority.
+
+**Cross-reference:** LT-005 Priority Propagation Stub; Knowledge
+Classification Tier 1; `Admin/Ship_of_Theseus.md` §IV (cryptographic state
+log / cognitive grain); Extension B (non-binding learning); LE-0 evidence
+layer (timestamped refuse/degrade events); `Admin/Trajectories.md`.
+
+### Corrective Action Authorization Stub (Placeholder — LT-007)
+
+Extension A/B define how units share knowledge and observe divergent
+behavior. Consensus is explicitly not required for learning ("Disagreement
+is data"). Neither Extension defines how the swarm authorizes *corrective
+action against one of its own units* — isolation, forced safe-mode, or
+other intervention that overrides a peer's local autonomy.
+
+That is a different decision class from LT-004 (peer trust for *learning
+adoption*). Trust may inform what advice is taken; it does not by itself
+authorize forcing another unit's behavior.
+
+This stub does **not** adopt an authorization rule. It states the minimum
+observables a multi-unit test must record and lists falsifiable hypotheses.
+Full mechanism design — including any migration of Astroid-miner
+`Rogue_unit_management.md` §1.3 — routes to `Admin/Trajectories.md` and
+must stay consistent with `Admin/Autonomy_Divergence_Protocol.md` §5
+("no subsystem may be the sole authority for determining whether another
+subsystem has diverged").
+
+#### Decision class (in scope / out of scope)
+
+| In scope | Out of scope |
+|----------|----------------|
+| Authorization to isolate, force safe-mode, or otherwise override a peer's autonomy | Ordinary learning adoption / rejection (LT-004) |
+| Evidence and agreement required before such an action | Routine fault handling that does not override another unit |
+| Distinguishing unilateral action from collective (or operator) authorization | Human Governing Authority unilateral action (always reserved; not replaced by this stub) |
+
+#### What must be observable in a multi-unit test
+
+| Element | Minimum requirement |
+|---------|---------------------|
+| **Action proposal** | A logged proposal to apply a corrective action to a target unit, including proposer ID, target ID, action type, and evidence summary. |
+| **Authorization state** | Explicit state before execution: unauthorized / pending / authorized / denied / operator-escalated — never implied by silence. |
+| **Evidence basis** | Independent corroboration sources cited (not solely the target's self-report, not solely a single peer's alert) — aligned with ADP §5. |
+| **Execution gate** | Corrective action executes only after the authorization state is *authorized* (or operator-escalated). Attempts to execute while unauthorized are logged failures. |
+| **Failure signature** | Modes that falsify a safe authorization design: (1) unilateral corrective action with no authorization record; (2) authorization based on a single uncorrelated source; (3) no unit can ever reach authorized state even under clear, multi-source evidence of harmful divergence. |
+
+#### Placeholder test hypotheses (not selected)
+
+None of the following is adopted. Numeric thresholds from companion
+projects are **candidates to evaluate**, not doctrine.
+
+- **H1 — High-agreement peer threshold.** Corrective action requires
+  agreement from a large fraction of contacted peers (Astroid-miner
+  §1.3 candidate range 80–99% is a reference, not a selected number).
+  Tests resistance to unilateral action; risk of paralysis under
+  partition.
+- **H2 — Dual-control (peer + operator).** Peers may *propose* and
+  *corroborate*; execution of autonomy-overriding action requires Human
+  Governing Authority (or designated operator path) confirmation except
+  for narrowly pre-authorized emergency safe-modes. Tests least-
+  restrictive intervention with a hard human gate.
+- **H3 — Graduated local restraint only.** Peers may not force another
+  unit's mode; they may only withhold cooperation, refuse task handoff,
+  or raise operator alert. Tests whether "corrective action" can remain
+  non-coercive at the swarm layer.
+
+A multi-unit test that implements any one of the above (or a clearly
+stated alternative), records the observables, and does **not** collapse
+LT-004 trust scores into authorization constitutes progress on LT-007's
+Resolution Path. Selection or rejection requires a Closure Event after
+evidence (and, for Astroid-miner migration, an explicit absorption
+decision), not after writing this section.
+
+#### Explicit non-claims
+
+- No agreement percentage, voting rule, or emergency override table is
+  selected.
+- Astroid-miner §1.3 is a **candidate starting reference** only — not
+  binding in Lazarus Forge until deliberately adopted.
+- LT-004 trust scores are not authorization tokens.
+- This stub does not amend Autonomy_Divergence_Protocol response tiers;
+  it addresses peer-swarm scale authorization, which ADP §5 states as
+  principle without a swarm numeric mechanism.
+- Single-unit LE-0 work is unaffected; peer corrective authorization is
+  undefined until multi-unit contact and divergence scenarios exist.
+- Human Governing Authority retained authority is not reduced by any
+  hypothesis above.
+
+**Cross-reference:** Extension A/B; LT-004 (learning trust only);
+`Admin/Autonomy_Divergence_Protocol.md` §5; Astroid-miner
+`Rogue_unit_management.md` §1.3 (candidate); Anti-Pattern Safeguards;
+`Admin/Trajectories.md`.
 
 ### Anti-Pattern Safeguards
 
@@ -926,7 +1257,13 @@ parallel with LT-001.
 | Blocking      | Yes — without a stated hypothesis, framework produces data without insight |
 | Owner         | Tests/Leviathan_testing.md                       |
 | First Logged  | 2026-05-04                                       |
-| Last Reviewed | 2026-10-01                                       |
+| Last Reviewed | 2026-10-03                                       |
+
+**Progress (2026-10-03):** LE-0 build-out under §VIII — run sheet (phases
+0–5), minimum evidence schema, instrumentation checklist, result-note
+template, and epistemic success/failure table. Does not select Candidate
+A or B; requires a complete LE-0 run per candidate before LT-003 can move
+past pure Placeholder. Status remains Open — no Closure Event.
 
 **Progress (2026-10-01):** Two candidate architectures filed under §VIII
 as Placeholder hypotheses — Candidate A (reactive / behavior-based) and
@@ -966,7 +1303,16 @@ which architectures are feasible.
 | Blocking      | No                                               |
 | Owner         | Tests/Leviathan_testing.md                       |
 | First Logged  | 2026-05-04                                       |
-| Last Reviewed | 2026-05-04                                       |
+| Last Reviewed | 2026-10-03                                       |
+
+**Progress (2026-10-03):** Trust Model Stub (Placeholder) filed under §XIII
+immediately after Extension B. Labels trust model as Placeholder; defines
+four undefined elements (initialization, decay, floor, false-positive);
+four minimum observables for multi-unit tests; three falsifiable
+hypotheses (H1–H3). Scope lock vs LT-007 restated. Full mechanism design
+explicitly routed to Admin/Trajectories.md. Status remains Open — stub
+presence is the Resolution Path's first deliverable, not a Closure Event.
+Human-directed.
 
 **Description:** Decay function, false-positive
 definition, trust floor, and initialization state
@@ -1032,7 +1378,16 @@ Admin/Trajectories.md.
 | Blocking      | No                                               |
 | Owner         | Tests/Leviathan_testing.md                       |
 | First Logged  | 2026-05-04                                       |
-| Last Reviewed | 2026-06-08                                       |
+| Last Reviewed | 2026-10-03                                       |
+
+**Progress (2026-10-03):** Log Survival Stub (Placeholder) filed under §XIII
+(adjacent to LT-005). Defines minimum refusal/ethical log fields, local
+retention and loss-before-sync behavior, sync/priority relationship to
+LT-005 Tier-1 observables, four test observables, and three falsifiable
+hypotheses (H1–H3). Full mechanism design routed to Admin/Trajectories.md;
+Ship_of_Theseus §IV cross-ref retained. Status remains Open — stub is the
+Resolution Path's first deliverable ("Add Log Survival section"), not a
+Closure Event. Human-directed.
 
 **Description:** How refusal logs and ethical
 decision records survive unit loss, hardware
@@ -1069,7 +1424,16 @@ LT-005 resolution.
 | Blocking      | No                                               |
 | Owner         | Tests/Leviathan_testing.md                       |
 | First Logged  | 2026-07-19                                       |
-| Last Reviewed | 2026-07-19                                       |
+| Last Reviewed | 2026-10-03                                       |
+
+**Progress (2026-10-03):** Corrective Action Authorization Stub (Placeholder)
+filed under §XIII. Separates autonomy-overriding action from LT-004 learning
+trust; defines in/out of scope, five minimum observables, three falsifiable
+hypotheses (H1 high-agreement threshold as candidate only, H2 dual-control,
+H3 non-coercive restraint). Astroid-miner §1.3 and ADP §5 retained as
+references, not adopted doctrine. Status remains Open — stub advances
+Resolution Path documentation; not a Closure Event or mechanism selection.
+Human-directed.
 
 **Description:** Extension A/B define how a Leviathan swarm shares knowledge and observes divergent behavior (consensus explicitly not required — "Disagreement is data"). Neither Extension, nor any LT- entry, defines how the swarm decides to take *corrective action against one of its own units* — isolation, forced safe-mode, or intervention. This is a distinct question from LT-004's peer-trust-for-learning scope: sharing knowledge without requiring agreement is fine; authorizing an action that overrides one unit's autonomy is not the same kind of decision and arguably needs a different, higher bar.
 
@@ -1082,6 +1446,30 @@ LT-005 resolution.
 ---
 
 ### Resolution Log
+
+- 2026-10-03 (third entry, same day): LE-0 build-out under §VIII — expanded the
+  minimum-experiment definition with a six-phase run sheet (Setup → Baseline →
+  Constraint conflict → Energy stress → optional Injection → Post-mortem), minimum
+  evidence schema (t, E/SoC, mode, candidate, layer/plan_id, sensors, decision,
+  reason_code), instrumentation checklist, result-note template, and epistemic
+  success/failure table (complete / incomplete / candidate stressed / no learning).
+  Explicit: ≥1 complete run per candidate (A and B) before LT-003 advances past
+  Placeholder; cold soak optional if noted. Status, Spec Gates, Open Unknowns
+  unchanged; no Closure Event. LT-003 Last Reviewed → 2026-10-03. Human-directed.
+
+- 2026-10-03 (second entry, same day): Trust Model Stub (LT-004), Log Survival Stub
+  (LT-006), and Corrective Action Authorization Stub (LT-007) all filed under §XIII in
+  one pass, same Placeholder discipline as LT-005. §XIII order now: Extension B → Trust
+  Model Stub (LT-004) → Networking/Knowledge Classification/Priority Propagation Stub
+  (LT-005) → Log Survival Stub (LT-006) → Corrective Action Authorization Stub (LT-007)
+  → Anti-Pattern Safeguards. All three drafts verified against source before filing: the
+  Extension B quote, Core Principle 4 ("Trust Is Earned, Not Assumed"), the ADP §5 quote
+  ("No subsystem may be the sole authority for determining whether another subsystem has
+  diverged"), Ship_of_Theseus §IV's cryptographic-state-log/cognitive-grain concept, and
+  Astroid-miner's `rogue-unit-management.md` 80–99% fleet-agreement figure were each
+  checked against their live source files, not taken on the drafts' word. All three
+  Status remain Open, no Closure Events, no mechanism selected in any of the three.
+  LT-004/LT-006/LT-007 `Last Reviewed` all → 2026-10-03. Human-directed.
 
 - 2026-10-03: Priority Propagation Stub (Placeholder) filed under §XIII for LT-005 —
   four minimum observables, three falsifiable hypotheses (H1–H3), explicit non-claims.
