@@ -37,6 +37,26 @@ Created 2026-08-09 to fix a recurring failure mode found the same day, in two pl
 
 *(Most recent first. Rotate to `Archive/Logs/Progress_Log_Changelog.md` once more than five entries accumulate.)*
 
+### 2026-10-04 — `.gitignore` added; stray `Automation/__pycache__/` bytecode flagged in the 1.19 release zip
+Release zip audit (checked the full tree against the live baseline rather than trusting the
+version bump alone) found byte-for-byte identical content throughout — a clean version bump,
+no regressions — except three compiled Python bytecode files (`audit_lib`, `AUDIT_HARNESS`,
+`parser`, all `cpython-312`) under a `__pycache__/` directory that had been swept into the
+zip from a local harness run. No `.gitignore` existed anywhere in the repository to prevent
+this from recurring or from actually landing in version control on push. New root
+`.gitignore` added: `__pycache__/`, `*.py[cod]`, common editor/OS artifacts, and a
+not-yet-used `.venv/`/`venv/` line for if `Automation/` ever needs one. Registered in
+`Admin/Repository_Structure.md`'s "Current root files and their justification" table —
+the same table corrected for staleness earlier today — rather than left unregistered, which
+would have immediately recreated the drift class that correction closed. Checked whether
+`Routing.md` or `Discovery.md` needed an entry too: confirmed `Routing.md` already
+explicitly excludes "transient or generated artifacts" and "pure implementation artifacts
+under `Automation/`" by design (its own Scope statement), and `Discovery.md`'s structure
+tree doesn't carry `LICENSE.md`/`NOTICE.md` either — so `.gitignore` correctly gets no entry
+in either, confirmed rather than assumed. Human-directed, prompted by a direct question
+about the zip's cleanliness.
+
+---
 ### 2026-10-03 (tenth entry, same day) — Four Ready-to-Run cards added to `Tests/Field_Logs/` (Lane B ×2, LE-0, MAQT Tier 2)
 ChatGPT/Grok scaffolded procedure cards for the four tracks discussed the same day (Lane B
 Logic-Zero/EL-006, Lane B salvage ID, LE-0 single-candidate run, MAQT Tier 2) plus a folder
@@ -112,42 +132,6 @@ on this exact file (list updated, summary count not). Caught during review, not 
 scheduled audit; flagged first, correction applied on explicit request. Line corrected to
 "9 open (FAK-001, FAK-005, FAK-006, FAK-009, FAK-014, FAK-015, FAK-016, FAK-017, and one
 flagged for Canonical_Terms.md...)". No other field touched. Human-directed.
-
----
-### 2026-10-03 (sixth entry, same day) — LT-004, LT-006, LT-007 Placeholder stubs filed in `Tests/Leviathan_testing.md`
-Same drafting discipline as LT-005 (Grok drafts, Claude verifies against source before
-filing). Three stubs filed in one pass per the drafts' own suggested §XIII ordering:
-Trust Model Stub (LT-004, after Extension B), Log Survival Stub (LT-006, after the
-Priority Propagation Stub), Corrective Action Authorization Stub (LT-007, after LT-006,
-before Anti-Pattern Safeguards). Every cross-referenced claim checked against its live
-source before filing, not taken on the drafts' word: Extension B's exact text ("Units may
-exchange failure summaries... Learning is asynchronous and non-binding. No unit may force
-behavioral updates onto another") — verbatim match; Core Principle 4 ("Trust Is Earned,
-Not Assumed") — verbatim match; `Admin/Autonomy_Divergence_Protocol.md` §5's quoted
-principle ("No subsystem may be the sole authority for determining whether another
-subsystem has diverged") — verbatim match, confirmed real, not invented; `Admin/
-Ship_of_Theseus.md` §IV's cryptographic-state-log / cognitive-grain concept — confirmed
-present; Astroid-miner's `rogue-unit-management.md` 80–99% fleet-agreement figure — opened
-the file directly inside the embedded `Archive/Astroid-miner/` zip and confirmed the
-number verbatim, not assumed from the draft's citation. All three sidecars updated with
-dated Progress notes; `Last Reviewed` touched for all three (LT-004 2026-05-04→10-03,
-LT-006 2026-06-08→10-03, LT-007 2026-07-19→10-03) — LT-006 and LT-007 each had this as
-their first review since original logging. One stray duplicate `Last Reviewed` row
-(leftover from LT-004's pre-edit text, missed on a first pass over the str_replace) was
-caught and removed before finalizing. File State `Last Audit` and the in-file Resolution
-Log both updated in one combined entry covering all three. Status remains Open for all
-three (LT-004/006/007), Spec Gates remain 0/6, Open Unknowns remain 7 — no Closure Event,
-no mechanism selected in any of the three, Astroid-miner's figure retained explicitly as
-candidate-only per the drafts' own non-claims. `Unknowns.md` needed no edit — none of the
-three rows' Status or Blocking values changed. Human-directed.
-
-**LT-00x set status after this entry:** LT-001/002/003/004/005/006/007 all now have at
-least a Placeholder or Analogous stub filed; all seven remain Open; none closed. LT-008
-was checked and confirmed not registered (no sidecar, no Resolution Path to expand) —
-correctly not drafted as a stub, since that would be proposing a new unknown rather than
-completing a logged one. Three unauthorized candidate topics were named for a possible
-future LT-008 (unified multi-unit test harness, delay-tolerant contact-window model,
-anti-pattern measurement mechanism) but none adopted — awaiting explicit direction.
 
 ---
 Full history, including entries rotated out of the five above, in `Archive/Logs/Progress_Log_Changelog.md`.

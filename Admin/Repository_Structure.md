@@ -283,6 +283,7 @@ belong at root:
 | `CONTRIBUTING.md` | Contributor / process entry point (File_Template exemption class) |
 | `LICENSE.md` | Legal / license surface — repository-wide; registered in Routing.md |
 | `NOTICE.md` | Attribution / notice surface — repository-wide; registered in Routing.md |
+| `.gitignore` | Tooling surface, not documentation — standard Git convention requiring root placement to function; excludes `Automation/`'s generated Python bytecode (`__pycache__/`, `*.pyc`) and common editor/OS artifacts from version control. Added 2026-10-04 after a release zip was found to include compiled bytecode with no `.gitignore` in place to prevent it. |
 
 Aligned with `Admin/File_Template.md` Template Exemptions (root navigation/index surface + CONTRIBUTING). LICENSE.md and NOTICE.md are retained at root as standard legal artifacts already present in the Master Routing Map; they are not navigation doctrine but are not treated as placement errors.
 
