@@ -640,8 +640,25 @@ While retiring `Unknowns.md`'s stale "What vX.X Means" section, found that its "
 
 ---
 
-## Rotated from Progress_Log.md, 2026-10-03 (16 entries, 2026-10-03 Convention 8/FAK-017 through 2026-09-20)
+## Rotated from Progress_Log.md, 2026-10-03 (17 entries, 2026-10-03 sweep corrections through 2026-09-20)
 
+### 2026-10-03 (fifth entry, same day) — Staleness/confusion sweep corrections (Routing, ADP, Repository_Structure, Adm_Scope_Map)
+ChatGPT staleness/confusion sweep findings source-checked by Grok before acting; high/medium items corrected.
+
+**(1) Routing.md path-count metric.** Scope prose still said “~112”; live Master Routing Map ≈130+ path rows. Hard-coded “~112” removed; replaced with durable wording + 2026-10-03 path-count note. Historical 112 figures elsewhere left as dated history where they describe past verification state.
+
+**(2) Autonomy_Divergence_Protocol.md G5 claim.** Spec Gates field and Resolution Log still presented “112 entries” as if current. Clarified to “112 entries at time of verification (2026-08-11); registry has since grown — see Routing.md path-count note.” ALIASES (18) still current — left unchanged.
+
+**(3) Repository_Structure.md root doctrine.** “Current root files” table listed only README/Discovery/Unknowns; live root and File_Template exemptions also include Routing, CONTRIBUTING, LICENSE, NOTICE. Table expanded to match; drift indicator “exceeds three” updated to “exceeds the documented justified set” so it no longer contradicts File_Template.
+
+**(4) Adm_Scope_Map.md Last Reviewed.** Field was 2026-09-24 while body already contained 2026-09-30 Operational_Conventions registration. Updated to 2026-10-03 with explicit field-meaning note (last substantive map check/modification, not full-folder re-audit).
+
+**(5–6) Follow-up same day after ChatGPT review of this pass:** Charter numbers left unchanged; temporal labels only — GOV-014/GOV-020 “Current … count/scale” → “at integration (…, confirmed 2026-08-20)” so historical measurements are not labeled current. Discovery.md header chronology gap closed — Prior: 2026-09-24 inserted for Metrics_Scaffold / Persistent_Cognition_Candidates (already in maturity snapshot); “gap is not closed” note removed from 2026-09-29 Prior entry. Convention numbering left alone (cosmetic).
+
+Human-directed after source verification of ChatGPT sweep. Rotation: this addition → six Current Lessons → oldest (2026-10-02 Pass 2 review) rotated to changelog same pass (Convention 8).
+
+
+---
 ### 2026-10-03 (fourth entry, same day) — Convention 8 attribution fix + FAK-017 (Forge_Audit_Kit citation staleness, fifth occurrence)
 Two items from the same self-maintenance checkpoint, both source-verified before acting.
 
