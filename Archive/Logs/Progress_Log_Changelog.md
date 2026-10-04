@@ -640,8 +640,18 @@ While retiring `Unknowns.md`'s stale "What vX.X Means" section, found that its "
 
 ---
 
-## Rotated from Progress_Log.md, 2026-10-04 (18 entries, 2026-10-03 LT-004/006/007 stubs through 2026-09-20)
+## Rotated from Progress_Log.md, 2026-10-04 (19 entries, 2026-10-03 FAK count fix through 2026-09-20)
 
+### 2026-10-03 (seventh entry, same day) — `Forge_Audit_Kit.md` "Current: N open" summary line corrected 8 → 9
+Follow-on to FAK-017 (same-day entry above): the sidecar's prose list of open FAK items had
+already been updated to include FAK-017, but the "Current: N open" summary line one
+paragraph below it still read 8, not 9 — the same desync sub-bug FAK-015 fixed once before
+on this exact file (list updated, summary count not). Caught during review, not by a
+scheduled audit; flagged first, correction applied on explicit request. Line corrected to
+"9 open (FAK-001, FAK-005, FAK-006, FAK-009, FAK-014, FAK-015, FAK-016, FAK-017, and one
+flagged for Canonical_Terms.md...)". No other field touched. Human-directed.
+
+---
 ### 2026-10-03 (sixth entry, same day) — LT-004, LT-006, LT-007 Placeholder stubs filed in `Tests/Leviathan_testing.md`
 Same drafting discipline as LT-005 (Grok drafts, Claude verifies against source before
 filing). Three stubs filed in one pass per the drafts' own suggested §XIII ordering:
