@@ -640,8 +640,19 @@ While retiring `Unknowns.md`'s stale "What vX.X Means" section, found that its "
 
 ---
 
-## Rotated from Progress_Log.md, 2026-10-03 (15 entries, 2026-10-03 Unknowns.md version-stacking fix through 2026-09-20)
+## Rotated from Progress_Log.md, 2026-10-03 (16 entries, 2026-10-03 Convention 8/FAK-017 through 2026-09-20)
 
+### 2026-10-03 (fourth entry, same day) — Convention 8 attribution fix + FAK-017 (Forge_Audit_Kit citation staleness, fifth occurrence)
+Two items from the same self-maintenance checkpoint, both source-verified before acting.
+
+**(1) Convention 8 attribution gap closed.** Claude correctly identified that `Admin/Resolution_Methodology.md` §9 ("Self-Maintenance Verification — Prose and Code") already documents the exact rotation/self-maintenance failure class with richer history than Convention 8 had cited. Convention 8's Source-of-truth line rewritten to point at §9 as the canonical statement; local Progress_Log / Unknowns.md citations retained as supporting. File State Last Audit updated.
+
+**(2) FAK-017 logged — fifth occurrence of Forge_Audit_Kit derivation-citation staleness.** `Admin/Forge_Audit_Kit.md` Derived-from line still read `Unknowns.md` v5.27 while live is v5.57 (30 versions). Same pattern previously logged as FAK-014/015/016. Citation refreshed to v5.57; kit version 1.18→1.19; Open Unknowns 8→9; FAK-017 written into `Archive/Logs/Forge_Audit_Kit_Changelog.md` sidecar; Resolution Log most-recent line updated. Status remains Open — the underlying structural question (citation currency has no automated check) is now five occurrences deep and still unresolved.
+
+Both executed under the stricter "quote every field before flagging" discipline from the methodology calibration earlier this session. Human-directed (continue-with-fixes instruction). Rotation rule checked: this addition makes six Current Lessons entries → oldest (2026-10-02 first-entry sweep review) rotated to `Progress_Log_Changelog.md` in the same pass per Convention 8.
+
+
+---
 ### 2026-10-03 (second entry, same day) — `Unknowns.md`'s own version-stacking rule violation found and fixed
 Asked directly whether `Archive/Logs/Unknowns_Changelog.md` needed attention after the
 Progress_Log rotation — it did, a different instance of the same bug class. `Unknowns.md`'s
