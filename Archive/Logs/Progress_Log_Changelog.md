@@ -640,8 +640,44 @@ While retiring `Unknowns.md`'s stale "What vX.X Means" section, found that its "
 
 ---
 
-## Rotated from Progress_Log.md, 2026-10-03 (17 entries, 2026-10-03 sweep corrections through 2026-09-20)
+## Rotated from Progress_Log.md, 2026-10-04 (18 entries, 2026-10-03 LT-004/006/007 stubs through 2026-09-20)
 
+### 2026-10-03 (sixth entry, same day) — LT-004, LT-006, LT-007 Placeholder stubs filed in `Tests/Leviathan_testing.md`
+Same drafting discipline as LT-005 (Grok drafts, Claude verifies against source before
+filing). Three stubs filed in one pass per the drafts' own suggested §XIII ordering:
+Trust Model Stub (LT-004, after Extension B), Log Survival Stub (LT-006, after the
+Priority Propagation Stub), Corrective Action Authorization Stub (LT-007, after LT-006,
+before Anti-Pattern Safeguards). Every cross-referenced claim checked against its live
+source before filing, not taken on the drafts' word: Extension B's exact text ("Units may
+exchange failure summaries... Learning is asynchronous and non-binding. No unit may force
+behavioral updates onto another") — verbatim match; Core Principle 4 ("Trust Is Earned,
+Not Assumed") — verbatim match; `Admin/Autonomy_Divergence_Protocol.md` §5's quoted
+principle ("No subsystem may be the sole authority for determining whether another
+subsystem has diverged") — verbatim match, confirmed real, not invented; `Admin/
+Ship_of_Theseus.md` §IV's cryptographic-state-log / cognitive-grain concept — confirmed
+present; Astroid-miner's `rogue-unit-management.md` 80–99% fleet-agreement figure — opened
+the file directly inside the embedded `Archive/Astroid-miner/` zip and confirmed the
+number verbatim, not assumed from the draft's citation. All three sidecars updated with
+dated Progress notes; `Last Reviewed` touched for all three (LT-004 2026-05-04→10-03,
+LT-006 2026-06-08→10-03, LT-007 2026-07-19→10-03) — LT-006 and LT-007 each had this as
+their first review since original logging. One stray duplicate `Last Reviewed` row
+(leftover from LT-004's pre-edit text, missed on a first pass over the str_replace) was
+caught and removed before finalizing. File State `Last Audit` and the in-file Resolution
+Log both updated in one combined entry covering all three. Status remains Open for all
+three (LT-004/006/007), Spec Gates remain 0/6, Open Unknowns remain 7 — no Closure Event,
+no mechanism selected in any of the three, Astroid-miner's figure retained explicitly as
+candidate-only per the drafts' own non-claims. `Unknowns.md` needed no edit — none of the
+three rows' Status or Blocking values changed. Human-directed.
+
+**LT-00x set status after this entry:** LT-001/002/003/004/005/006/007 all now have at
+least a Placeholder or Analogous stub filed; all seven remain Open; none closed. LT-008
+was checked and confirmed not registered (no sidecar, no Resolution Path to expand) —
+correctly not drafted as a stub, since that would be proposing a new unknown rather than
+completing a logged one. Three unauthorized candidate topics were named for a possible
+future LT-008 (unified multi-unit test harness, delay-tolerant contact-window model,
+anti-pattern measurement mechanism) but none adopted — awaiting explicit direction.
+
+---
 ### 2026-10-03 (fifth entry, same day) — Staleness/confusion sweep corrections (Routing, ADP, Repository_Structure, Adm_Scope_Map)
 ChatGPT staleness/confusion sweep findings source-checked by Grok before acting; high/medium items corrected.
 
