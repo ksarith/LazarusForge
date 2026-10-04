@@ -35,7 +35,7 @@ The deepest goal is this:
 Try an existing protocol or adapt the architecture to your environment. Begin with the minimum viable seed or the Site Initialization Checklist.
 
 **Bring evidence.**  
-A failed experiment is useful. A measurement that contradicts the doctrine is especially useful. Log results in [`Tests/Field_Logs.md`](Tests/Field_Logs.md).
+A failed experiment is useful. A measurement that contradicts the doctrine is especially useful. Log results per [`Tests/Field_Logs.md`](Tests/Field_Logs.md)'s submission format (one file per entry under `Tests/Field_Logs/`, as of 2026-10-03).
 
 **Challenge the assumptions.**  
 Find something that shouldn't work. Find a governance failure. Find a hidden assumption. Open an issue.
@@ -51,7 +51,7 @@ You don't need a facility to participate.
 3. Record what you think can be recovered.
 4. Record what you were wrong about.
 5. Estimate the energy and tools required.
-6. Add the result to [`Tests/Field_Logs.md`](Tests/Field_Logs.md).
+6. Add the result as a new file under `Tests/Field_Logs/`, per the format in [`Tests/Field_Logs.md`](Tests/Field_Logs.md).
 
 You have now contributed experimental evidence to the Forge.
 
@@ -143,10 +143,10 @@ Tell us what worked. Tell us what failed. Tell us where the assumptions break.
 | ⭐ Star | This is interesting or useful | GitHub star |
 | 🐛 Issue | Something is wrong | GitHub Issues |
 | 💡 Discussion | I have an idea | GitHub Discussions, or r/InnovativeAIChats |
-| 🔬 Field data | I tried this in the real world | `Tests/Field_Logs.md` — see there for no-GitHub-required submission, or post in r/InnovativeAIChats |
+| 🔬 Field data | I tried this in the real world | `Tests/Field_Logs.md` — see there for the submission format and no-GitHub-required path, or post in r/InnovativeAIChats |
 | 🔧 Improvement | I improved the doctrine or code | See [`CONTRIBUTING.md`](CONTRIBUTING.md) |
 
-Stars, bugs, ideas, evidence, and code changes are separate channels. Real-world observations — including failures — belong in `Tests/Field_Logs.md` and become part of the project's epistemic record when submitted with enough structure to be checked.
+Stars, bugs, ideas, evidence, and code changes are separate channels. Real-world observations — including failures — belong under `Tests/Field_Logs/` (format and submission instructions in `Tests/Field_Logs.md`) and become part of the project's epistemic record when submitted with enough structure to be checked.
 
 ---
 
@@ -320,7 +320,7 @@ Governance is not an add-on. It is the infrastructure that prevents the system f
 
 ### Tests & Evidence
 
-- `Tests/Field_Logs.md` — Primary location for experimental results and failures
+- `Tests/Field_Logs.md` — Submission format, index, and routing; individual experimental results and failures live under `Tests/Field_Logs/`
 - Additional experimental pathways in the `Tests/` directory covering solar, water, biological, pyrolysis, cognitive salvage, and more
 
 ---
