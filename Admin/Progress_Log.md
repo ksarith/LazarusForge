@@ -37,6 +37,33 @@ Created 2026-08-09 to fix a recurring failure mode found the same day, in two pl
 
 *(Most recent first. Rotate to `Archive/Logs/Progress_Log_Changelog.md` once more than five entries accumulate.)*
 
+### 2026-10-03 (tenth entry, same day) — Four Ready-to-Run cards added to `Tests/Field_Logs/` (Lane B ×2, LE-0, MAQT Tier 2)
+ChatGPT/Grok scaffolded procedure cards for the four tracks discussed the same day (Lane B
+Logic-Zero/EL-006, Lane B salvage ID, LE-0 single-candidate run, MAQT Tier 2) plus a folder
+`README.md`. **Caught before merging:** the submitted zip's `Field_Logs.md`, `README.md`,
+`CONTRIBUTING.md`, and `Routing.md` were all built from the pre-restructure baseline, not
+the version delivered three entries above — the submitted `Field_Logs.md` Scope Boundary
+still read "Serve as an append-only intake log... both are valid until a formal index-only
+restructure is applied," unaware that restructure had already landed. Adopting the zip as-is
+would have silently reverted the Field_Logs restructure. Caught by diffing the upload against
+the live tree before merging, not by trusting the delivery summary. Resolution: the four run
+cards and the folder `README.md` were verified independently (source-doctrine citations
+checked against live files — EL-006/Logic-Zero's P3–P5 Provisional Defaults in
+`Operations/Electronics.md`, `Admin/Safety_Protocols.md`'s existence as a file distinct from
+`Security_Protocols.md`, `Admin/Hardware_Diversity_Ladder.md`, and
+`Tests/Multi_Agent_Quorum_Trial.md`'s §8 sections and its cross-reference to
+`Admin/Governance_Migration_Protocol.md` §VII — all confirmed accurate) and merged in
+isolation against the current restructured tree; the stale `Field_Logs.md`/`README.md`/
+`CONTRIBUTING.md`/`Routing.md` from the upload were discarded entirely, not merged. New
+"Ready-to-Run Cards" table added to the live `Field_Logs.md` (distinct from the Index table —
+cards are procedures, not completed entries, and don't get Index rows). All five new files
+registered in `Routing.md` in the same pass. No change to `README.md` or `CONTRIBUTING.md` in
+this entry — nothing in the verified content required touching them. Human-directed; same
+general caution as the earlier same-day `LT004-005_blocking_fix.zip` regression (a different
+upload, same failure class — a zip built from an older base silently reintroducing settled
+content).
+
+---
 ### 2026-10-03 (ninth entry, same day) — `Field_Logs.md` restructured: index + per-entry files under new `Tests/Field_Logs/`
 Design question raised directly: the single shared append-only `Field_Logs.md` file posed a
 real collision risk on the low-friction GitHub web-editor submission path it exists to
@@ -121,22 +148,6 @@ correctly not drafted as a stub, since that would be proposing a new unknown rat
 completing a logged one. Three unauthorized candidate topics were named for a possible
 future LT-008 (unified multi-unit test harness, delay-tolerant contact-window model,
 anti-pattern measurement mechanism) but none adopted — awaiting explicit direction.
-
----
-### 2026-10-03 (fifth entry, same day) — Staleness/confusion sweep corrections (Routing, ADP, Repository_Structure, Adm_Scope_Map)
-ChatGPT staleness/confusion sweep findings source-checked by Grok before acting; high/medium items corrected.
-
-**(1) Routing.md path-count metric.** Scope prose still said “~112”; live Master Routing Map ≈130+ path rows. Hard-coded “~112” removed; replaced with durable wording + 2026-10-03 path-count note. Historical 112 figures elsewhere left as dated history where they describe past verification state.
-
-**(2) Autonomy_Divergence_Protocol.md G5 claim.** Spec Gates field and Resolution Log still presented “112 entries” as if current. Clarified to “112 entries at time of verification (2026-08-11); registry has since grown — see Routing.md path-count note.” ALIASES (18) still current — left unchanged.
-
-**(3) Repository_Structure.md root doctrine.** “Current root files” table listed only README/Discovery/Unknowns; live root and File_Template exemptions also include Routing, CONTRIBUTING, LICENSE, NOTICE. Table expanded to match; drift indicator “exceeds three” updated to “exceeds the documented justified set” so it no longer contradicts File_Template.
-
-**(4) Adm_Scope_Map.md Last Reviewed.** Field was 2026-09-24 while body already contained 2026-09-30 Operational_Conventions registration. Updated to 2026-10-03 with explicit field-meaning note (last substantive map check/modification, not full-folder re-audit).
-
-**(5–6) Follow-up same day after ChatGPT review of this pass:** Charter numbers left unchanged; temporal labels only — GOV-014/GOV-020 “Current … count/scale” → “at integration (…, confirmed 2026-08-20)” so historical measurements are not labeled current. Discovery.md header chronology gap closed — Prior: 2026-09-24 inserted for Metrics_Scaffold / Persistent_Cognition_Candidates (already in maturity snapshot); “gap is not closed” note removed from 2026-09-29 Prior entry. Convention numbering left alone (cosmetic).
-
-Human-directed after source verification of ChatGPT sweep. Rotation: this addition → six Current Lessons → oldest (2026-10-02 Pass 2 review) rotated to changelog same pass (Convention 8).
 
 ---
 Full history, including entries rotated out of the five above, in `Archive/Logs/Progress_Log_Changelog.md`.
