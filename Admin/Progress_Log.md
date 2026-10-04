@@ -37,6 +37,36 @@ Created 2026-08-09 to fix a recurring failure mode found the same day, in two pl
 
 *(Most recent first. Rotate to `Archive/Logs/Progress_Log_Changelog.md` once more than five entries accumulate.)*
 
+### 2026-10-04 (second entry, same day) — `Tests/Admin_Governance_Teardown_POC.md` created: minimality-tier classification of all 33 `Admin/` files
+Direct request to "tear down the repo into minimized components to rebuild into what must
+exist." Clarified scope before starting — a physical-teardown reading already has a home
+(`Architecture/Geck_forge_seed.md`'s G.E.C.K. module list), so this was scoped to `Admin/`
+governance files specifically, which the human named as the actual target and the "a little
+chaotic" subject. All 33 `Admin/` files' own Scope Boundary and Status fields read directly
+before classifying (one combined grep pass, not 33 separate reads) — four files
+(`Adm_Scope_Map.md`, `Agent_Verification_Event.md`, `BATTERY_SEED.md`, `CIR_Gov.md`,
+`Forge_Audit_Kit.md`, `INTEGRITY_SWEEP_PROMPT.md`, `PROBE_INVOCATION.md`) had no standard
+Scope Boundary section, so their actual header content was read directly instead rather than
+skipped or guessed. Four-tier classification (0 constitutional core through 4 tooling/meta)
+applied against an explicit minimality test, not impression. Two concrete findings
+surfaced: `Nothingness_Theorem.md` + `Computational_Institutional_Reasoning.md` + `CIR_Gov.md`
+total 166 KB and are each explicitly non-operational by their own Status fields ("functionless
+by doctrine," "not a ratified governance authority," "Proposed–Not-Ratified") — the cleanest
+consolidation candidate, larger than most Tier 0 files individually; `Governance_Migration_Protocol.md`
+(182 KB, the single largest Admin/ file) appears from its own Scope Boundary to conflate rare-event
+Tier 1 Axiom amendment procedure with common-event Track A/B migration mechanics, a split
+suggested by its own internal structure. A fifth finding worth naming: `Security_Protocols.md`,
+`Repository_Integrity_Protocol.md`, and `Auditor_Protocols.md` all touch "integrity" by name and
+read as possibly redundant from the outside, but their own DOES-NOT sections cleanly hand off to
+each other (timing/classification vs. cryptographic mechanism vs. epistemic foundation/role
+behavior) — confirmed non-overlapping, a genuine non-finding worth having rather than assuming.
+File is strictly observational — proposes no file merges, splits, or deprecations itself; any
+actual restructuring still goes through the same process real changes to these files already
+require. Registered per `Admin/Operational_Conventions.md` Convention 7 (new file needs a
+`*_Scope_Map.md` entry, same session) — added to `Tests/Tst_Scope_Map.md` in the same pass,
+plus `Discovery.md`'s structure tree and creation-history list, plus `Routing.md`. Human-directed.
+
+---
 ### 2026-10-04 — `.gitignore` added; stray `Automation/__pycache__/` bytecode flagged in the 1.19 release zip
 Release zip audit (checked the full tree against the live baseline rather than trusting the
 version bump alone) found byte-for-byte identical content throughout — a clean version bump,
@@ -122,16 +152,6 @@ reviewed spec.
 ---
 ### 2026-10-03 (eighth entry, same day) — LE-0 build-out in `Tests/Leviathan_testing.md` §VIII
 Expanded the LE-0 minimum-experiment definition into a countable bench/tank procedure without selecting architecture or closing unknowns. Added: six-phase run sheet (Setup → Baseline → Constraint conflict → Energy stress → optional §VII Injection → Post-mortem); minimum evidence schema (timestamp, energy/SoC, mode, candidate A|B, layer/plan_id, sensors, decision, reason_code); instrumentation checklist; result-note template; epistemic outcomes (complete / incomplete / candidate stressed / no learning). Explicit gate: ≥1 complete reconstructable run per candidate before LT-003 advances past Placeholder. Cold soak optional if noted on run card. File State Last Audit, LT-003 Last Reviewed, and Resolution Log updated. Status/Spec Gates/Open Unknowns unchanged. Human-directed. Rotation: sixth Current Lessons entry → oldest (Convention 8 addition) rotated to changelog same pass.
-
----
-### 2026-10-03 (seventh entry, same day) — `Forge_Audit_Kit.md` "Current: N open" summary line corrected 8 → 9
-Follow-on to FAK-017 (same-day entry above): the sidecar's prose list of open FAK items had
-already been updated to include FAK-017, but the "Current: N open" summary line one
-paragraph below it still read 8, not 9 — the same desync sub-bug FAK-015 fixed once before
-on this exact file (list updated, summary count not). Caught during review, not by a
-scheduled audit; flagged first, correction applied on explicit request. Line corrected to
-"9 open (FAK-001, FAK-005, FAK-006, FAK-009, FAK-014, FAK-015, FAK-016, FAK-017, and one
-flagged for Canonical_Terms.md...)". No other field touched. Human-directed.
 
 ---
 Full history, including entries rotated out of the five above, in `Archive/Logs/Progress_Log_Changelog.md`.
