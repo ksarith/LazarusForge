@@ -37,6 +37,42 @@ Created 2026-08-09 to fix a recurring failure mode found the same day, in two pl
 
 *(Most recent first. Rotate to `Archive/Logs/Progress_Log_Changelog.md` once more than five entries accumulate.)*
 
+### 2026-10-03 (ninth entry, same day) — `Field_Logs.md` restructured: index + per-entry files under new `Tests/Field_Logs/`
+Design question raised directly: the single shared append-only `Field_Logs.md` file posed a
+real collision risk on the low-friction GitHub web-editor submission path it exists to
+promote — two contributors editing the same file without pulling latest first produces a
+conflicting commit. Grok and Claude independently converged on the same structural fix
+(`Archive/Transcripts/`'s existing one-file-per-entry shape already avoids this), then
+jointly specified it: `Field_Logs.md` stays the Scope Boundary / Submission Format /
+Evidence Classification contract and becomes an **Index**; entries move to one file per
+submission under new `Tests/Field_Logs/`, named `FL-YYYYMMDD-shortslug.md`. Explicitly
+rejected: routing entries into `Archive/Transcripts/` itself — confirmed via direct check
+that `Routing.md` marks everything under `Archive/` as "historical preservation layer...
+not part of the live operational surface," which would mislabel live field evidence as
+archived history. Grok proposed five tightenings before apply, all adopted: (1) Status
+field (`Unreviewed` / `Reviewed — folded into [doctrine]` / `Reviewed — no action`) updated
+in the same edit pass as the doctrine fold, modeled directly on `Operational_Conventions.md`
+Convention 8 — verified the "same session, not as a follow-up" wording before accepting the
+analogy, not taken on trust; (2) Index table kept to five literal columns (ID/Date/Title/
+Status/Path), no free-text notes column, specifically to avoid repeating the exact failure
+`Unknowns.md`'s "Priority (Promo)" column had (three different value types silently mixed
+in one column, caught three separate times this session); (3) new entries registered in
+`Routing.md` in the same pass as acceptance, not deferred; (4) slug collision handled with
+a one-line disambiguator rule; (5) explicit non-goal stated that `Archive/Transcripts/`
+remains AI-session-dump-only. The sole existing Log Entry (GOV-021c, 2026-08-15) migrated
+verbatim as the pilot — `Tests/Field_Logs/FL-20260815-gov021c-independence.md`. Touch list
+applied: `Tests/Field_Logs.md` (reshaped), `README.md` (5 spots, not the originally-counted
+4 — a fifth inventory-list line was found during execution and corrected too), `CONTRIBUTING.md`
+(3 spots, plus one incidental missing-space typo fixed in passing on a line already being
+edited), `Routing.md` (folder + pilot entry registered), `Discovery.md` (structure-tree line
+updated; 2026-08-06 creation-history line left unedited, a new dated note appended after it
+instead, per this repository's own don't-rewrite-settled-history practice). Done while the
+project remains solo-operated, deliberately ahead of the collision risk rather than after a
+second contributor's commit actually conflicts. Human-directed; structural recommendation
+jointly reasoned by Grok and Claude, applied only after the human's explicit go-ahead on the
+reviewed spec.
+
+---
 ### 2026-10-03 (eighth entry, same day) — LE-0 build-out in `Tests/Leviathan_testing.md` §VIII
 Expanded the LE-0 minimum-experiment definition into a countable bench/tank procedure without selecting architecture or closing unknowns. Added: six-phase run sheet (Setup → Baseline → Constraint conflict → Energy stress → optional §VII Injection → Post-mortem); minimum evidence schema (timestamp, energy/SoC, mode, candidate A|B, layer/plan_id, sensors, decision, reason_code); instrumentation checklist; result-note template; epistemic outcomes (complete / incomplete / candidate stressed / no learning). Explicit gate: ≥1 complete reconstructable run per candidate before LT-003 advances past Placeholder. Cold soak optional if noted on run card. File State Last Audit, LT-003 Last Reviewed, and Resolution Log updated. Status/Spec Gates/Open Unknowns unchanged. Human-directed. Rotation: sixth Current Lessons entry → oldest (Convention 8 addition) rotated to changelog same pass.
 
@@ -101,16 +137,6 @@ ChatGPT staleness/confusion sweep findings source-checked by Grok before acting;
 **(5–6) Follow-up same day after ChatGPT review of this pass:** Charter numbers left unchanged; temporal labels only — GOV-014/GOV-020 “Current … count/scale” → “at integration (…, confirmed 2026-08-20)” so historical measurements are not labeled current. Discovery.md header chronology gap closed — Prior: 2026-09-24 inserted for Metrics_Scaffold / Persistent_Cognition_Candidates (already in maturity snapshot); “gap is not closed” note removed from 2026-09-29 Prior entry. Convention numbering left alone (cosmetic).
 
 Human-directed after source verification of ChatGPT sweep. Rotation: this addition → six Current Lessons → oldest (2026-10-02 Pass 2 review) rotated to changelog same pass (Convention 8).
-
----
-### 2026-10-03 (fourth entry, same day) — Convention 8 attribution fix + FAK-017 (Forge_Audit_Kit citation staleness, fifth occurrence)
-Two items from the same self-maintenance checkpoint, both source-verified before acting.
-
-**(1) Convention 8 attribution gap closed.** Claude correctly identified that `Admin/Resolution_Methodology.md` §9 ("Self-Maintenance Verification — Prose and Code") already documents the exact rotation/self-maintenance failure class with richer history than Convention 8 had cited. Convention 8's Source-of-truth line rewritten to point at §9 as the canonical statement; local Progress_Log / Unknowns.md citations retained as supporting. File State Last Audit updated.
-
-**(2) FAK-017 logged — fifth occurrence of Forge_Audit_Kit derivation-citation staleness.** `Admin/Forge_Audit_Kit.md` Derived-from line still read `Unknowns.md` v5.27 while live is v5.57 (30 versions). Same pattern previously logged as FAK-014/015/016. Citation refreshed to v5.57; kit version 1.18→1.19; Open Unknowns 8→9; FAK-017 written into `Archive/Logs/Forge_Audit_Kit_Changelog.md` sidecar; Resolution Log most-recent line updated. Status remains Open — the underlying structural question (citation currency has no automated check) is now five occurrences deep and still unresolved.
-
-Both executed under the stricter "quote every field before flagging" discipline from the methodology calibration earlier this session. Human-directed (continue-with-fixes instruction). Rotation rule checked: this addition makes six Current Lessons entries → oldest (2026-10-02 first-entry sweep review) rotated to `Progress_Log_Changelog.md` in the same pass per Convention 8.
 
 ---
 Full history, including entries rotated out of the five above, in `Archive/Logs/Progress_Log_Changelog.md`.
