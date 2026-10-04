@@ -76,6 +76,12 @@ Note: Status unchanged — Proposed Protocol — Not Yet Run.
 **Does not:** Amend any doctrine; advance GOV-008 or GMP-004; confer merge authority on any agent. Probe text stays with the human operator, not in this file.
 Note: Created 2026-09-21. Operator gives each agent only its own role card from this file — not the full file and not the probe list.
 
+### `Tests/Admin_Governance_Teardown_POC.md`
+**Status:** Exploration · 0/6 (analysis exercise, not a specification) · 0 Open Unknowns · Risk: Low
+**Does:** Classifies all 33 `Admin/` files (as of 2026-10-04) into four minimality tiers (0 constitutional core through 4 tooling/meta) against an explicit test — would a minimal, single-operator POC lose something it can't function without if this file vanished. Classification read directly from each file's own Scope Boundary and Status field, not inferred. Names two concrete findings: the `Nothingness_Theorem.md`/`Computational_Institutional_Reasoning.md`/`CIR_Gov.md` trio (166 KB combined) is explicitly non-operational by its own Status fields and is the cleanest consolidation candidate; `Governance_Migration_Protocol.md` (182 KB, the largest Admin/ file) appears to conflate rare-event amendment procedure with common-event migration mechanics along a seam its own structure already suggests.
+**Does not:** Modify, merge, or deprecate any file — purely observational. Propose specific target filenames or a migration sequence. Assess any folder other than `Admin/`.
+Note: Created 2026-10-04, scoped to `Admin/` after clarifying that a physical-teardown reading (already covered by `Architecture/Geck_forge_seed.md`) was not what was meant.
+
 ### `Tests/Pyrolysis_Cascade.md`
 **Status:** Draft — Exploration · 0/6 (not yet audited) · 8 Open Unknowns (PYC-001-008) · Risk: High (thermal processing of mixed salvage; halogen/hazardous-fraction exposure)
 **Does:** Staged thermal cascade architecture (primary pyrolysis to secondary high-temp reduction with heat integration); candidate material-separation pathways; explicit dependency surface on upstream triage/reduction/hazard/site/energy/scrubber doctrine; test concepts and measurement priorities.
@@ -120,6 +126,10 @@ No corrections were needed in this folder, same as Challenges/ — no stale cros
 
 ## Resolution Log
 
+- 2026-10-04: **`Admin_Governance_Teardown_POC.md` added and indexed** — see its new entry above. A
+  proof-of-concept analysis file, not a domain-content or protocol file like the entries around it;
+  0 Open Unknowns by design, same pattern as `Multi_Agent_Quorum_Trial.md`'s original addition.
+  Human-directed, following a direct request to classify `Admin/`'s 33 files by minimality.
 - 2026-09-18: **`Multi_Agent_Quorum_Trial.md` added and indexed** — see Addendum above. This entry's own summary (Status/Does/Does Not) is written fresh for the new file, not extracted from a pre-existing source the way the original ten were, since the file was created same-day. Human-directed, following a ChatGPT multi-agent-readiness assessment of the three-computer experiment `CONTRIBUTING.md` already names as highest-value.
 - 2026-08-08: **File created — fifth folder in the Scope_Map rollout**,
   following Admin/ (2026-08-07), Architecture/, Operations/, and
