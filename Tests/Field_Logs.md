@@ -162,6 +162,17 @@ Examples of valid combinations: `Submitted` + `Measured`; `Independently replica
 
 **Failed trials are first-class.** A documented failure against real requirements is worth more than an unlabeled success claim. Prefer entries that name the claim tested, conditions, observed outcome, failure mode (if any), implication, and any Unknown affected.
 
+## Ready-to-Run Cards
+
+Procedure cards for the four tracks currently cleared to run — fill while running, file the result as a new `FL-YYYYMMDD-shortslug.md` entry per the Submission Format above. Cards are procedures, not entries, and don't get Index rows themselves.
+
+| Card | Track | Evidence destination |
+|------|-------|----------------------|
+| `Tests/Field_Logs/RUN_CARD-LaneB-LogicZero.md` | Lane B — EL-006 v0 Logic-Zero admission | `FL-YYYYMMDD-logiczero-<mcu-or-board>.md` |
+| `Tests/Field_Logs/RUN_CARD-LaneB-SalvageID.md` | Lane B — Salvage vs. `Chemistry.md`/`Components.md` classes | `FL-YYYYMMDD-salvage-<slug>.md` |
+| `Tests/Field_Logs/RUN_CARD-LE0-Candidate.md` | LT-003 — LE-0 Phase 0–5, Candidate A or B | `FL-YYYYMMDD-le0-candA.md` or `...-candB.md` |
+| `Tests/Field_Logs/RUN_CARD-MAQT-Tier2.md` | MAQT — three physical hosts | `FL-YYYYMMDD-maqt-tier2.md` |
+
 ## Index
 
 *(One row per file in `Tests/Field_Logs/`. Columns: ID, Date, Title, Status, Path — kept minimal and literal; no free-text notes column, so this table can't drift into a second body the way other tables in this repository have.)*
