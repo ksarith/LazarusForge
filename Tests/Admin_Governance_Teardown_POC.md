@@ -11,7 +11,7 @@
 | Spec Gates       | 0/6 — this is an analysis exercise, not a specification              |
 | Open Unknowns    | 0 — this file identifies restructuring candidates, it does not itself resolve any Unknown |
 | Owning Domain    | Tests/ (proof-of-concept / methodology exercise, not physical evidence) |
-| Last Reviewed    | 2026-10-04 — integrated: recompute rule, Tier 2 deferral costs, GMP seam appendix, Tier 3/4 disposition options, link to Adm_Scope_Map load-bearing summary |
+| Last Reviewed    | 2026-10-04 — hypothesis-not-inventory line added to Scope Boundary; "Future experiment (not scheduled)" section added. Prior: recompute rule, Tier 2 deferral costs, GMP seam appendix, Tier 3/4 disposition options, link to Adm_Scope_Map load-bearing summary |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
 ---
@@ -30,6 +30,7 @@
 - Duplicate or override any file's own Scope Boundary. Classifications here are read *from* those Scope Boundaries, not imposed on them.
 - Assess Operations/, Architecture/, Challenges/, or Tests/ content. Scoped to `Admin/` only, per the question that prompted this file.
 - Produce Field_Logs evidence or close any Unknown.
+- Claim a demonstrated capability inventory. Tier assignments are **hypotheses about load-bearing structure**, read from each file's own Scope Boundary and Status field — not evidence that removing a file would actually produce the capability loss the tier implies. No component has been removed and tested. See "Future experiment (not scheduled)" below for what would actually close that gap.
 
 **One-screen summary:** Tier 0–4 counts and navigation framing also live in `Admin/Adm_Scope_Map.md` § Load-bearing map. That section is a summary; **this file is the full table and findings**. If the two disagree, recompute from the classification table below and fix both.
 
@@ -178,6 +179,38 @@ Until then, treat GMP as one Tier 2 file with an internal complexity warning.
 
 ---
 
+## Future experiment (not scheduled)
+
+A later, deliberately bounded version of this exercise could stop classifying documents and
+start testing capability directly: pick one small, checkable skill, run it under progressively
+reduced configurations of `Admin/`, and measure what actually breaks rather than inferring it
+from a file's stated Scope Boundary. This is a candidate for a future Field_Log / LE-0-class
+run design — **not implemented, not scheduled, and not a commitment** — listed here only so a
+later session doesn't have to re-derive the idea from scratch.
+
+**Candidate bounded skill:** "Detect and correct stale repository metadata" (the Routing.md
+path-count and Forge_Audit_Kit.md citation-staleness pattern this session already hit five
+times is a ready-made real example, not a hypothetical one).
+
+**Candidate measurement questions, for whoever designs the actual run:**
+1. Can it detect the problem exists?
+2. Can it locate the authoritative source to check against?
+3. Can it distinguish historical/dated information from current information?
+4. Can it propose a valid correction?
+5. Can it avoid damaging historical evidence while correcting?
+6. Can it detect secondary propagation (the same stale value repeated elsewhere)?
+7. Can it verify its own correction against source, not just assert it?
+8. Can it state what capability was lost when a given component was removed or unavailable?
+
+Run this against the full `Admin/` set first as a baseline, then again under one or more
+reduced configurations (e.g., without `Repository_Integrity_Protocol.md`, or without
+`Operational_Conventions.md`). The result would be a genuine capability-loss measurement —
+"these N questions failed, these M still passed" — rather than another tier label. That
+distinction is the entire point of treating this as a future experiment and not a present
+finding: nothing in this file has been tested that way yet.
+
+---
+
 ## Explicit non-claims
 
 - This file does not claim Tier 2 content is unimportant — only that it's deferrable for a *minimal* day-one POC character, which is a different claim from “safe to ignore during MAQT or physical runs.”
@@ -189,6 +222,28 @@ Until then, treat GMP as one Tier 2 file with an internal complexity warning.
 
 ## Resolution Log
 
+- 2026-10-04 (second integration pass): ChatGPT reviewed the prior state and proposed a
+  Capability 0–4 ladder (self-maintenance → self-model → controlled degradation →
+  self-directed experimentation) framing this file as early capability decomposition.
+  Grok assessed the review and recommended two small, instrument-scale integrations rather
+  than the full ladder. Claude reviewed both, agreed with Grok's scope caution, and flagged
+  one additional precision point not caught by either: ChatGPT's framing of the Tier 1/2
+  arithmetic correction as "a miniature of Capability 1 self-maintenance" overstated what
+  happened — a human-initiated, Grok-drafted recomputation that Claude verified and applied,
+  not autonomous self-correction. That framing was deliberately **not** adopted, specifically
+  because it would have been this file doing the exact thing it warns against two sections
+  later: letting a hypothesis (autonomous self-maintenance) read as a demonstrated capability.
+  Two integrations applied: (1) a "Future experiment (not scheduled)" section naming
+  ChatGPT's 8-question bounded test for "detect and correct stale repository metadata" as an
+  explicitly unimplemented candidate, tied to this session's own real stale-metadata pattern
+  (Routing.md path counts, FAK citation staleness) rather than a hypothetical example;
+  (2) one line added to Scope Boundary's DOES-NOT list stating tier assignments are
+  hypotheses about load-bearing structure, not a demonstrated capability inventory. The
+  FORGE SELF-MODEL diagram and the full Capability 0–4 ladder were explicitly not adopted as
+  file content — named here as considered and declined, so a future session doesn't
+  re-propose them without knowing that choice was already made deliberately. Human-directed.
+
+---
 - 2026-10-04 (integration pass): Added Methodology **recompute rule**; **Deferral costs** table for all Tier 2 files; **Disposition options** for Tier 3/4; **Appendix A** GMP seam sketch; navigation link to `Adm_Scope_Map` load-bearing map; File Purpose note that this is instrument not revolution. No Admin files merged, split, or deleted. Human-directed draft integration.
 
 - 2026-10-04 (same day, follow-on): Finding 3 core-size claim corrected 13 files/~772 KB → **12 files/~857 KB** after Tier 1/2 Totals arithmetic fix (6+6, 527+330).
