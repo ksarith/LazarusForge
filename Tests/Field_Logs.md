@@ -164,7 +164,7 @@ Examples of valid combinations: `Submitted` + `Measured`; `Independently replica
 
 ## Ready-to-Run Cards
 
-Procedure cards for the four tracks currently cleared to run — fill while running, file the result as a new `FL-YYYYMMDD-shortslug.md` entry per the Submission Format above. Cards are procedures, not entries, and don't get Index rows themselves.
+Procedure cards for tracks currently cleared to run — fill while running, file the result as a new `FL-YYYYMMDD-shortslug.md` entry per the Submission Format above. Cards are procedures, not entries, and don't get Index rows themselves.
 
 | Card | Track | Evidence destination |
 |------|-------|----------------------|
@@ -172,6 +172,7 @@ Procedure cards for the four tracks currently cleared to run — fill while runn
 | `Tests/Field_Logs/RUN_CARD-LaneB-SalvageID.md` | Lane B — Salvage vs. `Chemistry.md`/`Components.md` classes | `FL-YYYYMMDD-salvage-<slug>.md` |
 | `Tests/Field_Logs/RUN_CARD-LE0-Candidate.md` | LT-003 — LE-0 Phase 0–5, Candidate A or B | `FL-YYYYMMDD-le0-candA.md` or `...-candB.md` |
 | `Tests/Field_Logs/RUN_CARD-MAQT-Tier2.md` | MAQT — three physical hosts | `FL-YYYYMMDD-maqt-tier2.md` |
+| `Tests/Field_Logs/RUN_CARD-CAP-meta-stale-01.md` | Capability grade — stale metadata (stage ladder 1–8) | `FL-YYYYMMDD-cap-meta-stale-01.md` |
 
 ## Index
 
