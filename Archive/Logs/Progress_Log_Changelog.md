@@ -649,8 +649,38 @@ While retiring `Unknowns.md`'s stale "What vX.X Means" section, found that its "
 
 ---
 
-## Rotated from Progress_Log.md, 2026-10-04 (21 entries, 2026-10-03 run cards through 2026-09-20)
+## Rotated from Progress_Log.md, 2026-10-04 (22 entries, 2026-10-04 POC creation through 2026-09-20)
 
+### 2026-10-04 (second entry, same day) — `Tests/Admin_Governance_Teardown_POC.md` created: minimality-tier classification of all 33 `Admin/` files
+Direct request to "tear down the repo into minimized components to rebuild into what must
+exist." Clarified scope before starting — a physical-teardown reading already has a home
+(`Architecture/Geck_forge_seed.md`'s G.E.C.K. module list), so this was scoped to `Admin/`
+governance files specifically, which the human named as the actual target and the "a little
+chaotic" subject. All 33 `Admin/` files' own Scope Boundary and Status fields read directly
+before classifying (one combined grep pass, not 33 separate reads) — four files
+(`Adm_Scope_Map.md`, `Agent_Verification_Event.md`, `BATTERY_SEED.md`, `CIR_Gov.md`,
+`Forge_Audit_Kit.md`, `INTEGRITY_SWEEP_PROMPT.md`, `PROBE_INVOCATION.md`) had no standard
+Scope Boundary section, so their actual header content was read directly instead rather than
+skipped or guessed. Four-tier classification (0 constitutional core through 4 tooling/meta)
+applied against an explicit minimality test, not impression. Two concrete findings
+surfaced: `Nothingness_Theorem.md` + `Computational_Institutional_Reasoning.md` + `CIR_Gov.md`
+total 166 KB and are each explicitly non-operational by their own Status fields ("functionless
+by doctrine," "not a ratified governance authority," "Proposed–Not-Ratified") — the cleanest
+consolidation candidate, larger than most Tier 0 files individually; `Governance_Migration_Protocol.md`
+(182 KB, the single largest Admin/ file) appears from its own Scope Boundary to conflate rare-event
+Tier 1 Axiom amendment procedure with common-event Track A/B migration mechanics, a split
+suggested by its own internal structure. A fifth finding worth naming: `Security_Protocols.md`,
+`Repository_Integrity_Protocol.md`, and `Auditor_Protocols.md` all touch "integrity" by name and
+read as possibly redundant from the outside, but their own DOES-NOT sections cleanly hand off to
+each other (timing/classification vs. cryptographic mechanism vs. epistemic foundation/role
+behavior) — confirmed non-overlapping, a genuine non-finding worth having rather than assuming.
+File is strictly observational — proposes no file merges, splits, or deprecations itself; any
+actual restructuring still goes through the same process real changes to these files already
+require. Registered per `Admin/Operational_Conventions.md` Convention 7 (new file needs a
+`*_Scope_Map.md` entry, same session) — added to `Tests/Tst_Scope_Map.md` in the same pass,
+plus `Discovery.md`'s structure tree and creation-history list, plus `Routing.md`. Human-directed.
+
+---
 ### 2026-10-03 (tenth entry, same day) — Four Ready-to-Run cards added to `Tests/Field_Logs/` (Lane B ×2, LE-0, MAQT Tier 2)
 ChatGPT/Grok scaffolded procedure cards for the four tracks discussed the same day (Lane B
 Logic-Zero/EL-006, Lane B salvage ID, LE-0 single-candidate run, MAQT Tier 2) plus a folder
