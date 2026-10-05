@@ -37,6 +37,30 @@ Created 2026-08-09 to fix a recurring failure mode found the same day, in two pl
 
 *(Most recent first. Rotate to `Archive/Logs/Progress_Log_Changelog.md` once more than five entries accumulate.)*
 
+### 2026-10-04 (seventh entry, same day) — `RUN_CARD-CAP-meta-stale-01.md` added: stage-ladder run card for the POC's "Future experiment"
+ChatGPT proposed a wider capability-grading methodology (claim-grade, checklist score, stage
+ladder, rubric, ablation delta, minimum-viable-set — methods A through H) and, separately, a
+"mature future self-model" sketch (capability ledger under constraints, rewritten only by
+experiment evidence). Grok and ChatGPT converged on the same restraint already established last
+entry: the methodology discussion and the future-self-model sketch stay conceptual, not filed as
+doctrine — and correctly, neither touched `Tests/Admin_Governance_Teardown_POC.md` at all. What
+was actually drafted and checked: `Tests/Field_Logs/RUN_CARD-CAP-meta-stale-01.md`, a concrete
+run card operationalizing the POC's own "Future experiment (not scheduled)" section — Method C
+(stage ladder, 1-8, stop at first failure) with an optional Method G ablation (Full vs. Reduced
+config, Δ). Verified before merging: the card's EF-0.0 citation ("do not promote UNKNOWN→VERIFIED
+without empirical grounding") checked directly against `Admin/Auditor_Protocols.md` — confirmed
+real, the Epistemic Anchor / Axiom Zero clause. Card correctly cross-references the POC's Future
+experiment section by name rather than restating it, carries its own Explicit non-claims
+("does not close FAK-* items, rewrite Routing counts as doctrine, or prove Admin Tier
+assignments — measures this skill under a named config"), and ends with an explicit guardrail:
+"Do not bulk-retier Admin files from a single run." `Tests/Field_Logs.md` updated in the same
+pass — new row in Ready-to-Run Cards, and "the four tracks" corrected to "tracks" now that a
+fifth card exists (caught, not just copied forward). Registered in `Routing.md`. No file touched:
+`Admin_Governance_Teardown_POC.md`, `Admin/Adm_Scope_Map.md`. This is the first concrete artifact
+produced by two days of capability-framing discussion — still zero runs filed against it.
+Human-directed.
+
+---
 ### 2026-10-04 (sixth entry, same day) — `Admin_Governance_Teardown_POC.md`: "hypothesis not inventory" line + Future Experiment section added, Capability-ladder framing declined
 ChatGPT reviewed the POC and proposed a Capability 0–4 ladder (self-maintenance → self-model →
 controlled degradation → self-directed experimentation), framing the teardown as early capability
@@ -84,36 +108,6 @@ checking the math was initiative, not instruction).
 ---
 ### 2026-10-04 (third entry, same day) — Admin load-bearing map added to `Adm_Scope_Map.md` (POC applied, no teardowns)
 Human directed “Can we do this” on the low-risk follow-on to the Admin Governance Teardown POC: keep the analysis, add a one-screen Tier 0–4 map, **do not** merge/split/delete Admin files. POC package integrated into the 1.19 tree (`Tests/Admin_Governance_Teardown_POC.md` + Discovery/Routing/Tst_Scope_Map/Progress_Log wiring from the POC zip). `Admin/Adm_Scope_Map.md` gained a **Load-bearing map** section summarizing tiers, counts/sizes, and POC findings as pointers only, with an explicit non-action line. Last Reviewed → 2026-10-04. No Unknowns closed; no Spec Gates moved. Rotation: sixth Current Lessons entry → oldest (LE-0 build-out 2026-10-03 eighth) rotated to changelog same pass.
-
----
-### 2026-10-04 (second entry, same day) — `Tests/Admin_Governance_Teardown_POC.md` created: minimality-tier classification of all 33 `Admin/` files
-Direct request to "tear down the repo into minimized components to rebuild into what must
-exist." Clarified scope before starting — a physical-teardown reading already has a home
-(`Architecture/Geck_forge_seed.md`'s G.E.C.K. module list), so this was scoped to `Admin/`
-governance files specifically, which the human named as the actual target and the "a little
-chaotic" subject. All 33 `Admin/` files' own Scope Boundary and Status fields read directly
-before classifying (one combined grep pass, not 33 separate reads) — four files
-(`Adm_Scope_Map.md`, `Agent_Verification_Event.md`, `BATTERY_SEED.md`, `CIR_Gov.md`,
-`Forge_Audit_Kit.md`, `INTEGRITY_SWEEP_PROMPT.md`, `PROBE_INVOCATION.md`) had no standard
-Scope Boundary section, so their actual header content was read directly instead rather than
-skipped or guessed. Four-tier classification (0 constitutional core through 4 tooling/meta)
-applied against an explicit minimality test, not impression. Two concrete findings
-surfaced: `Nothingness_Theorem.md` + `Computational_Institutional_Reasoning.md` + `CIR_Gov.md`
-total 166 KB and are each explicitly non-operational by their own Status fields ("functionless
-by doctrine," "not a ratified governance authority," "Proposed–Not-Ratified") — the cleanest
-consolidation candidate, larger than most Tier 0 files individually; `Governance_Migration_Protocol.md`
-(182 KB, the single largest Admin/ file) appears from its own Scope Boundary to conflate rare-event
-Tier 1 Axiom amendment procedure with common-event Track A/B migration mechanics, a split
-suggested by its own internal structure. A fifth finding worth naming: `Security_Protocols.md`,
-`Repository_Integrity_Protocol.md`, and `Auditor_Protocols.md` all touch "integrity" by name and
-read as possibly redundant from the outside, but their own DOES-NOT sections cleanly hand off to
-each other (timing/classification vs. cryptographic mechanism vs. epistemic foundation/role
-behavior) — confirmed non-overlapping, a genuine non-finding worth having rather than assuming.
-File is strictly observational — proposes no file merges, splits, or deprecations itself; any
-actual restructuring still goes through the same process real changes to these files already
-require. Registered per `Admin/Operational_Conventions.md` Convention 7 (new file needs a
-`*_Scope_Map.md` entry, same session) — added to `Tests/Tst_Scope_Map.md` in the same pass,
-plus `Discovery.md`'s structure tree and creation-history list, plus `Routing.md`. Human-directed.
 
 ---
 Full history, including entries rotated out of the five above, in `Archive/Logs/Progress_Log_Changelog.md`.
