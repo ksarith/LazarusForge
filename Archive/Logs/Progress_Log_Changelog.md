@@ -649,8 +649,35 @@ While retiring `Unknowns.md`'s stale "What vX.X Means" section, found that its "
 
 ---
 
-## Rotated from Progress_Log.md, 2026-10-04 (20 entries, 2026-10-04 .gitignore through 2026-09-20)
+## Rotated from Progress_Log.md, 2026-10-04 (21 entries, 2026-10-03 run cards through 2026-09-20)
 
+### 2026-10-03 (tenth entry, same day) — Four Ready-to-Run cards added to `Tests/Field_Logs/` (Lane B ×2, LE-0, MAQT Tier 2)
+ChatGPT/Grok scaffolded procedure cards for the four tracks discussed the same day (Lane B
+Logic-Zero/EL-006, Lane B salvage ID, LE-0 single-candidate run, MAQT Tier 2) plus a folder
+`README.md`. **Caught before merging:** the submitted zip's `Field_Logs.md`, `README.md`,
+`CONTRIBUTING.md`, and `Routing.md` were all built from the pre-restructure baseline, not
+the version delivered three entries above — the submitted `Field_Logs.md` Scope Boundary
+still read "Serve as an append-only intake log... both are valid until a formal index-only
+restructure is applied," unaware that restructure had already landed. Adopting the zip as-is
+would have silently reverted the Field_Logs restructure. Caught by diffing the upload against
+the live tree before merging, not by trusting the delivery summary. Resolution: the four run
+cards and the folder `README.md` were verified independently (source-doctrine citations
+checked against live files — EL-006/Logic-Zero's P3–P5 Provisional Defaults in
+`Operations/Electronics.md`, `Admin/Safety_Protocols.md`'s existence as a file distinct from
+`Security_Protocols.md`, `Admin/Hardware_Diversity_Ladder.md`, and
+`Tests/Multi_Agent_Quorum_Trial.md`'s §8 sections and its cross-reference to
+`Admin/Governance_Migration_Protocol.md` §VII — all confirmed accurate) and merged in
+isolation against the current restructured tree; the stale `Field_Logs.md`/`README.md`/
+`CONTRIBUTING.md`/`Routing.md` from the upload were discarded entirely, not merged. New
+"Ready-to-Run Cards" table added to the live `Field_Logs.md` (distinct from the Index table —
+cards are procedures, not completed entries, and don't get Index rows). All five new files
+registered in `Routing.md` in the same pass. No change to `README.md` or `CONTRIBUTING.md` in
+this entry — nothing in the verified content required touching them. Human-directed; same
+general caution as the earlier same-day `LT004-005_blocking_fix.zip` regression (a different
+upload, same failure class — a zip built from an older base silently reintroducing settled
+content).
+
+---
 ### 2026-10-04 — `.gitignore` added; stray `Automation/__pycache__/` bytecode flagged in the 1.19 release zip
 Release zip audit (checked the full tree against the live baseline rather than trusting the
 version bump alone) found byte-for-byte identical content throughout — a clean version bump,
