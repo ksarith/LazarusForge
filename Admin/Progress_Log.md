@@ -37,6 +37,28 @@ Created 2026-08-09 to fix a recurring failure mode found the same day, in two pl
 
 *(Most recent first. Rotate to `Archive/Logs/Progress_Log_Changelog.md` once more than five entries accumulate.)*
 
+### 2026-10-04 (sixth entry, same day) — `Admin_Governance_Teardown_POC.md`: "hypothesis not inventory" line + Future Experiment section added, Capability-ladder framing declined
+ChatGPT reviewed the POC and proposed a Capability 0–4 ladder (self-maintenance → self-model →
+controlled degradation → self-directed experimentation), framing the teardown as early capability
+decomposition. Grok assessed it and recommended two small integrations instead of the full ladder.
+Claude agreed with Grok's scope caution and named one additional precision point neither had
+flagged: ChatGPT's description of the earlier Tier 1/2 arithmetic fix as "a miniature of Capability
+1 self-maintenance" overstated what actually happened — a human-initiated, Grok-drafted
+recomputation that Claude verified and applied, not the system autonomously noticing its own error.
+That framing was deliberately not adopted into the file, specifically because adopting it would
+have been the POC doing the exact thing its own non-claims section warns against: letting a
+hypothesis read as demonstrated capability. Two integrations applied instead: (1) new "Future
+experiment (not scheduled)" section naming ChatGPT's 8-question bounded test ("detect and correct
+stale repository metadata") as an explicit, unimplemented candidate — tied to this session's own
+real recurring pattern (Routing.md path-count staleness, five FAK citation-staleness occurrences)
+rather than a hypothetical; (2) one line added to Scope Boundary's DOES-NOT list: tier assignments
+are hypotheses about load-bearing structure, not a demonstrated capability inventory. The FORGE
+SELF-MODEL diagram and full Capability 0–4 ladder were explicitly declined as file content, with
+that decision recorded in the file's own Resolution Log so a future session finds it already
+considered rather than re-proposing it from zero. No Admin files touched, no tier assignment
+changed. Human-directed.
+
+---
 ### 2026-10-04 (fifth entry, same day) — `Admin_Governance_Teardown_POC.md` integration pass (deferral costs, GMP seam, disposition options, recompute rule)
 Revised Exploration POC only — still no Admin merges/splits/deletes. Added: mandatory recompute rule for Totals; Tier 2 deferral-cost table tied to MAQT/LE-0/LT/Safety work; Tier 3/4 disposition options A/B/C (default leave); Appendix A GMP amendment vs Track A/B seam sketch; pointer to Adm_Scope_Map load-bearing summary. Human-directed.
 
@@ -92,33 +114,6 @@ actual restructuring still goes through the same process real changes to these f
 require. Registered per `Admin/Operational_Conventions.md` Convention 7 (new file needs a
 `*_Scope_Map.md` entry, same session) — added to `Tests/Tst_Scope_Map.md` in the same pass,
 plus `Discovery.md`'s structure tree and creation-history list, plus `Routing.md`. Human-directed.
-
----
-### 2026-10-03 (tenth entry, same day) — Four Ready-to-Run cards added to `Tests/Field_Logs/` (Lane B ×2, LE-0, MAQT Tier 2)
-ChatGPT/Grok scaffolded procedure cards for the four tracks discussed the same day (Lane B
-Logic-Zero/EL-006, Lane B salvage ID, LE-0 single-candidate run, MAQT Tier 2) plus a folder
-`README.md`. **Caught before merging:** the submitted zip's `Field_Logs.md`, `README.md`,
-`CONTRIBUTING.md`, and `Routing.md` were all built from the pre-restructure baseline, not
-the version delivered three entries above — the submitted `Field_Logs.md` Scope Boundary
-still read "Serve as an append-only intake log... both are valid until a formal index-only
-restructure is applied," unaware that restructure had already landed. Adopting the zip as-is
-would have silently reverted the Field_Logs restructure. Caught by diffing the upload against
-the live tree before merging, not by trusting the delivery summary. Resolution: the four run
-cards and the folder `README.md` were verified independently (source-doctrine citations
-checked against live files — EL-006/Logic-Zero's P3–P5 Provisional Defaults in
-`Operations/Electronics.md`, `Admin/Safety_Protocols.md`'s existence as a file distinct from
-`Security_Protocols.md`, `Admin/Hardware_Diversity_Ladder.md`, and
-`Tests/Multi_Agent_Quorum_Trial.md`'s §8 sections and its cross-reference to
-`Admin/Governance_Migration_Protocol.md` §VII — all confirmed accurate) and merged in
-isolation against the current restructured tree; the stale `Field_Logs.md`/`README.md`/
-`CONTRIBUTING.md`/`Routing.md` from the upload were discarded entirely, not merged. New
-"Ready-to-Run Cards" table added to the live `Field_Logs.md` (distinct from the Index table —
-cards are procedures, not completed entries, and don't get Index rows). All five new files
-registered in `Routing.md` in the same pass. No change to `README.md` or `CONTRIBUTING.md` in
-this entry — nothing in the verified content required touching them. Human-directed; same
-general caution as the earlier same-day `LT004-005_blocking_fix.zip` regression (a different
-upload, same failure class — a zip built from an older base silently reintroducing settled
-content).
 
 ---
 Full history, including entries rotated out of the five above, in `Archive/Logs/Progress_Log_Changelog.md`.
