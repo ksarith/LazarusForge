@@ -37,6 +37,33 @@ Created 2026-08-09 to fix a recurring failure mode found the same day, in two pl
 
 *(Most recent first. Rotate to `Archive/Logs/Progress_Log_Changelog.md` once more than five entries accumulate.)*
 
+### 2026-10-04 (fifth entry, same day) — `Admin_Governance_Teardown_POC.md` integration pass (deferral costs, GMP seam, disposition options, recompute rule)
+Revised Exploration POC only — still no Admin merges/splits/deletes. Added: mandatory recompute rule for Totals; Tier 2 deferral-cost table tied to MAQT/LE-0/LT/Safety work; Tier 3/4 disposition options A/B/C (default leave); Appendix A GMP amendment vs Track A/B seam sketch; pointer to Adm_Scope_Map load-bearing summary. Human-directed.
+
+---
+### 2026-10-04 (fourth entry, same day) — Tier 1/Tier 2 arithmetic errors in the POC and `Adm_Scope_Map.md`'s Load-bearing map corrected
+Checked the merged `Adm_Scope_Map.md` update against its stated source before accepting it, not
+on description alone: recomputed every tier's file count and KB total directly from
+`Tests/Admin_Governance_Teardown_POC.md`'s own classification table (script-summed, not
+re-eyeballed). Found the POC's original Totals line was wrong on two of five tiers — Tier 1
+stated as 7 files/245 KB, actually 6 files/330 KB; Tier 2 stated as 14 files/653 KB, actually
+15 files/667 KB (Tiers 0, 3, 4 were correct). `Adm_Scope_Map.md`'s new Load-bearing map section
+had inherited both wrong figures from the POC's Totals line rather than re-deriving them from
+the table — including a misleading "(+ related continuity)" qualifier on Tier 1 implying a 7th,
+unnamed file that doesn't exist. Both files corrected: the POC's own Totals line fixed with a
+dated correction note explaining what was wrong and why (likely source: `Operational_Conventions.md`'s
+small size pulling the Tier 1 KB figure down while its row was miscounted toward the total);
+`Adm_Scope_Map.md`'s table row and Last Reviewed field both updated to match, with a pointer
+back to the POC's own correction note rather than restating the explanation twice. No
+classification tier assignment changed for any individual file — this was arithmetic/counting
+only, not a reclassification. Human-directed (upload review, not requested verification —
+checking the math was initiative, not instruction).
+
+---
+### 2026-10-04 (third entry, same day) — Admin load-bearing map added to `Adm_Scope_Map.md` (POC applied, no teardowns)
+Human directed “Can we do this” on the low-risk follow-on to the Admin Governance Teardown POC: keep the analysis, add a one-screen Tier 0–4 map, **do not** merge/split/delete Admin files. POC package integrated into the 1.19 tree (`Tests/Admin_Governance_Teardown_POC.md` + Discovery/Routing/Tst_Scope_Map/Progress_Log wiring from the POC zip). `Admin/Adm_Scope_Map.md` gained a **Load-bearing map** section summarizing tiers, counts/sizes, and POC findings as pointers only, with an explicit non-action line. Last Reviewed → 2026-10-04. No Unknowns closed; no Spec Gates moved. Rotation: sixth Current Lessons entry → oldest (LE-0 build-out 2026-10-03 eighth) rotated to changelog same pass.
+
+---
 ### 2026-10-04 (second entry, same day) — `Tests/Admin_Governance_Teardown_POC.md` created: minimality-tier classification of all 33 `Admin/` files
 Direct request to "tear down the repo into minimized components to rebuild into what must
 exist." Clarified scope before starting — a physical-teardown reading already has a home
@@ -67,26 +94,6 @@ require. Registered per `Admin/Operational_Conventions.md` Convention 7 (new fil
 plus `Discovery.md`'s structure tree and creation-history list, plus `Routing.md`. Human-directed.
 
 ---
-### 2026-10-04 — `.gitignore` added; stray `Automation/__pycache__/` bytecode flagged in the 1.19 release zip
-Release zip audit (checked the full tree against the live baseline rather than trusting the
-version bump alone) found byte-for-byte identical content throughout — a clean version bump,
-no regressions — except three compiled Python bytecode files (`audit_lib`, `AUDIT_HARNESS`,
-`parser`, all `cpython-312`) under a `__pycache__/` directory that had been swept into the
-zip from a local harness run. No `.gitignore` existed anywhere in the repository to prevent
-this from recurring or from actually landing in version control on push. New root
-`.gitignore` added: `__pycache__/`, `*.py[cod]`, common editor/OS artifacts, and a
-not-yet-used `.venv/`/`venv/` line for if `Automation/` ever needs one. Registered in
-`Admin/Repository_Structure.md`'s "Current root files and their justification" table —
-the same table corrected for staleness earlier today — rather than left unregistered, which
-would have immediately recreated the drift class that correction closed. Checked whether
-`Routing.md` or `Discovery.md` needed an entry too: confirmed `Routing.md` already
-explicitly excludes "transient or generated artifacts" and "pure implementation artifacts
-under `Automation/`" by design (its own Scope statement), and `Discovery.md`'s structure
-tree doesn't carry `LICENSE.md`/`NOTICE.md` either — so `.gitignore` correctly gets no entry
-in either, confirmed rather than assumed. Human-directed, prompted by a direct question
-about the zip's cleanliness.
-
----
 ### 2026-10-03 (tenth entry, same day) — Four Ready-to-Run cards added to `Tests/Field_Logs/` (Lane B ×2, LE-0, MAQT Tier 2)
 ChatGPT/Grok scaffolded procedure cards for the four tracks discussed the same day (Lane B
 Logic-Zero/EL-006, Lane B salvage ID, LE-0 single-candidate run, MAQT Tier 2) plus a folder
@@ -112,46 +119,6 @@ this entry — nothing in the verified content required touching them. Human-dir
 general caution as the earlier same-day `LT004-005_blocking_fix.zip` regression (a different
 upload, same failure class — a zip built from an older base silently reintroducing settled
 content).
-
----
-### 2026-10-03 (ninth entry, same day) — `Field_Logs.md` restructured: index + per-entry files under new `Tests/Field_Logs/`
-Design question raised directly: the single shared append-only `Field_Logs.md` file posed a
-real collision risk on the low-friction GitHub web-editor submission path it exists to
-promote — two contributors editing the same file without pulling latest first produces a
-conflicting commit. Grok and Claude independently converged on the same structural fix
-(`Archive/Transcripts/`'s existing one-file-per-entry shape already avoids this), then
-jointly specified it: `Field_Logs.md` stays the Scope Boundary / Submission Format /
-Evidence Classification contract and becomes an **Index**; entries move to one file per
-submission under new `Tests/Field_Logs/`, named `FL-YYYYMMDD-shortslug.md`. Explicitly
-rejected: routing entries into `Archive/Transcripts/` itself — confirmed via direct check
-that `Routing.md` marks everything under `Archive/` as "historical preservation layer...
-not part of the live operational surface," which would mislabel live field evidence as
-archived history. Grok proposed five tightenings before apply, all adopted: (1) Status
-field (`Unreviewed` / `Reviewed — folded into [doctrine]` / `Reviewed — no action`) updated
-in the same edit pass as the doctrine fold, modeled directly on `Operational_Conventions.md`
-Convention 8 — verified the "same session, not as a follow-up" wording before accepting the
-analogy, not taken on trust; (2) Index table kept to five literal columns (ID/Date/Title/
-Status/Path), no free-text notes column, specifically to avoid repeating the exact failure
-`Unknowns.md`'s "Priority (Promo)" column had (three different value types silently mixed
-in one column, caught three separate times this session); (3) new entries registered in
-`Routing.md` in the same pass as acceptance, not deferred; (4) slug collision handled with
-a one-line disambiguator rule; (5) explicit non-goal stated that `Archive/Transcripts/`
-remains AI-session-dump-only. The sole existing Log Entry (GOV-021c, 2026-08-15) migrated
-verbatim as the pilot — `Tests/Field_Logs/FL-20260815-gov021c-independence.md`. Touch list
-applied: `Tests/Field_Logs.md` (reshaped), `README.md` (5 spots, not the originally-counted
-4 — a fifth inventory-list line was found during execution and corrected too), `CONTRIBUTING.md`
-(3 spots, plus one incidental missing-space typo fixed in passing on a line already being
-edited), `Routing.md` (folder + pilot entry registered), `Discovery.md` (structure-tree line
-updated; 2026-08-06 creation-history line left unedited, a new dated note appended after it
-instead, per this repository's own don't-rewrite-settled-history practice). Done while the
-project remains solo-operated, deliberately ahead of the collision risk rather than after a
-second contributor's commit actually conflicts. Human-directed; structural recommendation
-jointly reasoned by Grok and Claude, applied only after the human's explicit go-ahead on the
-reviewed spec.
-
----
-### 2026-10-03 (eighth entry, same day) — LE-0 build-out in `Tests/Leviathan_testing.md` §VIII
-Expanded the LE-0 minimum-experiment definition into a countable bench/tank procedure without selecting architecture or closing unknowns. Added: six-phase run sheet (Setup → Baseline → Constraint conflict → Energy stress → optional §VII Injection → Post-mortem); minimum evidence schema (timestamp, energy/SoC, mode, candidate A|B, layer/plan_id, sensors, decision, reason_code); instrumentation checklist; result-note template; epistemic outcomes (complete / incomplete / candidate stressed / no learning). Explicit gate: ≥1 complete reconstructable run per candidate before LT-003 advances past Placeholder. Cold soak optional if noted on run card. File State Last Audit, LT-003 Last Reviewed, and Resolution Log updated. Status/Spec Gates/Open Unknowns unchanged. Human-directed. Rotation: sixth Current Lessons entry → oldest (Convention 8 addition) rotated to changelog same pass.
 
 ---
 Full history, including entries rotated out of the five above, in `Archive/Logs/Progress_Log_Changelog.md`.

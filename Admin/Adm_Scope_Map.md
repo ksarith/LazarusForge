@@ -11,7 +11,7 @@
 | Spec Gates       | N/A — this file is a cross-reference index, not a specification     |
 | Open Unknowns    | 0 (surfaces existing unknowns from owning files; creates none)      |
 | Owning Domain    | Admin/                                                               |
-| Last Reviewed    | 2026-10-03 — metadata catch-up: body already contained 2026-09-30 Operational_Conventions.md registration; Last Reviewed had remained 2026-09-24. Field meaning for this file: last substantive map check/modification (not a claim of full-folder re-audit of every Admin file). Prior: 2026-09-24 |
+| Last Reviewed    | 2026-10-04 — Load-bearing map (Tier 0–4) added from `Tests/Admin_Governance_Teardown_POC.md`, then Tier 1/Tier 2 file-count and KB figures corrected the same day (inherited two arithmetic errors from the source POC's own Totals line — see that file's Resolution Log). No Admin files merged or deleted. Prior: 2026-10-03 metadata catch-up. Field meaning: last substantive map check/modification, not a full-folder re-audit of every Admin file. |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
 ---
@@ -21,6 +21,28 @@
 Pilot for a per-folder scope-map pattern, proposed 2026-08-07 as a fix for a known prior failure mode: an earlier version of `Discovery.md` (v0.93) tried to hold this same per-file Purpose/In-Scope/Out-of-Scope/Upstream/Downstream detail for the *entire* repository in one file, and outgrew itself. At that version's density (~17-20 lines/file) applied to today's repository size (77 files across six folders), a single combined file would run 1500+ lines on top of everything else `Discovery.md` already carries. This file exists to test whether splitting that same format one-file-per-folder keeps each piece small while preserving the actual payoff: juxtaposing every file's stated scope in one place so gaps between them become visible, the way the old file's "Cross-Module Unknowns — Attention Required" table did.
 
 **This file does NOT** duplicate `Unknowns.md` — open items below point to unknowns already tracked there, not new ones. It does NOT replace each file's own authoritative Scope Boundary section — where this summary and a file's own text conflict, the file wins, same rule `Discovery.md` already states for its Maturity Snapshot.
+
+---
+
+## Load-bearing map (Admin minimality tiers)
+
+*Source: `Tests/Admin_Governance_Teardown_POC.md` (2026-10-04, Exploration). Classification is a **navigation aid** for “what must exist for a minimal governance POC,” not a promotion/demotion of doctrine and not authorization to merge or delete files. Full table and findings live in the POC; this section is the one-screen summary only.*
+
+| Tier | Meaning | Files (count / ~size) |
+|------|---------|------------------------|
+| **0 — Constitutional core** | Axioms, hard floors, structural contract | Charter, Ethical_Constraints, Auditor_Protocols, File_Template, Repository_Structure, Verification_Gates (**6 / ~527 KB**) |
+| **1 — Operational machinery** | Day-to-day audit, naming, continuity | Repository_Integrity_Protocol, Canonical_Terms, Resolution_Methodology, Operational_Conventions, Progress_Log, Agent_Verification_Event (**6 / 330 KB**) |
+| **2 — Specialized / derived** | Real governance, deferrable for *minimal* day-one POC; still needed for named open work (MAQT, safety, identity, etc.) | ADP, GMP, Security, Safety, Environmental, Hardware_Diversity_Ladder, Ship_of_Theseus, Economics, Engineer_Protocols, Trajectories, Metrics_Scaffold, Integrity_Incident_Log, Forge_Audit_Kit, Experiments, Adm_Scope_Map (**15 / 667 KB**) |
+| **3 — Theoretical superstructure** | Identity-bearing theory; files’ own Status say not operational gates | Nothingness_Theorem, Computational_Institutional_Reasoning, CIR_Gov (**3 / ~166 KB**) |
+| **4 — Tooling / meta** | Prompts and seed templates, not doctrine content | BATTERY_SEED, INTEGRITY_SWEEP_PROMPT, PROBE_INVOCATION (**3 / ~30 KB**) |
+
+**POC findings retained as pointers (not executed here):**
+1. Tier 3 is the cleanest *structural* grouping candidate (not a delete list).
+2. `Governance_Migration_Protocol.md` is size-outlier; a future split along amendment vs Track A/B is a candidate only.
+3. Apparent “integrity” overlap (RIP / Security / Auditor_Protocols) is mostly clean hand-off, not duplicate content.
+4. Tier 4 may belong with tooling conceptually (same spirit as Automation/ + Convention 6).
+
+**Explicit non-action:** No Admin file was merged, split, relocated, or deprecated in the 2026-10-04 pass that added this section.
 
 ---
 
