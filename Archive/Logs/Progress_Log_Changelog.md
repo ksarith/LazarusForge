@@ -3,6 +3,15 @@
 Split out 2026-08-09, following the precedent already established by `Unknowns_Changelog.md`, `AUDIT_HARNESS_CHANGELOG.md`, and `Forge_Audit_Kit_Changelog.md`. `Progress_Log.md` keeps the five most recent entries in full; this file holds every entry that's rotated out. No information is removed when an entry rotates — every entry below is preserved verbatim from `Progress_Log.md` at the time it moved.
 
 ---
+### 2026-10-03 (ninth entry, same day) — `Field_Logs.md` restructured: index + per-entry files under new `Tests/Field_Logs/`
+*(Rotated out of Current Lessons 2026-10-04 during POC integration pass.)*
+
+---
+### 2026-10-03 (eighth entry, same day) — LE-0 build-out in `Tests/Leviathan_testing.md` §VIII
+*(Rotated out of Current Lessons 2026-10-04 during Admin load-bearing map pass.)*
+Expanded LE-0 into countable bench/tank procedure (phases 0–5, evidence schema, result note). Status/Spec Gates/Open Unknowns unchanged. Human-directed.
+
+---
 ### 2026-10-03 (third entry, same day) — `Admin/Operational_Conventions.md` Convention 8 added: rotation rules don't self-enforce
 *(Rotated out of Current Lessons 2026-10-03 during LE-0 build-out pass.)*
 Direct follow-on to the two rotation fixes above. The failure pattern (a file states "keep
@@ -640,8 +649,28 @@ While retiring `Unknowns.md`'s stale "What vX.X Means" section, found that its "
 
 ---
 
-## Rotated from Progress_Log.md, 2026-10-04 (19 entries, 2026-10-03 FAK count fix through 2026-09-20)
+## Rotated from Progress_Log.md, 2026-10-04 (20 entries, 2026-10-04 .gitignore through 2026-09-20)
 
+### 2026-10-04 — `.gitignore` added; stray `Automation/__pycache__/` bytecode flagged in the 1.19 release zip
+Release zip audit (checked the full tree against the live baseline rather than trusting the
+version bump alone) found byte-for-byte identical content throughout — a clean version bump,
+no regressions — except three compiled Python bytecode files (`audit_lib`, `AUDIT_HARNESS`,
+`parser`, all `cpython-312`) under a `__pycache__/` directory that had been swept into the
+zip from a local harness run. No `.gitignore` existed anywhere in the repository to prevent
+this from recurring or from actually landing in version control on push. New root
+`.gitignore` added: `__pycache__/`, `*.py[cod]`, common editor/OS artifacts, and a
+not-yet-used `.venv/`/`venv/` line for if `Automation/` ever needs one. Registered in
+`Admin/Repository_Structure.md`'s "Current root files and their justification" table —
+the same table corrected for staleness earlier today — rather than left unregistered, which
+would have immediately recreated the drift class that correction closed. Checked whether
+`Routing.md` or `Discovery.md` needed an entry too: confirmed `Routing.md` already
+explicitly excludes "transient or generated artifacts" and "pure implementation artifacts
+under `Automation/`" by design (its own Scope statement), and `Discovery.md`'s structure
+tree doesn't carry `LICENSE.md`/`NOTICE.md` either — so `.gitignore` correctly gets no entry
+in either, confirmed rather than assumed. Human-directed, prompted by a direct question
+about the zip's cleanliness.
+
+---
 ### 2026-10-03 (seventh entry, same day) — `Forge_Audit_Kit.md` "Current: N open" summary line corrected 8 → 9
 Follow-on to FAK-017 (same-day entry above): the sidecar's prose list of open FAK items had
 already been updated to include FAK-017, but the "Current: N open" summary line one
