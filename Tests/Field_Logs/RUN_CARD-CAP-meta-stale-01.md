@@ -37,23 +37,33 @@ Clear stages **in order**. Stop at first failure. Grade = highest consecutive st
 | **5** | Avoid damaging historical evidence? | No silent rewrite of past-tense / dated closure records | | |
 | **6** | Detect secondary propagation? | Search for the same stale figure elsewhere (or document “none found” with search scope) | | |
 | **7** | Verify correction against source? | Re-check source after edit; record match | | |
-| **8** | State capability loss if a component was withheld? | Only required for **Reduced** config: which stages failed that Full would be expected to pass, in operator judgment — or “N/A — Full config” | | |
 
-**Highest consecutive stage:** ___ / 8  
+**Operational grade (stages 1–7 only):** ___ / 7 consecutive  
 **Config:** Full / Reduced (___)
+
+> **Do not mix stage 8 into the operational ordinal.** Stage 8 is an ablation *assessment*, not an eighth operational skill step. Reporting “8/8 > 7/8” as if Reduced outperformed Full is a metric error — Full correctly marks stage 8 N/A.
+
+### Stage 8 — Ablation assessment (Reduced configs only; not part of /7)
+
+| Field | Fill |
+|-------|------|
+| Stage 8 required? | Yes if Reduced / Secondary-only; **N/A if Full** |
+| Capability loss observed? | None / Partial (list failed operational stages) / Severe |
+| Ablation assessment | Pass (loss statement clear) / Fail (could not state loss) |
+| Load-bearing Δ vs Full on stages 1–7 | e.g. 0 or −N (compare **operational** grades only) |
 
 ---
 
 ## Optional ablation (Method G)
 
-Run the **same** seed fault twice when feasible:
+Run the **same** seed fault twice when feasible. Compare **operational grades only** (/7):
 
-| Run | Config | Highest stage | Δ vs Full |
-|-----|--------|---------------|-----------|
-| A | Full Admin | | baseline |
-| B | Reduced (list files not used) | | stage_B − stage_A |
+| Run | Config | Operational grade (/7) | Ablation assessment (stage 8) | Δ vs Full (/7) |
+|-----|--------|------------------------|-------------------------------|----------------|
+| A | Full Admin | | N/A | baseline |
+| B | Reduced (list files not used) | | Pass/Fail + loss note | operational_B − operational_A |
 
-Large negative Δ → withheld machinery was load-bearing *for this skill* (hypothesis for later teardown work). Small Δ → less load-bearing than tier talk implied.
+Large negative Δ on **/7** → withheld machinery was load-bearing *for this skill*. Small Δ → less load-bearing than tier talk implied. Never rank configs by “/8” scores.
 
 ---
 
@@ -80,7 +90,7 @@ Large negative Δ → withheld machinery was load-bearing *for this skill* (hypo
 - **Config:** Full Admin | Reduced: [files withheld]
 - **Seed fault:**
 - **Authoritative source:**
-- **Stages passed (consecutive):** /8
+- **Operational grade (1–7):** /7 · **Ablation (stage 8):** N/A or Pass/Fail
 - **Ablation:** none | Full stage= _ Reduced stage= _ Δ=
 - **What was attempted:**
 - **What actually happened:**
