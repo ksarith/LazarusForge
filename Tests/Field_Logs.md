@@ -183,6 +183,7 @@ Procedure cards for tracks currently cleared to run — fill while running, file
 
 | ID | Date | Title | Status | Path |
 |----|------|-------|--------|------|
+| FL-20261007-recharacterization-proposal | 2026-10-07 | Public recharacterization proposal/merge (README, CONTRIBUTING, Things_We_Got_Wrong) — framing only | Unreviewed | `Tests/Field_Logs/FL-20261007-recharacterization-proposal.md` |
 | FL-20261006-ave-sample-01 | 2026-10-06 | AVE first batch — 24 scored events, source-survival 21/24=0.875; thresholds remain Placeholder | Reviewed — no action | `Tests/Field_Logs/FL-20261006-ave-sample-01.md` |
 | FL-20261006-cap-meta-stale-03-secondary | 2026-10-06 | CAP-meta-stale-01 Reduced-Secondary — withhold Field_Logs authority; stage 2 fail (Δ large) | Reviewed — folded into `Discovery.md` | `Tests/Field_Logs/FL-20261006-cap-meta-stale-03-secondary.md` |
 | FL-20261006-cap-meta-stale-02 | 2026-10-06 | CAP-meta-stale-01 seed2 — Tst_Scope_Map Field_Logs-empty current-state claims (stages 1–7) | Reviewed — folded into `Tst_Scope_Map.md`, `Discovery.md` | `Tests/Field_Logs/FL-20261006-cap-meta-stale-02.md` |
@@ -191,6 +192,8 @@ Procedure cards for tracks currently cleared to run — fill while running, file
 | FL-20260815-gov021c-independence | 2026-08-15 | Cross-agent independence dimensions exercised live (High-Risk Unknowns tier) — GOV-021c evidence | Reviewed — folded into `Admin/Autonomy_Divergence_Protocol.md` GOV-021c | `Tests/Field_Logs/FL-20260815-gov021c-independence.md` |
 
 ## Resolution Log
+
+- 2026-10-07: **Recharacterization merge** — `FL-20261007-recharacterization-proposal.md` filed; root README/CONTRIBUTING replaced; `Things_We_Got_Wrong.md` added. Index row Unreviewed pending human ratification of public framing.
 
 - 2026-10-07: **MAQT-C1 session packet + results template** added under `Tests/Field_Logs/` (human-directed draft from ChatGPT MAQT-1 assessment; does not execute Cycle 1).
 
