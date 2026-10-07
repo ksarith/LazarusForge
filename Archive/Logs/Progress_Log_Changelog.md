@@ -3,6 +3,10 @@
 Split out 2026-08-09, following the precedent already established by `Unknowns_Changelog.md`, `AUDIT_HARNESS_CHANGELOG.md`, and `Forge_Audit_Kit_Changelog.md`. `Progress_Log.md` keeps the five most recent entries in full; this file holds every entry that's rotated out. No information is removed when an entry rotates — every entry below is preserved verbatim from `Progress_Log.md` at the time it moved.
 
 ---
+### 2026-10-04 (fifth entry, same day) — `Admin_Governance_Teardown_POC.md` integration pass (deferral costs, GMP seam, disposition options, recompute rule)
+*(Rotated 2026-10-07 MAQT packet draft.)*
+
+---
 ### 2026-10-03 (ninth entry, same day) — `Field_Logs.md` restructured: index + per-entry files under new `Tests/Field_Logs/`
 *(Rotated out of Current Lessons 2026-10-04 during POC integration pass.)*
 
