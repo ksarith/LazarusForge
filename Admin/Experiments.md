@@ -33,7 +33,10 @@
 - Linkage between experimental outcomes and Epistemic Ledger entries in owning file sidecars
 - The grounding artifact referenced when a claim is promoted from PROVISIONAL to VERIFIED
 
+**Boundary (2026-10-06):** This file records **physical-world / external-grounding** falsification only. **Process and capability experiments** (CAP-meta-stale, AVE batches, MAQT runs, Candidate memory tests) live under `Tests/Field_Logs/` (and related Tests/ design files). Empty rows *here* do **not** mean “the Forge has run no experiments.”
+
 **This file DOES NOT define:**
+- Process/capability experiment logs (→ `Tests/Field_Logs/`)
 - Operational test system specifications (→ `Tests/Living_Waters.md`, `Tests/Trophic_Forge.md`, `Tests/Solar_Descent.md`)
 - System-level design validation (→ `Admin/Verification_Gates.md`)
 - Unknown tracking or status management (→ `Unknowns.md`)
@@ -53,7 +56,7 @@ Every entry targets a specific PROVISIONAL claim or open unknown in another file
 
 **Relationship to `Admin/Auditor_Protocols.md` §AP-010:** This file is the institutional coupling layer between the epistemic grounding doctrine (EF-0.8b) and the physical test infrastructure in `Tests/`. AP-010 partially resolves when entries in this file establish documented grounding paths to active test harnesses.
 
-**Honest v0 acknowledgment:** At current maturity, no experiments have been run. This file is a governance stub — its structure and field definitions are established so that when physical testing begins, outcomes are recorded in a form the audit system can consume. Do not treat the absence of entries as evidence that all claims are grounded. The absence of entries means grounding has not yet occurred.
+**Honest v0 acknowledgment:** At current maturity, **no physical-grounding experiments have been logged in this file**. It remains a governance stub for physical/sensor/assay/code-against-tool-returns records. Process/capability work (CAP, AVE, MAQT, Candidate runs) is recorded under `Tests/Field_Logs/` — see that tree before concluding “no experiments exist.” Do not treat the absence of entries *here* as evidence that all claims are grounded, nor as evidence that no Forge experiments of any kind have run.
 
 ---
 
@@ -91,7 +94,7 @@ Each experiment occupies one named section. Five fields required. No entry may b
 
 ## Experiments
 
-*No entries yet. File is a governance stub. First entries will be created when physical testing begins on priority unknowns. Candidates for first experiments: CF-001 (hardware watchdog validation), EN-001 (salvaged material safety factors), CE-003 (field polymer identification reliability).*
+*No **physical** entries yet in this file. Process/capability Field_Logs exist under `Tests/Field_Logs/` (e.g. CAP-meta-stale-01, AVE sample 01). First entries **here** when physical testing begins on priority unknowns. Candidates: CF-001 (hardware watchdog), EN-001 (salvaged material safety factors), CE-003 (field polymer identification).*
 
 ---
 
@@ -126,4 +129,5 @@ Each experiment occupies one named section. Five fields required. No entry may b
 
 ## Resolution Log
 
+- 2026-10-06: Boundary clarified — this file = physical grounding only; process/capability experiments → `Tests/Field_Logs/`. Honest acknowledgment and entries note updated so “no experiments” cannot be misread as repo-wide. ChatGPT assessment; human-directed hygiene.
 - 2026-06-21: File created as Admin-layer governance stub. Schema defined. No experiments logged. Identified as partial resolution path for AP-010 (physical test harness coupling to epistemic grounding layer). Three priority candidates for first entries noted in Experiments section.
