@@ -11,7 +11,7 @@
 | Spec Gates       | N/A — this file is a cross-reference index, not a specification     |
 | Open Unknowns    | 0 (surfaces existing unknowns from owning files; creates none)      |
 | Owning Domain    | Tests/                                                               |
-| Last Reviewed    | 2026-09-24                                                           |
+| Last Reviewed    | 2026-10-06 — Field_Logs empty current-state claims corrected (CAP continuation); historical 2026-08-08 finding text retained with dated correction. Prior: 2026-09-24 |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
 ---
@@ -40,7 +40,7 @@ Note: points to `Operations/Leviathan.md` as "planned" — confirmed that file g
 **Status:** Active — Intake · N/A (log, not specification) · 0 Open Unknowns · Risk: N/A
 **Does:** Submission format for real-world test runs (physical fabrication, cross-agent sessions, hardware-diversity trials); append-only intake log, same discipline as `Archive/`.
 **Does not:** Resolve any Unknown or advance Status/Spec Gate/Body Stability on its own — a logged entry is raw evidence, folding it into doctrine is a separate deliberate step. Require a fork, PR, or GitHub account.
-Note: created 2026-08-06, this session. As of this Scope_Map build, its own Log Entries section is still empty — no physical or cross-agent runs have been submitted yet. Worth remembering this file exists and is waiting, not just that it was built.
+Note: created 2026-08-06. **Current (2026-10-06):** no longer empty — index lists multiple entries under `Tests/Field_Logs/` including CAP-meta-stale-01 Full and Reduced runs (`FL-20261006-cap-meta-stale-01.md`, `FL-20261006-cap-meta-stale-01-reduced.md`) and the earlier GOV-021c pilot. Restructured 2026-10-03 to index + per-file entries. *(Prior note from original Scope_Map build said the log was still empty; that described 2026-08-08, not present state.)*
 
 ### `Tests/Hydrologic_Resource_Cascade.md`
 **Status:** Exploration · 0/6 · 2 Formal / 6 Unregistered (HR-003-HR-010 pending sidecar registration) · Risk: High
@@ -114,17 +114,19 @@ Note: Created 2026-10-04, scoped to `Admin/` after clarifying that a physical-te
 
 3. **One real inconsistency in how unknowns are tracked, not in scope content:** `Hydrologic_Resource_Cascade.md` uses "2 Formal / 6 Unregistered" for its Open Unknowns count — the only file in this folder (or any folder scoped so far) with unregistered unknowns sitting in its own sidecar rather than fully mirrored to `Unknowns.md`. Not flagged as an error — every other Tests/ file's sidecar unknowns are fully registered — but worth a decision at some point on whether HR-003 through HR-010 should be formally registered.
 
-4. **`Field_Logs.md`'s actual state is worth restating plainly:** built 2026-08-06, cross-referenced from `CONTRIBUTING.md`, and — as of this build — still empty. The infrastructure exists; nothing has been submitted to it yet. This isn't a gap in the file itself, just a fact worth keeping visible rather than letting "we built the intake system" quietly stand in for "the intake system has been used."
+4. **`Field_Logs.md`'s actual state is worth restating plainly:** built 2026-08-06, cross-referenced from `CONTRIBUTING.md`, and — as of the original 2026-08-08 Scope_Map build — still empty. The infrastructure existed; nothing had been submitted yet. **Correction 2026-10-06 (CAP-meta-stale-01 continuation):** that current-state claim is obsolete — Field_Logs now has filed entries (GOV-021c pilot; CAP-meta-stale-01 Full + Reduced). The *lesson* of finding 4 remains valid: do not let “we built the intake system” stand in for “the intake system has been used”; update the map when usage begins.
 
 5. **No hub pattern as concentrated as Admin/'s Governance_Charter.md or Architecture/'s Facilities.md** — this folder's cross-references spread fairly evenly across `Operations/Energy.md`, `Architecture/Forge_Net.md`, and each other (`Leviathan_testing.md` <-> `Support_Raft.md` is the closest thing to a genuine pair, and both sides' entries already describe the relationship consistently with each other, checked).
 
 No corrections were needed in this folder, same as Challenges/ — no stale cross-references, no missing sections, nothing requiring a fix. Two folders now clean in a row after Operations/'s three corrections.
 
-**Addendum, 2026-09-18:** `Multi_Agent_Quorum_Trial.md` added as an 11th file — not part of the original 2026-08-08 build, so the counts and findings above describe that original ten-file set and are left as the historical record of that pass rather than silently rewritten. The new file is a protocol/test-design document (operationalizing `Admin/Governance_Migration_Protocol.md` §VII's quorum criteria into a runnable three-machine trial), not a domain-content file like the original ten, and has 0 Open Unknowns registered by design (several DECISION NEEDED items are left open in the file itself rather than formally registered). `Field_Logs.md`'s "still empty" status (item 4 above) is unchanged — this file gives Field_Logs.md something concrete to log against, but does not itself constitute a submission.
+**Addendum, 2026-09-18:** `Multi_Agent_Quorum_Trial.md` added as an 11th file — not part of the original 2026-08-08 build, so the counts and findings above describe that original ten-file set and are left as the historical record of that pass rather than silently rewritten. The new file is a protocol/test-design document (operationalizing `Admin/Governance_Migration_Protocol.md` §VII's quorum criteria into a runnable three-machine trial), not a domain-content file like the original ten, and has 0 Open Unknowns registered by design (several DECISION NEEDED items are left open in the file itself rather than formally registered). `Field_Logs.md`'s "still empty" status (item 4) was still accurate on 2026-09-18 — MAQT protocol text is not a Field_Log submission. **Superseded for current state 2026-10-06** when CAP and prior entries were filed; see item 4 correction.
 
 ---
 
 ## Resolution Log
+
+- 2026-10-06: **Current-state correction (CAP-meta-stale-01 continuation):** `Field_Logs.md` notes and finding 4 / 2026-09-18 addendum no longer claim the intake is empty. Historical wording of the 2026-08-08 finding preserved; explicit correction dated. Triggered by live Field_Logs index (CAP Full/Reduced + GOV-021c). Human-directed continue after Reduced ablation.
 
 - 2026-10-04: **`Admin_Governance_Teardown_POC.md` added and indexed** — see its new entry above. A
   proof-of-concept analysis file, not a domain-content or protocol file like the entries around it;

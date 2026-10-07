@@ -180,9 +180,24 @@ Procedure cards for tracks currently cleared to run — fill while running, file
 
 | ID | Date | Title | Status | Path |
 |----|------|-------|--------|------|
+| FL-20261006-ave-sample-01 | 2026-10-06 | AVE first batch — 24 scored events, source-survival 21/24=0.875; thresholds remain Placeholder | Unreviewed | `Tests/Field_Logs/FL-20261006-ave-sample-01.md` |
+| FL-20261006-cap-meta-stale-03-secondary | 2026-10-06 | CAP-meta-stale-01 Reduced-Secondary — withhold Field_Logs authority; stage 2 fail (Δ large) | Unreviewed | `Tests/Field_Logs/FL-20261006-cap-meta-stale-03-secondary.md` |
+| FL-20261006-cap-meta-stale-02 | 2026-10-06 | CAP-meta-stale-01 seed2 — Tst_Scope_Map Field_Logs-empty current-state claims (stages 1–7) | Unreviewed | `Tests/Field_Logs/FL-20261006-cap-meta-stale-02.md` |
+| FL-20261006-cap-meta-stale-01-reduced | 2026-10-06 | CAP-meta-stale-01 Reduced ablation — withhold RIP+OpConventions; stages 1–8, Δ=0 on 1–7 | Unreviewed | `Tests/Field_Logs/FL-20261006-cap-meta-stale-01-reduced.md` |
+| FL-20261006-cap-meta-stale-01 | 2026-10-06 | CAP-meta-stale-01 Full Admin — Routing.md Last-updated header lag vs map body (stages 1–7) | Unreviewed | `Tests/Field_Logs/FL-20261006-cap-meta-stale-01.md` |
 | FL-20260815-gov021c-independence | 2026-08-15 | Cross-agent independence dimensions exercised live (High-Risk Unknowns tier) — GOV-021c evidence | Reviewed — folded into `Admin/Autonomy_Divergence_Protocol.md` GOV-021c | `Tests/Field_Logs/FL-20260815-gov021c-independence.md` |
 
 ## Resolution Log
+
+- 2026-10-06: **AVE sample 01 filed** — `FL-20261006-ave-sample-01.md` (24 scored; survival 0.875; no threshold calibration).
+
+- 2026-10-06: **CAP stronger ablation** — `FL-20261006-cap-meta-stale-03-secondary.md`. Secondary-only config fails stage 2; Discovery history bullet clarified.
+
+- 2026-10-06: **CAP seed2 filed** — `FL-20261006-cap-meta-stale-02.md` (Tst_Scope_Map Field_Logs-empty staleness).
+
+- 2026-10-06: **CAP-meta-stale-01 Reduced ablation filed** — `FL-20261006-cap-meta-stale-01-reduced.md`. Withheld RIP + Operational_Conventions; stages 1–8; no stage 1–7 loss vs Full.
+
+- 2026-10-06: **CAP-meta-stale-01 first run filed** — `FL-20261006-cap-meta-stale-01.md`. Full Admin, stages 1–7/8 (Measured/PROVISIONAL). Seed: Routing.md Last-updated header lag. Index row added.
 
 - 2026-10-03: **Restructured from single-file append-only log to index + per-entry files**, following a Claude/Grok collision-risk review requested after the web-editor submission path was identified as a real conflict risk once more than one contributor is active. `Field_Logs.md` retained as the Scope Boundary / Submission Format / Evidence Classification contract and now an Index into `Tests/Field_Logs/`; entries moved to one file per submission there, named `FL-YYYYMMDD-shortslug.md`. The sole existing Log Entry (GOV-021c, 2026-08-15) migrated verbatim as the pilot — `Tests/Field_Logs/FL-20260815-gov021c-independence.md`. New Status field (`Unreviewed` / `Reviewed — folded into [doctrine]` / `Reviewed — no action`) added to the entry-file template; ownership rule modeled directly on `Admin/Operational_Conventions.md` Convention 8 — whoever folds an entry into doctrine updates both the entry file's Status and this file's index row in the same pass. Explicit non-goal stated: `Archive/Transcripts/` remains for raw AI session dumps only; field/run evidence stays under `Tests/Field_Logs/`, not merged into Transcripts by habit. `README.md`, `CONTRIBUTING.md`, `Routing.md`, and `Discovery.md` references updated in the same pass (see those files' own Resolution Log / Progress_Log entries). Done while the project remains solo-operated, specifically to be ahead of the collision risk rather than discovering it after a second contributor's commit conflicts. Human-directed, Grok-drafted recommendation, Claude-verified against the live tree before applying.
 

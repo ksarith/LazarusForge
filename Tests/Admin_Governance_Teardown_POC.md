@@ -181,6 +181,8 @@ Until then, treat GMP as one Tier 2 file with an internal complexity warning.
 
 ## Future experiment (not scheduled)
 
+**Status 2026-10-06:** Partially exercised — first Full and Reduced CAP-meta-stale-01 runs filed as `Tests/Field_Logs/FL-20261006-cap-meta-stale-01.md` and `FL-20261006-cap-meta-stale-01-reduced.md`. This section remains a design note, not a claim that the full measurement program is complete.
+
 A later, deliberately bounded version of this exercise could stop classifying documents and
 start testing capability directly: pick one small, checkable skill, run it under progressively
 reduced configurations of `Admin/`, and measure what actually breaks rather than inferring it
@@ -221,6 +223,8 @@ finding: nothing in this file has been tested that way yet.
 ---
 
 ## Resolution Log
+
+- 2026-10-06: Future experiment section marked **partially exercised** after CAP-meta-stale-01 Full + Reduced Field_Logs; no Spec Gates advanced; tiers remain hypotheses.
 
 - 2026-10-04 (second integration pass): ChatGPT reviewed the prior state and proposed a
   Capability 0–4 ladder (self-maintenance → self-model → controlled degradation →
