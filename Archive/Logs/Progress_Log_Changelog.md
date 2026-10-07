@@ -649,8 +649,12 @@ While retiring `Unknowns.md`'s stale "What vX.X Means" section, found that its "
 
 ---
 
-## Rotated from Progress_Log.md, 2026-10-04 (22 entries, 2026-10-04 POC creation through 2026-09-20)
+## Rotated from Progress_Log.md, 2026-10-06 (23 entries, 2026-10-04 Adm_Scope_Map through 2026-09-20)
 
+### 2026-10-04 (third entry, same day) — Admin load-bearing map added to `Adm_Scope_Map.md` (POC applied, no teardowns)
+Human directed “Can we do this” on the low-risk follow-on to the Admin Governance Teardown POC: keep the analysis, add a one-screen Tier 0–4 map, **do not** merge/split/delete Admin files. POC package integrated into the 1.19 tree (`Tests/Admin_Governance_Teardown_POC.md` + Discovery/Routing/Tst_Scope_Map/Progress_Log wiring from the POC zip). `Admin/Adm_Scope_Map.md` gained a **Load-bearing map** section summarizing tiers, counts/sizes, and POC findings as pointers only, with an explicit non-action line. Last Reviewed → 2026-10-04. No Unknowns closed; no Spec Gates moved. Rotation: sixth Current Lessons entry → oldest (LE-0 build-out 2026-10-03 eighth) rotated to changelog same pass.
+
+---
 ### 2026-10-04 (second entry, same day) — `Tests/Admin_Governance_Teardown_POC.md` created: minimality-tier classification of all 33 `Admin/` files
 Direct request to "tear down the repo into minimized components to rebuild into what must
 exist." Clarified scope before starting — a physical-teardown reading already has a home
