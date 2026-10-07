@@ -3,15 +3,46 @@
 > *The purpose of the Forge is not to make objects.*  
 > *The purpose of the Forge is to preserve agency.*
 
-Lazarus Forge is an open, salvage-first framework for turning discarded material, broken equipment, local resources, and accumulated knowledge back into useful capability. It is designed for communities that want to recover more value locally, depend less on fragile supply chains, and build systems that become more capable through documented experimentation.
+LazarusForge is a scrappy open-source experiment in building useful, resilient systems from imperfect parts—without assuming the software is telling the truth.
 
-It combines salvage-first engineering, local manufacturing, resilience, experimental testing, and unusually strict epistemic governance.
+It is part workshop, part experiment, part notebook.
 
-The Forge does not optimize for efficiency alone. Efficiency without resilience creates fragile systems. The Forge willingly sacrifices local speed and optimization when doing so increases **recoverability, redundancy, auditability, and graceful degradation.**
+We work with ordinary hardware, open tools, careful records, AI agents that are allowed to be wrong, and a deliberate refusal to hand-wave. The project assumes that software can be wrong, measurements can be misleading, agents can hallucinate, documentation can drift, and our own assumptions can fail. So instead of hiding those failures, we try to expose them, measure them, preserve the evidence, and improve one small step at a time.
 
-The deepest goal is this:
+AI is one of the things we are experimenting with. It is not the reason the project exists.
+
+The deepest goal remains:
 
 > *Build a civilization that forgets more slowly than it learns.*
+
+---
+
+## What this actually looks like
+
+- Old or scavenged hardware when we have it.
+- Markdown files and small Python scripts.
+- Experiments that are allowed to fail.
+- Explicit Unknowns that are not allowed to be buried.
+- Agents that must declare roles and can be caught being wrong.
+- Physical or mechanical checks preferred over software confidence.
+- Everything logged, including the mistakes.
+
+If the machine says one thing and the wire says another, believe the wire.
+
+Three AI sessions on one computer are not three independent witnesses. We are still learning where that distinction actually matters.
+
+---
+
+## What LazarusForge is not
+
+- A commercial AI product
+- A claim that AI agents are trustworthy
+- A finished autonomous system
+- A promise of AGI
+- A polished framework waiting for users
+- A collection of benchmarks designed to make the project look good
+
+It is an ongoing experiment.
 
 ---
 
@@ -40,6 +71,11 @@ A failed experiment is useful. A measurement that contradicts the doctrine is es
 **Challenge the assumptions.**  
 Find something that shouldn't work. Find a governance failure. Find a hidden assumption. Open an issue.
 
+You don't need a server farm. You don't need to understand the entire Forge.  
+Read something. Find something wrong. Try to break an assumption.  
+If you find the experiment interesting, one star is plenty.  
+If you want to go further, bring a machine, a test, an uncomfortable question, or a better idea.
+
 ---
 
 ## Your first Forge experiment
@@ -48,55 +84,20 @@ You don't need a facility to participate.
 
 1. Find one discarded object.
 2. Identify the highest-value function, component, or material it contains.
-3. Record what you think can be recovered.
-4. Record what you were wrong about.
-5. Estimate the energy and tools required.
-6. Add the result as a new file under `Tests/Field_Logs/`, per the format in [`Tests/Field_Logs.md`](Tests/Field_Logs.md).
+3. Record what you think can be recovered and what you actually recover.
+4. Log the result (success or failure) per [`Tests/Field_Logs.md`](Tests/Field_Logs.md).
 
-You have now contributed experimental evidence to the Forge.
+That single cycle is already a real contribution.
 
 ---
 
-## Don't Trust the Forge
+## Things we got wrong
 
-The Forge is designed to be challenged.
-
-If an experiment contradicts an assumption, that is a contribution — not a failure to follow the project.
-
-The repository deliberately records unknowns, failed experiments, disagreement, uncertainty, and unresolved claims.
-
-You do not have to agree with Lazarus Forge to participate in it.  
-In fact, disagreement backed by evidence is one of the most useful forms of participation.
-
-> The most valuable contribution may be a result that proves us wrong.
+We keep a short public record of real mistakes and corrections so the project does not accidentally learn the wrong lesson from them. See [`Things_We_Got_Wrong.md`](Things_We_Got_Wrong.md).
 
 ---
 
-## Current status
-
-**Alpha — active development**
-
-The Forge currently has:
-
-- a defined seven-gate operational architecture (architectural model
-  complete; physical validation is a separate, ongoing question — see below);
-- a formal governance and audit framework;
-- a live registry of unresolved questions;
-- experimental pathways covering material, water, biological, energy, and
-  knowledge recovery;
-- explicit separation between specified doctrine and experimentally
-  validated capability.
-
-**Not yet demonstrated:**
-
-- physical validation of most gates at production scale;
-- energy-independent or net-positive economics;
-- autonomous operation without human oversight;
-- self-replication;
-- any off-world or interstellar capability. These appear in the long-term
-  vision below as a research trajectory, not a current claim.
-
-**What is real right now, at a glance:**
+## Current state (honest orientation)
 
 | Capability | State |
 |---|---|
@@ -110,16 +111,9 @@ The Forge currently has:
 | Self-replication | Not demonstrated |
 | Off-world / interstellar deployment | Research trajectory |
 
-This table is a manual, human-facing orientation — a fast answer to "what's
-actually real." It is distinct from `Automation/integrity_check.py --health`,
-which mechanically checks repository consistency (metadata, cross-references,
-active unknowns) and does not attempt to judge physical readiness; neither
-replaces the other.
+This table is a manual, human-facing orientation — a fast answer to "what's actually real." It is distinct from `Automation/integrity_check.py --health`, which mechanically checks repository consistency (metadata, cross-references, active unknowns) and does not attempt to judge physical readiness; neither replaces the other.
 
-**Important:** much of the system remains experimental. An architectural
-specification is not evidence that the corresponding physical capability
-has been demonstrated. This distinction — specified versus demonstrated —
-is load-bearing throughout the repository, not just in this section.
+**Important:** much of the system remains experimental. An architectural specification is not evidence that the corresponding physical capability has been demonstrated. This distinction — specified versus demonstrated — is load-bearing throughout the repository, not just in this section.
 
 For the detailed development state, see [`Unknowns.md`](Unknowns.md) and [`Discovery.md`](Discovery.md).  
 Primary remaining gaps include long-term constitutional stability (GOV-005), human override authentication (GOV-006), and the operational hardware unknowns tracked in `Unknowns.md`.
@@ -197,163 +191,55 @@ The Forge is recursive. Knowledge is treated with the same conservation laws as 
 [Repair] [Repurpose]                 │  (Continuous Lessons Learned)
 └────┬────┘                         │
      │                              │
-[ Reduction ]                       │
-     │                              │
 [ Fabrication ]                     │
      │                              │
 [ Utilization ] ────────────────────┘
 ```
 
-Every failure, every unknown component, and every kilowatt-hour spent is logged to ensure the system forgets more slowly than it learns. The primary viability metric at every scale:
-
-> **Value recovered per kWh consumed**
-
-Full flow logic is defined in [`Architecture/Forge_flow.md`](Architecture/Forge_flow.md).
+Every cycle feeds knowledge back into the next cycle. Failed experiments are not discarded; they become part of the permanent record.
 
 ---
 
-## Portability — This Repository Is For Everyone
+## Seven Gates
 
-This repository is not for a specific location. It is designed to be forked, initialized, and deployed by any community anywhere in the world.
+Physical material moves through a controlled sequence of decision points. Each gate is a deliberate refusal to destroy value prematurely.
 
-The **Reference Deployment Context (RDC)** provides a climate baseline for files that contain environment-sensitive values. The [`Architecture/Facilities.md`](Architecture/Facilities.md) **Site Initialization Checklist** (Section VII) surfaces every climate and site parameter that needs to be substituted for your deployment context — temperature range, humidity, wind loading, floor type, regulatory environment, primary salvage stream.
+1. **Intake** — Safety screening and material acceptance
+2. **Triage** — Preserve function → assemblies → components → materials → destroy
+3. **Reduction** — Controlled destruction only after higher-value paths are exhausted
+4. **Separation (Mechanical)** — Mechanical separation of mixed streams
+5. **Separation (Thermal)** — Thermal and chemical separation pathways
+6. **Fabrication** — Turning recovered materials and components into new capability
+7. **Utilization** — Deployment, measurement, and feedback into the learning loop
 
-The doctrine is generic. The parameters are yours to supply. A builder in Lagos, Manila, or Reykjavik can run through the checklist and calibrate the entire repository to their local conditions. Nothing in the technical architecture assumes a particular geography, infrastructure level, or supply chain.
-
----
-
-## Long-term vision
-
-The Forge has a deliberately ambitious trajectory — from a local salvage loop to self-replicating and eventually off-world systems.
-
-Those later stages are aspirational thresholds, not current capabilities.
-
-**Each stage must earn the next through evidence.**
-
-| Version | Threshold | Character |
-|---------|-----------|-----------|
-| v0 | Proof of persistence — the loop closes | Terrestrial, bootstrap-friendly, manual oversight |
-| v1 | Energy independence demonstrated | Self-improving workshop; learning loops close |
-| v2 | Self-replication demonstrated | Forge_Net; distributed knowledge; cross-validation |
-| v3 | Autonomous operation demonstrated | Leviathan; harsh environments; sparse resources |
-| v4 | Off-world deployment | Seed systems; minimal bootstrap packages |
-| v5 | Interstellar propagation | Non-conquest expansion of adaptive, ethical fabrication capability |
-
-Skipping versions on either axis is explicitly discouraged. Each threshold must be earned.
-
-Full roadmap and exit conditions in [`Admin/Trajectories.md`](Admin/Trajectories.md).
+Full operational doctrine lives in `Operations/`.
 
 ---
 
-## The Pressures That Shaped This
+## Epistemic Governance
 
-The Forge's architecture is the fossil record of the pressures that shaped it. The **Challenges/** directory is the problem layer — it answers *why* these capabilities exist by anchoring the technical architecture to the real-world conditions it was built to address.
+The Forge treats claims the same way it treats materials: nothing is discarded without accounting, and certainty is not assumed.
 
-Challenges are permanent. Solutions are temporary local answers.
+Core practices include:
 
-**External Challenges** — pressures that exist independent of the Forge:
+- Explicit open Unknowns with a floor (the Unknown Budget)
+- Evidence classification (Measured / Replicated / Simulated / Analogous / Placeholder)
+- Verification gates before claims move from exploration to specification
+- Agents that must declare roles and can be refused
+- Preference for mechanical or physical checks over software confidence
+- Append-only treatment of prior mistakes so the system does not quietly rewrite its own history
 
-- `Challenges/Water.md` — Water scarcity and contamination. Clean water as a human right, not an optional capability. Living Waters initiative: atmospheric moisture recovery, stratification-based remediation, material-positive filtration
-- `Challenges/Biofouling.md` — Biological colonization and corrosion as threats to long-duration autonomous hardware. Ultrasonic disruption, biomimetic surfaces, sacrificial anodes. No toxic antifoulants
-- `Challenges/Waste.md` — Discretionary waste and the erosion of local repair capacity. The Forge as the system that makes self-reliance the path of least resistance
-- `Challenges/Planned_Obsolescence.md` — Sealed enclosures, potted components, locked firmware as deliberate unrepairability. Logic-Zero re-baselining, thermal delamination, standardized geometry upcycling
-- `Challenges/Critical_Minerals.md` — Rare earth and critical mineral supply chain concentration as a structural threat to technological sovereignty. The technosphere as the primary mine. Aggressive urban mining, centrifugal separation, selective induction melting for neodymium, cobalt, lithium, tantalum recovery
-- `Challenges/Energy_Scarcity.md` — Energy poverty, grid fragility, and fossil-fuel dependency as a structural condition the Forge responds to, not merely an operational input it consumes. Distinguished explicitly from `Operations/Energy.md`, which answers how the Forge powers itself — this file answers why energy access is a Forge purpose. Community energy sovereignty objective
+The same corrigibility standard the Forge imposes on agents is applied to the Forge itself.
 
-**Reflexive Challenges** — pressures created by the Forge's own capability:
-
-- `Challenges/Emergence.md` — The only Challenge whose pressure is created by the Forge itself. Capability growth produces new failure modes, new governance demands, and new ethical surface area. The system must remain corrigible under its own success.
-
-**Integration Challenges** — what success looks like when both external and reflexive pressures have been answered:
-
-- `Challenges/Return_To_Eden.md` — The integration target. Closed-loop material and knowledge systems that increase local agency rather than extract it.
-- `Challenges/Closed_Loop_Feedstock.md` — Solution-track counterpart. Operational pathways toward feedstock independence.
-
----
-
-## Repository Map
-
-### Operations (the seven gates)
-
-- `Operations/Gate_01_Intake.md` — Safety screening and material acceptance. Where every physical cycle starts.
-- `Operations/Gate_02_Triage.md` — Decision hierarchy: preserve function → assemblies → components → materials → destroy.
-- `Operations/Gate_03_Reduction.md` — Controlled destruction only after higher-value paths are exhausted. Point-of-no-return doctrine.
-- `Operations/Gate_04_Separation_Mechanical.md` — Mechanical separation of mixed streams.
-- `Operations/Gate_05_Separation_Thermal.md` — Thermal and chemical separation pathways.
-- `Operations/Gate_06_Fabrication.md` — Turning recovered materials and components into new capability.
-- `Operations/Gate_07_Utilization.md` — Deployment, measurement, and feedback into the learning loop.
-
-Supporting operational doctrine:
-
-- `Operations/Energy.md` — How the Forge powers itself
-- `Operations/Electronics.md` — Salvage and recovery of electronic systems
-- `Operations/Plastics.md` — Polymer recovery and processing
-- `Operations/Air_Scrubber.md` — Air quality and filtration systems
-- `Operations/Woodworking.md` — Full timber processing chain
-
-### Architecture
-
-- `Architecture/Forge_flow.md` — Master decision flow and repository-wide vocabulary standard
-- `Architecture/Facilities.md` — Physical environment constraints and Site Initialization Checklist
-- `Architecture/Components.md` — Critical vs. useful component taxonomy
-- `Architecture/Engineering.md` — Physical-world doctrine, first principles, Conservation of Complexity
-- `Architecture/Mechanical_Structures.md` — Structural and kinematic engineering for salvaged-component machinery
-- `Architecture/Thermal_Systems.md` — Thermodynamic laws as operating constraints
-- `Architecture/Friction_Dynamics.md` — Fluid mechanics, aerodynamics, and tribology
-- `Architecture/Chemistry.md` — Corrosion, galvanic series, polymer degradation, battery chemistry
-- `Architecture/Cognitive_Frameworks.md` — How Forge systems think safely under uncertainty
-- `Architecture/Forge_Net.md` — Decentralized network connecting Forge instances
-- `Architecture/Geck_forge_seed.md` — Minimum viable seed for new deployments
-
-### Governance & Philosophy
-
-Governance is not an add-on. It is the infrastructure that prevents the system from drifting into entropy or weaponization.
-
-- `Admin/Governance_Charter.md` — Constitutional governance. Eight Tier 1 Axioms
-- `Admin/Ethical_Constraints.md` — Permission framework and Anti-Weaponization Doctrine
-- `Admin/Auditor_Protocols.md` — Verification, hallucination filter, Epistemic Foundation (EF-0.0–EF-0.8b)
-- `Admin/Computational_Institutional_Reasoning.md` — Verification algebra, epistemic debt dynamics
-- `Admin/Engineer_Protocols.md` — Cognitive and procedural protocols for engineering contributors
-- `Admin/Trajectories.md` — Full roadmap and exit conditions
-- `Unknowns.md` — Live registry of unresolved questions
-- `Discovery.md` — Context core and discovery log
-
-### Tests & Evidence
-
-- `Tests/Field_Logs.md` — Submission format, index, and routing; individual experimental results and failures live under `Tests/Field_Logs/`
-- Additional experimental pathways in the `Tests/` directory covering solar, water, biological, pyrolysis, cognitive salvage, and more
-
----
-
-## Governance Architecture
-
-The repository is treated as a governed knowledge system. The architecture was designed for a specific problem: how do you build a system that remains trustworthy under scale, drift, recursion, and agent succession — without assuming the agents involved will always remain well-intentioned?
-
-The answer is institutional rather than behavioral:
-
-- **Bounded authority** — no agent may plan, execute, and self-authorize the same action
-- **Adversarial review** — no agent's output is trusted without hostile independent review
-- **Provenance requirements** — all claims must trace to verifiable external sources
-- **Visible uncertainty** — unknowns must remain visible, not buried
-- **Amendment procedures** — the system can be corrected through defined paths
-- **Escalation paths** — instability surfaces rather than accumulates silently
-
-The Forge itself is subject to the same corrigibility standard it imposes on the agents operating within it.
+See `Admin/` for the full governance and audit framework.
 
 ---
 
 ## Multi-Agent Development
 
-This project is developed through a structured multi-agent workflow. Different AI systems contribute in defined roles:
+This project is developed through a structured multi-agent workflow. Different AI systems contribute in defined roles (Skeptic, Auditor, Engineer, Synthesizer, and others). All AI contributions are governed by `Admin/Auditor_Protocols.md`. Refusal of a bad premise is a first-class output. Contributions pass through verification gates before promotion.
 
-- **Skeptic/Auditor** — stress-tests claims, surfaces hidden assumptions
-- **Systems/Auditor** — cross-module integration review, dependency mapping, drift detection
-- **Evidence/Auditor** — verification source integrity, confidence label enforcement
-- **Ethical/Auditor** — harm detection, governance erosion detection
-- **Engineer** — translates concepts into operational specifications
-- **Synthesizer** — integrates philosophy, doctrine, and cross-system coherence
-
-All AI contributions are governed by `Admin/Auditor_Protocols.md`. Contributions pass through six verification gates before promotion from exploration to specification. Refusal of a bad premise is a first-class output.
+AI is a tool inside the experiment, not the experiment's purpose.
 
 ---
 
