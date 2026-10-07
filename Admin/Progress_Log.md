@@ -37,6 +37,10 @@ Created 2026-08-09 to fix a recurring failure mode found the same day, in two pl
 
 *(Most recent first. Rotate to `Archive/Logs/Progress_Log_Changelog.md` once more than five entries accumulate.)*
 
+### 2026-10-07 — MAQT-C1 session packet + results template drafted (not executed)
+Human-directed after ChatGPT MAQT assessment. Added `Tests/Field_Logs/MAQT_C1_SESSION_PACKET.md` (operator packet: probes, EC-013 task, role cards, run order) and `RUN_CARD-MAQT-C1-Results.md` (dual score: §VII.3 structural + observed capability dimensions + friction; probe outcome; explicit non-claims). No Cycle 1 run this pass — packet enables logical-isolation or 3-host staffing. Registered in Field_Logs Ready-to-Run + Routing.
+
+---
 ### 2026-10-06 (second entry, same day) — Review pass on all five same-day Field_Log entries
 All five entries filed earlier today moved from `Unreviewed` to a real disposition, closing the
 loop the Status-ownership rule exists for. `FL-ave-sample-01` → **Reviewed — no action**, per
@@ -160,10 +164,6 @@ SELF-MODEL diagram and full Capability 0–4 ladder were explicitly declined as 
 that decision recorded in the file's own Resolution Log so a future session finds it already
 considered rather than re-proposing it from zero. No Admin files touched, no tier assignment
 changed. Human-directed.
-
----
-### 2026-10-04 (fifth entry, same day) — `Admin_Governance_Teardown_POC.md` integration pass (deferral costs, GMP seam, disposition options, recompute rule)
-Revised Exploration POC only — still no Admin merges/splits/deletes. Added: mandatory recompute rule for Totals; Tier 2 deferral-cost table tied to MAQT/LE-0/LT/Safety work; Tier 3/4 disposition options A/B/C (default leave); Appendix A GMP amendment vs Track A/B seam sketch; pointer to Adm_Scope_Map load-bearing summary. Human-directed.
 
 ---
 Full history, including entries rotated out of the five above, in `Archive/Logs/Progress_Log_Changelog.md`.
