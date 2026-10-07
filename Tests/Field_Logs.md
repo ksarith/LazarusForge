@@ -172,7 +172,10 @@ Procedure cards for tracks currently cleared to run — fill while running, file
 | `Tests/Field_Logs/RUN_CARD-LaneB-SalvageID.md` | Lane B — Salvage vs. `Chemistry.md`/`Components.md` classes | `FL-YYYYMMDD-salvage-<slug>.md` |
 | `Tests/Field_Logs/RUN_CARD-LE0-Candidate.md` | LT-003 — LE-0 Phase 0–5, Candidate A or B | `FL-YYYYMMDD-le0-candA.md` or `...-candB.md` |
 | `Tests/Field_Logs/RUN_CARD-MAQT-Tier2.md` | MAQT — three physical hosts | `FL-YYYYMMDD-maqt-tier2.md` |
-| `Tests/Field_Logs/RUN_CARD-CAP-meta-stale-01.md` | Capability grade — stale metadata (stage ladder 1–8) | `FL-YYYYMMDD-cap-meta-stale-01.md` |
+| `Tests/Field_Logs/MAQT_C1_SESSION_PACKET.md` | MAQT Cycle 1 session packet (roles, probes, EC-013 task) | use with results template |
+| `Tests/Field_Logs/RUN_CARD-MAQT-C1-Results.md` | MAQT-1 results template (§VII.3 + capability dimensions + friction) | `FL-YYYYMMDD-maqt-c1-ec013.md` |
+
+| `Tests/Field_Logs/RUN_CARD-CAP-meta-stale-01.md` | Capability grade — stale metadata (operational stages 1–7 + separate ablation assessment) | `FL-YYYYMMDD-cap-meta-stale-01.md` |
 
 ## Index
 
@@ -188,6 +191,8 @@ Procedure cards for tracks currently cleared to run — fill while running, file
 | FL-20260815-gov021c-independence | 2026-08-15 | Cross-agent independence dimensions exercised live (High-Risk Unknowns tier) — GOV-021c evidence | Reviewed — folded into `Admin/Autonomy_Divergence_Protocol.md` GOV-021c | `Tests/Field_Logs/FL-20260815-gov021c-independence.md` |
 
 ## Resolution Log
+
+- 2026-10-07: **MAQT-C1 session packet + results template** added under `Tests/Field_Logs/` (human-directed draft from ChatGPT MAQT-1 assessment; does not execute Cycle 1).
 
 - 2026-10-06: **Review pass on all five same-day entries.** `FL-ave-sample-01` → Reviewed — no
   action, per `Agent_Verification_Event.md`'s own "Where to log" rule (routine batches belong
