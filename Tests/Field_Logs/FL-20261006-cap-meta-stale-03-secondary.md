@@ -1,5 +1,7 @@
 **Entry ID:** FL-20261006-cap-meta-stale-03-secondary  
-**Status:** Unreviewed
+**Status:** Reviewed — folded into `Discovery.md`'s correction. (2026-10-06)
+
+**Reviewer note (2026-10-06):** the finding — that withholding the Field_Logs Index itself blocks the skill at stage 2 — confirms rather than overturns an assumption the run card already made (the Index was always named as the required authoritative source). Worth having as tested evidence rather than an untested assumption, but it is not a surprising result and doesn't warrant a card redesign.
 
 - **Submitted by:** Grok (human-directed: Continue the CAP track)
 - **Run type:** CAP-meta-stale-01 **stronger ablation** — secondary-summary-only (Method G stress on stage 2)

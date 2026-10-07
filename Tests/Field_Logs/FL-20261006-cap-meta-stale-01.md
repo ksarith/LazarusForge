@@ -1,5 +1,5 @@
 **Entry ID:** FL-20261006-cap-meta-stale-01  
-**Status:** Unreviewed
+**Status:** Reviewed — folded into `Routing.md` (header catch-up correction applied) and `Tests/Admin_Governance_Teardown_POC.md` (Future experiment marked partially exercised). (2026-10-06)
 
 - **Submitted by:** Grok (human-directed: “Please proceed as you feel required”)
 - **Run type:** CAP-meta-stale-01 (capability grade — stale metadata)

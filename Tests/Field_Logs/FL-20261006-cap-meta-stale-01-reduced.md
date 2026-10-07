@@ -1,5 +1,7 @@
 **Entry ID:** FL-20261006-cap-meta-stale-01-reduced  
-**Status:** Unreviewed
+**Status:** Reviewed — folded into `Tests/Admin_Governance_Teardown_POC.md` (early evidence note, see Future experiment section) and `RUN_CARD-CAP-meta-stale-01.md` (the metric-design flaw this run exposed). (2026-10-06)
+
+**Reviewer note (2026-10-06):** the "8/8" headline below is this run's actual submitted result and is left unchanged as historical record — but it predates the same-day card correction that split stage 8 into a separate ablation assessment, specifically because an /8 figure invites exactly the "Reduced beat Full" misreading this note exists to prevent. Under the corrected framing, this run's **operational grade is 7/7** (matching Full's 7/7), with a **Pass** ablation assessment (no stage 1–7 capability loss when RIP and Operational_Conventions were withheld). Read the figure below as 7/7 + ablation Pass, not as 8 out of 8.
 
 - **Submitted by:** Grok (human-directed: Run Reduced config ablation)
 - **Run type:** CAP-meta-stale-01 Reduced ablation (Method G)

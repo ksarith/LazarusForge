@@ -1,5 +1,5 @@
 **Entry ID:** FL-20261006-cap-meta-stale-02  
-**Status:** Unreviewed
+**Status:** Reviewed — folded into `Tests/Tst_Scope_Map.md` and `Discovery.md` (both corrected, original 2026-08-08 history preserved verbatim alongside the dated correction). (2026-10-06)
 
 - **Submitted by:** Grok (human-directed: Please continue)
 - **Run type:** CAP-meta-stale-01 (second seed — Full Admin)
