@@ -281,6 +281,7 @@ belong at root:
 | `Routing.md` | Canonical path/URL registry — spans all folders (File_Template root navigation/index surface) |
 | `Unknowns.md` | Cross-module unknowns index — spans all folders |
 | `CONTRIBUTING.md` | Contributor / process entry point (File_Template exemption class) |
+| `Things_We_Got_Wrong.md` | Public evidence-based miss/correction log — salvage discipline on claims (added 2026-10-07 recharacterization; File_Template root navigation/index surface) |
 | `LICENSE.md` | Legal / license surface — repository-wide; registered in Routing.md |
 | `NOTICE.md` | Attribution / notice surface — repository-wide; registered in Routing.md |
 | `.gitignore` | Tooling surface, not documentation — standard Git convention requiring root placement to function; excludes `Automation/`'s generated Python bytecode (`__pycache__/`, `*.pyc`) and common editor/OS artifacts from version control. Added 2026-10-04 after a release zip was found to include compiled bytecode with no `.gitignore` in place to prevent it. |
@@ -509,6 +510,8 @@ recognition; no new action required.
 ---
 
 ### Resolution Log
+
+- 2026-10-07: Root table + placement: `Things_We_Got_Wrong.md` added with Standard-scope recharacterization (public miss log). Human-directed merge.
 
 - 2026-08-09: **RS-002 closed — accepted outlier.** Keep `Forge_flow.md`
   casing. Rename Registry and 2026-06-11 Forge_flow resolution log already

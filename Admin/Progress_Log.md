@@ -37,6 +37,10 @@ Created 2026-08-09 to fix a recurring failure mode found the same day, in two pl
 
 *(Most recent first. Rotate to `Archive/Logs/Progress_Log_Changelog.md` once more than five entries accumulate.)*
 
+### 2026-10-07 — Public recharacterization merged (Standard scope)
+Human-directed merge of proposal package: root `README.md` and `CONTRIBUTING.md` replaced with workshop-first framing; new `Things_We_Got_Wrong.md` seeded from documented CAP/POC/AVE misses only; Field_Log `FL-20261007-recharacterization-proposal.md` filed; Routing + Discovery registration. **No** Admin doctrine, Unknown closures, or Spec Gate changes. Framing only — walk-back = restore prior README/CONTRIBUTING from git history if needed.
+
+---
 ### 2026-10-07 — MAQT-C1 session packet + results template drafted (not executed)
 Human-directed after ChatGPT MAQT assessment. Added `Tests/Field_Logs/MAQT_C1_SESSION_PACKET.md` (operator packet: probes, EC-013 task, role cards, run order) and `RUN_CARD-MAQT-C1-Results.md` (dual score: §VII.3 structural + observed capability dimensions + friction; probe outcome; explicit non-claims). No Cycle 1 run this pass — packet enables logical-isolation or 3-host staffing. Registered in Field_Logs Ready-to-Run + Routing.
 
@@ -142,28 +146,6 @@ fifth card exists (caught, not just copied forward). Registered in `Routing.md`.
 `Admin_Governance_Teardown_POC.md`, `Admin/Adm_Scope_Map.md`. This is the first concrete artifact
 produced by two days of capability-framing discussion — still zero runs filed against it.
 Human-directed.
-
----
-### 2026-10-04 (sixth entry, same day) — `Admin_Governance_Teardown_POC.md`: "hypothesis not inventory" line + Future Experiment section added, Capability-ladder framing declined
-ChatGPT reviewed the POC and proposed a Capability 0–4 ladder (self-maintenance → self-model →
-controlled degradation → self-directed experimentation), framing the teardown as early capability
-decomposition. Grok assessed it and recommended two small integrations instead of the full ladder.
-Claude agreed with Grok's scope caution and named one additional precision point neither had
-flagged: ChatGPT's description of the earlier Tier 1/2 arithmetic fix as "a miniature of Capability
-1 self-maintenance" overstated what actually happened — a human-initiated, Grok-drafted
-recomputation that Claude verified and applied, not the system autonomously noticing its own error.
-That framing was deliberately not adopted into the file, specifically because adopting it would
-have been the POC doing the exact thing its own non-claims section warns against: letting a
-hypothesis read as demonstrated capability. Two integrations applied instead: (1) new "Future
-experiment (not scheduled)" section naming ChatGPT's 8-question bounded test ("detect and correct
-stale repository metadata") as an explicit, unimplemented candidate — tied to this session's own
-real recurring pattern (Routing.md path-count staleness, five FAK citation-staleness occurrences)
-rather than a hypothetical; (2) one line added to Scope Boundary's DOES-NOT list: tier assignments
-are hypotheses about load-bearing structure, not a demonstrated capability inventory. The FORGE
-SELF-MODEL diagram and full Capability 0–4 ladder were explicitly declined as file content, with
-that decision recorded in the file's own Resolution Log so a future session finds it already
-considered rather than re-proposing it from zero. No Admin files touched, no tier assignment
-changed. Human-directed.
 
 ---
 Full history, including entries rotated out of the five above, in `Archive/Logs/Progress_Log_Changelog.md`.
