@@ -649,8 +649,28 @@ While retiring `Unknowns.md`'s stale "What vX.X Means" section, found that its "
 
 ---
 
-## Rotated from Progress_Log.md, 2026-10-06 (23 entries, 2026-10-04 Adm_Scope_Map through 2026-09-20)
+## Rotated from Progress_Log.md, 2026-10-06 (24 entries, 2026-10-04 arithmetic fix through 2026-09-20)
 
+### 2026-10-04 (fourth entry, same day) — Tier 1/Tier 2 arithmetic errors in the POC and `Adm_Scope_Map.md`'s Load-bearing map corrected
+Checked the merged `Adm_Scope_Map.md` update against its stated source before accepting it, not
+on description alone: recomputed every tier's file count and KB total directly from
+`Tests/Admin_Governance_Teardown_POC.md`'s own classification table (script-summed, not
+re-eyeballed). Found the POC's original Totals line was wrong on two of five tiers — Tier 1
+stated as 7 files/245 KB, actually 6 files/330 KB; Tier 2 stated as 14 files/653 KB, actually
+15 files/667 KB (Tiers 0, 3, 4 were correct). `Adm_Scope_Map.md`'s new Load-bearing map section
+had inherited both wrong figures from the POC's Totals line rather than re-deriving them from
+the table — including a misleading "(+ related continuity)" qualifier on Tier 1 implying a 7th,
+unnamed file that doesn't exist. Both files corrected: the POC's own Totals line fixed with a
+dated correction note explaining what was wrong and why (likely source: `Operational_Conventions.md`'s
+small size pulling the Tier 1 KB figure down while its row was miscounted toward the total);
+`Adm_Scope_Map.md`'s table row and Last Reviewed field both updated to match, with a pointer
+back to the POC's own correction note rather than restating the explanation twice. No
+classification tier assignment changed for any individual file — this was arithmetic/counting
+only, not a reclassification. Human-directed (upload review, not requested verification —
+checking the math was initiative, not instruction).
+
+
+---
 ### 2026-10-04 (third entry, same day) — Admin load-bearing map added to `Adm_Scope_Map.md` (POC applied, no teardowns)
 Human directed “Can we do this” on the low-risk follow-on to the Admin Governance Teardown POC: keep the analysis, add a one-screen Tier 0–4 map, **do not** merge/split/delete Admin files. POC package integrated into the 1.19 tree (`Tests/Admin_Governance_Teardown_POC.md` + Discovery/Routing/Tst_Scope_Map/Progress_Log wiring from the POC zip). `Admin/Adm_Scope_Map.md` gained a **Load-bearing map** section summarizing tiers, counts/sizes, and POC findings as pointers only, with an explicit non-action line. Last Reviewed → 2026-10-04. No Unknowns closed; no Spec Gates moved. Rotation: sixth Current Lessons entry → oldest (LE-0 build-out 2026-10-03 eighth) rotated to changelog same pass.
 
