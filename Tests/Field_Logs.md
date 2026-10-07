@@ -180,14 +180,27 @@ Procedure cards for tracks currently cleared to run — fill while running, file
 
 | ID | Date | Title | Status | Path |
 |----|------|-------|--------|------|
-| FL-20261006-ave-sample-01 | 2026-10-06 | AVE first batch — 24 scored events, source-survival 21/24=0.875; thresholds remain Placeholder | Unreviewed | `Tests/Field_Logs/FL-20261006-ave-sample-01.md` |
-| FL-20261006-cap-meta-stale-03-secondary | 2026-10-06 | CAP-meta-stale-01 Reduced-Secondary — withhold Field_Logs authority; stage 2 fail (Δ large) | Unreviewed | `Tests/Field_Logs/FL-20261006-cap-meta-stale-03-secondary.md` |
-| FL-20261006-cap-meta-stale-02 | 2026-10-06 | CAP-meta-stale-01 seed2 — Tst_Scope_Map Field_Logs-empty current-state claims (stages 1–7) | Unreviewed | `Tests/Field_Logs/FL-20261006-cap-meta-stale-02.md` |
-| FL-20261006-cap-meta-stale-01-reduced | 2026-10-06 | CAP-meta-stale-01 Reduced ablation — withhold RIP+OpConventions; stages 1–8, Δ=0 on 1–7 | Unreviewed | `Tests/Field_Logs/FL-20261006-cap-meta-stale-01-reduced.md` |
-| FL-20261006-cap-meta-stale-01 | 2026-10-06 | CAP-meta-stale-01 Full Admin — Routing.md Last-updated header lag vs map body (stages 1–7) | Unreviewed | `Tests/Field_Logs/FL-20261006-cap-meta-stale-01.md` |
+| FL-20261006-ave-sample-01 | 2026-10-06 | AVE first batch — 24 scored events, source-survival 21/24=0.875; thresholds remain Placeholder | Reviewed — no action | `Tests/Field_Logs/FL-20261006-ave-sample-01.md` |
+| FL-20261006-cap-meta-stale-03-secondary | 2026-10-06 | CAP-meta-stale-01 Reduced-Secondary — withhold Field_Logs authority; stage 2 fail (Δ large) | Reviewed — folded into `Discovery.md` | `Tests/Field_Logs/FL-20261006-cap-meta-stale-03-secondary.md` |
+| FL-20261006-cap-meta-stale-02 | 2026-10-06 | CAP-meta-stale-01 seed2 — Tst_Scope_Map Field_Logs-empty current-state claims (stages 1–7) | Reviewed — folded into `Tst_Scope_Map.md`, `Discovery.md` | `Tests/Field_Logs/FL-20261006-cap-meta-stale-02.md` |
+| FL-20261006-cap-meta-stale-01-reduced | 2026-10-06 | CAP-meta-stale-01 Reduced ablation — withhold RIP+OpConventions; 7/7 operational, ablation Pass | Reviewed — folded into POC, run card fix | `Tests/Field_Logs/FL-20261006-cap-meta-stale-01-reduced.md` |
+| FL-20261006-cap-meta-stale-01 | 2026-10-06 | CAP-meta-stale-01 Full Admin — Routing.md Last-updated header lag vs map body (stages 1–7) | Reviewed — folded into `Routing.md`, POC | `Tests/Field_Logs/FL-20261006-cap-meta-stale-01.md` |
 | FL-20260815-gov021c-independence | 2026-08-15 | Cross-agent independence dimensions exercised live (High-Risk Unknowns tier) — GOV-021c evidence | Reviewed — folded into `Admin/Autonomy_Divergence_Protocol.md` GOV-021c | `Tests/Field_Logs/FL-20260815-gov021c-independence.md` |
 
 ## Resolution Log
+
+- 2026-10-06: **Review pass on all five same-day entries.** `FL-ave-sample-01` → Reviewed — no
+  action, per `Agent_Verification_Event.md`'s own "Where to log" rule (routine batches belong
+  here, not in a doctrine edit). The two `cap-meta-stale-01` Full/Reduced entries and the
+  `-02`/`-03-secondary` entries → Reviewed, folded into the corrections they'd already driven
+  (`Routing.md`, `Tst_Scope_Map.md`, `Discovery.md`, the run card's own metric fix). One
+  discrepancy caught and annotated, not silently rewritten: `-01-reduced`'s submitted headline
+  read "8/8," the pre-correction framing the same-day card fix was written to prevent — a
+  Reviewer note was added clarifying the corrected reading (7/7 operational + ablation Pass)
+  without altering the original submitted figure. A short "Early evidence" note was added to
+  `Tests/Admin_Governance_Teardown_POC.md`'s Future experiment section, explicitly scoped to
+  the one skill/seed tested — not a basis for retiering RIP or Operational_Conventions.
+  Human-directed ("Please continue").
 
 - 2026-10-06: **AVE sample 01 filed** — `FL-20261006-ave-sample-01.md` (24 scored; survival 0.875; no threshold calibration).
 

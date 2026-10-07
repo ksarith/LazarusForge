@@ -183,6 +183,8 @@ Until then, treat GMP as one Tier 2 file with an internal complexity warning.
 
 **Status 2026-10-06:** Partially exercised — first Full and Reduced CAP-meta-stale-01 runs filed as `Tests/Field_Logs/FL-20261006-cap-meta-stale-01.md` and `FL-20261006-cap-meta-stale-01-reduced.md`. This section remains a design note, not a claim that the full measurement program is complete.
 
+**Early evidence (2026-10-06, reviewed):** On the one skill tested (stale-metadata detection/correction) and one seed pair, the Reduced run — which withheld `Repository_Integrity_Protocol.md` and `Operational_Conventions.md` — showed **no operational capability loss** (7/7, matching Full). This is a single-run, single-agent, PROVISIONAL result per the entries' own epistemic state, not Replicated, and it says something about *this one skill and seed*, not about RIP or Operational_Conventions generally — both remain Tier 1 in the classification table above, which is about structural role (naming, continuity, audit mechanics for the whole repo), not about whether any one bounded skill happens to need them. A second ablation (`FL-20261006-cap-meta-stale-03-secondary.md`) tested withholding the Field_Logs Index itself instead, and that *did* block the skill at stage 2 — confirming the Index, not RIP/Operational_Conventions, is what this particular skill actually depends on. Treat this as the first real data point toward Finding 1's and Finding 4's claims, not as grounds to revise either.
+
 A later, deliberately bounded version of this exercise could stop classifying documents and
 start testing capability directly: pick one small, checkable skill, run it under progressively
 reduced configurations of `Admin/`, and measure what actually breaks rather than inferring it
@@ -225,6 +227,13 @@ finding: nothing in this file has been tested that way yet.
 ## Resolution Log
 
 - 2026-10-06: Future experiment section marked **partially exercised** after CAP-meta-stale-01 Full + Reduced Field_Logs; no Spec Gates advanced; tiers remain hypotheses.
+
+- 2026-10-06: **"Early evidence" note added** after the Future experiment section's status line,
+  as part of a review pass on the day's six Field_Log entries. Scoped deliberately: states what
+  the Reduced-vs-Full and Reduced-Secondary ablations showed for the one skill/seed tested,
+  explicitly PROVISIONAL and single-run, and explicitly **not** grounds to change either RIP's
+  or `Operational_Conventions.md`'s Tier 1 classification above. No table row, tier, or Totals
+  figure changed by this entry. Human-directed.
 
 - 2026-10-04 (second integration pass): ChatGPT reviewed the prior state and proposed a
   Capability 0–4 ladder (self-maintenance → self-model → controlled degradation →
