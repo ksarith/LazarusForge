@@ -37,6 +37,33 @@ Created 2026-08-09 to fix a recurring failure mode found the same day, in two pl
 
 *(Most recent first. Rotate to `Archive/Logs/Progress_Log_Changelog.md` once more than five entries accumulate.)*
 
+### 2026-10-06 (second entry, same day) — Review pass on all five same-day Field_Log entries
+All five entries filed earlier today moved from `Unreviewed` to a real disposition, closing the
+loop the Status-ownership rule exists for. `FL-ave-sample-01` → **Reviewed — no action**, per
+`Agent_Verification_Event.md`'s own §5 "Where to log" doctrine — a routine batch's correct home
+is Field_Logs itself, no schema edit warranted, matching the entry's own Explicit non-claims.
+`FL-cap-meta-stale-01` and `-02` → **Reviewed — folded**, pointing at the `Routing.md` and
+`Tst_Scope_Map.md`/`Discovery.md` corrections they'd already driven. `FL-cap-meta-stale-03-secondary`
+→ **Reviewed — folded** into the `Discovery.md` correction, with a reviewer note that its finding
+(withholding the Field_Logs Index blocks the skill at stage 2) confirms rather than overturns an
+assumption the run card already made — tested now instead of assumed, not a surprising result.
+
+**`FL-cap-meta-stale-01-reduced` got the closest look**, since this is exactly the entry whose own
+headline ("8/8") uses the pre-correction metric framing the same-day run-card fix exists to
+prevent. Left the original submitted figure untouched — it's the honest historical record of what
+was actually run — and added a Reviewer note clarifying the corrected reading (operational grade
+7/7, matching Full; ablation assessment Pass) directly beneath it, rather than editing the
+original number out of existence.
+
+**One doctrine addition, deliberately narrow:** `Tests/Admin_Governance_Teardown_POC.md`'s Future
+experiment section gained an "Early evidence" note stating what the Reduced ablation showed —
+no operational capability loss when RIP and `Operational_Conventions.md` were withheld, for this
+one skill/seed pair — explicitly flagged PROVISIONAL, single-run, and **not** grounds to change
+either file's Tier 1 classification in the table above. No tier, row, or Totals figure changed.
+`Field_Logs.md`'s Index Status column updated to match all five dispositions; Resolution Log
+entries added to both `Field_Logs.md` and the POC file. Human-directed ("Please continue").
+
+---
 ### 2026-10-06 — First real CAP-meta-stale-01 and AVE runs filed: five new Field_Logs, run card metric bug caught and fixed, Routing.md triplication bug caught and fixed
 The evidence drought named repeatedly over the past two days broke: five new entries filed under
 `Tests/Field_Logs/` — `FL-20261006-cap-meta-stale-01.md` (Full Admin, Routing.md header-lag seed,
@@ -137,25 +164,6 @@ changed. Human-directed.
 ---
 ### 2026-10-04 (fifth entry, same day) — `Admin_Governance_Teardown_POC.md` integration pass (deferral costs, GMP seam, disposition options, recompute rule)
 Revised Exploration POC only — still no Admin merges/splits/deletes. Added: mandatory recompute rule for Totals; Tier 2 deferral-cost table tied to MAQT/LE-0/LT/Safety work; Tier 3/4 disposition options A/B/C (default leave); Appendix A GMP amendment vs Track A/B seam sketch; pointer to Adm_Scope_Map load-bearing summary. Human-directed.
-
----
-### 2026-10-04 (fourth entry, same day) — Tier 1/Tier 2 arithmetic errors in the POC and `Adm_Scope_Map.md`'s Load-bearing map corrected
-Checked the merged `Adm_Scope_Map.md` update against its stated source before accepting it, not
-on description alone: recomputed every tier's file count and KB total directly from
-`Tests/Admin_Governance_Teardown_POC.md`'s own classification table (script-summed, not
-re-eyeballed). Found the POC's original Totals line was wrong on two of five tiers — Tier 1
-stated as 7 files/245 KB, actually 6 files/330 KB; Tier 2 stated as 14 files/653 KB, actually
-15 files/667 KB (Tiers 0, 3, 4 were correct). `Adm_Scope_Map.md`'s new Load-bearing map section
-had inherited both wrong figures from the POC's Totals line rather than re-deriving them from
-the table — including a misleading "(+ related continuity)" qualifier on Tier 1 implying a 7th,
-unnamed file that doesn't exist. Both files corrected: the POC's own Totals line fixed with a
-dated correction note explaining what was wrong and why (likely source: `Operational_Conventions.md`'s
-small size pulling the Tier 1 KB figure down while its row was miscounted toward the total);
-`Adm_Scope_Map.md`'s table row and Last Reviewed field both updated to match, with a pointer
-back to the POC's own correction note rather than restating the explanation twice. No
-classification tier assignment changed for any individual file — this was arithmetic/counting
-only, not a reclassification. Human-directed (upload review, not requested verification —
-checking the math was initiative, not instruction).
 
 ---
 Full history, including entries rotated out of the five above, in `Archive/Logs/Progress_Log_Changelog.md`.
