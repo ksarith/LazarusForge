@@ -1,5 +1,5 @@
 **Entry ID:** FL-20261007-recharacterization-proposal  
-**Status:** Unreviewed — proposal only; no merge to main performed  
+**Status:** Reviewed — accepted and ratified (2026-10-07). `README.md` and `CONTRIBUTING.md` replaced with the revised framing; `Things_We_Got_Wrong.md` adopted in its corrected, verified form (see that file's own "Corrections to this file" section — several "how it was caught" details were sharpened on 2026-10-07 after direct source verification, independent of this proposal's drafting). Human ratification: "I have chosen to ratify. It looks net positive currently."
 
 ### [2026-10-07] — Public-facing recharacterization (Standard scope)
 
