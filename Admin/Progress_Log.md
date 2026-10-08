@@ -37,8 +37,34 @@ Created 2026-08-09 to fix a recurring failure mode found the same day, in two pl
 
 *(Most recent first. Rotate to `Archive/Logs/Progress_Log_Changelog.md` once more than five entries accumulate.)*
 
-### 2026-10-07 — Public recharacterization merged (Standard scope)
-Human-directed merge of proposal package: root `README.md` and `CONTRIBUTING.md` replaced with workshop-first framing; new `Things_We_Got_Wrong.md` seeded from documented CAP/POC/AVE misses only; Field_Log `FL-20261007-recharacterization-proposal.md` filed; Routing + Discovery registration. **No** Admin doctrine, Unknown closures, or Spec Gate changes. Framing only — walk-back = restore prior README/CONTRIBUTING from git history if needed.
+### 2026-10-07 (second entry, same day) — Public recharacterization ratified: README/CONTRIBUTING replaced, `Things_We_Got_Wrong.md` added
+Grok submitted a full `README.md`/`CONTRIBUTING.md` rewrite (shorter, "scrappy workshop" framing
+replacing much of the detailed Repository Map, Governance Architecture, Long-term vision table,
+and Challenges listing) as an explicit proposal — its own `FL-20261007-recharacterization-proposal.md`
+said plainly "no files were written into the live repository tree as authoritative" and listed
+human review as the required next step. The delivered zip didn't match that: it placed the
+rewrite directly at the live `README.md`/`CONTRIBUTING.md` paths rather than at `_REVISED` filenames
+as the proposal itself specified. Flagged this mismatch rather than assuming acceptance; asked the
+human to choose between reviewing it properly, accepting as-is, or leaving the root files
+untouched. **Chosen: accept as-is ("I have chosen to ratify. It looks net positive currently.").**
+
+A separate, standalone `Things_We_Got_Wrong.md` was supplied alongside the zip and named as "the
+fresher one" — compared line-by-line against the zip's bundled version and found to be a genuine
+correction pass, not just a rewrite: more precise about which run found the Routing.md lag "in
+the wild" versus which one re-injected it as a seed, honest that the reviewer on the 8/8 note
+isn't named, and reframed item 4 as staleness rather than an original error. All four corrected
+claims checked directly against source before accepting — `FL-20261006-cap-meta-stale-01.md`
+really does say "Found in the wild"; AVE-013/014 really are annotated "Caught 2026-10-04,"
+dated after the fix; AVE-007 matches; the reviewer note really is unattributed. The standalone
+version — not the bundled one — was adopted as the live file.
+
+**One gap caught before merging:** `Routing.md`'s header claimed both `Things_We_Got_Wrong.md`
+and the new Field_Log entry were "Also registered," but neither actually had a Master Routing
+Map table row — header prose only. Added both rows. Per the proposal's own suggested next steps,
+`FL-20261007-recharacterization-proposal.md`'s Status moved from Unreviewed to Reviewed —
+accepted and ratified, with the ratification quote recorded; `Field_Logs.md`'s Index row updated
+to match. No Admin doctrine, Unknown, or Spec Gate changed — framing and front-door content only.
+Human-directed.
 
 ---
 ### 2026-10-07 — MAQT-C1 session packet + results template drafted (not executed)
