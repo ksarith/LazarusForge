@@ -54,6 +54,8 @@ Sessions forget. Reputation, if any, lives in the **record**.
 | **New key** | Starts **Cooperate-first**: moderate default trust; no special privileges |
 | **Session reset** | Opening a new chat **does not** wipe the key’s window if the same key is declared again |
 
+**Key changes are logged.** If any component of a declared key (`agent_label`, `model_family`, `isolation_mode`) changes within a trial series, the Field_Log must record the change and the reason. An unlogged or unexplained change is treated as continuing the previous key's window, so relabeling does not reset standing.
+
 If the operator cannot honestly declare a stable key (anonymous paste, unknown model), treat as **New key** every time — maximum scrutiny for high-stakes claims, no reputation benefit.
 
 ---
@@ -62,7 +64,7 @@ If the operator cannot honestly declare a stable key (anonymous paste, unknown m
 
 **Cooperate** means: stay in assigned role; cite live sources for checkable claims; do not assert forbidden authorities; do not treat agreement as proof.
 
-**Defection** is recorded only when an **independent** verifier (human or agent ≠ claimant) confirms one of:
+**Defection** is recorded only when a **source check** confirms one of the items below. The check is run by a human or a script. An agent may help by listing what needs checking (for example, extracting its citations), but an agent's judgment is never itself confirmation, and no agent confirms another agent's defection:
 
 | Code | Defection | Typical check |
 |------|-----------|----------------|
@@ -76,6 +78,12 @@ If the operator cannot honestly declare a stable key (anonymous paste, unknown m
 
 Intent is **out of scope**. Fabrication and drift are handled as observable outcomes, not moral labels.
 
+**Where each defection is recorded.** AVE scores claim classes only (Inventory, Quote, Structure), so:
+
+- **D1** maps to an AVE `Fail` on an Inventory, Quote or Structure claim and is scored there.
+- **D5** is an AVE `Fail` if the closure-class claim is itself checkable. Otherwise it is recorded as a process defect.
+- **D2, D3, D4** are recorded as **process defects** in the trial's Field_Log (date, node key, code, the source check that confirmed it). They count toward the node's window for Elevated scrutiny. They do **not** enter AVE source-survival numerics.
+
 ---
 
 ## 3. Tit-for-tat on scrutiny (not punishment)
@@ -88,10 +96,12 @@ Pattern: **cooperate first → verified defection raises scrutiny → forgive af
 | **Elevated scrutiny** | After ≥1 verified D\* in window | That key’s Inventory/Quote/Structure claims require **independent source confirmation** before they count toward trial success or any reliability relief; claims from that key **alone** do not satisfy “independent review” |
 | **Restored** | Forgiveness rule met | Return to Default |
 
+**Extension of AVE R1/R2, not a parallel mechanism.** AVE R1 (mandatory source-check below a survival-rate threshold) and R2 (in-session quarantine) stay authoritative. This code adds two things only: persistence across sessions through the node key, and the forgiveness rule below. If R1 and Elevated scrutiny disagree, the stricter requirement applies. Elevated scrutiny never relaxes an R1 trigger, and a key in Elevated scrutiny is not eligible for R3 sampling relief.
+
 **Forgiveness (forgiving tit-for-tat):** restore Default after **either**:
 
 - A clean AVE sub-window (e.g. ≥5 consecutive Pass on scored events for that key with zero D\* / Fail), **or**
-- Operator-declared cooldown after documented correction (Field_Log note) — for noisy one-offs
+- Operator-declared cooldown after documented correction, for noisy one-offs. This is a **human waiver**, and it takes effect only with a Field_Log note naming the key, the defection, the correction and the operator who declared it. A cooldown without the note has no effect. Waivers are counted in the time-in-Elevated statistics so they stay visible.
 
 **Proportionality:** D3 / Closure-class contamination may keep Elevated scrutiny longer than a single minor D1 that was immediately corrected. Exact durations stay **Placeholder** until MAQT/AVE frequencies exist.
 
@@ -150,9 +160,11 @@ Only then calibrate forgiveness windows and whether Default trust should differ 
 | QCC-R2 | How to key agents when model string is hidden or routed |
 | QCC-R3 | Whether Elevated scrutiny should be visible in public Field_Logs or operator-only |
 | QCC-R4 | Interaction with single-agent CAP runs (same code vs MAQT-only) |
+| QCC-R5 | Reconciling the D-count trigger with AVE R1's survival-rate threshold numerics once real frequencies exist |
 
 ---
 
 ## Resolution Log
 
 - 2026-10-08: **Proposal drafted (Placeholder, unregistered).** Human-directed after discussion of tit-for-tat on the AVE reliability track: persistent node key, checkable defections only, scrutiny not punishment, forgiving restoration, no governance-weight coupling. Complements MAQT Cycle 1 packet and AVE; does not execute a trial or amend §VII.
+- 2026-10-08: **Revised after review (still Placeholder, unregistered).** (1) Stated that this code extends AVE R1/R2 and set a conflict rule (stricter applies; no R3 relief while Elevated). (2) Defections are confirmed only by a source check (human or script); agents do not confirm other agents. (3) Key changes within a series must be logged; unexplained relabeling continues the prior window. (4) Added the recording path for D1–D5 (AVE vs process defect). (5) Cooldown waivers require a Field_Log note and are counted. Added QCC-R5.
