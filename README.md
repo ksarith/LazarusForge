@@ -3,7 +3,7 @@
 > *The purpose of the Forge is not to make objects.*  
 > *The purpose of the Forge is to preserve agency.*
 
-LazarusForge is a scrappy open-source experiment in building useful, resilient systems from imperfect parts—without assuming the software is telling the truth.
+Lazarus Forge is a scrappy open-source experiment in building useful, resilient systems from imperfect parts—without assuming the software is telling the truth.
 
 It is part workshop, part experiment, part notebook.
 
@@ -33,7 +33,7 @@ Three AI sessions on one computer are not three independent witnesses. We are st
 
 ---
 
-## What LazarusForge is not
+## What Lazarus Forge is not
 
 - A commercial AI product
 - A claim that AI agents are trustworthy
@@ -141,6 +141,12 @@ Tell us what worked. Tell us what failed. Tell us where the assumptions break.
 | 🔧 Improvement | I improved the doctrine or code | See [`CONTRIBUTING.md`](CONTRIBUTING.md) |
 
 Stars, bugs, ideas, evidence, and code changes are separate channels. Real-world observations — including failures — belong under `Tests/Field_Logs/` (format and submission instructions in `Tests/Field_Logs.md`) and become part of the project's epistemic record when submitted with enough structure to be checked.
+
+---
+
+## Under the hood
+
+Everything above is the workshop. What follows is the machinery the workshop built to keep itself honest: the doctrine behind salvage-first design, the governance and evidence rules, the multi-agent process, and the longer-term vision. You don't need any of it to run an experiment or file a Field Log. It is here for when you want to know why the rules are the way they are.
 
 ---
 
