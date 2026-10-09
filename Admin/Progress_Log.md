@@ -37,6 +37,23 @@ Created 2026-08-09 to fix a recurring failure mode found the same day, in two pl
 
 *(Most recent first. Rotate to `Archive/Logs/Progress_Log_Changelog.md` once more than five entries accumulate.)*
 
+### 2026-10-09 (second entry, same day) — Conduct-protocol audit runs recorded; QCC-R7 added; seeded-audit method trialed
+Documented in `Tests/Field_Logs/FL-20261009-protocol-audit-runs.md` (index row and Routing row added). Audit 1
+(Grok, drafter-entangled, live file): no defects found, with an over-claiming sign-off ("pending cross-agent
+audit complete," a maturity promotion, a wrong truth-basis label). Three Gemini runs on a copy with planted
+faults (key held outside the repository): the first invalid (zip unreadable), the second invalid (acted out a
+full MAQT Cycle 1 trial; the pack had included the task and probe files, since removed), the third valid —
+caught 1 of 3 faults, missing the most consequential and misreading one planted sentence. Its design objections became QCC-R7 (human-confirmation bottleneck vs the Human Interaction
+Point Doctrine) and an extension of QCC-R5 (split between AVE scores and Field_Log process defects). The
+protocol's rules are unchanged.
+
+Lessons: a clean report from an entangled auditor with nothing planted has no detection value; audit-pack
+contents steer behavior (task files invited a role breach); one run per auditor is a data point, not
+calibration. Open: three candidate defect records (G2 role breach, G2 false multi-family claim, G3 stray
+citation) await human source-check confirmation. `FL-20261008-maqt-matrix-preregistration-proposal.md` is
+still unratified and unregistered. Rotated the 2026-10-06 first-runs entry to the changelog. Human-directed.
+
+---
 ### 2026-10-09 — `Tests/Quorum_Agent_Conduct_Protocol.md` ratified (trial scope) and registered; 2026-10-08 follow-ups logged
 Human ratified the agent-conduct proposal ("I would like to ratify the Quorum_Agent_Conduct_Protocol_PROPOSAL.md.
 It should be needed components and the approach should be mostly correct. We should run an audit on it.").
@@ -122,58 +139,6 @@ one skill/seed pair — explicitly flagged PROVISIONAL, single-run, and **not** 
 either file's Tier 1 classification in the table above. No tier, row, or Totals figure changed.
 `Field_Logs.md`'s Index Status column updated to match all five dispositions; Resolution Log
 entries added to both `Field_Logs.md` and the POC file. Human-directed ("Please continue").
-
----
-### 2026-10-06 — First real CAP-meta-stale-01 and AVE runs filed: five new Field_Logs, run card metric bug caught and fixed, Routing.md triplication bug caught and fixed
-The evidence drought named repeatedly over the past two days broke: five new entries filed under
-`Tests/Field_Logs/` — `FL-20261006-cap-meta-stale-01.md` (Full Admin, Routing.md header-lag seed,
-7/8), `FL-20261006-cap-meta-stale-01-reduced.md` (Reduced, withheld RIP+Operational_Conventions,
-no stage 1-7 loss), `FL-20261006-cap-meta-stale-02.md` (Full, second real seed — Tst_Scope_Map's
-stale "Field_Logs still empty" claim), `FL-20261006-cap-meta-stale-03-secondary.md` (stronger
-ablation — withheld the Field_Logs Index itself, correctly fails at stage 2), and
-`FL-20261006-ave-sample-01.md` (first AVE batch, 24 scored events, 21/24 = 0.875 source-survival,
-thresholds explicitly kept Placeholder per the schema's own R1/R3 rules). Total: six real entries
-now exist, up from one.
-
-**Verified before accepting, not taken on the delivery summary:** both seed faults checked against
-the actual pre-edit live state — `Routing.md` line 3 really did say "Last updated: 2026-09-30"
-while the map body already listed later paths; `Tests/Tst_Scope_Map.md` really did say Field_Logs
-"is still empty as of this build." AVE arithmetic (21/24) confirmed correct.
-
-**Two real bugs caught in review, both fixed:**
-1. **Routing.md registration triplication.** Each of the five new files had been registered
-   three times (the header catch-up note duplicated across three insertion points), not once.
-   Caught by grep count, not by eye. Rebuilt cleanly from the live baseline: header fixed once,
-   each file's table row added exactly once. Final state: each filename appears twice total (one
-   table row + one mention in the header's own prose summary) — confirmed correct, not residual
-   duplication.
-2. **RUN_CARD-CAP-meta-stale-01.md's own metric design flaw**, caught through actual use: the
-   original card scored stage 8 (an ablation-only assessment) as part of the same /8 ordinal as
-   operational stages 1-7, which let "Reduced 8/8" read as outperforming "Full 7/8" when the two
-   aren't comparable — Full correctly marks stage 8 N/A. Card corrected to an operational grade
-   (/7) plus a separate stage-8 ablation assessment table, with an explicit warning against mixing
-   them. This is exactly the kind of flaw a real pilot run is supposed to surface, and it worked.
-
-**One inconsistency flagged, not silently fixed:** `FL-20261006-cap-meta-stale-01-reduced.md`'s own
-headline still reads "Stages passed (consecutive): 8/8" — the pre-correction framing the card fix
-was specifically written to prevent. Left as-is rather than rewritten, since it's the actual
-historical record of what was submitted under the card's prior version, and its `Status:
-Unreviewed` field is precisely the mechanism meant to catch this before anything gets folded into
-doctrine — exactly the Status-ownership discipline this file's own restructure established.
-
-**Supporting doctrine touches, all verified clean:** `Admin/Experiments.md` — new boundary note
-clarifying it covers physical-grounding falsification only, process/capability work lives in
-`Tests/Field_Logs/`, so empty rows there don't imply no Forge experiments exist anywhere.
-`Discovery.md` and `Tests/Tst_Scope_Map.md` — both corrected current-state claims about Field_Logs'
-emptiness with proper dated parenthetical clarifications, original 2026-08-08 history preserved
-verbatim rather than rewritten. `Tests/Admin_Governance_Teardown_POC.md` — one small status line
-marking the Future experiment section "partially exercised," explicitly not claiming the
-measurement program is complete; still no Capability ladder or self-model diagram added, per the
-2026-10-04 decision. `Tests/Field_Logs.md` — five new Index rows, five new Resolution Log entries,
-clean, no duplication.
-
-All six Field_Log entries remain `Status: Unreviewed` — none folded into doctrine yet, no Unknown
-closed, no Admin file retiered. Human-directed ("Please proceed" / "Please continue").
 
 ---
 Full history, including entries rotated out of the five above, in `Archive/Logs/Progress_Log_Changelog.md`.
