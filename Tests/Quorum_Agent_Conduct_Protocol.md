@@ -2,7 +2,7 @@
 
 | Field            | Value |
 |------------------|-------|
-| Status           | **Ratified (human, 2026-10-09), trial scope** — numeric thresholds remain Placeholder; cross-agent audit pending |
+| Status           | **Ratified (human, 2026-10-09), trial scope** — numeric thresholds remain Placeholder; audit runs recorded in `Tests/Field_Logs/FL-20261009-protocol-audit-runs.md` |
 | Body Stability   | Volatile |
 | Spec Gates       | 0/6 (protocol, not spec — ratification here does not advance any Spec Gate) |
 | Owner            | Human governing authority — process complement to MAQT + AVE |
@@ -15,7 +15,7 @@
 - **Not changed by this ratification:** `Admin/Governance_Migration_Protocol.md` §VII, GOV-008, merge authority, governance weight, any Unknown or Spec Gate. No agent is authorized to merge to `main` or to alter governance weight by this file.
 - **Numbers:** every numeric value (k, streak length, hold durations) stays **Placeholder** until observed frequencies exist (§6).
 - **Dependencies:** this file builds on `Admin/Agent_Verification_Event.md` (Candidate schema) and `Tests/Multi_Agent_Quorum_Trial.md` (Proposed protocol). Ratifying this file does **not** ratify either of them. If AVE §3 or R1–R4 change, the mappings here must be updated.
-- **Audit:** a single-agent source check was done before ratification (see Resolution Log). A cross-agent audit is still pending and is not replaced by it.
+- **Audit:** a single-agent source check was done before ratification. Two cross-agent audits are recorded in `Tests/Field_Logs/FL-20261009-protocol-audit-runs.md`: one by a drafter-entangled auditor (no defects found) and one independent run on a copy with planted faults (caught 1 of 3). They do not substitute for trial data.
 
 ---
 
@@ -177,8 +177,9 @@ Only then calibrate forgiveness windows and whether Default trust should differ 
 | QCC-R2 | How to key agents when model string is hidden or routed |
 | QCC-R3 | Whether Elevated scrutiny should be visible in public Field_Logs or operator-only |
 | QCC-R4 | Interaction with single-agent CAP runs (same code vs MAQT-only) |
-| QCC-R5 | Reconciling the D-count trigger with AVE R1's survival-rate threshold numerics once real frequencies exist |
+| QCC-R5 | Reconciling the D-count trigger with AVE R1's survival-rate threshold numerics once real frequencies exist; and the split between AVE scores (D1, D6, checkable D5) and Field_Log process defects (D2–D4), so a node cannot show clean AVE numbers while under Elevated scrutiny without that being visible in one place (raised by the independent audit, 2026-10-09) |
 | QCC-R6 | Whether the project also needs a community conduct policy for people (interaction, reporting, moderation, appeals). Separate human decision |
+| QCC-R7 | Human or script confirmation of every process defect (D2–D4) may conflict with the Human Interaction Point Doctrine in `Admin/Auditor_Protocols.md` (human points are coarse, not blocking). Examine batching or sampling of confirmations with trial data. Agents still never confirm each other (raised by the independent audit, 2026-10-09) |
 
 ---
 
@@ -188,3 +189,4 @@ Only then calibrate forgiveness windows and whether Default trust should differ 
 - 2026-10-08: **Revised after review (still Placeholder, unregistered).** (1) Stated that this code extends AVE R1/R2 and set a conflict rule (stricter applies; no R3 relief while Elevated). (2) Defections are confirmed only by a source check (human or script); agents do not confirm other agents. (3) Key changes within a series must be logged; unexplained relabeling continues the prior window. (4) Added the recording path for D1–D5 (AVE vs process defect). (5) Cooldown waivers require a Field_Log note and are counted. Added QCC-R5.
 - 2026-10-08: **Revised after second review (still Placeholder, unregistered).** Renamed from "Quorum Code of Conduct" to "Quorum Agent Conduct Protocol" (the file is `Quorum_Agent_Conduct_Protocol_PROPOSAL.md`; the earlier filename is superseded). Added D6 (persistence after counter-evidence, scored through AVE `doubled_down`), a defect record and supersede-not-delete correction path, the statement that the node key is an accounting label, and the rule that restoration does not erase history. Added QCC-R6.
 - 2026-10-09: **Ratified by the human governing authority (trial scope; thresholds remain Placeholder).** Renamed from `Quorum_Agent_Conduct_Protocol_PROPOSAL.md`; the earlier `Quorum_Code_of_Conduct_PROPOSAL.md` was deleted from the live repository and is omitted. Single-agent source audit (Claude) before finalizing: every cited file and section was checked against the live files — AVE §3 window (k = 20), R1–R4 (R3 needs k≥10; R2 triggers on `doubled_down` on a Fail), MAQT probe success criterion and Entanglement disclosure, §VII / GOV-008, DV-003, `Forge_Net.md` §2.5.0, `Hardware_Diversity_Ladder.md`, the Ethical Anchor string. All resolved. Fixes: (1) §6 still said D1–D5 after D6 was added; (2) D6's check now matches AVE R2 (`doubled_down` on a Fail); (3) D5/D6 and QCC-R5/R6 put in order; (4) stale pre-ratification wording removed (proposal / not registered / if later ratified / "filing does not promote Status"); (5) dependency note added. **Cross-agent audit pending.** Registered in `Routing.md`, `Discovery.md`, `Tst_Scope_Map.md`.
+- 2026-10-09 (second entry): **Audit runs recorded.** Audit 1 (Grok, drafter-entangled, live file): no defects found. Audit 2 (Gemini, independent, run on a copy with planted faults; details withheld): caught 1 of 3, and its other findings were false positives or pack gaps. Two earlier Gemini runs were invalid. Its design objections apply to this file and are recorded as QCC-R5 (extended) and QCC-R7. **No change to the protocol's rules.** See `Tests/Field_Logs/FL-20261009-protocol-audit-runs.md`.

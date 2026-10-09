@@ -183,6 +183,7 @@ Procedure cards for tracks currently cleared to run — fill while running, file
 
 | ID | Date | Title | Status | Path |
 |----|------|-------|--------|------|
+| FL-20261009-protocol-audit-runs | 2026-10-09 | Audit runs on the conduct protocol — drafter-entangled audit plus three Gemini runs on a seeded copy (1 invalid-unreadable, 1 invalid-role-breach, 1 valid: 1 of 3 planted faults caught) | Unreviewed | `Tests/Field_Logs/FL-20261009-protocol-audit-runs.md` |
 | FL-20261007-recharacterization-proposal | 2026-10-07 | Public recharacterization — README/CONTRIBUTING replaced, Things_We_Got_Wrong.md added — framing only | Reviewed — accepted and ratified | `Tests/Field_Logs/FL-20261007-recharacterization-proposal.md` |
 | FL-20261006-ave-sample-01 | 2026-10-06 | AVE first batch — 24 scored events, source-survival 21/24=0.875; thresholds remain Placeholder | Reviewed — no action | `Tests/Field_Logs/FL-20261006-ave-sample-01.md` |
 | FL-20261006-cap-meta-stale-03-secondary | 2026-10-06 | CAP-meta-stale-01 Reduced-Secondary — withhold Field_Logs authority; stage 2 fail (Δ large) | Reviewed — folded into `Discovery.md` | `Tests/Field_Logs/FL-20261006-cap-meta-stale-03-secondary.md` |
@@ -193,6 +194,7 @@ Procedure cards for tracks currently cleared to run — fill while running, file
 
 ## Resolution Log
 
+- 2026-10-09: **Protocol audit runs filed** — `FL-20261009-protocol-audit-runs.md`. Index row added. No threshold calibration; one run per auditor.
 - 2026-10-07: **Recharacterization merge** — `FL-20261007-recharacterization-proposal.md` filed; root README/CONTRIBUTING replaced; `Things_We_Got_Wrong.md` added. Index row Unreviewed pending human ratification of public framing.
 
 - 2026-10-07: **MAQT-C1 session packet + results template** added under `Tests/Field_Logs/` (human-directed draft from ChatGPT MAQT-1 assessment; does not execute Cycle 1).

@@ -77,7 +77,7 @@ Note: Status unchanged — Proposed Protocol — Not Yet Run.
 Note: Created 2026-09-21. Operator gives each agent only its own role card from this file — not the full file and not the probe list.
 
 ### `Tests/Quorum_Agent_Conduct_Protocol.md`
-**Status:** Ratified Protocol (trial scope, 2026-10-09) · 0/6 (protocol, not spec) · 0 registered Unknowns (residuals QCC-R1–R6 are file-local) · Risk: Medium — a mistaken defection record could unfairly raise scrutiny on an agent, and a misread rule could be mistaken for governance weight; the protocol forbids the second explicitly
+**Status:** Ratified Protocol (trial scope, 2026-10-09) · 0/6 (protocol, not spec) · 0 registered Unknowns (residuals QCC-R1–R7 are file-local) · Risk: Medium — a mistaken defection record could unfairly raise scrutiny on an agent, and a misread rule could be mistaken for governance weight; the protocol forbids the second explicitly
 **Does:** Defines checkable agent defections (D1–D6), a node key that persists across sessions, a forgiving tit-for-tat scrutiny response on the node-reliability track, and a defect-record and correction path; extends AVE R1/R2 across sessions.
 **Does not:** Ratify AVE or MAQT; amend §VII or advance GOV-008; give reliability any governance weight or claim-confidence effect; cover how people treat one another; set numeric thresholds (all Placeholder).
 Note: Created 2026-10-08 as a proposal, ratified 2026-10-09. Cross-agent audit pending.
