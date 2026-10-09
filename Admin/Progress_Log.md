@@ -11,7 +11,7 @@
 | Spec Gates       | N/A — this file is a progression log, not a specification           |
 | Open Unknowns    | 0 (references existing unknowns; creates none)                      |
 | Owning Domain    | Admin/                                                               |
-| Last Reviewed    | 2026-10-03                                                           |
+| Last Reviewed    | 2026-10-09                                                           |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
 ---
@@ -37,6 +37,32 @@ Created 2026-08-09 to fix a recurring failure mode found the same day, in two pl
 
 *(Most recent first. Rotate to `Archive/Logs/Progress_Log_Changelog.md` once more than five entries accumulate.)*
 
+### 2026-10-09 — `Tests/Quorum_Agent_Conduct_Protocol.md` ratified (trial scope) and registered; 2026-10-08 follow-ups logged
+Human ratified the agent-conduct proposal ("I would like to ratify the Quorum_Agent_Conduct_Protocol_PROPOSAL.md.
+It should be needed components and the approach should be mostly correct. We should run an audit on it.").
+Scope: structure and approach only, operative for MAQT/AVE trials and reliability sampling; every number stays
+Placeholder; no Admin doctrine, §VII/GOV-008, Unknown or Spec Gate changed; AVE (Candidate) and MAQT (Proposed)
+are not ratified by this. Renamed from `_PROPOSAL`. The earlier `Quorum_Code_of_Conduct_PROPOSAL.md` had already
+been deleted from the live repository and is omitted.
+
+Single-agent source audit (Claude) before the ratified text was finalized: every cited file and section was
+checked against the live files (AVE §3 window and R1–R4, MAQT probe criterion and Entanglement disclosure,
+§VII/GOV-008, DV-003, `Forge_Net.md` §2.5.0, Hardware Diversity Ladder, Ethical Anchor string). All resolved.
+Five fixes: §6 still said D1–D5 after D6 was added; D6's check now matches AVE R2 (`doubled_down` on a Fail);
+D5/D6 and QCC-R5/R6 out of order; stale pre-ratification wording (proposal / not registered / if later
+ratified / "filing does not promote Status") — the same stale-state pattern as `FL-20261007`'s body; and a
+dependency note added. **Cross-agent audit still pending; the single-agent check is not a substitute.**
+
+Registered in `Routing.md`, `Discovery.md` (whose header had no line for the 2026-10-07 recharacterization, now
+caught up) and `Tests/Tst_Scope_Map.md`. Rotated the 2026-10-04 seventh entry to the changelog.
+
+Logged late, from 2026-10-08: README "Under the hood" bridge; human-facing "Lazarus Forge" vs repository
+identifier "LazarusForge" applied to README/CONTRIBUTING; `FL-20261007-recharacterization-proposal.md` body
+reconciled with a dated Disposition. `FL-20261008-maqt-matrix-preregistration-proposal.md` remains an
+unratified, unregistered proposal. Open: AVE and MAQT do not yet point back to the new protocol.
+Human-directed.
+
+---
 ### 2026-10-07 (second entry, same day) — Public recharacterization ratified: README/CONTRIBUTING replaced, `Things_We_Got_Wrong.md` added
 Grok submitted a full `README.md`/`CONTRIBUTING.md` rewrite (shorter, "scrappy workshop" framing
 replacing much of the detailed Repository Map, Governance Architecture, Long-term vision table,
@@ -148,30 +174,6 @@ clean, no duplication.
 
 All six Field_Log entries remain `Status: Unreviewed` — none folded into doctrine yet, no Unknown
 closed, no Admin file retiered. Human-directed ("Please proceed" / "Please continue").
-
----
-### 2026-10-04 (seventh entry, same day) — `RUN_CARD-CAP-meta-stale-01.md` added: stage-ladder run card for the POC's "Future experiment"
-ChatGPT proposed a wider capability-grading methodology (claim-grade, checklist score, stage
-ladder, rubric, ablation delta, minimum-viable-set — methods A through H) and, separately, a
-"mature future self-model" sketch (capability ledger under constraints, rewritten only by
-experiment evidence). Grok and ChatGPT converged on the same restraint already established last
-entry: the methodology discussion and the future-self-model sketch stay conceptual, not filed as
-doctrine — and correctly, neither touched `Tests/Admin_Governance_Teardown_POC.md` at all. What
-was actually drafted and checked: `Tests/Field_Logs/RUN_CARD-CAP-meta-stale-01.md`, a concrete
-run card operationalizing the POC's own "Future experiment (not scheduled)" section — Method C
-(stage ladder, 1-8, stop at first failure) with an optional Method G ablation (Full vs. Reduced
-config, Δ). Verified before merging: the card's EF-0.0 citation ("do not promote UNKNOWN→VERIFIED
-without empirical grounding") checked directly against `Admin/Auditor_Protocols.md` — confirmed
-real, the Epistemic Anchor / Axiom Zero clause. Card correctly cross-references the POC's Future
-experiment section by name rather than restating it, carries its own Explicit non-claims
-("does not close FAK-* items, rewrite Routing counts as doctrine, or prove Admin Tier
-assignments — measures this skill under a named config"), and ends with an explicit guardrail:
-"Do not bulk-retier Admin files from a single run." `Tests/Field_Logs.md` updated in the same
-pass — new row in Ready-to-Run Cards, and "the four tracks" corrected to "tracks" now that a
-fifth card exists (caught, not just copied forward). Registered in `Routing.md`. No file touched:
-`Admin_Governance_Teardown_POC.md`, `Admin/Adm_Scope_Map.md`. This is the first concrete artifact
-produced by two days of capability-framing discussion — still zero runs filed against it.
-Human-directed.
 
 ---
 Full history, including entries rotated out of the five above, in `Archive/Logs/Progress_Log_Changelog.md`.
