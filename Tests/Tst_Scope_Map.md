@@ -11,7 +11,7 @@
 | Spec Gates       | N/A — this file is a cross-reference index, not a specification     |
 | Open Unknowns    | 0 (surfaces existing unknowns from owning files; creates none)      |
 | Owning Domain    | Tests/                                                               |
-| Last Reviewed    | 2026-10-06 — Field_Logs empty current-state claims corrected (CAP continuation); historical 2026-08-08 finding text retained with dated correction. Prior: 2026-09-24 |
+| Last Reviewed    | 2026-10-09 — `Quorum_Agent_Conduct_Protocol.md` indexed. Prior: 2026-10-06 — Field_Logs empty current-state claims corrected (CAP continuation); historical 2026-08-08 finding text retained with dated correction. Prior: 2026-09-24 |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
 ---
@@ -76,6 +76,12 @@ Note: Status unchanged — Proposed Protocol — Not Yet Run.
 **Does not:** Amend any doctrine; advance GOV-008 or GMP-004; confer merge authority on any agent. Probe text stays with the human operator, not in this file.
 Note: Created 2026-09-21. Operator gives each agent only its own role card from this file — not the full file and not the probe list.
 
+### `Tests/Quorum_Agent_Conduct_Protocol.md`
+**Status:** Ratified Protocol (trial scope, 2026-10-09) · 0/6 (protocol, not spec) · 0 registered Unknowns (residuals QCC-R1–R6 are file-local) · Risk: Medium — a mistaken defection record could unfairly raise scrutiny on an agent, and a misread rule could be mistaken for governance weight; the protocol forbids the second explicitly
+**Does:** Defines checkable agent defections (D1–D6), a node key that persists across sessions, a forgiving tit-for-tat scrutiny response on the node-reliability track, and a defect-record and correction path; extends AVE R1/R2 across sessions.
+**Does not:** Ratify AVE or MAQT; amend §VII or advance GOV-008; give reliability any governance weight or claim-confidence effect; cover how people treat one another; set numeric thresholds (all Placeholder).
+Note: Created 2026-10-08 as a proposal, ratified 2026-10-09. Cross-agent audit pending.
+
 ### `Tests/Admin_Governance_Teardown_POC.md`
 **Status:** Exploration · 0/6 (analysis exercise, not a specification) · 0 Open Unknowns · Risk: Low
 **Does:** Classifies all 33 `Admin/` files (as of 2026-10-04) into four minimality tiers (0 constitutional core through 4 tooling/meta) against an explicit test — would a minimal, single-operator POC lose something it can't function without if this file vanished. Classification read directly from each file's own Scope Boundary and Status field, not inferred. Names two concrete findings: the `Nothingness_Theorem.md`/`Computational_Institutional_Reasoning.md`/`CIR_Gov.md` trio (166 KB combined) is explicitly non-operational by its own Status fields and is the cleanest consolidation candidate; `Governance_Migration_Protocol.md` (182 KB, the largest Admin/ file) appears to conflate rare-event amendment procedure with common-event migration mechanics along a seam its own structure already suggests.
@@ -122,10 +128,13 @@ No corrections were needed in this folder, same as Challenges/ — no stale cros
 
 **Addendum, 2026-09-18:** `Multi_Agent_Quorum_Trial.md` added as an 11th file — not part of the original 2026-08-08 build, so the counts and findings above describe that original ten-file set and are left as the historical record of that pass rather than silently rewritten. The new file is a protocol/test-design document (operationalizing `Admin/Governance_Migration_Protocol.md` §VII's quorum criteria into a runnable three-machine trial), not a domain-content file like the original ten, and has 0 Open Unknowns registered by design (several DECISION NEEDED items are left open in the file itself rather than formally registered). `Field_Logs.md`'s "still empty" status (item 4) was still accurate on 2026-09-18 — MAQT protocol text is not a Field_Log submission. **Superseded for current state 2026-10-06** when CAP and prior entries were filed; see item 4 correction.
 
+**Addendum, 2026-10-09:** `Quorum_Agent_Conduct_Protocol.md` added after the original build. The counts and findings above describe the original ten-file set and the 2026-09-18 addendum, and are left as the historical record. Its entry above was written fresh, same pattern as the 2026-09-18 file.
+
 ---
 
 ## Resolution Log
 
+- 2026-10-09: **`Quorum_Agent_Conduct_Protocol.md` added and indexed** — see its entry and the 2026-10-09 Addendum above. Human-directed.
 - 2026-10-06: **Current-state correction (CAP-meta-stale-01 continuation):** `Field_Logs.md` notes and finding 4 / 2026-09-18 addendum no longer claim the intake is empty. Historical wording of the 2026-08-08 finding preserved; explicit correction dated. Triggered by live Field_Logs index (CAP Full/Reduced + GOV-021c). Human-directed continue after Reduced ablation.
 
 - 2026-10-04: **`Admin_Governance_Teardown_POC.md` added and indexed** — see its new entry above. A
