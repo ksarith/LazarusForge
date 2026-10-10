@@ -1,5 +1,5 @@
 # Forge_Audit_Kit.md
-**Version 1.19**
+**Version 1.20**
 
 ---
 
@@ -16,13 +16,13 @@
 | Status         | Draft                                                               |
 | Spec Gates     | 0/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                    |
-| Last Audit     | 2026-10-03 — Grok, human-directed: derivation citation to `Unknowns.md` had gone stale a fifth time (v5.27 → live v5.57, 30 versions). Same recurring citation-staleness pattern previously logged as FAK-014/015/016. Logged as FAK-017. Citation refreshed to v5.57; header bumped 1.18→1.19. Prior: 2026-09-15 — Claude, FAK-016 (fourth occurrence, automated audit path). |
-| Auditor        | Grok — v1.19 FAK-017 logged (fifth occurrence of the citation-staleness pattern), derivation citation refreshed to Unknowns.md v5.57, header 1.18→1.19 (human-directed), 2026-10-03; Claude — v1.18 FAK-016 logged, 2026-09-15; prior history retained in Resolution Log / Changelog |
-| Open Unknowns  | 9 — see Sidecar Link                                                |
+| Last Audit     | 2026-10-10 — Claude, human-directed refresh: derivation citations updated (`Auditor_Protocols.md` v0.41 → v0.42, `Unknowns.md` v5.57 → v5.58) and the role-declaration string to v0.42; FAK-018 logged (sixth occurrence; the structural question stays open). Same-day mitigation: role-declaration example now uses a live-version placeholder, the Derived-from line is labeled as reconciled-against, and the maintenance trigger is now content-based (a plain version increment is not a trigger; reconciliation check at audit start). Prior: 2026-10-03 — Grok, human-directed: derivation citation to `Unknowns.md` had gone stale a fifth time (v5.27 → live v5.57, 30 versions). Same recurring citation-staleness pattern previously logged as FAK-014/015/016. Logged as FAK-017. Citation refreshed to v5.57; header bumped 1.18→1.19. Prior: 2026-09-15 — Claude, FAK-016 (fourth occurrence, automated audit path). |
+| Auditor        | Claude — v1.20 FAK-018 logged, derivation and role-declaration strings refreshed, header 1.19→1.20 (human-directed), 2026-10-10; Grok — v1.19 FAK-017 logged (fifth occurrence of the citation-staleness pattern), derivation citation refreshed to Unknowns.md v5.57, header 1.18→1.19 (human-directed), 2026-10-03; Claude — v1.18 FAK-016 logged, 2026-09-15; prior history retained in Resolution Log / Changelog |
+| Open Unknowns  | 10 — see Sidecar Link                                                |
 | Sidecar Link   | Archive/Logs/Forge_Audit_Kit_Changelog.md#sidecar--auditor-notes--unknowns |
 | Ethical Anchor | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
-**Derived from:** `Admin/Auditor_Protocols.md` v0.41 | `Admin/Verification_Gates.md` v0.7 | `Unknowns.md` v5.57
+**Derived from (reconciled against these versions, 2026-10-10):** `Admin/Auditor_Protocols.md` v0.42 | `Admin/Verification_Gates.md` v0.7 | `Unknowns.md` v5.58
 
 When this file contradicts a full source document, the full source document prevails.
 
@@ -166,7 +166,7 @@ Substantive notes required — bare checkmarks are not verification. Full text: 
 
 ## AI Contribution Rules
 
-Role declaration required: *"Operating as [Role] per Auditor_Protocols.md v0.41"*
+Role declaration required: *"Operating as [Role] per Auditor_Protocols.md v[live version]"* (use the live version at audit time; `Admin/Auditor_Protocols.md`'s own template pins it and is the source of truth)
 
 Valid roles: Skeptic/Auditor | Systems/Auditor | Evidence/Auditor | Ethical/Auditor | Synthesizer | Engineer | Connective Tissue
 
@@ -282,11 +282,13 @@ Load this file plus the document under audit. That is the baseline for every rou
 
 Load additional files only when the audit focus requires them — each adds tokens. Candidates: `Admin/Auditor_Protocols.md` (full role doctrine, full EF constitutional text, full Adversarial Battery), `Unknowns.md` (full unknown detail), `Discovery.md` (path lookup, Rename Registry), target file's upstream architecture files.
 
-**Token ceiling note:** `Admin/Auditor_Protocols.md` is approximately 146,700 characters at v0.41 (measured directly via harness fetch, 2026-08-30 — prior figure of ~157,000 was itself measured at v0.24; the file has grown in content — Rules 9/10, AP-033/034/035 — while trimming duplicated version-history narrative elsewhere, netting slightly smaller despite more doctrine). Load it only when auditing the file itself, onboarding a new agent, or when full EF constitutional text is required for an interpretive dispute. This kit is the runtime reference for all other sessions.
+**Token ceiling note:** `Admin/Auditor_Protocols.md` is approximately 146,700 characters at v0.41 (measured directly via harness fetch, 2026-08-30 — prior figure of ~157,000 was itself measured at v0.24; the file has grown in content — Rules 9/10, AP-033/034/035 — while trimming duplicated version-history narrative elsewhere, netting slightly smaller despite more doctrine). Load it only when auditing the file itself, onboarding a new agent, or when full EF constitutional text is required for an interpretive dispute. This kit is the runtime reference for all other sessions. (Re-measured 2026-10-10 at v0.42: 150,529 bytes via `wc -c`, not a character count from harness fetch, so not directly comparable to the figure above.)
 
 **Load full source documents instead of this kit when:** auditing `Admin/Auditor_Protocols.md` itself · onboarding a new agent · full unknown entry detail required · EF section interpretive dispute.
 
-**Maintenance trigger:** Update this file when `Admin/Auditor_Protocols.md` is revised OR when `Unknowns.md` version increments. Minimum fields to update: derivation version strings, role declaration version string, EF condensed section if EF sections changed. (Critical watch list removed at v1.10 — no longer a maintenance target.)
+**Maintenance trigger:** Update this file when a source changes a section this kit condenses or copies: `Admin/Auditor_Protocols.md` (role declaration template, EF-0.0–EF-0.8b text, sign-off format, AI Contribution Rules), `Admin/Verification_Gates.md` (gate definitions), or `Unknowns.md` (Expiry Watch / Expiry Rule wording, the Critical-and-Blocking cross-reference, the Resolved Unknown Discharge Procedure, the Governance Sidecar ID Reference). A plain version increment of any source is **not** a trigger. When you do update, set the reconciled-against versions and date in the Derived-from line. Minimum fields to update: the reconciled-against line, and the EF condensed section if EF sections changed. (The role-declaration example no longer pins a version, so it is not an update target.)
+
+**Reconciliation check at audit start:** Compare the Derived-from line with the live source versions. If a source is newer, read that source's own version history for changes to the sections listed above before relying on this kit for them, and report any mismatch as a drift flag in the sign-off. Do not silently refresh the line during an audit. (Critical watch list removed at v1.10 — no longer a maintenance target.)
 
 **End-of-Life:** This kit is a working document, not a permanent one — its function is to stay current with `Admin/Auditor_Protocols.md`, `Admin/Verification_Gates.md`, and `Unknowns.md`. When it's superseded — a successor kit, a structural change to the audit process, or the source documents outgrowing what a condensed reference can track — it is not deleted. It's shelved at its final version as a historical record: evidence of what the audit process actually was at a given point in Forge's evolution, available for ideological and process study rather than active use. Superseding a kit is a normal lifecycle event, not a failure; the sidecar and version history in `Archive/Logs/Forge_Audit_Kit_Changelog.md` are what make that shelving legible later rather than just an abandoned file.
 
@@ -295,9 +297,9 @@ Load additional files only when the audit focus requires them — each adds toke
 ## Drift Indicators
 
 - Governing principles, gates, or sign-off format diverge from `Admin/Auditor_Protocols.md`
-- Derivation statement references a superseded version of `Admin/Auditor_Protocols.md` or `Unknowns.md`
-- Expiry Watch not updated at `Unknowns.md` version increment
-- Role declaration version string does not match current `Admin/Auditor_Protocols.md` version
+- A source this kit condenses or copies has changed a listed section since the Derived-from reconciliation date, and the kit was not updated (a newer version number alone is not drift)
+- Expiry Watch step diverges from `Unknowns.md`'s current Expiry Watch / Expiry Rule wording
+- Role declaration example pins a version number instead of the live-version placeholder
 - Epistemic Foundation condensed section diverges from EF-0.0–EF-0.8b source text without documented rationale
 - VERIFIED / PROVISIONAL / UNKNOWN used inconsistently with EF-0.0 definitions
 - Governance sidecar ID reference contains stale or flat filenames
@@ -321,8 +323,8 @@ sidecar entries live in the owning file; every other file in the
 repository keeps its sidecar in-body. Adversarial Battery record for
 this kit is in the same file, §Adversarial Battery Record.
 
-Current: 9 open (FAK-001, FAK-005, FAK-006, FAK-009, FAK-014, FAK-015,
-FAK-016, FAK-017, and one flagged for `Canonical_Terms.md` rather than
+Current: 10 open (FAK-001, FAK-005, FAK-006, FAK-009, FAK-014, FAK-015,
+FAK-016, FAK-017, FAK-018, and one flagged for `Canonical_Terms.md` rather than
 resolved here — see Battery record, Cycle/CURRENT_CYCLE finding).
 
 ---
@@ -332,7 +334,19 @@ resolved here — see Battery record, Cycle/CURRENT_CYCLE finding).
 Full history: `Archive/Logs/Forge_Audit_Kit_Changelog.md` (relocated out of this
 kit at v1.10 — add new entries there, not here).
 
-Most recent: v1.19 (2026-10-03) — FAK-017 logged: derivation citation
+Most recent: v1.20 (2026-10-10) — FAK-018 logged: derivation citations went
+stale a sixth time (`Auditor_Protocols.md` v0.41 → live v0.42; `Unknowns.md`
+v5.57 → v5.58), found by an independent audit run and confirmed against both
+files. Strings refreshed (including the role-declaration string); header
+1.19→1.20; Open Unknowns 9 → 10. Whether `Auditor_Protocols.md` v0.42 changed
+EF text was not checked (no v0.41 copy to diff). The maintenance-trigger
+question from FAK-014 to FAK-017 is still open; a same-day mitigation
+removed the daily-stale pin (role-declaration example now uses a live-version
+placeholder; Derived-from line labeled reconciled-against) and made the
+maintenance trigger content-based, with a reconciliation check at audit start. Full account in
+`Archive/Logs/Forge_Audit_Kit_Changelog.md`.
+
+Prior: v1.19 (2026-10-03) — FAK-017 logged: derivation citation
 to `Unknowns.md` had gone stale a fifth time (v5.27 → live v5.57, 30
 versions). Same recurring citation-staleness pattern previously logged
 as FAK-014/015/016. Citation refreshed to v5.57; header 1.18→1.19.

@@ -169,6 +169,8 @@ Tracked as sidecar entries in **Auditor Notes & Unknowns** at the end of this fi
 
 ## Resolution Log
 
+- 2026-10-10: **Risk/Priority rankings on sidecar Unknowns human-confirmed** (values unchanged; remain Placeholder severity, non-blocking). No Status or Spec Gate change.
+
 - 2026-09-07: **AVE schema drafted (Candidate).** Claim classes, event fields, rolling metrics, reliance rules R1–R4, explicit ban on feeding DV-003. Worked examples from recent session failure modes. No Unknowns index registration until Human decides ownership/promotion path. Drafted by Grok, human-directed.
 - 2026-10-10: Residuals AVE-R1 to AVE-R4 converted to sidecar entries (Auditor Notes & Unknowns); AVE-R1 and AVE-R4 indexed in `Unknowns.md` v5.58. The 2026-09-07 hold on index registration (pending a human promotion decision) is lifted by this human-directed change. No schema or rule change.
 
@@ -182,7 +184,7 @@ Tracked as sidecar entries in **Auditor Notes & Unknowns** at the end of this fi
 
 ## Auditor Notes & Unknowns
 
-*Converted 2026-10-10 from the file's earlier residual list or prose into the repository's standard sidecar format, keeping existing IDs so no cross-reference breaks. Risk and Priority values are Placeholder, proposed for human confirmation. Nothing here is Blocking, and no Status or Spec Gate changes.*
+*Converted 2026-10-10 from the file's earlier residual list or prose into the repository's standard sidecar format, keeping existing IDs so no cross-reference breaks. **Risk and Priority rankings human-confirmed 2026-10-10** (still Placeholder severity — not derived from measured rates; all non-blocking). No Status or Spec Gate changes.*
 
 ### AVE-R1 -- Calibrate k and the source-survival threshold against real multi-agent logs
 

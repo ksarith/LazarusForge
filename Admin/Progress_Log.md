@@ -37,6 +37,10 @@ Created 2026-08-09 to fix a recurring failure mode found the same day, in two pl
 
 *(Most recent first. Rotate to `Archive/Logs/Progress_Log_Changelog.md` once more than five entries accumulate.)*
 
+### 2026-10-10 — Operations Automotive + Robotics v0 stubs filed and registered
+Human-directed expansion of the Operations layer: `Operations/Automotive.md` and `Operations/Robotics.md` (Proposed, Spec Gates 0/6). Each carries safety advisory, hard floors (AF/RF), functional blocks A–J with Placeholder thresholds, interfaces to Energy/Electronics/Gates/Admin, and eight non-blocking Unknowns. Public-road and unsupervised human-shared operation explicitly out of scope. Registered in Routing.md, Ops_Scope_Map.md, and Discovery.md. No physical work claimed; no Spec Gate opens.
+
+---
 ### 2026-10-10 — Unknowns registered for the newer files (Standard scope)
 The newest files tracked open items outside the repository's standard form: AVE had a residual table, the
 conduct protocol seven residuals (QCC-R1–R7), and MAQT "0 formally registered" with DECISION NEEDED prose. None
@@ -51,9 +55,9 @@ the current-version-only rule. Headers updated (Open Unknowns rows, MAQT sidecar
 QCC Last Updated), AVE §7 now points to its sidecar, and `Tst_Scope_Map.md` text corrected. No Status, Spec Gate,
 rule, or existing Unknown changed.
 
-Open: `Admin/Forge_Audit_Kit.md`'s Derived-from line still cites `Unknowns.md` v5.57 and `Auditor_Protocols.md`
-v0.41 (live: v5.58 and v0.42) — the FAK-017 citation-staleness pattern; a refresh pass is a human-directed
-doctrine edit and was not made here. Rotated the 2026-10-06 second entry to the changelog. Human-directed.
+Kit citation: `Admin/Forge_Audit_Kit.md` still cited `Unknowns.md` v5.57 and `Auditor_Protocols.md`
+v0.41 (live: v5.58 and v0.42), the FAK-017 pattern. Refreshed the same day (kit v1.20, FAK-018 logged);
+a same-day mitigation removed the daily-stale pin (role-declaration placeholder, reconciled-against label) and made the maintenance trigger content-based with a reconciliation check at audit start. FAK-018 stays open, mitigated, until a full source revision cycle passes with no pin failure. Also found: `Automation/AUDIT_HARNESS.py` hard-coded a v0.14 role declaration in every generated audit prompt; fixed the same day in harness v17 (prompt strings only; compile-checked, not run live). Rotated the 2026-10-06 second entry to the changelog. Human-directed.
 
 ---
 ### 2026-10-09 (second entry, same day) — Conduct-protocol audit runs recorded; QCC-R7 added; seeded-audit method trialed
@@ -127,10 +131,6 @@ Map table row — header prose only. Added both rows. Per the proposal's own sug
 accepted and ratified, with the ratification quote recorded; `Field_Logs.md`'s Index row updated
 to match. No Admin doctrine, Unknown, or Spec Gate changed — framing and front-door content only.
 Human-directed.
-
----
-### 2026-10-07 — MAQT-C1 session packet + results template drafted (not executed)
-Human-directed after ChatGPT MAQT assessment. Added `Tests/Field_Logs/MAQT_C1_SESSION_PACKET.md` (operator packet: probes, EC-013 task, role cards, run order) and `RUN_CARD-MAQT-C1-Results.md` (dual score: §VII.3 structural + observed capability dimensions + friction; probe outcome; explicit non-claims). No Cycle 1 run this pass — packet enables logical-isolation or 3-host staffing. Registered in Field_Logs Ready-to-Run + Routing.
 
 ---
 Full history, including entries rotated out of the five above, in `Archive/Logs/Progress_Log_Changelog.md`.
