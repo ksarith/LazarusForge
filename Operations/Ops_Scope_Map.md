@@ -11,7 +11,7 @@
 | Spec Gates       | N/A — this file is a cross-reference index, not a specification     |
 | Open Unknowns    | 0 (surfaces existing unknowns from owning files; creates none)      |
 | Owning Domain    | Operations/                                                          |
-| Last Reviewed    | 2026-09-13                                                           |
+| Last Reviewed    | 2026-10-10 — Automotive.md + Robotics.md Proposed stubs registered|
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
 ---
@@ -28,6 +28,14 @@ Third folder in the Scope_Map rollout, following `Admin/Adm_Scope_Map.md` (2026-
 **Status:** Draft · 3/6 · 4 Open Unknowns · Risk: High
 **Does:** Five-stage functional architecture (A-E) plus fractional condensation/chemisorption; wet capture variants (0-4); Saturation/Particulate Blinding/Thermal Fault monitoring; E-Stop interlocks; negative pressure/flashback doctrine; Gate 4 Cold Verification Harness.
 **Does not (arrow):** Spin Chamber exhaust heat load (`Gate_05_Separation_Thermal.md`) · Forge power budget (`Energy.md`) · deep-sea compression (`Admin/Trajectories.md`) · contamination routing (`Gate_02_Triage.md`) · noise/PPE standards (`Admin/Safety_Protocols.md` SP-003) · facility siting (`Architecture/Facilities.md` FA-001).
+
+
+### `Operations/Automotive.md`
+**Status:** Proposed · 0/6 · 8 Open Unknowns (AU-001–AU-008) · Risk: High (kinetic / HV)
+**Does:** Operations-layer home for salvage-aware vehicle systems — hard floors AF-1–AF-8, functional blocks A–J (thresholds Placeholder), interfaces to Energy/Electronics/Gates/Admin. Workshop and controlled private ground only.
+**Does not (arrow):** Road-legality or public-road testing · Energy.md pack chemistry · Electronics.md general firmware trust · Robotics.md (mobile bases share interfaces only) · Measured range/autonomy claims.
+**Upstream:** Energy.md · Electronics.md · Safety_Protocols.md · Environmental_Constraints.md
+**Filed:** 2026-10-10 (v0 stub)
 
 ### `Operations/Electronics.md`
 **Status:** Exploration · 0/6 · 9 Open Unknowns · Risk: High
@@ -73,6 +81,14 @@ Third folder in the Scope_Map rollout, following `Admin/Adm_Scope_Map.md` (2026-
 **Status:** Exploration · 0/6 · 5 Open Unknowns · Risk: Low
 **Does:** After-action review doctrine; performance logging minimums; failure mode capture/routing; maintenance frequency tracking; feedback to Fabrication and Forge-Net; retirement handoff doctrine; FRT per-cycle logging (measurement/reinvestment against `Admin/Trajectories.md`'s floor); part lifecycle termination.
 **Does not (arrow):** Retirement routing decisions (`Gate_02_Triage.md`) · fabrication methods/precision ceiling (`Gate_06_Fabrication.md`) · component taxonomy (`Architecture/Components.md`) · network trust weighting (`Architecture/Forge_Net.md`) · gate logic (`Architecture/Forge_flow.md`) · energy accounting (`Energy.md`) · FRT floor declaration/v1 baseline (`Admin/Economics.md`).
+
+
+### `Operations/Robotics.md`
+**Status:** Proposed · 0/6 · 8 Open Unknowns (RB-001–RB-008) · Risk: High (force / human-shared space)
+**Does:** Operations-layer home for salvage-aware mobile bases and manipulators — hard floors RF-1–RF-8, functional blocks A–J (thresholds Placeholder), interfaces to Energy/Electronics/Automotive/Gates/Admin/Ethical_Constraints. Controlled cell / supervised teleoperation only.
+**Does not (arrow):** Unsupervised human-shared operation · AGI/embodiment claims · Electronics.md general firmware trust · Automotive.md on-road systems · Weaponized configurations.
+**Upstream:** Energy.md · Electronics.md · Safety_Protocols.md · Ethical_Constraints.md
+**Filed:** 2026-10-10 (v0 stub)
 
 ### `Operations/Plastics.md`
 **Status:** Exploration · 0/6 · 5 Open Unknowns · Risk: High
@@ -127,6 +143,8 @@ Three corrections applied this pass (`Gate_05_Separation_Thermal.md`, `Gate_06_F
 ---
 
 ## Resolution Log
+
+- 2026-10-10: Registered `Operations/Automotive.md` and `Operations/Robotics.md` (Proposed v0 stubs). Human-directed.
 
 - 2026-09-13: **Content-accuracy pass run against all 13 files' live Scope
   Boundary sections, as a follow-up to the coverage fix below.** Found and
