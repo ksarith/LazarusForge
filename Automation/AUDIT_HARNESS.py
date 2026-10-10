@@ -1,5 +1,5 @@
 """
-LAZARUS FORGE — AUDIT HARNESS v16
+LAZARUS FORGE — AUDIT HARNESS v17
 Single importable module. See run_audit() docstring for the current
 bootstrap cell and usage.
 
@@ -813,7 +813,7 @@ def run_audit(target_file, focus, extra_files=None, doc_status="Exploration",
     sections = []
 
     sections.append(
-        f"Operating as Skeptic/Auditor per Auditor_Protocols.md v0.14\n"
+        f"Operating as Skeptic/Auditor per Auditor_Protocols.md (use the live version from its header)\n"
         f"Repository: LazarusForge"
     )
 
@@ -822,7 +822,7 @@ def run_audit(target_file, focus, extra_files=None, doc_status="Exploration",
         f"Prior contributions assumed:\n"
         f"- {target_file} is classified as {doc_status}\n"
         f"- Forge_Audit_Kit.md contains the active Fallacy Checklist, Verification Gates,\n"
-        f"  AI Contribution Rules, and condensed Unknowns Registry\n"
+        f"  and AI Contribution Rules\n"
         f"- Repository uses folder-based structure: Admin/, Architecture/, Operations/,\n"
         f"  Tests/, Challenges/\n"
         f"- Rename Registry in Archive/Rename_Registry.md maps legacy filenames to current canonical paths\n"
