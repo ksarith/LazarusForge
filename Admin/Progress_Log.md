@@ -37,6 +37,25 @@ Created 2026-08-09 to fix a recurring failure mode found the same day, in two pl
 
 *(Most recent first. Rotate to `Archive/Logs/Progress_Log_Changelog.md` once more than five entries accumulate.)*
 
+### 2026-10-10 — Unknowns registered for the newer files (Standard scope)
+The newest files tracked open items outside the repository's standard form: AVE had a residual table, the
+conduct protocol seven residuals (QCC-R1–R7), and MAQT "0 formally registered" with DECISION NEEDED prose. None
+appeared in `Unknowns.md`, so the Expiry Watch could not age them (one independent audit could not run that
+check on the protocol for this reason). Each owning file now has an Auditor Notes & Unknowns sidecar: AVE-R1–R4,
+QCC-R1–R7, and three MAQT items (MAQT-001 proposal-passing mechanics, MAQT-002 rotation authority, MAQT-003
+liveness timeout). Only open items the files already stated were converted; existing IDs kept; all entries
+non-blocking with Placeholder Risk/Priority proposed for human confirmation. Six cross-module items indexed in
+`Unknowns.md` (Governance & Verification): AVE-R1, AVE-R4, QCC-R2, QCC-R5, QCC-R7, MAQT-002. `Unknowns.md` bumped
+to v5.58 (959 → 966 lines, under the 1,200-line trigger); the v5.57 block moved to `Unknowns_Changelog.md` per
+the current-version-only rule. Headers updated (Open Unknowns rows, MAQT sidecar link and Last Reviewed, AVE and
+QCC Last Updated), AVE §7 now points to its sidecar, and `Tst_Scope_Map.md` text corrected. No Status, Spec Gate,
+rule, or existing Unknown changed.
+
+Open: `Admin/Forge_Audit_Kit.md`'s Derived-from line still cites `Unknowns.md` v5.57 and `Auditor_Protocols.md`
+v0.41 (live: v5.58 and v0.42) — the FAK-017 citation-staleness pattern; a refresh pass is a human-directed
+doctrine edit and was not made here. Rotated the 2026-10-06 second entry to the changelog. Human-directed.
+
+---
 ### 2026-10-09 (second entry, same day) — Conduct-protocol audit runs recorded; QCC-R7 added; seeded-audit method trialed
 Documented in `Tests/Field_Logs/FL-20261009-protocol-audit-runs.md` (index row and Routing row added). Audit 1
 (Grok, drafter-entangled, live file): no defects found, with an over-claiming sign-off ("pending cross-agent
@@ -112,33 +131,6 @@ Human-directed.
 ---
 ### 2026-10-07 — MAQT-C1 session packet + results template drafted (not executed)
 Human-directed after ChatGPT MAQT assessment. Added `Tests/Field_Logs/MAQT_C1_SESSION_PACKET.md` (operator packet: probes, EC-013 task, role cards, run order) and `RUN_CARD-MAQT-C1-Results.md` (dual score: §VII.3 structural + observed capability dimensions + friction; probe outcome; explicit non-claims). No Cycle 1 run this pass — packet enables logical-isolation or 3-host staffing. Registered in Field_Logs Ready-to-Run + Routing.
-
----
-### 2026-10-06 (second entry, same day) — Review pass on all five same-day Field_Log entries
-All five entries filed earlier today moved from `Unreviewed` to a real disposition, closing the
-loop the Status-ownership rule exists for. `FL-ave-sample-01` → **Reviewed — no action**, per
-`Agent_Verification_Event.md`'s own §5 "Where to log" doctrine — a routine batch's correct home
-is Field_Logs itself, no schema edit warranted, matching the entry's own Explicit non-claims.
-`FL-cap-meta-stale-01` and `-02` → **Reviewed — folded**, pointing at the `Routing.md` and
-`Tst_Scope_Map.md`/`Discovery.md` corrections they'd already driven. `FL-cap-meta-stale-03-secondary`
-→ **Reviewed — folded** into the `Discovery.md` correction, with a reviewer note that its finding
-(withholding the Field_Logs Index blocks the skill at stage 2) confirms rather than overturns an
-assumption the run card already made — tested now instead of assumed, not a surprising result.
-
-**`FL-cap-meta-stale-01-reduced` got the closest look**, since this is exactly the entry whose own
-headline ("8/8") uses the pre-correction metric framing the same-day run-card fix exists to
-prevent. Left the original submitted figure untouched — it's the honest historical record of what
-was actually run — and added a Reviewer note clarifying the corrected reading (operational grade
-7/7, matching Full; ablation assessment Pass) directly beneath it, rather than editing the
-original number out of existence.
-
-**One doctrine addition, deliberately narrow:** `Tests/Admin_Governance_Teardown_POC.md`'s Future
-experiment section gained an "Early evidence" note stating what the Reduced ablation showed —
-no operational capability loss when RIP and `Operational_Conventions.md` were withheld, for this
-one skill/seed pair — explicitly flagged PROVISIONAL, single-run, and **not** grounds to change
-either file's Tier 1 classification in the table above. No tier, row, or Totals figure changed.
-`Field_Logs.md`'s Index Status column updated to match all five dispositions; Resolution Log
-entries added to both `Field_Logs.md` and the POC file. Human-directed ("Please continue").
 
 ---
 Full history, including entries rotated out of the five above, in `Archive/Logs/Progress_Log_Changelog.md`.
