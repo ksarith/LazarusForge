@@ -249,9 +249,11 @@ Operations/                                 — Physical modules and operational
     ├── Gate_05_Separation_Thermal.md       — Core induction melting & gradient extraction
     ├── Gate_06_Fabrication.md              — Arc welding & mill-to-spec constructive ceiling
     ├── Gate_07_Utilization.md              — After-action loop & failure data capture
+    ├── Automotive.md                         — Salvaged & built vehicle systems (Proposed 2026-10-10)
     ├── Electronics.md                      — Salvaged PCB harvesting & Logic-Zero firmware trust
     ├── Energy.md                           — Incremental power bootstrap & load profiles
     ├── Air_Scrubber.md                     — 5-stage negative-pressure containment subsystem
+    ├── Robotics.md                           — Mobile & manipulator systems (Proposed 2026-10-10)
     ├── Plastics.md                         — Polymer triage & 3-stage pyrolysis framework
     ├── Tooling_Inventory.md                — Live operational tooling inventory backing Decision Point B's "within tooling capability" check
     └── Woodworking.md                      — Salvaged urban timber milling & drying schedules
@@ -310,6 +312,7 @@ Archive/                                    — Prior states of governance-beari
 - `Challenges/Closed_Loop_Feedstock.md` — created 2026-07-06 ✓ (see Challenges/ structure tree and Scope Map below).
 - `Tests/Pyrolysis_Cascade.md` — created 2026-08-04 ✓ (see Tests/ structure tree and Scope Map above); drafted from archived conversation via Copilot, distilled and quantitative claims retired to Placeholder by Grok, PC-/PYC- namespace collision fixed before merge.
 - `Tests/Field_Logs.md` — created 2026-08-06 ✓, append-only intake for physical test runs and cross-agent field data, cross-referenced from `CONTRIBUTING.md`; not a specification file, no Spec Gates or Unknowns of its own. **Restructured 2026-10-03** — now an index + submission contract; entries moved to one file per submission under new `Tests/Field_Logs/`, to remove the single-shared-file collision risk on the GitHub web-editor path. See `Tests/Field_Logs.md`'s own Resolution Log for detail; this line describes the file as originally created and is not rewritten.
+- `Operations/Automotive.md` and `Operations/Robotics.md` — created 2026-10-10 ✓ (Proposed v0 Operations-layer domain stubs; Spec Gates 0/6; AU-*/RB-* Unknowns non-blocking; no physical work claimed). Registered in Routing and Ops_Scope_Map.
 - `Things_We_Got_Wrong.md` — created 2026-10-07 ✓ with Standard-scope public recharacterization (README + CONTRIBUTING front-door alignment). Seeded only with already-documented misses (CAP-meta-stale, POC arithmetic, scoring misread). Framing only; no Admin doctrine or Unknown closures.
 - `Tests/Admin_Governance_Teardown_POC.md` — created 2026-10-04 ✓, Exploration-status proof-of-concept classifying all 33 `Admin/` files by a stated minimality test (Tier 0 constitutional core through Tier 4 tooling/meta). Proposes no file changes itself — a first-cut framework for a possible future `Admin/` restructuring, scoped to `Admin/` only. Not a specification file, Spec Gates 0/6, no Unknowns opened.
 - `Admin/Adm_Scope_Map.md` — created 2026-08-07 ✓, renamed with the folder-abbreviation-prefix convention (confirmed pushed to main by the human governing authority); pilot for a per-folder scope/dependency index (Purpose/Does/Does-Not per file, verified against each file's own Scope Boundary section); surfaced two files with no Scope Boundary section at all (`Computational_Institutional_Reasoning.md`, `Nothingness_Theorem.md`) and one apparent duplicate unknown that checked out as already correctly cross-linked (ENV-003/EC-010).
