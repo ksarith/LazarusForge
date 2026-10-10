@@ -3,6 +3,10 @@
 Split out 2026-08-09, following the precedent already established by `Unknowns_Changelog.md`, `AUDIT_HARNESS_CHANGELOG.md`, and `Forge_Audit_Kit_Changelog.md`. `Progress_Log.md` keeps the five most recent entries in full; this file holds every entry that's rotated out. No information is removed when an entry rotates — every entry below is preserved verbatim from `Progress_Log.md` at the time it moved.
 
 ---
+### 2026-10-07 — MAQT-C1 session packet + results template drafted (not executed)
+*(Rotated 2026-10-10 Automotive/Robotics registration.)*
+
+---
 ### 2026-10-06 (second entry, same day) — Review pass on all five same-day Field_Log entries
 *(Rotated 2026-10-10 during the Unknowns-registration entry.)*
 All five entries filed earlier today moved from `Unreviewed` to a real disposition, closing the

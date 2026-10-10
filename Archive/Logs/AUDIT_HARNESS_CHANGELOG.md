@@ -20,6 +20,24 @@ CONTENT-INTEGRITY REPAIR (2026-09-03, no code version change):
 
 ────────────────────────────────────────────────────────────────────
 
+CHANGES IN THIS PATCH (v16 → v17, 2026-10-10):
+  - Generated prompt, role declaration: replaced the hard-coded
+    "Operating as Skeptic/Auditor per Auditor_Protocols.md v0.14" with
+    "... per Auditor_Protocols.md (use the live version from its header)".
+    The v0.14 string had been stale for many versions and went into every
+    generated audit prompt. Auditor_Protocols.md is not in the harness's
+    default fetch set (core files are the kit and the target), so the
+    version is not read at build time. Tracked as a related item under
+    FAK-018 in the kit's sidecar.
+  - Generated prompt, assumption extraction: dropped "and condensed
+    Unknowns Registry" from the list of what Forge_Audit_Kit.md contains.
+    The kit's critical watch list was removed at v1.10 and it no longer
+    carries a condensed registry.
+  - No logic change. Only the two prompt strings and the version label.
+    Compile-checked only; not run against a live fetch.
+
+------------------------------------
+
 CHANGES IN THIS PATCH (v15 → v16, 2026-08-04):
   - Cell 1: FALLBACK_REGISTRY — added Pyrolysis_Cascade.md (Tests/).
     Discoverable via dynamic parse once Routing.md's Master Routing Map
