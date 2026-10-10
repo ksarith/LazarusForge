@@ -516,7 +516,7 @@ Log the result — full pass, partial pass, or informative failure — in `Tests
 
 ## Auditor Notes & Unknowns
 
-*Converted 2026-10-10 from the file's earlier residual list or prose into the repository's standard sidecar format, keeping existing IDs so no cross-reference breaks. Risk and Priority values are Placeholder, proposed for human confirmation. Nothing here is Blocking, and no Status or Spec Gate changes.*
+*Converted 2026-10-10 from the file's earlier residual list or prose into the repository's standard sidecar format, keeping existing IDs so no cross-reference breaks. **Risk and Priority rankings human-confirmed 2026-10-10** (still Placeholder severity — not derived from measured rates; all non-blocking). No Status or Spec Gate changes.*
 
 ### MAQT-001 -- Proposal-passing mechanics between machines not yet chosen
 
@@ -573,3 +573,7 @@ Log the result — full pass, partial pass, or informative failure — in `Tests
 **Description:** §VII.4 suggests 120 s as a starting statutory value, while §8.1 recommends 300 s for first human-paced runs. The first run should record the value actually used.
 
 **Resolution Path:** Record the value used in the first run; calibrate from the Collaboration Friction Log.
+
+## Resolution Log
+
+- 2026-10-10: **Risk/Priority rankings on sidecar Unknowns human-confirmed** (values unchanged; remain Placeholder severity, non-blocking). No Status or Spec Gate change.

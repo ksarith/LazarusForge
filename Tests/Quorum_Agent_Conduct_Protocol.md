@@ -172,7 +172,7 @@ Only then calibrate forgiveness windows and whether Default trust should differ 
 
 ## Auditor Notes & Unknowns
 
-*Converted 2026-10-10 from the file's earlier residual list or prose into the repository's standard sidecar format, keeping existing IDs so no cross-reference breaks. Risk and Priority values are Placeholder, proposed for human confirmation. Nothing here is Blocking, and no Status or Spec Gate changes.*
+*Converted 2026-10-10 from the file's earlier residual list or prose into the repository's standard sidecar format, keeping existing IDs so no cross-reference breaks. **Risk and Priority rankings human-confirmed 2026-10-10** (still Placeholder severity — not derived from measured rates; all non-blocking). No Status or Spec Gate changes.*
 
 ### QCC-R1 -- Numeric thresholds uncalibrated (k, forgiveness streak, D3 hold duration)
 
@@ -311,6 +311,8 @@ Only then calibrate forgiveness windows and whether Default trust should differ 
 ---
 
 ## Resolution Log
+
+- 2026-10-10: **Risk/Priority rankings on sidecar Unknowns human-confirmed** (values unchanged; remain Placeholder severity, non-blocking). No Status or Spec Gate change.
 
 - 2026-10-08: **Proposal drafted (Placeholder, unregistered).** Human-directed after discussion of tit-for-tat on the AVE reliability track: persistent node key, checkable defections only, scrutiny not punishment, forgiving restoration, no governance-weight coupling. Complements MAQT Cycle 1 packet and AVE; does not execute a trial or amend §VII.
 - 2026-10-08: **Revised after review (still Placeholder, unregistered).** (1) Stated that this code extends AVE R1/R2 and set a conflict rule (stricter applies; no R3 relief while Elevated). (2) Defections are confirmed only by a source check (human or script); agents do not confirm other agents. (3) Key changes within a series must be logged; unexplained relabeling continues the prior window. (4) Added the recording path for D1–D5 (AVE vs process defect). (5) Cooldown waivers require a Field_Log note and are counted. Added QCC-R5.
