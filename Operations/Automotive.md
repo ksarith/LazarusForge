@@ -37,7 +37,7 @@
 | Body Stability   | Volatile |
 | Spec Gates       | 0/6 |
 | Verification Ref | Admin/Verification_Gates.md |
-| Open Unknowns    | 8 (sidecar below; all non-blocking) |
+| Open Unknowns    | 8 (sidecar below; AU-002, AU-003 and AU-004 are Blocking for the stated physical work, the other 5 non-blocking) |
 | Owner            | `Operations/Automotive.md` |
 | Last Audit       | 2026-10-10 — v0 stub filed (Proposed). No physical vehicle work claimed. |
 | Last Updated     | 2026-10-10 |
@@ -106,6 +106,11 @@ These are **floors**, not a complete safety case. Weakening them requires human 
 | AF-6 | Brake and steering integrity are **blocking** for any powered movement, including "just in the yard." |
 | AF-7 | Software/assist features do not hold governance weight: human operator remains the authority for motion. |
 | AF-8 | Salvaged controllers enter under Electronics trust rules (e.g. Logic-Zero / provenance); no "it boots" acceptance. |
+| AF-9 | Running an engine indoors or in any enclosed space requires positive exhaust ventilation (carbon monoxide). Airflow figures are Placeholder. |
+| AF-10 | Against unintended motion: wheels chocked, parking brake set, key removed and battery isolated before work under or around a vehicle; never rely on a single restraint. |
+| AF-11 | Stored mechanical energy (coil springs, gas struts, hood/hatch supports, hydraulic or pneumatic pressure) is treated as loaded and released only by a platform-specific method. |
+| AF-12 | Hot work (cutting, welding, grinding) on or near fuel systems, empty tanks (vapor persists), airbag modules, or foam/plastic interiors is forbidden until a hot-work procedure is filed and human-authorized. |
+| AF-13 | Lithium packs, especially crashed or flooded ones, are fire-capable even when "de-energized": isolate them away from structures, never open, cut, pierce or charge them. See EV-003 and `Operations/Energy.md`. |
 
 ### 3. Functional blocks (named; thresholds Placeholder)
 
@@ -115,8 +120,8 @@ These are **floors**, not a complete safety case. Weakening them requires human 
 | **B — Structure & restraint** | Frame/unibody inspection, seats, belts, airbag status | Criteria **Placeholder** |
 | **C — Brakes & rolling** | Service/parking brake, tires, bearings | No movement without human sign-off; numbers **Placeholder** |
 | **D — Steering & suspension** | Play, leaks, structural mounts | **Placeholder** |
-| **E — Powertrain (ICE)** | Oil, cooling, fuel integrity, exhaust routing | Emissions **out of scope** for v0 claims |
-| **F — Powertrain (electric)** | Isolation, contactor state, BMS honesty, thermal | Defers to Energy.md; HV procedure **absent** |
+| **E — Powertrain (ICE)** | Oil, cooling, fuel integrity, exhaust routing | Emissions **out of scope** for v0 claims; AF-9 applies to any running engine |
+| **F — Powertrain (electric)** | Isolation, contactor state, BMS honesty, thermal | Defers to Energy.md; HV procedure **absent**; AF-13 applies to any pack |
 | **G — LV electrical** | 12/24 V, grounds, critical lighting | **Placeholder** |
 | **H — Controls & firmware** | ECU/BCM trust boundary | Defers to Electronics.md |
 | **I — Motion envelope** | What movement is allowed in which context | Default: static only until procedure filed |
@@ -153,7 +158,7 @@ These are **floors**, not a complete safety case. Weakening them requires human 
 
 ## Auditor Notes & Unknowns
 
-*All Open, non-blocking. Risk/Priority are Placeholder severity rankings for human confirmation.*
+*All Open. AU-002, AU-003 and AU-004 are Blocking for the physical work named in each entry (changed 2026-10-10 from non-blocking: the file's own floors already forbid that work until they are resolved; cf. the EL-005 correction in `Operations/Electronics.md`). The rest are non-blocking. Risk/Priority are Placeholder severity rankings for human confirmation.*
 
 ### AU-001 -- Intake checklist for salvage vehicles (flood, crash, airbag, odometer)
 
@@ -182,7 +187,7 @@ These are **floors**, not a complete safety case. Weakening them requires human 
 | Risk | High (Placeholder) |
 | Priority | Major (Placeholder) |
 | Type | Safety |
-| Blocking | No *(but AF-2 forbids energizing until resolved for that pack)* |
+| Blocking | Yes, scoped: first HV work on any pack -- changed from No 2026-10-10; AF-2 already forbids energizing until resolved |
 | Owner | `Operations/Automotive.md` (joint with `Energy.md`) |
 | First Logged | 2026-10-10 |
 | Last Reviewed | 2026-10-10 |
@@ -201,7 +206,7 @@ These are **floors**, not a complete safety case. Weakening them requires human 
 | Risk | High (Placeholder) |
 | Priority | Major (Placeholder) |
 | Type | Safety |
-| Blocking | No *(AF-6 still applies as floor)* |
+| Blocking | Yes, scoped: any powered movement, including yard movement -- changed from No 2026-10-10; AF-6 already treats this as blocking |
 | Owner | `Operations/Automotive.md` |
 | First Logged | 2026-10-10 |
 | Last Reviewed | 2026-10-10 |
@@ -220,7 +225,7 @@ These are **floors**, not a complete safety case. Weakening them requires human 
 | Risk | High (Placeholder) |
 | Priority | Major (Placeholder) |
 | Type | Safety |
-| Blocking | No |
+| Blocking | Yes, scoped: first airbag or pretensioner handling -- changed from No 2026-10-10; AF-5 treats modules as live until a procedure exists |
 | Owner | `Operations/Automotive.md` |
 | First Logged | 2026-10-10 |
 | Last Reviewed | 2026-10-10 |
@@ -282,7 +287,7 @@ These are **floors**, not a complete safety case. Weakening them requires human 
 | First Logged | 2026-10-10 |
 | Last Reviewed | 2026-10-10 |
 
-**Description:** Hazmat path for fuels, oils, coolant, refrigerant not specified here.
+**Description:** Hazmat path for fuels, oils, coolant, refrigerant not specified here. Also to be covered: asbestos in older brake, clutch and gasket material, lead, mercury switches in older vehicles, and airbag propellant exposure.
 
 **Resolution Path:** Pointers into Admin environmental/safety doctrine; local law remains authoritative.
 
@@ -320,6 +325,8 @@ These are **floors**, not a complete safety case. Weakening them requires human 
 - Controllers accepted on "it boots" without Electronics trust path.
 - Spec Gate advance without body evidence.
 - Open Unknowns count in File State disagreeing with sidecar.
+- Any floor AF-1 to AF-13 weakened or dropped without ratification and a Resolution Log entry.
+- HV, airbag, or powered-movement work performed while its AU entry is still Blocking.
 
 ---
 
@@ -327,3 +334,4 @@ These are **floors**, not a complete safety case. Weakening them requires human 
 
 - 2026-10-10: **Cross-link:** `Operations/Robotics.md` v0 stub filed same day; AU-008 resolution path updated.
 - 2026-10-10: **v0 Proposed stub filed.** Human-directed first iteration for an Operations-layer automotive domain: safety advisory, hard floors AF-1–AF-8, functional blocks A–J with Placeholder thresholds, interfaces to Energy/Electronics/Gates/Admin, eight non-blocking Unknowns (AU-001–AU-008). No physical work claimed; no Spec Gate opens; public road explicitly out of scope. Registered 2026-10-10 in Routing.md, Ops_Scope_Map.md, and Discovery.md.
+- 2026-10-10: **Safety review pass (human-directed).** Added floors AF-9 to AF-13 (engine ventilation, unintended motion, stored mechanical energy, hot work near fuel and airbags, fire-capable lithium packs) and pointers from blocks E and F; AU-002, AU-003 and AU-004 changed to scoped Blocking; AU-007 scope extended to asbestos, lead, mercury and propellant. Floors only; no procedure or number added. All new items are Proposed/Placeholder.

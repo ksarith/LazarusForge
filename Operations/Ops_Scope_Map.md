@@ -31,8 +31,8 @@ Third folder in the Scope_Map rollout, following `Admin/Adm_Scope_Map.md` (2026-
 
 
 ### `Operations/Automotive.md`
-**Status:** Proposed · 0/6 · 8 Open Unknowns (AU-001–AU-008) · Risk: High (kinetic / HV)
-**Does:** Operations-layer home for salvage-aware vehicle systems — hard floors AF-1–AF-8, functional blocks A–J (thresholds Placeholder), interfaces to Energy/Electronics/Gates/Admin. Workshop and controlled private ground only.
+**Status:** Proposed · 0/6 · 8 Open Unknowns (AU-002/003/004 Blocking for stated physical work; AU-001–AU-008) · Risk: High (kinetic / HV)
+**Does:** Operations-layer home for salvage-aware vehicle systems — hard floors AF-1 to AF-13, functional blocks A–J (thresholds Placeholder), interfaces to Energy/Electronics/Gates/Admin. Workshop and controlled private ground only.
 **Does not (arrow):** Road-legality or public-road testing · Energy.md pack chemistry · Electronics.md general firmware trust · Robotics.md (mobile bases share interfaces only) · Measured range/autonomy claims.
 **Upstream:** Energy.md · Electronics.md · Safety_Protocols.md · Environmental_Constraints.md
 **Filed:** 2026-10-10 (v0 stub)
@@ -85,7 +85,7 @@ Third folder in the Scope_Map rollout, following `Admin/Adm_Scope_Map.md` (2026-
 
 ### `Operations/Robotics.md`
 **Status:** Proposed · 0/6 · 8 Open Unknowns (RB-001–RB-008) · Risk: High (force / human-shared space)
-**Does:** Operations-layer home for salvage-aware mobile bases and manipulators — hard floors RF-1–RF-8, functional blocks A–J (thresholds Placeholder), interfaces to Energy/Electronics/Automotive/Gates/Admin/Ethical_Constraints. Controlled cell / supervised teleoperation only.
+**Does:** Operations-layer home for salvage-aware mobile bases and manipulators — hard floors RF-1 to RF-12, functional blocks A–J (thresholds Placeholder), interfaces to Energy/Electronics/Automotive/Gates/Admin/Ethical_Constraints. Controlled cell / supervised teleoperation only.
 **Does not (arrow):** Unsupervised human-shared operation · AGI/embodiment claims · Electronics.md general firmware trust · Automotive.md on-road systems · Weaponized configurations.
 **Upstream:** Energy.md · Electronics.md · Safety_Protocols.md · Ethical_Constraints.md
 **Filed:** 2026-10-10 (v0 stub)
@@ -145,6 +145,7 @@ Three corrections applied this pass (`Gate_05_Separation_Thermal.md`, `Gate_06_F
 ## Resolution Log
 
 - 2026-10-10: Registered `Operations/Automotive.md` and `Operations/Robotics.md` (Proposed v0 stubs). Human-directed.
+- 2026-10-10: Safety review: floors AF-9 to AF-13 and RF-9 to RF-12 added; AU-002/003/004 and RB-002/003/007 changed to scoped Blocking. Human-directed.
 
 - 2026-09-13: **Content-accuracy pass run against all 13 files' live Scope
   Boundary sections, as a follow-up to the coverage fix below.** Found and

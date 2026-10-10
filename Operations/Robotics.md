@@ -36,7 +36,7 @@
 | Body Stability   | Volatile |
 | Spec Gates       | 0/6 |
 | Verification Ref | Admin/Verification_Gates.md |
-| Open Unknowns    | 8 (sidecar below; all non-blocking) |
+| Open Unknowns    | 8 (sidecar below; RB-002, RB-003 and RB-007 are Blocking for the stated physical work, the other 5 non-blocking) |
 | Owner            | `Operations/Robotics.md` |
 | Last Audit       | 2026-10-10 — v0 stub filed (Proposed). No physical robot work claimed. |
 | Last Updated     | 2026-10-10 |
@@ -99,13 +99,17 @@ These are **floors**, not a complete safety case. Weakening them requires human 
 | ID | Floor |
 |----|--------|
 | RF-1 | No unsupervised operation in human-occupied space from this file alone. |
-| RF-2 | Force-capable axes: default **power removed** and **mechanically restrained** until platform procedure exists and is human-authorized. |
+| RF-2 | Force-capable axes: default **power removed** and **mechanically restrained** until platform procedure exists and is human-authorized. Support gravity or spring loads before removing power (RF-9). |
 | RF-3 | E-stop and power isolation must be understandable and reachable by the human operator; software-only stop is not sufficient as the sole floor. |
 | RF-4 | Pinch, crush, and stored-energy (gravity, spring, pneumatic) hazards are identified before power-up. |
 | RF-5 | Salvaged motor drivers and controllers enter under Electronics trust rules; no "it homes" acceptance. |
 | RF-6 | Perception or planning software does not relax RF-1–RF-5. |
 | RF-7 | Human remains motion authority; robot output has **no governance weight**. |
 | RF-8 | No integration path that converts the platform into a weapon or coercion tool (align Ethical_Constraints / anti-weaponization posture). |
+| RF-9 | Before removing power or releasing a brake on any gravity-loaded or spring-loaded axis, the load is mechanically supported; power-down order is part of the platform procedure. |
+| RF-10 | After power-off, stored electrical energy (drive bus capacitors) is verified discharged before hands-on work; waiting a fixed time is not verification. |
+| RF-11 | The safety channel (E-stop, contactors, safety relays) is function-tested, not presumed from presence, before any powered motion; salvaged safety components are untrusted until tested. Reset after an E-stop must not restart motion; a deliberate restart action is required. |
+| RF-12 | Other cell hazards are identified before power-up: hydraulic pressure (injection injury), laser or lidar emitters (eye safety), and mobile-base lithium packs (fire-capable; see EV-003 and `Operations/Energy.md`). |
 
 ### 3. Functional blocks (named; thresholds Placeholder)
 
@@ -114,10 +118,10 @@ These are **floors**, not a complete safety case. Weakening them requires human 
 | **A — Intake & identity** | Platform class, DOF, payload rating (claimed vs unknown), missing guards | Checklist **Placeholder** |
 | **B — Mechanical structure** | Frame cracks, backlash, cable management, end-effector security | Criteria **Placeholder** |
 | **C — Actuation & power train** | Motors, gearboxes, pneumatics/hydraulics leaks | Force/speed limits **Placeholder** |
-| **D — Electrical & HV/LV buses** | Isolation, emergency power-down path | Defers partly to Energy.md |
+| **D — Electrical & HV/LV buses** | Isolation, emergency power-down path | Defers partly to Energy.md; discharge verification per RF-10 |
 | **E — Control & firmware** | Teach pendant / stack trust boundary | Defers to Electronics.md |
 | **F — Sensing** | Encoders, limits, optional vision — honesty of telemetry | EC-012-related caution **Placeholder** |
-| **G — Safety channel** | E-stop, light curtains, zone control (if any) | Presence **required** before unsupervised claims; v0 forbids unsupervised |
+| **G — Safety channel** | E-stop, light curtains, zone control (if any) | Presence **required** before unsupervised claims, and function-tested per RF-11; v0 forbids unsupervised |
 | **H — Motion envelope** | Allowed modes: dead / teach / supervised auto | Default: dead + inspection only |
 | **I — End-effector & task** | Gripper/tool change; task-specific hazards | Per-task **Placeholder** |
 | **J — Utilization & retirement** | Cell integration vs donor parts; battery/hazmat | Gate_07 interface **Placeholder** |
@@ -154,7 +158,7 @@ These are **floors**, not a complete safety case. Weakening them requires human 
 
 ## Auditor Notes & Unknowns
 
-*All Open, non-blocking. Risk/Priority are Placeholder severity rankings for human confirmation.*
+*All Open. RB-002, RB-003 and RB-007 are Blocking for the physical work named in each entry (changed 2026-10-10 from non-blocking: the file's own floors already forbid that work until they are resolved; cf. the EL-005 correction in `Operations/Electronics.md`). The rest are non-blocking. Risk/Priority are Placeholder severity rankings for human confirmation.*
 
 ### RB-001 -- Platform intake checklist (DOF, payload unknown, guards, E-stop)
 
@@ -183,7 +187,7 @@ These are **floors**, not a complete safety case. Weakening them requires human 
 | Risk | High (Placeholder) |
 | Priority | Major (Placeholder) |
 | Type | Safety |
-| Blocking | No *(RF-2/RF-3 still apply as floors)* |
+| Blocking | Yes, scoped: first power-up of any force-capable axis -- changed from No 2026-10-10; RF-2/RF-3 already forbid it until resolved |
 | Owner | `Operations/Robotics.md` |
 | First Logged | 2026-10-10 |
 | Last Reviewed | 2026-10-10 |
@@ -202,7 +206,7 @@ These are **floors**, not a complete safety case. Weakening them requires human 
 | Risk | High (Placeholder) |
 | Priority | Major (Placeholder) |
 | Type | Safety |
-| Blocking | No |
+| Blocking | Yes, scoped: first powered motion, including supervised -- changed from No 2026-10-10; no motion without force and speed caps |
 | Owner | `Operations/Robotics.md` |
 | First Logged | 2026-10-10 |
 | Last Reviewed | 2026-10-10 |
@@ -278,7 +282,7 @@ These are **floors**, not a complete safety case. Weakening them requires human 
 | Risk | High (Placeholder) |
 | Priority | Major (Placeholder) |
 | Type | Safety / Governance |
-| Blocking | No *(RF-1 still forbids unsupervised human-shared operation)* |
+| Blocking | Yes, scoped: any operation with people in the cell or space -- changed from No 2026-10-10; RF-1 already forbids it |
 | Owner | `Operations/Robotics.md` |
 | First Logged | 2026-10-10 |
 | Last Reviewed | 2026-10-10 |
@@ -322,9 +326,12 @@ These are **floors**, not a complete safety case. Weakening them requires human 
 - Weaponization-capable configuration described as in-scope.
 - Spec Gate advance without body evidence.
 - Open Unknowns count in File State disagreeing with sidecar.
+- Any floor RF-1 to RF-12 weakened or dropped without ratification and a Resolution Log entry.
+- Powered motion or people-present operation while its RB entry is still Blocking.
 
 ---
 
 ## Resolution Log
 
 - 2026-10-10: **v0 Proposed stub filed.** Human-directed first iteration for an Operations-layer robotics domain: safety advisory, hard floors RF-1–RF-8, functional blocks A–J with Placeholder thresholds, interfaces to Energy/Electronics/Automotive/Gates/Admin, eight non-blocking Unknowns (RB-001–RB-008). No physical work claimed; no Spec Gate opens; unsupervised human-shared operation and AGI/embodiment hype explicitly out of scope. Registered 2026-10-10 in Routing.md, Ops_Scope_Map.md, and Discovery.md.
+- 2026-10-10: **Safety review pass (human-directed).** Added floors RF-9 to RF-12 (support loads before power removal, verify discharge, function-test the safety channel and require deliberate restart after E-stop, hydraulic/laser/lithium hazards) and pointers from blocks D and G; RB-002, RB-003 and RB-007 changed to scoped Blocking. Floors only; no procedure or number added. All new items are Proposed/Placeholder.
