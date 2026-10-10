@@ -13,11 +13,11 @@
 |------------------|----------------------------------------------------------------------|
 | Status           | Proposed Protocol — Not Yet Run                                     |
 | Spec Gates       | 0/6 — this file is an operational protocol, not a governance spec; it operationalizes §VII, it does not amend it |
-| Open Unknowns    | 0 formally registered — several DECISION NEEDED items below are left open by design, not omission |
+| Open Unknowns    | 3 registered in the sidecar at the end of this file (MAQT-001 to MAQT-003, all non-blocking); MAQT-002 also indexed in `Unknowns.md`. The DECISION NEEDED items remain open by design |
 | Body Stability   | Volatile — expect this to change after the first real attempt      |
 | Owning Domain    | Tests/                                                               |
-| Last Reviewed    | 2026-09-21 — §8.6–§8.8 role pack/task; §8.9 Handoff Schemas + §8.10 Collaboration Friction Log added (ChatGPT collaboration review). Status unchanged: Proposed Protocol — Not Yet Run. |
-| Sidecar Link     | N/A                                                                  |
+| Last Reviewed    | 2026-10-10 — sidecar added (MAQT-001 to MAQT-003); no protocol change. Prior: 2026-09-21 — §8.6–§8.8 role pack/task; §8.9 Handoff Schemas + §8.10 Collaboration Friction Log added (ChatGPT collaboration review). Status unchanged: Proposed Protocol — Not Yet Run. |
+| Sidecar Link     | Auditor Notes & Unknowns (end of this file)                          |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present.   |
 
 ---
@@ -511,3 +511,65 @@ Log the result — full pass, partial pass, or informative failure — in `Tests
 ## Lessons Learned
 
 *(Empty — this file has not yet had a real trial run against it. First-run notes belong here after the trial.)*
+
+---
+
+## Auditor Notes & Unknowns
+
+*Converted 2026-10-10 from the file's earlier residual list or prose into the repository's standard sidecar format, keeping existing IDs so no cross-reference breaks. Risk and Priority values are Placeholder, proposed for human confirmation. Nothing here is Blocking, and no Status or Spec Gate changes.*
+
+### MAQT-001 -- Proposal-passing mechanics between machines not yet chosen
+
+| Field | Value |
+|---|---|
+| Status | Open |
+| Risk | Low (Placeholder) |
+| Priority | Minor (Placeholder) |
+| Type | Process |
+| Blocking | No |
+| Owner | `Tests/Multi_Agent_Quorum_Trial.md` |
+| First Logged | 2026-09-18 |
+| Last Reviewed | 2026-10-10 |
+
+**Description:** The exact mechanism for passing a proposal between machines (shared remote, independent pull/push, relay script, manual copy) is left to whoever sets up the trial. The requirement is only that the chosen mechanism is recorded. §8.1 recommends a shared remote as a non-binding first-run default.
+
+**Resolution Path:** The human operator records the mechanism in the Pre-Trial Worksheet before the first run.
+
+---
+
+### MAQT-002 -- Authority for assigning and rotating roles across cycles
+
+| Field | Value |
+|---|---|
+| Status | Open |
+| Risk | Medium (Placeholder) |
+| Priority | Major (Placeholder) |
+| Type | Governance |
+| Blocking | No |
+| Owner | `Tests/Multi_Agent_Quorum_Trial.md` |
+| First Logged | 2026-09-18 |
+| Last Reviewed | 2026-10-10 |
+| Indexed | `Unknowns.md` > Governance & Verification |
+
+**Description:** Rotation is permitted but not required, and who sets the schedule is open in §VII.2 and the §VII.6 open item as well as here. §8.1 recommends a fixed schedule set by the human operator before the trial starts, with no agent choosing or changing roles mid-trial.
+
+**Resolution Path:** Human-set fixed schedule before each trial (the §8.1 default); a formal authority belongs with the §VII.6 / GOV-008 work.
+
+---
+
+### MAQT-003 -- Liveness timeout value for challenge queries
+
+| Field | Value |
+|---|---|
+| Status | Open |
+| Risk | Low (Placeholder) |
+| Priority | Minor (Placeholder) |
+| Type | Calibration |
+| Blocking | No |
+| Owner | `Tests/Multi_Agent_Quorum_Trial.md` |
+| First Logged | 2026-09-20 |
+| Last Reviewed | 2026-10-10 |
+
+**Description:** §VII.4 suggests 120 s as a starting statutory value, while §8.1 recommends 300 s for first human-paced runs. The first run should record the value actually used.
+
+**Resolution Path:** Record the value used in the first run; calibrate from the Collaboration Friction Log.

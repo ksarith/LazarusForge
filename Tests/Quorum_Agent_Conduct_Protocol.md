@@ -6,7 +6,8 @@
 | Body Stability   | Volatile |
 | Spec Gates       | 0/6 (protocol, not spec — ratification here does not advance any Spec Gate) |
 | Owner            | Human governing authority — process complement to MAQT + AVE |
-| Last Updated     | 2026-10-09 |
+| Last Updated     | 2026-10-10 |
+| Open Unknowns    | 7 (sidecar below, all non-blocking); QCC-R2, QCC-R5, QCC-R7 also indexed in `Unknowns.md` |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
 **Ratification scope (2026-10-09).** The human governing authority ratified the structure and approach of this protocol: the node key, checkable defections D1–D6, the scrutiny-only forgiving response, the defect record and correction path, and the hard rules. Recorded as: "It should be needed components and the approach should be mostly correct. We should run an audit on it."
@@ -169,17 +170,143 @@ Only then calibrate forgiveness windows and whether Default trust should differ 
 
 ---
 
-## Residuals (open)
+## Auditor Notes & Unknowns
 
-| ID | Residual |
-|----|----------|
-| QCC-R1 | Exact k, forgiveness streak length, and D3 hold duration need data |
-| QCC-R2 | How to key agents when model string is hidden or routed |
-| QCC-R3 | Whether Elevated scrutiny should be visible in public Field_Logs or operator-only |
-| QCC-R4 | Interaction with single-agent CAP runs (same code vs MAQT-only) |
-| QCC-R5 | Reconciling the D-count trigger with AVE R1's survival-rate threshold numerics once real frequencies exist; and the split between AVE scores (D1, D6, checkable D5) and Field_Log process defects (D2–D4), so a node cannot show clean AVE numbers while under Elevated scrutiny without that being visible in one place (raised by the independent audit, 2026-10-09) |
-| QCC-R6 | Whether the project also needs a community conduct policy for people (interaction, reporting, moderation, appeals). Separate human decision |
-| QCC-R7 | Human or script confirmation of every process defect (D2–D4) may conflict with the Human Interaction Point Doctrine in `Admin/Auditor_Protocols.md` (human points are coarse, not blocking). Examine batching or sampling of confirmations with trial data. Agents still never confirm each other (raised by the independent audit, 2026-10-09) |
+*Converted 2026-10-10 from the file's earlier residual list or prose into the repository's standard sidecar format, keeping existing IDs so no cross-reference breaks. Risk and Priority values are Placeholder, proposed for human confirmation. Nothing here is Blocking, and no Status or Spec Gate changes.*
+
+### QCC-R1 -- Numeric thresholds uncalibrated (k, forgiveness streak, D3 hold duration)
+
+| Field | Value |
+|---|---|
+| Status | Open |
+| Risk | Medium (Placeholder) |
+| Priority | Major (Placeholder) |
+| Type | Calibration |
+| Blocking | No |
+| Owner | `Tests/Quorum_Agent_Conduct_Protocol.md` |
+| First Logged | 2026-10-08 |
+| Last Reviewed | 2026-10-10 |
+
+**Description:** Exact k, forgiveness streak length, and D3 hold duration need data
+
+**Resolution Path:** Observed defection frequencies from MAQT/AVE runs; coordinate with AVE-R1.
+
+---
+
+### QCC-R2 -- Keying agents when the model string is hidden or routed
+
+| Field | Value |
+|---|---|
+| Status | Open |
+| Risk | Low (Placeholder) |
+| Priority | Minor (Placeholder) |
+| Type | Design |
+| Blocking | No |
+| Owner | `Tests/Quorum_Agent_Conduct_Protocol.md` |
+| First Logged | 2026-10-08 |
+| Last Reviewed | 2026-10-10 |
+| Indexed | `Unknowns.md` > Governance & Verification |
+
+**Description:** How to key agents when model string is hidden or routed
+
+**Resolution Path:** Operator-declared keys stay the rule. Revisit only if automated enforcement is ever proposed. Sybil resistance and cryptographic identity are out of scope.
+
+---
+
+### QCC-R3 -- Visibility of Elevated scrutiny (public Field_Logs or operator-only)
+
+| Field | Value |
+|---|---|
+| Status | Open |
+| Risk | Low (Placeholder) |
+| Priority | Minor (Placeholder) |
+| Type | Governance |
+| Blocking | No |
+| Owner | `Tests/Quorum_Agent_Conduct_Protocol.md` |
+| First Logged | 2026-10-08 |
+| Last Reviewed | 2026-10-10 |
+
+**Description:** Whether Elevated scrutiny should be visible in public Field_Logs or operator-only
+
+**Resolution Path:** Human decision after analyzing privacy and reputation side effects.
+
+---
+
+### QCC-R4 -- Interaction with single-agent CAP runs
+
+| Field | Value |
+|---|---|
+| Status | Open |
+| Risk | Low (Placeholder) |
+| Priority | Minor (Placeholder) |
+| Type | Design |
+| Blocking | No |
+| Owner | `Tests/Quorum_Agent_Conduct_Protocol.md` |
+| First Logged | 2026-10-08 |
+| Last Reviewed | 2026-10-10 |
+
+**Description:** Interaction with single-agent CAP runs (same code vs MAQT-only)
+
+**Resolution Path:** Decide whether the protocol applies outside MAQT/AVE trials, using CAP run logs.
+
+---
+
+### QCC-R5 -- D-count trigger vs AVE R1 numerics, and the split between AVE scores and Field_Log process defects
+
+| Field | Value |
+|---|---|
+| Status | Open |
+| Risk | Medium (Placeholder) |
+| Priority | Major (Placeholder) |
+| Type | Design |
+| Blocking | No |
+| Owner | `Tests/Quorum_Agent_Conduct_Protocol.md` |
+| First Logged | 2026-10-08 |
+| Last Reviewed | 2026-10-10 |
+| Indexed | `Unknowns.md` > Governance & Verification |
+
+**Description:** Reconciling the D-count trigger with AVE R1's survival-rate threshold numerics once real frequencies exist; and the split between AVE scores (D1, D6, checkable D5) and Field_Log process defects (D2–D4), so a node cannot show clean AVE numbers while under Elevated scrutiny without that being visible in one place (raised by the independent audit, 2026-10-09)
+
+**Resolution Path:** Define one accounting contract once real frequencies exist; coordinate with AVE-R1.
+
+---
+
+### QCC-R6 -- Community conduct policy for people (interaction, reporting, moderation, appeals)
+
+| Field | Value |
+|---|---|
+| Status | Open |
+| Risk | Low (Placeholder) |
+| Priority | Minor (Placeholder) |
+| Type | Governance |
+| Blocking | No |
+| Owner | `Tests/Quorum_Agent_Conduct_Protocol.md` |
+| First Logged | 2026-10-08 |
+| Last Reviewed | 2026-10-10 |
+
+**Description:** Whether the project also needs a community conduct policy for people (interaction, reporting, moderation, appeals). Separate human decision
+
+**Resolution Path:** Separate human decision; a distinct document if adopted. Not an agent-protocol matter.
+
+---
+
+### QCC-R7 -- Human or script confirmation of process defects vs the Human Interaction Point Doctrine
+
+| Field | Value |
+|---|---|
+| Status | Open |
+| Risk | Medium (Placeholder) |
+| Priority | Major (Placeholder) |
+| Type | Design |
+| Blocking | No |
+| Owner | `Tests/Quorum_Agent_Conduct_Protocol.md` |
+| First Logged | 2026-10-09 |
+| Last Reviewed | 2026-10-10 |
+| Indexed | `Unknowns.md` > Governance & Verification |
+
+**Description:** Human or script confirmation of every process defect (D2–D4) may conflict with the Human Interaction Point Doctrine in `Admin/Auditor_Protocols.md` (human points are coarse, not blocking). Examine batching or sampling of confirmations with trial data. Agents still never confirm each other (raised by the independent audit, 2026-10-09)
+
+**Resolution Path:** Examine batching or sampling of confirmations with trial data. Agents still never confirm each other.
 
 ---
 
@@ -191,3 +318,4 @@ Only then calibrate forgiveness windows and whether Default trust should differ 
 - 2026-10-09: **Ratified by the human governing authority (trial scope; thresholds remain Placeholder).** Renamed from `Quorum_Agent_Conduct_Protocol_PROPOSAL.md`; the earlier `Quorum_Code_of_Conduct_PROPOSAL.md` was deleted from the live repository and is omitted. Single-agent source audit (Claude) before finalizing: every cited file and section was checked against the live files — AVE §3 window (k = 20), R1–R4 (R3 needs k≥10; R2 triggers on `doubled_down` on a Fail), MAQT probe success criterion and Entanglement disclosure, §VII / GOV-008, DV-003, `Forge_Net.md` §2.5.0, `Hardware_Diversity_Ladder.md`, the Ethical Anchor string. All resolved. Fixes: (1) §6 still said D1–D5 after D6 was added; (2) D6's check now matches AVE R2 (`doubled_down` on a Fail); (3) D5/D6 and QCC-R5/R6 put in order; (4) stale pre-ratification wording removed (proposal / not registered / if later ratified / "filing does not promote Status"); (5) dependency note added. **Cross-agent audit pending.** Registered in `Routing.md`, `Discovery.md`, `Tst_Scope_Map.md`.
 - 2026-10-09 (second entry): **Audit runs recorded.** Audit 1 (Grok, drafter-entangled, live file): no defects found. Audit 2 (Gemini, independent, run on a copy with planted faults; details withheld): caught 1 of 3, and its other findings were false positives or pack gaps. Two earlier Gemini runs were invalid. Its design objections apply to this file and are recorded as QCC-R5 (extended) and QCC-R7. **No change to the protocol's rules.** See `Tests/Field_Logs/FL-20261009-protocol-audit-runs.md`.
 - 2026-10-09 (third entry): **Wording only.** The Default row said "Moderate trust." `Architecture/Forge_Net.md` §2.5.0 deprecates "trust score" in favor of the three-term taxonomy, so the row now reads "Default scrutiny (provisional node reliability; not a trust score)." Raised by an independent audit run (see `Tests/Field_Logs/FL-20261009-protocol-audit-runs.md`). No rule changed.
+- 2026-10-10: **Residuals converted to sidecar entries.** QCC-R1–R7 are now in the standard Auditor Notes & Unknowns format with Placeholder Risk and Priority; IDs unchanged. QCC-R2, QCC-R5, QCC-R7 are indexed in `Unknowns.md` v5.58. No rule changed.
