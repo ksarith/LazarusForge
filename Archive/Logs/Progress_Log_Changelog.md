@@ -3,6 +3,34 @@
 Split out 2026-08-09, following the precedent already established by `Unknowns_Changelog.md`, `AUDIT_HARNESS_CHANGELOG.md`, and `Forge_Audit_Kit_Changelog.md`. `Progress_Log.md` keeps the five most recent entries in full; this file holds every entry that's rotated out. No information is removed when an entry rotates — every entry below is preserved verbatim from `Progress_Log.md` at the time it moved.
 
 ---
+### 2026-10-06 (second entry, same day) — Review pass on all five same-day Field_Log entries
+*(Rotated 2026-10-10 during the Unknowns-registration entry.)*
+All five entries filed earlier today moved from `Unreviewed` to a real disposition, closing the
+loop the Status-ownership rule exists for. `FL-ave-sample-01` → **Reviewed — no action**, per
+`Agent_Verification_Event.md`'s own §5 "Where to log" doctrine — a routine batch's correct home
+is Field_Logs itself, no schema edit warranted, matching the entry's own Explicit non-claims.
+`FL-cap-meta-stale-01` and `-02` → **Reviewed — folded**, pointing at the `Routing.md` and
+`Tst_Scope_Map.md`/`Discovery.md` corrections they'd already driven. `FL-cap-meta-stale-03-secondary`
+→ **Reviewed — folded** into the `Discovery.md` correction, with a reviewer note that its finding
+(withholding the Field_Logs Index blocks the skill at stage 2) confirms rather than overturns an
+assumption the run card already made — tested now instead of assumed, not a surprising result.
+
+**`FL-cap-meta-stale-01-reduced` got the closest look**, since this is exactly the entry whose own
+headline ("8/8") uses the pre-correction metric framing the same-day run-card fix exists to
+prevent. Left the original submitted figure untouched — it's the honest historical record of what
+was actually run — and added a Reviewer note clarifying the corrected reading (operational grade
+7/7, matching Full; ablation assessment Pass) directly beneath it, rather than editing the
+original number out of existence.
+
+**One doctrine addition, deliberately narrow:** `Tests/Admin_Governance_Teardown_POC.md`'s Future
+experiment section gained an "Early evidence" note stating what the Reduced ablation showed —
+no operational capability loss when RIP and `Operational_Conventions.md` were withheld, for this
+one skill/seed pair — explicitly flagged PROVISIONAL, single-run, and **not** grounds to change
+either file's Tier 1 classification in the table above. No tier, row, or Totals figure changed.
+`Field_Logs.md`'s Index Status column updated to match all five dispositions; Resolution Log
+entries added to both `Field_Logs.md` and the POC file. Human-directed ("Please continue").
+
+---
 ### 2026-10-06 — First real CAP-meta-stale-01 and AVE runs filed: five new Field_Logs, run card metric bug caught and fixed, Routing.md triplication bug caught and fixed
 *(Rotated 2026-10-09 during the protocol audit-runs entry.)*
 The evidence drought named repeatedly over the past two days broke: five new entries filed under
