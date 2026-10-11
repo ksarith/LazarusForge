@@ -37,6 +37,10 @@ Created 2026-08-09 to fix a recurring failure mode found the same day, in two pl
 
 *(Most recent first. Rotate to `Archive/Logs/Progress_Log_Changelog.md` once more than five entries accumulate.)*
 
+### 2026-10-11 — Automation development pathway noted (proposal, not built)
+ChatGPT review of 1.21 recommended elevating `Automation/` from a tool bag to a repeatable, testable subsystem that checks its own limits without deciding governance. **Recorded direction only — no code or new folder filed this entry.** Proposed phases: (1) `Tests/Automation/` unittest suite for audit_lib, parser, integrity_check, AUDIT_HARNESS, cold_session_bundler — success and failure modes; (2) shared run manifest (source / execution / result identity) so tools do not silently disagree on repo state; (3) extract shared registry/aliases to e.g. `Automation/repo_registry.py` and break integrity_check→AUDIT_HARNESS coupling; (4) explicit checker modes local / pinned remote / live remote and clearer finding categories; (5) deterministic Colab checkout; (6) measure cold-session bundler strip behavior; (7) keep Candidate 3 isolated. Constraint retained: automation reports evidence and limits — does not certify ethics, governance readiness, or physical go-ahead. Near-term still: packaging hygiene (done same day), Kit/harness regression Field_Log, then tests before new capabilities.
+
+---
 ### 2026-10-11 — Three quick consistency fixes (packaging + headers)
 Removed shipped `Automation/__pycache__/*.pyc` from the working tree (`.gitignore` already excluded them; release zip had still contained them). `Discovery.md` Last-updated header catch-up 2026-10-09 → 2026-10-10 for Automotive/Robotics registration already in the body. `Automation/README.md` harness version label v16 → v17 to match `AUDIT_HARNESS.py`. No doctrine, Unknown, or Spec Gate change.
 
@@ -79,32 +83,6 @@ contents steer behavior (task files invited a role breach); one run per auditor 
 calibration. Open: three candidate defect records (G2 role breach, G2 false multi-family claim, G3 stray
 citation) await human source-check confirmation. `FL-20261008-maqt-matrix-preregistration-proposal.md` is
 still unratified and unregistered. Rotated the 2026-10-06 first-runs entry to the changelog. Human-directed.
-
----
-### 2026-10-09 — `Tests/Quorum_Agent_Conduct_Protocol.md` ratified (trial scope) and registered; 2026-10-08 follow-ups logged
-Human ratified the agent-conduct proposal ("I would like to ratify the Quorum_Agent_Conduct_Protocol_PROPOSAL.md.
-It should be needed components and the approach should be mostly correct. We should run an audit on it.").
-Scope: structure and approach only, operative for MAQT/AVE trials and reliability sampling; every number stays
-Placeholder; no Admin doctrine, §VII/GOV-008, Unknown or Spec Gate changed; AVE (Candidate) and MAQT (Proposed)
-are not ratified by this. Renamed from `_PROPOSAL`. The earlier `Quorum_Code_of_Conduct_PROPOSAL.md` had already
-been deleted from the live repository and is omitted.
-
-Single-agent source audit (Claude) before the ratified text was finalized: every cited file and section was
-checked against the live files (AVE §3 window and R1–R4, MAQT probe criterion and Entanglement disclosure,
-§VII/GOV-008, DV-003, `Forge_Net.md` §2.5.0, Hardware Diversity Ladder, Ethical Anchor string). All resolved.
-Five fixes: §6 still said D1–D5 after D6 was added; D6's check now matches AVE R2 (`doubled_down` on a Fail);
-D5/D6 and QCC-R5/R6 out of order; stale pre-ratification wording (proposal / not registered / if later
-ratified / "filing does not promote Status") — the same stale-state pattern as `FL-20261007`'s body; and a
-dependency note added. **Cross-agent audit still pending; the single-agent check is not a substitute.**
-
-Registered in `Routing.md`, `Discovery.md` (whose header had no line for the 2026-10-07 recharacterization, now
-caught up) and `Tests/Tst_Scope_Map.md`. Rotated the 2026-10-04 seventh entry to the changelog.
-
-Logged late, from 2026-10-08: README "Under the hood" bridge; human-facing "Lazarus Forge" vs repository
-identifier "LazarusForge" applied to README/CONTRIBUTING; `FL-20261007-recharacterization-proposal.md` body
-reconciled with a dated Disposition. `FL-20261008-maqt-matrix-preregistration-proposal.md` remains an
-unratified, unregistered proposal. Open: AVE and MAQT do not yet point back to the new protocol.
-Human-directed.
 
 ---
 Full history, including entries rotated out of the five above, in `Archive/Logs/Progress_Log_Changelog.md`.
