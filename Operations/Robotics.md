@@ -36,7 +36,7 @@
 | Body Stability   | Volatile |
 | Spec Gates       | 0/6 |
 | Verification Ref | Admin/Verification_Gates.md |
-| Open Unknowns    | 8 (sidecar below; RB-002, RB-003 and RB-007 are Blocking for the stated physical work, the other 5 non-blocking) |
+| Open Unknowns    | 8 (sidecar below; RB-002, RB-003 and RB-007 are Blocking for the stated physical work, the other 5 non-blocking; the three Blocking items also indexed in `Unknowns.md`) |
 | Owner            | `Operations/Robotics.md` |
 | Last Audit       | 2026-10-10 — v0 stub filed (Proposed). No physical robot work claimed. |
 | Last Updated     | 2026-10-10 |
@@ -191,6 +191,7 @@ These are **floors**, not a complete safety case. Weakening them requires human 
 | Owner | `Operations/Robotics.md` |
 | First Logged | 2026-10-10 |
 | Last Reviewed | 2026-10-10 |
+| Indexed | `Unknowns.md` > Operations -- Automotive & Robotics |
 
 **Description:** Floors stated; platform-class procedures and test methods not filed.
 
@@ -210,6 +211,7 @@ These are **floors**, not a complete safety case. Weakening them requires human 
 | Owner | `Operations/Robotics.md` |
 | First Logged | 2026-10-10 |
 | Last Reviewed | 2026-10-10 |
+| Indexed | `Unknowns.md` > Operations -- Automotive & Robotics |
 
 **Description:** No numeric caps; any later numbers start Placeholder until measured in cell.
 
@@ -286,6 +288,7 @@ These are **floors**, not a complete safety case. Weakening them requires human 
 | Owner | `Operations/Robotics.md` |
 | First Logged | 2026-10-10 |
 | Last Reviewed | 2026-10-10 |
+| Indexed | `Unknowns.md` > Operations -- Automotive & Robotics |
 
 **Description:** OEM cobot labels do not grant unsupervised presence; policy for supervised proximity TBD.
 
@@ -335,3 +338,4 @@ These are **floors**, not a complete safety case. Weakening them requires human 
 
 - 2026-10-10: **v0 Proposed stub filed.** Human-directed first iteration for an Operations-layer robotics domain: safety advisory, hard floors RF-1–RF-8, functional blocks A–J with Placeholder thresholds, interfaces to Energy/Electronics/Automotive/Gates/Admin, eight non-blocking Unknowns (RB-001–RB-008). No physical work claimed; no Spec Gate opens; unsupervised human-shared operation and AGI/embodiment hype explicitly out of scope. Registered 2026-10-10 in Routing.md, Ops_Scope_Map.md, and Discovery.md.
 - 2026-10-10: **Safety review pass (human-directed).** Added floors RF-9 to RF-12 (support loads before power removal, verify discharge, function-test the safety channel and require deliberate restart after E-stop, hydraulic/laser/lithium hazards) and pointers from blocks D and G; RB-002, RB-003 and RB-007 changed to scoped Blocking. Floors only; no procedure or number added. All new items are Proposed/Placeholder.
+- 2026-10-10: The three Blocking items are indexed in `Unknowns.md` v5.59 (Active Index cluster, Dependency Clusters block, Critical Watch). Index entries only; no change to the sidecar entries' substance.

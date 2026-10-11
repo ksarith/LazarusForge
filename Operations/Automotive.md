@@ -37,7 +37,7 @@
 | Body Stability   | Volatile |
 | Spec Gates       | 0/6 |
 | Verification Ref | Admin/Verification_Gates.md |
-| Open Unknowns    | 8 (sidecar below; AU-002, AU-003 and AU-004 are Blocking for the stated physical work, the other 5 non-blocking) |
+| Open Unknowns    | 8 (sidecar below; AU-002, AU-003 and AU-004 are Blocking for the stated physical work, the other 5 non-blocking; the three Blocking items also indexed in `Unknowns.md`) |
 | Owner            | `Operations/Automotive.md` |
 | Last Audit       | 2026-10-10 — v0 stub filed (Proposed). No physical vehicle work claimed. |
 | Last Updated     | 2026-10-10 |
@@ -191,6 +191,7 @@ These are **floors**, not a complete safety case. Weakening them requires human 
 | Owner | `Operations/Automotive.md` (joint with `Energy.md`) |
 | First Logged | 2026-10-10 |
 | Last Reviewed | 2026-10-10 |
+| Indexed | `Unknowns.md` > Operations -- Automotive & Robotics |
 
 **Description:** Stub forbids energizing traction packs; no pack-class procedure exists yet.
 
@@ -210,6 +211,7 @@ These are **floors**, not a complete safety case. Weakening them requires human 
 | Owner | `Operations/Automotive.md` |
 | First Logged | 2026-10-10 |
 | Last Reviewed | 2026-10-10 |
+| Indexed | `Unknowns.md` > Operations -- Automotive & Robotics |
 
 **Description:** Floor stated; measurable minima and test method not filed.
 
@@ -229,6 +231,7 @@ These are **floors**, not a complete safety case. Weakening them requires human 
 | Owner | `Operations/Automotive.md` |
 | First Logged | 2026-10-10 |
 | Last Reviewed | 2026-10-10 |
+| Indexed | `Unknowns.md` > Operations -- Automotive & Robotics |
 
 **Description:** Treat as live until vehicle-specific procedures exist.
 
@@ -335,3 +338,4 @@ These are **floors**, not a complete safety case. Weakening them requires human 
 - 2026-10-10: **Cross-link:** `Operations/Robotics.md` v0 stub filed same day; AU-008 resolution path updated.
 - 2026-10-10: **v0 Proposed stub filed.** Human-directed first iteration for an Operations-layer automotive domain: safety advisory, hard floors AF-1–AF-8, functional blocks A–J with Placeholder thresholds, interfaces to Energy/Electronics/Gates/Admin, eight non-blocking Unknowns (AU-001–AU-008). No physical work claimed; no Spec Gate opens; public road explicitly out of scope. Registered 2026-10-10 in Routing.md, Ops_Scope_Map.md, and Discovery.md.
 - 2026-10-10: **Safety review pass (human-directed).** Added floors AF-9 to AF-13 (engine ventilation, unintended motion, stored mechanical energy, hot work near fuel and airbags, fire-capable lithium packs) and pointers from blocks E and F; AU-002, AU-003 and AU-004 changed to scoped Blocking; AU-007 scope extended to asbestos, lead, mercury and propellant. Floors only; no procedure or number added. All new items are Proposed/Placeholder.
+- 2026-10-10: The three Blocking items are indexed in `Unknowns.md` v5.59 (Active Index cluster, Dependency Clusters block, Critical Watch). Index entries only; no change to the sidecar entries' substance.

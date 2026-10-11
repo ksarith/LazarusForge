@@ -145,7 +145,7 @@ Three corrections applied this pass (`Gate_05_Separation_Thermal.md`, `Gate_06_F
 ## Resolution Log
 
 - 2026-10-10: Registered `Operations/Automotive.md` and `Operations/Robotics.md` (Proposed v0 stubs). Human-directed.
-- 2026-10-10: Safety review: floors AF-9 to AF-13 and RF-9 to RF-12 added; AU-002/003/004 and RB-002/003/007 changed to scoped Blocking. Human-directed.
+- 2026-10-10: Safety review: floors AF-9 to AF-13 and RF-9 to RF-12 added; AU-002/003/004 and RB-002/003/007 changed to scoped Blocking and indexed in Unknowns.md v5.59. Human-directed.
 
 - 2026-09-13: **Content-accuracy pass run against all 13 files' live Scope
   Boundary sections, as a follow-up to the coverage fix below.** Found and
