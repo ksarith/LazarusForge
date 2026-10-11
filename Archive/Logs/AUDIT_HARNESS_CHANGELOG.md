@@ -35,6 +35,13 @@ CHANGES IN THIS PATCH (v16 → v17, 2026-10-10):
     carries a condensed registry.
   - No logic change. Only the two prompt strings and the version label.
     Compile-checked only; not run against a live fetch.
+  - Follow-up 2026-10-11: offline unittest added at
+    Tests/Automation/test_harness_prompt.py (7 tests: prompt text, fetch-failure
+    reporting, no hard-coded Auditor_Protocols version, README/harness version
+    match). Ran 7/7 on the 1.21.1 tree with a stubbed local fetch; still not
+    run against a live fetch. A first draft of the pin check flagged a comment
+    in integrity_check.py that only quotes an example; the check now skips
+    comment lines.
 
 ------------------------------------
 
