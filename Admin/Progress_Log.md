@@ -37,6 +37,10 @@ Created 2026-08-09 to fix a recurring failure mode found the same day, in two pl
 
 *(Most recent first. Rotate to `Archive/Logs/Progress_Log_Changelog.md` once more than five entries accumulate.)*
 
+### 2026-10-11 — Three quick consistency fixes (packaging + headers)
+Removed shipped `Automation/__pycache__/*.pyc` from the working tree (`.gitignore` already excluded them; release zip had still contained them). `Discovery.md` Last-updated header catch-up 2026-10-09 → 2026-10-10 for Automotive/Robotics registration already in the body. `Automation/README.md` harness version label v16 → v17 to match `AUDIT_HARNESS.py`. No doctrine, Unknown, or Spec Gate change.
+
+---
 ### 2026-10-10 — Operations Automotive + Robotics v0 stubs filed and registered
 Human-directed expansion of the Operations layer: `Operations/Automotive.md` and `Operations/Robotics.md` (Proposed, Spec Gates 0/6). Each carries safety advisory, hard floors (AF/RF), functional blocks A–J with Placeholder thresholds, interfaces to Energy/Electronics/Gates/Admin, and eight Unknowns (after the same-day safety review, three Blocking for stated physical work and five non-blocking). Public-road and unsupervised human-shared operation explicitly out of scope. Registered in Routing.md, Ops_Scope_Map.md, and Discovery.md. No physical work claimed; no Spec Gate opens. Safety review pass later the same day (Claude, human-directed): floors extended to AF-1 to AF-13 and RF-1 to RF-12 (engine ventilation, unintended motion, stored mechanical energy, hot work, fire-capable lithium packs; supported loads, discharge verification, function-tested safety channel, deliberate restart) and six Unknowns made Blocking (scoped), cf. the EL-005 precedent. The six were then registered in `Unknowns.md` v5.59 (Active Index cluster, Dependency Clusters block, Critical Watch), following the PYC-002/004/007 precedent; v5.58 block moved to the changelog. This was the first Unknowns bump since the Kit's content-based trigger: no copied section changed, so no Kit update was needed.
 
@@ -100,36 +104,6 @@ Logged late, from 2026-10-08: README "Under the hood" bridge; human-facing "Laza
 identifier "LazarusForge" applied to README/CONTRIBUTING; `FL-20261007-recharacterization-proposal.md` body
 reconciled with a dated Disposition. `FL-20261008-maqt-matrix-preregistration-proposal.md` remains an
 unratified, unregistered proposal. Open: AVE and MAQT do not yet point back to the new protocol.
-Human-directed.
-
----
-### 2026-10-07 (second entry, same day) — Public recharacterization ratified: README/CONTRIBUTING replaced, `Things_We_Got_Wrong.md` added
-Grok submitted a full `README.md`/`CONTRIBUTING.md` rewrite (shorter, "scrappy workshop" framing
-replacing much of the detailed Repository Map, Governance Architecture, Long-term vision table,
-and Challenges listing) as an explicit proposal — its own `FL-20261007-recharacterization-proposal.md`
-said plainly "no files were written into the live repository tree as authoritative" and listed
-human review as the required next step. The delivered zip didn't match that: it placed the
-rewrite directly at the live `README.md`/`CONTRIBUTING.md` paths rather than at `_REVISED` filenames
-as the proposal itself specified. Flagged this mismatch rather than assuming acceptance; asked the
-human to choose between reviewing it properly, accepting as-is, or leaving the root files
-untouched. **Chosen: accept as-is ("I have chosen to ratify. It looks net positive currently.").**
-
-A separate, standalone `Things_We_Got_Wrong.md` was supplied alongside the zip and named as "the
-fresher one" — compared line-by-line against the zip's bundled version and found to be a genuine
-correction pass, not just a rewrite: more precise about which run found the Routing.md lag "in
-the wild" versus which one re-injected it as a seed, honest that the reviewer on the 8/8 note
-isn't named, and reframed item 4 as staleness rather than an original error. All four corrected
-claims checked directly against source before accepting — `FL-20261006-cap-meta-stale-01.md`
-really does say "Found in the wild"; AVE-013/014 really are annotated "Caught 2026-10-04,"
-dated after the fix; AVE-007 matches; the reviewer note really is unattributed. The standalone
-version — not the bundled one — was adopted as the live file.
-
-**One gap caught before merging:** `Routing.md`'s header claimed both `Things_We_Got_Wrong.md`
-and the new Field_Log entry were "Also registered," but neither actually had a Master Routing
-Map table row — header prose only. Added both rows. Per the proposal's own suggested next steps,
-`FL-20261007-recharacterization-proposal.md`'s Status moved from Unreviewed to Reviewed —
-accepted and ratified, with the ratification quote recorded; `Field_Logs.md`'s Index row updated
-to match. No Admin doctrine, Unknown, or Spec Gate changed — framing and front-door content only.
 Human-directed.
 
 ---
