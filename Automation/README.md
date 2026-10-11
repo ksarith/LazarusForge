@@ -25,6 +25,7 @@ Tooling for auditing, checking, and experimenting on the repository. Nothing her
 ## Things to know
 
 - The three Colab launchers audit what is committed to GitHub `main`, not a local zip. Candidate 3 works from an uploaded zip or folder. Keep the two apart when comparing results.
+- Offline tests: from the repo root run `python -m unittest discover -s Tests/Automation -v`. They check the harness's generated prompt text, that a fetch failure is reported, that no `Auditor_Protocols` version is hard-coded, and that the README and harness versions agree. They read the local checkout with no network, so a pass shows what the harness generates from local files, not how it behaves against a live GitHub fetch.
 - `integrity_check.py` imports `ALIASES` from `AUDIT_HARNESS.py`. If that import fails, the reference pass degrades to an empty alias map and says so.
 - As observed on the 1.17 release (2026-09-28), the 14 "duplicate sidecar ID" criticals are all pairs where one copy lives under `Archive/`. Re-check this before relying on it; it is a snapshot, not a standing claim.
 
