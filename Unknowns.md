@@ -3,7 +3,7 @@
 
 **Full version history in `Unknowns_Changelog.md` (2026-07-19 cleanup pass, following the precedent set by `Archive/Logs/AUDIT_HARNESS_CHANGELOG.md` and `Archive/Logs/Forge_Audit_Kit_Changelog.md`; scrubbed to current-version-only 2026-07-28 — the "current plus last four in full" window was itself compressed further, since the Audit Trail below now carries the compressed record for every version back to v1.0, and the changelog carries full text for all of them. This block now keeps only the current version.)**
 
-**Version 5.59 -- 2026-10-10. Six Blocking unknowns from `Operations/Automotive.md` and `Operations/Robotics.md` registered.** AU-002, AU-003, AU-004, RB-002, RB-003 and RB-007 were made Blocking (scoped to first physical work) in the same-day safety review, because the files' own floors forbid that work until they are resolved (cf. the EL-005 correction). Registered in the Active Index (new Operations -- Automotive & Robotics cluster), the Dependency Clusters block and the Critical Watch table. The other ten AU/RB items stay in their files' sidecars. No existing entry, Status or Spec Gate changed. No `Admin/Forge_Audit_Kit.md` update is triggered: no section the kit copies changed (kit maintenance trigger since v1.20). Human-directed.**
+**Version 5.60 -- 2026-10-11. RB-007 Blocking scope reworded in its index row, Dependency Clusters block and Critical Watch note.** The old wording ("any operation with people in the cell or space") contradicted the entry's own supervised-operation default; the new scope is unsupervised presence or any person inside the hazard zone (RF-1 unchanged). Follows two independent audits of `Operations/Robotics.md` and `Operations/Automotive.md` (human-directed). No other entry, Status or Spec Gate changed. No `Admin/Forge_Audit_Kit.md` update is triggered: no section the kit copies changed. Human-directed.**
 ---
 
 **Expiry Rule active — see `Admin/Canonical_Terms.md` §4 for the Cycle definition this rule now explicitly references (one calendar year default, not one audit pass — see CT-011). Protocol Performance metrics collecting.**
@@ -182,7 +182,7 @@ RB-003 (Force and speed caps undefined)
 +-- First powered motion, including supervised, blocked
 
 RB-007 (Human-shared space unresolved)
-+-- Any operation with people in the cell or space blocked (RF-1)
++-- Unsupervised presence, or any person inside the hazard zone, blocked (RF-1)
 ```
 
 ---
@@ -916,7 +916,7 @@ RB-007 (Human-shared space unresolved)
 | AU-004 | Airbag and pyrotechnic disable / proof-of-safe procedures | `Operations/Automotive.md` | Open | -- | Blocking (first airbag handling) |
 | RB-002 | Power-down, restraint, and E-stop minimums before any powered motion | `Operations/Robotics.md` | Open | -- | Blocking (first power-up) |
 | RB-003 | Force and speed caps for supervised workshop motion | `Operations/Robotics.md` | Open | -- | Blocking (first powered motion) |
-| RB-007 | Human-shared space and "collaborative" labeling policy | `Operations/Robotics.md` | Open | -- | Blocking (people-present operation) |
+| RB-007 | Human-shared space and "collaborative" labeling policy | `Operations/Robotics.md` | Open | -- | Blocking (unsupervised or hazard-zone presence) |
 
 *Only the Blocking items are indexed here; the other ten AU/RB unknowns are in the sidecars of `Operations/Automotive.md` and `Operations/Robotics.md`. Each Blocking item is scoped to first physical work and mirrors a hard floor in its file.*
 
@@ -989,7 +989,7 @@ GOV-003 Resolved 2026-08-23 (Payment via Specification) — Repository_Integrity
 | AU-004 | Airbag and pretensioner procedures -- no module handling until resolved (AF-5) |
 | RB-002 | Power-down and E-stop procedure -- no power-up of force-capable axes until resolved (RF-2, RF-3) |
 | RB-003 | Force and speed caps -- no powered motion, including supervised, until resolved |
-| RB-007 | Human-shared space -- no operation with people in the cell or space until resolved (RF-1) |
+| RB-007 | Human-shared space -- no unsupervised presence and no person inside the hazard zone until resolved (RF-1) |
 | GH-009 | Emergent heuristic conflict — N² interaction scaling; two independently verified heuristics may fail catastrophically in combination; Interaction Volume doctrine required before knowledge base scales |
 | HR-UNK-002 | Hydrologic Resource Cascade material quality — flood sediment contaminant risk; safety-critical before any resource extraction operations |
 | CLF-003 | Nozzle/die wear tolerances — blocks sustained polymer extrusion operations |
