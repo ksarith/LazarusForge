@@ -445,6 +445,7 @@ Discovery.md is a navigation map — task tracking belongs in Unknowns.md.
 | `Tests/Multi_Agent_Quorum_Trial.md` | Proposed Protocol | 0/6 | High — governs who can cause a state transition on canonical main; no trial run yet; operationalizes §VII without amending it. §8.9/§8.10 added 2026-09-21: handoff schemas + friction log. |
 | `Tests/MAQT_Role_Cards_and_Cycle1_Task.md` | Operator defaults | 0/6 | Medium — companion role-card pack for individual agents; not a governance amendment |
 | `Tests/Quorum_Agent_Conduct_Protocol.md` | Ratified Protocol (trial scope) | 0/6 | Medium — scrutiny rules on the node-reliability track; thresholds Placeholder; must never become governance weight or claim confidence |
+| `Tests/Chrono_Divergence.md` | Proposed Protocol | 0/6 | Low — forecasting method; forecasts are not governance weight or claim confidence; no Measured claims |
 | `Challenges/Water.md` | Active | — | — |
 | `Challenges/Biofouling.md` | Active | — | — |
 | `Challenges/Waste.md` | Active | — | — |
