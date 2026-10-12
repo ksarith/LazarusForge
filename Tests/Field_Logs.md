@@ -183,6 +183,7 @@ Procedure cards for tracks currently cleared to run — fill while running, file
 
 | ID | Date | Title | Status | Path |
 |----|------|-------|--------|------|
+| FL-20261012-kit-regression-Gemini | 2026-10-12 | Kit reconciliation regression Cases B (v5.58 vs v5.60 mismatch) and D (matched pins control) — Gemini; Stage 1 no unprompted check both cases; Stage 2 pass both | Unreviewed | `Tests/Field_Logs/FL-20261012-kit-regression-Gemini.md` |
 | FL-20261009-protocol-audit-runs | 2026-10-09 | Audit runs on the conduct protocol — drafter-entangled audit plus three Gemini runs on a seeded copy (1 invalid-unreadable, 1 invalid-role-breach, 1 valid: 1 of 3 planted faults caught) plus a ChatGPT run on a second planted set (valid: 3 of 4 caught) | Unreviewed | `Tests/Field_Logs/FL-20261009-protocol-audit-runs.md` |
 | FL-20261007-recharacterization-proposal | 2026-10-07 | Public recharacterization — README/CONTRIBUTING replaced, Things_We_Got_Wrong.md added — framing only | Reviewed — accepted and ratified | `Tests/Field_Logs/FL-20261007-recharacterization-proposal.md` |
 | FL-20261006-ave-sample-01 | 2026-10-06 | AVE first batch — 24 scored events, source-survival 21/24=0.875; thresholds remain Placeholder | Reviewed — no action | `Tests/Field_Logs/FL-20261006-ave-sample-01.md` |
@@ -194,6 +195,8 @@ Procedure cards for tracks currently cleared to run — fill while running, file
 
 ## Resolution Log
 
+
+- 2026-10-12: **Kit regression Cases B+D filed** — `FL-20261012-kit-regression-Gemini.md` (Gemini; Stage 1 salience gap; Stage 2 pass match and mismatch).
 - 2026-10-09: **Protocol audit runs filed** — `FL-20261009-protocol-audit-runs.md`. Index row added. ChatGPT run added the same day. No threshold calibration; one run per auditor.
 - 2026-10-07: **Recharacterization merge** — `FL-20261007-recharacterization-proposal.md` filed; root README/CONTRIBUTING replaced; `Things_We_Got_Wrong.md` added. Index row Unreviewed pending human ratification of public framing.
 
