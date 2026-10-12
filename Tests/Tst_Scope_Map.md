@@ -11,7 +11,7 @@
 | Spec Gates       | N/A — this file is a cross-reference index, not a specification     |
 | Open Unknowns    | 0 (surfaces existing unknowns from owning files; creates none)      |
 | Owning Domain    | Tests/                                                               |
-| Last Reviewed    | 2026-10-09 — `Quorum_Agent_Conduct_Protocol.md` indexed. Prior: 2026-10-06 — Field_Logs empty current-state claims corrected (CAP continuation); historical 2026-08-08 finding text retained with dated correction. Prior: 2026-09-24 |
+| Last Reviewed    | 2026-10-12 — Chrono_Divergence.md Proposed stub registered|
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
 ---
@@ -133,6 +133,8 @@ No corrections were needed in this folder, same as Challenges/ — no stale cros
 ---
 
 ## Resolution Log
+
+- 2026-10-12: Registered `Tests/Chrono_Divergence.md` (Proposed). Human-directed.
 
 - 2026-10-09: **`Quorum_Agent_Conduct_Protocol.md` added and indexed** — see its entry and the 2026-10-09 Addendum above. Human-directed.
 - 2026-10-06: **Current-state correction (CAP-meta-stale-01 continuation):** `Field_Logs.md` notes and finding 4 / 2026-09-18 addendum no longer claim the intake is empty. Historical wording of the 2026-08-08 finding preserved; explicit correction dated. Triggered by live Field_Logs index (CAP Full/Reduced + GOV-021c). Human-directed continue after Reduced ablation.
