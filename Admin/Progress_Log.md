@@ -37,6 +37,14 @@ Created 2026-08-09 to fix a recurring failure mode found the same day, in two pl
 
 *(Most recent first. Rotate to `Archive/Logs/Progress_Log_Changelog.md` once more than five entries accumulate.)*
 
+### 2026-10-12 — Chrono_Divergence.md Proposed and registered
+New Tests/ protocol stub for mapping idea divergence over time (t0 snapshot, branch table, unlock experiments, forecast scoring). Explicit distinction between **incidental spark** (unplanned fork that must be named) and **deliberate forethought** (pre-declared map). Worked example uses Kit reconciliation salience from FL-20261012-kit-regression-Gemini. Registered in Routing, Tst_Scope_Map, Discovery. Spec Gates 0/6; no Unknowns indexed to Unknowns.md yet (CD-001–004 sidecar only). Human-directed.
+
+---
+### 2026-10-12 — Kit regression Cases B and D filed (Gemini)
+Field Log `FL-20261012-kit-regression-Gemini.md`: two fresh Gemini sessions on Ethical_Constraints.md with Kit + AP + VG + Unknowns. Case B natural mismatch (Kit Unknowns pin v5.58 vs live v5.60); Case D package-only matched pins (v5.60). Stage 1: no unprompted reconciliation in either session (salience data point). Stage 2: both correct when asked — mismatch flagged on B, all-match and no false drift on D. Mild Case B overclaim on what content was stale. FAK-018 remains open/mitigated. Registered in Field_Logs index and Routing. Human-directed operator assembly; Grok not used as auditor.
+
+---
 ### 2026-10-11 — Automation development pathway noted (proposal, not built)
 ChatGPT review of 1.21 recommended elevating `Automation/` from a tool bag to a repeatable, testable subsystem that checks its own limits without deciding governance. **Recorded direction only — no code or new folder filed this entry.** Proposed phases: (1) `Tests/Automation/` unittest suite for audit_lib, parser, integrity_check, AUDIT_HARNESS, cold_session_bundler — success and failure modes; (2) shared run manifest (source / execution / result identity) so tools do not silently disagree on repo state; (3) extract shared registry/aliases to e.g. `Automation/repo_registry.py` and break integrity_check→AUDIT_HARNESS coupling; (4) explicit checker modes local / pinned remote / live remote and clearer finding categories; (5) deterministic Colab checkout; (6) measure cold-session bundler strip behavior; (7) keep Candidate 3 isolated. Constraint retained: automation reports evidence and limits — does not certify ethics, governance readiness, or physical go-ahead. Near-term still: packaging hygiene (done same day), Kit/harness regression Field_Log, then tests before new capabilities.
 
@@ -47,42 +55,6 @@ Removed shipped `Automation/__pycache__/*.pyc` from the working tree (`.gitignor
 ---
 ### 2026-10-10 — Operations Automotive + Robotics v0 stubs filed and registered
 Human-directed expansion of the Operations layer: `Operations/Automotive.md` and `Operations/Robotics.md` (Proposed, Spec Gates 0/6). Each carries safety advisory, hard floors (AF/RF), functional blocks A–J with Placeholder thresholds, interfaces to Energy/Electronics/Gates/Admin, and eight Unknowns (after the same-day safety review, three Blocking for stated physical work and five non-blocking). Public-road and unsupervised human-shared operation explicitly out of scope. Registered in Routing.md, Ops_Scope_Map.md, and Discovery.md. No physical work claimed; no Spec Gate opens. Safety review pass later the same day (Claude, human-directed): floors extended to AF-1 to AF-13 and RF-1 to RF-12 (engine ventilation, unintended motion, stored mechanical energy, hot work, fire-capable lithium packs; supported loads, discharge verification, function-tested safety channel, deliberate restart) and six Unknowns made Blocking (scoped), cf. the EL-005 precedent. The six were then registered in `Unknowns.md` v5.59 (Active Index cluster, Dependency Clusters block, Critical Watch), following the PYC-002/004/007 precedent; v5.58 block moved to the changelog. This was the first Unknowns bump since the Kit's content-based trigger: no copied section changed, so no Kit update was needed. Follow-up 2026-10-11 (human-directed, after two independent audits of the Operations files): RB-007's Blocking scope reworded to match the entry's own supervised-operation default (the old wording was my error); AF-13's charging prohibition stated as applying to every lithium pack (kept strict, not narrowed); AF-10 and RF-11 clarified; RB-003's path says what "defined" means. `Unknowns.md` v5.60, a second bump with no copied section changed, so again no Kit update. The Last Audit rows of both Operations files had not recorded the 2026-10-10 safety review (an earlier edit silently failed to match); now fixed.
-
----
-### 2026-10-10 — Unknowns registered for the newer files (Standard scope)
-The newest files tracked open items outside the repository's standard form: AVE had a residual table, the
-conduct protocol seven residuals (QCC-R1–R7), and MAQT "0 formally registered" with DECISION NEEDED prose. None
-appeared in `Unknowns.md`, so the Expiry Watch could not age them (one independent audit could not run that
-check on the protocol for this reason). Each owning file now has an Auditor Notes & Unknowns sidecar: AVE-R1–R4,
-QCC-R1–R7, and three MAQT items (MAQT-001 proposal-passing mechanics, MAQT-002 rotation authority, MAQT-003
-liveness timeout). Only open items the files already stated were converted; existing IDs kept; all entries
-non-blocking with Placeholder Risk/Priority proposed for human confirmation. Six cross-module items indexed in
-`Unknowns.md` (Governance & Verification): AVE-R1, AVE-R4, QCC-R2, QCC-R5, QCC-R7, MAQT-002. `Unknowns.md` bumped
-to v5.58 (959 → 966 lines, under the 1,200-line trigger); the v5.57 block moved to `Unknowns_Changelog.md` per
-the current-version-only rule. Headers updated (Open Unknowns rows, MAQT sidecar link and Last Reviewed, AVE and
-QCC Last Updated), AVE §7 now points to its sidecar, and `Tst_Scope_Map.md` text corrected. No Status, Spec Gate,
-rule, or existing Unknown changed.
-
-Kit citation: `Admin/Forge_Audit_Kit.md` still cited `Unknowns.md` v5.57 and `Auditor_Protocols.md`
-v0.41 (live: v5.58 and v0.42), the FAK-017 pattern. Refreshed the same day (kit v1.20, FAK-018 logged);
-a same-day mitigation removed the daily-stale pin (role-declaration placeholder, reconciled-against label) and made the maintenance trigger content-based with a reconciliation check at audit start. FAK-018 stays open, mitigated, until a full source revision cycle passes with no pin failure. Also found: `Automation/AUDIT_HARNESS.py` hard-coded a v0.14 role declaration in every generated audit prompt; fixed the same day in harness v17 (prompt strings only; compile-checked, not run live). Rotated the 2026-10-06 second entry to the changelog. Human-directed.
-
----
-### 2026-10-09 (second entry, same day) — Conduct-protocol audit runs recorded; QCC-R7 added; seeded-audit method trialed
-Documented in `Tests/Field_Logs/FL-20261009-protocol-audit-runs.md` (index row and Routing row added). Audit 1
-(Grok, drafter-entangled, live file): no defects found, with an over-claiming sign-off ("pending cross-agent
-audit complete," a maturity promotion, a wrong truth-basis label). Three Gemini runs on a copy with planted
-faults (key held outside the repository): the first invalid (zip unreadable), the second invalid (acted out a
-full MAQT Cycle 1 trial; the pack had included the task and probe files, since removed), the third valid —
-caught 1 of 3 faults, missing the most consequential and misreading one planted sentence. Its design objections became QCC-R7 (human-confirmation bottleneck vs the Human Interaction
-Point Doctrine) and an extension of QCC-R5 (split between AVE scores and Field_Log process defects). The
-protocol's rules are unchanged.
-
-Lessons: a clean report from an entangled auditor with nothing planted has no detection value; audit-pack
-contents steer behavior (task files invited a role breach); one run per auditor is a data point, not
-calibration. Open: three candidate defect records (G2 role breach, G2 false multi-family claim, G3 stray
-citation) await human source-check confirmation. `FL-20261008-maqt-matrix-preregistration-proposal.md` is
-still unratified and unregistered. Rotated the 2026-10-06 first-runs entry to the changelog. Human-directed.
 
 ---
 Full history, including entries rotated out of the five above, in `Archive/Logs/Progress_Log_Changelog.md`.
