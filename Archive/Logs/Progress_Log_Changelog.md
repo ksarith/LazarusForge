@@ -3,6 +3,14 @@
 Split out 2026-08-09, following the precedent already established by `Unknowns_Changelog.md`, `AUDIT_HARNESS_CHANGELOG.md`, and `Forge_Audit_Kit_Changelog.md`. `Progress_Log.md` keeps the five most recent entries in full; this file holds every entry that's rotated out. No information is removed when an entry rotates — every entry below is preserved verbatim from `Progress_Log.md` at the time it moved.
 
 ---
+### 2026-10-10 — Unknowns registered for the newer files (Standard scope)
+*(Rotated 2026-10-12 Chrono_Divergence registration.)*
+
+---
+### 2026-10-09 (second entry, same day) — Conduct-protocol audit runs recorded; QCC-R7 added; seeded-audit method trialed
+*(Rotated 2026-10-12 kit regression FL.)*
+
+---
 ### 2026-10-09 — `Tests/Quorum_Agent_Conduct_Protocol.md` ratified (trial scope) and registered; 2026-10-08 follow-ups logged
 *(Rotated 2026-10-11 Automation pathway note.)*
 
