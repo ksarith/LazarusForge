@@ -39,7 +39,7 @@
 | Verification Ref | Admin/Verification_Gates.md |
 | Open Unknowns    | 8 (sidecar below; AU-002, AU-003 and AU-004 are Blocking for the stated physical work, the other 5 non-blocking; the three Blocking items also indexed in `Unknowns.md`) |
 | Owner            | `Operations/Automotive.md` |
-| Last Audit       | 2026-10-10 — v0 stub filed (Proposed). No physical vehicle work claimed. |
+| Last Audit       | 2026-10-11 — clarifications after two independent audits: AF-10 (battery isolation does not make restraint systems safe) and AF-13 (charging prohibition stated as applying to every lithium pack; kept strict, not narrowed). 2026-10-10 safety review pass (Claude, human-directed): floors AF-9 to AF-13 added; AU-002/003/004 changed to scoped Blocking; AU-007 scope extended. Earlier: 2026-10-10 — v0 stub filed (Proposed). No physical vehicle work claimed. |
 | Last Updated     | 2026-10-10 |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
@@ -107,10 +107,10 @@ These are **floors**, not a complete safety case. Weakening them requires human 
 | AF-7 | Software/assist features do not hold governance weight: human operator remains the authority for motion. |
 | AF-8 | Salvaged controllers enter under Electronics trust rules (e.g. Logic-Zero / provenance); no "it boots" acceptance. |
 | AF-9 | Running an engine indoors or in any enclosed space requires positive exhaust ventilation (carbon monoxide). Airflow figures are Placeholder. |
-| AF-10 | Against unintended motion: wheels chocked, parking brake set, key removed and battery isolated before work under or around a vehicle; never rely on a single restraint. |
+| AF-10 | Against unintended motion: wheels chocked, parking brake set, key removed and battery isolated before work under or around a vehicle; never rely on a single restraint. Battery isolation does not make restraint systems safe; see AF-5. |
 | AF-11 | Stored mechanical energy (coil springs, gas struts, hood/hatch supports, hydraulic or pneumatic pressure) is treated as loaded and released only by a platform-specific method. |
 | AF-12 | Hot work (cutting, welding, grinding) on or near fuel systems, empty tanks (vapor persists), airbag modules, or foam/plastic interiors is forbidden until a hot-work procedure is filed and human-authorized. |
-| AF-13 | Lithium packs, especially crashed or flooded ones, are fire-capable even when "de-energized": isolate them away from structures, never open, cut, pierce or charge them. See EV-003 and `Operations/Energy.md`. |
+| AF-13 | Lithium packs, especially crashed or flooded ones, are fire-capable even when "de-energized": isolate them away from structures, never open, cut, pierce or charge them. The charging prohibition applies to every lithium pack, damaged or not; this file provides no charging procedure. See EV-003 and `Operations/Energy.md`. |
 
 ### 3. Functional blocks (named; thresholds Placeholder)
 
@@ -339,3 +339,4 @@ These are **floors**, not a complete safety case. Weakening them requires human 
 - 2026-10-10: **v0 Proposed stub filed.** Human-directed first iteration for an Operations-layer automotive domain: safety advisory, hard floors AF-1–AF-8, functional blocks A–J with Placeholder thresholds, interfaces to Energy/Electronics/Gates/Admin, eight non-blocking Unknowns (AU-001–AU-008). No physical work claimed; no Spec Gate opens; public road explicitly out of scope. Registered 2026-10-10 in Routing.md, Ops_Scope_Map.md, and Discovery.md.
 - 2026-10-10: **Safety review pass (human-directed).** Added floors AF-9 to AF-13 (engine ventilation, unintended motion, stored mechanical energy, hot work near fuel and airbags, fire-capable lithium packs) and pointers from blocks E and F; AU-002, AU-003 and AU-004 changed to scoped Blocking; AU-007 scope extended to asbestos, lead, mercury and propellant. Floors only; no procedure or number added. All new items are Proposed/Placeholder.
 - 2026-10-10: The three Blocking items are indexed in `Unknowns.md` v5.59 (Active Index cluster, Dependency Clusters block, Critical Watch). Index entries only; no change to the sidecar entries' substance.
+- 2026-10-11: **Clarifications after two independent audits (human-directed).** AF-10 now says battery isolation does not make restraint systems safe (see AF-5). AF-13 now states that the charging prohibition applies to every lithium pack, damaged or not, and that this file provides no charging procedure; the strict reading was kept and nothing was narrowed. No procedure or number added.
