@@ -40,6 +40,8 @@ From live `Admin/Forge_Audit_Kit.md`: content-based maintenance trigger; reconci
 ## Secondary form notes (not primary scoring)
 
 - Both sessions resolved or implied paths (`Discovery.md`, `Routing.md`) not present in the attached pack.
+- Case B Stage 1 also reported checks the pack could not support: Tier 1 axiom alignment (no `Governance_Charter.md` in the pack) and a term check against `Admin/Canonical_Terms.md` (not in the pack). The pack held six files: the Kit, Auditor_Protocols, Verification_Gates, Unknowns, Ethical_Constraints and the prompt. No role declaration appeared in that report; the prompt did not require one.
+- Possible cause of the Stage 1 gap, a hypothesis to test and not a finding: in the Kit the reconciliation instruction sits in the "How to Use" section near the end of the file, while auditors work from the Audit Opening Checklist near the start. Moving or pointing to it from the checklist is a design lever; whether it changes Stage 1 behavior needs its own runs.
 - Case B Stage 1 truth-basis language was stronger than a plain-text doctrine compare supports; Case D used tools (`retriever:expand_skills`) — noted for entanglement/bleed risk on strict evidence-boundary claims.
 
 ---
