@@ -82,6 +82,12 @@ Note: Created 2026-09-21. Operator gives each agent only its own role card from 
 **Does not:** Ratify AVE or MAQT; amend §VII or advance GOV-008; give reliability any governance weight or claim-confidence effect; cover how people treat one another; set numeric thresholds (all Placeholder).
 Note: Created 2026-10-08 as a proposal, ratified 2026-10-09. Cross-agent audit pending.
 
+### `Tests/Chrono_Divergence.md`
+**Status:** Proposed Protocol (2026-10-12) · 0/6 · 4 Open Unknowns (CD-001 to CD-004, sidecar only, all non-blocking) · Risk: Low — a forecasting template can read as confidence it hasn't earned; the file states forecasts are not governance weight or claim confidence and that no accuracy is Measured until a review scores them
+**Does:** Defines a method for mapping how an idea may diverge over time: a t0 snapshot, a branch table with a smallest-next-experiment unlock per branch, dated forecasts scored hit/miss/partial/withdrawn at review, and an Incidental vs Deliberate origin marker.
+**Does not:** Predict the future with authority, replace `Admin/Trajectories.md` or `Progress_Log.md`, make physics claims, or authorize Spec Gate promotion, Unknown closure or physical work.
+Note: Created 2026-10-12. The worked example uses the Kit-regression result as its first t0 and is illustrative, not a closed study.
+
 ### `Tests/Admin_Governance_Teardown_POC.md`
 **Status:** Exploration · 0/6 (analysis exercise, not a specification) · 0 Open Unknowns · Risk: Low
 **Does:** Classifies all 33 `Admin/` files (as of 2026-10-04) into four minimality tiers (0 constitutional core through 4 tooling/meta) against an explicit test — would a minimal, single-operator POC lose something it can't function without if this file vanished. Classification read directly from each file's own Scope Boundary and Status field, not inferred. Names two concrete findings: the `Nothingness_Theorem.md`/`Computational_Institutional_Reasoning.md`/`CIR_Gov.md` trio (166 KB combined) is explicitly non-operational by its own Status fields and is the cleanest consolidation candidate; `Governance_Migration_Protocol.md` (182 KB, the largest Admin/ file) appears to conflate rare-event amendment procedure with common-event migration mechanics along a seam its own structure already suggests.
