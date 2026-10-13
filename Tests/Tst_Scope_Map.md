@@ -84,7 +84,7 @@ Note: Created 2026-10-08 as a proposal, ratified 2026-10-09. Cross-agent audit p
 
 ### `Tests/Chrono_Divergence.md`
 **Status:** Proposed Protocol (2026-10-12) · 0/6 · 4 Open Unknowns (CD-001 to CD-004, sidecar only, all non-blocking) · Risk: Low — a forecasting template can read as confidence it hasn't earned; the file states forecasts are not governance weight or claim confidence and that no accuracy is Measured until a review scores them
-**Does:** Defines a method for mapping how an idea may diverge over time: a t0 snapshot, a branch table with a smallest-next-experiment unlock per branch, dated forecasts scored hit/miss/partial/withdrawn at review, and an Incidental vs Deliberate origin marker.
+**Does:** Defines a method for mapping how an idea may diverge over time: a t0 snapshot, a branch table with a smallest-next-experiment unlock per branch, dated forecasts scored hit/miss/partial/unscorable/withdrawn at review, and an Incidental vs Deliberate origin marker.
 **Does not:** Predict the future with authority, replace `Admin/Trajectories.md` or `Progress_Log.md`, make physics claims, or authorize Spec Gate promotion, Unknown closure or physical work.
 Note: Created 2026-10-12. The worked example uses the Kit-regression result as its first t0 and is illustrative, not a closed study.
 
