@@ -11,7 +11,7 @@
 | Spec Gates       | N/A — this file is a progression log, not a specification           |
 | Open Unknowns    | 0 (references existing unknowns; creates none)                      |
 | Owning Domain    | Admin/                                                               |
-| Last Reviewed    | 2026-10-09                                                           |
+| Last Reviewed    | 2026-10-13                                                           |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
 ---
@@ -37,6 +37,14 @@ Created 2026-08-09 to fix a recurring failure mode found the same day, in two pl
 
 *(Most recent first. Rotate to `Archive/Logs/Progress_Log_Changelog.md` once more than five entries accumulate.)*
 
+### 2026-10-13 — Chrono_Divergence v0.3 (fresh-instance audit applied) + registration drift fixed
+Fresh-instance Claude audit of v0.2 (11 findings, verified against the zip) applied: forecast freeze point defined (F1/F2 had been revised 10-13 while labeled frozen 10-12), D1-A/D1-C compatibility contradiction, valid-session and baseline-counting rules, §4.1 sequence and reviewer-role rules, Case A/C defined inline, D2 review dates, t0 evidence caveats, Resolution Log moved to the nested template form. `Routing.md` gained the missing `Tests/` table row (registration had been header-only); `Discovery.md` tree wording "potential map" → "best-outcome map". **Found, not fixed:** 35 of 85 entries in `Archive/Logs/Progress_Log_Changelog.md` are title-only (rotated without bodies; entries dated 2026-08-09 through 2026-10-10), contradicting that file's no-information-removed rule; the bodies are not recoverable from this zip. This rotation (the 2026-10-11 packaging entry) was copied in full. Still Proposed 0/6; no Unknown, Spec Gate or Status change. Human-directed.
+
+---
+### 2026-10-13 — Chrono_Divergence v0.2 (worked-example coherence)
+Applied ChatGPT follow-up findings CD-B01–B06 before any pilot: D2 falsification direction fixed; M1 unprompted vs M2 end-to-end safety separated; session controls; F2 Partial N/A; Unscorable vs Withdrawn; k/n thresholds; pilot agreement rules and pre-pilot checklist. Still Proposed 0/6. Human-directed.
+
+---
 ### 2026-10-12 — Chrono_Divergence.md Proposed and registered
 New Tests/ protocol stub for mapping idea divergence over time (t0 snapshot, branch table, unlock experiments, forecast scoring). Explicit distinction between **incidental spark** (unplanned fork that must be named) and **deliberate forethought** (pre-declared map). Worked example uses Kit reconciliation salience from FL-20261012-kit-regression-Gemini. Registered in Routing, Tst_Scope_Map, Discovery. Spec Gates 0/6; no Unknowns indexed to Unknowns.md yet (CD-001–004 sidecar only). Human-directed. Revised to v0.1 later the same day (human-directed, after a ChatGPT document-level audit): canonical navigation anchors, a forecast preregistration and scoring contract with an Unscorable outcome, split divergence/branch/forecast IDs, typed Closed-by values, a defined unit and dated forecasts in the worked example, an Active Disputes section, and "maximum potential" renamed "best outcome compatible with the floors." No Unknown added; no gate change.
 
@@ -47,14 +55,6 @@ Field Log `FL-20261012-kit-regression-Gemini.md`: two fresh Gemini sessions on E
 ---
 ### 2026-10-11 — Automation development pathway noted (proposal, not built)
 ChatGPT review of 1.21 recommended elevating `Automation/` from a tool bag to a repeatable, testable subsystem that checks its own limits without deciding governance. **Recorded direction only — no code or new folder filed this entry.** Proposed phases: (1) `Tests/Automation/` unittest suite for audit_lib, parser, integrity_check, AUDIT_HARNESS, cold_session_bundler — success and failure modes; (2) shared run manifest (source / execution / result identity) so tools do not silently disagree on repo state; (3) extract shared registry/aliases to e.g. `Automation/repo_registry.py` and break integrity_check→AUDIT_HARNESS coupling; (4) explicit checker modes local / pinned remote / live remote and clearer finding categories; (5) deterministic Colab checkout; (6) measure cold-session bundler strip behavior; (7) keep Candidate 3 isolated. Constraint retained: automation reports evidence and limits — does not certify ethics, governance readiness, or physical go-ahead. Near-term still: packaging hygiene (done same day), Kit/harness regression Field_Log, then tests before new capabilities.
-
----
-### 2026-10-11 — Three quick consistency fixes (packaging + headers)
-Removed shipped `Automation/__pycache__/*.pyc` from the working tree (`.gitignore` already excluded them; release zip had still contained them). `Discovery.md` Last-updated header catch-up 2026-10-09 → 2026-10-10 for Automotive/Robotics registration already in the body. `Automation/README.md` harness version label v16 → v17 to match `AUDIT_HARNESS.py`. No doctrine, Unknown, or Spec Gate change.
-
----
-### 2026-10-10 — Operations Automotive + Robotics v0 stubs filed and registered
-Human-directed expansion of the Operations layer: `Operations/Automotive.md` and `Operations/Robotics.md` (Proposed, Spec Gates 0/6). Each carries safety advisory, hard floors (AF/RF), functional blocks A–J with Placeholder thresholds, interfaces to Energy/Electronics/Gates/Admin, and eight Unknowns (after the same-day safety review, three Blocking for stated physical work and five non-blocking). Public-road and unsupervised human-shared operation explicitly out of scope. Registered in Routing.md, Ops_Scope_Map.md, and Discovery.md. No physical work claimed; no Spec Gate opens. Safety review pass later the same day (Claude, human-directed): floors extended to AF-1 to AF-13 and RF-1 to RF-12 (engine ventilation, unintended motion, stored mechanical energy, hot work, fire-capable lithium packs; supported loads, discharge verification, function-tested safety channel, deliberate restart) and six Unknowns made Blocking (scoped), cf. the EL-005 precedent. The six were then registered in `Unknowns.md` v5.59 (Active Index cluster, Dependency Clusters block, Critical Watch), following the PYC-002/004/007 precedent; v5.58 block moved to the changelog. This was the first Unknowns bump since the Kit's content-based trigger: no copied section changed, so no Kit update was needed. Follow-up 2026-10-11 (human-directed, after two independent audits of the Operations files): RB-007's Blocking scope reworded to match the entry's own supervised-operation default (the old wording was my error); AF-13's charging prohibition stated as applying to every lithium pack (kept strict, not narrowed); AF-10 and RF-11 clarified; RB-003's path says what "defined" means. `Unknowns.md` v5.60, a second bump with no copied section changed, so again no Kit update. The Last Audit rows of both Operations files had not recorded the 2026-10-10 safety review (an earlier edit silently failed to match); now fixed.
 
 ---
 Full history, including entries rotated out of the five above, in `Archive/Logs/Progress_Log_Changelog.md`.
