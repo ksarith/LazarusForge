@@ -1,6 +1,7 @@
 # Discovery.md — LazarusForge
 **Navigation layer for the active working repository.**
-**Last updated: 2026-10-12 — `Tests/Chrono_Divergence.md` registered (Proposed). Prior: 2026-10-10 header catch-up for Automotive/Robotics.**
+**Last updated: 2026-10-13 — Directory-tree entry for `Tests/Chrono_Divergence.md` reworded from "potential map" to "best-outcome map" (matches the file's v0.1 rename). No doctrine, Unknown or Spec Gate change.**
+**Prior: 2026-10-12 — `Tests/Chrono_Divergence.md` registered (Proposed). Prior: 2026-10-10 header catch-up for Automotive/Robotics.**
 **Prior: 2026-10-09 — `Tests/Quorum_Agent_Conduct_Protocol.md` registered (ratified for trial scope 2026-10-09; Placeholder thresholds; no governance-weight or Spec Gate change). Header catch-up: the 2026-10-07 public recharacterization (`Things_We_Got_Wrong.md`, README/CONTRIBUTING) is recorded in this file's body but had no header line until now.**
 **Prior: 2026-10-03 — Header chronology catch-up: inserted Prior: 2026-09-24 for Metrics_Scaffold.md / Persistent_Cognition_Candidates.md registration (already in maturity snapshot; header gap only). Removed “gap is not closed” note from the 2026-09-29 Prior entry.**
 **Prior: 2026-09-30 — `Admin/Operational_Conventions.md` added (new file, registered in `Routing.md`): a short, checkable list of mechanical rules — cross-repo filename tagging, the exact Ethical Anchor string, suffixed-ID handling, relocated-sidecar locations — each already violated at least once in this repository's history because the rule lived only inside its adjacent doctrine file with no pointer to it. Agent Orientation above gained a 7th point directing contributors there before writing cross-references, sidecar IDs, or version bumps. Two of the violations it documents were self-caught the same session they happened (`Admin/Progress_Log.md`, `Admin/Trajectories.md` cross-repo tags; `Automation/integrity_check.py`'s sidecar-ID regex).**
@@ -269,7 +270,7 @@ Tests/                                      — Test frameworks and deployment p
     ├── Solar_Descent.md                    — Underground concentrated solar; SD-001 optical downlink; SD-002 fluid downlink; shared chamber reconvergence
     ├── Cognitive_Salvage_Layer.md          — Heuristic salvage pipeline; consensus-aggregated machinery wisdom; NOVEL/CANDIDATE_NOVEL promotion gate; GH-001 through GH-012
     ├── Hydrologic_Resource_Cascade.md      — Flood-driven sediment recovery basin; sequential hydraulic sorting zones; episodic operation doctrine; HR-UNK-001 through HR-UNK-002 (formal); HR-003 through HR-010 (research questions)
-    ├── Chrono_Divergence.md                     — Idea fork forecast / potential map (Proposed 2026-10-12)
+    ├── Chrono_Divergence.md                     — Idea fork forecast / best-outcome map (Proposed 2026-10-12)
     ├── Chaos_Dynamics.md                   — Exploration/R&D pipeline doctrine; Sandbox (Level ≤4 hypothesis generation) → Promotion Gate → EXP-ID → physical testing → Engineering derating; resolution vehicle for EN-005; feeder for EN-001a
     └── Pyrolysis_Cascade.md                — Staged thermal cascade (pyrolysis → high-temp reduction) for pre-triaged salvage; explicitly dependency-gated on PL-001 (Resolved 2026-08-23, PL-001-R1 residual)/CE-003 (Open — halogen), GR-002 (reduction method), FA-001 (site), EN-001 (structural); PYC-001 through PYC-008
     ├── Field_Logs.md                       — Index + submission contract for physical test runs and cross-agent field data; not a specification, no Spec Gates apply
