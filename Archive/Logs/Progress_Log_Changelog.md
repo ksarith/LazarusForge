@@ -3,6 +3,15 @@
 Split out 2026-08-09, following the precedent already established by `Unknowns_Changelog.md`, `AUDIT_HARNESS_CHANGELOG.md`, and `Forge_Audit_Kit_Changelog.md`. `Progress_Log.md` keeps the five most recent entries in full; this file holds every entry that's rotated out. No information is removed when an entry rotates — every entry below is preserved verbatim from `Progress_Log.md` at the time it moved.
 
 ---
+### 2026-10-11 — Three quick consistency fixes (packaging + headers)
+*(Rotated 2026-10-13 Chrono v0.3.)*
+Removed shipped `Automation/__pycache__/*.pyc` from the working tree (`.gitignore` already excluded them; release zip had still contained them). `Discovery.md` Last-updated header catch-up 2026-10-09 → 2026-10-10 for Automotive/Robotics registration already in the body. `Automation/README.md` harness version label v16 → v17 to match `AUDIT_HARNESS.py`. No doctrine, Unknown, or Spec Gate change.
+
+---
+### 2026-10-10 — Operations Automotive + Robotics v0 stubs filed and registered
+*(Rotated 2026-10-13 Chrono v0.2.)*
+
+---
 ### 2026-10-10 — Unknowns registered for the newer files (Standard scope)
 *(Rotated 2026-10-12 Chrono_Divergence registration.)*
 
