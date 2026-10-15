@@ -2,7 +2,7 @@
 
 | Field | Value |
 |-------|--------|
-| Status | **Proposed — not yet run.** Not registered in `Routing.md` |
+| Status | **Proposed — not yet run.** Registered in `Routing.md` (2026-10-15); registration is not a trial result |
 | Purpose | Test whether Kit v1.20's own text (content-based maintenance trigger, audit-start reconciliation check, live-version role line) produces the intended behavior |
 | Related | FAK-018 (open, mitigated); `Admin/Forge_Audit_Kit.md` |
 | Does not | Close FAK-018 by itself; promote Spec Gates; change Kit doctrine; modify the Kit |
