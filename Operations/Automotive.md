@@ -40,7 +40,7 @@
 | Open Unknowns    | 8 (sidecar below; AU-002, AU-003 and AU-004 are Blocking for the stated physical work, the other 5 non-blocking; the three Blocking items also indexed in `Unknowns.md`) |
 | Owner            | `Operations/Automotive.md` |
 | Last Audit       | 2026-10-11 — clarifications after two independent audits: AF-10 (battery isolation does not make restraint systems safe) and AF-13 (charging prohibition stated as applying to every lithium pack; kept strict, not narrowed). 2026-10-10 safety review pass (Claude, human-directed): floors AF-9 to AF-13 added; AU-002/003/004 changed to scoped Blocking; AU-007 scope extended. Earlier: 2026-10-10 — v0 stub filed (Proposed). No physical vehicle work claimed. |
-| Last Updated     | 2026-10-10 |
+| Last Updated     | 2026-10-11 |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
 ---
