@@ -11,7 +11,7 @@
 | Spec Gates       | N/A — this file is a progression log, not a specification           |
 | Open Unknowns    | 0 (references existing unknowns; creates none)                      |
 | Owning Domain    | Admin/                                                               |
-| Last Reviewed    | 2026-10-13                                                           |
+| Last Reviewed    | 2026-10-14                                                           |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
 ---
@@ -37,6 +37,10 @@ Created 2026-08-09 to fix a recurring failure mode found the same day, in two pl
 
 *(Most recent first. Rotate to `Archive/Logs/Progress_Log_Changelog.md` once more than five entries accumulate.)*
 
+### 2026-10-14 — Chrono_Divergence v0.4 + pilot protocol file; release 1.22 reviewed
+Release 1.22 was byte-identical to the 2026-10-13 corrections package apart from three `__pycache__/*.pyc` files (packaging regression, not in the update zip). ChatGPT's and Grok's reviews were checked against the zip. Confirmed: pyc files present; two Routing.md header lines lacked closing `**` (fixed); the allocation could not meet its own independence rule (n=4 per arm from 2 families on Cases B and D forces same-case reruns). Corrected: the "35 of 85" changelog count in the 10-13 entry was a counting error; the heading-based count is 8 of 96 title-only entries, all dated 2026-10-03 to 2026-10-10, bodies still to be restored from earlier releases' `Progress_Log.md`. Chrono_Divergence v0.4 adds the allocation rule (independence unit = family-and-case pair, 8 distinct pairs for n=4 per arm) and a memory-state control. New `Tests/Chrono_Divergence_Pilot.md` (Proposed, not started) corrects Grok's draft: refers to Chrono for forecasts instead of copying them, uses Field_Logs only for run evidence, fixed a wrong cross-reference. Registered in Routing, Discovery and `Tst_Scope_Map.md`. Still Proposed 0/6; no Unknown, Spec Gate or Status change. Human-directed.
+
+---
 ### 2026-10-13 — Chrono_Divergence v0.3 (fresh-instance audit applied) + registration drift fixed
 Fresh-instance Claude audit of v0.2 (11 findings, verified against the zip) applied: forecast freeze point defined (F1/F2 had been revised 10-13 while labeled frozen 10-12), D1-A/D1-C compatibility contradiction, valid-session and baseline-counting rules, §4.1 sequence and reviewer-role rules, Case A/C defined inline, D2 review dates, t0 evidence caveats, Resolution Log moved to the nested template form. `Routing.md` gained the missing `Tests/` table row (registration had been header-only); `Discovery.md` tree wording "potential map" → "best-outcome map". **Found, not fixed:** 8 of 96 dated entries in `Archive/Logs/Progress_Log_Changelog.md` are title-only (rotated without bodies; all dated 2026-10-03 through 2026-10-10, the most recent rotations), contradicting that file's no-information-removed rule. Correction 2026-10-14: this entry first said "35 of 85" and a range back to 2026-08-09; that was a counting error (short single-paragraph entries were miscounted as empty). The heading-based count above is the one to use. The bodies are not in this zip but should exist in earlier releases' `Admin/Progress_Log.md`, from before each entry rotated; restore from there, and mark any entry that cannot be found as an unrecoverable gap rather than reconstructing it. This rotation (the 2026-10-11 packaging entry) was copied in full. Still Proposed 0/6; no Unknown, Spec Gate or Status change. Human-directed.
 
@@ -51,10 +55,6 @@ New Tests/ protocol stub for mapping idea divergence over time (t0 snapshot, bra
 ---
 ### 2026-10-12 — Kit regression Cases B and D filed (Gemini)
 Field Log `FL-20261012-kit-regression-Gemini.md`: two fresh Gemini sessions on Ethical_Constraints.md with Kit + AP + VG + Unknowns. Case B natural mismatch (Kit Unknowns pin v5.58 vs live v5.60); Case D package-only matched pins (v5.60). Stage 1: no unprompted reconciliation in either session (salience data point). Stage 2: both correct when asked — mismatch flagged on B, all-match and no false drift on D. Mild Case B overclaim on what content was stale. FAK-018 remains open/mitigated. Registered in Field_Logs index and Routing. Human-directed operator assembly; Grok not used as auditor.
-
----
-### 2026-10-11 — Automation development pathway noted (proposal, not built)
-ChatGPT review of 1.21 recommended elevating `Automation/` from a tool bag to a repeatable, testable subsystem that checks its own limits without deciding governance. **Recorded direction only — no code or new folder filed this entry.** Proposed phases: (1) `Tests/Automation/` unittest suite for audit_lib, parser, integrity_check, AUDIT_HARNESS, cold_session_bundler — success and failure modes; (2) shared run manifest (source / execution / result identity) so tools do not silently disagree on repo state; (3) extract shared registry/aliases to e.g. `Automation/repo_registry.py` and break integrity_check→AUDIT_HARNESS coupling; (4) explicit checker modes local / pinned remote / live remote and clearer finding categories; (5) deterministic Colab checkout; (6) measure cold-session bundler strip behavior; (7) keep Candidate 3 isolated. Constraint retained: automation reports evidence and limits — does not certify ethics, governance readiness, or physical go-ahead. Near-term still: packaging hygiene (done same day), Kit/harness regression Field_Log, then tests before new capabilities.
 
 ---
 Full history, including entries rotated out of the five above, in `Archive/Logs/Progress_Log_Changelog.md`.
