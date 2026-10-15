@@ -37,6 +37,10 @@ Created 2026-08-09 to fix a recurring failure mode found the same day, in two pl
 
 *(Most recent first. Rotate to `Archive/Logs/Progress_Log_Changelog.md` once more than five entries accumulate.)*
 
+### 2026-10-14 — Chrono_Divergence v0.6 (independence vocabulary, acceptance outcomes)
+ChatGPT's reprocessed review of v0.4 weighed against v0.5: the cross-arm exposure point was already handled (isolation, counterbalanced order, carryover check); its current recommendation (2 families per arm × Cases B and D, 4 families in total) is feasible, so the between-family alternative now carries that example, and the preregistration declares which design is used. New and adopted: allocation unit / observation unit / independence-assumption vocabulary, and pilot acceptance split into procedurally complete (the only acceptance criterion), scoring agreement observed (reported, no threshold), and rubric reliability supported (not licensed). `Chrono_Divergence_Pilot.md` v0.3 aligned. Still Proposed 0/6; no Unknown, Spec Gate or Status change. Human-directed.
+
+---
 ### 2026-10-14 — Chrono_Divergence v0.5 (cross-arm exposure)
 A further ChatGPT review found that the v0.4 allocation rule fixed same-case reuse but not cross-arm exposure for a family run in both arms. Weighed against source: the concern is real (account memory, shared files, an operator adapting prompts, non-isolated sessions can carry exposure) but ChatGPT's preferred fix, one arm per family, needs about 8 families and confounds family with arm. v0.5 keeps within-family as the default and adds counterbalanced order, isolation requirements, a carryover check by order position, and the between-family design as a labeled alternative. The pilot claim (scoring reproducibility) is unchanged: exposure affects what is scored, not whether reviewers agree. `Chrono_Divergence_Pilot.md` v0.2 aligned. Still Proposed 0/6; no Unknown, Spec Gate or Status change. Human-directed.
 
@@ -51,10 +55,6 @@ Fresh-instance Claude audit of v0.2 (11 findings, verified against the zip) appl
 ---
 ### 2026-10-13 — Chrono_Divergence v0.2 (worked-example coherence)
 Applied ChatGPT follow-up findings CD-B01–B06 before any pilot: D2 falsification direction fixed; M1 unprompted vs M2 end-to-end safety separated; session controls; F2 Partial N/A; Unscorable vs Withdrawn; k/n thresholds; pilot agreement rules and pre-pilot checklist. Still Proposed 0/6. Human-directed.
-
----
-### 2026-10-12 — Chrono_Divergence.md Proposed and registered
-New Tests/ protocol stub for mapping idea divergence over time (t0 snapshot, branch table, unlock experiments, forecast scoring). Explicit distinction between **incidental spark** (unplanned fork that must be named) and **deliberate forethought** (pre-declared map). Worked example uses Kit reconciliation salience from FL-20261012-kit-regression-Gemini. Registered in Routing, Tst_Scope_Map, Discovery. Spec Gates 0/6; no Unknowns indexed to Unknowns.md yet (CD-001–004 sidecar only). Human-directed. Revised to v0.1 later the same day (human-directed, after a ChatGPT document-level audit): canonical navigation anchors, a forecast preregistration and scoring contract with an Unscorable outcome, split divergence/branch/forecast IDs, typed Closed-by values, a defined unit and dated forecasts in the worked example, an Active Disputes section, and "maximum potential" renamed "best outcome compatible with the floors." No Unknown added; no gate change.
 
 ---
 Full history, including entries rotated out of the five above, in `Archive/Logs/Progress_Log_Changelog.md`.
