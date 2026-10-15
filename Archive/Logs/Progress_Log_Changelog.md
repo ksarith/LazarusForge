@@ -3,6 +3,11 @@
 Split out 2026-08-09, following the precedent already established by `Unknowns_Changelog.md`, `AUDIT_HARNESS_CHANGELOG.md`, and `Forge_Audit_Kit_Changelog.md`. `Progress_Log.md` keeps the five most recent entries in full; this file holds every entry that's rotated out. No information is removed when an entry rotates — every entry below is preserved verbatim from `Progress_Log.md` at the time it moved.
 
 ---
+### 2026-10-12 — Chrono_Divergence.md Proposed and registered
+*(Rotated 2026-10-14 Chrono v0.6.)*
+New Tests/ protocol stub for mapping idea divergence over time (t0 snapshot, branch table, unlock experiments, forecast scoring). Explicit distinction between **incidental spark** (unplanned fork that must be named) and **deliberate forethought** (pre-declared map). Worked example uses Kit reconciliation salience from FL-20261012-kit-regression-Gemini. Registered in Routing, Tst_Scope_Map, Discovery. Spec Gates 0/6; no Unknowns indexed to Unknowns.md yet (CD-001–004 sidecar only). Human-directed. Revised to v0.1 later the same day (human-directed, after a ChatGPT document-level audit): canonical navigation anchors, a forecast preregistration and scoring contract with an Unscorable outcome, split divergence/branch/forecast IDs, typed Closed-by values, a defined unit and dated forecasts in the worked example, an Active Disputes section, and "maximum potential" renamed "best outcome compatible with the floors." No Unknown added; no gate change.
+
+---
 ### 2026-10-12 — Kit regression Cases B and D filed (Gemini)
 *(Rotated 2026-10-14 Chrono v0.5.)*
 Field Log `FL-20261012-kit-regression-Gemini.md`: two fresh Gemini sessions on Ethical_Constraints.md with Kit + AP + VG + Unknowns. Case B natural mismatch (Kit Unknowns pin v5.58 vs live v5.60); Case D package-only matched pins (v5.60). Stage 1: no unprompted reconciliation in either session (salience data point). Stage 2: both correct when asked — mismatch flagged on B, all-match and no false drift on D. Mild Case B overclaim on what content was stale. FAK-018 remains open/mitigated. Registered in Field_Logs index and Routing. Human-directed operator assembly; Grok not used as auditor.
