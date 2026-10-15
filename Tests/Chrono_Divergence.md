@@ -1,11 +1,11 @@
-# Chrono_Divergence.md v0.3 -- Idea Fork Forecast & Best-Outcome Map (Test Protocol)
+# Chrono_Divergence.md v0.4 -- Idea Fork Forecast & Best-Outcome Map (Test Protocol)
 
 ---
 
 ## Navigation Anchors
 * **Context Core:** [Discovery.md](https://raw.githubusercontent.com/ksarith/LazarusForge/refs/heads/main/Discovery.md)
 * **Network Routing:** [Routing.md](https://raw.githubusercontent.com/ksarith/LazarusForge/refs/heads/main/Routing.md)
-* **Related:** [Admin/Trajectories.md](../Admin/Trajectories.md) · [Tests/Field_Logs.md](Field_Logs.md) · [Admin/Progress_Log.md](../Admin/Progress_Log.md) · [Challenges/Emergence.md](../Challenges/Emergence.md) · [Tests/Chaos_Dynamics.md](Chaos_Dynamics.md)
+* **Related:** [Admin/Trajectories.md](../Admin/Trajectories.md) · [Tests/Field_Logs.md](Field_Logs.md) · [Admin/Progress_Log.md](../Admin/Progress_Log.md) · [Challenges/Emergence.md](../Challenges/Emergence.md) · [Tests/Chaos_Dynamics.md](Chaos_Dynamics.md) · [Tests/Chrono_Divergence_Pilot.md](Chrono_Divergence_Pilot.md)
 
 ---
 
@@ -19,8 +19,8 @@
 | Verification Ref | Admin/Verification_Gates.md |
 | Open Unknowns    | 4 (sidecar below; all non-blocking) |
 | Owner            | `Tests/Chrono_Divergence.md` |
-| Last Audit       | 2026-10-13 — v0.3: fresh-instance Claude audit (11 findings, verified against source) applied (human-directed). Prior same day: v0.2, ChatGPT follow-up findings CD-B01–B06. Prior: 2026-10-12 v0/v0.1. Method only; no forecast portfolio claimed Measured. |
-| Last Updated     | 2026-10-13 |
+| Last Audit       | 2026-10-14 — v0.4: allocation rule (independence unit = auditor-family-and-case pair; 8 distinct pairs for n=4 per arm; memory-state recording) added after ChatGPT and Grok reviews of 1.22 (human-directed); pilot protocol split into `Tests/Chrono_Divergence_Pilot.md`. Prior: 2026-10-13 — v0.3: fresh-instance Claude audit (11 findings, verified against source) applied (human-directed). Prior same day: v0.2, ChatGPT follow-up findings CD-B01–B06. Prior: 2026-10-12 v0/v0.1. Method only; no forecast portfolio claimed Measured. |
+| Last Updated     | 2026-10-14 |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
 ---
@@ -196,7 +196,8 @@ Unit of analysis: one fresh, unprompted audit session of one case on one auditor
 - If controls cannot be met, label results **exploratory** and do not attribute differences to the pointer alone.
 - **Valid Stage 1 session** (for `k/n`): fresh session; controls recorded; unhinted prompt that does not describe the reconciliation check; case pack as the operator specified; a completed initial audit report. Tool or retrieval use beyond the pack, and claims of checks the pack could not support, do not invalidate a session for M1 (M1 asks only whether a reconciliation statement appears) but are recorded as annotations and reported beside `k/n`. A session that breaks a control, or whose prompt reveals the check, is invalid.
 - **Baseline counting:** the existing Gemini Case B and D Stage 1 sessions (0/2) predate the preregistration and these controls. They are prior data and are not counted among the 4 sessions for F1 or F2.
-- **Allocation:** how sessions are split across auditor families, cases and arms (shipped Kit vs pointer variant) is declared in the preregistration record before the first run.
+- **Allocation rule (v0.4):** the independence unit is the (auditor family, case) pair, and each pair is run at most once across both arms. n = 4 valid sessions per arm therefore needs 8 distinct pairs, for example 4 families × Cases B and D, or 2 families × 4 equivalent operator-held case variants. Pairs are assigned to arms by recorded randomization or counterbalancing, so each case appears in both arms and no family runs the same case twice. The assignment is declared in the preregistration record before the first run. With fewer than 8 distinct pairs, F1/F2 are Unscorable (fewer than 4 valid sessions per arm); the sessions may still be filed and reported as exploratory `k/n` at their actual n.
+- **Memory and personalization state:** record whether the auditor product's memory or personalization features were on for each session, and whether any earlier conversation in that account touched the pack, the Kit reconciliation design, or Case B/D outcomes. A session whose memory demonstrably held any of those is invalid; memory-on sessions without such content are valid but annotated.
 
 **Counts, not vague frequency:** For this pilot, report M1 as `k/n` valid Stage 1 sessions (e.g. 0/4, 1/4). Do not use "common" or "rare" except as shorthand for a preregistered `k/n` threshold stated in the forecast row.
 
@@ -221,11 +222,13 @@ Unit of analysis: one fresh, unprompted audit session of one case on one auditor
 
 **Reviewers:** named in the pilot record with their roles. A reviewer who wrote or audited the forecast or rubric text (for example an agent that audited v0.1 or v0.2) is labeled as such, and the pair should include at least one reviewer who did not.
 
+**Pilot protocol:** operationalized in `Tests/Chrono_Divergence_Pilot.md` (Proposed, not started). This section stays authoritative for the claim, the forecasts and the scoring rules; the pilot file points here and does not copy them.
+
 **Pre-pilot checklist (must be satisfied before scoring F1/F2 as a formal pilot):**
 
 1. D2-A / D2-B falsification conditions refer to each branch's own claim (see table above).
 2. M1 and M2 are scored separately; D1-B is not treated as an M1 intervention.
-3. Session ordering, allocation, exposure controls, and independence limits are recorded.
+3. Session ordering, allocation (distinct family-and-case pairs, per the allocation rule in §4), exposure controls including memory state, and independence limits are recorded.
 4. Every scoring category is defined (F2 Partial = N/A as above).
 5. Frequency language is bound to `k/n` thresholds in the forecast rows.
 6. Reviewer agreement and rubric-revision rules are predeclared (below).
@@ -247,6 +250,8 @@ Unit of analysis: one fresh, unprompted audit session of one case on one auditor
 |------|----------------|
 | `Admin/Trajectories.md` | Longer mechanism design; this file is shorter-cycle idea forks |
 | `Tests/Field_Logs.md` | Evidence sink for scored maps |
+| `Admin/Autonomy_Divergence_Protocol.md` | Response tiers for autonomy drift and peer divergence; this file maps idea forks and sets no response tiers or authority |
+| `Tests/Chrono_Divergence_Pilot.md` | Operational protocol for the §4.1 scoring-reproducibility pilot; points here for forecasts and rules |
 | `Admin/Progress_Log.md` | May summarize completed chrono reviews; does not replace maps |
 | CAP / AVE / MAQT | Point-in-time capability/reliability; may appear as unlocks on a branch |
 | `Operations/*` | Domain ideas (e.g. Automotive floors) can be mapped; physical work still blocked by those files’ own floors |
@@ -291,11 +296,11 @@ Unit of analysis: one fresh, unprompted audit session of one case on one auditor
 | Blocking | No |
 | Owner | `Tests/Chrono_Divergence.md` |
 | First Logged | 2026-10-12 |
-| Last Reviewed | 2026-10-13 |
+| Last Reviewed | 2026-10-14 |
 
 **Description:** Residual after v0.1–v0.2: inter-rater agreement on Hit/Miss/Partial/Unscorable/Withdrawn still untested; F2 Partial is N/A for this example but other maps need explicit Partial rules; withdrawal must not substitute for unfavorable scores.
 
-**Resolution Path:** Run §4.1 pilot (two reviewers, same frozen F1/F2 evidence); revise rubric only under predeclared triggers. Optional: score 3–5 historical Progress_Log arcs retrospectively.
+**Resolution Path:** Run §4.1 pilot per `Tests/Chrono_Divergence_Pilot.md` (two reviewers, same frozen F1/F2 evidence); revise rubric only under predeclared triggers. Optional: score 3–5 historical Progress_Log arcs retrospectively.
 
 ---
 
@@ -358,6 +363,7 @@ Unit of analysis: one fresh, unprompted audit session of one case on one auditor
 
 *(No Unknown resolved. Entries below are file change history, newest first.)*
 
+- 2026-10-14: **v0.4 revision** after ChatGPT (LF-122-04) and Grok reviews of release 1.22 (human-directed; claims verified against the 1.22 zip). The worked example's allocation could not meet its own independence rule: n=4 per arm from 2 families on Cases B and D forces each family to run the same case in both arms. Added an allocation rule (independence unit = family-and-case pair, 8 distinct pairs for n=4 per arm, fewer pairs → Unscorable, exploratory reporting allowed) and a memory/personalization-state control; checklist item 3 updated; §4.1 points to the new `Tests/Chrono_Divergence_Pilot.md`; Interfaces gained rows for `Autonomy_Divergence_Protocol.md` and the pilot file; CD-001 resolution path points to the pilot file. No forecast text, Spec Gate, Unknown ID or Status change.
 - 2026-10-13: **v0.3 revision** after a fresh-instance Claude audit (11 findings, verified against the zip; human-directed). Forecast freeze point defined (the preregistration record), and the F1/F2 Frozen cells now record the 2026-10-13 pre-freeze revisions; D1-A/D1-C compatibility contradiction fixed (D1-C also excludes D1-B); valid-session, baseline-counting and allocation rules added; §4.1 gained sequence and reviewer-role rules and checklist item 9; Case A/C defined inline; D2 review dates set to 2026-11-12; t0 evidence caveats and evidence-boundary citation corrected; CD-001–004 Last Reviewed updated; Resolution Log moved into the nested template form and put in newest-first order. Registration drift fixed in Routing.md (missing Tests/ row) and Discovery.md (tree wording). No Spec Gate, Unknown ID, or Status change.
 - 2026-10-13: **v0.2 revision** after ChatGPT follow-up audit (CD-B01–B06; human-directed). Worked example: fixed inverted D2-A falsification; split M1 unprompted detection vs M2 end-to-end safety; session-order/exposure controls; F2 Partial = N/A; Unscorable vs Withdrawn; k/n instead of common/rare; pilot agreement criteria and pre-pilot checklist; preregistration hash note. CD-001 description updated to current residual. No Spec Gate, Unknown ID, or Status change.
 - 2026-10-12: **v0.1 revision** after a ChatGPT document-level audit and human review (human-directed). Navigation anchors now use the canonical raw URLs. Forecasts get a preregistration and scoring contract (3.3, 3.4) with an Unscorable outcome, frozen claims and dated superseding amendments. IDs split into divergence (D1), branch (D1-A) and forecast (F1). Closed-by split into Falsified / Prohibited by floor / Human-declined / Resource-deferred / Superseded. The worked example now states its evidence boundary, uses a defined unit and compatible branches, and has dated forecasts with thresholds; "Stage 1 fail" reworded to "Stage 1 miss" (earlier log lines are left as history). "Maximum potential" renamed "best outcome compatible with the floors," a qualitative heuristic. Active Disputes section and a sidecar Resolution Log subsection added; a first-pilot description added (4.1). No Spec Gate, Unknown or status change; no new Unknown (CD-001 path extended).

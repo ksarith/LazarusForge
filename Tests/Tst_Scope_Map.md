@@ -11,7 +11,7 @@
 | Spec Gates       | N/A — this file is a cross-reference index, not a specification     |
 | Open Unknowns    | 0 (surfaces existing unknowns from owning files; creates none)      |
 | Owning Domain    | Tests/                                                               |
-| Last Reviewed    | 2026-10-12 — Chrono_Divergence.md Proposed stub registered|
+| Last Reviewed    | 2026-10-14 — Chrono_Divergence_Pilot.md registered; Chrono_Divergence.md v0.4 |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
 ---
@@ -88,6 +88,12 @@ Note: Created 2026-10-08 as a proposal, ratified 2026-10-09. Cross-agent audit p
 **Does not:** Predict the future with authority, replace `Admin/Trajectories.md` or `Progress_Log.md`, make physics claims, or authorize Spec Gate promotion, Unknown closure or physical work.
 Note: Created 2026-10-12. The worked example uses the Kit-regression result as its first t0 and is illustrative, not a closed study.
 
+### `Tests/Chrono_Divergence_Pilot.md`
+**Status:** Proposed Protocol (2026-10-14) · 0/6 · 0 Open Unknowns of its own (surfaces CD-001, owned by `Chrono_Divergence.md`) · Risk: Low — a pilot checklist can read as a result; the file states the pilot is not started and completion licenses no accuracy claim
+**Does:** Gives the ordered steps, allocation table, filing and scoring tables for the Chrono §4.1 scoring-reproducibility pilot; refers to `Chrono_Divergence.md` for forecasts and rules instead of copying them.
+**Does not:** Hold run evidence (that goes in `Tests/Field_Logs/`), restate frozen forecasts, claim the pointer works, or change FAK-018, Kit text, Spec Gates or any Unknown.
+Note: Created 2026-10-14 from a Grok draft corrected against Chrono v0.3/v0.4.
+
 ### `Tests/Admin_Governance_Teardown_POC.md`
 **Status:** Exploration · 0/6 (analysis exercise, not a specification) · 0 Open Unknowns · Risk: Low
 **Does:** Classifies all 33 `Admin/` files (as of 2026-10-04) into four minimality tiers (0 constitutional core through 4 tooling/meta) against an explicit test — would a minimal, single-operator POC lose something it can't function without if this file vanished. Classification read directly from each file's own Scope Boundary and Status field, not inferred. Names two concrete findings: the `Nothingness_Theorem.md`/`Computational_Institutional_Reasoning.md`/`CIR_Gov.md` trio (166 KB combined) is explicitly non-operational by its own Status fields and is the cleanest consolidation candidate; `Governance_Migration_Protocol.md` (182 KB, the largest Admin/ file) appears to conflate rare-event amendment procedure with common-event migration mechanics along a seam its own structure already suggests.
@@ -139,6 +145,8 @@ No corrections were needed in this folder, same as Challenges/ — no stale cros
 ---
 
 ## Resolution Log
+
+- 2026-10-14: Registered `Tests/Chrono_Divergence_Pilot.md` (Proposed). Human-directed.
 
 - 2026-10-12: Registered `Tests/Chrono_Divergence.md` (Proposed). Human-directed.
 
