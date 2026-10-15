@@ -1,4 +1,4 @@
-# Chrono_Divergence_Pilot.md v0.1 -- Scoring Reproducibility Pilot (CD-Pilot-001)
+# Chrono_Divergence_Pilot.md v0.2 -- Scoring Reproducibility Pilot (CD-Pilot-001)
 
 ---
 
@@ -19,7 +19,7 @@
 | Verification Ref | Admin/Verification_Gates.md |
 | Open Unknowns    | 0 (surfaces CD-001, owned by `Tests/Chrono_Divergence.md`; creates none) |
 | Owner            | `Tests/Chrono_Divergence.md` |
-| Last Audit       | 2026-10-14 — v0.1 drafted from Grok's pilot draft; corrected against `Tests/Chrono_Divergence.md` v0.3/v0.4 before filing (Claude, human-directed). Not yet audited by a second agent. |
+| Last Audit       | 2026-10-14 — v0.2: allocation section aligned to Chrono v0.5 (order, isolation, carryover check). Prior: v0.1 drafted from Grok's pilot draft; corrected against `Tests/Chrono_Divergence.md` v0.3/v0.4 before filing (Claude, human-directed). Not yet audited by a second agent. |
 | Last Updated     | 2026-10-14 |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
@@ -51,7 +51,7 @@ Chrono_Divergence.md defines the protocol and the worked example. A pilot needs 
 
 1. The pilot claim is narrow: two independent reviewers can score the same frozen forecasts from the same filed evidence and produce documented agreement or fully recorded disagreement.
 2. Only the preregistration record freezes F1/F2 (Chrono §3.3). Until it exists, the pilot is unstarted.
-3. Independence is per (auditor family, case) pair (Chrono §4 allocation rule), so n per arm is bounded by the number of distinct pairs available.
+3. Sessions are counted per (auditor family, case) pair (Chrono §4 allocation rule), so n per arm is bounded by the number of distinct pairs available. A pair is not automatically an independent experimental unit: cross-arm exposure within a family is controlled by isolation, counterbalanced order and a carryover check.
 
 ---
 
@@ -83,7 +83,7 @@ F1 and F2 (claims, thresholds, withdraw conditions), the Hit / Partial / Miss / 
 
 The independence unit is the (auditor family, case) pair. Each pair runs once across both arms; assignment to arms is by recorded randomization or counterbalancing; each case appears in both arms.
 
-| Pair | Auditor family | Case | Arm (Baseline / Pointer) | Order | Session ID | Memory state |
+| Pair | Auditor family | Case | Arm (Baseline / Pointer) | Order (1st/2nd for family) | Session ID | Memory state |
 |------|----------------|------|--------------------------|-------|------------|--------------|
 | 1 | | | | | | |
 | 2 | | | | | | |
@@ -94,7 +94,7 @@ The independence unit is the (auditor family, case) pair. Each pair runs once ac
 | 7 | | | | | | |
 | 8 | | | | | | |
 
-Example shape (not an assignment): 4 families × Cases B and D, with each family running B in one arm and D in the other, and the two arms balanced within each case.
+Default design (Chrono §4, within-family): each family runs both arms on different cases, order counterbalanced (half baseline-first, half pointer-first), each case in both arms, every session isolated and run from the preregistered prompt verbatim. Example shape, not an assignment: 4 families × Cases B and D. Record isolation facts per session (memory state, new chat, no shared project or files). After the runs, report M1 by order position as the carryover check. The between-family alternative is in Chrono §4; use it only if isolation cannot be shown.
 
 ### 5. Arms and case material
 
@@ -155,6 +155,7 @@ Record totals (forecasts made, withdrawn, partial, unscorable). Rubric revision 
 
 ### Resolution Log
 
+- 2026-10-14: v0.2: allocation section aligned to Chrono v0.5 (counterbalanced order, isolation requirements, carryover check by order position). Contamination affects what the reviewers score, not whether they agree, so the pilot claim is unchanged. Human-directed.
 - 2026-10-14: v0.1 filed and registered (Proposed, pilot not started). Drafted by Grok; corrected against Chrono v0.3/v0.4 (forecast copy removed, bucket and cross-reference errors fixed, allocation rebuilt on distinct family-and-case pairs). Human-directed.
 
 ---
