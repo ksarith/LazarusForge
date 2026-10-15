@@ -68,7 +68,7 @@ Chrono_Divergence.md defines the protocol and the worked example. A pilot needs 
 | Step | Action | Gate |
 |------|--------|------|
 | 0 | This file filed, registered, and linked from Chrono §4.1 | Done when registered |
-| 1 | **Preregistration record** made: hash or commit of the Chrono forecast rows and §4 session controls, plus the filled allocation table (§4 below), exact pointer wording, and named reviewers | Must precede any data-collection session |
+| 1 | **Preregistration record** made: hash or commit of the Chrono §4 F1/F2 rows and session controls plus this file's §9 (pointer wording, design declaration, allocation table in §9.3, reviewers, forecast-coverage record) | Must precede any data-collection session |
 | 2 | Sessions run and filed as Field_Log(s), both arms | Needs 8 distinct (family, case) pairs for n=4 per arm; otherwise F1/F2 are Unscorable and results are reported as exploratory |
 | 3 | Two named reviewers score F1 and F2 independently, before discussion | At least one reviewer did not write or audit the forecast or rubric text; any who did are labeled |
 | 4 | Agreement table and disagreement analysis filed; any adjudicated score labeled as such | Completes the pilot |
@@ -217,6 +217,7 @@ A blank reason means **not ready to start**. Checklist item 9 requires a recorde
 
 ### Resolution Log
 
+- 2026-10-15: Editorial, no version bump. Step 1 in §2 repointed from the removed §4 allocation table to §9 (§9.3), and its hash scope worded to match §9.6; "§4" now always means Chrono §4 where it names session controls. No content change.
 - 2026-10-15: **v0.4** after Claude review of the first preregistration template. Fixes: §4 no longer carries a second allocation table (points to §9.3 only); freeze hash scope expanded to Chrono §4 F1/F2 rows + session controls + this §9; blank forecast-coverage reason means not ready to start (no silent default); under-8-pairs consequence stated plainly (both forecasts Unscorable, Hit/Miss discrimination not tested); version bumped. Prior same day: §9 first expanded from open-items list into a fillable record; editorial trim of Last Audit cell. Pilot remains Proposed / not started until the record is filled and hashed. No Spec Gate or Unknown change. Human-directed.
 - 2026-10-14: v0.3: §7 now reports three outcomes separately (procedurally complete / scoring agreement observed / rubric reliability supported) with completion as the only acceptance criterion; §4 requires the record to declare the design. Aligned to Chrono v0.6. Human-directed.
 - 2026-10-14: v0.2: allocation section aligned to Chrono v0.5 (counterbalanced order, isolation requirements, carryover check by order position). Contamination affects what the reviewers score, not whether they agree, so the pilot claim is unchanged. Human-directed.
