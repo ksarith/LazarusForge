@@ -11,7 +11,7 @@
 | Spec Gates       | N/A — this file is a progression log, not a specification           |
 | Open Unknowns    | 0 (references existing unknowns; creates none)                      |
 | Owning Domain    | Admin/                                                               |
-| Last Reviewed    | 2026-10-14                                                           |
+| Last Reviewed    | 2026-10-15                                                           |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
 ---
@@ -37,6 +37,10 @@ Created 2026-08-09 to fix a recurring failure mode found the same day, in two pl
 
 *(Most recent first. Rotate to `Archive/Logs/Progress_Log_Changelog.md` once more than five entries accumulate.)*
 
+### 2026-10-15 — Master zip checked; integrity-checker warnings traced and fixed
+The 2026-10-15 master zip was byte-identical to the v0.6 state (no `__pycache__`; packaging fix held). Harness tests passed (7); integrity checker 0 critical. Traced the `last_audit` conflict warning on Chrono, the pilot file, Automotive and Robotics: `parser.py` maps both Last Audit and Last Updated into one field, a bare-date Last Updated normalizes, but a Last Audit cell with text after the date did not, so the two looked different. `parser.py` now reads the leading ISO date from such a cell; genuinely different dates still conflict. Chrono and the pilot file had their Last Audit cells trimmed to current state (history stays in the Resolution Log); the pilot's Field_Log reference is now a canonical path; `Tst_Scope_Map.md` lost a stale Chrono version pin (same staleness class as FAK-014 to 018). Not changed, awaiting decision: the Automation folder README and the Kit regression pack are not in Routing (confirm intentional); 8 title-only changelog entries (2026-10-03 to 2026-10-10) still await older `Progress_Log.md` files; F1/F2 review date 2026-11-12 passes unmet if no preregistration record exists by then (record Resource-deferred). Still Proposed 0/6; no Unknown, Spec Gate or Status change. Human-directed.
+
+---
 ### 2026-10-14 — Chrono_Divergence v0.6 (independence vocabulary, acceptance outcomes)
 ChatGPT's reprocessed review of v0.4 weighed against v0.5: the cross-arm exposure point was already handled (isolation, counterbalanced order, carryover check); its current recommendation (2 families per arm × Cases B and D, 4 families in total) is feasible, so the between-family alternative now carries that example, and the preregistration declares which design is used. New and adopted: allocation unit / observation unit / independence-assumption vocabulary, and pilot acceptance split into procedurally complete (the only acceptance criterion), scoring agreement observed (reported, no threshold), and rubric reliability supported (not licensed). `Chrono_Divergence_Pilot.md` v0.3 aligned. Still Proposed 0/6; no Unknown, Spec Gate or Status change. Human-directed.
 
@@ -51,10 +55,6 @@ Release 1.22 was byte-identical to the 2026-10-13 corrections package apart from
 ---
 ### 2026-10-13 — Chrono_Divergence v0.3 (fresh-instance audit applied) + registration drift fixed
 Fresh-instance Claude audit of v0.2 (11 findings, verified against the zip) applied: forecast freeze point defined (F1/F2 had been revised 10-13 while labeled frozen 10-12), D1-A/D1-C compatibility contradiction, valid-session and baseline-counting rules, §4.1 sequence and reviewer-role rules, Case A/C defined inline, D2 review dates, t0 evidence caveats, Resolution Log moved to the nested template form. `Routing.md` gained the missing `Tests/` table row (registration had been header-only); `Discovery.md` tree wording "potential map" → "best-outcome map". **Found, not fixed:** 8 of 96 dated entries in `Archive/Logs/Progress_Log_Changelog.md` are title-only (rotated without bodies; all dated 2026-10-03 through 2026-10-10, the most recent rotations), contradicting that file's no-information-removed rule. Correction 2026-10-14: this entry first said "35 of 85" and a range back to 2026-08-09; that was a counting error (short single-paragraph entries were miscounted as empty). The heading-based count above is the one to use. The bodies are not in this zip but should exist in earlier releases' `Admin/Progress_Log.md`, from before each entry rotated; restore from there, and mark any entry that cannot be found as an unrecoverable gap rather than reconstructing it. This rotation (the 2026-10-11 packaging entry) was copied in full. Still Proposed 0/6; no Unknown, Spec Gate or Status change. Human-directed.
-
----
-### 2026-10-13 — Chrono_Divergence v0.2 (worked-example coherence)
-Applied ChatGPT follow-up findings CD-B01–B06 before any pilot: D2 falsification direction fixed; M1 unprompted vs M2 end-to-end safety separated; session controls; F2 Partial N/A; Unscorable vs Withdrawn; k/n thresholds; pilot agreement rules and pre-pilot checklist. Still Proposed 0/6. Human-directed.
 
 ---
 Full history, including entries rotated out of the five above, in `Archive/Logs/Progress_Log_Changelog.md`.
