@@ -1,4 +1,4 @@
-# Chrono_Divergence_Pilot.md v0.2 -- Scoring Reproducibility Pilot (CD-Pilot-001)
+# Chrono_Divergence_Pilot.md v0.3 -- Scoring Reproducibility Pilot (CD-Pilot-001)
 
 ---
 
@@ -19,7 +19,7 @@
 | Verification Ref | Admin/Verification_Gates.md |
 | Open Unknowns    | 0 (surfaces CD-001, owned by `Tests/Chrono_Divergence.md`; creates none) |
 | Owner            | `Tests/Chrono_Divergence.md` |
-| Last Audit       | 2026-10-14 — v0.2: allocation section aligned to Chrono v0.5 (order, isolation, carryover check). Prior: v0.1 drafted from Grok's pilot draft; corrected against `Tests/Chrono_Divergence.md` v0.3/v0.4 before filing (Claude, human-directed). Not yet audited by a second agent. |
+| Last Audit       | 2026-10-14 — v0.3: acceptance split into three outcomes; design declaration added (aligned to Chrono v0.6). Prior: v0.2: allocation section aligned to Chrono v0.5 (order, isolation, carryover check). Prior: v0.1 drafted from Grok's pilot draft; corrected against `Tests/Chrono_Divergence.md` v0.3/v0.4 before filing (Claude, human-directed). Not yet audited by a second agent. |
 | Last Updated     | 2026-10-14 |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
@@ -81,6 +81,8 @@ F1 and F2 (claims, thresholds, withdraw conditions), the Hit / Partial / Miss / 
 
 ### 4. Allocation (declared in the preregistration record)
 
+The record states which design is used: within-family (default) or between-family (Chrono §4). Terms follow Chrono §4: allocation unit, observation unit, and the independence assumption that holds only under the stated controls.
+
 The independence unit is the (auditor family, case) pair. Each pair runs once across both arms; assignment to arms is by recorded randomization or counterbalancing; each case appears in both arms.
 
 | Pair | Auditor family | Case | Arm (Baseline / Pointer) | Order (1st/2nd for family) | Session ID | Memory state |
@@ -116,7 +118,17 @@ Each batch is filed as a Field_Log (`Status: Unreviewed`, with a row added to th
 | F1 | | | | | |
 | F2 | | | | | |
 
-Record totals (forecasts made, withdrawn, partial, unscorable). Rubric revision follows only the predeclared triggers in Chrono §4.1. The pilot succeeds as a method test if Steps 1 to 4 ran in order, both forecasts received two independent scores, the agreement table and disagreement analysis are filed, and every invalid session, control failure and withdrawn forecast stays visible.
+Record totals (forecasts made, withdrawn, partial, unscorable). Rubric revision follows only the predeclared triggers in Chrono §4.1.
+
+Report three outcomes separately (Chrono §4.1):
+
+| Outcome | What it establishes | Status for this pilot |
+|---------|---------------------|-----------------------|
+| Procedurally complete | Steps 1 to 4 ran in order; both forecasts received two independent scores; the agreement table and disagreement analysis are filed; every invalid session, control failure and withdrawn forecast stays visible | Minimum acceptance criterion |
+| Scoring agreement observed | Reviewers assigned matching categories | A result to report, not a predetermined success; no percentage threshold |
+| Rubric reliability supported | A larger, appropriately designed evaluation supports a stronger reproducibility claim | Not licensed by this pilot |
+
+The pilot is procedurally complete even if the reviewers disagree on every score.
 
 ### 8. Explicit non-claims
 
@@ -155,6 +167,7 @@ Record totals (forecasts made, withdrawn, partial, unscorable). Rubric revision 
 
 ### Resolution Log
 
+- 2026-10-14: v0.3: §7 now reports three outcomes separately (procedurally complete / scoring agreement observed / rubric reliability supported) with completion as the only acceptance criterion; §4 requires the record to declare the design. Aligned to Chrono v0.6. Human-directed.
 - 2026-10-14: v0.2: allocation section aligned to Chrono v0.5 (counterbalanced order, isolation requirements, carryover check by order position). Contamination affects what the reviewers score, not whether they agree, so the pilot claim is unchanged. Human-directed.
 - 2026-10-14: v0.1 filed and registered (Proposed, pilot not started). Drafted by Grok; corrected against Chrono v0.3/v0.4 (forecast copy removed, bucket and cross-reference errors fixed, allocation rebuilt on distinct family-and-case pairs). Human-directed.
 
