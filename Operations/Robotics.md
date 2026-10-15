@@ -38,8 +38,8 @@
 | Verification Ref | Admin/Verification_Gates.md |
 | Open Unknowns    | 8 (sidecar below; RB-002, RB-003 and RB-007 are Blocking for the stated physical work, the other 5 non-blocking; the three Blocking items also indexed in `Unknowns.md`) |
 | Owner            | `Operations/Robotics.md` |
-| Last Audit       | 2026-10-11 — clarifications after two independent audits: RB-007 Blocking scope reworded, RB-003 path says what "defined" means, RF-11 adds the test condition. 2026-10-10 safety review pass (Claude, human-directed): floors RF-9 to RF-12 added; RB-002/003/007 changed to scoped Blocking. Earlier: 2026-10-10 — v0 stub filed (Proposed). No physical robot work claimed. |
-| Last Updated     | 2026-10-11 |
+| Last Audit       | 2026-10-15 — three resolution-path additions after ChatGPT's targeted audit (hazard-zone definition, cap evidence basis, safety-channel test record; human-directed; no safety floor changed). 2026-10-11 — clarifications after two independent audits: RB-007 Blocking scope reworded, RB-003 path says what "defined" means, RF-11 adds the test condition. 2026-10-10 safety review pass (Claude, human-directed): floors RF-9 to RF-12 added; RB-002/003/007 changed to scoped Blocking. Earlier: 2026-10-10 — v0 stub filed (Proposed). No physical robot work claimed. |
+| Last Updated     | 2026-10-15 |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
 ---
@@ -190,12 +190,12 @@ These are **floors**, not a complete safety case. Weakening them requires human 
 | Blocking | Yes, scoped: first power-up of any force-capable axis -- changed from No 2026-10-10; RF-2/RF-3 already forbid it until resolved |
 | Owner | `Operations/Robotics.md` |
 | First Logged | 2026-10-10 |
-| Last Reviewed | 2026-10-10 |
+| Last Reviewed | 2026-10-15 |
 | Indexed | `Unknowns.md` > Operations -- Automotive & Robotics |
 
 **Description:** Floors stated; platform-class procedures and test methods not filed.
 
-**Resolution Path:** Per-class procedure; human authorization before first power-up Field_Log.
+**Resolution Path:** Per-class procedure; human authorization before first power-up Field_Log. The procedure includes a platform-specific safety-channel test record (see RF-11): stop activation, no restart on reset, how isolation or restraint was verified, the outcome, and what happens on failure. A failed or inconclusive test blocks power-up.
 
 ---
 
@@ -210,12 +210,12 @@ These are **floors**, not a complete safety case. Weakening them requires human 
 | Blocking | Yes, scoped: first powered motion, including supervised -- changed from No 2026-10-10; no motion without force and speed caps |
 | Owner | `Operations/Robotics.md` |
 | First Logged | 2026-10-10 |
-| Last Reviewed | 2026-10-10 |
+| Last Reviewed | 2026-10-15 |
 | Indexed | `Unknowns.md` > Operations -- Automotive & Robotics |
 
 **Description:** No numeric caps; any later numbers start Placeholder until measured in cell.
 
-**Resolution Path:** Conservative Proposed defaults → Field_Log → revise; never demo-driven. For this entry "defined" means Proposed caps are written down, platform-specific and human-authorized before the first commissioning motion; Field_Log measurements then validate or revise them and do not authorize the motion that produced them.
+**Resolution Path:** Conservative Proposed defaults → Field_Log → revise; never demo-driven. For this entry "defined" means Proposed caps are written down, platform-specific and human-authorized before the first commissioning motion; Field_Log measurements then validate or revise them and do not authorize the motion that produced them. The basis for each proposed cap is recorded (source, operating conditions, assumptions, uncertainty); a value copied from another platform, or chosen only because it sounds conservative, is not a basis.
 
 ---
 
@@ -287,12 +287,12 @@ These are **floors**, not a complete safety case. Weakening them requires human 
 | Blocking | Yes, scoped: unsupervised presence, or any person inside the hazard zone -- changed from No 2026-10-10; scope reworded 2026-10-11 to match this entry's supervised-operation default and Section 1; RF-1 already forbids unsupervised presence |
 | Owner | `Operations/Robotics.md` |
 | First Logged | 2026-10-10 |
-| Last Reviewed | 2026-10-10 |
+| Last Reviewed | 2026-10-15 |
 | Indexed | `Unknowns.md` > Operations -- Automotive & Robotics |
 
 **Description:** OEM cobot labels do not grant unsupervised presence; policy for supervised proximity TBD. The Blocking scope is unsupervised presence or any person inside the hazard zone. Supervised operation with every person outside the hazard zone is still gated by RB-002 and RB-003.
 
-**Resolution Path:** Human decision + procedure; default remains exclusion or continuous supervision.
+**Resolution Path:** Human decision + procedure; default remains exclusion or continuous supervision. First step: define "hazard zone" for this entry -- what it contains, who establishes its boundary, and how the boundary is verified before each powered operation. Until that definition exists, the conservative reading applies: the hazard zone is the whole cell while any axis is powered.
 
 ---
 
@@ -340,3 +340,4 @@ These are **floors**, not a complete safety case. Weakening them requires human 
 - 2026-10-10: **Safety review pass (human-directed).** Added floors RF-9 to RF-12 (support loads before power removal, verify discharge, function-test the safety channel and require deliberate restart after E-stop, hydraulic/laser/lithium hazards) and pointers from blocks D and G; RB-002, RB-003 and RB-007 changed to scoped Blocking. Floors only; no procedure or number added. All new items are Proposed/Placeholder.
 - 2026-10-10: The three Blocking items are indexed in `Unknowns.md` v5.59 (Active Index cluster, Dependency Clusters block, Critical Watch). Index entries only; no change to the sidecar entries' substance.
 - 2026-10-11: **Clarifications after two independent audits (human-directed).** RB-007's Blocking scope reworded from "any operation with people in the cell or space" to "unsupervised presence, or any person inside the hazard zone," because the old wording contradicted the entry's own supervised-operation default and Section 1; RF-1 is unchanged. RB-003's resolution path now says what "defined" means (Proposed caps set and authorized before the first commissioning motion; Field_Log validates afterward). RF-11 adds that the safety channel is tested with motion power isolated or the axis restrained.
+- 2026-10-15: **Resolution-path additions after a targeted audit (human-directed).** Verified against source first: the audit's facts held, and most of its "critical" findings restated declared Open Blocking unknowns. Three follow-ons were kept. RB-007: the 2026-10-11 rewording introduced "hazard zone" without defining it, so its path now starts by defining the zone and its boundary check, with the whole cell as the conservative reading until then. RB-003: the path now requires a recorded basis for each proposed cap. RB-002: the path now includes a safety-channel test record (RF-11) and states that a failed or inconclusive test blocks power-up. No safety floor, Blocking scope, Status or Unknown ID changed; no new Unknown added; `Unknowns.md` is unaffected (it does not carry resolution-path text).
