@@ -3,6 +3,11 @@
 Split out 2026-08-09, following the precedent already established by `Unknowns_Changelog.md`, `AUDIT_HARNESS_CHANGELOG.md`, and `Forge_Audit_Kit_Changelog.md`. `Progress_Log.md` keeps the five most recent entries in full; this file holds every entry that's rotated out. No information is removed when an entry rotates — every entry below is preserved verbatim from `Progress_Log.md` at the time it moved.
 
 ---
+### 2026-10-11 — Automation development pathway noted (proposal, not built)
+*(Rotated 2026-10-14 Chrono v0.4 + pilot file.)*
+ChatGPT review of 1.21 recommended elevating `Automation/` from a tool bag to a repeatable, testable subsystem that checks its own limits without deciding governance. **Recorded direction only — no code or new folder filed this entry.** Proposed phases: (1) `Tests/Automation/` unittest suite for audit_lib, parser, integrity_check, AUDIT_HARNESS, cold_session_bundler — success and failure modes; (2) shared run manifest (source / execution / result identity) so tools do not silently disagree on repo state; (3) extract shared registry/aliases to e.g. `Automation/repo_registry.py` and break integrity_check→AUDIT_HARNESS coupling; (4) explicit checker modes local / pinned remote / live remote and clearer finding categories; (5) deterministic Colab checkout; (6) measure cold-session bundler strip behavior; (7) keep Candidate 3 isolated. Constraint retained: automation reports evidence and limits — does not certify ethics, governance readiness, or physical go-ahead. Near-term still: packaging hygiene (done same day), Kit/harness regression Field_Log, then tests before new capabilities.
+
+---
 ### 2026-10-11 — Three quick consistency fixes (packaging + headers)
 *(Rotated 2026-10-13 Chrono v0.3.)*
 Removed shipped `Automation/__pycache__/*.pyc` from the working tree (`.gitignore` already excluded them; release zip had still contained them). `Discovery.md` Last-updated header catch-up 2026-10-09 → 2026-10-10 for Automotive/Robotics registration already in the body. `Automation/README.md` harness version label v16 → v17 to match `AUDIT_HARNESS.py`. No doctrine, Unknown, or Spec Gate change.
