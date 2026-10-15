@@ -1,4 +1,4 @@
-# Chrono_Divergence_Pilot.md v0.3 -- Scoring Reproducibility Pilot (CD-Pilot-001)
+# Chrono_Divergence_Pilot.md v0.4 -- Scoring Reproducibility Pilot (CD-Pilot-001)
 
 ---
 
@@ -19,7 +19,7 @@
 | Verification Ref | Admin/Verification_Gates.md |
 | Open Unknowns    | 0 (surfaces CD-001, owned by `Tests/Chrono_Divergence.md`; creates none) |
 | Owner            | `Tests/Chrono_Divergence.md` |
-| Last Audit       | 2026-10-15 — editorial trim after a repo-wide integrity pass (no content change). Last content revision v0.3 (2026-10-14). Drafted by Grok and corrected by Claude; not yet audited by a second agent. History is in the Resolution Log. |
+| Last Audit       | 2026-10-15 — v0.4: preregistration template corrected after Claude review (single allocation table, hash scope, blank-as-not-ready, under-8-pairs consequence). Prior same day: template first added; editorial trim. Drafted by Grok, corrected by Claude; not yet audited by a second agent. History is in the Resolution Log. |
 | Last Updated     | 2026-10-15 |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
@@ -85,16 +85,7 @@ The record states which design is used: within-family (default) or between-famil
 
 The independence unit is the (auditor family, case) pair. Each pair runs once across both arms; assignment to arms is by recorded randomization or counterbalancing; each case appears in both arms.
 
-| Pair | Auditor family | Case | Arm (Baseline / Pointer) | Order (1st/2nd for family) | Session ID | Memory state |
-|------|----------------|------|--------------------------|-------|------------|--------------|
-| 1 | | | | | | |
-| 2 | | | | | | |
-| 3 | | | | | | |
-| 4 | | | | | | |
-| 5 | | | | | | |
-| 6 | | | | | | |
-| 7 | | | | | | |
-| 8 | | | | | | |
+**The filled allocation table lives only in §9.3.** This section states the rule; do not maintain a second copy of the table here.
 
 Default design (Chrono §4, within-family): each family runs both arms on different cases, order counterbalanced (half baseline-first, half pointer-first), each case in both arms, every session isolated and run from the preregistered prompt verbatim. Example shape, not an assignment: 4 families × Cases B and D. Record isolation facts per session (memory state, new chat, no shared project or files). After the runs, report M1 by order position as the carryover check. The between-family alternative is in Chrono §4; use it only if isolation cannot be shown.
 
@@ -137,13 +128,72 @@ The pilot is procedurally complete even if the reviewers disagree on every score
 - Scoring reproducibility is untested until this pilot completes, and one pilot cannot show forecasting accuracy.
 - Filing this file does not start the pilot; Step 1 does.
 
-### 9. Open items before start
+### 9. Preregistration record (fill to start the pilot)
 
-- Exact pointer wording (one sentence).
-- Family and case list sufficient for 8 distinct pairs, or a decision to run exploratory at smaller n.
-- Named reviewers and their roles.
-- Forecasts for D1-B, D1-C and D2 declared, or the gap recorded with a reason (Chrono checklist item 9).
-- Whether D2 detection paths run in the same campaign (optional).
+Until this section is completed and a content hash (or commit) of the frozen rows is recorded, the pilot remains **unstarted**. Fill in order; do not begin sessions until every required field has a value or an explicit deferral.
+
+#### 9.1 Pointer wording (required)
+
+Proposed (one sentence, for the Audit Opening Checklist):
+
+> **Reconciliation:** Before relying on this kit, compare the Derived-from line with the live source versions (see “How to Use — Reconciliation check at audit start”).
+
+Human may accept, edit, or replace. Once chosen, the exact sentence is frozen here and must match the Kit variant used in the Pointer arm.
+
+**Frozen pointer text:** _[empty — fill before first session]_
+
+#### 9.2 Design declaration (required)
+
+| Field | Value |
+|-------|-------|
+| Design | Within-family (default) / Between-family (alternative) |
+| Families planned | |
+| Cases planned | (default: B and D or operator-held equivalents) |
+| Target valid Stage-1 sessions per arm | 4 |
+| Isolation method | (new chat / no shared project or files / memory-state recorded) |
+| Order counterbalancing | (describe or “N/A if between-family”) |
+
+#### 9.3 Allocation table (required — 8 distinct pairs for full n)
+
+| Pair | Auditor family | Case | Arm | Order (1st/2nd) | Session ID | Memory state |
+|------|----------------|------|-----|-----------------|------------|--------------|
+| 1 | | | | | | |
+| 2 | | | | | | |
+| 3 | | | | | | |
+| 4 | | | | | | |
+| 5 | | | | | | |
+| 6 | | | | | | |
+| 7 | | | | | | |
+| 8 | | | | | | |
+
+If fewer than 8 distinct pairs are available, mark the pilot **exploratory** and record the reduced n. Under Chrono §4 both F1 and F2 then score **Unscorable**, so the reviewers can only agree on Unscorable; that does not test Hit/Miss discrimination. Proceed only if the human accepts that limit.
+
+#### 9.4 Reviewers (required)
+
+| Role | Name / handle | Wrote or audited forecast/rubric text? |
+|------|---------------|----------------------------------------|
+| Reviewer 1 | | Yes / No |
+| Reviewer 2 | | Yes / No |
+
+At least one reviewer must be free of forecast/rubric authorship. Label any entanglement.
+
+#### 9.5 Forecast coverage for remaining branches (Chrono checklist item 9)
+
+| Branch | Forecast declared? | Reason if deferred |
+|--------|--------------------|--------------------|
+| D1-B (operator habit) | | |
+| D1-C (accept low M1) | | |
+| D2-A / D2-B (detection path) | | |
+
+A blank reason means **not ready to start**. Checklist item 9 requires a recorded reason for any deferred branch; the human must write one (for example “Out of scope for scoring-reproducibility pilot; may be declared in a later map”). Do not treat silence as a decision.
+
+#### 9.6 Freeze marker
+
+| Field | Value |
+|-------|-------|
+| Preregistration completed date | |
+| Content hash or commit of Chrono §4 F1/F2 rows + Chrono §4 session controls + this §9 (including allocation and design declaration) | |
+| Linked from first test-start Field_Log | (FL-… ID) |
 
 ---
 
@@ -167,7 +217,7 @@ The pilot is procedurally complete even if the reviewers disagree on every score
 
 ### Resolution Log
 
-- 2026-10-15: Editorial, no version bump. Last Audit cell trimmed (pointer to this log); Last Updated aligned; Related Field_Log reference written as a canonical path so the integrity checker can resolve it. No content change.
+- 2026-10-15: **v0.4** after Claude review of the first preregistration template. Fixes: §4 no longer carries a second allocation table (points to §9.3 only); freeze hash scope expanded to Chrono §4 F1/F2 rows + session controls + this §9; blank forecast-coverage reason means not ready to start (no silent default); under-8-pairs consequence stated plainly (both forecasts Unscorable, Hit/Miss discrimination not tested); version bumped. Prior same day: §9 first expanded from open-items list into a fillable record; editorial trim of Last Audit cell. Pilot remains Proposed / not started until the record is filled and hashed. No Spec Gate or Unknown change. Human-directed.
 - 2026-10-14: v0.3: §7 now reports three outcomes separately (procedurally complete / scoring agreement observed / rubric reliability supported) with completion as the only acceptance criterion; §4 requires the record to declare the design. Aligned to Chrono v0.6. Human-directed.
 - 2026-10-14: v0.2: allocation section aligned to Chrono v0.5 (counterbalanced order, isolation requirements, carryover check by order position). Contamination affects what the reviewers score, not whether they agree, so the pilot claim is unchanged. Human-directed.
 - 2026-10-14: v0.1 filed and registered (Proposed, pilot not started). Drafted by Grok; corrected against Chrono v0.3/v0.4 (forecast copy removed, bucket and cross-reference errors fixed, allocation rebuilt on distinct family-and-case pairs). Human-directed.
