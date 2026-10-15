@@ -631,6 +631,16 @@ class MetadataParser:
                 return datetime.strptime(date_str, fmt).strftime("%Y-%m-%d")
             except ValueError:
                 continue
+        # Fallback: a File State cell may lead with an ISO date followed by
+        # free text ("2026-10-14 — v0.6: ..."). Read the leading date so such a
+        # cell is not reported as conflicting with a bare-date row (e.g. Last
+        # Updated) that carries the same day. Real date differences still conflict.
+        m = re.match(r"\s*(\d{4}-\d{2}-\d{2})(?=$|[\s\u2014\u2013:;,(.\-])", date_str)
+        if m:
+            try:
+                return datetime.strptime(m.group(1), "%Y-%m-%d").strftime("%Y-%m-%d")
+            except ValueError:
+                return None
         return None
 
 
