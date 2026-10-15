@@ -4,6 +4,12 @@ Split out 2026-08-09, following the precedent already established by `Unknowns_C
 
 ---
 
+### 2026-10-14 — Chrono_Divergence v0.5 (cross-arm exposure)
+*(Rotated 2026-10-15 Robotics resolution-path additions.)*
+A further ChatGPT review found that the v0.4 allocation rule fixed same-case reuse but not cross-arm exposure for a family run in both arms. Weighed against source: the concern is real (account memory, shared files, an operator adapting prompts, non-isolated sessions can carry exposure) but ChatGPT's preferred fix, one arm per family, needs about 8 families and confounds family with arm. v0.5 keeps within-family as the default and adds counterbalanced order, isolation requirements, a carryover check by order position, and the between-family design as a labeled alternative. The pilot claim (scoring reproducibility) is unchanged: exposure affects what is scored, not whether reviewers agree. `Chrono_Divergence_Pilot.md` v0.2 aligned. Still Proposed 0/6; no Unknown, Spec Gate or Status change. Human-directed.
+
+---
+
 ### 2026-10-14 — Chrono_Divergence v0.4 + pilot protocol file; release 1.22 reviewed
 *(Rotated 2026-10-15 pilot v0.4 + date hygiene.)*
 Release 1.22 was byte-identical to the 2026-10-13 corrections package apart from three `__pycache__/*.pyc` files (packaging regression, not in the update zip). ChatGPT's and Grok's reviews were checked against the zip. Confirmed: pyc files present; two Routing.md header lines lacked closing `**` (fixed); the allocation could not meet its own independence rule (n=4 per arm from 2 families on Cases B and D forces same-case reruns). Corrected: the "35 of 85" changelog count in the 10-13 entry was a counting error; the heading-based count is 8 of 96 title-only entries, all dated 2026-10-03 to 2026-10-10, bodies still to be restored from earlier releases' `Progress_Log.md`. Chrono_Divergence v0.4 adds the allocation rule (independence unit = family-and-case pair, 8 distinct pairs for n=4 per arm) and a memory-state control. New `Tests/Chrono_Divergence_Pilot.md` (Proposed, not started) corrects Grok's draft: refers to Chrono for forecasts instead of copying them, uses Field_Logs only for run evidence, fixed a wrong cross-reference. Registered in Routing, Discovery and `Tst_Scope_Map.md`. Still Proposed 0/6; no Unknown, Spec Gate or Status change. Human-directed.
