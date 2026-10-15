@@ -37,6 +37,10 @@ Created 2026-08-09 to fix a recurring failure mode found the same day, in two pl
 
 *(Most recent first. Rotate to `Archive/Logs/Progress_Log_Changelog.md` once more than five entries accumulate.)*
 
+### 2026-10-14 — Chrono_Divergence v0.5 (cross-arm exposure)
+A further ChatGPT review found that the v0.4 allocation rule fixed same-case reuse but not cross-arm exposure for a family run in both arms. Weighed against source: the concern is real (account memory, shared files, an operator adapting prompts, non-isolated sessions can carry exposure) but ChatGPT's preferred fix, one arm per family, needs about 8 families and confounds family with arm. v0.5 keeps within-family as the default and adds counterbalanced order, isolation requirements, a carryover check by order position, and the between-family design as a labeled alternative. The pilot claim (scoring reproducibility) is unchanged: exposure affects what is scored, not whether reviewers agree. `Chrono_Divergence_Pilot.md` v0.2 aligned. Still Proposed 0/6; no Unknown, Spec Gate or Status change. Human-directed.
+
+---
 ### 2026-10-14 — Chrono_Divergence v0.4 + pilot protocol file; release 1.22 reviewed
 Release 1.22 was byte-identical to the 2026-10-13 corrections package apart from three `__pycache__/*.pyc` files (packaging regression, not in the update zip). ChatGPT's and Grok's reviews were checked against the zip. Confirmed: pyc files present; two Routing.md header lines lacked closing `**` (fixed); the allocation could not meet its own independence rule (n=4 per arm from 2 families on Cases B and D forces same-case reruns). Corrected: the "35 of 85" changelog count in the 10-13 entry was a counting error; the heading-based count is 8 of 96 title-only entries, all dated 2026-10-03 to 2026-10-10, bodies still to be restored from earlier releases' `Progress_Log.md`. Chrono_Divergence v0.4 adds the allocation rule (independence unit = family-and-case pair, 8 distinct pairs for n=4 per arm) and a memory-state control. New `Tests/Chrono_Divergence_Pilot.md` (Proposed, not started) corrects Grok's draft: refers to Chrono for forecasts instead of copying them, uses Field_Logs only for run evidence, fixed a wrong cross-reference. Registered in Routing, Discovery and `Tst_Scope_Map.md`. Still Proposed 0/6; no Unknown, Spec Gate or Status change. Human-directed.
 
@@ -51,10 +55,6 @@ Applied ChatGPT follow-up findings CD-B01–B06 before any pilot: D2 falsificati
 ---
 ### 2026-10-12 — Chrono_Divergence.md Proposed and registered
 New Tests/ protocol stub for mapping idea divergence over time (t0 snapshot, branch table, unlock experiments, forecast scoring). Explicit distinction between **incidental spark** (unplanned fork that must be named) and **deliberate forethought** (pre-declared map). Worked example uses Kit reconciliation salience from FL-20261012-kit-regression-Gemini. Registered in Routing, Tst_Scope_Map, Discovery. Spec Gates 0/6; no Unknowns indexed to Unknowns.md yet (CD-001–004 sidecar only). Human-directed. Revised to v0.1 later the same day (human-directed, after a ChatGPT document-level audit): canonical navigation anchors, a forecast preregistration and scoring contract with an Unscorable outcome, split divergence/branch/forecast IDs, typed Closed-by values, a defined unit and dated forecasts in the worked example, an Active Disputes section, and "maximum potential" renamed "best outcome compatible with the floors." No Unknown added; no gate change.
-
----
-### 2026-10-12 — Kit regression Cases B and D filed (Gemini)
-Field Log `FL-20261012-kit-regression-Gemini.md`: two fresh Gemini sessions on Ethical_Constraints.md with Kit + AP + VG + Unknowns. Case B natural mismatch (Kit Unknowns pin v5.58 vs live v5.60); Case D package-only matched pins (v5.60). Stage 1: no unprompted reconciliation in either session (salience data point). Stage 2: both correct when asked — mismatch flagged on B, all-match and no false drift on D. Mild Case B overclaim on what content was stale. FAK-018 remains open/mitigated. Registered in Field_Logs index and Routing. Human-directed operator assembly; Grok not used as auditor.
 
 ---
 Full history, including entries rotated out of the five above, in `Archive/Logs/Progress_Log_Changelog.md`.
