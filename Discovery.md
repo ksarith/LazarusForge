@@ -1,6 +1,7 @@
 # Discovery.md — LazarusForge
 **Navigation layer for the active working repository.**
-**Last updated: 2026-10-14 — `Tests/Chrono_Divergence_Pilot.md` registered (Proposed; tree, created-list and maturity-snapshot entries added). No doctrine, Unknown or Spec Gate change.**
+**Last updated: 2026-10-15 — Directory-tree entry added for `Automation/README.md` (registered in `Routing.md` the same day). No doctrine, Unknown or Spec Gate change.**
+**Prior: 2026-10-14 — `Tests/Chrono_Divergence_Pilot.md` registered (Proposed; tree, created-list and maturity-snapshot entries added). No doctrine, Unknown or Spec Gate change.**
 **Prior: 2026-10-13 — Directory-tree entry for `Tests/Chrono_Divergence.md` reworded from "potential map" to "best-outcome map" (matches the file's v0.1 rename). No doctrine, Unknown or Spec Gate change.**
 **Prior: 2026-10-12 — `Tests/Chrono_Divergence.md` registered (Proposed). Prior: 2026-10-10 header catch-up for Automotive/Robotics.**
 **Prior: 2026-10-09 — `Tests/Quorum_Agent_Conduct_Protocol.md` registered (ratified for trial scope 2026-10-09; Placeholder thresholds; no governance-weight or Spec Gate change). Header catch-up: the 2026-10-07 public recharacterization (`Things_We_Got_Wrong.md`, README/CONTRIBUTING) is recorded in this file's body but had no header line until now.**
@@ -217,6 +218,7 @@ Admin/                                      — Governance, protocols, and doctr
     └── BATTERY_SEED.md                      — Frozen prompt block for a genuine AP-017 cold-session Adversarial Battery run
 
 Automation/                                 — Scripts supporting verification and integrity checks
+    ├── README.md                           — Folder guide: what each script does and how they connect
     ├── AUDIT_HARNESS.py                    — Primary automated verification script
     ├── audit_lib.py                        — Shared audit library functions
     ├── parser.py                           — Routing/registry parsing
