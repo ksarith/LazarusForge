@@ -5,7 +5,7 @@
 ## Navigation Anchors
 * **Context Core:** [Discovery.md](https://raw.githubusercontent.com/ksarith/LazarusForge/refs/heads/main/Discovery.md)
 * **Network Routing:** [Routing.md](https://raw.githubusercontent.com/ksarith/LazarusForge/refs/heads/main/Routing.md)
-* **Related:** [Tests/Chrono_Divergence.md](Chrono_Divergence.md) · [Tests/Field_Logs.md](Field_Logs.md) · [Admin/Forge_Audit_Kit.md](../Admin/Forge_Audit_Kit.md) · [Tests/Field_Logs/FL-20261012-kit-regression-Gemini.md](Field_Logs/FL-20261012-kit-regression-Gemini.md)
+* **Related:** [Tests/Chrono_Divergence.md](Chrono_Divergence.md) · [Tests/Field_Logs.md](Field_Logs.md) · [Admin/Forge_Audit_Kit.md](../Admin/Forge_Audit_Kit.md) · `Tests/Field_Logs/FL-20261012-kit-regression-Gemini.md`
 
 ---
 
@@ -19,8 +19,8 @@
 | Verification Ref | Admin/Verification_Gates.md |
 | Open Unknowns    | 0 (surfaces CD-001, owned by `Tests/Chrono_Divergence.md`; creates none) |
 | Owner            | `Tests/Chrono_Divergence.md` |
-| Last Audit       | 2026-10-14 — v0.3: acceptance split into three outcomes; design declaration added (aligned to Chrono v0.6). Prior: v0.2: allocation section aligned to Chrono v0.5 (order, isolation, carryover check). Prior: v0.1 drafted from Grok's pilot draft; corrected against `Tests/Chrono_Divergence.md` v0.3/v0.4 before filing (Claude, human-directed). Not yet audited by a second agent. |
-| Last Updated     | 2026-10-14 |
+| Last Audit       | 2026-10-15 — editorial trim after a repo-wide integrity pass (no content change). Last content revision v0.3 (2026-10-14). Drafted by Grok and corrected by Claude; not yet audited by a second agent. History is in the Resolution Log. |
+| Last Updated     | 2026-10-15 |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
 ---
@@ -167,6 +167,7 @@ The pilot is procedurally complete even if the reviewers disagree on every score
 
 ### Resolution Log
 
+- 2026-10-15: Editorial, no version bump. Last Audit cell trimmed (pointer to this log); Last Updated aligned; Related Field_Log reference written as a canonical path so the integrity checker can resolve it. No content change.
 - 2026-10-14: v0.3: §7 now reports three outcomes separately (procedurally complete / scoring agreement observed / rubric reliability supported) with completion as the only acceptance criterion; §4 requires the record to declare the design. Aligned to Chrono v0.6. Human-directed.
 - 2026-10-14: v0.2: allocation section aligned to Chrono v0.5 (counterbalanced order, isolation requirements, carryover check by order position). Contamination affects what the reviewers score, not whether they agree, so the pilot claim is unchanged. Human-directed.
 - 2026-10-14: v0.1 filed and registered (Proposed, pilot not started). Drafted by Grok; corrected against Chrono v0.3/v0.4 (forecast copy removed, bucket and cross-reference errors fixed, allocation rebuilt on distinct family-and-case pairs). Human-directed.

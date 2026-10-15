@@ -11,7 +11,7 @@
 | Spec Gates       | N/A — this file is a cross-reference index, not a specification     |
 | Open Unknowns    | 0 (surfaces existing unknowns from owning files; creates none)      |
 | Owning Domain    | Tests/                                                               |
-| Last Reviewed    | 2026-10-14 — Chrono_Divergence_Pilot.md registered; Chrono_Divergence.md v0.4 |
+| Last Reviewed    | 2026-10-15 — Chrono_Divergence_Pilot.md registered (2026-10-14); stale Chrono version pin removed |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
 ---
