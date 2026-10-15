@@ -1,6 +1,7 @@
 # Routing.md — LazarusForge
 **Canonical Navigation and Link Mapping Index.**
-**Last updated: 2026-10-13 — `Tests/Chrono_Divergence.md` URL-table row added (the 2026-10-12 registration had been header-only). No doctrine, Unknown or Spec Gate change.**
+**Last updated: 2026-10-14 — `Tests/Chrono_Divergence_Pilot.md` registered (Proposed; operational protocol for the Chrono §4.1 scoring-reproducibility pilot; not started). URL-table row added in the same pass. No doctrine, Unknown or Spec Gate change.**
+**Prior: 2026-10-13 — `Tests/Chrono_Divergence.md` URL-table row added (the 2026-10-12 registration had been header-only). No doctrine, Unknown or Spec Gate change.**
 **Prior: 2026-10-12 (second entry) — `Tests/Chrono_Divergence.md` registered (Proposed protocol: idea fork forecast / potential map; incidental vs deliberate origin). Prior same day: Kit regression FL-20261012-kit-regression-Gemini.**
 **Prior: 2026-10-11 — `Tests/Automation/test_harness_prompt.py` registered (offline unittest for the audit harness's generated prompt text and version consistency; standard library only; shows local-file behavior, not a live fetch). No doctrine, Unknown or Spec Gate change. (Restored 2026-10-12: this header line was replaced, not demoted, when later headers were added.)**
 **Prior: 2026-10-10 — `Operations/Automotive.md` and `Operations/Robotics.md` registered (Proposed v0 stubs: domain subsystems for vehicle and robot systems; Spec Gates 0/6; no physical work claimed). Prior same day: Unknowns sidecar Risk/Priority human-confirmed; QCC/AVE/MAQT residuals indexed.**
@@ -133,6 +134,7 @@ Last scope clarification: 2026-10-03 (stale path-count metric removed); prior 20
 | **Tests/ Layer** | | | |
 | `Tests/Chaos_Dynamics.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForge/refs/heads/main/Tests/Chaos_Dynamics.md) | [Repo](https://github.com/ksarith/LazarusForge/blob/main/Tests/Chaos_Dynamics.md) | Explicit |
 | `Tests/Chrono_Divergence.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForge/refs/heads/main/Tests/Chrono_Divergence.md) | [Repo](https://github.com/ksarith/LazarusForge/blob/main/Tests/Chrono_Divergence.md) | Explicit |
+| `Tests/Chrono_Divergence_Pilot.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForge/refs/heads/main/Tests/Chrono_Divergence_Pilot.md) | [Repo](https://github.com/ksarith/LazarusForge/blob/main/Tests/Chrono_Divergence_Pilot.md) | Explicit |
 | `Tests/Cognitive_Salvage_Layer.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForge/refs/heads/main/Tests/Cognitive_Salvage_Layer.md) | [Repo](https://github.com/ksarith/LazarusForge/blob/main/Tests/Cognitive_Salvage_Layer.md) | Explicit |
 | `Tests/Field_Logs.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForge/refs/heads/main/Tests/Field_Logs.md) | [Repo](https://github.com/ksarith/LazarusForge/blob/main/Tests/Field_Logs.md) | Explicit |
 | `Tests/Field_Logs/FL-20260815-gov021c-independence.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForge/refs/heads/main/Tests/Field_Logs/FL-20260815-gov021c-independence.md) | [Repo](https://github.com/ksarith/LazarusForge/blob/main/Tests/Field_Logs/FL-20260815-gov021c-independence.md) | Explicit |

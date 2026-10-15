@@ -1,6 +1,7 @@
 # Discovery.md — LazarusForge
 **Navigation layer for the active working repository.**
-**Last updated: 2026-10-13 — Directory-tree entry for `Tests/Chrono_Divergence.md` reworded from "potential map" to "best-outcome map" (matches the file's v0.1 rename). No doctrine, Unknown or Spec Gate change.**
+**Last updated: 2026-10-14 — `Tests/Chrono_Divergence_Pilot.md` registered (Proposed; tree, created-list and maturity-snapshot entries added). No doctrine, Unknown or Spec Gate change.**
+**Prior: 2026-10-13 — Directory-tree entry for `Tests/Chrono_Divergence.md` reworded from "potential map" to "best-outcome map" (matches the file's v0.1 rename). No doctrine, Unknown or Spec Gate change.**
 **Prior: 2026-10-12 — `Tests/Chrono_Divergence.md` registered (Proposed). Prior: 2026-10-10 header catch-up for Automotive/Robotics.**
 **Prior: 2026-10-09 — `Tests/Quorum_Agent_Conduct_Protocol.md` registered (ratified for trial scope 2026-10-09; Placeholder thresholds; no governance-weight or Spec Gate change). Header catch-up: the 2026-10-07 public recharacterization (`Things_We_Got_Wrong.md`, README/CONTRIBUTING) is recorded in this file's body but had no header line until now.**
 **Prior: 2026-10-03 — Header chronology catch-up: inserted Prior: 2026-09-24 for Metrics_Scaffold.md / Persistent_Cognition_Candidates.md registration (already in maturity snapshot; header gap only). Removed “gap is not closed” note from the 2026-09-29 Prior entry.**
@@ -271,6 +272,7 @@ Tests/                                      — Test frameworks and deployment p
     ├── Cognitive_Salvage_Layer.md          — Heuristic salvage pipeline; consensus-aggregated machinery wisdom; NOVEL/CANDIDATE_NOVEL promotion gate; GH-001 through GH-012
     ├── Hydrologic_Resource_Cascade.md      — Flood-driven sediment recovery basin; sequential hydraulic sorting zones; episodic operation doctrine; HR-UNK-001 through HR-UNK-002 (formal); HR-003 through HR-010 (research questions)
     ├── Chrono_Divergence.md                     — Idea fork forecast / best-outcome map (Proposed 2026-10-12)
+    ├── Chrono_Divergence_Pilot.md               — Scoring-reproducibility pilot protocol for Chrono §4.1 (Proposed 2026-10-14; not started)
     ├── Chaos_Dynamics.md                   — Exploration/R&D pipeline doctrine; Sandbox (Level ≤4 hypothesis generation) → Promotion Gate → EXP-ID → physical testing → Engineering derating; resolution vehicle for EN-005; feeder for EN-001a
     └── Pyrolysis_Cascade.md                — Staged thermal cascade (pyrolysis → high-temp reduction) for pre-triaged salvage; explicitly dependency-gated on PL-001 (Resolved 2026-08-23, PL-001-R1 residual)/CE-003 (Open — halogen), GR-002 (reduction method), FA-001 (site), EN-001 (structural); PYC-001 through PYC-008
     ├── Field_Logs.md                       — Index + submission contract for physical test runs and cross-agent field data; not a specification, no Spec Gates apply
@@ -316,6 +318,7 @@ Archive/                                    — Prior states of governance-beari
 - `Tests/Pyrolysis_Cascade.md` — created 2026-08-04 ✓ (see Tests/ structure tree and Scope Map above); drafted from archived conversation via Copilot, distilled and quantitative claims retired to Placeholder by Grok, PC-/PYC- namespace collision fixed before merge.
 - `Tests/Field_Logs.md` — created 2026-08-06 ✓, append-only intake for physical test runs and cross-agent field data, cross-referenced from `CONTRIBUTING.md`; not a specification file, no Spec Gates or Unknowns of its own. **Restructured 2026-10-03** — now an index + submission contract; entries moved to one file per submission under new `Tests/Field_Logs/`, to remove the single-shared-file collision risk on the GitHub web-editor path. See `Tests/Field_Logs.md`'s own Resolution Log for detail; this line describes the file as originally created and is not rewritten.
 - `Tests/Chrono_Divergence.md` — created 2026-10-12 ✓ (Proposed protocol: chrono divergence maps; incidental spark vs deliberate forethought; Spec Gates 0/6).
+- `Tests/Chrono_Divergence_Pilot.md` — created 2026-10-14 ✓ (Proposed pilot protocol operationalizing Chrono §4.1; refers to Chrono for forecasts and rules; Spec Gates 0/6; pilot not started).
 - `Operations/Automotive.md` and `Operations/Robotics.md` — created 2026-10-10 ✓ (Proposed v0 Operations-layer domain stubs; Spec Gates 0/6; AU-*/RB-* Unknowns: six Blocking, scoped to first physical work (AU-002/003/004, RB-002/003/007), ten non-blocking; no physical work claimed). Registered in Routing and Ops_Scope_Map.
 - `Things_We_Got_Wrong.md` — created 2026-10-07 ✓ with Standard-scope public recharacterization (README + CONTRIBUTING front-door alignment). Seeded only with already-documented misses (CAP-meta-stale, POC arithmetic, scoring misread). Framing only; no Admin doctrine or Unknown closures.
 - `Tests/Admin_Governance_Teardown_POC.md` — created 2026-10-04 ✓, Exploration-status proof-of-concept classifying all 33 `Admin/` files by a stated minimality test (Tier 0 constitutional core through Tier 4 tooling/meta). Proposes no file changes itself — a first-cut framework for a possible future `Admin/` restructuring, scoped to `Admin/` only. Not a specification file, Spec Gates 0/6, no Unknowns opened.
@@ -447,6 +450,7 @@ Discovery.md is a navigation map — task tracking belongs in Unknowns.md.
 | `Tests/MAQT_Role_Cards_and_Cycle1_Task.md` | Operator defaults | 0/6 | Medium — companion role-card pack for individual agents; not a governance amendment |
 | `Tests/Quorum_Agent_Conduct_Protocol.md` | Ratified Protocol (trial scope) | 0/6 | Medium — scrutiny rules on the node-reliability track; thresholds Placeholder; must never become governance weight or claim confidence |
 | `Tests/Chrono_Divergence.md` | Proposed Protocol | 0/6 | Low — forecasting method; forecasts are not governance weight or claim confidence; no Measured claims |
+| `Tests/Chrono_Divergence_Pilot.md` | Proposed Protocol | 0/6 | Low — method pilot for forecast scoring; no Measured claims; completion licenses no accuracy claim |
 | `Challenges/Water.md` | Active | — | — |
 | `Challenges/Biofouling.md` | Active | — | — |
 | `Challenges/Waste.md` | Active | — | — |
