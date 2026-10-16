@@ -13,13 +13,13 @@
 
 | Field            | Value |
 |------------------|-------|
-| Status           | **Proposed** (preregistration decisions recorded 2026-10-15; freeze hash still open — pilot not started until §9.6 hash is set) |
+| Status           | **Proposed** (preregistered at commit `1a885aa` on 2026-10-16; the pilot starts when the first session runs and its Field_Log ID is recorded in §9.6) |
 | Body Stability   | Volatile |
 | Spec Gates       | 0/6 |
 | Verification Ref | Admin/Verification_Gates.md |
 | Open Unknowns    | 0 (surfaces CD-001, owned by `Tests/Chrono_Divergence.md`; creates none) |
 | Owner            | `Tests/Chrono_Divergence.md` |
-| Last Audit       | 2026-10-16 — v0.6: §9.7 added before freeze (Kit variants with hashes, verbatim Stage 1 and Stage 2 prompts), closing a gap: the controls required a "preregistered prompt verbatim" but §9 had none. Prior same day: v0.5 tightening. Decisions are the human's. History is in the Resolution Log. |
+| Last Audit       | 2026-10-16 — freeze marker recorded: preregistration commit `1a885aa` (Pilot v0.6). No protocol change. Prior same day: v0.6 (§9.7), v0.5 tightening. Decisions are the human's. History is in the Resolution Log. |
 | Last Updated     | 2026-10-16 |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
@@ -194,11 +194,11 @@ At least one reviewer is free of forecast/rubric authorship (R1). R2 entanglemen
 
 | Field | Value |
 |-------|-------|
-| Preregistration completed date | _to be set at freeze, when the hash below is recorded_ (decisions recorded 2026-10-15) |
-| Content hash or commit of Chrono §4 F1/F2 rows + Chrono §4 session controls + this §9 (including allocation and design declaration) | _to be set at freeze (hash or commit of the Chrono §4 block + this file §9)_ |
+| Preregistration completed date | 2026-10-16 (decisions recorded 2026-10-15) |
+| Content hash or commit of Chrono §4 F1/F2 rows + Chrono §4 session controls + this §9 (including allocation and design declaration) | Commit `1a885aa4712d46de0fbe75be0446aa557f742719` (Pilot v0.6; parent `5d152a31b6e78c4dd0b76e85f985f75e8ccec2cc`) |
 | Linked from first test-start Field_Log | (FL-… ID — fill when first session is filed) |
 
-**Freeze mechanics:** a commit SHA cannot sit inside the commit it names. Commit the filled Pilot and Chrono first and copy that commit's SHA. Record it in this cell (or in the first Field_Log) in a follow-up commit that changes nothing else in §9; the frozen content is §9 and the Chrono §4 block as of the named commit. A hash shows identity, not creation time, so keep the git history for ordering.
+**Frozen content** is §9.1 to §9.5 and §9.7 as of the named commit; the §9.6 cells are the marker itself and are filled in follow-up commits. **Freeze mechanics:** a commit SHA cannot sit inside the commit it names. Commit the filled Pilot and Chrono first and copy that commit's SHA. Record it in this cell (or in the first Field_Log) in a follow-up commit that changes nothing else in §9; the frozen content is §9 and the Chrono §4 block as of the named commit. A hash shows identity, not creation time, so keep the git history for ordering.
 
 #### 9.7 Kit variants and session prompts (required — frozen with §9)
 
@@ -234,6 +234,7 @@ The prompts do not describe the reconciliation check. Both arms use the same pro
 
 ### Resolution Log
 
+- 2026-10-16: Freeze marker recorded (no version bump, no protocol change). Preregistration commit is `1a885aa` (Pilot v0.6; one file changed, +15/−2, adding §9.7). The marker cells in §9.6 were filled in a follow-up commit; nothing else in §9.1 to §9.5 or §9.7 changed. Chrono §4 as frozen is its state at that commit, which this record could not independently re-read. The pilot starts when the first session runs and its Field_Log ID is entered in §9.6.
 - 2026-10-16: **v0.6.** Pre-freeze addition after the human committed v0.5 and before any freeze SHA exists: §9.7 records the Kit variants (hashes), the verbatim Stage 1 and Stage 2 prompts (hashes), and operator-held materials. Closes a gap: the allocation rule requires the preregistered prompt verbatim, but §9 contained none. Prompts follow the Kit regression pack's description (minimal prompt, planted-faults disclosure, no mention of the check). The freeze commit is therefore this version or later, not v0.5. No forecast, Spec Gate or Unknown change.
 - 2026-10-16: **v0.5.** After Claude review of the filled §9 (decisions are the human's). Recorded the family-assignment deviation from Chrono §4 with a pre-run assignment rule and drop-out handling; moved the live pair log out of the frozen block into session Field_Logs (a table that fills after freeze would break the hash); labeled the pilot a dry run and stated that upgrading needs a new record; added the reviewer-also-auditor rule and memory-state recording for reviewer sessions; replaced the premature "completed" date with a set-at-freeze marker; spelled out the SHA follow-up-commit mechanics. No forecast, Spec Gate or Unknown change.
 - 2026-10-15: §9 preregistration decisions recorded (human-directed). Pointer wording accepted; design = within-family; scale = exploratory until enough distinct pairs; Reviewer 1 = Gemini (independent), Reviewer 2 = Grok fresh-session (entangled, labeled). Residual branches D1-B/C and D2 deferred with explicit reason. Freeze hash in §9.6 still open — pilot remains not started until that field is set. No Spec Gate or Unknown change.
