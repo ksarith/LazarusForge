@@ -212,6 +212,12 @@ At least one reviewer is free of forecast/rubric authorship (R1). R2 entanglemen
 
 The prompts do not describe the reconciliation check. Both arms use the same prompts. If the committed baseline Kit's hash differs from the value above at the freeze commit, stop and reconcile before any session.
 
+#### 9.8 Addenda (dated; the frozen text above is not edited)
+
+- **2026-10-16, after session 1 (FL-20261016-chrono-divergence-gemini-b-pointer):** §9.7 omitted the operator-held pack file `GEMINI_PROMPT.txt` (sha256 `bb5b8ca4b1e1d50bcd4b2380bf7c58e97c8aa6d12495fe961adffbeeaf44a70f`). It is attached to every session in the pack and holds the auditor role, evidence boundary, report structure and the instruction to follow the Kit as written. Stage 1 input is therefore the §9.7 chat sentence plus this file, identical in both arms; only the Kit file differs. No frozen value changes. The file stays outside the repository with the case packs.
+- **2026-10-16:** the memory, personalization and past-chat settings must be checked and recorded **before** each session. Session 1 did not (the operator did not know the setting existed), so its memory state is recorded as unknown and the session is annotated.
+- **Pending:** Case D Kit hashes (baseline and pointer variant) will be added here before any Case D session.
+
 ---
 
 ## Lessons Learned
@@ -234,6 +240,7 @@ The prompts do not describe the reconciliation check. Both arms use the same pro
 
 ### Resolution Log
 
+- 2026-10-16: Post-freeze addendum §9.8 added (no version bump; frozen text unchanged). Records the omitted pack file `GEMINI_PROMPT.txt` with its hash, the pre-session memory-setting check, and the pending Case D hashes, found while filing session 1.
 - 2026-10-16: Freeze marker recorded (no version bump, no protocol change). Preregistration commit is `1a885aa` (Pilot v0.6; one file changed, +15/−2, adding §9.7). The marker cells in §9.6 were filled in a follow-up commit; nothing else in §9.1 to §9.5 or §9.7 changed. Chrono §4 as frozen is its state at that commit, which this record could not independently re-read. The pilot starts when the first session runs and its Field_Log ID is entered in §9.6.
 - 2026-10-16: **v0.6.** Pre-freeze addition after the human committed v0.5 and before any freeze SHA exists: §9.7 records the Kit variants (hashes), the verbatim Stage 1 and Stage 2 prompts (hashes), and operator-held materials. Closes a gap: the allocation rule requires the preregistered prompt verbatim, but §9 contained none. Prompts follow the Kit regression pack's description (minimal prompt, planted-faults disclosure, no mention of the check). The freeze commit is therefore this version or later, not v0.5. No forecast, Spec Gate or Unknown change.
 - 2026-10-16: **v0.5.** After Claude review of the filled §9 (decisions are the human's). Recorded the family-assignment deviation from Chrono §4 with a pre-run assignment rule and drop-out handling; moved the live pair log out of the frozen block into session Field_Logs (a table that fills after freeze would break the hash); labeled the pilot a dry run and stated that upgrading needs a new record; added the reviewer-also-auditor rule and memory-state recording for reviewer sessions; replaced the premature "completed" date with a set-at-freeze marker; spelled out the SHA follow-up-commit mechanics. No forecast, Spec Gate or Unknown change.
