@@ -1,4 +1,4 @@
-# Chrono_Divergence_Pilot.md v0.4 -- Scoring Reproducibility Pilot (CD-Pilot-001)
+# Chrono_Divergence_Pilot.md v0.5 -- Scoring Reproducibility Pilot (CD-Pilot-001)
 
 ---
 
@@ -13,14 +13,14 @@
 
 | Field            | Value |
 |------------------|-------|
-| Status           | **Proposed** (pilot not started) |
+| Status           | **Proposed** (preregistration decisions recorded 2026-10-15; freeze hash still open — pilot not started until §9.6 hash is set) |
 | Body Stability   | Volatile |
 | Spec Gates       | 0/6 |
 | Verification Ref | Admin/Verification_Gates.md |
 | Open Unknowns    | 0 (surfaces CD-001, owned by `Tests/Chrono_Divergence.md`; creates none) |
 | Owner            | `Tests/Chrono_Divergence.md` |
-| Last Audit       | 2026-10-15 — v0.4: preregistration template corrected after Claude review (single allocation table, hash scope, blank-as-not-ready, under-8-pairs consequence). Prior same day: template first added; editorial trim. Drafted by Grok, corrected by Claude; not yet audited by a second agent. History is in the Resolution Log. |
-| Last Updated     | 2026-10-15 |
+| Last Audit       | 2026-10-16 — v0.5: after Claude review of the filled §9: family-assignment deviation recorded with a pre-run rule and drop-out handling, live pair log moved out of the frozen block, dry-run label and upgrade rule added, reviewer-role rule added, freeze mechanics spelled out. Decisions (pointer, within-family, exploratory scale, reviewers, deferrals) are the human's, recorded 2026-10-15. History is in the Resolution Log. |
+| Last Updated     | 2026-10-16 |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
 ---
@@ -140,20 +140,27 @@ Proposed (one sentence, for the Audit Opening Checklist):
 
 Human may accept, edit, or replace. Once chosen, the exact sentence is frozen here and must match the Kit variant used in the Pointer arm.
 
-**Frozen pointer text:** _[empty — fill before first session]_
+**Frozen pointer text:** **Reconciliation:** Before relying on this kit, compare the Derived-from line with the live source versions (see “How to Use — Reconciliation check at audit start”).
 
 #### 9.2 Design declaration (required)
 
 | Field | Value |
 |-------|-------|
-| Design | Within-family (default) / Between-family (alternative) |
-| Families planned | |
-| Cases planned | (default: B and D or operator-held equivalents) |
-| Target valid Stage-1 sessions per arm | 4 |
-| Isolation method | (new chat / no shared project or files / memory-state recorded) |
-| Order counterbalancing | (describe or “N/A if between-family”) |
+| Design | **Within-family** |
+| Families planned | **Deviation from Chrono §4 (assignment declared before the first run), recorded by human decision 2026-10-15:** families are not named at freeze, so that work can start without waiting on agent availability or token limits. The rule that replaces it is under 9.3. |
+| Cases planned | B and D (or operator-held equivalents) |
+| Target valid Stage-1 sessions per arm | Exploratory (under 4 per arm / under 8 distinct pairs) until circumstances change |
+| Isolation method | New chat; no shared project or files; memory-state recorded per session |
+| Order counterbalancing | Within-family: alternate baseline-first / pointer-first across pairs; report M1 by order position as carryover check |
 
 #### 9.3 Allocation table (required — 8 distinct pairs for full n)
+
+**Status: Exploratory (dry run).** Fewer than 8 distinct pairs. The human accepts that both F1 and F2 score **Unscorable** under Chrono §4, so the reviewers can only agree on Unscorable; Hit/Miss discrimination is not tested.
+
+- **Dry-run meaning:** in this configuration the pilot tests the procedure only. Agreement on two Unscorable scores is uninformative and is not cited as evidence of scoring reproducibility. The rubric-revision trigger cannot fire on these scores, because that Unscorable reason is preregistered.
+- **Upgrading:** moving to scored mode (8 distinct pairs) needs a new preregistration record. This record is not amended.
+- **Assignment rule that replaces naming families now:** before each session runs, its family, case, arm and order are recorded in that session's Field_Log and cannot be changed afterward. No (family, case) pair repeats. Arms alternate baseline-first and pointer-first across families. A family should run both arms (within-family design); if a family completes only one arm, for example because it hits a token limit, the session is kept, flagged "family incomplete", and reported as exploratory.
+- **Where the live record goes:** per-session pair records live in the session Field_Logs, not in this file, so §9 stays unchanged after freeze. The table below is a blank template for a future 8-pair record.
 
 | Pair | Auditor family | Case | Arm | Order (1st/2nd) | Session ID | Memory state |
 |------|----------------|------|-----|-----------------|------------|--------------|
@@ -166,34 +173,32 @@ Human may accept, edit, or replace. Once chosen, the exact sentence is frozen he
 | 7 | | | | | | |
 | 8 | | | | | | |
 
-If fewer than 8 distinct pairs are available, mark the pilot **exploratory** and record the reduced n. Under Chrono §4 both F1 and F2 then score **Unscorable**, so the reviewers can only agree on Unscorable; that does not test Hit/Miss discrimination. Proceed only if the human accepts that limit.
-
 #### 9.4 Reviewers (required)
 
 | Role | Name / handle | Wrote or audited forecast/rubric text? |
 |------|---------------|----------------------------------------|
-| Reviewer 1 | | Yes / No |
-| Reviewer 2 | | Yes / No |
+| Reviewer 1 | Gemini | **No** — independent |
+| Reviewer 2 | Grok (fresh session) | **Yes** — drafted original pilot and worked on Chrono forecast/rubric text; labeled entangled |
 
-At least one reviewer must be free of forecast/rubric authorship. Label any entanglement.
+At least one reviewer is free of forecast/rubric authorship (R1). R2 entanglement is labeled. A reviewer who also ran audit sessions in this pilot is labeled, and its own sessions are scored by the other reviewer. Each reviewer session records memory state, as the audit sessions do.
 
 #### 9.5 Forecast coverage for remaining branches (Chrono checklist item 9)
 
 | Branch | Forecast declared? | Reason if deferred |
 |--------|--------------------|--------------------|
-| D1-B (operator habit) | | |
-| D1-C (accept low M1) | | |
-| D2-A / D2-B (detection path) | | |
-
-A blank reason means **not ready to start**. Checklist item 9 requires a recorded reason for any deferred branch; the human must write one (for example “Out of scope for scoring-reproducibility pilot; may be declared in a later map”). Do not treat silence as a decision.
+| D1-B (operator habit) | No | Out of scope for scoring-reproducibility pilot; may be declared in a later map |
+| D1-C (accept low M1) | No | Out of scope for scoring-reproducibility pilot; may be declared in a later map |
+| D2-A / D2-B (detection path) | No | Out of scope for scoring-reproducibility pilot; may be declared in a later map |
 
 #### 9.6 Freeze marker
 
 | Field | Value |
 |-------|-------|
-| Preregistration completed date | |
-| Content hash or commit of Chrono §4 F1/F2 rows + Chrono §4 session controls + this §9 (including allocation and design declaration) | |
-| Linked from first test-start Field_Log | (FL-… ID) |
+| Preregistration completed date | _to be set at freeze, when the hash below is recorded_ (decisions recorded 2026-10-15) |
+| Content hash or commit of Chrono §4 F1/F2 rows + Chrono §4 session controls + this §9 (including allocation and design declaration) | _to be set at freeze (hash or commit of the Chrono §4 block + this file §9)_ |
+| Linked from first test-start Field_Log | (FL-… ID — fill when first session is filed) |
+
+**Freeze mechanics:** a commit SHA cannot sit inside the commit it names. Commit the filled Pilot and Chrono first and copy that commit's SHA. Record it in this cell (or in the first Field_Log) in a follow-up commit that changes nothing else in §9; the frozen content is §9 and the Chrono §4 block as of the named commit. A hash shows identity, not creation time, so keep the git history for ordering.
 
 ---
 
@@ -217,6 +222,8 @@ A blank reason means **not ready to start**. Checklist item 9 requires a recorde
 
 ### Resolution Log
 
+- 2026-10-16: **v0.5.** After Claude review of the filled §9 (decisions are the human's). Recorded the family-assignment deviation from Chrono §4 with a pre-run assignment rule and drop-out handling; moved the live pair log out of the frozen block into session Field_Logs (a table that fills after freeze would break the hash); labeled the pilot a dry run and stated that upgrading needs a new record; added the reviewer-also-auditor rule and memory-state recording for reviewer sessions; replaced the premature "completed" date with a set-at-freeze marker; spelled out the SHA follow-up-commit mechanics. No forecast, Spec Gate or Unknown change.
+- 2026-10-15: §9 preregistration decisions recorded (human-directed). Pointer wording accepted; design = within-family; scale = exploratory until enough distinct pairs; Reviewer 1 = Gemini (independent), Reviewer 2 = Grok fresh-session (entangled, labeled). Residual branches D1-B/C and D2 deferred with explicit reason. Freeze hash in §9.6 still open — pilot remains not started until that field is set. No Spec Gate or Unknown change.
 - 2026-10-15: Editorial, no version bump. Step 1 in §2 repointed from the removed §4 allocation table to §9 (§9.3), and its hash scope worded to match §9.6; "§4" now always means Chrono §4 where it names session controls. No content change.
 - 2026-10-15: **v0.4** after Claude review of the first preregistration template. Fixes: §4 no longer carries a second allocation table (points to §9.3 only); freeze hash scope expanded to Chrono §4 F1/F2 rows + session controls + this §9; blank forecast-coverage reason means not ready to start (no silent default); under-8-pairs consequence stated plainly (both forecasts Unscorable, Hit/Miss discrimination not tested); version bumped. Prior same day: §9 first expanded from open-items list into a fillable record; editorial trim of Last Audit cell. Pilot remains Proposed / not started until the record is filled and hashed. No Spec Gate or Unknown change. Human-directed.
 - 2026-10-14: v0.3: §7 now reports three outcomes separately (procedurally complete / scoring agreement observed / rubric reliability supported) with completion as the only acceptance criterion; §4 requires the record to declare the design. Aligned to Chrono v0.6. Human-directed.
