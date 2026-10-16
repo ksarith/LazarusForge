@@ -11,7 +11,7 @@
 | Spec Gates       | N/A — this file is a progression log, not a specification           |
 | Open Unknowns    | 0 (references existing unknowns; creates none)                      |
 | Owning Domain    | Admin/                                                               |
-| Last Reviewed    | 2026-10-15                                                           |
+| Last Reviewed    | 2026-10-16                                                           |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
 ---
@@ -37,6 +37,10 @@ Created 2026-08-09 to fix a recurring failure mode found the same day, in two pl
 
 *(Most recent first. Rotate to `Archive/Logs/Progress_Log_Changelog.md` once more than five entries accumulate.)*
 
+### 2026-10-16 — Chrono pilot preregistration decisions recorded; v0.5 tightening
+Human first-line call recorded in `Tests/Chrono_Divergence_Pilot.md` §9: pointer accepted, within-family design, exploratory scale (under 8 pairs, so F1/F2 score Unscorable), Reviewer 1 Gemini (independent), Reviewer 2 Grok fresh session (entangled, labeled), D1-B/C and D2 deferred as out of scope. Families deliberately not named so work can start (token limits per agent are unpredictable); recorded as a deviation from Chrono §4 with a pre-run assignment rule and drop-out handling. Pilot v0.5 also: live pair log moved to session Field_Logs (a table filling after freeze would break the hash), dry-run label and "upgrade needs a new record" rule, reviewer-also-auditor rule, premature "completed" date replaced, SHA follow-up-commit mechanics spelled out. Open forward item: set the §9.6 freeze marker (commit the filled Pilot and Chrono, record the SHA in a follow-up commit) — the pilot is not started until then. Still Proposed 0/6; no Unknown or Spec Gate change. Human-directed.
+
+---
 ### 2026-10-15 (fourth entry, same day) — Robotics resolution-path additions after targeted audits
 ChatGPT's targeted audits of Automotive and Robotics were checked against source: facts held (AF-10, AF-13, RB-007, RB-003, RF-11, Blocking index in `Unknowns.md` v5.60, Kit v1.20 unchanged), but most "critical" findings restated declared Open Blocking unknowns in Proposed stubs. Against 1.21.1 both files differ only in Last Updated. Kept three follow-ons in `Operations/Robotics.md`: RB-007 now starts by defining "hazard zone" (the 10-11 rewording introduced the term undefined; whole cell is the conservative reading until defined), RB-003 requires a recorded basis for each proposed cap, RB-002 includes a safety-channel test record (RF-11) and a failed or inconclusive test blocks power-up. Automotive unchanged. No floor, Blocking scope, Status or Unknown ID changed. Also corrected the Kit regression pack's own status line, which still said "Not registered in `Routing.md`" after the 2026-10-15 registration (found by ChatGPT's repo sweep; the sweep's other flagged live references were all already labeled historical, planned or rejected-proposal provenance, so no edits). Open forward items: Chrono pilot preregistration record before 2026-11-12; whether Operations stubs should carry an Adversarial Battery record section (neither does). Still Proposed; no Spec Gate change. Human-directed.
 
@@ -51,10 +55,6 @@ Decisions: the Automation folder README and the Kit regression pack are now regi
 ---
 ### 2026-10-15 — Master zip checked; integrity-checker warnings traced and fixed
 The 2026-10-15 master zip was byte-identical to the v0.6 state (no `__pycache__`; packaging fix held). Harness tests passed (7); integrity checker 0 critical. Traced the `last_audit` conflict warning on Chrono, the pilot file, Automotive and Robotics: `parser.py` maps both Last Audit and Last Updated into one field, a bare-date Last Updated normalizes, but a Last Audit cell with text after the date did not, so the two looked different. `parser.py` now reads the leading ISO date from such a cell; genuinely different dates still conflict. Chrono and the pilot file had their Last Audit cells trimmed to current state (history stays in the Resolution Log); the pilot's Field_Log reference is now a canonical path; `Tst_Scope_Map.md` lost a stale Chrono version pin (same staleness class as FAK-014 to 018). Not changed, awaiting decision: the Automation folder README and the Kit regression pack are not in Routing (confirm intentional); 8 title-only changelog entries (2026-10-03 to 2026-10-10) still await older `Progress_Log.md` files; F1/F2 review date 2026-11-12 passes unmet if no preregistration record exists by then (record Resource-deferred). Still Proposed 0/6; no Unknown, Spec Gate or Status change. Human-directed.
-
----
-### 2026-10-14 — Chrono_Divergence v0.6 (independence vocabulary, acceptance outcomes)
-ChatGPT's reprocessed review of v0.4 weighed against v0.5: the cross-arm exposure point was already handled (isolation, counterbalanced order, carryover check); its current recommendation (2 families per arm × Cases B and D, 4 families in total) is feasible, so the between-family alternative now carries that example, and the preregistration declares which design is used. New and adopted: allocation unit / observation unit / independence-assumption vocabulary, and pilot acceptance split into procedurally complete (the only acceptance criterion), scoring agreement observed (reported, no threshold), and rubric reliability supported (not licensed). `Chrono_Divergence_Pilot.md` v0.3 aligned. Still Proposed 0/6; no Unknown, Spec Gate or Status change. Human-directed.
 
 ---
 Full history, including entries rotated out of the five above, in `Archive/Logs/Progress_Log_Changelog.md`.
