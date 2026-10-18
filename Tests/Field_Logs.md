@@ -183,8 +183,10 @@ Procedure cards for tracks currently cleared to run — fill while running, file
 
 | ID | Date | Title | Status | Path |
 |----|------|-------|--------|------|
+| FL-20261018-chrono-divergence-chatgpt-b-pointer | 2026-10-18 | Chrono pilot session 5 — ChatGPT, Case B, Pointer arm; Stage 1 M1 Yes (F-01); Stage 2 not run; valid, annotated (Temporary Chat; account memory settings enabled at run time, disabled afterward), family incomplete | Unreviewed | `Tests/Field_Logs/FL-20261018-chrono-divergence-chatgpt-b-pointer.md` |
 | FL-20261017-chrono-divergence-claude-d-pointer | 2026-10-17 | Chrono pilot session 4 — Claude, Case D, Pointer arm; Stage 1 M1 borderline (operator: No); Stage 2 correct; valid, annotated, family complete | Unreviewed | `Tests/Field_Logs/FL-20261017-chrono-divergence-claude-d-pointer.md` |
 | FL-20261017-chrono-divergence-claude-b-baseline | 2026-10-17 | Chrono pilot session 3 — Claude, Case B, Baseline arm; Stage 1 M1 Yes (finding 23); Stage 2 not run; valid, annotated, family incomplete | Unreviewed | `Tests/Field_Logs/FL-20261017-chrono-divergence-claude-b-baseline.md` |
+| FL-20261016-chrono-divergence-gemini-d-pointer | 2026-10-16 | Chrono pilot session 2 — Gemini, Case D, Pointer arm (planned Baseline); Stage 1 M1 No; Stage 2 unsubstantiated; valid, annotated, pointer-only family | Unreviewed | `Tests/Field_Logs/FL-20261016-chrono-divergence-gemini-d-pointer.md` |
 | FL-20261016-chrono-divergence-gemini-b-pointer | 2026-10-16 | Chrono pilot session 1 — Gemini, Case B, Pointer arm; Stage 1 M1 No; Stage 2 did not report the reconciliation check; valid, annotated, family incomplete | Unreviewed | `Tests/Field_Logs/FL-20261016-chrono-divergence-gemini-b-pointer.md` |
 | FL-20261012-kit-regression-Gemini | 2026-10-12 | Kit reconciliation regression Cases B (v5.58 vs v5.60 mismatch) and D (matched pins control) — Gemini; Stage 1 no unprompted check both cases; Stage 2 pass both | Unreviewed | `Tests/Field_Logs/FL-20261012-kit-regression-Gemini.md` |
 | FL-20261009-protocol-audit-runs | 2026-10-09 | Audit runs on the conduct protocol — drafter-entangled audit plus three Gemini runs on a seeded copy (1 invalid-unreadable, 1 invalid-role-breach, 1 valid: 1 of 3 planted faults caught) plus a ChatGPT run on a second planted set (valid: 3 of 4 caught) | Unreviewed | `Tests/Field_Logs/FL-20261009-protocol-audit-runs.md` |
@@ -199,8 +201,10 @@ Procedure cards for tracks currently cleared to run — fill while running, file
 ## Resolution Log
 
 
+- 2026-10-18: **Chrono pilot session 5 filed** — `FL-20261018-chrono-divergence-chatgpt-b-pointer.md` (ChatGPT, Case B, Pointer arm; M1 Yes; Stage 2 not run; valid, annotated). Index row added. Evidence only; no doctrine, Unknown or Spec Gate change.
 - 2026-10-17: **Chrono pilot session 4 filed** — `FL-20261017-chrono-divergence-claude-d-pointer.md` (Claude, Case D, Pointer arm; M1 borderline, operator treated as No; Stage 2 correct; valid, annotated). Index row added. Evidence only; no doctrine, Unknown or Spec Gate change.
 - 2026-10-17: **Chrono pilot session 3 filed** — `FL-20261017-chrono-divergence-claude-b-baseline.md` (Claude, Case B, Baseline arm; M1 Yes; Stage 2 not run; valid, annotated). Index row added. Evidence only; no doctrine, Unknown or Spec Gate change.
+- 2026-10-17: **Chrono pilot session 2 filed** — `FL-20261016-chrono-divergence-gemini-d-pointer.md` (Gemini, Case D, ran as Pointer arm, planned Baseline; M1 No; Stage 2 unsubstantiated; valid, annotated). Index row added. Evidence only; no doctrine, Unknown or Spec Gate change.
 - 2026-10-16: **Chrono pilot session 1 filed** — `FL-20261016-chrono-divergence-gemini-b-pointer.md` (Gemini, Case B, Pointer arm; M1 No; Stage 2 did not report the reconciliation check; valid, annotated). Index row added. Evidence only; no doctrine, Unknown or Spec Gate change.
 - 2026-10-12: **Kit regression Cases B+D filed** — `FL-20261012-kit-regression-Gemini.md` (Gemini; Stage 1 salience gap; Stage 2 pass match and mismatch).
 - 2026-10-09: **Protocol audit runs filed** — `FL-20261009-protocol-audit-runs.md`. Index row added. ChatGPT run added the same day. No threshold calibration; one run per auditor.
