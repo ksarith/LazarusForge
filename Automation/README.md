@@ -6,7 +6,7 @@ Tooling for auditing, checking, and experimenting on the repository. Nothing her
 
 | File | What it does | How you run it |
 |------|--------------|----------------|
-| `AUDIT_HARNESS.py` (v17) | Fetches `Forge_Audit_Kit.md`, the target file, and any extra files from GitHub `main`, runs Phase 1 structural checks, and returns a ready-to-paste audit prompt plus findings. It does not call a model; you paste the prompt into an agent session. | `Colab_Launcher.py` |
+| `AUDIT_HARNESS.py` (v18) | Fetches `Forge_Audit_Kit.md`, the target file, and any extra files from GitHub `main`, runs Phase 1 structural checks, and returns a ready-to-paste audit prompt plus findings. It does not call a model; you paste the prompt into an agent session. On Routing.md fetch failure: explicit `DEGRADED — FALLBACK REGISTRY USED` (not silent). | `Colab_Launcher.py` |
 | `integrity_check.py` | Repo-wide checks: Routing.md coverage, Ethical Anchor and File State, duplicate sidecar IDs, cross-reference resolution, version-citation drift. `--health` adds active-unknown counts by priority. Deliberately emits no readiness or governance-state badge. | `Colab_Integrity.py`, or `python integrity_check.py <repo_root> [--json out.json] [--health]` |
 | `cold_session_bundler.py` | Builds an informationally independent audit payload (AP-017): raw doctrine text with retrospective findings and evaluative metadata stripped, plus a manifest of what was removed. Best-effort, not a formal guarantee. | `Colab_cold_session.py` |
 | `Candidate3_Transient_Index_Colab.py` | The pre-registered Persistent Cognition Candidate 3 experiment. See its section below. | Upload a zip, Run all |

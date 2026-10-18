@@ -1,5 +1,5 @@
 """
-LAZARUS FORGE — AUDIT HARNESS v17
+LAZARUS FORGE — AUDIT HARNESS v18
 Single importable module. See run_audit() docstring for the current
 bootstrap cell and usage.
 
@@ -10,11 +10,17 @@ Full version history: Archive/Logs/AUDIT_HARNESS_CHANGELOG.md
 # CELL 1 — Build registry from Routing.md + fallback (run once)
 # ─────────────────────────────────────────────────────────────────────
 
+import os
 import urllib.request
 import urllib.parse
 import re
 
 from audit_lib import Finding, parse_routing, extract_md_refs, check_cross_refs
+
+# When imported by another tool (e.g. integrity_check), set
+# AUDIT_HARNESS_QUIET=1 before import to suppress the LIVE registry
+# dump. DEGRADED still emits a one-line notice so fallback cannot hide.
+_QUIET = os.environ.get("AUDIT_HARNESS_QUIET", "").lower() in ("1", "true", "yes")
 
 BASE = "https://raw.githubusercontent.com/ksarith/LazarusForge/refs/heads/main/"
 
@@ -134,53 +140,104 @@ FALLBACK_REGISTRY = {
     "PROBE_INVOCATION.md":               "Admin/PROBE_INVOCATION.md",
 }
 
-def _build_registry():
+def _build_registry(quiet=None):
     """
     Fetch Routing.md and build FILE_REGISTRY dynamically.
     Falls back to FALLBACK_REGISTRY if fetch fails.
     Reports drift between dynamic and fallback registries.
+
+    Returns (merged_registry, routing_content_or_None, source_info).
+
+    source_info keys:
+      mode: "LIVE" | "DEGRADED"
+      detail: human-readable reason
+      fallback_entries: int (only when DEGRADED)
+      live_routing_checks: "RUN" | "NOT RUN"
+
+    quiet: if True, suppress LIVE chatter (drift lists, file dump).
+    DEGRADED always emits at least a one-line notice. Default follows
+    AUDIT_HARNESS_QUIET env (set by integrity_check before import).
     """
-    print("Building registry from Routing.md...")
+    if quiet is None:
+        quiet = _QUIET
+    if not quiet:
+        print("Building registry from Routing.md...")
     url = BASE + "Routing.md"
     try:
         with urllib.request.urlopen(url) as r:
             routing_content = r.read().decode("utf-8")
         dynamic = parse_routing(routing_content)
-        print(f" ✓ Routing.md fetched — {len(dynamic)} canonical paths parsed")
+        if not quiet:
+            print(f" ✓ Routing.md fetched — {len(dynamic)} canonical paths parsed")
 
         # Drift detection against fallback
         missing_from_fallback = [k for k in dynamic if k not in FALLBACK_REGISTRY
                                   and k not in ALIASES]
         missing_from_dynamic  = [k for k in FALLBACK_REGISTRY if k not in dynamic]
 
-        if missing_from_fallback:
-            print(f"\n⚠ REGISTRY DRIFT — in Routing.md but not fallback "
-                  f"({len(missing_from_fallback)}):")
-            for f in sorted(missing_from_fallback):
-                print(f"    + {f} → {dynamic[f]}")
-            print("  → Fallback registry needs updating.")
+        if not quiet:
+            if missing_from_fallback:
+                print(f"\n⚠ REGISTRY DRIFT — in Routing.md but not fallback "
+                      f"({len(missing_from_fallback)}):")
+                for f in sorted(missing_from_fallback):
+                    print(f"    + {f} → {dynamic[f]}")
+                print("  → Fallback registry needs updating.")
 
-        if missing_from_dynamic:
-            print(f"\n⚠ REGISTRY DRIFT — in fallback but not Routing.md "
-                  f"({len(missing_from_dynamic)}):")
-            for f in sorted(missing_from_dynamic):
-                print(f"    - {f}")
-            print("  → These may be renamed, removed, or Routing.md is stale.")
+            if missing_from_dynamic:
+                print(f"\n⚠ REGISTRY DRIFT — in fallback but not Routing.md "
+                      f"({len(missing_from_dynamic)}):")
+                for f in sorted(missing_from_dynamic):
+                    print(f"    - {f}")
+                print("  → These may be renamed, removed, or Routing.md is stale.")
 
-        if not missing_from_fallback and not missing_from_dynamic:
-            print(" ✓ Registry in sync with fallback — no drift detected")
+            if not missing_from_fallback and not missing_from_dynamic:
+                print(" ✓ Registry in sync with fallback — no drift detected")
 
         # Merge: dynamic takes precedence; aliases appended
         merged = {**dynamic, **ALIASES}
-        return merged, routing_content
+        source_info = {
+            "mode": "LIVE",
+            "detail": f"Routing.md fetched from {url} ({len(dynamic)} canonical paths)",
+            "fallback_entries": 0,
+            "live_routing_checks": "RUN",
+        }
+        return merged, routing_content, source_info
 
     except Exception as e:
-        print(f" ✗ Routing.md fetch FAILED: {e}")
-        print("   Falling back to hard-coded registry.")
+        n_fb = len(FALLBACK_REGISTRY)
+        n_alias = len(ALIASES)
+        if quiet:
+            # One line only — fallback must not be silent
+            print(f"AUDIT_HARNESS: DEGRADED — FALLBACK REGISTRY USED "
+                  f"(Routing.md fetch failed: {e}; live routing checks NOT RUN)")
+        else:
+            print()
+            print("=" * 60)
+            print("  DEGRADED — FALLBACK REGISTRY USED")
+            print("=" * 60)
+            print(f"  Cause:   Routing.md fetch FAILED: {e}")
+            print(f"  Source:  hard-coded FALLBACK_REGISTRY ({n_fb} entries)")
+            print(f"           + ALIASES ({n_alias} entries)")
+            print(f"  URL:     {url}")
+            print("  Scope:")
+            print("    - live Routing.md parse:     NOT RUN")
+            print("    - live registry drift check: NOT RUN")
+            print("    - cross-refs vs live map:    NOT RUN (using fallback map)")
+            print("  Do not treat this session as a live routing verification.")
+            print("=" * 60)
+            print()
         merged = {**FALLBACK_REGISTRY, **ALIASES}
-        return merged, None
+        source_info = {
+            "mode": "DEGRADED",
+            "detail": f"Routing.md fetch failed ({e}); using FALLBACK_REGISTRY ({n_fb}) + ALIASES ({n_alias})",
+            "fallback_entries": n_fb,
+            "live_routing_checks": "NOT RUN",
+        }
+        return merged, None, source_info
 
-FILE_REGISTRY, _routing_content = _build_registry()
+FILE_REGISTRY, _routing_content, REGISTRY_SOURCE = _build_registry()
+# REGISTRY_SOURCE["mode"] is "LIVE" or "DEGRADED". Downstream code and
+# auditors must treat DEGRADED as not equivalent to a live Routing pass.
 
 def fetch(filename):
     path = FILE_REGISTRY.get(filename, filename)
@@ -199,12 +256,23 @@ def fetch(filename):
         print(f"   Attempted URL: {url}")
         return f"[FETCH FAILED: {filename} at {url}]"
 
-print(f"\nRegistry contains {len(FILE_REGISTRY)} file mappings "
-      f"({len(FILE_REGISTRY) - len(ALIASES)} canonical + {len(ALIASES)} aliases).")
-print("\nCanonical files:")
-for short, path in sorted(FILE_REGISTRY.items()):
-    if short not in ALIASES:
-        print(f"  {short:50} → {path}")
+_mode = REGISTRY_SOURCE.get("mode", "UNKNOWN")
+if not _QUIET:
+    print(f"\nRegistry status: {_mode}"
+          + (" — FALLBACK REGISTRY USED (not a live Routing verification)"
+             if _mode == "DEGRADED" else " — live Routing.md"))
+    print(f"Registry contains {len(FILE_REGISTRY)} file mappings "
+          f"({len(FILE_REGISTRY) - len(ALIASES)} canonical + {len(ALIASES)} aliases).")
+    if _mode == "DEGRADED":
+        print(f"  Detail: {REGISTRY_SOURCE.get('detail', '')}")
+        print(f"  Live-routing-dependent checks: {REGISTRY_SOURCE.get('live_routing_checks', 'NOT RUN')}")
+    print("\nCanonical files:")
+    for short, path in sorted(FILE_REGISTRY.items()):
+        if short not in ALIASES:
+            print(f"  {short:50} → {path}")
+elif _mode == "DEGRADED":
+    # quiet import already printed a one-liner inside _build_registry
+    pass
 # ─────────────────────────────────────────────────────────────────────
 # CELL 3.5 — Phase 1 enforcement + boundary index + unknown aging
 # ─────────────────────────────────────────────────────────────────────

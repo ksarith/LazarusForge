@@ -55,6 +55,10 @@ import sys
 from parser import MetadataParser
 from audit_lib import Finding, parse_routing, check_cross_refs
 
+# Suppress AUDIT_HARNESS LIVE registry dump on import; this tool uses
+# local Routing.md only. DEGRADED still surfaces as a one-liner.
+os.environ.setdefault("AUDIT_HARNESS_QUIET", "1")
+
 try:
     from AUDIT_HARNESS import ALIASES
     _ALIASES_SOURCE = "AUDIT_HARNESS.ALIASES"
@@ -64,7 +68,7 @@ except Exception as e:
 
 
 TOOL_NAME = "integrity_check"
-TOOL_VERSION = "0.1"
+TOOL_VERSION = "0.2"  # 0.2: LOCAL-ONLY scope label; quiet harness import; DEGRADED if aliases fail
 
 # Sidecar ID pattern: matches "### AP-017 — ..." style defining headers,
 # not table rows. Prefix is 2-6 uppercase letters, ID is 3+ digits.
@@ -336,12 +340,28 @@ def run(root):
     for f in findings:
         by_severity.setdefault(f.severity, []).append(f)
 
+    aliases_degraded = (
+        "degraded" in _ALIASES_SOURCE.lower()
+        or _ALIASES_SOURCE.startswith("unavailable")
+    )
     report = {
         "tool": TOOL_NAME,
         "tool_version": TOOL_VERSION,
         "repo_root": root,
         "files_scanned": len(all_files),
         "aliases_source": _ALIASES_SOURCE,
+        "verification_scope": {
+            "routing_source": "local Routing.md at repo root (not a network fetch)",
+            "aliases_source": _ALIASES_SOURCE,
+            # LOCAL-ONLY: this tool never uses a network Routing fetch.
+            # DEGRADED only when the alias map is unavailable.
+            "status": "DEGRADED" if aliases_degraded else "LOCAL-ONLY",
+            "note": (
+                "Reference Pass LEGACY classification degraded — alias map unavailable"
+                if aliases_degraded else
+                "Local Routing.md + ALIASES; not a live GitHub Routing verification"
+            ),
+        },
         "summary": {sev: len(items) for sev, items in by_severity.items()},
         "findings": [f.to_dict() for f in findings],
         "unknowns_summary": unknowns_summary,
@@ -352,6 +372,9 @@ def run(root):
 def print_summary(report):
     print(f"Files scanned: {report['files_scanned']}")
     print(f"Aliases source: {report['aliases_source']}")
+    vs = report.get("verification_scope") or {}
+    if vs.get("status") == "DEGRADED":
+        print(f"Verification scope: DEGRADED — {vs.get('note', '')}")
     print()
     for sev in ("CRITICAL", "WARNING", "NOTE"):
         count = report["summary"].get(sev, 0)
@@ -383,6 +406,11 @@ def print_health_summary(report):
     discipline exists to prevent. If that judgment is wanted, it
     belongs to a human, as an explicitly-dated, explicitly-manual
     field — not this function.
+
+    As of 0.2: prints an explicit verification-scope line. This tool
+    always uses local Routing.md (never a network fetch). If ALIASES
+    could not be imported from AUDIT_HARNESS, status is DEGRADED and
+    LEGACY cross-ref classification must not be treated as complete.
     """
     by_cat = {}
     for f in report["findings"]:
@@ -397,12 +425,28 @@ def print_health_summary(report):
         ("VERSION_STRING", "Version-citation freshness"),
     ]
 
+    vs = report.get("verification_scope") or {}
+    scope_status = vs.get("status", "NORMAL")
+
     print("=" * 46)
     print("REPOSITORY HEALTH —", report["repo_root"])
     print("=" * 46)
     print()
+    if scope_status == "DEGRADED":
+        print("*** VERIFICATION SCOPE: DEGRADED ***")
+        print(f"  {vs.get('note', 'One or more inputs unavailable')}")
+        print(f"  Routing source: {vs.get('routing_source', 'local Routing.md')}")
+        print(f"  Aliases source: {vs.get('aliases_source', report.get('aliases_source', ''))}")
+        print("  Do not treat LEGACY cross-ref classification as complete.")
+        print()
+    else:
+        print(f"Verification scope: {scope_status}")
+        if vs.get("note"):
+            print(f"  {vs['note']}")
+        print()
     print(f"Files scanned: {report['files_scanned']}")
     print(f"Aliases source: {report['aliases_source']}")
+    print(f"Routing source: {vs.get('routing_source', 'local Routing.md at repo root (not a network fetch)')}")
     print()
     print("--- Tier 1: mechanical checks (PASS/FAIL) ---")
     for cat_key, cat_label in categories:
@@ -410,6 +454,9 @@ def print_health_summary(report):
         crit = sum(1 for i in items if i["severity"] == "CRITICAL")
         warn = sum(1 for i in items if i["severity"] == "WARNING")
         status = "FAIL" if crit else ("REVIEW" if warn else "PASS")
+        # Reference pass is incomplete when aliases are degraded
+        if cat_key == "REFERENCE" and scope_status == "DEGRADED":
+            status = "DEGRADED" if status == "PASS" else f"{status}/DEGRADED"
         note = f" ({crit} critical, {warn} warning)" if (crit or warn) else ""
         print(f"  {cat_label:<38} {status}{note}")
     print()
