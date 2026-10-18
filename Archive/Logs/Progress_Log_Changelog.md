@@ -4,6 +4,18 @@ Split out 2026-08-09, following the precedent already established by `Unknowns_C
 
 ---
 
+### 2026-10-15 — Master zip checked; integrity-checker warnings traced and fixed
+*(Rotated 2026-10-18 AUDIT_HARNESS v18 entry.)*
+The 2026-10-15 master zip was byte-identical to the v0.6 state (no `__pycache__`; packaging fix held). Harness tests passed (7); integrity checker 0 critical. Traced the `last_audit` conflict warning on Chrono, the pilot file, Automotive and Robotics: `parser.py` maps both Last Audit and Last Updated into one field, a bare-date Last Updated normalizes, but a Last Audit cell with text after the date did not, so the two looked different. `parser.py` now reads the leading ISO date from such a cell; genuinely different dates still conflict. Chrono and the pilot file had their Last Audit cells trimmed to current state (history stays in the Resolution Log); the pilot's Field_Log reference is now a canonical path; `Tst_Scope_Map.md` lost a stale Chrono version pin (same staleness class as FAK-014 to 018). Not changed, awaiting decision: the Automation folder README and the Kit regression pack are not in Routing (confirm intentional); 8 title-only changelog entries (2026-10-03 to 2026-10-10) still await older `Progress_Log.md` files; F1/F2 review date 2026-11-12 passes unmet if no preregistration record exists by then (record Resource-deferred). Still Proposed 0/6; no Unknown, Spec Gate or Status change. Human-directed.
+
+---
+
+### 2026-10-14 — Chrono_Divergence v0.6 (independence vocabulary, acceptance outcomes)
+*(Rotated 2026-10-16 pilot preregistration decisions.)*
+ChatGPT's reprocessed review of v0.4 weighed against v0.5: the cross-arm exposure point was already handled (isolation, counterbalanced order, carryover check); its current recommendation (2 families per arm × Cases B and D, 4 families in total) is feasible, so the between-family alternative now carries that example, and the preregistration declares which design is used. New and adopted: allocation unit / observation unit / independence-assumption vocabulary, and pilot acceptance split into procedurally complete (the only acceptance criterion), scoring agreement observed (reported, no threshold), and rubric reliability supported (not licensed). `Chrono_Divergence_Pilot.md` v0.3 aligned. Still Proposed 0/6; no Unknown, Spec Gate or Status change. Human-directed.
+
+---
+
 ### 2026-10-14 — Chrono_Divergence v0.5 (cross-arm exposure)
 *(Rotated 2026-10-15 Robotics resolution-path additions.)*
 A further ChatGPT review found that the v0.4 allocation rule fixed same-case reuse but not cross-arm exposure for a family run in both arms. Weighed against source: the concern is real (account memory, shared files, an operator adapting prompts, non-isolated sessions can carry exposure) but ChatGPT's preferred fix, one arm per family, needs about 8 families and confounds family with arm. v0.5 keeps within-family as the default and adds counterbalanced order, isolation requirements, a carryover check by order position, and the between-family design as a labeled alternative. The pilot claim (scoring reproducibility) is unchanged: exposure affects what is scored, not whether reviewers agree. `Chrono_Divergence_Pilot.md` v0.2 aligned. Still Proposed 0/6; no Unknown, Spec Gate or Status change. Human-directed.
