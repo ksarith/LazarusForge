@@ -13,7 +13,7 @@
 
 | Field            | Value |
 |------------------|-------|
-| Status           | **Proposed** (preregistered at commit `1a885aa` on 2026-10-16; the pilot starts when the first session runs and its Field_Log ID is recorded in §9.6) |
+| Status           | **Proposed** (preregistered at commit `1a885aa` on 2026-10-16; pilot started 2026-10-16 with `FL-20261016-chrono-divergence-gemini-b-pointer` recorded in §9.6; exploratory dry run) |
 | Body Stability   | Volatile |
 | Spec Gates       | 0/6 |
 | Verification Ref | Admin/Verification_Gates.md |
@@ -196,7 +196,7 @@ At least one reviewer is free of forecast/rubric authorship (R1). R2 entanglemen
 |-------|-------|
 | Preregistration completed date | 2026-10-16 (decisions recorded 2026-10-15) |
 | Content hash or commit of Chrono §4 F1/F2 rows + Chrono §4 session controls + this §9 (including allocation and design declaration) | Commit `1a885aa4712d46de0fbe75be0446aa557f742719` (Pilot v0.6; parent `5d152a31b6e78c4dd0b76e85f985f75e8ccec2cc`) |
-| Linked from first test-start Field_Log | (FL-… ID — fill when first session is filed) |
+| Linked from first test-start Field_Log | `FL-20261016-chrono-divergence-gemini-b-pointer` (session 1; pilot started 2026-10-16) |
 
 **Frozen content** is §9.1 to §9.5 and §9.7 as of the named commit; the §9.6 cells are the marker itself and are filled in follow-up commits. **Freeze mechanics:** a commit SHA cannot sit inside the commit it names. Commit the filled Pilot and Chrono first and copy that commit's SHA. Record it in this cell (or in the first Field_Log) in a follow-up commit that changes nothing else in §9; the frozen content is §9 and the Chrono §4 block as of the named commit. A hash shows identity, not creation time, so keep the git history for ordering.
 
@@ -243,6 +243,7 @@ The prompts do not describe the reconciliation check. Both arms use the same pro
 
 ### Resolution Log
 
+- 2026-10-17: §9.6 first test-start Field_Log ID filled: `FL-20261016-chrono-divergence-gemini-b-pointer`. Pilot formally started. Sessions 3–4 (Claude B baseline, Claude D pointer) already filed; Gemini family remains pointer-only / incomplete. No Spec Gate or Unknown change.
 - 2026-10-17: §9.8 addendum: upload rules recorded after sessions 1 and 2 (plain Kit file name, arm recorded as run, memory-setting check). Frozen text unchanged; no version bump.
 - 2026-10-16: §9.8 addendum: Case D Kit hashes (baseline and pointer variant) recorded before any Case D session; Case D pack differences from the repo documented. Frozen text unchanged; no version bump.
 - 2026-10-16: Post-freeze addendum §9.8 added (no version bump; frozen text unchanged). Records the omitted pack file `GEMINI_PROMPT.txt` with its hash, the pre-session memory-setting check, and the pending Case D hashes, found while filing session 1.

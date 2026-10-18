@@ -183,6 +183,7 @@ Procedure cards for tracks currently cleared to run — fill while running, file
 
 | ID | Date | Title | Status | Path |
 |----|------|-------|--------|------|
+| FL-20261017-chrono-divergence-claude-d-pointer | 2026-10-17 | Chrono pilot session 4 — Claude, Case D, Pointer arm; Stage 1 M1 borderline (operator: No); Stage 2 correct; valid, annotated, family complete | Unreviewed | `Tests/Field_Logs/FL-20261017-chrono-divergence-claude-d-pointer.md` |
 | FL-20261017-chrono-divergence-claude-b-baseline | 2026-10-17 | Chrono pilot session 3 — Claude, Case B, Baseline arm; Stage 1 M1 Yes (finding 23); Stage 2 not run; valid, annotated, family incomplete | Unreviewed | `Tests/Field_Logs/FL-20261017-chrono-divergence-claude-b-baseline.md` |
 | FL-20261016-chrono-divergence-gemini-b-pointer | 2026-10-16 | Chrono pilot session 1 — Gemini, Case B, Pointer arm; Stage 1 M1 No; Stage 2 did not report the reconciliation check; valid, annotated, family incomplete | Unreviewed | `Tests/Field_Logs/FL-20261016-chrono-divergence-gemini-b-pointer.md` |
 | FL-20261012-kit-regression-Gemini | 2026-10-12 | Kit reconciliation regression Cases B (v5.58 vs v5.60 mismatch) and D (matched pins control) — Gemini; Stage 1 no unprompted check both cases; Stage 2 pass both | Unreviewed | `Tests/Field_Logs/FL-20261012-kit-regression-Gemini.md` |
@@ -198,6 +199,7 @@ Procedure cards for tracks currently cleared to run — fill while running, file
 ## Resolution Log
 
 
+- 2026-10-17: **Chrono pilot session 4 filed** — `FL-20261017-chrono-divergence-claude-d-pointer.md` (Claude, Case D, Pointer arm; M1 borderline, operator treated as No; Stage 2 correct; valid, annotated). Index row added. Evidence only; no doctrine, Unknown or Spec Gate change.
 - 2026-10-17: **Chrono pilot session 3 filed** — `FL-20261017-chrono-divergence-claude-b-baseline.md` (Claude, Case B, Baseline arm; M1 Yes; Stage 2 not run; valid, annotated). Index row added. Evidence only; no doctrine, Unknown or Spec Gate change.
 - 2026-10-16: **Chrono pilot session 1 filed** — `FL-20261016-chrono-divergence-gemini-b-pointer.md` (Gemini, Case B, Pointer arm; M1 No; Stage 2 did not report the reconciliation check; valid, annotated). Index row added. Evidence only; no doctrine, Unknown or Spec Gate change.
 - 2026-10-12: **Kit regression Cases B+D filed** — `FL-20261012-kit-regression-Gemini.md` (Gemini; Stage 1 salience gap; Stage 2 pass match and mismatch).
