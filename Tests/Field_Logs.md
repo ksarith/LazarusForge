@@ -183,6 +183,7 @@ Procedure cards for tracks currently cleared to run — fill while running, file
 
 | ID | Date | Title | Status | Path |
 |----|------|-------|--------|------|
+| FL-20261018-chrono-divergence-chatgpt-d-baseline | 2026-10-18 | Chrono pilot session 6 — ChatGPT, Case D, Baseline arm; Stage 1 M1 No; Stage 2 did not report the reconciliation check; valid, annotated, family complete | Unreviewed | `Tests/Field_Logs/FL-20261018-chrono-divergence-chatgpt-d-baseline.md` |
 | FL-20261018-chrono-divergence-chatgpt-b-pointer | 2026-10-18 | Chrono pilot session 5 — ChatGPT, Case B, Pointer arm; Stage 1 M1 Yes (F-01); Stage 2 not run; valid, annotated (Temporary Chat; account memory settings enabled at run time, disabled afterward), family incomplete | Unreviewed | `Tests/Field_Logs/FL-20261018-chrono-divergence-chatgpt-b-pointer.md` |
 | FL-20261017-chrono-divergence-claude-d-pointer | 2026-10-17 | Chrono pilot session 4 — Claude, Case D, Pointer arm; Stage 1 M1 borderline (operator: No); Stage 2 correct; valid, annotated, family complete | Unreviewed | `Tests/Field_Logs/FL-20261017-chrono-divergence-claude-d-pointer.md` |
 | FL-20261017-chrono-divergence-claude-b-baseline | 2026-10-17 | Chrono pilot session 3 — Claude, Case B, Baseline arm; Stage 1 M1 Yes (finding 23); Stage 2 not run; valid, annotated, family incomplete | Unreviewed | `Tests/Field_Logs/FL-20261017-chrono-divergence-claude-b-baseline.md` |
@@ -201,6 +202,7 @@ Procedure cards for tracks currently cleared to run — fill while running, file
 ## Resolution Log
 
 
+- 2026-10-18: **Chrono pilot session 6 filed** — `FL-20261018-chrono-divergence-chatgpt-d-baseline.md` (ChatGPT, Case D, Baseline arm; M1 No; Stage 2 did not report the reconciliation check; valid, annotated; family complete). Index row added. Evidence only; no doctrine, Unknown or Spec Gate change.
 - 2026-10-18: **Chrono pilot session 5 filed** — `FL-20261018-chrono-divergence-chatgpt-b-pointer.md` (ChatGPT, Case B, Pointer arm; M1 Yes; Stage 2 not run; valid, annotated). Index row added. Evidence only; no doctrine, Unknown or Spec Gate change.
 - 2026-10-17: **Chrono pilot session 4 filed** — `FL-20261017-chrono-divergence-claude-d-pointer.md` (Claude, Case D, Pointer arm; M1 borderline, operator treated as No; Stage 2 correct; valid, annotated). Index row added. Evidence only; no doctrine, Unknown or Spec Gate change.
 - 2026-10-17: **Chrono pilot session 3 filed** — `FL-20261017-chrono-divergence-claude-b-baseline.md` (Claude, Case B, Baseline arm; M1 Yes; Stage 2 not run; valid, annotated). Index row added. Evidence only; no doctrine, Unknown or Spec Gate change.
