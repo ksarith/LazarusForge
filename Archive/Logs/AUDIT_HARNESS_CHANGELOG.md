@@ -6,6 +6,27 @@ Add new entries here, not back into the .py docstring.
 
 ────────────────────────────────────────────────────────────────────
 
+────────────────────────────────────────────────────────────────────
+
+CHANGES IN THIS PATCH (v17 → v18, 2026-10-18):
+  - Routing.md fetch failure now emits an explicit
+    `DEGRADED — FALLBACK REGISTRY USED` banner listing what did not run
+    (live Routing parse, registry drift check, cross-refs vs live map)
+    and states the session is not a live routing verification. Mode is
+    carried in module-level `REGISTRY_SOURCE` (`LIVE` | `DEGRADED`).
+  - `_build_registry()` reports drift between dynamic and fallback
+    registries (docstring retained); returns
+    `(registry, routing_content, source_info)`.
+  - `AUDIT_HARNESS_QUIET=1` (set by integrity_check before import)
+    suppresses the LIVE registry dump so checker output is not mixed
+    with harness bootstrap noise; DEGRADED still prints a one-liner.
+  - Companion: integrity_check.py 0.2 uses verification_scope status
+    `LOCAL-ONLY` (not `NORMAL`) when the local Routing.md path is used,
+    and `DEGRADED` only if ALIASES import fails.
+  - Automation/README.md version label bumped to match
+    (test_harness_prompt requires header and README agree).
+
+
 CONTENT-INTEGRITY REPAIR (2026-09-03, no code version change):
   - This file's own `## Audit Trail` section (below the patch log)
     contained ~45 lines of verbatim `Unknowns.md`/`Unknowns_Changelog.md`
