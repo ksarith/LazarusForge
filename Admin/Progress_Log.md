@@ -11,7 +11,7 @@
 | Spec Gates       | N/A — this file is a progression log, not a specification           |
 | Open Unknowns    | 0 (references existing unknowns; creates none)                      |
 | Owning Domain    | Admin/                                                               |
-| Last Reviewed    | 2026-10-16                                                           |
+| Last Reviewed    | 2026-10-19                                                           |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
 ---
@@ -37,6 +37,10 @@ Created 2026-08-09 to fix a recurring failure mode found the same day, in two pl
 
 *(Most recent first. Rotate to `Archive/Logs/Progress_Log_Changelog.md` once more than five entries accumulate.)*
 
+### 2026-10-19 — Chrono pilot Steps 3-4 filed (reviewer scoring)
+Gemini (R1, memory on, own sessions S1-S2 excluded per §9.4) and Grok (R2) scored the six sessions from a blind packet; recorded in `FL-20261019-chrono-divergence-pilot-scoring` with an agreement table and disagreement analysis, and no adjudicated score. Both sheets: F1 and F2 Unscorable. Item level: M1 agreed on 1 of 4 sessions, validity on 3 of 4. R1 called M1 No on S3-S5 against text that contains the comparison (S3 finding 23, S5 F-01); R2's S4 Yes is labeled reading (ii) but the cited text fits only reading (i); R2 invalidated S1, S2 and S5 more strictly than the rule as written. The Unscorable rule, S4's M1 reading and session validity are independent choices that could move F1 between Unscorable, Partial and Hit. Packet flaw: it carried the §9.3 declaration verbatim, anchoring both reviewers. No preregistered revision trigger fired; CD-001 stays Open; rubric reliability not licensed. Pilot recorded as procedurally complete (human to confirm). Next, if wanted: new preregistration with tighter M1 and validity definitions (candidates listed in the Field_Log, not applied), and two more baseline pairs. Still Proposed 0/6; no Unknown, Spec Gate or Status change. Human-directed.
+
+---
 ### 2026-10-18 — AUDIT_HARNESS v18: explicit DEGRADED fallback labeling
 Harness Routing.md fetch failure now prints `DEGRADED — FALLBACK REGISTRY USED` with scope of checks NOT RUN; `REGISTRY_SOURCE` carries LIVE/DEGRADED. integrity_check 0.2 labels verification scope `LOCAL-ONLY` (local Routing.md, not network) and quiets harness import noise. README version matched. No Spec Gate, Unknown or doctrine change. Human-directed (ChatGPT audit P1; Claude review of first patch).
 
@@ -51,10 +55,6 @@ ChatGPT's targeted audits of Automotive and Robotics were checked against source
 ---
 ### 2026-10-15 (third entry, same day) — Chrono pilot v0.4 + date hygiene
 `Tests/Chrono_Divergence_Pilot.md` advanced to v0.4 after Claude review of the first preregistration template: single allocation table (§4 points to §9.3 only), freeze hash scope expanded to Chrono §4 F1/F2 + session controls + §9, blank forecast-coverage reason means not ready to start, under-8-pairs consequence stated (both forecasts Unscorable; Hit/Miss discrimination not tested), version bump. Automotive.md and Robotics.md Last Updated advanced from 2026-10-10 to 2026-10-11 to match Last Audit. Oldest Progress_Log entry (2026-10-14 Chrono v0.4) rotated into the changelog to restore the five-entry rule. Pilot remains Proposed / not started until the preregistration record is filled and hashed. No Spec Gate, Unknown, or Status change. Human-directed.
-
----
-### 2026-10-15 (second entry, same day) — Routing gaps closed; changelog stubs accepted
-Decisions: the Automation folder README and the Kit regression pack are now registered in `Routing.md` (they had been left off for their novelty), plus a tree entry for the README in `Discovery.md`. The 8 title-only changelog entries (2026-10-03 to 2026-10-10) are accepted as they are and will not be restored: `Progress_Log.md` is a forward-momentum checklist, and an item that is done may be dropped from it. The changelog header now states that exception, so its no-information-removed line is accurate. This supersedes the "awaiting older `Progress_Log.md` files" item in the 2026-10-14 and 2026-10-15 entries. Open forward items: Chrono pilot preregistration record (pointer wording, design, allocation, reviewers) before the F1/F2 review date 2026-11-12; Automotive/Robotics Last Updated (2026-10-10) is behind their Last Audit (2026-10-11). Still Proposed 0/6; no Unknown, Spec Gate or Status change. Human-directed.
 
 ---
 Full history, including entries rotated out of the five above, in `Archive/Logs/Progress_Log_Changelog.md`.
