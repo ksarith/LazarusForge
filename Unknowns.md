@@ -1,9 +1,9 @@
 # Unknowns.md — Cross-Module Unknowns Global Index
 
 
-**Full version history in `Unknowns_Changelog.md` (2026-07-19 cleanup pass, following the precedent set by `Archive/Logs/AUDIT_HARNESS_CHANGELOG.md` and `Archive/Logs/Forge_Audit_Kit_Changelog.md`; scrubbed to current-version-only 2026-07-28 — the "current plus last four in full" window was itself compressed further, since the Audit Trail below now carries the compressed record for every version back to v1.0, and the changelog carries full text for all of them. This block now keeps only the current version.)**
+**Full version history in `Archive/Logs/Unknowns_Changelog.md` (2026-07-19 cleanup pass, following the precedent set by `Archive/Logs/AUDIT_HARNESS_CHANGELOG.md` and `Archive/Logs/Forge_Audit_Kit_Changelog.md`; scrubbed to current-version-only 2026-07-28 — the "current plus last four in full" window was itself compressed further, since the Audit Trail below now carries the compressed record for every version back to v1.0, and the changelog carries full text for all of them. This block now keeps only the current version.)**
 
-**Version 5.60 -- 2026-10-11. RB-007 Blocking scope reworded in its index row, Dependency Clusters block and Critical Watch note.** The old wording ("any operation with people in the cell or space") contradicted the entry's own supervised-operation default; the new scope is unsupervised presence or any person inside the hazard zone (RF-1 unchanged). Follows two independent audits of `Operations/Robotics.md` and `Operations/Automotive.md` (human-directed). No other entry, Status or Spec Gate changed. No `Admin/Forge_Audit_Kit.md` update is triggered: no section the kit copies changed. Human-directed.**
+**Version 5.61 -- 2026-10-20. AP-029 Discharged and removed from the Active Index; two bare `Unknowns_Changelog.md` citations corrected to `Archive/Logs/Unknowns_Changelog.md`.** AP-029 (the 10-Entry Rule tripped by the `Admin/Auditor_Protocols.md` sidecar's own open-count) is Resolved — Discharge: the sidecar's open count is 10, not more than 10 as the rule requires to trip, and the Human Governing Authority determined the rule does not warrant action at this maturity (full reasoning in the AP-029 entry in `Archive/Logs/Auditor_Protocols_Logs.md`). The rule's own text is unchanged. The two citation fixes (this header block; Size Management Rule 4) are the same unprefixed-path defect class the 2026-09-03 G5 sweep fixed in `Admin/Auditor_Protocols.md`; both were found by an external integrity sweep (Vibe, Skeptic/Auditor, human-directed, per `Admin/INTEGRITY_SWEEP_PROMPT.md` v1.0.2) and verified against source by Claude. v5.60's displaced header text is migrated to `Archive/Logs/Unknowns_Changelog.md` in the same pass. No other entry, Status, Priority or Spec Gate changed. No `Admin/Forge_Audit_Kit.md` update is triggered: no section the kit copies changed. Human-directed.
 ---
 
 **Expiry Rule active — see `Admin/Canonical_Terms.md` §4 for the Cycle definition this rule now explicitly references (one calendar year default, not one audit pass — see CT-011). Protocol Performance metrics collecting.**
@@ -58,7 +58,7 @@ These rules are enforced at every audit cycle opening:
 
 3. **Compression trigger at 1,200 lines.** If this file exceeds 1,200 lines, a compression pass is mandatory before new entries are added. Compression scope: verify all resolved actives have been removed from the index, confirm no archive accumulation has restarted.
 
-4. **Audit Trail entries are to be in Unknowns_Changelog.md.** 
+4. **Audit Trail entries are to be in `Archive/Logs/Unknowns_Changelog.md`.** 
 
 5. **Unknown Budget — floor on acknowledged unknowns.** A healthy repository maintains a nonzero active unknown count. If the active index drops below 10 open entries across all clusters, treat this as a signal of premature closure rather than epistemic health — trigger a meta-audit to verify recent resolutions were genuinely grounded and not closed under optimization pressure. The goal is not an empty index; it is an honest one.
 
@@ -285,7 +285,6 @@ RB-007 (Human-shared space unresolved)
 | AP-011 | Automated arbitration deadlock and human fatigue escalation | `Admin/Auditor_Protocols.md` | Open | — | Major |
 | AP-018 | Saturation threshold hysteresis and smoothing undefined | `Admin/Auditor_Protocols.md` | Open | — | Major |
 | AP-019 | Semantic convergence metrics for unknown resolution undefined | `Admin/Auditor_Protocols.md` | Open | — | Major |
-| AP-029 | 10-Entry Rule tripped by the sidecar's own open-count, unaddressed | `Admin/Auditor_Protocols.md` | Open | — | Minor |
 | AP-030 | Mission Drift Review N=5 ratification-velocity threshold unvalidated pending first three probe cycles | `Admin/Auditor_Protocols.md` | Open | — | Minor |
 | CIR-001 | Physical Grounding Telemetry Mapping Interface undefined — γ1–γ4 predicates aspirational pending harness Phase 2; renamed 2026-07-28 from a colliding local "GOV-008" (see `Admin/Forge_Audit_Kit.md`'s Governance Sidecar ID Reference); registration gap closed 2026-07-29 — this tracker existed in `Admin/Computational_Institutional_Reasoning.md`'s own sidecar since the rename but was never mirrored here, despite its sibling tracker CF-004 (same file's Active Trackers list) being registered. A candidate $S(n)$ mapping schema (v0, Draft, not ratified) was added under this tracker 2026-08-18 — remains Open until a first concrete Leviathan log → $S$ derivation is demonstrated against it | `Admin/Computational_Institutional_Reasoning.md` | Open | — | Critical |
 | AVE-R1 | Calibrate k and source-survival threshold against real multi-agent logs; coordinate with QCC-R1 and QCC-R5 | `Admin/Agent_Verification_Event.md` | Open | -- | Major |
@@ -312,7 +311,7 @@ RB-007 (Human-shared space unresolved)
 | CT-009 | Grain System implementation consistency — tracks Canonical_Terms.md definition against ST-001/ST-002 implementation | `Admin/Canonical_Terms.md` | Open | — | Minor |
 | CT-010 | Verification Gate / Enforcement Checkpoint rename propagation — confirm no file still cites unqualified "Gate N" for Governance_Charter.md's renamed checkpoints, outside Verification_Gates.md and Operations/Gate_01–07 | `Admin/Canonical_Terms.md` | In Progress | Vehicle | Major |
 
-*The following are Resolved and do not appear in this active index per Size Management Rule 2 — full closure detail is in `Archive/Logs/Auditor_Protocols_Logs.md`'s own sidecar entries: AP-004 (2026-08-20), AP-005 (2026-08-19), AP-013 (2026-08-19), AP-024 (2026-08-20). See Audit Trail in `Archive/Logs/Unknowns_Changelog.md` for the brief resolution note on each.*
+*The following are Resolved and do not appear in this active index per Size Management Rule 2 — full closure detail is in `Archive/Logs/Auditor_Protocols_Logs.md`'s own sidecar entries: AP-004 (2026-08-20), AP-005 (2026-08-19), AP-013 (2026-08-19), AP-024 (2026-08-20), AP-029 (2026-10-20 — Discharge). See Audit Trail in `Archive/Logs/Unknowns_Changelog.md` for the brief resolution note on each.*
 
 ### Engineer Protocols
 
