@@ -13,14 +13,14 @@
 
 | Field            | Value |
 |------------------|-------|
-| Status           | **Proposed** (preregistered at commit `1a885aa` on 2026-10-16; pilot started 2026-10-16 with `FL-20261016-chrono-divergence-gemini-b-pointer` recorded in §9.6; exploratory dry run) |
+| Status           | **Proposed** (preregistered at commit `1a885aa` on 2026-10-16; pilot started 2026-10-16 with `FL-20261016-chrono-divergence-gemini-b-pointer` recorded in §9.6; exploratory dry run); run completed procedurally 2026-10-19 (Steps 3 and 4 filed, no adjudicated score) |
 | Body Stability   | Volatile |
 | Spec Gates       | 0/6 |
 | Verification Ref | Admin/Verification_Gates.md |
 | Open Unknowns    | 0 (surfaces CD-001, owned by `Tests/Chrono_Divergence.md`; creates none) |
 | Owner            | `Tests/Chrono_Divergence.md` |
-| Last Audit       | 2026-10-16 — freeze marker recorded: preregistration commit `1a885aa` (Pilot v0.6). No protocol change. Prior same day: v0.6 (§9.7), v0.5 tightening. Decisions are the human's. History is in the Resolution Log. |
-| Last Updated     | 2026-10-16 |
+| Last Audit       | 2026-10-19 — Steps 3 and 4 recorded in `FL-20261019-chrono-divergence-pilot-scoring` (reviewer sheets, agreement table, disagreement analysis). No protocol change. Prior: freeze marker recorded 2026-10-16 (Pilot v0.6). Decisions are the human's. History is in the Resolution Log. |
+| Last Updated     | 2026-10-19 |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
 ---
@@ -243,6 +243,7 @@ The prompts do not describe the reconciliation check. Both arms use the same pro
 
 ### Resolution Log
 
+- 2026-10-19: Steps 3 and 4 recorded: Reviewer 1 (Gemini) and Reviewer 2 (Grok) scored the six sessions independently; both gave F1 and F2 as Unscorable; M1 agreement was 1 of 4 sessions and validity agreement 3 of 4; no preregistered revision trigger fired; no adjudicated score. See `FL-20261019-chrono-divergence-pilot-scoring`. Procedurally complete (human to confirm); rubric reliability not licensed; CD-001 stays Open. No version bump, no frozen text changed.
 - 2026-10-17: §9.6 first test-start Field_Log ID filled: `FL-20261016-chrono-divergence-gemini-b-pointer`. Pilot formally started. Sessions 3–4 (Claude B baseline, Claude D pointer) already filed; Gemini family remains pointer-only / incomplete. No Spec Gate or Unknown change.
 - 2026-10-17: §9.8 addendum: upload rules recorded after sessions 1 and 2 (plain Kit file name, arm recorded as run, memory-setting check). Frozen text unchanged; no version bump.
 - 2026-10-16: §9.8 addendum: Case D Kit hashes (baseline and pointer variant) recorded before any Case D session; Case D pack differences from the repo documented. Frozen text unchanged; no version bump.
