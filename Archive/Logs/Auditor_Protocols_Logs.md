@@ -795,14 +795,14 @@ This becomes governance metadata rather than prose, auditable the same way Truth
 
 | Field         | Value                        |
 |---------------|------------------------------|
-| Status        | Open                         |
+| Status        | Resolved — Discharge         |
 | Risk          | Low                           |
 | Priority      | Minor                        |
 | Type          | Governance / Process          |
 | Blocking      | No                            |
 | Owner         | Admin/Auditor_Protocols.md   |
 | First Logged  | 2026-07-23                    |
-| Last Reviewed | 2026-07-23                    |
+| Last Reviewed | 2026-10-20                    |
 
 **Description:** `Admin/Auditor_Protocols.md`'s own §Decentralized Audit Architecture defines the 10-Entry Rule: "More than 10 distinct open entries in a sidecar flags the file for a Resolution Pass before the next audit cycle." This sidecar currently carries 13 open entries (AP-002, AP-003, AP-004, AP-005, AP-007, AP-008, AP-010, AP-011, AP-013, AP-017, AP-018, AP-019, AP-024) — over the threshold, unaddressed.
 
@@ -811,6 +811,20 @@ This becomes governance metadata rather than prose, auditable the same way Truth
 **Resolution Path:** Payment via Specification, or Discharge — human governing authority to decide scope: either run the Resolution Pass the rule calls for (review the 13 open entries for consolidation, staleness, or premature-Open status), or explicitly decide the threshold doesn't warrant action at this file's current maturity and log that reasoning here. Either is a valid close; leaving it untouched is not, per the rule's own text.
 
 *Surfaced by a cold-session audit (independent instance, per AP-017) of `Admin/Auditor_Protocols.md` v0.26, 2026-07-23; verified against source and registered by Claude — Synthesizer/Auditor, human-directed.*
+
+**Closure Event (2026-10-20):**
+- **Unknown:** AP-029
+- **Proposed status:** Resolved
+- **Payment type:** Discharge
+- **Basis:** The rule trips on "more than 10 distinct open entries." This sidecar's open count was 10 at the 2026-09-02 reconciliation and is 10 on 2026-10-20 (AP-002, AP-003, AP-007, AP-008, AP-010, AP-011, AP-018, AP-019, AP-029, AP-030), counted directly against this archive and matched to File State and `Unknowns.md`'s Active Index — the threshold is not exceeded, and the entry's premise (13 > 10) no longer holds. Separately, the entry's own evidence is that the rule sat tripped for about three months with no consequence and was found only by chance ("nothing structurally enforces it"). The Human Governing Authority determined on 2026-10-20 that the rule does not warrant action at this file's current maturity: it was an attempt to limit unresolved issues, but it is overeager for this system, and unknowns can be too effervescent and unresolvable for a fixed count threshold to work — it sounds good but does not really work. This is the second valid close named in the Resolution Path above (decide the threshold does not warrant action and log the reasoning here).
+- **Proposer:** Claude — Synthesizer/Auditor (human-directed), 2026-10-20.
+- **Verifier:** none independent. Claude checked the rule text, the count and the File State against source; no second-party verification pass was run, and no independence attestation is claimed. The closure rests on a count check and a governance decision, not a specification.
+- **Human ratification:** the Human Governing Authority stated the reasoning above and directed this change in-session on 2026-10-20; ratification is recorded when he commits it to `main`.
+- **Residual (not decided here):** the 10-Entry Rule's own text is unchanged (`Admin/Auditor_Protocols.md` §The 10-Entry Rule; `Admin/File_Template.md` Sidecar Governance Rules and trigger table; `Admin/Verification_Gates.md` compliance check). Whether to amend, demote or remove it is a separate decision, deliberately not registered as a new unknown. The Aging Rule (90+ days unreviewed) was about to trip on this entry (last reviewed 2026-07-23); this closure moots that.
+
+**Resolution:** Closed 2026-10-20 — Discharge.
+
+**Lessons Learned:** A self-referential threshold with no enforcement path did not bind its own file: it tripped, went unnoticed for about three months, and then lapsed through ordinary closures. This is one rule's evidence, but it bears on the May 2026 Audit Review lesson that credited the 10-entry rule as a working structural constraint — this case counts against that half of the claim only; it does not touch the sidecar model.
 
 ---
 
@@ -996,6 +1010,20 @@ would not discard "without sentiment" is eligible to be considered.
 ---
 
 ### Resolution Log
+
+- 2026-10-20: **v0.43 — AP-029 Discharged; File State refreshed; no doctrine change.**
+  AP-029 (10-Entry Rule tripped by the sidecar's own open-count) Resolved —
+  Discharge; the Closure Event and the Human Governing Authority's stated
+  reasoning are in its sidecar entry above, and the rule's own text is
+  unchanged. Open Unknowns decremented 10 → 9. Sidecar SHA-256 recomputed
+  against current archive content (it had been stale since 2026-09-02: the
+  2026-09-29 UNK-003 sidecar write-up and this entry both modified archive
+  content afterward). Last Audit entry added for the 2026-10-20 external
+  integrity sweep (Vibe, Skeptic/Auditor, human-directed — found the stale
+  hash; Claude verified it against source) and Grok's same-day sweep (no AP
+  findings). Both Version String Registry citations updated v0.42 → v0.43.
+  **Known gap, not closed here:** versions 0.39 through 0.42 still have no
+  Resolution Log entry; not reconstructed or invented. Human-directed.
 
 - 2026-08-11: **v0.38 — Cross-reference added, no doctrine change.** §AP-006's
   Evidence Classification and Institutional Truth Provenance Hierarchy
