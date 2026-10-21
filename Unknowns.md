@@ -3,7 +3,7 @@
 
 **Full version history in `Archive/Logs/Unknowns_Changelog.md` (2026-07-19 cleanup pass, following the precedent set by `Archive/Logs/AUDIT_HARNESS_CHANGELOG.md` and `Archive/Logs/Forge_Audit_Kit_Changelog.md`; scrubbed to current-version-only 2026-07-28 — the "current plus last four in full" window was itself compressed further, since the Audit Trail below now carries the compressed record for every version back to v1.0, and the changelog carries full text for all of them. This block now keeps only the current version.)**
 
-**Version 5.62 -- 2026-10-20. AP-029 fully resolved: the 10-Entry Rule is removed from the doctrine (Constitutional Decision, human-directed; ratification completes on commit).** The rule is gone from `Admin/Auditor_Protocols.md` (v0.44; §The 10-Entry Rule is now a tombstone), `Admin/File_Template.md`, `Admin/Verification_Gates.md` and `Tests/Persistent_Cognition_Candidates.md`; the 20% Metadata Guardrail and the Aging Rule remain, and no Unknown is registered for the removal. AP-029 was already closed and removed from the Active Index in v5.61 (the AP-owned open count is 9). No other entry, Status, Priority or Spec Gate changed. No `Admin/Forge_Audit_Kit.md` update is triggered: the kit copies none of the affected text. Human-directed.
+**Version 5.63 -- 2026-10-20. GF-005 re-scoped; dispute IDs disambiguated.** GF-005 (`Operations/Gate_06_Fabrication.md`) is re-scoped from "Utilization stage has no owning file" — satisfied when `Operations/Gate_07_Utilization.md` was created — to the residual question of Utilization → fabrication feedback-path governance (which file owns updating Gate_06's precision-ceiling record from utilization data, and by what rule); it stays Open, Minor and non-Blocking. The bare ID DS-001, used by four different disputes, is disambiguated in the files that own them: FL-DS-001 (purification-stage terminology; `Architecture/Forge_flow.md`, mirrored in `Operations/Gate_04_Separation_Mechanical.md`), GF-DS-001 (Gate_06 wire sourcing) and TF-DS-001 (`Tests/Trophic_Forge.md`, Resolved); `DS-001` now means only the Auditor_Protocols dispute registered here. No Status, Priority or Spec Gate changed. No `Admin/Forge_Audit_Kit.md` update is triggered: the kit copies none of the affected text. Human-directed.
 ---
 
 **Expiry Rule active — see `Admin/Canonical_Terms.md` §4 for the Cycle definition this rule now explicitly references (one calendar year default, not one audit pass — see CT-011). Protocol Performance metrics collecting.**
@@ -633,7 +633,7 @@ RB-007 (Human-shared space unresolved)
 | GF-003 | Material removal hardware not specified | `Operations/Gate_06_Fabrication.md` | Open | — | Minor |
 | GF-004 | Fabrication energy consumption not characterized | `Operations/Gate_06_Fabrication.md` | Open | — | Minor |
 | GF-006 | Structural adequacy criteria undefined for v0 qualification | `Operations/Gate_06_Fabrication.md` | Open | — | Major |
-| GF-005 | Utilization stage has no owning file | `Operations/Gate_06_Fabrication.md` | Open | — | Minor |
+| GF-005 | Utilization → fabrication feedback-path governance not defined (re-scoped 2026-10-20) | `Operations/Gate_06_Fabrication.md` | Open | — | Minor |
 | GF-007 | Fabrication-area fire suppression and hot-work doctrine undefined | `Operations/Gate_06_Fabrication.md` | Open | — | Critical |
 
 ### Intake
