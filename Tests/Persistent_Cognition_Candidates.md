@@ -130,7 +130,7 @@ sections" would be one line, sourced from today. This is structurally identical 
 reasoning process instead of fabrication technique — the repository already has a working
 precedent for exactly this shape of thing.
 
-**Fit:** High. One new flat file, same Sidecar Governance Rules (10-Entry, 20%, Aging)
+**Fit:** High. One new flat file, same Sidecar Governance Rules (20%, Aging)
 already defined in `File_Template.md` would apply to keep it from growing unboundedly —
 so the storage-discipline machinery already exists and doesn't need inventing.
 **Limit:** A flat append-only list doesn't scale as a *retrieval* mechanism past a certain
@@ -848,6 +848,8 @@ constraints change)*
 enough to generate a real implementation unknown yet)*
 
 ### Resolution Log
+
+- 2026-10-20: **Reference correction (no content change).** Candidate 7's fit note named the 10-Entry Rule among the Sidecar Governance Rules; that rule was removed under AP-029 (`Admin/Auditor_Protocols.md` v0.44), so the note now lists the 20% and Aging rules only. Human-directed.
 
 - 2026-09-27: **v0.15 — status relabeled, indicator-timing question closed, Persistence
   Integrity Test Series added.** Cross-agent convergence (Claude, Grok, ChatGPT
