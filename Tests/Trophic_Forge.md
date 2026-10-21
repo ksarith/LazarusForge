@@ -280,7 +280,7 @@ The Trophic Forge is the biological analogue of the mechanical and thermal trans
 
 | ID | Summary | Positions in Conflict | Risk | Status | Owner |
 |---|---|---|---|---|---|
-| DS-001 | Naming: Trophic Forge vs. Cascade Agriculture vs. Metabolic Agriculture | Resolved — Gemini audit 2026-06-14. Trophic Forge adopted. Rationale: reflects active engineering manipulation of biological energy levels; fits Forge nomenclature; Metabolic Agriculture sounds like standard organic farming. Prior art identified: entomoponics, phototactic tri-trophic aquaponics, Southeast Asian rice-fish light-trap systems. | Low | **Closed** | This file |
+| TF-DS-001 | Naming: Trophic Forge vs. Cascade Agriculture vs. Metabolic Agriculture | Resolved — Gemini audit 2026-06-14. Trophic Forge adopted. Rationale: reflects active engineering manipulation of biological energy levels; fits Forge nomenclature; Metabolic Agriculture sounds like standard organic farming. Prior art identified: entomoponics, phototactic tri-trophic aquaponics, Southeast Asian rice-fish light-trap systems. | Low | **Closed** | This file |
 
 ---
 
@@ -516,6 +516,8 @@ This principle is more fundamental than the light node claim. If the LED array f
 
 ### Resolution Log
 
+- 2026-10-20: **Dispute ID disambiguated: DS-001 → TF-DS-001 (no content change).** The closed naming dispute's bare ID was shared by four different disputes in the repository; it is now TF-DS-001 in the Active Disputes table and the drift-signal note. The 2026-07-12 entry below keeps the bare ID as recorded. Dispute status is unchanged (Closed, Gemini audit 2026-06-14). Raised by an external sweep (Vibe) and by Grok; checked against source by Claude. Human-directed.
+
 - 2026-08-11: **Pseudo-audit (Grok, same limits).** Findings only; Spec Gates
   left locked at 0/6. (1) Open Unknowns **10** = TF-001–010, matches local +
   `Unknowns.md`. (2) TF-001 correctly **Blocking Yes** (organizing principle
@@ -547,5 +549,5 @@ Standard mandatory re-audit conditions per File_Template.md apply.
 
 - ASM-001 (phototaxis yield assumption) remains unchallenged for more than 90 days without TF-TEST-001 initiation → mandatory re-audit.
 - TF-006 (non-target insect capture) reaches Critical status without an operating protocol in Body → halt expansion, escalate to Ethical_Constraints.md review.
-- DS-001 (naming dispute) is Closed per Active Disputes above (Gemini audit, 2026-06-14) — if this ever shows as reopened or unresolved in a future audit without a new dispute entry logged first, that mismatch is itself the drift signal → escalate to Unknowns.md for repository-level resolution.
+- TF-DS-001 (naming dispute) is Closed per Active Disputes above (Gemini audit, 2026-06-14) — if this ever shows as reopened or unresolved in a future audit without a new dispute entry logged first, that mismatch is itself the drift signal → escalate to Unknowns.md for repository-level resolution.
 - Body content references atmospheric mitigation effects of any kind → immediate human review required. This is a hard scope violation.
