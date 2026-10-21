@@ -2,7 +2,8 @@
 
 **Standard file structure for LazarusForge documents.**
 Applies to all new files and retrofit audit cycles.
-**Last updated: 2026-09-24 — Two new sections added: "New File Creation Checklist" and "Update Procedure" (registration/rotation/provenance guidance folded in from a Grok-drafted scaffold, Claude-verified against this file's own Sidecar Governance Rules and actual Resolution Log placement before filing). No change to sections 0–11 or Template Exemptions.**
+**Last updated: 2026-10-20 — 10-Entry Rule removed (AP-029, human-directed; ratification completes on commit): the Sidecar Governance Rules paragraph now records the removal and the trigger-table row is deleted; the 20% and Aging rules are unchanged. No other change.**
+**Prior: 2026-09-24 — Two new sections added: "New File Creation Checklist" and "Update Procedure" (registration/rotation/provenance guidance folded in from a Grok-drafted scaffold, Claude-verified against this file's own Sidecar Governance Rules and actual Resolution Log placement before filing). No change to sections 0–11 or Template Exemptions.**
 
 ---
 
@@ -579,8 +580,8 @@ Reference them here but do not duplicate the full entry.
 
 ### Sidecar Governance Rules
 
-**10-Entry Rule:** If open entries exceed 10, the file requires a Resolution Pass before
-the next audit cycle. Resolved entries move to the Resolution Log — they are not deleted.
+**10-Entry Rule:** Removed 2026-10-20 (AP-029; `Admin/Auditor_Protocols.md` v0.44) — no open-entry-count
+threshold applies. Resolved entries move to the Resolution Log — they are not deleted.
 
 **20% Rule:** If the sidecar exceeds 20% of total document word count, halt expansion and
 prioritize consolidation or discharge before auditing further.
@@ -863,7 +864,6 @@ defined under Section 9 above:
 
 | Rule | Trigger | Action |
 |------|---------|--------|
-| **10-Entry Rule** | A file's Auditor Notes/Unknowns section exceeds 10 open entries | Resolution Pass required before the next audit cycle |
 | **20% Rule** | The sidecar exceeds 20% of the document's total word count | Halt expansion; consolidate or discharge entries before continuing |
 | **Aging Rule** | An unknown has gone unreviewed 90+ days | Mandatory re-audit |
 

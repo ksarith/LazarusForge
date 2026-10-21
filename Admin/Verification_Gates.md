@@ -506,7 +506,7 @@ cleared, and:
 - Drift indicators are inactive
 - Scope boundaries remain stable
 - Frozen sections are justified and marked
-- Sidecar governance thresholds are compliant (10-entry rule, 20% rule)
+- Sidecar governance thresholds are compliant (20% rule, aging rule)
 
 Specification is not permanent. Instability discovered after promotion
 triggers re-entry into the gate sequence.
@@ -615,6 +615,8 @@ Lessons Learned entry already names for detection-latency unknowns.
 ---
 
 ### Resolution Log
+
+- 2026-10-20: **Compliance-check reference updated (no gate change).** The sidecar-governance line in the promotion checklist no longer names the 10-entry rule (removed under AP-029; see `Admin/Auditor_Protocols.md` v0.44) and now reads "20% rule, aging rule". Human-directed.
 
 - 2026-08-09: **Filename Track A — `Verification_Gates_LF.md` →
   `Verification_Gates.md`.** `_LF` suffix retired under Repository_Structure
