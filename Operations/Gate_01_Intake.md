@@ -1262,6 +1262,8 @@ better of the two placements; §7.1 is schema, not doctrine prose.
 
 ### Resolution Log
 
+- 2026-10-20: **Log catch-up (no content change): 2026-09-14 edit.** The record provenance rule was applied to §2 Safety Screening on 2026-09-14, immediately after the detection-limit rule, as the GI-008 candidate text; GI-008 stays Open pending human re-verification before Resolved. The edit was recorded only in GI-008's sidecar entry and the inline §2 marker, with no Resolution Log entry; it is logged here retroactively. Found by an external sweep (Vibe), checked against source by Claude. Human-directed.
+
 - 2026-09-12: **ChatGPT Gate_01 audit priorities applied.** Identity-vs-hazard independence rule; CLEAR/FLAGGED/HOLD operational definitions; detection-limit rule; Intake completion/handoff preconditions; GI-008 (record integrity / false-clear) registered as candidate. No Spec Gates change; GI-002 remains Blocking. Human-directed.
 
 - 2026-08-15 (second entry, same day): **GI-003 wired as a supporting

@@ -27,7 +27,7 @@
 | Verification Ref | Admin/Verification_Gates.md                                      |
 | Last Audit       | 2026-09-20 — EC-013 Gate_05 safe-state descent sequence filed as Proposed/Placeholder (§EC-013 Descent Sequence). Blocking for hot runs retained until first hot-run validation. Prior: 2026-08-08 (Scope Boundary DOES-NOT wording corrected to match Lessons Learned); prior: 2026-07-31 (SC-009 registered; SC-004 expanded with Driving Mechanism Options) |
 | Auditor          | Grok — EC-013 descent section drafted and filed as Proposed/Placeholder (Path A, human-directed 2026-09-20); prior: Claude — Retrofit/Auditor; Claude — Synthesizer, human-directed (SC-009, SC-004 expansion), 2026-07-31 |
-| Open Unknowns    | 9 substantively open. EC-013 sequence registered as Proposed/Placeholder (does not close EC-013 tracker). |
+| Open Unknowns    | 10 substantively open (SC-001 In Progress counted as open; SC-010 registered 2026-09-08). EC-013 sequence registered as Proposed/Placeholder (does not close EC-013 tracker). |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | Medium                                                              |
 | Sidecar Link     | #auditor-notes--unknowns                                            |
@@ -910,6 +910,8 @@ G2 scope decision.
 ---
 
 ### Resolution Log
+
+- 2026-10-20: **Log catch-up and File State count correction (no content change).** (1) SC-010 ("Class C" terminology not reconciled against Gate_04) was registered 2026-09-08, found during the HP-006 cross-layer reconciliation, and recorded only in its sidecar entry; logged here retroactively. (2) §EC-013 Descent Sequence — Gate_05 Spin Chamber was filed 2026-09-20 under Path A as Proposed/Placeholder (Blocking for hot runs retained; does not close the EC-013 tracker); it was recorded in Last Audit/Auditor and the section's own status note but had no Resolution Log entry, and is logged here retroactively. (3) File State read 9 substantively open and was not updated for SC-010; corrected to 10, counting SC-001 In Progress as the file's 2026-08-14 entry already did. Found by an external sweep (Vibe), checked against source by Claude. Human-directed.
 - 2026-08-14: **Claude resolution-path review (Round 5 — Operations
   sequence, continuing from Rounds 1-4).** All nine SC unknowns
   reviewed against source. One real error found and corrected: SC-004's

@@ -32,7 +32,7 @@
 | Verification Ref | Admin/Verification_Gates.md                                      |
 | Last Audit       | 2026-09-09 — §XII.1b added (TIL extended with Gate B Secondary Test fields, serving Forge_flow.md's FL-005); prior: 2026-09-01 — GU-002 reciprocal retirement-handoff subsection integrated (interface with Gate_07); prior: 2026-08-09 Grok pseudo-audit (Skeptic read + minimal fixes); body 2026-07-17; §XII drafted 2026-08-02 |
 | Auditor          | ChatGPT — Synthesizer; Claude — Engineer; Claude — Embedded Value Preservation cross-reference added (human-directed), 2026-07-17; Copilot — drafted TIL/TAL/TCM/TMV + CIR-Triage extension (human-directed), 2026-08-02; Claude — verified against source and `Admin/Verification_Gates.md`, corrective merge (human-directed), 2026-08-02; Grok pseudo-audit 2026-08-09 — no Spec Gate promotion |
-| Open Unknowns    | 7                                                                   |
+| Open Unknowns    | 9 (TS-009, TS-010 registered 2026-09-08; TS-001 and TS-003 In Progress counted as open; TS-004 Resolved) |
 | Active Disputes  | 1                                                                   |
 | Highest Risk     | High                                                                |
 | Sidecar Link     | #auditor-notes--unknowns                                            |
@@ -978,6 +978,8 @@ until a scoring owner and cadence are assigned and logged here.
 ---
 
 ### Resolution Log
+
+- 2026-10-20: **Log catch-up and File State count correction (no content change).** (1) TS-009 ("Unknown Bulk" review criteria undefined) and TS-010 (battery chemistry sorting algorithms undefined) were registered 2026-09-08, found during the HP-006 cross-layer reconciliation, and recorded only in their sidecar entries; they are logged here retroactively. (2) File State Open Unknowns read 7 and was not updated for them; corrected to 9. The earlier count of 7 for TS-001–TS-008 (TS-004 Resolved) also counted In Progress entries as open, so the convention is unchanged. Found by an external sweep (Vibe), checked against source by Claude. Human-directed.
 
 - 2026-09-09: **§XII.1b added — TIL extended with Gate B Secondary
   Test fields, serving `Architecture/Forge_flow.md`'s FL-005.** Grok
