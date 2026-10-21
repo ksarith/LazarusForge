@@ -1,6 +1,6 @@
 # Discovery.md — LazarusForge
 **Navigation layer for the active working repository.**
-**Last updated: 2026-10-20 — Theorem count corrected for `Admin/Computational_Institutional_Reasoning.md` in two passages (the foundational-documents paragraph and the directory-tree entry named four theorems; the file declares five, adding Theorem 5, Soundness of the Compiler, §6.4). No doctrine, Unknown or Spec Gate change.**
+**Last updated: 2026-10-20 — Theorem count corrected for `Admin/Computational_Institutional_Reasoning.md` in two passages (the foundational-documents paragraph and the directory-tree entry named four theorems; the file declares five, adding Theorem 5, Soundness of the Compiler, §6.4); `Challenges/Emergence.md`'s maturity-snapshot row changed from Exploration to Active to match the file's Status, aligned the same day with the other Problem-Statement files. No doctrine, Unknown or Spec Gate change.**
 **Prior: 2026-10-15 — Directory-tree entry added for `Automation/README.md` (registered in `Routing.md` the same day). No doctrine, Unknown or Spec Gate change.**
 **Prior: 2026-10-14 — `Tests/Chrono_Divergence_Pilot.md` registered (Proposed; tree, created-list and maturity-snapshot entries added). No doctrine, Unknown or Spec Gate change.**
 **Prior: 2026-10-13 — Directory-tree entry for `Tests/Chrono_Divergence.md` reworded from "potential map" to "best-outcome map" (matches the file's v0.1 rename). No doctrine, Unknown or Spec Gate change.**
@@ -460,7 +460,7 @@ Discovery.md is a navigation map — task tracking belongs in Unknowns.md.
 | `Challenges/Planned_Obsolescence.md` | Active | — | — |
 | `Challenges/Critical_Minerals.md` | Active | — | — |
 | `Challenges/Energy_Scarcity.md` | Active | — | — |
-| `Challenges/Emergence.md` | Exploration | — | — |
+| `Challenges/Emergence.md` | Active | — | — |
 | `Challenges/Return_To_Eden.md` | Exploration | None cleared (G1–G2 conditional, G4–G6 cleared per 2026-06-30 audit — see Last Audit) | RE-UNK-001 — Eden Index variables lack defined measurement protocols; index is formally specified but not yet operationally measurable. RE-UNK-005 is a direct dependency. |
 | `Challenges/Closed_Loop_Feedstock.md` | Exploration | 0/6 | Silent contamination cascades or toolhead destruction (CLF-003/CLF-006). |
 
