@@ -821,11 +821,12 @@ This becomes governance metadata rather than prose, auditable the same way Truth
 - **Verifier:** Vibe — Skeptic/Auditor (human-directed), 2026-10-20: independent verification pass on the edit package — count parity (9), Closure Event structure, hash recomputation, citation fixes and old-vs-new diffs. It did not assess the rule's merits, and it flagged the original "Discharge" label, which is why this entry reads Constitutional Decision. Claude separately checked the rule text, the count and the File State against source.
 - **Independence attestation:** partial, disclosed rather than rounded up. Vibe's earlier sweep surfaced the stale-hash finding and described AP-029 as persisting; it took no part in the closure decision or its reasoning, which are the Human Governing Authority's and Claude's.
 - **Human ratification:** Required — `Admin/Auditor_Protocols.md` is a meta-governance file and the payment type is Constitutional Decision. The Human Governing Authority stated the reasoning above and directed this change in-session on 2026-10-20; ratification is recorded when he commits it to `main`.
-- **Residual (not decided here):** the 10-Entry Rule's own text is unchanged (`Admin/Auditor_Protocols.md` §The 10-Entry Rule; `Admin/File_Template.md` Sidecar Governance Rules and trigger table; `Admin/Verification_Gates.md` compliance check). Whether to amend, demote or remove it is a separate decision, deliberately not registered as a new unknown. The Aging Rule (90+ days unreviewed) was about to trip on this entry (last reviewed 2026-07-23); this closure moots that.
+- **Residual (as of the first pass; completed in the next bullet):** the 10-Entry Rule's own text is unchanged (`Admin/Auditor_Protocols.md` §The 10-Entry Rule; `Admin/File_Template.md` Sidecar Governance Rules and trigger table; `Admin/Verification_Gates.md` compliance check). Whether to amend, demote or remove it is a separate decision, deliberately not registered as a new unknown. The Aging Rule (90+ days unreviewed) was about to trip on this entry (last reviewed 2026-07-23); this closure moots that.
+- **Completion (2026-10-20, second pass):** the Human Governing Authority directed removal of the 10-Entry Rule and said he will ratify the change to fully resolve AP-029. The rule is removed from `Admin/Auditor_Protocols.md` (§The 10-Entry Rule is now a tombstone; the Metadata Bloat row no longer lists it), `Admin/File_Template.md` (Sidecar Governance Rules paragraph; trigger-table row), `Admin/Verification_Gates.md` (compliance check) and `Tests/Persistent_Cognition_Candidates.md` (one reference); the 20% Metadata Guardrail and the Aging Rule are untouched. Historical mentions in dated logs (`Tests/Solar_Descent.md`, `Archive/Logs/Unknowns_Changelog.md` v4.31, the May 2026 lesson row in `Admin/Auditor_Protocols.md`, which is annotated) are left as records. This is a doctrine change under Mandatory Human Ratification; ratification completes when he commits it to `main`. No new Unknown is registered for the removal, and `Admin/Forge_Audit_Kit.md` copies none of the affected text.
 
 **Resolution:** Closed 2026-10-20 — Payment via Constitutional Decision.
 
-**Lessons Learned:** A self-referential threshold with no enforcement path did not bind its own file: it tripped, went unnoticed for about three months, and then lapsed through ordinary closures. This is one rule's evidence, but it bears on the May 2026 Audit Review lesson that credited the 10-entry rule as a working structural constraint — this case counts against that half of the claim only; it does not touch the sidecar model.
+**Lessons Learned:** A self-referential threshold with no enforcement path did not bind its own file: it tripped, went unnoticed for about three months, and then lapsed through ordinary closures. This is one rule's evidence, but it bears on the May 2026 Audit Review lesson that credited the 10-entry rule as a working structural constraint — this case counts against that half of the claim only; it does not touch the sidecar model. The rule was then removed on this evidence (second pass, same day).
 
 ---
 
@@ -1011,6 +1012,21 @@ would not discard "without sentiment" is eligible to be considered.
 ---
 
 ### Resolution Log
+
+- 2026-10-20: **v0.44 — 10-Entry Rule removed; AP-029 fully resolved; doctrine change.**
+  At the human governing authority's direction (he will ratify on commit), the
+  10-Entry Rule — more than 10 open sidecar entries flags a Resolution Pass —
+  is removed: §The 10-Entry Rule in this file is now a tombstone and the
+  Metadata Bloat row no longer lists it; `Admin/File_Template.md`,
+  `Admin/Verification_Gates.md` and `Tests/Persistent_Cognition_Candidates.md`
+  are updated; the 20% Metadata Guardrail and Aging Rule remain. AP-029's
+  entry above gains a Completion note (its Closure Event, Constitutional
+  Decision, is unchanged). Same pass: the Status block was corrected 0.41 →
+  0.44 and the Resolution Log footer re-pointed (it still said v0.36;
+  v0.37–v0.43 are not carried there); both Version String Registry citations
+  updated v0.43 → v0.44; Sidecar SHA-256 recomputed. Companion edit:
+  `Unknowns.md` v5.62. **Known gap, unchanged:** v0.39–v0.42 still have no
+  Resolution Log entry; not reconstructed or invented. Human-directed.
 
 - 2026-10-20: **v0.43 — AP-029 Discharged; File State refreshed; no doctrine change.**
   AP-029 (10-Entry Rule tripped by the sidecar's own open-count) Resolved —
