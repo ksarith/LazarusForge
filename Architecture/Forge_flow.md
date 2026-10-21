@@ -69,7 +69,7 @@
 - Primary KPI definition (value recovered per kWh consumed)
 - Termination conditions for items exiting the system
 - Oversight State logic and want/need policy
-- Purification stage definition — governs DS-001 terminology dispute
+- Purification stage definition — governs FL-DS-001 terminology dispute
 - Self-replication architecture or loop closure logic, as pointed
   to from `Operations/Gate_05_Separation_Thermal.md` (pending —
   see FL-003)
@@ -768,7 +768,7 @@ cross-validation is FL-002's remaining scope. Until it closes:
   Gate as upstream mechanical diversion
 - Pass / fail logic
 - Fallback to powder or bulk stock if needed
-- *Stage definition governs DS-001 terminology dispute —
+- *Stage definition governs FL-DS-001 terminology dispute —
   see Active Disputes and Auditor Notes*
 - *Equivalence criteria defined in
   `Operations/Gate_05_Separation_Thermal.md`*
@@ -1348,9 +1348,9 @@ Unknown until a concrete gap is found within a class.
 
 | ID | Dispute Summary | Positions in Conflict | Risk | Status | Owner |
 |----|-----------------|-----------------------|------|--------|-------|
-| DS-001 | "Purification stage" terminology may cause semantic overlap with Spin_Chamber_v0.md and misrepresent the Material Separation Gate's function | Position A: Purification is correctly defined broadly — "Spin chamber or any mechanism achieving comparable separation output" — the Gate fits this definition and no rename is needed. Position B: The Gate does not purify in metallurgical terms; calling its stage Purification creates confusion about what the module does and risks semantic drift across the repository | Low | Open | Architecture/Forge_flow.md |
+| FL-DS-001 | "Purification stage" terminology may cause semantic overlap with `Operations/Gate_05_Separation_Thermal.md` and misrepresent `Operations/Gate_04_Separation_Mechanical.md`'s function | Position A: Purification is correctly defined broadly — "Spin chamber or any mechanism achieving comparable separation output" — the Gate fits this definition and no rename is needed. Position B: The Gate does not purify in metallurgical terms; calling its stage Purification creates confusion about what the module does and risks semantic drift across the repository | Low | Open | Architecture/Forge_flow.md |
 
-*DS-001 originates from ChatGPT audit of Operations/Gate_04_Separation_Mechanical.md
+*FL-DS-001 originates from ChatGPT audit of Operations/Gate_04_Separation_Mechanical.md
 (2026-05-15) and is logged there as a cross-reference. Resolution
 belongs here — if the Purification stage definition is revised,
 Operations/Gate_04_Separation_Mechanical.md File Purpose and position statement
@@ -2299,6 +2299,8 @@ deferred, not closed.
 
 ### Resolution Log
 
+- 2026-10-20: **Dispute ID disambiguated: DS-001 → FL-DS-001 (no content change to the dispute).** The bare ID "DS-001" was in use for four different disputes (the Auditor_Protocols dispute registered in `Unknowns.md`, this purification-stage terminology dispute, Gate_06's wire-sourcing dispute, and a closed naming dispute in `Tests/Trophic_Forge.md`). This dispute is now FL-DS-001 everywhere it is carried as live content (this file's Related Files and Defined Terms references, the Active Disputes row and its note, the Drift Indicator) and in its mirror in `Operations/Gate_04_Separation_Mechanical.md`; the row's two superseded names (a pre-rename Spin Chamber filename and "the Material Separation Gate") are updated to the current gate files. Earlier dated log entries below keep the bare "DS-001" as recorded — read them as this dispute. Bare `DS-001` now means only the Auditor_Protocols dispute. Raised by an external sweep (Vibe) and by Grok; checked against source by Claude. Human-directed.
+
 - 2026-09-14 (rename pass, second tranche): **Gate_02_Triage.md operative body** renamed to Decision Point A–D / Oversight State; Lessons Learned and Auditor Notes left under historical names. Light pass on Gate_07, Tooling_Inventory, Discovery, Progress_Log, Electronics, Ops_Scope_Map. Canonical_Terms Disambiguation already updated in tranche 1. Archive/ untouched. FL-012 still Open pending final consistency sweep.
 
 - 2026-09-14 (rename pass, first tranche): **Decision Gates A–D → Decision Points A–D; Human/AI Oversight Gate → Oversight State.** Operative body of this file updated; Resolution Log historical narrative left under original names (same discipline as FL-009 — do not rewrite history). Gate_01–Gate_07 and Verification Gates 1–6 unchanged. Defined Terms FL-012 note updated to reflect the rename. Cross-file follow-up still required (Gate_02, Gate_01, Gate_03, Canonical_Terms, Ethical_Constraints, Discovery). FL-012 remains Open until Canonical_Terms Disambiguation section matches. Human-directed.
@@ -2512,7 +2514,7 @@ Lazarus Forge operational flow document:
 | Trigger | Reason |
 |---------|--------|
 | Any module redefines a term from the Defined Terms section without updating this file | This document is the repository vocabulary standard — unauthorized redefinition causes silent semantic drift across all files that inherit the term |
-| Purification stage definition revised without DS-001 resolution and repository-wide propagation | DS-001 is the active terminology dispute — any change here must update Operations/Gate_04_Separation_Mechanical.md, Unknowns.md, and any other file referencing the stage |
+| Purification stage definition revised without FL-DS-001 resolution and repository-wide propagation | FL-DS-001 is the active terminology dispute — any change here must update Operations/Gate_04_Separation_Mechanical.md, Unknowns.md, and any other file referencing the stage |
 | Gate logic modified without FL-001 resolution | FL-001 is In Progress — gate changes before boundary cases are resolved risk introducing new non-determinism |
 | Reduction module specified without FL-002 closure and cross-validation against Operations/Gate_04_Separation_Mechanical.md Inputs section | FL-002 and UNK-007 must resolve together — a Reduction spec that doesn't match the Gate's provisional feedstock envelope creates a hidden dependency failure |
 | Human/AI Oversight State removed or made optional | The Oversight State is the system's primary safeguard against premature irreversible action — removal requires explicit human authorization and full audit cycle |
