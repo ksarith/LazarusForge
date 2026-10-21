@@ -18,7 +18,7 @@
 | **Status** | Active |
 | **Challenges Subtype** | Problem-Statement |
 | **Version** | v0.3 |
-| **Last Updated** | 2026-09-06 (WA-003 cross-referenced to `Architecture/Local_Governance_Framework.md`; prior 2026-08-23 — WA-002 Resolved) |
+| **Last Updated** | 2026-10-20 (log catch-up, no content change; prior 2026-09-06 — WA-003 cross-referenced to `Architecture/Local_Governance_Framework.md`) |
 | **Owner** | Challenges/ |
 | **Verification Ref** | `Admin/Verification_Gates.md` |
 | **Ethical Anchor** | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
@@ -258,6 +258,8 @@ The river does not waste water. The forest does not waste leaves. Waste, in thos
 ---
 
 ## Resolution Log
+
+- 2026-10-20: **Log catch-up (no content change).** The 2026-09-06 edit (WA-003 cross-referenced to `Architecture/Local_Governance_Framework.md`) was recorded only in File State and the in-row note; it is logged here retroactively. File State's earlier "prior 2026-08-23 — WA-002 Resolved" also skipped the 2026-08-24 WA-004 discharge. Found by an external sweep (Vibe), checked against source by Claude. Human-directed.
 
 - 2026-08-24: **WA-004 (Negative-value waste fraction disposal) Resolved — Discharge via Consolidation, ratified by Human Governing Authority.** This row was never a second disposal problem — it has tracked `Operations/Gate_03_Reduction.md` GR-003 from the Challenges/ side since at least the 2026-08-15 pass that first wrote GR-003's real doctrine, per this row's own long-standing text ("this row tracks the same doctrine from the Challenges/ side, not a second one"). With GR-003 now fully closed (2026-08-24, Payment via Specification — five categories, concrete hold-duration and container values), the honest disposition for WA-004 is not a second specification pass but formal discharge to the canonical owner, matching this repository's existing Discharge via Consolidation precedent (`Operations/Gate_02_Triage.md` TS-004 → `Admin/Canonical_Terms.md` CT-002). Distinction from that precedent: CT-002 was still open at the time TS-004 discharged to it; here the canonical target (GR-003) is itself already Resolved, so WA-004's discharge carries GR-003's residuals (GR-003-R1 jurisdiction-dependent regulation, R2 physical validation, R3 Ethical_Constraints permanent-placement confirmation) by reference rather than tracking its own. Entry retained per the non-deletion principle, not removed. Human-directed.
 

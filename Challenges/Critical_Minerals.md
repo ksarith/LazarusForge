@@ -19,7 +19,7 @@
 | **Status** | Active |
 | **Challenges Subtype** | Problem-Statement |
 | **Version** | v0.3 |
-| **Last Updated** | 2026-07-11 |
+| **Last Updated** | 2026-10-20 (File State date corrected, no content change; prior 2026-08-10) |
 | **Owner** | Challenges/ |
 | **Verification Ref** | `Admin/Verification_Gates.md` |
 | **Ethical Anchor** | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
@@ -194,6 +194,8 @@ The landfill is a mine. The question is whether we build the tools to work it.
 ---
 
 ## Resolution Log
+
+- 2026-10-20: **File State correction (no content change).** Last Updated read 2026-07-11, but the 2026-08-10 pass edited the file (removed a stale registration note); the field is corrected. Found by an external sweep (Vibe), checked against source by Claude. Human-directed.
 
 - 2026-08-10: **Pseudo-audit (Grok, same limits).** Findings only; Spec Gates
   N/A for Challenges Problem-Statement subtype. (1) Open Unknowns **4** =

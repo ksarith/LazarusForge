@@ -28,7 +28,7 @@
 | Active Disputes | 0 |
 | Highest Risk | RE-UNK-001 — Eden Index variables lack defined measurement protocols; index is formally specified but not yet operationally measurable. RE-UNK-005 is a direct dependency. |
 | Sidecar Link | #auditor-notes--unknowns |
-| Last Audit | 2026-08-30 (RE-UNK-006 registration); prior 2026-06-30 dual audit (Grok + ChatGPT; G1–G2 conditional, G4–G6 cleared; dimensional consistency corrected v1.0.1 → v1.0.2) |
+| Last Audit | 2026-10-20 (external sweep by Vibe, checked against source by Claude; reference corrections only, no formula or doctrine change); prior 2026-08-30 (RE-UNK-006 registration); prior 2026-06-30 dual audit (Grok + ChatGPT; G1–G2 conditional, G4–G6 cleared; dimensional consistency corrected v1.0.1 → v1.0.2) |
 
 ---
 
@@ -55,7 +55,7 @@ The objective is to engineer localized physical nodes capable of reversing struc
 - Governance mechanics and human-variable handling — `Admin/Governance_Charter.md`, `Admin/Auditor_Protocols.md`
 - Chemical and analytical assay methods — `Architecture/Chemistry.md`
 - Water-quality remediation procedures — `Tests/Living_Waters.md`
-- Measurement instrument specification and calibration — `Experiments.md` (pending RE-UNK-001/005 resolution)
+- Measurement instrument specification and calibration — `Admin/Experiments.md` (pending RE-UNK-001/005 resolution)
 
 This file sets the objective function; it does not prescribe how any individual module hits it.
 
@@ -156,6 +156,8 @@ As the Lazarus Forge catalog expands, this file serves as the definitive archite
 
 ### Resolution Log
 
+- 2026-10-20: **Reference corrections (no formula or doctrine change).** (1) The Abandoned Paths row for the unbounded Eden Index denominator was dated 2026-06-30 but credits the +1 floor fix released as v1.1.0, which this log dates 2026-07-13 (the 2026-06-30 dual audit corrected a different issue, dimensional consistency v1.0.1 → v1.0.2); the row is re-dated 2026-07-13. (2) `Experiments.md` named in the Scope Boundary and as Resolution Vehicle for RE-UNK-001, RE-UNK-002 and RE-UNK-005 had no repo-root path; the file lives at `Admin/Experiments.md`, and the four references now say so. The header's "Date: June 2026" beside Version 1.1.0 is left as is, pending the human governing authority's version-stamp ruling. Found by an external sweep (Vibe), checked against source by Claude. Human-directed.
+
 - 2026-08-30: **RE-UNK-006 registered — post-abundance human behavioral drift, distinct from §6.2's entropy/friction framing.** Raised directly by the human governing authority: achieving genuine abundance (the file's own stated goal) may itself shift human psychology and expectations in ways §6.2's "human variables as friction against an optimized system" framing does not model — success-induced drift rather than degradation-induced drift, and possibly the inverse effect in either direction. Explicitly registered as speculative-by-design rather than spec-closable, per the human governing authority's own framing on registration ("uncertain how this will evolve... potential paths should be anticipated") and consistent with the Challenges/ folder's "define problems, don't freeze solutions" principle. Four candidate directions logged as open branches, none asserted as likely: complacency/reduced stewardship motivation, hedonic redefinition of "enough," generational drift in resource-discipline transmission, and the inverse — abundance freeing attention toward stewardship that scarcity had crowded out. Open Unknowns 5 → 6; Body Stability note updated to distinguish the five formula-operability unknowns from this one, which is not a formula or engineering blocker at any current Tier.
 
 - 2026-08-10: **Pseudo-audit (Grok, same limits).** Findings only. (1) Open
@@ -177,7 +179,7 @@ As the Lazarus Forge catalog expands, this file serves as the definitive archite
 | Subtype | Active |
 | Status | Open |
 | Blocking | Tier I gate advancement — $I_E$ cannot be computed without at least $W_{out}$ and $\Phi_{ext}$ baselines. Non-blocking at Exploration. |
-| Resolution Vehicle | Experiments.md — measurement protocol design for each variable; cross-ref Architecture/Chemistry.md (analytical methods), Tests/Living_Waters.md (water quality proxies for $\Omega_r$) |
+| Resolution Vehicle | Admin/Experiments.md — measurement protocol design for each variable; cross-ref Architecture/Chemistry.md (analytical methods), Tests/Living_Waters.md (water quality proxies for $\Omega_r$) |
 | First Cycle | 11 |
 
 ### RE-UNK-002
@@ -188,7 +190,7 @@ As the Lazarus Forge catalog expands, this file serves as the definitive archite
 | Subtype | Active |
 | Status | Open |
 | Blocking | Non-blocking at Exploration. Becomes blocking at Tier I gate review — threshold must be defensible before it can function as a pass/fail criterion. |
-| Resolution Vehicle | Experiments.md — literature survey or first-principles derivation; cross-ref Operations/Gate_03_Reduction.md, Architecture/Chemistry.md |
+| Resolution Vehicle | Admin/Experiments.md — literature survey or first-principles derivation; cross-ref Operations/Gate_03_Reduction.md, Architecture/Chemistry.md |
 | First Cycle | 11 |
 
 ### RE-UNK-003
@@ -221,7 +223,7 @@ As the Lazarus Forge catalog expands, this file serves as the definitive archite
 | Subtype | Active |
 | Status | Open |
 | Blocking | Tier I gate advancement — inherits RE-UNK-001 blocking condition. Non-blocking at Exploration. |
-| Resolution Vehicle | Experiments.md — baseline characterization protocol (site-entry measurement campaign); cross-ref Admin/Environmental_Constraints.md (site characterization), Tests/Living_Waters.md ($\Omega_r$ proxy candidates), Challenges/Water.md ($W_{out}$ baselines) |
+| Resolution Vehicle | Admin/Experiments.md — baseline characterization protocol (site-entry measurement campaign); cross-ref Admin/Environmental_Constraints.md (site characterization), Tests/Living_Waters.md ($\Omega_r$ proxy candidates), Challenges/Water.md ($W_{out}$ baselines) |
 | First Cycle | 11 |
 
 ### RE-UNK-006
@@ -241,7 +243,7 @@ As the Lazarus Forge catalog expands, this file serves as the definitive archite
 | Date | Path | Why Abandoned | Reconsider? |
 |---|---|---|---|
 | Pre-v1.0 | Metaphorical or theological "Eden" framing | Risk of dogmatic drift incompatible with an operational engineering heuristic and the Ethical Anchor's "do no harm" focus; Section 1 explicitly strips theological prerequisites | No |
-| 2026-06-30 | Unbounded/non-normalized Eden Index denominator | Original formulation allowed $I_E \to \infty$ as the system approached its own stated ideal state — a formula that diverges at its target condition can't function as a Tier-gate threshold. Corrected via +1 denominator floor, v1.1.0 | No — see Section 3 editorial note |
+| 2026-07-13 | Unbounded/non-normalized Eden Index denominator | Original formulation allowed $I_E \to \infty$ as the system approached its own stated ideal state — a formula that diverges at its target condition can't function as a Tier-gate threshold. Corrected via +1 denominator floor, v1.1.0 | No — see Section 3 editorial note |
 
 *Two additional entries proposed for this table (a rejected "single-metric Eden Score" and a rejected "top-down centralized governance model for Tier IV") were not adopted here — no textual evidence in this file's history supports either as a decision that was actually considered and rejected, as opposed to a plausible-sounding alternative. Abandoned Paths exists to prevent re-litigating real settled decisions; an entry without a documented origin doesn't serve that function and risks implying a debate happened that didn't. If either was in fact discussed and rejected, add it with a real date and source.*
 

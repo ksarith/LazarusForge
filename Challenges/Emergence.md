@@ -15,10 +15,10 @@
 
 | Field | Value |
 |---|---|
-| **Status** | Exploration |
+| **Status** | Active |
 | **Challenges Subtype** | Problem-Statement |
 | **Version** | v0.2 |
-| **Last Updated** | 2026-07-11 |
+| **Last Updated** | 2026-10-20 (Status aligned to Active; File State date corrected; prior 2026-08-17) |
 | **Owner** | Challenges/ |
 | **Verification Ref** | `Admin/Verification_Gates.md` |
 | **Ethical Anchor** | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
@@ -198,6 +198,8 @@ The Forge itself is not exempt from this standard. A governance architecture tha
 ---
 
 ## Resolution Log
+
+- 2026-10-20: **Status aligned to Active; File State date corrected.** (1) Status read Exploration with no recorded reason, while the other Problem-Statement lean-schema files (Water, Planned_Obsolescence, Critical_Minerals, Energy_Scarcity) read Active, and `Energy_Scarcity.md`'s 2026-07-12 log entry records Active as the doctrine-sanctioned value for this schema. Set to Active at the human governing authority's direction; the `Discovery.md` maturity-snapshot row is changed to match. (2) Last Updated read 2026-07-11, but the file was edited on 2026-08-10 (stale registration note removed) and 2026-08-17 (scope note); corrected. No change to doctrine, Engineering Requirements or Open Unknowns. Found by an external sweep (Vibe), checked against source by Claude. Human-directed.
 
 - 2026-08-17: **Scope note added — disambiguates this file's AI/governance
   sense of "emergence" from the general systems-engineering sense.**

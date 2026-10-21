@@ -18,7 +18,7 @@
 | **Status** | Active |
 | **Challenges Subtype** | Problem-Statement |
 | **Version** | v0.3 |
-| **Last Updated** | 2026-09-06 (WS-004 cross-referenced to `Architecture/Local_Governance_Framework.md`; prior 2026-07-11) |
+| **Last Updated** | 2026-10-20 (log catch-up, no content change; prior 2026-09-06 — WS-004 cross-referenced to `Architecture/Local_Governance_Framework.md`) |
 | **Owner** | Challenges/ |
 | **Verification Ref** | `Admin/Verification_Gates.md` |
 | **Ethical Anchor** | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
@@ -178,6 +178,8 @@ The river does not arrive from a central warehouse. It rises from the land it ha
 ---
 
 ## Resolution Log
+
+- 2026-10-20: **Log catch-up (no content change).** The 2026-09-06 edit (WS-004 cross-referenced to `Architecture/Local_Governance_Framework.md`) was recorded only in File State and the in-row note; it is logged here retroactively. File State's earlier "prior 2026-07-11" also skipped the 2026-08-10 pass, which removed a stale registration note. Found by an external sweep (Vibe), checked against source by Claude. Human-directed.
 
 - 2026-08-10: **Pseudo-audit (Grok, same limits).** Findings only; Spec Gates N/A for Challenges Problem-Statement subtype. (1) Open Unknowns **4** = WS-001–004, matches local table and `Unknowns.md`. (2) TH-003 correctly flagged as Blocking for Living Waters deployment (owned in Thermal_Systems; cross-ref intact). (3) Removed stale “Full tracking entries for WS cluster to be registered in Unknowns.md on next audit cycle” — all four already registered. No WS-* closed. Human-directed.
 - 2026-07-12: Ethical Anchor field corrected — was using a non-canonical variant (backticked, `Admin/`-prefixed: "Defer to `Admin/Ethical_Constraints.md` if present.") instead of the canonical plain-text string ("Defer to Ethical_Constraints.md if present."). Same drift found across 9 files in a full-repository Phase 1 sweep (ChatGPT, adapted local-disk harness run) — verified independently against source before patching. No semantic change; the anchor's meaning was never in question, only its exact text.

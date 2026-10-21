@@ -18,7 +18,7 @@
 | **Status** | Active |
 | **Challenges Subtype** | Problem-Statement |
 | **Version** | v0.3 |
-| **Last Updated** | 2026-09-06 (PO-004 cross-referenced to `Architecture/Local_Governance_Framework.md`; prior 2026-07-11) |
+| **Last Updated** | 2026-10-20 (log catch-up, no content change; prior 2026-09-06 — PO-004 cross-referenced to `Architecture/Local_Governance_Framework.md`) |
 | **Owner** | Challenges/ |
 | **Verification Ref** | `Admin/Verification_Gates.md` |
 | **Ethical Anchor** | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
@@ -185,6 +185,8 @@ The Forge is part of what changes the world around them.
 ---
 
 ## Resolution Log
+
+- 2026-10-20: **Log catch-up (no content change).** The 2026-09-06 edit (PO-004 cross-referenced to `Architecture/Local_Governance_Framework.md`) was recorded only in File State and the in-row note; it is logged here retroactively. File State's earlier "prior 2026-07-11" also skipped the 2026-08-10 pass, which removed a stale registration note. Found by an external sweep (Vibe), checked against source by Claude. Human-directed.
 
 - 2026-08-10: **Pseudo-audit (Grok, same limits).** Findings only; Spec Gates
   N/A for Challenges Problem-Statement subtype. (1) Open Unknowns **4** =

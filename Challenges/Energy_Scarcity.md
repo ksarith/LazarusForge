@@ -18,7 +18,7 @@
 | **Status** | Active |
 | **Challenges Subtype** | Problem-Statement |
 | **Version** | v0.1 |
-| **Last Updated** | 2026-09-06 (ES-001/ES-002 cross-referenced to `Architecture/Local_Governance_Framework.md`; prior 2026-07-19) |
+| **Last Updated** | 2026-10-20 (log catch-up, no content change; prior 2026-09-06 — ES-001/ES-002 cross-referenced to `Architecture/Local_Governance_Framework.md`) |
 | **Owner** | Challenges/ |
 | **Verification Ref** | `Admin/Verification_Gates.md` |
 | **Ethical Anchor** | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
@@ -174,6 +174,8 @@ The grid does not have to be the only shape reliable power can take.
 ---
 
 ## Resolution Log
+
+- 2026-10-20: **Log catch-up (no content change).** The 2026-09-06 edit (ES-001/ES-002 cross-referenced to `Architecture/Local_Governance_Framework.md`) was recorded only in File State and the in-row notes; it is logged here retroactively. Found by an external sweep (Vibe), checked against source by Claude. Human-directed.
 
 - 2026-08-10: **Pseudo-audit (Grok, same limits).** Findings only; Spec Gates
   N/A for Challenges Problem-Statement subtype. (1) Open Unknowns **3** =

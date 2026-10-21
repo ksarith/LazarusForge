@@ -12,13 +12,13 @@
 |--------------------|-------|
 | Status             | Exploration |
 | Challenges Subtype | Solution-Track |
-| Version            | v0.9.0 |
+| Version            | v0.11.0 |
 | Body Stability     | Transitional |
 | Spec Gates         | 0/6 |
 | Verification Ref   | `Admin/Verification_Gates.md` |
 | Ethical Anchor     | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 | Highest Risk       | Silent contamination cascades or toolhead destruction (CLF-003/CLF-006). |
-| Last Audit         | 2026-08-11 — CLF-010 Ratified (human governing authority), §4a; prior: 2026-08-07 (§4a Class-D gaming surface given its Challenge Class 8 adversarial pass, Class D Residency Cap proposed); prior: 2026-08-03 (§4a CLF-010 proposed resolution added); prior: 2026-07-31 (§7 CLF-006/CLF-009 doctrine ratified by human governing authority; CLF-006/CLF-009 moved Open → In Progress) |
+| Last Audit         | 2026-10-20 — external Skeptic/Auditor sweep (Vibe) verified File State counts and cross-references; version catch-up to v0.11.0 and CLF-005 note correction (Claude, human-directed); prior: 2026-08-11 — CLF-010 Ratified (human governing authority), §4a; prior: 2026-08-07 (§4a Class-D gaming surface given its Challenge Class 8 adversarial pass, Class D Residency Cap proposed); prior: 2026-08-03 (§4a CLF-010 proposed resolution added); prior: 2026-07-31 (§7 CLF-006/CLF-009 doctrine ratified by human governing authority; CLF-006/CLF-009 moved Open → In Progress) |
 | Auditor            | Claude — Synthesizer, §4a FIR boundary-condition taxonomy integrated as Proposed (drafted by Copilot, corrected and verified by Grok under Skeptic/Auditor constraints — broken LaTeX fixed, Class D's 0.5 factor explicitly marked Placeholder pending §7.3 hardening, blend-recording rule clarified, gaming surface flagged, premature "Resolved" status claim rejected per AP-032; all cross-references to §2a/§7.2/§7.3/CLF-006 verified exact against source before integration), human-directed, 2026-08-03; prior: Claude — Skeptic/Auditor (integration, 2026-07-07); prior: Grok, Gemini, Claude (2026-07-06); Claude — ratification pass (human-directed), 2026-07-17; Grok — drafted §7 contamination doctrine / MCM schema / validation logic (Skeptic/Auditor), Claude — Synthesizer (verified against source, integrated as §7, cross-consistency check vs Gate_04/05/Ethical_Constraints, adversarial stress-test additions), 2026-07-30; Claude — Synthesizer, expanded CLF-003 from single-line entry to full detail (§8), verified against Plastics.md and Gate_05 SC-004 source, human-directed, 2026-07-31; Claude — §7 ratified (human governing authority), CLF-006/CLF-009 status updated, 2026-07-31 |
 | Open Unknowns      | 9 (CLF-001–004, CLF-006–009 Open/In Progress + CLF-011 Open; CLF-005 Resolved 2026-07-07, CLF-010 Resolved 2026-08-11) — CLF-011 registered 2026-08-12 (gate-side fir_class consumption + Gate_04 sorting-class naming collision); CLF-006/CLF-009 In Progress; CLF-003 Open pending hardware |
 | Active Disputes    | 0 |
@@ -207,7 +207,7 @@ Recursive loops risk cascading contamination (heavy metals in polymers, alloy dr
 
 *CLF-003 and CLF-006 are Critical — CLF-003 blocks sustained polymer extrusion operations; CLF-006 blocks safe recursive-loop operation without defined contamination thresholds.*
 *CLF-004 is Critical — no electrolytic/electrorefining pathway may proceed without a chemical footprint decision, and a candidate pathway now exists pending a chlorine containment answer.*
-*CLF-005 — Resolved 2026-07-07 (see §1). Retained in this table as a closed record rather than removed, consistent with this file's own audit trail practice.*
+*CLF-005 — Resolved 2026-07-07 (see §1 and the v0.6.0 Resolution Log entry). Not carried as a row in this table; CLF-010, resolved 2026-08-11, is the closed record retained here.*
 *CLF-006 and CLF-009 — Doctrine drafted 2026-07-30, ratified 2026-07-31 (human governing authority): contamination doctrine, Material Certainty Manifest schema, and validation/hardening logic, including a compound sub-threshold trigger and an assay-gated confidence ceiling surfaced by adversarial stress-testing. Full text in §7 below. Status: In Progress — doctrine is binding, but numeric thresholds remain provisional until hardened via §7.3's instrumented-cycle validation process. §7 does not itself resolve CLF-003 or CLF-004; CLF-004 remains fully untouched, and CLF-003 is treated separately below.*
 *CLF-003 — expanded 2026-07-31 from a single-line entry to full detail (§8). No extrusion hardware exists yet on either the polymer (`Operations/Plastics.md`) or metal (`Operations/Gate_05_Separation_Thermal.md` SC-004) path; provisional wear-tolerance numbers borrowed from §7.1 by citation. Still Critical/Open — documentation progress only, not a resolution.*
 
@@ -426,6 +426,9 @@ These numbers carry the same provisional, design-intent status as the rest of §
 ---
 
 ## Resolution Log
+
+- 2026-10-20: **v0.11.0 — version catch-up and two small corrections; no doctrine change.**
+  (1) The File State header read v0.9.0 while the log's last versioned entry is v0.10.0 (2026-08-03), and the changes logged 2026-08-07 (Class D Residency Cap), 2026-08-11 (CLF-010 ratified), 2026-08-12 (CLF-011 registered; `material_class` → `fir_class`) and 2026-08-14 (§4b; Gate_04/05/06 acknowledgment stubs) were never given version numbers. They are consolidated here under v0.11.0 at the human governing authority's direction; this is a labeling catch-up, not a content change. (2) The note under §6 claiming CLF-005 is retained as a row in the table was false — no CLF-005 row exists; reworded to point to §1 and the v0.6.0 entry. (3) For the record: the 2026-08-10 pseudo-audit below counted Open Unknowns as 10 (CLF-001–010); CLF-005 was already Resolved, so the correct count was 9 — noted here rather than rewriting that entry. Found by an external sweep (Vibe), checked against source by Claude. Human-directed.
 
 - 2026-08-14: **§4b drafted (Claude); Gate_04/05/06 acknowledgment stubs added (this pass).**
   Prior session summaries (Claude + Grok) claimed §4b already existed as

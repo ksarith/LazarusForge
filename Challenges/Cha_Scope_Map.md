@@ -64,7 +64,7 @@ Note: this file's own Scope Boundary is `## 2. Scope Boundary` — a numbered he
 ### `Challenges/Return_To_Eden.md`
 **Subtype:** Solution-Track · Status: Exploration · Gates: None cleared (G1-G2 conditional, G4-G6 cleared per 2026-06-30 audit) · 6 Open Unknowns (RE-UNK-001–006) · Risk: RE-UNK-001 (Eden Index variables formally specified but not operationally measurable; RE-UNK-005 directly dependent)
 **Owns (In-Scope):** Eden Index ($I_E$) as cross-system evaluation heuristic; four Technical Challenge Tiers; Primary Challenge Metrics as index-level pass/fail criteria; the systemic "toward or away from Eden" heuristic question applied at architecture level.
-**Does not own (arrow):** Hardware/mechanical implementation (`Air_Scrubber.md`, `Plastics.md`, `Woodworking.md`) · governance mechanics (`Admin/Governance_Charter.md`, `Admin/Auditor_Protocols.md`) · chemical/analytical assay (`Architecture/Chemistry.md`) · water-quality remediation (`Tests/Living_Waters.md`) · measurement instrument spec (`Experiments.md`, pending RE-UNK-001/005).
+**Does not own (arrow):** Hardware/mechanical implementation (`Air_Scrubber.md`, `Plastics.md`, `Woodworking.md`) · governance mechanics (`Admin/Governance_Charter.md`, `Admin/Auditor_Protocols.md`) · chemical/analytical assay (`Architecture/Chemistry.md`) · water-quality remediation (`Tests/Living_Waters.md`) · measurement instrument spec (`Admin/Experiments.md`, pending RE-UNK-001/005).
 **Explicitly states its own limit:** "This file sets the objective function; it does not prescribe how any individual module hits it."
 
 ### `Challenges/Waste.md`
@@ -96,6 +96,8 @@ No corrections were needed in this folder — no stale cross-references, no miss
 ---
 
 ## Resolution Log
+
+- 2026-10-20: **Log catch-up and one path fix.** The file's Last Reviewed date (2026-09-04) has no entry recording what that review changed; the entries already reflect CLF-011 (registered 2026-08-12) and RE-UNK-006 (2026-08-30), and those counts were checked against the owning files and `Unknowns.md` on this date, but what the 09-04 review touched is not recorded and is not reconstructed here. The bare `Experiments.md` in the Return_To_Eden entry is corrected to `Admin/Experiments.md`. Last Reviewed is not changed — this was a targeted check, not a full review. Found by an external sweep (Vibe), checked against source by Claude. Human-directed.
 
 - 2026-08-08: **File created — fourth folder in the Scope_Map rollout**,
   following Admin/ (2026-08-07), Architecture/ and Operations/ (both

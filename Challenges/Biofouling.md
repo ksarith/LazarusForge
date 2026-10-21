@@ -20,7 +20,7 @@
 | **Status** | Active |
 | **Challenges Subtype** | Problem-Statement |
 | **Version** | v0.3 |
-| **Last Updated** | 2026-07-11 |
+| **Last Updated** | 2026-10-20 (File State date and one ID attribution corrected; prior 2026-08-10) |
 | **Owner** | Challenges/ |
 | **Verification Ref** | `Admin/Verification_Gates.md` |
 | **Ethical Anchor** | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
@@ -130,7 +130,7 @@ The Forge's most developed response to biofouling is architectural rather than c
 Current approaches active in the repository:
 
 - **Sacrificial Shell System** — `Tests/Support_Raft.md` defines the modular outer hull panel design that accepts intentional colonization on designated sacrificial surfaces while protecting the load-bearing inner hull from direct biological contact. Panels are designed for scheduled shedding and rapid replacement. Shed panels are deposited as structured reef substrate — the colonization that accumulated on the Forge's hull becomes habitat contribution rather than waste. The biological pressure does not go away; it is redirected.
-- **Sacrificial anodes from Forge outputs** — `Tests/Support_Raft.md` GK-002 and `Architecture/Geck_forge_seed.md` address the selection and deployment of sacrificial anodes produced from recovered zinc, aluminum, and magnesium fractions from `Operations/Gate_04_Separation_Mechanical.md` and `Operations/Gate_05_Separation_Thermal.md`. The material the Forge recovers from salvage becomes the material that protects the Forge from galvanic corrosion. The loop closes.
+- **Sacrificial anodes from Forge outputs** — `Architecture/Geck_forge_seed.md` (GK-002) and `Tests/Support_Raft.md` (which depends on GK-002's resolution) address the selection and deployment of sacrificial anodes produced from recovered zinc, aluminum, and magnesium fractions from `Operations/Gate_04_Separation_Mechanical.md` and `Operations/Gate_05_Separation_Thermal.md`. The material the Forge recovers from salvage becomes the material that protects the Forge from galvanic corrosion. The loop closes.
 - **Hydrodynamic doctrine from Friction_Dynamics** — `Architecture/Friction_Dynamics.md` §5.1–§5.2 quantifies the drag penalty imposed by fouled surfaces and defines the boundary layer disruption mechanisms that biofouling introduces. §7.2 addresses the abrasive wear mechanisms from biofouling debris entering bearing and seal clearances. These sections provide the engineering baseline for calculating what fouling actually costs in energy and component life — making the case for mitigation in falsifiable terms rather than general concern.
 - **Ultrasonic attachment prevention** — piezoelectric transducer arrays powered by parasitic energy harvested from ambient fluid flow or thermal gradients are an active approach under exploration. High-frequency acoustic waves at structural nodes and fluid channels disrupt the initial biofilm formation that anchors macro-fouling colonizers. The energy source is the environment itself. The approach avoids chemical toxicity entirely.
 - **Biomimetic surface topography** — `Operations/Plastics.md`'s fabrication loop provides the material basis for engineered surface textures — micro-topographies modeled on sharkskin and lotus leaf geometries — that reduce the mechanical purchase available to sessile organisms. Applied to hull surfaces and structural joints from recycled polymer feedstock, these surfaces make attachment harder without making the environment more hostile.
@@ -186,6 +186,8 @@ The barnacle is not the enemy. It is evidence that the environment is alive and 
 ---
 
 ## Resolution Log
+
+- 2026-10-20: **File State and reference corrections (no doctrine change).** (1) Last Updated read 2026-07-11, but the 2026-08-10 pass edited the file (removed a stale registration note); corrected. (2) Current Approaches attributed GK-002 to both `Tests/Support_Raft.md` and `Architecture/Geck_forge_seed.md`; GK-002 is owned by `Architecture/Geck_forge_seed.md` (this file's own Scope Boundary and `Unknowns.md`), and `Tests/Support_Raft.md` depends on its resolution — reworded accordingly. Found by an external sweep (Vibe), checked against source by Claude. Human-directed.
 
 - 2026-08-10: **Pseudo-audit (Grok, same limits).** Findings only; Spec Gates
   N/A for Challenges Problem-Statement subtype. (1) Open Unknowns **4** =
