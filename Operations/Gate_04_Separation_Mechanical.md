@@ -556,9 +556,9 @@ Path B (human contract-acceptance) is taken per §4b.
 
 | ID | Dispute Summary | Positions in Conflict | Risk | Status | Owner |
 |----|-----------------|-----------------------|------|--------|-------|
-| DS-001 | "Purification stage" terminology may cause semantic overlap with `Operations/Gate_05_Separation_Thermal.md` | Position A: Gate sits within Purification stage per `Architecture/Forge_flow.md` definition ("any mechanism achieving comparable separation output"). Position B: Gate does not purify in metallurgical terms — should be called "Mechanical Diversion Stage" or "Pre-Thermal Classification Stage" to avoid confusion | Low | Open | `Architecture/Forge_flow.md` |
+| FL-DS-001 | "Purification stage" terminology may cause semantic overlap with `Operations/Gate_05_Separation_Thermal.md` | Position A: Gate sits within Purification stage per `Architecture/Forge_flow.md` definition ("any mechanism achieving comparable separation output"). Position B: Gate does not purify in metallurgical terms — should be called "Mechanical Diversion Stage" or "Pre-Thermal Classification Stage" to avoid confusion | Low | Open | `Architecture/Forge_flow.md` |
 
-*DS-001 is a cross-module terminology question. Resolution belongs
+*FL-DS-001 is a cross-module terminology question. Resolution belongs
 in `Architecture/Forge_flow.md` — if the flow document's Purification
 definition is revised to exclude mechanical diversion, this file's
 position statement must be updated to match. No unilateral change
@@ -1023,6 +1023,8 @@ them defeats the purpose of having a mirrored stopgap.
   the wrong end of the file; caught against the three confirmed
   files and corrected before finalizing. Human-directed.
 
+- 2026-10-20: **Dispute ID disambiguated: DS-001 → FL-DS-001 (no content change).** The Active Disputes row, its note and the Drift Indicator now use FL-DS-001, matching the owning dispute in `Architecture/Forge_flow.md`; the bare ID was shared by four different disputes. The 2026-05-15 log entries above keep the bare ID as recorded. Raised by an external sweep (Vibe) and by Grok; checked against source by Claude. Human-directed.
+
 ---
 
 ## Abandoned Paths
@@ -1055,7 +1057,7 @@ Material Separation Gate:
 | Feedstock class expands beyond non-powdered reduced metallic without assumptions review | ASM-001 expiry trigger — particle envelope, RPM bands, and sensor calibration all change with feedstock class |
 | Replication scaling abandoned in favor of enlargement without ASM-006 review | Core scaling doctrine — override requires explicit audit and documented justification |
 | Geometry correction algorithm advanced without MG-004 resolution | Sensor cross-check cannot function as designed without specified algorithm |
-| `Architecture/Forge_flow.md` revises Purification stage definition without DS-001 review | Gate's position in system flow depends on flow document definition — any change must propagate here |
+| `Architecture/Forge_flow.md` revises Purification stage definition without FL-DS-001 review | Gate's position in system flow depends on flow document definition — any change must propagate here |
 
 ### Canonical Drift Triggers
 

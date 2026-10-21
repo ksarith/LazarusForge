@@ -878,9 +878,9 @@ evidence) or Path B (human contract-acceptance) is taken per §4b.
 
 | ID | Dispute Summary | Positions in Conflict | Risk | Status | Owner |
 |----|-----------------|-----------------------|------|--------|-------|
-| DS-001 | Whether internally produced wire from Spin Chamber output is sufficient for v0 arc welding without external sourcing at bootstrap | Position A: Internal wire production from SC-004 is the goal and should be validated before arc welding qualification begins — using external wire delays the self-replication proof of concept. Position B: External wire sourcing at bootstrap is correct doctrine per purchase-what-cannot-be-produced — arc welding qualification should not wait on SC-004 validation, which is itself unvalidated | Low | Open | Operations/Gate_06_Fabrication.md |
+| GF-DS-001 | Whether internally produced wire from Spin Chamber output is sufficient for v0 arc welding without external sourcing at bootstrap | Position A: Internal wire production from SC-004 is the goal and should be validated before arc welding qualification begins — using external wire delays the self-replication proof of concept. Position B: External wire sourcing at bootstrap is correct doctrine per purchase-what-cannot-be-produced — arc welding qualification should not wait on SC-004 validation, which is itself unvalidated | Low | Open | Operations/Gate_06_Fabrication.md |
 
-*DS-001 is a sequencing dispute, not a technical one.
+*GF-DS-001 is a sequencing dispute, not a technical one.
 Both positions agree that internal wire production is
 the goal. The disagreement is whether arc welding
 qualification should wait for internal wire or proceed
@@ -1079,7 +1079,7 @@ scheduling conflicts arise.
 
 ---
 
-### GF-005 — Utilization stage has no owning file
+### GF-005 — Utilization → fabrication feedback-path governance not defined (re-scoped 2026-10-20; originally “Utilization stage has no owning file”)
 
 | Field         | Value                                            |
 |---------------|--------------------------------------------------|
@@ -1090,12 +1090,11 @@ scheduling conflicts arise.
 | Blocking      | No                                               |
 | Owner         | Operations/Gate_06_Fabrication.md                |
 | First Logged  | 2026-05-15                                       |
-| Last Reviewed | 2026-08-15                                       |
+| Last Reviewed | 2026-10-20                                       |
 
-**Description:** The Utilization stage — where
-fabricated parts enter service and real-world
-performance is validated — has no owning
-specification file in the repository.
+**Description (re-scoped 2026-10-20):** `Operations/Gate_07_Utilization.md` now owns the Utilization stage and specifies the outbound feedback paths (to this gate's fabrication decisions and precision-ceiling tracking, to `Architecture/Forge_Net.md`, and to `Architecture/Forge_flow.md`). What is still undefined is who governs the *closing* of the loop on this side: which file owns updating the precision-ceiling record from utilization data, by what trigger or rule, and how this gate's Section 8 feedback loop consumes what Gate_07 emits. Gate_07's open unknowns GU-001 (metric schema) and GU-005 (Forge Regeneration Threshold cycle) bear on what data the loop would carry, but neither assigns the receiving-side governance.
+
+*Original scope (2026-05-15), satisfied when Gate_07 was created: the Utilization stage had no owning specification file in the repository.*
 
 *Grok review 2026-08-15: STALE CLAIM FLAGGED. `Operations/Gate_07_Utilization.md` now exists and carries GU-001–005. The 2026-06-08 Resolution Log incorrectly stated “GF-005 now resolved.” GF-005 remains Open in both local sidecar and Unknowns.md Active Index. Re-scope consideration (ownership of the learning/feedback path) is legitimate but no closure performed this round. Cross-ref Gate_07 verified real.*
 
@@ -1107,6 +1106,7 @@ learning loop that improves fabrication quality
 over time has no closing mechanism.
 
 **Resolution Path:**
+- Re-scoped 2026-10-20: creating Gate_07 is done (GU-001–005; GU-002 Resolved). Remaining: define which file owns updating this gate's precision-ceiling record from utilization data and by what rule; specify this gate's receiving side (Section 8 loop) to match Gate_07's outbound feedback path; coordinate with GU-001 and GU-005 so the data the loop consumes is defined. The bullets below are the original path, kept as history.
 - Create Gate_07_Utilization.md — minimum content:
   performance metrics captured, failure mode
   logging, maintenance frequency tracking, and
@@ -1299,6 +1299,8 @@ the fire risk profile is materially different.
 
 ### Resolution Log
 
+- 2026-10-20: **GF-005 re-scoped; DS-001 → GF-DS-001 (human-directed).** (1) GF-005 stays Open, Minor, non-Blocking, but its subject changes from "Utilization stage has no owning file" (satisfied by Gate_07; Grok flagged it stale on 2026-08-15 and the 2026-06-08 log wrongly called it resolved) to the residual governance of the Utilization → fabrication feedback path; the original scope and path are kept in the entry as history. `Unknowns.md` carries the new title (v5.63). (2) The wire-sourcing dispute's bare ID "DS-001" is now GF-DS-001 in its Active Disputes row, note, Drift Indicator and the 2026-05-15 Abandoned Paths row; the bare ID was shared by four different disputes. Dated log entries keep the bare ID as recorded. Raised by an external sweep (Vibe) and by Grok; checked against source by Claude. Human-directed.
+
 - 2026-10-20: **Log catch-up (no content change): EC-013 descent section.** §EC-013 Descent Sequence — Gate_06 Fabrication / Hot Work was filed 2026-09-21 under Path A as Proposed/Placeholder: a short extension of the GF-007 hot-work shutdown procedure, Blocking for hot runs retained, and it does not close the EC-013 tracker. The filing was recorded in Last Audit/Auditor and the section's own status note but had no Resolution Log entry; it is logged here retroactively. Found by an external sweep (Vibe), checked against source by Claude. Human-directed.
 
 - 2026-09-10: **Metal-additive-manufacturing developments recognized (Grok-drafted, Claude-verified before applying).** James asked whether AM's evolution since this file was drafted warranted updated language; Grok proposed three minimal insertions recognizing WAAM/wire-arc DED as a natural future extension of the existing qualified-wire path — all three anchor locations verified against live text before applying (§1's "Arc welding opens the door" paragraph, §7's wire-qualification cross-reference line, §6's opening sentence). Confirmed no existing additive/WAAM/LPBF content anywhere in this file or Geck_forge_seed.md — genuinely new territory, not a duplicate. Added: a WAAM-recognition paragraph in §1 plus a Claude-added LPBF/bound-metal forward-looking note (clearly marked non-bootstrap, infrastructure-dependent) per explicit human direction to go slightly further than Grok's draft; a WAAM wire-characterization subsection in §7; a clarifying sentence in §6 confirming additive/directed-energy processes aren't exempt from qualification just because the wire itself is qualified; one discoverability line in Scope Boundary. No change to arc-welding-first bootstrap priority, SC-004/UNK-008 ownership, ASM-001/005, or PPE/safety doctrine. Human-directed.
@@ -1379,7 +1381,7 @@ the fire risk profile is materially different.
 | Date | Path | Why Abandoned | Reconsider? |
 |------|------|---------------|-------------|
 | 2026-05-15 | Fabrication as terminal endpoint — material goes in, parts come out, process ends | Fabrication without a feedback loop produces parts but no learning. Classification rules, precision ceiling, wire quality, and method capability all improve through fabrication data. A terminal fabrication stage breaks the learning loop that the entire system depends on | No — feedback loop doctrine is permanent |
-| 2026-05-15 | Waiting for internal wire production to be validated before beginning arc welding qualification | Gates two unresolved unknowns on each other — SC-004 and arc welding qualification are both unvalidated. Delaying arc welding qualification until SC-004 produces qualified wire means neither advances. External wire sourcing at bootstrap per purchase-what-cannot-be-produced doctrine allows arc welding to qualify independently | Reconsider if SC-004 produces wire samples before arc welding equipment is sourced — opportunistic parallel validation is valid if both happen to be available simultaneously. See DS-001 |
+| 2026-05-15 | Waiting for internal wire production to be validated before beginning arc welding qualification | Gates two unresolved unknowns on each other — SC-004 and arc welding qualification are both unvalidated. Delaying arc welding qualification until SC-004 produces qualified wire means neither advances. External wire sourcing at bootstrap per purchase-what-cannot-be-produced doctrine allows arc welding to qualify independently | Reconsider if SC-004 produces wire samples before arc welding equipment is sourced — opportunistic parallel validation is valid if both happen to be available simultaneously. See GF-DS-001 |
 | 2026-05-15 | Single precision ceiling for all fabrication methods | Different methods have different ceilings — an angle grinder and a lathe operate at fundamentally different precision levels. A single ceiling overclaims what rough tools can achieve or underclaims what precision tools can achieve | No — method-specific precision ceiling tracking is correct |
 | 2026-05-15 | Achieving dimensional accuracy through forming precision alone | Variable feedstock and inherent forming imprecision make first-pass dimensional accuracy unreliable. Attempting to hit spec on the forming step produces parts that are sometimes correct and sometimes not, with no consistent path to correction | No — add-to-excess and mill-to-spec is permanent doctrine |
 | 2026-05-15 | Introducing fabrication methods informally before qualification | Informal method adoption means unknown capability, unknown failure modes, and unknown safety requirements operating on real parts. An unqualified method that produces a structural failure on a critical component sets back the entire fabrication program | No — formal method introduction is permanent doctrine |
@@ -1454,7 +1456,7 @@ additional local triggers specific to Gate_06_Fabrication:
 | New fabrication method introduced without qualification framework completion | Informal method adoption is a permanently abandoned path — unknown capability and unknown failure modes operating on real parts |
 | Wire feedstock used for structural arc welding without qualification status confirmed | Unqualified wire of unknown alloy composition may produce brittle, porous, or cracked welds — wire qualification status must be known before structural use |
 | Add-to-excess philosophy abandoned in favor of first-pass dimensional accuracy | Permanently correct doctrine for v0 capability levels — abandonment requires demonstrated forming precision that makes excess unnecessary, supported by GF-002 data |
-| DS-001 resolved without SC-004 wire quality assessment | Wire sequencing dispute resolution must include actual wire quality data — resolving DS-001 by assumption rather than evidence reopens the unknown |
+| GF-DS-001 resolved without SC-004 wire quality assessment | Wire sequencing dispute resolution must include actual wire quality data — resolving GF-DS-001 by assumption rather than evidence reopens the unknown |
 | Powder or laser welding introduced before arc welding qualification is complete | Arc welding is the gatekeeper — higher methods require the baseline to be established first. Abandoned path with version-specific reconsider conditions |
 | Utilization feedback loop broken — fabricated parts enter service without performance logging | Section 8 feedback doctrine requires Utilization data — if parts enter service without logging, the learning loop closes and precision ceiling cannot improve. GF-005 prerequisite |
 | PPE requirements reduced for welding on known clean base metal | Arc flash UV hazard exists regardless of base metal composition — PPE reduction based on material class is not valid. Helmet shade and gloves are always required |
