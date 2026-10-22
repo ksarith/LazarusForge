@@ -648,8 +648,8 @@ recommended here for terrestrial v0.
   1. Spin Chamber Gen-0 operational run demonstrates stable
      melt output
   2. Welding wire specification and qualification requirements
-     are defined (currently unowned — see cross-module gap
-     noted in Scope Boundary)
+     are defined (owned by `Architecture/Geck_forge_seed.md`
+     UNK-008 since 2026-07-19 — see Scope Boundary)
   3. Draw speed control method is selected and integrated
      with instrumentation spec
 - Discharge via Trajectory — route full nozzle specification
@@ -910,6 +910,8 @@ G2 scope decision.
 ---
 
 ### Resolution Log
+
+- 2026-10-20: **Stale ownership fragment corrected (no doctrine change).** The nozzle-design trigger list still described welding-wire specification as "currently unowned — see cross-module gap noted in Scope Boundary," although the 2026-08-08 pass had already corrected the Scope Boundary to record the 2026-07-19 reassignment of UNK-008 to `Architecture/Geck_forge_seed.md`. The trigger now says so. Found by an external sweep (Vibe), checked against source by Claude. Human-directed.
 
 - 2026-10-20: **Log catch-up and File State count correction (no content change).** (1) SC-010 ("Class C" terminology not reconciled against Gate_04) was registered 2026-09-08, found during the HP-006 cross-layer reconciliation, and recorded only in its sidecar entry; logged here retroactively. (2) §EC-013 Descent Sequence — Gate_05 Spin Chamber was filed 2026-09-20 under Path A as Proposed/Placeholder (Blocking for hot runs retained; does not close the EC-013 tracker); it was recorded in Last Audit/Auditor and the section's own status note but had no Resolution Log entry, and is logged here retroactively. (3) File State read 9 substantively open and was not updated for SC-010; corrected to 10, counting SC-001 In Progress as the file's 2026-08-14 entry already did. Found by an external sweep (Vibe), checked against source by Claude. Human-directed.
 - 2026-08-14: **Claude resolution-path review (Round 5 — Operations
