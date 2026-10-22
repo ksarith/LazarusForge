@@ -16,8 +16,8 @@
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-05-14 (Gemini 3 Flash — Skeptic/Auditor); revised 2026-06-08  |
-| Auditor          | Gemini 3 Flash — Skeptic/Auditor                                    |
+| Last Audit       | 2026-10-20 — external Skeptic/Auditor sweep (Vibe) checked against source by Claude (human-directed): File State refreshed (it had not moved since 2026-06-08 although the log records a 2026-08-10 pseudo-audit and a 2026-09-08 body edit), two log claims annotated, a CO-002 routing note and a consumables note added; prior: 2026-05-14 (Gemini 3 Flash — Skeptic/Auditor); revised 2026-06-08 |
+| Auditor          | Claude — 2026-10-20 corrections (human-directed, from an external Vibe sweep); Gemini 3 Flash — Skeptic/Auditor |
 | Open Unknowns    | 2                                                                   |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | Low                                                                 |
@@ -216,6 +216,8 @@ manifest rather than this taxonomy. A G.E.C.K. is considered insufficient if it 
 support at least one full maintenance cycle for each Critical component. The taxonomy
 defines what must exist; the G.E.C.K. ensures it can keep existing.
 
+*Note (2026-10-20): `Architecture/Geck_forge_seed.md` does not yet carry a consumables, wear-parts or redundancy manifest, or a maintenance-cycle sufficiency criterion; the routing above points to doctrine not yet written, not to existing content. No new Unknown is registered for it here.*
+
 **Proxy/Downgrade paths:** When a critical component is unavailable at spec, a
 lower-capability substitute is acceptable if it allows the loop to close in degraded form.
 Document the substitution.
@@ -331,9 +333,12 @@ criterion — the Forge cannot confirm loop closure with confidence.
 material class and part category at v0. Defer precise values to first fabrication trials;
 tolerance requirements emerge from actual loop closure attempts, not pre-specification.
 
+*Routing note (2026-10-20): the 2026-08-10 log entry's "owned resolution path via PR-001" is not supported by this entry or by `Architecture/Precision.md`; Precision.md names its §III Metrology Doctrine as the CO-002 route, and says it "closes CO-002 in Components.md," yet CO-002 is still Open here and in `Unknowns.md`. Held for the human governing authority's ruling; Status unchanged.*
 ---
 
 ### Resolution Log
+
+- 2026-10-20: **Annotations and log catch-up from an external Skeptic/Auditor sweep (Vibe; human-directed; checked against source by Claude).** (1) The 2026-09-08 entry below says `Operations/Tooling_Inventory.md` is "the new file satisfying" FL-004. FL-004 in `Architecture/Forge_flow.md` is "Tooling inventory owned but unpopulated," Status Open: the new file resolved the ownership half and created the condition FL-004 still tracks (population). Read that entry accordingly. (2) The 2026-08-10 entry's "CO-002 Minor, owned resolution path via PR-001" has no support in CO-002's sidecar; a routing note is added there (see CO-002). (3) CO-001's sidecar shows Risk "Low (downgraded from Medium)"; no log entry records when or why — recorded here as unrecorded, not reconstructed. (4) Bootstrap Doctrine's pointer to "the G.E.C.K. manifest" for consumables and redundancy now carries a dated note that Geck_forge_seed.md has no such content yet. (5) File State Last Audit and Auditor refreshed. Found by an external sweep (Vibe), checked against source by Claude. Human-directed.
 
 - 2026-09-08: Added a Scope Boundary "DOES NOT define" cross-reference
   to `Operations/Tooling_Inventory.md`, the new file satisfying

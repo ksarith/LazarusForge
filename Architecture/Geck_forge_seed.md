@@ -17,9 +17,9 @@
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-05-04 (Claude — Skeptic/Auditor); revised 2026-06-08           |
-| Auditor          | Claude — Skeptic/Auditor                                            |
-| Open Unknowns    | 3                                                                   |
+| Last Audit       | 2026-10-20 — external Skeptic/Auditor sweep (Vibe) checked against source by Claude (human-directed): Open Unknowns recounted, two Precision.md section pointers and one routing claim corrected, File State refreshed (it had not moved since 2026-06-08 although the log records body work on 2026-07-19, 2026-08-03 and 2026-08-06); prior: 2026-05-04 (Claude — Skeptic/Auditor); revised 2026-06-08 |
+| Auditor          | Claude — 2026-10-20 corrections (human-directed, from an external Vibe sweep); Claude — Skeptic/Auditor |
+| Open Unknowns    | 4 (GK-002, GK-003, GK-004, UNK-008 — every sidecar not Resolved; matches Unknowns.md) |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | Medium                                                              |
 | Sidecar Link     | #auditor-notes--unknowns                                            |
@@ -226,7 +226,7 @@ Favor smaller weld units — finer passes, lower heat input per pass — over la
 
 **Honest limit, not a monotonic rule:** this does not mean smaller is always better without bound. Excessive pass count reintroduces problems from a different direction — accumulated inter-pass residual stress, and if passes don't get adequate cooling between them, total arc-on time and cumulative heat input can approach or exceed a coarser single-pass approach. There is a real optimum weld-unit size for a given joint and material, not an unbounded improvement curve. Consistent with `Architecture/Precision.md`'s own doctrine: a stated precision or efficiency ceiling must be an honest bound demonstrated in practice, not an aspirational claim.
 
-**Remaining open work (UNK-008, still Open):** this doctrine establishes the *design principle*, not the *specification*. Still needed: actual welding wire specification and qualification (wire diameter/alloy suited to small-pass work), the specific weld-unit size/power envelope that qualifies as "small" for G.E.C.K. purposes, and empirical validation of the distortion-reduction claim against `Operations/Gate_05_Separation_Thermal.md`'s planned wire extrusion interface once that interface exists. Cross-reference `Architecture/Precision.md` §V (Precision Threshold) for the ceiling-declaration framework this doctrine feeds.
+**Remaining open work (UNK-008, still Open):** this doctrine establishes the *design principle*, not the *specification*. Still needed: actual welding wire specification and qualification (wire diameter/alloy suited to small-pass work), the specific weld-unit size/power envelope that qualifies as "small" for G.E.C.K. purposes, and empirical validation of the distortion-reduction claim against `Operations/Gate_05_Separation_Thermal.md`'s planned wire extrusion interface once that interface exists. Cross-reference `Architecture/Precision.md` §I (Precision as a Capability Ceiling) for the ceiling-declaration framework this doctrine feeds.
 
 **Feedstock Self-Sufficiency (v0→v1 growth target, not a v0 baseline):** At v0, the Fabrication
 Module's joining capability may rely on procured or salvaged joinable stock per Section IV
@@ -552,7 +552,7 @@ Version Mapping.
 precision doctrine now lives there: T0–T4 tolerance tier system, precision ceiling
 doctrine, metrology doctrine, salvage equipment derating, and fabrication-precision
 feedback loop. Section V cross-reference updated to `Architecture/Precision.md`. CO-002
-in Components.md routes to PR-001 for resolution.
+in Components.md is addressed by Precision.md §III (Metrology Doctrine); PR-001 is a separate, still-open precision-ceiling unknown, not CO-002's route (corrected 2026-10-20 — see the Resolution Log). Whether that doctrine closes CO-002 is not settled: CO-002 remains Open in Components.md.
 
 ---
 
@@ -573,7 +573,7 @@ in Components.md routes to PR-001 for resolution.
 
 **Why It Matters:** An owning-file contradiction meant this unknown had a table entry but no file actually treating it as its responsibility — a bookkeeping gap of the same kind this repository's own audit discipline exists to catch.
 
-**Resolution Path:** §VI.4 above establishes the design *principle* (favor smaller weld units for tolerance and peak-power reasons, with an honest non-monotonic limit) but not the *specification*. Remaining: actual wire diameter/alloy selection suited to small-pass work, empirical validation against `Operations/Gate_05_Separation_Thermal.md`'s planned wire extrusion interface once built, and the specific power/size envelope that qualifies as "small" for G.E.C.K. purposes. Cross-reference `Architecture/Precision.md` §V for the ceiling-declaration framework this feeds into.
+**Resolution Path:** §VI.4 above establishes the design *principle* (favor smaller weld units for tolerance and peak-power reasons, with an honest non-monotonic limit) but not the *specification*. Remaining: actual wire diameter/alloy selection suited to small-pass work, empirical validation against `Operations/Gate_05_Separation_Thermal.md`'s planned wire extrusion interface once built, and the specific power/size envelope that qualifies as "small" for G.E.C.K. purposes. Cross-reference `Architecture/Precision.md` §I (Declaring the Ceiling) for the ceiling-declaration framework this feeds into.
 
 **Candidate resolution vehicle — car-derived weld feedstock (Proposed, 2026-08-03, human-directed; drafted by Copilot, audited and refined by Grok under Skeptic/Auditor constraints).** Does not resolve UNK-008. Adds a falsifiable acceptance-criteria table and a buildable apparatus sketch as a candidate pathway toward it, both explicitly Provisional/Placeholder pending first physical trials. The underlying assumption — that a salvaged car body supplies usable weld feedstock — was itself audited first: predominant feedstock must be mild/low-carbon steel (older-vehicle body panels and many structural members), coatings (paint, undercoating, zinc) must be removable in the regions processed, and heat-affected-zone behavior must stay within §VI.4's small-pass doctrine. None of that is confirmed on real stock yet — it remains PROVISIONAL/Analogous until measured.
 
@@ -588,6 +588,8 @@ in Components.md routes to PR-001 for resolution.
 ---
 
 ### Resolution Log
+
+- 2026-10-20: **Corrections and log catch-up from an external Skeptic/Auditor sweep (Vibe; human-directed; checked against source by Claude).** (1) *Open Unknowns recounted: 3 → 4.* The file has four sidecars that are not Resolved — GK-002, GK-003, GK-004 and UNK-008 — and `Unknowns.md` indexes the same four. The earlier entries below keep their arithmetic as recorded (2026-06-08 "3 to 2" while listing three open; 2026-07-19 "2 → 3"; the 2026-08-10 pseudo-audit's "3 = GK-002, GK-003, GK-004," which omits UNK-008), so they cannot all be true; the current count is 4. (2) *Two pointers corrected:* the UNK-008 text cited `Architecture/Precision.md` §V (Precision Threshold) for the ceiling-declaration framework; §V is the Fabrication-Precision Feedback Loop, and the framework lives in §I. (3) *GK-005's record said CO-002 "routes to PR-001"*; PR-001 is a separate open unknown, and Precision.md names its §III Metrology Doctrine as the CO-002 route. The record now says so. Whether that doctrine actually closes CO-002 is held for the human governing authority: Precision.md says it does, but CO-002 is still Open in Components.md and `Unknowns.md`. (4) File State Last Audit and Auditor refreshed. Not changed: the log's out-of-order entries; GK-002/003/004 Last Reviewed dates (2026-05-14); the GK-005 record's cross-reference list. Found by an external sweep (Vibe), checked against source by Claude. Human-directed.
 
 - 2026-08-10: **Pseudo-audit (Grok, same limits).** Findings only; Spec Gates
   left locked at 0/6. (1) Open Unknowns **3** = GK-002, GK-003, GK-004

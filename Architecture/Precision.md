@@ -16,9 +16,9 @@
 | Body Stability   | Volatile                                                            |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-06-05                                                          |
-| Auditor          | Claude — Architect/Auditor                                          |
-| Open Unknowns    | 5                                                                   |
+| Last Audit       | 2026-10-20 — PR-005 closed (Discharged); Open Unknowns recounted; external sweep by Vibe checked against source by Claude (human-directed); prior: 2026-06-05 |
+| Auditor          | Claude — 2026-10-20 corrections (human-directed, from an external Vibe sweep); Claude — Architect/Auditor |
+| Open Unknowns    | 4 (PR-001–PR-004; PR-005 Discharged 2026-10-20)                     |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | High                                                                |
 | Sidecar Link     | #auditor-notes--unknowns                                            |
@@ -599,14 +599,14 @@ declaration.
 
 | Field         | Value                     |
 |---------------|---------------------------|
-| Status        | Open                      |
+| Status        | Discharged                |
 | Risk          | Low                       |
 | Priority      | Minor                     |
 | Type          | Governance                |
 | Blocking      | No                        |
 | Owner         | Architecture/Precision.md |
 | First Logged  | 2026-06-05                |
-| Last Reviewed | 2026-06-05                |
+| Last Reviewed | 2026-10-20                |
 
 **Description:** This file is the intended resolution target
 for GK-005 in `Architecture/Geck_forge_seed.md`. GK-005
@@ -618,9 +618,12 @@ Geck_forge_seed.md, update GK-005 status and
 cross-reference this file. Same pattern as GMP-001
 for Governance_Migration_Protocol.md.
 
+**Resolution:** Closed 2026-10-20 — Discharged to `Architecture/Geck_forge_seed.md` GK-005, which was updated to Resolved on 2026-06-08 with the cross-reference this entry asked for. The entry stayed Open for about four and a half months and was still counted in the 2026-08-10 pseudo-audit's "Open Unknowns 5." Found by an external sweep (Vibe), checked against source by Claude. Human-directed.
 ---
 
 ### Resolution Log
+
+- 2026-10-20: **PR-005 closed (Discharged); File State refreshed.** PR-005's only condition — that GK-005 in `Architecture/Geck_forge_seed.md` be updated to Resolved with a cross-reference to this file — was met on 2026-06-08, but the entry stayed Open and was still counted in the 2026-08-10 pseudo-audit's "Open Unknowns 5 = PR-001–005." It is closed here as Discharged to GK-005's resolution record; Open Unknowns 5 → 4, and `Unknowns.md` v5.64 drops the row. Geck's GK-005 sidecar likewise never mentioned PR-005 (each file left the confirmation to the other). Separately noted, not changed: this file states its §III Metrology Doctrine "resolves CO-002" and "closes CO-002 in Components.md," but CO-002 is still Open in `Architecture/Components.md` and `Unknowns.md` — held for the human governing authority's ruling. Found by an external sweep (Vibe), checked against source by Claude. Human-directed.
 
 - 2026-08-10: **Pseudo-audit (Grok, same limits).** Findings only; Spec Gates
   left locked at 0/6. (1) Open Unknowns **5** = PR-001–005, matches local +
