@@ -29,8 +29,8 @@
 | Body Stability   | Volatile                                                            |
 | Spec Gates       | 1/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-07-31; CE-006 Resolution Path refreshed 2026-08-16 (`Admin/Resolution_Methodology.md` third applied case) — file-level Last Audit not bumped at the time; corrected 2026-08-30 |
-| Auditor          | Claude (2026-06-02); ChatGPT informal (2026-06-11); Claude retrofit; Claude — CE-006 logged (human-directed) 2026-07-07; Claude — CE-006 directed approach added (human-directed), 2026-07-17; Claude — CE-006 mechanism correction, CE-007 registered (Grok flag, cross-checked against source), 2026-07-19; Claude — Synthesizer, §2.3 expanded to full doctrine, §2.4 Dilution Doctrine added (CE-008, corrected from proposed CE-004 to avoid ID collision), §1.2 SCC extended, §3.2 NOₓ subsection added, CE-005 narrowed to In Progress, CE-006/CE-007 given quantitative scrubber chemistry and storage doctrine (Grok content, verified against source before adoption), human-directed, 2026-07-31; Claude — CE-006 vessel design sketch integrated after two rounds of correction (thermal-sink sizing, AS-003 prerequisite gate) verified against Air_Scrubber.md source; CE-006 moved Open → In Progress, human-directed, 2026-07-31 |
+| Last Audit       | 2026-10-20 — external Skeptic/Auditor sweep (Vibe) checked against source by Claude (human-directed): File State refreshed, the legacy Status section, four Downstream Dependents rows and a stale Unknowns.md bullet corrected; prior: 2026-07-31; CE-006 Resolution Path refreshed 2026-08-16 (`Admin/Resolution_Methodology.md` third applied case) — file-level Last Audit not bumped at the time; corrected 2026-08-30 |
+| Auditor          | Claude — 2026-10-20 corrections (human-directed, from an external Vibe sweep); Claude (2026-06-02); ChatGPT informal (2026-06-11); Claude retrofit; Claude — CE-006 logged (human-directed) 2026-07-07; Claude — CE-006 directed approach added (human-directed), 2026-07-17; Claude — CE-006 mechanism correction, CE-007 registered (Grok flag, cross-checked against source), 2026-07-19; Claude — Synthesizer, §2.3 expanded to full doctrine, §2.4 Dilution Doctrine added (CE-008, corrected from proposed CE-004 to avoid ID collision), §1.2 SCC extended, §3.2 NOₓ subsection added, CE-005 narrowed to In Progress, CE-006/CE-007 given quantitative scrubber chemistry and storage doctrine (Grok content, verified against source before adoption), human-directed, 2026-07-31; Claude — CE-006 vessel design sketch integrated after two rounds of correction (thermal-sink sizing, AS-003 prerequisite gate) verified against Air_Scrubber.md source; CE-006 moved Open → In Progress, human-directed, 2026-07-31 |
 | Open Unknowns    | 8                                                                   |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | High                                                                |
@@ -56,11 +56,11 @@
 | `Operations/Plastics.md` | Halogenated polymer rejection (PL-001) built on §4.1 Beilstein and §5 polymer degradation |
 | `Operations/Electronics.md` | Battery chemistry (§6); BFR hazard (§5.1); PCB etch neutralization (§2) |
 | `Operations/Air_Scrubber.md` | Scrubber design and AS-003 saturation monitoring built on §2 acid-base doctrine |
-| `Operations/Gate_05_Separation_Thermal.md` | Oxide burden (CE-002); redox chemistry of metal separation (§3.1) |
-| `Operations/Gate_03_Reduction.md` | Combustion chemistry (§3.2); contamination indicators (§4.3) |
+| `Operations/Gate_05_Separation_Thermal.md` | Oxidation/nitride chemistry (named co-owner in an SC entry's Owner field); galvanic series — the sole existing titanium mention. Oxide burden (CE-002) and redox chemistry (§3.1) are not cited there |
+| `Operations/Gate_03_Reduction.md` | One-way: Gate_03 does not cite this file and has no combustion content. Its Beilstein reuse runs through `Operations/Plastics.md` PL-001; this file's CE-006 routes residual NaOCl to Gate_03's GR-003 disposal model |
 | `Operations/Energy.md` | Salvaged cell assessment doctrine (§6); EV-003 containment |
-| `Operations/Gate_01_Intake.md` | Contamination identification (§4); GI-003 augmented detection |
-| `Operations/Gate_02_Triage.md` | Polymer identification (§5.2); Beilstein at Station 0 |
+| `Operations/Gate_01_Intake.md` | One-way: Gate_01 does not cite this file. Its contamination detection (GI-003) runs through `Operations/Plastics.md` PL-001's Beilstein test and `Challenges/Waste.md` WA-002 (Gate_01's 2026-08-15 convergence note) |
+| `Operations/Gate_02_Triage.md` | One-way: Gate_02 cites neither this file nor the Beilstein test. Beilstein is PL-001's (`Operations/Plastics.md`); Gate_02's own contamination handling is TS-002 (hold before further triage) |
 | `Tests/Support_Raft.md` | Galvanic corrosion mitigation SR-001 (§1.1–1.3) |
 | `Challenges/Biofouling.md` | MIC mechanism (§1.2); cathodic protection (§1.3) |
 | `Architecture/Mechanical_Structures.md` | Galvanic compatibility of mixed-metal salvage assemblies (§1.1) |
@@ -1332,6 +1332,8 @@ CE-006 remains **In Progress** — Blocking Yes for CLF-004 candidate pathway un
 
 ### Resolution Log
 
+- 2026-10-20: **Corrections from an external Skeptic/Auditor sweep (Vibe; human-directed; checked against source by Claude).** (1) *File State.* Last Audit still read 2026-07-31 with an appended note that the omission was "corrected 2026-08-30"; the date was never bumped, the Auditor field stopped at the same point, and the 2026-08-30 edit it refers to has no log entry. Both fields are refreshed today; the content of the 2026-08-30 edit is not reconstructed here. (2) *Status section.* "G1 and G2 assessed as passing" is the 2026-06-02 draft assessment; File State and the 2026-08-10 pseudo-audit hold Spec Gates at 1/6 pending formal audit. The section now says the claim is historical and superseded. (3) *Downstream Dependents.* The Gate_01, Gate_02, Gate_03 and Gate_05 rows described dependencies the gate files do not carry: Gates 01–03 contain no reference to this file; "Beilstein at Station 0" was attributed to Gate_02, which never mentions it (the test is `Operations/Plastics.md` PL-001's, reused by Gates 01 and 03); Gate_03 has no combustion content; Gate_05 cites this file for oxidation/nitride chemistry and the galvanic series, not oxide burden or redox. The rows now state what is actually cited and mark the relationship one-way where the gate file does not point back. (4) *Relationship list.* The Unknowns.md bullet ("CE-001 through CE-004 to be indexed at next update") now says CE-001–CE-008 are indexed. Not changed: the heading levels of Sections 2.3 and 2.4. Human-directed.
+
 - 2026-08-16: **CE-006 — Resolution_Methodology third applied case (chemistry/safety domain).**
   §1 confirmed remaining dependencies still hollow where expected (AS-003, Gate_05 thermal, CE-007 quantitative) and newly solid where expected (GR-003 two-outcome model now exists for residual NaOCl). §2 reused GR-003 rather than inventing a parallel disposition path. §3 caught a real staleness: the top-of-entry Resolution Path still listed detection/alarm and caustic-dosing items as remaining work after they had already been answered in body — refreshed to an explicit paper-complete vs equipment-gated split. §4 conclusion: paper surface on CE-006 is substantially exhausted; further progress requires hardware. §5 noted Arc_Scope_Map for later refresh. Status remains **In Progress**; Blocking Yes for CLF-004 unchanged. No unknowns opened or closed. Human-directed.
 
@@ -1516,7 +1518,8 @@ CE-006 remains **In Progress** — Blocking Yes for CLF-004 candidate pathway un
   basis for the biofouling challenge
 - `Admin/Ethical_Constraints.md` — chemical hazards are a primary category
   of harm this file helps prevent; chemical dual-use awareness is relevant
-- `Unknowns.md` — CE-001 through CE-004 to be indexed at next update
+- `Unknowns.md` — CE-001 through CE-008 are indexed there (confirmed by the
+  2026-08-10 pseudo-audit)
 
 ---
 
@@ -1524,9 +1527,11 @@ CE-006 remains **In Progress** — Blocking Yes for CLF-004 candidate pathway un
 
 Version 0.1 — initial draft (2026-06-02).
 
-**Gate status:** G1 (internal coherence) and G2 (physical plausibility as
-a doctrine document) assessed as passing at Draft/Exploration stage.
-G3 through G6 require formal audit pass by a different agent.
+**Gate status (historical, 2026-06-02; superseded by File State):** G1 (internal coherence)
+and G2 (physical plausibility as a doctrine document) were assessed as passing at the
+initial Draft/Exploration stage. The current standing is Spec Gates 1/6, held there by
+the 2026-08-10 pseudo-audit pending formal audit. G3 through G6 require formal audit
+pass by a different agent.
 
 **What must remain constant:**
 

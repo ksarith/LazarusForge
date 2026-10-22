@@ -56,10 +56,10 @@
 | `Architecture/Thermal_Systems.md` | Systems engineering integration principles |
 | `Architecture/Friction_Dynamics.md` | Peer file — broad engineering principles apply across all domains |
 | `Architecture/Chemistry.md` | Peer file — materials behavior and derating doctrine |
-| `Operations/Gate_06_Fabrication.md` | Forge-specific safety factors and tolerance standards |
+| `Operations/Gate_06_Fabrication.md` | Forge-specific safety factors and tolerance standards (one-way: Gate_06 does not cite this file) |
 | `Operations/Woodworking.md` | Wood derating and moisture behavior doctrine |
 | `Operations/Plastics.md` | Materials behavior and failure mode analysis |
-| `Architecture/Components.md` | Safety factors for salvaged component graduation |
+| `Architecture/Components.md` | Safety factors for salvaged component graduation (one-way: Components.md does not cite this file) |
 | `Tests/Leviathan_testing.md` | Engineering principles for autonomous system structural design |
 
 ---
@@ -577,6 +577,8 @@ exists to test.
 ---
 
 ### Resolution Log
+
+- 2026-10-20: **Downstream Dependents annotated (no doctrine change; human-directed).** The `Operations/Gate_06_Fabrication.md` and `Architecture/Components.md` rows claim this file as a source of safety factors, but neither file cites Engineering.md; both rows are marked one-way. The other seven dependents were not checked in this pass. Found by an external sweep (Vibe), checked against source by Claude. Human-directed.
 
 - 2026-08-10: **Pseudo-audit (Grok, same limits as Facilities/Electronics pass).**
   Findings only; Spec Gates left locked at 3/6. (1) Open Unknowns **7** =
