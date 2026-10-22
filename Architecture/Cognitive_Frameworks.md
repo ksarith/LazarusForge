@@ -16,8 +16,8 @@
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-08-07 (Authority & Tier Classification preface added; Confidence Algebra patches 1 and 2); prior: 2026-05-09 (ChatGPT — Synthesizer); revised 2026-06-08; revised 2026-06-27; revised 2026-07-26; revised 2026-07-28 |
-| Auditor          | Claude — Retrofit/Auditor; revised Claude — Synthesizer/Auditor; Gemini — Skeptic/Auditor (Exploration audit), Claude — Synthesizer/Auditor (verification against source, corrections), CF-DS-002 ratified by human governing authority, CF-DS-001 resolved (Claude + Grok, independently confirmed), 2026-07-26; Claude — Synthesizer/Auditor, Section IV revised with formal transition triggers from `Admin/Computational_Institutional_Reasoning.md` §5.4, CF-004 updated, Section IX consistency check performed (human-directed), 2026-07-28 |
+| Last Audit       | 2026-10-20 — external Skeptic/Auditor sweep (Vibe) checked against source by Claude (human-directed): the 2026-08-22 CF-001 sidecar edit logged retroactively, the Yellow regime mapping reworded, one stale dependency ID corrected; prior: 2026-08-07 (Authority & Tier Classification preface added; Confidence Algebra patches 1 and 2); prior: 2026-05-09 (ChatGPT — Synthesizer); revised 2026-06-08; revised 2026-06-27; revised 2026-07-26; revised 2026-07-28 |
+| Auditor          | Claude — 2026-10-20 corrections (human-directed, from an external Vibe sweep); Claude — Retrofit/Auditor; revised Claude — Synthesizer/Auditor; Gemini — Skeptic/Auditor (Exploration audit), Claude — Synthesizer/Auditor (verification against source, corrections), CF-DS-002 ratified by human governing authority, CF-DS-001 resolved (Claude + Grok, independently confirmed), 2026-07-26; Claude — Synthesizer/Auditor, Section IV revised with formal transition triggers from `Admin/Computational_Institutional_Reasoning.md` §5.4, CF-004 updated, Section IX consistency check performed (human-directed), 2026-07-28 |
 | Open Unknowns    | 5                                                                   |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | High                                                                |
@@ -351,9 +351,12 @@ to Yellow — not mere absence of new faults, consistent
 with this section's existing downward-transition
 requirement above.
 
-Green, Yellow, and Orange correspond to CIR §5.3's
-Stability Regimes (Stable Operating Zone / Neutral
-Equilibrium / Triage Zone, respectively). Red
+Green and Orange correspond to CIR §5.3's Stability
+Regimes (Green: Stable Operating Zone or Neutral
+Equilibrium, per the Green row above; Orange: Triage
+Zone). Yellow — debt rising ($dD_e/dt > 0$) but not yet
+past $\varepsilon_{\text{triage}}$ — is a pre-triage warning
+band that CIR §5.3 does not name as a regime. Red
 corresponds to the Collapse Region — note this
 requires the *second* derivative of debt to be
 sustained positive, i.e. debt growth that is itself
@@ -625,7 +628,7 @@ are the node weights. Propagation logic is not yet
 enforced — it is a future automation target.
 
 Example of current gap: EV-001 is Placeholder.
-EC-002 depends on EV-001. EC-002 cannot legitimately
+ECN-002 depends on EV-001. ECN-002 cannot legitimately
 be more confident than Placeholder, but nothing
 currently prevents a file from claiming otherwise.
 
@@ -1263,6 +1266,8 @@ Synthesizer/Auditor, human-directed.*
 ---
 
 ### Resolution Log
+
+- 2026-10-20: **Corrections and log catch-up from an external Skeptic/Auditor sweep (Vibe; human-directed; checked against source by Claude).** (1) *Logged retroactively:* the 2026-08-22 CF-001 sidecar edit — heartbeat window τ = 50ms defined per `Operations/Electronics.md` (Analogous confidence, from the "Why 50ms" note), CF-001 remains Blocking until a hardware prototype validates it at Measured confidence, and the sidecar was brought into line with `Unknowns.md`, which already carried the progress. It had been recorded only in the sidecar, outside the log and Last Audit. (2) *Yellow regime mapping reworded* (Section IV): the mapping sentence paired Green/Yellow/Orange with Stable Operating Zone / Neutral Equilibrium / Triage Zone, but the table's own Green row already includes Neutral Equilibrium, and Yellow's trigger (rising debt, not yet past the triage threshold) is not a regime CIR §5.3 names. The sentence now says so; no trigger, threshold or state changed. (3) *Section IX.3's example* now names ECN-002, the unknown that depends on EV-001 in `Unknowns.md`'s Dependency Clusters, instead of the stale pre-rename ID EC-002. (4) File State Last Audit and Auditor refreshed. Not changed: the out-of-order 2026-06-08/06-27 log entries and CF-002's Last Reviewed date. Found by an external sweep (Vibe), checked against source by Claude. Human-directed.
 
 - 2026-08-10: **Pseudo-audit (Grok, same limits).** Findings only; Spec Gates
   left locked at 0/6. (1) Open Unknowns **5** = CF-001–005, matches local

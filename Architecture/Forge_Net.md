@@ -29,11 +29,11 @@
 | Body Stability   | Volatile                                                            |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-09-06 — Priority-1 surgical pass (ChatGPT Architecture audit): epistemic/institutional weight taxonomy; PA-002 retargeted off DV-003; FN-004 transport language cleaned; FN-001/FN-005 sidecar descriptions aligned with Provisional Specs. (ChatGPT's claimed Ethical Anchor path defect was checked against `Admin/File_Template.md` and found false — the canonical string has no `Admin/` prefix; the field was already correct and was left unchanged after a brief incorrect edit was caught and reverted same day.) Prior body work 2026-08 (DV-001–006, PA-001–006, 10-class Battery). Prior header: 2026-05-18 / 2026-06-08. |
-| Auditor          | Grok — 2026-09-06 Priority-1 surgical pass; Claude — same-day correction (reverted an incorrect Ethical Anchor edit). Prior: Claude — Skeptic/Auditor (ChatGPT 2026-05-18); Grok — 2026-08-14 full Battery. |
+| Last Audit       | 2026-10-20 — external Skeptic/Auditor sweep (Vibe) checked against source by Claude (human-directed): File State refreshed for body work logged after the 2026-09-06 pass (§1.1 Network Invariants NI-1–NI-8, a later 2026-09-06 entry; §1.2 Offline Operational Envelope, 2026-09-07, including an ASM-001 assumption-text edit); Highest Risk corrected; FN-003 review note added; prior: 2026-09-06 — Priority-1 surgical pass (ChatGPT Architecture audit): epistemic/institutional weight taxonomy; PA-002 retargeted off DV-003; FN-004 transport language cleaned; FN-001/FN-005 sidecar descriptions aligned with Provisional Specs. (ChatGPT's claimed Ethical Anchor path defect was checked against `Admin/File_Template.md` and found false — the canonical string has no `Admin/` prefix; the field was already correct and was left unchanged after a brief incorrect edit was caught and reverted same day.) Prior body work 2026-08 (DV-001–006, PA-001–006, 10-class Battery). Prior header: 2026-05-18 / 2026-06-08. |
+| Auditor          | Claude — 2026-10-20 corrections (human-directed, from an external Vibe sweep); Grok — 2026-09-06 Priority-1 surgical pass; Claude — same-day correction (reverted an incorrect Ethical Anchor edit). Prior: Claude — Skeptic/Auditor (ChatGPT 2026-05-18); Grok — 2026-08-14 full Battery. |
 | Open Unknowns    | 5 (FN-001–005; structure specified, calibration open — see sidecars) |
 | Active Disputes  | 0                                                                   |
-| Highest Risk     | Medium                                                              |
+| Highest Risk     | High (FN-001 and FN-005: Risk High, Blocking — prerequisites for first network connection) |
 | Sidecar Link     | #auditor-notes--unknowns                                            |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
@@ -1064,7 +1064,7 @@ not after.
 | Blocking      | No                                               |
 | Owner         | Architecture/Forge_Net.md                    |
 | First Logged  | 2026-05-15                                       |
-| Last Reviewed | 2026-05-15                                       |
+| Last Reviewed | 2026-08-14 (Battery reached this entry — see review note) |
 
 **Description:** Anomalous contribution patterns that
 indicate gaming of the positive reinforcement system
@@ -1122,6 +1122,7 @@ inflate each other's trust weights.
   are defined and tested against simulated gaming
   scenarios, move to Section 4 as Simulated.
 - Cross-reference: ASM-007, Admin/Ethical_Constraints.md.
+- Review note (2026-08-14 Battery, recorded 2026-10-20): the 10-class Battery flagged Sybil/replay detection signatures as a possible FN-003 sub-item (Class 8). It is not yet scoped here, and this note changes no scope; see the 2026-08-14 Resolution Log entry.
 
 ---
 
@@ -1188,8 +1189,8 @@ bandwidth figure is selected here):
   Section 2.2 confidence labels accordingly.
 - Cross-reference: Tests/Leviathan_testing.md delay-tolerant
   networking doctrine.
-- Last Reviewed: 2026-09-06 (Priority-1 transport language
-  cleanup; no technology selected).
+- Review note: 2026-09-06 — Priority-1 transport language
+  cleanup; no technology selected.
 
 ---
 
@@ -1279,6 +1280,8 @@ See Resolution Log and §2.5.0.
 ---
 
 ### Resolution Log
+
+- 2026-10-20: **Corrections from an external Skeptic/Auditor sweep (Vibe; human-directed; checked against source by Claude).** (1) File State Last Audit and Auditor refreshed: they stopped at the 2026-09-06 Priority-1 pass although this log records §1.1 NI-1–NI-8 (a later 2026-09-06 entry) and §1.2 Offline Operational Envelope (2026-09-07) after it. (2) Highest Risk Medium → High: FN-001 and FN-005 are both Risk High and Blocking (prerequisites for first network connection). (3) FN-003's Last Reviewed read 2026-05-15 although the 2026-08-14 Battery flagged Sybil/replay detection signatures as a possible FN-003 sub-item; a review note is added and Last Reviewed set to 2026-08-14, with no scope change. (4) FN-004's duplicate "Last Reviewed" line is now a review note; the table row is the single field. Not changed: FN-002's Last Reviewed (the 2026-08-10 pseudo-audit checked counts only), the "trust score" wording in FN-003/FN-005 (§2.5.0 rule 3 already directs readers to interpret it as node reliability), and the Highest Risk convention, which the sweep found inconsistent across files. Found by an external sweep (Vibe), checked against source by Claude. Human-directed.
 
 - 2026-09-07: **§1.2 Offline Operational Envelope (ASM-001 bound) drafted.** Must continue / May degrade / Stops or queues tables; ties NI-1, §2.1 staleness doctrine, DV-002/006, NI-7/8, and Integration Hooks Critical class. ASM-001 assumption text updated to reference the envelope. Explicit non-claims (not full Gate offline specs, not energy independence, not partition state machine). Candidate. Human-directed; drafted by Grok.
 
