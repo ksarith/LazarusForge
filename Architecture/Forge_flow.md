@@ -31,8 +31,8 @@
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-09-10 — ChatGPT ran a full multi-phase audit (Phases 1-6: structural validation, scope validation, assumption extraction, internal coherence, cross-module consistency, evidence validation) under Auditor_Protocols.md v0.41; Claude verified every substantive claim against live source before acting. Six mechanical fixes applied directly (Lessons Learned heading restored over a pre-existing orphaned table, stale Gate Correspondence Oversight row corrected, FL-003 self-contradiction fixed, "Eight sequential decision gates" reworded, §1.3 bare filenames fully-qualified, illustrative example values labeled non-measured). Six new Unknowns registered (FL-008 through FL-013); FL-007 strengthened with cross-file evidence. One new finding beyond the audit itself: FL-001's Resolution Path cites a Gate_02_Triage.md worked example that doesn't exist (FL-009). One error caught in the audit's own output (EV-011 misattributed a quote's section). Prior: 2026-09-08/09 — fifteen resolution-log passes across two days: R0-R4 taxonomy (HP-001, propagated to Gate_03_Reduction.md), Oversight multi-exit formalization (HP-002), Flow Invariants §1.1 (HP-003), Gate D polarity rewrite (HP-004), boundary-case Examples 4-7 (HP-005 partial), cross-layer reconciliation spinning off FL-003/FL-004 (HP-006), Tooling_Inventory.md creation (HP-007), per-deployment wording + Deployment Localization Doctrine, Gate B Secondary Test + FL-005, Gate Decision Contracts §1.2 + explicit UNKNOWN transitions + re-entry contract (HP-008/009/015), terminal-state distinction (HP-014). Prior: 2026-08-08 |
-| Auditor          | Claude — Retrofit/Auditor                                           |
+| Last Audit       | 2026-10-20 — external Skeptic/Auditor sweep (Vibe) verified file size, counts and cross-references; Claude (human-directed) corrected the HP-001 contradiction in two places, annotated dead UNK references, fixed the FL-006 §1.3 pointer, renamed DS-001 to FL-DS-001, and logged retroactively the FL-006, FL-008–FL-012 and 2026-10-02 changes (this field had not moved since 2026-09-10 although the log and sidecars record changes through 2026-10-02); prior: 2026-09-10 — ChatGPT ran a full multi-phase audit (Phases 1-6: structural validation, scope validation, assumption extraction, internal coherence, cross-module consistency, evidence validation) under Auditor_Protocols.md v0.41; Claude verified every substantive claim against live source before acting. Six mechanical fixes applied directly (Lessons Learned heading restored over a pre-existing orphaned table, stale Gate Correspondence Oversight row corrected, FL-003 self-contradiction fixed, "Eight sequential decision gates" reworded, §1.3 bare filenames fully-qualified, illustrative example values labeled non-measured). Six new Unknowns registered (FL-008 through FL-013); FL-007 strengthened with cross-file evidence. One new finding beyond the audit itself: FL-001's Resolution Path cites a Gate_02_Triage.md worked example that doesn't exist (FL-009). One error caught in the audit's own output (EV-011 misattributed a quote's section). Prior: 2026-09-08/09 — fifteen resolution-log passes across two days: R0-R4 taxonomy (HP-001, propagated to Gate_03_Reduction.md), Oversight multi-exit formalization (HP-002), Flow Invariants §1.1 (HP-003), Gate D polarity rewrite (HP-004), boundary-case Examples 4-7 (HP-005 partial), cross-layer reconciliation spinning off FL-003/FL-004 (HP-006), Tooling_Inventory.md creation (HP-007), per-deployment wording + Deployment Localization Doctrine, Gate B Secondary Test + FL-005, Gate Decision Contracts §1.2 + explicit UNKNOWN transitions + re-entry contract (HP-008/009/015), terminal-state distinction (HP-014). Prior: 2026-08-08 |
+| Auditor          | Claude — Retrofit/Auditor (2026-10-20 corrections, human-directed, from an external Vibe sweep) |
 | Open Unknowns    | 6 — corrected 2026-10-02 (was 7; FL-001–006 are Open/In Progress, FL-007–013 are all Resolved, giving 6, not 7) |
 | Active Disputes  | 1                                                                   |
 | Highest Risk     | Medium                                                              |
@@ -228,8 +228,10 @@ order.
 **Irreversibility Levels** — Added 2026-09-08 to replace a flat
 irreversible/not-irreversible split with graded consequence.
 This taxonomy governs Forge_flow.md's own reversibility notes
-below. It is *not yet* extended to Operations/Gate_03_Reduction.md
-or any other file — that remains held (HP-001 residual scope).
+below, and was applied to Operations/Gate_03_Reduction.md's R4
+safety-doctrine language on 2026-09-08 (HP-001, Closed — see that
+file's Resolution Log). Extension to any other file is a separate
+decision; no open Held Proposal covers it.
 
 | Level | Meaning |
 |---|---|
@@ -730,12 +732,12 @@ the judgment auditable, not to remove it.*
 - Shredding, cutting, or milling
 - Size reduction only (no melting yet)
 - Reduction module specification owned by
-  Operations/Gate_03_Reduction.md — see FL-002, UNK-007
+  Operations/Gate_03_Reduction.md — see FL-002 (output-envelope
+  cross-validation; drift logged as GR-009 / MG-009)
 - *Reversibility: R4 — the flow's highest-consequence boundary.*
-  *Operations/Gate_03_Reduction.md still describes this step as*
-  *"the only irreversible step" in its own safety doctrine (GR-005,*
-  *ASM-001) — that language is intentionally untouched pending*
-  *separate review; see HP-001 in Held Proposals.*
+  *Operations/Gate_03_Reduction.md's safety doctrine (GR-005, ASM-001,*
+  *ASM-006) was aligned to this R4 language on 2026-09-08; see HP-001*
+  *(Closed) in Held Proposals and that file's Resolution Log.*
 - *Terminal for recovery in the sense that matters most — R4 is the*
   *point past which the item cannot be recovered as a discrete*
   *object. The material itself continues to Separation/Purification*
@@ -938,8 +940,11 @@ This document uses two identifier systems — they are not
 interchangeable:
 - **Local sidecar IDs** (FL-001, FL-002) — module-level
   unknowns with full detail in this file's sidecar
-- **Cross-module UNK-*** (UNK-007, UNK-008) — repository-level
-  navigation only, indexed in `Unknowns.md`
+- **Cross-module unknowns** — repository-level navigation only,
+  indexed in `Unknowns.md` under their owning-file prefixes. Early
+  references to UNK-007 and UNK-012 are retired IDs with no current
+  entry; UNK-008 (weld-wire qualification) is still in use and is
+  indexed in `Unknowns.md`.
 
 When referencing an unknown, use the local sidecar ID as
 primary. Use UNK-* only when the unknown has been formally
@@ -1440,7 +1445,9 @@ creates inconsistency across forge instances.
   have worked examples producing deterministic outcomes
   across multiple operators, move validated gate logic
   to Body as Measured.
-- Cross-module reference: UNK-012 in Unknowns.md
+- Cross-module reference: UNK-012 — a retired ID with no current
+  entry in `Unknowns.md`; the original target is not recorded, so
+  the reference is kept for provenance only.
 
 ---
 
@@ -1480,8 +1487,11 @@ against an unconfirmed input.
 - Until cross-validated, Operations/Gate_04_Separation_Mechanical.md's
   provisional feedstock envelope (Inputs section) stands as the
   best available constraint.
-- Cross-module reference: UNK-007 in Unknowns.md,
-  MG-007 in Operations/Gate_04_Separation_Mechanical.md.
+- Cross-module references: GR-009 (Operations/Gate_03_Reduction.md)
+  and MG-009 (Operations/Gate_04_Separation_Mechanical.md) — the
+  logged envelope drift. An earlier UNK-007 / MG-007 pointer here
+  predates the current IDs: UNK-007 has no entry in `Unknowns.md`
+  today, and MG-007 is the rotor-jam unknown, not the envelope.
 - **2026-09-09:** scoped this entry — confirmed still blocked on
   Reduction method selection (GR-002, not yet resolved). Found the
   two provisional envelope tables that stand in for the real
@@ -1655,7 +1665,7 @@ before this pass.
 
 | Field         | Value                                            |
 |---------------|--------------------------------------------------|
-| Status        | Open — authority half (B) re-verified 2026-09-14: procedure confirmed sound (EC-003's Recipient/Logging rows), but re-verification surfaced an unstated dependency on GOV-006 (operator-identity authentication), now cross-referenced in §1.2. Not Resolved — the GOV-006 dependency means this is a documented partial resolution, not a closeable one, until GOV-006 or an explicit scope decision addresses it. Evidence-ownership half (A) remains fully Open, untouched. |
+| Status        | Open — authority half (B) re-verified 2026-09-14: procedure confirmed sound (EC-003's Recipient/Logging rows), but re-verification surfaced an unstated dependency on GOV-006 (operator-identity authentication), now cross-referenced in §1.3. Not Resolved — the GOV-006 dependency means this is a documented partial resolution, not a closeable one, until GOV-006 or an explicit scope decision addresses it. Evidence-ownership half (A) remains fully Open, untouched. |
 | Risk          | Medium (raised from Low 2026-09-10 — ChatGPT Phase 8: the Escalate exit invokes an authority structure this repository has not named, which is a separation-of-powers interface gap, not an administrative filing problem) |
 | Priority      | Major (raised from Minor 2026-09-10)               |
 | Type          | Cross-Module / Governance                          |
@@ -1867,7 +1877,7 @@ explicitly rather than leaving implicit.
 | Blocking      | No                                                 |
 | Owner         | Architecture/Forge_flow.md                          |
 | First Logged  | 2026-09-10                                        |
-| Last Reviewed | 2026-09-10                                        |
+| Last Reviewed | 2026-09-14                                        |
 
 **Description:** Raised by ChatGPT (IC-001), verified against live
 text. FI-2 states "uncertainty defaults to hold, never to
@@ -1948,7 +1958,7 @@ statements of the same principle.
 | Blocking      | No                                                 |
 | Owner         | Architecture/Forge_flow.md                          |
 | First Logged  | 2026-09-10                                        |
-| Last Reviewed | 2026-09-10                                        |
+| Last Reviewed | 2026-09-14                                        |
 
 **Description:** FL-001's own Resolution Path (twice) states a
 "motor worked example added to Operations/Gate_02_Triage.md (65%
@@ -2017,7 +2027,7 @@ all. Applying this resolution means both locations, not just one.
 | Blocking      | No                                                 |
 | Owner         | Architecture/Forge_flow.md                          |
 | First Logged  | 2026-09-10                                        |
-| Last Reviewed | 2026-09-10                                        |
+| Last Reviewed | 2026-09-14                                        |
 
 **Description:** Raised by ChatGPT (P5-001a). `Operations/Gate_01_Intake.md`
 allows five consecutive unresolved unknown items to trigger
@@ -2097,7 +2107,7 @@ process-level trigger, individual-item Hold behavior) agree.
 | Blocking      | No                                                 |
 | Owner         | Architecture/Forge_flow.md                          |
 | First Logged  | 2026-09-10                                        |
-| Last Reviewed | 2026-09-10                                        |
+| Last Reviewed | 2026-09-14                                        |
 
 **Description:** Raised by ChatGPT (P5-003/IC-006). `Operations/Gate_02_Triage.md`
 introduces an "Embedded Value Preservation" check before full
@@ -2158,7 +2168,7 @@ untouched since its sentence was never wrong.
 | Blocking      | No                                                 |
 | Owner         | Architecture/Forge_flow.md                          |
 | First Logged  | 2026-09-10                                        |
-| Last Reviewed | 2026-09-10                                        |
+| Last Reviewed | 2026-09-15                                        |
 
 **Description:** Raised by ChatGPT (P5-012), broader than the single
 "Eight sequential decision gates" sentence already corrected in this
@@ -2298,6 +2308,8 @@ deferred, not closed.
 ---
 
 ### Resolution Log
+
+- 2026-10-20: **Corrections and log catch-up from an external Skeptic/Auditor sweep (Vibe; human-directed; checked against source by Claude).** (1) *HP-001 contradiction fixed in two places.* Defined Terms said the Irreversibility Levels taxonomy was "not yet extended" to Gate_03 and that this "remains held"; the Reduction outcome path said Gate_03's "only irreversible step" language was "intentionally untouched pending separate review." Both were relics of the 2026-09-08 second pass; the third pass closed HP-001 the same day (Held Proposals row: Fully adopted, Closed) and Gate_03's current text uses R4 throughout. Both passages now say so. No safety intent changed. (2) *Dead references.* UNK-007 (FL-002, the Reduction outcome path and a Drift Indicator row) now points to GR-009 / MG-009, the logged envelope drift FL-002's own 2026-09-09 note describes; UNK-012 (FL-001) has no current counterpart and is annotated as retired with its target unrecorded; the generic Cross-module line is reworded (UNK-008 remains live). (3) *FL-006* status text pointed to §1.2 for the GOV-006 cross-reference; it lives in §1.3. (4) *FL-008–FL-012* Last Reviewed dates, which still read 2026-09-10, are set to their resolution dates. (5) *Logged retroactively* (previously recorded only in the sidecar entries and File State): FL-008 (FI-2 narrowed; Decision Point D independence re-verified; Ratified by James 2026-09-14); FL-009 (historical claim annotated in both locations rather than deleted; disposition withdrawn; Ratified 2026-09-14); FL-010 (process-level Oversight trigger added; three-way consistency re-verified; Ratified 2026-09-14); FL-011 (EVP ownership assigned to Gate_02_Triage.md as an execution-stage requirement; Ratified 2026-09-14); FL-012 (Gate terminology rename completed and fully swept 2026-09-14/15; Ratified by James); FL-006 (authority half B re-verified 2026-09-14 with the GOV-006 dependency cross-referenced; evidence half A structural owner named 2026-09-18 with `Operations/Exception_Evidence.md` created — still Open, not Resolved); and the 2026-10-02 Open Unknowns correction (7 → 6, as recorded in File State). (6) *File State* Last Audit and Auditor refreshed. Not changed: FL-009's diagnosis note — the sweep suggests the withdrawn claim may be a garbled memory of Gate_02's 64% motor worked example; that is unverified here, and the withdrawal stands either way. Human-directed.
 
 - 2026-10-20: **Dispute ID disambiguated: DS-001 → FL-DS-001 (no content change to the dispute).** The bare ID "DS-001" was in use for four different disputes (the Auditor_Protocols dispute registered in `Unknowns.md`, this purification-stage terminology dispute, Gate_06's wire-sourcing dispute, and a closed naming dispute in `Tests/Trophic_Forge.md`). This dispute is now FL-DS-001 everywhere it is carried as live content (this file's Related Files and Defined Terms references, the Active Disputes row and its note, the Drift Indicator) and in its mirror in `Operations/Gate_04_Separation_Mechanical.md`; the row's two superseded names (a pre-rename Spin Chamber filename and "the Material Separation Gate") are updated to the current gate files. Earlier dated log entries below keep the bare "DS-001" as recorded — read them as this dispute. Bare `DS-001` now means only the Auditor_Protocols dispute. Raised by an external sweep (Vibe) and by Grok; checked against source by Claude. Human-directed.
 
@@ -2516,7 +2528,7 @@ Lazarus Forge operational flow document:
 | Any module redefines a term from the Defined Terms section without updating this file | This document is the repository vocabulary standard — unauthorized redefinition causes silent semantic drift across all files that inherit the term |
 | Purification stage definition revised without FL-DS-001 resolution and repository-wide propagation | FL-DS-001 is the active terminology dispute — any change here must update Operations/Gate_04_Separation_Mechanical.md, Unknowns.md, and any other file referencing the stage |
 | Gate logic modified without FL-001 resolution | FL-001 is In Progress — gate changes before boundary cases are resolved risk introducing new non-determinism |
-| Reduction module specified without FL-002 closure and cross-validation against Operations/Gate_04_Separation_Mechanical.md Inputs section | FL-002 and UNK-007 must resolve together — a Reduction spec that doesn't match the Gate's provisional feedstock envelope creates a hidden dependency failure |
+| Reduction module specified without FL-002 closure and cross-validation against Operations/Gate_04_Separation_Mechanical.md Inputs section | FL-002 and the GR-009 / MG-009 envelope drift must resolve together — a Reduction spec that doesn't match the Gate's provisional feedstock envelope creates a hidden dependency failure |
 | Human/AI Oversight State removed or made optional | The Oversight State is the system's primary safeguard against premature irreversible action — removal requires explicit human authorization and full audit cycle |
 | Contamination category list revised without open learning system clause preserved | The open learning system clause is the doctrine that handles unforeseen contamination — removing it closes the list and creates blind spots |
 | Want/need policy definition changed without downstream file review | Want/need policy governs Fabrication priority and Oversight State decisions — changes propagate to Operations/Gate_02_Triage.md and Architecture/Geck_forge_seed.md at minimum |
