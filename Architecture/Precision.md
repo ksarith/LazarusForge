@@ -34,7 +34,8 @@
 - Tolerance classification tier system — repository-wide
   standard that gate files reference
 - Metrology doctrine — how the Forge measures what it makes
-  at v0 with salvaged equipment (resolves CO-002)
+  at v0 with salvaged equipment (addresses CO-002; CO-002 closes
+  when PR-001's measured ceiling is declared)
 - Measurement uncertainty doctrine — honest accounting of
   what salvaged instruments can and cannot resolve
 - Salvage equipment dimensional derating — applying
@@ -623,6 +624,8 @@ for Governance_Migration_Protocol.md.
 
 ### Resolution Log
 
+- 2026-10-20: **CO-002 ruling applied (human-directed).** CO-002 stays Open: its closure condition is measured tolerance values, which depend on PR-001's ceiling declaration. The Scope Boundary's "(resolves CO-002)" for the §III Metrology Doctrine now reads "addresses CO-002; CO-002 closes when PR-001's measured ceiling is declared." PR-001's own resolution path ("Closes CO-002 in Components.md") is unchanged — it states the closing event. The Abandoned Paths row for the 2026-06-05 stale filename is annotated as done on 2026-06-08. This resolves the "held for ruling" note in the PR-005 entry below. Human-directed.
+
 - 2026-10-20: **PR-005 closed (Discharged); File State refreshed.** PR-005's only condition — that GK-005 in `Architecture/Geck_forge_seed.md` be updated to Resolved with a cross-reference to this file — was met on 2026-06-08, but the entry stayed Open and was still counted in the 2026-08-10 pseudo-audit's "Open Unknowns 5 = PR-001–005." It is closed here as Discharged to GK-005's resolution record; Open Unknowns 5 → 4, and `Unknowns.md` v5.64 drops the row. Geck's GK-005 sidecar likewise never mentioned PR-005 (each file left the confirmation to the other). Separately noted, not changed: this file states its §III Metrology Doctrine "resolves CO-002" and "closes CO-002 in Components.md," but CO-002 is still Open in `Architecture/Components.md` and `Unknowns.md` — held for the human governing authority's ruling. Found by an external sweep (Vibe), checked against source by Claude. Human-directed.
 
 - 2026-08-10: **Pseudo-audit (Grok, same limits).** Findings only; Spec Gates
@@ -640,7 +643,7 @@ for Governance_Migration_Protocol.md.
 |------|------|---------------|-------------|
 | 2026-06-05 | Defining specific tolerance figures for each gate operation | Gate-specific tolerances belong in gate files, not here. This file owns the tier system and ceiling doctrine that gate files reference — not the specific application of those tiers to each module. | No |
 | 2026-06-05 | Aspirational precision targets for future versions | Precision capability at v1+ is unknown until v0 operational data exists. Future precision targets stated without basis are false precision — the same failure mode this file exists to prevent. | Reconsider at v1 when operational data exists |
-| 2026-06-05 | Filename Precision_LF.md per original GK-005 reference | Repository_Structure.md no-scope-suffix rule adopted. Precision.md is the correct name. GK-005 reference to Precision_LF.md is a stale name — correct on next audit pass of Geck_forge_seed.md. | No |
+| 2026-06-05 | Filename Precision_LF.md per original GK-005 reference | Repository_Structure.md no-scope-suffix rule adopted. Precision.md is the correct name. GK-005 reference to Precision_LF.md is a stale name — correct on next audit pass of Geck_forge_seed.md. [Done 2026-06-08: GK-005 now references Precision.md.] | No |
 
 ---
 

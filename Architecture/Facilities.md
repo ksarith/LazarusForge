@@ -27,8 +27,8 @@
 | Body Stability   | Volatile                                                            |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-08-09 — Grok pseudo-audit (Skeptic read + minimal fixes); prior 2026-07-29 |
-| Auditor          | Claude — Architect/Auditor; Claude — Synthesizer/Auditor, Section VII "Operational Launch, defined" + deferred-parameters reference added, scoped down from a broader multi-agent proposal (human-directed), 2026-07-29; Grok pseudo-audit 2026-08-09 — no Spec Gate promotion |
+| Last Audit       | 2026-10-20 — external Skeptic/Auditor sweep (Vibe) checked against source by Claude (human-directed): File State refreshed for the 2026-08-15 FA-002 pass and the 2026-09-08 Charter cross-reference, FA-002–FA-005 Owner paths prefixed; prior: 2026-08-09 — Grok pseudo-audit (Skeptic read + minimal fixes); prior 2026-07-29 |
+| Auditor          | Claude — 2026-10-20 corrections (human-directed, from an external Vibe sweep); Claude — Architect/Auditor; Claude — Synthesizer/Auditor, Section VII "Operational Launch, defined" + deferred-parameters reference added, scoped down from a broader multi-agent proposal (human-directed), 2026-07-29; Grok pseudo-audit 2026-08-09 — no Spec Gate promotion |
 | Open Unknowns    | 4                                                                   |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | High                                                                |
@@ -452,7 +452,7 @@ assessment.
 | Priority      | Major         |
 | Type          | Technical     |
 | Blocking      | No            |
-| Owner         | Facilities.md |
+| Owner         | Architecture/Facilities.md |
 | First Logged  | 2026-06-05    |
 | Last Reviewed | 2026-08-15    |
 
@@ -494,7 +494,7 @@ still stands, and no physical site has confirmed it fits.
 | Priority      | Major         |
 | Type          | Governance    |
 | Blocking      | No            |
-| Owner         | Facilities.md |
+| Owner         | Architecture/Facilities.md |
 | First Logged  | 2026-06-05    |
 | Last Reviewed | 2026-06-05    |
 
@@ -520,7 +520,7 @@ Exploration — blocking for first hot operation.
 | Priority      | Minor         |
 | Type          | Technical     |
 | Blocking      | No            |
-| Owner         | Facilities.md |
+| Owner         | Architecture/Facilities.md |
 | First Logged  | 2026-06-05    |
 | Last Reviewed | 2026-06-11    |
 
@@ -553,7 +553,7 @@ hot operation.
 | Priority      | Minor             |
 | Type          | Governance        |
 | Blocking      | No                |
-| Owner         | Facilities.md     |
+| Owner         | Architecture/Facilities.md |
 | First Logged  | 2026-06-05        |
 | Resolved      | 2026-06-11        |
 
@@ -566,6 +566,8 @@ resolved. Discovery.md Cross-Module Unknowns table updated. FA-005 closed.
 ---
 
 ### Resolution Log
+
+- 2026-10-20: **File State refresh and owner-path fix (no doctrine change).** (1) Last Audit and Auditor had not moved since the 2026-08-09 pseudo-audit, although this log records the 2026-08-15 FA-002 spec-depth pass (which edited §IV to reference the 35 ft figure) and the 2026-09-08 Charter cross-reference (Scope Boundary); both are now reflected. (2) The 2026-08-09 pass gave FA-001 the folder-prefixed Owner `Architecture/Facilities.md`; FA-002–FA-005 still read `Facilities.md` and are now prefixed to match. (3) Disambiguation: "UNK-006" in this file is the facility-siting unknown; `Architecture/Geck_forge_seed.md` also uses "(UNK-006)" for a different item (a Leviathan unit power-envelope dependency in a Discharge-via-Trajectory path), so a bare UNK-006 is ambiguous across files; not changed there. Not changed: FA-002's Last Reviewed (2026-08-15), which is correct. Found by an external sweep (Vibe), checked against source by Claude. Human-directed.
 
 - 2026-09-08: Cross-referenced this file's RDC + Site Initialization
   Checklist pattern to the new Deployment Localization Doctrine in

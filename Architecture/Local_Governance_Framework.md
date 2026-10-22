@@ -18,7 +18,7 @@
 | **Status** | Exploration |
 | **Architecture Subtype** | Institutional Interface |
 | **Version** | v0.1-draft |
-| **Last Updated** | 2026-09-07 (Active Disputes field added — missing from initial File State table; caught by a Grok morning-report sweep; prior 2026-09-06) |
+| **Last Updated** | 2026-10-20 (log catch-up, no content change; prior 2026-09-07: Active Disputes field added — missing from initial File State table; caught by a Grok morning-report sweep; prior 2026-09-06) |
 | **Owner** | Architecture/ |
 | **Verification Ref** | `Admin/Verification_Gates.md` |
 | **Ethical Anchor** | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
@@ -184,6 +184,8 @@ Resolution of those unknowns should reference this framework for standing and de
 ---
 
 ## Resolution Log
+
+- 2026-10-20: **Log catch-up (no content change).** The 2026-09-07 edit — the missing Active Disputes field added to the File State table, caught by a Grok morning-report sweep — was recorded only in the Last Updated field; it is logged here retroactively. Not changed: the File State layout (this file uses the Challenges-folder format rather than the File_Template convention) and the header form; both were noted as deviations and are left for a later formatting decision. LGF's adoption and ratification status, and the timing of its Unknowns.md registration, remain the human governing authority's call. Found by an external sweep (Vibe), checked against source by Claude. Human-directed.
 
 - 2026-09-06: **v0.1-draft.** First articulation of the minimum institutional interface between a Forge deployment and its host community. Responds to the structural gap across the Challenges set (community-sovereignty language without institutional referent) and to the observation that surplus disposition was being treated as a background obligation rather than a local, revisable choice. Placement under Architecture/, naming as Framework, and reframing as interface constraints (not a new governance tier) per classification review. Human-directed; not yet ratified.
 

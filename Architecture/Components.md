@@ -334,9 +334,13 @@ material class and part category at v0. Defer precise values to first fabricatio
 tolerance requirements emerge from actual loop closure attempts, not pre-specification.
 
 *Routing note (2026-10-20): the 2026-08-10 log entry's "owned resolution path via PR-001" is not supported by this entry or by `Architecture/Precision.md`; Precision.md names its §III Metrology Doctrine as the CO-002 route, and says it "closes CO-002 in Components.md," yet CO-002 is still Open here and in `Unknowns.md`. Held for the human governing authority's ruling; Status unchanged.*
+
+*Ruling and correction (2026-10-20, later): CO-002 stays Open until `Architecture/Precision.md`'s PR-001 declares the measured precision ceiling, which is the event that closes it; Precision.md's wording was changed to match ("addresses," not "resolves"). Under that ruling the 2026-08-10 entry's "owned resolution path via PR-001" was right in substance, and the routing note above was wrong to call it unsupported — CO-002's sidecar simply never stated the route. Resolution Path addendum: closes when PR-001 in Precision.md closes.*
 ---
 
 ### Resolution Log
+
+- 2026-10-20: **CO-002 ruling recorded; one annotation corrected (human-directed).** CO-002 stays Open until PR-001 in `Architecture/Precision.md` declares the measured ceiling. The annotation earlier today (item 2 below) that the 2026-08-10 "via PR-001" route had "no support" was too strong: the route is right in substance and was merely unstated in CO-002's sidecar; CO-002's routing note now says so. Human-directed.
 
 - 2026-10-20: **Annotations and log catch-up from an external Skeptic/Auditor sweep (Vibe; human-directed; checked against source by Claude).** (1) The 2026-09-08 entry below says `Operations/Tooling_Inventory.md` is "the new file satisfying" FL-004. FL-004 in `Architecture/Forge_flow.md` is "Tooling inventory owned but unpopulated," Status Open: the new file resolved the ownership half and created the condition FL-004 still tracks (population). Read that entry accordingly. (2) The 2026-08-10 entry's "CO-002 Minor, owned resolution path via PR-001" has no support in CO-002's sidecar; a routing note is added there (see CO-002). (3) CO-001's sidecar shows Risk "Low (downgraded from Medium)"; no log entry records when or why — recorded here as unrecorded, not reconstructed. (4) Bootstrap Doctrine's pointer to "the G.E.C.K. manifest" for consumables and redundancy now carries a dated note that Geck_forge_seed.md has no such content yet. (5) File State Last Audit and Auditor refreshed. Found by an external sweep (Vibe), checked against source by Claude. Human-directed.
 

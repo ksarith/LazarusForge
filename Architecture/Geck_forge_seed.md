@@ -171,7 +171,7 @@ can reliably produce.
 
 *Cross-reference: `Architecture/Components.md` CO-002 (Metrology Precision Thresholds).
 Full precision doctrine in `Architecture/Precision.md` — cross-referenced from
-Components.md Metrology (item 5), CO-002, and Version Mapping.*
+Components.md's Scope Boundary and, as of 2026-10-20, CO-002's routing note.*
 
 ---
 
@@ -552,7 +552,7 @@ Version Mapping.
 precision doctrine now lives there: T0–T4 tolerance tier system, precision ceiling
 doctrine, metrology doctrine, salvage equipment derating, and fabrication-precision
 feedback loop. Section V cross-reference updated to `Architecture/Precision.md`. CO-002
-in Components.md is addressed by Precision.md §III (Metrology Doctrine); PR-001 is a separate, still-open precision-ceiling unknown, not CO-002's route (corrected 2026-10-20 — see the Resolution Log). Whether that doctrine closes CO-002 is not settled: CO-002 remains Open in Components.md.
+in Components.md routes to PR-001 for resolution: Precision.md §III (Metrology Doctrine) supplies the doctrine, and closing PR-001 (the measured precision ceiling) is the event that closes CO-002, which stays Open until then (restored and clarified 2026-10-20 — see the Resolution Log).
 
 ---
 
@@ -569,7 +569,7 @@ in Components.md is addressed by Precision.md §III (Metrology Doctrine); PR-001
 | First Logged  | 2026-06-24 (approx., per `Unknowns.md`) |
 | Last Reviewed | 2026-08-03                        |
 
-**Description:** Welding wire specification (diameter, alloy) and qualification for G.E.C.K.-class fabrication is undefined. Previously listed in `Unknowns.md`'s global table as owned by `Operations/Gate_05_Separation_Thermal.md` — but that file's own Scope Boundary explicitly states this is "downstream — not yet assigned," and its Drift Trigger table calls it "the unowned cross-module gap." Reassigned here since §VI.4's Weld Unit Sizing Doctrine (above) is where the actual design reasoning now lives.
+**Description:** Welding wire specification (diameter, alloy) and qualification for G.E.C.K.-class fabrication is undefined. Previously listed in `Unknowns.md`'s global table as owned by `Operations/Gate_05_Separation_Thermal.md` — but that file's own Scope Boundary explicitly states this is "downstream — not yet assigned," and its Drift Trigger table calls it "the unowned cross-module gap." (Those quotations describe Gate_05 as of 2026-07-19; its Scope Boundary and Drift Trigger were corrected on 2026-08-08 and 2026-10-20 and now name this reassignment.) Reassigned here since §VI.4's Weld Unit Sizing Doctrine (above) is where the actual design reasoning now lives.
 
 **Why It Matters:** An owning-file contradiction meant this unknown had a table entry but no file actually treating it as its responsibility — a bookkeeping gap of the same kind this repository's own audit discipline exists to catch.
 
@@ -588,6 +588,8 @@ in Components.md is addressed by Precision.md §III (Metrology Doctrine); PR-001
 ---
 
 ### Resolution Log
+
+- 2026-10-20: **CO-002 ruling and citation fixes; one earlier correction reversed (human-directed).** (1) Ruling: CO-002 stays Open until PR-001 in `Architecture/Precision.md` declares the measured ceiling. (2) *Reversal:* the entry below (item 3) "corrected" GK-005's statement that CO-002 "routes to PR-001." Under the ruling the original statement was right in substance — Precision.md's PR-001 resolution path closes CO-002 — so the GK-005 record now says that, with §III as the doctrine and PR-001 as the closing event. The earlier correction was my error, made without checking PR-001's own resolution path. (3) The GK-005 record's cross-reference list now names only what exists (Components.md's Scope Boundary and CO-002's routing note); item 5 and Version Mapping cite nothing. (4) UNK-008's quotations of Gate_05's old Scope Boundary and Drift Trigger text carry a dated note that Gate_05 has since been corrected. Human-directed.
 
 - 2026-10-20: **Corrections and log catch-up from an external Skeptic/Auditor sweep (Vibe; human-directed; checked against source by Claude).** (1) *Open Unknowns recounted: 3 → 4.* The file has four sidecars that are not Resolved — GK-002, GK-003, GK-004 and UNK-008 — and `Unknowns.md` indexes the same four. The earlier entries below keep their arithmetic as recorded (2026-06-08 "3 to 2" while listing three open; 2026-07-19 "2 → 3"; the 2026-08-10 pseudo-audit's "3 = GK-002, GK-003, GK-004," which omits UNK-008), so they cannot all be true; the current count is 4. (2) *Two pointers corrected:* the UNK-008 text cited `Architecture/Precision.md` §V (Precision Threshold) for the ceiling-declaration framework; §V is the Fabrication-Precision Feedback Loop, and the framework lives in §I. (3) *GK-005's record said CO-002 "routes to PR-001"*; PR-001 is a separate open unknown, and Precision.md names its §III Metrology Doctrine as the CO-002 route. The record now says so. Whether that doctrine actually closes CO-002 is held for the human governing authority: Precision.md says it does, but CO-002 is still Open in Components.md and `Unknowns.md`. (4) File State Last Audit and Auditor refreshed. Not changed: the log's out-of-order entries; GK-002/003/004 Last Reviewed dates (2026-05-14); the GK-005 record's cross-reference list. Found by an external sweep (Vibe), checked against source by Claude. Human-directed.
 
