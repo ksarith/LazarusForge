@@ -3,7 +3,7 @@
 
 **Full version history in `Archive/Logs/Unknowns_Changelog.md` (2026-07-19 cleanup pass, following the precedent set by `Archive/Logs/AUDIT_HARNESS_CHANGELOG.md` and `Archive/Logs/Forge_Audit_Kit_Changelog.md`; scrubbed to current-version-only 2026-07-28 — the "current plus last four in full" window was itself compressed further, since the Audit Trail below now carries the compressed record for every version back to v1.0, and the changelog carries full text for all of them. This block now keeps only the current version.)**
 
-**Version 5.63 -- 2026-10-20. GF-005 re-scoped; dispute IDs disambiguated.** GF-005 (`Operations/Gate_06_Fabrication.md`) is re-scoped from "Utilization stage has no owning file" — satisfied when `Operations/Gate_07_Utilization.md` was created — to the residual question of Utilization → fabrication feedback-path governance (which file owns updating Gate_06's precision-ceiling record from utilization data, and by what rule); it stays Open, Minor and non-Blocking. The bare ID DS-001, used by four different disputes, is disambiguated in the files that own them: FL-DS-001 (purification-stage terminology; `Architecture/Forge_flow.md`, mirrored in `Operations/Gate_04_Separation_Mechanical.md`), GF-DS-001 (Gate_06 wire sourcing) and TF-DS-001 (`Tests/Trophic_Forge.md`, Resolved); `DS-001` now means only the Auditor_Protocols dispute registered here. No Status, Priority or Spec Gate changed. No `Admin/Forge_Audit_Kit.md` update is triggered: the kit copies none of the affected text. Human-directed.
+**Version 5.64 -- 2026-10-20. PR-005 closed (Discharged) and removed from the Active Index.** PR-005 (`Architecture/Precision.md`) existed only to get GK-005 in `Architecture/Geck_forge_seed.md` updated to Resolved with a cross-reference; that happened on 2026-06-08, but the entry stayed Open. It is Discharged to GK-005's resolution record, and Precision.md's open count is now 4 (PR-001–PR-004). Separately noted, not changed: Precision.md says its §III Metrology Doctrine resolves CO-002, while CO-002 remains Open in `Architecture/Components.md` and here; the ruling is the human governing authority's. No other entry, Status, Priority or Spec Gate changed. No `Admin/Forge_Audit_Kit.md` update is triggered: the kit copies none of the affected text. Human-directed.
 ---
 
 **Expiry Rule active — see `Admin/Canonical_Terms.md` §4 for the Cycle definition this rule now explicitly references (one calendar year default, not one audit pass — see CT-011). Protocol Performance metrics collecting.**
@@ -768,7 +768,6 @@ RB-007 (Human-shared space unresolved)
 | PR-002 | Reference standard not established | `Architecture/Precision.md` | Open | — | Major |
 | PR-003 | Traceable dimensional claims required at Specification | `Architecture/Precision.md` | Open | — | Major |
 | PR-004 | Backlash and compliance characterization not performed | `Architecture/Precision.md` | Open | — | Major |
-| PR-005 | GK-005 resolution confirmation pending | `Architecture/Precision.md` | Open | — | Minor |
 
 *PR-001 Critical — blocks T1/T2 part claims; PR-004 is a prerequisite.*
 
