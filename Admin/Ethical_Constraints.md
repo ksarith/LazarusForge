@@ -16,9 +16,9 @@
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | `Admin/Verification_Gates.md`                                    |
-| Last Audit       | 2026-09-03 — ChatGPT audit (REVISE/G6-BLOCKED, EC-AUD-001–003); Claude source-verified findings and applied surgical corrections: Version metadata synced to v0.16, ratified count corrected from six to seven (EC-007 included), obsolete EC-001–EC-007 Drift Indicator retired. Prior: 2026-08-22 — Grok drafts EC-016/008/004/003/009; Claude source-verified full batch; integration pass; Closure Events corrected to AP-013 format; Human Governing Authority ratified all seven (EC-003, EC-004, EC-005, EC-007, EC-008, EC-009, EC-016) |
-| Auditor          | ChatGPT — Skeptic/Auditor; ChatGPT — Philosophical Review; Grok — Exploration audit 2026-07-05; Gemini — Exploration audit 2026-07-05; Claude — toxic material doctrine + gap remediation 2026-07-05; Claude — law-vs-morality doctrine + Navigation Anchors correction 2026-07-05; Claude — EC-010 stale-reference correction 2026-07-06; Claude — Anti-Weaponization override scope and tool/weapon distinction ratified by human governing authority, 2026-07-26; Claude — Synthesizer, EC-016 registered 2026-08-06; Grok pseudo-audit 2026-08-09 — no Spec Gate promotion; Claude — EC-002 Pattern Recognition Annex added and closed, 2026-08-11; Claude — EC-001 Confidence Threshold Doctrine added and closed, 2026-08-11 |
-| Open Unknowns    | 7 substantively open (EC-006, EC-010–EC-015). EC-003, EC-004, EC-005, EC-007, EC-008, EC-009, EC-016 Ratified — Payment via Specification, 2026-08-22 |
+| Last Audit       | 2026-10-23 — Claude (human-directed) applied corrections from a Vibe per-file audit, each checked against source first: Resolution Log backfilled for 08-22, 09-18, 09-20/21, 09-23 and 09-27 (the 09-03 v0.16 entry already existed, at the log foot); Scope Boundary reconciled for EC-008, EC-009 and EC-012-PR; Pending Canonical Term Anchors annotated for EC-004/007/008; Open Unknowns row now names EC-012-PR. No doctrine text, Tier 1 floor or ratified rule modified. Prior: 2026-09-03 — ChatGPT audit (REVISE/G6-BLOCKED, EC-AUD-001–003); Claude source-verified findings and applied surgical corrections: Version metadata synced to v0.16, ratified count corrected from six to seven (EC-007 included), obsolete EC-001–EC-007 Drift Indicator retired. Prior: 2026-08-22 — Grok drafts EC-016/008/004/003/009; Claude source-verified full batch; integration pass; Closure Events corrected to AP-013 format; Human Governing Authority ratified all seven (EC-003, EC-004, EC-005, EC-007, EC-008, EC-009, EC-016) |
+| Auditor          | Claude — 2026-10-23 corrections (human-directed, from a Vibe per-file audit); Grok (Proposer) + Claude (Verifier) — 2026-09-23 EC-012-PR; ChatGPT — Skeptic/Auditor; ChatGPT — Philosophical Review; Grok — Exploration audit 2026-07-05; Gemini — Exploration audit 2026-07-05; Claude — toxic material doctrine + gap remediation 2026-07-05; Claude — law-vs-morality doctrine + Navigation Anchors correction 2026-07-05; Claude — EC-010 stale-reference correction 2026-07-06; Claude — Anti-Weaponization override scope and tool/weapon distinction ratified by human governing authority, 2026-07-26; Claude — Synthesizer, EC-016 registered 2026-08-06; Grok pseudo-audit 2026-08-09 — no Spec Gate promotion; Claude — EC-002 Pattern Recognition Annex added and closed, 2026-08-11; Claude — EC-001 Confidence Threshold Doctrine added and closed, 2026-08-11 |
+| Open Unknowns    | 7 substantively open (EC-006, EC-010–EC-015). EC-003, EC-004, EC-005, EC-007, EC-008, EC-009, EC-016 Ratified — Payment via Specification, 2026-08-22. EC-012-PR (procedural-escalation residual of EC-012; parent remains Open) Ratified — Payment via Specification, 2026-09-23 |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | High                                                                |
 | Sidecar Link     | #auditor-notes--unknowns                                            |
@@ -34,6 +34,9 @@
 - Legal context awareness
 - Compliance-Maximizing Default and Right-to-Repair Posture (legal-boundary navigation, distinct from the ethical hard floors below)
 - Anti-Weaponization Doctrine (hard floor, not subject to override), including the Pattern Recognition Annex (pattern categories, detection method, false-positive handling, escalation)
+- Inferred authorization doctrine — Inferred Authorization Annex under Core Mandate (EC-008, Ratified 2026-08-22)
+- Human authority conflict resolution — Human Authority Conflict Doctrine under Human Escalation Protocol (EC-009, Ratified 2026-08-22); the full authenticated-override priority table remains GOV-019's
+- Procedural escalation rule for unattested or anomalous High-Risk telemetry (EC-012-PR, Ratified 2026-09-23); the parent attestation problem (EC-012) remains Open
 - Life preservation heuristics
 - Toxic and hazardous material handling doctrine (active-release vs. passive-encapsulated distinction)
 - Cultural and sacred site recognition
@@ -46,8 +49,6 @@
 
 **This file DOES NOT define:**
 - Escalation channel *implementation* (concrete transport still → `Tests/Leviathan_testing.md`; behavioral protocol resolved under Human Escalation Protocol / EC-003)
-- Inferred authorization doctrine (→ EC-008, resolved 2026-08-22 — see Inferred Authorization Annex under Core Mandate)
-- Human authority conflict resolution (→ EC-009, resolved 2026-08-22 — see Human Authority Conflict Doctrine under Human Escalation Protocol)
 - Jurisdiction conflict hierarchy (→ EC-010, deferred)
 - Human governance adversary model (→ EC-011, pending)
 - Canonical definitions of provisional terms (→ `Admin/Canonical_Terms.md`)
@@ -1157,13 +1158,25 @@ The following terms appear in this document without canonical definitions. They 
 | Sufficient confidence | Threshold for default-to-non-action — now defined in-file via the Confidence Threshold Doctrine (Risk-tiered UNKNOWN/PROVISIONAL/VERIFIED mapping, reusing AP-006); still pending promotion to canonical registration | High | EC-001 (Resolved) → `Admin/Canonical_Terms.md` |
 | Minimal-impact observation | Safe observational mode | Medium | `Admin/Canonical_Terms.md` |
 | Pattern match | Weaponization detection trigger — now defined in-file via the Pattern Recognition Annex (six categories); still pending promotion to canonical registration | High | EC-002 (Resolved) → `Admin/Canonical_Terms.md` |
-| Governance failure | Trigger for Pacifist Operating Posture | High | EC-004 → `Admin/Canonical_Terms.md` |
-| Pacifist Operating Posture | Safe state during governance failure | High | EC-007 → `Admin/Canonical_Terms.md` |
-| Inferred authorization | Soft permission inference | High | EC-008 → `Admin/Canonical_Terms.md` |
+| Governance failure | Trigger for Pacifist Operating Posture | High | EC-004 (Ratified 2026-08-22) → `Admin/Canonical_Terms.md` |
+| Pacifist Operating Posture | Safe state during governance failure | High | EC-007 (Ratified 2026-08-22) → `Admin/Canonical_Terms.md` |
+| Inferred authorization | Soft permission inference | High | EC-008 (Ratified 2026-08-22) → `Admin/Canonical_Terms.md` |
 
 ---
 
 ### Resolution Log
+
+- 2026-09-27: **EC-011 sidecar extended — floor inventory and EC-011-R3 design brief filed; EC-011 remains Open.** Inventory of floor already present in live doctrine, and a design brief for quiet / non-anomalous coercion (EC-011-R3), both Grok-drafted and Claude source-verified against live text before filing. No Payment-via-Specification. *(Backfilled 2026-10-23 from the EC-011 sidecar.)*
+
+- 2026-09-23: **EC-012-PR ratified (Payment via Specification) — procedural escalation on unattested or anomalous High-Risk telemetry.** Closes only the procedural-escalation residual of EC-012; parent EC-012 remains Open. Operative rule includes a Genesis Phase holding clause. Proposer Grok; Verifier Claude (Pass; cross-checked against live EC-003 escalation fields, and caught and corrected the same §VII.5 citation error fixed in GMP-011 the same day); Proposer and Verifier are different agent instances; ratified by Human Governing Authority. Full Closure Event in the EC-012-PR sidecar. *(Backfilled 2026-10-23.)*
+
+- 2026-09-21: **EC-013 Descent Sequences filed for Gate_03 and Gate_06 (Proposed/Placeholder, Path A).** Completes the five-file candidate set begun 2026-09-20 (Plastics, Air_Scrubber, Gate_05). Blocking-for-hot-runs retained until first hot-run validation. EC-013 remains Open pending Human Governing Authority acceptance of the set. *(Backfilled 2026-10-23 from the EC-013 sidecar.)*
+
+- 2026-09-20: **EC-013 Descent Sequences filed for Plastics, Air_Scrubber and Gate_05 (Proposed/Placeholder, Path A).** See the 2026-09-21 entry for the remainder. *(Backfilled 2026-10-23.)*
+
+- 2026-09-18: **Problem statements filed for EC-011 and EC-012; EC-012-PR logged; EC-013 current-state note and hazardous-process candidate scan recorded.** The scan covers five candidate hazardous-process files. No unknown closed. *(Backfilled 2026-10-23 from dated in-file markers.)*
+
+- 2026-08-22: **Seven ratifications by Human Governing Authority (Payment via Specification): EC-003, EC-004, EC-005, EC-007, EC-008, EC-009, EC-016.** Grok drafted EC-016/008/004/003/009; Claude source-verified the full batch; integration pass; Closure Events corrected to AP-013 format. The closures are recorded in sidecar Status fields and Closure Event paragraphs, not as individual Resolution Log entries. The v0.16 entry (2026-09-03, at the foot of this log) refers to them as "Resolution Log closures"; see the correction note there. *(Backfilled 2026-10-23.)*
 
 - 2026-08-11: **v0.15 — EC-001 closed: Confidence Threshold Doctrine added.** Human-directed
   work item, operating as Synthesizer, immediately following EC-002's closure. Added the
@@ -1261,7 +1274,7 @@ The following terms appear in this document without canonical definitions. They 
 
 Version 0.16 — Exploration
 
-- 2026-09-03: **v0.16 — ChatGPT audit (REVISE/G6-BLOCKED) metadata-synchronization pass; no doctrine change.** Findings EC-AUD-001–003 verified by Claude against source and corrected: (1) Version metadata was stale — header still read v0.15 despite seven post-v0.15 Resolution Log closures on 2026-08-22 (EC-003/004/005/007/008/009/016); bumped to v0.16, this entry added. (2) File State "ratified all six (including EC-005)" was a miscount — EC-007 was ratified in that same 2026-08-22 human-ratification event and had been left out; corrected to "all seven," IDs listed explicitly. (3) Drift Indicators still hard-coded the compound "EC-001 through EC-007 cluster approaches two-cycle threshold" condition, which no longer reflects current state (six of seven now resolved/ratified); retired in favor of tracking EC-006, the actual remaining open item from that original cluster. No EC closures reopened; no Anti-Weaponization or other Tier-1 floor language touched; EC-007's Placeholder thresholds unchanged. Human-directed.
+- 2026-09-03: **v0.16 — ChatGPT audit (REVISE/G6-BLOCKED) metadata-synchronization pass; no doctrine change.** Findings EC-AUD-001–003 verified by Claude against source and corrected: (1) Version metadata was stale — header still read v0.15 despite seven post-v0.15 Resolution Log closures on 2026-08-22 (EC-003/004/005/007/008/009/016); bumped to v0.16, this entry added. (2) File State "ratified all six (including EC-005)" was a miscount — EC-007 was ratified in that same 2026-08-22 human-ratification event and had been left out; corrected to "all seven," IDs listed explicitly. (3) Drift Indicators still hard-coded the compound "EC-001 through EC-007 cluster approaches two-cycle threshold" condition, which no longer reflects current state (six of seven now resolved/ratified); retired in favor of tracking EC-006, the actual remaining open item from that original cluster. No EC closures reopened; no Anti-Weaponization or other Tier-1 floor language touched; EC-007's Placeholder thresholds unchanged. Human-directed. [Correction note, 2026-10-23: the seven 2026-08-22 closures live in sidecar Status fields and Closure Event paragraphs, not as Resolution Log entries; a backfilled 2026-08-22 entry now exists above. Original wording preserved. This entry sits at the foot of the log, out of date order.]
 
 **What must remain constant:** capability never outruns permission.
 
