@@ -400,6 +400,41 @@ Six turned up something real the audit itself missed, each a different failure c
 Worth naming as the session's real lesson, distinct from any single finding: an audit that reads as thorough and cites real counts/IDs correctly can still repeat a false claim sitting in its own baseline material, because checking whether a document's *narrative* is internally consistent is a different operation from checking whether its *specific factual claims* hold against the thing it's citing — Forge_Audit_Kit's version number was real, just stale; GMP-002's ownership claim was well-formed prose, just false; the Charter's "Critical" was a real field value, just the wrong field. None of these were hallucinations in the sense of inventing something from nothing — they were correct-shaped claims that had drifted from or misread their own source, which is a harder class to catch by reading alone. Also worth naming: this is not a claim that Grok/ChatGPT's audits were low-quality — the header-level counts, IDs, and cross-references in all eleven audits were independently confirmed exact almost everywhere checked; the misses were narrow and specific, not systemic sloppiness.
 
 ---
+### 2026-09-03 (second entry) — Security_Protocols.md state-synchronization repair after ChatGPT REVISE/G6-BLOCKED audit
+Grok independently confirmed the ChatGPT findings (stale bottom Status block, SEC-009 pending references, PAT-001/002 drift, RIP-001 dependency language, missing FROZEN markers). Note: the reported duplicate Trust Boundary heading was not present in the live Alpha 10 file (only one heading exists). Applied surgical repairs only:
+
+- Scope Boundary: SEC-009 marked Ratified.
+- Human-Factors note: SEC-009 closed; SEC-008 remains open; EC-011 still open.
+- PAT-001 Status → Ratified 2026-08-22; PAT-002 no longer "Blocked pending SEC-007a".
+- RIP-001 references updated to distinguish resolved archival substrate from still-open SEC-008 mechanism.
+- Bottom Version 0.8 / G1–G6 Status block replaced with explicit Current + Historical record.
+- FROZEN markers added to Trust Boundary Declaration and SEC-007a resolution vehicle.
+- File State Last Audit / Auditor updated.
+
+No reopen of SEC-002, SEC-007a, or SEC-009. No new Unknowns. No artificial Spec Gates advancement. Human-directed.
+
+---
+### 2026-09-03 — Dual integrity repair after ChatGPT REVISE/G6-BLOCKED audits of Governance_Charter.md and Governance_Migration_Protocol.md
+Grok independently confirmed both ChatGPT audits (all primary findings held under source check). Applied surgical repairs only — no constitutional or migration architecture redesign:
+
+**Governance_Charter.md**
+- Added FROZEN markers to Tier 1 Axioms, Integrity Enforcement Architecture (GOV-003), and Repository Integrity Doctrine.
+- Corrected two stale GOV-003 status references to post-2026-08-23 closure language (residual only SEC-007b).
+- Corrected GOV-016 "not yet ratified" sentence.
+- Replaced Checkpoint 5 "four-tier system" with current two-axis epistemic architecture language.
+- Updated File State Last Audit / Auditor fields.
+
+**Governance_Migration_Protocol.md**
+- Normalized File State: kept Exploration/0/6 but added explicit clarification that individual subsections may be operative/Payment-via-Specification closed.
+- Collapsed overloaded Last Audit field to clean record (prior narrative remains in Resolution Log).
+- Added explicit Charter-precedence rule pending GMP-002.
+- Added FROZEN markers to Two Migration Tracks, III.A state machine, EQD, ESG.
+- Added subsection STATUS markers for §VI / §VII / §VIII.
+- Updated Open Unknowns listing to name the eight items.
+
+Human-directed. No new Unknowns opened. Ready for re-audit of these two files or next high-coupling targets.
+
+---
 ### 2026-09-02 — Grok audited `Admin/Auditor_Protocols.md` against itself; found the governing document's own metadata had drifted from its body, and a deeper check found an undocumented version gap neither audit caught
 Grok ran a full self-application audit of `Auditor_Protocols.md` — the file that defines this repository's audit discipline, audited against its own rules. Findings: the relocated-sidecar summary still listed AP-013, AP-005, AP-004, and AP-024 as open ("14 open") despite the File State header explicitly marking all four Resolved weeks earlier; the Version String Registry's own two mandatory citations (Role Declaration example, Observability sign-off template) were still at "v0.37" against a "v0.41" header; the Status block was five versions behind at "0.36"; and the Sidecar SHA-256 hash predated four Closure Events that had modified the archive it's supposed to protect against divergence.
 
