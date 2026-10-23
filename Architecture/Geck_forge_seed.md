@@ -17,7 +17,7 @@
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-10-20 — external Skeptic/Auditor sweep (Vibe) checked against source by Claude (human-directed): Open Unknowns recounted, two Precision.md section pointers and one routing claim corrected, File State refreshed (it had not moved since 2026-06-08 although the log records body work on 2026-07-19, 2026-08-03 and 2026-08-06); prior: 2026-05-04 (Claude — Skeptic/Auditor); revised 2026-06-08 |
+| Last Audit       | 2026-10-23 — Gingery prior-art note added to §IV Procurement Doctrine (Grok draft checked against source by Claude, human-directed; draft's "commercial tooling is not a prerequisite" framing corrected to match §IV); prior: 2026-10-20 — external Skeptic/Auditor sweep (Vibe) checked against source by Claude (human-directed): Open Unknowns recounted, two Precision.md section pointers and one routing claim corrected, File State refreshed (it had not moved since 2026-06-08 although the log records body work on 2026-07-19, 2026-08-03 and 2026-08-06); prior: 2026-05-04 (Claude — Skeptic/Auditor); revised 2026-06-08 |
 | Auditor          | Claude — 2026-10-20 corrections (human-directed, from an external Vibe sweep); Claude — Skeptic/Auditor |
 | Open Unknowns    | 4 (GK-002, GK-003, GK-004, UNK-008 — every sidecar not Resolved; matches Unknowns.md) |
 | Active Disputes  | 0                                                                   |
@@ -145,6 +145,19 @@ commercially available measuring instrument will outperform anything a v0 Forge 
 to measure itself with. Purchasing precision tools early is an investment in the Forge's
 ability to verify its own output — which is a Critical function. See Section V (Precision
 Threshold) and Components.md item 5 (Metrology).
+
+**Prior art — Dave Gingery.** David J. Gingery (1932–2004) wrote the *Build Your Own Metal
+Working Shop From Scrap* series (Charcoal Foundry → Metal Lathe → Metal Shaper → Milling
+Machine → Drill Press → Dividing Head & Deluxe Accessories → Sheet Metal Brake): a sequenced
+mechanical bootstrap from scrap, foundry first, with the lathe as the first machine built
+because it can help build itself. The Forge shares his salvage-as-feedstock stance and the
+idea of capability expanding in a deliberate order. It **diverges** on two points: it does
+not treat purchased tooling as outside doctrine (above), and it seeds precision with
+purchased metrology rather than accumulating it from scrap alone. Gingery's series addresses
+mechanical bootstrap only — not energy accounting, multi-material closed loops, provenance,
+or governance. The Forge does not claim descent from this work; it is recorded as prior art
+in the same problem space. (Dates and series order are from public bibliographic sources,
+not from this repository.)
 
 ---
 
