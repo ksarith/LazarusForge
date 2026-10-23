@@ -11,7 +11,7 @@
 | Spec Gates       | N/A — this file is a progression log, not a specification           |
 | Open Unknowns    | 0 (references existing unknowns; creates none)                      |
 | Owning Domain    | Admin/                                                               |
-| Last Reviewed    | 2026-10-19                                                           |
+| Last Reviewed    | 2026-10-23                                                           |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
 ---
@@ -23,10 +23,12 @@ Created 2026-08-09 to fix a recurring failure mode found the same day, in two pl
 **This file DOES:**
 - Hold the rolling answer to "what did we just learn, what's currently open, what's next" — the thing `Unknowns.md`'s old "What vX.X Means" section tried to be, without a version number baked into the heading this time, so a new entry never requires renaming the section.
 - Track recent completed work at a summary level, for continuity across sessions.
+- Hold a short parking list of concerns raised by agents, audits or the human that are not being worked yet (§Parked Concerns) — a holding ground, not a work queue.
 
 **This file does NOT:**
 - Duplicate `Unknowns.md`'s Active Index — that remains the sole authoritative source for open unknowns; this file references IDs, never restates their full detail.
 - Duplicate the five `*_Scope_Map.md` files' per-file scope content.
+- Create unknowns. A parked concern that becomes a real open unknown is promoted to an `Unknowns.md` entry; this file then only points to it.
 - Hold anything that belongs in a Resolution Log — file-specific change history stays in that file's own log, not here. This file is for cross-cutting lessons and session-level continuity, not a substitute for per-file logs.
 
 **Size discipline, learned directly from what broke last time:** this section rotates. Keep the current entry plus the four most recent in full below; older entries move to `Archive/Logs/Progress_Log_Changelog.md` in full, same split pattern already established for `Unknowns.md`/`Unknowns_Changelog.md`. No version number in any heading here — headings are dated, so nothing about adding a new entry ever requires editing an old one's title. This rotation rule was exercised for the first time the same day this file was created — see Resolution Log.
@@ -176,7 +178,39 @@ The prior verified Lane A funnel (2026-08-21/30, confirmed GMP-006/007/008/010/0
 
 
 
+## Parked Concerns
+
+*(Holding ground for concerns raised by agents, audits or the human that are not being worked yet. Newest first. Parking a concern is not agreement that it is valid and authorizes no edit. IDs use the `PKC-` prefix — `PC-` is already a live Process Corrections series in `Unknowns.md`.)*
+
+**Rules:**
+1. One row per concern. Cite the file and section, who raised it, and whether it has been checked against source. Reference existing IDs; do not restate their detail.
+2. Status values: **Parked** · **Promoted → <Unknowns.md ID>** · **Resolved <date>** · **Dropped <date> (reason)**. Rows are never deleted; Status changes in place.
+3. Human governing authority decides when a row is picked up. A concern that needs a ruling, blocks something, or proves to be a real unknown is promoted to `Unknowns.md`.
+4. *Weight* is a rough Low / Med / High guess at the cost of ignoring the concern. It is not a Risk or Priority value and must not be copied into either field anywhere.
+5. Rotation: once more than ten rows are Resolved or Dropped, move them in full to `Archive/Logs/Progress_Log_Changelog.md`.
+
+| ID | Raised | Concern | Where | Checked | Weight | Status |
+|----|--------|---------|-------|---------|--------|--------|
+| PKC-001 | 2026-10-23, Vibe audits | Per-file bookkeeping decay: Resolution Logs, Last Audit and Auditor fields stopped being maintained in late August / early September while bodies kept changing (Governance_Migration_Protocol, Ethical_Constraints, Verification_Gates; this file's own Resolution Log has no entry after 2026-09-10 although Current Lessons run to 2026-10-19). Three files were backfilled one at a time. Rule out a shared cause (e.g. the 2026-09-03 passes changing where entries are expected to land) before backfilling more. | `Admin/*` | Yes — against source | High | Parked |
+| PKC-002 | 2026-10-23, Vibe audits | Trailing `## Status` sections drift (GMP still at v0.9 / 2026-07-31; Verification_Gates contradicted its own header until 2026-10-23). Decide: maintain them, retire them in favor of the Resolution Log, or add a header check to the audit kit. | `Admin/Governance_Migration_Protocol.md`, `Admin/Verification_Gates.md`, others unchecked | Yes | Med | Parked |
+| PKC-003 | 2026-10-23, Vibe audits | `ASM-` assumption IDs collide across files (Charter ASM-001–006, GMP ASM-001–005, Verification_Gates ASM-001–004, different content). Repo-wide naming decision, e.g. per-file prefixes at the next Canonical_Terms revision. | `Admin/Governance_Charter.md`, `Admin/Governance_Migration_Protocol.md`, `Admin/Verification_Gates.md` | Yes (IDs); impact on cross-references not checked | Med | Parked |
+| PKC-004 | 2026-10-23, Vibe audit | Risk/Priority conflation survived three correction passes. `File_Template.md` already limits Highest Risk to Low/Medium/High, so Critical was never a valid value there. Decide whether to add a one-line note under the File State block there (Highest Risk takes a Risk value, never a Priority). Convention change, so not applied. | `Admin/File_Template.md` | Yes | Med | Parked |
+| PKC-005 | 2026-10-23, Vibe audit | The Governance_Charter "Self-Evidence" essay attributes the "sacred and undeniable" → "self-evident" edit to the U.S. Constitution; it belongs to the Declaration of Independence. The essay sits under the FROZEN Tier 1 Axioms marker, so a ruling is needed on whether the freeze covers it. | `Admin/Governance_Charter.md` | Yes (citation); freeze scope unresolved | Low | Parked |
+| PKC-006 | 2026-10-23, Vibe audits | Coverage gap: relocated sidecar logs were never audited, so the Charter's 13 Open Unknowns count and GOV closure events are only partly verified. Also unaudited: Security_Protocols, Leviathan_testing and other files Vibe could not load. | `Archive/Logs/Governance_Charter_Changelog.md` and others | No | Med | Parked |
+| PKC-007 | 2026-10-23, Vibe audits | Resolution Log ordering and numbering irregularities, all in history: GMP 07-26 / 07-27 / 07-26 inversion; Ethical_Constraints missing v0.2 and v0.4–v0.7, 05-04 pair mid-log, v0.16 entry at the foot; Verification_Gates creation pair mid-log, versions v0.1 then v0.6. Decide whether to repair or declare them as-is. | GMP, Ethical_Constraints, Verification_Gates logs | Yes | Low | Parked |
+| PKC-008 | 2026-10-23, Vibe audit | GMP-011 routes dispute logging to this file under a "Classification Disputes" heading. The heading does not exist yet (zero active disputes). Create it on first use, or now. | `Admin/Governance_Migration_Protocol.md`, this file | Yes | Low | Parked |
+| PKC-009 | 2026-10-23, Claude | Ethical_Constraints Scope Boundary still lists "Human escalation protocol (placeholder)" under DOES define, though EC-003 was ratified 2026-08-22. Wording only. | `Admin/Ethical_Constraints.md` | Yes | Low | Parked |
+| PKC-010 | 2026-10-23, Vibe audit | The Verification_Gates Synchronization Protocol may have been triggered by the 2026-08-19/20 Auditor_Protocols closures (AP-004/005/013/024). No closure statement names a trigger section and AP-004 went into the Dispute Handling Protocol, so no evidence of a miss; the bodies were not diffed. | `Admin/Verification_Gates.md`, `Admin/Auditor_Protocols.md` | Partly | Low | Parked |
+
+---
+
 ## Resolution Log
+
+- 2026-10-23: Added `## Parked Concerns` (holding ground for concerns
+  raised by audits and agents, seeded with ten items from the
+  2026-10-23 Vibe per-file audits and the corrections that followed),
+  plus matching DOES / DOES NOT lines in Purpose. Last Reviewed updated.
+  Human-directed.
 
 - 2026-09-10: Added 2026-09-09/10 lesson to Current Lessons covering
   HP-011/013/014, FL-002/005/006/007, GR-009/MG-009 (including the

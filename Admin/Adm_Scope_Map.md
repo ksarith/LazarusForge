@@ -11,7 +11,7 @@
 | Spec Gates       | N/A — this file is a cross-reference index, not a specification     |
 | Open Unknowns    | 0 (surfaces existing unknowns from owning files; creates none)      |
 | Owning Domain    | Admin/                                                               |
-| Last Reviewed    | 2026-10-04 — Load-bearing map (Tier 0–4) added from `Tests/Admin_Governance_Teardown_POC.md`, then Tier 1/Tier 2 file-count and KB figures corrected the same day (inherited two arithmetic errors from the source POC's own Totals line — see that file's Resolution Log). No Admin files merged or deleted. Prior: 2026-10-03 metadata catch-up. Field meaning: last substantive map check/modification, not a full-folder re-audit of every Admin file. |
+| Last Reviewed    | 2026-10-23 — Charter entry Risk corrected Critical → High (Risk/Priority conflation; found by a Vibe audit of the Charter, checked against its File State and GOV-005 sidecar). Also 2026-10-23: Progress_Log entry updated for its new Parked Concerns section. Prior: 2026-10-04 — Load-bearing map (Tier 0–4) added from `Tests/Admin_Governance_Teardown_POC.md`, then Tier 1/Tier 2 file-count and KB figures corrected the same day (inherited two arithmetic errors from the source POC's own Totals line — see that file's Resolution Log). No Admin files merged or deleted. Prior: 2026-10-03 metadata catch-up. Field meaning: last substantive map check/modification, not a full-folder re-audit of every Admin file. |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
 ---
@@ -124,7 +124,7 @@ Pilot for a per-folder scope-map pattern, proposed 2026-08-07 as a fix for a kno
 **Correction 2026-09-13:** this entry previously said 5 Open Unknowns. The file's own File State says 7 — its Last Audit note records that "5" was itself a caught staleness bug (FAK-014/015, fixed 2026-09-10) that this map hadn't picked up.
 
 ### `Admin/Governance_Charter.md`
-**Status:** Draft · 6/6 (execution quality; promotion separately blocked by GOV-005 + Enforcement Checkpoint 2 — GOV-003 Resolved 2026-08-23, no longer a promotion blocker) · 13 Open Unknowns (corrected 2026-08-25 from a stale "20" carried in this file; see that file's own File State header) · Risk: Critical
+**Status:** Draft · 6/6 (execution quality; promotion separately blocked by GOV-005 + Enforcement Checkpoint 2 — GOV-003 Resolved 2026-08-23, no longer a promotion blocker) · 13 Open Unknowns (corrected 2026-08-25 from a stale "20" carried in this file; see that file's own File State header) · Risk: High (corrected 2026-10-23 from "Critical" — Critical is GOV-005's Priority, not its Risk; matches the Charter's File State)
 **Does:** Tier 1 constitutional axioms; governance authority hierarchy; canonical governance ownership; bootstrap/Genesis Phase doctrine; migration doctrine; human override doctrine.
 **Does not (arrow):** Runtime execution, crypto implementation, CI/CD (out of scope entirely) - canonical terminology (`Canonical_Terms.md`) - auditor behavior (`Auditor_Protocols.md`) - condensed reference (`Forge_Audit_Kit.md`).
 FLAG: Single most load-bearing file in the repository — six other files in this folder alone (`GMP`, `RIP`, `CIR_Gov`, `Hardware_Diversity_Ladder`, `Security_Protocols`, `Ethical_Constraints`) explicitly defer authority questions back to this one.
@@ -186,7 +186,7 @@ exactly the failure mode its own Rule 7 documents.
 
 ### `Admin/Progress_Log.md`
 **Status:** Active — Living Document · N/A (progression log) · 0 Open Unknowns · Risk: N/A
-**Does:** Rolling, dated-heading lessons/continuity log — replaces `Unknowns.md`'s retired "What vX.X Means" section and `Discovery.md`'s removed 19-versions-stale "Attention Required" table (both 2026-08-09).
+**Does:** Rolling, dated-heading lessons/continuity log — replaces `Unknowns.md`'s retired "What vX.X Means" section and `Discovery.md`'s removed 19-versions-stale "Attention Required" table (both 2026-08-09). Also holds a short Parked Concerns list (PKC- IDs) as a holding ground for concerns not yet being worked (added 2026-10-23).
 **Does not (arrow):** Duplicate `Unknowns.md`'s Active Index or any `*_Scope_Map.md`'s per-file content — references IDs, never restates full detail. Substitute for a per-file Resolution Log.
 Note: created same day as this Scope_Map build's own findings were still fresh — exists specifically because two other files (this session's own Discovery.md and Unknowns.md work) had independently developed the same failure mode (stale narrative content trapped in structural index files) from opposite directions.
 
