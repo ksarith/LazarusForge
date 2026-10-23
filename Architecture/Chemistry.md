@@ -63,7 +63,7 @@
 | `Operations/Gate_02_Triage.md` | One-way: Gate_02 cites neither this file nor the Beilstein test. Beilstein is PL-001's (`Operations/Plastics.md`); Gate_02's own contamination handling is TS-002 (hold before further triage) |
 | `Tests/Support_Raft.md` | Galvanic corrosion mitigation SR-001 (§1.1–1.3) |
 | `Challenges/Biofouling.md` | MIC mechanism (§1.2); cathodic protection (§1.3) |
-| `Architecture/Mechanical_Structures.md` | Galvanic compatibility of mixed-metal salvage assemblies (§1.1) |
+| `Architecture/Mechanical_Structures.md` | Galvanic compatibility of mixed-metal salvage assemblies (§1.1) (one-way: Mechanical_Structures.md has no galvanic or corrosion content and does not cite this file) |
 | `Architecture/Friction_Dynamics.md` | Peer file — lubrication chemistry; tribochemistry at interfaces |
 | `Architecture/Thermal_Systems.md` | Peer file — thermal effects on electrochemical reactions |
 
@@ -935,7 +935,7 @@ parts.
 | `Operations/Energy.md` | §6.1–6.2 (battery chemistry, cell assessment) | EV-003 salvaged battery containment doctrine depends on chemistry understanding |
 | `Tests/Support_Raft.md` | §1.1–1.3 (galvanic series, MIC, cathodic protection) | SR-001 galvanic corrosion mitigation is an applied electrochemistry problem |
 | `Challenges/Biofouling.md` | §1.2 (MIC mechanism), §1.3 (cathodic protection) | MIC is the chemical mechanism behind the most severe biofouling corrosion |
-| `Architecture/Mechanical_Structures.md` | §1.1 (galvanic compatibility of mixed-metal salvage assemblies) | Dissimilar metal fasteners in humid environments create galvanic cells |
+| `Architecture/Mechanical_Structures.md` | §1.1 (galvanic compatibility of mixed-metal salvage assemblies) | Dissimilar metal fasteners in humid environments create galvanic cells (one-way: Mechanical_Structures.md does not carry this) |
 | `Operations/Gate_01_Intake.md` | §4 (contamination identification methods) | GI-003 augmented detection capability is partly chemical field testing |
 | `Operations/Gate_02_Triage.md` | §5.2 (polymer identification), §4.1 (Beilstein) | Station 0 contamination check includes chemical identification |
 | `Operations/Woodworking.md` | §2.2 (acid behavior relevant to wood tannin chemistry), §7.2 (surface treatments) | Finishing and wood-metal interaction chemistry |
@@ -1331,6 +1331,8 @@ CE-006 remains **In Progress** — Blocking Yes for CLF-004 candidate pathway un
 ---
 
 ### Resolution Log
+
+- 2026-10-20: **Mechanical_Structures rows marked one-way (no doctrine change; human-directed).** Both rows that name `Architecture/Mechanical_Structures.md` as depending on galvanic compatibility (§1.1) are annotated: Mechanical_Structures.md contains no galvanic or corrosion content and does not cite this file. Found by an external sweep (Vibe), checked against source by Claude. Human-directed.
 
 - 2026-10-20: **Corrections from an external Skeptic/Auditor sweep (Vibe; human-directed; checked against source by Claude).** (1) *File State.* Last Audit still read 2026-07-31 with an appended note that the omission was "corrected 2026-08-30"; the date was never bumped, the Auditor field stopped at the same point, and the 2026-08-30 edit it refers to has no log entry. Both fields are refreshed today; the content of the 2026-08-30 edit is not reconstructed here. (2) *Status section.* "G1 and G2 assessed as passing" is the 2026-06-02 draft assessment; File State and the 2026-08-10 pseudo-audit hold Spec Gates at 1/6 pending formal audit. The section now says the claim is historical and superseded. (3) *Downstream Dependents.* The Gate_01, Gate_02, Gate_03 and Gate_05 rows described dependencies the gate files do not carry: Gates 01–03 contain no reference to this file; "Beilstein at Station 0" was attributed to Gate_02, which never mentions it (the test is `Operations/Plastics.md` PL-001's, reused by Gates 01 and 03); Gate_03 has no combustion content; Gate_05 cites this file for oxidation/nitride chemistry and the galvanic series, not oxide burden or redox. The rows now state what is actually cited and mark the relationship one-way where the gate file does not point back. (4) *Relationship list.* The Unknowns.md bullet ("CE-001 through CE-004 to be indexed at next update") now says CE-001–CE-008 are indexed. Not changed: the heading levels of Sections 2.3 and 2.4. Human-directed.
 

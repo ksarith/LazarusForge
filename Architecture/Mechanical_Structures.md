@@ -30,8 +30,8 @@
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 2/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-06-11                                                          |
-| Auditor          | Gemini (2026-05-31); ChatGPT (2026-06-11); Claude — Retrofit        |
+| Last Audit       | 2026-10-20 — external Skeptic/Auditor sweep (Vibe) checked against source by Claude (human-directed): Resolution Log repaired; File State refreshed (it had not moved for the 2026-07-28 count correction); prior: 2026-06-11 |
+| Auditor          | Claude — 2026-10-20 corrections (human-directed, from an external Vibe sweep); Gemini (2026-05-31); ChatGPT (2026-06-11); Claude — Retrofit        |
 | Open Unknowns    | 4                                                                   |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | High                                                                |
@@ -431,6 +431,8 @@ to next major file revision — non-blocking.
 
 ### Resolution Log
 
+- 2026-10-20: **Log repair and File State refresh from an external Skeptic/Auditor sweep (Vibe; human-directed; checked against source by Claude).** (1) *Log repair.* A fragment of an earlier entry ("mechanical, and kinematic engineering doctrine for salvaged-component fabrication machinery… Spec Gate 1 assessed as passing.") was spliced into the middle of the 2026-06-08 entry, under a truncated duplicate of that entry's first sentence ("- 2026-06-08: Navigation Anchors block added. Scope Boundary updated."). The duplicate line is removed — the complete entry follows it — and the fragment is moved after the complete entry under its own labeled heading, verbatim; its opening lines and exact date are not recoverable and were not reconstructed. (2) *File State.* Last Audit and Auditor had not moved for the 2026-07-28 Open Unknowns correction (3 → 4); refreshed. (3) *Noted, not changed:* Thermal_Systems.md names this file as owner of the structural response to thermal expansion, but this file does not cite Thermal_Systems.md, and `Architecture/Arc_Scope_Map.md`'s "reciprocal link confirmed" overstates that; this file also carries no Upstream/Downstream tables. Human-directed.
+
 - 2026-08-10: **Pseudo-audit (Grok, same limits as Engineering/Waste pass).**
   Findings only; Spec Gates left locked at 2/6. (1) Open Unknowns **4** =
   ME-001–004, matches local sidecar and `Unknowns.md` (count already corrected
@@ -456,7 +458,12 @@ to next major file revision — non-blocking.
   ME-003 added (structural creep and damp-fill aging). ME-004 added (calibration
   values not separated from doctrine). Open Unknowns updated 2→3 (ME-004 is
   Minor/non-blocking; ME-003 is the substantive new gap). Last Audit updated.
-- 2026-06-08: Navigation Anchors block added. Scope Boundary updated.
+- 2026-06-08: Navigation Anchors block added. Scope Boundary updated —
+  `Operations/Electronics.md` [PLANNED] tag removed (file now exists);
+  `Architecture/Precision.md` added as precision ceiling doctrine owner (PC-003).
+  ME-002 resolution path updated — `Operations/Air_Scrubber.md` now exists;
+  cross-reference to AS-003 added.
+- 2026-06-08 or earlier (date not recoverable): *[Fragment of a lost earlier entry — its opening lines are missing. Found spliced into the middle of the 2026-06-08 entry above; separated here and preserved verbatim, not reconstructed.]*
   mechanical, and kinematic engineering doctrine for salvaged-component fabrication
   machinery. Scope explicitly scoped as downstream extension of
   `Architecture/Engineering.md`, not a replacement. Codified gantry damp-filling
@@ -465,8 +472,3 @@ to next major file revision — non-blocking.
   spindle purge parameters. Verification Ref corrected to
   `Admin/Verification_Gates.md`. Open Unknowns count set to 2 (ME-001, ME-002).
   Spec Gate 1 assessed as passing.
-- 2026-06-08: Navigation Anchors block added. Scope Boundary updated —
-  `Operations/Electronics.md` [PLANNED] tag removed (file now exists);
-  `Architecture/Precision.md` added as precision ceiling doctrine owner (PC-003).
-  ME-002 resolution path updated — `Operations/Air_Scrubber.md` now exists;
-  cross-reference to AS-003 added.

@@ -28,8 +28,8 @@
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 1/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-06-11                                                          |
-| Auditor          | Claude (2026-05-31); ChatGPT informal (2026-06-11); Claude retrofit  |
+| Last Audit       | 2026-10-20 — external Skeptic/Auditor sweep (Vibe) checked against source by Claude (human-directed): Resolution Log repaired, TH-002 pointer corrected, Gate_05 rows marked one-way; prior: 2026-06-11 |
+| Auditor          | Claude — 2026-10-20 corrections (human-directed, from an external Vibe sweep); Claude (2026-05-31); ChatGPT informal (2026-06-11); Claude retrofit  |
 | Open Unknowns    | 6                                                                   |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | High                                                                |
@@ -91,7 +91,7 @@
 
 | File | Dependency |
 |---|---|
-| `Operations/Gate_05_Separation_Thermal.md` | Induction and thermal separation doctrine; TH-001 (heat pump sizing) |
+| `Operations/Gate_05_Separation_Thermal.md` | Induction and thermal separation doctrine; TH-001 (heat pump sizing) (one-way: Gate_05 does not cite this file or track TH-001) |
 | `Operations/Air_Scrubber.md` | Thermal quench stage design; exhaust heat load management |
 | `Operations/Energy.md` | Heat pump COP doctrine; thermal harvest from Gate_05; EV-003 (battery thermal containment) |
 | `Operations/Plastics.md` | Pyrolysis thermal profiles; polymer thermal degradation |
@@ -548,7 +548,7 @@ thermal design decisions.
 
 | Downstream File | Relevant Sections | Dependency |
 |----------------|-------------------|------------|
-| `Operations/Gate_05_Separation_Thermal.md` | §1 (thermodynamic limits), §2 (radiation at high temp), §3 (thermal impedance of crucible assembly) | Gate_05 is a thermal separation system — all design decisions have thermal doctrine roots |
+| `Operations/Gate_05_Separation_Thermal.md` | §1 (thermodynamic limits), §2 (radiation at high temp), §3 (thermal impedance of crucible assembly) | Gate_05 is a thermal separation system — all design decisions have thermal doctrine roots (one-way: Gate_05 does not cite this file) |
 | `Operations/Air_Scrubber.md` | §2.2 (forced convection in quench stage), §6 (Peltier for condensate recovery) | AS-003 saturation threshold depends on thermal quench parameters |
 | `Operations/Energy.md` | §7 (TEG waste heat harvest), §5 (heat pump COP for efficiency claims) | EV-001 demand baseline must account for thermal parasitic loads |
 | `Operations/Plastics.md` | §1 (First Law — no free heat in pyrolysis), §3 (thermal impedance of reactor wall) | Pyrolysis temperature profiles are thermal management problems |
@@ -640,7 +640,9 @@ sizing and expected COP. Append to Section 5.
 
 **Description:** Section 7 provides estimated ΔT ranges for Gate_05 TEG harvest
 but the actual exterior shell temperature profile during operation is not yet
-characterized (see SC-001 in `Operations/Gate_05_Separation_Thermal.md`).
+characterized. No Gate_05 unknown currently owns it — SC-001 in
+`Operations/Gate_05_Separation_Thermal.md` is RPM envelope validation
+(pointer corrected 2026-10-20).
 Harvest yield estimates are Analogous confidence only.
 
 **Resolution Path:** When Gate_05 first operational prototype exists, mount
@@ -789,6 +791,8 @@ useful in a waste-heat harvest application. Document acceptance threshold as
 
 ### Resolution Log
 
+- 2026-10-20: **Log repair and pointer corrections from an external Skeptic/Auditor sweep (Vibe; human-directed; checked against source by Claude).** (1) *Log repair.* The tail of the file-creation entry ("Engineering.md. Sections 1–8 drafted covering…", ending "`Admin/Verification_Gates.md`.") had run onto the end of the 2026-06-11 entry with its opening line missing. It is now separated under its own labeled fragment entry, dated approximately 2026-05-31 from the Auditor field and TH-001–TH-004 First Logged dates; nothing was reconstructed or added to it. (2) *TH-002.* Its pointer to "SC-001 in Gate_05" for the shell temperature profile was wrong — SC-001 is RPM envelope validation; no Gate_05 unknown owns exterior shell temperature. The text now says so. (3) *Gate_05 rows.* Both Downstream Dependents rows for Gate_05 are marked one-way: Gate_05 cites this file nowhere and does not track TH-001. (4) File State Last Audit and Auditor refreshed. Not changed: the §2.3 numbering gap. Human-directed.
+
 - 2026-08-10: **Pseudo-audit (Grok, same limits).** Findings only; Spec Gates
   left locked at 1/6. (1) Open Unknowns **6** = TH-001–006, matches local
   sidecar and `Unknowns.md`. (2) TH-003 correctly nuanced: Blocking for Living
@@ -809,6 +813,7 @@ useful in a waste-heat harvest application. Document acceptance threshold as
   TH-005 added (thermal interface material doctrine). TH-006 added (TEG salvage
   validation). Thermal expansion bridge sentence added to Scope Boundary.
   Open Unknowns updated 4→6. Last Audit updated.
+- 2026-05-31 (date approximate; opening line lost): *[Fragment of the file-creation entry. Its first line was lost, and its surviving tail was found appended to the 2026-06-11 entry above; it is separated here and preserved verbatim, not reconstructed. The date comes from the Auditor field and the TH-001–TH-004 First Logged dates.]*
   Engineering.md. Sections 1–8 drafted covering thermodynamic laws, heat transfer
   modes, thermal impedance circuit analogy, insulation doctrine, heat pumps, Peltier
   devices, TEGs, and Forge thermal integration map. TH-001 through TH-004 logged.

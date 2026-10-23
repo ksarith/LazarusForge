@@ -29,8 +29,8 @@
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 2/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-06-11                                                          |
-| Auditor          | Claude (2026-05-31); ChatGPT informal (2026-06-11); Claude retrofit  |
+| Last Audit       | 2026-10-20 — external Skeptic/Auditor sweep (Vibe) checked against source by Claude (human-directed): spliced table rows removed, Gate_04 row marked one-way; prior: 2026-06-11 |
+| Auditor          | Claude — 2026-10-20 corrections (human-directed, from an external Vibe sweep); Claude (2026-05-31); ChatGPT informal (2026-06-11); Claude retrofit  |
 | Open Unknowns    | 4                                                                   |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | Medium                                                              |
@@ -54,7 +54,7 @@
 
 | File | Dependency |
 |---|---|
-| `Operations/Gate_04_Separation_Mechanical.md` | Fluid dynamics in Spin Chamber; centrifugal separation |
+| `Operations/Gate_04_Separation_Mechanical.md` | Fluid dynamics in Spin Chamber; centrifugal separation (one-way: Gate_04 does not cite this file) |
 | `Operations/Air_Scrubber.md` | Duct airflow design; fan sizing; pressure drop calculations |
 | `Architecture/Thermal_Systems.md` | Peer file — convective heat transfer; fluid thermal properties |
 | `Architecture/Chemistry.md` | Peer file — tribochemistry; lubrication fluid chemistry |
@@ -62,10 +62,6 @@
 | `Tests/Support_Raft.md` | SWATH hydrodynamics; boundary layer doctrine; wave-surge converter |
 | `Tests/Leviathan_testing.md` | Subsea drag; hydrodynamic maneuverability |
 | `Challenges/Biofouling.md` | Drag penalty from biofouling; boundary layer disruption |
-| Active Disputes  | 0                                                                   |
-| Highest Risk     | High                                                                |
-| Sidecar Link     | #auditor-notes--unknowns                                            |
-| Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
 ---
 
@@ -871,6 +867,8 @@ first FSI-relevant failure in operational deployment.
 ---
 
 ### Resolution Log
+
+- 2026-10-20: **Downstream Dependents repair (no doctrine change; human-directed).** Four rows had been spliced into the end of the Downstream Dependents table — Active Disputes 0, Highest Risk High, Sidecar Link, Ethical Anchor — duplicating this file's own File State fields; the spliced "Highest Risk High" also contradicted File State (Medium) and `Architecture/Arc_Scope_Map.md` (Medium). The four rows are removed; the File State copies are untouched. The `Operations/Gate_04_Separation_Mechanical.md` row is marked one-way: Gate_04 does not cite this file, and MG-002 does not mention the Stokes interpretation FD-001 depends on. File State Last Audit and Auditor refreshed. Not changed: the air-density figure at 35 °C (~1.17 kg/m³ against ≈1.146 from the ideal-gas law), which is internally consistent and slightly conservative. Found by an external sweep (Vibe), checked against source by Claude. Human-directed.
 
 - 2026-08-10: **Pseudo-audit (Grok, same limits).** Findings only; Spec Gates
   left locked at 2/6. (1) Open Unknowns **4** = FD-001, FD-002, FD-003, FD-005
