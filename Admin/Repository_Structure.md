@@ -16,8 +16,8 @@
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-08-11                                                          |
-| Auditor          | Claude — Automation/ formalized in Section II (external ChatGPT review finding, verified before applying), human-directed; prior: Grok — correction pass, 2026-08-09 |
+| Last Audit       | 2026-10-23 — Claude (human-directed) corrections from a Vibe per-file audit: 2026-10-03/10-04 passes logged, RS-001 refreshed; open items parked in `Admin/Progress_Log.md` §Parked Concerns, not fixed here. Prior: 2026-10-07 root-table addition (logged), 2026-10-04 and 2026-10-03 edits, 2026-08-11 |
+| Auditor          | Claude — 2026-10-23 corrections (human-directed, from a Vibe per-file audit); 2026-10-03/10-04/10-07 passes human-directed, agents not recorded; prior: Claude — Automation/ formalized in Section II (external ChatGPT review finding, verified before applying), human-directed; prior: Grok — correction pass, 2026-08-09 |
 | Open Unknowns    | 1                                                                   |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | Low                                                                 |
@@ -435,14 +435,16 @@ The LazarusForge project spans three repositories with distinct roles:
 | Blocking      | No                             |
 | Owner         | Admin/Repository_Structure.md  |
 | First Logged  | 2026-06-05                     |
-| Last Reviewed | 2026-06-05                     |
+| Last Reviewed | 2026-10-23                     |
 
 **Description:** Section I states that new file types require a RS-001
 review before introduction. The review procedure itself is not yet
 defined.
 
-**Why It Matters:** AUDIT_HARNESS.py is currently the only non-markdown
-file. If scripts, data files, or other formats are added, the naming
+**Why It Matters:** *(Refreshed 2026-10-23: when first written, AUDIT_HARNESS.py
+was the only non-markdown file; `Automation/` now holds eleven `.py` files
+and one `.zip`, so the trigger described here has already fired repeatedly
+without a defined review.)* If scripts, data files, or other formats are added, the naming
 and placement convention may not apply cleanly.
 
 **Resolution Path:** Payment via Specification — define minimum review
@@ -510,6 +512,12 @@ recognition; no new action required.
 ---
 
 ### Resolution Log
+
+- 2026-10-23: Bookkeeping backfill (human-directed, from a Vibe per-file audit, each finding checked against source first): entries added below for the 2026-10-03 and 2026-10-04 passes; Last Audit and Auditor extended; RS-001's stale "only non-markdown file" statement refreshed (Resolution Path and deferral unchanged). No doctrine changed.
+
+- 2026-10-04: Root table: `.gitignore` added as a tooling-surface root file (standard Git placement; excludes `Automation/`'s generated Python bytecode and common editor/OS artifacts), after a release zip was found to include compiled bytecode with no `.gitignore` to prevent it. Agent not recorded. *(Backfilled 2026-10-23 from the root-table row.)*
+
+- 2026-10-03: Drift Indicators: root-count threshold changed from a fixed "three" to the live justified set in "Current root files and their justification"; the old figure was stale relative to File_Template exemptions and the actual root. Agent not recorded. *(Backfilled 2026-10-23 from the in-file "as of 2026-10-03" marker.)*
 
 - 2026-10-07: Root table + placement: `Things_We_Got_Wrong.md` added with Standard-scope recharacterization (public miss log). Human-directed merge.
 
