@@ -14,8 +14,8 @@
 | Body Stability   | Volatile                                                            |
 | Spec Gates       | 0/6 — file-level maturity remains Exploration because the protocol still contains unresolved and unimplemented migration capabilities (GMP-002 ownership transfer, GMP-004 ratification authentication, etc.). Individual subsections may nevertheless be operative or Payment-via-Specification closed (notably §III.A GMP-006 state machine, §III.B GMP-012 repeal/rollback, §III.C GMP-007 withdrawal, §III.D GMP-008 expiration, §VIII Evidence-Sufficiency Gate, Fork Reconciliation Track, §VI EQD). 0/6 does **not** mean the body is merely hypothetical. |
 | Verification Ref | `Admin/Verification_Gates.md`                                    |
-| Last Audit       | 2026-09-18 — §VII.2 amended (Candidate specification, unratified): role rotation across quorum cycles added as permitted-not-required, with expected limitations stated explicitly (does not satisfy Diversity/Independence tests by itself, does not touch Hardware/Runtime Diversity, rotation-assignment authority left open) rather than presented as a solved mechanism; corresponding open item added to §VII.6. No change to VII.1/VII.3–VII.5's requirements, this section's Status, or GOV-008. Human-directed, following a ChatGPT multi-agent-readiness assessment verified accurate against this section before extending it. Prior: 2026-09-03 — Grok surgical integrity repair after ChatGPT REVISE/G6-BLOCKED audit (GMP-AUD-001–007): FROZEN markers added; File State normalized with explicit subsection-vs-file maturity clarification; Last Audit collapsed to clean record (prior multi-month narrative retained in Resolution Log / sidecar); explicit Charter-precedence rule added pending GMP-002; subsection status markers for §VI/VII/VIII. No migration architecture redesigned. Prior full history in Resolution Log. Same day, following a Grok verification audit: Claude corrected GMP-002's own Description, which had wrongly claimed the Charter's ownership table already listed this file as owner — the live Charter table still names itself as owner (confirmed by direct check), contradicting this file's own accurate Scope Boundary text on the same point. Revised 2026-09-05, three passes: §III.B Repeal/Rollback (GMP-012), §III.C Withdrawal (GMP-007), and §III.D Expiration (GMP-008) — all three drafted by Grok, each independently Skeptic-reviewed by Claude against live §III.A source (III.A.4's Withdraw/Expire authority rows, III.A.6's human-attention design note, and GMP-008's own original three-audit-cycle default all confirmed accurate, no invented authority, no blocking findings), and each Ratified by Human Governing Authority same day. The GMP-006/007/008 amendment-lifecycle cluster is now fully closed. |
-| Auditor          | Grok — 2026-09-03 integrity repair; Grok — 2026-09-05 §III.B/§III.C/§III.D drafts (GMP-012/007/008); Claude — 2026-09-05 Skeptic passes + merge integrity checks (all three). Prior Closure Events and multi-agent history retained in Resolution Log and Archive. |
+| Last Audit       | 2026-10-23 — Claude (human-directed) applied corrections from a Vibe per-file audit, each checked against source first: Resolution Log backfilled for five unlogged passes (08-31, 09-03, 09-05, 09-18, 09-23) from in-file Closure Events and markers; Scope Boundary DOES/DOES NOT lists reconciled with §III.A–§III.D; Relationship section's Unknowns.md index claim corrected. Trailing `## Status` section deliberately not updated (maintain-vs-retire decision pending). No ratified or FROZEN text modified. Prior: 2026-09-18 — §VII.2 amended (Candidate specification, unratified): role rotation across quorum cycles added as permitted-not-required, with expected limitations stated explicitly (does not satisfy Diversity/Independence tests by itself, does not touch Hardware/Runtime Diversity, rotation-assignment authority left open) rather than presented as a solved mechanism; corresponding open item added to §VII.6. No change to VII.1/VII.3–VII.5's requirements, this section's Status, or GOV-008. Human-directed, following a ChatGPT multi-agent-readiness assessment verified accurate against this section before extending it. Prior: 2026-09-03 — Grok surgical integrity repair after ChatGPT REVISE/G6-BLOCKED audit (GMP-AUD-001–007): FROZEN markers added; File State normalized with explicit subsection-vs-file maturity clarification; Last Audit collapsed to clean record (prior multi-month narrative retained in Resolution Log / sidecar); explicit Charter-precedence rule added pending GMP-002; subsection status markers for §VI/VII/VIII. No migration architecture redesigned. Prior full history in Resolution Log. Same day, following a Grok verification audit: Claude corrected GMP-002's own Description, which had wrongly claimed the Charter's ownership table already listed this file as owner — the live Charter table still names itself as owner (confirmed by direct check), contradicting this file's own accurate Scope Boundary text on the same point. Revised 2026-09-05, three passes: §III.B Repeal/Rollback (GMP-012), §III.C Withdrawal (GMP-007), and §III.D Expiration (GMP-008) — all three drafted by Grok, each independently Skeptic-reviewed by Claude against live §III.A source (III.A.4's Withdraw/Expire authority rows, III.A.6's human-attention design note, and GMP-008's own original three-audit-cycle default all confirmed accurate, no invented authority, no blocking findings), and each Ratified by Human Governing Authority same day. The GMP-006/007/008 amendment-lifecycle cluster is now fully closed. |
+| Auditor          | Claude — 2026-10-23 corrections (human-directed, from a Vibe per-file audit); Grok (drafter) + Claude (source verifier) — 2026-09-23 GMP-011; human-directed — 2026-09-18 §VII.2; Grok — 2026-09-03 integrity repair; Grok — 2026-09-05 §III.B/§III.C/§III.D drafts (GMP-012/007/008); Claude — 2026-09-05 Skeptic passes + merge integrity checks (all three). Prior Closure Events and multi-agent history retained in Resolution Log and Archive. |
 | Open Unknowns    | 4 (GMP-002, GMP-003, GMP-004, GMP-013). GMP-011 Resolved (Payment via Specification, ratified 2026-09-23). GMP-012, GMP-007, and GMP-008 all Ratified 2026-09-05. |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | High                                                                |
@@ -39,6 +39,14 @@
 - Amendment recording requirements (Resolution Log preservation of prior text)
 - Track B classification scope: text changes AND enforcement-bound
   reinterpretations of Tier 1 Axioms via lower-tier documents
+- Track B amendment lifecycle and concurrent amendment handling — §III.A
+  state machine (GMP-006, Resolved 2026-08-31)
+- Repeal and rollback of recorded Track B amendments — §III.B (GMP-012,
+  Ratified 2026-09-05)
+- Withdrawal of pre-Recorded Track B proposals — §III.C (GMP-007, Ratified
+  2026-09-05)
+- Expiration of stalled pre-Recorded Track B proposals — §III.D (GMP-008,
+  Ratified 2026-09-05; stall window provisional)
 
 **This file DOES NOT define:**
 - The Tier 1 Axioms themselves (→ `Admin/Governance_Charter.md`)
@@ -50,9 +58,6 @@
   (→ `Admin/Repository_Integrity_Protocol.md`)
 - Auditor operational behavior during migration review
   (→ `Admin/Auditor_Protocols.md`)
-- Amendment withdrawal procedure (→ §III.C / GMP-007, Ratified 2026-09-05)
-- Concurrent amendment handling — Resolved 2026-08-31, §III.A Track B Amendment Lifecycle (→ GMP-006)
-- Proposal expiration policy (→ §III.D / GMP-008, Ratified 2026-09-05)
 
 ---
 
@@ -1957,6 +1962,16 @@ Claude — Synthesizer/Auditor, human-directed, 2026-07-26.*
 
 ### Resolution Log
 
+- 2026-09-23: **GMP-011 resolved — Track classification dispute rule ratified (Payment via Specification), including the Genesis Phase holding clause on the timeout/structural-review sub-rules.** Drafted by Grok; source-verified by Claude against this file's live §VII.5 and the Charter's Genesis Phase exit-pathway doctrine, which caught and corrected a citation error (§VII.5 had been cited as supporting a Genesis-Phase relaxation; the live text says the opposite) and a scope error (holding-clause expiry was tied only to GOV-008 quorum rather than to any of the Charter's four exit pathways). Ratified by Human Governing Authority. Full closure detail in the GMP-011 sidecar. *(Backfilled 2026-10-23 from the in-file closure statement; this entry was missing when the pass landed.)*
+
+- 2026-09-18: **§VII.2 amended — role rotation across quorum cycles added (permitted, not required); GMP-004 sidecar gained solo-operator residual and scope fences.** Human-directed. §VII.2 remains a Candidate specification, unratified; the amendment states its limitations explicitly (does not satisfy the Diversity/Independence tests by itself, does not touch Hardware/Runtime Diversity). Rotation-assignment authority recorded as an open item in §VII.6. GMP-004's sidecar gained the solo-operator residual and scope fences against GOV-006 and GOV-019. No unknown closed. *(Backfilled 2026-10-23 from in-file dated markers.)*
+
+- 2026-09-05: **§III.B, §III.C and §III.D ratified — repeal/rollback (GMP-012), withdrawal (GMP-007) and expiration (GMP-008) of Track B proposals.** Drafted by Grok; Claude ran Skeptic passes and merge integrity checks on all three; ratified by Human Governing Authority. Closure statements are at the end of each section; sidecar Closure Events carry the detail. *(Backfilled 2026-10-23 from File State and the section closure statements.)*
+
+- 2026-09-03: **Integrity repair (Grok).** FROZEN markers placed on the Track A/B classification rule, the §III.A state machine, §VI EQD core distinctions and §VIII ESG core distinctions. Other changes made in this pass are not itemized in this file; see the Auditor field. *(Backfilled 2026-10-23 from the FROZEN markers and the Auditor field.)*
+
+- 2026-08-31: **§III.A Track B Amendment Lifecycle (state machine) integrated — GMP-006 resolved, Payment via Specification.** Drafted by Grok (Revision 1 addressed a ChatGPT Skeptic pass); independently verified by Claude against live source; ratified by Human Governing Authority. Detail in the GMP-006 Closure Event. *(Backfilled 2026-10-23 from the Closure Event.)*
+
 - 2026-08-07: **§VII.2 and §VII.3.3 tightened — Coupled-orchestration rule and Decision-weight method added, closing ClaudeAudit Class 5 (coupled-orchestration decision-weight for non-executing/advisory roles).** VII.2's four-class taxonomy previously said nothing about sub-agents spawned inside the same runtime/session as another class — nominally distinct instances could remain architecturally coupled while still counting as separate classes. Added: a coupled set now counts as one unit for class counting and decision weight, using the same independence standard §VI and the (Class 9-updated) VII.4 already require. VII.3.3's 50% decision-weight rule previously had no method for weighting non-executing roles against an Executor — added: only roles that can block or authorize carry weight; Skeptic/Auditor roles with no execution or final-authorization power carry zero. Deliberately no fractional weighting scheme — zero-for-advisory is the conservative floor, not a calibrated parameter. Both patches drafted by Grok; both source quotes (the VII.2 cross-reference paragraph, VII.3 item 3) verified exact against this file's live text before applying.
 
   One claim in Grok's proposed disposition note was not applied: it characterized this as closing "the original three-finding set (Classes 4, 9, and 5)" from the 2026-08-03 cold pass. Checked against that pass's own Resolution Log entry below — it names no "Class 4" anywhere, describes its two acted-on findings by content only, and states explicitly that the ten-class battery "surfaced ten findings; two were acted on." There is no source basis for a specific "Class 4" label, and no claim that only three of the ten findings were ever relevant. What's accurate: together with Class 9 (closed 2026-08-07, same session) and the two content-described findings from 2026-08-03, four total findings from that cold pass have now been acted on. The other six, whatever they were, remain unaddressed and undocumented here — this patch does not claim otherwise.
@@ -2310,8 +2325,10 @@ Track A and Track B above define how a single lineage evolves. This Track is the
 - `Admin/Forge_Audit_Kit.md` — Tier 3; Verification Maturity Model
   referenced for Gate 4 clearance threshold; GMP- prefix in Sidecar ID
   Reference
-- `Unknowns.md` — GMP-001 through GMP-008 indexed there; cross-module
-  impact of Track B amendments to be logged there
+- `Unknowns.md` — active GMP rows (currently GMP-002, GMP-003, GMP-004,
+  GMP-013) indexed there; Resolved GMP entries are removed from the active
+  index per its Size Management Rule 2; cross-module impact of Track B
+  amendments to be logged there
 - `Discovery.md` — downstream notification tracking during migrations;
   canonical cross-reference resolution source
 
