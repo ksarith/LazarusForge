@@ -16,8 +16,8 @@
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 6/6                                                                 |
 | Verification Ref | Self (this file is the verification reference)                      |
-| Last Audit       | 2026-07-10; revised 2026-09-03 — Grok audit (G1–G6 all Pass; Tier 1 Axiom Verification provisional — Governance_Charter.md not loaded that session); Spec Gates promoted 2/6→6/6 per audit recommendation; Claude — Tier 1 Axiom Verification follow-up completed same day with Governance_Charter.md loaded: self-approval prohibition confirmed derived from Axiom Q-2 (Separation of Powers), evidence/reality-grounding requirements confirmed derived from Axiom Q-1, override-doctrine exclusion of Tier 1/Anti-Weaponization confirmed verbatim-consistent with Charter's Relationship to Existing Documents section; no axiom text drift, no override-scope widening; provisional caveat closed (human-directed) |
-| Auditor          | ChatGPT — Skeptic/Auditor (findings actioned by Claude); Claude — EMS merge integration and VG-002/AP-021 resolution cascade (human-directed), 2026-07-10; Grok — Skeptic/Auditor, full G1–G6 pass, 2026-09-03 |
+| Last Audit       | 2026-10-23 — Claude (human-directed) applied corrections from a Vibe per-file audit, each checked against source first: 2026-09-03 promotion backfilled into the Resolution Log; trailing `## Status` section's gate-status line corrected to match Spec Gates 6/6; Last Audit and Auditor fields extended to cover the 2026-10-20 compliance-check reference update (logged 10-20, human-directed, under AP-029). No gate definition changed. Prior: 2026-07-10; revised 2026-09-03 — Grok audit (G1–G6 all Pass; Tier 1 Axiom Verification provisional — Governance_Charter.md not loaded that session); Spec Gates promoted 2/6→6/6 per audit recommendation; Claude — Tier 1 Axiom Verification follow-up completed same day with Governance_Charter.md loaded: self-approval prohibition confirmed derived from Axiom Q-2 (Separation of Powers), evidence/reality-grounding requirements confirmed derived from Axiom Q-1, override-doctrine exclusion of Tier 1/Anti-Weaponization confirmed verbatim-consistent with Charter's Relationship to Existing Documents section; no axiom text drift, no override-scope widening; provisional caveat closed (human-directed) |
+| Auditor          | Claude — 2026-10-23 corrections (human-directed, from a Vibe per-file audit); 2026-10-20 compliance-check reference update (human-directed; agent not recorded in the log entry); ChatGPT — Skeptic/Auditor (findings actioned by Claude); Claude — EMS merge integration and VG-002/AP-021 resolution cascade (human-directed), 2026-07-10; Grok — Skeptic/Auditor, full G1–G6 pass, 2026-09-03 |
 | Open Unknowns    | 0                                                                   |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | High                                                                |
@@ -618,6 +618,8 @@ Lessons Learned entry already names for detection-latency unknowns.
 
 - 2026-10-20: **Compliance-check reference updated (no gate change).** The sidecar-governance line in the promotion checklist no longer names the 10-entry rule (removed under AP-029; see `Admin/Auditor_Protocols.md` v0.44) and now reads "20% rule, aging rule". Human-directed.
 
+- 2026-09-03: **Full G1–G6 audit pass; Spec Gates promoted 2/6 → 6/6.** Grok (Skeptic/Auditor) assessed all six gates as Pass; the Tier 1 Axiom Verification step was provisional because `Admin/Governance_Charter.md` was not loaded that session. Spec Gates promoted per the audit recommendation. Same day, Claude completed the Tier 1 Axiom Verification follow-up with the Charter loaded: the self-approval prohibition is derived from Axiom Q-2 (Separation of Powers); the evidence and reality-grounding requirements are derived from Axiom Q-1; the override-doctrine exclusion of Tier 1 / Anti-Weaponization is verbatim-consistent with the Charter's Relationship to Existing Documents section; no axiom text drift and no override-scope widening. Provisional caveat closed. Human-directed. *(Backfilled 2026-10-23 from the File State Last Audit field; the promotion was previously recorded only there.)*
+
 - 2026-08-09: **Filename Track A — `Verification_Gates_LF.md` →
   `Verification_Gates.md`.** `_LF` suffix retired under Repository_Structure
   no-version-suffix rule. All inbound references updated across the tree;
@@ -747,8 +749,11 @@ evidence maturity vector's thresholds for Measured/Replicated confidence
 claims. Human-audit-level enforcement only; `Automation/AUDIT_HARNESS.py`
 automation remains future work (2026-07-10).
 
-**Gate status:** G1 and G2 assessed as passing at Draft stage. G3 through
-G6 require formal audit pass against Auditor_Protocols.md before claiming.
+**Gate status:** Spec Gates 6/6 — promoted 2026-09-03 after a Grok G1–G6
+audit (all Pass) and Claude's same-day Tier 1 Axiom Verification follow-up.
+Later changes: filename rename 2026-08-09 (content unchanged); compliance-check
+reference update 2026-10-20 (no gate change). See the Resolution Log; the
+File State header is authoritative if this block and it ever disagree.
 
 **What must remain constant:**
 
