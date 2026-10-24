@@ -16,8 +16,8 @@
 | Body Stability   | Volatile                                                            |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-07-06                                                          |
-| Auditor          | Claude — Skeptic/Auditor (rename pass); Gemini — Skeptic/Auditor (Exploration audit, path/gap findings) |
+| Last Audit       | 2026-10-23 — Claude (human-directed) Resolution Log backfilled for the 2026-06-05 first logging and the two 2026-07-06 passes (Gemini Exploration audit; Claude EC-→ECN- rename), from a Vibe per-file audit, each finding checked against source first. Whether a findings-only pseudo-audit (the logged 2026-08-10 Grok pass) advances this field is unresolved (Progress_Log PKC-020). Prior: 2026-07-06                                                          |
+| Auditor          | Claude — 2026-10-23 log backfill (human-directed, from a Vibe per-file audit); Claude — Skeptic/Auditor (rename pass); Gemini — Skeptic/Auditor (Exploration audit, path/gap findings) |
 | Open Unknowns    | 5 (ECN-001, ECN-002, ECN-004, ECN-005, ECN-006)                     |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | Medium                                                              |
@@ -780,6 +780,12 @@ declared with rationale, rather than left silent. This file defers:
   ECN-005, ECN-006 (ECN-003 Resolved) — matches File State and `Unknowns.md`.
   (2) ECN-002 correctly **Blocking Yes** (blocks TR-001 resolution). (3) No
   ECN-* closed; no market claims advanced. Human-directed.
+
+- 2026-07-06: **Gemini Exploration audit (Skeptic/Auditor) — path and gap findings.** Surfaced ECN-006 (barter performance and default risk mechanics undefined; first logged this date) and declared the Adversarial Deferral (Gate 3) block: counterparty bad faith, localized market collapse and hyper-inflationary liquidity distortion deferred with rationale. *(Backfilled 2026-10-23 from the Auditor field, the Adversarial Deferral block and ECN-006's sidecar; same-day order with the rename pass below not recorded.)*
+
+- 2026-07-06: **EC- → ECN- rename pass (Claude).** CT-007 (`Admin/Canonical_Terms.md`) identified an `EC-` prefix collision with `Admin/Ethical_Constraints.md`; all five of this file's entries, ECN-001 through ECN-005 (including Resolved ECN-003), were renamed from `EC-` to `ECN-`. CT-007's original write-up cited EC-008 as a sixth colliding ID; checked against this file, EC-008 does not exist here, so that citation was an error. Detail in Lessons Learned. *(Backfilled 2026-10-23.)*
+
+- 2026-06-05: **ECN-001 through ECN-005 first logged** (their sidecar First Logged dates). The file's creation pass is not otherwise recorded in this file. *(Backfilled 2026-10-23.)*
 
 ---
 

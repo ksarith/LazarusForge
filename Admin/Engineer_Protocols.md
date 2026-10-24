@@ -29,8 +29,8 @@
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 2/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-05-30 (ChatGPT — Skeptic/Auditor); revised 2026-06-08          |
-| Auditor          | Claude — Retrofit/Auditor (integrating 2026-05-30 addendum)         |
+| Last Audit       | 2026-05-30 (ChatGPT — Skeptic/Auditor); revised 2026-06-08; revised 2026-10-23 (structure corrections)          |
+| Auditor          | Claude — Retrofit/Auditor (integrating 2026-05-30 addendum); Claude — 2026-10-23 structure corrections (human-directed, from a Vibe per-file audit)         |
 | Open Unknowns    | 6                                                                   |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | High                                                                |
@@ -438,6 +438,19 @@ Mandatory re-audit conditions for this document:
 - File moved out of Admin/ without updating all cross-references
 - Ethical Anchor field absent, altered, or does not match canonical string
 
+All canonical triggers from `Admin/File_Template.md` also apply. The following additional local triggers (from the 2026-05-30 addendum, merged into this section 2026-10-23) apply too:
+
+| Trigger | Reason |
+|---------|--------|
+| The 10-question framework is modified to remove safety or failure-learning questions | Safety and failure-learning are load-bearing — the framework is not complete without them |
+| Assumption Challenge Triggers are removed or made optional | Mandatory challenge doctrine is the primary defense against reasoning drift in multi-agent workflows |
+| Discovery.md is removed as the primary search target | Anti-reinvention doctrine depends on a stable primary navigation anchor |
+| Unknown Discovery Doctrine removed from Section 6 | Untracked unknowns compound silently — logging doctrine is mandatory |
+| Section 8 Hazard Escalation table revised without cross-validating against owning file sidecars | Hazard unknowns change as files are updated — table must stay current |
+| "Acceptable risk threshold" referenced without pointing to a defined standard | EP-005 — subjective threshold produces audit-inconsistent escalation decisions |
+| EP-005 or EP-006 closed without formal resolution entry | Both require documented resolution criteria — silent closure is not permitted |
+| Lessons Learned evidence type labels diverge from repository Truth Provenance vocabulary | Repository alignment requires Measured / Estimated / Analogous / Placeholder labels |
+
 **Compound Drift Rule:** If multiple indicators activate simultaneously,
 halt autonomous audit progression and escalate for human review.
 
@@ -658,10 +671,26 @@ Cross-reference `Admin/Auditor_Protocols.md` §Unknowns Registry Governance.
 
 ### Resolution Log
 
-- 2026-05-29: v0.1 created by Grok (Fabricator/Systems). Initial
-  10-question framework, creative problem-solving doctrine, anti-
-  reinvention rules, AI-specific guidance, and failure harvesting
-  defined. EP-001 through EP-003 logged.
+- 2026-10-23: **Structure corrections (human-directed, from a Vibe per-file audit; each finding checked against source first).** (1) The two `## Drift Indicators` sections (a ten-item bullet list from v0.2 and an eight-item table of "additional local triggers" left over from the 2026-05-30 addendum) merged into one; every trigger from both survives, and the Compound Drift Rule keeps its stricter wording. (2) The unlabelled cross-reference block that followed this log given the heading `## Relationship to Existing Documents`; its last bullet updated, since EP-001 through EP-006 are indexed in `Unknowns.md`. (3) This log reordered newest-first, entries unchanged. No doctrine, Unknown or Spec Gate changed.
+- 2026-06-08: Navigation Anchors block added. Verification Ref corrected
+  from `Verification_Gates.md` to `Admin/Verification_Gates.md`
+  (PC-001). Scope Boundary updated — `Admin/Safety_Protocols.md` added
+  for physical safety hazard thresholds and PPE requirements (PC-003).
+  Safety_Protocols.md row added to Section 8 Hazard Escalation table.
+  All addendum content integrated into body — addendum block removed.
+  File State updated: Open Unknowns 4→6, Last Audit and Auditor fields
+  updated to reflect 2026-05-30 ChatGPT pass. EP-005 resolution path
+  updated — `Admin/Safety_Protocols.md` now provides consequence
+  category table as partial resolution path.
+- 2026-05-30: ChatGPT Skeptic/Auditor addendum actioned. Question 2
+  search order updated to include fallback paths. Question 4 expanded
+  with energy-bearing systems consultation requirement. Question 5
+  expanded with recovery economics check. Section 6 expanded with
+  Unknown Discovery Doctrine. Section 8 (Hazard Escalation Doctrine)
+  added — hazard class table with repository references and active
+  critical unknowns. Lessons Learned entries added. EP-005 logged
+  (acceptable risk threshold undefined). EP-006 logged (unknown lifecycle
+  integration undefined). Open Unknowns updated to 6.
 - 2026-05-29: v0.2 revision — ChatGPT Skeptic/Auditor and Claude
   Skeptic/Auditor findings actioned. Assumption Challenge Triggers
   added as mandatory subsection under Question 7. Failure Harvesting
@@ -674,25 +703,12 @@ Cross-reference `Admin/Auditor_Protocols.md` §Unknowns Registry Governance.
   Spec Gates updated to 2/6. Open Unknowns updated to 4. All EP-
   owner fields corrected to Admin/Engineer_Protocols.md. Abandoned
   Paths section populated. ASM-004 added to Assumptions.
-- 2026-05-30: ChatGPT Skeptic/Auditor addendum actioned. Question 2
-  search order updated to include fallback paths. Question 4 expanded
-  with energy-bearing systems consultation requirement. Question 5
-  expanded with recovery economics check. Section 6 expanded with
-  Unknown Discovery Doctrine. Section 8 (Hazard Escalation Doctrine)
-  added — hazard class table with repository references and active
-  critical unknowns. Lessons Learned entries added. EP-005 logged
-  (acceptable risk threshold undefined). EP-006 logged (unknown lifecycle
-  integration undefined). Open Unknowns updated to 6.
-- 2026-06-08: Navigation Anchors block added. Verification Ref corrected
-  from `Verification_Gates.md` to `Admin/Verification_Gates.md`
-  (PC-001). Scope Boundary updated — `Admin/Safety_Protocols.md` added
-  for physical safety hazard thresholds and PPE requirements (PC-003).
-  Safety_Protocols.md row added to Section 8 Hazard Escalation table.
-  All addendum content integrated into body — addendum block removed.
-  File State updated: Open Unknowns 4→6, Last Audit and Auditor fields
-  updated to reflect 2026-05-30 ChatGPT pass. EP-005 resolution path
-  updated — `Admin/Safety_Protocols.md` now provides consequence
-  category table as partial resolution path.
+- 2026-05-29: v0.1 created by Grok (Fabricator/Systems). Initial
+  10-question framework, creative problem-solving doctrine, anti-
+  reinvention rules, AI-specific guidance, and failure harvesting
+  defined. EP-001 through EP-003 logged.
+
+## Relationship to Existing Documents
 
 - `Admin/Auditor_Protocols.md` — Tier 2; this file extends the Engineer
   role defined in §Auditor Role Classes; AI Contribution Rules and Human
@@ -717,27 +733,5 @@ Cross-reference `Admin/Auditor_Protocols.md` §Unknowns Registry Governance.
   that are valid future work but out of current version scope
 - `Discovery.md` — primary navigation layer; mandatory first search
   target for all engineering problem-solving
-- `Unknowns.md` — EP-001 through EP-004 to be added to Governance &
-  Verification section at next Unknowns.md update
-
----
-
-## Drift Indicators
-
-Mandatory re-audit conditions for this document. All canonical triggers
-from `Admin/File_Template.md` apply. The following are additional local
-triggers specific to Engineer_Protocols.md:
-
-| Trigger | Reason |
-|---------|--------|
-| The 10-question framework is modified to remove safety or failure-learning questions | Safety and failure-learning are load-bearing — the framework is not complete without them |
-| Assumption Challenge Triggers are removed or made optional | Mandatory challenge doctrine is the primary defense against reasoning drift in multi-agent workflows |
-| Discovery.md is removed as the primary search target | Anti-reinvention doctrine depends on a stable primary navigation anchor |
-| Unknown Discovery Doctrine removed from Section 6 | Untracked unknowns compound silently — logging doctrine is mandatory |
-| Section 8 Hazard Escalation table revised without cross-validating against owning file sidecars | Hazard unknowns change as files are updated — table must stay current |
-| "Acceptable risk threshold" referenced without pointing to a defined standard | EP-005 — subjective threshold produces audit-inconsistent escalation decisions |
-| EP-005 or EP-006 closed without formal resolution entry | Both require documented resolution criteria — silent closure is not permitted |
-| Lessons Learned evidence type labels diverge from repository Truth Provenance vocabulary | Repository alignment requires Measured / Estimated / Analogous / Placeholder labels |
-
-**Compound Drift Rule:** Multiple simultaneous triggers escalate to
-human review.
+- `Unknowns.md` — EP-001 through EP-006 are indexed there (the 2026-05-29
+  promise to add EP-001 through EP-004 at the next update has been met)
