@@ -52,7 +52,7 @@
 
 Decision Point B in Forge_flow.md evaluates whether a failure is “within current tooling capability.” That evaluation is only deterministic if a known, maintained list of tools actually available to operators exists. This file is that list and its governing rules.
 
-It is deliberately narrow: a living operational reference, not an architecture document. It exists to satisfy ASM-003 and FL-004.
+It is deliberately narrow: a living operational reference, not an architecture document. It exists to satisfy `Architecture/Forge_flow.md` ASM-003 and FL-004 (not this file's own ASM-003 below).
 
 Without this file, Decision Point B decisions remain operator-dependent mental models and the conservative degraded-mode rule (“if inventory is stale → Decision Point B = NO”) has nothing concrete to check against.
 
@@ -89,7 +89,7 @@ Initialization Checklist.
    Decision Point B decisions use only the inventory in this file. Projected, planned, or “we could buy” tools are invisible to Decision Point B.
 
 2. **Conservative default**  
-   If the inventory is known to be stale, incomplete, or under dispute, Decision Point B evaluates to **NO** (item routes to Decision Point C). See Forge_flow.md degraded-operation doctrine and ASM-003.
+   If the inventory is known to be stale, incomplete, or under dispute, Decision Point B evaluates to **NO** (item routes to Decision Point C). See Forge_flow.md degraded-operation doctrine and `Architecture/Forge_flow.md` ASM-003 (distinct from this file's own ASM-003).
 
 3. **Update cadence**  
    - After any tool is added, removed, fails, or is taken out of service → update within one operational shift.  
@@ -210,6 +210,8 @@ Initialization Checklist.
 ---
 
 ## Resolution Log
+
+- 2026-10-24: ASM-003 citations disambiguated (human-directed, from a Vibe per-file audit; each finding checked against source first): two bare mentions now name Forge_flow's ASM-003 so they cannot be confused with this file's own ASM-003 (absence of a tool is treated as not available). No inventory, rule or Unknown changed.
 
 - 2026-09-08 (third follow-up): Cross-referenced this file's File
   Purpose to the new Deployment Localization Doctrine in

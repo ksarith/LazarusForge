@@ -38,7 +38,7 @@
 | Verification Ref | Admin/Verification_Gates.md |
 | Open Unknowns    | 8 (sidecar below; RB-002, RB-003 and RB-007 are Blocking for the stated physical work, the other 5 non-blocking; the three Blocking items also indexed in `Unknowns.md`) |
 | Owner            | `Operations/Robotics.md` |
-| Last Audit       | 2026-10-15 — three resolution-path additions after ChatGPT's targeted audit (hazard-zone definition, cap evidence basis, safety-channel test record; human-directed; no safety floor changed). 2026-10-11 — clarifications after two independent audits: RB-007 Blocking scope reworded, RB-003 path says what "defined" means, RF-11 adds the test condition. 2026-10-10 safety review pass (Claude, human-directed): floors RF-9 to RF-12 added; RB-002/003/007 changed to scoped Blocking. Earlier: 2026-10-10 — v0 stub filed (Proposed). No physical robot work claimed. |
+| Last Audit       | 2026-10-24 — Claude (human-directed) two bare EC-012 citations qualified with their owning file and the Resolution Log reordered newest-first, from a Vibe per-file audit. Prior: 2026-10-15 — three resolution-path additions after ChatGPT's targeted audit (hazard-zone definition, cap evidence basis, safety-channel test record; human-directed; no safety floor changed). 2026-10-11 — clarifications after two independent audits: RB-007 Blocking scope reworded, RB-003 path says what "defined" means, RF-11 adds the test condition. 2026-10-10 safety review pass (Claude, human-directed): floors RF-9 to RF-12 added; RB-002/003/007 changed to scoped Blocking. Earlier: 2026-10-10 — v0 stub filed (Proposed). No physical robot work claimed. |
 | Last Updated     | 2026-10-15 |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
@@ -120,7 +120,7 @@ These are **floors**, not a complete safety case. Weakening them requires human 
 | **C — Actuation & power train** | Motors, gearboxes, pneumatics/hydraulics leaks | Force/speed limits **Placeholder** |
 | **D — Electrical & HV/LV buses** | Isolation, emergency power-down path | Defers partly to Energy.md; discharge verification per RF-10 |
 | **E — Control & firmware** | Teach pendant / stack trust boundary | Defers to Electronics.md |
-| **F — Sensing** | Encoders, limits, optional vision — honesty of telemetry | EC-012-related caution **Placeholder** |
+| **F — Sensing** | Encoders, limits, optional vision — honesty of telemetry | `Admin/Ethical_Constraints.md` EC-012-related caution **Placeholder** |
 | **G — Safety channel** | E-stop, light curtains, zone control (if any) | Presence **required** before unsupervised claims, and function-tested per RF-11; v0 forbids unsupervised |
 | **H — Motion envelope** | Allowed modes: dead / teach / supervised auto | Default: dead + inspection only |
 | **I — End-effector & task** | Gripper/tool change; task-specific hazards | Per-task **Placeholder** |
@@ -270,7 +270,7 @@ These are **floors**, not a complete safety case. Weakening them requires human 
 | First Logged | 2026-10-10 |
 | Last Reviewed | 2026-10-10 |
 
-**Description:** Firmware-reported state is not ground truth (align EC-012 caution).
+**Description:** Firmware-reported state is not ground truth (align `Admin/Ethical_Constraints.md` EC-012 caution).
 
 **Resolution Path:** Require independent check paths for safety-relevant sensors where feasible; document residual when not.
 
@@ -336,8 +336,14 @@ These are **floors**, not a complete safety case. Weakening them requires human 
 
 ## Resolution Log
 
-- 2026-10-10: **v0 Proposed stub filed.** Human-directed first iteration for an Operations-layer robotics domain: safety advisory, hard floors RF-1–RF-8, functional blocks A–J with Placeholder thresholds, interfaces to Energy/Electronics/Automotive/Gates/Admin, eight non-blocking Unknowns (RB-001–RB-008). No physical work claimed; no Spec Gate opens; unsupervised human-shared operation and AGI/embodiment hype explicitly out of scope. Registered 2026-10-10 in Routing.md, Ops_Scope_Map.md, and Discovery.md.
-- 2026-10-10: **Safety review pass (human-directed).** Added floors RF-9 to RF-12 (support loads before power removal, verify discharge, function-test the safety channel and require deliberate restart after E-stop, hydraulic/laser/lithium hazards) and pointers from blocks D and G; RB-002, RB-003 and RB-007 changed to scoped Blocking. Floors only; no procedure or number added. All new items are Proposed/Placeholder.
-- 2026-10-10: The three Blocking items are indexed in `Unknowns.md` v5.59 (Active Index cluster, Dependency Clusters block, Critical Watch). Index entries only; no change to the sidecar entries' substance.
-- 2026-10-11: **Clarifications after two independent audits (human-directed).** RB-007's Blocking scope reworded from "any operation with people in the cell or space" to "unsupervised presence, or any person inside the hazard zone," because the old wording contradicted the entry's own supervised-operation default and Section 1; RF-1 is unchanged. RB-003's resolution path now says what "defined" means (Proposed caps set and authorized before the first commissioning motion; Field_Log validates afterward). RF-11 adds that the safety channel is tested with motion power isolated or the axis restrained.
+- 2026-10-24: Two bare EC-012 citations (Block F; RB-006) now name `Admin/Ethical_Constraints.md`, per Canonical_Terms' owner-naming guardrail for colliding EC IDs; this log reordered newest-first, entries unchanged (human-directed, from a Vibe per-file audit; each finding checked against source first). Status "Proposed" left as is (not a registered designation; parked as Progress_Log PKC-031).
+
 - 2026-10-15: **Resolution-path additions after a targeted audit (human-directed).** Verified against source first: the audit's facts held, and most of its "critical" findings restated declared Open Blocking unknowns. Three follow-ons were kept. RB-007: the 2026-10-11 rewording introduced "hazard zone" without defining it, so its path now starts by defining the zone and its boundary check, with the whole cell as the conservative reading until then. RB-003: the path now requires a recorded basis for each proposed cap. RB-002: the path now includes a safety-channel test record (RF-11) and states that a failed or inconclusive test blocks power-up. No safety floor, Blocking scope, Status or Unknown ID changed; no new Unknown added; `Unknowns.md` is unaffected (it does not carry resolution-path text).
+
+- 2026-10-11: **Clarifications after two independent audits (human-directed).** RB-007's Blocking scope reworded from "any operation with people in the cell or space" to "unsupervised presence, or any person inside the hazard zone," because the old wording contradicted the entry's own supervised-operation default and Section 1; RF-1 is unchanged. RB-003's resolution path now says what "defined" means (Proposed caps set and authorized before the first commissioning motion; Field_Log validates afterward). RF-11 adds that the safety channel is tested with motion power isolated or the axis restrained.
+
+- 2026-10-10: The three Blocking items are indexed in `Unknowns.md` v5.59 (Active Index cluster, Dependency Clusters block, Critical Watch). Index entries only; no change to the sidecar entries' substance.
+
+- 2026-10-10: **Safety review pass (human-directed).** Added floors RF-9 to RF-12 (support loads before power removal, verify discharge, function-test the safety channel and require deliberate restart after E-stop, hydraulic/laser/lithium hazards) and pointers from blocks D and G; RB-002, RB-003 and RB-007 changed to scoped Blocking. Floors only; no procedure or number added. All new items are Proposed/Placeholder.
+
+- 2026-10-10: **v0 Proposed stub filed.** Human-directed first iteration for an Operations-layer robotics domain: safety advisory, hard floors RF-1–RF-8, functional blocks A–J with Placeholder thresholds, interfaces to Energy/Electronics/Automotive/Gates/Admin, eight non-blocking Unknowns (RB-001–RB-008). No physical work claimed; no Spec Gate opens; unsupervised human-shared operation and AGI/embodiment hype explicitly out of scope. Registered 2026-10-10 in Routing.md, Ops_Scope_Map.md, and Discovery.md.

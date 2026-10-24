@@ -36,8 +36,8 @@
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 3/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-09-20 — EC-013 Air_Scrubber safe-state descent sequence filed as Proposed/Placeholder (§EC-013 Descent Sequence). Blocking for hot runs retained until first hot-run validation. Prior: 2026-05-31 |
-| Auditor          | Grok — EC-013 descent section drafted and filed as Proposed/Placeholder (Path A, human-directed 2026-09-20); prior: Gemini |
+| Last Audit       | 2026-09-29 — AS-006 registered (Open Unknowns 5 → 6; see Resolution Log). Header corrected 2026-10-24 (Claude, human-directed, from a Vibe per-file audit) to cover it and the passes recorded in the Resolution Log that this chain had skipped: 2026-07-19 chemistry corrections, 2026-08-10 Grok pseudo-audit (findings only, not counted as an audit here pending Progress_Log PKC-020), and the 2026-08-15 review round with the AS-005 registration and the Fire Event row. Prior: 2026-09-20 — 2026-09-20 — EC-013 Air_Scrubber safe-state descent sequence filed as Proposed/Placeholder (§EC-013 Descent Sequence). Blocking for hot runs retained until first hot-run validation. Prior: 2026-05-31 |
+| Auditor          | Claude — 2026-10-24 header correction (human-directed); passes since 2026-05-31 per the Resolution Log: Grok 2026-08-10 pseudo-audit and 2026-08-15 review round, AS-005 and AS-006 registrations (2026-08-15, 2026-09-29); prior: Grok — EC-013 descent section drafted and filed as Proposed/Placeholder (Path A, human-directed 2026-09-20); prior: Gemini |
 | Open Unknowns    | 6 substantively open. EC-013 sequence registered as Proposed/Placeholder (does not close EC-013 tracker). |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | High                                                                |
@@ -50,6 +50,8 @@ as partial resolution path (noise exposure limits
 are addressed there), but the formal hearing
 conservation program for Air Scrubber operations
 and site-specific SPL measurements remain open.
+
+*(Historical note from the 2026-08-10 pass: the current count is in the Open Unknowns row above — 6 after AS-005 and AS-006.)*
 Gate 4 Cold Verification Harness integrated as
 its own body section — Spec Gates remain at 3/6 until
 physical verification protocols are executed and
@@ -971,6 +973,8 @@ own unknown.
 
 ### Resolution Log
 
+- 2026-10-24: Header and log corrected (human-directed, from a Vibe per-file audit; each finding checked against source first): Last Audit and Auditor now cover the 2026-09-29 AS-006 registration and the passes the Prior chain skipped; the missing 2026-09-20 EC-013 entry backfilled; a stale 'Open Unknowns updated from 3 to 4' note under File State annotated as historical; this log put in date order, entries unchanged. No sidecar entry, doctrine or Spec Gate changed.
+
 - 2026-09-29: **AS-006 registered — no volumetric airflow / static-pressure
   duty point specified.** Surfaced during a session discussion of quieter
   fan alternatives: this file's power ballpark (50–150 W fan/compressor)
@@ -983,6 +987,8 @@ own unknown.
   they'd inform. Distinct from AS-004 (SPL measurement of an already-
   installed fan). Open Unknowns 5 → 6, mirrored in `Unknowns.md` v5.54.
   Human-directed.
+
+- 2026-09-20: **EC-013 Air_Scrubber safe-state descent sequence filed as Proposed/Placeholder (§EC-013 Descent Sequence).** Drafted by Grok (Path A, human-directed). Blocking for hot runs retained until first hot-run validation; this does not close the EC-013 tracker. *(Backfilled 2026-10-24 from this file's Last Audit and Auditor fields; no log entry was made at the time.)*
 
 - 2026-08-15 (third entry, same day): **Fire Event — Hot Zone interlock row
   added — second applied case of `Admin/Resolution_Methodology.md`.**
@@ -1050,28 +1056,17 @@ own unknown.
   liquor as a reuse-potential case, cross-referenced to new CE-007. No change to
   Stage D or Stage E's existing operational doctrine for other gas streams.
 
-- 2026-05-04: `Stratification_Chamber_v0.md`
-  reference removed. `Material_Separation_Gate_v0.md`
-  substituted.
-- 2026-05-06: Variant 4 depth scope corrected from
-  10–100 atm to less than 5 atm for v0. Deep-sea
-  variants routed to `Admin/Trajectories.md`. Thermal
-  sink requirement added to Stage D. Saturation Fault
-  monitoring requirement added. Variant 0 added.
-- 2026-05-23: Retrofit to `Admin/File_Template.md`
-  structure. File State, Scope Boundary, Assumptions,
-  Abandoned Paths, Drift Indicators sections added.
-  Noise hazard added to Safety Advisory, Design
-  Philosophy, Monitoring, and AS-004. Integration
-  hook references updated to canonical folder-prefixed
-  paths.
-- 2026-05-31: Integrated Amendment and Field Note
-  addenda into core body. Stage C updated with
-  fractional condensation prerequisite. Stage E
-  updated with KMnO₄ chemisorption mandate. AS-003
-  bound to automated interlock sensor matrix.
-  Flashback arrestors and corrosion isolation material
-  updates added. Promoted Spec Gates to 3/6.
+- 2026-07-12: Stray "Section IX" roman-numeral prefix removed from the
+  Gate 4 Cold Verification Harness heading and its four live in-body
+  references (this Resolution Log entry above is left unchanged as an
+  accurate historical record of what the section was called on
+  2026-06-08). No other body section in this file uses roman-numeral
+  headings, so the "IX" was a leftover artifact from the raw-append
+  integration described above, not an intentional numbering scheme.
+  Reordered Abandoned Paths and Drift Indicators to after Auditor Notes
+  & Unknowns, per template order — they previously sat between Active
+  Disputes and Auditor Notes & Unknowns. No other content changed.
+
 - 2026-06-08: Navigation Anchors block added.
   Verification Ref corrected from `Verification_Gates.md`
   to `Admin/Verification_Gates.md` (PC-001).
@@ -1088,16 +1083,32 @@ own unknown.
   `Admin/Safety_Protocols.md`. Open Unknowns updated
   to 4 (AS-004 remains open; site SPL not yet
   measured).
-- 2026-07-12: Stray "Section IX" roman-numeral prefix removed from the
-  Gate 4 Cold Verification Harness heading and its four live in-body
-  references (this Resolution Log entry above is left unchanged as an
-  accurate historical record of what the section was called on
-  2026-06-08). No other body section in this file uses roman-numeral
-  headings, so the "IX" was a leftover artifact from the raw-append
-  integration described above, not an intentional numbering scheme.
-  Reordered Abandoned Paths and Drift Indicators to after Auditor Notes
-  & Unknowns, per template order — they previously sat between Active
-  Disputes and Auditor Notes & Unknowns. No other content changed.
+
+- 2026-05-31: Integrated Amendment and Field Note
+  addenda into core body. Stage C updated with
+  fractional condensation prerequisite. Stage E
+  updated with KMnO₄ chemisorption mandate. AS-003
+  bound to automated interlock sensor matrix.
+  Flashback arrestors and corrosion isolation material
+  updates added. Promoted Spec Gates to 3/6.
+
+- 2026-05-23: Retrofit to `Admin/File_Template.md`
+  structure. File State, Scope Boundary, Assumptions,
+  Abandoned Paths, Drift Indicators sections added.
+  Noise hazard added to Safety Advisory, Design
+  Philosophy, Monitoring, and AS-004. Integration
+  hook references updated to canonical folder-prefixed
+  paths.
+
+- 2026-05-06: Variant 4 depth scope corrected from
+  10–100 atm to less than 5 atm for v0. Deep-sea
+  variants routed to `Admin/Trajectories.md`. Thermal
+  sink requirement added to Stage D. Saturation Fault
+  monitoring requirement added. Variant 0 added.
+
+- 2026-05-04: `Stratification_Chamber_v0.md`
+  reference removed. `Material_Separation_Gate_v0.md`
+  substituted.
 
 ---
 

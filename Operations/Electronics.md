@@ -36,8 +36,8 @@
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-09-16 — v0 Logic-Zero Run Sheet's P3–P5 gaps filled with Provisional Defaults (Placeholder): known-good image identity/approval/naming, SHA-256 as the v0 hash algorithm with full-chip scope, minimum tool capability and erase success criteria. All three explicitly Open until first actual hardware designation — no image, hash, or tool chain claimed to exist yet. Prior: 2026-09-15 — CF-006 resolved (Option A, Ratified by James): `Security_Protocols.md`'s "signature-verified bootstrap" language corrected to state this file's actual v0 hash-based floor; no change required to this file's own doctrine. Prior: 2026-09-14 — v0 Logic-Zero Run Sheet added (Proposed/Placeholder, under Firmware Trust Doctrine) and CF-006 cross-reference added to EL-006's Resolution Path. No change to EL-006's Status/Risk/Priority. Prior: 2026-08-09 — Grok pseudo-audit (Skeptic read + minimal fixes); prior: 2026-08-02 corrective merge; 2026-08-02 Threat Model/Heartbeat Token still not Gate-1 audited |
-| Auditor          | Claude — Retrofit/Auditor; Gemini — Synthesizer (CF-001 parameters); Copilot — drafted Threat Model/Trust Boundary/Firmware Provenance Log restructure (human-directed), 2026-08-02; Grok — drafted Heartbeat Token Cryptography spec and reviewed Copilot's draft (human-directed), 2026-08-02; Claude — verified against source, corrective merge (human-directed), 2026-08-02; Grok pseudo-audit 2026-08-09 — no Spec Gate promotion |
+| Last Audit       | 2026-10-24 — Claude (human-directed) Resolution Log backfilled for the 2026-09-14, 2026-09-15 and 2026-09-16 passes documented below and in the section markers, and put in date order, from a Vibe per-file audit; no body text changed. Prior: 2026-09-16 — v0 Logic-Zero Run Sheet's P3–P5 gaps filled with Provisional Defaults (Placeholder): known-good image identity/approval/naming, SHA-256 as the v0 hash algorithm with full-chip scope, minimum tool capability and erase success criteria. All three explicitly Open until first actual hardware designation — no image, hash, or tool chain claimed to exist yet. Prior: 2026-09-15 — CF-006 resolved (Option A, Ratified by James): `Security_Protocols.md`'s "signature-verified bootstrap" language corrected to state this file's actual v0 hash-based floor; no change required to this file's own doctrine. Prior: 2026-09-14 — v0 Logic-Zero Run Sheet added (Proposed/Placeholder, under Firmware Trust Doctrine) and CF-006 cross-reference added to EL-006's Resolution Path. No change to EL-006's Status/Risk/Priority. Prior: 2026-08-09 — Grok pseudo-audit (Skeptic read + minimal fixes); prior: 2026-08-02 corrective merge; 2026-08-02 Threat Model/Heartbeat Token still not Gate-1 audited |
+| Auditor          | Claude — 2026-10-24 log backfill (human-directed, from a Vibe per-file audit); prior: Claude — Retrofit/Auditor; Gemini — Synthesizer (CF-001 parameters); Copilot — drafted Threat Model/Trust Boundary/Firmware Provenance Log restructure (human-directed), 2026-08-02; Grok — drafted Heartbeat Token Cryptography spec and reviewed Copilot's draft (human-directed), 2026-08-02; Claude — verified against source, corrective merge (human-directed), 2026-08-02; Grok pseudo-audit 2026-08-09 — no Spec Gate promotion |
 | Open Unknowns    | 9                                                                   |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | High                                                                |
@@ -1611,6 +1611,14 @@ exists and is cross-referenced from §IV.
 
 ### Resolution Log
 
+- 2026-10-24: Resolution Log backfilled for three September passes and put in date order (human-directed, from a Vibe per-file audit; each finding checked against source first). No body text, sidecar entry, Unknown or Spec Gate changed.
+
+- 2026-09-16: **P3–P5 gaps in the v0 Logic-Zero Run Sheet filled with Provisional Defaults (Placeholder):** known-good image identity, approval and naming; SHA-256 as the v0 hash algorithm with full-chip scope; minimum tool capability and erase success criteria. All three explicitly Open until first actual hardware designation; no image, hash or tool chain claimed to exist yet. *(Backfilled 2026-10-24 from this file's Last Audit field and the section's marker.)*
+
+- 2026-09-15: **CF-006 resolved (Option A, ratified by James):** `Admin/Security_Protocols.md`'s "signature-verified bootstrap" language was corrected to state this file's actual v0 hash-based floor; no change required to this file's own doctrine. *(Backfilled 2026-10-24 from this file's Last Audit field.)*
+
+- 2026-09-14: **v0 Logic-Zero Run Sheet added (Proposed / Placeholder, under Firmware Trust Doctrine)** and a CF-006 cross-reference added to EL-006's Resolution Path. No change to EL-006's Status, Risk or Priority. *(Backfilled 2026-10-24 from this file's Last Audit field and the section's marker.)*
+
 - 2026-08-15: **Grok review round (alphabetical continuation — Electronics.md).** All 9 EL unknowns (EL-001–009) reviewed. Last Reviewed bumped; review markers added. Cross-refs (LT-001, Air_Scrubber.md, Security_Protocols.md, CF-002, EL-006/007 mutual) verified real. EL-005 and EL-006 Blocking Yes correctly retained. Zero closures, zero Blocking flips, zero Priority changes. Spec Gates left locked at 0/6. Human-directed.
 
 - 2026-08-09: **Pseudo-audit (Grok — Skeptic/Auditor read + minimal Synthesizer fixes; human-directed).** Correction: EL-005 Blocking No → Yes — file's own Why It Matters states PPE/scrubber doctrine may be insufficient until emissions characterized (respiratory hazard); Critical Priority with Blocking No understated the operational halt. Aligns with TS-002 treatment pattern. **Findings (not closed):** F-EL-001 — Open Unknowns 9 = EL-001–009; count matches. F-EL-002 — EL-006 correctly Blocking for first salvaged MCU integration; firmware trust not closable in-repo. F-EL-003 — Spec Gates 0/6 honest; 2026-08-02 Threat Model/Heartbeat Token additions remain proposed/unaudited. F-EL-004 — Unknowns.md Priority vocabulary for EL-001/002/003 uses Medium/Low vs local Major/Minor — systemic index overload, not fixed this pass. Spec Gates **unchanged** 0/6. Status **unchanged** Exploration.
@@ -1667,21 +1675,12 @@ exists and is cross-referenced from §IV.
   unchanged (Exploration, 0/6) — none of this session's additions
   constitute an actual gate pass.
 
-- 2026-05-19: EL-001 through EL-004 — Reformatted
-  from prose to structured sidecar table format.
-  Content preserved, provenance dates maintained.
-- 2026-05-19: EL-005, EL-006, EL-007 — Migrated
-  from multi-agent audit 2026-05-09. Reformatted
-  to structured tables.
-- 2026-05-19: EL-008 — New entry. Counterfeit
-  component detection doctrine gap identified
-  in meta-audit. Provisional detection guidance
-  added to Section II.
 - 2026-06-08: Navigation Anchors block added.
   Verification Ref corrected from `Admin/Forge_Audit_Kit.md`
   to `Admin/Verification_Gates.md` (PC-001).
   Scope Boundary UNK-006 reference updated to
   `Architecture/Facilities.md` FA-001 (PC-002).
+
 - 2026-06-08: Hardware Watchdog Doctrine section
   expanded with CF-001 minimum standard — τ=50ms
   windowed WDT, cryptographic heartbeat requirement,
@@ -1692,6 +1691,19 @@ exists and is cross-referenced from §IV.
   hardware prototype validation. Closes CF-001
   resolution path from
   Architecture/Cognitive_Frameworks.md.
+
+- 2026-05-19: EL-001 through EL-004 — Reformatted
+  from prose to structured sidecar table format.
+  Content preserved, provenance dates maintained.
+
+- 2026-05-19: EL-005, EL-006, EL-007 — Migrated
+  from multi-agent audit 2026-05-09. Reformatted
+  to structured tables.
+
+- 2026-05-19: EL-008 — New entry. Counterfeit
+  component detection doctrine gap identified
+  in meta-audit. Provisional detection guidance
+  added to Section II.
 
 ---
 

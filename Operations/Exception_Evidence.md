@@ -16,7 +16,7 @@
 | Open Unknowns | FL-006-A (structural owner named; population and demonstrated maintenance still open) |
 | Body Stability | Volatile — no operational trial against this structure has been run yet |
 | Owning Domain | Operations/ |
-| Last Reviewed | 2026-09-18 |
+| Last Reviewed | 2026-09-18 (structure sections added 2026-10-24, no content review) |
 | Sidecar Link | `Architecture/Forge_flow.md` FL-006 |
 | Ethical Anchor | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
@@ -132,3 +132,17 @@ Empty control entries and unconfirmed pointers are intentional until first popul
 ## Lessons Learned
 
 *(Empty — no operational trial has been run against this structure yet.)*
+
+---
+
+## Active Disputes
+
+None.
+
+---
+
+## Resolution Log
+
+- 2026-10-24: Active Disputes and Resolution Log sections added (human-directed, from a Vibe per-file audit; each finding checked against source first). This file had neither. No content, schema or Unknown changed; Drift Indicators, a Verification Ref and the standard `Last Audit` field name are still missing (parked as Progress_Log PKC-032).
+
+- 2026-09-18: File created as the structural home for FL-006 half A: an evidence-control specification and index for Oversight State's exception evidence portfolio, with a pointer-not-ledger design. Registered in `Routing.md` and `Discovery.md` the same day. Cross-reference writes to HP-011, the FL-006 sidecar and Gate_01 / Gate_02 left pending (see Maintenance Honesty). *(Backfilled 2026-10-24 from Discovery.md's 2026-09-18 header entry and this file's File State; the file had no Resolution Log.)*

@@ -20,8 +20,8 @@
 | Body Stability | Volatile |
 | Spec Gates | 0/6 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-05-30 (Gemini — Systems/Auditor); revised 2026-06-08           |
-| Auditor | Gemini — Systems/Auditor |
+| Last Audit       | 2026-10-24 — Claude (human-directed) header corrected to cover the 2026-08-15 Grok resolution-path review, which changed the body (review markers on all five sidecar entries, Last Reviewed bumped) without advancing it; the logged 2026-08-10 Grok pseudo-audit (findings only) is not counted here pending Progress_Log PKC-020. Prior: 2026-05-30 (Gemini — Systems/Auditor); revised 2026-06-08           |
+| Auditor | Claude — 2026-10-24 header correction (human-directed, from a Vibe per-file audit); Grok — 2026-08-15 resolution-path review (per the Resolution Log); prior: Gemini — Systems/Auditor |
 | Open Unknowns | 5 |
 | Active Disputes | 0 |
 | Highest Risk | High |
@@ -416,6 +416,8 @@ Fine wood dust suspended in air is explosive. Do not allow dust to accumulate on
 ---
 
 ### Resolution Log
+
+- 2026-10-24: Header corrected (human-directed, from a Vibe per-file audit; each finding checked against source first): Last Audit and Auditor now cover the 2026-08-15 Grok review, which had changed the body without advancing them. No doctrine, Unknown or Spec Gate changed.
 
 - 2026-08-15: **Grok resolution-path review (Operations close-out — Woodworking).** All five WW unknowns reviewed against source. Every Resolution Path judged adequate; residual evidence needs correctly retained. Cross-ref (Air_Scrubber) verified real. Markers added; Last Reviewed → 2026-08-15 on all five. **No WW-* closed.** Open Unknowns remain 5. Blocking status unchanged (WW-004 and WW-005 Yes). Human-directed. This file closes the Operations/ folder review sequence.
 
