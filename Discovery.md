@@ -1,6 +1,7 @@
 # Discovery.md — LazarusForge
 **Navigation layer for the active working repository.**
-**Last updated: 2026-10-20 — Theorem count corrected for `Admin/Computational_Institutional_Reasoning.md` in two passages (the foundational-documents paragraph and the directory-tree entry named four theorems; the file declares five, adding Theorem 5, Soundness of the Compiler, §6.4); `Challenges/Emergence.md`'s maturity-snapshot row changed from Exploration to Active to match the file's Status, aligned the same day with the other Problem-Statement files. No doctrine, Unknown or Spec Gate change.**
+**Last updated: 2026-10-24 — Directory-tree reconciliation (from a Vibe audit; each item checked against the live tree). Added the live files that were registered in `Routing.md`, this file's header or its maturity snapshot but absent from the tree: root `CONTRIBUTING.md`, `LICENSE.md`, `NOTICE.md`; `Admin/Resolution_Methodology.md` (previously absent from this file entirely; now also in the maturity snapshot), `Admin/Operational_Conventions.md` and `Admin/Integrity_Incident_Log.md`; `Operations/Exception_Evidence.md`; the three Tests quorum files and `Tests/Automation/`; the two Candidate 3 scripts and the hybrid zip in `Automation/`. Fixed the malformed branch markers in the Tests tree. No doctrine, Unknown or Spec Gate change.**
+**Prior: 2026-10-20 — Theorem count corrected for `Admin/Computational_Institutional_Reasoning.md` in two passages (the foundational-documents paragraph and the directory-tree entry named four theorems; the file declares five, adding Theorem 5, Soundness of the Compiler, §6.4); `Challenges/Emergence.md`'s maturity-snapshot row changed from Exploration to Active to match the file's Status, aligned the same day with the other Problem-Statement files. No doctrine, Unknown or Spec Gate change.**
 **Prior: 2026-10-15 — Directory-tree entry added for `Automation/README.md` (registered in `Routing.md` the same day). No doctrine, Unknown or Spec Gate change.**
 **Prior: 2026-10-14 — `Tests/Chrono_Divergence_Pilot.md` registered (Proposed; tree, created-list and maturity-snapshot entries added). No doctrine, Unknown or Spec Gate change.**
 **Prior: 2026-10-13 — Directory-tree entry for `Tests/Chrono_Divergence.md` reworded from "potential map" to "best-outcome map" (matches the file's v0.1 rename). No doctrine, Unknown or Spec Gate change.**
@@ -182,6 +183,9 @@ Several mechanical formatting rules — the `[ExternalRepo]` cross-repo tag form
 Root
 ├── README.md                               — Project overview and core principles
 ├── Things_We_Got_Wrong.md                  — Public evidence-based miss/correction log (2026-10-07 recharacterization)
+├── CONTRIBUTING.md                         — Contribution guide; closure-authority summary and agent-performance notes (2026-10-07 revision)
+├── LICENSE.md                              — MIT License for this repository
+├── NOTICE.md                               — Additional notice, not a separate license (project identity and endorsement)
 ├── Discovery.md                            — Navigation layer (this file)
 ├── Routing.md                              — Programmatic file index; raw URLs for agent context loading
 ├── Unknowns.md                             — Cross-module unknowns global index
@@ -216,6 +220,9 @@ Admin/                                      — Governance, protocols, and doctr
     ├── Hardware_Diversity_Ladder.md         — Four-tier path to a hardware-diverse GOV-008 quorum; Draft, declarable-not-achieved
     ├── Progress_Log.md                      — Active notebook: rolling lessons/continuity tracking (2026-08-09)
     ├── Metrics_Scaffold.md                  — Lane C metric definitions (development/governance); scaffold only, no data yet (2026-09-24)
+    ├── Resolution_Methodology.md            — Named reference for demonstrated resolution patterns (five-category frame, applied cases, Patterns 1–9); Active — Reference
+    ├── Operational_Conventions.md           — Short, checkable index of mechanical rules (cross-repo tags, exact Ethical Anchor string, suffixed IDs, relocated sidecars); Specification
+    ├── Integrity_Incident_Log.md            — Intake log for repository-integrity violations; empty since creation 2026-08-16
     └── BATTERY_SEED.md                      — Frozen prompt block for a genuine AP-017 cold-session Adversarial Battery run
 
 Automation/                                 — Scripts supporting verification and integrity checks
@@ -228,7 +235,10 @@ Automation/                                 — Scripts supporting verification 
     ├── Cold_session_manifest.py            — Cold-session manifest generation
     ├── Colab_Launcher.py                   — Colab environment launcher
     ├── Colab_Integrity.py                  — Colab integrity checks
-    └── Colab_cold_session.py               — Colab cold-session runner
+    ├── Colab_cold_session.py               — Colab cold-session runner
+    ├── Candidate3_Transient_Index_Colab.py — Candidate 3 transient-index Colab runner (see Tests/Persistent_Cognition_Candidates.md)
+    ├── Candidate3_Transient_Index_Colab_hybrid.py — Hybrid variant of the Candidate 3 runner
+    └── Candidate3_Colab_Hybrid.zip         — Packaged hybrid variant
 
 Architecture/                               — System architecture and foundational logic
     ├── Arc_Scope_Map.md                     — Per-file scope/dependency index for this folder (2026-08-08)
@@ -262,6 +272,7 @@ Operations/                                 — Physical modules and operational
     ├── Robotics.md                           — Mobile & manipulator systems (Proposed 2026-10-10)
     ├── Plastics.md                         — Polymer triage & 3-stage pyrolysis framework
     ├── Tooling_Inventory.md                — Live operational tooling inventory backing Decision Point B's "within tooling capability" check
+    ├── Exception_Evidence.md               — Evidence-control specification and index for Oversight State's exception evidence portfolio (FL-006 half A structural owner)
     └── Woodworking.md                      — Salvaged urban timber milling & drying schedules
 
 Tests/                                      — Test frameworks and deployment platforms
@@ -277,9 +288,13 @@ Tests/                                      — Test frameworks and deployment p
     ├── Chrono_Divergence.md                     — Idea fork forecast / best-outcome map (Proposed 2026-10-12)
     ├── Chrono_Divergence_Pilot.md               — Scoring-reproducibility pilot protocol for Chrono §4.1 (Proposed 2026-10-14; not started)
     ├── Chaos_Dynamics.md                   — Exploration/R&D pipeline doctrine; Sandbox (Level ≤4 hypothesis generation) → Promotion Gate → EXP-ID → physical testing → Engineering derating; resolution vehicle for EN-005; feeder for EN-001a
-    └── Pyrolysis_Cascade.md                — Staged thermal cascade (pyrolysis → high-temp reduction) for pre-triaged salvage; explicitly dependency-gated on PL-001 (Resolved 2026-08-23, PL-001-R1 residual)/CE-003 (Open — halogen), GR-002 (reduction method), FA-001 (site), EN-001 (structural); PYC-001 through PYC-008
+    ├── Pyrolysis_Cascade.md                — Staged thermal cascade (pyrolysis → high-temp reduction) for pre-triaged salvage; explicitly dependency-gated on PL-001 (Resolved 2026-08-23, PL-001-R1 residual)/CE-003 (Open — halogen), GR-002 (reduction method), FA-001 (site), EN-001 (structural); PYC-001 through PYC-008
+    ├── Multi_Agent_Quorum_Trial.md         — Concrete three-physical-computer quorum trial protocol; operationalizes `Admin/Governance_Migration_Protocol.md` §VII
+    ├── MAQT_Role_Cards_and_Cycle1_Task.md  — Role cards and Cycle 1 task for the quorum trial
+    ├── Quorum_Agent_Conduct_Protocol.md    — Agent-reliability protocol on the node-reliability track; ratified for trial scope 2026-10-09, Placeholder thresholds
     ├── Field_Logs.md                       — Index + submission contract for physical test runs and cross-agent field data; not a specification, no Spec Gates apply
     ├── Field_Logs/                         — One file per submission (as of 2026-10-03); see Field_Logs.md for format
+    ├── Automation/                         — `KIT_REGRESSION_PACK.md` (operator-run Kit reconciliation regression pack) and `test_harness_prompt.py` (offline unittest for the audit harness's generated prompt text and version consistency)
     └── Admin_Governance_Teardown_POC.md    — Exploration: classifies all 33 Admin/ files into a minimality-tier POC, scoped to the Admin/ folder only (2026-10-04)
 
 Challenges/                                 — Problem layer: why these capabilities exist
@@ -386,6 +401,8 @@ Discovery.md is a navigation map — task tracking belongs in Unknowns.md.
 | `Admin/Security_Protocols.md` | Draft | 0/6 | High |
 | `Admin/Repository_Integrity_Protocol.md` | Draft | 2/6 | High |
 | `Admin/Integrity_Incident_Log.md` | Active — Intake Log | N/A — this file is a log, not a specification | Medium (empty since creation 2026-08-16; format sound but untested under live load — added to this table 2026-09-04, was missing despite being registered in `Routing.md` since creation) |
+| `Admin/Resolution_Methodology.md` | Active — Reference | N/A — named reference for demonstrated patterns, not a specification | Low |
+| `Admin/Operational_Conventions.md` | Specification | N/A — reference index, not a governed doctrine surface | Low |
 | `Admin/Repository_Structure.md` | Exploration | 0/6 | Low |
 | `Admin/Ship_of_Theseus.md` | Exploration | 0/6 | Medium |
 | `Admin/Trajectories.md` | Exploration | 1/6 | Medium |

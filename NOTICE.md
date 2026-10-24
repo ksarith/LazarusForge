@@ -1,6 +1,6 @@
 Lazarus Forge — additional notice (not a separate license)
 
-The MIT License in the root LICENSE file is the license for this repository.
+The MIT License in the root `LICENSE.md` file is the license for this repository.
 
 Unless a subdirectory states otherwise, that MIT license applies to the
 contents of this repository as distributed, including software under
