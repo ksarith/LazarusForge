@@ -15,8 +15,8 @@
 | Spec Gates       | 6/6 — G1 Fallacy, G2 Physical Plausibility, G3 Adversarial Battery, G4 Scope Alignment, G6 Conflict Check PASSED; G5 Cross-Reference Integrity confirmed PASS 2026-08-11 by directly running `Automation/audit_lib.py`'s actual `parse_routing`/`check_cross_refs` functions (not a hand reimplementation) against this file and the local `Routing.md` registry (**112 entries at time of verification**; registry has since grown — see Routing.md path-count note 2026-10-03) and `ALIASES` (18 entries, still current) — zero findings |
 | Verification Ref | `Admin/Verification_Gates.md`                                    |
 | First Logged     | 2026-07-19                                                          |
-| Last Audit       | 2026-08-11 (Skeptic/Auditor dual-pass — Claude)                    |
-| Auditor          | Drafted Claude, synthesizing ChatGPT proposals (human-directed); revised after ChatGPT/Grok review; cross-checked against Auditor_Protocols.md (Claude, read-only); formal Skeptic/Auditor dual-pass completed 2026-08-11 (Claude) — G5 blocked, since fixed pending re-verification |
+| Last Audit       | 2026-10-23 — Claude (human-directed) corrections from a Vibe per-file audit, each checked against source first: 2026-10-03 Routing-registry annotations logged and marked; §12 status block's stale second-blocker clause corrected to match §2 and the Impact Statement; §12.5's "owed" wording refreshed. No doctrine, gate or Unknown changed. Prior: 2026-08-11 (Skeptic/Auditor dual-pass — Claude) |
+| Auditor          | Claude — 2026-10-23 corrections (human-directed, from a Vibe per-file audit); 2026-10-03 annotations (agent not recorded); prior: Drafted Claude, synthesizing ChatGPT proposals (human-directed); revised after ChatGPT/Grok review; cross-checked against Auditor_Protocols.md (Claude, read-only); formal Skeptic/Auditor dual-pass completed 2026-08-11 (Claude) — G5 blocked, since fixed pending re-verification |
 | Open Unknowns    | 1 (GOV-021c — multi-agent coordinated divergence, §12; GOV-021b Resolved 2026-08-11 — Detection Criteria, corroboration rules, observation windows, tier entry thresholds, Watch exit conditions, and degraded-observation handling specified in §4 and §6, including the EF-0.1 wording-fix confirmation this replaces) |
 | Active Disputes  | 0                                                                    |
 | Highest Risk     | High (governs response to AI governance/objective divergence)      |
@@ -238,7 +238,7 @@ This protocol should be reviewed whenever it is actually invoked (successfully o
 
 ## 12. Multi-Agent Coordinated Divergence Detection (GOV-021c)
 
-**Status:** Open — Payment via Specification draft (2026-08-11), **accepted by human governing authority 2026-08-12, specification adequate as written; operational closure deliberately withheld pending live evidence.** "Open" here does not mean the specification is unfinished — it is provisionally accepted in full (scope boundary, non-adopted numeric thresholds, and epistemic mapping all confirmed as written, no changes required). It means the closure condition itself (independence dimensions demonstrated in real multi-agent practice, not merely specified) has not yet been satisfied, and cannot be satisfied by further drafting. Does **not** close GOV-021c; does not by itself ratify this protocol. (GOV-021b was Resolved 2026-08-11; Spec Gates 6/6 are recorded on File State — ratification remains blocked by this unknown and the Track A Constitutional Impact Statement owed to `Governance_Migration_Protocol.md`.)
+**Status:** Open — Payment via Specification draft (2026-08-11), **accepted by human governing authority 2026-08-12, specification adequate as written; operational closure deliberately withheld pending live evidence.** "Open" here does not mean the specification is unfinished — it is provisionally accepted in full (scope boundary, non-adopted numeric thresholds, and epistemic mapping all confirmed as written, no changes required). It means the closure condition itself (independence dimensions demonstrated in real multi-agent practice, not merely specified) has not yet been satisfied, and cannot be satisfied by further drafting. Does **not** close GOV-021c; does not by itself ratify this protocol. (GOV-021b was Resolved 2026-08-11; Spec Gates 6/6 are recorded on File State — ratification remains blocked by this unknown only; the Track A Constitutional Impact Statement was delivered and its classification independently confirmed 2026-08-12 — see §2 and the Constitutional Impact Statement section.)
 
 **Scope (narrow, binding):** Detecting *correlated or corroborating divergence signals across multiple agents* — distinguishing several agents independently triggering real, unrelated anomalies from several agents exhibiting a genuinely coordinated divergence pattern.
 
@@ -317,7 +317,7 @@ Five agents whose independence is genuinely established can still independently 
 - GOV-008 / Hardware Diversity substrate.
 - Any claim that multi-agent agreement is safety evidence without an independence assessment.
 - Operational quarantine routing (AP-016).
-- The Track A Constitutional Impact Statement owed to `Governance_Migration_Protocol.md`.
+- The Track A Constitutional Impact Statement for `Governance_Migration_Protocol.md` (delivered; classification independently confirmed 2026-08-12 — see the Constitutional Impact Statement section; this section does not extend it).
 
 **Resolution path for GOV-021c itself:** Human-directed review of this specification against live multi-agent practice (including Field_Logs evidence when any exists). Implementation tooling is out of scope until independence dimensions can be assessed in a real deployment. Status remains Open until that review closes it deliberately.
 
@@ -378,6 +378,8 @@ Earlier discussion in this drafting process considered framing this as an "exit 
 ---
 
 ## Resolution Log
+
+- 2026-10-03: **Routing registry pointer annotations** (agent and direction not recorded in this file). The Spec Gates line gained "registry has since grown — see Routing.md path-count note 2026-10-03", and the same pointer was added in parentheses inside the historical 2026-08-11 third-pass entry below ("112 entries *at that date*; registry later grew"). Annotations only: the 112-entry figure, the G5 PASS and every other value are unchanged. *(Backfilled 2026-10-23 from the in-file markers; the annotation inside the historical entry was previously unmarked and is now marked there.)*
 
 - 2026-08-15: **First live evidence logged for GOV-021c — does not close it.**
   A real cross-agent case from this session (Grok proposal, Claude independent
@@ -492,7 +494,7 @@ Earlier discussion in this drafting process considered framing this as an "exit 
   imported directly from `Automation/audit_lib.py` (not reimplemented)
   against this file's live content, using the local `Routing.md` (112
   entries *at that date*; registry later grew — see Routing.md 2026-10-03
-  path-count note) and `AUDIT_HARNESS.py`'s real `ALIASES` dict (18 entries) —
+  path-count note — annotation added 2026-10-03, marked 2026-10-23) and `AUDIT_HARNESS.py`'s real `ALIASES` dict (18 entries) —
   bypassing only the network fetch step, which pulls the identical
   `Routing.md` content read locally. Zero findings. This is the actual
   harness logic, genuinely invoked, not another manual regex replication.
