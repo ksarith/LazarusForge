@@ -30,8 +30,8 @@
 | Body Stability   | Volatile                                                            |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-06-05                                                          |
-| Auditor          | Claude — Architect/Auditor                                          |
+| Last Audit       | 2026-10-24 — Claude (human-directed) corrected the EP-005 wording in the Scope Boundary and Section I (see Resolution Log); the logged 2026-08-10 Grok pseudo-audit (findings only) is not counted here pending Progress_Log PKC-020. Prior: 2026-06-05                                                          |
+| Auditor          | Claude — 2026-10-24 wording correction (human-directed, from a Vibe per-file audit); prior: Claude — Architect/Auditor                                          |
 | Open Unknowns    | 6                                                                   |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | High                                                                |
@@ -44,7 +44,7 @@
 
 **This file DOES define:**
 - Acceptable risk threshold doctrine — the line between operator-managed risk and
-  mandatory escalation (resolves EP-005)
+  mandatory escalation (intended resolution of EP-005; confirmation pending, see SP-001)
 - PPE requirements by hazard class and operation type
 - Hearing conservation doctrine (referenced by `Operations/Air_Scrubber.md`)
 - Heat stress doctrine — Arkansas summer operating conditions (referenced by
@@ -106,10 +106,10 @@ implement. The doctrine lives here; the application lives in the owning gate fil
 
 ---
 
-## I. Acceptable Risk Threshold (EP-005 Resolution)
+## I. Acceptable Risk Threshold (EP-005 Resolution Path)
 
-This section resolves `Admin/Engineer_Protocols.md` EP-005 — the undefined threshold
-between operator-managed risk and mandatory escalation.
+This section is the intended resolution of `Admin/Engineer_Protocols.md` EP-005 — the undefined threshold
+between operator-managed risk and mandatory escalation. EP-005 stays Open there as a partial resolution until the SP-001 cross-file review confirms the two files are compatible.
 
 ### Risk Consequence Categories
 
@@ -556,6 +556,8 @@ defer until FA-001 (site confirmed) is resolved. Cross-reference FA-001.
 ---
 
 ### Resolution Log
+
+- 2026-10-24: **EP-005 claim softened** (human-directed, from a Vibe per-file audit; checked against Engineer_Protocols and SP-001 first). The Scope Boundary and Section I said this file "resolves" EP-005, but SP-001 records that the cross-file confirmation with Engineer_Protocols never happened (the files were drafted in parallel) and Engineer_Protocols still lists EP-005 as Open with a partial resolution. Wording now says "intended resolution" and points to SP-001; the Section I heading now reads "EP-005 Resolution Path" (no references to the old heading text exist elsewhere in the repository). No threshold, PPE or consequence-class content changed.
 
 - 2026-08-10: **Pseudo-audit (Grok, same limits).** Findings only; Spec Gates
   left locked at 0/6. (1) Open Unknowns **6** = SP-001–006, matches local +

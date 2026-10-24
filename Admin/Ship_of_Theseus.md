@@ -16,8 +16,8 @@
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-05-04 (Claude — Skeptic/Auditor); revised 2026-06-08; audited 2026-06-26 (Gemini + Claude dual Skeptic/Auditor) |
-| Auditor          | Claude — Synthesizer/Auditor; Gemini — Skeptic/Auditor              |
+| Last Audit       | 2026-10-24 — Claude (human-directed) log order corrected and AP-012/AP-016 cross-reference noted (see Resolution Log); the logged 2026-08-11 Grok pseudo-audit (findings only) is not counted here pending PKC-020. Prior: 2026-05-04 (Claude — Skeptic/Auditor); revised 2026-06-08; audited 2026-06-26 (Gemini + Claude dual Skeptic/Auditor) |
+| Auditor          | Claude — 2026-10-24 corrections (human-directed, from a Vibe per-file audit); prior: Claude — Synthesizer/Auditor; Gemini — Skeptic/Auditor              |
 | Open Unknowns    | 4                                                                   |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | Medium                                                              |
@@ -607,23 +607,13 @@ human unavailability.
 
 ### Resolution Log
 
+- 2026-10-24: **Log order and cross-reference note** (human-directed, from a Vibe per-file audit; checked against source first). The 2026-06-26 entry moved above the 2026-06-08 entry so the log reads newest-first; entries unchanged. Note on the 2026-06-26 entry's "G3 blocked (AP-012/AP-016 pending)": AP-012 and AP-016 were Resolved 2026-07-03, so that blocker is no longer pending; G3 has not been re-assessed. Spec Gates stay at 0/6 (the 2026-08-11 entry records them as left locked); whether the gates cleared on 2026-06-26 should now be promoted is open (Progress_Log PKC-027). No Unknown, gate or doctrine changed.
+
 - 2026-08-11: **Pseudo-audit (Grok, same limits).** Findings only; Spec Gates
   left locked at 0/6. (1) Open Unknowns **4** = ST-001–004, matches local +
   `Unknowns.md` (ST-003 In Progress). (2) ST-004 **Epistemic** Blocking —
   consistent vocabulary, not understatement. (3) No ST-* closed. Human-directed.
 
-- 2026-06-08: Navigation Anchors added. File State
-  expanded to full table. Scope Boundary, File
-  Purpose, Assumptions, Drift Indicators sections
-  added. Lessons Learned expanded to full template
-  format. Sidecar entries expanded to full field
-  tables. File renamed from
-  `Ship_of_Theseus_Right_to_Repair.md` to
-  `Admin/Ship_of_Theseus.md` per Rename Registry
-  (change occurred 2026-05-15). Section IV (AI
-  Identity Continuity Doctrine) added — closes
-  CF-003 from `Architecture/Cognitive_Frameworks.md`.
-  ST-003 status updated to In Progress.
 - 2026-06-26: Gemini + Claude dual Skeptic/Auditor pass.
   ST-004 logged (sub-threshold state tampering
   vulnerability — High risk, Epistemic Blocking;
@@ -638,3 +628,16 @@ human unavailability.
   context but bounded to pre-intake description.
   Open Unknowns 3 → 4. Gates cleared: G1, G2, G4,
   G5, G6. G3 blocked (AP-012/AP-016 pending).
+
+- 2026-06-08: Navigation Anchors added. File State
+  expanded to full table. Scope Boundary, File
+  Purpose, Assumptions, Drift Indicators sections
+  added. Lessons Learned expanded to full template
+  format. Sidecar entries expanded to full field
+  tables. File renamed from
+  `Ship_of_Theseus_Right_to_Repair.md` to
+  `Admin/Ship_of_Theseus.md` per Rename Registry
+  (change occurred 2026-05-15). Section IV (AI
+  Identity Continuity Doctrine) added — closes
+  CF-003 from `Architecture/Cognitive_Frameworks.md`.
+  ST-003 status updated to In Progress.

@@ -17,8 +17,8 @@
 | Body Stability   | Volatile                                                            |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-09-23                                                          |
-| Auditor          | Claude — Claim-Type Labels registered under §4 (Grok proposer, human-directed), 2026-09-23; prior: Claude — "Disambiguation: Uses of 'Gate'" section added (FL-012, human-directed), 2026-09-14; prior: Claude — four new terms registered (Active Constitutional Surface, Claimed/Recognized/Ratified Constitutional Lineage) at GOV-018 closure, checked against existing vocabulary first — no competing term found (human-directed); prior: Claude — Synthesizer/Auditor (2026-06-24); Claude — Cycle definition + version-string correction (2026-07-05); Claude — CT-011 resolution 2026-07-05 |
+| Last Audit       | 2026-10-24 — Claude (human-directed) corrected "Three vocabulary sources" to four and added a note to the Status section, from a Vibe per-file audit (see Resolution Log). Prior: 2026-09-23                                                          |
+| Auditor          | Claude — 2026-10-24 wording correction and Status note (human-directed); prior: Claude — Claim-Type Labels registered under §4 (Grok proposer, human-directed), 2026-09-23; prior: Claude — "Disambiguation: Uses of 'Gate'" section added (FL-012, human-directed), 2026-09-14; prior: Claude — four new terms registered (Active Constitutional Surface, Claimed/Recognized/Ratified Constitutional Lineage) at GOV-018 closure, checked against existing vocabulary first — no competing term found (human-directed); prior: Claude — Synthesizer/Auditor (2026-06-24); Claude — Cycle definition + version-string correction (2026-07-05); Claude — CT-011 resolution 2026-07-05 |
 | Open Unknowns    | 9                                                                   |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | Low                                                                 |
@@ -95,7 +95,7 @@ string references — that is a distinct function from filename aliasing.
 
 **This section governs how terminology conflicts are resolved.**
 
-Three vocabulary sources exist in the repository:
+Four vocabulary sources exist in the repository:
 
 | Source                       | Authority Domain                                      |
 |------------------------------|-------------------------------------------------------|
@@ -1124,6 +1124,8 @@ Auditor_Protocols.md specifically, which is now closed.
 
 ### Resolution Log
 
+- 2026-10-24: **Wording and Status corrections** (human-directed, from a Vibe per-file audit; checked against source first). Conflict Resolution Doctrine said "Three vocabulary sources exist" above a four-row table; the count is now four (Verification_Gates was added as the fourth on 2026-07-03). A note added to the Status section: it ends at v0.6 while the header reads v0.7, and the 2026-08-17, 2026-09-14 and 2026-09-23 passes carry no version number. No definition, sidecar or Unknown changed; sidecar Last Reviewed dates not touched, since no review was performed.
+
 - 2026-09-23: **Claim-Type Labels registered (§4).** Nine-label taxonomy
   (FACT/MEASUREMENT/OBSERVATION/INFERENCE/ASSUMPTION/PROPOSAL/UNKNOWN/
   DECISION/AUTHORIZATION) distinguishing claim *type* from AP-006's
@@ -1265,6 +1267,8 @@ Auditor_Protocols.md specifically, which is now closed.
 ---
 
 ## Status
+
+*Note (2026-10-24): this Status history ends at v0.6, while the header reads v0.7 (2026-07-05, CT-007 escalated; see the Resolution Log). The later body passes (2026-08-17, 2026-09-14, 2026-09-23) carry no version number. Completing the history here is held pending the Status-section maintain-or-retire ruling and a decision on version bumps for those passes (Progress_Log PKC-002, PKC-029).*
 
 Version 0.6 — CT-011 resolved: `Admin/Auditor_Protocols.md` v0.17 now
 cross-references this file's Cycle definition in its Expiry Rule and Expiry

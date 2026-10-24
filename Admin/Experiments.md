@@ -14,8 +14,8 @@
 | Body Stability   | Stub                                                                |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | `Admin/Verification_Gates.md`                                    |
-| Last Audit       | 2026-06-21                                                          |
-| Auditor          | Claude — Synthesizer                                                |
+| Last Audit       | 2026-10-06 (boundary clarification — ChatGPT assessment, human-directed; see Resolution Log); header corrected 2026-10-24 (Claude, human-directed, from a Vibe per-file audit). Prior: 2026-06-21                                                          |
+| Auditor          | ChatGPT — assessment 2026-10-06 (human-directed); Claude — header correction 2026-10-24 (human-directed); prior: Claude — Synthesizer                                                |
 | Open Unknowns    | 0                                                                   |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | Low                                                                 |
@@ -128,6 +128,8 @@ Each experiment occupies one named section. Five fields required. No entry may b
 ---
 
 ## Resolution Log
+
+- 2026-10-24: Header corrected (human-directed, from a Vibe per-file audit; checked against source first): Last Audit and Auditor now cover the 2026-10-06 boundary clarification, which changed the Scope Boundary, File Purpose and the entries note but had not advanced them. No body text, Unknown or Spec Gate changed.
 
 - 2026-10-06: Boundary clarified — this file = physical grounding only; process/capability experiments → `Tests/Field_Logs/`. Honest acknowledgment and entries note updated so “no experiments” cannot be misread as repo-wide. ChatGPT assessment; human-directed hygiene.
 - 2026-06-21: File created as Admin-layer governance stub. Schema defined. No experiments logged. Identified as partial resolution path for AP-010 (physical test harness coupling to epistemic grounding layer). Three priority candidates for first entries noted in Experiments section.

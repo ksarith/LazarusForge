@@ -20,7 +20,7 @@
 | Ethical Anchor | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 | Highest Risk | N/A — Tier 0 documents are audited for internal consistency only |
 | Operationalized In | `Admin/Computational_Institutional_Reasoning.md` — Axiom A3 ("The Nothingness Principle") and enforcement Rule γ2 ("The Nothingness Conservation Law") formally derive from this document's Core Theorem. This file remains Tier 0 / exempt; CIR's operational use does not alter this file's status. |
-| Last Audit | 2026-07-31 (five minimal clarifiers added: scalar/ordinal, per-substrate domain, topology C, escape-velocity warning, friction heuristic — see Resolution Log) |
+| Last Audit | 2026-10-24 (Claude, human-directed: preamble count "three generations" corrected to four, from a Vibe per-file audit; see Resolution Log). Prior: 2026-07-31 (five minimal clarifiers added: scalar/ordinal, per-substrate domain, topology C, escape-velocity warning, friction heuristic — see Resolution Log) |
 
 ---
 
@@ -48,7 +48,7 @@
 
 ## Preamble
 
-This document is the definitive compilation of a framework developed across many sessions of philosophical, mathematical, and practical inquiry. It synthesizes three generations of the idea:
+This document is the definitive compilation of a framework developed across many sessions of philosophical, mathematical, and practical inquiry. It synthesizes four generations of the idea:
 
 - **Generation 1:** Original ethical/spiritual framing (*Nothing Does Not Exist*)
 - **Generation 2:** Expanded critique identifying structural gaps (information theory, entropy, falsifiability)
@@ -502,6 +502,8 @@ The operational argument is self-contained and internally consistent under the f
 ---
 
 ## Resolution Log
+
+- 2026-10-24: Preamble corrected from "three generations" to "four generations" (human-directed, from a Vibe per-file audit): the list directly below it, and the footer ("Generation 4 / Compiled Edition"), already named four. No theorem, axiom, clarifier or unknown changed.
 
 - 2026-07-31: Five minimal, non-disruptive clarifiers added following a
   Copilot Skeptic/Auditor pass (cross-checked and confirmed by Grok
