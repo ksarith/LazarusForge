@@ -7,7 +7,7 @@
 | Spec Gates       | 0/6 |
 | Open Unknowns    | 4 (sidecar at end of file, all non-blocking); AVE-R1 and AVE-R4 also indexed in `Unknowns.md` |
 | Owner            | `Admin/Agent_Verification_Event.md` (process schema); operational samples may land in `Tests/Field_Logs.md` |
-| Last Updated     | 2026-10-10 |
+| Last Updated     | 2026-10-23 (Resolution Log reorder only; content last changed 2026-10-10) |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
 ---
@@ -168,6 +168,8 @@ Tracked as sidecar entries in **Auditor Notes & Unknowns** at the end of this fi
 ---
 
 ## Resolution Log
+
+- 2026-10-23: **Log order corrected** (human-directed, from a Vibe per-file audit): the second 2026-10-10 entry (residuals AVE-R1 to AVE-R4 converted to sidecar entries) moved above the 2026-09-07 entry so the log reads newest-first. Entries themselves unchanged; no doctrine, Unknown or Status change.
 
 - 2026-10-10: **Risk/Priority rankings on sidecar Unknowns human-confirmed** (values unchanged; remain Placeholder severity, non-blocking). No Status or Spec Gate change.
 

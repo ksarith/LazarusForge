@@ -212,10 +212,13 @@ The prior verified Lane A funnel (2026-08-21/30, confirmed GMP-006/007/008/010/0
 | PKC-019 | 2026-10-23, Vibe audit and Claude | RIP-011 anchors, first used 2026-10-23 on Repository_Integrity_Protocol's own log entry. Three open questions: (a) `content_hash_after` is self-referential when the anchor lives in the file it hashes (recorded as omitted); (b) whether the 2026-10-23 backfill and correction entries in other governance files (GMP, Ethical_Constraints, Verification_Gates, etc.) count as substantive revisions owing anchors; none were added there; (c) the rule does not define how to count Resolution Log entries (RIP's entry counts dated bullets). | `Admin/Repository_Integrity_Protocol.md` §Lightweight Revision Anchors | Yes | Med | Parked |
 | PKC-020 | 2026-10-23, Vibe audit | Policy ruling: does a findings-only pseudo-audit (Grok's logged 2026-08-10 pass on Economics, the 2026-08-11 passes elsewhere) advance a file's Last Audit field? The same question came up on Hardware_Diversity_Ladder and Security_Protocols. Last Audit notes now mention such passes without treating them as audits. | `Admin/Economics.md`, `Admin/Hardware_Diversity_Ladder.md` and others | Yes | Low | Parked |
 | PKC-021 | 2026-10-23, Vibe audit | Duplicate-section class: Engineer_Protocols carried two divergent `## Drift Indicators` sections (merged 2026-10-23). A repo-wide search of live files outside `Archive/` for repeated `## Drift Indicators` headings found no other file with a duplicate. Other repeated required sections were not searched. | all live `.md` files | Partly | Low | Parked |
+| PKC-022 | 2026-10-23, Grok integrity sweep | Forge_Audit_Kit's derived-from pin lags the live Unknowns progression (Grok's recurring standing item, IS-20261020-001 in its numbering). Not checked by Claude; Grok rates it minor and suggests leaving it until a deliberate kit regeneration. | `Admin/Forge_Audit_Kit.md`, `Unknowns.md` | No | Low | Parked |
 
 ---
 
 ## Resolution Log
+
+- 2026-10-23 (tenth entry): Parked Concerns PKC-022 added from Grok's 19-file integrity sweep. Human-directed.
 
 - 2026-10-23 (ninth entry): Parked Concerns PKC-020 and PKC-021 added, PKC-001 and PKC-003 extended, from the
   Economics / Engineer_Protocols audit. Human-directed.
