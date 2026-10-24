@@ -17,8 +17,8 @@
 | Body Stability   | Volatile                                                               |
 | Spec Gates       | 0/6                                                                    |
 | Verification Ref | Admin/Verification_Gates.md                                        |
-| Last Audit       | 2026-08-03                                                             |
-| Auditor          | Claude — Synthesizer, human-directed. Drafted from external candidate material (Grok), verified against `Operations/Electronics.md` TMR doctrine, `Architecture/Cognitive_Frameworks.md` Framework D, `Admin/Governance_Charter.md` (Genesis Phase Protocol, Axiom Q-2), and `Admin/Security_Protocols.md` SEC-007a/b before integration — all cross-references confirmed exact against source, 2026-08-03 |
+| Last Audit       | 2026-10-23 — Claude (human-directed) corrections from a Vibe per-file audit, each checked against source first: Last Audit had not been advanced past 2026-08-03 by the two 2026-08-06 Synthesizer passes (human-directed) or the 2026-08-11 Grok pseudo-audit (findings only), all logged below; Near-Term Action Items item 3 marked done (GMP-011 resolved 2026-09-23). No tier, requirement or status changed. Prior: 2026-08-03                                                             |
+| Auditor          | Claude — 2026-10-23 corrections (human-directed, from a Vibe per-file audit); 2026-08-06 Synthesizer passes (human-directed) and 2026-08-11 Grok pseudo-audit per the Resolution Log; prior: Claude — Synthesizer, human-directed. Drafted from external candidate material (Grok), verified against `Operations/Electronics.md` TMR doctrine, `Architecture/Cognitive_Frameworks.md` Framework D, `Admin/Governance_Charter.md` (Genesis Phase Protocol, Axiom Q-2), and `Admin/Security_Protocols.md` SEC-007a/b before integration — all cross-references confirmed exact against source, 2026-08-03 |
 | Open Unknowns    | 0 — this file supplies implementation reference for `Admin/Governance_Migration_Protocol.md` §VII's own open items (VII.6), not new tracked unknowns of its own |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
@@ -116,11 +116,11 @@ Provide a progressive, falsifiable path from the current single-operator advisor
 
 ---
 
-## Near-Term Action Items (from §VII.6, still open)
+## Near-Term Action Items (from §VII.6; items 1, 2 and 4 still open, item 3 done 2026-09-23)
 
 1. Acquire or designate a second physical host (even a low-cost single-board computer) and document its architecture, power, and network independence.
 2. Decide, under Track-B-adjacent scrutiny, whether hardware diversity is mandatory for Pathway 1 exit or only pre-v1.
-3. Write the minimal dispute-resolution rule for GMP-011 (default to Track B while disputed).
+3. ~~Write the minimal dispute-resolution rule for GMP-011 (default to Track B while disputed).~~ Done — GMP-011 resolved 2026-09-23 (Payment via Specification; Operative Rule ratified, including a Genesis Phase holding clause). See `Admin/Governance_Migration_Protocol.md`.
 4. Do **not** claim any progress on GOV-008, promote GMP-002 ownership transfer, or mark §VII "achieved" until at least Tier 1 exists and has been ratified.
 
 ---

@@ -18,8 +18,8 @@
 | Body Stability   | Stable                                                               |
 | Spec Gates       | N/A — reference index, not a governed doctrine surface               |
 | Verification Ref | Admin/Verification_Gates.md                                          |
-| Last Audit       | 2026-10-03 (second pass) — Convention 8 Source-of-truth line revised to cite `Admin/Resolution_Methodology.md` §9 as the canonical statement of the pattern (was standing alone). Prior: 2026-10-03 — Convention 8 added (rotation-rule self-enforcement failure, Progress_Log.md + Unknowns.md). Prior: 2026-09-30 — file created. |
-| Auditor          | Grok — Convention 8 attribution fix (human-directed); prior Claude — human-directed |
+| Last Audit       | 2026-10-23 — Claude (human-directed) resequenced the Conventions so they read 1–8 in order (Convention 7's block moved after 6; numbers and text unchanged, so existing citations such as "Convention 7" still resolve). Prior: 2026-10-03 (second pass) — Convention 8 Source-of-truth line revised to cite `Admin/Resolution_Methodology.md` §9 as the canonical statement of the pattern (was standing alone). Prior: 2026-10-03 — Convention 8 added (rotation-rule self-enforcement failure, Progress_Log.md + Unknowns.md). Prior: 2026-09-30 — file created. |
+| Auditor          | Claude — 2026-10-23 resequencing (human-directed, from a Vibe per-file audit); prior: Grok — Convention 8 attribution fix (human-directed); prior Claude — human-directed |
 | Open Unknowns    | 0                                                                     |
 | Active Disputes  | 0                                                                     |
 | Highest Risk     | Low                                                                   |
@@ -123,18 +123,6 @@ in use for `Discovery.md` → `Archive/Logs/Discovery_Changelog.md` and `Unknown
 for a same-named `_Logs.md`/`_Changelog.md` file under `Archive/Logs/` before concluding a
 registered ID's case history doesn't exist.
 
-### 7. New files need a `*_Scope_Map.md` entry too, same session
-
-`Admin/File_Template.md`'s New File Creation Checklist requires registering a new file in
-its folder's `*_Scope_Map.md` (`Admin/Adm_Scope_Map.md`, `Architecture/Arc_Scope_Map.md`,
-`Operations/Ops_Scope_Map.md`, `Challenges/Cha_Scope_Map.md`, `Tests/Tst_Scope_Map.md`) as
-a Does/Does-not entry — separate from, and in addition to, the `Routing.md` row.
-
-**Violated:** this file itself — added to `Routing.md` and linked from `Discovery.md`'s
-Agent Orientation on 2026-09-30, but not added to `Admin/Adm_Scope_Map.md` until this rule
-was written and the omission checked for. Fixed in the same pass as this entry.
-**Source of truth:** `Admin/File_Template.md`, New File Creation Checklist.
-
 ### 5. `Archive/` duplicate sidecar IDs are expected, not a defect
 
 A live file and an `Archive/Logs/` or `Archive/Transcripts/` file legitimately sharing a
@@ -159,6 +147,18 @@ doctrine (not a script) still does.
 session work and correctly left unregistered; recorded here so the next check doesn't
 have to re-derive the reasoning from `Routing.md`'s own text.
 **Source of truth:** `Routing.md`, registration-scope note near the top of the file.
+
+### 7. New files need a `*_Scope_Map.md` entry too, same session
+
+`Admin/File_Template.md`'s New File Creation Checklist requires registering a new file in
+its folder's `*_Scope_Map.md` (`Admin/Adm_Scope_Map.md`, `Architecture/Arc_Scope_Map.md`,
+`Operations/Ops_Scope_Map.md`, `Challenges/Cha_Scope_Map.md`, `Tests/Tst_Scope_Map.md`) as
+a Does/Does-not entry — separate from, and in addition to, the `Routing.md` row.
+
+**Violated:** this file itself — added to `Routing.md` and linked from `Discovery.md`'s
+Agent Orientation on 2026-09-30, but not added to `Admin/Adm_Scope_Map.md` until this rule
+was written and the omission checked for. Fixed in the same pass as this entry.
+**Source of truth:** `Admin/File_Template.md`, New File Creation Checklist.
 
 ### 8. A "keep only the N most recent, rotate the rest" rule does not enforce itself
 

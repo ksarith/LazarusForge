@@ -8,8 +8,8 @@
 | Status         | Draft                                                               |
 | Spec Gates     | N/A — operational prompt template, not a doctrine or specification claim |
 | Verification Ref | Admin/Repository_Integrity_Protocol.md                            |
-| Last Audit     | 2026-08-30                                                          |
-| Auditor        | Claude — Synthesizer, human-directed, first draft, 2026-08-30. Consolidates a prompt refined across several morning-audit sessions run by Grok on external automation; captured here so the function survives independent of any one automation config. |
+| Last Audit     | 2026-10-23 — field corrected (Claude, human-directed, from a Vibe per-file audit): the 2026-08-31 v1.0.2 pass (one real fix applied; two findings from the same sweep checked and declined as false positives — see Resolution Log) had not been recorded here. No prompt text changed. Prior: 2026-08-30                                                          |
+| Auditor        | Claude — 2026-10-23 field correction (human-directed); 2026-08-31 v1.0.2 pass per the Resolution Log; prior: Claude — Synthesizer, human-directed, first draft, 2026-08-30. Consolidates a prompt refined across several morning-audit sessions run by Grok on external automation; captured here so the function survives independent of any one automation config. |
 | Open Unknowns  | 0                                                                    |
 | Ethical Anchor | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
