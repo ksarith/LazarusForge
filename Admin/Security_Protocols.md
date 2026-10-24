@@ -28,8 +28,8 @@
 | Body Stability   | Volatile                                                            |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | `Admin/Verification_Gates.md`                                    |
-| Last Audit       | 2026-09-03 — Grok surgical state-synchronization repair after ChatGPT REVISE/G6-BLOCKED audit (SEC-AUD-001–006): FROZEN markers added; Scope Boundary SEC-009 updated; Human-Factors note synchronized; PAT-001/PAT-002 statuses updated; RIP-001 dependency language corrected; bottom Version 0.8 Status block replaced with current + historical record. No security architecture redesigned; SEC-002/007a/009 closures preserved. Prior: 2026-08-22 |
-| Auditor          | Grok — 2026-09-03 integrity repair (see Last Audit). Prior: Gemini / Grok / ChatGPT / Claude multi-agent history retained in Resolution Log |
+| Last Audit       | 2026-10-23 — Claude (human-directed) corrections from a Vibe per-file audit, each checked against source first: Last Audit and Auditor extended to cover the 2026-09-10 (SEC-007b), 2026-09-14 (CF-006 registered) and 2026-09-15 (CF-006 resolved, Option A) passes logged in the Resolution Log, the last of which touched operative body text; SEC-002, SEC-007a and SEC-009 sidecar headings re-titled to match their Ratified status; duplicate EC-011 bullet removed from §I.6. No FROZEN region, Status or security doctrine changed. Prior: 2026-09-03 — Grok surgical state-synchronization repair after ChatGPT REVISE/G6-BLOCKED audit (SEC-AUD-001–006): FROZEN markers added; Scope Boundary SEC-009 updated; Human-Factors note synchronized; PAT-001/PAT-002 statuses updated; RIP-001 dependency language corrected; bottom Version 0.8 Status block replaced with current + historical record. No security architecture redesigned; SEC-002/007a/009 closures preserved. Prior: 2026-08-22 |
+| Auditor          | Claude — 2026-10-23 corrections (human-directed, from a Vibe per-file audit); 2026-09-10 / 09-14 / 09-15 passes per the Resolution Log (Grok and Claude, human-directed); Grok — 2026-09-03 integrity repair (see Last Audit). Prior: Gemini / Grok / ChatGPT / Claude multi-agent history retained in Resolution Log |
 | Open Unknowns    | 10 substantively open (SEC-001, SEC-003, SEC-004, SEC-005, SEC-006, SEC-007b, SEC-008, SEC-010, SEC-011, SEC-012). SEC-002, SEC-007a, SEC-009 Ratified — Payment via Specification, 2026-08-22. CF-006 Resolved 2026-09-15 (Option A) |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | High                                                                |
@@ -410,7 +410,6 @@ uncoerced, and cognitively unimpaired. Side-channel attacks, social engineering
 directed at operators holding tokens, and timing attacks on multi-signature
 processes are not addressed at current maturity. Cross-reference:
 - `Admin/Safety_Protocols.md` §V — operator impairment recognition
-- `Admin/Ethical_Constraints.md` EC-011 — human governance adversary model
 - SEC-009 — compromise detection criteria (Ratified, Payment via Specification, 2026-08-22); SEC-008 remains open for signature replay protection
 - `Admin/Ethical_Constraints.md` EC-011 — human governance adversary model (still open)
 
@@ -866,7 +865,7 @@ human-supervised bootstrap bypass (see Phase Implementation Ordering note).
 
 ---
 
-### SEC-002 — Key Revocation and Compromise Response Doctrine Undefined
+### SEC-002 — Key Revocation and Compromise Response Doctrine (Ratified 2026-08-22)
 
 | Field         | Value                              |
 |---------------|------------------------------------|
@@ -1024,7 +1023,7 @@ primary context where clock sync is lost.
 
 ---
 
-### SEC-007a — External Root-of-Trust: Constitutional Requirements Undefined
+### SEC-007a — External Root-of-Trust: Constitutional Requirements (Ratified 2026-08-22)
 
 | Field         | Value                              |
 |---------------|-------------------------------------|
@@ -1167,7 +1166,7 @@ procedure: RIP-001 is Resolved as archival substrate; SEC-008 replay mechanism r
 
 ---
 
-### SEC-009 — Compromise Detection Criteria Undefined
+### SEC-009 — Compromise Detection Criteria (Ratified 2026-08-22)
 
 | Field         | Value                              |
 |---------------|------------------------------------|
@@ -1396,6 +1395,8 @@ has not been inserted into either file.
 ---
 
 ### Resolution Log
+
+- 2026-10-23: **Bookkeeping corrections (human-directed, from a Vibe per-file audit; each finding checked against source first).** Last Audit and Auditor extended to cover the 2026-09-10, 2026-09-14 and 2026-09-15 passes logged below; the 09-15 CF-006 fix had touched operative body text without advancing them. The SEC-002, SEC-007a and SEC-009 sidecar headings were re-titled to drop "Undefined" (Status fields untouched; no references to the old titles found elsewhere in the repository). The duplicate EC-011 bullet in §I.6 was removed, keeping the "(still open)" version. No FROZEN region, Status or security doctrine changed.
 
 - 2026-09-15: **CF-006 resolved — Option A applied.** Grok investigated
   provenance (verified by Claude): the 2026-05-26 abandoned-path entry
