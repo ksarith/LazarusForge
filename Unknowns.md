@@ -1,9 +1,9 @@
 # Unknowns.md — Cross-Module Unknowns Global Index
 
 
-**Full version history in `Archive/Logs/Unknowns_Changelog.md` (2026-07-19 cleanup pass, following the precedent set by `Archive/Logs/AUDIT_HARNESS_CHANGELOG.md` and `Archive/Logs/Forge_Audit_Kit_Changelog.md`; scrubbed to current-version-only 2026-07-28 — the "current plus last four in full" window was itself compressed further, since the Audit Trail below now carries the compressed record for every version back to v1.0, and the changelog carries full text for all of them. This block now keeps only the current version.)**
+**Full version history in `Archive/Logs/Unknowns_Changelog.md` (2026-07-19 cleanup pass, following the precedent set by `Archive/Logs/AUDIT_HARNESS_CHANGELOG.md` and `Archive/Logs/Forge_Audit_Kit_Changelog.md`; scrubbed to current-version-only 2026-07-28 — the "current plus last four in full" window was itself compressed further, since the changelog carries full text for every version back to v1.0 (the in-file Audit Trail was moved there under Rule 4). This block now keeps only the current version.)**
 
-**Version 5.65 -- 2026-10-20. CO-002 ruling recorded.** CO-002 (`Architecture/Components.md`) stays Open until PR-001 in `Architecture/Precision.md` declares the measured precision ceiling, which is the event that closes it. Precision.md's Scope Boundary now says its §III Metrology Doctrine "addresses" CO-002, not "resolves" it, and Geck_forge_seed.md's GK-005 record again states that CO-002 routes to PR-001 (an earlier same-day edit had wrongly said otherwise). The v5.64 note that the ruling was pending is resolved. No Status, Priority or Spec Gate changed. No `Admin/Forge_Audit_Kit.md` update is triggered: the kit copies none of the affected text. Human-directed.
+**Version 5.66 -- 2026-10-23. Navigation-layer corrections (from a Vibe audit; each finding checked against source).** Cognitive Salvage: the duplicate PYC-001–008 block was removed, and the surviving rows' Priority values now follow `Tests/Pyrolysis_Cascade.md`'s sidecars (the expanded rows had carried Risk values in the Priority column). Per Size Management Rule 2: RS-002 and RS-003 removed from the Repository Structure table, CF-DS-001 and CF-DS-002 removed from the Active Disputes Registry, SR-010 given a resolved footnote. EC-008 removed from Critical Watch (Resolved 2026-08-22); the Expiry Watch Auditor_Protocols bullet refreshed (AP-001, AP-004 and AP-005 are Resolved). Pointers to the former in-file Audit Trail repointed to `Archive/Logs/Unknowns_Changelog.md`. No Unknown opened or closed; open counts unchanged. Companion edits: none required.
 ---
 
 **Expiry Rule active — see `Admin/Canonical_Terms.md` §4 for the Cycle definition this rule now explicitly references (one calendar year default, not one audit pass — see CT-011). Protocol Performance metrics collecting.**
@@ -54,7 +54,7 @@ These rules are enforced at every audit cycle opening:
    caught. `Progress_Log.md`'s dated-heading format removes the need for a
    retirement step entirely — new entries never touch old ones.
 
-2. **Resolved entries leave the Active Index immediately.** Once an unknown is resolved, it is removed from the Active Index. Full resolution detail is recorded in the owning file's sidecar under Lessons Learned. This file carries no persistent archive of resolved entries — the Audit Trail's brief resolution notes are the only navigation-layer record maintained here. Active tables show Open, In Progress, and Reopened only.
+2. **Resolved entries leave the Active Index immediately.** Once an unknown is resolved, it is removed from the Active Index. Full resolution detail is recorded in the owning file's sidecar under Lessons Learned. This file carries no persistent archive of resolved entries — the brief resolution notes in `Archive/Logs/Unknowns_Changelog.md` (Rule 4) are the only navigation-layer record of resolved entries. Active tables show Open, In Progress, and Reopened only.
 
 3. **Compression trigger at 1,200 lines.** If this file exceeds 1,200 lines, a compression pass is mandatory before new entries are added. Compression scope: verify all resolved actives have been removed from the index, confirm no archive accumulation has restarted.
 
@@ -588,6 +588,8 @@ RB-007 (Human-shared space unresolved)
 | SR-012 | Mechanical bio-damping | `Tests/Support_Raft.md` | Open | — | Major |
 | SR-013 | Buoyancy shift — calcifying organism mass limit | `Tests/Support_Raft.md` | Open | — | Major |
 
+*SR-010 is Resolved (2026-06-11) and does not appear in this active index per Size Management Rule 2 — full closure detail is in `Tests/Support_Raft.md`'s own Resolution Log.*
+
 ### Salvage & Fabrication
 
 | ID | Title | Owning File | Status | Subtype | Priority (Promo) |
@@ -733,7 +735,7 @@ RB-007 (Human-shared space unresolved)
 | ECN-006 | Barter performance and default risk mechanics undefined — no verification/recourse posture for non-monetary exchanges yet | `Admin/Economics.md` | Open | — | Minor |
 
 *ECN-002 Critical — blocks TR-001 closure; depends on EV-001.*
-*ID prefix note: renamed from `EC-` to `ECN-` 2026-07-06 per CT-007 resolution — see Governance & Verification section and Audit Trail below. ECN-003 (barter valuation standard) is Resolved and does not appear in this active index per Size Management Rule 2.*
+*ID prefix note: renamed from `EC-` to `ECN-` 2026-07-06 per CT-007 resolution — see the Governance & Verification section and the Audit Trail in `Archive/Logs/Unknowns_Changelog.md`. ECN-003 (barter valuation standard) is Resolved and does not appear in this active index per Size Management Rule 2.*
 
 ### Governance Migration
 
@@ -757,8 +759,8 @@ RB-007 (Human-shared space unresolved)
 | ID | Title | Owning File | Status | Subtype | Priority (Promo) |
 |---|---|---|---|---|---|
 | RS-001 | Non-markdown file type introduction procedure undefined | `Admin/Repository_Structure.md` | Open | — | Minor |
-| RS-002 | Forge_flow.md casing outlier not yet corrected | `Admin/Repository_Structure.md` | Resolved 2026-08-09 — accepted outlier | — | Minor |
-| RS-003 | Archive/ directory not yet physically created | `Admin/Repository_Structure.md` | Resolved 2026-08-09 | — | Major |
+
+*RS-002 and RS-003 (both Resolved 2026-08-09) do not appear in this active index per Size Management Rule 2 — full closure detail is in `Admin/Repository_Structure.md`'s own Resolution Log.*
 
 ### Precision
 
@@ -826,24 +828,17 @@ RB-007 (Human-shared space unresolved)
 | GH-011 | Heuristic canonicalization layer undefined — variant sequences inflate consensus_run_count without adding evidential weight | `Tests/Cognitive_Salvage_Layer.md` | Open | — | Major |
 | GH-012 | Discovery yield rate undefined — fraction of harvested heuristics that are genuinely novel; primary ROI signal for the layer | `Tests/Cognitive_Salvage_Layer.md` | Open | — | Major |
 | GH-013 | Conceptual salvage artifact storage mechanism undefined — no object schema exists for non-physical-input recovery (Conceptual Salvage Pipeline, provisional) | `Tests/Cognitive_Salvage_Layer.md` | Open | — | Minor (Blocking for the Conceptual Salvage Pipeline subsection specifically, not the file as a whole) |
-| PYC-001 | Halogenated-polymer triage dependency — blocks all hot thermal work under this file. PL-001 Resolved 2026-08-23; CE-003 remains Open — one of two dependencies cleared | `Tests/Pyrolysis_Cascade.md` | Open | — | Critical |
-| PYC-002 | Reduction-method selection dependency (GR-002) — blocks any claim the secondary stage is a bloomery | `Tests/Pyrolysis_Cascade.md` | Open | — | High |
-| PYC-003 | Hazardous-fraction and disposal dependency (WA-002, GR-003, WA-004 — all three Resolved 2026-08-23/24); Blocking remains Yes on WA-002-R1/GR-003-R1 empirical and jurisdiction residuals, not on missing doctrine | `Tests/Pyrolysis_Cascade.md` | Open | — | Critical |
-| PYC-004 | Site and emergency-response dependency (FA-001 → SP-006) — blocks any physical pilot | `Tests/Pyrolysis_Cascade.md` | Open | — | Critical |
-| PYC-005 | Energy integration quantitative claims — no Forge energy balance exists; archived heat-recapture targets retired to Placeholder | `Tests/Pyrolysis_Cascade.md` | Open | — | Medium |
-| PYC-006 | Metals-recovery yield claims — stated without measurement or a selected reduction method | `Tests/Pyrolysis_Cascade.md` | Open | — | Medium |
-| PYC-007 | Structural/refractory adequacy for salvaged construction (EN-001) — blocks any physical build claim | `Tests/Pyrolysis_Cascade.md` | Open | — | High |
-| PYC-008 | Economic viability framing — tipping-fee/break-even claims lack an operating-cost baseline and a site (ECN-002, EV-001, FA-001, TR-001) | `Tests/Pyrolysis_Cascade.md` | Open | — | Medium |
+| PYC-001 | Halogenated-polymer triage dependency — blocks all hot thermal work under this file. PL-001 Resolved 2026-08-23; CE-003 remains Open — one of two dependencies cleared | `Tests/Pyrolysis_Cascade.md` | Open | — | Blocking |
+| PYC-002 | Reduction-method selection dependency (GR-002) — blocks any claim the secondary stage is a bloomery | `Tests/Pyrolysis_Cascade.md` | Open | — | Blocking (bloomery-specific) |
+| PYC-003 | Hazardous-fraction and disposal dependency (WA-002, GR-003, WA-004 — all three Resolved 2026-08-23/24); Blocking remains Yes on WA-002-R1/GR-003-R1 empirical and jurisdiction residuals, not on missing doctrine | `Tests/Pyrolysis_Cascade.md` | Open | — | Blocking |
+| PYC-004 | Site and emergency-response dependency (FA-001 → SP-006) — blocks any physical pilot | `Tests/Pyrolysis_Cascade.md` | Open | — | Blocking (physical pilot) |
+| PYC-005 | Energy integration quantitative claims — no Forge energy balance exists; archived heat-recapture targets retired to Placeholder | `Tests/Pyrolysis_Cascade.md` | Open | — | Major |
+| PYC-006 | Metals-recovery yield claims — stated without measurement or a selected reduction method | `Tests/Pyrolysis_Cascade.md` | Open | — | Major |
+| PYC-007 | Structural/refractory adequacy for salvaged construction (EN-001) — blocks any physical build claim | `Tests/Pyrolysis_Cascade.md` | Open | — | Blocking (physical build) |
+| PYC-008 | Economic viability framing — tipping-fee/break-even claims lack an operating-cost baseline and a site (ECN-002, EV-001, FA-001, TR-001) | `Tests/Pyrolysis_Cascade.md` | Open | — | Major |
 
 *PYC-001 and PYC-003 are co-blocking with PYC-004: no hot thermal work, no physical pilot, until PL-001/CE-003 and FA-001 close.*
-| PYC-001 | Halogenated-polymer triage dependency | `Tests/Pyrolysis_Cascade.md` | Open | — | Blocking |
-| PYC-002 | Reduction-method selection dependency | `Tests/Pyrolysis_Cascade.md` | Open | — | Blocking (bloomery-specific) |
-| PYC-003 | Hazardous-fraction and disposal dependency | `Tests/Pyrolysis_Cascade.md` | Open | — | Blocking |
-| PYC-004 | Site and emergency-response dependency | `Tests/Pyrolysis_Cascade.md` | Open | — | Blocking (physical pilot) |
-| PYC-005 | Energy integration quantitative claims | `Tests/Pyrolysis_Cascade.md` | Open | — | Major |
-| PYC-006 | Metals-recovery yield claims | `Tests/Pyrolysis_Cascade.md` | Open | — | Major |
-| PYC-007 | Structural / refractory adequacy for salvaged construction | `Tests/Pyrolysis_Cascade.md` | Open | — | Blocking (physical build) |
-| PYC-008 | Economic viability framing | `Tests/Pyrolysis_Cascade.md` | Open | — | Major |
+*PYC-001–008 Priority values follow `Tests/Pyrolysis_Cascade.md`'s sidecars; their Risk values (Critical / High / Medium) live there, not in this column.*
 
 *GH-001 and CSL-A06 are co-blocking: translation fidelity and simulation-to-physical fidelity are the two load-bearing assumptions for operational deployment.*
 *GH-003 maps to Adversarial Battery Challenge Class 8 — route adversarial resistance requirements to Admin/Security_Protocols.md.*
@@ -924,13 +919,11 @@ RB-007 (Human-shared space unresolved)
 
 | ID | Title | Owning File | Positions | Risk | Status |
 |---|---|---|---|---|---|
-| CF-DS-001 | Centralized vs. distributed cognition | `Architecture/Cognitive_Frameworks.md` | Single executive AI vs. fleet consensus | High | **Resolved 2026-07-26 — scope-dependent hybrid** |
-| CF-DS-002 | Human override authority scope | `Architecture/Cognitive_Frameworks.md` | Absolute override vs. bounded override (see `Admin/Ethical_Constraints.md`) | High | **Resolved 2026-07-26 — Bounded Override** |
 | GOV-DS-001 | Whether constitutional governance should contain executable enforcement mechanics | `Admin/Governance_Charter.md` | Constitutional abstraction vs. hardcoded governance automation | High | Open |
 | DS-001 | Whether autonomous auditors should ever be allowed to reopen hard-stopped abandoned paths | `Admin/Auditor_Protocols.md` | Full prohibition vs. conditional supervised reopening | High | Open |
 
 *CF-DS-001 resolved as neither named extreme — Frameworks E and F apply at different decision scales per the new Authority Scope Boundary in `Architecture/Cognitive_Frameworks.md` §III, generalizing `Tests/Support_Raft.md`'s existing comms-blackout doctrine.*
-*CF-DS-002 ratified directly by human governing authority — hard floors in `Admin/Ethical_Constraints.md` (Anti-Weaponization, Life Preservation, Cultural Sites) sit above the human governing authority's own direct order, not only above subordinate agents. Full doctrine in `Admin/Ethical_Constraints.md` v0.13. Per Size Management Rule 2, both entries will drop from this registry entirely on the next version pass; kept visible with Resolved status this pass since the resolution is new.*
+*CF-DS-002 ratified directly by human governing authority — hard floors in `Admin/Ethical_Constraints.md` (Anti-Weaponization, Life Preservation, Cultural Sites) sit above the human governing authority's own direct order, not only above subordinate agents. Full doctrine in `Admin/Ethical_Constraints.md` v0.13. Per Size Management Rule 2, both entries were dropped from this registry in v5.66 (2026-10-23); they had been kept visible with Resolved status after the 2026-07-26 resolution.*
 *ENV-DS-001 (Bootstrap operating doctrine vs. Compliance-Maximizing Default) ratified by human governing authority 2026-07-17 and removed from this active registry per Size Management Rule 2 — see `Admin/Environmental_Constraints.md` Constraint Category 2 for the adopted text.*
 
 ---
@@ -953,7 +946,7 @@ GOV-003 Resolved 2026-08-23 (Payment via Specification) — Repository_Integrity
 
 **CF-001 In Progress/Blocking** — parameters defined (τ=50ms WDT). Remains Blocking until first hardware prototype validates at Measured confidence.
 
-**AP Systemic Risk escalation** — Downgrade confirmed by human governing authority 2026-07-03 (Auditor_Protocols.md v0.15). AP-001, AP-002, AP-004, AP-005, AP-007 remain In Progress. AP-012 and AP-016 Resolved 2026-07-03 (v0.16) — no longer Critical Watch items.
+**AP Systemic Risk escalation** — Downgrade confirmed by human governing authority 2026-07-03 (Auditor_Protocols.md v0.15). As of 2026-10-23, per `Archive/Logs/Auditor_Protocols_Logs.md`: AP-002 and AP-007 remain In Progress; AP-001 is Resolved, and AP-004 (2026-08-20) and AP-005 (2026-08-19) are Resolved. AP-012 and AP-016 Resolved 2026-07-03 (v0.16) — no longer Critical Watch items.
 
 ### Critical Watch
 
@@ -962,7 +955,6 @@ GOV-003 Resolved 2026-08-23 (Payment via Specification) — Repository_Integrity
 | GOV-005 | Constitutional stability — no fast resolution path; requires operational cycles |
 | SEC-007b | External root-of-trust, physical implementation layer — SEC-007a (constitutional layer) Resolved 2026-08-22; SEC-007b now the sole remaining blocker, not "pending SEC-007a" |
 | UNK-009 | External root-of-trust cross-module — spans GOV-005, RIP-001, SEC-007a/SEC-007b (GOV-003 Resolved 2026-08-23, no longer a live span component) |
-| EC-008 | Inferred authorization — softest point in permission model; interim default (no material alteration) in place; formal resolution required before operational deployment |
 | EC-011 | Human governance adversary model — load-bearing assumption under "capability never outruns permission"; no protection if permission source is compromised |
 | EC-012 | Epistemic spoofing via hardware/firmware tampering — every constraint in Ethical_Constraints.md assumes telemetry is honest; no doctrine addresses compromised sensor/firmware data |
 | EV-003 | Battery thermal containment — no enclosed battery bank until resolved |
