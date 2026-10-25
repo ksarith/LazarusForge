@@ -133,6 +133,8 @@ Any future edit that softens this file's "currently declarable, not achieved" fr
 
 ## Resolution Log
 
+- 2026-10-25: **Clarification of the 2026-08-11 entry (PKC-017; no doctrine change).** The 2026-08-11 entry's "Spec Gates N/A / left locked" is loose wording. The File State value 0/6 is authoritative: this file is Draft doctrine, is not on the `File_Template.md` exemption list, and no gate has passed. "Left locked" meant no gate was advanced. The 2026-08-11 entry is left as written (append-only). No tier claim, field or Unknown changed. Human-directed.
+
 - 2026-08-11: **Pseudo-audit (Grok, same limits).** Findings only. (1) Open
   Unknowns **0** — matches File State (supplies reference for GMP §VII,
   creates none of its own). (2) “Declarable, not achieved” framing intact;
