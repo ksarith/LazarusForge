@@ -17,8 +17,8 @@
 |---|---|
 | **Status** | Active |
 | **Challenges Subtype** | Problem-Statement |
-| **Version** | v0.2 |
-| **Last Updated** | 2026-10-20 (Status aligned to Active; File State date corrected; prior 2026-08-17) |
+| **Version** | v0.3 |
+| **Last Updated** | 2026-10-25 (v0.2 → v0.3, from base v0.2: Priority column added to the Open Unknowns table; EM-004's Risk corrected from Critical to High; prior 2026-10-20 — Status aligned to Active; File State date corrected; prior 2026-08-17) |
 | **Owner** | Challenges/ |
 | **Verification Ref** | `Admin/Verification_Gates.md` |
 | **Ethical Anchor** | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
@@ -182,12 +182,12 @@ The Forge itself is not exempt from this standard. A governance architecture tha
 
 ## Open Unknowns
 
-| ID | Description | Status | Risk |
-|---|---|---|---|
-| EM-001 | Behavioral opacity detection threshold — at what measurable divergence does watchdog escalation trigger? Requires CF-001 resolution before specification. | Open | High |
-| EM-002 | Correlated failure detection in multi-agent consensus — how does the Forge distinguish genuine independent agreement from amplified shared blind spots? Cross-reference `Tests/Leviathan_testing.md` Correlated AI Failure Test Protocol. | Open | High |
-| EM-003 | Gradual autonomy transition detection — what observable signals distinguish incremental capability expansion from a phase-shift threshold? No current sensor doctrine. | Open | Medium |
-| EM-004 | Governance substrate integrity under emergent agent access — if an emergent agent gains write access to governance files, what physical or cryptographic backstop prevents constitutional erosion? Mirrors GOV-003, SEC-007. | Open | Critical |
+| ID | Description | Status | Risk | Priority |
+|---|---|---|---|---|
+| EM-001 | Behavioral opacity detection threshold — at what measurable divergence does watchdog escalation trigger? Requires CF-001 resolution before specification. | Open | High | Major |
+| EM-002 | Correlated failure detection in multi-agent consensus — how does the Forge distinguish genuine independent agreement from amplified shared blind spots? Cross-reference `Tests/Leviathan_testing.md` Correlated AI Failure Test Protocol. | Open | High | Major |
+| EM-003 | Gradual autonomy transition detection — what observable signals distinguish incremental capability expansion from a phase-shift threshold? No current sensor doctrine. | Open | Medium | Minor |
+| EM-004 | Governance substrate integrity under emergent agent access — if an emergent agent gains write access to governance files, what physical or cryptographic backstop prevents constitutional erosion? Mirrors GOV-003, SEC-007. | Open | High | Critical |
 
 *All four EM entries (EM-001–004) are registered in `Unknowns.md`.*
 
@@ -198,6 +198,8 @@ The Forge itself is not exempt from this standard. A governance architecture tha
 ---
 
 ## Resolution Log
+
+- 2026-10-25: **v0.2 → v0.3, from base v0.2 (human-directed, PKC-024; Priorities proposed from each entry's text and approved by the human).** The Open Unknowns table had a Risk column only, and Unknowns.md had been carrying those Risk values in its Priority column. A Priority column is added: EM-001 Major, EM-002 Major, EM-003 Minor, EM-004 Critical. EM-004's Risk cell read Critical, which is not a Risk value (Low / Medium / High); it is corrected to High, and Critical moves to the new Priority column, where it is valid. No Unknown opened or closed; no scope, assumption or Status change.
 
 - 2026-10-20: **Status aligned to Active; File State date corrected.** (1) Status read Exploration with no recorded reason, while the other Problem-Statement lean-schema files (Water, Planned_Obsolescence, Critical_Minerals, Energy_Scarcity) read Active, and `Energy_Scarcity.md`'s 2026-07-12 log entry records Active as the doctrine-sanctioned value for this schema. Set to Active at the human governing authority's direction; the `Discovery.md` maturity-snapshot row is changed to match. (2) Last Updated read 2026-07-11, but the file was edited on 2026-08-10 (stale registration note removed) and 2026-08-17 (scope note); corrected. No change to doctrine, Engineering Requirements or Open Unknowns. Found by an external sweep (Vibe), checked against source by Claude. Human-directed.
 
