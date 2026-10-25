@@ -3,7 +3,7 @@
 
 **Full version history in `Archive/Logs/Unknowns_Changelog.md` (2026-07-19 cleanup pass, following the precedent set by `Archive/Logs/AUDIT_HARNESS_CHANGELOG.md` and `Archive/Logs/Forge_Audit_Kit_Changelog.md`; scrubbed to current-version-only 2026-07-28 — the "current plus last four in full" window was itself compressed further, since the changelog carries full text for every version back to v1.0 (the in-file Audit Trail was moved there under Rule 4). This block now keeps only the current version.)**
 
-**Version 5.66 -- 2026-10-23. Navigation-layer corrections (from a Vibe audit; each finding checked against source).** Cognitive Salvage: the duplicate PYC-001–008 block was removed, and the surviving rows' Priority values now follow `Tests/Pyrolysis_Cascade.md`'s sidecars (the expanded rows had carried Risk values in the Priority column). Per Size Management Rule 2: RS-002 and RS-003 removed from the Repository Structure table, CF-DS-001 and CF-DS-002 removed from the Active Disputes Registry, SR-010 given a resolved footnote. EC-008 removed from Critical Watch (Resolved 2026-08-22); the Expiry Watch Auditor_Protocols bullet refreshed (AP-001, AP-004 and AP-005 are Resolved). Pointers to the former in-file Audit Trail repointed to `Archive/Logs/Unknowns_Changelog.md`. No Unknown opened or closed; open counts unchanged. Companion edits: none required.
+**Version 5.67 -- 2026-10-25. Priority column corrected for thirteen rows (human-directed, PKC-024; each row checked against its owning file's sidecar first).** Risk-scale values (High / Medium / Low) had been carried into the Priority (Promo) column; each now follows the Priority in the owning sidecar: CIR-GOV-001, AS-002, GK-002–004, ST-001, ST-002 and EL-002 now read Minor; AS-003, ST-003, EL-001, EL-003 and EL-004 now read Major. EM-001–003 were not changed: `Challenges/Emergence.md` records only a Risk column for them and no Priority, so there is nothing in the sidecar to take, and they still carry Risk values pending a Priority being set in the owning file. Ruling background: Risk and Priority are distinct fields, "Critical" is not a Risk value, and elevated severity is carried by Blocking (Progress_Log, 2026-10-25). Per Size Management Rule 2 this block holds only the current version; v5.66 is in `Archive/Logs/Unknowns_Changelog.md`. No Unknown opened or closed; open counts unchanged. Companion edits: none required.
 ---
 
 **Expiry Rule active — see `Admin/Canonical_Terms.md` §4 for the Cycle definition this rule now explicitly references (one calendar year default, not one audit pass — see CT-011). Protocol Performance metrics collecting.**
@@ -259,7 +259,7 @@ RB-007 (Human-shared space unresolved)
 | GOV-017 | Institutional governance stagnation — document-level, distinct from GOV-012's unknown-level stagnation | `Admin/Governance_Charter.md` | Open | — | Major |
 | GOV-019 | Conflicting authenticated human override arbitration undefined | `Admin/Governance_Charter.md` | Open | — | Major |
 | GOV-021 | Autonomy Divergence Protocol formal registration — GOV-021 ID formally registered in `Admin/Governance_Charter.md`'s sidecar 2026-07-27 (protocol body itself remains Draft/PROPOSED NOT RATIFIED). Sub-unknown GOV-021b (Detection Criteria calibration) Resolved 2026-08-11. Constitutional Impact Statement's Track A classification independently confirmed 2026-08-12 (Skeptic/Auditor pass, scoped to classification only). GOV-021c (multi-agent coordinated divergence detection) remains Open — sole remaining ratification blocker, deliberately held pending live evidence. First live evidence logged 2026-08-15 (`Tests/Field_Logs.md`) — one data point at the High-Risk Unknowns tier, honestly assessed as partial (role independence not fully met) and from a benign case, not closure. | `Admin/Governance_Charter.md` | Open | Vehicle | Major |
-| CIR-GOV-001 | Predicate-to-Checkpoint mapping incomplete — candidate mapping table supplied 2026-07-31, two genuine gaps documented at Checkpoints 2 (Structural Plausibility) and 4 (Cross-Module Integration), zero predicate coverage on either. File itself is Proposed — Not Ratified. | `Admin/CIR_Gov.md` | Open | — | Low |
+| CIR-GOV-001 | Predicate-to-Checkpoint mapping incomplete — candidate mapping table supplied 2026-07-31, two genuine gaps documented at Checkpoints 2 (Structural Plausibility) and 4 (Cross-Module Integration), zero predicate coverage on either. File itself is Proposed — Not Ratified. | `Admin/CIR_Gov.md` | Open | — | Minor |
 | SEC-001 | Quorum recovery under terminal partition | `Admin/Security_Protocols.md` | Open | — | Major |
 | SEC-003 | Key rotation period undefined | `Admin/Security_Protocols.md` | Open | — | Major |
 | SEC-004 | Key lifecycle doctrine incomplete | `Admin/Security_Protocols.md` | Open | — | Major |
@@ -570,8 +570,8 @@ RB-007 (Human-shared space unresolved)
 | MG-008 | Sensor fouling from conductive or abrasive fines | `Operations/Gate_04_Separation_Mechanical.md` | Open | — | Major |
 | MG-009 | Provisional feedstock envelope table drifted from Gate_03_Reduction.md's mirror table — found scoping FL-002; logged rather than fixed since both are placeholders pending Reduction method selection | `Operations/Gate_04_Separation_Mechanical.md` | Open | — | Minor |
 | AS-001 | 500W power budget not validated | `Operations/Air_Scrubber.md` | Open | — | Major |
-| AS-002 | Marine bubble-column depth scope | `Operations/Air_Scrubber.md` | In Progress | Active | Low |
-| AS-003 | Scrubber waste stream and saturation | `Operations/Air_Scrubber.md` | In Progress | Active | Medium |
+| AS-002 | Marine bubble-column depth scope | `Operations/Air_Scrubber.md` | In Progress | Active | Minor |
+| AS-003 | Scrubber waste stream and saturation | `Operations/Air_Scrubber.md` | In Progress | Active | Major |
 | AS-004 | Noise exposure limits and hearing conservation program undefined | `Operations/Air_Scrubber.md` | Open | — | Major |
 | AS-005 | No intake path defined for discrete unknown-content releases (non-process-stream sources) | `Operations/Air_Scrubber.md` | Open | — | Major |
 | AS-006 | No volumetric airflow / static-pressure duty point specified; fan-family selection unconstrained | `Operations/Air_Scrubber.md` | Open | — | Major |
@@ -594,17 +594,17 @@ RB-007 (Human-shared space unresolved)
 
 | ID | Title | Owning File | Status | Subtype | Priority (Promo) |
 |---|---|---|---|---|---|
-| GK-002 | Sacrificial anode material | `Architecture/Geck_forge_seed.md` | Open | — | Medium |
-| GK-003 | Induction charging pad design | `Architecture/Geck_forge_seed.md` | Open | — | Low |
-| GK-004 | Marine AM material durability | `Architecture/Geck_forge_seed.md` | Open | — | Low |
-| ST-001 | Grain storage and tracking protocol | `Admin/Ship_of_Theseus.md` | Open | — | Low |
-| ST-002 | QR documentation standard | `Admin/Ship_of_Theseus.md` | Open | — | Low |
-| ST-003 | AI identity continuity under split-brain | `Admin/Ship_of_Theseus.md` | In Progress | Active | Medium |
+| GK-002 | Sacrificial anode material | `Architecture/Geck_forge_seed.md` | Open | — | Minor |
+| GK-003 | Induction charging pad design | `Architecture/Geck_forge_seed.md` | Open | — | Minor |
+| GK-004 | Marine AM material durability | `Architecture/Geck_forge_seed.md` | Open | — | Minor |
+| ST-001 | Grain storage and tracking protocol | `Admin/Ship_of_Theseus.md` | Open | — | Minor |
+| ST-002 | QR documentation standard | `Admin/Ship_of_Theseus.md` | Open | — | Minor |
+| ST-003 | AI identity continuity under split-brain | `Admin/Ship_of_Theseus.md` | In Progress | Active | Major |
 | ST-004 | Sub-threshold state tampering vulnerability — Derivative Identity threshold (30%) has adversarial bypass; rolling delta mechanism required | `Admin/Ship_of_Theseus.md` | Open | — | Major |
-| EL-001 | Forge-Standard interface spec | `Operations/Electronics.md` | Open | — | Medium |
-| EL-002 | PCB trace width for v0 tooling | `Operations/Electronics.md` | Open | — | Low |
-| EL-003 | TMR voter implementation | `Operations/Electronics.md` | Open | — | Medium |
-| EL-004 | Chemical etch waste stream | `Operations/Electronics.md` | Open | — | Medium |
+| EL-001 | Forge-Standard interface spec | `Operations/Electronics.md` | Open | — | Major |
+| EL-002 | PCB trace width for v0 tooling | `Operations/Electronics.md` | Open | — | Minor |
+| EL-003 | TMR voter implementation | `Operations/Electronics.md` | Open | — | Major |
+| EL-004 | Chemical etch waste stream | `Operations/Electronics.md` | Open | — | Major |
 | EL-005 | Toxic dust and BFR emission profile not characterized | `Operations/Electronics.md` | Open | — | Critical |
 | EL-006 | Firmware trust and reflashing validation not defined | `Operations/Electronics.md` | Open | — | Critical |
 | EL-007 | Correlated failure modes in homogeneous salvage TMR not characterized | `Operations/Electronics.md` | Open | — | Major |
