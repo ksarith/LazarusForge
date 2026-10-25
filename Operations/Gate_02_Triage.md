@@ -551,7 +551,7 @@ fields in addition to the standard XII.1a set:
 | `Secondary_Test_Result` | YES → Repair & Learn, or NO → Decision Point C | Maps to existing `Outcome` field — do not duplicate, this is the same value already captured there |
 | `Rationale` | Free text, must reference at least one of the three axes above | Maps to existing `Notes` field — use `Notes` for this, do not add a separate column |
 | `Alternative_Operator_Decision` | Optional. Same item reviewed by a second operator, or the same operator's counterfactual at half/double the estimated effort | New — highest-value single field for surfacing inter-operator divergence, per FL-005 |
-| `Tooling_Inventory_Snapshot` | Reference/version of the live inventory used for the Primary tooling-capability check | New — ties this record to FL-004/ASM-003 |
+| `Tooling_Inventory_Snapshot` | Reference/version of the live inventory used for the Primary tooling-capability check | New — ties this record to FL-004 and `Architecture/Forge_flow.md` ASM-003 (not this file's own ASM-003) |
 
 `Later_Fate` (already in XII.1a) is what closes the loop for this
 extension too — no separate outcome-tracking field is needed.
@@ -978,6 +978,8 @@ until a scoring owner and cadence are assigned and logged here.
 ---
 
 ### Resolution Log
+
+- 2026-10-25: **ASM-003 citation qualified (PKC-003 ruling; no doctrine change).** The `Tooling_Inventory_Snapshot` field's rationale cited a bare "ASM-003" meaning Forge_flow's tooling-known assumption, while this file's own ASM-003 is the Gate_01 safety-screening assumption. It now names `Architecture/Forge_flow.md` and says it is not this file's own. No field, rule, Unknown or Status changed. Human-directed.
 
 - 2026-10-20: **Log catch-up and File State count correction (no content change).** (1) TS-009 ("Unknown Bulk" review criteria undefined) and TS-010 (battery chemistry sorting algorithms undefined) were registered 2026-09-08, found during the HP-006 cross-layer reconciliation, and recorded only in their sidecar entries; they are logged here retroactively. (2) File State Open Unknowns read 7 and was not updated for them; corrected to 9. The earlier count of 7 for TS-001–TS-008 (TS-004 Resolved) also counted In Progress entries as open, so the convention is unchanged. Found by an external sweep (Vibe), checked against source by Claude. Human-directed.
 
