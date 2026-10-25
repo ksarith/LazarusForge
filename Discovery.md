@@ -1,6 +1,7 @@
 # Discovery.md — LazarusForge
 **Navigation layer for the active working repository.**
-**Last updated: 2026-10-24 — Directory-tree reconciliation (from a Vibe audit; each item checked against the live tree). Added the live files that were registered in `Routing.md`, this file's header or its maturity snapshot but absent from the tree: root `CONTRIBUTING.md`, `LICENSE.md`, `NOTICE.md`; `Admin/Resolution_Methodology.md` (previously absent from this file entirely; now also in the maturity snapshot), `Admin/Operational_Conventions.md` and `Admin/Integrity_Incident_Log.md`; `Operations/Exception_Evidence.md`; the three Tests quorum files and `Tests/Automation/`; the two Candidate 3 scripts and the hybrid zip in `Automation/`. Fixed the malformed branch markers in the Tests tree. No doctrine, Unknown or Spec Gate change.**
+**Last updated: 2026-10-25 — Five directory-tree descriptors changed from "Proposed" to "Exploration" (`Admin/CIR_Gov.md`, `Operations/Automotive.md`, `Operations/Robotics.md`, `Tests/Chrono_Divergence.md`, `Tests/Chrono_Divergence_Pilot.md`), following the PKC-031 ruling that retires "Proposed" as a Status value (human-directed). The Chrono_Divergence_Pilot descriptor also drops "not started", which no longer matched the file (run completed procedurally 2026-10-19, human confirmation pending). Earlier dated entries that say Proposed are history and stay as written. No doctrine, Unknown or Spec Gate change.**
+**Prior: 2026-10-24 — Directory-tree reconciliation (from a Vibe audit; each item checked against the live tree). Added the live files that were registered in `Routing.md`, this file's header or its maturity snapshot but absent from the tree: root `CONTRIBUTING.md`, `LICENSE.md`, `NOTICE.md`; `Admin/Resolution_Methodology.md` (previously absent from this file entirely; now also in the maturity snapshot), `Admin/Operational_Conventions.md` and `Admin/Integrity_Incident_Log.md`; `Operations/Exception_Evidence.md`; the three Tests quorum files and `Tests/Automation/`; the two Candidate 3 scripts and the hybrid zip in `Automation/`. Fixed the malformed branch markers in the Tests tree. No doctrine, Unknown or Spec Gate change.**
 **Prior: 2026-10-20 — Theorem count corrected for `Admin/Computational_Institutional_Reasoning.md` in two passages (the foundational-documents paragraph and the directory-tree entry named four theorems; the file declares five, adding Theorem 5, Soundness of the Compiler, §6.4); `Challenges/Emergence.md`'s maturity-snapshot row changed from Exploration to Active to match the file's Status, aligned the same day with the other Problem-Statement files. No doctrine, Unknown or Spec Gate change.**
 **Prior: 2026-10-15 — Directory-tree entry added for `Automation/README.md` (registered in `Routing.md` the same day). No doctrine, Unknown or Spec Gate change.**
 **Prior: 2026-10-14 — `Tests/Chrono_Divergence_Pilot.md` registered (Proposed; tree, created-list and maturity-snapshot entries added). No doctrine, Unknown or Spec Gate change.**
@@ -212,7 +213,7 @@ Admin/                                      — Governance, protocols, and doctr
     ├── Experiments.md                      — Physical grounding registry; falsification records; EXP-ID artifacts for PROVISIONAL→VERIFIED claim transitions
     ├── Nothingness_Theorem.md              — Philosophical substrate; foundational framework for salvage-first doctrine, distributed disagreement, and anti-entropy maintenance principles; Tier 0 / functionless by doctrine
     ├── Computational_Institutional_Reasoning.md — Formal theoretical paper; axiomatic state-machine model of institutional epistemics; Unknown Conservation, Governance Stability, Epistemic Debt Instability, Institutional Memory Dominance, and Compiler Soundness theorems (the fifth is a proof sketch); non-linear Verification Algebra specification
-    ├── CIR_Gov.md                          — CIR v2.0 predicate-kernel packaging; Proposed — Not Ratified; does not claim constitutional authority
+    ├── CIR_Gov.md                          — CIR v2.0 predicate-kernel packaging; Exploration — Not Ratified; does not claim constitutional authority
     ├── Autonomy_Divergence_Protocol.md     — Graduated response to observed autonomous-subsystem divergence; Draft — PROPOSED NOT RATIFIED
     ├── Governance_Migration_Protocol.md    — Tier 1 Axiom amendment procedures
     ├── PROBE_INVOCATION.md                 — Copy-paste cold-start template for Mission Drift Review (AP-030); not doctrine, an operational prompt
@@ -265,11 +266,11 @@ Operations/                                 — Physical modules and operational
     ├── Gate_05_Separation_Thermal.md       — Core induction melting & gradient extraction
     ├── Gate_06_Fabrication.md              — Arc welding & mill-to-spec constructive ceiling
     ├── Gate_07_Utilization.md              — After-action loop & failure data capture
-    ├── Automotive.md                         — Salvaged & built vehicle systems (Proposed 2026-10-10)
+    ├── Automotive.md                         — Salvaged & built vehicle systems (Exploration; created 2026-10-10)
     ├── Electronics.md                      — Salvaged PCB harvesting & Logic-Zero firmware trust
     ├── Energy.md                           — Incremental power bootstrap & load profiles
     ├── Air_Scrubber.md                     — 5-stage negative-pressure containment subsystem
-    ├── Robotics.md                           — Mobile & manipulator systems (Proposed 2026-10-10)
+    ├── Robotics.md                           — Mobile & manipulator systems (Exploration; created 2026-10-10)
     ├── Plastics.md                         — Polymer triage & 3-stage pyrolysis framework
     ├── Tooling_Inventory.md                — Live operational tooling inventory backing Decision Point B's "within tooling capability" check
     ├── Exception_Evidence.md               — Evidence-control specification and index for Oversight State's exception evidence portfolio (FL-006 half A structural owner)
@@ -285,8 +286,8 @@ Tests/                                      — Test frameworks and deployment p
     ├── Solar_Descent.md                    — Underground concentrated solar; SD-001 optical downlink; SD-002 fluid downlink; shared chamber reconvergence
     ├── Cognitive_Salvage_Layer.md          — Heuristic salvage pipeline; consensus-aggregated machinery wisdom; NOVEL/CANDIDATE_NOVEL promotion gate; GH-001 through GH-012
     ├── Hydrologic_Resource_Cascade.md      — Flood-driven sediment recovery basin; sequential hydraulic sorting zones; episodic operation doctrine; HR-UNK-001 through HR-UNK-002 (formal); HR-003 through HR-010 (research questions)
-    ├── Chrono_Divergence.md                     — Idea fork forecast / best-outcome map (Proposed 2026-10-12)
-    ├── Chrono_Divergence_Pilot.md               — Scoring-reproducibility pilot protocol for Chrono §4.1 (Proposed 2026-10-14; not started)
+    ├── Chrono_Divergence.md                     — Idea fork forecast / best-outcome map (Exploration; created 2026-10-12)
+    ├── Chrono_Divergence_Pilot.md               — Scoring-reproducibility pilot protocol for Chrono §4.1 (Exploration; created 2026-10-14; run completed procedurally 2026-10-19, human confirmation pending)
     ├── Chaos_Dynamics.md                   — Exploration/R&D pipeline doctrine; Sandbox (Level ≤4 hypothesis generation) → Promotion Gate → EXP-ID → physical testing → Engineering derating; resolution vehicle for EN-005; feeder for EN-001a
     ├── Pyrolysis_Cascade.md                — Staged thermal cascade (pyrolysis → high-temp reduction) for pre-triaged salvage; explicitly dependency-gated on PL-001 (Resolved 2026-08-23, PL-001-R1 residual)/CE-003 (Open — halogen), GR-002 (reduction method), FA-001 (site), EN-001 (structural); PYC-001 through PYC-008
     ├── Multi_Agent_Quorum_Trial.md         — Concrete three-physical-computer quorum trial protocol; operationalizes `Admin/Governance_Migration_Protocol.md` §VII
