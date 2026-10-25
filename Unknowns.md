@@ -3,7 +3,7 @@
 
 **Full version history in `Archive/Logs/Unknowns_Changelog.md` (2026-07-19 cleanup pass, following the precedent set by `Archive/Logs/AUDIT_HARNESS_CHANGELOG.md` and `Archive/Logs/Forge_Audit_Kit_Changelog.md`; scrubbed to current-version-only 2026-07-28 — the "current plus last four in full" window was itself compressed further, since the changelog carries full text for every version back to v1.0 (the in-file Audit Trail was moved there under Rule 4). This block now keeps only the current version.)**
 
-**Version 5.67 -- 2026-10-25. Priority column corrected for thirteen rows (human-directed, PKC-024; each row checked against its owning file's sidecar first).** Risk-scale values (High / Medium / Low) had been carried into the Priority (Promo) column; each now follows the Priority in the owning sidecar: CIR-GOV-001, AS-002, GK-002–004, ST-001, ST-002 and EL-002 now read Minor; AS-003, ST-003, EL-001, EL-003 and EL-004 now read Major. EM-001–003 were not changed: `Challenges/Emergence.md` records only a Risk column for them and no Priority, so there is nothing in the sidecar to take, and they still carry Risk values pending a Priority being set in the owning file. Ruling background: Risk and Priority are distinct fields, "Critical" is not a Risk value, and elevated severity is carried by Blocking (Progress_Log, 2026-10-25). Per Size Management Rule 2 this block holds only the current version; v5.66 is in `Archive/Logs/Unknowns_Changelog.md`. No Unknown opened or closed; open counts unchanged. Companion edits: none required.
+**Version 5.68 -- 2026-10-25. Priority column corrected for EM-001–003; PKC-024 pass complete (human-directed).** `Challenges/Emergence.md` recorded only a Risk column for the Emergence unknowns, so Priorities were proposed from each entry's text and approved by the human, and the file went to v0.3 with a Priority column: EM-001 Major, EM-002 Major, EM-003 Minor (the Priority column here had carried Risk values High, High, Medium). EM-004 stays Critical; its Risk in the owning file was corrected from Critical to High. With the thirteen rows corrected in v5.67 this clears the Risk-in-Priority class named in PKC-024. Per Size Management Rule 2 this block holds only the current version; v5.67 is in `Archive/Logs/Unknowns_Changelog.md`. No Unknown opened or closed; open counts unchanged. Companion edits: `Challenges/Emergence.md` v0.3.
 ---
 
 **Expiry Rule active — see `Admin/Canonical_Terms.md` §4 for the Cycle definition this rule now explicitly references (one calendar year default, not one audit pass — see CT-011). Protocol Performance metrics collecting.**
@@ -411,9 +411,9 @@ RB-007 (Human-shared space unresolved)
 
 | ID | Title | Owning File | Status | Subtype | Priority (Promo) |
 |---|---|---|---|---|---|
-| EM-001 | Behavioral opacity detection threshold — depends on CF-001 resolution | `Challenges/Emergence.md` | Open | — | High |
-| EM-002 | Correlated failure detection in multi-agent consensus | `Challenges/Emergence.md` | Open | — | High |
-| EM-003 | Gradual autonomy transition detection — no current sensor doctrine | `Challenges/Emergence.md` | Open | — | Medium |
+| EM-001 | Behavioral opacity detection threshold — depends on CF-001 resolution | `Challenges/Emergence.md` | Open | — | Major |
+| EM-002 | Correlated failure detection in multi-agent consensus | `Challenges/Emergence.md` | Open | — | Major |
+| EM-003 | Gradual autonomy transition detection — no current sensor doctrine | `Challenges/Emergence.md` | Open | — | Minor |
 | EM-004 | Governance substrate integrity under emergent agent access — mirrors GOV-003, SEC-007a | `Challenges/Emergence.md` | Open | — | Critical |
 
 *EM-001 depends on CF-001 resolution.*
