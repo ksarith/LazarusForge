@@ -4,6 +4,12 @@ Split out 2026-08-09, following the precedent already established by `Unknowns_C
 
 ---
 
+### 2026-10-15 (fourth entry, same day) — Robotics resolution-path additions after targeted audits
+*(Rotated 2026-10-25, PKC rulings recorded.)*
+ChatGPT's targeted audits of Automotive and Robotics were checked against source: facts held (AF-10, AF-13, RB-007, RB-003, RF-11, Blocking index in `Unknowns.md` v5.60, Kit v1.20 unchanged), but most "critical" findings restated declared Open Blocking unknowns in Proposed stubs. Against 1.21.1 both files differ only in Last Updated. Kept three follow-ons in `Operations/Robotics.md`: RB-007 now starts by defining "hazard zone" (the 10-11 rewording introduced the term undefined; whole cell is the conservative reading until defined), RB-003 requires a recorded basis for each proposed cap, RB-002 includes a safety-channel test record (RF-11) and a failed or inconclusive test blocks power-up. Automotive unchanged. No floor, Blocking scope, Status or Unknown ID changed. Also corrected the Kit regression pack's own status line, which still said "Not registered in `Routing.md`" after the 2026-10-15 registration (found by ChatGPT's repo sweep; the sweep's other flagged live references were all already labeled historical, planned or rejected-proposal provenance, so no edits). Open forward items: Chrono pilot preregistration record before 2026-11-12; whether Operations stubs should carry an Adversarial Battery record section (neither does). Still Proposed; no Spec Gate change. Human-directed.
+
+---
+
 ### 2026-10-15 (third entry, same day) — Chrono pilot v0.4 + date hygiene
 *(Rotated 2026-10-25, PKC-003 ruling.)*
 `Tests/Chrono_Divergence_Pilot.md` advanced to v0.4 after Claude review of the first preregistration template: single allocation table (§4 points to §9.3 only), freeze hash scope expanded to Chrono §4 F1/F2 + session controls + §9, blank forecast-coverage reason means not ready to start, under-8-pairs consequence stated (both forecasts Unscorable; Hit/Miss discrimination not tested), version bump. Automotive.md and Robotics.md Last Updated advanced from 2026-10-10 to 2026-10-11 to match Last Audit. Oldest Progress_Log entry (2026-10-14 Chrono v0.4) rotated into the changelog to restore the five-entry rule. Pilot remains Proposed / not started until the preregistration record is filled and hashed. No Spec Gate, Unknown, or Status change. Human-directed.
