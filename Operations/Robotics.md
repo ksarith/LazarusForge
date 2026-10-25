@@ -32,13 +32,13 @@
 
 | Field            | Value |
 |------------------|-------|
-| Status           | **Proposed** |
+| Status           | **Exploration** |
 | Body Stability   | Volatile |
 | Spec Gates       | 0/6 |
 | Verification Ref | Admin/Verification_Gates.md |
 | Open Unknowns    | 8 (sidecar below; RB-002, RB-003 and RB-007 are Blocking for the stated physical work, the other 5 non-blocking; the three Blocking items also indexed in `Unknowns.md`) |
 | Owner            | `Operations/Robotics.md` |
-| Last Audit       | 2026-10-24 — Claude (human-directed) two bare EC-012 citations qualified with their owning file and the Resolution Log reordered newest-first, from a Vibe per-file audit. Prior: 2026-10-15 — three resolution-path additions after ChatGPT's targeted audit (hazard-zone definition, cap evidence basis, safety-channel test record; human-directed; no safety floor changed). 2026-10-11 — clarifications after two independent audits: RB-007 Blocking scope reworded, RB-003 path says what "defined" means, RF-11 adds the test condition. 2026-10-10 safety review pass (Claude, human-directed): floors RF-9 to RF-12 added; RB-002/003/007 changed to scoped Blocking. Earlier: 2026-10-10 — v0 stub filed (Proposed). No physical robot work claimed. |
+| Last Audit       | 2026-10-25 — Claude (human-directed, PKC-031) Status "Proposed" changed to "Exploration"; no other change. Prior: 2026-10-24 — Claude (human-directed) two bare EC-012 citations qualified with their owning file and the Resolution Log reordered newest-first, from a Vibe per-file audit. Prior: 2026-10-15 — three resolution-path additions after ChatGPT's targeted audit (hazard-zone definition, cap evidence basis, safety-channel test record; human-directed; no safety floor changed). 2026-10-11 — clarifications after two independent audits: RB-007 Blocking scope reworded, RB-003 path says what "defined" means, RF-11 adds the test condition. 2026-10-10 safety review pass (Claude, human-directed): floors RF-9 to RF-12 added; RB-002/003/007 changed to scoped Blocking. Earlier: 2026-10-10 — v0 stub filed (Proposed). No physical robot work claimed. |
 | Last Updated     | 2026-10-15 |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
@@ -335,6 +335,8 @@ These are **floors**, not a complete safety case. Weakening them requires human 
 ---
 
 ## Resolution Log
+
+- 2026-10-25: Status "Proposed" changed to "Exploration" (human-directed, PKC-031 ruling: "Proposed" is retired and a newly generated file starts at Exploration). No other field, section or Unknown changed.
 
 - 2026-10-24: Two bare EC-012 citations (Block F; RB-006) now name `Admin/Ethical_Constraints.md`, per Canonical_Terms' owner-naming guardrail for colliding EC IDs; this log reordered newest-first, entries unchanged (human-directed, from a Vibe per-file audit; each finding checked against source first). Status "Proposed" left as is (not a registered designation; parked as Progress_Log PKC-031).
 

@@ -11,13 +11,13 @@
 
 | Field | Value |
 |-------|-------|
-| Status | Proposed — structural home for FL-006 half A (evidence-control specification) |
+| Status | Exploration — structural home for FL-006 half A (evidence-control specification) |
 | Spec Gates | 0/6 |
 | Open Unknowns | FL-006-A (structural owner named; population and demonstrated maintenance still open) |
 | Body Stability | Volatile — no operational trial against this structure has been run yet |
 | Owning Domain | Operations/ |
 | Verification Ref | Admin/Verification_Gates.md |
-| Last Audit | 2026-10-25 — Claude (human-directed, PKC-032) added the Drift Indicators section and the Verification Ref row and renamed this field from Last Reviewed; no content review. Prior: 2026-09-18 (structure sections added 2026-10-24, no content review) |
+| Last Audit | 2026-10-25 — Claude (human-directed, PKC-031) Status "Proposed" changed to "Exploration"; no other change. Prior: 2026-10-25 — Claude (human-directed, PKC-032) added the Drift Indicators section and the Verification Ref row and renamed this field from Last Reviewed; no content review. Prior: 2026-09-18 (structure sections added 2026-10-24, no content review) |
 | Sidecar Link | `Architecture/Forge_flow.md` FL-006 |
 | Ethical Anchor | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
@@ -155,6 +155,8 @@ Each of these restates a rule this file already states; none is new doctrine. Th
 ---
 
 ## Resolution Log
+
+- 2026-10-25: Status "Proposed" changed to "Exploration" (human-directed, PKC-031 ruling: "Proposed" is retired and a newly generated file starts at Exploration). Replaces the "still reads Proposed" remark in the entry below. No other field, section or Unknown changed.
 
 - 2026-10-25: **Template gaps closed (PKC-032 ruling, human-directed; no doctrine changed).** Added a Drift Indicators section drafted only from rules this file already states (Freshness and Provenance, Maintenance Honesty, pointer-not-ledger design), added the standard Verification Ref row, and renamed the `Last Reviewed` field to `Last Audit`. No content review was done, and no Unknown, schema or Status changed (Status still reads Proposed, which the PKC-031 sweep will move to Exploration). Wording for human review.
 
