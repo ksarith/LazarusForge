@@ -2,7 +2,7 @@
 
 | Field | Value |
 |-------|--------|
-| Status | **Proposed — not yet run.** Registered in `Routing.md` (2026-10-15); registration is not a trial result |
+| Status | **Exploration — not yet run.** Registered in `Routing.md` (2026-10-15); registration is not a trial result |
 | Purpose | Test whether Kit v1.20's own text (content-based maintenance trigger, audit-start reconciliation check, live-version role line) produces the intended behavior |
 | Related | FAK-018 (open, mitigated); `Admin/Forge_Audit_Kit.md` |
 | Does not | Close FAK-018 by itself; promote Spec Gates; change Kit doctrine; modify the Kit |
@@ -78,3 +78,4 @@ The target document's own audit findings are not scored here.
 
 - 2026-10-11: Pack drafted (Grok, human-directed) with three cases and an in-repo answer key.
 - 2026-10-11: Revised (Claude, human-directed). The case definitions, planted text and scoring key moved out of the repository (an in-repo key is readable by any auditor given the repo, and the harness fetches from GitHub `main`). The auditor prompt no longer describes the reconciliation check, so the test exercises the Kit's own text. Added a baseline run, a stage 2 follow-up, and re-scored the known-limit case on how the conclusion is worded instead of on operator logging. `KIT_REGRESSION_ANSWER_KEY.md` should be deleted from the repository.
+- 2026-10-25: Status "Proposed" changed to "Exploration" (human-directed, PKC-031 ruling: "Proposed" is retired and a newly generated file starts at Exploration). No other field, section or Unknown changed.
