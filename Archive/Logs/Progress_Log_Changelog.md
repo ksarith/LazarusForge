@@ -4,6 +4,12 @@ Split out 2026-08-09, following the precedent already established by `Unknowns_C
 
 ---
 
+### 2026-10-15 (third entry, same day) — Chrono pilot v0.4 + date hygiene
+*(Rotated 2026-10-25, PKC-003 ruling.)*
+`Tests/Chrono_Divergence_Pilot.md` advanced to v0.4 after Claude review of the first preregistration template: single allocation table (§4 points to §9.3 only), freeze hash scope expanded to Chrono §4 F1/F2 + session controls + §9, blank forecast-coverage reason means not ready to start, under-8-pairs consequence stated (both forecasts Unscorable; Hit/Miss discrimination not tested), version bump. Automotive.md and Robotics.md Last Updated advanced from 2026-10-10 to 2026-10-11 to match Last Audit. Oldest Progress_Log entry (2026-10-14 Chrono v0.4) rotated into the changelog to restore the five-entry rule. Pilot remains Proposed / not started until the preregistration record is filled and hashed. No Spec Gate, Unknown, or Status change. Human-directed.
+
+---
+
 ### 2026-10-15 (second entry, same day) — Routing gaps closed; changelog stubs accepted
 *(Rotated 2026-10-19 Chrono pilot scoring.)*
 Decisions: the Automation folder README and the Kit regression pack are now registered in `Routing.md` (they had been left off for their novelty), plus a tree entry for the README in `Discovery.md`. The 8 title-only changelog entries (2026-10-03 to 2026-10-10) are accepted as they are and will not be restored: `Progress_Log.md` is a forward-momentum checklist, and an item that is done may be dropped from it. The changelog header now states that exception, so its no-information-removed line is accurate. This supersedes the "awaiting older `Progress_Log.md` files" item in the 2026-10-14 and 2026-10-15 entries. Open forward items: Chrono pilot preregistration record (pointer wording, design, allocation, reviewers) before the F1/F2 review date 2026-11-12; Automotive/Robotics Last Updated (2026-10-10) is behind their Last Audit (2026-10-11). Still Proposed 0/6; no Unknown, Spec Gate or Status change. Human-directed.
