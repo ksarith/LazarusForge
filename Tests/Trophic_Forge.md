@@ -17,7 +17,7 @@
 | Body Stability | Volatile |
 | Spec Gates | 0/6 |
 | Verification Ref | Admin/Verification_Gates.md |
-| Last Audit | 2026-06-14 |
+| Last Audit | 2026-06-14 (Gemini audit). Body changes since, per the Resolution Log: 2026-07-12 stale Drift Indicator retired; 2026-10-20 dispute ID DS-001 → TF-DS-001. The 2026-08-11 Grok pseudo-audit (findings only) is not counted pending Progress_Log PKC-020. Header annotated 2026-10-24. |
 | Auditor | Claude (Synthesizer), Gemini (Auditor), ChatGPT (Synthesizer), Grok (Synthesizer) |
 | Open Unknowns | 10 |
 | Active Disputes | 0 |
@@ -515,6 +515,8 @@ This principle is more fundamental than the light node claim. If the LED array f
 ---
 
 ### Resolution Log
+
+- 2026-10-24: Last Audit annotated (human-directed, from a Vibe per-file audit; each finding checked against source first): it now lists the body changes and the pseudo-audit recorded below. No content, sidecar, Unknown or Spec Gate changed.
 
 - 2026-10-20: **Dispute ID disambiguated: DS-001 → TF-DS-001 (no content change).** The closed naming dispute's bare ID was shared by four different disputes in the repository; it is now TF-DS-001 in the Active Disputes table and the drift-signal note. The 2026-07-12 entry below keeps the bare ID as recorded. Dispute status is unchanged (Closed, Gemini audit 2026-06-14). Raised by an external sweep (Vibe) and by Grok; checked against source by Claude. Human-directed.
 

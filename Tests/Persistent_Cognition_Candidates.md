@@ -17,7 +17,7 @@
 | Body Stability   | Draft                                                                  |
 | Spec Gates       | N/A — candidate-system survey, not a specification to be gated toward promotion |
 | Verification Ref | `Admin/Verification_Gates.md`                                          |
-| Last Audit       | 2026-09-27                                                              |
+| Last Audit       | 2026-10-20 — reference correction under AP-029 (logged as no content change, though it edited Candidate 7's fit note); header corrected 2026-10-24. Prior: 2026-09-27                                                              |
 | Auditor          | Claude — Synthesizer, human-directed, 2026-09-27: relabeled Candidate 7's status from "PASS with FI-adjacent observation" to "Observed — mechanism not established," per cross-agent (Claude/Grok/ChatGPT) convergence; closed the indicator-timing open question as not-observable-through-this-surface; added the Persistence Integrity Test Series (persistence boundary, update conflict, provenance probe, ongoing negative control) as the next increment, design only. History condensed here per this file's own Sidecar Governance Rules as it approaches 75KB — full entry-by-entry history lives in the Resolution Log below, not repeated in this field going forward; prior audits: file created (v0.1) → Candidate 3 fully pre-registered across seven cycles (v0.2–v0.7, Grok/ChatGPT review, one fabricated §VII.5-style citation avoided) → Candidate 6 surfaced and passed (v0.8–v0.9) → Candidate 7 surfaced, designed, and run three times (v0.10–v0.14, one fabricated "Parser observes" citation caught and rejected at v0.12) → this entry (v0.15). |
 | Open Unknowns    | 0 (candidates below are explicitly unevaluated, not filed as unknowns) |
 | Active Disputes  | 0                                                                       |
@@ -848,6 +848,8 @@ constraints change)*
 enough to generate a real implementation unknown yet)*
 
 ### Resolution Log
+
+- 2026-10-24: Header corrected (human-directed, from a Vibe per-file audit; each finding checked against source first): Last Audit now covers the 2026-10-20 reference correction. Flag, not a fix: the header reads Version 0.16 while the last versioned entry here is v0.15 (2026-09-27), and the 2026-10-20 entry, the only later one, does not say it bumped the version; where 0.16 came from is not recorded (Progress_Log PKC-039). No candidate, result or status changed.
 
 - 2026-10-20: **Reference correction (no content change).** Candidate 7's fit note named the 10-Entry Rule among the Sidecar Governance Rules; that rule was removed under AP-029 (`Admin/Auditor_Protocols.md` v0.44), so the note now lists the 20% and Aging rules only. Human-directed.
 

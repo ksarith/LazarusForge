@@ -15,7 +15,7 @@
 | Spec Gates       | 0/6 (not yet audited)                                               |
 | Verification Ref | `Admin/Verification_Gates.md`                                    |
 | First Logged     | 2026-08-04                                                          |
-| Last Audit       | — (pre-audit skeleton; ID-collision fix applied 2026-08-04, not a Gate audit) |
+| Last Audit       | — (no Gate audit has been run). Body-changing passes recorded in the Resolution Log: 2026-08-04 ID-collision fix, 2026-08-23 and 2026-08-24 dependency syncs on PYC-001 and PYC-003; the 2026-08-11 Grok pseudo-audit (findings only) is not counted pending Progress_Log PKC-020. Header corrected 2026-10-24. |
 | Auditor          | — (Claude — Synthesizer, PC-/PYC- namespace collision fix only, human-directed, 2026-08-04) |
 | Open Unknowns    | 8 (PYC-001 … PYC-008)                                                 |
 | Active Disputes  | 0                                                                   |
@@ -295,6 +295,8 @@ No test may be run that violates the hard preconditions in Scope Boundary.
 ---
 
 ### Resolution Log
+
+- 2026-10-24: Last Audit annotated (human-directed, from a Vibe per-file audit; each finding checked against source first): it still says no Gate audit has been run (true), and now lists the later passes the log records. Sidecar Last Reviewed fields on PYC-002 and PYC-004 to PYC-008 are absent and were not added (Progress_Log PKC-040). No sidecar, Unknown or Spec Gate changed.
 
 - 2026-08-23: **Dependency sync — PYC-001 and PYC-003 updated to reflect PL-001 and WA-002 both closing (Resolved, Payment via Specification) earlier this session.** Neither PYC entry closes: PYC-001 still requires CE-003 (field polymer ID reliability, Open); PYC-003 still requires GR-003 and WA-004 (disposal doctrine, both Open). Both entries' Status fields updated to note "one of N dependencies cleared" rather than leaving stale text implying all listed dependencies were still untouched. Blocking status unchanged on both (Yes). No unknown closed by this entry — hygiene only, prompted by this session's broader practice of checking whether a closure elsewhere in the repository leaves stale references behind. Human-directed.
 

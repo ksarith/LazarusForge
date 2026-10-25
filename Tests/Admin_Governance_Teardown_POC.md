@@ -11,7 +11,7 @@
 | Spec Gates       | 0/6 — this is an analysis exercise, not a specification              |
 | Open Unknowns    | 0 — this file identifies restructuring candidates, it does not itself resolve any Unknown |
 | Owning Domain    | Tests/ (proof-of-concept / methodology exercise, not physical evidence) |
-| Last Reviewed    | 2026-10-04 — hypothesis-not-inventory line added to Scope Boundary; "Future experiment (not scheduled)" section added. Prior: recompute rule, Tier 2 deferral costs, GMP seam appendix, Tier 3/4 disposition options, link to Adm_Scope_Map load-bearing summary |
+| Last Reviewed    | 2026-10-06 — Future experiment section marked partially exercised and an "Early evidence" note added (see Resolution Log); header corrected 2026-10-24 (Claude, human-directed, from a Vibe per-file audit). Prior: 2026-10-04 — 2026-10-04 — hypothesis-not-inventory line added to Scope Boundary; "Future experiment (not scheduled)" section added. Prior: recompute rule, Tier 2 deferral costs, GMP seam appendix, Tier 3/4 disposition options, link to Adm_Scope_Map load-bearing summary |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
 ---
@@ -225,6 +225,8 @@ finding: nothing in this file has been tested that way yet.
 ---
 
 ## Resolution Log
+
+- 2026-10-24: Header corrected (human-directed, from a Vibe per-file audit; each finding checked against source first): Last Reviewed now covers the two 2026-10-06 entries below, which had not advanced it. The 2026-10-04 creation entry's mention of `Architecture/Geck_forge_seed.md` is not dangling: that file still exists (the Geck file deleted 2026-10-24 was a stray duplicate in `Admin/`). No analysis, tier total or Spec Gate changed.
 
 - 2026-10-06: Future experiment section marked **partially exercised** after CAP-meta-stale-01 Full + Reduced Field_Logs; no Spec Gates advanced; tiers remain hypotheses.
 

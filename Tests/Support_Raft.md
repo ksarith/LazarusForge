@@ -19,9 +19,9 @@
 | **Body Stability** | Volatile |
 | **Spec Gates** | 0/6 |
 | **Verification Ref** | `Admin/Verification_Gates.md` |
-| **Last Audit** | 2026-06-11 |
+| **Last Audit** | 2026-06-11 (Gemini). Body changes since, per the Resolution Log: 2026-07-12 Ethical Anchor correction and template backfill. The 2026-08-10 Grok pseudo-audit (findings only) is not counted pending Progress_Log PKC-020. Header annotated 2026-10-24. |
 | **Auditor** | Gemini (Auditor) |
-| **Open Unknowns** | 13 |
+| **Open Unknowns** | 12 (SR-001 to SR-009 and SR-011 to SR-013; corrected 2026-10-24 from 13, which counted SR-010, Resolved 2026-06-11 and kept in the sidecar as institutional memory; matches the 12 SR rows in `Unknowns.md`) |
 | **Active Disputes** | 0 |
 | **Highest Risk** | High — SR-001 (galvanic corrosion) is Open/High and required before v1.0; a hull that corrodes faster than modeled threatens the whole anchor-node concept |
 | **Sidecar Link** | #auditor-notes--unknowns |
@@ -668,6 +668,8 @@ None are masters. Each occupies a scope. The Raft is not headquarters. It is an 
 
 ### Resolution Log
 
+- 2026-10-24: Header and log corrected (human-directed, from a Vibe per-file audit; each finding checked against source first): Last Audit annotated; Open Unknowns corrected from 13 to 12 (the 13 counted Resolved SR-010); the legacy table below now has a label. The `Architecture/Geck_forge_seed.md` rows in the dependency tables are not dangling: that file exists (the Geck file deleted 2026-10-24 was a stray duplicate in `Admin/`). No sidecar, dependency or Spec Gate changed.
+
 - 2026-08-10: **Pseudo-audit (Grok, same limits).** Findings only; Spec Gates
   left locked at 0/6. (1) Open Unknowns **13** = SR-001–013, matches local +
   `Unknowns.md`. (2) SR-001 correctly **Blocking Yes** (before v1.0). (3)
@@ -675,6 +677,8 @@ None are masters. Each occupies a scope. The Raft is not headquarters. It is an 
   closed. Human-directed.
 
 - 2026-07-12: Ethical Anchor field corrected — was using a non-canonical variant (backticked, `Admin/`-prefixed: "Defer to `Admin/Ethical_Constraints.md` if present.") instead of the canonical plain-text string ("Defer to Ethical_Constraints.md if present."). Same drift found across 9 files in a full-repository Phase 1 sweep (ChatGPT, adapted local-disk harness run) — verified independently against source before patching. No semantic change; the anchor's meaning was never in question, only its exact text.
+*Earlier entries, in the file's legacy table format (kept as recorded; the 2026-07-12 row is the template backfill):*
+
 | Date | Entry |
 |---|---|
 | 2026-05-04 | Induction loss estimate corrected from 12% (laboratory) to 20–40% (real subsea conditions). Logged in Lessons Learned. |

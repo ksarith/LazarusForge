@@ -19,8 +19,8 @@
 | Verification Ref | Admin/Verification_Gates.md |
 | Open Unknowns    | 4 (sidecar below; all non-blocking) |
 | Owner            | `Tests/Chrono_Divergence.md` |
-| Last Audit       | 2026-10-15 — editorial trim after a repo-wide integrity pass (no content change). Last content revision v0.6 (2026-10-14, after ChatGPT's review of v0.4). Earlier audits (ChatGPT, fresh-instance Claude, Grok) are recorded in the Resolution Log. Method only; no forecast portfolio claimed Measured. |
-| Last Updated     | 2026-10-15 |
+| Last Audit       | 2026-10-24 — Claude (human-directed) two dated post-run notes added from the Pilot's own 2026-10-19 record; no version bump, no content revision. Prior: 2026-10-15 — editorial trim after a repo-wide integrity pass (no content change). Last content revision v0.6 (2026-10-14, after ChatGPT's review of v0.4). Earlier audits (ChatGPT, fresh-instance Claude, Grok) are recorded in the Resolution Log. Method only; no forecast portfolio claimed Measured. |
+| Last Updated     | 2026-10-24 (post-run notes only); previously 2026-10-15 |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
 ---
@@ -219,6 +219,8 @@ Unit of analysis: one fresh, unprompted audit session of one case on one auditor
 
 #### 4.1 First pilot (proposed, not run)
 
+*Post-run note (2026-10-24): this pilot has since been run — preregistered and started 2026-10-16, procedurally complete 2026-10-19 (human confirmation pending), with both reviewers scoring F1 and F2 Unscorable. See `Tests/Chrono_Divergence_Pilot.md` and its Field_Log. The text below is unchanged.*
+
 **Pilot claim (narrow):** Can two reviewers independently score the same frozen forecasts (F1/F2) from the same Field_Log evidence with documented agreement?
 
 **Not the pilot claim:** That the pointer works, or that forecasts are accurate in general.
@@ -306,6 +308,8 @@ Unit of analysis: one fresh, unprompted audit session of one case on one auditor
 
 **Description:** Residual after v0.1–v0.2: inter-rater agreement on Hit/Miss/Partial/Unscorable/Withdrawn still untested; F2 Partial is N/A for this example but other maps need explicit Partial rules; withdrawal must not substitute for unfavorable scores.
 
+**Post-run note (2026-10-24):** the §4.1 pilot has been run (see the note under §4.1). Per the Pilot's 2026-10-19 entry: M1 agreement 1 of 4 sessions, validity agreement 3 of 4, no preregistered revision trigger fired, no adjudicated score, rubric reliability not licensed, and CD-001 stays Open. Status and Last Reviewed were not changed by this note.
+
 **Resolution Path:** Run §4.1 pilot per `Tests/Chrono_Divergence_Pilot.md` (two reviewers, same frozen F1/F2 evidence); revise rubric only under predeclared triggers. Optional: score 3–5 historical Progress_Log arcs retrospectively.
 
 ---
@@ -368,6 +372,8 @@ Unit of analysis: one fresh, unprompted audit session of one case on one auditor
 ### Resolution Log
 
 *(No Unknown resolved. Entries below are file change history, newest first.)*
+
+- 2026-10-24: Post-run notes added, no version bump and no frozen text changed (human-directed, from a Vibe per-file audit; each finding checked against source first): a note under §4.1 and a note in CD-001 recording that the pilot ran (preregistered and started 2026-10-16, procedurally complete 2026-10-19, human confirmation pending; both reviewers scored F1 and F2 Unscorable; M1 agreement 1 of 4, validity agreement 3 of 4; no adjudicated score; rubric reliability not licensed; CD-001 stays Open), all taken from `Tests/Chrono_Divergence_Pilot.md`'s 2026-10-19 entry. The §4.1 heading, CD-001's Resolution Path wording and Last Reviewed, and the Status value "Proposed" were left as they are (the status label is Progress_Log PKC-031).
 
 - 2026-10-15: Editorial, no version bump. Last Audit cell trimmed to current state with a pointer to this log (the long "Prior:" chain duplicated this log and tripped a checker warning); Last Updated aligned. No content, forecast, Spec Gate, Unknown or Status change.
 - 2026-10-14: **v0.6 revision** after ChatGPT's review of v0.4 (assessed against source; v0.5 had already added isolation, counterbalanced order and a carryover check for the cross-arm exposure it raised). New here: allocation unit / observation unit / independence-assumption vocabulary; the between-family alternative given a concrete 2-families-per-arm shape (4 families in total, so ChatGPT's current recommendation is feasible, unlike its earlier 4-per-arm version); the preregistration declares which design is used; and the pilot acceptance rule now separates procedurally complete, scoring agreement observed, and rubric reliability supported. No forecast text, Spec Gate, Unknown ID or Status change.

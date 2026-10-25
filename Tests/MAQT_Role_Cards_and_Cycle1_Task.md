@@ -3,6 +3,8 @@
 **Status:** Operator defaults for first run — not a governance amendment  
 **Date:** 2026-09-21
 
+**Note (2026-10-24):** this pack and §8.6–§8.8 of the protocol file have diverged: only 8 of this pack's 59 substantive lines appear verbatim there. Which text is canonical for the first run is undecided (Progress_Log PKC-038). Until it is, do not mix role cards from the two sources.
+
 ---
 
 ## How to use

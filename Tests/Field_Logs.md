@@ -12,7 +12,7 @@
 | Open Unknowns    | 0                                                                    |
 | Body Stability   | N/A                                                                  |
 | Owning Domain    | Tests/                                                               |
-| Last Reviewed    | 2026-10-03                                                          |
+| Last Reviewed    | 2026-10-19 — index rows and log entries added through the Chrono pilot scoring (see Resolution Log); header corrected 2026-10-24 (Claude, human-directed, from a Vibe per-file audit). Prior: 2026-10-03                                                          |
 | Sidecar Link     | N/A                                                                  |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
@@ -202,6 +202,8 @@ Procedure cards for tracks currently cleared to run — fill while running, file
 
 ## Resolution Log
 
+
+- 2026-10-24: Header corrected (human-directed, from a Vibe per-file audit; each finding checked against source first): Last Reviewed now covers the entries added through 2026-10-19. Flag, not a fix: the index row for `FL-20261007-recharacterization-proposal` reads "Reviewed — accepted and ratified", but the 2026-10-07 entry below records it as Unreviewed pending human ratification and no later entry records the change; who ratified it, and when, is not recorded here (Progress_Log PKC-036). No entry or index row changed.
 
 - 2026-10-19: **Chrono pilot scoring filed** — `FL-20261019-chrono-divergence-pilot-scoring.md` (reviewer sheets, agreement table, disagreement analysis; no adjudicated score). Index row added. Evidence only; no doctrine, Unknown or Spec Gate change.
 - 2026-10-18: **Chrono pilot session 6 filed** — `FL-20261018-chrono-divergence-chatgpt-d-baseline.md` (ChatGPT, Case D, Baseline arm; M1 No; Stage 2 did not report the reconciliation check; valid, annotated; family complete). Index row added. Evidence only; no doctrine, Unknown or Spec Gate change.

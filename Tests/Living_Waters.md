@@ -17,7 +17,7 @@
 | Body Stability | Volatile |
 | Spec Gates | 0/6 |
 | Verification Ref | Admin/Verification_Gates.md |
-| Last Audit | 2026-07-30 |
+| Last Audit | 2026-07-30 (the logged 2026-08-10 Grok pseudo-audit, findings only, is not counted here pending Progress_Log PKC-020; noted 2026-10-24) |
 | Auditor | Human Governing Authority (Owner), Claude (Synthesizer), Gemini (Auditor), ChatGPT (Synthesizer), Grok (Synthesizer); 2026-07-30 — ASM-004 / AWG energy band softened, arid sorption+waste-heat preference noted, Solar Descent heat interface reciprocal text added (Synthesizer) |
 | Open Unknowns | 9 |
 | Active Disputes | 0 |
@@ -782,6 +782,8 @@ Promotion is partial and pathway-specific. Unvalidated pathways remain in Tests/
 ---
 
 ### Resolution Log
+
+- 2026-10-24: Last Audit annotated (human-directed, from a Vibe per-file audit; each finding checked against source first): it now points to the 2026-08-10 pseudo-audit below, which is findings-only and not counted as an audit date pending a policy ruling (PKC-020). No content, sidecar, Unknown or Spec Gate changed.
 
 - 2026-08-10: **Pseudo-audit (Grok, same limits).** Findings only; Spec Gates
   left locked at 0/6. (1) Open Unknowns **9** = LW-UNK-001–009, matches local +

@@ -17,7 +17,7 @@
 | Body Stability   | Volatile                                                            |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-06-28                                                          |
+| Last Audit       | 2026-06-28 (the 2026-06-30 multi-agent audit pass and the 2026-08-11 Grok pseudo-audit, findings only, are logged below; the pseudo-audit is not counted here pending Progress_Log PKC-020; noted 2026-10-24)                                                          |
 | Auditor          | Grok (Synthesizer); revised Gemini + Claude (Synthesizer/Auditor)   |
 | Open Unknowns    | 2 Formal / 6 Unregistered (HR-003–HR-010 pending sidecar registration) |
 | Active Disputes  | 0                                                                   |
@@ -239,6 +239,8 @@ Each zone improves water quality for the next while generating distinct value st
 
 ### Resolution Log
 
+- 2026-10-24: Resolution Log put in newest-first order (human-directed, from a Vibe per-file audit; each finding checked against source first): the 2026-06-30 multi-agent audit entry had been placed after the two 2026-06-28 entries; the older entries are now reversed, text unchanged. Last Audit annotated. No sidecar (including HR-UNK-002's Last Reviewed, Progress_Log PKC-035), Unknown or Spec Gate changed.
+
 - 2026-08-11: **Pseudo-audit (Grok, same limits).** Findings only; Spec Gates
   left locked at 0/6. (1) Formal Open Unknowns **2** = HR-UNK-001, HR-UNK-002
   (matches `Unknowns.md`); HR-003–010 remain body research questions with
@@ -248,9 +250,11 @@ Each zone improves water quality for the next while generating distinct value st
   Containment Mode. (3) No HR-UNK-* closed; no extraction claims advanced.
   Human-directed.
 
-- 2026-06-28: **Initial file creation** by Grok (Synthesizer). Core architecture, six sequential zones, episodic operation doctrine, four assumptions, eight research questions, two formal unknowns.
-- 2026-06-28: **Agent revision pass** (Gemini + Claude). Wind/river coupling added: river-coupled base-flow doctrine, Optional Passive Momentum Systems framing (technology-agnostic), Hydraulic Operating Modes table (five modes). HR-ASM-005 and HR-ASM-006 added to Assumptions. HR-009 and HR-010 added as extended research parameters. HR-UNK-002 expanded with contaminant pathway detail and cross-references. Open Unknowns corrected 8 → 2 (HR-003 through HR-010 are body research questions; formal sidecar registration deferred to first audit pass). Flow diagram updated with river-coupling architecture.
 - 2026-06-30: **Multi-agent audit pass** (Claude, ChatGPT, Gemini). Open Unknowns metadata corrected to "2 Formal / 6 Unregistered" to resolve self-flagged Drift Indicator violation. HR-ASM-007 added (downstream sediment starvation / "hungry water" risk). Scope Boundary expanded to exclude downstream sediment budgeting/water rights doctrine and human-machinery co-incident risk. Hydraulic Operating Modes table gained a Trigger/Control Mechanism column and a new Containment Mode, converting contaminant exceedance (HR-UNK-002) from a static risk note into a defined operational state. Public Safety / Harvesting Separation note added under Sequential Zones to formally require Recreation Loop lockout during active material harvesting.
+
+- 2026-06-28: **Agent revision pass** (Gemini + Claude). Wind/river coupling added: river-coupled base-flow doctrine, Optional Passive Momentum Systems framing (technology-agnostic), Hydraulic Operating Modes table (five modes). HR-ASM-005 and HR-ASM-006 added to Assumptions. HR-009 and HR-010 added as extended research parameters. HR-UNK-002 expanded with contaminant pathway detail and cross-references. Open Unknowns corrected 8 → 2 (HR-003 through HR-010 are body research questions; formal sidecar registration deferred to first audit pass). Flow diagram updated with river-coupling architecture.
+
+- 2026-06-28: **Initial file creation** by Grok (Synthesizer). Core architecture, six sequential zones, episodic operation doctrine, four assumptions, eight research questions, two formal unknowns.
 
 ---
 

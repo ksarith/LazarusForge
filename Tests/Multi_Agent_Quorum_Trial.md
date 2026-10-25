@@ -16,7 +16,7 @@
 | Open Unknowns    | 3 registered in the sidecar at the end of this file (MAQT-001 to MAQT-003, all non-blocking); MAQT-002 also indexed in `Unknowns.md`. The DECISION NEEDED items remain open by design |
 | Body Stability   | Volatile — expect this to change after the first real attempt      |
 | Owning Domain    | Tests/                                                               |
-| Last Reviewed    | 2026-10-10 — sidecar added (MAQT-001 to MAQT-003); no protocol change. Prior: 2026-09-21 — §8.6–§8.8 role pack/task; §8.9 Handoff Schemas + §8.10 Collaboration Friction Log added (ChatGPT collaboration review). Status unchanged: Proposed Protocol — Not Yet Run. |
+| Last Reviewed    | 2026-10-24 — Resolution Log backfilled for the 2026-09-18, 2026-09-20 and 2026-09-21 passes, from this field's Prior chain and the section and sidecar dates; no protocol change. Prior: 2026-10-10 — sidecar added (MAQT-001 to MAQT-003); no protocol change. Prior: 2026-09-21 — §8.6–§8.8 role pack/task; §8.9 Handoff Schemas + §8.10 Collaboration Friction Log added (ChatGPT collaboration review). Status unchanged: Proposed Protocol — Not Yet Run. |
 | Sidecar Link     | Auditor Notes & Unknowns (end of this file)                          |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present.   |
 
@@ -576,4 +576,12 @@ Log the result — full pass, partial pass, or informative failure — in `Tests
 
 ## Resolution Log
 
+- 2026-10-24: Resolution Log backfilled for three body-changing passes that had only a Prior-chain mention (human-directed, from a Vibe per-file audit; each finding checked against source first). No protocol text, sidecar entry, Unknown or Status changed.
+
 - 2026-10-10: **Risk/Priority rankings on sidecar Unknowns human-confirmed** (values unchanged; remain Placeholder severity, non-blocking). No Status or Spec Gate change.
+
+- 2026-09-21: **§8.6–§8.8 role-card pack, minimal context pack and Cycle 1 bounded task, §8.9 Handoff Schemas and §8.10 Collaboration Friction Log added** (ChatGPT collaboration review). The companion worksheet `Tests/MAQT_Role_Cards_and_Cycle1_Task.md` is dated the same day. Status unchanged: Proposed Protocol — Not Yet Run. *(Backfilled 2026-10-24 from this file's Last Reviewed Prior chain.)*
+
+- 2026-09-20: **§8 Preparation Package added** (section dated 2026-09-20; MAQT-003 carries First Logged 2026-09-20). *(Backfilled 2026-10-24 from the section heading and the sidecar field; no log entry was made at the time.)*
+
+- 2026-09-18: **File created and registered in `Routing.md` and `Discovery.md`:** a concrete three-physical-computer quorum trial protocol operationalizing `Admin/Governance_Migration_Protocol.md` §VII, written against the operational gaps identified in a 2026-09-18 ChatGPT multi-agent-readiness assessment. MAQT-001 and MAQT-002 carry First Logged 2026-09-18 (the sidecar was added 2026-10-10). *(Backfilled 2026-10-24 from Discovery.md's 2026-09-18 header entry and the file's own dated references.)*

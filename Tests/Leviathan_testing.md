@@ -16,7 +16,7 @@
 | Body Stability   | Volatile                                                            |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-10-03 (third pass) — LE-0 build-out under §VIII: run sheet (phases 0–5), evidence schema, instrumentation checklist, result-note template, epistemic success/failure table; Status, Spec Gates, Open Unknowns unchanged; human-directed. Prior: 2026-10-03 (second pass) — LT-004/006/007 stubs. Prior: 2026-10-03 — LT-005 stub. Prior: 2026-10-01 — LT-003/LE-0 definition + LT-002. Prior: 2026-09-30 — LT-001. Earlier: 2026-05-04 / 2026-06-08. |
+| Last Audit       | 2026-10-03 (third pass) — LE-0 build-out under §VIII: run sheet (phases 0–5), evidence schema, instrumentation checklist, result-note template, epistemic success/failure table; Status, Spec Gates, Open Unknowns unchanged; human-directed. Prior: 2026-10-03 (second pass) — LT-004/006/007 stubs. Prior: 2026-10-03 — LT-005 stub. Prior: 2026-10-01 — LT-003/LE-0 definition + LT-002. Prior: 2026-09-30 — LT-001. Also recorded in the Resolution Log: 2026-08-10 Grok pseudo-audit (findings only, not counted here) and 2026-07-19 designation as the resolved cross-repo merge anchor (human governing authority). Earlier: 2026-05-04 / 2026-06-08. |
 | Auditor          | Grok — LE-0 build-out (human-directed); prior Claude — Retrofit/Auditor |
 | Open Unknowns    | 7                                                                   |
 | Active Disputes  | 0                                                                   |
@@ -1446,6 +1446,8 @@ Human-directed.
 ---
 
 ### Resolution Log
+
+- 2026-10-24: Last Audit's Prior chain completed (human-directed, from a Vibe per-file audit; each finding checked against source first): it now names the 2026-08-10 pseudo-audit and the 2026-07-19 merge-anchor designation, both already logged below. No section, sidecar, Unknown or Spec Gate changed.
 
 - 2026-10-03 (third entry, same day): LE-0 build-out under §VIII — expanded the
   minimum-experiment definition with a six-phase run sheet (Setup → Baseline →

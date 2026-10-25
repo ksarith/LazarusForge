@@ -14,7 +14,7 @@
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-07-05 — Claude added first Sandbox Log entries (SB-001–SB-004); no formal Skeptic/Auditor sign-off through Forge_Audit_Kit.md opening sequence yet |
+| Last Audit       | 2026-10-24 — Claude (human-directed, from a Vibe per-file audit) header corrected to cover the 2026-07-12 template-skeleton backfill, a body change the field had not recorded; the footer date 2026-07-12 was already correct. The logged 2026-08-11 Grok pseudo-audit (findings only) is not counted here pending Progress_Log PKC-020. Prior: 2026-07-05 — 2026-07-05 — Claude added first Sandbox Log entries (SB-001–SB-004); no formal Skeptic/Auditor sign-off through Forge_Audit_Kit.md opening sequence yet |
 | Auditor          | None formal yet — see Last Audit and Active Disputes                |
 | Open Unknowns    | 0                                                                   |
 | Active Disputes  | 1 (CD-DS-001, Resolved same session — see below)                    |
@@ -159,6 +159,8 @@ Every sandbox artifact is recorded here at disposition — Discarded, Deferred, 
 No unknowns are currently open under this file's own ownership. EN-001, EN-001a, and EN-005 are referenced in §8 but owned by `Architecture/Engineering.md` — see that file's sidecar for authoritative status. First unknowns native to this file are expected once a hypothesis completes a full Sandbox → EXP-ID → feedback cycle for the first time.
 
 ### Resolution Log
+
+- 2026-10-24: Last Audit corrected (human-directed, from a Vibe per-file audit; each finding checked against source first): it now covers the 2026-07-12 template-skeleton backfill. No sandbox entry, Unknown or Spec Gate changed.
 
 - 2026-08-11: **Pseudo-audit (Grok, same limits).** Findings only; Spec Gates
   left locked at 0/6. (1) Open Unknowns **0** — matches File State; no native
