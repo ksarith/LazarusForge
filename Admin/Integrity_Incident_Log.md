@@ -116,6 +116,38 @@ Append only. Never edit or delete prior entries (same discipline as Field_Logs /
 
 *None at file creation. Prior scattered incidents are not retroactively invented here; new detections use this format going forward. Historical reconstruction of past events is optional and must be labeled Analogous / reconstructed.*
 
+### 2026-10-25 — Per-file bookkeeping decay (Compound Drift, retrospective)
+
+**Incident_ID:** IIL-20261025-01
+**Severity:** Minor (escalated by accumulation under RIP Compound Drift)
+**Status:** Open
+**Detected by:** Vibe per-file audits, first recorded 2026-10-23 (checked against source by Claude)
+**Logged by:** Claude, human-directed (PKC-015 ruling, 2026-10-25)
+**Closure authority used:** pending
+
+**Evidence label:** Analogous / reconstructed. Written after the fact from the PKC-001 row in `Admin/Progress_Log.md` and the per-file audit passes it summarizes; not logged contemporaneously.
+
+**Summary:** From late August / early September 2026, Resolution Logs, Last Audit and Auditor fields stopped being kept current while file bodies kept changing. PKC-001 counts 33 of 47 audited files showing it at the time of the Operations batch, in several shapes: stale header with a current log, stale log with a current header, both stale, a missing Resolution Log, and a version string ahead of its Status history. Named examples include `Governance_Migration_Protocol.md`, `Ethical_Constraints.md`, `Verification_Gates.md`, `Repository_Integrity_Protocol.md` and `Progress_Log.md`'s own Resolution Log. Clean control cases exist (`Agent_Verification_Event.md`, `Leviathan_testing.md`). The cause is not established; PKC-001 holds that question open.
+
+**RIP classification basis:** Minor class (stale or mismatched File State and log fields) accumulating across more than three consecutive audits, which triggers Compound Drift escalation and logging here. Some individual instances also resemble the Major example "version increment without audit trail entry"; those were not assessed one by one, and the human may reclassify.
+
+**Affected paths:** `Admin/*` and the `Operations/` and `Tests/` files listed in PKC-001; see that row for the per-file shapes.
+
+**Response taken:**
+1. Per-file audits flagged the pattern; parked as PKC-001 (High) on 2026-10-23.
+2. Several files backfilled 2026-10-23, including `Progress_Log.md`'s own Resolution Log and the 2026-09-03 and 2026-09-05 passes in `Repository_Integrity_Protocol.md`.
+3. Further backfilling held until a shared cause (for example, a change in where entries are expected to land after the 2026-09-03 passes) is ruled out.
+4. 2026-10-25: human ruled this retrospective entry (PKC-015).
+
+**STATE_HOLD:** No
+
+**Links:**
+- Resolution Log: `Admin/Progress_Log.md`, 2026-10-25 (PKC-015)
+- Unknowns.md: none
+- Prior-state / archive: none used
+
+**Closure note:** pending. Close only after the PKC-001 shared-cause question is ruled and the decay is remediated or accepted; Minor closure by the logging auditor or the human operator.
+
 ---
 
 ## Closed incidents
@@ -136,4 +168,4 @@ Append only. Never edit or delete prior entries (same discipline as Field_Logs /
 ## Resolution Log
 
 - 2026-08-16: **File created (v0.1).** Canonical home for RIP integrity incidents; ownership table addresses RIP-007 minimum doctrine; append-only intake aligned with Field_Logs discipline. Registered in Routing.md. RIP Scope Boundary / response ladder updated to point here instead of "log willy-nilly." No past incidents fabricated into the log. Human-directed.
-
+- 2026-10-25: **First entry logged (IIL-20261025-01).** Retrospective Compound Drift incident for PKC-001 bookkeeping decay, labeled Analogous / reconstructed, per the PKC-015 ruling. No format, ownership or scope change; version unchanged. Human-directed.
