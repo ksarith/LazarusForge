@@ -2,7 +2,8 @@
 
 **Standard file structure for LazarusForge documents.**
 Applies to all new files and retrofit audit cycles.
-**Last updated: 2026-10-20 — 10-Entry Rule removed (AP-029, human-directed; ratification completes on commit): the Sidecar Governance Rules paragraph now records the removal and the trigger-table row is deleted; the 20% and Aging rules are unchanged. No other change.**
+**Last updated: 2026-10-25 — Rulings from the Human Ruling List enacted (human-directed; see `Admin/Progress_Log.md`, 2026-10-25): "Proposed" retired as a Status value (PKC-031); Highest Risk takes a Risk value, never a Priority value, with Blocking carrying elevated severity (PKC-004/024); `Admin/Operational_Conventions.md` listed as an exempt reference index (PKC-017); Resolution Log heading level rule (PKC-018); Update Procedure gains the version-bump, sidecar Last Reviewed and fork rules (PKC-039, PKC-035, PKC-029). Sections 0–11 unchanged apart from these additions.**
+**Prior: 2026-10-20 — 10-Entry Rule removed (AP-029, human-directed; ratification completes on commit): the Sidecar Governance Rules paragraph now records the removal and the trigger-table row is deleted; the 20% and Aging rules are unchanged. No other change.**
 **Prior: 2026-09-24 — Two new sections added: "New File Creation Checklist" and "Update Procedure" (registration/rotation/provenance guidance folded in from a Grok-drafted scaffold, Claude-verified against this file's own Sidecar Governance Rules and actual Resolution Log placement before filing). No change to sections 0–11 or Template Exemptions.**
 
 ---
@@ -99,6 +100,10 @@ The full File Template is **not** applied to every file in the repository. Forci
    - `Challenges/Waste.md`
    - `Challenges/Water.md`
    These carry a File State table but Spec Gates is N/A by subtype design — they define problems, not specifications to be gated toward promotion. Confirmed as an intentional, already-reviewed exemption via a 2026-08-10 pseudo-audit pass on each file (see each file's own Resolution Log: "Spec Gates N/A for Challenges Problem-Statement subtype"), not an oversight. Added here 2026-09-04 to close a documentation gap: the exemption existed in practice and in each file's own record but was never listed in this canonical class list, which had allowed a later fabricated claim (that these files were "missing" the field entirely, an accidental early-cohort gap) to go unchecked against this file before being repeated. `Challenges/Return_To_Eden.md` and `Challenges/Closed_Loop_Feedstock.md` are Solution-Track subtype, not Problem-Statement, and are not exempt — they carry real Spec Gates values.
+
+9. **Reference index**
+   - `Admin/Operational_Conventions.md`
+   A pointer list of mechanical rules, each owned by another file. Exempt from the Lessons Learned, Active Disputes and Abandoned Paths sections and from keeping a Resolution Log; its passes are recorded in its Last Audit field. The exemption was declared in the file itself and is listed here from 2026-10-25 (PKC-017).
 
 **Non-exempt (template applies on retrofit and for new files):**  
 All other files under `Admin/`, `Architecture/`, `Operations/`, `Challenges/`, and `Tests/` that carry doctrine, protocols, specifications, or gate definitions.
@@ -202,6 +207,13 @@ or deliberately omitted.
 **Verification Ref must point to `Admin/Verification_Gates.md`.** Not Forge_Audit_Kit.md.
 The Kit is a condensed reference; the Gates file is the canonical authority.
 
+**Highest Risk takes a Risk value, never a Priority value** (human ruling, 2026-10-25, PKC-004 and
+PKC-024). The allowed values are Low / Medium / High. "Critical" is not a Risk value; elevated
+severity is carried by the Blocking designation on an unknown. Risk and Priority are distinct
+fields: Risk values must not appear in a Priority column, nor Priority values in a Risk field.
+An open Blocking item that is ignored is a warning condition in audits and in work that depends
+on it.
+
 ---
 
 ### Status Definitions
@@ -213,6 +225,12 @@ toward premature specification.
 
 **Specification** — All required verification gates passed. Claims are considered binding
 until revised through a full audit cycle.
+
+**Proposed** is retired and is not a Status value (human ruling, 2026-10-25, PKC-031). A newly
+generated file starts at Exploration and advances through Draft and Specification as it matures.
+No post-execution status exists: a file that has been exercised, such as a completed pilot, keeps
+its Status and records what happened in its logs. A file still reading Proposed is awaiting
+migration to Exploration, not in violation of a new rule.
 
 ---
 
@@ -561,6 +579,10 @@ The sidecar. Placed after Active Disputes.
 - YYYY-MM-DD: [FILE-PREFIX-NNN] — One-line description of how it was resolved or discharged
 ```
 
+**Resolution Log heading level.** The heading text "Resolution Log" is what counts, at either
+level. Existing files use `###` (nested here, as shown) or `##`, and both are accepted; no file is
+retrofitted for the level alone (human ruling, 2026-10-25, PKC-018). New files use `###`.
+
 ---
 
 ### Unknowns Doctrine
@@ -849,10 +871,13 @@ already-compliant file receiving an ordinary edit.
 - Confirm the file is the correct canonical target (check `Routing.md` / `Archive/Rename_Registry.md` if a legacy name appears anywhere in the request).
 - Note the current File State (Status, Spec Gates, Open Unknowns, Last Reviewed) before editing, so the diff is deliberate rather than incidental.
 - Identify whether the change is content-only (Body/Lessons/notes), metadata-only (File State fields, dates), or structural (new section, rotation, split, merge).
+- Note the file's current version, if it carries one, as the base. If the copy in hand has the same version as the committed file but different content, or an older version than the committed file, treat it as a fork: stop and route it to the human, who is the single merge point. Do not merge automatically.
 
 ### 2. Make the change
 - Edit the Body or relevant section.
 - Update Last Reviewed / Last Audit to the current date.
+- Any edit to the file's text, including a reference correction, is a change. If the file carries a version, bump it, and have the log entry say what changed and name the transition and base (for example "v0.16 → v0.17, from base v0.16"). "No content change" is reserved for metadata-only edits. Do not bump retroactively for earlier unversioned passes: bump once on the next real pass and name the earlier passes in that log entry.
+- A pass that changes an unknown's content, or evaluates it, updates that sidecar entry's Last Reviewed; an incidental mention does not. Last Reviewed means a review happened, so it is not refreshed without one, and there is no calendar cadence.
 - If Status or Open Unknowns count changes, update the File State table in the same pass — not as a follow-up edit.
 - Add an entry to the file's own Resolution Log (`### Resolution Log`, nested under `## Auditor Notes & Unknowns` per Section 9 above — not a standalone top-level section).
 

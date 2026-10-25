@@ -20,13 +20,13 @@ None. This is a governance/epistemics document with no physical hazard surface.
 
 | Field | Value |
 |-------|-------|
-| Status | **Proposed — Not Ratified** |
+| Status | **Exploration — Not Ratified** |
 | Body Stability | Volatile |
 | Spec Gates | 0/6 |
 | Verification Ref | `Admin/Verification_Gates.md` |
 | Ethical Anchor | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 | Highest Risk | High — while unratified and GOV-008 remains Open, the misreading risk (treating this as operational) is real, not theoretical; raised from Medium 2026-07-31 per Skeptic/Auditor review. See §Binding Status below. |
-| Last Audit | 2026-10-20 |
+| Last Audit | 2026-10-25 — Claude (human-directed, PKC-031) Status "Proposed" changed to "Exploration"; no other change. Prior: 2026-10-20 |
 | Auditor | Grok — drafted CIR v2.0 architecture (Parts 0–8) and Nothingness-bridge/naming recommendations; Claude — Synthesizer, verified cross-references against `Governance_Charter.md`, `Nothingness_Theorem.md`, and `Unknowns.md` GOV-008 status before filing; human-directed, 2026-07-31; Grok — Skeptic/Auditor pass on this file (same-session as original drafting — human noted this is a "cognitive purity" limitation, a fresh instance would have been preferable and is a lesson for future review cycles), produced candidate Checkpoint mapping and f(n)/s(n) definitions; Claude — Synthesizer, independently verified all six Checkpoint names/numbers and the Checkpoint 2/4 gap characterization against `Governance_Charter.md` source before integrating (not just accepting the same-session review's claims), human-directed, 2026-07-31; Claude — Skeptic/Auditor, verified the γ_provenance circularity directly against this file's own math and registered CIR-GOV-002, human-directed, 2026-08-18; Grok — proposed the M₀(n) non-vacuous reformulation; Claude — Synthesizer, independently verified the reformulation and its stated `[0,1]` premise against source before integrating, applied at all four in-file occurrences of the old form (one beyond the proposal's own scope), discharged CIR-GOV-002, human-directed, 2026-08-18 |
 | Open Unknowns | 1 (CIR-GOV-001 — predicate/Checkpoint mapping, candidate table now supplied; two genuine gaps documented at Checkpoints 2 and 4. CIR-GOV-002 resolved 2026-08-18 — see Auditor Notes / Unknowns and Resolution Log. Separately, this file's Binding Status also depends on GOV-008, but GOV-008 itself is tracked and owned by `Governance_Charter.md`, not counted here.) |
 | Active Disputes | 0 |
@@ -578,6 +578,8 @@ This file's own Resolution Log (2026-07-31 filing entry, 2026-07-31 Skeptic/Audi
 ---
 
 ## Resolution Log
+
+- 2026-10-25: Status "Proposed" changed to "Exploration" (human-directed, PKC-031 ruling: "Proposed" is retired and a newly generated file starts at Exploration). No other field, section or Unknown changed.
 
 - 2026-10-20: **Small corrections from an external Skeptic/Auditor sweep (Vibe, human-directed), each checked against source by Claude; no doctrine change.** (1) The CIR-GOV-002 tracker entry cites lines 267, 279 and 405; those numbers had drifted as the file was edited (measured against this file as delivered on 2026-10-20: Part 3 predicate 277, classification matrix 289, Predicate DAG 408; the Clarification and mapping-table citations, 190 and 535, were accurate until this same entry's gate note was added and now sit at 192 and 537). The citations are annotated in place rather than rewritten, so the entry still shows what was recorded on 2026-08-18; line numbers in this file drift, so cite by section where possible. (2) A clarifying note under the Physical Grounding Gate records that `S(n) = ε` here and CIR's `S(n) ≤ ε` are equivalent because Part 8.1 truncates coordinates before gate evaluation; this is Claude's reading of the file's own pipeline, and no formula changed. (3) Recorded retroactively, as reported by the sweep from commit history and not verified by Claude from the uploaded file: a 2026-09-03 commit (`9801e03`) rewrote the forward-reference text in Part 9 with no log entry at the time. No predicate, axiom, tracker status or Spec Gate changed. Status remains Proposed — Not Ratified. Human-directed.
 

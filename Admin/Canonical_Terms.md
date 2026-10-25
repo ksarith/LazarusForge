@@ -1,5 +1,5 @@
 # Canonical_Terms.md — Standard Repository Nomenclature
-**Version 0.7**
+**Version 0.8**
 
 ---
 
@@ -17,8 +17,8 @@
 | Body Stability   | Volatile                                                            |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-10-24 — Claude (human-directed) corrected "Three vocabulary sources" to four and added a note to the Status section, from a Vibe per-file audit (see Resolution Log). Prior: 2026-09-23                                                          |
-| Auditor          | Claude — 2026-10-24 wording correction and Status note (human-directed); prior: Claude — Claim-Type Labels registered under §4 (Grok proposer, human-directed), 2026-09-23; prior: Claude — "Disambiguation: Uses of 'Gate'" section added (FL-012, human-directed), 2026-09-14; prior: Claude — four new terms registered (Active Constitutional Surface, Claimed/Recognized/Ratified Constitutional Lineage) at GOV-018 closure, checked against existing vocabulary first — no competing term found (human-directed); prior: Claude — Synthesizer/Auditor (2026-06-24); Claude — Cycle definition + version-string correction (2026-07-05); Claude — CT-011 resolution 2026-07-05 |
+| Last Audit       | 2026-10-25 — Claude (human-directed) v0.7 → v0.8, from base v0.7: "Proposed" retired as a status designation (PKC-031) and the unversioned 2026-08-17, 2026-09-14 and 2026-09-23 passes covered by this one bump (PKC-029); see Resolution Log. Prior: 2026-10-24 — Claude (human-directed) corrected "Three vocabulary sources" to four and added a note to the Status section, from a Vibe per-file audit (see Resolution Log). Prior: 2026-09-23                                                          |
+| Auditor          | Claude — 2026-10-25 v0.8 bump and Proposed note (human-directed); prior: Claude — 2026-10-24 wording correction and Status note (human-directed); prior: Claude — Claim-Type Labels registered under §4 (Grok proposer, human-directed), 2026-09-23; prior: Claude — "Disambiguation: Uses of 'Gate'" section added (FL-012, human-directed), 2026-09-14; prior: Claude — four new terms registered (Active Constitutional Surface, Claimed/Recognized/Ratified Constitutional Lineage) at GOV-018 closure, checked against existing vocabulary first — no competing term found (human-directed); prior: Claude — Synthesizer/Auditor (2026-06-24); Claude — Cycle definition + version-string correction (2026-07-05); Claude — CT-011 resolution 2026-07-05 |
 | Open Unknowns    | 9                                                                   |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | Low                                                                 |
@@ -403,7 +403,9 @@ calcification or corrosion pressure.
 The three primary file status designations. Exploration: incomplete by design,
 do not over-police. Draft: active convergence toward Specification underway.
 Specification: all gates passed, claims binding until revised through full
-audit cycle. Defined in `Admin/File_Template.md`.
+audit cycle. Defined in `Admin/File_Template.md`. "Proposed" is not a status
+designation: it was retired on 2026-10-25 (PKC-031). A newly generated file
+starts at Exploration, and there is no separate post-execution status.
 
 **Verification Maturity Model**
 Five-state maturity progression from Exploration through Hardened Doctrine.
@@ -1124,6 +1126,8 @@ Auditor_Protocols.md specifically, which is now closed.
 
 ### Resolution Log
 
+- 2026-10-25: **v0.7 → v0.8, from base v0.7 (human-directed; PKC-031, PKC-029).** One sentence added to the §4 entry "Exploration / Draft / Specification": "Proposed" is not a status designation, was retired 2026-10-25, and a newly generated file starts at Exploration. No other term changed. The version is bumped once, as ruled under PKC-029 (no retroactive bumps), and this bump also covers the 2026-08-17, 2026-09-14 and 2026-09-23 body passes, which carry no version number in this log. The six sidecar entries dated 2026-06-24 (CT-001, 003, 004, 005, 006, 008) were not reviewed and keep that date. Open Unknowns unchanged at 9.
+
 - 2026-10-24: **Wording and Status corrections** (human-directed, from a Vibe per-file audit; checked against source first). Conflict Resolution Doctrine said "Three vocabulary sources exist" above a four-row table; the count is now four (Verification_Gates was added as the fourth on 2026-07-03). A note added to the Status section: it ends at v0.6 while the header reads v0.7, and the 2026-08-17, 2026-09-14 and 2026-09-23 passes carry no version number. No definition, sidecar or Unknown changed; sidecar Last Reviewed dates not touched, since no review was performed.
 
 - 2026-09-23: **Claim-Type Labels registered (§4).** Nine-label taxonomy
@@ -1267,6 +1271,17 @@ Auditor_Protocols.md specifically, which is now closed.
 ---
 
 ## Status
+
+Version 0.8 (2026-10-25) — "Proposed" retired as a status designation (§4 note, PKC-031).
+This bump also covers the three body passes dated 2026-08-17, 2026-09-14 and 2026-09-23
+that carried no version number, and the header-versus-history gap noted below is closed
+here without backfilling those passes individually (PKC-029). The v0.7 change (2026-07-05,
+CT-007 escalated) is recorded in the Resolution Log, not in this section. Open Unknowns
+stay at 9.
+
+**Changes from v0.7:**
+- §4: note added that "Proposed" is not a status designation
+- Header version string 0.7 → 0.8
 
 *Note (2026-10-24): this Status history ends at v0.6, while the header reads v0.7 (2026-07-05, CT-007 escalated; see the Resolution Log). The later body passes (2026-08-17, 2026-09-14, 2026-09-23) carry no version number. Completing the history here is held pending the Status-section maintain-or-retire ruling and a decision on version bumps for those passes (Progress_Log PKC-002, PKC-029).*
 
