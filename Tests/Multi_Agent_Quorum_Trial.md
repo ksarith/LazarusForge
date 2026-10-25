@@ -11,12 +11,12 @@
 
 | Field            | Value                                                               |
 |------------------|----------------------------------------------------------------------|
-| Status           | Proposed Protocol — Not Yet Run                                     |
+| Status           | Exploration — Protocol Not Yet Run                                  |
 | Spec Gates       | 0/6 — this file is an operational protocol, not a governance spec; it operationalizes §VII, it does not amend it |
 | Open Unknowns    | 3 registered in the sidecar at the end of this file (MAQT-001 to MAQT-003, all non-blocking); MAQT-002 also indexed in `Unknowns.md`. The DECISION NEEDED items remain open by design |
 | Body Stability   | Volatile — expect this to change after the first real attempt      |
 | Owning Domain    | Tests/                                                               |
-| Last Reviewed    | 2026-10-24 — Resolution Log backfilled for the 2026-09-18, 2026-09-20 and 2026-09-21 passes, from this field's Prior chain and the section and sidecar dates; no protocol change. Prior: 2026-10-10 — sidecar added (MAQT-001 to MAQT-003); no protocol change. Prior: 2026-09-21 — §8.6–§8.8 role pack/task; §8.9 Handoff Schemas + §8.10 Collaboration Friction Log added (ChatGPT collaboration review). Status unchanged: Proposed Protocol — Not Yet Run. |
+| Last Reviewed    | 2026-10-25 — Claude (human-directed, PKC-031) Status "Proposed" changed to "Exploration"; no other change. Prior: 2026-10-24 — Resolution Log backfilled for the 2026-09-18, 2026-09-20 and 2026-09-21 passes, from this field's Prior chain and the section and sidecar dates; no protocol change. Prior: 2026-10-10 — sidecar added (MAQT-001 to MAQT-003); no protocol change. Prior: 2026-09-21 — §8.6–§8.8 role pack/task; §8.9 Handoff Schemas + §8.10 Collaboration Friction Log added (ChatGPT collaboration review). Status unchanged: Proposed Protocol — Not Yet Run. |
 | Sidecar Link     | Auditor Notes & Unknowns (end of this file)                          |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present.   |
 
@@ -575,6 +575,8 @@ Log the result — full pass, partial pass, or informative failure — in `Tests
 **Resolution Path:** Record the value used in the first run; calibrate from the Collaboration Friction Log.
 
 ## Resolution Log
+
+- 2026-10-25: Status "Proposed" changed to "Exploration" (human-directed, PKC-031 ruling: "Proposed" is retired and a newly generated file starts at Exploration). No other field, section or Unknown changed.
 
 - 2026-10-24: Resolution Log backfilled for three body-changing passes that had only a Prior-chain mention (human-directed, from a Vibe per-file audit; each finding checked against source first). No protocol text, sidecar entry, Unknown or Status changed.
 

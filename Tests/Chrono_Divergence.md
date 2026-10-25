@@ -13,13 +13,13 @@
 
 | Field            | Value |
 |------------------|-------|
-| Status           | **Proposed** |
+| Status           | **Exploration** |
 | Body Stability   | Volatile |
 | Spec Gates       | 0/6 |
 | Verification Ref | Admin/Verification_Gates.md |
 | Open Unknowns    | 4 (sidecar below; all non-blocking) |
 | Owner            | `Tests/Chrono_Divergence.md` |
-| Last Audit       | 2026-10-24 — Claude (human-directed) two dated post-run notes added from the Pilot's own 2026-10-19 record; no version bump, no content revision. Prior: 2026-10-15 — editorial trim after a repo-wide integrity pass (no content change). Last content revision v0.6 (2026-10-14, after ChatGPT's review of v0.4). Earlier audits (ChatGPT, fresh-instance Claude, Grok) are recorded in the Resolution Log. Method only; no forecast portfolio claimed Measured. |
+| Last Audit       | 2026-10-25 — Claude (human-directed, PKC-031) Status "Proposed" changed to "Exploration"; no other change. Prior: 2026-10-24 — Claude (human-directed) two dated post-run notes added from the Pilot's own 2026-10-19 record; no version bump, no content revision. Prior: 2026-10-15 — editorial trim after a repo-wide integrity pass (no content change). Last content revision v0.6 (2026-10-14, after ChatGPT's review of v0.4). Earlier audits (ChatGPT, fresh-instance Claude, Grok) are recorded in the Resolution Log. Method only; no forecast portfolio claimed Measured. |
 | Last Updated     | 2026-10-24 (post-run notes only); previously 2026-10-15 |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
@@ -372,6 +372,8 @@ Unit of analysis: one fresh, unprompted audit session of one case on one auditor
 ### Resolution Log
 
 *(No Unknown resolved. Entries below are file change history, newest first.)*
+
+- 2026-10-25: Status "Proposed" changed to "Exploration" (human-directed, PKC-031 ruling: "Proposed" is retired and a newly generated file starts at Exploration). No other field, section or Unknown changed.
 
 - 2026-10-24: Post-run notes added, no version bump and no frozen text changed (human-directed, from a Vibe per-file audit; each finding checked against source first): a note under §4.1 and a note in CD-001 recording that the pilot ran (preregistered and started 2026-10-16, procedurally complete 2026-10-19, human confirmation pending; both reviewers scored F1 and F2 Unscorable; M1 agreement 1 of 4, validity agreement 3 of 4; no adjudicated score; rubric reliability not licensed; CD-001 stays Open), all taken from `Tests/Chrono_Divergence_Pilot.md`'s 2026-10-19 entry. The §4.1 heading, CD-001's Resolution Path wording and Last Reviewed, and the Status value "Proposed" were left as they are (the status label is Progress_Log PKC-031).
 
