@@ -16,7 +16,8 @@
 | Open Unknowns | FL-006-A (structural owner named; population and demonstrated maintenance still open) |
 | Body Stability | Volatile — no operational trial against this structure has been run yet |
 | Owning Domain | Operations/ |
-| Last Reviewed | 2026-09-18 (structure sections added 2026-10-24, no content review) |
+| Verification Ref | Admin/Verification_Gates.md |
+| Last Audit | 2026-10-25 — Claude (human-directed, PKC-032) added the Drift Indicators section and the Verification Ref row and renamed this field from Last Reviewed; no content review. Prior: 2026-09-18 (structure sections added 2026-10-24, no content review) |
 | Sidecar Link | `Architecture/Forge_flow.md` FL-006 |
 | Ethical Anchor | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
@@ -141,7 +142,21 @@ None.
 
 ---
 
+## Drift Indicators
+
+Each of these restates a rule this file already states; none is new doctrine. The template's Mandatory Re-Audit Conditions (`Admin/File_Template.md` Section 11) also apply.
+
+- A standing-reference pointer is carried without a confirmed-live date, or a stale pointer is not labeled stale (Freshness and Provenance)
+- An episodic control entry lacks enough information to locate the original record (Freshness and Provenance)
+- Evidence content is copied into this file instead of pointed to, against the pointer-not-ledger design
+- A Maintenance Honesty checkpoint changes to YES without Status and the FL-006-A Open Unknowns entry being updated in the same pass
+- An empty entry or an unconfirmed pointer is described as showing that no evidence exists (Maintenance Honesty)
+
+---
+
 ## Resolution Log
+
+- 2026-10-25: **Template gaps closed (PKC-032 ruling, human-directed; no doctrine changed).** Added a Drift Indicators section drafted only from rules this file already states (Freshness and Provenance, Maintenance Honesty, pointer-not-ledger design), added the standard Verification Ref row, and renamed the `Last Reviewed` field to `Last Audit`. No content review was done, and no Unknown, schema or Status changed (Status still reads Proposed, which the PKC-031 sweep will move to Exploration). Wording for human review.
 
 - 2026-10-24: Active Disputes and Resolution Log sections added (human-directed, from a Vibe per-file audit; each finding checked against source first). This file had neither. No content, schema or Unknown changed; Drift Indicators, a Verification Ref and the standard `Last Audit` field name are still missing (parked as Progress_Log PKC-032).
 

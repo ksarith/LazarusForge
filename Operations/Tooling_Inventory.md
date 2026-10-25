@@ -17,7 +17,7 @@
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                         |
-| Last Audit       | 2026-09-08 (Claude review — added missing Lessons Learned/Active Disputes sections; prior: file created from HP-007 skeleton) |
+| Last Audit       | 2026-10-25 — Claude (human-directed, PKC-032) added the Drift Indicators section; no content review. Prior: 2026-09-08 (Claude review — added missing Lessons Learned/Active Disputes sections; prior: file created from HP-007 skeleton) |
 | Auditor          | —                                                                   |
 | Open Unknowns    | 1                                                                   |
 | Active Disputes  | 0                                                                   |
@@ -175,6 +175,18 @@ Initialization Checklist.
 
 ---
 
+## Drift Indicators
+
+Each of these restates a rule this file already states; none is new doctrine. The template's Mandatory Re-Audit Conditions (`Admin/File_Template.md` Section 11) also apply.
+
+- A tool is added, removed, fails or is taken out of service and the inventory is not updated within one operational shift (Governing Rule 3)
+- No full review within a calendar month, or a Specification-stage gate promotion proceeds without one (Governing Rule 3)
+- Decision Point B counts a projected, planned or "could buy" tool, or evaluates the tooling-capability clause against anything other than this inventory (Governing Rules 1 and 5)
+- The inventory is known to be stale, incomplete or under dispute and Decision Point B does not evaluate to NO (Governing Rule 2)
+- A tool absent from the list is treated as available (ASM-003)
+
+---
+
 ## Auditor Notes & Unknowns
 
 ### TI-001 — Initial population and ownership assignment pending
@@ -210,6 +222,8 @@ Initialization Checklist.
 ---
 
 ## Resolution Log
+
+- 2026-10-25: **Drift Indicators section added (PKC-032 ruling, human-directed; no doctrine changed).** Drafted only from rules this file already states (Governing Rules 1 to 3 and 5, ASM-003). No content review was done, and no Unknown, assumption or Status changed. Wording for human review.
 
 - 2026-10-24: ASM-003 citations disambiguated (human-directed, from a Vibe per-file audit; each finding checked against source first): two bare mentions now name Forge_flow's ASM-003 so they cannot be confused with this file's own ASM-003 (absence of a tool is treated as not available). No inventory, rule or Unknown changed.
 
