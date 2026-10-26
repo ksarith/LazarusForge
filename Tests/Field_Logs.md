@@ -12,7 +12,7 @@
 | Open Unknowns    | 0                                                                    |
 | Body Stability   | N/A                                                                  |
 | Owning Domain    | Tests/                                                               |
-| Last Reviewed    | 2026-10-19 — index rows and log entries added through the Chrono pilot scoring (see Resolution Log); header corrected 2026-10-24 (Claude, human-directed, from a Vibe per-file audit). Prior: 2026-10-03                                                          |
+| Last Reviewed    | 2026-10-25 — gap noted: no entry or index row exists for MAQT Cycle 1 (PKC-041); nothing added to the index. Prior: 2026-10-19 — index rows and log entries added through the Chrono pilot scoring (see Resolution Log); header corrected 2026-10-24 (Claude, human-directed, from a Vibe per-file audit). Prior: 2026-10-03                                                          |
 | Sidecar Link     | N/A                                                                  |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
@@ -202,6 +202,8 @@ Procedure cards for tracks currently cleared to run — fill while running, file
 
 ## Resolution Log
 
+
+- 2026-10-25: **Gap noted, nothing reconstructed (PKC-041, human-directed).** `Archive/Logs/Progress_Log_Changelog.md` (2026-09-22) says MAQT Cycle 1 (`MAQT-C1-EC013-CROSSREF`; Gemini Planner, Copilot Skeptic, Grok Auditor; logical isolation) had its first Field_Logs entry filed, with a human ratification stored here. No such entry or index row exists in this tree. Whether it was lost in the 2026-10-03 one-file-per-entry restructure or never committed cannot be determined from the repo. If the original is supplied it is filed as an `FL-` entry; a reconstruction from the changelog summary is not filed as evidence. The index is unchanged. Human-directed.
 
 - 2026-10-24: Header corrected (human-directed, from a Vibe per-file audit; each finding checked against source first): Last Reviewed now covers the entries added through 2026-10-19. Flag, not a fix: the index row for `FL-20261007-recharacterization-proposal` reads "Reviewed — accepted and ratified", but the 2026-10-07 entry below records it as Unreviewed pending human ratification and no later entry records the change; who ratified it, and when, is not recorded here (Progress_Log PKC-036). No entry or index row changed.
 

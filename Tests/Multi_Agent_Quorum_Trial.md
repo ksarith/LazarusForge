@@ -11,12 +11,12 @@
 
 | Field            | Value                                                               |
 |------------------|----------------------------------------------------------------------|
-| Status           | Exploration — Protocol Not Yet Run                                  |
+| Status           | Exploration — Cycle 1 run 2026-09-22 (logical isolation only; evidence entry not in repo); Tier 2 not yet run |
 | Spec Gates       | 0/6 — this file is an operational protocol, not a governance spec; it operationalizes §VII, it does not amend it |
 | Open Unknowns    | 3 registered in the sidecar at the end of this file (MAQT-001 to MAQT-003, all non-blocking); MAQT-002 also indexed in `Unknowns.md`. The DECISION NEEDED items remain open by design |
 | Body Stability   | Volatile — expect this to change after the first real attempt      |
 | Owning Domain    | Tests/                                                               |
-| Last Reviewed    | 2026-10-25 — Claude (human-directed, PKC-038) canonical-source note added at §8.8 (this file's §8.6–§8.10 is canonical; the companion pack is a derived excerpt) and a note that the Cycle 1 task is spent; no protocol text changed. Prior: 2026-10-25 — Claude (human-directed, PKC-031) Status "Proposed" changed to "Exploration"; no other change. Prior: 2026-10-24 — Resolution Log backfilled for the 2026-09-18, 2026-09-20 and 2026-09-21 passes, from this field's Prior chain and the section and sidecar dates; no protocol change. Prior: 2026-10-10 — sidecar added (MAQT-001 to MAQT-003); no protocol change. Prior: 2026-09-21 — §8.6–§8.8 role pack/task; §8.9 Handoff Schemas + §8.10 Collaboration Friction Log added (ChatGPT collaboration review). Status unchanged: Proposed Protocol — Not Yet Run. |
+| Last Reviewed    | 2026-10-25 — Claude (human-directed, PKC-041) Status corrected: Cycle 1 ran 2026-09-22 per the archived changelog, so "Protocol Not Yet Run" was wrong; no protocol text changed. Prior: 2026-10-25 — Claude (human-directed, PKC-038) canonical-source note added at §8.8 (this file's §8.6–§8.10 is canonical; the companion pack is a derived excerpt) and a note that the Cycle 1 task is spent; no protocol text changed. Prior: 2026-10-25 — Claude (human-directed, PKC-031) Status "Proposed" changed to "Exploration"; no other change. Prior: 2026-10-24 — Resolution Log backfilled for the 2026-09-18, 2026-09-20 and 2026-09-21 passes, from this field's Prior chain and the section and sidecar dates; no protocol change. Prior: 2026-10-10 — sidecar added (MAQT-001 to MAQT-003); no protocol change. Prior: 2026-09-21 — §8.6–§8.8 role pack/task; §8.9 Handoff Schemas + §8.10 Collaboration Friction Log added (ChatGPT collaboration review). Status unchanged: Proposed Protocol — Not Yet Run. |
 | Sidecar Link     | Auditor Notes & Unknowns (end of this file)                          |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present.   |
 
@@ -577,6 +577,8 @@ Log the result — full pass, partial pass, or informative failure — in `Tests
 **Resolution Path:** Record the value used in the first run; calibrate from the Collaboration Friction Log.
 
 ## Resolution Log
+
+- 2026-10-25: **Status corrected (PKC-041, human-directed; no protocol text changed).** The Status line read "Exploration — Protocol Not Yet Run", but `Archive/Logs/Progress_Log_Changelog.md` records MAQT Cycle 1 as run on 2026-09-22 (Gemini Planner, Copilot Skeptic, Grok Auditor, logical isolation only), and `Tests/Field_Logs/RUN_CARD-MAQT-Tier2.md` cites it as prior evidence. It now reads as stated in the header. The Cycle 1 evidence entry is not in the repo; that gap is recorded in `Tests/Field_Logs.md`, and nothing was reconstructed. Earlier log entries that say "Protocol Not Yet Run" were true when written and are left.
 
 - 2026-10-25: **Canonical source for §8.6–§8.10 stated (PKC-038 ruling, human-directed; no protocol text changed).** A note at §8.8 says this file is canonical and `Tests/MAQT_Role_Cards_and_Cycle1_Task.md` is a derived, non-canonical excerpt, and that the Cycle 1 task has been used (run 2026-09-22, index in `Operations/Ops_Scope_Map.md`). The companion pack carries the matching note. The Status line still reads "Protocol Not Yet Run"; that is a separate open item (PKC-041).
 
