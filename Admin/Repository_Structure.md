@@ -16,9 +16,9 @@
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-10-23 — Claude (human-directed) corrections from a Vibe per-file audit: 2026-10-03/10-04 passes logged, RS-001 refreshed; open items parked in `Admin/Progress_Log.md` §Parked Concerns, not fixed here. Prior: 2026-10-07 root-table addition (logged), 2026-10-04 and 2026-10-03 edits, 2026-08-11 |
-| Auditor          | Claude — 2026-10-23 corrections (human-directed, from a Vibe per-file audit); 2026-10-03/10-04/10-07 passes human-directed, agents not recorded; prior: Claude — Automation/ formalized in Section II (external ChatGPT review finding, verified before applying), human-directed; prior: Grok — correction pass, 2026-08-09 |
-| Open Unknowns    | 1                                                                   |
+| Last Audit       | 2026-10-25 — Claude (human-directed, PKC-013): RS-001 resolved by defining a minimal review for new non-markdown file types in Section I, with a retroactive note for the `.py` and `.zip` files already present; Open Unknowns 1 → 0. Prior: 2026-10-23 — Claude (human-directed) corrections from a Vibe per-file audit: 2026-10-03/10-04 passes logged, RS-001 refreshed; open items parked in `Admin/Progress_Log.md` §Parked Concerns, not fixed here. Prior: 2026-10-07 root-table addition (logged), 2026-10-04 and 2026-10-03 edits, 2026-08-11 |
+| Auditor          | Claude — 2026-10-25 RS-001 resolution (human-directed); prior: Claude — 2026-10-23 corrections (human-directed, from a Vibe per-file audit); 2026-10-03/10-04/10-07 passes human-directed, agents not recorded; prior: Claude — Automation/ formalized in Section II (external ChatGPT review finding, verified before applying), human-directed; prior: Grok — correction pass, 2026-08-09 |
+| Open Unknowns    | 0                                                                   |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | Low                                                                 |
 | Sidecar Link     | #auditor-notes--unknowns                                            |
@@ -148,9 +148,19 @@ It does not generalize to other folders.
 ### File Extension
 
 All doctrine, specification, and governance files use `.md` (Markdown).
-Scripts use their native extension (`.py`). No other extensions are
-currently in use. New file types require a RS-001 review before
-introduction.
+Scripts use their native extension (`.py`). One `.zip` (a Colab bundle) also
+sits in `Automation/`, and `Archive/` holds an archival zip.
+
+**New non-markdown file types (RS-001 review, defined 2026-10-25).** Before a
+new file type is introduced it needs a short Track A note stating (1) the type,
+(2) its folder, (3) its naming convention, and (4) whether any audit or
+integrity check depends on it. The retroactive note for the types already
+present follows; it records what is observed and imposes no renaming.
+
+| Type | Where | Naming | Audit / check dependence |
+|------|-------|--------|--------------------------|
+| `.py` | `Automation/` (eleven files, described in `Automation/README.md`); `Tests/Automation/` (`test_harness_prompt.py`, offline tests) | Mixed, as found (for example `AUDIT_HARNESS.py`, `audit_lib.py`, `Colab_Launcher.py`); not standardized here. `Cold_session_manifest.py` is JSON despite its extension and keeps its name because `Routing.md` registers it | Yes: `integrity_check.py` and `AUDIT_HARNESS.py` are audit tools, and both import `audit_lib.py`; `integrity_check.py` also imports `parser.py` (per `Automation/README.md`) |
+| `.zip` | `Automation/Candidate3_Colab_Hybrid.zip`; one archival zip under `Archive/Astroid-miner/` | As found | None stated |
 
 ---
 
@@ -428,14 +438,15 @@ The LazarusForge project spans three repositories with distinct roles:
 
 | Field         | Value                          |
 |---------------|--------------------------------|
-| Status        | Open                           |
+| Status        | Resolved                       |
 | Risk          | Low                            |
 | Priority      | Minor                          |
 | Type          | Governance                     |
 | Blocking      | No                             |
 | Owner         | Admin/Repository_Structure.md  |
 | First Logged  | 2026-06-05                     |
-| Last Reviewed | 2026-10-23                     |
+| Last Reviewed | 2026-10-25                     |
+| Resolved      | 2026-10-25                     |
 
 **Description:** Section I states that new file types require a RS-001
 review before introduction. The review procedure itself is not yet
@@ -446,6 +457,10 @@ was the only non-markdown file; `Automation/` now holds eleven `.py` files
 and one `.zip`, so the trigger described here has already fired repeatedly
 without a defined review.)* If scripts, data files, or other formats are added, the naming
 and placement convention may not apply cleanly.
+
+**Resolved 2026-10-25 (human ruling, PKC-013):** the deferral was dropped, because the
+trigger had already fired. The minimal review (type, folder, naming, audit dependence) is
+now written into Section I, with one retroactive note covering the files already present.
 
 **Resolution Path:** Payment via Specification — define minimum review
 criteria when a non-markdown file type is first proposed. Likely a
@@ -512,6 +527,8 @@ recognition; no new action required.
 ---
 
 ### Resolution Log
+
+- 2026-10-25: **RS-001 resolved (human-directed, PKC-013 ruling).** Section I now states the minimal review for a new non-markdown file type and carries a retroactive note for the `.py` and `.zip` files already present, drawn from `Automation/README.md` and the folder contents; no file renamed or moved. RS-001 moved to Resolved and Open Unknowns went 1 → 0. Companion edits: `Unknowns.md` v5.69, `Admin/Adm_Scope_Map.md`.
 
 - 2026-10-23: Bookkeeping backfill (human-directed, from a Vibe per-file audit, each finding checked against source first): entries added below for the 2026-10-03 and 2026-10-04 passes; Last Audit and Auditor extended; RS-001's stale "only non-markdown file" statement refreshed (Resolution Path and deferral unchanged). No doctrine changed.
 

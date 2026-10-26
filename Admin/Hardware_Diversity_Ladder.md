@@ -17,7 +17,7 @@
 | Body Stability   | Volatile                                                               |
 | Spec Gates       | 0/6                                                                    |
 | Verification Ref | Admin/Verification_Gates.md                                        |
-| Last Audit       | 2026-10-23 — Claude (human-directed) corrections from a Vibe per-file audit, each checked against source first: Last Audit had not been advanced past 2026-08-03 by the two 2026-08-06 Synthesizer passes (human-directed) or the 2026-08-11 Grok pseudo-audit (findings only), all logged below; Near-Term Action Items item 3 marked done (GMP-011 resolved 2026-09-23). No tier, requirement or status changed. Prior: 2026-08-03                                                             |
+| Last Audit       | 2026-10-23 — Claude (human-directed) corrections from a Vibe per-file audit, each checked against source first: Last Audit had not been advanced past 2026-08-03 by the two 2026-08-06 Synthesizer passes (human-directed), logged below; the 2026-08-11 Grok pseudo-audit (findings only) is not counted per the PKC-020 ruling of 2026-10-25; Near-Term Action Items item 3 marked done (GMP-011 resolved 2026-09-23). No tier, requirement or status changed. Prior: 2026-08-03                                                             |
 | Auditor          | Claude — 2026-10-23 corrections (human-directed, from a Vibe per-file audit); 2026-08-06 Synthesizer passes (human-directed) and 2026-08-11 Grok pseudo-audit per the Resolution Log; prior: Claude — Synthesizer, human-directed. Drafted from external candidate material (Grok), verified against `Operations/Electronics.md` TMR doctrine, `Architecture/Cognitive_Frameworks.md` Framework D, `Admin/Governance_Charter.md` (Genesis Phase Protocol, Axiom Q-2), and `Admin/Security_Protocols.md` SEC-007a/b before integration — all cross-references confirmed exact against source, 2026-08-03 |
 | Open Unknowns    | 0 — this file supplies implementation reference for `Admin/Governance_Migration_Protocol.md` §VII's own open items (VII.6), not new tracked unknowns of its own |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
@@ -132,6 +132,8 @@ Any future edit that softens this file's "currently declarable, not achieved" fr
 ---
 
 ## Resolution Log
+
+- 2026-10-25: **Last Audit wording aligned with the PKC-020 ruling (no content change).** The 2026-10-23 header text said the 2026-08-11 Grok pseudo-audit (findings only) had not advanced Last Audit, as though it should have. Under the ruling of 2026-10-25 a findings-only pseudo-audit does not advance it, so the text now says it is not counted. The Last Audit date (2026-10-23) and every field value are unchanged.
 
 - 2026-10-25: **Clarification of the 2026-08-11 entry (PKC-017; no doctrine change).** The 2026-08-11 entry's "Spec Gates N/A / left locked" is loose wording. The File State value 0/6 is authoritative: this file is Draft doctrine, is not on the `File_Template.md` exemption list, and no gate has passed. "Left locked" meant no gate was advanced. The 2026-08-11 entry is left as written (append-only). No tier claim, field or Unknown changed. Human-directed.
 

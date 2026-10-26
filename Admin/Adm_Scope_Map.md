@@ -11,7 +11,7 @@
 | Spec Gates       | N/A — this file is a cross-reference index, not a specification     |
 | Open Unknowns    | 0 (surfaces existing unknowns from owning files; creates none)      |
 | Owning Domain    | Admin/                                                               |
-| Last Reviewed    | 2026-10-23 — Charter entry Risk corrected Critical → High (Risk/Priority conflation; found by a Vibe audit of the Charter, checked against its File State and GOV-005 sidecar). Also 2026-10-23: Progress_Log entry updated for its new Parked Concerns section. Prior: 2026-10-04 — Load-bearing map (Tier 0–4) added from `Tests/Admin_Governance_Teardown_POC.md`, then Tier 1/Tier 2 file-count and KB figures corrected the same day (inherited two arithmetic errors from the source POC's own Totals line — see that file's Resolution Log). No Admin files merged or deleted. Prior: 2026-10-03 metadata catch-up. Field meaning: last substantive map check/modification, not a full-folder re-audit of every Admin file. |
+| Last Reviewed    | 2026-10-25 — Repository_Structure entry updated for RS-001 resolved (0 Open Unknowns). Prior: 2026-10-23 — Charter entry Risk corrected Critical → High (Risk/Priority conflation; found by a Vibe audit of the Charter, checked against its File State and GOV-005 sidecar). Also 2026-10-23: Progress_Log entry updated for its new Parked Concerns section. Prior: 2026-10-04 — Load-bearing map (Tier 0–4) added from `Tests/Admin_Governance_Teardown_POC.md`, then Tier 1/Tier 2 file-count and KB figures corrected the same day (inherited two arithmetic errors from the source POC's own Totals line — see that file's Resolution Log). No Admin files merged or deleted. Prior: 2026-10-03 metadata catch-up. Field meaning: last substantive map check/modification, not a full-folder re-audit of every Admin file. |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
 ---
@@ -202,7 +202,7 @@ Note: created same day as this Scope_Map build's own findings were still fresh �
 **Correction 2026-09-13:** this entry previously said 9 (RIP-001-011). A staleness correction (9→8), a ChatGPT audit pass (8→7), and RIP-011/RIP-012 jointly closing and Ratifying 2026-09-05 (7→5) all happened after this map's build — corrected to 5.
 
 ### `Admin/Repository_Structure.md`
-**Status:** Exploration · 0/6 · 1 Open Unknown (RS-001 open; RS-002 resolved 2026-08-09 accepted outlier; RS-003 resolved 2026-08-09) · Risk: Low
+**Status:** Exploration · 0/6 · 0 Open Unknowns (RS-001 resolved 2026-10-25, non-markdown file-type review defined; RS-002 resolved 2026-08-09 accepted outlier; RS-003 resolved 2026-08-09) · Risk: Low
 **Does:** No-version-suffix filename convention; folder assignment doctrine; root-file doctrine; Archive/ directory doctrine; planned directory addition trigger conditions.
 **Does not (arrow):** File content standards (`File_Template.md`) - governance hierarchy (`Governance_Charter.md`) - navigation/current file map - Rename Registry (`Archive/Rename_Registry.md`) - migration procedures (`GMP` Track A) - integrity enforcement (`Repository_Integrity_Protocol.md`).
 
