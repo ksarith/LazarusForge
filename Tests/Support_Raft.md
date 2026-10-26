@@ -19,7 +19,7 @@
 | **Body Stability** | Volatile |
 | **Spec Gates** | 0/6 |
 | **Verification Ref** | `Admin/Verification_Gates.md` |
-| **Last Audit** | 2026-06-11 (Gemini). Body changes since, per the Resolution Log: 2026-07-12 Ethical Anchor correction and template backfill. The 2026-08-10 Grok pseudo-audit (findings only) is not counted pending Progress_Log PKC-020. Header annotated 2026-10-24. |
+| **Last Audit** | 2026-06-11 (Gemini). Body changes since, per the Resolution Log: 2026-07-12 Ethical Anchor correction and template backfill. The 2026-08-10 Grok pseudo-audit (findings only) is not counted per the PKC-020 ruling of 2026-10-25. Header annotated 2026-10-24. |
 | **Auditor** | Gemini (Auditor) |
 | **Open Unknowns** | 12 (SR-001 to SR-009 and SR-011 to SR-013; corrected 2026-10-24 from 13, which counted SR-010, Resolved 2026-06-11 and kept in the sidecar as institutional memory; matches the 12 SR rows in `Unknowns.md`) |
 | **Active Disputes** | 0 |
@@ -667,6 +667,8 @@ None are masters. Each occupies a scope. The Raft is not headquarters. It is an 
 ---
 
 ### Resolution Log
+
+- 2026-10-25: **Header wording updated (PKC-020 ruling; no content change).** The Last Audit annotation that said the logged findings-only pseudo-audit was not counted "pending PKC-020" now cites the ruling of 2026-10-25: a findings-only pseudo-audit does not advance Last Audit (`Admin/Auditor_Protocols.md` v0.45, Rule 10 addendum). No date, field value, Unknown or Spec Gate changed.
 
 - 2026-10-24: Header and log corrected (human-directed, from a Vibe per-file audit; each finding checked against source first): Last Audit annotated; Open Unknowns corrected from 13 to 12 (the 13 counted Resolved SR-010); the legacy table below now has a label. The `Architecture/Geck_forge_seed.md` rows in the dependency tables are not dangling: that file exists (the Geck file deleted 2026-10-24 was a stray duplicate in `Admin/`). No sidecar, dependency or Spec Gate changed.
 

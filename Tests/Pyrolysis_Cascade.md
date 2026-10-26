@@ -15,7 +15,7 @@
 | Spec Gates       | 0/6 (not yet audited)                                               |
 | Verification Ref | `Admin/Verification_Gates.md`                                    |
 | First Logged     | 2026-08-04                                                          |
-| Last Audit       | — (no Gate audit has been run). Body-changing passes recorded in the Resolution Log: 2026-08-04 ID-collision fix, 2026-08-23 and 2026-08-24 dependency syncs on PYC-001 and PYC-003; the 2026-08-11 Grok pseudo-audit (findings only) is not counted pending Progress_Log PKC-020. Header corrected 2026-10-24. |
+| Last Audit       | — (no Gate audit has been run). Body-changing passes recorded in the Resolution Log: 2026-08-04 ID-collision fix, 2026-08-23 and 2026-08-24 dependency syncs on PYC-001 and PYC-003; the 2026-08-11 Grok pseudo-audit (findings only) is not counted per the PKC-020 ruling of 2026-10-25. Header corrected 2026-10-24. |
 | Auditor          | — (Claude — Synthesizer, PC-/PYC- namespace collision fix only, human-directed, 2026-08-04) |
 | Open Unknowns    | 8 (PYC-001 … PYC-008)                                                 |
 | Active Disputes  | 0                                                                   |
@@ -295,6 +295,8 @@ No test may be run that violates the hard preconditions in Scope Boundary.
 ---
 
 ### Resolution Log
+
+- 2026-10-25: **Header wording updated (PKC-020 ruling; no content change).** The Last Audit annotation that said the logged findings-only pseudo-audit was not counted "pending PKC-020" now cites the ruling of 2026-10-25: a findings-only pseudo-audit does not advance Last Audit (`Admin/Auditor_Protocols.md` v0.45, Rule 10 addendum). No date, field value, Unknown or Spec Gate changed.
 
 - 2026-10-24: Last Audit annotated (human-directed, from a Vibe per-file audit; each finding checked against source first): it still says no Gate audit has been run (true), and now lists the later passes the log records. Sidecar Last Reviewed fields on PYC-002 and PYC-004 to PYC-008 are absent and were not added (Progress_Log PKC-040). No sidecar, Unknown or Spec Gate changed.
 

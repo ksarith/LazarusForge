@@ -17,7 +17,7 @@
 | Body Stability   | Draft                                                               |
 | Spec Gates       | 1/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-08-03 (the logged 2026-08-11 Grok pseudo-audit, findings only, is not counted here pending Progress_Log PKC-020; log order corrected 2026-10-24)                                                          |
+| Last Audit       | 2026-08-03 (the logged 2026-08-11 Grok pseudo-audit, findings only, is not counted here per the PKC-020 ruling of 2026-10-25; log order corrected 2026-10-24)                                                          |
 | Auditor          | Claude — Synthesizer/Auditor, human-directed, 2026-08-03: corrective merge of a Copilot/Grok exchange — GH-004/GH-012/CSL-A03 gained complementary elaboration (Payment via Specification only, see AP-033 in Admin/Auditor_Protocols.md); GH-007/GH-008/GH-009/GH-011 left untouched, already better-specified than what was proposed; prior: Claude — Synthesizer/Auditor                                        |
 | Open Unknowns    | 13                                                                  |
 | Active Disputes  | 0                                                                   |
@@ -806,6 +806,8 @@ Full Battery deferred to Candidate Spec. No specification-level claims promoted.
 ---
 
 ### Resolution Log
+
+- 2026-10-25: **Header wording updated (PKC-020 ruling; no content change).** The Last Audit annotation that said the logged findings-only pseudo-audit was not counted "pending PKC-020" now cites the ruling of 2026-10-25: a findings-only pseudo-audit does not advance Last Audit (`Admin/Auditor_Protocols.md` v0.45, Rule 10 addendum). No date, field value, Unknown or Spec Gate changed.
 
 - 2026-10-24: Resolution Log put in newest-first order (human-directed, from a Vibe per-file audit; each finding checked against source first): the 2026-08-03 corrective-merge entry (below a stray `---` and after the 2026-07-12 entries) moved up with the other older entries reversed, and the divider removed; entries themselves unchanged. A note was added under the Gate 1 Audit Record flagging its conflict with the header and Epistemic State. No gate, sidecar or Unknown changed.
 

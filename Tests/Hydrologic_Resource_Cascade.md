@@ -17,7 +17,7 @@
 | Body Stability   | Volatile                                                            |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-06-28 (the 2026-06-30 multi-agent audit pass and the 2026-08-11 Grok pseudo-audit, findings only, are logged below; the pseudo-audit is not counted here pending Progress_Log PKC-020; noted 2026-10-24)                                                          |
+| Last Audit       | 2026-06-28 (the 2026-06-30 multi-agent audit pass and the 2026-08-11 Grok pseudo-audit, findings only, are logged below; the pseudo-audit is not counted here per the PKC-020 ruling of 2026-10-25; noted 2026-10-24)                                                          |
 | Auditor          | Grok (Synthesizer); revised Gemini + Claude (Synthesizer/Auditor)   |
 | Open Unknowns    | 2 Formal / 6 Unregistered (HR-003–HR-010 pending sidecar registration) |
 | Active Disputes  | 0                                                                   |
@@ -238,6 +238,8 @@ Each zone improves water quality for the next while generating distinct value st
 ---
 
 ### Resolution Log
+
+- 2026-10-25: **Header wording updated (PKC-020 ruling; no content change).** The Last Audit annotation that said the logged findings-only pseudo-audit was not counted "pending PKC-020" now cites the ruling of 2026-10-25: a findings-only pseudo-audit does not advance Last Audit (`Admin/Auditor_Protocols.md` v0.45, Rule 10 addendum). No date, field value, Unknown or Spec Gate changed.
 
 - 2026-10-24: Resolution Log put in newest-first order (human-directed, from a Vibe per-file audit; each finding checked against source first): the 2026-06-30 multi-agent audit entry had been placed after the two 2026-06-28 entries; the older entries are now reversed, text unchanged. Last Audit annotated. No sidecar (including HR-UNK-002's Last Reviewed, Progress_Log PKC-035), Unknown or Spec Gate changed.
 
