@@ -11,7 +11,7 @@
 | Spec Gates       | N/A — this file is a cross-reference index, not a specification     |
 | Open Unknowns    | 0 (surfaces existing unknowns from owning files; creates none)      |
 | Owning Domain    | Operations/                                                          |
-| Last Reviewed    | 2026-10-24 — Open Unknowns counts refreshed for eight entries from their owning files' headers (Plastics, Air_Scrubber, Gate_01, 02, 03, 04, 05, 07); Does / Does-not text not re-derived (Progress_Log PKC-033). Prior: 2026-10-10 — Automotive.md + Robotics.md Proposed stubs registered|
+| Last Reviewed    | 2026-10-25 — Status of three entries (Automotive, Robotics, Exception_Evidence) changed from Proposed to Exploration to match their owning files (PKC-031); content refresh still open under PKC-033. Prior: 2026-10-24 — Open Unknowns counts refreshed for eight entries from their owning files' headers (Plastics, Air_Scrubber, Gate_01, 02, 03, 04, 05, 07); Does / Does-not text not re-derived (Progress_Log PKC-033). Prior: 2026-10-10 — Automotive.md + Robotics.md Proposed stubs registered|
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
 ---
@@ -31,7 +31,7 @@ Third folder in the Scope_Map rollout, following `Admin/Adm_Scope_Map.md` (2026-
 
 
 ### `Operations/Automotive.md`
-**Status:** Proposed · 0/6 · 8 Open Unknowns (AU-002/003/004 Blocking for stated physical work; AU-001–AU-008) · Risk: High (kinetic / HV)
+**Status:** Exploration · 0/6 · 8 Open Unknowns (AU-002/003/004 Blocking for stated physical work; AU-001–AU-008) · Risk: High (kinetic / HV)
 **Does:** Operations-layer home for salvage-aware vehicle systems — hard floors AF-1 to AF-13, functional blocks A–J (thresholds Placeholder), interfaces to Energy/Electronics/Gates/Admin. Workshop and controlled private ground only.
 **Does not (arrow):** Road-legality or public-road testing · Energy.md pack chemistry · Electronics.md general firmware trust · Robotics.md (mobile bases share interfaces only) · Measured range/autonomy claims.
 **Upstream:** Energy.md · Electronics.md · Safety_Protocols.md · Environmental_Constraints.md
@@ -84,7 +84,7 @@ Third folder in the Scope_Map rollout, following `Admin/Adm_Scope_Map.md` (2026-
 
 
 ### `Operations/Robotics.md`
-**Status:** Proposed · 0/6 · 8 Open Unknowns (RB-001–RB-008) · Risk: High (force / human-shared space)
+**Status:** Exploration · 0/6 · 8 Open Unknowns (RB-001–RB-008) · Risk: High (force / human-shared space)
 **Does:** Operations-layer home for salvage-aware mobile bases and manipulators — hard floors RF-1 to RF-12, functional blocks A–J (thresholds Placeholder), interfaces to Energy/Electronics/Automotive/Gates/Admin/Ethical_Constraints. Controlled cell / supervised teleoperation only.
 **Does not (arrow):** Unsupervised human-shared operation · AGI/embodiment claims · Electronics.md general firmware trust · Automotive.md on-road systems · Weaponized configurations.
 **Upstream:** Energy.md · Electronics.md · Safety_Protocols.md · Ethical_Constraints.md
@@ -102,7 +102,7 @@ Third folder in the Scope_Map rollout, following `Admin/Adm_Scope_Map.md` (2026-
 **Note:** Added to this map 2026-09-13 — created 2026-09-08 from the HP-007 skeleton, after this map's prior 2026-08-15 Last Reviewed date; missed by the original build for that reason, not excluded deliberately.
 
 ### `Operations/Exception_Evidence.md`
-**Status:** Proposed · 0/6 · FL-006-A (structural owner named; population and demonstrated maintenance still open) · Risk: Medium
+**Status:** Exploration · 0/6 · FL-006-A (structural owner named; population and demonstrated maintenance still open) · Risk: Medium
 **Does:** Evidence-control specification and index for Oversight State's exception evidence portfolio — defines evidence classes (episodic packages + standing reference), required fields, deposit and handoff rules, freshness/provenance expectations, and pointers to where authoritative records live. Fills the Operations cell in `Architecture/Forge_flow.md`'s HP-011 Transition Ownership table that was previously blank (FL-006 half A). Carries an explicit anti-policy rule: evidence in or referenced by this file is not a decision, authorization, routing instruction, or policy.
 **Does not (arrow):** Store the entire operational evidence universe — episodic packet bodies and standing data live in the operational records this file *points to* · decide want/need policy (stays in `Architecture/Forge_flow.md`) · own routing or Escalate authority (FL-006 half B, separately owned by EC-003) · resolve GOV-006 or GMP-004 · replace `Gate_01_Intake.md` or `Gate_02_Triage.md` procedures.
 **Note:** Created 2026-09-18. Upstream gates deposit to this file's control schema; they do not own the Oversight evidence portfolio. Operational maintainer pending (same honesty as `Tooling_Inventory.md` / TI-001). FL-006 remains Open.
@@ -143,6 +143,8 @@ Three corrections applied this pass (`Gate_05_Separation_Thermal.md`, `Gate_06_F
 ---
 
 ## Resolution Log
+
+- 2026-10-25: Status of the Automotive, Robotics and Exception_Evidence entries changed from "Proposed" to "Exploration", matching their owning files after the PKC-031 ruling (found by the Vibe baseline pull). The EC-013 "Proposed/Placeholder" labels on five other entries describe a descent-sequence role, not a file Status, and were left. No Does / Does-not text, count or Unknown changed. Human-directed.
 
 - 2026-10-24: Open Unknowns counts refreshed for eight entries (human-directed, from a Vibe per-file audit; each finding checked against source first): Plastics 5→4, Air_Scrubber 4→6, Gate_01 7→6, Gate_02 7→9, Gate_03 7→8, Gate_04 8→9, Gate_05 9→10, Gate_07 5→4, each taken from the owning file's current File State header. The Does / Does-not text of those entries was not re-derived (parked as Progress_Log PKC-033). The "all 12 files" claim in the Gaps section is now date-stamped 2026-08-08. Registration of `Exception_Evidence.md` (the entry carries "Created 2026-09-18") was never logged here; the date it was added to this map is not recorded.
 
