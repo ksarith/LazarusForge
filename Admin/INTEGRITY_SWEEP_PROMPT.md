@@ -1,5 +1,5 @@
 # INTEGRITY_SWEEP_PROMPT.md
-**Version 1.0.2**
+**Version 1.0.3**
 
 ## File State
 
@@ -8,8 +8,8 @@
 | Status         | Draft                                                               |
 | Spec Gates     | N/A — operational prompt template, not a doctrine or specification claim |
 | Verification Ref | Admin/Repository_Integrity_Protocol.md                            |
-| Last Audit     | 2026-10-23 — field corrected (Claude, human-directed, from a Vibe per-file audit): the 2026-08-31 v1.0.2 pass (one real fix applied; two findings from the same sweep checked and declined as false positives — see Resolution Log) had not been recorded here. No prompt text changed. Prior: 2026-08-30                                                          |
-| Auditor        | Claude — 2026-10-23 field correction (human-directed); 2026-08-31 v1.0.2 pass per the Resolution Log; prior: Claude — Synthesizer, human-directed, first draft, 2026-08-30. Consolidates a prompt refined across several morning-audit sessions run by Grok on external automation; captured here so the function survives independent of any one automation config. |
+| Last Audit     | 2026-10-26 — v1.0.2 → v1.0.3, from base v1.0.2 (human-directed, PKC-026): one check added, step 13 (Routing and Discovery list the same active files). Prior: 2026-10-23 — field corrected (Claude, human-directed, from a Vibe per-file audit): the 2026-08-31 v1.0.2 pass (one real fix applied; two findings from the same sweep checked and declined as false positives — see Resolution Log) had not been recorded here. No prompt text changed. Prior: 2026-08-30                                                          |
+| Auditor        | Claude — 2026-10-26 step 13 added (human-directed); prior: Claude — 2026-10-23 field correction (human-directed); 2026-08-31 v1.0.2 pass per the Resolution Log; prior: Claude — Synthesizer, human-directed, first draft, 2026-08-30. Consolidates a prompt refined across several morning-audit sessions run by Grok on external automation; captured here so the function survives independent of any one automation config. |
 | Open Unknowns  | 0                                                                    |
 | Ethical Anchor | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
@@ -65,6 +65,7 @@ Follow the repo's own rules where possible:
 10. List what changed in the last 3 days (GitHub commits API since window start if available; otherwise dated body text in opened files).
 11. List Blocking/Critical unknowns from Unknowns.md watches; only claim sidecar parity for files actually opened.
 12. Open Maintenance tasks: limited, concrete, with raw URLs.
+13. Check that Routing.md's URL table and Discovery.md's tree list the same active files, Archive/ excepted (Routing's own scope says Archive omissions are not drift; do not fire on that append-only directory). `.py` sources in Automation/ are listed in both and need no separate exception; packaged archives are excluded from Routing by design. A file present in one and absent from the other is a finding, unless that file's own header says it is deliberately unregistered, in which case report it as a note, not a defect.
 
 Report structure (keep this shape):
 - Integrity Findings (Major first, then Constitutional/Ethical Anchor result, identity/V0 note)
@@ -93,6 +94,8 @@ End with a one-paragraph bottom line: constitutional clean? biggest real finding
 ---
 
 ## Resolution Log
+
+- 2026-10-26: v1.0.3 — from base v1.0.2, one check added (human-directed, PKC-026; wording refined after a Vibe review of the proposal). Step 13 compares Routing.md's URL table with Discovery.md's tree for the same active files, Archive/ excepted, with no special case for Automation `.py` sources, and treats a file whose own header says it is deliberately unregistered as a note rather than a defect. No existing step changed or was renumbered.
 
 - 2026-08-31: v1.0.2 — one real fix from Grok's morning integrity sweep, two findings from the same report checked and confirmed as false positives rather than acted on. Real fix: Verification Ref field listed `Admin/Repository_Integrity_Protocol.md, Admin/Forge_Audit_Kit.md` — `File_Template.md` states explicitly "Verification Ref must point to `Admin/Verification_Gates.md`. Not Forge_Audit_Kit.md," and neither sibling exemption-class-6 file (`PROBE_INVOCATION.md`, `BATTERY_SEED.md`) mixes files there — both point to a single specific `Admin/Auditor_Protocols.md` section. Corrected to point at `Admin/Repository_Integrity_Protocol.md` alone, matching that pattern; the Kit remains correctly cited in the "Derived from" line below the table, where it already belonged. The same report's other two "Minor" findings — reduced File State on seven Challenges/ Problem-Statement files, and Chemistry.md missing a "Pending Ratification" row — were checked against `File_Template.md` directly and found to be false positives: the lean Challenges schema is explicitly documented there as "a deliberate, documented choice for this subtype, not a truncated version of the full schema," and "Pending Ratification" is not a File_Template.md column at all. Neither acted on.
 - 2026-08-30: v1.0.1 — two small hardening edits, both Grok-proposed after reviewing v1.0 against a live run, both accepted without modification: (1) the V0 legacy-alias line now glosses explicitly that it's a historical repo name, not a project version, to prevent a future reader from misreading the identity check as a version check; (2) step 8's Dependency Cluster staleness check gained an explicit instruction never to grade an ID as live/resolved from the cluster tree text alone — always open the owning sidecar or Unknowns Active Index first. Grok's third suggestion (promoting Status from Draft to "Active — Operational Template") held pending confirmation the automation is actually pulling from this file rather than a hand-copied config; not applied here.
