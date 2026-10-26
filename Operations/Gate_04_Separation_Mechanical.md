@@ -30,7 +30,7 @@
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-09-09 — MG-009 added, diverged duplicate Resolution Log merged; prior: 2026-08-14 (Claude Round 4 review), 2026-08-10 (Grok pseudo-audit), 2026-06-08 rename fixes, 2026-05-15 |
+| Last Audit       | 2026-09-09 — MG-009 added, diverged duplicate Resolution Log merged; prior: 2026-08-14 (Claude Round 4 review), 2026-08-10 (Grok pseudo-audit, findings only, not counted per the PKC-020 ruling of 2026-10-25), 2026-06-08 rename fixes, 2026-05-15 |
 | Auditor          | Claude — Retrofit/Auditor                                           |
 | Open Unknowns    | 9                                                                   |
 | Active Disputes  | 1                                                                   |
@@ -957,6 +957,8 @@ them defeats the purpose of having a mirrored stopgap.
 ---
 
 ### Resolution Log
+
+- 2026-10-25: **Last Audit annotation aligned with the PKC-020 ruling (no content change).** The prior-dates chain in Last Audit listed the 2026-08-10 Grok pseudo-audit alongside real audits. It now says the pass was findings only and is not counted. The Last Audit date (2026-09-09) and every field value are unchanged.
 
 - 2026-05-15: MG-001 through MG-005 — Migrated from prose
   Unknowns Registry to structured sidecar format. Content
