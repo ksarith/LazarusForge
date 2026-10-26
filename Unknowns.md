@@ -3,7 +3,7 @@
 
 **Full version history in `Archive/Logs/Unknowns_Changelog.md` (2026-07-19 cleanup pass, following the precedent set by `Archive/Logs/AUDIT_HARNESS_CHANGELOG.md` and `Archive/Logs/Forge_Audit_Kit_Changelog.md`; scrubbed to current-version-only 2026-07-28 — the "current plus last four in full" window was itself compressed further, since the changelog carries full text for every version back to v1.0 (the in-file Audit Trail was moved there under Rule 4). This block now keeps only the current version.)**
 
-**Version 5.68 -- 2026-10-25. Priority column corrected for EM-001–003; PKC-024 pass complete (human-directed).** `Challenges/Emergence.md` recorded only a Risk column for the Emergence unknowns, so Priorities were proposed from each entry's text and approved by the human, and the file went to v0.3 with a Priority column: EM-001 Major, EM-002 Major, EM-003 Minor (the Priority column here had carried Risk values High, High, Medium). EM-004 stays Critical; its Risk in the owning file was corrected from Critical to High. With the thirteen rows corrected in v5.67 this clears the Risk-in-Priority class named in PKC-024. Per Size Management Rule 2 this block holds only the current version; v5.67 is in `Archive/Logs/Unknowns_Changelog.md`. No Unknown opened or closed; open counts unchanged. Companion edits: `Challenges/Emergence.md` v0.3.
+**Version 5.69 -- 2026-10-25. RS-001 resolved and removed from the Active Index (human-directed, PKC-013).** The review procedure for new non-markdown file types is now defined in `Admin/Repository_Structure.md` Section I, with a retroactive note for the `.py` and `.zip` files already present, so RS-001 closes (Resolved 2026-10-25) and its row leaves the Repository Structure cluster per Size Management Rule 2; RS-002 and RS-003 were already resolved, so the cluster has no open entries. Per Size Management Rule 2 this block holds only the current version; v5.68 is in `Archive/Logs/Unknowns_Changelog.md`. Companion edits: `Admin/Repository_Structure.md` (Open Unknowns 1 → 0), `Admin/Adm_Scope_Map.md`.
 ---
 
 **Expiry Rule active — see `Admin/Canonical_Terms.md` §4 for the Cycle definition this rule now explicitly references (one calendar year default, not one audit pass — see CT-011). Protocol Performance metrics collecting.**
@@ -756,11 +756,7 @@ RB-007 (Human-shared space unresolved)
 
 ### Repository Structure
 
-| ID | Title | Owning File | Status | Subtype | Priority (Promo) |
-|---|---|---|---|---|---|
-| RS-001 | Non-markdown file type introduction procedure undefined | `Admin/Repository_Structure.md` | Open | — | Minor |
-
-*RS-002 and RS-003 (both Resolved 2026-08-09) do not appear in this active index per Size Management Rule 2 — full closure detail is in `Admin/Repository_Structure.md`'s own Resolution Log.*
+*RS-001 (Resolved 2026-10-25), RS-002 and RS-003 (both Resolved 2026-08-09) do not appear in this active index per Size Management Rule 2 — full closure detail is in `Admin/Repository_Structure.md`'s own Resolution Log. This cluster currently has no open entries.*
 
 ### Precision
 
