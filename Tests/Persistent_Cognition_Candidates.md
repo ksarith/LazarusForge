@@ -17,7 +17,7 @@
 | Body Stability   | Draft                                                                  |
 | Spec Gates       | N/A — candidate-system survey, not a specification to be gated toward promotion |
 | Verification Ref | `Admin/Verification_Gates.md`                                          |
-| Last Audit       | 2026-10-20 — reference correction under AP-029 (logged as no content change, though it edited Candidate 7's fit note); header corrected 2026-10-24. Prior: 2026-09-27                                                              |
+| Last Audit       | 2026-10-25 — v0.16 bump backfilled in the Resolution Log (PKC-039); no content change. Prior: 2026-10-20 — reference correction under AP-029 (logged as no content change, though it edited Candidate 7's fit note); header corrected 2026-10-24. Prior: 2026-09-27                                                              |
 | Auditor          | Claude — Synthesizer, human-directed, 2026-09-27: relabeled Candidate 7's status from "PASS with FI-adjacent observation" to "Observed — mechanism not established," per cross-agent (Claude/Grok/ChatGPT) convergence; closed the indicator-timing open question as not-observable-through-this-surface; added the Persistence Integrity Test Series (persistence boundary, update conflict, provenance probe, ongoing negative control) as the next increment, design only. History condensed here per this file's own Sidecar Governance Rules as it approaches 75KB — full entry-by-entry history lives in the Resolution Log below, not repeated in this field going forward; prior audits: file created (v0.1) → Candidate 3 fully pre-registered across seven cycles (v0.2–v0.7, Grok/ChatGPT review, one fabricated §VII.5-style citation avoided) → Candidate 6 surfaced and passed (v0.8–v0.9) → Candidate 7 surfaced, designed, and run three times (v0.10–v0.14, one fabricated "Parser observes" citation caught and rejected at v0.12) → this entry (v0.15). |
 | Open Unknowns    | 0 (candidates below are explicitly unevaluated, not filed as unknowns) |
 | Active Disputes  | 0                                                                       |
@@ -848,6 +848,8 @@ constraints change)*
 enough to generate a real implementation unknown yet)*
 
 ### Resolution Log
+
+- 2026-10-25: **v0.16 bump backfilled (PKC-039 ruling, human-directed; no content change).** The header reads Version 0.16, but no entry recorded the bump after v0.15 (2026-09-27). The only change in the log after v0.15 is the 2026-10-20 reference correction, so v0.16 is attributed to it; that attribution is inferred from the log, because the bump was not recorded when it was made. That edit changed Candidate 7's fit note, so under the 2026-10-25 ruling it counts as a change, not "no content change"; the 2026-10-20 entry is left as written (append-only). No version bump is made for this log entry itself.
 
 - 2026-10-24: Header corrected (human-directed, from a Vibe per-file audit; each finding checked against source first): Last Audit now covers the 2026-10-20 reference correction. Flag, not a fix: the header reads Version 0.16 while the last versioned entry here is v0.15 (2026-09-27), and the 2026-10-20 entry, the only later one, does not say it bumped the version; where 0.16 came from is not recorded (Progress_Log PKC-039). No candidate, result or status changed.
 

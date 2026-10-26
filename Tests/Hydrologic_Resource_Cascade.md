@@ -225,7 +225,7 @@ Each zone improves water quality for the next while generating distinct value st
 | Blocking      | Operational                                      |
 | Owner         | Tests/Hydrologic_Resource_Cascade.md             |
 | First Logged  | 2026-06-28                                       |
-| Last Reviewed | 2026-06-28                                       |
+| Last Reviewed | 2026-06-30                                       |
 
 **Description:** Recovered fractions (especially silt/clay from first-flush urban or agricultural runoff) may contain heavy metals, pesticides, E. coli, or industrial contaminants. If fine clay lagoons accumulate toxins, zones 4 and 5 pivot from resource generation to hazardous waste remediation. Material usability thresholds for ceramics, growing media, and construction aggregate are unvalidated.
 
@@ -240,6 +240,8 @@ Each zone improves water quality for the next while generating distinct value st
 ### Resolution Log
 
 - 2026-10-25: **Header wording updated (PKC-020 ruling; no content change).** The Last Audit annotation that said the logged findings-only pseudo-audit was not counted "pending PKC-020" now cites the ruling of 2026-10-25: a findings-only pseudo-audit does not advance Last Audit (`Admin/Auditor_Protocols.md` v0.45, Rule 10 addendum). No date, field value, Unknown or Spec Gate changed.
+
+- 2026-10-25: **HR-UNK-002 Last Reviewed refreshed 2026-06-28 → 2026-06-30 (PKC-035 ruling, human-directed; no other change).** The 2026-06-30 multi-agent audit pass turned HR-UNK-002's contaminant exceedance from a static risk note into the defined Containment Mode, which under the ruling counts as changing the unknown's content, so its Last Reviewed moves to that pass's date. The date is taken from the 2026-06-30 entry below; no new review was done. No status, risk, priority, Unknown or Spec Gate changed.
 
 - 2026-10-24: Resolution Log put in newest-first order (human-directed, from a Vibe per-file audit; each finding checked against source first): the 2026-06-30 multi-agent audit entry had been placed after the two 2026-06-28 entries; the older entries are now reversed, text unchanged. Last Audit annotated. No sidecar (including HR-UNK-002's Last Reviewed, Progress_Log PKC-035), Unknown or Spec Gate changed.
 
