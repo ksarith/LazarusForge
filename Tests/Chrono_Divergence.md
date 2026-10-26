@@ -20,7 +20,7 @@
 | Open Unknowns    | 4 (sidecar below; all non-blocking) |
 | Owner            | `Tests/Chrono_Divergence.md` |
 | Last Audit       | 2026-10-25 — Claude (human-directed, PKC-031) Status "Proposed" changed to "Exploration"; no other change. Prior: 2026-10-24 — Claude (human-directed) two dated post-run notes added from the Pilot's own 2026-10-19 record; no version bump, no content revision. Prior: 2026-10-15 — editorial trim after a repo-wide integrity pass (no content change). Last content revision v0.6 (2026-10-14, after ChatGPT's review of v0.4). Earlier audits (ChatGPT, fresh-instance Claude, Grok) are recorded in the Resolution Log. Method only; no forecast portfolio claimed Measured. |
-| Last Updated     | 2026-10-24 (post-run notes only); previously 2026-10-15 |
+| Last Updated     | 2026-10-25 (Status cell only: Proposed → Exploration); previously 2026-10-24 (post-run notes only); previously 2026-10-15 |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
 ---

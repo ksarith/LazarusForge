@@ -20,7 +20,7 @@
 | Open Unknowns    | 0 (surfaces CD-001, owned by `Tests/Chrono_Divergence.md`; creates none) |
 | Owner            | `Tests/Chrono_Divergence.md` |
 | Last Audit       | 2026-10-25 — Claude (human-directed, PKC-031) Status "Proposed" changed to "Exploration"; no other change. Prior: 2026-10-24 — Status cell wording aligned with the 2026-10-19 log entry's "human to confirm"; no protocol change. Prior: 2026-10-19 — Steps 3 and 4 recorded in `FL-20261019-chrono-divergence-pilot-scoring` (reviewer sheets, agreement table, disagreement analysis). No protocol change. Prior: freeze marker recorded 2026-10-16 (Pilot v0.6). Decisions are the human's. History is in the Resolution Log. |
-| Last Updated     | 2026-10-24 (Status cell wording only); previously 2026-10-19 |
+| Last Updated     | 2026-10-25 (Status cell only: Proposed → Exploration); previously 2026-10-24 (Status cell wording only); previously 2026-10-19 |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
 ---
