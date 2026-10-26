@@ -59,3 +59,24 @@ From live `Admin/Forge_Audit_Kit.md`: content-based maintenance trigger; reconci
 
 - Grok authored the original regression pack concept and must not serve as auditor for these cases (design entanglement).
 - Answer key kept outside the repository for the run.
+
+---
+
+## Addendum — operator-held artifact hashes (added 2026-10-26, human-directed)
+
+**Provenance:** these are SHA-256 hashes of operator-held case packages that live **outside the repository**. They are recorded so the exact inputs to the 2026-10-12 run can be identified later; they cannot be checked against the repository tree, and a mismatch with any file in the tree is not drift. The operator key is not recorded here and stays outside the repository. This addendum changes no result, status or claim above. The auditor's replies are not in these packages and are not reproduced here.
+
+The two packages differ in one file only (`Forge_Audit_Kit.md`, one "Derived from" line). Both carry `Unknowns.md` at v5.60; Case B's Kit pins Unknowns v5.58, and Case D's Kit pins v5.60 (a package-only pin, as stated above; the repository Kit was not changed).
+
+| File in package | Case B (SHA-256) | Case D (SHA-256) |
+|---|---|---|
+| `Forge_Audit_Kit.md` | `44b5c5664ea746f0876a222a568cc3e8a80f31ac9daa7a5b1cfd9a22e2b39289` | `ace9c732b67a4c272d7badd595d9843249a9178fff000b46cff140068edebe8f` |
+| `Unknowns.md` | `f6782870c9518dae7d0cc9516c7f6fdd644db7d2f72403d5fe0ee9b5d76dad18` | same as B |
+| `Auditor_Protocols.md` | `ef26245e94cd161ab264ed032042d0a4c2ac0086e17feb03ecdf23f69ad1190c` | same as B |
+| `Ethical_Constraints.md` | `174ed2699eb82bffe2b2a46526430a9da6c953ad55c15bc272647d5e917d76b2` | same as B |
+| `Verification_Gates.md` | `100775e23041b8a53f66960597e603ae5e8f82d24b912b7288b87283c4e77ddd` | same as B |
+| `GEMINI_PROMPT.txt` | `bb5b8ca4b1e1d50bcd4b2380bf7c58e97c8aa6d12495fe961adffbeeaf44a70f` | same as B |
+| Whole zip | `efb0d208b81cfdbc87ea882ad8a231b58ca438ec835abcd6ecbc5209a136f4dc` | `995352bffd0e99672091b0fcaa82cc63e4f7d417540d9f15b9a5f975a0a9b64d` |
+
+The zip hashes belong to the files as held by the operator (`KIT_REGRESSION_CASE_B_Gemini.zip`, `KIT_REGRESSION_CASE_D_Gemini.zip`); re-zipping the same files can give a different zip hash.
+
