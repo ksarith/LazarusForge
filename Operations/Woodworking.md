@@ -20,7 +20,7 @@
 | Body Stability | Volatile |
 | Spec Gates | 0/6 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-10-24 — Claude (human-directed) header corrected to cover the 2026-08-15 Grok resolution-path review, which changed the body (review markers on all five sidecar entries, Last Reviewed bumped) without advancing it; the logged 2026-08-10 Grok pseudo-audit (findings only) is not counted here pending Progress_Log PKC-020. Prior: 2026-05-30 (Gemini — Systems/Auditor); revised 2026-06-08           |
+| Last Audit       | 2026-10-24 — Claude (human-directed) header corrected to cover the 2026-08-15 Grok resolution-path review, which changed the body (review markers on all five sidecar entries, Last Reviewed bumped) without advancing it; the logged 2026-08-10 Grok pseudo-audit (findings only) is not counted here per the PKC-020 ruling of 2026-10-25. Prior: 2026-05-30 (Gemini — Systems/Auditor); revised 2026-06-08           |
 | Auditor | Claude — 2026-10-24 header correction (human-directed, from a Vibe per-file audit); Grok — 2026-08-15 resolution-path review (per the Resolution Log); prior: Gemini — Systems/Auditor |
 | Open Unknowns | 5 |
 | Active Disputes | 0 |
@@ -416,6 +416,8 @@ Fine wood dust suspended in air is explosive. Do not allow dust to accumulate on
 ---
 
 ### Resolution Log
+
+- 2026-10-25: **Header wording updated (PKC-020 ruling; no content change).** The Last Audit annotation that said the logged findings-only pseudo-audit was not counted "pending PKC-020" now cites the ruling of 2026-10-25: a findings-only pseudo-audit does not advance Last Audit (`Admin/Auditor_Protocols.md` v0.45, Rule 10 addendum). No date, field value, Unknown or Spec Gate changed.
 
 - 2026-10-24: Header corrected (human-directed, from a Vibe per-file audit; each finding checked against source first): Last Audit and Auditor now cover the 2026-08-15 Grok review, which had changed the body without advancing them. No doctrine, Unknown or Spec Gate changed.
 

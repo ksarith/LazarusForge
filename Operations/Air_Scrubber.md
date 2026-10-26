@@ -36,7 +36,7 @@
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 3/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-09-29 — AS-006 registered (Open Unknowns 5 → 6; see Resolution Log). Header corrected 2026-10-24 (Claude, human-directed, from a Vibe per-file audit) to cover it and the passes recorded in the Resolution Log that this chain had skipped: 2026-07-19 chemistry corrections, 2026-08-10 Grok pseudo-audit (findings only, not counted as an audit here pending Progress_Log PKC-020), and the 2026-08-15 review round with the AS-005 registration and the Fire Event row. Prior: 2026-09-20 — 2026-09-20 — EC-013 Air_Scrubber safe-state descent sequence filed as Proposed/Placeholder (§EC-013 Descent Sequence). Blocking for hot runs retained until first hot-run validation. Prior: 2026-05-31 |
+| Last Audit       | 2026-09-29 — AS-006 registered (Open Unknowns 5 → 6; see Resolution Log). Header corrected 2026-10-24 (Claude, human-directed, from a Vibe per-file audit) to cover it and the passes recorded in the Resolution Log that this chain had skipped: 2026-07-19 chemistry corrections, 2026-08-10 Grok pseudo-audit (findings only, not counted as an audit here per the PKC-020 ruling of 2026-10-25), and the 2026-08-15 review round with the AS-005 registration and the Fire Event row. Prior: 2026-09-20 — 2026-09-20 — EC-013 Air_Scrubber safe-state descent sequence filed as Proposed/Placeholder (§EC-013 Descent Sequence). Blocking for hot runs retained until first hot-run validation. Prior: 2026-05-31 |
 | Auditor          | Claude — 2026-10-24 header correction (human-directed); passes since 2026-05-31 per the Resolution Log: Grok 2026-08-10 pseudo-audit and 2026-08-15 review round, AS-005 and AS-006 registrations (2026-08-15, 2026-09-29); prior: Grok — EC-013 descent section drafted and filed as Proposed/Placeholder (Path A, human-directed 2026-09-20); prior: Gemini |
 | Open Unknowns    | 6 substantively open. EC-013 sequence registered as Proposed/Placeholder (does not close EC-013 tracker). |
 | Active Disputes  | 0                                                                   |
@@ -972,6 +972,8 @@ own unknown.
 ---
 
 ### Resolution Log
+
+- 2026-10-25: **Header wording updated (PKC-020 ruling; no content change).** The Last Audit annotation that said the logged findings-only pseudo-audit was not counted "pending PKC-020" now cites the ruling of 2026-10-25: a findings-only pseudo-audit does not advance Last Audit (`Admin/Auditor_Protocols.md` v0.45, Rule 10 addendum). No date, field value, Unknown or Spec Gate changed.
 
 - 2026-10-24: Header and log corrected (human-directed, from a Vibe per-file audit; each finding checked against source first): Last Audit and Auditor now cover the 2026-09-29 AS-006 registration and the passes the Prior chain skipped; the missing 2026-09-20 EC-013 entry backfilled; a stale 'Open Unknowns updated from 3 to 4' note under File State annotated as historical; this log put in date order, entries unchanged. No sidecar entry, doctrine or Spec Gate changed.
 
