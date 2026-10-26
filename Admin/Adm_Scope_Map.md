@@ -11,7 +11,7 @@
 | Spec Gates       | N/A — this file is a cross-reference index, not a specification     |
 | Open Unknowns    | 0 (surfaces existing unknowns from owning files; creates none)      |
 | Owning Domain    | Admin/                                                               |
-| Last Reviewed    | 2026-10-25 — Repository_Structure entry updated for RS-001 resolved (0 Open Unknowns). Prior: 2026-10-23 — Charter entry Risk corrected Critical → High (Risk/Priority conflation; found by a Vibe audit of the Charter, checked against its File State and GOV-005 sidecar). Also 2026-10-23: Progress_Log entry updated for its new Parked Concerns section. Prior: 2026-10-04 — Load-bearing map (Tier 0–4) added from `Tests/Admin_Governance_Teardown_POC.md`, then Tier 1/Tier 2 file-count and KB figures corrected the same day (inherited two arithmetic errors from the source POC's own Totals line — see that file's Resolution Log). No Admin files merged or deleted. Prior: 2026-10-03 metadata catch-up. Field meaning: last substantive map check/modification, not a full-folder re-audit of every Admin file. |
+| Last Reviewed    | 2026-10-25 — Repository_Structure entry updated for RS-001 resolved (0 Open Unknowns); CIR_Gov entry Status changed from Proposed to Exploration to match its owning file (PKC-031). Prior: 2026-10-23 — Charter entry Risk corrected Critical → High (Risk/Priority conflation; found by a Vibe audit of the Charter, checked against its File State and GOV-005 sidecar). Also 2026-10-23: Progress_Log entry updated for its new Parked Concerns section. Prior: 2026-10-04 — Load-bearing map (Tier 0–4) added from `Tests/Admin_Governance_Teardown_POC.md`, then Tier 1/Tier 2 file-count and KB figures corrected the same day (inherited two arithmetic errors from the source POC's own Totals line — see that file's Resolution Log). No Admin files merged or deleted. Prior: 2026-10-03 metadata catch-up. Field meaning: last substantive map check/modification, not a full-folder re-audit of every Admin file. |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
 ---
@@ -72,7 +72,7 @@ Pilot for a per-folder scope-map pattern, proposed 2026-08-07 as a fix for a kno
 **Does not (arrow):** AP-017's closure bar itself (`Archive/Logs/Auditor_Protocols_Logs.md`) - the Battery's ten class definitions (`Auditor_Protocols.md`) - `cold_session_bundler.py` mechanics.
 
 ### `Admin/CIR_Gov.md`
-**Status:** Proposed — Not Ratified · 0/6 · 1 Open Unknown (CIR-GOV-001) · Risk: High (raised from Medium 2026-07-31)
+**Status:** Exploration — Not Ratified · 0/6 · 1 Open Unknown (CIR-GOV-001) · Risk: High (raised from Medium 2026-07-31)
 **Does:** Formal epistemic state-transition kernel spec — predicate-gated admissibility, debt accounting, provenance ceilings — intended as a future layer *under* Charter authority.
 **Does not, and must never claim:** Constitutional authority - satisfaction of Axiom Q-2 or GOV-008 - runtime execution (nothing in this repo implements it) - Genesis Phase exit.
 
@@ -253,6 +253,8 @@ Findings 1–3 (structural scope gaps) closed 2026-08-09. Findings 4–5 remain 
 ---
 
 ## Resolution Log
+
+- 2026-10-25: Status of the CIR_Gov entry changed from "Proposed — Not Ratified" to "Exploration — Not Ratified", matching the owning file after the PKC-031 ruling. No other entry, count or Unknown changed. Human-directed.
 
 - 2026-09-24: **`Admin/Metrics_Scaffold.md` entry added** (new file, Lane C
   metric definitions). **GMP-011 staleness found and fixed while adding
