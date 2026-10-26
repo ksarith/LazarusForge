@@ -1013,6 +1013,21 @@ would not discard "without sentiment" is eligible to be considered.
 
 ### Resolution Log
 
+- 2026-10-25: **v0.44 → v0.45, from base v0.44 — two human rulings written in; doctrine change.**
+  PKC-020: Rule 10 (AP-035) gains an addendum saying a findings-only pseudo-audit
+  does not advance the owning file's Last Audit or Auditor; it is logged in that
+  file's Resolution Log, and a body-changing pass still bumps both. PKC-025: an
+  exception under Audit Entry Conditions says `Unknowns.md` is a derivative index,
+  exempt from the File State, Scope Boundary and Ethical Anchor requirements, and
+  audited as an index instead (single current version block with changelog,
+  rows checked against the owning sidecars, counts reconciled); that procedure
+  was drafted only from rules already in `Unknowns.md` and `Admin/File_Template.md`
+  and is flagged for human review. Same pass: both Version String Registry
+  citations, the Status block and the Resolution Log footer updated v0.44 → v0.45;
+  Sidecar SHA-256 recomputed. No gate, assumption or Unknown changed. **Known gap,
+  unchanged:** v0.39–v0.42 still have no Resolution Log entry; not reconstructed or
+  invented. Human-directed.
+
 - 2026-10-20: **v0.44 — 10-Entry Rule removed; AP-029 fully resolved; doctrine change.**
   At the human governing authority's direction (he will ratify on commit), the
   10-Entry Rule — more than 10 open sidecar entries flags a Resolution Pass —
