@@ -1,9 +1,9 @@
 # MAQT Role-Card Pack + Cycle 1 Task
 **Companion to** `Tests/Multi_Agent_Quorum_Trial.md` §8.6–§8.8  
-**Status:** Operator defaults for first run — not a governance amendment  
+**Status:** Operator defaults for first run — not a governance amendment; derived excerpt, non-canonical  
 **Date:** 2026-09-21
 
-**Note (2026-10-24):** this pack and §8.6–§8.8 of the protocol file have diverged: only 8 of this pack's 59 substantive lines appear verbatim there. Which text is canonical for the first run is undecided (Progress_Log PKC-038). Until it is, do not mix role cards from the two sources.
+**Note (2026-10-25, PKC-038 ruling):** this pack is a derived excerpt and is **not canonical**. The canonical text for role cards, the minimal context pack, the Cycle 1 task, handoff schemas and the friction log is `Tests/Multi_Agent_Quorum_Trial.md` §8.6–§8.10. The two had diverged (only 8 of this pack's 59 substantive lines appear verbatim there), and this pack omits safeguards the protocol states, among them the cite-live-text rule, the parallel-first-pass rule, the success criteria and the Skeptic and Auditor focus lines. Do not mix role cards from the two sources; to use this pack for a run, regenerate it from §8.6–§8.10 first. Its Cycle 1 task is spent: Cycle 1 ran on 2026-09-22 (per `Archive/Logs/Progress_Log_Changelog.md`) and its Option A index is already in `Operations/Ops_Scope_Map.md`, so a later run needs a new task or Option B.
 
 ---
 
