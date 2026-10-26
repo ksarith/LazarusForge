@@ -11,7 +11,7 @@
 | Spec Gates       | N/A — this file is a cross-reference index, not a specification     |
 | Open Unknowns    | 0 (surfaces existing unknowns from owning files; creates none)      |
 | Owning Domain    | Tests/                                                               |
-| Last Reviewed    | 2026-10-15 — Chrono_Divergence_Pilot.md registered (2026-10-14); stale Chrono version pin removed |
+| Last Reviewed    | 2026-10-25 — Status of the MAQT, Chrono_Divergence and Chrono_Divergence_Pilot entries changed from Proposed to Exploration to match their owning files (PKC-031). Prior: 2026-10-15 — Chrono_Divergence_Pilot.md registered (2026-10-14); stale Chrono version pin removed |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
 ---
@@ -65,10 +65,10 @@ Note: the only file in this folder carrying a Critical risk rating with an expli
 **Does not (arrow):** Recommend or adopt any candidate — explicitly survey-only · implement anything (no code, schema, or new file format created) · claim verified knowledge of current external memory-augmentation products (flagged Internally Derived/PROVISIONAL per AP-006, not checked against outside sources) · duplicate `Cognitive_Salvage_Layer.md` (Forge task-performance heuristics) or `Admin/Progress_Log.md` (rolling decision continuity) — this file is about the deliberation/dissent those two don't capture.
 
 ### `Tests/Multi_Agent_Quorum_Trial.md`
-**Status:** Proposed Protocol — Not Yet Run · 0/6 (protocol, not spec) · 0 Open Unknowns (registered) · Risk: High — governs who can cause a state transition on canonical `main`; a loose trial here is a race-condition and governance-bypass risk, not just a documentation gap
+**Status:** Exploration — Protocol Not Yet Run · 0/6 (protocol, not spec) · 0 Open Unknowns (registered) · Risk: High — governs who can cause a state transition on canonical `main`; a loose trial here is a race-condition and governance-bypass risk, not just a documentation gap
 **Does:** Operationalizes `Admin/Governance_Migration_Protocol.md` §VII (Bootstrap Quorum, GOV-008 candidate) into a runnable three-machine protocol — machine/agent baseline, role assignment incl. §VII.2's role-rotation clause, Git branch/promotion-authority topology, required Non-collusion probe, human-ratification constraints (inherits GMP-004's unresolved authentication gap in full, does not close it), failure/recovery scenarios, pass/fail scoring against §VII.3's five-item quorum-achieved checklist. §8 Preparation Package (2026-09-20): recommended defaults, fillable pre-trial worksheet, six concrete non-collusion probes, Field_Logs skeleton, minimal viable first-run configuration. §8.6–§8.8 (2026-09-21): role-card pack, minimal context pack, Cycle 1 bounded task. §8.9–§8.10 (2026-09-21): handoff schemas (structured artifacts per role — not transcript-as-interface) and collaboration friction log (requirements-discovery block required on every MAQT Field_Logs entry; discover what to automate after the run, not before).
 **Does not:** Amend §VII or resolve GOV-008/GMP-004; replace `Tests/Field_Logs.md`'s results-logging role. See companion `Tests/MAQT_Role_Cards_and_Cycle1_Task.md` for individual agent role cards.
-Note: Status unchanged — Proposed Protocol — Not Yet Run.
+Note: Status unchanged — now written Exploration — Protocol Not Yet Run (it read Proposed Protocol — Not Yet Run before 2026-10-25).
 
 ### `Tests/MAQT_Role_Cards_and_Cycle1_Task.md`
 **Status:** Operator defaults — Not a governance amendment · 0/6 (companion doc) · Risk: Medium
@@ -83,13 +83,13 @@ Note: Created 2026-09-21. Operator gives each agent only its own role card from 
 Note: Created 2026-10-08 as a proposal, ratified 2026-10-09. Cross-agent audit pending.
 
 ### `Tests/Chrono_Divergence.md`
-**Status:** Proposed Protocol (2026-10-12) · 0/6 · 4 Open Unknowns (CD-001 to CD-004, sidecar only, all non-blocking) · Risk: Low — a forecasting template can read as confidence it hasn't earned; the file states forecasts are not governance weight or claim confidence and that no accuracy is Measured until a review scores them
+**Status:** Exploration (created 2026-10-12) · 0/6 · 4 Open Unknowns (CD-001 to CD-004, sidecar only, all non-blocking) · Risk: Low — a forecasting template can read as confidence it hasn't earned; the file states forecasts are not governance weight or claim confidence and that no accuracy is Measured until a review scores them
 **Does:** Defines a method for mapping how an idea may diverge over time: a t0 snapshot, a branch table with a smallest-next-experiment unlock per branch, dated forecasts scored hit/miss/partial/unscorable/withdrawn at review, and an Incidental vs Deliberate origin marker.
 **Does not:** Predict the future with authority, replace `Admin/Trajectories.md` or `Progress_Log.md`, make physics claims, or authorize Spec Gate promotion, Unknown closure or physical work.
 Note: Created 2026-10-12. The worked example uses the Kit-regression result as its first t0 and is illustrative, not a closed study.
 
 ### `Tests/Chrono_Divergence_Pilot.md`
-**Status:** Proposed Protocol (2026-10-14) · 0/6 · 0 Open Unknowns of its own (surfaces CD-001, owned by `Chrono_Divergence.md`) · Risk: Low — a pilot checklist can read as a result; the file states the pilot is not started and completion licenses no accuracy claim
+**Status:** Exploration (created 2026-10-14) · 0/6 · 0 Open Unknowns of its own (surfaces CD-001, owned by `Chrono_Divergence.md`) · Risk: Low — a pilot checklist can read as a result; the file states the pilot is not started and completion licenses no accuracy claim
 **Does:** Gives the ordered steps, allocation table, filing and scoring tables for the Chrono §4.1 scoring-reproducibility pilot; refers to `Chrono_Divergence.md` for forecasts and rules instead of copying them.
 **Does not:** Hold run evidence (that goes in `Tests/Field_Logs/`), restate frozen forecasts, claim the pointer works, or change FAK-018, Kit text, Spec Gates or any Unknown.
 Note: Created 2026-10-14 from a Grok draft corrected against Chrono v0.3/v0.4.
@@ -145,6 +145,8 @@ No corrections were needed in this folder, same as Challenges/ — no stale cros
 ---
 
 ## Resolution Log
+
+- 2026-10-25: Status of the Multi_Agent_Quorum_Trial, Chrono_Divergence and Chrono_Divergence_Pilot entries changed from "Proposed" to "Exploration", matching their owning files after the PKC-031 ruling (missed by the first sweep and by the Vibe baseline pull; found on follow-up). Earlier dated entries saying Proposed are history. No Does / Does-not text, count or Unknown changed. Human-directed.
 
 - 2026-10-14: Registered `Tests/Chrono_Divergence_Pilot.md` (Proposed). Human-directed.
 
