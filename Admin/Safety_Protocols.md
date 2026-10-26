@@ -30,7 +30,7 @@
 | Body Stability   | Volatile                                                            |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-10-24 — Claude (human-directed) corrected the EP-005 wording in the Scope Boundary and Section I (see Resolution Log); the logged 2026-08-10 Grok pseudo-audit (findings only) is not counted here pending Progress_Log PKC-020. Prior: 2026-06-05                                                          |
+| Last Audit       | 2026-10-24 — Claude (human-directed) corrected the EP-005 wording in the Scope Boundary and Section I (see Resolution Log); the logged 2026-08-10 Grok pseudo-audit (findings only) is not counted here per the PKC-020 ruling of 2026-10-25. Prior: 2026-06-05                                                          |
 | Auditor          | Claude — 2026-10-24 wording correction (human-directed, from a Vibe per-file audit); prior: Claude — Architect/Auditor                                          |
 | Open Unknowns    | 6                                                                   |
 | Active Disputes  | 0                                                                   |
@@ -556,6 +556,8 @@ defer until FA-001 (site confirmed) is resolved. Cross-reference FA-001.
 ---
 
 ### Resolution Log
+
+- 2026-10-25: **Header wording updated (PKC-020 ruling; no content change).** The Last Audit annotation that said the logged findings-only pseudo-audit was not counted "pending PKC-020" now cites the ruling of 2026-10-25: a findings-only pseudo-audit does not advance Last Audit (`Admin/Auditor_Protocols.md` v0.45, Rule 10 addendum). No date, field value, Unknown or Spec Gate changed.
 
 - 2026-10-24: **EP-005 claim softened** (human-directed, from a Vibe per-file audit; checked against Engineer_Protocols and SP-001 first). The Scope Boundary and Section I said this file "resolves" EP-005, but SP-001 records that the cross-file confirmation with Engineer_Protocols never happened (the files were drafted in parallel) and Engineer_Protocols still lists EP-005 as Open with a partial resolution. Wording now says "intended resolution" and points to SP-001; the Section I heading now reads "EP-005 Resolution Path" (no references to the old heading text exist elsewhere in the repository). No threshold, PPE or consequence-class content changed.
 

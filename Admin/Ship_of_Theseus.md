@@ -16,7 +16,7 @@
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-10-24 — Claude (human-directed) log order corrected and AP-012/AP-016 cross-reference noted (see Resolution Log); the logged 2026-08-11 Grok pseudo-audit (findings only) is not counted here pending PKC-020. Prior: 2026-05-04 (Claude — Skeptic/Auditor); revised 2026-06-08; audited 2026-06-26 (Gemini + Claude dual Skeptic/Auditor) |
+| Last Audit       | 2026-10-24 — Claude (human-directed) log order corrected and AP-012/AP-016 cross-reference noted (see Resolution Log); the logged 2026-08-11 Grok pseudo-audit (findings only) is not counted here per the PKC-020 ruling of 2026-10-25. Prior: 2026-05-04 (Claude — Skeptic/Auditor); revised 2026-06-08; audited 2026-06-26 (Gemini + Claude dual Skeptic/Auditor) |
 | Auditor          | Claude — 2026-10-24 corrections (human-directed, from a Vibe per-file audit); prior: Claude — Synthesizer/Auditor; Gemini — Skeptic/Auditor              |
 | Open Unknowns    | 4                                                                   |
 | Active Disputes  | 0                                                                   |
@@ -606,6 +606,8 @@ human unavailability.
 ---
 
 ### Resolution Log
+
+- 2026-10-25: **Header wording updated (PKC-020 ruling; no content change).** The Last Audit annotation that said the logged findings-only pseudo-audit was not counted "pending PKC-020" now cites the ruling of 2026-10-25: a findings-only pseudo-audit does not advance Last Audit (`Admin/Auditor_Protocols.md` v0.45, Rule 10 addendum). No date, field value, Unknown or Spec Gate changed.
 
 - 2026-10-24: **Log order and cross-reference note** (human-directed, from a Vibe per-file audit; checked against source first). The 2026-06-26 entry moved above the 2026-06-08 entry so the log reads newest-first; entries unchanged. Note on the 2026-06-26 entry's "G3 blocked (AP-012/AP-016 pending)": AP-012 and AP-016 were Resolved 2026-07-03, so that blocker is no longer pending; G3 has not been re-assessed. Spec Gates stay at 0/6 (the 2026-08-11 entry records them as left locked); whether the gates cleared on 2026-06-26 should now be promoted is open (Progress_Log PKC-027). No Unknown, gate or doctrine changed.
 

@@ -16,7 +16,7 @@
 | Body Stability   | Volatile                                                            |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-10-23 — Claude (human-directed) Resolution Log backfilled for the 2026-06-05 first logging and the two 2026-07-06 passes (Gemini Exploration audit; Claude EC-→ECN- rename), from a Vibe per-file audit, each finding checked against source first. Whether a findings-only pseudo-audit (the logged 2026-08-10 Grok pass) advances this field is unresolved (Progress_Log PKC-020). Prior: 2026-07-06                                                          |
+| Last Audit       | 2026-10-23 — Claude (human-directed) Resolution Log backfilled for the 2026-06-05 first logging and the two 2026-07-06 passes (Gemini Exploration audit; Claude EC-→ECN- rename), from a Vibe per-file audit, each finding checked against source first. A findings-only pseudo-audit (the logged 2026-08-10 Grok pass) does not advance this field (PKC-020 ruling, 2026-10-25). Prior: 2026-07-06                                                          |
 | Auditor          | Claude — 2026-10-23 log backfill (human-directed, from a Vibe per-file audit); Claude — Skeptic/Auditor (rename pass); Gemini — Skeptic/Auditor (Exploration audit, path/gap findings) |
 | Open Unknowns    | 5 (ECN-001, ECN-002, ECN-004, ECN-005, ECN-006)                     |
 | Active Disputes  | 0                                                                   |
@@ -774,6 +774,8 @@ declared with rationale, rather than left silent. This file defers:
 ---
 
 ### Resolution Log
+
+- 2026-10-25: **Header wording updated (PKC-020 ruling; no content change).** The Last Audit annotation that said the logged findings-only pseudo-audit was not counted "pending PKC-020" now cites the ruling of 2026-10-25: a findings-only pseudo-audit does not advance Last Audit (`Admin/Auditor_Protocols.md` v0.45, Rule 10 addendum). No date, field value, Unknown or Spec Gate changed.
 
 - 2026-08-10: **Pseudo-audit (Grok, same limits).** Findings only; Spec Gates
   left locked at 0/6. (1) Open Unknowns **5** = ECN-001, ECN-002, ECN-004,
