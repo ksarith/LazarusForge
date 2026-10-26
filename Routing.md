@@ -1,6 +1,7 @@
 # Routing.md — LazarusForge
 **Canonical Navigation and Link Mapping Index.**
-**Last updated: 2026-10-19 — Chrono pilot scoring Field_Log registered (`FL-20261019-chrono-divergence-pilot-scoring`); URL-table row only. No doctrine, Unknown or Spec Gate change.**
+**Last updated: 2026-10-26 — Two Automation scripts registered in the URL table (`Automation/Candidate3_Transient_Index_Colab.py`, `Automation/Candidate3_Transient_Index_Colab_hybrid.py`), both already listed in `Discovery.md` and documented in `Automation/README.md` (PKC-026). The Scope sentence on `Automation/` was reworded to match the table: the `.py` sources are listed, packaged archives are excluded. `Tests/Field_Logs/FL-20261008-maqt-matrix-preregistration-proposal.md` was deliberately not registered: its own header says it is an unratified proposal held out of Routing, Discovery and the Field_Logs index. No doctrine, Unknown or Spec Gate change.**
+**Prior: 2026-10-19 — Chrono pilot scoring Field_Log registered (`FL-20261019-chrono-divergence-pilot-scoring`); URL-table row only. No doctrine, Unknown or Spec Gate change.**
 **Prior: 2026-10-18 (second entry) — Chrono pilot session 6 Field_Log registered (`FL-20261018-chrono-divergence-chatgpt-d-baseline`); URL-table row only. No doctrine, Unknown or Spec Gate change.**
 **Prior: 2026-10-18 — Chrono pilot session 5 Field_Log registered (`FL-20261018-chrono-divergence-chatgpt-b-pointer`); URL-table row only. No doctrine, Unknown or Spec Gate change.**
 **Prior: 2026-10-17 (third entry) — Chrono pilot session 2 Field_Log registered (`FL-20261016-chrono-divergence-gemini-d-pointer`); URL-table row only. No doctrine, Unknown or Spec Gate change.**
@@ -37,10 +38,10 @@ This file acts as the primary network lookup table for automated agents, continu
 Intentionally excluded from the Master Routing Map (by design, not by oversight):
 
 - All content under `Archive/` and `Archive/Logs/` — historical preservation layer. These files are not part of the live operational surface and are not required to carry Navigation Anchors or participate in the backlink requirement.
-- Pure implementation artifacts under `Automation/` (the `.py` sources themselves). Supporting documentation that is doctrine may still appear.
+- Packaged archives under `Automation/` (for example `Candidate3_Colab_Hybrid.zip`). The `.py` sources in `Automation/` are listed in the URL table, with link type `N/A (Script)`, because the audit harness and Colab launchers fetch them by raw URL through this registry; they carry no Navigation Anchors. Supporting documentation that is doctrine may also appear.
 - Transient or generated artifacts that may appear in working trees but are not committed doctrine.
 
-The difference between the number of paths listed here and the total number of non-directory files in a full checkout is therefore expected (active map size grows as files are registered; Archive/ and Automation sources remain intentionally excluded). Agents must not treat a missing entry for an Archive file as registry drift or an integrity failure. If an active (non-Archive) doctrine or protocol file is absent from this table, that *is* a defect and should be logged.
+The difference between the number of paths listed here and the total number of non-directory files in a full checkout is therefore expected (active map size grows as files are registered; Archive/ and packaged archives remain intentionally excluded). Agents must not treat a missing entry for an Archive file as registry drift or an integrity failure. If an active (non-Archive) doctrine or protocol file is absent from this table, that *is* a defect and should be logged.
 
 *Path-count note (2026-10-03):* earlier prose carried a hard-coded “~112” figure that had become stale as the active map grew (live table ≈130+ path rows as of this date). The hard-coded number was removed rather than replaced with another brittle count; the authoritative size is the Master Routing Map table below.
 
@@ -184,6 +185,8 @@ Last scope clarification: 2026-10-03 (stale path-count metric removed); prior 20
 | `Tests/Tst_Scope_Map.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForge/refs/heads/main/Tests/Tst_Scope_Map.md) | [Repo](https://github.com/ksarith/LazarusForge/blob/main/Tests/Tst_Scope_Map.md) | Explicit |
 | **Automation/ Layer** | | | |
 | `Automation/AUDIT_HARNESS.py` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForge/refs/heads/main/Automation/AUDIT_HARNESS.py) | [Repo](https://github.com/ksarith/LazarusForge/blob/main/Automation/AUDIT_HARNESS.py) | N/A (Script) |
+| `Automation/Candidate3_Transient_Index_Colab.py` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForge/refs/heads/main/Automation/Candidate3_Transient_Index_Colab.py) | [Repo](https://github.com/ksarith/LazarusForge/blob/main/Automation/Candidate3_Transient_Index_Colab.py) | N/A (Script) |
+| `Automation/Candidate3_Transient_Index_Colab_hybrid.py` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForge/refs/heads/main/Automation/Candidate3_Transient_Index_Colab_hybrid.py) | [Repo](https://github.com/ksarith/LazarusForge/blob/main/Automation/Candidate3_Transient_Index_Colab_hybrid.py) | N/A (Script) |
 | `Automation/Colab_Integrity.py` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForge/refs/heads/main/Automation/Colab_Integrity.py) | [Repo](https://github.com/ksarith/LazarusForge/blob/main/Automation/Colab_Integrity.py) | N/A (Script) |
 | `Automation/Colab_Launcher.py` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForge/refs/heads/main/Automation/Colab_Launcher.py) | [Repo](https://github.com/ksarith/LazarusForge/blob/main/Automation/Colab_Launcher.py) | N/A (Script) |
 | `Automation/Colab_cold_session.py` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForge/refs/heads/main/Automation/Colab_cold_session.py) | [Repo](https://github.com/ksarith/LazarusForge/blob/main/Automation/Colab_cold_session.py) | N/A (Script) |
