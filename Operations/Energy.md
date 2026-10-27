@@ -23,9 +23,9 @@
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 1/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-08-09 — Grok pseudo-audit (Skeptic read + minimal Synthesizer fixes); prior: 2026-08-02 dual-audit adjudication; EGL body still not Gate-1 cleared |
-| Auditor          | Gemini (2026-05-31); Grok EGL draft (2026-08-01); Gemini+Grok dual-audit (2026-08-02); Grok pseudo-audit (2026-08-09) — no Spec Gate promotion |
-| Open Unknowns    | 5                                                                   |
+| Last Audit       | 2026-10-27 — Claude (human-directed, PKC-034) three sidecar entries added (EV-006/EV-007/EV-008, from the Superconductivity Horizons SC-H1–H3 list), each Open, Risk Low, Priority Minor, non-Blocking; Open Unknowns 5 → 8; no body doctrine, Spec Gate or existing-unknown change. Prior: 2026-08-09 — Grok pseudo-audit (Skeptic read + minimal Synthesizer fixes); prior: 2026-08-02 dual-audit adjudication; EGL body still not Gate-1 cleared |
+| Auditor          | Claude — PKC-034 registration (human-directed, 2026-10-27); Gemini (2026-05-31); Grok EGL draft (2026-08-01); Gemini+Grok dual-audit (2026-08-02); Grok pseudo-audit (2026-08-09) — no Spec Gate promotion |
+| Open Unknowns    | 8                                                                   |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | High                                                                |
 | Sidecar Link     | #auditor-notes--unknowns                                            |
@@ -422,6 +422,7 @@ Key guiding principles drawn from disciplined analysis:
   - SC-H1: Practical ambient-pressure materials viable below 200 K under Forge bootstrap constraints.
   - SC-H2: Salvage-compatible fabrication routes for superconducting wire/joints.
   - SC-H3: Net system-level kWh benefit after accounting for cooling/strain infrastructure.
+  - (Registered as EV-006/EV-007/EV-008 in this file's sidecar and in `Unknowns.md` v5.70, 2026-10-27, PKC-034.)
 
 ### Cross-References & Migration Path
 - Strong empirical or prototype success → migrate detailed implementation to **`Architecture/Engineering.md`** (pragmatic fabrication focus).
@@ -597,7 +598,66 @@ Key guiding principles drawn from disciplined analysis:
 
 ---
 
+### EV-006 — Ambient-pressure superconducting materials viable below 200 K under Forge bootstrap constraints (SC-H1)
+
+| Field         | Value                                            |
+|---------------|-----------------------------------------------------|
+| Status        | Open                                                 |
+| Risk          | Low                                                  |
+| Priority      | Minor                                                |
+| Type          | Technical                                            |
+| Blocking      | No                                                    |
+| Owner         | `Operations/Energy.md`                                |
+| First Logged  | 2026-10-27                                            |
+| Last Reviewed | 2026-10-27                                            |
+
+**Description:** Registered as a possibility with low expectations — possible, not assumed (human direction, PKC-034). Restates only what the Superconductivity Horizons section already says: whether practical ambient-pressure materials viable below 200 K exist under Forge bootstrap constraints. No feasibility claim is made or implied.
+
+**Resolution Path:** None beyond the Superconductivity Horizons section's own guardrails: no dedicated R&D budget at v0–v1; monitor external progress and salvage opportunities only; maintain fallback to conventional (copper/aluminum) conductors. Any candidate material is tested via simple four-point probe resistance + basic susceptibility checks before integration.
+
+---
+
+### EV-007 — Salvage-compatible fabrication routes for superconducting wire/joints (SC-H2)
+
+| Field         | Value                                            |
+|---------------|-----------------------------------------------------|
+| Status        | Open                                                 |
+| Risk          | Low                                                  |
+| Priority      | Minor                                                |
+| Type          | Technical                                            |
+| Blocking      | No                                                    |
+| Owner         | `Operations/Energy.md`                                |
+| First Logged  | 2026-10-27                                            |
+| Last Reviewed | 2026-10-27                                            |
+
+**Description:** Registered as a possibility with low expectations — possible, not assumed (human direction, PKC-034). Restates only what the Superconductivity Horizons section already says: whether fabrication routes for superconducting wire and joints exist that are compatible with salvage/bootstrap constraints. No route is proposed.
+
+**Resolution Path:** None beyond the Superconductivity Horizons section's own guardrails: no dedicated R&D budget at v0–v1; monitor external progress and salvage opportunities only; maintain fallback to conventional (copper/aluminum) conductors.
+
+---
+
+### EV-008 — Net system-level kWh benefit after cooling/strain infrastructure (SC-H3)
+
+| Field         | Value                                            |
+|---------------|-----------------------------------------------------|
+| Status        | Open                                                 |
+| Risk          | Low                                                  |
+| Priority      | Minor                                                |
+| Type          | Technical                                            |
+| Blocking      | No                                                    |
+| Owner         | `Operations/Energy.md`                                |
+| First Logged  | 2026-10-27                                            |
+| Last Reviewed | 2026-10-27                                            |
+
+**Description:** Registered as a possibility with low expectations — possible, not assumed (human direction, PKC-034). Restates only what the Superconductivity Horizons section already says: whether superconducting transmission, magnets, or storage yield a net system-level kWh benefit once the cooling and strain infrastructure they require is accounted for. The file's core metric is Value recovered per kWh; no benefit is assumed.
+
+**Resolution Path:** None beyond the Superconductivity Horizons section's own guardrails: no dedicated R&D budget at v0–v1; monitor external progress and salvage opportunities only; maintain fallback to conventional (copper/aluminum) conductors so all designs degrade gracefully.
+
+---
+
 ### Resolution Log
+
+- 2026-10-27: **PKC-034 enacted — EV-006, EV-007 and EV-008 registered (superconductivity horizons SC-H1–H3).** The Superconductivity Horizons section listed three unknowns to track with no sidecar entries; they are now registered as possibilities with low expectations — possible, not assumed (human-directed) — each restating only what the section already says and defining no resolution path beyond its guardrails (no R&D budget at v0–v1, monitor external progress, copper/aluminum fallback). IDs use this sidecar's EV prefix because the SC- string is already used for unrelated items in Thermal_Systems and Chemistry; each entry carries its SC-H name, and the section's list now maps SC-H1→EV-006, SC-H2→EV-007, SC-H3→EV-008. Open Unknowns 5 → 8. Companion edits: `Unknowns.md` v5.70, `Operations/Ops_Scope_Map.md`. No Spec Gate, Risk, Blocking or existing-unknown change; Status stays Draft, 1/6.
 
 - 2026-08-15: **Grok review round (alphabetical continuation — Energy.md + cross-check of Challenges/Energy_Scarcity.md).** All 5 EV unknowns (EV-001–005) reviewed. Last Reviewed bumped; review markers added. Cross-refs verified real (ECN-002, Air_Scrubber, Electronics EL-006, Gate_05). **Cross-file check:** Challenges/Energy_Scarcity.md correctly distinguishes itself from Operations/Energy.md (External purpose framing vs operational how-to); its ASM-002 explicitly subordinates any community-surplus claim to EV-001 measured figures; EV- prefix collision avoided by design (ES- unknowns). No stale ownership claims found either direction. EV-001/003/004 Blocking Yes correctly retained. Zero closures, zero Blocking flips, zero Priority changes. Spec Gates left locked at 1/6. Human-directed.
 

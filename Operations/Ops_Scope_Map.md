@@ -11,7 +11,7 @@
 | Spec Gates       | N/A — this file is a cross-reference index, not a specification     |
 | Open Unknowns    | 0 (surfaces existing unknowns from owning files; creates none)      |
 | Owning Domain    | Operations/                                                          |
-| Last Reviewed    | 2026-10-25 — Status of three entries (Automotive, Robotics, Exception_Evidence) changed from Proposed to Exploration to match their owning files (PKC-031); content refresh still open under PKC-033. Prior: 2026-10-24 — Open Unknowns counts refreshed for eight entries from their owning files' headers (Plastics, Air_Scrubber, Gate_01, 02, 03, 04, 05, 07); Does / Does-not text not re-derived (Progress_Log PKC-033). Prior: 2026-10-10 — Automotive.md + Robotics.md Proposed stubs registered|
+| Last Reviewed    | 2026-10-27 — Energy entry count updated 5 → 8 (PKC-034: EV-006/EV-007/EV-008 registered in `Operations/Energy.md`). Prior: 2026-10-25 — Status of three entries (Automotive, Robotics, Exception_Evidence) changed from Proposed to Exploration to match their owning files (PKC-031); content refresh still open under PKC-033. Prior: 2026-10-24 — Open Unknowns counts refreshed for eight entries from their owning files' headers (Plastics, Air_Scrubber, Gate_01, 02, 03, 04, 05, 07); Does / Does-not text not re-derived (Progress_Log PKC-033). Prior: 2026-10-10 — Automotive.md + Robotics.md Proposed stubs registered|
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
 ---
@@ -43,7 +43,7 @@ Third folder in the Scope_Map rollout, following `Admin/Adm_Scope_Map.md` (2026-
 **Does not (arrow):** TMR as philosophy/framework (`Architecture/Cognitive_Frameworks.md` Framework D) · dual-use ethical escalation (`Admin/Ethical_Constraints.md`) · Air Scrubber specs (`Air_Scrubber.md`) · component taxonomy (`Architecture/Components.md`) · crypto/root-of-trust (unassigned, EL-006) · Forge-Net implementation (`Architecture/Forge_Net.md`).
 
 ### `Operations/Energy.md`
-**Status:** Draft · 1/6 · 5 Open Unknowns · Risk: High
+**Status:** Draft · 1/6 · 8 Open Unknowns · Risk: High
 **Does:** Incremental energy integration philosophy v0-v1; generation interlocks (syngas/biomass); power mode envelopes; battery protection parameters; Energy Governance Layer (EGL — Demand/Generation/Arbitration/Thermal models, proposed 2026-08-01, audited 2026-08-02, not yet ratified); Storage Model & Battery Governance; Energy Capability Trajectory.
 **Does not (arrow):** Deep-environment battery physics (`Tests/Leviathan_testing.md` LT-002) · Leviathan power envelope (`Tests/Leviathan_testing.md` LT-001) · unknown-cell chemistry sorting (`Gate_02_Triage.md`) · crypto/root-of-trust (`Electronics.md` EL-006) · Spec Gate definitions (`Admin/Verification_Gates.md`).
 
@@ -143,6 +143,8 @@ Three corrections applied this pass (`Gate_05_Separation_Thermal.md`, `Gate_06_F
 ---
 
 ## Resolution Log
+
+- 2026-10-27: Energy entry's Open Unknowns count updated 5 → 8 to match `Operations/Energy.md`'s File State after EV-006, EV-007 and EV-008 were registered there (PKC-034; superconductivity horizons SC-H1–H3, possibilities with low expectations). Count-only change; Does / Does-not text not re-derived (PKC-033). Human-directed.
 
 - 2026-10-25: Status of the Automotive, Robotics and Exception_Evidence entries changed from "Proposed" to "Exploration", matching their owning files after the PKC-031 ruling (found by the Vibe baseline pull). The EC-013 "Proposed/Placeholder" labels on five other entries describe a descent-sequence role, not a file Status, and were left. No Does / Does-not text, count or Unknown changed. Human-directed.
 

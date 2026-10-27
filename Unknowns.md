@@ -3,7 +3,7 @@
 
 **Full version history in `Archive/Logs/Unknowns_Changelog.md` (2026-07-19 cleanup pass, following the precedent set by `Archive/Logs/AUDIT_HARNESS_CHANGELOG.md` and `Archive/Logs/Forge_Audit_Kit_Changelog.md`; scrubbed to current-version-only 2026-07-28 — the "current plus last four in full" window was itself compressed further, since the changelog carries full text for every version back to v1.0 (the in-file Audit Trail was moved there under Rule 4). This block now keeps only the current version.)**
 
-**Version 5.69 -- 2026-10-25. RS-001 resolved and removed from the Active Index (human-directed, PKC-013).** The review procedure for new non-markdown file types is now defined in `Admin/Repository_Structure.md` Section I, with a retroactive note for the `.py` and `.zip` files already present, so RS-001 closes (Resolved 2026-10-25) and its row leaves the Repository Structure cluster per Size Management Rule 2; RS-002 and RS-003 were already resolved, so the cluster has no open entries. Per Size Management Rule 2 this block holds only the current version; v5.68 is in `Archive/Logs/Unknowns_Changelog.md`. Companion edits: `Admin/Repository_Structure.md` (Open Unknowns 1 → 0), `Admin/Adm_Scope_Map.md`.
+**Version 5.70 -- 2026-10-27. EV-006, EV-007 and EV-008 registered in the Energy & Power cluster (human-directed, PKC-034).** The three superconductivity horizons listed in `Operations/Energy.md`'s Superconductivity Horizons section (SC-H1–H3: ambient-pressure materials viable below 200 K; salvage-compatible fabrication routes for superconducting wire/joints; net system-level kWh benefit after cooling/strain infrastructure) are now registered as sidecar entries EV-006–EV-008 in the owning file and as three rows here — Open, Risk Low, Priority Minor, non-Blocking: possibilities with low expectations, possible, not assumed, restating only what the section already says and adding no resolution path beyond its guardrails (no R&D budget at v0–v1, monitor external progress, copper/aluminum fallback). Per Size Management Rule 2 this block holds only the current version; v5.69 is in `Archive/Logs/Unknowns_Changelog.md`. Companion edits: `Operations/Energy.md` (Open Unknowns 5 → 8), `Operations/Ops_Scope_Map.md`.
 ---
 
 **Expiry Rule active — see `Admin/Canonical_Terms.md` §4 for the Cycle definition this rule now explicitly references (one calendar year default, not one audit pass — see CT-011). Protocol Performance metrics collecting.**
@@ -198,6 +198,9 @@ RB-007 (Human-shared space unresolved)
 | EV-003 | Salvaged battery thermal containment and ventilation strategy undefined | `Operations/Energy.md` | In Progress | Active | Critical |
 | EV-004 | Energy Arbitration Layer (EAL) hardware watchdog and firmware isolation unvalidated | `Operations/Energy.md` | Open | — | Major |
 | EV-005 | Thermoelectric Generator (TEG) net energy harvesting threshold uncharacterized | `Operations/Energy.md` | Open | — | Minor |
+| EV-006 | Ambient-pressure superconducting materials viable below 200 K under Forge bootstrap constraints (SC-H1) | `Operations/Energy.md` | Open | — | Minor |
+| EV-007 | Salvage-compatible fabrication routes for superconducting wire/joints (SC-H2) | `Operations/Energy.md` | Open | — | Minor |
+| EV-008 | Net system-level kWh benefit after cooling/strain infrastructure (SC-H3) | `Operations/Energy.md` | Open | — | Minor |
 
 ### Leviathan / Autonomy
 
