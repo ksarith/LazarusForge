@@ -3,7 +3,7 @@
 
 **Full version history in `Archive/Logs/Unknowns_Changelog.md` (2026-07-19 cleanup pass, following the precedent set by `Archive/Logs/AUDIT_HARNESS_CHANGELOG.md` and `Archive/Logs/Forge_Audit_Kit_Changelog.md`; scrubbed to current-version-only 2026-07-28 — the "current plus last four in full" window was itself compressed further, since the changelog carries full text for every version back to v1.0 (the in-file Audit Trail was moved there under Rule 4). This block now keeps only the current version.)**
 
-**Version 5.70 -- 2026-10-27. EV-006, EV-007 and EV-008 registered in the Energy & Power cluster (human-directed, PKC-034).** The three superconductivity horizons listed in `Operations/Energy.md`'s Superconductivity Horizons section (SC-H1–H3: ambient-pressure materials viable below 200 K; salvage-compatible fabrication routes for superconducting wire/joints; net system-level kWh benefit after cooling/strain infrastructure) are now registered as sidecar entries EV-006–EV-008 in the owning file and as three rows here — Open, Risk Low, Priority Minor, non-Blocking: possibilities with low expectations, possible, not assumed, restating only what the section already says and adding no resolution path beyond its guardrails (no R&D budget at v0–v1, monitor external progress, copper/aluminum fallback). Per Size Management Rule 2 this block holds only the current version; v5.69 is in `Archive/Logs/Unknowns_Changelog.md`. Companion edits: `Operations/Energy.md` (Open Unknowns 5 → 8), `Operations/Ops_Scope_Map.md`.
+**Version 5.71 -- 2026-10-27. SP-001 and EP-005 Resolved and removed from the Active Index (human-authorized autonomous management, PKC-028).** The SP-001 cross-file review — its only outstanding work — was completed 2026-10-27: `Admin/Safety_Protocols.md` Section I's consequence categories and escalation rules were verified compatible with `Admin/Engineer_Protocols.md`'s Assumption Challenge Triggers and §8 Hazard Escalation Doctrine, which also satisfies EP-005's Payment-via-Specification resolution path (severity categories, Life Preservation hard-floor cross-reference, human deferral for irreversible harm). Both rows leave the Safety and Engineer Protocols clusters per Size Management Rule 2 (full detail in the owning files' sidecars; Safety_Protocols Open Unknowns 6 → 5, Engineer_Protocols 6 → 5). SP-002–006 reviewed and confirmed accurate, Last Reviewed refreshed, no status change. Per Size Management Rule 2 this block holds only the current version; v5.70 is in `Archive/Logs/Unknowns_Changelog.md`. Companion edits: `Admin/Safety_Protocols.md`, `Admin/Engineer_Protocols.md`, `Admin/Adm_Scope_Map.md`, `Admin/Progress_Log.md` (PKC-028).
 ---
 
 **Expiry Rule active — see `Admin/Canonical_Terms.md` §4 for the Cycle definition this rule now explicitly references (one calendar year default, not one audit pass — see CT-011). Protocol Performance metrics collecting.**
@@ -324,7 +324,6 @@ RB-007 (Human-shared space unresolved)
 | EP-002 | AI vs Human Protocol optimization | `Admin/Engineer_Protocols.md` | Open | — | Minor |
 | EP-003 | Integration mapping with Auditor_Protocols and Cognitive_Frameworks | `Admin/Engineer_Protocols.md` | Open | — | Major |
 | EP-004 | Engineering authority boundary — tier relationship to Ethical_Constraints.md and Auditor_Protocols.md now explicit in Engineering.md File Purpose | `Admin/Engineer_Protocols.md` | Open | — | Major |
-| EP-005 | Acceptable risk threshold undefined — partial resolution via Safety_Protocols.md; full threshold definition still open | `Admin/Engineer_Protocols.md` | Open | — | Major |
 | EP-006 | Unknown lifecycle integration undefined | `Admin/Engineer_Protocols.md` | Open | — | Major |
 
 ### Engineering & Structures
@@ -718,7 +717,6 @@ RB-007 (Human-shared space unresolved)
 
 | ID | Title | Owning File | Status | Subtype | Priority (Promo) |
 |---|---|---|---|---|---|
-| SP-001 | Risk threshold cross-reference with Engineer_Protocols.md pending | `Admin/Safety_Protocols.md` | Open | — | Major |
 | SP-002 | PPE specifications not sourced to standards | `Admin/Safety_Protocols.md` | Open | — | Major |
 | SP-003 | Site noise levels not measured | `Admin/Safety_Protocols.md` | Open | — | Major |
 | SP-004 | Heat stress doctrine not validated against operator experience | `Admin/Safety_Protocols.md` | Open | — | Minor |

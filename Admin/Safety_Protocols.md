@@ -14,9 +14,10 @@
 > death. Forge operations combine arc flash, molten metal, toxic dust, rotating
 > machinery, halogenated polymer off-gas, and sustained high-heat environments. No
 > process-level precaution compensates for absent PPE, impaired operator judgment,
-> or undefined escalation paths. Open unknown SP-001 (acceptable risk threshold)
-> means the boundary between operator-managed risk and mandatory hold has not yet
-> been formally defined. Until SP-001 is resolved, the working rule is: when a
+> or undefined escalation paths. SP-001 (acceptable risk threshold) was Resolved 2026-10-27: the boundary
+> between operator-managed risk and mandatory hold is now formally defined
+> (Section I) and cross-confirmed against `Admin/Engineer_Protocols.md`. The
+> standing rule is unchanged: when a
 > hazard involves irreversible physical harm, escalate to human review before
 > proceeding. The cost of a hold is always lower than the cost of a miss.
 
@@ -30,9 +31,9 @@
 | Body Stability   | Volatile                                                            |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-10-24 — Claude (human-directed) corrected the EP-005 wording in the Scope Boundary and Section I (see Resolution Log); the logged 2026-08-10 Grok pseudo-audit (findings only) is not counted here per the PKC-020 ruling of 2026-10-25. Prior: 2026-06-05                                                          |
-| Auditor          | Claude — 2026-10-24 wording correction (human-directed, from a Vibe per-file audit); prior: Claude — Architect/Auditor                                          |
-| Open Unknowns    | 6                                                                   |
+| Last Audit       | 2026-10-27 — Claude (human-authorized autonomous management; PKC-028): SP-001 cross-file review pass — SP Section I verified compatible with Engineer_Protocols' Assumption Challenge Triggers and §8 Hazard Escalation Doctrine; SP-001 Resolved (and EP-005 in its owning sidecar); SP-002–006 reviewed, confirmed accurate, Last Reviewed refreshed; Open Unknowns 6 → 5. Not a Gate audit — Spec Gates stay 0/6. Prior: 2026-10-24 — Claude (human-directed) corrected the EP-005 wording in the Scope Boundary and Section I (see Resolution Log); the logged 2026-08-10 Grok pseudo-audit (findings only) is not counted here per the PKC-020 ruling of 2026-10-25. Prior: 2026-06-05                                                          |
+| Auditor          | Claude — 2026-10-27 SP-001 cross-file review pass (PKC-028, human-authorized autonomous management); prior: Claude — 2026-10-24 wording correction (human-directed, from a Vibe per-file audit); prior: Claude — Architect/Auditor                                          |
+| Open Unknowns    | 5                                                                   |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | High                                                                |
 | Sidecar Link     | #auditor-notes--unknowns                                            |
@@ -390,14 +391,14 @@ Minimum content for any incident log entry:
 
 | Field         | Value                   |
 |---------------|-------------------------|
-| Status        | Open                    |
+| Status        | Resolved — cross-file review completed 2026-10-27 (see Resolution note)                    |
 | Risk          | Medium                  |
 | Priority      | Major                   |
 | Type          | Governance              |
 | Blocking      | No                      |
 | Owner         | Admin/Safety_Protocols.md |
 | First Logged  | 2026-06-05              |
-| Last Reviewed | 2026-06-05              |
+| Last Reviewed | 2026-10-27              |
 
 **Description:** Section I defines the acceptable risk threshold intended to resolve
 EP-005 in Engineer_Protocols.md. This resolution requires confirmation that the
@@ -415,6 +416,8 @@ Align language and update EP-005 status in Engineer_Protocols.md sidecar.
 Also cross-reference EC-001 (sufficient confidence threshold in Ethical_Constraints.md)
 as the governance floor.
 
+**Resolution (2026-10-27, human-authorized autonomous management; PKC-028):** Cross-file review completed. SP Section I's consequence categories (Minor / Major / Catastrophic / Irreversible) and escalation rules were compared against `Admin/Engineer_Protocols.md` §Assumption Challenge Triggers and §8 Hazard Escalation Doctrine and found compatible: the trigger's "safety consequences exceed acceptable risk threshold" now resolves to Section I's consequence classes — Major or above, or any class where the mitigation is undefined or unvalidated, mandates human review — matching EP's mandatory-challenge and human-escalation routing; the `Admin/Ethical_Constraints.md` Life Preservation hard floor sits beneath both files identically. EP-005 moved to Resolved in its owning sidecar the same day (its Payment-via-Specification path is satisfied by Section I as written). SP-002–006 were each reviewed against their dependencies in the same pass and confirmed accurate as written. Status → Resolved.
+
 ---
 
 ### SP-002 — PPE specifications not sourced to standards
@@ -428,7 +431,7 @@ as the governance floor.
 | Blocking      | No                      |
 | Owner         | Admin/Safety_Protocols.md |
 | First Logged  | 2026-06-05              |
-| Last Reviewed | 2026-06-05              |
+| Last Reviewed | 2026-10-27              |
 
 **Description:** PPE specifications in Section II reference common-sense minimums
 (ANSI Z87.1, shade ratings, NRR values) but are not formally sourced to OSHA
@@ -456,7 +459,7 @@ with safety knowledge before first hot operation.
 | Blocking      | No                      |
 | Owner         | Admin/Safety_Protocols.md |
 | First Logged  | 2026-06-05              |
-| Last Reviewed | 2026-06-05              |
+| Last Reviewed | 2026-10-27              |
 
 **Description:** Section III assumes Forge operations exceed 85 dB based on analogous
 equipment estimates (ASM-005). No site noise survey has been conducted.
@@ -481,7 +484,7 @@ operational run. Update Section III with measured values. Resolve ASM-005 expiry
 | Blocking      | No                      |
 | Owner         | Admin/Safety_Protocols.md |
 | First Logged  | 2026-06-05              |
-| Last Reviewed | 2026-06-05              |
+| Last Reviewed | 2026-10-27              |
 
 **Description:** Section IV heat stress doctrine uses published NIOSH and general
 climate guidelines. It has not been calibrated to the specific operator, site,
@@ -508,7 +511,7 @@ Lessons Learned target, not a blocking issue.
 | Blocking      | No                      |
 | Owner         | Admin/Safety_Protocols.md |
 | First Logged  | 2026-06-05              |
-| Last Reviewed | 2026-06-05              |
+| Last Reviewed | 2026-10-27              |
 
 **Description:** This file defines safety doctrine but does not assess whether
 Forge operations at a given site require OSHA compliance, fire marshal inspection,
@@ -536,7 +539,7 @@ both together.
 | Blocking      | No                      |
 | Owner         | Admin/Safety_Protocols.md |
 | First Logged  | 2026-06-05              |
-| Last Reviewed | 2026-06-05              |
+| Last Reviewed | 2026-10-27              |
 
 **Description:** This file defines hazard classification and operator impairment
 response but does not define emergency response procedures beyond operator scope —
@@ -556,6 +559,8 @@ defer until FA-001 (site confirmed) is resolved. Cross-reference FA-001.
 ---
 
 ### Resolution Log
+
+- 2026-10-27: **SP-001 resolved — cross-file review pass completed (PKC-028, human-authorized autonomous management).** SP Section I compared line-by-line against `Admin/Engineer_Protocols.md` §Assumption Challenge Triggers and §8 Hazard Escalation Doctrine: compatible. The "acceptable risk threshold" the EP trigger references resolves to Section I's consequence classes (Major or above, or undefined/unvalidated mitigation, mandates human review), matching EP's own mandatory-challenge and human-escalation routing; the Life Preservation hard floor (`Admin/Ethical_Constraints.md`) sits beneath both files identically; EP §8's Physical safety/PPE row correctly routes to this file (its listed unknowns SP-002/003/006 are the live technical ones — SP-001 closes today; SP-004/005 are validation/regulatory items, not hazard-class doctrine). EP-005 moved to Resolved in its owning sidecar — its resolution path (severity categories, Life Preservation cross-reference, human deferral for irreversible harm) is satisfied by Section I as written. SP-002–006 each reviewed against their dependencies (FA-001 still Open per `Unknowns.md`; no site, no operating season, no standards pass yet): all accurate as written, Last Reviewed refreshed to 2026-10-27, no Status change. Open Unknowns 6 → 5. This pass is a sidecar review, not a Gate audit: Spec Gates stay 0/6. The Operational Safety Advisory's SP-001 sentence was updated to reflect the resolution; the standing irreversible-harm escalation rule is unchanged.
 
 - 2026-10-25: **Header wording updated (PKC-020 ruling; no content change).** The Last Audit annotation that said the logged findings-only pseudo-audit was not counted "pending PKC-020" now cites the ruling of 2026-10-25: a findings-only pseudo-audit does not advance Last Audit (`Admin/Auditor_Protocols.md` v0.45, Rule 10 addendum). No date, field value, Unknown or Spec Gate changed.
 

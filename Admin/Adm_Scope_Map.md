@@ -11,7 +11,7 @@
 | Spec Gates       | N/A — this file is a cross-reference index, not a specification     |
 | Open Unknowns    | 0 (surfaces existing unknowns from owning files; creates none)      |
 | Owning Domain    | Admin/                                                               |
-| Last Reviewed    | 2026-10-25 — Repository_Structure entry updated for RS-001 resolved (0 Open Unknowns); CIR_Gov entry Status changed from Proposed to Exploration to match its owning file (PKC-031). Prior: 2026-10-23 — Charter entry Risk corrected Critical → High (Risk/Priority conflation; found by a Vibe audit of the Charter, checked against its File State and GOV-005 sidecar). Also 2026-10-23: Progress_Log entry updated for its new Parked Concerns section. Prior: 2026-10-04 — Load-bearing map (Tier 0–4) added from `Tests/Admin_Governance_Teardown_POC.md`, then Tier 1/Tier 2 file-count and KB figures corrected the same day (inherited two arithmetic errors from the source POC's own Totals line — see that file's Resolution Log). No Admin files merged or deleted. Prior: 2026-10-03 metadata catch-up. Field meaning: last substantive map check/modification, not a full-folder re-audit of every Admin file. |
+| Last Reviewed    | 2026-10-27 — Safety_Protocols and Engineer_Protocols entries corrected 6 → 5 Open Unknowns (SP-001 and EP-005 both Resolved, PKC-028; cross-file review pass). Prior: 2026-10-25 — Repository_Structure entry updated for RS-001 resolved (0 Open Unknowns); CIR_Gov entry Status changed from Proposed to Exploration to match its owning file (PKC-031). Prior: 2026-10-23 — Charter entry Risk corrected Critical → High (Risk/Priority conflation; found by a Vibe audit of the Charter, checked against its File State and GOV-005 sidecar). Also 2026-10-23: Progress_Log entry updated for its new Parked Concerns section. Prior: 2026-10-04 — Load-bearing map (Tier 0–4) added from `Tests/Admin_Governance_Teardown_POC.md`, then Tier 1/Tier 2 file-count and KB figures corrected the same day (inherited two arithmetic errors from the source POC's own Totals line — see that file's Resolution Log). No Admin files merged or deleted. Prior: 2026-10-03 metadata catch-up. Field meaning: last substantive map check/modification, not a full-folder re-audit of every Admin file. |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
 ---
@@ -93,7 +93,7 @@ Pilot for a per-folder scope-map pattern, proposed 2026-08-07 as a fix for a kno
 **Does not (arrow):** FRT doctrine/floor (`Trajectories.md`) - FRT logging (`Gate_07_Utilization.md`) - primary KPI (`Architecture/Forge_flow.md`) - energy cost model (`Operations/Energy.md`) - safety envelopes for commercial value streams (`Safety_Protocols.md`, `Operations/Plastics.md`, `Operations/Woodworking.md`).
 
 ### `Admin/Engineer_Protocols.md`
-**Status:** Draft · 2/6 · 6 Open Unknowns · Risk: High
+**Status:** Draft · 2/6 · 5 Open Unknowns (EP-005 Resolved 2026-10-27, PKC-028) · Risk: High
 **Does:** Engineering problem-solving protocols; assumption-challenge triggers; anti-reinvention/failure-harvesting rules; Engineer-Auditor dispute resolution.
 **Does not (arrow):** Domain-specific calculations (`Operations/`, `Architecture/`) - general audit procedure (`Auditor_Protocols.md`) - PPE/risk thresholds (`Safety_Protocols.md`).
 
@@ -207,7 +207,7 @@ Note: created same day as this Scope_Map build's own findings were still fresh �
 **Does not (arrow):** File content standards (`File_Template.md`) - governance hierarchy (`Governance_Charter.md`) - navigation/current file map - Rename Registry (`Archive/Rename_Registry.md`) - migration procedures (`GMP` Track A) - integrity enforcement (`Repository_Integrity_Protocol.md`).
 
 ### `Admin/Safety_Protocols.md`
-**Status:** Exploration · 0/6 · 6 Open Unknowns · Risk: High
+**Status:** Exploration · 0/6 · 5 Open Unknowns (SP-001 Resolved 2026-10-27, PKC-028) · Risk: High
 **Does:** Acceptable risk threshold doctrine; PPE by hazard class; hearing conservation; heat stress doctrine; operator impairment response; pre-operation safety checks; incident reporting.
 **Does not (arrow):** Facility constraints (`Architecture/Facilities.md`) - Air Scrubber hardware specs (`Operations/Air_Scrubber.md`) - Anti-Weaponization/Life Preservation hard floors (`Ethical_Constraints.md` — explicitly distinguished as governance constraints, not operational safety) - legal/regulatory compliance (SP-005, human decision).
 
@@ -253,6 +253,8 @@ Findings 1–3 (structural scope gaps) closed 2026-08-09. Findings 4–5 remain 
 ---
 
 ## Resolution Log
+
+- 2026-10-27: **Safety_Protocols and Engineer_Protocols entries corrected 6 → 5 Open Unknowns each** (PKC-028, human-authorized autonomous management): SP-001 (cross-file risk-threshold confirmation) and EP-005 (acceptable risk threshold) both Resolved 2026-10-27 after the SP-001 cross-file review pass; counts updated against the owning files' File State. No other entry changed; not a full-folder re-audit.
 
 - 2026-10-25: Status of the CIR_Gov entry changed from "Proposed — Not Ratified" to "Exploration — Not Ratified", matching the owning file after the PKC-031 ruling. No other entry, count or Unknown changed. Human-directed.
 

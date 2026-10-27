@@ -29,9 +29,9 @@
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 2/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-05-30 (ChatGPT — Skeptic/Auditor); revised 2026-06-08; revised 2026-10-23 (structure corrections)          |
-| Auditor          | Claude — Retrofit/Auditor (integrating 2026-05-30 addendum); Claude — 2026-10-23 structure corrections (human-directed, from a Vibe per-file audit)         |
-| Open Unknowns    | 6                                                                   |
+| Last Audit       | 2026-10-27 — Claude (human-authorized autonomous management; PKC-028): EP-005 resolved after the SP-001 cross-file review confirmed `Admin/Safety_Protocols.md` Section I satisfies its Payment-via-Specification path; EP-001–004 and EP-006 untouched. Prior: 2026-05-30 (ChatGPT — Skeptic/Auditor); revised 2026-06-08; revised 2026-10-23 (structure corrections)          |
+| Auditor          | Claude — 2026-10-27 EP-005 resolution pass (PKC-028, human-authorized autonomous management); prior: Claude — Retrofit/Auditor (integrating 2026-05-30 addendum); Claude — 2026-10-23 structure corrections (human-directed, from a Vibe per-file audit)         |
+| Open Unknowns    | 5                                                                   |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | High                                                                |
 | Sidecar Link     | #auditor-notes--unknowns                                            |
@@ -600,14 +600,14 @@ overridden regardless of engineering authority level.
 
 | Field         | Value                        |
 |---------------|------------------------------|
-| Status        | Open                         |
+| Status        | Resolved — Payment via Specification, 2026-10-27 (see Resolution note)                         |
 | Risk          | Medium                       |
 | Priority      | Major                        |
 | Type          | Governance / Technical       |
 | Blocking      | No                           |
 | Owner         | Admin/Engineer_Protocols.md  |
 | First Logged  | 2026-05-30                   |
-| Last Reviewed | 2026-05-30                   |
+| Last Reviewed | 2026-10-27                   |
 
 **Description:** The Assumption Challenge Triggers section requires escalation
 when "safety consequences exceed acceptable risk threshold" but no threshold
@@ -630,6 +630,8 @@ Cross-reference `Admin/Safety_Protocols.md` consequence category table —
 that file now owns physical safety escalation thresholds (EP-005 partial
 resolution path). Also cross-reference EC-001 (sufficient confidence
 threshold) and EP-004 (engineering authority boundary).
+
+**Resolution (2026-10-27, human-authorized autonomous management; PKC-028):** Payment via Specification satisfied by `Admin/Safety_Protocols.md` Section I, cross-verified this date by the SP-001 review: (1) consequence severity categories (Minor / Major / Catastrophic / Irreversible) with escalation routes — Section I's mandatory-hold rule (Major or above, or undefined/unvalidated mitigation) matches this file's Assumption Challenge Triggers; (2) the `Admin/Ethical_Constraints.md` Life Preservation heuristics are cross-referenced as the hard floor beneath the threshold; (3) irreversible physical harm defers explicitly to the human operator (Full Stop class). Status → Resolved. EP-004's risk-threshold dependency is thereby satisfied, but EP-004 remains Open on its own remaining criteria; EP-001–004 and EP-006 were not re-reviewed this pass.
 
 ---
 
@@ -670,6 +672,8 @@ Cross-reference `Admin/Auditor_Protocols.md` §Unknowns Registry Governance.
 ---
 
 ### Resolution Log
+
+- 2026-10-27: **EP-005 resolved — Payment via Specification (PKC-028, human-authorized autonomous management).** The SP-001 cross-file review (see `Admin/Safety_Protocols.md`'s log, same date) confirmed Safety_Protocols Section I satisfies this entry's resolution path on all three points: consequence severity categories with escalation routes (compatible with the Assumption Challenge Triggers), the Life Preservation hard-floor cross-reference, and explicit human deferral for irreversible physical harm. The "acceptable risk threshold" the Assumption Challenge Triggers reference is now defined doctrine. Sidecar Status → Resolved; Last Reviewed 2026-10-27; Open Unknowns 6 → 5. EP-001–004 and EP-006 unchanged. No Spec Gate change.
 
 - 2026-10-23: **Structure corrections (human-directed, from a Vibe per-file audit; each finding checked against source first).** (1) The two `## Drift Indicators` sections (a ten-item bullet list from v0.2 and an eight-item table of "additional local triggers" left over from the 2026-05-30 addendum) merged into one; every trigger from both survives, and the Compound Drift Rule keeps its stricter wording. (2) The unlabelled cross-reference block that followed this log given the heading `## Relationship to Existing Documents`; its last bullet updated, since EP-001 through EP-006 are indexed in `Unknowns.md`. (3) This log reordered newest-first, entries unchanged. No doctrine, Unknown or Spec Gate changed.
 - 2026-06-08: Navigation Anchors block added. Verification Ref corrected
