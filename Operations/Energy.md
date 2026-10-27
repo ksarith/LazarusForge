@@ -23,8 +23,8 @@
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 1/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-10-27 — Claude (human-directed, PKC-034) three sidecar entries added (EV-006/EV-007/EV-008, from the Superconductivity Horizons SC-H1–H3 list), each Open, Risk Low, Priority Minor, non-Blocking; Open Unknowns 5 → 8; no body doctrine, Spec Gate or existing-unknown change. Prior: 2026-08-09 — Grok pseudo-audit (Skeptic read + minimal Synthesizer fixes); prior: 2026-08-02 dual-audit adjudication; EGL body still not Gate-1 cleared |
-| Auditor          | Claude — PKC-034 registration (human-directed, 2026-10-27); Gemini (2026-05-31); Grok EGL draft (2026-08-01); Gemini+Grok dual-audit (2026-08-02); Grok pseudo-audit (2026-08-09) — no Spec Gate promotion |
+| Last Audit       | 2026-10-27 — Claude (human-directed): Why It Matters lines added to EV-006–EV-008 (the template field was missing); no other change. Prior: 2026-10-27 — Claude (human-directed, PKC-034) three sidecar entries added (EV-006/EV-007/EV-008, from the Superconductivity Horizons SC-H1–H3 list), each Open, Risk Low, Priority Minor, non-Blocking; Open Unknowns 5 → 8; no body doctrine, Spec Gate or existing-unknown change. Prior: 2026-08-09 — Grok pseudo-audit (Skeptic read + minimal Synthesizer fixes); prior: 2026-08-02 dual-audit adjudication; EGL body still not Gate-1 cleared |
+| Auditor          | Claude — Why It Matters lines added (human-directed, 2026-10-27); Claude — PKC-034 registration (human-directed, 2026-10-27); Gemini (2026-05-31); Grok EGL draft (2026-08-01); Gemini+Grok dual-audit (2026-08-02); Grok pseudo-audit (2026-08-09) — no Spec Gate promotion |
 | Open Unknowns    | 8                                                                   |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | High                                                                |
@@ -613,6 +613,8 @@ Key guiding principles drawn from disciplined analysis:
 
 **Description:** Registered as a possibility with low expectations — possible, not assumed (human direction, PKC-034). Restates only what the Superconductivity Horizons section already says: whether practical ambient-pressure materials viable below 200 K exist under Forge bootstrap constraints. No feasibility claim is made or implied.
 
+**Why It Matters:** Until this is answered, superconductivity stays a monitored idea: nothing in the Superconductivity Horizons section can be adopted without a practical ambient-pressure material.
+
 **Resolution Path:** None beyond the Superconductivity Horizons section's own guardrails: no dedicated R&D budget at v0–v1; monitor external progress and salvage opportunities only; maintain fallback to conventional (copper/aluminum) conductors. Any candidate material is tested via simple four-point probe resistance + basic susceptibility checks before integration.
 
 ---
@@ -631,6 +633,8 @@ Key guiding principles drawn from disciplined analysis:
 | Last Reviewed | 2026-10-27                                            |
 
 **Description:** Registered as a possibility with low expectations — possible, not assumed (human direction, PKC-034). Restates only what the Superconductivity Horizons section already says: whether fabrication routes for superconducting wire and joints exist that are compatible with salvage/bootstrap constraints. No route is proposed.
+
+**Why It Matters:** Even a viable material (EV-006) cannot reach the transmission, magnet or storage pathways the section describes unless it can be made into wire and joints within Forge constraints.
 
 **Resolution Path:** None beyond the Superconductivity Horizons section's own guardrails: no dedicated R&D budget at v0–v1; monitor external progress and salvage opportunities only; maintain fallback to conventional (copper/aluminum) conductors.
 
@@ -651,11 +655,15 @@ Key guiding principles drawn from disciplined analysis:
 
 **Description:** Registered as a possibility with low expectations — possible, not assumed (human direction, PKC-034). Restates only what the Superconductivity Horizons section already says: whether superconducting transmission, magnets, or storage yield a net system-level kWh benefit once the cooling and strain infrastructure they require is accounted for. The file's core metric is Value recovered per kWh; no benefit is assumed.
 
+**Why It Matters:** A material that works but costs more energy to cool and strain than it saves would not serve the Forge's value-recovered-per-kWh metric.
+
 **Resolution Path:** None beyond the Superconductivity Horizons section's own guardrails: no dedicated R&D budget at v0–v1; monitor external progress and salvage opportunities only; maintain fallback to conventional (copper/aluminum) conductors so all designs degrade gracefully.
 
 ---
 
 ### Resolution Log
+
+- 2026-10-27: **Why It Matters lines added to EV-006, EV-007 and EV-008 (human-directed; no other change).** The three entries registered under PKC-034 lacked the template's "Why It Matters" field that EV-005 and the other sidecar entries carry. One sentence each was added, drawn only from what the Superconductivity Horizons section already says. No status, risk, priority, description or resolution path changed.
 
 - 2026-10-27: **PKC-034 enacted — EV-006, EV-007 and EV-008 registered (superconductivity horizons SC-H1–H3).** The Superconductivity Horizons section listed three unknowns to track with no sidecar entries; they are now registered as possibilities with low expectations — possible, not assumed (human-directed) — each restating only what the section already says and defining no resolution path beyond its guardrails (no R&D budget at v0–v1, monitor external progress, copper/aluminum fallback). IDs use this sidecar's EV prefix because the SC- string is already used for unrelated items in Thermal_Systems and Chemistry; each entry carries its SC-H name, and the section's list now maps SC-H1→EV-006, SC-H2→EV-007, SC-H3→EV-008. Open Unknowns 5 → 8. Companion edits: `Unknowns.md` v5.70, `Operations/Ops_Scope_Map.md`. No Spec Gate, Risk, Blocking or existing-unknown change; Status stays Draft, 1/6.
 

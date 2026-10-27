@@ -12,7 +12,7 @@
 | Open Unknowns    | 0                                                                    |
 | Body Stability   | N/A                                                                  |
 | Owning Domain    | Tests/                                                               |
-| Last Reviewed    | 2026-10-25 — gap noted: no entry or index row exists for MAQT Cycle 1 (PKC-041); nothing added to the index. Prior: 2026-10-19 — index rows and log entries added through the Chrono pilot scoring (see Resolution Log); header corrected 2026-10-24 (Claude, human-directed, from a Vibe per-file audit). Prior: 2026-10-03                                                          |
+| Last Reviewed    | 2026-10-27 — flag on the FL-20261007 ratification closed (PKC-036); no entry or index row changed. Prior: 2026-10-25 — gap noted: no entry or index row exists for MAQT Cycle 1 (PKC-041); nothing added to the index. Prior: 2026-10-19 — index rows and log entries added through the Chrono pilot scoring (see Resolution Log); header corrected 2026-10-24 (Claude, human-directed, from a Vibe per-file audit). Prior: 2026-10-03                                                          |
 | Sidecar Link     | N/A                                                                  |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
@@ -202,6 +202,8 @@ Procedure cards for tracks currently cleared to run — fill while running, file
 
 ## Resolution Log
 
+
+- 2026-10-27: **Flag on FL-20261007 closed (PKC-036, human-directed; nothing else changed).** The 2026-10-24 entry below flagged that the index row reads "Reviewed — accepted and ratified" while the 2026-10-07 log line records the entry as Unreviewed pending ratification. The human confirmed on 2026-10-27 that the recharacterization was approved and completed. The ratification is recorded in the entry's own Status line (2026-10-07), in `Archive/Logs/Progress_Log_Changelog.md` (2026-10-07, second entry), and now here; the index row is correct. The 2026-10-07 log line below is the state at filing time and is left as written (append-only). The cosmetic table break in the Ready-to-Run Cards section was not touched.
 
 - 2026-10-25: **Gap noted, nothing reconstructed (PKC-041, human-directed).** `Archive/Logs/Progress_Log_Changelog.md` (2026-09-22) says MAQT Cycle 1 (`MAQT-C1-EC013-CROSSREF`; Gemini Planner, Copilot Skeptic, Grok Auditor; logical isolation) had its first Field_Logs entry filed, with a human ratification stored here. No such entry or index row exists in this tree. Whether it was lost in the 2026-10-03 one-file-per-entry restructure or never committed cannot be determined from the repo. If the original is supplied it is filed as an `FL-` entry; a reconstruction from the changelog summary is not filed as evidence. The index is unchanged. Human-directed.
 
