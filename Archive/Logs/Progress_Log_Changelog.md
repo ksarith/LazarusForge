@@ -4,6 +4,13 @@ Split out 2026-08-09, following the precedent already established by `Unknowns_C
 
 ---
 
+### 2026-10-19 — Chrono pilot Steps 3-4 filed (reviewer scoring)
+*(Rotated 2026-10-27, Forge_Audit_Kit v1.22 pass.)*
+Gemini (R1, memory on, own sessions S1-S2 excluded per §9.4) and Grok (R2) scored the six sessions from a blind packet; recorded in `FL-20261019-chrono-divergence-pilot-scoring` with an agreement table and disagreement analysis, and no adjudicated score. Both sheets: F1 and F2 Unscorable. Item level: M1 agreed on 1 of 4 sessions, validity on 3 of 4. R1 called M1 No on S3-S5 against text that contains the comparison (S3 finding 23, S5 F-01); R2's S4 Yes is labeled reading (ii) but the cited text fits only reading (i); R2 invalidated S1, S2 and S5 more strictly than the rule as written. The Unscorable rule, S4's M1 reading and session validity are independent choices that could move F1 between Unscorable, Partial and Hit. Packet flaw: it carried the §9.3 declaration verbatim, anchoring both reviewers. No preregistered revision trigger fired; CD-001 stays Open; rubric reliability not licensed. Pilot recorded as procedurally complete (human to confirm). Next, if wanted: new preregistration with tighter M1 and validity definitions (candidates listed in the Field_Log, not applied), and two more baseline pairs. Still Proposed 0/6; no Unknown, Spec Gate or Status change. Human-directed.
+
+
+---
+
 ### 2026-10-18 — AUDIT_HARNESS v18: explicit DEGRADED fallback labeling
 *(Rotated 2026-10-27.)*
 Harness Routing.md fetch failure now prints `DEGRADED — FALLBACK REGISTRY USED` with scope of checks NOT RUN; `REGISTRY_SOURCE` carries LIVE/DEGRADED. integrity_check 0.2 labels verification scope `LOCAL-ONLY` (local Routing.md, not network) and quiets harness import noise. README version matched. No Spec Gate, Unknown or doctrine change. Human-directed (ChatGPT audit P1; Claude review of first patch).
