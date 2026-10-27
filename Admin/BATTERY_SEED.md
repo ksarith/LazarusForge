@@ -1,5 +1,5 @@
 # BATTERY_SEED.md
-**Version 1.0**
+**Version 1.1**
 
 ## File State
 
@@ -8,12 +8,12 @@
 | Status         | Draft                                                               |
 | Spec Gates     | N/A — operational prompt template, not a doctrine or specification claim |
 | Verification Ref | Admin/Auditor_Protocols.md §Adversarial Challenge Battery, AP-017 |
-| Last Audit     | 2026-08-02                                                          |
-| Auditor        | Claude — Synthesizer/Auditor, human-directed, first draft, 2026-08-02 |
+| Last Audit     | 2026-10-27 — Vibe (human ruling enacted, PKC-022 option B): version pin retired, header 1.0→1.1; prior: Claude — first draft, 2026-08-02 |
+| Auditor        | Vibe — Skeptic/Auditor, 2026-10-27 pin retirement (human-ratified); prior: Claude — Synthesizer/Auditor, human-directed, first draft, 2026-08-02 |
 | Open Unknowns  | 0 — tracked at Admin/Auditor_Protocols.md AP-017 (mechanism-level, not template-level) |
 | Ethical Anchor | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
-**Derived from:** `Admin/Auditor_Protocols.md` v0.32 §Adversarial Challenge Battery and AP-017's Resolution Path (`Archive/Logs/Auditor_Protocols_Logs.md`).
+**Derived from:** `Admin/Auditor_Protocols.md` §Adversarial Challenge Battery and AP-017's Resolution Path (`Archive/Logs/Auditor_Protocols_Logs.md`). Version pin retired per human ruling 2026-10-27 (PKC-022, option B): the seed defers to the attached source at run time and copies no version-sensitive content, so no version pin is maintained.
 When this file contradicts that source, the source document prevails.
 
 ---
@@ -78,3 +78,4 @@ When the audit's subject is `Admin/Auditor_Protocols.md` itself, bundle these al
 
 - 2026-08-02: v1.0 — initial draft, human-directed. Companion file for `Admin/Auditor_Protocols.md` AP-017. Supplies the missing Battery-shaped prompt `cold_session_bundler.py`'s constructor already had a parameter for but no frozen, versioned text to fill it with. Does not change AP-017's closure bar (see that entry's own Resolution Path for the acceptance criteria this file's output is measured against).
 - 2026-10-27: findings-only pseudo-audit (Vibe — Skeptic/Auditor, human-authorized autonomous management; the PKC-014 re-derivation check). Per the PKC-020 findings-only rule this entry does not advance Last Audit or the version, and is not counted in either; no content above changed. Checked against live `Admin/Auditor_Protocols.md` v0.45 (13 versions past this file's v0.32 pin): (1) the Battery's ten challenge classes are unchanged in count and naming, so the seed's "all ten classes" instruction and its deferral of class definitions to the attached source both remain accurate; (2) the Adversarial Audit Sign-Off Format the seed's closing instruction references still exists in the source; (3) AP-017, the cold-session independence mechanics and the Audit Entry Conditions carve-out the Self-Audit Target List relies on are intact. Two findings, neither edited here: (a) the frozen role-declaration string "Operating as Skeptic/Auditor per the attached Auditor_Protocols.md." deviates from AP's own Role Declaration Requirement template, which pins the live version ("per Auditor_Protocols.md v0.45") — defensible in a cold bundle (the attached file carries its version in the header, so the auditor can cite it), but whether to align the frozen string is a decision for the human; (b) the Derived-from pin (v0.32) lags the live v0.45 — same pin-vs-retire structural class as PKC-022 / FAK-014–FAK-019; since the seed copies no AP content (it defers to the attached file at run time), the lag is cosmetic until AP's Battery section changes. Recommendation: no re-derivation needed; the seed remains valid as frozen prompt text; the pin decision belongs with PKC-022's.
+- 2026-10-27: v1.0 → v1.1 (human ruling enacted, PKC-022 option B; body-changing pass, so Last Audit advances per the PKC-020 split policy): the "v0.32" version pin retired from the Derived-from line — the seed copies no version-sensitive content and defers to the attached source at run time, so the pin generated staleness findings without preventing any (the 2026-10-27 findings-only check above found the seed otherwise fully valid against live AP v0.45). The role-declaration-string deviation found by that check is deferred as cosmetic until this file's next natural content edit, per the human's low-value-polish disposition.
