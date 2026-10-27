@@ -1,5 +1,5 @@
 # Forge_Audit_Kit.md
-**Version 1.21**
+**Version 1.22**
 
 ---
 
@@ -16,13 +16,13 @@
 | Status         | Draft                                                               |
 | Spec Gates     | 0/6 — hold: FAK-014's account of a same-day 2026-09-03 Grok audit that "cleared all six gates" is treated as stale (body changed since, v1.16–v1.20); no advance without fresh audit + human ratification (PKC-042, 2026-10-27)                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                    |
-| Last Audit     | 2026-10-27 — Claude (human-authorized autonomous management; PKC-042): Spec Gates hold reason annotated; header 1.20→1.21; no gate advanced; no derivation-reconciliation pass due (annotation only, not a maintenance-trigger change). Prior: 2026-10-10 — Claude, human-directed refresh: derivation citations updated (`Auditor_Protocols.md` v0.41 → v0.42, `Unknowns.md` v5.57 → v5.58) and the role-declaration string to v0.42; FAK-018 logged (sixth occurrence; the structural question stays open). Same-day mitigation: role-declaration example now uses a live-version placeholder, the Derived-from line is labeled as reconciled-against, and the maintenance trigger is now content-based (a plain version increment is not a trigger; reconciliation check at audit start). Prior: 2026-10-03 — Grok, human-directed: derivation citation to `Unknowns.md` had gone stale a fifth time (v5.27 → live v5.57, 30 versions). Same recurring citation-staleness pattern previously logged as FAK-014/015/016. Logged as FAK-017. Citation refreshed to v5.57; header bumped 1.18→1.19. Prior: 2026-09-15 — Claude, FAK-016 (fourth occurrence, automated audit path). |
-| Auditor        | Claude — 2026-10-27 PKC-042 hold-reason annotation, header 1.20→1.21 (human-authorized autonomous management); prior: Claude — v1.20 FAK-018 logged, derivation and role-declaration strings refreshed, header 1.19→1.20 (human-directed), 2026-10-10; Grok — v1.19 FAK-017 logged (fifth occurrence of the citation-staleness pattern), derivation citation refreshed to Unknowns.md v5.57, header 1.18→1.19 (human-directed), 2026-10-03; Claude — v1.18 FAK-016 logged, 2026-09-15; prior history retained in Resolution Log / Changelog |
-| Open Unknowns  | 10 — see Sidecar Link                                                |
+| Last Audit     | 2026-10-27 — Vibe (human-authorized targeted refresh, PKC-022 lag clearance): Derived-from line re-pinned (`Auditor_Protocols.md` v0.42 → v0.45, `Unknowns.md` v5.58 → v5.71; `Verification_Gates.md` checked and unchanged at v0.7); condensed Rule 10 extended with the PKC-020 findings-only sub-rule from AP v0.45's Rule 10 addendum; FAK-019 logged (seventh pin-staleness occurrence; pin-vs-retire structural question stays open by human direction). Header 1.21→1.22. Prior: 2026-10-27 — Claude (human-authorized autonomous management; PKC-042): Spec Gates hold reason annotated; header 1.20→1.21; no gate advanced; no derivation-reconciliation pass due (annotation only, not a maintenance-trigger change). Prior: 2026-10-10 — Claude, human-directed refresh: derivation citations updated (`Auditor_Protocols.md` v0.41 → v0.42, `Unknowns.md` v5.57 → v5.58) and the role-declaration string to v0.42; FAK-018 logged (sixth occurrence; the structural question stays open). Same-day mitigation: role-declaration example now uses a live-version placeholder, the Derived-from line is labeled as reconciled-against, and the maintenance trigger is now content-based (a plain version increment is not a trigger; reconciliation check at audit start). Prior: 2026-10-03 — Grok, human-directed: derivation citation to `Unknowns.md` had gone stale a fifth time (v5.27 → live v5.57, 30 versions). Same recurring citation-staleness pattern previously logged as FAK-014/015/016. Logged as FAK-017. Citation refreshed to v5.57; header bumped 1.18→1.19. Prior: 2026-09-15 — Claude, FAK-016 (fourth occurrence, automated audit path). |
+| Auditor        | Vibe — Skeptic/Auditor, 2026-10-27 targeted v1.22 refresh (human-authorized): re-pinned AP v0.45 / Unknowns v5.71, incorporated the PKC-020 findings-only sub-rule into condensed Rule 10, FAK-019 logged, Open Unknowns 10 → 11; prior: Claude — 2026-10-27 PKC-042 hold-reason annotation, header 1.20→1.21 (human-authorized autonomous management); prior: Claude — v1.20 FAK-018 logged, derivation and role-declaration strings refreshed, header 1.19→1.20 (human-directed), 2026-10-10; Grok — v1.19 FAK-017 logged (fifth occurrence of the citation-staleness pattern), derivation citation refreshed to Unknowns.md v5.57, header 1.18→1.19 (human-directed), 2026-10-03; Claude — v1.18 FAK-016 logged, 2026-09-15; prior history retained in Resolution Log / Changelog |
+| Open Unknowns  | 11 — see Sidecar Link                                                |
 | Sidecar Link   | Archive/Logs/Forge_Audit_Kit_Changelog.md#sidecar--auditor-notes--unknowns |
 | Ethical Anchor | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
-**Derived from (reconciled against these versions, 2026-10-10):** `Admin/Auditor_Protocols.md` v0.42 | `Admin/Verification_Gates.md` v0.7 | `Unknowns.md` v5.58
+**Derived from (reconciled against these versions, 2026-10-27):** `Admin/Auditor_Protocols.md` v0.45 | `Admin/Verification_Gates.md` v0.7 | `Unknowns.md` v5.71
 
 When this file contradicts a full source document, the full source document prevails.
 
@@ -179,7 +179,7 @@ Valid roles: Skeptic/Auditor | Systems/Auditor | Evidence/Auditor | Ethical/Audi
 7. Repository Structure Awareness — use canonical folder-prefixed paths.
 8. Epistemic State Labeling — claims that cannot reach VERIFIED must be labeled PROVISIONAL or UNKNOWN. Do not collapse epistemic states under optimization pressure.
 9. Resolution Claims Require Governance Access (AP-033) — no contribution may mark, or by structure imply, that any unknown has advanced toward Resolved/Closed status without confirmed access to `Admin/Auditor_Protocols.md`'s own Resolution Taxonomy at the time of writing. Without that access, proposed closure mechanisms are candidate methodology only — never status.
-10. External Pseudo-Audit Scope and Logging Destination (AP-035) — a pseudo-audit (Spec Gates/Verification thresholds locked, no ratification authority) may not assert inventory/file/content claims without stating direct verification against the payload; may not invent a local ID prefix for cross-module unknowns; may not generate a freestanding ledger file as the primary record. Findings go first in the owning file's own sidecar; only genuinely cross-module findings get a `Unknowns.md` entry, added by an agent with confirmed sidecar access.
+10. External Pseudo-Audit Scope and Logging Destination (AP-035) — a pseudo-audit (Spec Gates/Verification thresholds locked, no ratification authority) may not assert inventory/file/content claims without stating direct verification against the payload; may not invent a local ID prefix for cross-module unknowns; may not generate a freestanding ledger file as the primary record. Findings go first in the owning file's own sidecar; only genuinely cross-module findings get a `Unknowns.md` entry, added by an agent with confirmed sidecar access. Rule 10 addendum (PKC-020, human ruling 2026-10-25): a findings-only pseudo-audit does not advance the owning file's Last Audit or Auditor field — it is logged in the Resolution Log as a pseudo-audit, findings only, and Last Audit keeps the date of the last real audit; a body-changing pass bumps Last Audit and Auditor, as already practiced.
 
 ---
 
@@ -323,8 +323,8 @@ sidecar entries live in the owning file; every other file in the
 repository keeps its sidecar in-body. Adversarial Battery record for
 this kit is in the same file, §Adversarial Battery Record.
 
-Current: 10 open (FAK-001, FAK-005, FAK-006, FAK-009, FAK-014, FAK-015,
-FAK-016, FAK-017, FAK-018, and one flagged for `Canonical_Terms.md` rather than
+Current: 11 open (FAK-001, FAK-005, FAK-006, FAK-009, FAK-014, FAK-015,
+FAK-016, FAK-017, FAK-018, FAK-019, and one flagged for `Canonical_Terms.md` rather than
 resolved here — see Battery record, Cycle/CURRENT_CYCLE finding).
 
 ---
@@ -334,7 +334,9 @@ resolved here — see Battery record, Cycle/CURRENT_CYCLE finding).
 Full history: `Archive/Logs/Forge_Audit_Kit_Changelog.md` (relocated out of this
 kit at v1.10 — add new entries there, not here).
 
-Most recent: v1.21 (2026-10-27) — Spec Gates hold reason annotated (PKC-042): FAK-014's account of a same-day Grok audit that "cleared all six gates" on 2026-09-03 is treated as stale; the header stays 0/6; no gate is advanced without a fresh audit and human ratification. Header 1.20→1.21; changelog entry added in `Archive/Logs/Forge_Audit_Kit_Changelog.md`. No FAK entry opened or closed.
+Most recent: v1.22 (2026-10-27) — Targeted derivation re-pin and PKC-020 incorporation (human-authorized; PKC-022 lag clearance): Derived-from line re-pinned to `Auditor_Protocols.md` v0.45 and `Unknowns.md` v5.71 (`Verification_Gates.md` confirmed unchanged at v0.7); the condensed AI Contribution Rules Rule 10 gained the PKC-020 findings-only sub-rule from AP v0.45's Rule 10 addendum; FAK-019 logged (seventh occurrence of the pin-staleness pattern); Open Unknowns 10 → 11; header 1.21→1.22. The pin-vs-retire structural question is untouched and remains open by human direction. Changelog entry added in `Archive/Logs/Forge_Audit_Kit_Changelog.md`.
+
+Prior: v1.21 (2026-10-27) — Spec Gates hold reason annotated (PKC-042): FAK-014's account of a same-day Grok audit that "cleared all six gates" on 2026-09-03 is treated as stale; the header stays 0/6; no gate is advanced without a fresh audit and human ratification. Header 1.20→1.21; changelog entry added in `Archive/Logs/Forge_Audit_Kit_Changelog.md`. No FAK entry opened or closed.
 
 Prior: v1.20 (2026-10-10) — FAK-018 logged: derivation citations went
 stale a sixth time (`Auditor_Protocols.md` v0.41 → live v0.42; `Unknowns.md`
