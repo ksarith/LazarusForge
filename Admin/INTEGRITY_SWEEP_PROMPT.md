@@ -1,5 +1,5 @@
 # INTEGRITY_SWEEP_PROMPT.md
-**Version 1.0.3**
+**Version 1.0.4**
 
 ## File State
 
@@ -8,7 +8,7 @@
 | Status         | Draft                                                               |
 | Spec Gates     | N/A — operational prompt template, not a doctrine or specification claim |
 | Verification Ref | Admin/Repository_Integrity_Protocol.md                            |
-| Last Audit     | 2026-10-26 — v1.0.2 → v1.0.3, from base v1.0.2 (human-directed, PKC-026): one check added, step 13 (Routing and Discovery list the same active files). Prior: 2026-10-23 — field corrected (Claude, human-directed, from a Vibe per-file audit): the 2026-08-31 v1.0.2 pass (one real fix applied; two findings from the same sweep checked and declined as false positives — see Resolution Log) had not been recorded here. No prompt text changed. Prior: 2026-08-30                                                          |
+| Last Audit     | 2026-10-27 — v1.0.3 → v1.0.4, from base v1.0.3 (human-authorized autonomous management, the PKC-001 sweep-prompt candidate): one check added, step 14 (Resolution Log newest entry vs newest body/File State change — the inverse of step 7). No existing step changed or renumbered. Prior: 2026-10-26 — v1.0.2 → v1.0.3, from base v1.0.2 (human-directed, PKC-026): one check added, step 13 (Routing and Discovery list the same active files). Prior: 2026-10-23 — field corrected (Claude, human-directed, from a Vibe per-file audit): the 2026-08-31 v1.0.2 pass (one real fix applied; two findings from the same sweep checked and declined as false positives — see Resolution Log) had not been recorded here. No prompt text changed. Prior: 2026-08-30                                                          |
 | Auditor        | Claude — 2026-10-26 step 13 added (human-directed); prior: Claude — 2026-10-23 field correction (human-directed); 2026-08-31 v1.0.2 pass per the Resolution Log; prior: Claude — Synthesizer, human-directed, first draft, 2026-08-30. Consolidates a prompt refined across several morning-audit sessions run by Grok on external automation; captured here so the function survives independent of any one automation config. |
 | Open Unknowns  | 0                                                                    |
 | Ethical Anchor | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
@@ -66,6 +66,7 @@ Follow the repo's own rules where possible:
 11. List Blocking/Critical unknowns from Unknowns.md watches; only claim sidecar parity for files actually opened.
 12. Open Maintenance tasks: limited, concrete, with raw URLs.
 13. Check that Routing.md's URL table and Discovery.md's tree list the same active files, Archive/ excepted (Routing's own scope says Archive omissions are not drift; do not fire on that append-only directory). `.py` sources in Automation/ are listed in both and need no separate exception; packaged archives are excluded from Routing by design. A file present in one and absent from the other is a finding, unless that file's own header says it is deliberately unregistered, in which case report it as a note, not a defect.
+14. For each file opened, compare the newest dated entry in its Resolution Log against the newest dated change anywhere else in the file (body sections, File State Status, Last Audit, sidecar). A body or File State change newer than the newest Resolution Log entry means the bookkeeping cascade was skipped for that change — grade it a finding: Major if the change was substantive doctrine, a mechanical note otherwise. Findings-only passes are exempt by construction: per the PKC-020 split policy (2026-10-25) they advance neither the log nor the header. This is the inverse of step 7 — step 7 catches the header lagging the body; this step catches the log lagging both, the exact shape of the late-August/early-September bookkeeping decay (PKC-001, resolved 2026-10-27).
 
 Report structure (keep this shape):
 - Integrity Findings (Major first, then Constitutional/Ethical Anchor result, identity/V0 note)
@@ -94,6 +95,8 @@ End with a one-paragraph bottom line: constitutional clean? biggest real finding
 ---
 
 ## Resolution Log
+
+- 2026-10-27: v1.0.4 — from base v1.0.3, one check added (human-authorized autonomous management; the PKC-001 row's sweep-prompt candidate, ruled in the 2026-10-27 decision session). Step 14 compares each opened file's newest Resolution Log entry against its newest body/File State change, closing the gap the PKC-001 investigation identified: the late-August/early-September decay survived both existing mechanical checks because nothing compared those two dates. Findings-only passes are exempt per the PKC-020 split policy. No existing step changed or renumbered. Note for the operator: the automation config copy still needs the manual sync described in the header.
 
 - 2026-10-26: v1.0.3 — from base v1.0.2, one check added (human-directed, PKC-026; wording refined after a Vibe review of the proposal). Step 13 compares Routing.md's URL table with Discovery.md's tree for the same active files, Archive/ excepted, with no special case for Automation `.py` sources, and treats a file whose own header says it is deliberately unregistered as a note rather than a defect. No existing step changed or was renumbered.
 

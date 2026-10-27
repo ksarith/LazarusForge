@@ -151,3 +151,47 @@ def check_cross_refs(filename, content, registry, aliases, findings):
                 f"[UNKNOWN] '{ref}' — no canonical or alias match. "
                 f"Investigate: stale reference or missing Routing.md entry."
             ))
+
+# ---------------------------------------------------------------------------
+# Bare colliding-ID citation check (PKC-021 item iii, added 2026-10-27,
+# human-authorized autonomous management).
+#
+# Canonical_Terms CT-007 and the PKC-003 ruling (2026-10-25) require that a
+# citation of another file's ID use the qualified form `File.md XXX-NNN`.
+# Prefixes in COLLIDING_PREFIXES are known to be defined in more than one
+# file, so a bare occurrence is worth surfacing for reviewer judgment.
+# Deliberately conservative: an ID is treated as qualified if a
+# `Something.md` token appears within QUALIFY_WINDOW characters. Frozen
+# history and a file's own sidecar definition rows are reviewer-exempt,
+# not machine-exempt -- this is a review list, not an error list.
+
+COLLIDING_PREFIXES = {"EC", "ASM", "CF", "AP", "TS", "SP", "FA", "FL", "GF", "GI"}
+
+_BARE_ID_RE = re.compile(r"\b([A-Z]{2,4})-(\d{3})\b")
+_MD_TOKEN_RE = re.compile(r"[A-Za-z0-9_]+\.md")
+QUALIFY_WINDOW = 60
+
+
+def check_bare_id_citations(content, filename, own_prefixes=()):
+    """Flag bare citations of colliding prefixes lacking a nearby file
+    qualifier. Appends WARNING/REFERENCE findings to the returned list.
+
+    own_prefixes: prefixes this file itself defines -- bare uses of those
+    are local references, not cross-file citations, and are skipped.
+    """
+    findings = []
+    for m in _BARE_ID_RE.finditer(content):
+        prefix, num = m.group(1), m.group(2)
+        if prefix not in COLLIDING_PREFIXES or prefix in own_prefixes:
+            continue
+        window = content[max(0, m.start() - QUALIFY_WINDOW): m.end() + QUALIFY_WINDOW]
+        if _MD_TOKEN_RE.search(window):
+            continue  # qualified within the window
+        findings.append(Finding(
+            "WARNING", "REFERENCE", filename,
+            "[BARE-ID] '%s-%s' -- colliding prefix cited without a "
+            "qualifying File.md within %d chars (CT-007 / PKC-003 ruling "
+            "2026-10-25). Reviewer judgment: sidecar definition rows and "
+            "frozen history are exempt." % (prefix, num, QUALIFY_WINDOW)
+        ))
+    return findings

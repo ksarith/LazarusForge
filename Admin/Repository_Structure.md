@@ -16,7 +16,7 @@
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-10-25 — Claude (human-directed, PKC-013): RS-001 resolved by defining a minimal review for new non-markdown file types in Section I, with a retroactive note for the `.py` and `.zip` files already present; Open Unknowns 1 → 0. Prior: 2026-10-23 — Claude (human-directed) corrections from a Vibe per-file audit: 2026-10-03/10-04 passes logged, RS-001 refreshed; open items parked in `Admin/Progress_Log.md` §Parked Concerns, not fixed here. Prior: 2026-10-07 root-table addition (logged), 2026-10-04 and 2026-10-03 edits, 2026-08-11 |
+| Last Audit       | 2026-10-27 — Vibe (owner-confirmed / human-authorized autonomous management; PKC-011 and PKC-012): §VI Lazarus-Forge- row updated to retired-and-deleted per owner confirmation, with the duplicate-doctrine rule annotated as historical; ASM-001 and §II folder-count wording reconciled into one stated convention. No placement rule changed, no file moved, RS-001 unaffected. Prior: 2026-10-25 — Claude (human-directed, PKC-013): RS-001 resolved by defining a minimal review for new non-markdown file types in Section I, with a retroactive note for the `.py` and `.zip` files already present; Open Unknowns 1 → 0. Prior: 2026-10-23 — Claude (human-directed) corrections from a Vibe per-file audit: 2026-10-03/10-04 passes logged, RS-001 refreshed; open items parked in `Admin/Progress_Log.md` §Parked Concerns, not fixed here. Prior: 2026-10-07 root-table addition (logged), 2026-10-04 and 2026-10-03 edits, 2026-08-11 |
 | Auditor          | Claude — 2026-10-25 RS-001 resolution (human-directed); prior: Claude — 2026-10-23 corrections (human-directed, from a Vibe per-file audit); 2026-10-03/10-04/10-07 passes human-directed, agents not recorded; prior: Claude — Automation/ formalized in Section II (external ChatGPT review finding, verified before applying), human-directed; prior: Grok — correction pass, 2026-08-09 |
 | Open Unknowns    | 0                                                                   |
 | Active Disputes  | 0                                                                   |
@@ -77,7 +77,7 @@ doctrine. Discovery.md retains ownership of the navigation map;
 
 | ID      | Assumption | Basis | Confidence | Expiry Trigger |
 |---------|------------|-------|------------|----------------|
-| ASM-001 | The six-folder structure (root, Admin/, Architecture/, Operations/, Tests/, Challenges/) is stable at v0 | Current repo state | High | New capability domain requires a folder not covered by existing structure |
+| ASM-001 | The folder structure — six content-owning folders counting root (Admin/, Architecture/, Operations/, Tests/, Challenges/, root) plus the Automation/ tooling layer and the Archive/ history layer — is stable at v0 *(reworded 2026-10-27, PKC-012: previously "six-folder structure (root, Admin/, ...)", which sat ambiguously against §II's six content domains and the physical directory count; same convention, now stated explicitly)* | Current repo state | High | New capability domain requires a folder not covered by existing structure |
 | ASM-002 | Markdown (.md) remains the universal file format for all doctrine and specification files | Current tooling and workflow | High | Alternative format formally adopted |
 | ASM-003 | The no-version-suffix rule applies to new files only — existing files are renamed opportunistically, not mandatorily | Rename Registry workload realism | High | Bulk rename pass formally scheduled |
 
@@ -184,6 +184,12 @@ the six above for file-placement purposes — see Rule 8 below. The
 section name is retained for continuity with existing cross-references;
 "Six-Folder Structure" refers to the six content-owning domains, with
 Automation/ and Archive/ as infrastructure and history layers respectively.
+*(Count convention made explicit 2026-10-27, PKC-012: the six
+content-owning folders are Admin/, Architecture/, Operations/, Tests/,
+Challenges/ and root — root counts as a folder for structure purposes
+because it owns navigation and cross-cutting files; the physical
+directory count is higher because Automation/ and Archive/ are
+non-content layers. Both counts are correct at their own layer.)*
 
 ### Decision Rules
 
@@ -402,12 +408,14 @@ The LazarusForge project spans three repositories with distinct roles:
 | Repository | Role | Naming Convention |
 |---|---|---|
 | `LazarusForge` | Active working repository — lean, operational, specification-oriented | This file's conventions apply |
-| `Lazarus-Forge-` | Doctrine and philosophy companion | Separate governance — not subject to this file |
+| `Lazarus-Forge-` | Former doctrine and philosophy companion — a learning-era GitHub workflow experiment used to see-saw ideology forward with the main repo; deleted once the workflow stabilized (owner-confirmed 2026-10-27, PKC-011) | Retired — no longer exists; the row is kept as the historical naming record |
 | `Astroid-miner` | Planned space-based extension — deferred to Leviathan milestone | Not yet active |
 
 **Cross-repo rules:**
 - Do not create files in LazarusForge that duplicate doctrine
   owned by Lazarus-Forge- without an explicit divergence reason logged
+  *(historical rule, PKC-011 2026-10-27: the companion repository has
+  been retired and deleted — retained unchanged as record)*
 - Divergence between repos is a signal — log it, do not silently resolve it
 - Astroid-miner does not inherit LazarusForge structure automatically —
   it will require its own Repository_Structure.md when activated
@@ -527,6 +535,8 @@ recognition; no new action required.
 ---
 
 ### Resolution Log
+
+- 2026-10-27: **PKC-011 and PKC-012 resolved (owner-confirmed; human-authorized autonomous management).** §VI: `Lazarus-Forge-` row updated from live companion to retired-and-deleted — the owner confirmed it existed as a learning-era GitHub workflow experiment used to see-saw ideology forward with the main repo, and was deleted once the workflow stabilized; the row stays as the historical naming record and the cross-repo duplicate-doctrine rule carries a historical annotation. Astroid-miner wording left unchanged (not yet ruled by the owner). PKC-012: ASM-001's "six-folder structure" and §II's "six content-owning domains" now state one convention explicitly — six content-owning folders counting root, with Automation/ and Archive/ as non-content layers; the physical directory count is acknowledged as correct at its own layer. Companion: `Admin/Adm_Scope_Map.md` Purpose wording qualified.
 
 - 2026-10-25: **RS-001 resolved (human-directed, PKC-013 ruling).** Section I now states the minimal review for a new non-markdown file type and carries a retroactive note for the `.py` and `.zip` files already present, drawn from `Automation/README.md` and the folder contents; no file renamed or moved. RS-001 moved to Resolved and Open Unknowns went 1 → 0. Companion edits: `Unknowns.md` v5.69, `Admin/Adm_Scope_Map.md`.
 
