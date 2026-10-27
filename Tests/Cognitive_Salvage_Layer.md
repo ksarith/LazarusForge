@@ -1,5 +1,5 @@
 # Cognitive_Salvage_Layer.md
-**Version 0.4**
+**Version 0.5**
 
 ---
 
@@ -15,10 +15,10 @@
 |------------------|---------------------------------------------------------------------|
 | Status           | Exploration                                                         |
 | Body Stability   | Draft                                                               |
-| Spec Gates       | 1/6                                                                 |
+| Spec Gates       | 1/6 — hold: the 2026-06-24 Gate 1 Audit Record's clears (G1, G2, G4, G5, G6; G3 partial) are treated as stale (body changed since); no advance without fresh audit + human ratification (PKC-027/042, 2026-10-27)                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-08-03 (the logged 2026-08-11 Grok pseudo-audit, findings only, is not counted here per the PKC-020 ruling of 2026-10-25; log order corrected 2026-10-24)                                                          |
-| Auditor          | Claude — Synthesizer/Auditor, human-directed, 2026-08-03: corrective merge of a Copilot/Grok exchange — GH-004/GH-012/CSL-A03 gained complementary elaboration (Payment via Specification only, see AP-033 in Admin/Auditor_Protocols.md); GH-007/GH-008/GH-009/GH-011 left untouched, already better-specified than what was proposed; prior: Claude — Synthesizer/Auditor                                        |
+| Last Audit       | 2026-10-27 — Claude (human-authorized autonomous management; PKC-027): Spec Gates hold reason annotated; version bumped 0.4 → 0.5 (PKC-039); no gate advanced. Prior: 2026-08-03 (the logged 2026-08-11 Grok pseudo-audit, findings only, is not counted here per the PKC-020 ruling of 2026-10-25; log order corrected 2026-10-24)                                                          |
+| Auditor          | Claude — 2026-10-27 PKC-027 hold-reason annotation, v0.5 (human-authorized autonomous management); prior: Claude — Synthesizer/Auditor, human-directed, 2026-08-03: corrective merge of a Copilot/Grok exchange — GH-004/GH-012/CSL-A03 gained complementary elaboration (Payment via Specification only, see AP-033 in Admin/Auditor_Protocols.md); GH-007/GH-008/GH-009/GH-011 left untouched, already better-specified than what was proposed; prior: Claude — Synthesizer/Auditor                                        |
 | Open Unknowns    | 13                                                                  |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | High                                                                |
@@ -806,6 +806,8 @@ Full Battery deferred to Candidate Spec. No specification-level claims promoted.
 ---
 
 ### Resolution Log
+
+- 2026-10-27: **Spec Gates hold reason recorded; v0.4 → v0.5 (PKC-027, human-authorized autonomous management; version bumped per the PKC-039 ruling — any text edit bumps the version).** The header's 1/6 versus the 2026-06-24 Gate 1 Audit Record's "G1, G2, G4, G5, G6 clear; G3 partial" is closed conservatively: the recorded clears are treated as stale — the body has changed since 2026-06-24 — the header stays 1/6, and no gate is advanced without a fresh audit and human ratification. The 2026-10-24 note under the Gate 1 Audit Record flagged the same conflict; this entry is its disposition. Spec Gates field annotated; Last Audit and Auditor advanced. No gate, sidecar or Unknown changed.
 
 - 2026-10-25: **Header wording updated (PKC-020 ruling; no content change).** The Last Audit annotation that said the logged findings-only pseudo-audit was not counted "pending PKC-020" now cites the ruling of 2026-10-25: a findings-only pseudo-audit does not advance Last Audit (`Admin/Auditor_Protocols.md` v0.45, Rule 10 addendum). No date, field value, Unknown or Spec Gate changed.
 

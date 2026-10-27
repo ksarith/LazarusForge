@@ -1,5 +1,5 @@
 # Forge_Audit_Kit.md
-**Version 1.20**
+**Version 1.21**
 
 ---
 
@@ -14,10 +14,10 @@
 | Field          | Value                                                               |
 |----------------|---------------------------------------------------------------------|
 | Status         | Draft                                                               |
-| Spec Gates     | 0/6                                                                 |
+| Spec Gates     | 0/6 — hold: FAK-014's account of a same-day 2026-09-03 Grok audit that "cleared all six gates" is treated as stale (body changed since, v1.16–v1.20); no advance without fresh audit + human ratification (PKC-042, 2026-10-27)                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                    |
-| Last Audit     | 2026-10-10 — Claude, human-directed refresh: derivation citations updated (`Auditor_Protocols.md` v0.41 → v0.42, `Unknowns.md` v5.57 → v5.58) and the role-declaration string to v0.42; FAK-018 logged (sixth occurrence; the structural question stays open). Same-day mitigation: role-declaration example now uses a live-version placeholder, the Derived-from line is labeled as reconciled-against, and the maintenance trigger is now content-based (a plain version increment is not a trigger; reconciliation check at audit start). Prior: 2026-10-03 — Grok, human-directed: derivation citation to `Unknowns.md` had gone stale a fifth time (v5.27 → live v5.57, 30 versions). Same recurring citation-staleness pattern previously logged as FAK-014/015/016. Logged as FAK-017. Citation refreshed to v5.57; header bumped 1.18→1.19. Prior: 2026-09-15 — Claude, FAK-016 (fourth occurrence, automated audit path). |
-| Auditor        | Claude — v1.20 FAK-018 logged, derivation and role-declaration strings refreshed, header 1.19→1.20 (human-directed), 2026-10-10; Grok — v1.19 FAK-017 logged (fifth occurrence of the citation-staleness pattern), derivation citation refreshed to Unknowns.md v5.57, header 1.18→1.19 (human-directed), 2026-10-03; Claude — v1.18 FAK-016 logged, 2026-09-15; prior history retained in Resolution Log / Changelog |
+| Last Audit     | 2026-10-27 — Claude (human-authorized autonomous management; PKC-042): Spec Gates hold reason annotated; header 1.20→1.21; no gate advanced; no derivation-reconciliation pass due (annotation only, not a maintenance-trigger change). Prior: 2026-10-10 — Claude, human-directed refresh: derivation citations updated (`Auditor_Protocols.md` v0.41 → v0.42, `Unknowns.md` v5.57 → v5.58) and the role-declaration string to v0.42; FAK-018 logged (sixth occurrence; the structural question stays open). Same-day mitigation: role-declaration example now uses a live-version placeholder, the Derived-from line is labeled as reconciled-against, and the maintenance trigger is now content-based (a plain version increment is not a trigger; reconciliation check at audit start). Prior: 2026-10-03 — Grok, human-directed: derivation citation to `Unknowns.md` had gone stale a fifth time (v5.27 → live v5.57, 30 versions). Same recurring citation-staleness pattern previously logged as FAK-014/015/016. Logged as FAK-017. Citation refreshed to v5.57; header bumped 1.18→1.19. Prior: 2026-09-15 — Claude, FAK-016 (fourth occurrence, automated audit path). |
+| Auditor        | Claude — 2026-10-27 PKC-042 hold-reason annotation, header 1.20→1.21 (human-authorized autonomous management); prior: Claude — v1.20 FAK-018 logged, derivation and role-declaration strings refreshed, header 1.19→1.20 (human-directed), 2026-10-10; Grok — v1.19 FAK-017 logged (fifth occurrence of the citation-staleness pattern), derivation citation refreshed to Unknowns.md v5.57, header 1.18→1.19 (human-directed), 2026-10-03; Claude — v1.18 FAK-016 logged, 2026-09-15; prior history retained in Resolution Log / Changelog |
 | Open Unknowns  | 10 — see Sidecar Link                                                |
 | Sidecar Link   | Archive/Logs/Forge_Audit_Kit_Changelog.md#sidecar--auditor-notes--unknowns |
 | Ethical Anchor | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
@@ -334,7 +334,9 @@ resolved here — see Battery record, Cycle/CURRENT_CYCLE finding).
 Full history: `Archive/Logs/Forge_Audit_Kit_Changelog.md` (relocated out of this
 kit at v1.10 — add new entries there, not here).
 
-Most recent: v1.20 (2026-10-10) — FAK-018 logged: derivation citations went
+Most recent: v1.21 (2026-10-27) — Spec Gates hold reason annotated (PKC-042): FAK-014's account of a same-day Grok audit that "cleared all six gates" on 2026-09-03 is treated as stale; the header stays 0/6; no gate is advanced without a fresh audit and human ratification. Header 1.20→1.21; changelog entry added in `Archive/Logs/Forge_Audit_Kit_Changelog.md`. No FAK entry opened or closed.
+
+Prior: v1.20 (2026-10-10) — FAK-018 logged: derivation citations went
 stale a sixth time (`Auditor_Protocols.md` v0.41 → live v0.42; `Unknowns.md`
 v5.57 → v5.58), found by an independent audit run and confirmed against both
 files. Strings refreshed (including the role-declaration string); header

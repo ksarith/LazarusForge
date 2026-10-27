@@ -80,6 +80,8 @@ That check has now been run. `AUDIT_HARNESS.py` line 368: `CURRENT_CYCLE = 10   
 
 ## Version History
 
+- 2026-10-27: **v1.21 — Spec Gates hold-reason annotation (PKC-042 disposition).** The kit's File State Spec Gates field now records why the header stays 0/6 despite FAK-014's account of a same-day Grok audit that "cleared all six gates" on 2026-09-03 while missing the citation staleness: the recorded clear is treated as stale — the kit body has changed since (v1.16 through v1.20) — and no gate is advanced without a fresh audit and human ratification; self-approval is prohibited. Last Audit and Auditor advanced to record the annotation pass (human-authorized autonomous management). No gate field value changed; no FAK entry opened or closed; no derivation-reconciliation pass was due (annotation only, not a maintenance-trigger change).
+
 - 2026-10-10: **v1.20 — Derivation and role-declaration refresh (FAK-018).**
   `Auditor_Protocols.md` v0.41 → v0.42 and `Unknowns.md` v5.57 → v5.58 in the
   Derived-from line; role-declaration string to v0.42; token-ceiling note

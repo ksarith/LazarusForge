@@ -14,10 +14,10 @@
 |------------------|---------------------------------------------------------------------|
 | Status           | Exploration                                                         |
 | Body Stability   | Transitional                                                        |
-| Spec Gates       | 1/6                                                                 |
+| Spec Gates       | 1/6 — hold: the 2026-06-26 recorded clears (G1, G2, G4, G5, G6; G3 deferred) are treated as stale (body changed since); no advance without fresh audit + human ratification (PKC-042, 2026-10-27)                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-05-23; revised 2026-06-08; revised 2026-06-24; audited 2026-06-26; revised 2026-08-03 |
-| Auditor          | Claude — Retrofit/Auditor; Claude — Synthesizer, TR-GOV-001 split into `Admin/Hardware_Diversity_Ladder.md` per this file's own Scope Boundary (human-directed), 2026-08-03 |
+| Last Audit       | 2026-10-27 — Claude (human-authorized autonomous management; PKC-042): Spec Gates hold reason annotated; no gate advanced. Prior: 2026-05-23; revised 2026-06-08; revised 2026-06-24; audited 2026-06-26; revised 2026-08-03 |
+| Auditor          | Claude — 2026-10-27 PKC-042 hold-reason annotation (human-authorized autonomous management); prior: Claude — Retrofit/Auditor; Claude — Synthesizer, TR-GOV-001 split into `Admin/Hardware_Diversity_Ladder.md` per this file's own Scope Boundary (human-directed), 2026-08-03 |
 | Open Unknowns    | 3                                                                   |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | Medium                                                              |
@@ -487,6 +487,8 @@ prose since 2026-06-26 but never registered as a tracked unknown.*
 ---
 
 ### Resolution Log
+
+- 2026-10-27: **Spec Gates hold reason recorded (PKC-042, human-authorized autonomous management).** The header's 1/6 versus the 2026-06-26 dual-audit entry's "Gates cleared: G1, G2, G4, G5, G6. G3 deferred" is closed conservatively: the recorded clears are treated as stale — the body has changed since 2026-06-26 — the header stays 1/6, and no gate is advanced without a fresh audit and human ratification (self-approval prohibited). Spec Gates field annotated; Last Audit and Auditor advanced to record this pass. No gate, Unknown or doctrine changed.
 
 - 2026-08-11: **Pseudo-audit (Grok, same limits).** Findings only; Spec Gates
   left locked at 1/6. (1) Open Unknowns **3** = TR-001–003, matches local +

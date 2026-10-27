@@ -2,7 +2,7 @@
 `Challenges/Return_To_Eden.md`
 
 * **Author:** ksarith
-* **Version:** 1.1.0
+* **Version:** 1.1.1
 * **Date:** June 2026
 
 ---
@@ -20,15 +20,15 @@
 | Status | Exploration |
 | Challenges Subtype | Solution-Track |
 | Body Stability | Volatile — six open unknowns (RE-UNK-001 through 006) affect this file; RE-UNK-001–005 affect the Eden Index formula's operability directly (the mathematical formulation itself is explicitly labeled PROVISIONAL pending instrument specification), RE-UNK-006 is a standing speculative/observational question about post-abundance human behavior, deliberately not spec-closable |
-| Spec Gates | None cleared (G1–G2 conditional, G4–G6 cleared per 2026-06-30 audit — see Last Audit) |
+| Spec Gates | None advanced — the 2026-06-30 audit's G4–G6 clears (G1–G2 conditional) are treated as stale: the body has changed since; no gate advances without a fresh audit and human ratification (PKC-042 disposition, 2026-10-27) |
 | Verification Ref | `Admin/Verification_Gates.md` |
 | Ethical Anchor | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
-| Auditor | Grok + ChatGPT — dual Exploration audit, 2026-06-30 |
+| Auditor | Claude — 2026-10-27 PKC-042 hold-reason annotation, v1.1.1 (human-authorized autonomous management); prior: Grok + ChatGPT — dual Exploration audit, 2026-06-30 |
 | Open Unknowns | 6 (RE-UNK-001 through RE-UNK-006) |
 | Active Disputes | 0 |
 | Highest Risk | RE-UNK-001 — Eden Index variables lack defined measurement protocols; index is formally specified but not yet operationally measurable. RE-UNK-005 is a direct dependency. |
 | Sidecar Link | #auditor-notes--unknowns |
-| Last Audit | 2026-10-20 (external sweep by Vibe, checked against source by Claude; reference corrections only, no formula or doctrine change); prior 2026-08-30 (RE-UNK-006 registration); prior 2026-06-30 dual audit (Grok + ChatGPT; G1–G2 conditional, G4–G6 cleared; dimensional consistency corrected v1.0.1 → v1.0.2) |
+| Last Audit | 2026-10-27 — Claude (human-authorized autonomous management; PKC-042): Spec Gates row's self-contradiction resolved by hold annotation; no gate advanced; version bumped 1.1.0 → 1.1.1 (PKC-039). Prior: 2026-10-20 (external sweep by Vibe, checked against source by Claude; reference corrections only, no formula or doctrine change); prior 2026-08-30 (RE-UNK-006 registration); prior 2026-06-30 dual audit (Grok + ChatGPT; G1–G2 conditional, G4–G6 cleared; dimensional consistency corrected v1.0.1 → v1.0.2) |
 
 ---
 
@@ -155,6 +155,8 @@ As the Lazarus Forge catalog expands, this file serves as the definitive archite
 ## Auditor Notes & Unknowns
 
 ### Resolution Log
+
+- 2026-10-27: **Spec Gates row corrected and hold reason recorded; v1.1.0 → v1.1.1 (PKC-042, human-authorized autonomous management; version bumped per the PKC-039 ruling).** The Spec Gates row's "None cleared (G1–G2 conditional, G4–G6 cleared per 2026-06-30 audit)" was self-contradictory. Closed conservatively: the 2026-06-30 G4–G6 clears are treated as stale — the body has changed since — the row now reads "None advanced," and no gate advances without a fresh audit and human ratification (self-approval prohibited). `Discovery.md`'s Maturity Snapshot row is corrected to mirror this wording. Spec Gates field reworded; Last Audit and Auditor advanced. No formula, Unknown or doctrine changed; the header's "Date: June 2026" beside the version stays as is, pending the human version-stamp ruling.
 
 - 2026-10-20: **Reference corrections (no formula or doctrine change).** (1) The Abandoned Paths row for the unbounded Eden Index denominator was dated 2026-06-30 but credits the +1 floor fix released as v1.1.0, which this log dates 2026-07-13 (the 2026-06-30 dual audit corrected a different issue, dimensional consistency v1.0.1 → v1.0.2); the row is re-dated 2026-07-13. (2) `Experiments.md` named in the Scope Boundary and as Resolution Vehicle for RE-UNK-001, RE-UNK-002 and RE-UNK-005 had no repo-root path; the file lives at `Admin/Experiments.md`, and the four references now say so. The header's "Date: June 2026" beside Version 1.1.0 is left as is, pending the human governing authority's version-stamp ruling. Found by an external sweep (Vibe), checked against source by Claude. Human-directed.
 

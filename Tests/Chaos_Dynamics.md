@@ -12,10 +12,10 @@
 |------------------|-----------------------------------------------------------------------|
 | Status           | Exploration                                                         |
 | Body Stability   | Transitional                                                        |
-| Spec Gates       | 0/6                                                                 |
+| Spec Gates       | 0/6 — hold: the resolution entry's "G5 = Pass" and "G2 = Pass" adjudications (SEC-DS-001 precedent) are treated as stale (body changed since); no advance without fresh audit + human ratification (PKC-042, 2026-10-27)                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-10-24 — Claude (human-directed, from a Vibe per-file audit) header corrected to cover the 2026-07-12 template-skeleton backfill, a body change the field had not recorded; the footer date 2026-07-12 was already correct. The logged 2026-08-11 Grok pseudo-audit (findings only) is not counted here per the PKC-020 ruling of 2026-10-25. Prior: 2026-07-05 — 2026-07-05 — Claude added first Sandbox Log entries (SB-001–SB-004); no formal Skeptic/Auditor sign-off through Forge_Audit_Kit.md opening sequence yet |
-| Auditor          | None formal yet — see Last Audit and Active Disputes                |
+| Last Audit       | 2026-10-27 — Claude (human-authorized autonomous management; PKC-042): Spec Gates hold reason annotated; no gate advanced; this pass is not a Gate audit. Prior: 2026-10-24 — Claude (human-directed, from a Vibe per-file audit) header corrected to cover the 2026-07-12 template-skeleton backfill, a body change the field had not recorded; the footer date 2026-07-12 was already correct. The logged 2026-08-11 Grok pseudo-audit (findings only) is not counted here per the PKC-020 ruling of 2026-10-25. Prior: 2026-07-05 — 2026-07-05 — Claude added first Sandbox Log entries (SB-001–SB-004); no formal Skeptic/Auditor sign-off through Forge_Audit_Kit.md opening sequence yet |
+| Auditor          | Claude — 2026-10-27 PKC-042 hold-reason annotation, not a formal Gate audit (human-authorized autonomous management); prior: None formal yet — see Last Audit and Active Disputes                |
 | Open Unknowns    | 0                                                                   |
 | Active Disputes  | 1 (CD-DS-001, Resolved same session — see below)                    |
 | Highest Risk     | Medium — gatekeeps the evidentiary pipeline feeding EN-001/EN-001a; misuse risk if sandbox output is cited past its Level ≤4 ceiling |
@@ -159,6 +159,8 @@ Every sandbox artifact is recorded here at disposition — Discarded, Deferred, 
 No unknowns are currently open under this file's own ownership. EN-001, EN-001a, and EN-005 are referenced in §8 but owned by `Architecture/Engineering.md` — see that file's sidecar for authoritative status. First unknowns native to this file are expected once a hypothesis completes a full Sandbox → EXP-ID → feedback cycle for the first time.
 
 ### Resolution Log
+
+- 2026-10-27: **Spec Gates hold reason recorded (PKC-042, human-authorized autonomous management).** The header's 0/6 versus the resolution entry's "G5 = Pass ... G2 = Pass" adjudication (applying the SEC-DS-001 Gate-Scope-vs-Promotion-Readiness precedent) is closed conservatively: the recorded passes are treated as stale — the body has changed since — the header stays 0/6, and no gate is advanced without a fresh audit and human ratification (self-approval prohibited). This annotation pass is not a Gate audit. Spec Gates field annotated; Last Audit and Auditor advanced. No gate, Unknown or doctrine changed.
 
 - 2026-10-25: **Header wording updated (PKC-020 ruling; no content change).** The Last Audit annotation that said the logged findings-only pseudo-audit was not counted "pending PKC-020" now cites the ruling of 2026-10-25: a findings-only pseudo-audit does not advance Last Audit (`Admin/Auditor_Protocols.md` v0.45, Rule 10 addendum). No date, field value, Unknown or Spec Gate changed.
 

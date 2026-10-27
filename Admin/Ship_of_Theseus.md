@@ -14,10 +14,10 @@
 |------------------|---------------------------------------------------------------------|
 | Status           | Exploration                                                         |
 | Body Stability   | Transitional                                                        |
-| Spec Gates       | 0/6                                                                 |
+| Spec Gates       | 0/6 — hold: the 2026-06-26 recorded clears (G1, G2, G4, G5, G6) are treated as stale (body changed since); no advance without fresh audit + human ratification (PKC-027, 2026-10-27)                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-10-24 — Claude (human-directed) log order corrected and AP-012/AP-016 cross-reference noted (see Resolution Log); the logged 2026-08-11 Grok pseudo-audit (findings only) is not counted here per the PKC-020 ruling of 2026-10-25. Prior: 2026-05-04 (Claude — Skeptic/Auditor); revised 2026-06-08; audited 2026-06-26 (Gemini + Claude dual Skeptic/Auditor) |
-| Auditor          | Claude — 2026-10-24 corrections (human-directed, from a Vibe per-file audit); prior: Claude — Synthesizer/Auditor; Gemini — Skeptic/Auditor              |
+| Last Audit       | 2026-10-27 — Claude (human-authorized autonomous management; PKC-027): Spec Gates hold reason annotated; no gate advanced; no other field changed. Prior: 2026-10-24 — Claude (human-directed) log order corrected and AP-012/AP-016 cross-reference noted (see Resolution Log); the logged 2026-08-11 Grok pseudo-audit (findings only) is not counted here per the PKC-020 ruling of 2026-10-25. Prior: 2026-05-04 (Claude — Skeptic/Auditor); revised 2026-06-08; audited 2026-06-26 (Gemini + Claude dual Skeptic/Auditor) |
+| Auditor          | Claude — 2026-10-27 PKC-027 hold-reason annotation (human-authorized autonomous management); prior: Claude — 2026-10-24 corrections (human-directed, from a Vibe per-file audit); prior: Claude — Synthesizer/Auditor; Gemini — Skeptic/Auditor              |
 | Open Unknowns    | 4                                                                   |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | Medium                                                              |
@@ -606,6 +606,8 @@ human unavailability.
 ---
 
 ### Resolution Log
+
+- 2026-10-27: **Spec Gates hold reason recorded (PKC-027, human-authorized autonomous management).** The header's 0/6 versus the 2026-06-26 entry's "Gates cleared: G1, G2, G4, G5, G6" is closed conservatively: the recorded clears are treated as stale — the body has changed since 2026-06-26 — the header stays 0/6, and no gate is advanced without a fresh audit and human ratification (self-approval prohibited). The 2026-06-26 G3 blocker (AP-012/AP-016) was Resolved 2026-07-03 but G3 has not been re-assessed; that re-assessment belongs to the fresh audit, not to this annotation. Spec Gates field annotated; Last Audit and Auditor advanced to record this pass. No gate, Unknown or doctrine changed.
 
 - 2026-10-25: **Header wording updated (PKC-020 ruling; no content change).** The Last Audit annotation that said the logged findings-only pseudo-audit was not counted "pending PKC-020" now cites the ruling of 2026-10-25: a findings-only pseudo-audit does not advance Last Audit (`Admin/Auditor_Protocols.md` v0.45, Rule 10 addendum). No date, field value, Unknown or Spec Gate changed.
 

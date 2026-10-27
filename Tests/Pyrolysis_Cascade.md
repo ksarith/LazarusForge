@@ -15,8 +15,8 @@
 | Spec Gates       | 0/6 (not yet audited)                                               |
 | Verification Ref | `Admin/Verification_Gates.md`                                    |
 | First Logged     | 2026-08-04                                                          |
-| Last Audit       | — (no Gate audit has been run). Body-changing passes recorded in the Resolution Log: 2026-08-04 ID-collision fix, 2026-08-23 and 2026-08-24 dependency syncs on PYC-001 and PYC-003; the 2026-08-11 Grok pseudo-audit (findings only) is not counted per the PKC-020 ruling of 2026-10-25. Header corrected 2026-10-24. |
-| Auditor          | — (Claude — Synthesizer, PC-/PYC- namespace collision fix only, human-directed, 2026-08-04) |
+| Last Audit       | 2026-10-27 — Claude (human-authorized autonomous management; PKC-040): real sidecar review, not a Gate audit — each entry's dependencies checked against its owning file (GR-002 Open; FA-001 Open; SP-006 Open, deferred pending FA-001; EV-001 In Progress; EN-001 In Progress; ECN-002 Open; TR-001 Open); PYC-002 and PYC-004–008 gained Last Reviewed 2026-10-27; entries confirmed accurate; no Status, Risk, Priority or Blocking change. Spec Gates stay 0/6. Prior: — (no Gate audit has been run). Body-changing passes recorded in the Resolution Log: 2026-08-04 ID-collision fix, 2026-08-23 and 2026-08-24 dependency syncs on PYC-001 and PYC-003; the 2026-08-11 Grok pseudo-audit (findings only) is not counted per the PKC-020 ruling of 2026-10-25. Header corrected 2026-10-24. |
+| Auditor          | Claude — 2026-10-27 sidecar review (PKC-040, human-authorized autonomous management; not a formal Gate audit); prior: — (Claude — Synthesizer, PC-/PYC- namespace collision fix only, human-directed, 2026-08-04) |
 | Open Unknowns    | 8 (PYC-001 … PYC-008)                                                 |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | High (thermal processing of mixed salvage; halogen & hazardous-fraction exposure) |
@@ -182,6 +182,7 @@ No test may be run that violates the hard preconditions in Scope Boundary.
 | Blocking | Yes for any claim that the secondary stage is a bloomery |
 | Owner | Tests/Pyrolysis_Cascade.md (dependency); resolution owned by Gate_03_Reduction.md (GR-002) |
 | First Logged | 2026-08-04 |
+| Last Reviewed | 2026-10-27 |
 
 **Description:** Archived draft treats bloomery-type reduction as the secondary stage. GR-002 has not selected a reduction method.
 
@@ -219,6 +220,7 @@ No test may be run that violates the hard preconditions in Scope Boundary.
 | Blocking | Yes for hot operations |
 | Owner | Dependency on FA-001 → SP-006 |
 | First Logged | 2026-08-04 |
+| Last Reviewed | 2026-10-27 |
 
 **Resolution Path:** Payment via Specification (site assessment).
 
@@ -235,6 +237,7 @@ No test may be run that violates the hard preconditions in Scope Boundary.
 | Blocking | No (blocks only efficiency claims) |
 | Owner | Tests/Pyrolysis_Cascade.md + Energy.md (EV-001) |
 | First Logged | 2026-08-04 |
+| Last Reviewed | 2026-10-27 |
 
 **Description:** Archived targets (≥40–60 % heat recapture, near self-sufficiency) have no Forge energy balance or measured yields.
 
@@ -253,6 +256,7 @@ No test may be run that violates the hard preconditions in Scope Boundary.
 | Blocking | No |
 | Owner | Tests/Pyrolysis_Cascade.md (after GR-002) |
 | First Logged | 2026-08-04 |
+| Last Reviewed | 2026-10-27 |
 
 **Description:** ≥70 % metals recovery was stated without measurement or even a selected reduction method.
 
@@ -271,6 +275,7 @@ No test may be run that violates the hard preconditions in Scope Boundary.
 | Blocking | Yes |
 | Owner | Dependency on EN-001 |
 | First Logged | 2026-08-04 |
+| Last Reviewed | 2026-10-27 |
 
 **Resolution Path:** Payment via Validation on EN-001 for the material classes actually used.
 
@@ -287,6 +292,7 @@ No test may be run that violates the hard preconditions in Scope Boundary.
 | Blocking | No (blocks only profitability claims) |
 | Owner | Dependency on ECN-002, EV-001, FA-001, TR-001 |
 | First Logged | 2026-08-04 |
+| Last Reviewed | 2026-10-27 |
 
 **Description:** Tipping-fee ranges, break-even tonnage, and “eventual profitability” statements lack an operating-cost baseline and a site.
 
@@ -295,6 +301,8 @@ No test may be run that violates the hard preconditions in Scope Boundary.
 ---
 
 ### Resolution Log
+
+- 2026-10-27: **Sidecar review — Last Reviewed added to PYC-002 and PYC-004–PYC-008 (PKC-040, human-authorized autonomous management).** Each entry was genuinely reviewed against its owning file before dating: PYC-002 depends on GR-002 (`Operations/Gate_03_Reduction.md`) — still Open, entry accurate; PYC-004's chain FA-001 → SP-006 (`Admin/Safety_Protocols.md`) confirmed still fully Open (SP-006 deferred pending FA-001); PYC-005 EV-001 In Progress; PYC-006 blocked on GR-002 (Open); PYC-007 EN-001 In Progress; PYC-008 ECN-002/EV-001/FA-001/TR-001 all open. No Status, Risk, Priority, Blocking or dependency text changed — the review confirmed the entries accurate as written. This pass is a sidecar review, not a Gate audit: Spec Gates stay 0/6. Sidecar tables edited: Last Reviewed field added, dated 2026-10-27.
 
 - 2026-10-25: **Header wording updated (PKC-020 ruling; no content change).** The Last Audit annotation that said the logged findings-only pseudo-audit was not counted "pending PKC-020" now cites the ruling of 2026-10-25: a findings-only pseudo-audit does not advance Last Audit (`Admin/Auditor_Protocols.md` v0.45, Rule 10 addendum). No date, field value, Unknown or Spec Gate changed.
 
