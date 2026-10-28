@@ -16,11 +16,11 @@
 | Body Stability   | Volatile                                                            |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-10-23 — Claude (human-directed) Resolution Log backfilled for the 2026-06-05 first logging and the two 2026-07-06 passes (Gemini Exploration audit; Claude EC-→ECN- rename), from a Vibe per-file audit, each finding checked against source first. A findings-only pseudo-audit (the logged 2026-08-10 Grok pass) does not advance this field (PKC-020 ruling, 2026-10-25). Prior: 2026-07-06                                                          |
-| Auditor          | Claude — 2026-10-23 log backfill (human-directed, from a Vibe per-file audit); Claude — Skeptic/Auditor (rename pass); Gemini — Skeptic/Auditor (Exploration audit, path/gap findings) |
+| Last Audit       | 2026-10-28 — Vibe (Repo Custodian, delegated maintenance, human-ratified Decision Brief 2026-10-28b): AUDIT_19 (campaign) F1/F2 enacted — File State Highest Risk Medium → High (ECN-002 carries Risk High; X10 corpus recompute); Lessons Learned Evidence Type "Governance" → "Audit Review" and Confidence "High" → "Measured" (File_Template §7 vocabulary); ECN-001/002/004/005/006 Last Reviewed refreshed to 2026-10-28 with dated notes (no status change). No gate advanced; no unknown opened or closed. Prior: 2026-10-23 — Claude (human-directed) Resolution Log backfilled for the 2026-06-05 first logging and the two 2026-07-06 passes (Gemini Exploration audit; Claude EC-→ECN- rename), from a Vibe per-file audit, each finding checked against source first. A findings-only pseudo-audit (the logged 2026-08-10 Grok pass) does not advance this field (PKC-020 ruling, 2026-10-25). Prior: 2026-07-06                                                          |
+| Auditor          | Vibe — Repo Custodian, 2026-10-28 AUDIT_19 F1/F2 enactment (delegated maintenance, human-ratified Decision Brief 2026-10-28b); prior: Claude — 2026-10-23 log backfill (human-directed, from a Vibe per-file audit); Claude — Skeptic/Auditor (rename pass); Gemini — Skeptic/Auditor (Exploration audit, path/gap findings) |
 | Open Unknowns    | 5 (ECN-001, ECN-002, ECN-004, ECN-005, ECN-006)                     |
 | Active Disputes  | 0                                                                   |
-| Highest Risk     | Medium                                                              |
+| Highest Risk     | High                                                                |
 | Sidecar Link     | #auditor-notes--unknowns                                            |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
@@ -561,7 +561,7 @@ logging in Gate_07_Utilization.md.
 
 | Date | Evidence Type | What Was Tried | What Failed | What Was Learned | Confidence | Revalidation Needed |
 |------|---------------|----------------|-------------|------------------|------------|---------------------|
-| 2026-07-06 | Governance | CT-007 (Canonical_Terms.md) identified an `EC-` prefix collision between this file and `Ethical_Constraints.md` | Rename not yet executed | ECN-001 through ECN-005 (all five of this file's own EC- entries, including Resolved ECN-003) renamed from `EC-` to `ECN-` to close the collision. CT-007's original write-up cited EC-008 as a sixth colliding ID — verified against this file directly: EC-008 does not exist here, that citation was in error. It also omitted EC-003 as a collision, likely because it is Resolved and drops out of Unknowns.md's active index — resolved status does not retire an ID from the shared namespace. | High — verified directly against source text | Update Unknowns.md's Economics table, CT-007 entry, and Canonical_Terms.md's ID-prefix registry to reflect `ECN-` |
+| 2026-07-06 | Audit Review | CT-007 (Canonical_Terms.md) identified an `EC-` prefix collision between this file and `Ethical_Constraints.md` | Rename not yet executed | ECN-001 through ECN-005 (all five of this file's own EC- entries, including Resolved ECN-003) renamed from `EC-` to `ECN-` to close the collision. CT-007's original write-up cited EC-008 as a sixth colliding ID — verified against this file directly: EC-008 does not exist here, that citation was in error. It also omitted EC-003 as a collision, likely because it is Resolved and drops out of Unknowns.md's active index — resolved status does not retire an ID from the shared namespace. | Measured — verified directly against source text | Update Unknowns.md's Economics table, CT-007 entry, and Canonical_Terms.md's ID-prefix registry to reflect `ECN-` |
 
 ---
 
@@ -586,7 +586,9 @@ logging in Gate_07_Utilization.md.
 | Blocking      | No                 |
 | Owner         | Admin/Economics.md |
 | First Logged  | 2026-06-05         |
-| Last Reviewed | 2026-06-05         |
+| Last Reviewed | 2026-10-28         |
+
+*(Reviewed 2026-10-28, Vibe — delegated maintenance, human-ratified Decision Brief 2026-10-28b: re-read against current body state; no status change.)*
 
 **Description:** Recovered rare and critical mineral fractions
 (neodymium, cobalt, tantalum, indium, gallium) represent potentially
@@ -618,7 +620,9 @@ Payment via Specification.
 | Blocking      | Yes — blocks TR-001 resolution |
 | Owner         | Admin/Economics.md |
 | First Logged  | 2026-06-05         |
-| Last Reviewed | 2026-06-05         |
+| Last Reviewed | 2026-10-28         |
+
+*(Reviewed 2026-10-28, Vibe — delegated maintenance, human-ratified Decision Brief 2026-10-28b: re-read against current body state; no status change.)*
 
 **Description:** The operating cost model required for the v1
 profitability baseline (Section V Component 1) does not yet exist.
@@ -669,7 +673,9 @@ of all barter doctrine assigned to this file.
 | Blocking      | No                 |
 | Owner         | Admin/Economics.md |
 | First Logged  | 2026-06-05         |
-| Last Reviewed | 2026-06-05         |
+| Last Reviewed | 2026-10-28         |
+
+*(Reviewed 2026-10-28, Vibe — delegated maintenance, human-ratified Decision Brief 2026-10-28b: re-read against current body state; no status change.)*
 
 **Description:** Market rate data for scrap metal, recovered
 materials, and fabricated components is real-time and
@@ -700,7 +706,9 @@ file needs to own price data — it is operational data, not doctrine.
 | Blocking      | No                 |
 | Owner         | Admin/Economics.md |
 | First Logged  | 2026-06-05         |
-| Last Reviewed | 2026-06-05         |
+| Last Reviewed | 2026-10-28         |
+
+*(Reviewed 2026-10-28, Vibe — delegated maintenance, human-ratified Decision Brief 2026-10-28b: re-read against current body state; no status change.)*
 
 **Description:** Commercial sale of recovered materials, fabricated
 components, and processing services may require business registration,
@@ -731,7 +739,9 @@ first commercial transaction. Cross-reference FA-003 in
 | Blocking      | No                 |
 | Owner         | Admin/Economics.md |
 | First Logged  | 2026-07-06         |
-| Last Reviewed | 2026-07-06         |
+| Last Reviewed | 2026-10-28         |
+
+*(Reviewed 2026-10-28, Vibe — delegated maintenance, human-ratified Decision Brief 2026-10-28b: re-read against current body state; no status change.)*
 
 **Description:** The Barter Doctrine (Section VI) defines valuation
 (market replacement cost) and accounting treatment with internal
@@ -774,6 +784,8 @@ declared with rationale, rather than left silent. This file defers:
 ---
 
 ### Resolution Log
+
+- 2026-10-28: **AUDIT_19 (campaign) findings enacted (Vibe, Repo Custodian — delegated maintenance, human-ratified Decision Brief 2026-10-28b).** (1) F1/X10: File State Highest Risk Medium → High — ECN-002 (Operating cost baseline, Blocking) carries Risk High and the header understated it. (2) F2: the Lessons Learned row for the 2026-07-06 rename pass corrected to File_Template §7 vocabulary — Evidence Type "Governance" → "Audit Review", Confidence "High" → "Measured". (3) Five open ECN sidecars (ECN-001, ECN-002, ECN-004, ECN-005, ECN-006) Last Reviewed refreshed to 2026-10-28 with dated notes — re-read against current body state, no status change (ECN-003 Resolved, untouched). No gate advanced; no unknown opened or closed.
 
 - 2026-10-25: **Header wording updated (PKC-020 ruling; no content change).** The Last Audit annotation that said the logged findings-only pseudo-audit was not counted "pending PKC-020" now cites the ruling of 2026-10-25: a findings-only pseudo-audit does not advance Last Audit (`Admin/Auditor_Protocols.md` v0.45, Rule 10 addendum). No date, field value, Unknown or Spec Gate changed.
 

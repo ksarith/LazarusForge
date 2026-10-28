@@ -1,5 +1,5 @@
 # Canonical_Terms.md — Standard Repository Nomenclature
-**Version 0.11**
+**Version 0.12**
 
 ---
 
@@ -17,11 +17,11 @@
 | Body Stability   | Volatile                                                            |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-10-28 — Vibe (Repo Custodian, delegated maintenance, human-assigned X3 completion): v0.10 → v0.11 — designations completed: `K` = `Automation/` (kinetic), `B` = base layer (root-level files). Prior: 2026-10-28 — Vibe (Repo Custodian, delegated maintenance, human-ratified Decision Brief ruling, X3): v0.9 → v0.10 — Folder Designation Characters registered in §1; CT-007 annotated with the ruling and Last Reviewed advanced. Prior: 2026-10-28 — Vibe (Repo Custodian, delegated maintenance, human-ratified findings batch) v0.8 → v0.9, from base v0.8: AUDIT_11 F1–F4 enacted — Open Unknowns recounted 9 → 10 (off-by-one since the 2026-07-05 CT-011 resolution logged the transition as 10 → 9; no unknown opened); two misplaced Resolution Log entries relocated into the log; Version String Registry added; CT-005's bare EC-001 citation qualified. Prior: 2026-10-25 — Claude (human-directed) v0.7 → v0.8, from base v0.7: "Proposed" retired as a status designation (PKC-031) and the unversioned 2026-08-17, 2026-09-14 and 2026-09-23 passes covered by this one bump (PKC-029); see Resolution Log. Prior: 2026-10-24 — Claude (human-directed) corrected "Three vocabulary sources" to four and added a note to the Status section, from a Vibe per-file audit (see Resolution Log). Prior: 2026-09-23                                                          |
-| Auditor          | Vibe — Repo Custodian, 2026-10-28 X3 completion — B/K assignments (delegated maintenance, human-assigned); prior: Vibe — Repo Custodian, 2026-10-28 X3 Folder Designation registration (delegated maintenance, human-ratified); prior: Vibe — 2026-10-28 AUDIT_11 findings enactment (delegated maintenance, human-ratified batch); prior: Claude — 2026-10-25 v0.8 bump and Proposed note (human-directed); prior: Claude — 2026-10-24 wording correction and Status note (human-directed); prior: Claude — Claim-Type Labels registered under §4 (Grok proposer, human-directed), 2026-09-23; prior: Claude — "Disambiguation: Uses of 'Gate'" section added (FL-012, human-directed), 2026-09-14; prior: Claude — four new terms registered (Active Constitutional Surface, Claimed/Recognized/Ratified Constitutional Lineage) at GOV-018 closure, checked against existing vocabulary first — no competing term found (human-directed); prior: Claude — Synthesizer/Auditor (2026-06-24); Claude — Cycle definition + version-string correction (2026-07-05); Claude — CT-011 resolution 2026-07-05 |
+| Last Audit       | 2026-10-28 (later same-day) — Vibe (Repo Custodian, delegated maintenance, human-ratified Decision Brief 2026-10-28b + batch 2026-10-28c): v0.11 → v0.12 — CT-007 and the ID-prefix registry reconciled to the executed ECN- rename (2026-07-06), the erroneous EC-008 citation corrected (AUDIT_19 F3); File State Highest Risk Low → High (X10 corpus recompute — open sidecars CT-004 and CT-007 both carry Risk High). No unknown opened or closed; no doctrine changed. Prior: 2026-10-28 — Vibe (Repo Custodian, delegated maintenance, human-assigned X3 completion): v0.10 → v0.11 — designations completed: `K` = `Automation/` (kinetic), `B` = base layer (root-level files). Prior: 2026-10-28 — Vibe (Repo Custodian, delegated maintenance, human-ratified Decision Brief ruling, X3): v0.9 → v0.10 — Folder Designation Characters registered in §1; CT-007 annotated with the ruling and Last Reviewed advanced. Prior: 2026-10-28 — Vibe (Repo Custodian, delegated maintenance, human-ratified findings batch) v0.8 → v0.9, from base v0.8: AUDIT_11 F1–F4 enacted — Open Unknowns recounted 9 → 10 (off-by-one since the 2026-07-05 CT-011 resolution logged the transition as 10 → 9; no unknown opened); two misplaced Resolution Log entries relocated into the log; Version String Registry added; CT-005's bare EC-001 citation qualified. Prior: 2026-10-25 — Claude (human-directed) v0.7 → v0.8, from base v0.7: "Proposed" retired as a status designation (PKC-031) and the unversioned 2026-08-17, 2026-09-14 and 2026-09-23 passes covered by this one bump (PKC-029); see Resolution Log. Prior: 2026-10-24 — Claude (human-directed) corrected "Three vocabulary sources" to four and added a note to the Status section, from a Vibe per-file audit (see Resolution Log). Prior: 2026-09-23                                                          |
+| Auditor          | Vibe — Repo Custodian, 2026-10-28 CT-007 registry reconciliation + Highest Risk recompute (delegated maintenance, human-ratified batches 2026-10-28b/c); prior: Vibe — Repo Custodian, 2026-10-28 X3 completion — B/K assignments (delegated maintenance, human-assigned); prior: Vibe — Repo Custodian, 2026-10-28 X3 Folder Designation registration (delegated maintenance, human-ratified); prior: Vibe — 2026-10-28 AUDIT_11 findings enactment (delegated maintenance, human-ratified batch); prior: Claude — 2026-10-25 v0.8 bump and Proposed note (human-directed); prior: Claude — 2026-10-24 wording correction and Status note (human-directed); prior: Claude — Claim-Type Labels registered under §4 (Grok proposer, human-directed), 2026-09-23; prior: Claude — "Disambiguation: Uses of 'Gate'" section added (FL-012, human-directed), 2026-09-14; prior: Claude — four new terms registered (Active Constitutional Surface, Claimed/Recognized/Ratified Constitutional Lineage) at GOV-018 closure, checked against existing vocabulary first — no competing term found (human-directed); prior: Claude — Synthesizer/Auditor (2026-06-24); Claude — Cycle definition + version-string correction (2026-07-05); Claude — CT-011 resolution 2026-07-05 |
 | Open Unknowns    | 10                                                                   |
 | Active Disputes  | 0                                                                   |
-| Highest Risk     | Low                                                                 |
+| Highest Risk     | High                                                                |
 | Sidecar Link     | #auditor-notes--unknowns                                            |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
@@ -699,7 +699,7 @@ Use of banned terms in specification-level content is a Fallacy 4
 | Gate N (unqualified, N=1–6)           | Verification Gate N or Enforcement Checkpoint N | Always specify which system; both are six-item, numbered, and were once both called "Canonical Verification Gates" — see GOV-011 |
 | Blocking (unqualified)               | Operational Blocking or Epistemic Blocking     | Always specify which type; unqualified Blocking obscures whether physical work halts or only claims halt |
 | SESSION BOUNDARY INDEX               | Audit Cycle (Section 4, this file)             | Not a defined term anywhere in `Admin/Auditor_Protocols.md`, `Admin/Forge_Audit_Kit.md`, `Unknowns.md`, or `Admin/Verification_Gates.md` as of 2026-07-05, despite appearing in multiple audit headers as if citing established doctrine. Treat any audit opening with this phrase as citing an unverified/external convention, not repository doctrine, until traced to a real source or formally adopted here. |
-| EC-00X (bare, no owning file named) | EC-00X (`Admin/Ethical_Constraints.md`) or the pending `ECN-` renumbering (`Admin/Economics.md`) | Ambiguous as of 2026-07-05 — see CT-007. EC-001, EC-002, EC-004, EC-005, and EC-008 are each claimed by both files with unrelated content. Never cite a bare "EC-00X" without naming the owning file until CT-007's rename is complete. |
+| EC-00X (bare, no owning file named) | EC-00X (`Admin/Ethical_Constraints.md`) — `Admin/Economics.md`'s entries were renamed to the `ECN-` prefix on 2026-07-06 (executed; this registry previously narrated it as pending) | See CT-007. The 2026-07-05 collision (EC-001, EC-002, EC-003, EC-004, EC-005) is closed by that executed rename; this registry's earlier listing of EC-008 as a sixth colliding ID was an error — EC-008 never existed in Economics.md (per that file's own verified record, 2026-07-06). Bare "EC-00X" citations still require the owning file name under the qualified-citation rule (PKC-003). |
 
 "Autonomous Decision-Making" without bounding clauses is prohibited because
 it obscures human override visibility, which is a constitutional requirement
@@ -985,6 +985,8 @@ collision handling) — this escalation only accelerates the specific,
 already-occurred collision, which shouldn't wait for the general doctrine
 to be resolved first.
 
+**Executed (2026-07-06, Claude; recorded here 2026-10-28, Vibe — delegated maintenance, human-ratified batch 2026-10-28c; AUDIT_19 F3):** the specific rename above is done — Economics.md's five entries are ECN-001 through ECN-005 (including Resolved ECN-003), its own sidecar and `Unknowns.md`'s index updated the same day. What remains open under this row is the general doctrine question only (reuse, range reservation, collision handling). Corrections to the 2026-07-05 write-up, verified against Economics.md directly: EC-008 never existed there (citation error; the actual fifth collision was EC-003, likely omitted because it was Resolved — Resolved status does not retire an ID from a shared namespace).
+
 **Original Resolution Path (general doctrine, still valid):** Discharge via
 Trajectory — log in `Admin/Trajectories.md` as a v0→v1 transition task.
 Minimum doctrine when resolved: IDs are never reused; prefixes are
@@ -999,6 +1001,8 @@ within-Admin EC- collision (both `Ethical_Constraints.md` and `Economics.md`
 are `A`), so this row stays Open: the ECN- rename path above and the general
 doctrine questions (reuse, range reservation, collision handling) remain
 outstanding. Last Reviewed advanced 2026-07-05 → 2026-10-28.
+
+**Correction (2026-10-28, Vibe — delegated maintenance, human-ratified batch 2026-10-28c):** the ECN- rename named above as outstanding was already executed on 2026-07-06 — see the Executed note above. The row stays Open for the general namespace doctrine question only.
 
 ---
 
@@ -1151,6 +1155,8 @@ Auditor_Protocols.md specifically, which is now closed.
 ---
 
 ### Resolution Log
+
+- 2026-10-28 (later same-day): **CT-007 registry reconciliation + Highest Risk recompute (Vibe, Repo Custodian — delegated maintenance, human-ratified Decision Brief 2026-10-28b + batch 2026-10-28c; AUDIT_19 F3 + X10).** The ID-prefix registry row and CT-007's Resolution Path narrated the ECN- rename as pending ("until CT-007's rename is complete") four months after Economics.md executed it (2026-07-06, ECN-001–005); both reconciled to the executed state. The erroneous EC-008 citation corrected: EC-008 never existed in Economics.md; the actual fifth collision was EC-003 (Resolved status does not retire an ID from a shared namespace). File State Highest Risk Low → High per the corpus recompute — open sidecars CT-004 and CT-007 both carry Risk High. CT-007 remains Open for the general namespace doctrine only. Header 0.11 → 0.12; Version String Registry and Status current line updated in the same pass. No unknown opened or closed (stays 10); no doctrine changed.
 
 - 2026-10-28: **X3 scheme completed (Vibe, Repo Custodian — delegated maintenance, human-assigned).** `K` = `Automation/` (kinetic) and `B` = base layer (root-level files) added to the §1 designation list; the scheme now covers every top-level location. `Routing.md` and `Discovery.md` references updated in the same commit (their "pending human assignment" phrasing retired). Header 0.10 → 0.11. Open Unknowns unchanged at 10.
 
@@ -1335,8 +1341,8 @@ Auditor_Protocols.md specifically, which is now closed.
 
 | Location | String | Rule |
 |---|---|---|
-| Header line | **Version 0.11** | Authoritative; bumped on every text change (PKC-039) |
-| Status section current line | Version 0.11 (2026-10-28) | Updated in the same pass as the header; the header prevails on any disagreement |
+| Header line | **Version 0.12** | Authoritative; bumped on every text change (PKC-039) |
+| Status section current line | Version 0.12 (2026-10-28) | Updated in the same pass as the header; the header prevails on any disagreement |
 
 *Added 2026-10-28 (AUDIT_11 F3) — this file carries self-referential version strings in its Status log and had no registry after the 2026-07-05 header-vs-Status desync, the exact FAK-014–019 failure mode. — Vibe, delegated maintenance.*
 
@@ -1344,7 +1350,14 @@ Auditor_Protocols.md specifically, which is now closed.
 
 ## Status
 
-Version 0.11 (2026-10-28) — X3 scheme completed (delegated maintenance, human-assigned): `K` = `Automation/` (kinetic) and `B` = base layer (root-level files) added to §1; Routing/Discovery references updated in the same commit. No unknown opened or closed; Open Unknowns stay at 10.
+Version 0.12 (2026-10-28) — CT-007/ID-prefix registry reconciliation (delegated maintenance, human-ratified batches 2026-10-28b/c): the ECN- rename narration reconciled from pending to executed (2026-07-06); the erroneous EC-008 citation corrected (actual fifth collision: EC-003); File State Highest Risk Low → High (X10 corpus recompute; open sidecars CT-004 and CT-007 both High). No unknown opened or closed; Open Unknowns stay at 10.
+
+**Changes from v0.11:**
+- ID-prefix registry row + CT-007 Resolution Path: ECN- rename narrated as executed; EC-008 citation error corrected
+- File State Highest Risk: Low → High
+- Header version string 0.11 → 0.12
+
+Version 0.12 (2026-10-28) — X3 scheme completed (delegated maintenance, human-assigned): `K` = `Automation/` (kinetic) and `B` = base layer (root-level files) added to §1; Routing/Discovery references updated in the same commit. No unknown opened or closed; Open Unknowns stay at 10.
 
 **Changes from v0.10:**
 - §1: K and B assignments added; scheme complete for every top-level location

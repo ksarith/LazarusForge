@@ -11,7 +11,7 @@
 | Spec Gates       | N/A — this file is a cross-reference index, not a specification     |
 | Open Unknowns    | 0 (surfaces existing unknowns from owning files; creates none)      |
 | Owning Domain    | Admin/                                                               |
-| Last Reviewed    | 2026-10-28 — Canonical_Terms (Open Unknowns 9 → 10) and Trajectories (Risk Medium → High) entries corrected against their owning files (AUDIT_11 F1 / AUDIT_13 F5 enactment, delegated maintenance). Prior: 2026-10-27 — Purpose wording qualified for the PKC-012 folder-count reconciliation (companion to `Admin/Repository_Structure.md`'s same-day pass). Prior: 2026-10-27 — Safety_Protocols and Engineer_Protocols entries corrected 6 → 5 Open Unknowns (SP-001 and EP-005 both Resolved, PKC-028; cross-file review pass). Prior: 2026-10-25 — Repository_Structure entry updated for RS-001 resolved (0 Open Unknowns); CIR_Gov entry Status changed from Proposed to Exploration to match its owning file (PKC-031). Prior: 2026-10-23 — Charter entry Risk corrected Critical → High (Risk/Priority conflation; found by a Vibe audit of the Charter, checked against its File State and GOV-005 sidecar). Also 2026-10-23: Progress_Log entry updated for its new Parked Concerns section. Prior: 2026-10-04 — Load-bearing map (Tier 0–4) added from `Tests/Admin_Governance_Teardown_POC.md`, then Tier 1/Tier 2 file-count and KB figures corrected the same day (inherited two arithmetic errors from the source POC's own Totals line — see that file's Resolution Log). No Admin files merged or deleted. Prior: 2026-10-03 metadata catch-up. Field meaning: last substantive map check/modification, not a full-folder re-audit of every Admin file. |
+| Last Reviewed    | 2026-10-28 (later same-day) — Canonical_Terms, Economics and Ship_of_Theseus Risk entries corrected against their owning files (X10 corpus Highest-Risk recompute, human-ratified Decision Brief 2026-10-28b): CT Low → High (CT-004, CT-007); Economics Medium → High (ECN-002); Ship_of_Theseus Medium → High (ST-004). No other entry changed; not a full-folder re-audit. Prior: 2026-10-28 — Canonical_Terms (Open Unknowns 9 → 10) and Trajectories (Risk Medium → High) entries corrected against their owning files (AUDIT_11 F1 / AUDIT_13 F5 enactment, delegated maintenance). Prior: 2026-10-27 — Purpose wording qualified for the PKC-012 folder-count reconciliation (companion to `Admin/Repository_Structure.md`'s same-day pass). Prior: 2026-10-27 — Safety_Protocols and Engineer_Protocols entries corrected 6 → 5 Open Unknowns (SP-001 and EP-005 both Resolved, PKC-028; cross-file review pass). Prior: 2026-10-25 — Repository_Structure entry updated for RS-001 resolved (0 Open Unknowns); CIR_Gov entry Status changed from Proposed to Exploration to match its owning file (PKC-031). Prior: 2026-10-23 — Charter entry Risk corrected Critical → High (Risk/Priority conflation; found by a Vibe audit of the Charter, checked against its File State and GOV-005 sidecar). Also 2026-10-23: Progress_Log entry updated for its new Parked Concerns section. Prior: 2026-10-04 — Load-bearing map (Tier 0–4) added from `Tests/Admin_Governance_Teardown_POC.md`, then Tier 1/Tier 2 file-count and KB figures corrected the same day (inherited two arithmetic errors from the source POC's own Totals line — see that file's Resolution Log). No Admin files merged or deleted. Prior: 2026-10-03 metadata catch-up. Field meaning: last substantive map check/modification, not a full-folder re-audit of every Admin file. |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
 ---
@@ -77,7 +77,7 @@ Pilot for a per-folder scope-map pattern, proposed 2026-08-07 as a fix for a kno
 **Does not, and must never claim:** Constitutional authority - satisfaction of Axiom Q-2 or GOV-008 - runtime execution (nothing in this repo implements it) - Genesis Phase exit.
 
 ### `Admin/Canonical_Terms.md`
-**Status:** Draft · 0/6 · 10 open Unknowns · Risk: Low
+**Status:** Draft · 0/6 · 10 open Unknowns · Risk: High (CT-004, CT-007 — recomputed 2026-10-28)
 **Does:** Authoritative vocabulary mappings; conflict-resolution rules against other vocabulary sources; anti-drift guardrails and banned-term list.
 **Does not (arrow):** Ethical policy (`Ethical_Constraints.md`) - operational routing semantics (`Architecture/Forge_flow.md` — authoritative on conflict) - governance tier authority (`Governance_Charter.md`) - Rename Registry (`Discovery.md`).
 
@@ -88,7 +88,7 @@ Pilot for a per-folder scope-map pattern, proposed 2026-08-07 as a fix for a kno
 **Correction 2026-09-13:** this entry previously said "G3 blocked (AP-012/AP-016)" and "Open Unknowns unclear." The file's own v0.25 log (2026-08-18) already resolved the G3 contradiction against `Auditor_Protocols.md` directly, and its File State does track exactly one open item, CIR-001 — this map just hadn't caught up.
 
 ### `Admin/Economics.md`
-**Status:** Exploration · 0/6 · 5 Open Unknowns (ECN-001/002/004/005/006) · Risk: Medium
+**Status:** Exploration · 0/6 · 5 Open Unknowns (ECN-001/002/004/005/006) · Risk: High (ECN-002 — recomputed 2026-10-28)
 **Does:** Dynamic resource/procurement/surplus doctrine; market navigation; revenue model (TR-001 input); v1 profitability baseline; barter doctrine.
 **Does not (arrow):** FRT doctrine/floor (`Trajectories.md`) - FRT logging (`Gate_07_Utilization.md`) - primary KPI (`Architecture/Forge_flow.md`) - energy cost model (`Operations/Energy.md`) - safety envelopes for commercial value streams (`Safety_Protocols.md`, `Operations/Plastics.md`, `Operations/Woodworking.md`).
 
@@ -218,7 +218,7 @@ Note: created same day as this Scope_Map build's own findings were still fresh �
 **Correction 2026-09-13:** this entry previously said 13. SEC-002, SEC-007a, and SEC-009 were Ratified 2026-08-22 — corrected to 10.
 
 ### `Admin/Ship_of_Theseus.md`
-**Status:** Exploration · 0/6 · 4 Open Unknowns · Risk: Medium
+**Status:** Exploration · 0/6 · 4 Open Unknowns · Risk: High (ST-004 — recomputed 2026-10-28)
 **Does:** Ship of Theseus paradox as repair-first legal/philosophical grounding; Grain system (provenance/identity continuity); right-to-repair defense; AI identity continuity doctrine (Derivative vs. Canonical, ST-003/CF-003).
 **Does not (arrow):** Full triage workflow (`Operations/Gate_02_Triage.md`) - minimum seed spec (`Architecture/Geck_forge_seed.md`) - crypto state verification (`Security_Protocols.md`) - split-brain recovery (`Architecture/Cognitive_Frameworks.md`).
 
@@ -253,6 +253,8 @@ Findings 1–3 (structural scope gaps) closed 2026-08-09. Findings 4–5 remain 
 ---
 
 ## Resolution Log
+
+- 2026-10-28 (later same-day): **Canonical_Terms, Economics and Ship_of_Theseus Risk entries corrected** (delegated maintenance, human-ratified Decision Brief 2026-10-28b — X10 corpus Highest-Risk recompute): CT Risk Low → High (open sidecars CT-004 and CT-007 both High); Economics Risk Medium → High (ECN-002 High); Ship_of_Theseus Risk Medium → High (ST-004 High). Values checked against each owning file's File State and sidecars. No other entry changed; not a full-folder re-audit.
 
 - 2026-10-28: **Canonical_Terms and Trajectories entries corrected** (delegated maintenance, AUDIT_11 F1 / AUDIT_13 F5 enactment): CT Open Unknowns 9 → 10 (recount against the owning file's sidecar); Trajectories Risk Medium → High (TR-003 carries Risk High). No other entry changed; not a full-folder re-audit.
 
