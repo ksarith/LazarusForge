@@ -11,7 +11,7 @@
 | Spec Gates       | N/A — this file is a cross-reference index, not a specification     |
 | Open Unknowns    | 0 (surfaces existing unknowns from owning files; creates none)      |
 | Owning Domain    | Admin/                                                               |
-| Last Reviewed    | 2026-10-27 — Purpose wording qualified for the PKC-012 folder-count reconciliation (companion to `Admin/Repository_Structure.md`'s same-day pass). Prior: 2026-10-27 — Safety_Protocols and Engineer_Protocols entries corrected 6 → 5 Open Unknowns (SP-001 and EP-005 both Resolved, PKC-028; cross-file review pass). Prior: 2026-10-25 — Repository_Structure entry updated for RS-001 resolved (0 Open Unknowns); CIR_Gov entry Status changed from Proposed to Exploration to match its owning file (PKC-031). Prior: 2026-10-23 — Charter entry Risk corrected Critical → High (Risk/Priority conflation; found by a Vibe audit of the Charter, checked against its File State and GOV-005 sidecar). Also 2026-10-23: Progress_Log entry updated for its new Parked Concerns section. Prior: 2026-10-04 — Load-bearing map (Tier 0–4) added from `Tests/Admin_Governance_Teardown_POC.md`, then Tier 1/Tier 2 file-count and KB figures corrected the same day (inherited two arithmetic errors from the source POC's own Totals line — see that file's Resolution Log). No Admin files merged or deleted. Prior: 2026-10-03 metadata catch-up. Field meaning: last substantive map check/modification, not a full-folder re-audit of every Admin file. |
+| Last Reviewed    | 2026-10-28 — Canonical_Terms (Open Unknowns 9 → 10) and Trajectories (Risk Medium → High) entries corrected against their owning files (AUDIT_11 F1 / AUDIT_13 F5 enactment, delegated maintenance). Prior: 2026-10-27 — Purpose wording qualified for the PKC-012 folder-count reconciliation (companion to `Admin/Repository_Structure.md`'s same-day pass). Prior: 2026-10-27 — Safety_Protocols and Engineer_Protocols entries corrected 6 → 5 Open Unknowns (SP-001 and EP-005 both Resolved, PKC-028; cross-file review pass). Prior: 2026-10-25 — Repository_Structure entry updated for RS-001 resolved (0 Open Unknowns); CIR_Gov entry Status changed from Proposed to Exploration to match its owning file (PKC-031). Prior: 2026-10-23 — Charter entry Risk corrected Critical → High (Risk/Priority conflation; found by a Vibe audit of the Charter, checked against its File State and GOV-005 sidecar). Also 2026-10-23: Progress_Log entry updated for its new Parked Concerns section. Prior: 2026-10-04 — Load-bearing map (Tier 0–4) added from `Tests/Admin_Governance_Teardown_POC.md`, then Tier 1/Tier 2 file-count and KB figures corrected the same day (inherited two arithmetic errors from the source POC's own Totals line — see that file's Resolution Log). No Admin files merged or deleted. Prior: 2026-10-03 metadata catch-up. Field meaning: last substantive map check/modification, not a full-folder re-audit of every Admin file. |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
 ---
@@ -77,7 +77,7 @@ Pilot for a per-folder scope-map pattern, proposed 2026-08-07 as a fix for a kno
 **Does not, and must never claim:** Constitutional authority - satisfaction of Axiom Q-2 or GOV-008 - runtime execution (nothing in this repo implements it) - Genesis Phase exit.
 
 ### `Admin/Canonical_Terms.md`
-**Status:** Draft · 0/6 · 9 Open Unknowns · Risk: Low
+**Status:** Draft · 0/6 · 10 open Unknowns · Risk: Low
 **Does:** Authoritative vocabulary mappings; conflict-resolution rules against other vocabulary sources; anti-drift guardrails and banned-term list.
 **Does not (arrow):** Ethical policy (`Ethical_Constraints.md`) - operational routing semantics (`Architecture/Forge_flow.md` — authoritative on conflict) - governance tier authority (`Governance_Charter.md`) - Rename Registry (`Discovery.md`).
 
@@ -223,7 +223,7 @@ Note: created same day as this Scope_Map build's own findings were still fresh �
 **Does not (arrow):** Full triage workflow (`Operations/Gate_02_Triage.md`) - minimum seed spec (`Architecture/Geck_forge_seed.md`) - crypto state verification (`Security_Protocols.md`) - split-brain recovery (`Architecture/Cognitive_Frameworks.md`).
 
 ### `Admin/Trajectories.md`
-**Status:** Exploration · 1/6 · 3 Open Unknowns · Risk: Medium
+**Status:** Exploration · 1/6 · 3 Open Unknowns · Risk: High
 **Does:** v0 to v5 version trajectory; survival thresholds/exit conditions per version; FRT doctrine and floor (still Placeholder); revenue allocation framework; v0-v1 Trajectory Items registry.
 **Does not (arrow):** Future-version component taxonomy (module docs, when active) - detailed economic model (`Economics.md`) - FRT logging procedure (`Operations/Gate_07_Utilization.md`) - component procurement (`Architecture/Geck_forge_seed.md`).
 
@@ -253,6 +253,8 @@ Findings 1–3 (structural scope gaps) closed 2026-08-09. Findings 4–5 remain 
 ---
 
 ## Resolution Log
+
+- 2026-10-28: **Canonical_Terms and Trajectories entries corrected** (delegated maintenance, AUDIT_11 F1 / AUDIT_13 F5 enactment): CT Open Unknowns 9 → 10 (recount against the owning file's sidecar); Trajectories Risk Medium → High (TR-003 carries Risk High). No other entry changed; not a full-folder re-audit.
 
 - 2026-10-27: **Purpose wording qualified (PKC-012, companion to Repository_Structure's same-day pass)** — the "77 files across six folders" figure now reads as a founding-date figure under the reconciled count convention (root counts as a folder; Automation/ and Archive/ are non-content layers). No entry changed; not a full-folder re-audit.
 

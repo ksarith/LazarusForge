@@ -16,11 +16,11 @@
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 1/6 — hold: the 2026-06-26 recorded clears (G1, G2, G4, G5, G6; G3 deferred) are treated as stale (body changed since); no advance without fresh audit + human ratification (PKC-042, 2026-10-27)                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-10-27 — Claude (human-authorized autonomous management; PKC-042): Spec Gates hold reason annotated; no gate advanced. Prior: 2026-05-23; revised 2026-06-08; revised 2026-06-24; audited 2026-06-26; revised 2026-08-03 |
-| Auditor          | Claude — 2026-10-27 PKC-042 hold-reason annotation (human-authorized autonomous management); prior: Claude — Retrofit/Auditor; Claude — Synthesizer, TR-GOV-001 split into `Admin/Hardware_Diversity_Ladder.md` per this file's own Scope Boundary (human-directed), 2026-08-03 |
+| Last Audit       | 2026-10-28 — Vibe (Repo Custodian, delegated maintenance, human-ratified findings batch): AUDIT_13 F1–F5 enacted — TR-AST-001 log backfill; Scope Boundary v3+ Does-item; Assumptions section (ASM-001–003); three stale citations refreshed; Highest Risk Medium → High; no gate advanced. Prior: 2026-10-27 — Claude (human-authorized autonomous management; PKC-042): Spec Gates hold reason annotated; no gate advanced. Prior: 2026-05-23; revised 2026-06-08; revised 2026-06-24; audited 2026-06-26; revised 2026-08-03 |
+| Auditor          | Vibe — Repo Custodian, 2026-10-28 AUDIT_13 findings enactment (delegated maintenance, human-ratified batch); prior: Claude — 2026-10-27 PKC-042 hold-reason annotation (human-authorized autonomous management); prior: Claude — Retrofit/Auditor; Claude — Synthesizer, TR-GOV-001 split into `Admin/Hardware_Diversity_Ladder.md` per this file's own Scope Boundary (human-directed), 2026-08-03 |
 | Open Unknowns    | 3                                                                   |
 | Active Disputes  | 0                                                                   |
-| Highest Risk     | Medium                                                              |
+| Highest Risk     | High                                                              |
 | Sidecar Link     | #auditor-notes--unknowns                                            |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
@@ -37,6 +37,7 @@
 - Design doctrine notes governing version advancement
 - Economic model placeholder for v1 profitability baseline
 - v0→v1 Trajectory Items registry — discharged knowns awaiting deferred activation
+- v3+ proposed trajectory items — candidate capabilities not yet owned by any file's sidecar
 
 **This file DOES NOT define:**
 - Component taxonomy or implementation specs for future versions
@@ -73,6 +74,16 @@ external or proxy validation — see individual notes.*
 
 ---
 
+## Assumptions
+
+| ID      | Assumption | Basis | Confidence | Expiry Trigger |
+|---------|------------|-------|------------|-----------------|
+| ASM-001 | v0 exit-condition verification requires an external observer or human proxy — the Forge cannot self-verify at v0 | v0 verification note (detector/target circularity, May 2026) | High | v0 external-observer protocol defined |
+| ASM-002 | The FRT cycle (floor percentage, reinvestment window) is operator-declared until operational data exists | FRT doctrine — floor is [Placeholder] (2026-07-05) | High | First operational FRT measurement cycle |
+| ASM-003 | The Astroid-miner companion-repo archive (TR-AST-001's evidence source) remains retrievable | TR-AST-001 First Logged 2026-09-29; companion repository retired (PKC-011) | Low | Archive access re-verified at first TR-AST-001 use |
+
+*Section added 2026-10-28 — Vibe, delegated maintenance (AUDIT_13 F3).*
+
 ---
 
 ## v0 — Proof of Persistence (Terrestrial Seed)
@@ -94,7 +105,7 @@ external or proxy validation — see individual notes.*
 **Exit Condition** [Placeholder]
 > The Forge can repair itself faster than it degrades.
 
-*Verification note: This exit condition cannot be self-reported by the Forge — the detector and the thing being detected are the same system at v0. Verification requires an external observer or proxy metric (e.g., mean time between failures trending downward over N cycles, tracked by human operator). See UNK-026 / CO-001 in Components.md.*
+*Verification note: This exit condition cannot be self-reported by the Forge — the detector and the thing being detected are the same system at v0. Verification requires an external observer or proxy metric (e.g., mean time between failures trending downward over N cycles, tracked by human operator). See CO-001 in `Architecture/Components.md` — UNK-026 no longer resolves in the Unknowns.md active index; citation updated to the live row [Note 2026-10-28, delegated maintenance, AUDIT_13 F4].*
 
 ---
 
@@ -106,7 +117,7 @@ external or proxy validation — see individual notes.*
 - Modular subsystems
 - Semi-autonomous operation
 - Expanded alloy handling
-- On-site power generation (partial) — see `Operations/Energy.md`; UNK-011 / EV-001 tracks demand baseline
+- On-site power generation (partial) — see `Operations/Energy.md`; EV-001 (Operations/Energy.md) tracks demand baseline — UNK-011 no longer resolves in the active index [Note 2026-10-28, delegated maintenance, AUDIT_13 F4]
 
 **Required Capabilities**
 - Closed-loop material recovery
@@ -150,7 +161,7 @@ external or proxy validation — see individual notes.*
 
 **Required Capabilities**
 - Regolith and asteroid material processing
-- Autonomous maintenance cycles — *contingent on UNK-008 / LT-003 resolution in `Tests/Leviathan_testing.md`*
+- Autonomous maintenance cycles — *contingent on LT-003 resolution in `Tests/Leviathan_testing.md` and UNK-008 resolution in `Architecture/Geck_forge_seed.md` (ownership reassigned 2026-07-19) [Note 2026-10-28, delegated maintenance, AUDIT_13 F4]*
 - Energy scavenging (solar, nuclear, thermal) — *nuclear energy scavenging introduces radiation containment, shielding, and decay management requirements not addressed at v0; see TR-003 (formalized 2026-07-05) — nuclear capability must not activate before that entry reaches Provisional Spec.*
 - Zero-waste material flows
 - Autonomous structural repair against micro-collision damage — *proposed capability, see TR-MET-001 in v3+ Trajectory Items (Proposed) below; contingent on the same autonomy dependency as autonomous maintenance cycles above*
@@ -487,6 +498,10 @@ prose since 2026-06-26 but never registered as a tracked unknown.*
 ---
 
 ### Resolution Log
+
+- 2026-10-28: **AUDIT_13 findings enacted (Vibe, Repo Custodian — delegated maintenance, human-ratified findings batch 2026-10-28).** (1) F1 backfill: the 2026-09-29 TR-AST-001 v3+ table addition (Astroid-miner Core-0/1/2 industrial-seed closure framework) had no Resolution Log entry; recorded here per the RS/SP backfill-with-marker precedent (AUDIT_12 F4). (2) F2: Scope Boundary Does-list gained the v3+ proposed-items line. (3) F3: Assumptions section added (ASM-001–003). (4) F4: three stale registry citations refreshed with dated notes (UNK-026 → CO-001; UNK-011 → EV-001; UNK-008 owner → Geck_forge_seed.md). (5) F5: Highest Risk Medium → High (TR-003 carries Risk High; PKC-004/024). No gate advanced; no unknown opened or closed; Open Unknowns recounted at 3. Report: Archive/Audits/AUDIT_13_Admin-Trajectories.md.
+
+- 2026-10-28: Pseudo-audit, findings only, 2026-10-27; report: Archive/Audits/AUDIT_13_Admin-Trajectories.md (PKC-020 — the pass itself advanced nothing; this file's Last Audit advance records today's maintenance edits, not the pseudo-audit).
 
 - 2026-10-27: **Spec Gates hold reason recorded (PKC-042, human-authorized autonomous management).** The header's 1/6 versus the 2026-06-26 dual-audit entry's "Gates cleared: G1, G2, G4, G5, G6. G3 deferred" is closed conservatively: the recorded clears are treated as stale — the body has changed since 2026-06-26 — the header stays 1/6, and no gate is advanced without a fresh audit and human ratification (self-approval prohibited). Spec Gates field annotated; Last Audit and Auditor advanced to record this pass. No gate, Unknown or doctrine changed.
 

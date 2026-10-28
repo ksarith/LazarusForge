@@ -1,5 +1,5 @@
 # Canonical_Terms.md — Standard Repository Nomenclature
-**Version 0.8**
+**Version 0.9**
 
 ---
 
@@ -17,9 +17,9 @@
 | Body Stability   | Volatile                                                            |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-10-25 — Claude (human-directed) v0.7 → v0.8, from base v0.7: "Proposed" retired as a status designation (PKC-031) and the unversioned 2026-08-17, 2026-09-14 and 2026-09-23 passes covered by this one bump (PKC-029); see Resolution Log. Prior: 2026-10-24 — Claude (human-directed) corrected "Three vocabulary sources" to four and added a note to the Status section, from a Vibe per-file audit (see Resolution Log). Prior: 2026-09-23                                                          |
-| Auditor          | Claude — 2026-10-25 v0.8 bump and Proposed note (human-directed); prior: Claude — 2026-10-24 wording correction and Status note (human-directed); prior: Claude — Claim-Type Labels registered under §4 (Grok proposer, human-directed), 2026-09-23; prior: Claude — "Disambiguation: Uses of 'Gate'" section added (FL-012, human-directed), 2026-09-14; prior: Claude — four new terms registered (Active Constitutional Surface, Claimed/Recognized/Ratified Constitutional Lineage) at GOV-018 closure, checked against existing vocabulary first — no competing term found (human-directed); prior: Claude — Synthesizer/Auditor (2026-06-24); Claude — Cycle definition + version-string correction (2026-07-05); Claude — CT-011 resolution 2026-07-05 |
-| Open Unknowns    | 9                                                                   |
+| Last Audit       | 2026-10-28 — Vibe (Repo Custodian, delegated maintenance, human-ratified findings batch) v0.8 → v0.9, from base v0.8: AUDIT_11 F1–F4 enacted — Open Unknowns recounted 9 → 10 (off-by-one since the 2026-07-05 CT-011 resolution logged the transition as 10 → 9; no unknown opened); two misplaced Resolution Log entries relocated into the log; Version String Registry added; CT-005's bare EC-001 citation qualified. Prior: 2026-10-25 — Claude (human-directed) v0.7 → v0.8, from base v0.7: "Proposed" retired as a status designation (PKC-031) and the unversioned 2026-08-17, 2026-09-14 and 2026-09-23 passes covered by this one bump (PKC-029); see Resolution Log. Prior: 2026-10-24 — Claude (human-directed) corrected "Three vocabulary sources" to four and added a note to the Status section, from a Vibe per-file audit (see Resolution Log). Prior: 2026-09-23                                                          |
+| Auditor          | Vibe — Repo Custodian, 2026-10-28 AUDIT_11 findings enactment (delegated maintenance, human-ratified batch); prior: Claude — 2026-10-25 v0.8 bump and Proposed note (human-directed); prior: Claude — 2026-10-24 wording correction and Status note (human-directed); prior: Claude — Claim-Type Labels registered under §4 (Grok proposer, human-directed), 2026-09-23; prior: Claude — "Disambiguation: Uses of 'Gate'" section added (FL-012, human-directed), 2026-09-14; prior: Claude — four new terms registered (Active Constitutional Surface, Claimed/Recognized/Ratified Constitutional Lineage) at GOV-018 closure, checked against existing vocabulary first — no competing term found (human-directed); prior: Claude — Synthesizer/Auditor (2026-06-24); Claude — Cycle definition + version-string correction (2026-07-05); Claude — CT-011 resolution 2026-07-05 |
+| Open Unknowns    | 10                                                                   |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | Low                                                                 |
 | Sidecar Link     | #auditor-notes--unknowns                                            |
@@ -881,7 +881,7 @@ file. Minimum required elements: (1) physical custody requirements;
 
 **Description:** Several ethical and authorization terms appear across
 Ethical_Constraints.md, Governance_Charter.md, and Auditor_Protocols.md
-without canonical definitions here. Confirm EC-001 (sufficient confidence
+without canonical definitions here. Confirm EC-001 (`Admin/Ethical_Constraints.md`) (sufficient confidence
 threshold) language is consistent with the Epistemic Blocking definition
 when that entry matures.
 
@@ -1126,6 +1126,10 @@ Auditor_Protocols.md specifically, which is now closed.
 
 ### Resolution Log
 
+- 2026-10-28: **AUDIT_11 findings enacted (Vibe, Repo Custodian — delegated maintenance, human-ratified findings batch 2026-10-28).** Open Unknowns recounted 9 → 10 (the count has been off by one since the 2026-07-05 CT-011 resolution recorded the transition as 10 → 9; no unknown opened); the two misplaced entries (2026-06-26, 2026-07-03) relocated from below the Status block into this log with a dated marker; Version String Registry section added; CT-005's bare EC-001 citation qualified. Header 0.8 → 0.9. Report: Archive/Audits/AUDIT_11_Admin-Canonical_Terms.md.
+
+- 2026-10-28: Pseudo-audit, findings only, 2026-10-27; report: Archive/Audits/AUDIT_11_Admin-Canonical_Terms.md (PKC-020 — the pass itself advanced nothing; today's Last Audit advance records the maintenance edits).
+
 - 2026-10-25: **v0.7 → v0.8, from base v0.7 (human-directed; PKC-031, PKC-029).** One sentence added to the §4 entry "Exploration / Draft / Specification": "Proposed" is not a status designation, was retired 2026-10-25, and a newly generated file starts at Exploration. No other term changed. The version is bumped once, as ruled under PKC-029 (no retroactive bumps), and this bump also covers the 2026-08-17, 2026-09-14 and 2026-09-23 body passes, which carry no version number in this log. The six sidecar entries dated 2026-06-24 (CT-001, 003, 004, 005, 006, 008) were not reviewed and keep that date. Open Unknowns unchanged at 9.
 
 - 2026-10-24: **Wording and Status corrections** (human-directed, from a Vibe per-file audit; checked against source first). Conflict Resolution Doctrine said "Three vocabulary sources exist" above a four-row table; the count is now four (Verification_Gates was added as the fourth on 2026-07-03). A note added to the Status section: it ends at v0.6 while the header reads v0.7, and the 2026-08-17, 2026-09-14 and 2026-09-23 passes carry no version number. No definition, sidecar or Unknown changed; sidecar Last Reviewed dates not touched, since no review was performed.
@@ -1240,6 +1244,33 @@ Auditor_Protocols.md specifically, which is now closed.
 
 ---
 
+- [Relocated 2026-10-28 — Vibe, delegated maintenance (AUDIT_11 F2): the two entries below had been misplaced at the file bottom after the Status block; moved here unchanged.]
+
+- 2026-06-26: Grain System canonical definition added to Section 4 — vocabulary,
+  legal functions, VIN/HIN/ISO 3779 implementation analog, and implementation
+  status note. CT-009 logged to track consistency between canonical definition
+  and ST-001/ST-002 implementation work in Ship_of_Theseus.md. Open Unknowns
+  7 → 8.
+- 2026-07-03: v0.4 — Verification Gate / Enforcement Checkpoint disambiguation.
+  `Admin/Governance_Charter.md`'s "Canonical Verification Gates" and
+  `Admin/Verification_Gates.md`'s "Six Canonical Verification Gates" were
+  found to be independently-named, materially different six-item systems
+  sharing the same "Gate N" numbering — an undocumented divergence (GOV-011)
+  that existed in part because Verification_Gates.md was never registered
+  as a vocabulary authority source in this file's Conflict Resolution
+  Doctrine, despite being the file every document's `Spec Gates X/6` field
+  actually references. Fixed: Verification_Gates.md added as fourth
+  authority source (Resolution Rule 3 renumbered accordingly). New Section 4
+  entries: Verification Gate, Enforcement Checkpoint — both explicitly
+  cross-referencing each other and the unrelated Operations/Gate_01–07
+  physical-pipeline usage. Full Stop Review's "reset to G1" reference
+  disambiguated to "Verification Gate 1." Anti-drift guardrail table gained
+  a row for unqualified "Gate N." CT-010 logged to track propagation of the
+  rename across any file still citing the old unqualified terminology. New
+  Lessons Learned row added, following the same pattern as the 2026-05-27
+  Gate_04/Gate_05 entry this file already used to fix an earlier instance
+  of exactly this problem. Open Unknowns 8 → 9.
+
 ## Relationship to Existing Documents
 
 - `Architecture/Forge_flow.md` — primary operational vocabulary reference
@@ -1270,7 +1301,25 @@ Auditor_Protocols.md specifically, which is now closed.
 
 ---
 
+## Version String Registry
+
+| Location | String | Rule |
+|---|---|---|
+| Header line | **Version 0.9** | Authoritative; bumped on every text change (PKC-039) |
+| Status section current line | Version 0.9 (2026-10-28) | Updated in the same pass as the header; the header prevails on any disagreement |
+
+*Added 2026-10-28 (AUDIT_11 F3) — this file carries self-referential version strings in its Status log and had no registry after the 2026-07-05 header-vs-Status desync, the exact FAK-014–019 failure mode. — Vibe, delegated maintenance.*
+
+---
+
 ## Status
+
+Version 0.9 (2026-10-28) — AUDIT_11 findings enacted (delegated maintenance, human-ratified batch): Open Unknowns recounted 9 → 10 (sidecar recount: CT-001–CT-010, ten non-Resolved entries); the two misplaced Resolution Log entries (2026-06-26, 2026-07-03) relocated into the log with a dated marker; Version String Registry added; CT-005's bare EC-001 citation qualified.
+
+**Changes from v0.8:**
+- File State Open Unknowns 9 → 10 (recount — no unknown opened)
+- Misplaced log entries relocated; Version String Registry added; CT-005 citation qualified
+- Header version string 0.8 → 0.9
 
 Version 0.8 (2026-10-25) — "Proposed" retired as a status designation (§4 note, PKC-031).
 This bump also covers the three body passes dated 2026-08-17, 2026-09-14 and 2026-09-23
@@ -1328,27 +1377,3 @@ registered as fourth vocabulary authority source.
 **Governance_Charter.md governs tier authority.**
 **This file governs cross-file vocabulary consistency.**
 **Conflicts between them are logged here — never silently resolved.**
-- 2026-06-26: Grain System canonical definition added to Section 4 — vocabulary,
-  legal functions, VIN/HIN/ISO 3779 implementation analog, and implementation
-  status note. CT-009 logged to track consistency between canonical definition
-  and ST-001/ST-002 implementation work in Ship_of_Theseus.md. Open Unknowns
-  7 → 8.
-- 2026-07-03: v0.4 — Verification Gate / Enforcement Checkpoint disambiguation.
-  `Admin/Governance_Charter.md`'s "Canonical Verification Gates" and
-  `Admin/Verification_Gates.md`'s "Six Canonical Verification Gates" were
-  found to be independently-named, materially different six-item systems
-  sharing the same "Gate N" numbering — an undocumented divergence (GOV-011)
-  that existed in part because Verification_Gates.md was never registered
-  as a vocabulary authority source in this file's Conflict Resolution
-  Doctrine, despite being the file every document's `Spec Gates X/6` field
-  actually references. Fixed: Verification_Gates.md added as fourth
-  authority source (Resolution Rule 3 renumbered accordingly). New Section 4
-  entries: Verification Gate, Enforcement Checkpoint — both explicitly
-  cross-referencing each other and the unrelated Operations/Gate_01–07
-  physical-pipeline usage. Full Stop Review's "reset to G1" reference
-  disambiguated to "Verification Gate 1." Anti-drift guardrail table gained
-  a row for unqualified "Gate N." CT-010 logged to track propagation of the
-  rename across any file still citing the old unqualified terminology. New
-  Lessons Learned row added, following the same pattern as the 2026-05-27
-  Gate_04/Gate_05 entry this file already used to fix an earlier instance
-  of exactly this problem. Open Unknowns 8 → 9.
