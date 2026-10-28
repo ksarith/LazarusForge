@@ -37,6 +37,7 @@ Created 2026-08-09 to fix a recurring failure mode found the same day, in two pl
 
 ## Current Lessons
 
+- 2026-10-28 — File State table column widths vary per file (`Forge_Audit_Kit.md` uses narrower rows than the rest of the tree); anchoring a str_replace on a fixed-width row string silently skips (count=0) instead of failing loudly. Anchor on the row label plus leading value text, and always report the skip array — the missed Kit rows were caught and repaired same-day (0daeecf9 → eba129f). Delegated maintenance (Vibe, Repo Custodian); human-ratified batch 2026-10-28.
 *(Most recent first. Rotate to `Archive/Logs/Progress_Log_Changelog.md` once more than five entries accumulate.)*
 
 ### 2026-10-27 (third entry, same day) — Pin-vs-retire ruled: version pins retired (PKC-022 and PKC-014 Resolved)
@@ -284,6 +285,8 @@ None active. (Section created 2026-10-25, PKC-008.)
 ---
 
 ## Resolution Log
+
+- 2026-10-28: **Pseudo-audit ledger line (Vibe, Repo Custodian — delegated maintenance, human-ratified findings batch 2026-10-28).** Pseudo-audit, findings only, 2026-10-27; report: Archive/Audits/AUDIT_14_Admin-Progress_Log.md. Per PKC-020 this pass does not advance Last Audit, Last Reviewed, version, or Status; the line exists so the owning file's own record shows the audit happened, per AP-035 Rule 10(c).
 
 - 2026-10-27: **Decision Brief b ruling session enacted (Vibe, human-authorized autonomous management).** Seven rows resolved: PKC-005 (FROZEN citation corrected under the freeze-covers-doctrine-not-citations ruling — first FROZEN-text precedent), PKC-006 (read-only pseudo-audit verified the Charter's 13-count, all GOV closure events, and Security_Protocols' header↔sidecar parity; one duplicate-heading fix in the Charter changelog), PKC-007 (log irregularities declared historical), PKC-011 (owner confirmed `Lazarus-Forge-` was a deleted learning-era experiment; §VI updated to retired), PKC-012 (folder-count convention stated explicitly across ASM-001/§II/Adm_Scope_Map), PKC-019 (three RIP-011 semantics ratified as practiced; codification at RIP's next natural revision), PKC-037 (read-only pseudo-audit verified CF-002 reciprocity and all four Tests files' interfaces; no defect). Also enacted: INTEGRITY_SWEEP_PROMPT v1.0.4 step 14 (the PKC-001 inverse check — Resolution Log newest entry vs newest body/File State change), `Automation/audit_lib.py` bare colliding-ID citation check (PKC-021 item iii). Findings-only per PKC-020 where applicable; every substantive edit carried its own file-level bookkeeping. Open Parked Concerns rows: 5.
 
