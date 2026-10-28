@@ -17,6 +17,10 @@ elsewhere. Every other file in the repository keeps its sidecar in-body.
 
 ────────────────────────────────────────────────────────────────────
 
+## v1.26 (2026-10-28)
+
+Vibe (Repo Custodian) — delegated maintenance, human-ratified batch 2026-10-28c. (1) AUDIT_15 F1/F2: ## File Purpose, ## Assumptions, ## Active Disputes and ## Lessons Learned sections added — the kit carried the working content but had never stated purpose or assumptions, and lacked the template-mandated dispute/lessons sections (lessons seeded from the FAK-014–018 citation-staleness recurrence). (2) X4: Rule 11 (RIP-form logging standard) added to AI Contribution Rules — every body-editing pass records its own dated Resolution Log entry in the target file. (3) X1/X9: Post-Audit Cross-Reference gains the same-pass reconciliation check (Scope Boundary reconciled; pending-narration resolved in-pass, not deferred). (4) X5: the ASM- disambiguation note upgraded to a full known-series table (Charter/RIP/Safety_Protocols ASM-001–006; GMP, Verification_Gates, Canonical_Terms as series; Engineer_Protocols ASM-001–004; Repository_Structure/Metrics_Scaffold ASM-001–003; Economics ASM-001–005; Components.md/Gate_02 per citations); remaining-prefix regeneration proceeds as the sweep reaches folders. Header 1.25→1.26. No gate advanced; Spec Gates unchanged.
+
 ## v1.25 (2026-10-28)
 
 Vibe (Repo Custodian) — delegated maintenance, human-ratified AUDIT_15 findings batch 2026-10-28. (1) X1: the Scope Boundary DOES list now includes the Resolved Unknown Discharge Procedure — the kit has carried the full section since v1.4 but never listed it in its own boundary. (2) Size drift indicator re-baselined 12,000 → 35,000 with a dated note; measured 33,857 characters at v1.24; a genuine reduction/split decision stays with the human. (3) Companion: `Unknowns.md` v5.72 adds this kit's open FAKs to the Active Index (mirroring gap — the v1.11 sidecar relocation covers where the entries live, not registry mirroring). Header 1.24→1.25. No gate advanced; Spec Gates unchanged.

@@ -1,5 +1,5 @@
 # Forge_Audit_Kit.md
-**Version 1.25**
+**Version 1.26**
 
 ---
 
@@ -16,8 +16,8 @@
 | Status         | Draft                                                               |
 | Spec Gates     | 0/6 — hold: FAK-014's account of a same-day 2026-09-03 Grok audit that "cleared all six gates" is treated as stale (body changed since, v1.16–v1.20); no advance without fresh audit + human ratification (PKC-042, 2026-10-27)                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                    |
-| Last Audit     | 2026-10-28 — Vibe (Repo Custodian, delegated maintenance, human-ratified AUDIT_15 findings batch): v1.24 → v1.25 — Scope Boundary now lists the Resolved Unknown Discharge Procedure (X1); size drift indicator re-baselined 12,000 → 35,000 with a dated note; companion `Unknowns.md` v5.72 adds this kit's five open FAKs to the Active Index (mirroring gap). No gate advanced. Prior: 2026-10-28 — Vibe (Repo Custodian, delegated maintenance, human-ratified findings batch): v1.23 → v1.24 — Governance Sidecar ID Reference regenerated in part (CF- and GMP- ownership rows added; ASM- disambiguation note added pending the X3 human ruling). No gate advanced. Prior: 2026-10-27 — Vibe (human ruling enacted, PKC-022 option B: pin retirement): Derived-from version pins retired; FAK-014 through FAK-019 closed by ruling (Open Unknowns 11 → 5); header 1.22→1.23; no gate advanced. Prior: 2026-10-27 — Vibe (human-authorized targeted refresh, PKC-022 lag clearance): Derived-from line re-pinned (`Auditor_Protocols.md` v0.42 → v0.45, `Unknowns.md` v5.58 → v5.71; `Verification_Gates.md` checked and unchanged at v0.7); condensed Rule 10 extended with the PKC-020 findings-only sub-rule from AP v0.45's Rule 10 addendum; FAK-019 logged (seventh pin-staleness occurrence; pin-vs-retire structural question stays open by human direction). Header 1.21→1.22. Prior: 2026-10-27 — Claude (human-authorized autonomous management; PKC-042): Spec Gates hold reason annotated; header 1.20→1.21; no gate advanced; no derivation-reconciliation pass due (annotation only, not a maintenance-trigger change). Prior: 2026-10-10 — Claude, human-directed refresh: derivation citations updated (`Auditor_Protocols.md` v0.41 → v0.42, `Unknowns.md` v5.57 → v5.58) and the role-declaration string to v0.42; FAK-018 logged (sixth occurrence; the structural question stays open). Same-day mitigation: role-declaration example now uses a live-version placeholder, the Derived-from line is labeled as reconciled-against, and the maintenance trigger is now content-based (a plain version increment is not a trigger; reconciliation check at audit start). Prior: 2026-10-03 — Grok, human-directed: derivation citation to `Unknowns.md` had gone stale a fifth time (v5.27 → live v5.57, 30 versions). Same recurring citation-staleness pattern previously logged as FAK-014/015/016. Logged as FAK-017. Citation refreshed to v5.57; header bumped 1.18→1.19. Prior: 2026-09-15 — Claude, FAK-016 (fourth occurrence, automated audit path). |
-| Auditor        | Vibe — Repo Custodian, 2026-10-28 v1.25 AUDIT_15 wrapper items (delegated maintenance, human-ratified batch); prior: Vibe — Repo Custodian, 2026-10-28 v1.24 ID-Reference regeneration (delegated maintenance, human-ratified batch); prior: Vibe — Skeptic/Auditor, 2026-10-27 pin-retirement ruling enacted, v1.23, FAK-014–019 closed (human-ratified); prior: Vibe — Skeptic/Auditor, 2026-10-27 targeted v1.22 refresh (human-authorized): re-pinned AP v0.45 / Unknowns v5.71, incorporated the PKC-020 findings-only sub-rule into condensed Rule 10, FAK-019 logged, Open Unknowns 10 → 11; prior: Claude — 2026-10-27 PKC-042 hold-reason annotation, header 1.20→1.21 (human-authorized autonomous management); prior: Claude — v1.20 FAK-018 logged, derivation and role-declaration strings refreshed, header 1.19→1.20 (human-directed), 2026-10-10; Grok — v1.19 FAK-017 logged (fifth occurrence of the citation-staleness pattern), derivation citation refreshed to Unknowns.md v5.57, header 1.18→1.19 (human-directed), 2026-10-03; Claude — v1.18 FAK-016 logged, 2026-09-15; prior history retained in Resolution Log / Changelog |
+| Last Audit     | 2026-10-28 (later same-day) — Vibe (Repo Custodian, delegated maintenance, human-ratified batch 2026-10-28c): v1.25 → v1.26 — ## File Purpose and ## Assumptions added (AUDIT_15 F1); ## Active Disputes and ## Lessons Learned added (F2); Rule 11 RIP-form logging standard (X4); Post-Audit Cross-Reference same-pass X1/X9 check; ASM- ID-Reference rows regenerated (X5). No gate advanced. Prior: 2026-10-28 — Vibe (Repo Custodian, delegated maintenance, human-ratified AUDIT_15 findings batch): v1.24 → v1.25 — Scope Boundary now lists the Resolved Unknown Discharge Procedure (X1); size drift indicator re-baselined 12,000 → 35,000 with a dated note; companion `Unknowns.md` v5.72 adds this kit's five open FAKs to the Active Index (mirroring gap). No gate advanced. Prior: 2026-10-28 — Vibe (Repo Custodian, delegated maintenance, human-ratified findings batch): v1.23 → v1.24 — Governance Sidecar ID Reference regenerated in part (CF- and GMP- ownership rows added; ASM- disambiguation note added pending the X3 human ruling). No gate advanced. Prior: 2026-10-27 — Vibe (human ruling enacted, PKC-022 option B: pin retirement): Derived-from version pins retired; FAK-014 through FAK-019 closed by ruling (Open Unknowns 11 → 5); header 1.22→1.23; no gate advanced. Prior: 2026-10-27 — Vibe (human-authorized targeted refresh, PKC-022 lag clearance): Derived-from line re-pinned (`Auditor_Protocols.md` v0.42 → v0.45, `Unknowns.md` v5.58 → v5.71; `Verification_Gates.md` checked and unchanged at v0.7); condensed Rule 10 extended with the PKC-020 findings-only sub-rule from AP v0.45's Rule 10 addendum; FAK-019 logged (seventh pin-staleness occurrence; pin-vs-retire structural question stays open by human direction). Header 1.21→1.22. Prior: 2026-10-27 — Claude (human-authorized autonomous management; PKC-042): Spec Gates hold reason annotated; header 1.20→1.21; no gate advanced; no derivation-reconciliation pass due (annotation only, not a maintenance-trigger change). Prior: 2026-10-10 — Claude, human-directed refresh: derivation citations updated (`Auditor_Protocols.md` v0.41 → v0.42, `Unknowns.md` v5.57 → v5.58) and the role-declaration string to v0.42; FAK-018 logged (sixth occurrence; the structural question stays open). Same-day mitigation: role-declaration example now uses a live-version placeholder, the Derived-from line is labeled as reconciled-against, and the maintenance trigger is now content-based (a plain version increment is not a trigger; reconciliation check at audit start). Prior: 2026-10-03 — Grok, human-directed: derivation citation to `Unknowns.md` had gone stale a fifth time (v5.27 → live v5.57, 30 versions). Same recurring citation-staleness pattern previously logged as FAK-014/015/016. Logged as FAK-017. Citation refreshed to v5.57; header bumped 1.18→1.19. Prior: 2026-09-15 — Claude, FAK-016 (fourth occurrence, automated audit path). |
+| Auditor        | Vibe — Repo Custodian, 2026-10-28 v1.26 wrapper-hygiene batch 2026-10-28c (delegated maintenance); prior: Vibe — Repo Custodian, 2026-10-28 v1.25 AUDIT_15 wrapper items (delegated maintenance, human-ratified batch); prior: Vibe — Repo Custodian, 2026-10-28 v1.24 ID-Reference regeneration (delegated maintenance, human-ratified batch); prior: Vibe — Skeptic/Auditor, 2026-10-27 pin-retirement ruling enacted, v1.23, FAK-014–019 closed (human-ratified); prior: Vibe — Skeptic/Auditor, 2026-10-27 targeted v1.22 refresh (human-authorized): re-pinned AP v0.45 / Unknowns v5.71, incorporated the PKC-020 findings-only sub-rule into condensed Rule 10, FAK-019 logged, Open Unknowns 10 → 11; prior: Claude — 2026-10-27 PKC-042 hold-reason annotation, header 1.20→1.21 (human-authorized autonomous management); prior: Claude — v1.20 FAK-018 logged, derivation and role-declaration strings refreshed, header 1.19→1.20 (human-directed), 2026-10-10; Grok — v1.19 FAK-017 logged (fifth occurrence of the citation-staleness pattern), derivation citation refreshed to Unknowns.md v5.57, header 1.18→1.19 (human-directed), 2026-10-03; Claude — v1.18 FAK-016 logged, 2026-09-15; prior history retained in Resolution Log / Changelog |
 | Open Unknowns  | 5 — see Sidecar Link                                                 |
 | Sidecar Link   | Archive/Logs/Forge_Audit_Kit_Changelog.md#sidecar--auditor-notes--unknowns |
 | Ethical Anchor | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
@@ -33,6 +33,21 @@ When this file contradicts a full source document, the full source document prev
 **DOES define:** Governing principles · Epistemic Foundation condensed reference · Verification Maturity Model · Truth Provenance labels · Adversarial priority weighting · Audit Opening Checklist · Fallacy checklist · AI contribution rules · Verification gates · Sign-off format · Governance sidecar ID reference · Resolved Unknown Discharge Procedure (X1, added 2026-10-28, AUDIT_15) · How to use
 
 **DOES NOT define:** Full auditor role doctrine (→ `Admin/Auditor_Protocols.md`) · Full EF constitutional text (→ `Admin/Auditor_Protocols.md` EF-0.0–EF-0.8b) · Full Adversarial Battery (→ `Admin/Auditor_Protocols.md`) · Unknown registry (→ `Unknowns.md`) · File paths and ownership (→ `Discovery.md`) · Governance hierarchy (→ `Admin/Governance_Charter.md`) · Ethical policy (→ `Admin/Ethical_Constraints.md`) · Canonical vocabulary (→ `Admin/Canonical_Terms.md`) · Kit evolution history (→ git log)
+
+---
+
+## File Purpose
+
+This kit is a condensed working reference for audit sessions — governing principles, the Epistemic Foundation checklist, the Verification Maturity Model, truth-provenance labels, gate quick-reference, the Resolved Unknown Discharge Procedure, ID disambiguation, and the audit-session workflow (Post-Audit Cross-Reference → Sign-Off). It exists so a routine audit does not need to load full role doctrine; source files prevail on interpretive questions (see How to Use). *(Added 2026-10-28, AUDIT_15 F1 — the kit carried the working content but had never stated its purpose.)*
+
+---
+
+## Assumptions
+
+- The condensed sections stay subordinate to their sources; on any interpretive question the source file prevails, and the kit is wrong the moment it diverges silently.
+- The reconciliation check at audit start is performed honestly — a skipped check is a drift condition, not a formality.
+- The 35,000-character ceiling decision stays with the human (re-baselined from 12,000 at v1.25).
+- Auditors operate under `Admin/Auditor_Protocols.md` role doctrine; this kit is reference, not authority.
 
 ---
 
@@ -180,6 +195,7 @@ Valid roles: Skeptic/Auditor | Systems/Auditor | Evidence/Auditor | Ethical/Audi
 8. Epistemic State Labeling — claims that cannot reach VERIFIED must be labeled PROVISIONAL or UNKNOWN. Do not collapse epistemic states under optimization pressure.
 9. Resolution Claims Require Governance Access (AP-033) — no contribution may mark, or by structure imply, that any unknown has advanced toward Resolved/Closed status without confirmed access to `Admin/Auditor_Protocols.md`'s own Resolution Taxonomy at the time of writing. Without that access, proposed closure mechanisms are candidate methodology only — never status.
 10. External Pseudo-Audit Scope and Logging Destination (AP-035) — a pseudo-audit (Spec Gates/Verification thresholds locked, no ratification authority) may not assert inventory/file/content claims without stating direct verification against the payload; may not invent a local ID prefix for cross-module unknowns; may not generate a freestanding ledger file as the primary record. Findings go first in the owning file's own sidecar; only genuinely cross-module findings get a `Unknowns.md` entry, added by an agent with confirmed sidecar access. Rule 10 addendum (PKC-020, human ruling 2026-10-25): a findings-only pseudo-audit does not advance the owning file's Last Audit or Auditor field — it is logged in the Resolution Log as a pseudo-audit, findings only, and Last Audit keeps the date of the last real audit; a body-changing pass bumps Last Audit and Auditor, as already practiced.
+11. RIP-Form Logging Standard (X4, human-ratified batch 2026-10-28c) — every pass that edits a target file's body records its own dated Resolution Log entry in that file (what changed, why, ratification source); multi-file batches get one entry per file, and findings-only passes record only the pseudo-audit ledger line (PKC-020).
 
 ---
 
@@ -239,6 +255,8 @@ source of findings to look for going in — auditing toward a pre-loaded
 list is what Expiry Watch (step 3) exists to avoid. Its output populates
 Sign-Off's `Unknowns logged` field below.
 
+**Same-pass reconciliation (X1/X9, human-ratified batch 2026-10-28c):** a pass that enacts its own findings must, in that same pass, (a) update the target file's Scope Boundary DOES/DOES-NOT lists if the change alters what the file defines, and (b) reconcile any "to be registered/reconciled" narration it touches to the done-state — narrating a pending action the same pass could have completed is a wrapper-decay defect (X11), not a to-do.
+
 ---
 
 ```
@@ -276,7 +294,23 @@ Non-obvious governance prefixes only. All operational prefixes: load `Discovery.
 | RIP-   | `Admin/Repository_Integrity_Protocol.md` |
 | SEC-   | `Admin/Security_Protocols.md` |
 
-*Note (2026-10-28, delegated maintenance): ASM- is deliberately absent from this table — it is defined in seven or more files (X3: Charter, RIP, GMP, Safety_Protocols, Engineer_Protocols, Verification_Gates, Canonical_Terms, plus Components.md and Gate_02 per citations) and awaits the human namespace ruling; cite ASM- with its qualifying File.md until then. CF- and GMP- rows added per the AUDIT_06/AUDIT_02 recommendations (X5 partial regeneration).*
+**ASM- disambiguation (X5, regenerated 2026-10-28, human-ratified batch 2026-10-28c):** ASM- is an assumption-series ID with no single owner — each file numbers its own series independently; cite ASM- with its qualifying File.md (PKC-003). Known series:
+
+| Series | File |
+|--------|------|
+| ASM-001–006 | `Admin/Governance_Charter.md` |
+| ASM-001–006 | `Admin/Repository_Integrity_Protocol.md` |
+| ASM- series | `Admin/Governance_Migration_Protocol.md` |
+| ASM-001–006 | `Admin/Safety_Protocols.md` |
+| ASM-001–004 | `Admin/Engineer_Protocols.md` |
+| ASM- series | `Admin/Verification_Gates.md` |
+| ASM- series | `Admin/Canonical_Terms.md` |
+| ASM-001–003 | `Admin/Repository_Structure.md` |
+| ASM-001–003 | `Admin/Metrics_Scaffold.md` |
+| ASM-001–005 | `Admin/Economics.md` |
+| ASM- citations | `Architecture/Components.md`, `Operations/Gate_02_Triage.md` |
+
+*Regeneration of remaining prefixes proceeds as the audit sweep reaches each folder (ratified batch 2026-10-28c). CF- and GMP- rows were added at v1.24 per the AUDIT_06/AUDIT_02 recommendations.*
 
 ---
 
@@ -295,6 +329,25 @@ Load additional files only when the audit focus requires them — each adds toke
 **Reconciliation check at audit start:** Read each source's own version history for changes to the sections listed above before relying on this kit for them, and report any mismatch as a drift flag in the sign-off. (Version pins retired 2026-10-27, human ruling PKC-022 option B — a version delta alone is not drift; content is. Critical watch list removed at v1.10 — no longer a maintenance target.)
 
 **End-of-Life:** This kit is a working document, not a permanent one — its function is to stay current with `Admin/Auditor_Protocols.md`, `Admin/Verification_Gates.md`, and `Unknowns.md`. When it's superseded — a successor kit, a structural change to the audit process, or the source documents outgrowing what a condensed reference can track — it is not deleted. It's shelved at its final version as a historical record: evidence of what the audit process actually was at a given point in Forge's evolution, available for ideological and process study rather than active use. Superseding a kit is a normal lifecycle event, not a failure; the sidecar and version history in `Archive/Logs/Forge_Audit_Kit_Changelog.md` are what make that shelving legible later rather than just an abandoned file.
+
+---
+
+## Active Disputes
+
+| ID | Dispute | Status |
+|----|---------|-------|
+
+*(None open — added 2026-10-28, AUDIT_15 F1/F2; empty table per template requirement.)*
+
+---
+
+## Lessons Learned
+
+| Date | Evidence Type | What Was Tried | What Failed | What Was Learned | Confidence |
+|------|---------------|----------------|-------------|------------------|------------|
+| 2026-09-03 → 2026-10-10 | Internally Derived | Version-pinned derivation citations (FAK-014–018 lineage) | Went stale six times across five versions; same-day audits cleared gates without catching it | Content-based maintenance triggers and live-version placeholders beat version pins; reconciliation is checked at audit start, not assumed | High |
+
+*(Table added 2026-10-28, AUDIT_15 F2, seeded from the kit's own FAK-014–018 recurrence record; Evidence Type vocabulary per File_Template §7.)*
 
 ---
 
@@ -340,7 +393,9 @@ closure notes on each entry in the changelog sidecar.
 Full history: `Archive/Logs/Forge_Audit_Kit_Changelog.md` (relocated out of this
 kit at v1.10 — add new entries there, not here).
 
-Most recent: v1.25 (2026-10-28) — AUDIT_15 wrapper items enacted (human-ratified batch): Scope Boundary lists the Resolved Unknown Discharge Procedure (X1); size drift indicator re-baselined 12,000 → 35,000 with a dated note (measured 33,857 at v1.24); companion `Unknowns.md` v5.72 adds this kit's five open FAKs to its Active Index. Header 1.24→1.25. Changelog entry in `Archive/Logs/Forge_Audit_Kit_Changelog.md`.
+Most recent: v1.26 (2026-10-28) — Wrapper-hygiene batch 2026-10-28c (human-ratified): ## File Purpose + ## Assumptions (AUDIT_15 F1); ## Active Disputes + ## Lessons Learned (F2); Rule 11 RIP-form logging standard (X4); Post-Audit Cross-Reference same-pass X1/X9 check; ASM- disambiguation rows regenerated (X5). Header 1.25→1.26. No gate advanced.
+
+Prior: v1.25 (2026-10-28) — AUDIT_15 wrapper items enacted (human-ratified batch): Scope Boundary lists the Resolved Unknown Discharge Procedure (X1); size drift indicator re-baselined 12,000 → 35,000 with a dated note (measured 33,857 at v1.24); companion `Unknowns.md` v5.72 adds this kit's five open FAKs to its Active Index. Header 1.24→1.25. Changelog entry in `Archive/Logs/Forge_Audit_Kit_Changelog.md`.
 
 Prior: v1.24 (2026-10-28) — ID Reference regenerated in part (CF- and GMP- rows added; ASM- note added pending the X3 ruling). Header 1.23→1.24. Changelog entry in `Archive/Logs/Forge_Audit_Kit_Changelog.md`.
 

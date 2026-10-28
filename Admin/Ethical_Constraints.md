@@ -16,8 +16,8 @@
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | `Admin/Verification_Gates.md`                                    |
-| Last Audit       | 2026-10-23 — Claude (human-directed) applied corrections from a Vibe per-file audit, each checked against source first: Resolution Log backfilled for 08-22, 09-18, 09-20/21, 09-23 and 09-27 (the 09-03 v0.16 entry already existed, at the log foot); Scope Boundary reconciled for EC-008, EC-009 and EC-012-PR; Pending Canonical Term Anchors annotated for EC-004/007/008; Open Unknowns row now names EC-012-PR. No doctrine text, Tier 1 floor or ratified rule modified. Prior: 2026-09-03 — ChatGPT audit (REVISE/G6-BLOCKED, EC-AUD-001–003); Claude source-verified findings and applied surgical corrections: Version metadata synced to v0.16, ratified count corrected from six to seven (EC-007 included), obsolete EC-001–EC-007 Drift Indicator retired. Prior: 2026-08-22 — Grok drafts EC-016/008/004/003/009; Claude source-verified full batch; integration pass; Closure Events corrected to AP-013 format; Human Governing Authority ratified all seven (EC-003, EC-004, EC-005, EC-007, EC-008, EC-009, EC-016) |
-| Auditor          | Claude — 2026-10-23 corrections (human-directed, from a Vibe per-file audit); Grok (Proposer) + Claude (Verifier) — 2026-09-23 EC-012-PR; ChatGPT — Skeptic/Auditor; ChatGPT — Philosophical Review; Grok — Exploration audit 2026-07-05; Gemini — Exploration audit 2026-07-05; Claude — toxic material doctrine + gap remediation 2026-07-05; Claude — law-vs-morality doctrine + Navigation Anchors correction 2026-07-05; Claude — EC-010 stale-reference correction 2026-07-06; Claude — Anti-Weaponization override scope and tool/weapon distinction ratified by human governing authority, 2026-07-26; Claude — Synthesizer, EC-016 registered 2026-08-06; Grok pseudo-audit 2026-08-09 — no Spec Gate promotion; Claude — EC-002 Pattern Recognition Annex added and closed, 2026-08-11; Claude — EC-001 Confidence Threshold Doctrine added and closed, 2026-08-11 |
+| Last Audit       | 2026-10-28 — Vibe (Repo Custodian, delegated maintenance, human-ratified batch 2026-10-28c): v0.16 → v0.17 — ## Active Disputes (empty) and ## Abandoned Paths (seeded) added per template requirements; Status bumped. No doctrine text or Tier 1 floor modified. Prior: 2026-10-23 — Claude (human-directed) applied corrections from a Vibe per-file audit, each checked against source first: Resolution Log backfilled for 08-22, 09-18, 09-20/21, 09-23 and 09-27 (the 09-03 v0.16 entry already existed, at the log foot); Scope Boundary reconciled for EC-008, EC-009 and EC-012-PR; Pending Canonical Term Anchors annotated for EC-004/007/008; Open Unknowns row now names EC-012-PR. No doctrine text, Tier 1 floor or ratified rule modified. Prior: 2026-09-03 — ChatGPT audit (REVISE/G6-BLOCKED, EC-AUD-001–003); Claude source-verified findings and applied surgical corrections: Version metadata synced to v0.16, ratified count corrected from six to seven (EC-007 included), obsolete EC-001–EC-007 Drift Indicator retired. Prior: 2026-08-22 — Grok drafts EC-016/008/004/003/009; Claude source-verified full batch; integration pass; Closure Events corrected to AP-013 format; Human Governing Authority ratified all seven (EC-003, EC-004, EC-005, EC-007, EC-008, EC-009, EC-016) |
+| Auditor          | Vibe — Repo Custodian, 2026-10-28 wrapper-hygiene sections pass (delegated maintenance, human-ratified batch 2026-10-28c); Claude — 2026-10-23 corrections (human-directed, from a Vibe per-file audit); Grok (Proposer) + Claude (Verifier) — 2026-09-23 EC-012-PR; ChatGPT — Skeptic/Auditor; ChatGPT — Philosophical Review; Grok — Exploration audit 2026-07-05; Gemini — Exploration audit 2026-07-05; Claude — toxic material doctrine + gap remediation 2026-07-05; Claude — law-vs-morality doctrine + Navigation Anchors correction 2026-07-05; Claude — EC-010 stale-reference correction 2026-07-06; Claude — Anti-Weaponization override scope and tool/weapon distinction ratified by human governing authority, 2026-07-26; Claude — Synthesizer, EC-016 registered 2026-08-06; Grok pseudo-audit 2026-08-09 — no Spec Gate promotion; Claude — EC-002 Pattern Recognition Annex added and closed, 2026-08-11; Claude — EC-001 Confidence Threshold Doctrine added and closed, 2026-08-11 |
 | Open Unknowns    | 7 substantively open (EC-006, EC-010–EC-015). EC-003, EC-004, EC-005, EC-007, EC-008, EC-009, EC-016 Ratified — Payment via Specification, 2026-08-22. EC-012-PR (procedural-escalation residual of EC-012; parent remains Open) Ratified — Payment via Specification, 2026-09-23 |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | High                                                                |
@@ -649,6 +649,25 @@ These are features, not bugs. Every refusal, hesitation, or escalation is valuab
 
 ---
 
+## Active Disputes
+
+| ID | Dispute | Status |
+|----|---------|-------|
+
+*(None open — the File State Active Disputes row reads 0. Section added 2026-10-28, Vibe, delegated maintenance, human-ratified batch 2026-10-28c, per the 2026-10-27 template-resolution pass; the table stays for future entries.)*
+
+---
+
+## Abandoned Paths
+
+| Date | Path | Why Abandoned | Reconsider? |
+|------|------|---------------|-------------|
+| 2026-07-26 | Object-list tool/weapon restriction | Superseded by the intent/complicity-based tool/weapon distinction ratified that day — an object list cannot handle dual-use tools; the plasma-cutter worked example later shaped EC-002's Pattern Recognition Annex ("not an object list"). | No — the ratified distinction governs |
+
+*(Seeded 2026-10-28 from existing rejected-path material in this file's own record, per the template-resolution pass; future abandoned paths append here.)*
+
+---
+
 ## Lessons Learned
 
 | Date | Evidence Type | What Was Tried | What Failed | What Was Learned | Confidence | Revalidation Needed |
@@ -1166,6 +1185,8 @@ The following terms appear in this document without canonical definitions. They 
 
 ### Resolution Log
 
+- 2026-10-28 (later same-day): **Wrapper-hygiene sections added (Vibe, Repo Custodian — delegated maintenance, human-ratified batch 2026-10-28c).** ## Active Disputes (empty — none open) and ## Abandoned Paths (seeded from the file's own rejected-path record) added per the 2026-10-27 template-resolution pass; Status bumped v0.16 → v0.17. No doctrine text, Tier 1 floor, or ratified rule modified; no unknown opened or closed.
+
 - 2026-10-28: **Pseudo-audit ledger line (Vibe, Repo Custodian — delegated maintenance, human-ratified findings batch 2026-10-28).** Pseudo-audit, findings only, 2026-10-27; report: Archive/Audits/AUDIT_05_Admin-Ethical_Constraints.md. Per PKC-020 this pass does not advance Last Audit, Last Reviewed, version, or Status; the line exists so the owning file's own record shows the audit happened, per AP-035 Rule 10(c).
 
 - 2026-09-27: **EC-011 sidecar extended — floor inventory and EC-011-R3 design brief filed; EC-011 remains Open.** Inventory of floor already present in live doctrine, and a design brief for quiet / non-anomalous coercion (EC-011-R3), both Grok-drafted and Claude source-verified against live text before filing. No Payment-via-Specification. *(Backfilled 2026-10-23 from the EC-011 sidecar.)*
@@ -1274,7 +1295,9 @@ The following terms appear in this document without canonical definitions. They 
 
 ## Status
 
-Version 0.16 — Exploration
+Version 0.17 — Exploration
+
+- 2026-10-28: **v0.17 — Wrapper-hygiene sections (Vibe, Repo Custodian — delegated maintenance, human-ratified batch 2026-10-28c).** `## Active Disputes` (empty table; the File State row already read 0) and `## Abandoned Paths` (seeded from existing rejected-path material) added per the 2026-10-27 template-resolution pass. No doctrine text, Tier 1 floor, or ratified rule modified; no EC unknown opened or closed.
 
 - 2026-09-03: **v0.16 — ChatGPT audit (REVISE/G6-BLOCKED) metadata-synchronization pass; no doctrine change.** Findings EC-AUD-001–003 verified by Claude against source and corrected: (1) Version metadata was stale — header still read v0.15 despite seven post-v0.15 Resolution Log closures on 2026-08-22 (EC-003/004/005/007/008/009/016); bumped to v0.16, this entry added. (2) File State "ratified all six (including EC-005)" was a miscount — EC-007 was ratified in that same 2026-08-22 human-ratification event and had been left out; corrected to "all seven," IDs listed explicitly. (3) Drift Indicators still hard-coded the compound "EC-001 through EC-007 cluster approaches two-cycle threshold" condition, which no longer reflects current state (six of seven now resolved/ratified); retired in favor of tracking EC-006, the actual remaining open item from that original cluster. No EC closures reopened; no Anti-Weaponization or other Tier-1 floor language touched; EC-007's Placeholder thresholds unchanged. Human-directed. [Correction note, 2026-10-23: the seven 2026-08-22 closures live in sidecar Status fields and Closure Event paragraphs, not as Resolution Log entries; a backfilled 2026-08-22 entry now exists above. Original wording preserved. This entry sits at the foot of the log, out of date order.]
 
