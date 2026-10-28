@@ -3,7 +3,7 @@
 
 **Full version history in `Archive/Logs/Unknowns_Changelog.md` (2026-07-19 cleanup pass, following the precedent set by `Archive/Logs/AUDIT_HARNESS_CHANGELOG.md` and `Archive/Logs/Forge_Audit_Kit_Changelog.md`; scrubbed to current-version-only 2026-07-28 — the "current plus last four in full" window was itself compressed further, since the changelog carries full text for every version back to v1.0 (the in-file Audit Trail was moved there under Rule 4). This block now keeps only the current version.)**
 
-**Version 5.71 -- 2026-10-27. SP-001 and EP-005 Resolved and removed from the Active Index (human-authorized autonomous management, PKC-028).** The SP-001 cross-file review — its only outstanding work — was completed 2026-10-27: `Admin/Safety_Protocols.md` Section I's consequence categories and escalation rules were verified compatible with `Admin/Engineer_Protocols.md`'s Assumption Challenge Triggers and §8 Hazard Escalation Doctrine, which also satisfies EP-005's Payment-via-Specification resolution path (severity categories, Life Preservation hard-floor cross-reference, human deferral for irreversible harm). Both rows leave the Safety and Engineer Protocols clusters per Size Management Rule 2 (full detail in the owning files' sidecars; Safety_Protocols Open Unknowns 6 → 5, Engineer_Protocols 6 → 5). SP-002–006 reviewed and confirmed accurate, Last Reviewed refreshed, no status change. Per Size Management Rule 2 this block holds only the current version; v5.70 is in `Archive/Logs/Unknowns_Changelog.md`. Companion edits: `Admin/Safety_Protocols.md`, `Admin/Engineer_Protocols.md`, `Admin/Adm_Scope_Map.md`, `Admin/Progress_Log.md` (PKC-028).
+**Version 5.72 -- 2026-10-28. `Admin/Forge_Audit_Kit.md`'s open FAK unknowns added to the Active Index as a new Forge Audit Kit cluster (AUDIT_15 mirroring finding, human-ratified batch).** The kit was the only audited file whose open unknowns were absent from this index — its v1.11 sidecar relocation to `Archive/Logs/Forge_Audit_Kit_Changelog.md` covers where the entries live, not registry mirroring. Full detail remains in that sidecar. Per Size Management Rule 2 this block holds only the current version; v5.71 is in `Archive/Logs/Unknowns_Changelog.md`. Companion edits: `Admin/Forge_Audit_Kit.md` (v1.25).**
 ---
 
 **Expiry Rule active — see `Admin/Canonical_Terms.md` §4 for the Cycle definition this rule now explicitly references (one calendar year default, not one audit pass — see CT-011). Protocol Performance metrics collecting.**
@@ -803,6 +803,17 @@ RB-007 (Human-shared space unresolved)
 *CLF-003 and CLF-006 are Critical — CLF-003 blocks sustained polymer extrusion operations; CLF-006 blocks safe recursive-loop operation.*
 *CLF-004 is Critical — no electrolytic/electrorefining pathway may proceed without a chemical footprint decision. Its candidate pathway is further blocked by CE-006 pending a chlorine containment design.*
 *ID collision history: originally registered `CF-001`–`CF-003` (collided with `Architecture/Cognitive_Frameworks.md`/`Operations/Electronics.md`); briefly renamed `FL-001`–`FL-004` by an intervening pass, which collided with `Architecture/Forge_flow.md`'s FL-001 (Blocking); settled on `CLF-` prefix, unique in this index as of this version.*
+
+### Forge Audit Kit
+
+| ID | Title | Owning File | Status | Subtype | Priority (Promo) |
+|---|---|---|---|---|---|
+| FAK-001 | Kit version maintenance trigger not formally owned | `Admin/Forge_Audit_Kit.md` | Open | — | — |
+| FAK-005 | Kit character-count ceiling parameter itself never revisited — reduction passes done, the 12,000 threshold stayed (re-baselined to 35,000 at kit v1.25, 2026-10-28) | `Admin/Forge_Audit_Kit.md` | Open | — | — |
+| FAK-006 | Resolved Unknown Discharge Procedure: full procedural doctrine belongs in `Admin/Auditor_Protocols.md`; condensed version live in the kit, full-doctrine migration pending | `Admin/Forge_Audit_Kit.md` | Open | — | — |
+| FAK-009 | Wrong-layer citation incident (VG-001's first concrete evidence) — kit citation corrected; VG-001 itself remains unresolved in `Admin/Verification_Gates.md` | `Admin/Forge_Audit_Kit.md` | Open | — | — |
+
+*Cluster added 2026-10-28 (Unknowns.md v5.72, AUDIT_15 mirroring finding, human-ratified batch): the kit's sidecar was relocated to `Archive/Logs/Forge_Audit_Kit_Changelog.md` §Sidecar at v1.11 — the relocation covers where the entries live, not this index's mirroring duty; full detail stays in that sidecar. Priority values mirrored as "—": the sidecar carries no Priority classification and none is invented here. The fifth open item — the Cycle/CURRENT_CYCLE Battery finding, flagged for `Admin/Canonical_Terms.md` — carries no FAK number and is covered by CT-011's scope; noted here rather than assigned an invented ID.*
 
 ### Pending Corrections
 

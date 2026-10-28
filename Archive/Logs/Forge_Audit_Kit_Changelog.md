@@ -17,6 +17,10 @@ elsewhere. Every other file in the repository keeps its sidecar in-body.
 
 ────────────────────────────────────────────────────────────────────
 
+## v1.25 (2026-10-28)
+
+Vibe (Repo Custodian) — delegated maintenance, human-ratified AUDIT_15 findings batch 2026-10-28. (1) X1: the Scope Boundary DOES list now includes the Resolved Unknown Discharge Procedure — the kit has carried the full section since v1.4 but never listed it in its own boundary. (2) Size drift indicator re-baselined 12,000 → 35,000 with a dated note; measured 33,857 characters at v1.24; a genuine reduction/split decision stays with the human. (3) Companion: `Unknowns.md` v5.72 adds this kit's open FAKs to the Active Index (mirroring gap — the v1.11 sidecar relocation covers where the entries live, not registry mirroring). Header 1.24→1.25. No gate advanced; Spec Gates unchanged.
+
 ## v1.24 (2026-10-28)
 
 Vibe (Repo Custodian) — delegated maintenance, human-ratified findings batch 2026-10-28. Governance Sidecar ID Reference regenerated in part (X5): CF- row added (`Architecture/Cognitive_Frameworks.md`, per AUDIT_06 F-recommendations) and GMP- row restored (`Admin/Governance_Migration_Protocol.md`, per AUDIT_02 recommendation 3); ASM- disambiguation note added — ASM- is defined in seven or more files and awaits the human namespace ruling (X3), so no single owning-file row can be written for it yet. No condensed doctrine content changed; no gate advanced; Open Unknowns unchanged at 5. Header 1.23→1.24.
