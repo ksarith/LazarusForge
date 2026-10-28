@@ -2,7 +2,8 @@
 
 **Standard file structure for LazarusForge documents.**
 Applies to all new files and retrofit audit cycles.
-**Last updated: 2026-10-25 — Rulings from the Human Ruling List enacted (human-directed; see `Admin/Progress_Log.md`, 2026-10-25): "Proposed" retired as a Status value (PKC-031); Highest Risk takes a Risk value, never a Priority value, with Blocking carrying elevated severity (PKC-004/024); `Admin/Operational_Conventions.md` listed as an exempt reference index (PKC-017); Resolution Log heading level rule (PKC-018); Update Procedure gains the version-bump, sidecar Last Reviewed and fork rules (PKC-039, PKC-035, PKC-029). Sections 0–11 unchanged apart from these additions.**
+**Last updated: 2026-10-28 — Pattern A (in-file Front / Historical split) adopted by Human Governing Authority ruling, all draft defaults D1–D7: new §Pattern A section (boundary heading `## Historical Record`, placement table, rules R1–R9, checks C1–C8, pilot Plastics/Woodworking one-per-cycle, migration at next substantive touch — no bulk sweep). D5 supersedes PKC-002's "not adopted now" note for the trailing-Status version-history part. Sections 0–11 and Template Exemptions otherwise unchanged.**
+**Prior: 2026-10-25 — Rulings from the Human Ruling List enacted (human-directed; see `Admin/Progress_Log.md`, 2026-10-25): "Proposed" retired as a Status value (PKC-031); Highest Risk takes a Risk value, never a Priority value, with Blocking carrying elevated severity (PKC-004/024); `Admin/Operational_Conventions.md` listed as an exempt reference index (PKC-017); Resolution Log heading level rule (PKC-018); Update Procedure gains the version-bump, sidecar Last Reviewed and fork rules (PKC-039, PKC-035, PKC-029). Sections 0–11 unchanged apart from these additions.**
 **Prior: 2026-10-20 — 10-Entry Rule removed (AP-029, human-directed; ratification completes on commit): the Sidecar Governance Rules paragraph now records the removal and the trigger-table row is deleted; the 20% and Aging rules are unchanged. No other change.**
 **Prior: 2026-09-24 — Two new sections added: "New File Creation Checklist" and "Update Procedure" (registration/rotation/provenance guidance folded in from a Grok-drafted scaffold, Claude-verified against this file's own Sidecar Governance Rules and actual Resolution Log placement before filing). No change to sections 0–11 or Template Exemptions.**
 
@@ -48,6 +49,65 @@ Canonical doctrine, protocol, and specification files in LazarusForge follow thi
 The Body must stand alone.
 Footer sections are additive and must never be required to understand core functionality.
 A Specification-level body should remain understandable even if all footer sections are removed.
+
+---
+
+---
+
+## Pattern A — Front / Historical Record Split
+
+*(Adopted 2026-10-28 by Human Governing Authority ruling, with all draft defaults D1–D7. Effective immediately; files migrate at their next substantive touch, never by bulk sweep.)*
+
+One boundary heading, `## Historical Record`, divides a file. Everything above it is **Front** (current doctrine, current File State, open items). Everything below it is **Historical** — append-only evidence, not binding doctrine. No Front section appears below the boundary.
+
+**Placement of the template's sections under Pattern A:**
+
+| Template section | Pattern A placement | Notes |
+|---|---|---|
+| 0. Navigation Anchors | Front | unchanged |
+| 1. Operational Safety Advisory | Front | unchanged |
+| 2. File State | Front | **current values only** (R7) |
+| 3. Scope Boundary | Front | unchanged |
+| 4. File Purpose | Front | unchanged |
+| 5. Assumptions | Front | unchanged |
+| 6. Body | Front | unchanged; Frozen Sections stay here |
+| 7. Lessons Learned | **Historical** | a lesson that has become doctrine is promoted into Body (D3) |
+| 8. Active Disputes | Front | active only; resolved disputes go to the Resolution Log |
+| 9. Auditor Notes & Unknowns | Front: **open** sidecar entries. Historical: closed entries and the Resolution Log | |
+| 10. Abandoned Paths | **Historical** | |
+| 11. Drift Indicators | Front | |
+| Trailing `## Status` section | Front: current version line only. Historical: version history | D5 |
+
+**Rules:**
+
+- **R1 — Citation.** Only Front content may be cited as current doctrine. Historical content is evidence and provenance.
+- **R2 — One boundary.** Exactly one `## Historical Record` heading per file (or one R8 pointer). Nothing Front below it.
+- **R3 — Moves.** Content moves Front → Historical only by the template's existing mechanics (Update Procedure step 3): full text moved, never summarized or deleted; a short pointer left behind. Triggers are the file's own rule if it has one, else the existing 20% and Aging rules — no new numeric threshold. A resolved unknown moves to Closed Sidecar Entries at closure, ID unchanged.
+- **R4 — No silent moves.** Every Front → Historical move gets a dated one-line Resolution Log entry saying what moved and why.
+- **R5 — Historical is append-only.** New entries go at the end of their section. Any later annotation inside an existing Historical entry carries a dated marker so an annotation can never read as original text.
+- **R6 — Versioning.** A change to Front text bumps the version (existing ruling, 2026-10-25). A pure Historical append does not bump and does not advance Last Audit. A Front → Historical move changes Front text, so it bumps (D2).
+- **R7 — File State is current only.** Last Audit and Auditor hold the latest as one short line; long "Prior:" chains move to the Resolution Log. Existing chains migrate at the file's next substantive touch, not in bulk. Where a file carries both Last Audit and Last Updated rows, they advance together.
+- **R8 — Relocated logs.** A file whose Resolution Log lives in `Archive/Logs/` keeps one pointer line under `## Historical Record`. The relocation is an allowed form of Historical, not a separate exception.
+- **R9 — Exemptions.** The template's existing exemption list stands as-is; derived indexes, pure logs, and exempt classes do not adopt Pattern A. No ad-hoc exemptions.
+
+**Consistency checks (part of this adoption, not a follow-up):**
+
+| # | Check | Kind |
+|---|---|---|
+| C1 | Exactly one boundary heading or one R8 pointer | static, one file |
+| C2 | No Front section heading below the boundary | static, one file |
+| C3 | Version in the header equals the version in the newest Resolution Log entry naming a transition | static, one file |
+| C4 | Last Audit       | 2026-10-28 — Vibe (Repo Custodian, delegated maintenance, human-ratified): Pattern A adopted per human ruling, D1–D7 defaults; §Pattern A section added; header Last-updated advanced. Prior:  is not older than the newest audit entry in Historical | static, one file |
+| C5 | File State holds no "Prior:" chain (warning level; migrate on touch) | static, one file |
+| C6 | Historical entries are in date order | static, one file |
+| C7 | Every Front change between two releases has a Resolution Log entry | release-diff |
+| C8 | Historical text unchanged between releases except appends and dated annotations | release-diff |
+
+C1–C6 extend sweep step 13's neighbors and `integrity_check.py`; C7–C8 use the release 1.27 baseline-and-hash method.
+
+**Pilot:** `Operations/Plastics.md` and `Operations/Woodworking.md` (D7) — one file per cycle, migrated by hand, never mid-audit or mid-gate-campaign. Success tests and stop conditions per the adopted draft §6 (Front size measured before/after; reader test; deliberate skipped-log-entry check test; cascade count — stop if a pilot migration touches files beyond the file and its own log). Pattern B (sibling files) is not proposed; no `logs/` or `audits/` subfolders.
+
+**Interaction with PKC-002 (D5):** this adoption supersedes the PKC-002 ruling's "not adopted now" note for the trailing-Status version-history part — the current-version line stays required in Front, the history moves to Historical. The PKC-002 row itself is the human's to close in `Admin/Progress_Log.md`.
 
 ---
 
@@ -575,6 +635,8 @@ The sidecar. Placed after Active Disputes.
 ---
 
 ### Resolution Log
+
+- 2026-10-28: **Pattern A (Front / Historical Record split) adopted — Human Governing Authority ruling, all draft defaults D1–D7, enacted by Vibe (Repo Custodian, delegated maintenance).** New §Pattern A section added: boundary heading `## Historical Record`, placement table, rules R1–R9, checks C1–C8, pilot Plastics/Woodworking, migration at next substantive touch (no bulk sweep). D5 supersedes PKC-002's "not adopted now" note for the trailing-Status version-history part (the row itself remains open for the human to close). Sections 0–11, Template Exemptions, and the AUDIT_10 F1 Challenges-exemption question untouched. No file migrates today; pilots stage at their own cycles.
 
 - 2026-10-28: **Pseudo-audit ledger line (Vibe, Repo Custodian — delegated maintenance, human-ratified findings batch 2026-10-28).** Pseudo-audit, findings only, 2026-10-27; report: Archive/Audits/AUDIT_10_Admin-File_Template.md. Per PKC-020 this pass does not advance Last Audit, Last Reviewed, version, or Status; the line exists so the owning file's own record shows the audit happened, per AP-035 Rule 10(c).
 
