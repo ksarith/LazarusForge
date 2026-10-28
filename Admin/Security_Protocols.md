@@ -28,9 +28,9 @@
 | Body Stability   | Volatile                                                            |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | `Admin/Verification_Gates.md`                                    |
-| Last Audit       | 2026-10-28 — Vibe (Repo Custodian, delegated maintenance, human-ratified batch): VG Status-precedence line propagated (AUDIT_09 F4(a)); no gate advanced. Prior:  2026-10-23 — Claude (human-directed) corrections from a Vibe per-file audit, each checked against source first: Last Audit and Auditor extended to cover the 2026-09-10 (SEC-007b), 2026-09-14 (CF-006 registered) and 2026-09-15 (CF-006 resolved, Option A) passes logged in the Resolution Log, the last of which touched operative body text; SEC-002, SEC-007a and SEC-009 sidecar headings re-titled to match their Ratified status; duplicate EC-011 bullet removed from §I.6. No FROZEN region, Status or security doctrine changed. Prior: 2026-09-03 — Grok surgical state-synchronization repair after ChatGPT REVISE/G6-BLOCKED audit (SEC-AUD-001–006): FROZEN markers added; Scope Boundary SEC-009 updated; Human-Factors note synchronized; PAT-001/PAT-002 statuses updated; RIP-001 dependency language corrected; bottom Version 0.8 Status block replaced with current + historical record. No security architecture redesigned; SEC-002/007a/009 closures preserved. Prior: 2026-08-22 |
-| Auditor          | Vibe — Repo Custodian, 2026-10-28 precedence-line propagation (delegated maintenance); prior:  Claude — 2026-10-23 corrections (human-directed, from a Vibe per-file audit); 2026-09-10 / 09-14 / 09-15 passes per the Resolution Log (Grok and Claude, human-directed); Grok — 2026-09-03 integrity repair (see Last Audit). Prior: Gemini / Grok / ChatGPT / Claude multi-agent history retained in Resolution Log |
-| Open Unknowns    | 10 substantively open (SEC-001, SEC-003, SEC-004, SEC-005, SEC-006, SEC-007b, SEC-008, SEC-010, SEC-011, SEC-012). SEC-002, SEC-007a, SEC-009 Ratified — Payment via Specification, 2026-08-22. CF-006 Resolved 2026-09-15 (Option A) |
+| Last Audit       | 2026-10-28 — Vibe (Repo Custodian, delegated maintenance, human-ratified batch): SEC-013 reciprocal unknown registered — cross-file reciprocal of `Admin/Ship_of_Theseus.md` ST-004 (Decision Brief 2026-10-28, item 6; the brief named SEC-012 as the next free ID but SEC-012 is already taken, so the reciprocal is registered as SEC-013, superseding the never-logged 2026-07-02 SEC-013 reservation); File State Open Unknowns 10 → 11; `Unknowns.md` mirrored v5.72 → v5.73. Same-day prior: 2026-10-28 — Vibe (Repo Custodian, delegated maintenance, human-ratified batch): VG Status-precedence line propagated (AUDIT_09 F4(a)); no gate advanced. Prior:  2026-10-23 — Claude (human-directed) corrections from a Vibe per-file audit, each checked against source first: Last Audit and Auditor extended to cover the 2026-09-10 (SEC-007b), 2026-09-14 (CF-006 registered) and 2026-09-15 (CF-006 resolved, Option A) passes logged in the Resolution Log, the last of which touched operative body text; SEC-002, SEC-007a and SEC-009 sidecar headings re-titled to match their Ratified status; duplicate EC-011 bullet removed from §I.6. No FROZEN region, Status or security doctrine changed. Prior: 2026-09-03 — Grok surgical state-synchronization repair after ChatGPT REVISE/G6-BLOCKED audit (SEC-AUD-001–006): FROZEN markers added; Scope Boundary SEC-009 updated; Human-Factors note synchronized; PAT-001/PAT-002 statuses updated; RIP-001 dependency language corrected; bottom Version 0.8 Status block replaced with current + historical record. No security architecture redesigned; SEC-002/007a/009 closures preserved. Prior: 2026-08-22 |
+| Auditor          | Vibe — Repo Custodian, 2026-10-28 SEC-013 reciprocal registration + same-day precedence-line propagation (delegated maintenance); prior: Vibe — Repo Custodian, 2026-10-28 precedence-line propagation (delegated maintenance); prior:  Claude — 2026-10-23 corrections (human-directed, from a Vibe per-file audit); 2026-09-10 / 09-14 / 09-15 passes per the Resolution Log (Grok and Claude, human-directed); Grok — 2026-09-03 integrity repair (see Last Audit). Prior: Gemini / Grok / ChatGPT / Claude multi-agent history retained in Resolution Log |
+| Open Unknowns    | 11 substantively open (SEC-001, SEC-003, SEC-004, SEC-005, SEC-006, SEC-007b, SEC-008, SEC-010, SEC-011, SEC-012, SEC-013). SEC-002, SEC-007a, SEC-009 Ratified — Payment via Specification, 2026-08-22. CF-006 Resolved 2026-09-15 (Option A) |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | High                                                                |
 | Sidecar Link     | #auditor-notes--unknowns                                            |
@@ -1311,6 +1311,27 @@ than working around.
 
 ---
 
+### SEC-013 — Sub-Threshold Cumulative State-Drift Detection for Derivative Identity Thresholds
+
+| Field         | Value                              |
+|---------------|-------------------------------------|
+| Status        | Open                               |
+| Risk          | High                               |
+| Priority      | Major                              |
+| Type          | Security / Governance              |
+| Blocking      | Epistemic                          |
+| Owner         | `Admin/Security_Protocols.md`      |
+| First Logged  | 2026-10-28                         |
+| Last Reviewed | 2026-10-28                         |
+
+**Description:** Reciprocal registration of `Admin/Ship_of_Theseus.md` ST-004 (the source tracker, registered there first). Derivative Identity thresholds are single-event: an alteration replacing less than the threshold fraction (for example 30%) in one pass does not trigger identity-loss doctrine. A substitution can be routed through a sequence of individually below-threshold events, so cumulative drift can defeat a threshold designed against single events. Registered here because threshold bypass-resistance is a security property; the identity-doctrine side stays owned by ST-004. ID note: the 2026-07-02 EDL entry below had reserved SEC-013 for a hypothetical symmetric-fallback-tree unknown that was never logged; this registration takes the free ID per registry allocation discipline, and any future symmetric-fallback unknown, if ever logged, takes SEC-014.
+
+**Why It Matters:** Single-event thresholds implicitly assume the threat is one large alteration. Sequences of small alterations are a standard adversarial pattern; without rolling-window or rate-of-change detection doctrine, threshold-anchored identity claims can be satisfied in form while violated in substance. Epistemic blocker: current doctrine cannot certify resistance to the most basic evasion of its own mechanism.
+
+**Resolution Path:** Doctrine work is owned by `Admin/Ship_of_Theseus.md` ST-004 (rolling-window/rate-of-change detection requirement). This entry closes when ST-004 closes, or when derivative identity doctrine adopts cumulative-tracking language this entry can cite. No cryptographic mechanism is proposed here — the gap is doctrinal, not algorithmic.
+
+---
+
 ### CF-006 — "Signature-verified bootstrap" claim overstates Electronics.md's current firmware-trust doctrine
 
 | Field         | Value                              |
@@ -1395,6 +1416,8 @@ has not been inserted into either file.
 ---
 
 ### Resolution Log
+
+- 2026-10-28: **SEC-013 reciprocal unknown registered (Vibe, Repo Custodian — delegated maintenance, human-ratified Decision Brief 2026-10-28, item 6).** New sidecar entry SEC-013 (Sub-Threshold Cumulative State-Drift Detection for Derivative Identity Thresholds) registered as the cross-file reciprocal of `Admin/Ship_of_Theseus.md` ST-004: single-event identity-loss thresholds can be bypassed by sequences of individually below-threshold alterations, requiring rolling-window/rate-of-change detection doctrine that does not yet exist. Two ID corrections made before filing, ratified intent (reciprocal registration) preserved in both: (1) the ratified brief named SEC-012 as the next free SEC- ID, but SEC-012 is already taken (asymmetric cryptographic overhead on salvaged silicon, registered 2026-07-02); (2) the 2026-07-02 EDL entry below had reserved SEC-013 for a hypothetical symmetric-fallback-tree unknown that was never logged — this registration takes the free SEC-013, and any future symmetric-fallback unknown, if ever logged, takes SEC-014. File State Open Unknowns 10 → 11; `Unknowns.md` mirrored v5.72 → v5.73 (changelog cascade included the late-migrated v5.72 entry). The trailing Status block's unknown list was left untouched (retained-lineage block; the AUDIT_09 F4(a) precedence sentence already makes the File State header authoritative on divergence). No gate advanced; no other doctrine changed.
 
 - 2026-10-28: **VG Status-precedence line propagated + pseudo-audit ledger line (Vibe, Repo Custodian — delegated maintenance, human-ratified findings batch 2026-10-28).** (1) The trailing Status section now carries the precedence sentence from `Admin/Verification_Gates.md` (AUDIT_09 F4(a)): the File State header is authoritative if the Status block and it ever disagree. (2) Pseudo-audit, findings only, 2026-10-27; report: Archive/Audits/AUDIT_06_Admin-Security_Protocols.md (PKC-020 — the pass itself advanced nothing; this file's Last Audit advance records today's maintenance edit, not the pseudo-audit). No gate advanced; no unknown opened or closed.
 
