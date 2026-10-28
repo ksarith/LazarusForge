@@ -30,6 +30,10 @@ GOV-XXX sidecar entry and the full Resolution Log — lives here now.
 
 ---
 
+## 2026-10-28 (later same-day) — Wrapper-hygiene pass (Vibe, Repo Custodian — delegated maintenance, human-ratified batch 2026-10-28c)
+
+(1) Scope Boundary DOES-define list now names the Deployment Localization doctrine (AUDIT_01 F1) — the doctrine section has existed in the Charter body since 2026-09-08 but was never listed in the Scope Boundary inventory. (2) Relationship to Existing Documents: the `Astroid-miner` companion-repo row updated from "[PLANNED] — planned repository" to exists-state per the owner's 2026-10-28 ruling (repository at github.com/ksarith/Astroid-miner; V0.07 snapshot in VibesSandbox; zip under `Archive/Astroid-miner/`), retaining the not-an-active-dependency caution. No Tier 1 Axiom, FROZEN text, or enforcement mechanism modified; no unknown opened or closed. File State Last Audit/Auditor advanced in the Charter body.
+
 ## 2026-10-28 — Pseudo-audit ledger line (Vibe, Repo Custodian — delegated maintenance, human-ratified findings batch)
 
 Pseudo-audit, findings only, 2026-10-27; report: Archive/Audits/AUDIT_01_Admin-Governance_Charter.md. Per PKC-020 this pass does not advance the Charter's Last Audit, version, or Status; recorded here because the Charter's changelog is relocated to this file (R8-style pointer), per AP-035 Rule 10(c).

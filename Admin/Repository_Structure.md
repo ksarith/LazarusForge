@@ -16,8 +16,8 @@
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-10-27 — Vibe (owner-confirmed / human-authorized autonomous management; PKC-011 and PKC-012): §VI Lazarus-Forge- row updated to retired-and-deleted per owner confirmation, with the duplicate-doctrine rule annotated as historical; ASM-001 and §II folder-count wording reconciled into one stated convention. No placement rule changed, no file moved, RS-001 unaffected. Prior: 2026-10-25 — Claude (human-directed, PKC-013): RS-001 resolved by defining a minimal review for new non-markdown file types in Section I, with a retroactive note for the `.py` and `.zip` files already present; Open Unknowns 1 → 0. Prior: 2026-10-23 — Claude (human-directed) corrections from a Vibe per-file audit: 2026-10-03/10-04 passes logged, RS-001 refreshed; open items parked in `Admin/Progress_Log.md` §Parked Concerns, not fixed here. Prior: 2026-10-07 root-table addition (logged), 2026-10-04 and 2026-10-03 edits, 2026-08-11 |
-| Auditor          | Claude — 2026-10-25 RS-001 resolution (human-directed); prior: Claude — 2026-10-23 corrections (human-directed, from a Vibe per-file audit); 2026-10-03/10-04/10-07 passes human-directed, agents not recorded; prior: Claude — Automation/ formalized in Section II (external ChatGPT review finding, verified before applying), human-directed; prior: Grok — correction pass, 2026-08-09 |
+| Last Audit       | 2026-10-28 — Vibe (Repo Custodian, delegated maintenance, human-ratified batch 2026-10-28c): §VI Astroid-miner row and cross-repo rule updated to exists-state per owner ruling (PKC-011 narration amendment); File Purpose ownership narration reconciled to the Charter's current Canonical Governance Ownership table (AUDIT_12 F2). No placement rule changed; RS-001 unaffected. Prior: 2026-10-27 — Vibe (owner-confirmed / human-authorized autonomous management; PKC-011 and PKC-012): §VI Lazarus-Forge- row updated to retired-and-deleted per owner confirmation, with the duplicate-doctrine rule annotated as historical; ASM-001 and §II folder-count wording reconciled into one stated convention. No placement rule changed, no file moved, RS-001 unaffected. Prior: 2026-10-25 — Claude (human-directed, PKC-013): RS-001 resolved by defining a minimal review for new non-markdown file types in Section I, with a retroactive note for the `.py` and `.zip` files already present; Open Unknowns 1 → 0. Prior: 2026-10-23 — Claude (human-directed) corrections from a Vibe per-file audit: 2026-10-03/10-04 passes logged, RS-001 refreshed; open items parked in `Admin/Progress_Log.md` §Parked Concerns, not fixed here. Prior: 2026-10-07 root-table addition (logged), 2026-10-04 and 2026-10-03 edits, 2026-08-11 |
+| Auditor          | Vibe — Repo Custodian, 2026-10-28 wrapper-hygiene pass (delegated maintenance, human-ratified batch 2026-10-28c); Claude — 2026-10-25 RS-001 resolution (human-directed); prior: Claude — 2026-10-23 corrections (human-directed, from a Vibe per-file audit); 2026-10-03/10-04/10-07 passes human-directed, agents not recorded; prior: Claude — Automation/ formalized in Section II (external ChatGPT review finding, verified before applying), human-directed; prior: Grok — correction pass, 2026-08-09 |
 | Open Unknowns    | 0                                                                   |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | Low                                                                 |
@@ -66,9 +66,11 @@ for that directory, unblocking Repository_Integrity_Protocol.md's
 prior-state preservation requirement.
 
 **Ownership transfer:** The Governance_Charter.md Canonical Governance
-Ownership table lists `Repository_Structure.md` as a planned canonical
-target with no current owner. This file now owns repository structure
-doctrine. Discovery.md retains ownership of the navigation map;
+Ownership table lists `Admin/Repository_Structure.md` as the canonical
+target for repository structure doctrine (created 2026-06-06). This file
+owns that doctrine — the narration here previously described the
+pre-ownership state ("planned canonical target with no current owner"),
+reconciled 2026-10-28 to the Charter's current table state (AUDIT_12 F2). Discovery.md retains ownership of the navigation map;
 `Archive/Rename_Registry.md` owns the historical rename record — those are complementary, not overlapping.
 
 ---
@@ -409,7 +411,7 @@ The LazarusForge project spans three repositories with distinct roles:
 |---|---|---|
 | `LazarusForge` | Active working repository — lean, operational, specification-oriented | This file's conventions apply |
 | `Lazarus-Forge-` | Former doctrine and philosophy companion — a learning-era GitHub workflow experiment used to see-saw ideology forward with the main repo; deleted once the workflow stabilized (owner-confirmed 2026-10-27, PKC-011) | Retired — no longer exists; the row is kept as the historical naming record |
-| `Astroid-miner` | Planned space-based extension — deferred to Leviathan milestone | Not yet active |
+| `Astroid-miner` | Space-based extension companion — repository exists (github.com/ksarith/Astroid-miner, owner-confirmed 2026-10-28; V0.07 snapshot in VibesSandbox; archival zip under `Archive/Astroid-miner/`); not an active LazarusForge dependency | Not yet active for LazarusForge — requires its own Repository_Structure.md |
 
 **Cross-repo rules:**
 - Do not create files in LazarusForge that duplicate doctrine
@@ -418,7 +420,9 @@ The LazarusForge project spans three repositories with distinct roles:
   been retired and deleted — retained unchanged as record)*
 - Divergence between repos is a signal — log it, do not silently resolve it
 - Astroid-miner does not inherit LazarusForge structure automatically —
-  it will require its own Repository_Structure.md when activated
+  it requires its own Repository_Structure.md (the repository exists as of
+  2026-10-28, owner-confirmed; its structure doctrine is its own, not this
+  file's)
 
 **Naming history:** The active working repository was renamed from `LazarusForgeV0` to `LazarusForge` (2026-08-16). While it carried the `V0` suffix, that suffix was a repository name, not a file version marker — the no-version-suffix rule always applied to files within the repository, never to the repository name itself, which was a proper noun identifying a specific instantiation. That distinction no longer needs stating now that the repository name itself carries no version marker, but is preserved here as institutional memory — older references to `LazarusForgeV0` elsewhere in the repository (Archive/, historical transcripts) are accurate records of the name at the time and are not retroactively rewritten.
 
@@ -535,6 +539,8 @@ recognition; no new action required.
 ---
 
 ### Resolution Log
+
+- 2026-10-28 (later same-day): **Wrapper-hygiene enactments (Vibe, Repo Custodian — delegated maintenance, human-ratified batch 2026-10-28c).** (1) AUDIT_12 F2: File Purpose ownership-transfer narration reconciled to the Charter's current Canonical Governance Ownership table — the Charter has listed this file as the canonical target since 2026-06-06; the old text described the pre-ownership state. (2) Owner ruling 2026-10-28 (PKC-011 narration amendment): §VI `Astroid-miner` row and cross-repo rule updated from "planned/deferred" to exists-state — the companion repository exists at github.com/ksarith/Astroid-miner (V0.07 snapshot in VibesSandbox; zip under `Archive/Astroid-miner/`), and still does not inherit LazarusForge structure. No placement rule changed; RS-001 unaffected.
 
 - 2026-10-28: **Pseudo-audit ledger line (Vibe, Repo Custodian — delegated maintenance, human-ratified findings batch 2026-10-28).** Pseudo-audit, findings only, 2026-10-27; report: Archive/Audits/AUDIT_12_Admin-Repository_Structure.md. Per PKC-020 this pass does not advance Last Audit, Last Reviewed, version, or Status; the line exists so the owning file's own record shows the audit happened, per AP-035 Rule 10(c).
 
