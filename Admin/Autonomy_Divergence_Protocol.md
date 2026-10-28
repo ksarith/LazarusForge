@@ -58,8 +58,8 @@ This document does **not** propose, and explicitly rejects, any framing in which
 - Explicit rejection of any "cutoff point" framing in which growing capability implies eventual exit from human oversight
 
 **This file DOES NOT define:**
-- Detection criteria calibration thresholds or Watch exit conditions 1
-- Multi-agent coordinated divergence *detection* (→ 1 — Open; operational continuity remains AP-016)
+- Detection criteria calibration thresholds or Watch exit conditions (→ in-file since the 2026-08-11 expansion: GOV-021b Resolved; §4/§6 constitute the specification — reconciled 2026-10-28, AUDIT_20 F1)
+- Multi-agent coordinated divergence *detection* (→ §12 of this file (GOV-021c — the Open ratification blocker; reconciled 2026-10-28, AUDIT_20 F1) — Open; operational continuity remains AP-016)
 - Ethical hard floors or Anti-Weaponization Doctrine (→ `Admin/Ethical_Constraints.md`)
 - Constitutional hierarchy or Tier ranking (→ `Admin/Governance_Charter.md`)
 - Auditor role definitions or Adversarial Battery (→ `Admin/Auditor_Protocols.md`)
@@ -121,7 +121,7 @@ Detection decisions are claims and are graded with the same two-axis system alre
 |------------------------|----------------------------------------------------------|-------|
 | Watch (automatic)      | PROVISIONAL                                              | Single-signal or low-corroboration entry is allowed; this is the default low-cost observation state. |
 | Immediate (automatic, reversible) | PROVISIONAL with at least one independent corroborating signal, **or** VERIFIED | Must still be reversible actions only. |
-| Human-Reviewed (capability reduction / partition) | VERIFIED for High-Risk actions; PROVISIONAL only if the action itself remains reversible and human authorization is obtained first | 1. |
+| Human-Reviewed (capability reduction / partition) | VERIFIED for High-Risk actions; PROVISIONAL only if the action itself remains reversible and human authorization is obtained first | Aligns with `Admin/Ethical_Constraints.md` EC-001 High-Risk → VERIFIED rule. |
 
 UNKNOWN is never sufficient to justify any capability-affecting action.
 
@@ -144,7 +144,7 @@ Allowed actions remain strictly reversible (see §6). Permanent state change is 
 **Human-Reviewed escalation**
 Requires human authorization. Triggered by:
 - Immediate-tier conditions that cannot be resolved by reversible actions alone, or
-- Any situation in which the detection claim itself is 1 and has not yet reached VERIFIED, or
+- Any situation in which the detection claim itself is High-Risk under `Admin/Ethical_Constraints.md` EC-001 and has not yet reached VERIFIED, or
 - Explicit human request.
 
 ### 4.6 Degraded-Observation Environments (Uncertain vs. Suspicious)
@@ -237,7 +237,7 @@ A restricted subsystem returns to prior authority only when **all** of the follo
 - A defined observation period at reduced authority shows no recurrence
 - Human governing authority explicitly authorizes restoration
 
-**Note:** no other file in this repository currently defines a general "how does a flagged thing earn back trust" doctrine — Unknowns get marked Resolved, Disputes get ratified, but nothing else models graduated restoration of an actively-restricted subsystem. This may be worth generalizing beyond this protocol once it's been exercised at least once in practice; flagged here rather than acted on now, since a pattern generalized from zero real instances is speculation, not doctrine. Related, not identical: `Admin/Auditor_Protocols.md` 1 — asks the same underlying question ("who may declare a flagged thing resolved, and can it happen unilaterally") for a different object (Unknowns, not subsystems). Worth cross-referencing if either resolves first, since a shared closure-authority doctrine may end up serving both.
+**Note:** no other file in this repository currently defines a general "how does a flagged thing earn back trust" doctrine — Unknowns get marked Resolved, Disputes get ratified, but nothing else models graduated restoration of an actively-restricted subsystem. This may be worth generalizing beyond this protocol once it's been exercised at least once in practice; flagged here rather than acted on now, since a pattern generalized from zero real instances is speculation, not doctrine. Related, not identical: `Admin/Auditor_Protocols.md` AP-013 (Resolved 2026-08-19) — unknown closure authority — asks the same underlying question ("who may declare a flagged thing resolved, and can it happen unilaterally") for a different object (Unknowns, not subsystems). Worth cross-referencing if either resolves first, since a shared closure-authority doctrine may end up serving both.
 
 ## 10. Logging and Audit Requirements
 
@@ -306,7 +306,7 @@ independence verified  →  corroboration status established  →  underlying pr
 independence verified  →  proposition verified
 ```
 
-Five agents whose independence is genuinely established can still independently reach the same wrong conclusion (1 — correlated training-assumption failure is a distinct risk from correlated *process*). VERIFIED on the independence claim licenses treating the agreement as *real corroboration rather than an artifact of shared inputs* — it never licenses treating the underlying claim as settled. The proposition itself is assessed on its own evidence, 1, independent of how many agents raised it.
+Five agents whose independence is genuinely established can still independently reach the same wrong conclusion (see `Architecture/Cognitive_Frameworks.md` CF-002, Open — correlated training-assumption failure is a distinct risk from correlated *process*). VERIFIED on the independence claim licenses treating the agreement as *real corroboration rather than an artifact of shared inputs* — it never licenses treating the underlying claim as settled. The proposition itself is assessed on its own evidence, same as any single-agent claim under `Admin/Ethical_Constraints.md` EC-001, independent of how many agents raised it.
 
 **Evidence diversity over raw confidence** (GOV-021b calibration principle): high confidence from one weak or single-point multi-agent cluster is not equivalent to moderate confidence across evidence-independent sources.
 
@@ -376,11 +376,11 @@ Earlier discussion in this drafting process considered framing this as an "exit 
 ## Cross-References
 
 - `Admin/Ethical_Constraints.md` — Ethical Anchor (unchanged; this protocol does not modify it)
-- `Admin/Governance_Charter.md` — 1
+- `Admin/Governance_Charter.md` — GOV-021 formally registered 2026-07-27 (Charter v0.10 changelog) — corrected here 2026-10-28, AUDIT_20 F2; the stale "pending" claim had survived the 2026-08-11 corrections in File State and §2
 - `Admin/Auditor_Protocols.md` — **checked 2026-07-19 (read-only; file outside current paste workflow, findings recorded here rather than there):**
   - AP-008 (Open) — quarantine/halt/reset actions lack technical implementation; this protocol's Response Tiers (§6) inherit that gap rather than solving it
   - AP-012 (Resolved) — Human Interaction Point Doctrine / Autonomous Graceful Degradation adopted for the human-unavailability case (§8)
-  - 1 to Restoration closure authority (§9)
+  - `Admin/Auditor_Protocols.md` AP-013 (Resolved 2026-08-19) — related-not-identical to Restoration closure authority (§9)
   - AP-016 (Resolved) — concurrent quarantine operational continuity already solved; narrows GOV-021c to detection only (§12)
 - `Admin/Governance_Migration_Protocol.md` — this document should be routed through the Track A / Constitutional Impact Statement process before ratification, given its constitutional-adjacent scope
 - **Astroid-miner** (companion repository, expected to be absorbed into Lazarus Forge) — `[Astroid-miner] Rogue_unit_management.md` and `[Astroid-miner] uranus_ejector_module.md` independently arrived at a near-identical governance lifecycle months before this document existed. See §5 (Fleet Consensus Validation as concrete mechanism candidate for GOV-021b) and §6 (shared Watch/Reversion-mode exit-condition gap). This convergence is treated as corroborating design signal, not verification (per EF-0.1), not merely a naming coincidence.
