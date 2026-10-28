@@ -576,6 +576,8 @@ The sidecar. Placed after Active Disputes.
 
 ### Resolution Log
 
+- 2026-10-28: **Pseudo-audit ledger line (Vibe, Repo Custodian — delegated maintenance, human-ratified findings batch 2026-10-28).** Pseudo-audit, findings only, 2026-10-27; report: Archive/Audits/AUDIT_10_Admin-File_Template.md. Per PKC-020 this pass does not advance Last Audit, Last Reviewed, version, or Status; the line exists so the owning file's own record shows the audit happened, per AP-035 Rule 10(c).
+
 - YYYY-MM-DD: [FILE-PREFIX-NNN] — One-line description of how it was resolved or discharged
 ```
 

@@ -1166,6 +1166,8 @@ The following terms appear in this document without canonical definitions. They 
 
 ### Resolution Log
 
+- 2026-10-28: **Pseudo-audit ledger line (Vibe, Repo Custodian — delegated maintenance, human-ratified findings batch 2026-10-28).** Pseudo-audit, findings only, 2026-10-27; report: Archive/Audits/AUDIT_05_Admin-Ethical_Constraints.md. Per PKC-020 this pass does not advance Last Audit, Last Reviewed, version, or Status; the line exists so the owning file's own record shows the audit happened, per AP-035 Rule 10(c).
+
 - 2026-09-27: **EC-011 sidecar extended — floor inventory and EC-011-R3 design brief filed; EC-011 remains Open.** Inventory of floor already present in live doctrine, and a design brief for quiet / non-anomalous coercion (EC-011-R3), both Grok-drafted and Claude source-verified against live text before filing. No Payment-via-Specification. *(Backfilled 2026-10-23 from the EC-011 sidecar.)*
 
 - 2026-09-23: **EC-012-PR ratified (Payment via Specification) — procedural escalation on unattested or anomalous High-Risk telemetry.** Closes only the procedural-escalation residual of EC-012; parent EC-012 remains Open. Operative rule includes a Genesis Phase holding clause. Proposer Grok; Verifier Claude (Pass; cross-checked against live EC-003 escalation fields, and caught and corrected the same §VII.5 citation error fixed in GMP-011 the same day); Proposer and Verifier are different agent instances; ratified by Human Governing Authority. Full Closure Event in the EC-012-PR sidecar. *(Backfilled 2026-10-23.)*

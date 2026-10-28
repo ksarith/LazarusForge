@@ -30,6 +30,10 @@ GOV-XXX sidecar entry and the full Resolution Log — lives here now.
 
 ---
 
+## 2026-10-28 — Pseudo-audit ledger line (Vibe, Repo Custodian — delegated maintenance, human-ratified findings batch)
+
+Pseudo-audit, findings only, 2026-10-27; report: Archive/Audits/AUDIT_01_Admin-Governance_Charter.md. Per PKC-020 this pass does not advance the Charter's Last Audit, version, or Status; recorded here because the Charter's changelog is relocated to this file (R8-style pointer), per AP-035 Rule 10(c).
+
 ## Auditor Notes & Unknowns
 *(Duplicate heading removed 2026-10-27 — the section heading appeared twice in a row since the 2026-07-23 relocation; no content changed. Found by the PKC-006 read-only pass.)*
 
