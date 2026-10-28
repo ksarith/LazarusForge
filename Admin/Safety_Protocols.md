@@ -31,8 +31,8 @@
 | Body Stability   | Volatile                                                            |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-10-27 — Claude (human-authorized autonomous management; PKC-028): SP-001 cross-file review pass — SP Section I verified compatible with Engineer_Protocols' Assumption Challenge Triggers and §8 Hazard Escalation Doctrine; SP-001 Resolved (and EP-005 in its owning sidecar); SP-002–006 reviewed, confirmed accurate, Last Reviewed refreshed; Open Unknowns 6 → 5. Not a Gate audit — Spec Gates stay 0/6. Prior: 2026-10-24 — Claude (human-directed) corrected the EP-005 wording in the Scope Boundary and Section I (see Resolution Log); the logged 2026-08-10 Grok pseudo-audit (findings only) is not counted here per the PKC-020 ruling of 2026-10-25. Prior: 2026-06-05                                                          |
-| Auditor          | Claude — 2026-10-27 SP-001 cross-file review pass (PKC-028, human-authorized autonomous management); prior: Claude — 2026-10-24 wording correction (human-directed, from a Vibe per-file audit); prior: Claude — Architect/Auditor                                          |
+| Last Audit       | 2026-10-28 — Vibe (Repo Custodian, delegated maintenance, human-ratified batch 2026-10-28c): AUDIT_07 F1 — the three pre-resolution EP-005 claims left by the 2026-10-27 pass (Scope Boundary "confirmation pending", Section I "until the SP-001 cross-file review confirms", File Purpose gap-list) reconciled to post-resolution wording. No threshold, PPE or consequence-class content changed. Prior: 2026-10-27 — Claude (human-authorized autonomous management; PKC-028): SP-001 cross-file review pass — SP Section I verified compatible with Engineer_Protocols' Assumption Challenge Triggers and §8 Hazard Escalation Doctrine; SP-001 Resolved (and EP-005 in its owning sidecar); SP-002–006 reviewed, confirmed accurate, Last Reviewed refreshed; Open Unknowns 6 → 5. Not a Gate audit — Spec Gates stay 0/6. Prior: 2026-10-24 — Claude (human-directed) corrected the EP-005 wording in the Scope Boundary and Section I (see Resolution Log); the logged 2026-08-10 Grok pseudo-audit (findings only) is not counted here per the PKC-020 ruling of 2026-10-25. Prior: 2026-06-05                                                          |
+| Auditor          | Vibe — Repo Custodian, 2026-10-28 AUDIT_07 F1 post-resolution reconciliation (delegated maintenance, human-ratified batch 2026-10-28c); prior: Claude — 2026-10-27 SP-001 cross-file review pass (PKC-028, human-authorized autonomous management); prior: Claude — 2026-10-24 wording correction (human-directed, from a Vibe per-file audit); prior: Claude — Architect/Auditor                                          |
 | Open Unknowns    | 5                                                                   |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | High                                                                |
@@ -45,7 +45,8 @@
 
 **This file DOES define:**
 - Acceptable risk threshold doctrine — the line between operator-managed risk and
-  mandatory escalation (intended resolution of EP-005; confirmation pending, see SP-001)
+  mandatory escalation (resolves EP-005; the SP-001 cross-file review confirmed
+  compatibility 2026-10-27 and EP-005 is Resolved in its owning sidecar)
 - PPE requirements by hazard class and operation type
 - Hearing conservation doctrine (referenced by `Operations/Air_Scrubber.md`)
 - Heat stress doctrine — Arkansas summer operating conditions (referenced by
@@ -80,8 +81,9 @@ contributors think, verify, trust, and protect documents. This file governs what
 operators do to protect themselves while the Forge operates.
 
 Without this file, three specific gaps persist: (1) the acceptable risk threshold
-referenced in `Admin/Engineer_Protocols.md` EP-005 has no definition — engineers
-cannot determine when a hazard triggers mandatory escalation; (2) hearing conservation
+referenced in `Admin/Engineer_Protocols.md` EP-005 loses its definition — Section I
+here defines it (EP-005 Resolved 2026-10-27 via SP-001), and without this file engineers
+could not determine when a hazard triggers mandatory escalation; (2) hearing conservation
 referenced in `Operations/Air_Scrubber.md` has no owning document; (3) heat stress
 doctrine referenced in `Architecture/Facilities.md` FA-004 has no owning document.
 If this file disappeared, physical operator safety would revert to implicit assumptions
@@ -109,8 +111,8 @@ implement. The doctrine lives here; the application lives in the owning gate fil
 
 ## I. Acceptable Risk Threshold (EP-005 Resolution Path)
 
-This section is the intended resolution of `Admin/Engineer_Protocols.md` EP-005 — the undefined threshold
-between operator-managed risk and mandatory escalation. EP-005 stays Open there as a partial resolution until the SP-001 cross-file review confirms the two files are compatible.
+This section resolves `Admin/Engineer_Protocols.md` EP-005 — the undefined threshold
+between operator-managed risk and mandatory escalation. The SP-001 cross-file review (2026-10-27) confirmed the two files are compatible; EP-005 is Resolved in its owning sidecar (Payment via Specification, 2026-10-27).
 
 ### Risk Consequence Categories
 
@@ -559,6 +561,8 @@ defer until FA-001 (site confirmed) is resolved. Cross-reference FA-001.
 ---
 
 ### Resolution Log
+
+- 2026-10-28 (later same-day): **AUDIT_07 F1 reconciliation — post-resolution wording applied (Vibe, Repo Custodian — delegated maintenance, human-ratified batch 2026-10-28c).** The 2026-10-27 SP-001 resolution pass updated the Advisory and both sidecars but left three body locations asserting the pre-resolution state; all three now read post-resolution: (1) Scope Boundary first Does-item — "confirmation pending" → the review confirmed compatibility 2026-10-27 and EP-005 is Resolved in its owning sidecar; (2) Section I intro — "intended resolution … until the SP-001 cross-file review confirms" → this section resolves EP-005, review completed 2026-10-27; (3) File Purpose gap (1) — the threshold is defined in Section I (EP-005 Resolved 2026-10-27 via SP-001). No threshold, PPE, consequence-class or sidecar content changed; no unknown opened or closed.
 
 - 2026-10-28: **Pseudo-audit ledger line (Vibe, Repo Custodian — delegated maintenance, human-ratified findings batch 2026-10-28).** Pseudo-audit, findings only, 2026-10-27; report: Archive/Audits/AUDIT_07_Admin-Safety_Protocols.md. Per PKC-020 this pass does not advance Last Audit, Last Reviewed, version, or Status; the line exists so the owning file's own record shows the audit happened, per AP-035 Rule 10(c).
 

@@ -29,8 +29,8 @@
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 2/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-10-27 — Claude (human-authorized autonomous management; PKC-028): EP-005 resolved after the SP-001 cross-file review confirmed `Admin/Safety_Protocols.md` Section I satisfies its Payment-via-Specification path; EP-001–004 and EP-006 untouched. Prior: 2026-05-30 (ChatGPT — Skeptic/Auditor); revised 2026-06-08; revised 2026-10-23 (structure corrections)          |
-| Auditor          | Claude — 2026-10-27 EP-005 resolution pass (PKC-028, human-authorized autonomous management); prior: Claude — Retrofit/Auditor (integrating 2026-05-30 addendum); Claude — 2026-10-23 structure corrections (human-directed, from a Vibe per-file audit)         |
+| Last Audit       | 2026-10-28 — Vibe (Repo Custodian, delegated maintenance, human-ratified batch 2026-10-28c): AUDIT_08 F1 — the final local drift-indicator trigger re-derived to File_Template §7 Evidence Types vocabulary for the Lessons Learned column, with the AP-021 five-label Truth Provenance set ("Estimated" retired) noted as governing claim provenance instead; no doctrine, gate or sidecar change. Prior: 2026-10-27 — Claude (human-authorized autonomous management; PKC-028): EP-005 resolved after the SP-001 cross-file review confirmed `Admin/Safety_Protocols.md` Section I satisfies its Payment-via-Specification path; EP-001–004 and EP-006 untouched. Prior: 2026-05-30 (ChatGPT — Skeptic/Auditor); revised 2026-06-08; revised 2026-10-23 (structure corrections)          |
+| Auditor          | Vibe — Repo Custodian, 2026-10-28 AUDIT_08 F1 drift-indicator re-derivation (delegated maintenance, human-ratified batch 2026-10-28c); prior: Claude — 2026-10-27 EP-005 resolution pass (PKC-028, human-authorized autonomous management); prior: Claude — Retrofit/Auditor (integrating 2026-05-30 addendum); Claude — 2026-10-23 structure corrections (human-directed, from a Vibe per-file audit)         |
 | Open Unknowns    | 5                                                                   |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | High                                                                |
@@ -449,7 +449,7 @@ All canonical triggers from `Admin/File_Template.md` also apply. The following a
 | Section 8 Hazard Escalation table revised without cross-validating against owning file sidecars | Hazard unknowns change as files are updated — table must stay current |
 | "Acceptable risk threshold" referenced without pointing to a defined standard | EP-005 — subjective threshold produces audit-inconsistent escalation decisions |
 | EP-005 or EP-006 closed without formal resolution entry | Both require documented resolution criteria — silent closure is not permitted |
-| Lessons Learned evidence type labels diverge from repository Truth Provenance vocabulary | Repository alignment requires Measured / Estimated / Analogous / Placeholder labels |
+| Lessons Learned Evidence Type labels diverge from File_Template §7 Evidence Types vocabulary | That column uses File_Template §7's Evidence Types (Bench Test / Field Test / Simulation / Modeling / Audit Review / Anecdotal); the Truth Provenance quantitative labels (Measured / Replicated / Simulated / Analogous / Placeholder — "Estimated" retired by AP-021, 2026-07-10) govern claim provenance, not this column |
 
 **Compound Drift Rule:** If multiple indicators activate simultaneously,
 halt autonomous audit progression and escalate for human review.
@@ -672,6 +672,8 @@ Cross-reference `Admin/Auditor_Protocols.md` §Unknowns Registry Governance.
 ---
 
 ### Resolution Log
+
+- 2026-10-28 (later same-day): **Drift-indicator trigger re-derivation (Vibe, Repo Custodian — delegated maintenance, human-ratified batch 2026-10-28c; AUDIT_08 F1).** The final local trigger demanded Truth Provenance labels ("Measured / Estimated / Analogous / Placeholder") for the Lessons Learned Evidence Type column — wrong vocabulary (File_Template §7 Evidence Types governs that column) and citing "Estimated", retired by AP-021 on 2026-07-10. Re-derived: the trigger now references File_Template §7's Evidence Types (Bench Test / Field Test / Simulation / Modeling / Audit Review / Anecdotal), with the five-label AP-021 provenance set (Measured / Replicated / Simulated / Analogous / Placeholder) noted as governing claim provenance, not this column. The live Lessons Learned table already conforms to §7. No other trigger, doctrine, gate or sidecar change.
 
 - 2026-10-28: **Pseudo-audit ledger line (Vibe, Repo Custodian — delegated maintenance, human-ratified findings batch 2026-10-28).** Pseudo-audit, findings only, 2026-10-27; report: Archive/Audits/AUDIT_08_Admin-Engineer_Protocols.md. Per PKC-020 this pass does not advance Last Audit, Last Reviewed, version, or Status; the line exists so the owning file's own record shows the audit happened, per AP-035 Rule 10(c).
 
