@@ -18,8 +18,8 @@
 | Body Stability   | Stable                                                               |
 | Spec Gates       | N/A — reference index, not a governed doctrine surface               |
 | Verification Ref | Admin/Verification_Gates.md                                          |
-| Last Audit       | 2026-10-25 — Claude (human-directed, PKC-017) added one sentence to the Template Exemption stating that this file keeps no Resolution Log and that its passes are recorded in this field, and updated it to say the exemption is now listed in `File_Template.md` (class 9); no convention changed. Prior: 2026-10-23 — Claude (human-directed) resequenced the Conventions so they read 1–8 in order (Convention 7's block moved after 6; numbers and text unchanged, so existing citations such as "Convention 7" still resolve). Prior: 2026-10-03 (second pass) — Convention 8 Source-of-truth line revised to cite `Admin/Resolution_Methodology.md` §9 as the canonical statement of the pattern (was standing alone). Prior: 2026-10-03 — Convention 8 added (rotation-rule self-enforcement failure, Progress_Log.md + Unknowns.md). Prior: 2026-09-30 — file created. |
-| Auditor          | Claude — 2026-10-25 Template Exemption sentence (human-directed, PKC-017); prior: Claude — 2026-10-23 resequencing (human-directed, from a Vibe per-file audit); prior: Grok — Convention 8 attribution fix (human-directed); prior Claude — human-directed |
+| Last Audit       | 2026-10-28 — Vibe (Repo Custodian, delegated maintenance, human-ratified AUDIT_16 findings batch): Convention 6 rewritten to match the post-PKC-026 `Routing.md` registration-scope note (AUDIT_16 F1) with the pre-emptive-intake deviation annotated (F2); the trailing candidates note given its `## Candidates` heading (AUDIT_16 NOTE). No other convention changed. Prior: 2026-10-25 — Claude (human-directed, PKC-017) added one sentence to the Template Exemption stating that this file keeps no Resolution Log and that its passes are recorded in this field, and updated it to say the exemption is now listed in `File_Template.md` (class 9); no convention changed. Prior: 2026-10-23 — Claude (human-directed) resequenced the Conventions so they read 1–8 in order (Convention 7's block moved after 6; numbers and text unchanged, so existing citations such as "Convention 7" still resolve). Prior: 2026-10-03 (second pass) — Convention 8 Source-of-truth line revised to cite `Admin/Resolution_Methodology.md` §9 as the canonical statement of the pattern (was standing alone). Prior: 2026-10-03 — Convention 8 added (rotation-rule self-enforcement failure, Progress_Log.md + Unknowns.md). Prior: 2026-09-30 — file created. |
+| Auditor          | Vibe — 2026-10-28 Convention 6 source-sync + annotations (Repo Custodian, delegated maintenance, human-ratified batch); prior: Claude — 2026-10-25 Template Exemption sentence (human-directed, PKC-017); prior: Claude — 2026-10-23 resequencing (human-directed, from a Vibe per-file audit); prior: Grok — Convention 8 attribution fix (human-directed); prior Claude — human-directed |
 | Open Unknowns    | 0                                                                     |
 | Active Disputes  | 0                                                                     |
 | Highest Risk     | Low                                                                   |
@@ -137,16 +137,26 @@ checked. `Automation/integrity_check.py` now excludes `Archive/` from this scan.
 rules; the two clearest live examples self-declare it in their own header
 (`Archive/Transcripts/Configurations.md`).
 
-### 6. `Automation/`'s `.py` sources are exempt from `Routing.md` registration
+### 6. `Automation/`'s `.py` sources carry `Routing.md` rows (packaged archives don't)
 
-Scripts under `Automation/` do not need a `Routing.md` row. Documentation that is itself
-doctrine (not a script) still does.
+Scripts under `Automation/` are listed in `Routing.md`'s URL table — all nine as of the
+PKC-026 pass — because the harness and Colab fetch them by raw URL. Packaged archives
+(the Candidate 3 zip) are what's excluded. Documentation that is itself doctrine (not a
+script) is also registered.
 
-**Not yet violated** — included pre-emptively, since `Automation/README.md` and
-`Candidate3_Transient_Index_Colab.py` were checked against this rule in 2026-09-28
-session work and correctly left unregistered; recorded here so the next check doesn't
-have to re-derive the reasoning from `Routing.md`'s own text.
-**Source of truth:** `Routing.md`, registration-scope note near the top of the file.
+*(Entry rewritten 2026-10-28, AUDIT_16 F1, human-ratified findings batch.)* The prior
+version of this entry stated the opposite rule ("do not need a `Routing.md` row") and
+had gone stale against its own cited source: PKC-026 reworded `Routing.md`'s
+registration-scope note on 2026-10-26, and this file's own rule — the source wins, update
+this file — made the update owed. **Original-scope note:** this was the file's only
+pre-emptive entry, admitted as such ("not yet violated — included pre-emptively"),
+against this file's own intake bar of adding entries only once a rule has demonstrably
+been missed in practice. The deviation is now doubly demonstrated: the pre-emptive entry
+was also the file's only stale one. Retained per the human-ratified batch as an
+annotated exception, not silently rewritten history — the original wording is preserved
+in `Archive/Logs/` where applicable and in AUDIT_16 itself.
+**Source of truth:** `Routing.md`, registration-scope note near the top of the file
+(reworded 2026-10-26, PKC-026).
 
 ### 7. New files need a `*_Scope_Map.md` entry too, same session
 
@@ -191,6 +201,8 @@ as a follow-up.
 **Source of truth / canonical statement of the pattern:** `Admin/Resolution_Methodology.md` §9 ("Self-Maintenance Verification — Prose and Code"), which already documents this exact failure class with richer history (including `Progress_Log.md` failing its own rotation rule five separate times in one week, "including once while a fix for a previous instance of the same failure was being written," and the earlier `Unknowns.md` 26-stale-rows / 20-stacked-versions cases). This Convention 8 entry is the standing checklist pointer into that section, not a parallel doctrine. Supporting local sources: `Admin/Progress_Log.md`'s own "Size discipline" paragraph; `Unknowns.md` line 4 (the block's own stated rule); migration history in both files' `Archive/Logs/` changelogs.
 
 ---
+
+## Candidates
 
 *This section holds candidate entries only until they graduate to full write-ups above,
 or are declined. None currently pending.*
