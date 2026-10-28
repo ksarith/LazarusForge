@@ -1,6 +1,7 @@
 # Routing.md — LazarusForge
 **Canonical Navigation and Link Mapping Index.**
-**Last updated: 2026-10-26 — Two Automation scripts registered in the URL table (`Automation/Candidate3_Transient_Index_Colab.py`, `Automation/Candidate3_Transient_Index_Colab_hybrid.py`), both already listed in `Discovery.md` and documented in `Automation/README.md` (PKC-026). The Scope sentence on `Automation/` was reworded to match the table: the `.py` sources are listed, packaged archives are excluded. `Tests/Field_Logs/FL-20261008-maqt-matrix-preregistration-proposal.md` was deliberately not registered: its own header says it is an unratified proposal held out of Routing, Discovery and the Field_Logs index. No doctrine, Unknown or Spec Gate change.**
+**Last updated: 2026-10-28 — Folder Designation Characters registered (X3 human ruling; definitions owned by `Admin/Canonical_Terms.md` §1, v0.10): `A`=`Admin/`, `R`=`Architecture/`, `X`=`Archive/`, `O`=`Operations/`, `C`=`Challenges/`, `T`=`Tests/`, all case-sensitive; `Automation/` and root-level files pending human assignment. No file added, renamed or unregistered — URL table unchanged. No Unknown or Spec Gate change.**
+**Prior: 2026-10-26 — Two Automation scripts registered in the URL table (`Automation/Candidate3_Transient_Index_Colab.py`, `Automation/Candidate3_Transient_Index_Colab_hybrid.py`), both already listed in `Discovery.md` and documented in `Automation/README.md` (PKC-026). The Scope sentence on `Automation/` was reworded to match the table: the `.py` sources are listed, packaged archives are excluded. `Tests/Field_Logs/FL-20261008-maqt-matrix-preregistration-proposal.md` was deliberately not registered: its own header says it is an unratified proposal held out of Routing, Discovery and the Field_Logs index. No doctrine, Unknown or Spec Gate change.**
 **Prior: 2026-10-19 — Chrono pilot scoring Field_Log registered (`FL-20261019-chrono-divergence-pilot-scoring`); URL-table row only. No doctrine, Unknown or Spec Gate change.**
 **Prior: 2026-10-18 (second entry) — Chrono pilot session 6 Field_Log registered (`FL-20261018-chrono-divergence-chatgpt-d-baseline`); URL-table row only. No doctrine, Unknown or Spec Gate change.**
 **Prior: 2026-10-18 — Chrono pilot session 5 Field_Log registered (`FL-20261018-chrono-divergence-chatgpt-b-pointer`); URL-table row only. No doctrine, Unknown or Spec Gate change.**
@@ -47,6 +48,8 @@ The difference between the number of paths listed here and the total number of n
 
 Last scope clarification: 2026-10-03 (stale path-count metric removed); prior 2026-08-10 (integrity cleanup pass).
 
+
+**Folder Designation Characters (X3 ruling, 2026-10-28):** each top-level content folder carries a single case-sensitive designation character — `A`=`Admin/`, `R`=`Architecture/`, `X`=`Archive/`, `O`=`Operations/`, `C`=`Challenges/`, `T`=`Tests/` — defined and owned by `Admin/Canonical_Terms.md` §1 (v0.10). `Automation/` and root-level files have no designation yet (pending human assignment). This registry lists paths; the designation system disambiguates ID citations at the folder level — see Canonical_Terms for the full rule, including its interplay with PKC-003 qualified citations. The retrofit of existing bare IDs to designated forms is a separate human-authorized pass.
 ---
 
 ## Master Routing Map
