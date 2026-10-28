@@ -2,7 +2,8 @@
 
 **Standard file structure for LazarusForge documents.**
 Applies to all new files and retrofit audit cycles.
-**Last updated: 2026-10-28 (second entry) — AUDIT_10 F1 reconciled (human ruling, Decision Brief item 2): the §2 Challenges/ File Subtypes doctrine controls — Problem-Statement Spec Gates are N/A for build-readiness promotion but live as the reinterpreted act-readiness count; Template Exemptions class 8 reworded to match (no change to any Challenges file). Sections 0–11, Pattern A, and the rest of Template Exemptions unchanged.**
+**Last updated: 2026-10-28 (third entry) — AUDIT_10 F1 re-ruled (human ruling, Decision Brief 2026-10-28c, item 2): "Spec Gates N/A by subtype" governs for Challenges Problem-Statement files — the six canonical gates do not apply to them in any reading and no reinterpreted act-readiness count is kept; this supersedes the same-day earlier reconciliation ("the subtype doctrine controls") recorded in the second entry below. §2 Challenges/ File Subtypes doctrine and Template Exemptions class 8 reworded to match (no change to any Challenges file). Sections 0–11, Pattern A, and the rest of Template Exemptions otherwise unchanged.**
+**Prior: 2026-10-28 (second entry) — AUDIT_10 F1 reconciled (human ruling, Decision Brief item 2): the §2 Challenges/ File Subtypes doctrine controls — Problem-Statement Spec Gates are N/A for build-readiness promotion but live as the reinterpreted act-readiness count; Template Exemptions class 8 reworded to match (no change to any Challenges file). Sections 0–11, Pattern A, and the rest of Template Exemptions unchanged.**
 **Prior: 2026-10-28 — Pattern A (in-file Front / Historical split) adopted by Human Governing Authority ruling, all draft defaults D1–D7: new §Pattern A section (boundary heading `## Historical Record`, placement table, rules R1–R9, checks C1–C8, pilot Plastics/Woodworking one-per-cycle, migration at next substantive touch — no bulk sweep). D5 supersedes PKC-002's "not adopted now" note for the trailing-Status version-history part. Sections 0–11 and Template Exemptions otherwise unchanged.**
 **Prior: 2026-10-25 — Rulings from the Human Ruling List enacted (human-directed; see `Admin/Progress_Log.md`, 2026-10-25): "Proposed" retired as a Status value (PKC-031); Highest Risk takes a Risk value, never a Priority value, with Blocking carrying elevated severity (PKC-004/024); `Admin/Operational_Conventions.md` listed as an exempt reference index (PKC-017); Resolution Log heading level rule (PKC-018); Update Procedure gains the version-bump, sidecar Last Reviewed and fork rules (PKC-039, PKC-035, PKC-029). Sections 0–11 unchanged apart from these additions.**
 **Prior: 2026-10-20 — 10-Entry Rule removed (AP-029, human-directed; ratification completes on commit): the Sidecar Governance Rules paragraph now records the removal and the trigger-table row is deleted; the 20% and Aging rules are unchanged. No other change.**
@@ -160,7 +161,7 @@ The full File Template is **not** applied to every file in the repository. Forci
    - `Challenges/Planned_Obsolescence.md`
    - `Challenges/Waste.md`
    - `Challenges/Water.md`
-   These carry a File State table but Spec Gates is N/A for promotion by subtype design — they define problems, not specifications to be gated toward promotion — and the gates remain live in their reinterpreted act-readiness reading per the §2 Challenges/ File Subtypes doctrine ("Spec Gates still apply, reinterpreted"): the six files carry a live 0–6 count under that reading. This exemption is from build-readiness promotion, not from gate evaluation. (Reconciled 2026-10-28, human ruling — AUDIT_10 F1; the subtype doctrine controls.) Confirmed as an intentional, already-reviewed exemption via a 2026-08-10 pseudo-audit pass on each file (see each file's own Resolution Log: "Spec Gates N/A for Challenges Problem-Statement subtype"), not an oversight. Added here 2026-09-04 to close a documentation gap: the exemption existed in practice and in each file's own record but was never listed in this canonical class list, which had allowed a later fabricated claim (that these files were "missing" the field entirely, an accidental early-cohort gap) to go unchecked against this file before being repeated. `Challenges/Return_To_Eden.md` and `Challenges/Closed_Loop_Feedstock.md` are Solution-Track subtype, not Problem-Statement, and are not exempt — they carry real Spec Gates values.
+   These carry a File State table but Spec Gates is N/A by subtype — they define problems, not specifications to be gated, and the six canonical gates do not apply to them in any reading; no gate count is kept. (Reconciled 2026-10-28, human ruling — AUDIT_10 F1; re-ruled later the same day by Decision Brief 2026-10-28c item 2: "Spec Gates N/A by subtype" governs, superseding the earlier same-day reading that kept a live reinterpreted 0–6 count.) Confirmed as an intentional, already-reviewed exemption via a 2026-08-10 pseudo-audit pass on each file (see each file's own Resolution Log: "Spec Gates N/A for Challenges Problem-Statement subtype"), not an oversight. Added here 2026-09-04 to close a documentation gap: the exemption existed in practice and in each file's own record but was never listed in this canonical class list, which had allowed a later fabricated claim (that these files were "missing" the field entirely, an accidental early-cohort gap) to go unchecked against this file before being repeated. `Challenges/Return_To_Eden.md` and `Challenges/Closed_Loop_Feedstock.md` are Solution-Track subtype, not Problem-Statement, and are not exempt — they carry real Spec Gates values.
 
 9. **Reference index**
    - `Admin/Operational_Conventions.md`
@@ -337,11 +338,9 @@ to be present.
 **Problem-Statement subtype** — names and scopes a real-world problem; does not
 itself converge toward a build. The lean File State schema (Status, Version,
 Owner, Verification Ref, Ethical Anchor) is a deliberate, documented choice for
-this subtype, not a truncated version of the full schema. **Spec Gates still
-apply, reinterpreted** — the six canonical gates test the problem statement's
-own rigor, not build-readiness:
+this subtype, not a truncated version of the full schema. **Spec Gates are N/A by subtype** — per the 2026-10-28c human re-ruling, the six canonical gates do not apply to Problem-Statement files in any reading; no reinterpreted act-readiness count is kept. What a problem statement owes is ordinary problem-rigor hygiene, checked but not gate-evaluated:
 
-| Gate | Problem-Statement reading |
+| Check | Problem-Statement reading |
 |------|------------------------------|
 | G1 — Fallacy Check | Reasoning behind naming this a problem is sound |
 | G2 — Physical Plausibility | The claimed problem doesn't violate physical/scientific fact — is the severity, scarcity, or failure mode actually as claimed? |
@@ -350,9 +349,11 @@ own rigor, not build-readiness:
 | G5 — Cross-Reference Integrity | Cross-references resolve; claims aren't invented |
 | G6 — Conflict Check | No contradiction with existing doctrine |
 
-A Problem-Statement file's Spec Gates count tracks readiness for the repository
-to *act* on the problem — spawn an Operations/ file, register formal Unknowns
-against it, become someone's actual work — not readiness to fabricate anything.
+A Problem-Statement file does not carry a Spec Gates count; its File State reads
+Spec Gates N/A by subtype. Whether the repository is ready to *act* on the problem —
+spawn an Operations/ file, register formal Unknowns against it, become someone's
+actual work — is a human judgment, not a gate value; the problem-rigor checks
+above are advisory hygiene, not promotion gates.
 
 **Solution-Track subtype** — a Challenges/ file that has grown past naming a
 problem into active engineering: worked equations, a telemetry model, a
@@ -636,6 +637,8 @@ The sidecar. Placed after Active Disputes.
 ---
 
 ### Resolution Log
+
+- 2026-10-28 (later same-day): **AUDIT_10 F1 re-ruled + subtype doctrine reworded (Vibe, Repo Custodian — delegated maintenance, human-ratified Decision Brief 2026-10-28c, item 2).** "Spec Gates N/A by subtype" now governs for Challenges Problem-Statement files: the six canonical gates do not apply in any reading and no reinterpreted act-readiness count is kept. This supersedes the same-day earlier reconciliation ("the subtype doctrine controls") recorded below in this log. §2 Challenges/ File Subtypes doctrine and Template Exemptions class 8 reworded to match; header Last-updated advanced. No Challenges file changed.
 
 - 2026-10-28: **Pattern A (Front / Historical Record split) adopted — Human Governing Authority ruling, all draft defaults D1–D7, enacted by Vibe (Repo Custodian, delegated maintenance).** New §Pattern A section added: boundary heading `## Historical Record`, placement table, rules R1–R9, checks C1–C8, pilot Plastics/Woodworking, migration at next substantive touch (no bulk sweep). D5 supersedes PKC-002's "not adopted now" note for the trailing-Status version-history part (the row itself remains open for the human to close). Sections 0–11, Template Exemptions, and the AUDIT_10 F1 Challenges-exemption question untouched. No file migrates today; pilots stage at their own cycles.
 
