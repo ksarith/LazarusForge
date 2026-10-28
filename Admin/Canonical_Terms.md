@@ -1,5 +1,5 @@
 # Canonical_Terms.md — Standard Repository Nomenclature
-**Version 0.10**
+**Version 0.11**
 
 ---
 
@@ -17,8 +17,8 @@
 | Body Stability   | Volatile                                                            |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-10-28 — Vibe (Repo Custodian, delegated maintenance, human-ratified Decision Brief ruling, X3): v0.9 → v0.10 — Folder Designation Characters registered in §1; CT-007 annotated with the ruling and Last Reviewed advanced. Prior: 2026-10-28 — Vibe (Repo Custodian, delegated maintenance, human-ratified findings batch) v0.8 → v0.9, from base v0.8: AUDIT_11 F1–F4 enacted — Open Unknowns recounted 9 → 10 (off-by-one since the 2026-07-05 CT-011 resolution logged the transition as 10 → 9; no unknown opened); two misplaced Resolution Log entries relocated into the log; Version String Registry added; CT-005's bare EC-001 citation qualified. Prior: 2026-10-25 — Claude (human-directed) v0.7 → v0.8, from base v0.7: "Proposed" retired as a status designation (PKC-031) and the unversioned 2026-08-17, 2026-09-14 and 2026-09-23 passes covered by this one bump (PKC-029); see Resolution Log. Prior: 2026-10-24 — Claude (human-directed) corrected "Three vocabulary sources" to four and added a note to the Status section, from a Vibe per-file audit (see Resolution Log). Prior: 2026-09-23                                                          |
-| Auditor          | Vibe — Repo Custodian, 2026-10-28 X3 Folder Designation registration (delegated maintenance, human-ratified); prior: Vibe — 2026-10-28 AUDIT_11 findings enactment (delegated maintenance, human-ratified batch); prior: Claude — 2026-10-25 v0.8 bump and Proposed note (human-directed); prior: Claude — 2026-10-24 wording correction and Status note (human-directed); prior: Claude — Claim-Type Labels registered under §4 (Grok proposer, human-directed), 2026-09-23; prior: Claude — "Disambiguation: Uses of 'Gate'" section added (FL-012, human-directed), 2026-09-14; prior: Claude — four new terms registered (Active Constitutional Surface, Claimed/Recognized/Ratified Constitutional Lineage) at GOV-018 closure, checked against existing vocabulary first — no competing term found (human-directed); prior: Claude — Synthesizer/Auditor (2026-06-24); Claude — Cycle definition + version-string correction (2026-07-05); Claude — CT-011 resolution 2026-07-05 |
+| Last Audit       | 2026-10-28 — Vibe (Repo Custodian, delegated maintenance, human-assigned X3 completion): v0.10 → v0.11 — designations completed: `K` = `Automation/` (kinetic), `B` = base layer (root-level files). Prior: 2026-10-28 — Vibe (Repo Custodian, delegated maintenance, human-ratified Decision Brief ruling, X3): v0.9 → v0.10 — Folder Designation Characters registered in §1; CT-007 annotated with the ruling and Last Reviewed advanced. Prior: 2026-10-28 — Vibe (Repo Custodian, delegated maintenance, human-ratified findings batch) v0.8 → v0.9, from base v0.8: AUDIT_11 F1–F4 enacted — Open Unknowns recounted 9 → 10 (off-by-one since the 2026-07-05 CT-011 resolution logged the transition as 10 → 9; no unknown opened); two misplaced Resolution Log entries relocated into the log; Version String Registry added; CT-005's bare EC-001 citation qualified. Prior: 2026-10-25 — Claude (human-directed) v0.7 → v0.8, from base v0.7: "Proposed" retired as a status designation (PKC-031) and the unversioned 2026-08-17, 2026-09-14 and 2026-09-23 passes covered by this one bump (PKC-029); see Resolution Log. Prior: 2026-10-24 — Claude (human-directed) corrected "Three vocabulary sources" to four and added a note to the Status section, from a Vibe per-file audit (see Resolution Log). Prior: 2026-09-23                                                          |
+| Auditor          | Vibe — Repo Custodian, 2026-10-28 X3 completion — B/K assignments (delegated maintenance, human-assigned); prior: Vibe — Repo Custodian, 2026-10-28 X3 Folder Designation registration (delegated maintenance, human-ratified); prior: Vibe — 2026-10-28 AUDIT_11 findings enactment (delegated maintenance, human-ratified batch); prior: Claude — 2026-10-25 v0.8 bump and Proposed note (human-directed); prior: Claude — 2026-10-24 wording correction and Status note (human-directed); prior: Claude — Claim-Type Labels registered under §4 (Grok proposer, human-directed), 2026-09-23; prior: Claude — "Disambiguation: Uses of 'Gate'" section added (FL-012, human-directed), 2026-09-14; prior: Claude — four new terms registered (Active Constitutional Surface, Claimed/Recognized/Ratified Constitutional Lineage) at GOV-018 closure, checked against existing vocabulary first — no competing term found (human-directed); prior: Claude — Synthesizer/Auditor (2026-06-24); Claude — Cycle definition + version-string correction (2026-07-05); Claude — CT-011 resolution 2026-07-05 |
 | Open Unknowns    | 10                                                                   |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | Low                                                                 |
@@ -244,10 +244,11 @@ Each top-level content folder carries a single case-sensitive designation
 character, assigned by the Human Governing Authority (the "post office zip
 code" scheme). The character identifies a folder and disambiguates ID
 citations at the folder level: `A` = `Admin/`, `R` = `Architecture/`,
-`X` = `Archive/`, `O` = `Operations/`, `C` = `Challenges/`, `T` = `Tests/`.
+`X` = `Archive/`, `O` = `Operations/`, `C` = `Challenges/`, `T` = `Tests/`,
+`K` = `Automation/` (kinetic), `B` = the base layer (root-level files).
 All designations are case-sensitive as written; lowercase forms are unassigned
-and not interchangeable. `Automation/` and root-level files carry no
-designation yet — pending human assignment, not assumed. Scope note: the
+and not interchangeable. All eight assignments are human-assigned (the B and
+K assignments, 2026-10-28, complete the scheme for every top-level location). Scope note: the
 designation narrows ID ambiguity to the folder level; it does not by itself
 resolve within-folder collisions (see CT-007), so PKC-003's qualified-citation
 rule (`File.md ASM-NNN`) remains in force wherever two files in the same
@@ -1151,6 +1152,8 @@ Auditor_Protocols.md specifically, which is now closed.
 
 ### Resolution Log
 
+- 2026-10-28: **X3 scheme completed (Vibe, Repo Custodian — delegated maintenance, human-assigned).** `K` = `Automation/` (kinetic) and `B` = base layer (root-level files) added to the §1 designation list; the scheme now covers every top-level location. `Routing.md` and `Discovery.md` references updated in the same commit (their "pending human assignment" phrasing retired). Header 0.10 → 0.11. Open Unknowns unchanged at 10.
+
 - 2026-10-28: **X3 ruling registered (Vibe, Repo Custodian — delegated maintenance, human-ratified Decision Brief item 1).** Folder Designation Characters entry added to §1: `A`=`Admin/`, `R`=`Architecture/`, `X`=`Archive/`, `O`=`Operations/`, `C`=`Challenges/`, `T`=`Tests/`, all case-sensitive; `Automation/` and root-level files pending human assignment. CT-007 annotated (row stays Open — the designation is folder-level and does not resolve the within-Admin EC- collision or the general namespace doctrine); CT-007 Last Reviewed 2026-07-05 → 2026-10-28. PKC-003's qualified-citation rule remains in force for within-folder collisions. Mechanical retrofit of existing bare IDs is a separate human-authorized pass, not performed here. Referenced in `Routing.md` and `Discovery.md` in the same commit. Header 0.9 → 0.10. Open Unknowns unchanged at 10.
 
 - 2026-10-28: **AUDIT_11 findings enacted (Vibe, Repo Custodian — delegated maintenance, human-ratified findings batch 2026-10-28).** Open Unknowns recounted 9 → 10 (the count has been off by one since the 2026-07-05 CT-011 resolution recorded the transition as 10 → 9; no unknown opened); the two misplaced entries (2026-06-26, 2026-07-03) relocated from below the Status block into this log with a dated marker; Version String Registry section added; CT-005's bare EC-001 citation qualified. Header 0.8 → 0.9. Report: Archive/Audits/AUDIT_11_Admin-Canonical_Terms.md.
@@ -1332,14 +1335,20 @@ Auditor_Protocols.md specifically, which is now closed.
 
 | Location | String | Rule |
 |---|---|---|
-| Header line | **Version 0.10** | Authoritative; bumped on every text change (PKC-039) |
-| Status section current line | Version 0.10 (2026-10-28) | Updated in the same pass as the header; the header prevails on any disagreement |
+| Header line | **Version 0.11** | Authoritative; bumped on every text change (PKC-039) |
+| Status section current line | Version 0.11 (2026-10-28) | Updated in the same pass as the header; the header prevails on any disagreement |
 
 *Added 2026-10-28 (AUDIT_11 F3) — this file carries self-referential version strings in its Status log and had no registry after the 2026-07-05 header-vs-Status desync, the exact FAK-014–019 failure mode. — Vibe, delegated maintenance.*
 
 ---
 
 ## Status
+
+Version 0.11 (2026-10-28) — X3 scheme completed (delegated maintenance, human-assigned): `K` = `Automation/` (kinetic) and `B` = base layer (root-level files) added to §1; Routing/Discovery references updated in the same commit. No unknown opened or closed; Open Unknowns stay at 10.
+
+**Changes from v0.10:**
+- §1: K and B assignments added; scheme complete for every top-level location
+- Header version string 0.10 → 0.11
 
 Version 0.10 (2026-10-28) — X3 ruling registered (delegated maintenance, human-ratified): Folder Designation Characters entry added to §1 (A/R/X/O/C/T, case-sensitive; Automation/ and root pending assignment); CT-007 annotated with the ruling, Last Reviewed advanced; Resolution Log entry added. No unknown opened or closed; Open Unknowns stay at 10.
 
