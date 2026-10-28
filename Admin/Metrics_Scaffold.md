@@ -9,10 +9,26 @@
 |------------------|----------------------------------------------------------------------|
 | Status           | Active — Scaffold Only (no data collection required yet)            |
 | Spec Gates       | N/A — this file defines a measurement taxonomy, not a specification |
+| Verification Ref | Admin/Verification_Gates.md |
 | Open Unknowns    | 0                                                                     |
 | Owning Domain    | Admin/                                                                |
-| Last Reviewed    | 2026-09-24                                                            |
+| Last Reviewed    | 2026-10-28                                                            |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present.   |
+
+---
+
+## Scope Boundary
+
+**This file DOES define:**
+- Define what each Lane C metric counts, its unit, its start/stop or inclusion boundary, and its log location, precisely enough that two independent agents would count the same event the same way.
+- State the minimum viable one-line record format for when a metric is first populated.
+
+**This file DOES NOT define:**
+- Collect, compute, or report any data itself — it is a taxonomy, not a dashboard.
+- Modify, extend, or depend on `Automation/AUDIT_HARNESS.py` or `Automation/integrity_check.py`. Those remain the integrity layer (cross-reference resolution, File State/Ethical Anchor enforcement, unknown aging, version-string drift); this file is the feedback/measurement layer. The two are orthogonal and neither reads the other.
+- Duplicate `Unknowns.md`'s Active Index — Unknowns-opened/resolved counts already live there and in `Archive/Logs/Unknowns_Changelog.md`; this file only names them as governance metrics for completeness and points back rather than restating.
+- Invent numeric targets, thresholds, or scoring. No metric here implies a pass/fail bar.
+- Expand into knowledge-substrate work beyond the already-ratified Claim-Type Labels (`Admin/Canonical_Terms.md` §4) — a metric's own value is not itself claim-typed by this file.
 
 ---
 
@@ -20,16 +36,15 @@
 
 Created 2026-09-24 to close the Lane C ("Make it learn," per `Admin/Progress_Log.md`'s Forward Growth Avenues) gap between having a stated ambition — measure the Forge's own effectiveness — and having anywhere defined to put a measurement once one exists. Pure documentation. Every counter below starts empty; nothing here requires backfilling history or standing up new tooling.
 
-**This file DOES:**
-- Define what each Lane C metric counts, its unit, its start/stop or inclusion boundary, and its log location, precisely enough that two independent agents would count the same event the same way.
-- State the minimum viable one-line record format for when a metric is first populated.
+---
 
-**This file does NOT:**
-- Collect, compute, or report any data itself — it is a taxonomy, not a dashboard.
-- Modify, extend, or depend on `Automation/AUDIT_HARNESS.py` or `Automation/integrity_check.py`. Those remain the integrity layer (cross-reference resolution, File State/Ethical Anchor enforcement, unknown aging, version-string drift); this file is the feedback/measurement layer. The two are orthogonal and neither reads the other.
-- Duplicate `Unknowns.md`'s Active Index — Unknowns-opened/resolved counts already live there and in `Archive/Logs/Unknowns_Changelog.md`; this file only names them as governance metrics for completeness and points back rather than restating.
-- Invent numeric targets, thresholds, or scoring. No metric here implies a pass/fail bar.
-- Expand into knowledge-substrate work beyond the already-ratified Claim-Type Labels (`Admin/Canonical_Terms.md` §4) — a metric's own value is not itself claim-typed by this file.
+## Assumptions
+
+| ID      | Assumption | Basis    | Confidence | Expiry Trigger                    |
+|---------|------------|----------|------------|-----------------------------------|
+| ASM-001 | Metric definitions as written are precise enough that two independent agents would count the same event the same way. | Stated design goal at creation (Purpose); not yet tested — no metric has ever been populated. | Medium | First real population attempt shows divergent counting. |
+| ASM-002 | A scaffold-only file with zero recorded measurements remains the right granularity for Lane C at this stage. | Lane C is not yet active; no data exists to collect and no tooling is owed. | High | First metric is populated, or a dashboard/collection requirement is raised. |
+| ASM-003 | The measurement layer and the integrity layer remain orthogonal: no `Automation/` tool tracks Lane C metrics or this file, and this file does not depend on either tool. | Verified against live source at filing (2026-09-24, Claude) and re-verified 2026-10-28 (AUDIT_17 F4). | High | Either side gains a feature that reads or tracks the other's content. |
 
 ---
 
@@ -77,7 +92,31 @@ No dashboard, no automation, and no new unknown are required. The scaffold exist
 
 ---
 
-## Resolution Log
+## Lessons Learned
+
+| Date | Evidence Type | What Was Tried | What Failed | What Was Learned | Confidence | Revalidation Needed |
+|------|---------------|----------------|-------------|------------------|------------|---------------------|
+
+None yet — the scaffold was created 2026-09-24 and no metric has been populated; nothing has been tried against it, successfully or otherwise.
+
+---
+
+## Active Disputes
+
+| ID | Summary | Positions in Conflict | Risk | Status | Owner |
+|----|---------|-----------------------|------|--------|-------|
+
+None. No interpretation conflict is currently open against this file or its metric definitions.
+
+---
+
+## Auditor Notes & Unknowns
+
+No open unknowns. (File State Open Unknowns: 0 — AUDIT_17 checklist item 5 re-verified live that no `MS-`-prefixed IDs exist anywhere and no Metrics_Scaffold cluster is owed in `Unknowns.md`.)
+
+### Resolution Log
+
+- 2026-10-28: **AUDIT_17 F1–F3 enacted (human-ratified same day; enacted by Vibe, Repo Custodian, delegated maintenance).** F1: `Verification Ref` row added to File State, pointing at `Admin/Verification_Gates.md` — clears the guaranteed `AUDIT_HARNESS.py` Phase 1 Check 2 flag on this file. F2: template-section gaps closed — `## Scope Boundary` added (the DOES/DOES-NOT lists moved out of Purpose into it, relabeled to the canonical **This file DOES define / DOES NOT define** form; bullet text unchanged), plus `## Assumptions` (ASM-001–003, drawn from the file's own stated claims), `## Lessons Learned`, `## Active Disputes`, `## Auditor Notes & Unknowns`, and `## Drift Indicators`. F3: standalone top-level `## Resolution Log` folded to `### Resolution Log` nested under Auditor Notes & Unknowns (the PKC-018 new-files form), this entry prepended newest-first. Last Reviewed advanced 2026-09-24 → 2026-10-28 — first substantive touch since creation. §1–§4 metric definitions, the Purpose paragraph, and every claim verified clean by AUDIT_17 (F4) otherwise untouched; no version string exists to bump (AUDIT_17 checklist item 10). Findings report: `Archive/Audits/AUDIT_17_Admin-Metrics_Scaffold.md`.
 
 - 2026-09-24: **File created.** Lane C metrics scaffold — nine development/
   governance metric definitions plus a physical-metrics placeholder and a
@@ -93,3 +132,18 @@ No dashboard, no automation, and no new unknown are required. The scaffold exist
   Automation/ "what these tools do / do not do" claims directly against
   `AUDIT_HARNESS.py` and `integrity_check.py` source; no correction
   required). Human-directed.
+
+
+---
+
+## Drift Indicators
+
+Re-audit this file if any of the following activate:
+
+- A numeric target, threshold, or scoring bar is added to any metric (violates this file's own DOES-NOT-define list).
+- A metric is populated here in the file body rather than recorded at its named log location in the §4 one-line format.
+- `Open Unknowns` in File State disagrees with the sidecar, or an `MS-`-prefixed ID appears anywhere.
+- A reference to this file, Lane C, or any metric name defined here appears in `Automation/AUDIT_HARNESS.py` or `Automation/integrity_check.py`, or this file grows a dependency on either — orthogonality breach (ASM-003; AUDIT_17 F4 claim).
+- ASM-001–003 pass their expiry triggers without review or migration to the sidecar.
+- Ethical Anchor absent, altered, or not the canonical string; `Verification Ref` not pointing at `Admin/Verification_Gates.md`.
+- Navigation Anchors block absent or URLs modified from canonical values.
