@@ -17,6 +17,10 @@ elsewhere. Every other file in the repository keeps its sidecar in-body.
 
 ────────────────────────────────────────────────────────────────────
 
+## v1.24 (2026-10-28)
+
+Vibe (Repo Custodian) — delegated maintenance, human-ratified findings batch 2026-10-28. Governance Sidecar ID Reference regenerated in part (X5): CF- row added (`Architecture/Cognitive_Frameworks.md`, per AUDIT_06 F-recommendations) and GMP- row restored (`Admin/Governance_Migration_Protocol.md`, per AUDIT_02 recommendation 3); ASM- disambiguation note added — ASM- is defined in seven or more files and awaits the human namespace ruling (X3), so no single owning-file row can be written for it yet. No condensed doctrine content changed; no gate advanced; Open Unknowns unchanged at 5. Header 1.23→1.24.
+
 ## Sidecar — Auditor Notes & Unknowns
 
 **FAK-001** — Kit version maintenance trigger not formally owned. Maintenance trigger defined in How to Use. Status: Open — formal ownership assignment still needed.

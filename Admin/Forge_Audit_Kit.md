@@ -1,5 +1,5 @@
 # Forge_Audit_Kit.md
-**Version 1.23**
+**Version 1.24**
 
 ---
 
@@ -266,13 +266,17 @@ Non-obvious governance prefixes only. All operational prefixes: load `Discovery.
 |--------|-------------|
 | AP-    | `Admin/Auditor_Protocols.md` |
 | CT-    | `Admin/Canonical_Terms.md` |
+| CF-    | `Architecture/Cognitive_Frameworks.md` |
 | CIR-   | `Admin/Computational_Institutional_Reasoning.md` |
 | EC-    | `Admin/Ethical_Constraints.md` |
 | FAK-   | `Admin/Forge_Audit_Kit.md` |
 | GH-    | `Tests/Cognitive_Salvage_Layer.md` |
 | GOV-   | `Admin/Governance_Charter.md` |
+| GMP-   | `Admin/Governance_Migration_Protocol.md` |
 | RIP-   | `Admin/Repository_Integrity_Protocol.md` |
 | SEC-   | `Admin/Security_Protocols.md` |
+
+*Note (2026-10-28, delegated maintenance): ASM- is deliberately absent from this table — it is defined in seven or more files (X3: Charter, RIP, GMP, Safety_Protocols, Engineer_Protocols, Verification_Gates, Canonical_Terms, plus Components.md and Gate_02 per citations) and awaits the human namespace ruling; cite ASM- with its qualifying File.md until then. CF- and GMP- rows added per the AUDIT_06/AUDIT_02 recommendations (X5 partial regeneration).*
 
 ---
 
@@ -336,7 +340,9 @@ closure notes on each entry in the changelog sidecar.
 Full history: `Archive/Logs/Forge_Audit_Kit_Changelog.md` (relocated out of this
 kit at v1.10 — add new entries there, not here).
 
-Most recent: v1.23 (2026-10-27) — Pin retirement enacted (human ruling, PKC-022 option B, ratification completes on commit): the Derived-from line's version pins are retired (sources and reconciliation date kept); the reconciliation check at audit start reworded to read source content histories, not version deltas; FAK-014 through FAK-019 closed by the same ruling (the recurring pin-staleness class is dissolved, not refreshed); Open Unknowns 11 → 5; header 1.22→1.23. Changelog entry and closure notes in `Archive/Logs/Forge_Audit_Kit_Changelog.md`.
+Most recent: v1.24 (2026-10-28) — ID Reference regenerated in part (CF- and GMP- rows added; ASM- note added pending the X3 ruling). Header 1.23→1.24. Changelog entry in `Archive/Logs/Forge_Audit_Kit_Changelog.md`.
+
+Prior: v1.23 (2026-10-27) — Pin retirement enacted (human ruling, PKC-022 option B, ratification completes on commit): the Derived-from line's version pins are retired (sources and reconciliation date kept); the reconciliation check at audit start reworded to read source content histories, not version deltas; FAK-014 through FAK-019 closed by the same ruling (the recurring pin-staleness class is dissolved, not refreshed); Open Unknowns 11 → 5; header 1.22→1.23. Changelog entry and closure notes in `Archive/Logs/Forge_Audit_Kit_Changelog.md`.
 
 Prior: v1.22 (2026-10-27) — Targeted derivation re-pin and PKC-020 incorporation (human-authorized; PKC-022 lag clearance): Derived-from line re-pinned to `Auditor_Protocols.md` v0.45 and `Unknowns.md` v5.71 (`Verification_Gates.md` confirmed unchanged at v0.7); the condensed AI Contribution Rules Rule 10 gained the PKC-020 findings-only sub-rule from AP v0.45's Rule 10 addendum; FAK-019 logged (seventh occurrence of the pin-staleness pattern); Open Unknowns 10 → 11; header 1.21→1.22. The pin-vs-retire structural question is untouched and remains open by human direction. Changelog entry added in `Archive/Logs/Forge_Audit_Kit_Changelog.md`.
 
