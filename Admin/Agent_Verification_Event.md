@@ -5,9 +5,12 @@
 | Status           | Candidate / Exploration |
 | Body Stability   | Volatile |
 | Spec Gates       | 0/6 |
+| Last Audit       | 2026-10-28 — Vibe (Repo Custodian, delegated maintenance, human-ratified Decision Brief 2026-10-28d): File State completed — Highest Risk, Last Audit and Auditor added (AUDIT_27 F1); Highest Risk set to the own-sidecar maximum (AVE-R1 Medium (Placeholder)). Prior passes: content last changed 2026-10-10; 2026-10-23 Resolution Log reorder only |
+| Auditor          | Vibe — Repo Custodian, 2026-10-28 File State completion (delegated maintenance, human-ratified Decision Brief 2026-10-28d); prior: Grok — schema draft 2026-09-07 (human-directed); human-confirmed Risk/Priority rankings 2026-10-10; human-directed log reorder 2026-10-23 |
 | Open Unknowns    | 4 (sidecar at end of file, all non-blocking); AVE-R1 and AVE-R4 also indexed in `Unknowns.md` |
+| Highest Risk     | Medium (Placeholder — AVE-R1) |
 | Owner            | `Admin/Agent_Verification_Event.md` (process schema); operational samples may land in `Tests/Field_Logs.md` |
-| Last Updated     | 2026-10-23 (Resolution Log reorder only; content last changed 2026-10-10) |
+| Last Updated     | 2026-10-28 (File State completed — Highest Risk, Last Audit, Auditor added per AUDIT_27 F1; no schema, rule or doctrine change. Prior: 2026-10-23 Resolution Log reorder only; content last changed 2026-10-10) |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
 ---
@@ -168,6 +171,8 @@ Tracked as sidecar entries in **Auditor Notes & Unknowns** at the end of this fi
 ---
 
 ## Resolution Log
+
+- 2026-10-28: **File State completed** (Vibe, Repo Custodian — delegated maintenance, human-ratified Decision Brief 2026-10-28d; AUDIT_27 F1). Highest Risk, Last Audit and Auditor fields added to the File State header; Highest Risk set to "Medium (Placeholder — AVE-R1)" — the own-sidecar maximum, per the Charter's Risk-not-Priority convention. This ends the four-way risk-representation divergence (in-file sidecar Medium (Placeholder) / Discovery editorial "Low" / Scope Map "unlabeled" / no field): the owning file now carries the value and the indexes mirror it ("file wins"). No schema, rule, reliance-limit or doctrine change; no unknown opened or closed.
 
 - 2026-10-23: **Log order corrected** (human-directed, from a Vibe per-file audit): the second 2026-10-10 entry (residuals AVE-R1 to AVE-R4 converted to sidecar entries) moved above the 2026-09-07 entry so the log reads newest-first. Entries themselves unchanged; no doctrine, Unknown or Status change.
 

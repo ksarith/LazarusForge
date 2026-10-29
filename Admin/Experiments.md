@@ -14,8 +14,8 @@
 | Body Stability   | Stub                                                                |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | `Admin/Verification_Gates.md`                                    |
-| Last Audit       | 2026-10-06 (boundary clarification — ChatGPT assessment, human-directed; see Resolution Log); header corrected 2026-10-24 (Claude, human-directed, from a Vibe per-file audit). Prior: 2026-06-21                                                          |
-| Auditor          | ChatGPT — assessment 2026-10-06 (human-directed); Claude — header correction 2026-10-24 (human-directed); prior: Claude — Synthesizer                                                |
+| Last Audit       | 2026-10-28 — Vibe (Repo Custodian, delegated maintenance, human-ratified Decision Brief 2026-10-28d): candidates note clarified per AUDIT_28 F5 — one explanatory line under the Experiments section; no schema, entry or boundary change. Prior: 2026-10-06 (boundary clarification — ChatGPT assessment, human-directed; see Resolution Log); header corrected 2026-10-24 (Claude, human-directed, from a Vibe per-file audit). Prior: 2026-06-21                                                          |
+| Auditor          | Vibe — Repo Custodian, 2026-10-28 candidates-note clarification (delegated maintenance, human-ratified Decision Brief 2026-10-28d); prior: ChatGPT — assessment 2026-10-06 (human-directed); Claude — header correction 2026-10-24 (human-directed); prior: Claude — Synthesizer                                                |
 | Open Unknowns    | 0                                                                   |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | Low                                                                 |
@@ -96,6 +96,8 @@ Each experiment occupies one named section. Five fields required. No entry may b
 
 *No **physical** entries yet in this file. Process/capability Field_Logs exist under `Tests/Field_Logs/` (e.g. CAP-meta-stale-01, AVE sample 01). First entries **here** when physical testing begins on priority unknowns. Candidates: CF-001 (hardware watchdog), EN-001 (salvaged material safety factors), CE-003 (field polymer identification).*
 
+*(Candidates = priority unknown targets for future entries, not entries — they carry none of the five Entry Schema fields and do not count as logged experiments. Clarified 2026-10-28, AUDIT_28 F5, human-ratified Decision Brief 2026-10-28d.)*
+
 ---
 
 ## Assumptions
@@ -128,6 +130,8 @@ Each experiment occupies one named section. Five fields required. No entry may b
 ---
 
 ## Resolution Log
+
+- 2026-10-28: **Candidates note clarified** (Vibe, Repo Custodian — delegated maintenance, human-ratified Decision Brief 2026-10-28d; AUDIT_28 F5). One explanatory line added under the Experiments section: the three named candidates are priority unknown targets for future entries, not entries — they carry none of the five Entry Schema fields. Removes the ambiguity by which the file's own drift indicator ("File begins accumulating speculative future experiments...") could be read to fire on its own candidates note. No schema, entry, boundary or gate change; no unknown opened or closed.
 
 - 2026-10-24: Header corrected (human-directed, from a Vibe per-file audit; checked against source first): Last Audit and Auditor now cover the 2026-10-06 boundary clarification, which changed the Scope Boundary, File Purpose and the entries note but had not advanced them. No body text, Unknown or Spec Gate changed.
 
