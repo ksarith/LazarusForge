@@ -1,5 +1,5 @@
 # PROBE_INVOCATION.md
-**Version 1.1**
+**Version 1.2**
 
 ## File State
 
@@ -8,8 +8,8 @@
 | Status         | Draft                                                               |
 | Spec Gates     | N/A — operational prompt template, not a doctrine or specification claim |
 | Verification Ref | Admin/Auditor_Protocols.md §Mission Drift Review                  |
-| Last Audit     | 2026-08-02                                                          |
-| Auditor        | Claude — Synthesizer/Auditor, human-directed, 2026-08-02: History Appendix added (post-Cycle-3 Atrophied detection, inactive until Cycle 4), independence language strengthened to match `cold_session_bundler.py`'s bar; prior: Claude — Synthesizer/Auditor, human-directed, first draft, 2026-07-26 |
+| Last Audit     | 2026-10-29 — Vibe (Repo Custodian, delegated line, human-ruled cycle ruling "MDR Cycle 1 executes now"): Mission Drift Review Cycle 1 COMPLETED — History Appendix Cycle 1 column and Cycle-1 metadata filled per the operator workflow (ratings only, no prose/citations); Resolution Log entry added; ratification counter reset to 0 as of Cycle 1 (the physical counter field in Admin/Auditor_Protocols.md §Mission Drift Review updates at that file’s campaign audit — X3 deferral stands; the log record is authoritative meanwhile). The 3 deferred bare AP citations (AUDIT_30 F4) resolved: all sit in frozen Resolution Log history or adjacency-qualified File State cells — permanently out of in-place scope by the frozen-history rule; annotation-only disposition stands (MAINT-11). Prior: 2026-08-02 |
+| Auditor        | Vibe — Repo Custodian, 2026-10-29 MDR Cycle 1 completion record (delegated line, human-ruled); prior: Claude — Synthesizer/Auditor, human-directed, 2026-08-02: History Appendix added (post-Cycle-3 Atrophied detection, inactive until Cycle 4), independence language strengthened to match `cold_session_bundler.py`'s bar; prior: Claude — Synthesizer/Auditor, human-directed, first draft, 2026-07-26 |
 | Open Unknowns  | 0 — tracked at Admin/Auditor_Protocols.md AP-030 (mechanism-level, not template-level) |
 | Ethical Anchor | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
@@ -87,14 +87,14 @@ Also label how strong that citation is, using this project's own evidence scale:
 
 | Axiom | Rating | Evidence label | Citation |
 |---|---|---|---|
-| P-1 Preservation of Life | | | |
-| P-2 Growth and Truth-Seeking | | | |
-| P-3 Collaboration and Mutual Benefit | | | |
-| P-4 Agency and Consent | | | |
-| Q-1 Reality Grounding | | | |
-| Q-2 Separation of Powers | | | |
-| Q-3 Corrigibility | | | |
-| Q-4 Provenance and Anti-Deception | | | |
+| P-1 Preservation of Life | Insufficient Evidence | | |
+| P-2 Growth and Truth-Seeking | Aligned | | |
+| P-3 Collaboration and Mutual Benefit | Weakened | | |
+| P-4 Agency and Consent | Aligned | | |
+| Q-1 Reality Grounding | Aligned | | |
+| Q-2 Separation of Powers | Aligned | | |
+| Q-3 Corrigibility | Aligned | | |
+| Q-4 Provenance and Anti-Deception | Aligned | | |
 
 ### History Appendix (ratings only — activate only from Cycle 4 onward)
 
@@ -119,7 +119,7 @@ The table below contains **prior probe ratings only**. It exists solely so you c
 | Q-4 Provenance and Anti-Deception | | | | | |
 
 **Cycle metadata (for operator use only — ignore for scoring):**
-- Cycle 1 date / ratification count at trigger:
+- Cycle 1 date / ratification count at trigger: 2026-10-29 / 5 (velocity trigger fired; the 60-day backstop had also elapsed ~2026-09-24 — dual trigger, AUDIT_30 F3; missed-backstop lapse folded into the Cycle 1 output per human ruling)
 - Cycle 2 date / ratification count at trigger:
 - Cycle 3 date / ratification count at trigger:
 - …
@@ -133,6 +133,8 @@ When you escalate a rating to Atrophied, note it explicitly in the Citation cell
 ---
 
 ## Resolution Log
+
+- 2026-10-29: v1.2 — Vibe (Repo Custodian, delegated line, human-ruled cycle ruling "MDR Cycle 1 executes now"). Cycle 1 completed: the cold-start probe ran in a fresh thread on the human’s side (this session has read the MDR design, so an in-session run was invalid per the cold-start rule); the raw output is the Invocation Record in `Archive/Logs/Auditor_Protocols_Logs.md` (AP-030 section). Per the operator workflow: the eight ratings extracted into the History Appendix Cycle 1 column (ratings only — no Phase A prose, evidence labels, or citations) and the Cycle-1 metadata line filled (2026-10-29 / 5, dual trigger). Ratings: P-1 Insufficient Evidence, P-2 Aligned, P-3 Weakened, P-4 Aligned, Q-1..Q-4 Aligned; no Silent ratings, so no escalation. The appendix stays inactive for scoring until Cycle 4 — operators pasting Cycles 2–3 keep the block’s appendix blank and unmentioned as instructed. Ratification counter reset to 0 as of this cycle; the physical counter in `Admin/Auditor_Protocols.md` §Mission Drift Review updates at that file’s campaign audit (X3 deferral stands). AUDIT_30 F4’s 3 bare AP citations: all located in frozen Resolution Log history or adjacency-qualified File State cells — in-place qualification is permanently out of scope by the frozen-history rule; annotation-only disposition stands (MAINT-11). No change to trigger cadence, canonical inputs, or Step 1/Step 2 structure.
 
 - 2026-08-02: v1.1 — human-directed, verified against source before merge.
   Added the History Appendix (ratings-only table, inactive until Cycle
