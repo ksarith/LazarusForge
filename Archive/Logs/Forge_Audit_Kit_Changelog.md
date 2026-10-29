@@ -17,6 +17,12 @@ elsewhere. Every other file in the repository keeps its sidecar in-body.
 
 ────────────────────────────────────────────────────────────────────
 
+## v1.27 (2026-10-29)
+
+Vibe (Repo Custodian) — delegated maintenance, human-ratified kit-ceiling retirement (release-1.29 follow-on; human ruling 2026-10-29). (1) FAK-005 Resolved: the character-count ceiling retired as a Drift Indicator — the 12,000 (re-baselined 35,000) threshold was a constraint of the kit's mobile paste-instrument era (cut-paste size limits, token-condensed run-time loading), not an intrinsic virtue of an audit instrument; audits now run by full-archive fetch and direct prompting (FAK-014's 2026-09-03 record), so the trigger is dissolved, not re-baselined (PKC-022, option B precedent). Kit size remains a reported trend metric, not a trigger. (2) New Drift Indicator in its place: the kit body must not carry changelog-homed history — latest entries plus pointer only. (3) One-time history relocation to this file, §Relocated In-Body History: the Last Audit row's pre-v1.23 Prior chain, the Auditor row's pre-2026-10-27 entries, and the Resolution Log's Priors v1.19 and older, all verbatim; their full accounts were already in §Version History. (4) Same-pass parity: Kit File State Open Unknowns 5 → 4; `Unknowns.md` v5.75 (FAK-005 row Resolved, cluster note reconciled); `Admin/Adm_Scope_Map.md` Kit entry 5 → 4; §Sidecar FAK-005 closure note below. Header 1.26→1.27. No gate advanced; Spec Gates unchanged.
+
+────────────────────────────────────────────────────────────────────
+
 ## v1.26 (2026-10-28)
 
 Vibe (Repo Custodian) — delegated maintenance, human-ratified batch 2026-10-28c. (1) AUDIT_15 F1/F2: ## File Purpose, ## Assumptions, ## Active Disputes and ## Lessons Learned sections added — the kit carried the working content but had never stated purpose or assumptions, and lacked the template-mandated dispute/lessons sections (lessons seeded from the FAK-014–018 citation-staleness recurrence). (2) X4: Rule 11 (RIP-form logging standard) added to AI Contribution Rules — every body-editing pass records its own dated Resolution Log entry in the target file. (3) X1/X9: Post-Audit Cross-Reference gains the same-pass reconciliation check (Scope Boundary reconciled; pending-narration resolved in-pass, not deferred). (4) X5: the ASM- disambiguation note upgraded to a full known-series table (Charter/RIP/Safety_Protocols ASM-001–006; GMP, Verification_Gates, Canonical_Terms as series; Engineer_Protocols ASM-001–004; Repository_Structure/Metrics_Scaffold ASM-001–003; Economics ASM-001–005; Components.md/Gate_02 per citations); remaining-prefix regeneration proceeds as the sweep reaches folders. Header 1.25→1.26. No gate advanced; Spec Gates unchanged.
@@ -35,7 +41,7 @@ Vibe (Repo Custodian) — delegated maintenance, human-ratified findings batch 2
 
 **FAK-004** — Index triage policy (critical watch list, adopted v1.1) was never formally ratified. **Resolved (v1.10, human-directed):** approach superseded rather than ratified. Pre-loading an auditor with expected findings before it reads the target file undermines independent verification (EF-0.1: precedent and consensus are disqualified as evidence) — this is the same failure mode as agent-convergence-without-verification, just at the checklist-design level instead of the finding level. Resolution: critical watch list removed from the pre-audit checklist; `Unknowns.md` cross-referencing moved to Post-Audit Cross-Reference, performed only after independent findings are drafted. Lessons Learned: a checklist step can itself introduce the bias an audit is supposed to catch — worth auditing the audit process, not just its outputs. Status: Resolved — Discharge via Lessons Learned.
 
-**FAK-005** — Character-count reduction pass at v1.3 reached ~16,950 chars; EF condensed reference and Audit Opening Checklist were ruled load-bearing, not bloat. Growth since — Resolution Log narrative, Auditor Notes narrative, and especially the critical watch list (FAK-004) — brought the kit to 35,112 chars by v1.9. **v1.10 pass:** Resolution Log externalized here; FAK-* entries trimmed to this kit's own Discharge Procedure format; critical watch list removed (FAK-004). Post-reduction count: ~25,100 chars in-kit (28% reduction from v1.9's 35,112). **v1.11:** sidecar and battery record also relocated here — see intro above. Status: Open — the 12,000-char ceiling parameter itself still hasn't been revisited; ceiling flag remains active as a Drift Indicator on the kit body.
+**FAK-005** — Character-count reduction pass at v1.3 reached ~16,950 chars; EF condensed reference and Audit Opening Checklist were ruled load-bearing, not bloat. Growth since — Resolution Log narrative, Auditor Notes narrative, and especially the critical watch list (FAK-004) — brought the kit to 35,112 chars by v1.9. **v1.10 pass:** Resolution Log externalized here; FAK-* entries trimmed to this kit's own Discharge Procedure format; critical watch list removed (FAK-004). Post-reduction count: ~25,100 chars in-kit (28% reduction from v1.9's 35,112). **v1.11:** sidecar and battery record also relocated here — see intro above. Status: Resolved — closed 2026-10-29 by human ruling (Kit v1.27, PKC-022 option-B precedent: dissolve, don't refresh): the ceiling was a constraint of the kit's mobile paste-instrument era (cut-paste size limits, token-condensed run-time loading), not an intrinsic virtue of an audit instrument; with audits now performed by full-archive fetch and direct prompting, the trigger's cause of record is gone and the ceiling retired as a Drift Indicator rather than being re-baselined. Kit size remains a reported trend metric, not a trigger. Closure recorded same-pass in Kit File State (Open Unknowns 5 → 4), `Unknowns.md` v5.75, and `Admin/Adm_Scope_Map.md`.
 
 **FAK-006** — Resolved Unknown Discharge Procedure canonized here at v1.4 from organically-emerged RIP-001 practice; per this kit's own Scope Boundary, full procedural doctrine belongs in `Admin/Auditor_Protocols.md`. Status: Open — condensed version live in the kit; full-doctrine migration to `Admin/Auditor_Protocols.md` still pending.
 
@@ -361,3 +367,53 @@ That check has now been run. `AUDIT_HARNESS.py` line 368: `CURRENT_CYCLE = 10   
   partially corrected for the same reason (AP-012/AP-016 removed, RIP-001
   and SEC-007 updated to current split/resolved state); full v4.0→v4.9
   refresh still not done, FAK-007 remains open.
+
+────────────────────────────────────────────────────────────────────
+
+## Relocated In-Body History (2026-10-29, v1.27 history-relief pass)
+
+The kit body carried these condensed records until v1.27; relocated here verbatim to the changelog's designated home — the kit's new duplication Drift Indicator now enforces this boundary. Full accounts were already in §Version History above.
+
+### Last Audit row — pre-v1.23 Prior chain
+
+Prior: 2026-10-27 — Vibe (human-authorized targeted refresh, PKC-022 lag clearance): Derived-from line re-pinned (`Auditor_Protocols.md` v0.42 → v0.45, `Unknowns.md` v5.58 → v5.71; `Verification_Gates.md` checked and unchanged at v0.7); condensed Rule 10 extended with the PKC-020 findings-only sub-rule from AP v0.45's Rule 10 addendum; FAK-019 logged (seventh pin-staleness occurrence; pin-vs-retire structural question stays open by human direction). Header 1.21→1.22. Prior: 2026-10-27 — Claude (human-authorized autonomous management; PKC-042): Spec Gates hold reason annotated; header 1.20→1.21; no gate advanced; no derivation-reconciliation pass due (annotation only, not a maintenance-trigger change). Prior: 2026-10-10 — Claude, human-directed refresh: derivation citations updated (`Auditor_Protocols.md` v0.41 → v0.42, `Unknowns.md` v5.57 → v5.58) and the role-declaration string to v0.42; FAK-018 logged (sixth occurrence; the structural question stays open). Same-day mitigation: role-declaration example now uses a live-version placeholder, the Derived-from line is labeled as reconciled-against, and the maintenance trigger is now content-based (a plain version increment is not a trigger; reconciliation check at audit start). Prior: 2026-10-03 — Grok, human-directed: derivation citation to `Unknowns.md` had gone stale a fifth time (v5.27 → live v5.57, 30 versions). Same recurring citation-staleness pattern previously logged as FAK-014/015/016. Logged as FAK-017. Citation refreshed to v5.57; header bumped 1.18→1.19. Prior: 2026-09-15 — Claude, FAK-016 (fourth occurrence, automated audit path).
+
+### Auditor row — pre-2026-10-27 entries
+
+prior: Claude — v1.20 FAK-018 logged, derivation and role-declaration strings refreshed, header 1.19→1.20 (human-directed), 2026-10-10; Grok — v1.19 FAK-017 logged (fifth occurrence of the citation-staleness pattern), derivation citation refreshed to Unknowns.md v5.57, header 1.18→1.19 (human-directed), 2026-10-03; Claude — v1.18 FAK-016 logged, 2026-09-15; prior history retained in Resolution Log / Changelog
+
+### Resolution Log — Priors v1.19 and older
+
+Prior: v1.19 (2026-10-03) — FAK-017 logged: derivation citation
+to `Unknowns.md` had gone stale a fifth time (v5.27 → live v5.57, 30
+versions). Same recurring citation-staleness pattern previously logged
+as FAK-014/015/016. Citation refreshed to v5.57; header 1.18→1.19.
+Open Unknowns 8 → 9. Full account in `Archive/Logs/Forge_Audit_Kit_Changelog.md`.
+
+Prior: v1.18 (2026-09-15) — FAK-016 logged: derivation citation
+to `Unknowns.md` had gone stale a fourth time (v5.10 → live v5.27),
+surfaced this time by an automated integrity-audit report rather than
+a human prompt. Header also caught up 1.16→1.18 — the v1.17 bump the
+Resolution Log already claimed had never actually landed on the header
+field. Citation refreshed to v5.27. Open Unknowns 7 → 8.
+Full account in `Archive/Logs/Forge_Audit_Kit_Changelog.md`.
+
+Prior: v1.17 (2026-09-10) — FAK-015 logged: derivation citation
+to `Unknowns.md` had gone stale a third time (v4.93 → live v5.10),
+the same recurring pattern FAK-014 already named as structurally
+unfixed. Citation refreshed to v5.10. Also fixed a desynced summary
+line that had never counted FAK-014. Open Unknowns 6 → 7.
+Full account in `Archive/Logs/Forge_Audit_Kit_Changelog.md`.
+
+Prior: v1.16 (2026-09-03) — FAK-014 logged: derivation citation
+to `Unknowns.md` had gone stale a second time (v4.87 → live v4.93,
+missed by a same-day Grok audit that cleared all six gates without
+catching it) despite the kit's own Drift Indicators naming this exact
+condition. Citation refreshed to v4.93. Open Unknowns 5 → 6.
+Full account in `Archive/Logs/Forge_Audit_Kit_Changelog.md`.
+
+Prior: v1.15 (2026-08-30) — Derivation refresh against `Admin/Auditor_Protocols.md`
+v0.41 (was v0.24) and `Unknowns.md` v4.87 (was v4.21). Rules 9 (AP-033)
+and 10 (AP-035) added to AI Contribution Rules — a real content gap, not
+just version lag. Token ceiling note and role declaration string updated.
+Full account in `Archive/Logs/Forge_Audit_Kit_Changelog.md`.

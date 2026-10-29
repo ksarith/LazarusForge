@@ -1,5 +1,5 @@
 # Forge_Audit_Kit.md
-**Version 1.26**
+**Version 1.27**
 
 ---
 
@@ -16,9 +16,9 @@
 | Status         | Draft                                                               |
 | Spec Gates     | 0/6 — hold: FAK-014's account of a same-day 2026-09-03 Grok audit that "cleared all six gates" is treated as stale (body changed since, v1.16–v1.20); no advance without fresh audit + human ratification (PKC-042, 2026-10-27)                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                    |
-| Last Audit     | 2026-10-28 (later same-day) — Vibe (Repo Custodian, delegated maintenance, human-ratified batch 2026-10-28c): v1.25 → v1.26 — ## File Purpose and ## Assumptions added (AUDIT_15 F1); ## Active Disputes and ## Lessons Learned added (F2); Rule 11 RIP-form logging standard (X4); Post-Audit Cross-Reference same-pass X1/X9 check; ASM- ID-Reference rows regenerated (X5). No gate advanced. Prior: 2026-10-28 — Vibe (Repo Custodian, delegated maintenance, human-ratified AUDIT_15 findings batch): v1.24 → v1.25 — Scope Boundary now lists the Resolved Unknown Discharge Procedure (X1); size drift indicator re-baselined 12,000 → 35,000 with a dated note; companion `Unknowns.md` v5.72 adds this kit's five open FAKs to the Active Index (mirroring gap). No gate advanced. Prior: 2026-10-28 — Vibe (Repo Custodian, delegated maintenance, human-ratified findings batch): v1.23 → v1.24 — Governance Sidecar ID Reference regenerated in part (CF- and GMP- ownership rows added; ASM- disambiguation note added pending the X3 human ruling). No gate advanced. Prior: 2026-10-27 — Vibe (human ruling enacted, PKC-022 option B: pin retirement): Derived-from version pins retired; FAK-014 through FAK-019 closed by ruling (Open Unknowns 11 → 5); header 1.22→1.23; no gate advanced. Prior: 2026-10-27 — Vibe (human-authorized targeted refresh, PKC-022 lag clearance): Derived-from line re-pinned (`Auditor_Protocols.md` v0.42 → v0.45, `Unknowns.md` v5.58 → v5.71; `Verification_Gates.md` checked and unchanged at v0.7); condensed Rule 10 extended with the PKC-020 findings-only sub-rule from AP v0.45's Rule 10 addendum; FAK-019 logged (seventh pin-staleness occurrence; pin-vs-retire structural question stays open by human direction). Header 1.21→1.22. Prior: 2026-10-27 — Claude (human-authorized autonomous management; PKC-042): Spec Gates hold reason annotated; header 1.20→1.21; no gate advanced; no derivation-reconciliation pass due (annotation only, not a maintenance-trigger change). Prior: 2026-10-10 — Claude, human-directed refresh: derivation citations updated (`Auditor_Protocols.md` v0.41 → v0.42, `Unknowns.md` v5.57 → v5.58) and the role-declaration string to v0.42; FAK-018 logged (sixth occurrence; the structural question stays open). Same-day mitigation: role-declaration example now uses a live-version placeholder, the Derived-from line is labeled as reconciled-against, and the maintenance trigger is now content-based (a plain version increment is not a trigger; reconciliation check at audit start). Prior: 2026-10-03 — Grok, human-directed: derivation citation to `Unknowns.md` had gone stale a fifth time (v5.27 → live v5.57, 30 versions). Same recurring citation-staleness pattern previously logged as FAK-014/015/016. Logged as FAK-017. Citation refreshed to v5.57; header bumped 1.18→1.19. Prior: 2026-09-15 — Claude, FAK-016 (fourth occurrence, automated audit path). |
-| Auditor        | Vibe — Repo Custodian, 2026-10-28 v1.26 wrapper-hygiene batch 2026-10-28c (delegated maintenance); prior: Vibe — Repo Custodian, 2026-10-28 v1.25 AUDIT_15 wrapper items (delegated maintenance, human-ratified batch); prior: Vibe — Repo Custodian, 2026-10-28 v1.24 ID-Reference regeneration (delegated maintenance, human-ratified batch); prior: Vibe — Skeptic/Auditor, 2026-10-27 pin-retirement ruling enacted, v1.23, FAK-014–019 closed (human-ratified); prior: Vibe — Skeptic/Auditor, 2026-10-27 targeted v1.22 refresh (human-authorized): re-pinned AP v0.45 / Unknowns v5.71, incorporated the PKC-020 findings-only sub-rule into condensed Rule 10, FAK-019 logged, Open Unknowns 10 → 11; prior: Claude — 2026-10-27 PKC-042 hold-reason annotation, header 1.20→1.21 (human-authorized autonomous management); prior: Claude — v1.20 FAK-018 logged, derivation and role-declaration strings refreshed, header 1.19→1.20 (human-directed), 2026-10-10; Grok — v1.19 FAK-017 logged (fifth occurrence of the citation-staleness pattern), derivation citation refreshed to Unknowns.md v5.57, header 1.18→1.19 (human-directed), 2026-10-03; Claude — v1.18 FAK-016 logged, 2026-09-15; prior history retained in Resolution Log / Changelog |
-| Open Unknowns  | 5 — see Sidecar Link                                                 |
+| Last Audit     | 2026-10-29 — Vibe (Repo Custodian, delegated maintenance, human-ratified kit-ceiling retirement): v1.26 → v1.27 — character-count ceiling retired as a Drift Indicator (FAK-005 Resolved by human ruling; PKC-022 option-B precedent: dissolve stale triggers, don't refresh them; cause of record: the mobile paste-instrument era is over — audits run by full-archive fetch); duplication indicator added in its place (changelog-homed history stays out of the kit body); one-time history relocation to the changelog sidecar (Last Audit pre-v1.23 chain, Auditor pre-2026-10-27 entries, Resolution Log Priors v1.19 and older). Open Unknowns 5 → 4. No gate advanced. Prior: 2026-10-28 (later same-day) — Vibe (Repo Custodian, delegated maintenance, human-ratified batch 2026-10-28c): v1.25 → v1.26 — ## File Purpose and ## Assumptions added (AUDIT_15 F1); ## Active Disputes and ## Lessons Learned added (F2); Rule 11 RIP-form logging standard (X4); Post-Audit Cross-Reference same-pass X1/X9 check; ASM- ID-Reference rows regenerated (X5). No gate advanced. Prior: 2026-10-28 — Vibe (Repo Custodian, delegated maintenance, human-ratified AUDIT_15 findings batch): v1.24 → v1.25 — Scope Boundary now lists the Resolved Unknown Discharge Procedure (X1); size drift indicator re-baselined 12,000 → 35,000 with a dated note; companion `Unknowns.md` v5.72 adds this kit's five open FAKs to the Active Index (mirroring gap). No gate advanced. Prior: 2026-10-28 — Vibe (Repo Custodian, delegated maintenance, human-ratified findings batch): v1.23 → v1.24 — Governance Sidecar ID Reference regenerated in part (CF- and GMP- ownership rows added; ASM- disambiguation note added pending the X3 human ruling). No gate advanced. Prior: 2026-10-27 — Vibe (human ruling enacted, PKC-022 option B: pin retirement): Derived-from version pins retired; FAK-014 through FAK-019 closed by ruling (Open Unknowns 11 → 5); header 1.22→1.23; no gate advanced. Older audit history (pre-v1.23 chain) relocated to `Archive/Logs/Forge_Audit_Kit_Changelog.md` §Relocated In-Body History (2026-10-29, v1.27 pass). |
+| Auditor        | Vibe — Repo Custodian, 2026-10-29 v1.27 kit-ceiling retirement + history relocation (delegated maintenance, human-ratified); prior: Vibe — Repo Custodian, 2026-10-28 v1.26 wrapper-hygiene batch 2026-10-28c (delegated maintenance); prior: Vibe — Repo Custodian, 2026-10-28 v1.25 AUDIT_15 wrapper items (delegated maintenance, human-ratified batch); prior: Vibe — Repo Custodian, 2026-10-28 v1.24 ID-Reference regeneration (delegated maintenance, human-ratified batch); prior: Vibe — Skeptic/Auditor, 2026-10-27 pin-retirement ruling enacted, v1.23, FAK-014–019 closed (human-ratified); prior: Vibe — Skeptic/Auditor, 2026-10-27 targeted v1.22 refresh (human-authorized): re-pinned AP v0.45 / Unknowns v5.71, incorporated the PKC-020 findings-only sub-rule into condensed Rule 10, FAK-019 logged, Open Unknowns 10 → 11; prior: Claude — 2026-10-27 PKC-042 hold-reason annotation, header 1.20→1.21 (human-authorized autonomous management); older auditor history (pre-2026-10-27) relocated to `Archive/Logs/Forge_Audit_Kit_Changelog.md` §Relocated In-Body History (2026-10-29, v1.27 pass) |
+| Open Unknowns  | 4 — see Sidecar Link                                                 |
 | Sidecar Link   | Archive/Logs/Forge_Audit_Kit_Changelog.md#sidecar--auditor-notes--unknowns |
 | Ethical Anchor | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
@@ -363,7 +363,7 @@ Load additional files only when the audit focus requires them — each adds toke
 - Ethical Anchor absent or altered
 - Resolved unknown missing Lessons Learned narrative field, matching top-table row, or discharge status suffix (Resolved Unknown Discharge Procedure skipped)
 - Gate status language conflates "check coverage complete" with "promotion blocked by open unknowns" (see Gate scope vs. promotion readiness note)
-- Kit character count exceeds 35,000 — flag for reduction pass *(Re-baselined 2026-10-28, AUDIT_15, human-ratified: the original 12,000 threshold dated to the v1.10-era size and had been continuously tripped since ~v1.16 with no re-baseline — an un-re-baselined indicator is noise, not a check. New baseline 35,000 against a measured 33,857 at v1.24, headroom deliberately thin so this line stays live. A genuine content-reduction or split decision remains a human call; this re-baseline records the baseline change, not a conclusion that the size is fine.)*
+- Kit body carries changelog-homed history — version entries older than the current audit window belong in `Archive/Logs/Forge_Audit_Kit_Changelog.md` (their designated home since v1.10); relocate, keeping the latest entries plus the pointer. *(Replaces the character-count ceiling trigger, retired 2026-10-29 by human ruling, FAK-005 closed: the 12,000-then-35,000-char limit was a constraint of the kit's mobile cut-paste era — a live ceiling while the kit was hand-carried and token-condensed at run time — not an intrinsic virtue of an audit instrument. Audits are now performed by full-archive fetch and direct prompting (FAK-014's 2026-09-03 record), so the trigger's cause of record is gone and it is dissolved, not re-baselined (PKC-022, option B: dissolve stale triggers, don't refresh them). Kit size remains a reported trend metric — roughly 40,000 characters at v1.26, before this pass's history relocation — not a trigger.)*
 - "Cycle" (Expiry Watch, aging language) conflated with "audit pass" rather than the calendar-based definition in `Admin/Canonical_Terms.md` §4 — see CT-011
 
 **Compound Drift Rule:** Multiple simultaneous indicators → halt autonomous progression, escalate for human review.
@@ -380,11 +380,13 @@ sidecar entries live in the owning file; every other file in the
 repository keeps its sidecar in-body. Adversarial Battery record for
 this kit is in the same file, §Adversarial Battery Record.
 
-Current: 5 open (FAK-001, FAK-005, FAK-006, FAK-009, and one flagged for
+Current: 4 open (FAK-001, FAK-006, FAK-009, and one flagged for
 `Canonical_Terms.md` rather than resolved here — see Battery record, Cycle/CURRENT_CYCLE
-finding). FAK-014 through FAK-019 closed 2026-10-27 by human ruling (PKC-022, option B:
-pin retirement) — Payment via Constitutional Decision, ratification completes on commit;
-closure notes on each entry in the changelog sidecar.
+finding). FAK-005 closed 2026-10-29 by human ruling: the character-count ceiling retired
+as a Drift Indicator at v1.27 (PKC-022, option B: dissolve stale triggers, don't refresh
+them); closure note in the changelog sidecar. FAK-014 through FAK-019 closed 2026-10-27 by
+human ruling (PKC-022, option B: pin retirement) — Payment via Constitutional Decision,
+ratification completes on commit; closure notes on each entry in the changelog sidecar.
 
 ---
 
@@ -393,7 +395,9 @@ closure notes on each entry in the changelog sidecar.
 Full history: `Archive/Logs/Forge_Audit_Kit_Changelog.md` (relocated out of this
 kit at v1.10 — add new entries there, not here).
 
-Most recent: v1.26 (2026-10-28) — Wrapper-hygiene batch 2026-10-28c (human-ratified): ## File Purpose + ## Assumptions (AUDIT_15 F1); ## Active Disputes + ## Lessons Learned (F2); Rule 11 RIP-form logging standard (X4); Post-Audit Cross-Reference same-pass X1/X9 check; ASM- disambiguation rows regenerated (X5). Header 1.25→1.26. No gate advanced.
+Most recent: v1.27 (2026-10-29) — Kit-ceiling retirement (human-ratified): 35,000-char ceiling dissolved as a Drift Indicator (FAK-005 Resolved; PKC-022 option-B precedent: dissolve stale triggers, don't refresh them; the ceiling was a constraint of the mobile paste-instrument era, not an intrinsic virtue of an audit instrument); duplication indicator added (changelog-homed history stays out of the kit body); Last Audit, Auditor and Resolution Log pre-cutoff history relocated to the changelog sidecar §Relocated In-Body History; File State Open Unknowns 5 → 4. Header 1.26→1.27. No gate advanced.
+
+Prior: v1.26 (2026-10-28) — Wrapper-hygiene batch 2026-10-28c (human-ratified): ## File Purpose + ## Assumptions (AUDIT_15 F1); ## Active Disputes + ## Lessons Learned (F2); Rule 11 RIP-form logging standard (X4); Post-Audit Cross-Reference same-pass X1/X9 check; ASM- disambiguation rows regenerated (X5). Header 1.25→1.26. No gate advanced.
 
 Prior: v1.25 (2026-10-28) — AUDIT_15 wrapper items enacted (human-ratified batch): Scope Boundary lists the Resolved Unknown Discharge Procedure (X1); size drift indicator re-baselined 12,000 → 35,000 with a dated note (measured 33,857 at v1.24); companion `Unknowns.md` v5.72 adds this kit's five open FAKs to its Active Index. Header 1.24→1.25. Changelog entry in `Archive/Logs/Forge_Audit_Kit_Changelog.md`.
 
@@ -417,36 +421,4 @@ placeholder; Derived-from line labeled reconciled-against) and made the
 maintenance trigger content-based, with a reconciliation check at audit start. Full account in
 `Archive/Logs/Forge_Audit_Kit_Changelog.md`.
 
-Prior: v1.19 (2026-10-03) — FAK-017 logged: derivation citation
-to `Unknowns.md` had gone stale a fifth time (v5.27 → live v5.57, 30
-versions). Same recurring citation-staleness pattern previously logged
-as FAK-014/015/016. Citation refreshed to v5.57; header 1.18→1.19.
-Open Unknowns 8 → 9. Full account in `Archive/Logs/Forge_Audit_Kit_Changelog.md`.
-
-Prior: v1.18 (2026-09-15) — FAK-016 logged: derivation citation
-to `Unknowns.md` had gone stale a fourth time (v5.10 → live v5.27),
-surfaced this time by an automated integrity-audit report rather than
-a human prompt. Header also caught up 1.16→1.18 — the v1.17 bump the
-Resolution Log already claimed had never actually landed on the header
-field. Citation refreshed to v5.27. Open Unknowns 7 → 8.
-Full account in `Archive/Logs/Forge_Audit_Kit_Changelog.md`.
-
-Prior: v1.17 (2026-09-10) — FAK-015 logged: derivation citation
-to `Unknowns.md` had gone stale a third time (v4.93 → live v5.10),
-the same recurring pattern FAK-014 already named as structurally
-unfixed. Citation refreshed to v5.10. Also fixed a desynced summary
-line that had never counted FAK-014. Open Unknowns 6 → 7.
-Full account in `Archive/Logs/Forge_Audit_Kit_Changelog.md`.
-
-Prior: v1.16 (2026-09-03) — FAK-014 logged: derivation citation
-to `Unknowns.md` had gone stale a second time (v4.87 → live v4.93,
-missed by a same-day Grok audit that cleared all six gates without
-catching it) despite the kit's own Drift Indicators naming this exact
-condition. Citation refreshed to v4.93. Open Unknowns 5 → 6.
-Full account in `Archive/Logs/Forge_Audit_Kit_Changelog.md`.
-
-Prior: v1.15 (2026-08-30) — Derivation refresh against `Admin/Auditor_Protocols.md`
-v0.41 (was v0.24) and `Unknowns.md` v4.87 (was v4.21). Rules 9 (AP-033)
-and 10 (AP-035) added to AI Contribution Rules — a real content gap, not
-just version lag. Token ceiling note and role declaration string updated.
-Full account in `Archive/Logs/Forge_Audit_Kit_Changelog.md`.
+*Older entries (v1.19 and earlier) relocated to `Archive/Logs/Forge_Audit_Kit_Changelog.md` §Relocated In-Body History, 2026-10-29 (v1.27 history-relief pass); their full accounts were already in that changelog's Version History section.*
