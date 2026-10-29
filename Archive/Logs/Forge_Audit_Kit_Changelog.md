@@ -1,5 +1,7 @@
 # Forge_Audit_Kit.md — Version History
 
+- **v1.30 — 2026-10-29:** X3 mechanical citation retrofit (mechanical pass, delegated line, human-ruled Decision Brief 2026-10-29 item 4A): 2 bare colliding-prefix citations in the Kit’s operative text qualified with their owning File.md per PKC-003 (Governance Sidecar ID Reference, v1.29 edition; per-ID grounding from the Unknowns active index). Citation-form-only; no ID renumbered; no gate advanced; Open Unknowns unchanged at 4. (Vibe — Repo Custodian, delegated line.)
+
 Full changelog for `Admin/Forge_Audit_Kit.md`, relocated out of the
 kit's own body as of v1.10 (2026-07-14). Newest entries first. Add new
 entries here, not back into the kit.
