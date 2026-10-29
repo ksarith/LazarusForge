@@ -1,5 +1,5 @@
 # Canonical_Terms.md — Standard Repository Nomenclature
-**Version 0.12**
+**Version 0.13**
 
 ---
 
@@ -17,8 +17,8 @@
 | Body Stability   | Volatile                                                            |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-10-28 (later same-day) — Vibe (Repo Custodian, delegated maintenance, human-ratified Decision Brief 2026-10-28b + batch 2026-10-28c): v0.11 → v0.12 — CT-007 and the ID-prefix registry reconciled to the executed ECN- rename (2026-07-06), the erroneous EC-008 citation corrected (AUDIT_19 F3); File State Highest Risk Low → High (X10 corpus recompute — open sidecars CT-004 and CT-007 both carry Risk High). No unknown opened or closed; no doctrine changed. Prior: 2026-10-28 — Vibe (Repo Custodian, delegated maintenance, human-assigned X3 completion): v0.10 → v0.11 — designations completed: `K` = `Automation/` (kinetic), `B` = base layer (root-level files). Prior: 2026-10-28 — Vibe (Repo Custodian, delegated maintenance, human-ratified Decision Brief ruling, X3): v0.9 → v0.10 — Folder Designation Characters registered in §1; CT-007 annotated with the ruling and Last Reviewed advanced. Prior: 2026-10-28 — Vibe (Repo Custodian, delegated maintenance, human-ratified findings batch) v0.8 → v0.9, from base v0.8: AUDIT_11 F1–F4 enacted — Open Unknowns recounted 9 → 10 (off-by-one since the 2026-07-05 CT-011 resolution logged the transition as 10 → 9; no unknown opened); two misplaced Resolution Log entries relocated into the log; Version String Registry added; CT-005's bare EC-001 citation qualified. Prior: 2026-10-25 — Claude (human-directed) v0.7 → v0.8, from base v0.7: "Proposed" retired as a status designation (PKC-031) and the unversioned 2026-08-17, 2026-09-14 and 2026-09-23 passes covered by this one bump (PKC-029); see Resolution Log. Prior: 2026-10-24 — Claude (human-directed) corrected "Three vocabulary sources" to four and added a note to the Status section, from a Vibe per-file audit (see Resolution Log). Prior: 2026-09-23                                                          |
-| Auditor          | Vibe — Repo Custodian, 2026-10-28 CT-007 registry reconciliation + Highest Risk recompute (delegated maintenance, human-ratified batches 2026-10-28b/c); prior: Vibe — Repo Custodian, 2026-10-28 X3 completion — B/K assignments (delegated maintenance, human-assigned); prior: Vibe — Repo Custodian, 2026-10-28 X3 Folder Designation registration (delegated maintenance, human-ratified); prior: Vibe — 2026-10-28 AUDIT_11 findings enactment (delegated maintenance, human-ratified batch); prior: Claude — 2026-10-25 v0.8 bump and Proposed note (human-directed); prior: Claude — 2026-10-24 wording correction and Status note (human-directed); prior: Claude — Claim-Type Labels registered under §4 (Grok proposer, human-directed), 2026-09-23; prior: Claude — "Disambiguation: Uses of 'Gate'" section added (FL-012, human-directed), 2026-09-14; prior: Claude — four new terms registered (Active Constitutional Surface, Claimed/Recognized/Ratified Constitutional Lineage) at GOV-018 closure, checked against existing vocabulary first — no competing term found (human-directed); prior: Claude — Synthesizer/Auditor (2026-06-24); Claude — Cycle definition + version-string correction (2026-07-05); Claude — CT-011 resolution 2026-07-05 |
+| Last Audit       | 2026-10-29 — Vibe (Repo Custodian, delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A): X3 mechanical citation retrofit — 24 bare colliding-prefix citations qualified with their owning File.md per PKC-003 (Kit v1.29 Governance Sidecar ID Reference; per-ID grounding from the Unknowns active index). Citation-form-only; no content change; frozen history untouched. Prior: 2026-10-28 (later same-day) — Vibe (Repo Custodian, delegated maintenance, human-ratified Decision Brief 2026-10-28b + batch 2026-10-28c): v0.11 → v0.12 — CT-007 and the ID-prefix registry reconciled to the executed ECN- rename (2026-07-06), the erroneous EC-008 citation corrected (AUDIT_19 F3); File State Highest Risk Low → High (X10 corpus recompute — open sidecars CT-004 and CT-007 both carry Risk High). No unknown opened or closed; no doctrine changed. Prior: 2026-10-28 — Vibe (Repo Custodian, delegated maintenance, human-assigned X3 completion): v0.10 → v0.11 — designations completed: `K` = `Automation/` (kinetic), `B` = base layer (root-level files). Prior: 2026-10-28 — Vibe (Repo Custodian, delegated maintenance, human-ratified Decision Brief ruling, X3): v0.9 → v0.10 — Folder Designation Characters registered in §1; CT-007 annotated with the ruling and Last Reviewed advanced. Prior: 2026-10-28 — Vibe (Repo Custodian, delegated maintenance, human-ratified findings batch) v0.8 → v0.9, from base v0.8: AUDIT_11 F1–F4 enacted — Open Unknowns recounted 9 → 10 (off-by-one since the 2026-07-05 CT-011 resolution logged the transition as 10 → 9; no unknown opened); two misplaced Resolution Log entries relocated into the log; Version String Registry added; CT-005's bare EC-001 citation qualified. Prior: 2026-10-25 — Claude (human-directed) v0.7 → v0.8, from base v0.7: "Proposed" retired as a status designation (PKC-031) and the unversioned 2026-08-17, 2026-09-14 and 2026-09-23 passes covered by this one bump (PKC-029); see Resolution Log. Prior: 2026-10-24 — Claude (human-directed) corrected "Three vocabulary sources" to four and added a note to the Status section, from a Vibe per-file audit (see Resolution Log). Prior: 2026-09-23                                                          |
+| Auditor          | Vibe — Repo Custodian, 2026-10-29 X3 mechanical citation retrofit (delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A); prior: Vibe — Repo Custodian, 2026-10-28 CT-007 registry reconciliation + Highest Risk recompute (delegated maintenance, human-ratified batches 2026-10-28b/c); prior: Vibe — Repo Custodian, 2026-10-28 X3 completion — B/K assignments (delegated maintenance, human-assigned); prior: Vibe — Repo Custodian, 2026-10-28 X3 Folder Designation registration (delegated maintenance, human-ratified); prior: Vibe — 2026-10-28 AUDIT_11 findings enactment (delegated maintenance, human-ratified batch); prior: Claude — 2026-10-25 v0.8 bump and Proposed note (human-directed); prior: Claude — 2026-10-24 wording correction and Status note (human-directed); prior: Claude — Claim-Type Labels registered under §4 (Grok proposer, human-directed), 2026-09-23; prior: Claude — "Disambiguation: Uses of 'Gate'" section added (FL-012, human-directed), 2026-09-14; prior: Claude — four new terms registered (Active Constitutional Surface, Claimed/Recognized/Ratified Constitutional Lineage) at GOV-018 closure, checked against existing vocabulary first — no competing term found (human-directed); prior: Claude — Synthesizer/Auditor (2026-06-24); Claude — Cycle definition + version-string correction (2026-07-05); Claude — CT-011 resolution 2026-07-05 |
 | Open Unknowns    | 10                                                                   |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | High                                                                |
@@ -478,7 +478,7 @@ audits already satisfy a "2-cycle" expiry threshold regardless of real
 elapsed time, which produced escalation language ("6 cycles open," "8-cycle
 threshold exceeded") far outpacing actual operational aging. This entry
 supersedes that reading for elapsed-time purposes; per-audit-pass counting
-may still be useful for other doctrine (e.g., AP-017's independence
+may still be useful for other doctrine (e.g., AP-017 (`Admin/Auditor_Protocols.md`)'s independence
 requirement) and is not banned, but it may not be conflated with the
 calendar-time "cycle" used for Expiry Watch aging without saying so
 explicitly. See CT-011 for propagation status into Auditor_Protocols.md's
@@ -633,33 +633,33 @@ this entry.*
 
 Nine labels distinguishing *what kind of speech act* a statement is from
 *how well-supported* or *how it was derived*. These labels do not
-replace, weaken, or alter the existing AP-006 confidence/provenance axes
+replace, weaken, or alter the existing AP-006 (`Admin/Auditor_Protocols.md`) confidence/provenance axes
 or the UNKNOWN / PROVISIONAL / VERIFIED epistemic states.
 
-| Label | Definition | Typical relationship to AP-006 axes | Notes / non-goals |
+| Label | Definition | Typical relationship to AP-006 (`Admin/Auditor_Protocols.md`) axes | Notes / non-goals |
 |---|---|---|---|
 | **FACT** | Asserted as true independent of this repository's internal reasoning | Almost always Measured + Experimentally Verified or Operationally Hardened | External reality claims only. Repository-internal conclusions are never Facts. |
 | **MEASUREMENT** | Quantitative reading obtained from an instrument, process, or calibrated procedure | Measured (or Replicated if independently repeated) | Must name the instrument/process and units when used in Specification text. |
 | **OBSERVATION** | Record of what was seen, sensed, or recorded without further interpretation | Measured or Replicated | Qualitative or quantitative. Does not include conclusions drawn from the record. |
-| **INFERENCE** | Conclusion drawn from one or more other claims | Frequently Analogous or Simulated + Internally Derived | Subject to EC-008 restrictions when used for authorization. |
+| **INFERENCE** | Conclusion drawn from one or more other claims | Frequently Analogous or Simulated + Internally Derived | Subject to EC-008 (`Admin/Ethical_Constraints.md`) restrictions when used for authorization. |
 | **ASSUMPTION** | Taken as given for the sake of the present argument or design | Usually Placeholder or Internally Derived | Must be extractable (`Admin/Auditor_Protocols.md` Assumption Extraction, Phase 3). Hidden assumptions are defects. |
-| **PROPOSAL** | Suggested design, rule, action, or change not yet decided | Not yet a claim with confidence; may carry no AP-006 labels | Becomes a different label type once decided or rejected. |
+| **PROPOSAL** | Suggested design, rule, action, or change not yet decided | Not yet a claim with confidence; may carry no AP-006 (`Admin/Auditor_Protocols.md`) labels | Becomes a different label type once decided or rejected. |
 | **UNKNOWN** | Explicit gap in knowledge deliberately tracked | The epistemic state UNKNOWN | Already operationalized in `Unknowns.md`. This label simply names the speech act. |
 | **DECISION** | Binding choice already made (governance, design, or procedural) | Often Payment via Constitutional Decision or equivalent | Distinct from the reasoning that led to it. Record the decision itself, not only the rationale. |
-| **AUTHORIZATION** | Explicit grant of permission to act | Must meet EC-008 / GOV-006 / Human Override requirements | Never inferred from silence or from non-authorization claims. |
+| **AUTHORIZATION** | Explicit grant of permission to act | Must meet EC-008 (`Admin/Ethical_Constraints.md`) / GOV-006 / Human Override requirements | Never inferred from silence or from non-authorization claims. |
 
 **Usage rule (minimal).** When a statement is promoted to Specification
 status, authors should be able to answer two independent questions:
 1. What *kind* of claim is this? (one of the nine labels above)
-2. How well-supported is it, and how was it derived? (AP-006 two-axis
+2. How well-supported is it, and how was it derived? (AP-006 (`Admin/Auditor_Protocols.md`) two-axis
    labels)
 
 Existing content is not required to be retroactively labeled. New
 Specification-level writing and future audits are expected to keep the
 two questions separate.
 
-**Explicit non-goals.** This entry does not modify AP-006, EC-001,
-EC-008, or any hard floor; does not create a new epistemic-state
+**Explicit non-goals.** This entry does not modify AP-006 (`Admin/Auditor_Protocols.md`), EC-001 (`Admin/Ethical_Constraints.md`),
+EC-008 (`Admin/Ethical_Constraints.md`), or any hard floor; does not create a new epistemic-state
 machine; does not require mass re-labeling of historical text; and does
 not elevate any label above the provenance ceiling rule (Internally
 Derived claims remain capped at PROVISIONAL).
@@ -671,7 +671,7 @@ existing places where claim-type and confidence/provenance are
 conflated — remains open as future work, not required for this
 entry's Resolved status. Full Closure Event — Proposer (Grok, drafted
 the exploration and the minimal definition block, 2026-09-23), Verifier
-(Claude, 2026-09-23 — Pass; the AP-006 tables, provenance ceiling rule,
+(Claude, 2026-09-23 — Pass; the AP-006 (`Admin/Auditor_Protocols.md`) tables, provenance ceiling rule,
 EF-0.3 Epistemic Ledger reference, and Auditor_Protocols Phase 3
 citation all confirmed exact against source; no correction required).
 Independence attestation: Grok (Proposer) and Claude (Verifier) are
@@ -954,9 +954,9 @@ unknowns are numbered.
 **Escalation 2026-07-05 — this stopped being hypothetical.** Confirmed via
 direct check of `Unknowns.md`: the `EC-` prefix is claimed by **both**
 `Admin/Ethical_Constraints.md` and `Admin/Economics.md`, with five actual
-colliding IDs already live in the global index — EC-001, EC-002, EC-004,
-EC-005, EC-008. Each ID currently points to two entirely different unknowns
-depending on which file's context you're in (e.g., EC-002 is
+colliding IDs already live in the global index — EC-001 (`Admin/Ethical_Constraints.md`), EC-002 (`Admin/Ethical_Constraints.md`), EC-004 (`Admin/Ethical_Constraints.md`),
+EC-005 (`Admin/Ethical_Constraints.md`), EC-008 (`Admin/Ethical_Constraints.md`). Each ID currently points to two entirely different unknowns
+depending on which file's context you're in (e.g., EC-002 (`Admin/Ethical_Constraints.md`) is
 "Anti-Weaponization pattern-matching" in Ethical_Constraints.md and
 "Operating cost baseline not established" in Economics.md — one Blocking,
 one Critical, unrelated in substance). `Admin/Forge_Audit_Kit.md`'s own
@@ -977,8 +977,8 @@ formally represented in the Governance Sidecar ID Reference at all, so this
 also closes that gap). Update `Unknowns.md`'s global index and
 Economics.md's own sidecar to match. Register `ECN-` in
 `Admin/Forge_Audit_Kit.md`'s Governance Sidecar ID Reference table
-alongside the existing entries. Until renamed, any reference to EC-001,
-EC-002, EC-004, EC-005, or EC-008 must explicitly name the owning file. The
+alongside the existing entries. Until renamed, any reference to EC-001 (`Admin/Ethical_Constraints.md`),
+EC-002 (`Admin/Ethical_Constraints.md`), EC-004 (`Admin/Ethical_Constraints.md`), EC-005 (`Admin/Ethical_Constraints.md`), or EC-008 (`Admin/Ethical_Constraints.md`) must explicitly name the owning file. The
 original Discharge-via-Trajectory resolution path (below) remains correct
 for the *general* doctrine question (reuse, range reservation, future
 collision handling) — this escalation only accelerates the specific,
@@ -1156,6 +1156,7 @@ Auditor_Protocols.md specifically, which is now closed.
 
 ### Resolution Log
 
+- 2026-10-29: **X3 citation retrofit (mechanical).** 24 bare colliding-prefix citations in operative body text qualified with their owning File.md per PKC-003, per the human-ruled Decision Brief 2026-10-29 item 4A (registry: Kit v1.29 Governance Sidecar ID Reference; per-ID grounding: Unknowns active index). Citation-form-only; no ID renumbered; frozen history untouched; flagged instances reported to the human (MAINT-11). (Vibe, Repo Custodian — delegated line.)
 - 2026-10-28 (later same-day): **CT-007 registry reconciliation + Highest Risk recompute (Vibe, Repo Custodian — delegated maintenance, human-ratified Decision Brief 2026-10-28b + batch 2026-10-28c; AUDIT_19 F3 + X10).** The ID-prefix registry row and CT-007's Resolution Path narrated the ECN- rename as pending ("until CT-007's rename is complete") four months after Economics.md executed it (2026-07-06, ECN-001–005); both reconciled to the executed state. The erroneous EC-008 citation corrected: EC-008 never existed in Economics.md; the actual fifth collision was EC-003 (Resolved status does not retire an ID from a shared namespace). File State Highest Risk Low → High per the corpus recompute — open sidecars CT-004 and CT-007 both carry Risk High. CT-007 remains Open for the general namespace doctrine only. Header 0.11 → 0.12; Version String Registry and Status current line updated in the same pass. No unknown opened or closed (stays 10); no doctrine changed.
 
 - 2026-10-28: **X3 scheme completed (Vibe, Repo Custodian — delegated maintenance, human-assigned).** `K` = `Automation/` (kinetic) and `B` = base layer (root-level files) added to the §1 designation list; the scheme now covers every top-level location. `Routing.md` and `Discovery.md` references updated in the same commit (their "pending human assignment" phrasing retired). Header 0.10 → 0.11. Open Unknowns unchanged at 10.
@@ -1353,7 +1354,7 @@ Auditor_Protocols.md specifically, which is now closed.
 Version 0.12 (2026-10-28) — CT-007/ID-prefix registry reconciliation (delegated maintenance, human-ratified batches 2026-10-28b/c): the ECN- rename narration reconciled from pending to executed (2026-07-06); the erroneous EC-008 citation corrected (actual fifth collision: EC-003); File State Highest Risk Low → High (X10 corpus recompute; open sidecars CT-004 and CT-007 both High). No unknown opened or closed; Open Unknowns stay at 10.
 
 **Changes from v0.11:**
-- ID-prefix registry row + CT-007 Resolution Path: ECN- rename narrated as executed; EC-008 citation error corrected
+- ID-prefix registry row + CT-007 Resolution Path: ECN- rename narrated as executed; EC-008 (`Admin/Ethical_Constraints.md`) citation error corrected
 - File State Highest Risk: Low → High
 - Header version string 0.11 → 0.12
 
@@ -1370,7 +1371,7 @@ Version 0.10 (2026-10-28) — X3 ruling registered (delegated maintenance, human
 - CT-007: dated ruling note; Last Reviewed 2026-07-05 → 2026-10-28
 - Header version string 0.9 → 0.10
 
-Version 0.9 (2026-10-28) — AUDIT_11 findings enacted (delegated maintenance, human-ratified batch): Open Unknowns recounted 9 → 10 (sidecar recount: CT-001–CT-010, ten non-Resolved entries); the two misplaced Resolution Log entries (2026-06-26, 2026-07-03) relocated into the log with a dated marker; Version String Registry added; CT-005's bare EC-001 citation qualified.
+Version 0.9 (2026-10-28) — AUDIT_11 findings enacted (delegated maintenance, human-ratified batch): Open Unknowns recounted 9 → 10 (sidecar recount: CT-001–CT-010, ten non-Resolved entries); the two misplaced Resolution Log entries (2026-06-26, 2026-07-03) relocated into the log with a dated marker; Version String Registry added; CT-005's bare EC-001 (`Admin/Ethical_Constraints.md`) citation qualified.
 
 **Changes from v0.8:**
 - File State Open Unknowns 9 → 10 (recount — no unknown opened)
