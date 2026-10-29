@@ -1,6 +1,6 @@
 # Computational Institutional Reasoning
 ### A Formal Framework for Autonomous Governance
-*GOV-CIR-01 | Version 0.31 | 2026-10-28*
+*GOV-CIR-01 | Version 0.31 | 2026-10-29*
 
 ---
 
@@ -15,7 +15,7 @@
 | Field | Value |
 | :--- | :--- |
 | Status | Exploration |
-| Version | 0.30 |
+| Version | 0.31 |
 | Spec Gates | G4 cleared; G1 partial (Gemini 2026-06-30); G3 cleared (per Admin/Auditor_Protocols.md, Clear as of 2026-08-03 — AP-012/AP-016 Provisional Spec + Battery application + AP-017 independence requirement all met). See §7.4 resolution note. G2/G5/G6 not formally assessed (six-gate enumeration completed 2026-10-28, AUDIT_21 F4 — no gate advanced per PKC-020; G5's 2026-10-28 external verification was findings-only). |
 | Verification Ref | Admin/Verification_Gates.md |
 | Ethical Anchor | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
@@ -822,6 +822,8 @@ No continuous sensor stream is required. The harness remains offline / batch, co
 ---
 
 ## Resolution Log
+
+- 2026-10-29 (same-day corrective): **X3 retrofit bookkeeping sync.** The Part 3/4 X3 pass bumped the header version line 0.30 → 0.31 but left this File State’s Version cell at 0.30; synced to 0.31 and the header date advanced to 2026-10-29. Citation-form-only; no doctrine, gate, unknown or epistemic content changed. (Vibe, Repo Custodian — delegated line.)
 
 - 2026-10-29: **X3 citation retrofit (mechanical).** 5 bare colliding-prefix citations in operative body text qualified with their owning File.md per PKC-003, per the human-ruled Decision Brief 2026-10-29 item 4A (registry: Kit v1.29 Governance Sidecar ID Reference; per-ID grounding: Unknowns active index). Citation-form-only; no ID renumbered; frozen history untouched; flagged instances reported to the human (MAINT-11). (Vibe, Repo Custodian — delegated line.)
 
