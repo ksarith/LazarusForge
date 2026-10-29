@@ -16,8 +16,8 @@
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 0/6 — hold: the 2026-06-26 recorded clears (G1, G2, G4, G5, G6) are treated as stale (body changed since); no advance without fresh audit + human ratification (PKC-027, 2026-10-27)                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-10-28 — Vibe (Repo Custodian, delegated maintenance, human-ratified Decision Brief 2026-10-28b): AUDIT_18 (campaign) F1/F2 enacted — File State Highest Risk Medium → High (ST-004 carries Risk High; X10 corpus recompute); the bare AP-012 citation in ST-004's text qualified with `Admin/Auditor_Protocols.md`; ST-001–ST-004 Last Reviewed refreshed to 2026-10-28 with dated notes (no status change). No gate advanced; no unknown opened or closed. Prior: 2026-10-27 — Claude (human-authorized autonomous management; PKC-027): Spec Gates hold reason annotated; no gate advanced; no other field changed. Prior: 2026-10-24 — Claude (human-directed) log order corrected and AP-012/AP-016 cross-reference noted (see Resolution Log); the logged 2026-08-11 Grok pseudo-audit (findings only) is not counted here per the PKC-020 ruling of 2026-10-25. Prior: 2026-05-04 (Claude — Skeptic/Auditor); revised 2026-06-08; audited 2026-06-26 (Gemini + Claude dual Skeptic/Auditor) |
-| Auditor          | Vibe — Repo Custodian, 2026-10-28 AUDIT_18 F1/F2 enactment (delegated maintenance, human-ratified Decision Brief 2026-10-28b); prior: Claude — 2026-10-27 PKC-027 hold-reason annotation (human-authorized autonomous management); prior: Claude — 2026-10-24 corrections (human-directed, from a Vibe per-file audit); prior: Claude — Synthesizer/Auditor; Gemini — Skeptic/Auditor              |
+| Last Audit       | 2026-10-29 — Vibe (Repo Custodian, delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A): X3 mechanical citation retrofit — 4 bare colliding-prefix citations qualified with their owning File.md per PKC-003 (Kit v1.29 Governance Sidecar ID Reference; per-ID grounding from the Unknowns active index). Citation-form-only; no content change; frozen history untouched. Prior: 2026-10-28 — Vibe (Repo Custodian, delegated maintenance, human-ratified Decision Brief 2026-10-28b): AUDIT_18 (campaign) F1/F2 enacted — File State Highest Risk Medium → High (ST-004 carries Risk High; X10 corpus recompute); the bare AP-012 citation in ST-004's text qualified with `Admin/Auditor_Protocols.md`; ST-001–ST-004 Last Reviewed refreshed to 2026-10-28 with dated notes (no status change). No gate advanced; no unknown opened or closed. Prior: 2026-10-27 — Claude (human-authorized autonomous management; PKC-027): Spec Gates hold reason annotated; no gate advanced; no other field changed. Prior: 2026-10-24 — Claude (human-directed) log order corrected and AP-012/AP-016 cross-reference noted (see Resolution Log); the logged 2026-08-11 Grok pseudo-audit (findings only) is not counted here per the PKC-020 ruling of 2026-10-25. Prior: 2026-05-04 (Claude — Skeptic/Auditor); revised 2026-06-08; audited 2026-06-26 (Gemini + Claude dual Skeptic/Auditor) |
+| Auditor          | Vibe — Repo Custodian, 2026-10-29 X3 mechanical citation retrofit (delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A); prior: Vibe — Repo Custodian, 2026-10-28 AUDIT_18 F1/F2 enactment (delegated maintenance, human-ratified Decision Brief 2026-10-28b); prior: Claude — 2026-10-27 PKC-027 hold-reason annotation (human-authorized autonomous management); prior: Claude — 2026-10-24 corrections (human-directed, from a Vibe per-file audit); prior: Claude — Synthesizer/Auditor; Gemini — Skeptic/Auditor |
 | Open Unknowns    | 4                                                                   |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | High                                                                |
@@ -42,7 +42,7 @@
 - AI identity continuity doctrine — Derivative
   vs. Canonical Identity classification for
   restored or fragmented autonomous units
-  (ST-003 / CF-003 resolution)
+  (ST-003 / CF-003 (`Architecture/Cognitive_Frameworks.md`) resolution)
 - Relationship between Bootstrap Doctrine,
   Graduation Rule, and Ship of Theseus
   philosophy
@@ -101,7 +101,7 @@ framework that governs AI unit restoration authority.
 | ASM-001 | Courts and regulators recognize incremental repair as preserving ownership identity — outputs are restorations, not new manufactures | Right-to-repair legal precedents; FTC 2023, EU 2024 Ecodesign Directive | Medium | Legal challenge succeeds in classifying Forge outputs as new manufactures — doctrine must be revised |
 | ASM-002 | A 1g grain sample constitutes sufficient material provenance for legal continuity claims | Analogous to auto repair and restoration precedents | Low | Jurisdiction-specific legal review finds grain standard insufficient — minimum sample size or documentation standard must change |
 | ASM-003 | The 30% cryptographic state threshold for Derivative Identity classification produces a meaningful boundary between recoverable and non-recoverable identity continuity | Engineering judgment; no empirical validation yet | Low | First split-brain recovery cycle characterizes actual state loss patterns — threshold adjusted to match observed behavior |
-| ASM-004 | AI identity continuity follows the same philosophical rules as physical component identity — continuity of function and purpose outweighs continuity of substrate | Extension of Ship of Theseus doctrine to cognitive systems | Medium | CF-003 resolution reveals a fundamental disanalogy between physical and cognitive identity that requires separate doctrine |
+| ASM-004 | AI identity continuity follows the same philosophical rules as physical component identity — continuity of function and purpose outweighs continuity of substrate | Extension of Ship of Theseus doctrine to cognitive systems | Medium | CF-003 (`Architecture/Cognitive_Frameworks.md`) resolution reveals a fundamental disanalogy between physical and cognitive identity that requires separate doctrine |
 
 ---
 
@@ -227,7 +227,7 @@ policy direction.
 
 ## IV. AI Identity Continuity Doctrine
 
-*Closes CF-003 from
+*Closes CF-003 (`Architecture/Cognitive_Frameworks.md`) from
 `Architecture/Cognitive_Frameworks.md`. Added
 2026-06-08 following Gemini Synthesizer analysis.*
 
@@ -555,7 +555,7 @@ is calibrated against first operational split-brain
 recovery data, (2) the re-vetting path trial
 duration is defined from operational deployment,
 and (3) `Architecture/Cognitive_Frameworks.md`
-CF-003 is updated to reference Section IV as
+CF-003 (`Architecture/Cognitive_Frameworks.md`) is updated to reference Section IV as
 its resolution. Payment via Specification —
 once threshold is empirically validated, move
 Section IV to Analogous.
@@ -614,6 +614,8 @@ human unavailability.
 ---
 
 ### Resolution Log
+
+- 2026-10-29: **X3 citation retrofit (mechanical).** 4 bare colliding-prefix citations in operative body text qualified with their owning File.md per PKC-003, per the human-ruled Decision Brief 2026-10-29 item 4A (registry: Kit v1.29 Governance Sidecar ID Reference; per-ID grounding: Unknowns active index). Citation-form-only; no ID renumbered; frozen history untouched; flagged instances reported to the human (MAINT-11). (Vibe, Repo Custodian — delegated line.)
 
 - 2026-10-28: **AUDIT_18 (campaign) findings enacted (Vibe, Repo Custodian — delegated maintenance, human-ratified Decision Brief 2026-10-28b).** (1) F1/X10: File State Highest Risk Medium → High — the file's own open ST-004 (Sub-threshold state tampering vulnerability) carries Risk High, and the header understated it. (2) F2: the bare AP-012 citation in ST-004's verification-loop text qualified to `Admin/Auditor_Protocols.md` AP-012 (PKC-003). (3) ST-001–ST-004 Last Reviewed refreshed to 2026-10-28 with dated notes — re-read against current body state, no status change. No gate advanced; no unknown opened or closed.
 

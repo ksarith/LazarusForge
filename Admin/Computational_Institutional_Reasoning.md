@@ -1,6 +1,6 @@
 # Computational Institutional Reasoning
 ### A Formal Framework for Autonomous Governance
-*GOV-CIR-01 | Version 0.30 | 2026-10-28*
+*GOV-CIR-01 | Version 0.31 | 2026-10-28*
 
 ---
 
@@ -21,7 +21,7 @@
 | Ethical Anchor | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 | Highest Risk | High — CIR-001 — Physical Grounding Telemetry Mapping Interface undefined; \u03b31\u2013\u03b34 predicates currently aspirational in harness implementation (see Section 7.4). Renamed 2026-07-28 from local "GOV-008" — collided with `Admin/Governance_Charter.md`'s registered GOV-008 (minimum agent quorum); CIR-scoped prefix now registered in `Admin/Forge_Audit_Kit.md`'s Governance Sidecar ID Reference. |
 | Truth Basis | Internally Derived (Theorems) + Analogous (Multi-Agent Systems) |
-| Last Audit | 2026-10-28 — Vibe (Repo Custodian, human-ratified AUDIT_21 F1–F4 minimal wrapper repair, Decision Brief 2026-10-28b item 4): changelog extracted from this cell into the file's new Resolution Log; CIR-001 §8.4 tracker completed with the standard fields; Spec Gates enumerated to six; bare citations qualified; version 0.29 → 0.30 with subtitle. Prior leading date 2026-07-29 (Claude — Skeptic/Auditor, verifying a Copilot-proposed finding set against source); the full v0.19–v0.29 chain now lives in the Resolution Log. |
+| Last Audit       | 2026-10-29 — Vibe (Repo Custodian, delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A): X3 mechanical citation retrofit — 5 bare colliding-prefix citations qualified with their owning File.md per PKC-003 (Kit v1.29 Governance Sidecar ID Reference; per-ID grounding from the Unknowns active index). Citation-form-only; no content change; frozen history untouched. Prior: 2026-10-28 — Vibe (Repo Custodian, human-ratified AUDIT_21 F1–F4 minimal wrapper repair, Decision Brief 2026-10-28b item 4): changelog extracted from this cell into the file's new Resolution Log; CIR-001 §8.4 tracker completed with the standard fields; Spec Gates enumerated to six; bare citations qualified; version 0.29 → 0.30 with subtitle. Prior leading date 2026-07-29 (Claude — Skeptic/Auditor, verifying a Copilot-proposed finding set against source); the full v0.19–v0.29 chain now lives in the Resolution Log. |
 | Active Trackers | CIR-001 (this file); `Architecture/Cognitive_Frameworks.md` CF-002; `Architecture/Cognitive_Frameworks.md` CF-004 |
 
 > **Provenance self-reference note:** This document's own Provenance Ceiling Gate (\u03a8, Section 4.3) classifies its Truth Basis as *Internally Derived*, which bars it from self-promotion under its own algebra. Promotion to Candidate Spec requires at least partial Experimentally Verified status on the core claims.
@@ -665,10 +665,10 @@ The $\gamma_1$–$\gamma_4$ predicates as formalized in Section 6.2 represent th
 | :--- | :--- | :--- |
 | $\gamma_1$ (EF-0.8b) | Physical Grounding Filter | Not yet implemented; depends on CIR-001 resolution |
 | $\gamma_2$ (Axiom A3) | Nothingness Conservation | Partially implemented via unknown node registration checks |
-| $\gamma_3$ (AP-006) | Provenance Ceiling Enforcement | Not yet implemented |
-| $\gamma_4$ (CF-004) | Dynamic Debt Ceiling Triage | Not yet implemented; Unknowns.md line count functions as a proxy |
+| $\gamma_3$ (AP-006 (`Admin/Auditor_Protocols.md`)) | Provenance Ceiling Enforcement | Not yet implemented |
+| $\gamma_4$ (CF-004 (`Architecture/Cognitive_Frameworks.md`)) | Dynamic Debt Ceiling Triage | Not yet implemented; Unknowns.md line count functions as a proxy |
 
-This is a discrepancy between declared and implemented governance — the kind of drift this repository's apparatus exists to catch. $\gamma_1$ through $\gamma_4$ are aspirational prose until CIR-001 is resolved and the harness is extended to Phase 2. No unknown is logged here because CIR-001 already tracks the primary blocker. The enforcement-layer dependency previously cited (AP-012/AP-016) is resolved at the protocol layer; remaining Phase-2 work is gated solely on CIR-001 and harness extension.
+This is a discrepancy between declared and implemented governance — the kind of drift this repository's apparatus exists to catch. $\gamma_1$ through $\gamma_4$ are aspirational prose until CIR-001 is resolved and the harness is extended to Phase 2. No unknown is logged here because CIR-001 already tracks the primary blocker. The enforcement-layer dependency previously cited (AP-012 (`Admin/Auditor_Protocols.md`)/AP-016 (`Admin/Auditor_Protocols.md`)) is resolved at the protocol layer; remaining Phase-2 work is gated solely on CIR-001 and harness extension.
 
 ## 7.5 Conclusion
 
@@ -781,7 +781,7 @@ This schema answers three questions a Phase-2 harness must be able to answer for
 | Test run exists, but telemetry was never cryptographically logged | $S = \varepsilon$ | Default | `unverified` |
 | Cryptographically logged genuine telemetry (Section VII / IX) with no poisoned-injection flag | $S \in (\varepsilon, 1]$ | Value derived from logged contact / recovery / structural-health evidence | `cryptographic` |
 | Poisoned-telemetry injection detected and flagged (`Tests/Leviathan_testing.md` ASM-005 / §VII) | $S = \varepsilon$ | Even if raw sensors reported contact | `poisoned_flagged` |
-| Multi-unit swarm diversity score available and disagreement analysis performed (CF-002 protocol) | May raise $S$ within $(\varepsilon, 1]$ | Only if authenticity already `cryptographic` | `cryptographic` + diversity note |
+| Multi-unit swarm diversity score available and disagreement analysis performed (CF-002 (`Architecture/Cognitive_Frameworks.md`) protocol) | May raise $S$ within $(\varepsilon, 1]$ | Only if authenticity already `cryptographic` | `cryptographic` + diversity note |
 | Manual human attestation of physical recovery / inspection | $S \in (\varepsilon, 1]$ | Explicitly recorded, dated, and signed | `multi_party` or `manual_attestation` |
 
 **Support_Raft:** all sensor surfaces remain TBD/Placeholder. Until SR-006 / SR-007 (and the Leviathan unit physical envelope dependency) resolve, Support_Raft contributes only the default $S = \varepsilon$.
@@ -822,6 +822,8 @@ No continuous sensor stream is required. The harness remains offline / batch, co
 ---
 
 ## Resolution Log
+
+- 2026-10-29: **X3 citation retrofit (mechanical).** 5 bare colliding-prefix citations in operative body text qualified with their owning File.md per PKC-003, per the human-ruled Decision Brief 2026-10-29 item 4A (registry: Kit v1.29 Governance Sidecar ID Reference; per-ID grounding: Unknowns active index). Citation-form-only; no ID renumbered; frozen history untouched; flagged instances reported to the human (MAINT-11). (Vibe, Repo Custodian — delegated line.)
 
 - 2026-10-28 (v0.30): **AUDIT_21 F1–F4 minimal wrapper repair enacted (human-ratified Decision Brief 2026-10-28b item 4; Vibe, Repo Custodian, delegated maintenance).** F1: the v0.19–v0.29 changelog that had accumulated inside the File State Last Audit cell is extracted verbatim into this new Resolution Log (entries below, newest-first); Last Audit slimmed to the current pass with a pointer here. F2 (minimal scope): CIR-001's §8.4 tracker given the missing standard fields (Risk, Priority, Type, Owner, Last Reviewed); First Logged deliberately kept "Not recorded" — no backfill. F3: bare citations qualified — §6.2 Rule γ3 → `Admin/Auditor_Protocols.md` AP-006; §6.2 Rule γ4 → `Architecture/Cognitive_Frameworks.md` CF-004; the File State Active Trackers row; the §4.6.2 Independence Predicate. F4: Spec Gates field completed to six-gate enumeration (G2/G5/G6 recorded as not formally assessed — no gate advanced per PKC-020; G5's 2026-10-28 external verification was findings-only). Version bumped 0.29 → 0.30 including the subtitle line (per the v0.28 lesson). Full section set (Assumptions, Active Disputes, Auditor Notes & Unknowns, Drift Indicators, etc.) deferred to the next substantive revision per the human ruling. Findings report: VibesSandbox `Audits/AUDIT_21_Admin-Computational_Institutional_Reasoning.md` (import pending as CAMPAIGN_AUDIT_21).
 
