@@ -12,7 +12,7 @@
 | Open Unknowns    | 0                                                                    |
 | Body Stability   | N/A                                                                  |
 | Owning Domain    | Tests/                                                               |
-| Last Reviewed    | 2026-10-27 — flag on the FL-20261007 ratification closed (PKC-036); no entry or index row changed. Prior: 2026-10-25 — gap noted: no entry or index row exists for MAQT Cycle 1 (PKC-041); nothing added to the index. Prior: 2026-10-19 — index rows and log entries added through the Chrono pilot scoring (see Resolution Log); header corrected 2026-10-24 (Claude, human-directed, from a Vibe per-file audit). Prior: 2026-10-03                                                          |
+| Last Reviewed    | 2026-10-29 — cross-agent-session evidence entry FL-20261029-shared-custodian-collaboration filed and index row added (collaboration-milestone recording pass); entry Status filed as Unreviewed, entry file and index row same pass per the status-ownership rule. Prior: 2026-10-27 — flag on the FL-20261007 ratification closed (PKC-036); no entry or index row changed. Prior: 2026-10-25 — gap noted: no entry or index row exists for MAQT Cycle 1 (PKC-041); nothing added to the index. Prior: 2026-10-19 — index rows and log entries added through the Chrono pilot scoring (see Resolution Log); header corrected 2026-10-24 (Claude, human-directed, from a Vibe per-file audit). Prior: 2026-10-03                                                          |
 | Sidecar Link     | N/A                                                                  |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
@@ -183,6 +183,7 @@ Procedure cards for tracks currently cleared to run — fill while running, file
 
 | ID | Date | Title | Status | Path |
 |----|------|-------|--------|------|
+| FL-20261029-shared-custodian-collaboration | 2026-10-29 | First structural cross-agent collaboration in operation — shared-custodian methodology; two custodial lines same-day, independent verifications agreeing, auditor seat vacated (Pathway 1 accounting included); operational evidence, not a test run | Unreviewed | `Tests/Field_Logs/FL-20261029-shared-custodian-collaboration.md` |
 | FL-20261019-chrono-divergence-pilot-scoring | 2026-10-19 | Chrono pilot Steps 3-4 — Gemini and Grok scored the six sessions; F1/F2 Unscorable on both sheets; M1 agreement 1 of 4, validity 3 of 4; no adjudicated score | Unreviewed | `Tests/Field_Logs/FL-20261019-chrono-divergence-pilot-scoring.md` |
 | FL-20261018-chrono-divergence-chatgpt-d-baseline | 2026-10-18 | Chrono pilot session 6 — ChatGPT, Case D, Baseline arm; Stage 1 M1 No; Stage 2 did not report the reconciliation check; valid, annotated, family complete | Unreviewed | `Tests/Field_Logs/FL-20261018-chrono-divergence-chatgpt-d-baseline.md` |
 | FL-20261018-chrono-divergence-chatgpt-b-pointer | 2026-10-18 | Chrono pilot session 5 — ChatGPT, Case B, Pointer arm; Stage 1 M1 Yes (F-01); Stage 2 not run; valid, annotated (Temporary Chat; account memory settings enabled at run time, disabled afterward), family incomplete | Unreviewed | `Tests/Field_Logs/FL-20261018-chrono-divergence-chatgpt-b-pointer.md` |
@@ -202,6 +203,8 @@ Procedure cards for tracks currently cleared to run — fill while running, file
 
 ## Resolution Log
 
+
+- 2026-10-29: **First operational cross-agent collaboration filed** — `FL-20261029-shared-custodian-collaboration.md` (shared-custodian methodology, 2026-10-29: two custodial lines working the repository independently same-day with independent verifications agreeing; roles segregated; auditor seat vacated pending a successor, GOV-008/Pathway 1 accounting included; run type cross-agent session in operation, not a quorum trial). Index row added. Evidence only; no doctrine, Unknown or Spec Gate change.
 
 - 2026-10-27: **Flag on FL-20261007 closed (PKC-036, human-directed; nothing else changed).** The 2026-10-24 entry below flagged that the index row reads "Reviewed — accepted and ratified" while the 2026-10-07 log line records the entry as Unreviewed pending ratification. The human confirmed on 2026-10-27 that the recharacterization was approved and completed. The ratification is recorded in the entry's own Status line (2026-10-07), in `Archive/Logs/Progress_Log_Changelog.md` (2026-10-07, second entry), and now here; the index row is correct. The 2026-10-07 log line below is the state at filing time and is left as written (append-only). The cosmetic table break in the Ready-to-Run Cards section was not touched.
 
