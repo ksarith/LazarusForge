@@ -2,7 +2,8 @@
 
 **Standard file structure for LazarusForge documents.**
 Applies to all new files and retrofit audit cycles.
-**Last updated: 2026-10-28 (third entry) — AUDIT_10 F1 re-ruled (human ruling, Decision Brief 2026-10-28c, item 2): "Spec Gates N/A by subtype" governs for Challenges Problem-Statement files — the six canonical gates do not apply to them in any reading and no reinterpreted act-readiness count is kept; this supersedes the same-day earlier reconciliation ("the subtype doctrine controls") recorded in the second entry below. §2 Challenges/ File Subtypes doctrine and Template Exemptions class 8 reworded to match (no change to any Challenges file). Sections 0–11, Pattern A, and the rest of Template Exemptions otherwise unchanged.**
+**Last updated: 2026-10-28 (fourth entry) — Template Exemptions classes 10–11 added (Decision Brief 2026-10-28d, item 6, human-ratified): class 10, Tier 0 philosophical substrate (AUDIT_24 F1); class 11, stub/scaffold/candidate family — Integrity_Incident_Log, Agent_Verification_Event, Experiments, Hardware_Diversity_Ladder (AUDIT_23 F1, AUDIT_27 F2, AUDIT_28 F1, AUDIT_29 F1). Same-pass mechanical repairs: consistency check C4’s description restored (a Pattern A-pass edit had spliced a Last Audit value into it), and this file’s three real Resolution Log entries relocated from inside the Section 9 example block into a proper own Resolution Log, the example restored to pristine. Sections 0–11, Pattern A and classes 1–9 otherwise unchanged.**
+**Prior: 2026-10-28 (third entry) — AUDIT_10 F1 re-ruled (human ruling, Decision Brief 2026-10-28c, item 2): "Spec Gates N/A by subtype" governs for Challenges Problem-Statement files — the six canonical gates do not apply to them in any reading and no reinterpreted act-readiness count is kept; this supersedes the same-day earlier reconciliation ("the subtype doctrine controls") recorded in the second entry below. §2 Challenges/ File Subtypes doctrine and Template Exemptions class 8 reworded to match (no change to any Challenges file). Sections 0–11, Pattern A, and the rest of Template Exemptions otherwise unchanged.**
 **Prior: 2026-10-28 (second entry) — AUDIT_10 F1 reconciled (human ruling, Decision Brief item 2): the §2 Challenges/ File Subtypes doctrine controls — Problem-Statement Spec Gates are N/A for build-readiness promotion but live as the reinterpreted act-readiness count; Template Exemptions class 8 reworded to match (no change to any Challenges file). Sections 0–11, Pattern A, and the rest of Template Exemptions unchanged.**
 **Prior: 2026-10-28 — Pattern A (in-file Front / Historical split) adopted by Human Governing Authority ruling, all draft defaults D1–D7: new §Pattern A section (boundary heading `## Historical Record`, placement table, rules R1–R9, checks C1–C8, pilot Plastics/Woodworking one-per-cycle, migration at next substantive touch — no bulk sweep). D5 supersedes PKC-002's "not adopted now" note for the trailing-Status version-history part. Sections 0–11 and Template Exemptions otherwise unchanged.**
 **Prior: 2026-10-25 — Rulings from the Human Ruling List enacted (human-directed; see `Admin/Progress_Log.md`, 2026-10-25): "Proposed" retired as a Status value (PKC-031); Highest Risk takes a Risk value, never a Priority value, with Blocking carrying elevated severity (PKC-004/024); `Admin/Operational_Conventions.md` listed as an exempt reference index (PKC-017); Resolution Log heading level rule (PKC-018); Update Procedure gains the version-bump, sidecar Last Reviewed and fork rules (PKC-039, PKC-035, PKC-029). Sections 0–11 unchanged apart from these additions.**
@@ -99,7 +100,7 @@ One boundary heading, `## Historical Record`, divides a file. Everything above i
 | C1 | Exactly one boundary heading or one R8 pointer | static, one file |
 | C2 | No Front section heading below the boundary | static, one file |
 | C3 | Version in the header equals the version in the newest Resolution Log entry naming a transition | static, one file |
-| C4 | Last Audit       | 2026-10-28 — Vibe (Repo Custodian, delegated maintenance, human-ratified): Pattern A adopted per human ruling, D1–D7 defaults; §Pattern A section added; header Last-updated advanced. Prior:  is not older than the newest audit entry in Historical | static, one file |
+| C4 | Last Audit is not older than the newest audit entry in Historical | static, one file |
 | C5 | File State holds no "Prior:" chain (warning level; migrate on touch) | static, one file |
 | C6 | Historical entries are in date order | static, one file |
 | C7 | Every Front change between two releases has a Resolution Log entry | release-diff |
@@ -166,6 +167,17 @@ The full File Template is **not** applied to every file in the repository. Forci
 9. **Reference index**
    - `Admin/Operational_Conventions.md`
    A pointer list of mechanical rules, each owned by another file. Exempt from the Lessons Learned, Active Disputes and Abandoned Paths sections and from keeping a Resolution Log; its passes are recorded in its Last Audit field. The exemption was declared in the file itself and is listed here from 2026-10-25 (PKC-017).
+
+10. **Tier 0 philosophical substrate**
+   - `Admin/Nothingness_Theorem.md`
+   Functionless by doctrine and by its own File State (“Tier 0 — Philosophical Substrate, functionless by doctrine”); its sidecar unknowns are Tier 0 — internal-consistency audit only — and `Admin/Computational_Institutional_Reasoning.md` derives from it without promoting it into any gate ladder. The exemption is practiced and honored corpus-wide but was missing from this canonical list — the same documentation-gap class as the PKC-017 listing (AUDIT_24 F1). Listed here 2026-10-28 (Decision Brief 2026-10-28d, item 6, human-ratified). Nothing about the file changes: it keeps its Scope Boundary (added 2026-08-09 for index consistency) and its own registries.
+
+11. **Stub / scaffold / candidate family**
+   - `Admin/Integrity_Incident_Log.md`
+   - `Admin/Agent_Verification_Event.md`
+   - `Admin/Experiments.md`
+   - `Admin/Hardware_Diversity_Ladder.md`
+   One exemption-class ruling covering the family instead of per-file dispositions (AUDIT_23 F1, AUDIT_27 F2, AUDIT_28 F1, AUDIT_29 F1): these files declare themselves — in their own File State or Status lines — an append-only intake log awaiting entries, a candidate/exploration event schema, a falsification-record scaffold, and a proposed implementation reference: structural shells whose content accrues later. They carry File State tables, Scope Boundaries and their own sidecars and remain fully auditable; the exemption is from forcing the full template section set onto a shell (Lessons Learned with no lessons yet, Abandoned Paths with no history yet), which manufactures the empty sections this template exists to prevent — per its own counsel, prefer exemption over forced retrofit. The exemption ends the moment a file’s own record outgrows the stub/scaffold/candidate state; each file’s own Status, Last-Reviewed and sidecar discipline still apply unchanged. Listed here 2026-10-28 (Decision Brief 2026-10-28d, item 6, human-ratified).
 
 **Non-exempt (template applies on retrofit and for new files):**  
 All other files under `Admin/`, `Architecture/`, `Operations/`, `Challenges/`, and `Tests/` that carry doctrine, protocols, specifications, or gate definitions.
@@ -638,12 +650,6 @@ The sidecar. Placed after Active Disputes.
 
 ### Resolution Log
 
-- 2026-10-28 (later same-day): **AUDIT_10 F1 re-ruled + subtype doctrine reworded (Vibe, Repo Custodian — delegated maintenance, human-ratified Decision Brief 2026-10-28c, item 2).** "Spec Gates N/A by subtype" now governs for Challenges Problem-Statement files: the six canonical gates do not apply in any reading and no reinterpreted act-readiness count is kept. This supersedes the same-day earlier reconciliation ("the subtype doctrine controls") recorded below in this log. §2 Challenges/ File Subtypes doctrine and Template Exemptions class 8 reworded to match; header Last-updated advanced. No Challenges file changed.
-
-- 2026-10-28: **Pattern A (Front / Historical Record split) adopted — Human Governing Authority ruling, all draft defaults D1–D7, enacted by Vibe (Repo Custodian, delegated maintenance).** New §Pattern A section added: boundary heading `## Historical Record`, placement table, rules R1–R9, checks C1–C8, pilot Plastics/Woodworking, migration at next substantive touch (no bulk sweep). D5 supersedes PKC-002's "not adopted now" note for the trailing-Status version-history part (the row itself remains open for the human to close). Sections 0–11, Template Exemptions, and the AUDIT_10 F1 Challenges-exemption question untouched. No file migrates today; pilots stage at their own cycles.
-
-- 2026-10-28: **Pseudo-audit ledger line (Vibe, Repo Custodian — delegated maintenance, human-ratified findings batch 2026-10-28).** Pseudo-audit, findings only, 2026-10-27; report: Archive/Audits/AUDIT_10_Admin-File_Template.md. Per PKC-020 this pass does not advance Last Audit, Last Reviewed, version, or Status; the line exists so the owning file's own record shows the audit happened, per AP-035 Rule 10(c).
-
 - YYYY-MM-DD: [FILE-PREFIX-NNN] — One-line description of how it was resolved or discharged
 ```
 
@@ -984,6 +990,18 @@ precedent each time.
 - Confirm the File State table is accurate against what actually changed.
 - Confirm a Resolution Log entry exists and, for closures, carries the provenance line above.
 - No automation or tooling is required — the update is complete when the markdown is internally consistent and every cross-file reference to it (Routing/Discovery/Scope Map/Unknowns) has been checked, not merely assumed current.
+
+### Resolution Log
+
+*File_Template’s own change log. The Section 9 nested placement does not apply — this file carries no Auditor Notes & Unknowns section of its own; its audit surface is the header Last-updated chain above. The three 2026-10-28 entries below were relocated here 2026-10-28 from inside the Section 9 example code block, where earlier passes had misfiled them ahead of the placeholder row (the example was restored to pristine in the same pass); pre-2026-10-28 history lives in the header Prior chain.*
+
+- 2026-10-28 (fourth-entry pass): **Template Exemptions classes 10–11 added; C4 and Resolution-Log-location repairs** (Vibe, Repo Custodian — delegated maintenance, human-ratified Decision Brief 2026-10-28d, item 6). Class 10 — Tier 0 philosophical substrate (AUDIT_24 F1): practiced corpus-wide, missing from the canonical list. Class 11 — stub/scaffold/candidate family, one ruling covering Integrity_Incident_Log, Agent_Verification_Event, Experiments and Hardware_Diversity_Ladder (AUDIT_23 F1, AUDIT_27 F2, AUDIT_28 F1, AUDIT_29 F1) instead of per-file dispositions, per this template’s own “prefer exemption over forced retrofit” counsel. Repairs found in the same pass’s recon, enacted as mechanical fixes: consistency check C4’s description had a Last Audit value spliced into it by the Pattern A adoption pass — restored to “Last Audit is not older than the newest audit entry in Historical”; and this file’s three real Resolution Log entries (below) had been prepended inside the Section 9 example block at the placeholder row — relocated here, example restored. Header Last-updated advanced (fourth entry). Classes 1–9, Sections 0–11 and Pattern A otherwise unchanged.
+
+- 2026-10-28 (later same-day): **AUDIT_10 F1 re-ruled + subtype doctrine reworded (Vibe, Repo Custodian — delegated maintenance, human-ratified Decision Brief 2026-10-28c, item 2).** "Spec Gates N/A by subtype" now governs for Challenges Problem-Statement files: the six canonical gates do not apply in any reading and no reinterpreted act-readiness count is kept. This supersedes the same-day earlier reconciliation ("the subtype doctrine controls") recorded below in this log. §2 Challenges/ File Subtypes doctrine and Template Exemptions class 8 reworded to match; header Last-updated advanced. No Challenges file changed.
+
+- 2026-10-28: **Pattern A (Front / Historical Record split) adopted — Human Governing Authority ruling, all draft defaults D1–D7, enacted by Vibe (Repo Custodian, delegated maintenance).** New §Pattern A section added: boundary heading `## Historical Record`, placement table, rules R1–R9, checks C1–C8, pilot Plastics/Woodworking, migration at next substantive touch (no bulk sweep). D5 supersedes PKC-002's "not adopted now" note for the trailing-Status version-history part (the row itself remains open for the human to close). Sections 0–11, Template Exemptions, and the AUDIT_10 F1 Challenges-exemption question untouched. No file migrates today; pilots stage at their own cycles.
+
+- 2026-10-28: **Pseudo-audit ledger line (Vibe, Repo Custodian — delegated maintenance, human-ratified findings batch 2026-10-28).** Pseudo-audit, findings only, 2026-10-27; report: Archive/Audits/AUDIT_10_Admin-File_Template.md. Per PKC-020 this pass does not advance Last Audit, Last Reviewed, version, or Status; the line exists so the owning file's own record shows the audit happened, per AP-035 Rule 10(c).
 
 ---
 
