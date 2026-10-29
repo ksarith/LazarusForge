@@ -1,9 +1,9 @@
 # Archive/Audits — External Audit Campaign Records
 
-Provenance: findings-only per-file audit campaign (PKC-020 split policy) run by Vibe (Skeptic/Auditor) against ksarith/LazarusForge @ main, head 6dea6e0 (unchanged across sessions to date). Working copies live in ksarith/VibesSandbox/Audits/ (the resume authority); this folder is the LazarusForge-side archival record.
+Provenance: findings-only per-file audit campaign (PKC-020 split policy) run by Vibe (Skeptic/Auditor) against ksarith/LazarusForge @ main. The head moved mid-campaign, so no single head describes the whole archive (reconciled 2026-10-29 after the release-1.29 review flagged the stale single-head claim): `AUDIT_01`–`AUDIT_16` were audited at head `6dea6e0`; `CAMPAIGN_AUDIT_17`–`CAMPAIGN_AUDIT_21` at `982e958`; `CAMPAIGN_AUDIT_22`–`CAMPAIGN_AUDIT_29` at `eee122a6`. Each report, correction, and cross-file session record states its own fetch head; `SESSION_STATUS.md` tracks the campaign-era head. Working copies live in ksarith/VibesSandbox/Audits/ (the resume authority); this folder is the LazarusForge-side archival record.
 
 Naming conventions:
-- AUDIT_NN_<domain>-<File>.md — one report per audited file (AUDIT_01 through AUDIT_11 as of 2026-10-28; campaign continues at file 12, Admin/Repository_Structure.md)
+- AUDIT_NN_<domain>-<File>.md — one report per audited file (`AUDIT_01`–`AUDIT_16` unprefixed, `CAMPAIGN_AUDIT_17`–`CAMPAIGN_AUDIT_29` prefixed on import; campaign complete through file 29 as of 2026-10-28)
 - AUDIT_NN-MM_<topic>_<date>.md — dated corrections to earlier reports
 - CROSS_FILE_PATTERN_FINDINGS_Session<N>.md — recurring cross-file patterns (X-numbered), per session batch
 - SESSION_STATUS.md — resume tracker: status table, approved remaining sequence, patterns, open questions
