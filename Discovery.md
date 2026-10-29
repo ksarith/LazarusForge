@@ -1,6 +1,7 @@
 # Discovery.md — LazarusForge
 **Navigation layer for the active working repository.**
-**Last updated: 2026-10-28 (second entry) — X3 designation scheme completed (human-assigned): `K`=`Automation/` (kinetic) and `B`=base layer (root-level files) added to the folder-pointer note; scheme complete for every top-level location (definitions live in `Admin/Canonical_Terms.md` §1, v0.11). No file registered or unregistered; no Status change.**
+**Last updated: 2026-10-28 (third entry) — Six Maturity Snapshot Risk cells mirrored from the owning files (human-ratified Decision Brief 2026-10-28d item 2 + the 2026-10-28b X10 recompute, "file wins" rule): `Admin/Agent_Verification_Event.md` Low → Medium (Placeholder — AVE-R1); `Admin/Hardware_Diversity_Ladder.md` unlabeled → Low (no owned unknowns); `Admin/Canonical_Terms.md` Low → High (CT-004, CT-007); `Admin/Ship_of_Theseus.md` Medium → High (ST-004); `Admin/Trajectories.md` Medium → High (TR-003); `Admin/Economics.md` Medium → High (ECN-002). The AVE §2.5.0 claim-confidence bar is unchanged. No file registered or unregistered; no Status change.**
+**Prior: 2026-10-28 (second entry) — X3 designation scheme completed (human-assigned): `K`=`Automation/` (kinetic) and `B`=base layer (root-level files) added to the folder-pointer note; scheme complete for every top-level location (definitions live in `Admin/Canonical_Terms.md` §1, v0.11). No file registered or unregistered; no Status change.**
 **Prior: 2026-10-28 — Folder Designation Characters referenced from the Scope Map folder pointers (X3 human ruling; definitions live in `Admin/Canonical_Terms.md` §1, v0.10): `A`=`Admin/`, `R`=`Architecture/`, `X`=`Archive/`, `O`=`Operations/`, `C`=`Challenges/`, `T`=`Tests/`, case-sensitive; `Automation/` and root-level files pending human assignment. No file registered or unregistered; no Status change.**
 **Prior: 2026-10-27 — Return_To_Eden's Maturity Snapshot Spec Gates cell mirrored from the owning file's PKC-042 hold annotation (recorded clears treated as stale; no gate advanced). No doctrine, Unknown or Status change.**
 **Prior: 2026-10-25 — Five directory-tree descriptors changed from "Proposed" to "Exploration" (`Admin/CIR_Gov.md`, `Operations/Automotive.md`, `Operations/Robotics.md`, `Tests/Chrono_Divergence.md`, `Tests/Chrono_Divergence_Pilot.md`), following the PKC-031 ruling that retires "Proposed" as a Status value (human-directed). The Chrono_Divergence_Pilot descriptor also drops "not started", which no longer matched the file (run completed procedurally 2026-10-19, human confirmation pending). Earlier dated entries that say Proposed are history and stay as written. No doctrine, Unknown or Spec Gate change.**
@@ -394,12 +395,12 @@ Discovery.md is a navigation map — task tracking belongs in Unknowns.md.
 |------|--------|-----------|--------------|
 | `Admin/Governance_Charter.md` | Draft | 6/6 vs. `Admin/Verification_Gates.md` — execution quality (see GOV-011, resolved 2026-07-05); promotion separately blocked by open unknowns (GOV-005) and Enforcement Checkpoint 2 — Bootstrap Paradox; GOV-003 Resolved 2026-08-23 (specification-level architecture only — no promotion-readiness change) | High (GOV-005 — sole remaining open item with Priority: Critical in that file; its own Risk field reads High, matching the convention that this column mirrors Risk not Priority — corrected 2026-09-04, this row previously said "Critical," carrying forward a Risk/Priority conflation from that file's own header that was fixed 2026-09-03; GOV-013 ratified 2026-07-19, GOV-015/GOV-018/GOV-003 Resolved 2026-08-23 — see `Archive/Logs/Governance_Charter_Changelog.md`) |
 | `Admin/Ethical_Constraints.md` | Exploration | 0/6 | High |
-| `Admin/Agent_Verification_Event.md` | Candidate / Exploration | 0/6 | Low — process schema, explicitly barred from feeding claim confidence (§2.5.0) |
+| `Admin/Agent_Verification_Event.md` | Candidate / Exploration | 0/6 | Medium (Placeholder — AVE-R1 — mirrored from the owning file's File State 2026-10-28; the §2.5.0 bar on feeding claim confidence is unchanged) |
 | `Admin/Auditor_Protocols.md` | Draft | 5/6 (G1, G3, G4, G5, G6 clear — G3 cleared 2026-08-03 via AP-017 Resolved; G5 cleared 2026-09-03, cross-ref sweep found and fixed one remaining unprefixed-path defect; G2 N/A — no physical/quantitative claims of its own) | High |
 | `Admin/Forge_Audit_Kit.md` | Draft | 0/6 | — |
 | `Admin/Verification_Gates.md` | Draft | 6/6 — Spec Gates 2/6→6/6 2026-09-03 per Grok audit recommendation, Tier 1 Axiom Verification follow-up completed same day (Governance_Charter.md loaded, no drift found); Status remains Draft — 6/6 reflects execution quality only, not promotion readiness | High |
 | `Admin/File_Template.md` | Exploration / Draft / Specification | 0/6 | Low / Medium / High |
-| `Admin/Canonical_Terms.md` | Draft | 0/6 | Low |
+| `Admin/Canonical_Terms.md` | Draft | 0/6 | High (CT-004, CT-007 — mirrored from the owning file's File State 2026-10-28, Decision Brief 2026-10-28b X10 recompute) |
 | `Admin/Engineer_Protocols.md` | Draft | 2/6 | High |
 | `Admin/Safety_Protocols.md` | Exploration | 0/6 | High |
 | `Admin/Security_Protocols.md` | Draft | 0/6 | High |
@@ -408,9 +409,9 @@ Discovery.md is a navigation map — task tracking belongs in Unknowns.md.
 | `Admin/Resolution_Methodology.md` | Active — Reference | N/A — named reference for demonstrated patterns, not a specification | Low |
 | `Admin/Operational_Conventions.md` | Specification | N/A — reference index, not a governed doctrine surface | Low |
 | `Admin/Repository_Structure.md` | Exploration | 0/6 | Low |
-| `Admin/Ship_of_Theseus.md` | Exploration | 0/6 | Medium |
-| `Admin/Trajectories.md` | Exploration | 1/6 | Medium |
-| `Admin/Economics.md` | Exploration | 0/6 | Medium |
+| `Admin/Ship_of_Theseus.md` | Exploration | 0/6 | High (ST-004 — mirrored from the owning file's File State 2026-10-28, Decision Brief 2026-10-28b X10 recompute) |
+| `Admin/Trajectories.md` | Exploration | 1/6 | High (TR-003 — mirrored from the owning file's File State) |
+| `Admin/Economics.md` | Exploration | 0/6 | High (ECN-002 — mirrored from the owning file's File State 2026-10-28, Decision Brief 2026-10-28b X10 recompute) |
 | `Admin/Environmental_Constraints.md` | Draft | 1/6 (G1 cleared — fallacy checklist applied at creation; G3/G5 fixes applied 2026-07-06, pending re-audit confirmation) | High |
 | `Admin/Experiments.md` | Draft | 0/6 | Low |
 | `Admin/Nothingness_Theorem.md` | Tier 0 — Philosophical Substrate (functionless by doctrine; not subject to operational promotion gates) | N/A — Tier 0 exempt | N/A — Tier 0 documents are audited for internal consistency only |
@@ -420,7 +421,7 @@ Discovery.md is a navigation map — task tracking belongs in Unknowns.md.
 | `Admin/Autonomy_Divergence_Protocol.md` | Draft — PROPOSED NOT RATIFIED | 6/6 (GOV-021b Resolved 2026-08-11; CIS Track A independently confirmed 2026-08-12; sole remaining ratification blocker is GOV-021c, §12, deliberately held Open pending live multi-agent evidence — not a defect in the specification) | High (governs response to AI governance/objective divergence) |
 | `Admin/PROBE_INVOCATION.md` | Draft | N/A — operational prompt template, not a doctrine or specification claim | — |
 | `Admin/INTEGRITY_SWEEP_PROMPT.md` | Draft | N/A — operational prompt template, not a doctrine or specification claim | — |
-| `Admin/Hardware_Diversity_Ladder.md` | Draft — Proposed implementation reference only | 0/6 | unlabeled |
+| `Admin/Hardware_Diversity_Ladder.md` | Draft — Proposed implementation reference only | 0/6 | Low (no owned unknowns — mirrored from the owning file's File State 2026-10-28) |
 | `Admin/Progress_Log.md` | Active — Living Document | N/A — progression log, not a specification | N/A |
 | `Admin/Metrics_Scaffold.md` | Active — Scaffold Only | N/A — measurement taxonomy, not a specification | N/A — no data collected yet |
 | `Admin/BATTERY_SEED.md` | Draft | N/A — operational prompt template, not a doctrine or specification claim | — |
