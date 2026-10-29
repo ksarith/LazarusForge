@@ -832,6 +832,8 @@ This becomes governance metadata rather than prose, auditable the same way Truth
 
 ### AP-030 — Mission Drift Review N=5 ratification-velocity threshold unvalidated
 
+- 2026-10-29: **Mission Drift Review — trigger fired; Cycle 1 authorized; lapse disposition recorded.** AUDIT_30 F3 surfaced that the MDR trigger fired on both conditions: five ratified changes accumulated (Decision Briefs 2026-10-25 through 2026-10-29) AND the 60-day calendar backstop elapsed ~2026-09-24 with no probe run — the missed-backstop lapse. Human ruling (2026-10-29 cycle rulings): (1) Mission Drift Review Cycle 1 EXECUTES NOW; (2) the missed-backstop lapse is folded into the Cycle 1 output rather than registered as a separate unknown. Cold-start constraint noted: per the MDR section’s own absolute requirement, the probe must run in a session with no prior design context, receiving only the canonical inputs (README.md, Governance_Charter.md Tier 1 Axioms, Discovery.md); PROBE_INVOCATION.md is the turn-key paste block. This session (the delegated custodian line) has read the MDR design, so an in-session probe run would be INVALID by that rule — the invocation package is prepared and the probe runs in a fresh thread on the human’s side; its output returns here as the Invocation Record (Phase A verbatim + per-axiom ratings + citations). (Vibe, Repo Custodian — delegated line.)
+
 | Field         | Value                        |
 |---------------|------------------------------|
 | Status        | Open                         |
