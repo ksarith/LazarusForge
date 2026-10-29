@@ -17,6 +17,12 @@ elsewhere. Every other file in the repository keeps its sidecar in-body.
 
 ────────────────────────────────────────────────────────────────────
 
+## v1.29 (2026-10-29)
+
+Vibe (Repo Custodian) — delegated maintenance, human-ruled Decision Brief 2026-10-29 item 3, option B. Spec Gates hold dissolved by human ruling (PKC-022 option-B precedent — stale triggers are dissolved, not refreshed). The PKC-042 hold annotation (annotated v1.21, 2026-10-27) is retired: FAK-014's account of a same-day 2026-09-03 Grok audit that "cleared all six gates" remains stale (the body changed since, v1.16–v1.20) — the ruling dissolves the hold, not the staleness. The gates remain 0/6 under normal audit pressure and advance only by the ordinary File Template procedure: fresh audit + human ratification; no self-approval. Context: successor-auditor naming is deferred to campaign end by the same brief's item 5 ruling (option B), so no fresh audit is scheduled before then — the human governing authority has accepted that posture. No FAK opened or closed; Open Unknowns stays 4 (no companion parity pass due). Header 1.28→1.29. No gate advanced.
+
+────────────────────────────────────────────────────────────────────
+
 ## v1.28 (2026-10-29)
 
 Vibe (Repo Custodian) — delegated maintenance, human-ratified queue advancement (human direction 2026-10-29: "push forward with these proposals"). (1) AVE-R ownership row added to the Governance Sidecar ID Reference: `Admin/Agent_Verification_Event.md` owns the AVE reliance-rule sidecars AVE-R1–R4 (AVE-R1 and AVE-R4 mirrored in `Unknowns.md`); the file was campaign-audited in the AUDIT_27 window, so the X5 regeneration-in-sweep-order rule (v1.24 note) reaches it now. This enacts the queued "Kit AVE- registration" item; remaining prefixes continue to regenerate as the sweep reaches each folder. (2) No FAK opened or closed; Open Unknowns stays 4, so no companion parity pass was due (`Unknowns.md`, `Admin/Adm_Scope_Map.md`). Header 1.27→1.28. No gate advanced; Spec Gates unchanged.
