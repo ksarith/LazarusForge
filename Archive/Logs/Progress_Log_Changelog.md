@@ -4,6 +4,10 @@ Split out 2026-08-09, following the precedent already established by `Unknowns_C
 
 ---
 
+### 2026-10-28 — File State column widths vary per file; str_replace anchor lesson
+*(Rotated 2026-10-29, collaboration-milestone recording pass.)*
+- File State table column widths vary per file (`Forge_Audit_Kit.md` uses narrower rows than the rest of the tree); anchoring a str_replace on a fixed-width row string silently skips (count=0) instead of failing loudly. Anchor on the row label plus leading value text, and always report the skip array — the missed Kit rows were caught and repaired same-day (0daeecf9 → eba129f). Delegated maintenance (Vibe, Repo Custodian); human-ratified batch 2026-10-28.
+
 ### 2026-10-27 (third entry, same day) — Pin-vs-retire ruled: version pins retired (PKC-022 and PKC-014 Resolved)
 *(Rotated 2026-10-29, Kit-ceiling retirement + ideology-log pass.)*
 - **Human governing authority adopted the decision brief's recommendation (option B: retire the pins).** `Admin/Forge_Audit_Kit.md` v1.22 → v1.23: Derived-from version pins retired (sources and reconciliation date kept), the reconciliation check at audit start reworded to read source content histories — a version delta alone is not drift, content is — and the v1.20 content-based maintenance trigger unchanged. FAK-014 through FAK-019 closed by the same ruling (Payment via Constitutional Decision, ratification completes on commit): the recurring pin-staleness defect class is dissolved by removing the pins, not refreshed; FAK-018's clean-cycle condition is mooted. Kit Open Unknowns 11 → 5.
