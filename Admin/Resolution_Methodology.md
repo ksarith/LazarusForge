@@ -1,6 +1,6 @@
 # Resolution_Methodology.md
 
-**Version 0.9 — 2026-08-28**
+**Version 0.10 — 2026-08-28**
 
 ---
 
@@ -18,8 +18,8 @@
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | N/A — this file is a named reference for demonstrated patterns, not a specification or gate |
 | Verification Ref | Admin/Verification_Gates.md                                         |
-| Last Audit       | 2026-10-23 (Resolution Log backfilled for the Fifth Applied Case and Patterns 6–9; missing Fifth-Case Lessons Learned row added; Pattern 9 applied to this file's own header and case tracking — human-directed, from a Vibe per-file audit, each finding checked against source first; no pattern text changed). Prior: 2026-08-28 (Patterns 6–9 added: specification/operational-clearance split; discharge-vs-specification; verify-closure-format-against-precedent; self-maintenance verification — distilled from the 2026-08-23 through 2026-08-27 session's closures and hygiene fixes, none of which had been captured here despite being real, repeatable, and independently rediscovered rather than cited each time) |
-| Auditor          | Claude — 2026-10-23 log backfill and self-application (human-directed); prior: Claude — Patterns 6–9 drafted and registered, citation examples added (human-directed, prompted by an explicit question: what should following agents know that isn't yet in Progress_Log.md or here), 2026-08-28; prior: Claude — Fifth Applied Case registered, mislabeling corrected in four downstream citations (human-directed), 2026-08-25; prior: Grok — human-directed draft from 2026-08-15 session patterns |
+| Last Audit       | 2026-10-29 — Vibe (Repo Custodian, delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A): X3 mechanical citation retrofit — 17 bare colliding-prefix citations qualified with their owning File.md per PKC-003 (Kit v1.29 Governance Sidecar ID Reference; per-ID grounding from the Unknowns active index). Citation-form-only; no content change; frozen history untouched. Prior: 2026-10-23 (Resolution Log backfilled for the Fifth Applied Case and Patterns 6–9; missing Fifth-Case Lessons Learned row added; Pattern 9 applied to this file's own header and case tracking — human-directed, from a Vibe per-file audit, each finding checked against source first; no pattern text changed). Prior: 2026-08-28 (Patterns 6–9 added: specification/operational-clearance split; discharge-vs-specification; verify-closure-format-against-precedent; self-maintenance verification — distilled from the 2026-08-23 through 2026-08-27 session's closures and hygiene fixes, none of which had been captured here despite being real, repeatable, and independently rediscovered rather than cited each time) |
+| Auditor          | Vibe — Repo Custodian, 2026-10-29 X3 mechanical citation retrofit (delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A); prior: Claude — 2026-10-23 log backfill and self-application (human-directed); prior: Claude — Patterns 6–9 drafted and registered, citation examples added (human-directed, prompted by an explicit question: what should following agents know that isn't yet in Progress_Log.md or here), 2026-08-28; prior: Claude — Fifth Applied Case registered, mislabeling corrected in four downstream citations (human-directed), 2026-08-25; prior: Grok — human-directed draft from 2026-08-15 session patterns |
 | Open Unknowns    | 0                                                                   |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | Low                                                                 |
@@ -48,7 +48,7 @@ This is a reference document in the same tier as `Auditor_Protocols.md` and `For
 
 ## File Purpose
 
-The 2026-08-15 session closed or advanced multiple Critical unknowns (AS-005, PL-001/WA-002/TS-002 shared isolation destination, GF-007/FA-002 fire doctrine, GOV-021c first live evidence) without inventing hardware or claiming readiness the session could not produce. The durable product was not any single closure; it was a small set of repeatable moves that kept turning vague cross-references into named, reusable architecture.
+The 2026-08-15 session closed or advanced multiple Critical unknowns (AS-005, PL-001/WA-002/TS-002 (`Operations/Gate_02_Triage.md`) shared isolation destination, GF-007 (`Operations/Gate_06_Fabrication.md`)/FA-002 (`Architecture/Facilities.md`) fire doctrine, GOV-021c first live evidence) without inventing hardware or claiming readiness the session could not produce. The durable product was not any single closure; it was a small set of repeatable moves that kept turning vague cross-references into named, reusable architecture.
 
 This file names those moves so they can be invoked by citation instead of re-explained each time.
 
@@ -69,8 +69,8 @@ Before treating a cross-reference as load-bearing, open the target file and veri
 Prefer extending an existing named mechanism over creating a parallel path that solves the same problem under a new name.
 
 **Demonstrated cases:**
-- AS-005: GI-002’s “route through scrubber intake” had no mechanical meaning in Air_Scrubber.md. The resolution was a physically separate auxiliary release point that reused the file’s own Variant 1 (aerated bubbler) baseline and stayed chemically isolated from Stage D’s calibrated loop — not a new hardware doctrine and not a tap into the main A→E stream.
-- PL-001 / WA-002 / TS-002: “specialist disposal” (Plastics) and “routed per WA-004/GR-003” (Waste) were two sentences pointing at the same undefined place. The resolution extended TS-002’s existing Contaminated bin (non-decontaminable state) to cover compositional hazards explicitly. No new destination was invented.
+- AS-005: GI-002 (`Operations/Gate_01_Intake.md`)’s “route through scrubber intake” had no mechanical meaning in Air_Scrubber.md. The resolution was a physically separate auxiliary release point that reused the file’s own Variant 1 (aerated bubbler) baseline and stayed chemically isolated from Stage D’s calibrated loop — not a new hardware doctrine and not a tap into the main A→E stream.
+- PL-001 / WA-002 / TS-002 (`Operations/Gate_02_Triage.md`): “specialist disposal” (Plastics) and “routed per WA-004/GR-003” (Waste) were two sentences pointing at the same undefined place. The resolution extended TS-002 (`Operations/Gate_02_Triage.md`)’s existing Contaminated bin (non-decontaminable state) to cover compositional hazards explicitly. No new destination was invented.
 - BFR detection in WA-002: bromine is a halogen; PL-001’s already-established Beilstein test was reused rather than a parallel method written.
 
 **Move:** When a gap appears, first search for an existing named hold, path, test, or bin that already sits in the right architectural position. Extend it. Invent only when nothing reusable exists.
@@ -79,7 +79,7 @@ Prefer extending an existing named mechanism over creating a parallel path that 
 
 Primary-source check (grep / view / direct read) on every factual claim in a proposal before implementing it. Do not accept characterizations on trust, even from a prior agent in the same session or a prior session of the same agent.
 
-**Demonstrated case:** GOV-021c Field_Logs entry of 2026-08-15. Grok proposed the shared-destination architecture with specific claims about PL-001 language, GI-003 kit contents, and WA-002 routing phrasing. Claude re-verified each claim against the primary files before acting. All claims held; the architecture was implemented. Model independence and evidence independence were thereby met and traceable. Role independence was not fully met (Reviewer/Implementer collapsed) and was named precisely rather than rounded up.
+**Demonstrated case:** GOV-021c Field_Logs entry of 2026-08-15. Grok proposed the shared-destination architecture with specific claims about PL-001 language, GI-003 (`Operations/Gate_01_Intake.md`) kit contents, and WA-002 routing phrasing. Claude re-verified each claim against the primary files before acting. All claims held; the architecture was implemented. Model independence and evidence independence were thereby met and traceable. Role independence was not fully met (Reviewer/Implementer collapsed) and was named precisely rather than rounded up.
 
 **Move:** Treat every cross-file factual assertion as provisional until the owning file is opened. Log the verification (or the failure of verification) so the independence dimensions remain inspectable.
 
@@ -88,9 +88,9 @@ Primary-source check (grep / view / direct read) on every factual claim in a pro
 Explicitly separate what can be closed or advanced on paper from what requires physical validation, training data, or equipment that does not yet exist. Never invent a number, capacity, or “validated” claim the session cannot produce.
 
 **Demonstrated cases:**
-- AS-005 deliberately left the auxiliary release point unsized because capacity depends on GI-002’s still-open largest-plausible-vessel assumption.
+- AS-005 deliberately left the auxiliary release point unsized because capacity depends on GI-002 (`Operations/Gate_01_Intake.md`)’s still-open largest-plausible-vessel assumption.
 - WA-002 protocol written at Analogous confidence; remains Open because feedstock validation and formal operator training cannot be produced without equipment.
-- GF-007: four of five fire-doctrine items grounded on the sourced NFPA 51B 35 ft / 11 m standard; the fifth (ventilation/fire interlock) left open pending an Air_Scrubber addition rather than invented unilaterally.
+- GF-007 (`Operations/Gate_06_Fabrication.md`): four of five fire-doctrine items grounded on the sourced NFPA 51B 35 ft / 11 m standard; the fifth (ventilation/fire interlock) left open pending an Air_Scrubber addition rather than invented unilaterally.
 - GOV-021c: one data point logged; the unknown left Open. No claim of closure on specification alone.
 
 **Move:** When writing a Resolution Path, state which steps are paper-closeable now and which are gated on equipment, site, or Field_Logs data. Prefer an honest Open status with a clear remaining evidence need over a premature Resolved.
@@ -99,7 +99,7 @@ Explicitly separate what can be closed or advanced on paper from what requires p
 
 The per-folder Scope_Maps (`Ops_Scope_Map.md`, `Adm_Scope_Map.md`, etc.) have already proven value by catching ownership reassignments and cross-file pointers that never fully propagated. After a folder has been heavily edited, the corresponding Scope_Map is a high-yield surface for residual drift.
 
-**Demonstrated case:** Ops_Scope_Map.md Last Reviewed 2026-08-08; the 2026-08-15 Operations sweep (AS-005, PL-001/WA-002 shared destination, GF-007, Gate_01/02/03 updates) post-dates it. The map’s own methodology previously caught a 2026-07-19 ownership reassignment that had left stale pointers across three files.
+**Demonstrated case:** Ops_Scope_Map.md Last Reviewed 2026-08-08; the 2026-08-15 Operations sweep (AS-005, PL-001/WA-002 shared destination, GF-007 (`Operations/Gate_06_Fabrication.md`), Gate_01/02/03 updates) post-dates it. The map’s own methodology previously caught a 2026-07-19 ownership reassignment that had left stale pointers across three files.
 
 **Move:** After a material session on a folder, either refresh the Scope_Map entry for the changed files or explicitly note the map as stale relative to the session date. Do not treat an unreviewed Scope_Map as current navigation.
 
@@ -142,9 +142,9 @@ A file that states its own maintenance rules (rotation limits, size caps, "most 
 These patterns are intended to be referenced by short name in Resolution Logs, Field_Logs entries, and cross-agent handoffs:
 
 - “Applied Resolution_Methodology §1 (dependency-hollowness check) to WA-002 before accepting GR-007’s downstream claim.”
-- “Applied §2 (reuse-before-invent): extended TS-002 Contaminated bin rather than inventing a parallel specialist-disposal path.”
+- “Applied §2 (reuse-before-invent): extended TS-002 (`Operations/Gate_02_Triage.md`) Contaminated bin rather than inventing a parallel specialist-disposal path.”
 - “Applied §3 (verify-before-accept): primary-source check on every claim in the proposal before implementation.”
-- “Applied §4 (digital/equipment-gated split): left capacity unsized; remains Open pending GI-002 vessel assumptions.”
+- “Applied §4 (digital/equipment-gated split): left capacity unsized; remains Open pending GI-002 (`Operations/Gate_01_Intake.md`) vessel assumptions.”
 - “Applied §5 (scope-map stale-pointer): Ops_Scope_Map last reviewed 2026-08-08; flagged for refresh after today’s Operations edits.”
 - “Applied §6 (specification/operational-clearance split): closed GR-003 Resolved via Payment via Specification; GR-003-R1 keeps jurisdiction-dependent reliance blocked.”
 - “Applied §7 (discharge vs. specification): WA-004 discharged to GR-003 rather than drafting a second disposal specification.”
@@ -161,7 +161,7 @@ Citation is optional. The value is that the move is named and therefore reusable
 
 **WA-004 / GR-003** — negative-value waste fraction and biological/chemical disposal doctrine. Applied 2026-08-15, same day as this file's creation.
 
-Both were confirmed genuinely thin before writing anything (§1: GR-003 outline-only, WA-004 a single table row). §2 decided against a dedicated `Operations/Waste_Handling.md` — GR-003 was already the convergence point both WA-004 and TS-002 pointed at, so extending it kept one destination rather than fragmenting into three. §3 verified `Ethical_Constraints.md`'s active-release vs. passive-encapsulation distinction against source before building on it, rather than restating it from memory — that distinction turned out to structurally imply exactly two disposal outcomes (permanent passive containment or specialist hand-off), not an open-ended list, which is a stronger result than a flat category checklist would have been. §4 wrote category-specific doctrine, deliberately withholding disposal doctrine for the radiological category since no real handling capability exists for it. Cross-file pointers updated (WA-004's row, TS-002's non-decontaminable-state text) — originally mislabeled "§5" here; see the correction under How to Cite and the real Pattern 5 run logged in the Second Applied Case section.
+Both were confirmed genuinely thin before writing anything (§1: GR-003 outline-only, WA-004 a single table row). §2 decided against a dedicated `Operations/Waste_Handling.md` — GR-003 was already the convergence point both WA-004 and TS-002 (`Operations/Gate_02_Triage.md`) pointed at, so extending it kept one destination rather than fragmenting into three. §3 verified `Ethical_Constraints.md`'s active-release vs. passive-encapsulation distinction against source before building on it, rather than restating it from memory — that distinction turned out to structurally imply exactly two disposal outcomes (permanent passive containment or specialist hand-off), not an open-ended list, which is a stronger result than a flat category checklist would have been. §4 wrote category-specific doctrine, deliberately withholding disposal doctrine for the radiological category since no real handling capability exists for it. Cross-file pointers updated (WA-004's row, TS-002 (`Operations/Gate_02_Triage.md`)'s non-decontaminable-state text) — originally mislabeled "§5" here; see the correction under How to Cite and the real Pattern 5 run logged in the Second Applied Case section.
 
 Both GR-003 and WA-004 remain **Open** — categories exist at Analogous confidence; jurisdiction-specific regulatory research and physical validation are still explicitly open, per §4's own instruction not to close on doctrine alone.
 
@@ -173,7 +173,7 @@ Both GR-003 and WA-004 remain **Open** — categories exist at Analogous confide
 
 **GF-007 ventilation/fire interlock (`Operations/Gate_06_Fabrication.md`) × `Operations/Air_Scrubber.md`'s fault-interlock table.** Applied 2026-08-15, same day as the first case — deliberately in a different domain (fire-suppression/safety-systems, not waste/disposal), per the first case's own Revalidation Needed note.
 
-§1 confirmed the gap was real, not already covered by anything else in either file. §2 was the interesting step here: unlike WA-004/GR-003, this wasn't a choice between two owners with equal claim — the actual shutdown mechanism (halting forced ventilation) is Air_Scrubber's own system, so the interlock logic could only sensibly live in its existing five-row fault table, not duplicated in GF-007. §3 surfaced a real limit rather than a stronger structure this time: no automatic fire/smoke detection hardware is specified anywhere in the repository, so the row's trigger input was deliberately kept method-agnostic (manual call) rather than inventing sensor doctrine. §4 closed all five of GF-007's Resolution Path items — the first case to reach that. Cross-file pointers updated in both files (this was originally mislabeled "§5" — see correction above; it is not the Scope-Map pattern).
+§1 confirmed the gap was real, not already covered by anything else in either file. §2 was the interesting step here: unlike WA-004/GR-003, this wasn't a choice between two owners with equal claim — the actual shutdown mechanism (halting forced ventilation) is Air_Scrubber's own system, so the interlock logic could only sensibly live in its existing five-row fault table, not duplicated in GF-007 (`Operations/Gate_06_Fabrication.md`). §3 surfaced a real limit rather than a stronger structure this time: no automatic fire/smoke detection hardware is specified anywhere in the repository, so the row's trigger input was deliberately kept method-agnostic (manual call) rather than inventing sensor doctrine. §4 closed all five of GF-007 (`Operations/Gate_06_Fabrication.md`)'s Resolution Path items — the first case to reach that. Cross-file pointers updated in both files (this was originally mislabeled "§5" — see correction above; it is not the Scope-Map pattern).
 
 **Pattern 5 (Scope-Map stale-pointer check), actually run 2026-08-15:** Checked `Operations/Ops_Scope_Map.md` against today's Operations edits (Gate_02, Gate_03, Gate_06, Air_Scrubber all touched). Gate_03's Scope Boundary already correctly claims contamination-discovery doctrine — no drift. Gate_02's Scope Boundary said "Decontamination protocols and air handling → Air_Scrubber.md, AS-003" — in tension with TS-002's own disposition-workflow content now living in that file. Defensible on a narrow mechanism-vs-workflow reading, but ambiguous enough to correct; clarified in `Gate_02_Triage.md` directly. This is the same class of finding Ops_Scope_Map.md's own Gaps Exposed section has caught before (the 2026-07-19 UNK-008 pattern across three files) — a smaller instance of it, not a new failure mode.
 
@@ -270,7 +270,7 @@ None yet. Candidate for future review: any attempt to turn this reference into a
 
 *§4:* A first draft deviated from an established convention — this repository's PL-001/WA-002/GOV-003 pattern of leaving Risk/Priority fields unchanged on closure — by annotating them as "(residual)"/"→ residual only." Caught and corrected before integration by checking against those three files' actual post-closure text, not just their stated intent. Category structure closes Resolved via Payment via Specification; three residuals (GR-003-R1 jurisdiction-dependent regulation, R2 physical validation, R3 Ethical_Constraints permanent-placement confirmation) keep full operational reliance blocked. Stays functionally blocked pending R1; does not stay **Open** the way GR-007 did in the Fourth case — the distinction is that this case closed the specification itself, where GR-007 remained an unresolved doctrine gap.
 
-*§5:* This case was mislabeled "second applied case" (GF-007's actual case number) at the time of integration, in four places — `Gate_03_Reduction.md`'s own closure note and Resolution Log entry, `Unknowns_Changelog.md`'s v4.83 record, and `Admin/Progress_Log.md` — and this file itself was never updated to register the case at all. Found and corrected 2026-08-25, during a systematic cross-reference sweep prompted directly by the question "have we closed all angles of previous work" — not caught by any of the verification passes run at the time of the original closure.
+*§5:* This case was mislabeled "second applied case" (GF-007 (`Operations/Gate_06_Fabrication.md`)'s actual case number) at the time of integration, in four places — `Gate_03_Reduction.md`'s own closure note and Resolution Log entry, `Unknowns_Changelog.md`'s v4.83 record, and `Admin/Progress_Log.md` — and this file itself was never updated to register the case at all. Found and corrected 2026-08-25, during a systematic cross-reference sweep prompted directly by the question "have we closed all angles of previous work" — not caught by any of the verification passes run at the time of the original closure.
 
 **What this case added:** First applied case to demonstrate that the method's own tracking apparatus — this file's ordinal case numbering — can itself drift out of sync with the work it records. The underlying doctrine work was real and correctly executed; the citation of it was wrong everywhere it appeared, for a full session, because nothing checked this file against its own citations until asked to.
 
@@ -292,6 +292,8 @@ Integrity incidents: log Major/Constitutional (and compound Minor) in `Admin/Int
 ---
 
 ## Resolution Log
+
+- 2026-10-29: **X3 citation retrofit (mechanical).** 17 bare colliding-prefix citations in operative body text qualified with their owning File.md per PKC-003, per the human-ruled Decision Brief 2026-10-29 item 4A (registry: Kit v1.29 Governance Sidecar ID Reference; per-ID grounding: Unknowns active index). Citation-form-only; no ID renumbered; frozen history untouched; flagged instances reported to the human (MAINT-11). (Vibe, Repo Custodian — delegated line.)
 
 - 2026-10-23: **Bookkeeping backfill and first self-application of Pattern 9 (human-directed, from a Vibe per-file audit).** Pattern 9 was run against this file's own version header and case tracking: the header reads v0.9 while this log ended at v0.7, and the Fifth Applied Case had no Lessons Learned row. Entries for the Fifth Applied Case and Patterns 6–9 backfilled below; the missing Lessons Learned row added; Last Audit and Auditor extended. No pattern text changed and no version bump. Not changed: section order (Third through Fifth Applied Cases and the v0.7 refinements sit after Lessons Learned through Drift Indicators) and the Lessons Learned row order. No v0.8 entry or reference exists anywhere in the repository; the 2026-08-25 entry below carries no version number for that reason.
 

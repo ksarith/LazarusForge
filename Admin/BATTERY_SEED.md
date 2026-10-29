@@ -1,5 +1,5 @@
 # BATTERY_SEED.md
-**Version 1.1**
+**Version 1.2**
 
 ## File State
 
@@ -8,8 +8,8 @@
 | Status         | Draft                                                               |
 | Spec Gates     | N/A — operational prompt template, not a doctrine or specification claim |
 | Verification Ref | Admin/Auditor_Protocols.md §Adversarial Challenge Battery, AP-017 |
-| Last Audit     | 2026-10-27 — Vibe (human ruling enacted, PKC-022 option B): version pin retired, header 1.0→1.1; prior: Claude — first draft, 2026-08-02 |
-| Auditor        | Vibe — Skeptic/Auditor, 2026-10-27 pin retirement (human-ratified); prior: Claude — Synthesizer/Auditor, human-directed, first draft, 2026-08-02 |
+| Last Audit       | 2026-10-29 — Vibe (Repo Custodian, delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A): X3 mechanical citation retrofit — 5 bare colliding-prefix citations qualified with their owning File.md per PKC-003 (Kit v1.29 Governance Sidecar ID Reference; per-ID grounding from the Unknowns active index). Citation-form-only; no content change; frozen history untouched. Prior: 2026-10-27 — Vibe (human ruling enacted, PKC-022 option B): version pin retired, header 1.0→1.1; prior: Claude — first draft, 2026-08-02 |
+| Auditor          | Vibe — Repo Custodian, 2026-10-29 X3 mechanical citation retrofit (delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A); prior: Vibe — Skeptic/Auditor, 2026-10-27 pin retirement (human-ratified); prior: Claude — Synthesizer/Auditor, human-directed, first draft, 2026-08-02 |
 | Open Unknowns  | 0 — tracked at Admin/Auditor_Protocols.md AP-017 (mechanism-level, not template-level) |
 | Ethical Anchor | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
@@ -28,19 +28,19 @@ When this file contradicts that source, the source document prevails.
 
 ## Why This Exists
 
-`Automation/cold_session_bundler.py` already refuses to construct a session carrying prior findings — that part of informational independence is solid and code-enforced. But its `DEFAULT_STANDARD_AUDIT_PROMPT` is intentionally general ("evaluate the material on its own terms... identify unsupported claims, internal inconsistencies...") — it produces broad reviewer output, not a structured, class-by-class Adversarial Battery with the concrete-scenario minimum each class requires. Every AP-017 instance logged to date that used the bundler's default prompt produced real, useful findings, but not in a form directly creditable against the Battery's own ten-class structure. This file exists so an operator constructing a bundle for an AP-017 attempt can pass a prompt that forces Battery-shaped output, without editing the bundler's code — its constructor already accepts a custom `standard_audit_prompt`; this file is that prompt, frozen and versioned like `PROBE_INVOCATION.md` is for Mission Drift Review.
+`Automation/cold_session_bundler.py` already refuses to construct a session carrying prior findings — that part of informational independence is solid and code-enforced. But its `DEFAULT_STANDARD_AUDIT_PROMPT` is intentionally general ("evaluate the material on its own terms... identify unsupported claims, internal inconsistencies...") — it produces broad reviewer output, not a structured, class-by-class Adversarial Battery with the concrete-scenario minimum each class requires. Every AP-017 (`Admin/Auditor_Protocols.md`) instance logged to date that used the bundler's default prompt produced real, useful findings, but not in a form directly creditable against the Battery's own ten-class structure. This file exists so an operator constructing a bundle for an AP-017 (`Admin/Auditor_Protocols.md`) attempt can pass a prompt that forces Battery-shaped output, without editing the bundler's code — its constructor already accepts a custom `standard_audit_prompt`; this file is that prompt, frozen and versioned like `PROBE_INVOCATION.md` is for Mission Drift Review.
 
 ---
 
 ## How To Use This File
 
-1. Confirm you're attempting a genuine AP-017 instance, not general review — if you just want feedback on a file, the bundler's default prompt is fine and this file is unnecessary overhead.
+1. Confirm you're attempting a genuine AP-017 (`Admin/Auditor_Protocols.md`) instance, not general review — if you just want feedback on a file, the bundler's default prompt is fine and this file is unnecessary overhead.
 2. Construct the bundle with this file's seed as the `standard_audit_prompt`:
    `ColdSessionBundler(repo_root, standard_audit_prompt=<paste block below>).bundle([target_files])`
 3. If the target includes `Admin/Auditor_Protocols.md` itself, also bundle the two companion files listed under **Self-Audit Target List** below.
 4. Inspect the manifest yourself; never paste it to the auditor.
-5. Open a brand-new session, ideally on a different model family than any prior instance logged for this same AP-017 cycle (cross-model is part of the acceptance criteria, not just a nice-to-have).
-6. Paste the entire rendered payload as the first and only message. No framing, no "this is for AP-017," no "previous attempts found X."
+5. Open a brand-new session, ideally on a different model family than any prior instance logged for this same AP-017 (`Admin/Auditor_Protocols.md`) cycle (cross-model is part of the acceptance criteria, not just a nice-to-have).
+6. Paste the entire rendered payload as the first and only message. No framing, no "this is for AP-017 (`Admin/Auditor_Protocols.md`)," no "previous attempts found X."
 7. Log the raw output under AP-017 in `Archive/Logs/Auditor_Protocols_Logs.md` per the Fresh Instance format already established there — include the manifest's `raw_sha256` values and the model identifier. Compare against any other instances on record; disagreements route through AP-004.
 
 ---
@@ -75,6 +75,8 @@ When the audit's subject is `Admin/Auditor_Protocols.md` itself, bundle these al
 ---
 
 ## Resolution Log
+
+- 2026-10-29: **X3 citation retrofit (mechanical).** 5 bare colliding-prefix citations in operative body text qualified with their owning File.md per PKC-003, per the human-ruled Decision Brief 2026-10-29 item 4A (registry: Kit v1.29 Governance Sidecar ID Reference; per-ID grounding: Unknowns active index). Citation-form-only; no ID renumbered; frozen history untouched; flagged instances reported to the human (MAINT-11). (Vibe, Repo Custodian — delegated line.)
 
 - 2026-08-02: v1.0 — initial draft, human-directed. Companion file for `Admin/Auditor_Protocols.md` AP-017. Supplies the missing Battery-shaped prompt `cold_session_bundler.py`'s constructor already had a parameter for but no frozen, versioned text to fill it with. Does not change AP-017's closure bar (see that entry's own Resolution Path for the acceptance criteria this file's output is measured against).
 - 2026-10-27: findings-only pseudo-audit (Vibe — Skeptic/Auditor, human-authorized autonomous management; the PKC-014 re-derivation check). Per the PKC-020 findings-only rule this entry does not advance Last Audit or the version, and is not counted in either; no content above changed. Checked against live `Admin/Auditor_Protocols.md` v0.45 (13 versions past this file's v0.32 pin): (1) the Battery's ten challenge classes are unchanged in count and naming, so the seed's "all ten classes" instruction and its deferral of class definitions to the attached source both remain accurate; (2) the Adversarial Audit Sign-Off Format the seed's closing instruction references still exists in the source; (3) AP-017, the cold-session independence mechanics and the Audit Entry Conditions carve-out the Self-Audit Target List relies on are intact. Two findings, neither edited here: (a) the frozen role-declaration string "Operating as Skeptic/Auditor per the attached Auditor_Protocols.md." deviates from AP's own Role Declaration Requirement template, which pins the live version ("per Auditor_Protocols.md v0.45") — defensible in a cold bundle (the attached file carries its version in the header, so the auditor can cite it), but whether to align the frozen string is a decision for the human; (b) the Derived-from pin (v0.32) lags the live v0.45 — same pin-vs-retire structural class as PKC-022 / FAK-014–FAK-019; since the seed copies no AP content (it defers to the attached file at run time), the lag is cosmetic until AP's Battery section changes. Recommendation: no re-derivation needed; the seed remains valid as frozen prompt text; the pin decision belongs with PKC-022's.
