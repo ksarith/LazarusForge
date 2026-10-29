@@ -14,8 +14,8 @@
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 1/6 (G1 cleared — fallacy checklist applied at creation; G3/G5 fixes applied 2026-07-06, pending re-audit confirmation) |
 | Verification Ref | `Admin/Verification_Gates.md`                                    |
-| Last Audit       | 2026-10-29 — Vibe (Repo Custodian, delegated maintenance, human-identified via the release-1.29 review): Open Unknowns count corrected 7 → 8 — ENV-008 was never among the open eight (the 2026-10-28 pass wrongly decremented on its resolution); Resolution Log, coda summary, version footer and Adm_Scope_Map mirrors corrected. No Spec Gate, doctrine or constraint-category change. Prior: 2026-10-28, 2026-07-17                                                          |
-| Auditor          | Grok — Systems Integrator; Claude — Synthesizer; Gemini — Exploration audit 2026-07-06; Claude — doctrine reconciliation + sidecar correction 2026-07-06; Claude — ENV-DS-001 ratified (human governing authority), 2026-07-17; Vibe — Repo Custodian, 2026-10-28 staleness reconciliation pass (delegated maintenance, human-ratified Decision Brief 2026-10-28d); Vibe — Repo Custodian, 2026-10-29 Open Unknowns count correction (delegated maintenance, human-identified via the release-1.29 review) |
+| Last Audit       | 2026-10-29 — Vibe (Repo Custodian, delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A): X3 mechanical citation retrofit — 1 bare colliding-prefix citations qualified with their owning File.md per PKC-003 (Kit v1.29 Governance Sidecar ID Reference; per-ID grounding from the Unknowns active index). Citation-form-only; no content change; frozen history untouched. Prior: 2026-10-29 — Vibe (Repo Custodian, delegated maintenance, human-identified via the release-1.29 review): Open Unknowns count corrected 7 → 8 — ENV-008 was never among the open eight (the 2026-10-28 pass wrongly decremented on its resolution); Resolution Log, coda summary, version footer and Adm_Scope_Map mirrors corrected. No Spec Gate, doctrine or constraint-category change. Prior: 2026-10-28, 2026-07-17 |
+| Auditor          | Vibe — Repo Custodian, 2026-10-29 X3 mechanical citation retrofit (delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A); prior: Grok — Systems Integrator; Claude — Synthesizer; Gemini — Exploration audit 2026-07-06; Claude — doctrine reconciliation + sidecar correction 2026-07-06; Claude — ENV-DS-001 ratified (human governing authority), 2026-07-17; Vibe — Repo Custodian, 2026-10-28 staleness reconciliation pass (delegated maintenance, human-ratified Decision Brief 2026-10-28d); Vibe — Repo Custodian, 2026-10-29 Open Unknowns count correction (delegated maintenance, human-identified via the release-1.29 review) |
 | Open Unknowns    | 8 (ENV-001, ENV-002, ENV-003, ENV-004, ENV-005, ENV-006, ENV-009, ENV-010 — ENV-008 Resolved 2026-10-28, never among the open count; header corrected 7 → 8 on 2026-10-29)                                |
 | Active Disputes  | 0                                                                    |
 | Highest Risk     | High                                                                |
@@ -275,7 +275,7 @@ Mandatory re-audit conditions for this document:
 - No-externalized-entropy principle qualified or removed
 - Graceful degradation rules weakened to allow operations through active community opposition or detected ecological impact
 - Tier 1 Axiom compliance cited as optional when in conflict with environmental or regulatory pressure
-- EC-010 and GOV-010 closed without updating this file as their resolution record
+- EC-010 (`Admin/Ethical_Constraints.md`) and GOV-010 closed without updating this file as their resolution record
 - Site-specific values promoted to Specification without local data replacing Placeholder anchors
 - Ethical Anchor field absent, altered, or does not match canonical string
 - Verification Ref field changed from `Admin/Verification_Gates.md`
@@ -514,6 +514,8 @@ Mandatory re-audit conditions for this document:
 ---
 
 ### Resolution Log
+
+- 2026-10-29: **X3 citation retrofit (mechanical).** 1 bare colliding-prefix citations in operative body text qualified with their owning File.md per PKC-003, per the human-ruled Decision Brief 2026-10-29 item 4A (registry: Kit v1.29 Governance Sidecar ID Reference; per-ID grounding: Unknowns active index). Citation-form-only; no ID renumbered; frozen history untouched; flagged instances reported to the human (MAINT-11). (Vibe, Repo Custodian — delegated line.)
 
 - 2026-10-29: **v0.6 — Open Unknowns count correction** (Vibe, Repo Custodian — delegated maintenance, human-identified via the release-1.29 review). The 2026-10-28 v0.5 pass decremented File State Open Unknowns 8 → 7 on resolving ENV-008 — an error: ENV-008 was never among the open eight (the open list is ENV-001–006, ENV-009, ENV-010, per this file's 2026-08-11 pseudo-audit parity check and AUDIT_25's count parity; ENV-008 was Partially Addressed, not counted as open). Resolving it changed no count. Header corrected 7 → 8; the v0.5 entry, the coda summary and the version footer carry dated corrections, as do both Adm_Scope_Map spots. Cause-of-record: the v0.5 pass's postchecks compared the new count only against constants the same pass had set, so they could not catch it; the defect was found by the independent release-1.29 review. No Spec Gate, doctrine or constraint-category change.
 

@@ -15,8 +15,8 @@
 | Spec Gates       | 6/6 — G1 Fallacy, G2 Physical Plausibility, G3 Adversarial Battery, G4 Scope Alignment, G6 Conflict Check PASSED; G5 Cross-Reference Integrity confirmed PASS 2026-08-11 by directly running `Automation/audit_lib.py`'s actual `parse_routing`/`check_cross_refs` functions (not a hand reimplementation) against this file and the local `Routing.md` registry (**112 entries at time of verification**; registry has since grown — see Routing.md path-count note 2026-10-03) and `ALIASES` (18 entries, still current) — zero findings |
 | Verification Ref | `Admin/Verification_Gates.md`                                    |
 | First Logged     | 2026-07-19                                                          |
-| Last Audit       | 2026-10-28 — Vibe (Repo Custodian, human-ratified AUDIT_20 F1–F6 enactment, Decision Brief 2026-10-28b item 3): wrapper reconciliation — Scope Boundary reconciled; Cross-References statuses corrected; AP-013 updated; Assumptions/Lessons Learned/Active Disputes/Auditor Notes & Unknowns (GOV-021b/c sidecars)/Abandoned Paths/Drift Indicators added; Resolution Log nested under the sidecar with newest-first restored; bare EC-/CF- citations qualified. Prior: 2026-10-23 — Claude (human-directed) corrections from a Vibe per-file audit, each checked against source first: 2026-10-03 Routing-registry annotations logged and marked; §12 status block's stale second-blocker clause corrected to match §2 and the Impact Statement; §12.5's "owed" wording refreshed. No doctrine, gate or Unknown changed. Prior: 2026-08-11 (Skeptic/Auditor dual-pass — Claude) |
-| Auditor          | Vibe — Repo Custodian, 2026-10-28 AUDIT_20 F1–F6 enactment (human-ratified); prior: Claude — 2026-10-23 corrections (human-directed, from a Vibe per-file audit); 2026-10-03 annotations (agent not recorded); prior: Drafted Claude, synthesizing ChatGPT proposals (human-directed); revised after ChatGPT/Grok review; cross-checked against Auditor_Protocols.md (Claude, read-only); formal Skeptic/Auditor dual-pass completed 2026-08-11 (Claude) — G5 blocked, since fixed pending re-verification |
+| Last Audit       | 2026-10-29 — Vibe (Repo Custodian, delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A): X3 mechanical citation retrofit — 8 bare colliding-prefix citations qualified with their owning File.md per PKC-003 (Kit v1.29 Governance Sidecar ID Reference; per-ID grounding from the Unknowns active index). Citation-form-only; no content change; frozen history untouched. Prior: 2026-10-28 — Vibe (Repo Custodian, human-ratified AUDIT_20 F1–F6 enactment, Decision Brief 2026-10-28b item 3): wrapper reconciliation — Scope Boundary reconciled; Cross-References statuses corrected; AP-013 updated; Assumptions/Lessons Learned/Active Disputes/Auditor Notes & Unknowns (GOV-021b/c sidecars)/Abandoned Paths/Drift Indicators added; Resolution Log nested under the sidecar with newest-first restored; bare EC-/CF- citations qualified. Prior: 2026-10-23 — Claude (human-directed) corrections from a Vibe per-file audit, each checked against source first: 2026-10-03 Routing-registry annotations logged and marked; §12 status block's stale second-blocker clause corrected to match §2 and the Impact Statement; §12.5's "owed" wording refreshed. No doctrine, gate or Unknown changed. Prior: 2026-08-11 (Skeptic/Auditor dual-pass — Claude) |
+| Auditor          | Vibe — Repo Custodian, 2026-10-29 X3 mechanical citation retrofit (delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A); prior: Vibe — Repo Custodian, 2026-10-28 AUDIT_20 F1–F6 enactment (human-ratified); prior: Claude — 2026-10-23 corrections (human-directed, from a Vibe per-file audit); 2026-10-03 annotations (agent not recorded); prior: Drafted Claude, synthesizing ChatGPT proposals (human-directed); revised after ChatGPT/Grok review; cross-checked against Auditor_Protocols.md (Claude, read-only); formal Skeptic/Auditor dual-pass completed 2026-08-11 (Claude) — G5 blocked, since fixed pending re-verification |
 | Open Unknowns    | 1 (GOV-021c — multi-agent coordinated divergence, §12; GOV-021b Resolved 2026-08-11 — Detection Criteria, corroboration rules, observation windows, tier entry thresholds, Watch exit conditions, and degraded-observation handling specified in §4 and §6, including the EF-0.1 wording-fix confirmation this replaces) |
 | Active Disputes  | 0                                                                    |
 | Highest Risk     | High (governs response to AI governance/objective divergence)      |
@@ -37,7 +37,7 @@
 | ASM-001 | Divergence is classifiable from observable behavior rather than inferred mental state | The file's own observable-effect discipline; inferred-mental-state language rejected as unverifiable | High | An operational divergence event demonstrably classifiable only via inferred intent |
 | ASM-002 | Multi-agent coordinated divergence is a distinct class from single-agent divergence — single-agent criteria do not automatically transfer | The file's core framing; the 2026-08-15 live data point showed role independence not fully met at single-agent grading | High | Live evidence shows single-agent restoration criteria fully transfer |
 | ASM-003 | No coordinated multi-agent divergence event has occurred in the operating environment to date | The file's own zero-real-instances discipline; one benign 2026-08-15 data point graded honestly as not-closure | Medium | A second live data point or an actual coordinated event is observed |
-| ASM-004 | EC-001's Confidence Threshold Doctrine remains stable as the governing mapping for High-Risk observational contexts | §4.4's mapping aligns word-level with EC-001 (verified by the AUDIT_20 pass) | High | An EC-001 revision changes the High-Risk → VERIFIED mapping |
+| ASM-004 | EC-001 (`Admin/Ethical_Constraints.md`)'s Confidence Threshold Doctrine remains stable as the governing mapping for High-Risk observational contexts | §4.4's mapping aligns word-level with EC-001 (verified by the AUDIT_20 pass) | High | An EC-001 (`Admin/Ethical_Constraints.md`) revision changes the High-Risk → VERIFIED mapping |
 
 ---
 
@@ -59,7 +59,7 @@ This document does **not** propose, and explicitly rejects, any framing in which
 
 **This file DOES NOT define:**
 - Detection criteria calibration thresholds or Watch exit conditions (→ in-file since the 2026-08-11 expansion: GOV-021b Resolved; §4/§6 constitute the specification — reconciled 2026-10-28, AUDIT_20 F1)
-- Multi-agent coordinated divergence *detection* (→ §12 of this file (GOV-021c — the Open ratification blocker; reconciled 2026-10-28, AUDIT_20 F1) — Open; operational continuity remains AP-016)
+- Multi-agent coordinated divergence *detection* (→ §12 of this file (GOV-021c — the Open ratification blocker; reconciled 2026-10-28, AUDIT_20 F1) — Open; operational continuity remains AP-016 (`Admin/Auditor_Protocols.md`))
 - Ethical hard floors or Anti-Weaponization Doctrine (→ `Admin/Ethical_Constraints.md`)
 - Constitutional hierarchy or Tier ranking (→ `Admin/Governance_Charter.md`)
 - Auditor role definitions or Adversarial Battery (→ `Admin/Auditor_Protocols.md`)
@@ -288,7 +288,7 @@ EQD’s Outcome Taxonomy (Consensus / Qualified Consensus / Split Decision / Fai
 
 ### 12.3 Detection posture (extension of resolved GOV-021b / §4–§6)
 
-Multi-agent detection inherits the single-agent epistemic-state and tier machinery specified under GOV-021b (Resolved) and the repository’s AP-006 / EC-001 confidence vocabulary:
+Multi-agent detection inherits the single-agent epistemic-state and tier machinery specified under GOV-021b (Resolved) and the repository’s AP-006 (`Admin/Auditor_Protocols.md`) / EC-001 (`Admin/Ethical_Constraints.md`) confidence vocabulary:
 
 - **UNKNOWN** — multi-agent signals present but independence dimensions unmet or unassessable → do not treat as Independent corroboration; remain at or below Watch unless single-agent criteria under §6 already justify escalation on a per-node basis.
 - **PROVISIONAL** — agreement plus partial independence (some dimensions met, others not or degraded) → document which dimensions held; Qualified Consensus at most; human review before treating as coordinated divergence.
@@ -319,15 +319,15 @@ Five agents whose independence is genuinely established can still independently 
 | Numeric correlation / independence thresholds | Not supplied by EQD, FN-001, or GOV-021b as binding multi-agent confirmation numbers; choosing one would be silent policy |
 | Astroid-miner 80–99% fleet-consensus figure | Already cited in this file’s history as a *candidate* mechanism and **explicitly not adopted as binding** for GOV-021b — same non-adoption applies to GOV-021c; do not re-derive it here |
 | Mandatory multi-model deployment topology | Hardware / runtime diversity is `Admin/Hardware_Diversity_Ladder.md` (“declarable, not achieved”); detection doctrine must not pretend the substrate exists |
-| Closure of CF-002 | Correlated training-assumption failure modes remain Open; this section cites them, does not model them |
+| Closure of CF-002 (`Architecture/Cognitive_Frameworks.md`) | Correlated training-assumption failure modes remain Open; this section cites them, does not model them |
 
 ### 12.5 What this section does not resolve
 
 - Ratification of `Autonomy_Divergence_Protocol.md` (still Draft — PROPOSED NOT RATIFIED).
-- CF-002 correlated AI failure modeling.
+- CF-002 (`Architecture/Cognitive_Frameworks.md`) correlated AI failure modeling.
 - GOV-008 / Hardware Diversity substrate.
 - Any claim that multi-agent agreement is safety evidence without an independence assessment.
-- Operational quarantine routing (AP-016).
+- Operational quarantine routing (AP-016 (`Admin/Auditor_Protocols.md`)).
 - The Track A Constitutional Impact Statement for `Governance_Migration_Protocol.md` (delivered; classification independently confirmed 2026-08-12 — see the Constitutional Impact Statement section; this section does not extend it).
 
 **Resolution path for GOV-021c itself:** Human-directed review of this specification against live multi-agent practice (including Field_Logs evidence when any exists). Implementation tooling is out of scope until independence dimensions can be assessed in a real deployment. Status remains Open until that review closes it deliberately.
@@ -472,6 +472,8 @@ Re-audit this file if any of the following activate (all canonical File_Template
 **Compound Drift Rule:** If multiple indicators activate simultaneously, halt autonomous audit progression and escalate for human review.
 
 ### Resolution Log
+
+- 2026-10-29: **X3 citation retrofit (mechanical).** 8 bare colliding-prefix citations in operative body text qualified with their owning File.md per PKC-003, per the human-ruled Decision Brief 2026-10-29 item 4A (registry: Kit v1.29 Governance Sidecar ID Reference; per-ID grounding: Unknowns active index). Citation-form-only; no ID renumbered; frozen history untouched; flagged instances reported to the human (MAINT-11). (Vibe, Repo Custodian — delegated line.)
 
 - 2026-10-28: **AUDIT_20 F1–F6 enacted (human-ratified Decision Brief 2026-10-28b item 3; Vibe, Repo Custodian, delegated maintenance).** F1: Scope Boundary DOES-NOTs reconciled with the 2026-08-11 expansion (GOV-021b → in-file §4/§6, Resolved; multi-agent detection → in-file §12, GOV-021c the Open ratification blocker). F2: Cross-References GOV-021 "pending" corrected to registered 2026-07-27. F3: AP-013 status corrected to Resolved 2026-08-19 in both live-text instances, citations qualified. F4: Assumptions (ASM-001–004), Lessons Learned, Active Disputes, Auditor Notes & Unknowns (GOV-021b/c structured sidecar tables), Abandoned Paths (formalized pointer to "Relationship to Prior Framing"), Drift Indicators added — the Sidecar Link anchor now resolves. F5: Resolution Log folded under Auditor Notes & Unknowns (PKC-018 new-files form) and newest-first order restored (the six 2026-08-11/08-12 entries repositioned). F6: bare EC-/CF- citations qualified per PKC-003. File State Last Audit/Auditor advanced. X2 "PROPOSED NOT RATIFIED" instances deliberately not migrated (migration-pending per the AUDIT_10 F5 ruling). Findings report: VibesSandbox `Audits/AUDIT_20_Admin-Autonomy_Divergence_Protocol.md` (import pending as CAMPAIGN_AUDIT_20).
 
