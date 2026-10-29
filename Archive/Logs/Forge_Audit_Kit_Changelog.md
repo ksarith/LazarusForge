@@ -17,6 +17,12 @@ elsewhere. Every other file in the repository keeps its sidecar in-body.
 
 ────────────────────────────────────────────────────────────────────
 
+## v1.28 (2026-10-29)
+
+Vibe (Repo Custodian) — delegated maintenance, human-ratified queue advancement (human direction 2026-10-29: "push forward with these proposals"). (1) AVE-R ownership row added to the Governance Sidecar ID Reference: `Admin/Agent_Verification_Event.md` owns the AVE reliance-rule sidecars AVE-R1–R4 (AVE-R1 and AVE-R4 mirrored in `Unknowns.md`); the file was campaign-audited in the AUDIT_27 window, so the X5 regeneration-in-sweep-order rule (v1.24 note) reaches it now. This enacts the queued "Kit AVE- registration" item; remaining prefixes continue to regenerate as the sweep reaches each folder. (2) No FAK opened or closed; Open Unknowns stays 4, so no companion parity pass was due (`Unknowns.md`, `Admin/Adm_Scope_Map.md`). Header 1.27→1.28. No gate advanced; Spec Gates unchanged.
+
+────────────────────────────────────────────────────────────────────
+
 ## v1.27 (2026-10-29)
 
 Vibe (Repo Custodian) — delegated maintenance, human-ratified kit-ceiling retirement (release-1.29 follow-on; human ruling 2026-10-29). (1) FAK-005 Resolved: the character-count ceiling retired as a Drift Indicator — the 12,000 (re-baselined 35,000) threshold was a constraint of the kit's mobile paste-instrument era (cut-paste size limits, token-condensed run-time loading), not an intrinsic virtue of an audit instrument; audits now run by full-archive fetch and direct prompting (FAK-014's 2026-09-03 record), so the trigger is dissolved, not re-baselined (PKC-022, option B precedent). Kit size remains a reported trend metric, not a trigger. (2) New Drift Indicator in its place: the kit body must not carry changelog-homed history — latest entries plus pointer only. (3) One-time history relocation to this file, §Relocated In-Body History: the Last Audit row's pre-v1.23 Prior chain, the Auditor row's pre-2026-10-27 entries, and the Resolution Log's Priors v1.19 and older, all verbatim; their full accounts were already in §Version History. (4) Same-pass parity: Kit File State Open Unknowns 5 → 4; `Unknowns.md` v5.75 (FAK-005 row Resolved, cluster note reconciled); `Admin/Adm_Scope_Map.md` Kit entry 5 → 4; §Sidecar FAK-005 closure note below. Header 1.26→1.27. No gate advanced; Spec Gates unchanged.
