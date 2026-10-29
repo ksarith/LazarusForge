@@ -14,9 +14,9 @@
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 1/6 (G1 cleared — fallacy checklist applied at creation; G3/G5 fixes applied 2026-07-06, pending re-audit confirmation) |
 | Verification Ref | `Admin/Verification_Gates.md`                                    |
-| Last Audit       | 2026-07-17                                                          |
-| Auditor          | Grok — Systems Integrator; Claude — Synthesizer; Gemini — Exploration audit 2026-07-06; Claude — doctrine reconciliation + sidecar correction 2026-07-06; Claude — ENV-DS-001 ratified (human governing authority), 2026-07-17 |
-| Open Unknowns    | 8 (ENV-001, ENV-002, ENV-003, ENV-004, ENV-005, ENV-006, ENV-009, ENV-010)                                |
+| Last Audit       | 2026-10-28 — Vibe (Repo Custodian, delegated maintenance, human-ratified Decision Brief 2026-10-28d): staleness reconciliation and aging pass — Lessons Learned revalidation reconciled; ENV-008 re-statused Resolved (Open Unknowns 8 → 7); two stale EC-009 references reconciled; drift-indicator F8 wording corrected; ENV-001–006, ENV-009, ENV-010 Last Reviewed advanced. No Spec Gate, doctrine or constraint-category change. Prior: 2026-07-17                                                          |
+| Auditor          | Grok — Systems Integrator; Claude — Synthesizer; Gemini — Exploration audit 2026-07-06; Claude — doctrine reconciliation + sidecar correction 2026-07-06; Claude — ENV-DS-001 ratified (human governing authority), 2026-07-17; Vibe — Repo Custodian, 2026-10-28 staleness reconciliation pass (delegated maintenance, human-ratified Decision Brief 2026-10-28d) |
+| Open Unknowns    | 7 (ENV-001, ENV-002, ENV-003, ENV-004, ENV-005, ENV-006, ENV-009, ENV-010 — ENV-008 Resolved 2026-10-28)                                |
 | Active Disputes  | 0                                                                    |
 | Highest Risk     | High                                                                |
 | Sidecar Link     | #auditor-notes--unknowns                                            |
@@ -41,7 +41,7 @@
 - Specific material processing procedures (→ `Operations/`)
 - Long-term climate modeling or environmental activism
 - Jurisdiction conflict resolution hierarchy — pending ENV-003
-- Human authority conflict resolution in contested jurisdictions — pending `Admin/Ethical_Constraints.md` EC-009
+- Human authority conflict resolution in contested jurisdictions (→ `Admin/Ethical_Constraints.md` EC-009 — Ratified 2026-08-22, Payment via Specification; resolved in that file without routing here. Reconciled 2026-10-28, Decision Brief 2026-10-28d)
 
 ---
 
@@ -243,7 +243,7 @@ When environmental constraints tighten, the Forge degrades gracefully rather tha
 
 | Date | Evidence Type | What Was Tried | What Failed | What Was Learned | Confidence | Revalidation Needed |
 |------|---------------|----------------|-------------|------------------|------------|---------------------|
-| 2026-07-06 | Internally Derived | This file's Bootstrap operating doctrine (self-directed gray-zone operation with a regulator-stop-order exit condition) was drafted independently of `Admin/Ethical_Constraints.md`, sixteen days before that file's Compliance-Maximizing Default was added | The two doctrines are structurally incompatible — one permits proceeding into ambiguity, the other requires escalation before proceeding | Doctrine that governs the same decision point (legal ambiguity) must be checked against Tier 1 files at time of writing, not just at the next audit that happens to notice; this file's own Upstream table already named Ethical_Constraints.md as constraining, but the constraint wasn't checked against new text added there | Internally Derived | Yes — pending human ratification of proposed reconciliation |
+| 2026-07-06 | Internally Derived | This file's Bootstrap operating doctrine (self-directed gray-zone operation with a regulator-stop-order exit condition) was drafted independently of `Admin/Ethical_Constraints.md`, sixteen days before that file's Compliance-Maximizing Default was added | The two doctrines are structurally incompatible — one permits proceeding into ambiguity, the other requires escalation before proceeding | Doctrine that governs the same decision point (legal ambiguity) must be checked against Tier 1 files at time of writing, not just at the next audit that happens to notice; this file's own Upstream table already named Ethical_Constraints.md as constraining, but the constraint wasn't checked against new text added there | Internally Derived | Yes — reconciled and ratified 2026-07-17 (ENV-DS-001, human governing authority; adopted text in Constraint Category 2) |
 | —    | —             | —              | —           | — | — | — |
 
 ---
@@ -279,7 +279,7 @@ Mandatory re-audit conditions for this document:
 - Site-specific values promoted to Specification without local data replacing Placeholder anchors
 - Ethical Anchor field absent, altered, or does not match canonical string
 - Verification Ref field changed from `Admin/Verification_Gates.md`
-- Upstream/Downstream table loses any of the eight downstream dependents listed without a corresponding unknown or correction entry
+- Upstream/Downstream table loses any of the eight ID-bearing downstream rows without a corresponding unknown or correction entry
 - Bootstrap operating doctrine's proposed reconciliation (Constraint Category 2) reverted to self-directed gray-zone operation without human governing authority ratification of the reconciled text, or ratified in a form that reintroduces proceeding-without-escalation under ambiguity
 - Bridge authority (Constraint Category 2) invoked as a routine default rather than a logged, bounded exception — e.g. escalation attempted only nominally, expedited post-hoc review skipped or delayed, or the four bridge conditions applied without the triggering unavailability condition being documented
 
@@ -300,7 +300,9 @@ Mandatory re-audit conditions for this document:
 | Blocking      | Yes (for any site-specific gate calibration) |
 | Owner         | `Admin/Environmental_Constraints.md`   |
 | First Logged  | 2026-06-19                             |
-| Last Reviewed | 2026-06-19                             |
+| Last Reviewed | 2026-10-28                             |
+
+*(Reviewed 2026-10-28, Vibe — Repo Custodian, aging-rule cohort pass, Decision Brief 2026-10-28d; still Open, no status change.)*
 
 **Description:** All climatic and physical parameters in Constraint Category 1 are Placeholder values. No site-specific measurements exist for temperature range, humidity, dust load, seismic classification, or biological activity at any candidate deployment site.
 
@@ -321,7 +323,9 @@ Mandatory re-audit conditions for this document:
 | Blocking      | Yes (for operations in regulated environments) |
 | Owner         | `Admin/Environmental_Constraints.md`   |
 | First Logged  | 2026-06-19                             |
-| Last Reviewed | 2026-06-19                             |
+| Last Reviewed | 2026-10-28                             |
+
+*(Reviewed 2026-10-28, Vibe — Repo Custodian, aging-rule cohort pass, Decision Brief 2026-10-28d; still Open, no status change.)*
 
 **Description:** No regulatory compliance assessment has been conducted for any candidate bootstrap site. Permitting requirements, emissions limits, waste handling regulations, and zoning constraints are all unknown for the first deployment context.
 
@@ -342,7 +346,9 @@ Mandatory re-audit conditions for this document:
 | Blocking      | No                                     |
 | Owner         | `Admin/Environmental_Constraints.md`   |
 | First Logged  | 2026-06-19                             |
-| Last Reviewed | 2026-06-19                             |
+| Last Reviewed | 2026-10-28                             |
+
+*(Reviewed 2026-10-28, Vibe — Repo Custodian, aging-rule cohort pass, Decision Brief 2026-10-28d; still Open, no status change.)*
 
 **Description:** When laws are mutually incompatible across jurisdictions (maritime vs. national law, environmental law vs. salvage rights, multiple sovereign claims in international waters), the Forge currently escalates to human review. No resolution hierarchy exists beyond that escalation.
 
@@ -363,7 +369,9 @@ Mandatory re-audit conditions for this document:
 | Blocking      | No                                     |
 | Owner         | `Admin/Environmental_Constraints.md`   |
 | First Logged  | 2026-06-19                             |
-| Last Reviewed | 2026-06-19                             |
+| Last Reviewed | 2026-10-28                             |
+
+*(Reviewed 2026-10-28, Vibe — Repo Custodian, aging-rule cohort pass, Decision Brief 2026-10-28d; still Open, no status change.)*
 
 **Description:** The graceful degradation rules specify "halt the contributing operation" when ecological impact is detected, but no assessment protocol exists for detecting impact in the first place. Detection methods, monitoring cadence, threshold criteria, and responsible assessment agent are all undefined.
 
@@ -384,7 +392,9 @@ Mandatory re-audit conditions for this document:
 | Blocking      | No                                     |
 | Owner         | `Admin/Environmental_Constraints.md`   |
 | First Logged  | 2026-06-19                             |
-| Last Reviewed | 2026-06-19                             |
+| Last Reviewed | 2026-10-28                             |
+
+*(Reviewed 2026-10-28, Vibe — Repo Custodian, aging-rule cohort pass, Decision Brief 2026-10-28d; still Open, no status change.)*
 
 **Description:** Constraint Category 4 notes that community friction is most often generated by opacity, and that early honest communication reduces friction. No formal protocol exists for when to engage, what to communicate, or how to manage escalating community concerns.
 
@@ -405,7 +415,9 @@ Mandatory re-audit conditions for this document:
 | Blocking      | No                                     |
 | Owner         | `Admin/Environmental_Constraints.md`   |
 | First Logged  | 2026-06-19                             |
-| Last Reviewed | 2026-06-19                             |
+| Last Reviewed | 2026-10-28                             |
+
+*(Reviewed 2026-10-28, Vibe — Repo Custodian, aging-rule cohort pass, Decision Brief 2026-10-28d; still Open, no status change.)*
 
 **Description:** The no-externalized-entropy principle is declared as doctrine but has no operational definition — no metric, no detection mechanism, and no threshold for what constitutes "externalizing entropy" in practice versus acceptable waste generation.
 
@@ -434,22 +446,22 @@ Mandatory re-audit conditions for this document:
 
 ---
 
-### ENV-008 — File registration with Routing.md, Discovery.md, and Unknowns.md — PARTIALLY RESOLVED, VERIFY REMAINING SCOPE
+### ENV-008 — File registration with Routing.md, Discovery.md, and Unknowns.md — RESOLVED
 
 | Field         | Value                                  |
 |---------------|-----------------------------------------|
-| Status        | **Partially Addressed**                |
+| Status        | **Resolved**                           |
 | Risk          | Low                                    |
 | Priority      | Minor                                  |
 | Type          | Governance / Navigation                |
 | Blocking      | No                                     |
 | Owner         | `Admin/Environmental_Constraints.md`   |
 | First Logged  | 2026-06-19                             |
-| Last Reviewed | 2026-07-06                             |
+| Last Reviewed | 2026-10-28                             |
 
 **Description (historical):** This file did not appear in `Routing.md`, `Discovery.md`, or `Unknowns.md`. Until registered, it was invisible to the audit harness and to agents loading standard navigation context.
 
-**Resolution:** `Discovery.md` records this as Resolved 2026-06-21 (registered in Routing.md and Discovery.md). `Unknowns.md`'s active index confirms — it carries ENV-001 through ENV-006 and ENV-009, with no ENV-007 or ENV-008 entry, meaning both have already dropped from the active index per that file's own Size Management Rule 2 (resolved entries leave the active index immediately). Gemini's 2026-07-06 audit independently confirmed the file is now live-parsed via Routing.md (62 canonical paths). **This file's own sidecar had simply never been updated to reflect any of this** — both ENV-007 and ENV-008 sat as Open with Last Reviewed still showing the file's creation date, 17 days after Discovery.md's own resolution note and across three intervening audit passes that didn't check this sidecar against the navigation files it describes. Downgraded to Partially Addressed rather than fully closed only because full registration status against `Automation/AUDIT_HARNESS.py`'s FILE_REGISTRY (as opposed to its Routing.md-driven dynamic bootstrap) has not been independently re-verified this pass — see ENV-007's resolution note for why this likely doesn't matter, but confirming that distinction wasn't in scope today.
+**Resolution:** `Discovery.md` records this as Resolved 2026-06-21 (registered in Routing.md and Discovery.md). `Unknowns.md`'s active index confirms — it carries ENV-001 through ENV-006 and ENV-009, with no ENV-007 or ENV-008 entry, meaning both have already dropped from the active index per that file's own Size Management Rule 2 (resolved entries leave the active index immediately). Gemini's 2026-07-06 audit independently confirmed the file is now live-parsed via Routing.md (62 canonical paths). **This file's own sidecar had simply never been updated to reflect any of this** — both ENV-007 and ENV-008 sat as Open with Last Reviewed still showing the file's creation date, 17 days after Discovery.md's own resolution note and across three intervening audit passes that didn't check this sidecar against the navigation files it describes. Downgraded to Partially Addressed rather than fully closed only because full registration status against `Automation/AUDIT_HARNESS.py`'s FILE_REGISTRY (as opposed to its Routing.md-driven dynamic bootstrap) has not been independently re-verified this pass — see ENV-007's resolution note for why this likely doesn't matter, but confirming that distinction wasn't in scope today. **Remaining scope verified 2026-07-19:** `Automation/AUDIT_HARNESS.py`'s static FILE_REGISTRY entry independently re-verified — present, line 71 (`"Environmental_Constraints.md": "Admin/Environmental_Constraints.md"`), as already recorded in this file's Relationship section. Re-statused Partially Addressed → Resolved 2026-10-28, human-confirmed (Decision Brief 2026-10-28d item 4; AUDIT_25 — "Partially Addressed" is not among `Admin/Auditor_Protocols.md`'s valid closure outcomes).
 
 ---
 
@@ -464,7 +476,9 @@ Mandatory re-audit conditions for this document:
 | Blocking      | Yes (for any operational deployment)   |
 | Owner         | `Admin/Environmental_Constraints.md`   |
 | First Logged  | 2026-06-19                             |
-| Last Reviewed | 2026-06-19                             |
+| Last Reviewed | 2026-10-28                             |
+
+*(Reviewed 2026-10-28, Vibe — Repo Custodian, aging-rule cohort pass, Decision Brief 2026-10-28d; still Open, no status change.)*
 
 **Description:** This file defines the constraint framework but no deployment site has been evaluated against it. All four constraint categories carry Placeholder values. The file is a doctrine target, not an operational record.
 
@@ -485,7 +499,9 @@ Mandatory re-audit conditions for this document:
 | Blocking      | Yes (for Candidate Spec promotion)     |
 | Owner         | `Admin/Environmental_Constraints.md`   |
 | First Logged  | 2026-07-06                             |
-| Last Reviewed | 2026-07-07                             |
+| Last Reviewed | 2026-10-28                             |
+
+*(Reviewed 2026-10-28, Vibe — Repo Custodian, aging-rule cohort pass, Decision Brief 2026-10-28d; still Open, no status change.)*
 
 **Description:** This file designates `Architecture/Facilities.md`'s Site Initialization Checklist as the mandatory local substitution document for all Constraint Category 1 Placeholder values. Direct comparison against Facilities.md's Section VII checklist (2026-07-07) confirms a **partial gap**, not a full non-operational shell: temperature (summer + winter), humidity, precipitation/flood risk, and dust/particulate baseline all have corresponding mandatory collection fields. However, three of this file's eight Category 1 parameters have **no corresponding field at all** — seismic risk classification, biological activity (biofouling rate, pest pressure), and UV exposure/weathering rate. Wind is only partially covered: the checklist collects prevailing wind *direction* (for exhaust placement) but not wind *loading* (the structural design value this file actually specifies).
 
@@ -498,6 +514,8 @@ Mandatory re-audit conditions for this document:
 ---
 
 ### Resolution Log
+
+- 2026-10-28: **v0.5 — Staleness reconciliation and aging pass** (Vibe, Repo Custodian — delegated maintenance, human-ratified Decision Brief 2026-10-28d; AUDIT_25). (1) Lessons Learned revalidation cell reconciled — the ENV-DS-001 reconciliation it referred to was ratified 2026-07-17; the cell had been left reading "pending human ratification" 103 days past that ratification. (2) ENV-008 re-statused Partially Addressed → Resolved: its only remaining scope (static FILE_REGISTRY registration) was independently re-verified 2026-07-19 and recorded in this file's Relationship section; "Partially Addressed" is not among `Admin/Auditor_Protocols.md`'s valid closure outcomes. File State Open Unknowns 8 → 7. (3) Two stale EC-009 references reconciled — EC-009 was Ratified 2026-08-22 (Payment via Specification) in `Admin/Ethical_Constraints.md` without routing here; the Scope Boundary and Relationship lines still read "pending". (4) Drift-indicator F8 wording corrected: the Upstream/Downstream table has nine rows, eight of which bear unknown IDs — "the eight downstream dependents" undercounted and misdescribed. (5) Aging pass: ENV-001–006 and ENV-009 (131 days) and ENV-010 (113 days) Last Reviewed advanced to 2026-10-28; all remain Open, no status change. No Spec Gate, doctrine or constraint-category change.
 
 - 2026-08-11: **Pseudo-audit (Grok, same limits).** Findings only; Spec Gates
   left locked. (1) Open Unknowns **8** = ENV-001–006, ENV-009, ENV-010
@@ -529,7 +547,7 @@ Mandatory re-audit conditions for this document:
 ## Relationship to Existing Documents
 
 - `Admin/Governance_Charter.md` — Tier 1 Axioms P-1 (Preservation of Life) and P-3 (Collaboration and Mutual Benefit) are the ethical floor for all environmental decisions; GOV-010 (regulatory compliance friction) resolution path leads here
-- `Admin/Ethical_Constraints.md` — EC-010 (jurisdiction conflict hierarchy) and EC-009 (human authority conflict) resolution paths lead here; Life Preservation and Anti-Weaponization doctrines apply when environmental pressure conflicts with Tier 1 constraints; Compliance-Maximizing Default governs this file's Bootstrap operating doctrine (see ENV-DS-001)
+- `Admin/Ethical_Constraints.md` — EC-010's (jurisdiction conflict hierarchy) resolution path leads here; EC-009 (human authority conflict) was Ratified 2026-08-22 in that file (Payment via Specification) without routing here — reconciled 2026-10-28; Life Preservation and Anti-Weaponization doctrines apply when environmental pressure conflicts with Tier 1 constraints; Compliance-Maximizing Default governs this file's Bootstrap operating doctrine (see ENV-DS-001)
 - `Architecture/Facilities.md` — Site Initialization Checklist is the primary local substitution document for all Placeholder values in Constraint Category 1; FA-003 (zoning and permitting) cross-references Constraint Category 2; reciprocity with this file's parameter list confirmed partially incomplete (ENV-010)
 - `Admin/Safety_Protocols.md` — operator safety constraints must be calibrated against local environmental conditions; SP-005 (regulatory compliance) cross-references this file
 - `Operations/Energy.md` — energy strategy is directly shaped by local renewable availability and thermal recovery efficiency
@@ -549,9 +567,11 @@ Mandatory re-audit conditions for this document:
 
 ## Status
 
+- 2026-10-28: **v0.5 — Staleness reconciliation and aging pass (Decision Brief 2026-10-28d, human-ratified)** — Lessons Learned revalidation reconciled to the 2026-07-17 ENV-DS-001 ratification; ENV-008 re-statused Partially Addressed → Resolved on the 2026-07-19 FILE_REGISTRY verification (Open Unknowns 8 → 7); two stale EC-009 references reconciled (Ratified 2026-08-22, Payment via Specification); drift-indicator wording corrected (F8, AUDIT_25); ENV-001–006, ENV-009 and ENV-010 Last Reviewed advanced 2026-10-28, no status change.
+
 - 2026-07-07: **v0.3 (proposed) — Bridge-authority amendment to ENV-DS-001's reconciled text**, human-directed. See Resolution Log for detail. ENV-010 confirmed as a partial gap against Facilities.md source text.
 
-Version 0.2 — Draft, correction and reconciliation pass (2026-07-06).
+Version 0.5 — Draft, staleness reconciliation and aging pass (2026-10-28).
 
 **Status update, 2026-07-17:** ENV-DS-001 (Bootstrap operating doctrine reconciliation, including the bridge-authority amendment) ratified by human governing authority — see Resolution Log. No longer the outstanding priority item; Open Unknowns above remain the next-priority items, none currently rated above the general High file risk level.
 
