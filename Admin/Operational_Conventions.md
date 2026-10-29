@@ -18,8 +18,8 @@
 | Body Stability   | Stable                                                               |
 | Spec Gates       | N/A — reference index, not a governed doctrine surface               |
 | Verification Ref | Admin/Verification_Gates.md                                          |
-| Last Audit       | 2026-10-28 — Vibe (Repo Custodian, delegated maintenance, human-ratified AUDIT_16 findings batch): Convention 6 rewritten to match the post-PKC-026 `Routing.md` registration-scope note (AUDIT_16 F1) with the pre-emptive-intake deviation annotated (F2); the trailing candidates note given its `## Candidates` heading (AUDIT_16 NOTE). No other convention changed. Prior: 2026-10-25 — Claude (human-directed, PKC-017) added one sentence to the Template Exemption stating that this file keeps no Resolution Log and that its passes are recorded in this field, and updated it to say the exemption is now listed in `File_Template.md` (class 9); no convention changed. Prior: 2026-10-23 — Claude (human-directed) resequenced the Conventions so they read 1–8 in order (Convention 7's block moved after 6; numbers and text unchanged, so existing citations such as "Convention 7" still resolve). Prior: 2026-10-03 (second pass) — Convention 8 Source-of-truth line revised to cite `Admin/Resolution_Methodology.md` §9 as the canonical statement of the pattern (was standing alone). Prior: 2026-10-03 — Convention 8 added (rotation-rule self-enforcement failure, Progress_Log.md + Unknowns.md). Prior: 2026-09-30 — file created. |
-| Auditor          | Vibe — 2026-10-28 Convention 6 source-sync + annotations (Repo Custodian, delegated maintenance, human-ratified batch); prior: Claude — 2026-10-25 Template Exemption sentence (human-directed, PKC-017); prior: Claude — 2026-10-23 resequencing (human-directed, from a Vibe per-file audit); prior: Grok — Convention 8 attribution fix (human-directed); prior Claude — human-directed |
+| Last Audit       | 2026-10-29 — Vibe (Repo Custodian, delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A): X3 mechanical citation retrofit — 10 bare colliding-prefix citations qualified with their owning File.md per PKC-003 (Kit v1.29 Governance Sidecar ID Reference; per-ID grounding from the Unknowns active index). Citation-form-only; no content change; frozen history untouched. Prior: 2026-10-28 — Vibe (Repo Custodian, delegated maintenance, human-ratified AUDIT_16 findings batch): Convention 6 rewritten to match the post-PKC-026 `Routing.md` registration-scope note (AUDIT_16 F1) with the pre-emptive-intake deviation annotated (F2); the trailing candidates note given its `## Candidates` heading (AUDIT_16 NOTE). No other convention changed. Prior: 2026-10-25 — Claude (human-directed, PKC-017) added one sentence to the Template Exemption stating that this file keeps no Resolution Log and that its passes are recorded in this field, and updated it to say the exemption is now listed in `File_Template.md` (class 9); no convention changed. Prior: 2026-10-23 — Claude (human-directed) resequenced the Conventions so they read 1–8 in order (Convention 7's block moved after 6; numbers and text unchanged, so existing citations such as "Convention 7" still resolve). Prior: 2026-10-03 (second pass) — Convention 8 Source-of-truth line revised to cite `Admin/Resolution_Methodology.md` §9 as the canonical statement of the pattern (was standing alone). Prior: 2026-10-03 — Convention 8 added (rotation-rule self-enforcement failure, Progress_Log.md + Unknowns.md). Prior: 2026-09-30 — file created. |
+| Auditor          | Vibe — Repo Custodian, 2026-10-29 X3 mechanical citation retrofit (delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A); prior: Vibe — 2026-10-28 Convention 6 source-sync + annotations (Repo Custodian, delegated maintenance, human-ratified batch); prior: Claude — 2026-10-25 Template Exemption sentence (human-directed, PKC-017); prior: Claude — 2026-10-23 resequencing (human-directed, from a Vibe per-file audit); prior: Grok — Convention 8 attribution fix (human-directed); prior Claude — human-directed |
 | Open Unknowns    | 0                                                                     |
 | Active Disputes  | 0                                                                     |
 | Highest Risk     | Low                                                                   |
@@ -89,15 +89,15 @@ files — `Operations/Exception_Evidence.md`, `Tests/Multi_Agent_Quorum_Trial.md
 
 ### 3. A suffixed ID is a distinct ID, not a variant of its base
 
-`EC-011-R3`, `GMP-010-R1`, `EC-012-PR` are each their own entry — not a residual note
-folded under `EC-011`, `GMP-010`, or `EC-012`. Give each its own `### ID — Title` header.
-Verified real examples of the pattern, not illustrative placeholders: `AP-013-R1`
+`EC-011 (`Admin/Ethical_Constraints.md`)-R3`, `GMP-010 (`Admin/Governance_Migration_Protocol.md`)-R1`, `EC-012 (`Admin/Ethical_Constraints.md`)-PR` are each their own entry — not a residual note
+folded under `EC-011 (`Admin/Ethical_Constraints.md`)`, `GMP-010 (`Admin/Governance_Migration_Protocol.md`)`, or `EC-012 (`Admin/Ethical_Constraints.md`)`. Give each its own `### ID — Title` header.
+Verified real examples of the pattern, not illustrative placeholders: `AP-013 (`Admin/Auditor_Protocols.md`)-R1`
 (`Admin/Auditor_Protocols.md`) and `EC-012-PR-R1` (`Admin/Ethical_Constraints.md`) — a
 suffix can itself carry a further suffix, and each layer is still its own distinct ID.
 
 **Violated:** `Automation/integrity_check.py`'s sidecar-ID regex used a plain `\b` word
 boundary after the numeric portion, which also matches the boundary before a trailing
-hyphen — so `### EC-012-PR` was parsed as a second definition of plain `EC-012` and
+hyphen — so `### EC-012 (`Admin/Ethical_Constraints.md`)-PR` was parsed as a second definition of plain `EC-012 (`Admin/Ethical_Constraints.md`)` and
 flagged as a same-file duplicate. Found and fixed 2026-09-29.
 **Source of truth:** the suffix pattern itself is established usage across
 `Admin/Ethical_Constraints.md` and `Admin/Governance_Migration_Protocol.md`; the fixed
@@ -112,7 +112,7 @@ against the original file in `Unknowns.md`. `Admin/Auditor_Protocols.md` →
 similarly-named `_Logs.md`/`_Changelog.md` in `Archive/Logs/` before concluding a
 registered ID's content is missing or thin.
 
-**Violated:** 2026-09-29 — AP-033/Rule 9's actual text was assumed absent from Candidate
+**Violated:** 2026-09-29 — AP-033 (`Admin/Auditor_Protocols.md`)/Rule 9's actual text was assumed absent from Candidate
 3's indexed sections based on checking only `Admin/Auditor_Protocols.md`; it was actually
 present and correctly retrieved from `Archive/Logs/Auditor_Protocols_Logs.md`, which a
 first-pass note had not checked.
@@ -206,3 +206,7 @@ as a follow-up.
 
 *This section holds candidate entries only until they graduate to full write-ups above,
 or are declined. None currently pending.*
+
+---
+
+- 2026-10-29: X3 citation retrofit (mechanical) — 10 bare colliding-prefix citations qualified with their owning File.md per PKC-003 (human-ruled Decision Brief 2026-10-29 item 4A). This file keeps no Resolution Log per its Template Exemption (PKC-017); the pass is recorded here as a dated note and in the File State cells above. (Vibe, Repo Custodian — delegated line.)
