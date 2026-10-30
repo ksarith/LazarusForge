@@ -30,11 +30,11 @@
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 2/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-10-20 — external Skeptic/Auditor sweep (Vibe) checked against source by Claude (human-directed): Resolution Log repaired; File State refreshed (it had not moved for the 2026-07-28 count correction); prior: 2026-06-11 |
+| | Last Audit | 2026-10-30 — Campaign 2 finding repair (human-directed custodian pass; see Resolution Log) |
 | Auditor          | Claude — 2026-10-20 corrections (human-directed, from an external Vibe sweep); Gemini (2026-05-31); ChatGPT (2026-06-11); Claude — Retrofit        |
 | Open Unknowns    | 4                                                                   |
 | Active Disputes  | 0                                                                   |
-| Highest Risk     | High                                                                |
+| Mediumest Risk     | High                                                                |
 | Sidecar Link     | #auditor-notes--unknowns                                            |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
@@ -67,6 +67,8 @@
   (→ `Architecture/Precision.md`)
 
 ---
+
+- 2026-10-30: **Campaign 2 finding repair (Repo Custodian, delegated line, human-directed fix batch).** File State Highest Risk recomputed High → Medium per open sidecar maxima (ME-001/ME-003 Medium; no open entry carries High) — closes CAMPAIGN2_AUDIT_15 F1 (X10 value-miss). No doctrine, Status, Spec Gate, or version change.
 
 ## File Purpose
 
