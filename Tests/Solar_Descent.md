@@ -17,7 +17,7 @@
 | Body Stability | Volatile |
 | Spec Gates | 0/6 |
 | Verification Ref | Admin/Verification_Gates.md |
-| | Last Audit | 2026-10-30 — Campaign 2 finding repair (human-directed custodian pass; see Resolution Log) |TMR was tried, failed against correlated errors, and was superseded by a diversity requirement. Corrected to match; prior: 2026-07-30 |
+| Last Audit | 2026-10-30 — Campaign 2 finding repair (human-directed custodian pass; see Resolution Log). Prior: 2026-09-15 — CF-006-class sibling scan (Grok) found the Underground Chamber sensor line over-attributed a fixed "triple-redundant" count to Cognitive_Frameworks.md, which actually documents (May 2026 Lessons Learned) that quantity-based TMR was tried, failed against correlated errors, and was superseded by a diversity requirement. Corrected to match; prior: 2026-07-30 |
 | Auditor | Claude (Synthesizer), Gemini (Auditor), ChatGPT (Synthesizer), Grok (Synthesizer); Gemini — Skeptic/Auditor Exploration audit, Claude — Synthesizer/Auditor (verification against source, corrections applied), 2026-07-28; Grok — Skeptic/Auditor Exploration audit, Claude — Synthesizer/Auditor (verified against source, SD-UNK-015 registered, SD-UNK-007 resolution path corrected), 2026-07-28; 2026-07-30 Phase 0 hygiene — Ethical Anchor canonicalized, SD-UNK-013/014/015 mirrored to Unknowns.md (Synthesizer); 2026-07-30 Phase 1 Resolution Pass — open unknowns 15 → 8 (Synthesizer); 2026-07-30 — Tier 3 Living_Waters interface expanded (distillation + sorption desorption); SD-UNK-010 note expanded, count unchanged (Synthesizer) |
 | Open Unknowns | 8 |
 | Active Disputes | 0 |
