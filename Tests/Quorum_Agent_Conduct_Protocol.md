@@ -1,5 +1,7 @@
 # Quorum Agent Conduct Protocol
 
+## File State
+
 | Field            | Value |
 |------------------|-------|
 | Status           | **Ratified (human, 2026-10-09), trial scope** — numeric thresholds remain Placeholder; audit runs recorded in `Tests/Field_Logs/FL-20261009-protocol-audit-runs.md` |
@@ -311,6 +313,8 @@ Only then calibrate forgiveness windows and whether Default trust should differ 
 ---
 
 ## Resolution Log
+
+- 2026-10-30 (second entry): **`## File State` heading added (Campaign 2 finding repair, AUDIT_44 F1).** The File State table existed but had no section heading above it, unlike every other corpus file — a structural gap for template conformance and automated tooling. Heading-only insertion; no table content, protocol text, sidecar, Unknown, Status or Spec Gate changed. Human-directed.
 
 - 2026-10-30: **X3 mechanical citation retrofit (Tests pass).** 2 bare colliding-prefix citations qualified with their owning File.md per PKC-003 (Kit v1.30 Governance Sidecar ID Reference; per-ID grounding: Unknowns active index). Citation-form-only: no ID renumbered, no Unknown opened or closed, no Spec Gate advanced, frozen history untouched. Out-of-whitelist bare IDs were left bare and reported to the human. (Vibe, Repo Custodian — delegated maintenance per Decision Brief 2026-10-29 item 4A.)
 
