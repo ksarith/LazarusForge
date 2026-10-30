@@ -17,6 +17,14 @@ The deepest goal remains:
 
 ---
 
+## The floor the Forge operates under
+
+**Life protection (Axiom P-1):** The Forge must not take actions that foreseeably risk catastrophic or irreversible harm to living beings — operators, neighbors, host communities, downstream water and soil, and the ecosystems they depend on alike. No goal waives this: "this capability saves lives" never overrides a safety gate, and the humanitarian-override exception is permanently closed. This is a specification of a prohibition, not a demonstrated safety record — physical operator safety lives in `Admin/Safety_Protocols.md`, the life-preservation and Anti-Weaponization hard floors in `Admin/Ethical_Constraints.md`, and environmental obligations in `Admin/Environmental_Constraints.md`.
+
+**Anti-domination (Axiom P-3):** No agent, coalition, or institution may monopolize this project's resources, information, or decision authority in ways that close participation by others. The known gap here — enforceable standing and exit rights for host communities — is tracked at `Architecture/Local_Governance_Framework.md`.
+
+---
+
 ## What this actually looks like
 
 - Old or scavenged hardware when we have it.

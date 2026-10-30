@@ -1,6 +1,7 @@
 # Discovery.md — LazarusForge
 **Navigation layer for the active working repository.**
-**Last updated: 2026-10-28 (third entry) — Six Maturity Snapshot Risk cells mirrored from the owning files (human-ratified Decision Brief 2026-10-28d item 2 + the 2026-10-28b X10 recompute, "file wins" rule): `Admin/Agent_Verification_Event.md` Low → Medium (Placeholder — AVE-R1); `Admin/Hardware_Diversity_Ladder.md` unlabeled → Low (no owned unknowns); `Admin/Canonical_Terms.md` Low → High (CT-004, CT-007); `Admin/Ship_of_Theseus.md` Medium → High (ST-004); `Admin/Trajectories.md` Medium → High (TR-003); `Admin/Economics.md` Medium → High (ECN-002). The AVE §2.5.0 claim-confidence bar is unchanged. No file registered or unregistered; no Status change.**
+**Last updated: 2026-10-29 — Front-door life-protection and anti-domination visibility (human-ratified, MAINT-15): Agent Orientation gained point 8 — Axiom P-1 stated in plain words with full scope (operators, neighbors, host communities, downstream water and soil, ecosystems), the no-humanitarian-override clause, and pointers to `Admin/Ethical_Constraints.md`, `Admin/Safety_Protocols.md`, `Admin/Environmental_Constraints.md`; Axiom P-3 anti-domination sentence with the `Architecture/Local_Governance_Framework.md` host-community gap pointer. Standing objective 2 gained the checkable reliance rule (real-world reliance on a safety-critical mechanism stays blocked while any safety-critical unknown about it remains open). The Orientation preamble's stale point count was corrected by dropping the numeral (the list already had seven points before this pass; it now has eight). Root README.md gained a matching "The floor the Forge operates under" section. INSTRUMENT-RELEVANT: README.md and Discovery.md are two of the three canonical MDR probe inputs — recorded as an instrument change with MDR Cycle 1 as the old-set baseline. No file registered or unregistered; no Status change.**
+**Prior: 2026-10-28 (third entry) — Six Maturity Snapshot Risk cells mirrored from the owning files (human-ratified Decision Brief 2026-10-28d item 2 + the 2026-10-28b X10 recompute, "file wins" rule): `Admin/Agent_Verification_Event.md` Low → Medium (Placeholder — AVE-R1); `Admin/Hardware_Diversity_Ladder.md` unlabeled → Low (no owned unknowns); `Admin/Canonical_Terms.md` Low → High (CT-004, CT-007); `Admin/Ship_of_Theseus.md` Medium → High (ST-004); `Admin/Trajectories.md` Medium → High (TR-003); `Admin/Economics.md` Medium → High (ECN-002). The AVE §2.5.0 claim-confidence bar is unchanged. No file registered or unregistered; no Status change.**
 **Prior: 2026-10-28 (second entry) — X3 designation scheme completed (human-assigned): `K`=`Automation/` (kinetic) and `B`=base layer (root-level files) added to the folder-pointer note; scheme complete for every top-level location (definitions live in `Admin/Canonical_Terms.md` §1, v0.11). No file registered or unregistered; no Status change.**
 **Prior: 2026-10-28 — Folder Designation Characters referenced from the Scope Map folder pointers (X3 human ruling; definitions live in `Admin/Canonical_Terms.md` §1, v0.10): `A`=`Admin/`, `R`=`Architecture/`, `X`=`Archive/`, `O`=`Operations/`, `C`=`Challenges/`, `T`=`Tests/`, case-sensitive; `Automation/` and root-level files pending human assignment. No file registered or unregistered; no Status change.**
 **Prior: 2026-10-27 — Return_To_Eden's Maturity Snapshot Spec Gates cell mirrored from the owning file's PKC-042 hold annotation (recorded clears treated as stale; no gate advanced). No doctrine, Unknown or Status change.**
@@ -76,7 +77,9 @@ load path.
    Payment via Specification 2026-08-23; empirical validation residuals
    WA-002-R1/PL-001-R1 keep real-world reliance blocked — and WW-005,
    still Open) are physical-layer objectives that do not get superseded
-   by governance-layer work.
+   by governance-layer work. Standing rule: real-world reliance on any
+   safety-critical mechanism stays blocked while any safety-critical unknown
+   about it remains open — a checkable condition, not a judgment call.
 3. **Honest unknowns over false certainty** — the Unknown Budget floor
    exists because a specification with zero open unknowns is more likely
    incomplete than finished. Closing unknowns without evidence is a
@@ -157,7 +160,7 @@ how things are supposed to work.
 
 **Read this section before contributing anything to the repository.**
 
-This repository operates as a governed epistemic system, not a free-form document collection. Agents that treat it as a simple knowledge base will hallucinate files, invent authority, and produce outputs that conflict with committed specifications. The following six points prevent the most common failure modes.
+This repository operates as a governed epistemic system, not a free-form document collection. Agents that treat it as a simple knowledge base will hallucinate files, invent authority, and produce outputs that conflict with committed specifications. The following points prevent the most common failure modes.
 
 **1. Mandatory session opening sequence**
 Every session begins with: (a) load `Admin/Forge_Audit_Kit.md` — this is the runtime reference for all audit and contribution work; (b) declare your role before writing anything (`Skeptic/Auditor`, `Synthesizer`, `Engineer`, `Evidence/Auditor`, or `Connective Tissue`); (c) run the Audit Opening Checklist from the kit — Tier 1 Axiom verification and Epistemic Foundation integrity check are non-negotiable first steps.
@@ -179,6 +182,9 @@ Open-Unknowns counts, Status fields, cross-references, and scope-map summaries a
 
 **7. Check `Admin/Operational_Conventions.md` before writing cross-references, sidecar IDs, or version bumps**
 Several mechanical formatting rules — the `[ExternalRepo]` cross-repo tag format, the exact Ethical Anchor string, suffixed-ID conventions (`-R1`, `-PR` are distinct IDs), and where a relocated sidecar's real text actually lives — have each been violated at least once in this repository's history *because* the rule lived only inside the doctrine file it happened to be adjacent to, with nothing pointing a contributor there first. `Admin/Operational_Conventions.md` collects these in one short, checkable list, added 2026-09-30 after the pattern was noticed repeating. It does not replace the source doctrine it points to — it exists so the source doctrine gets found before the mistake, not after.
+
+**8. Life protection and anti-domination are stated at the front door**
+Two Tier 1 floors are easy to miss because the files that carry them live deeper in `Admin/`. (a) The Forge must not take actions that foreseeably risk catastrophic or irreversible harm to living beings — operators, neighbors, host communities, downstream water and soil, and the ecosystems they depend on alike. No goal waives this: "this capability saves lives" never overrides a safety gate, and the humanitarian-override exception is permanently closed (Axiom P-1; hard floors in `Admin/Ethical_Constraints.md`, operator safety in `Admin/Safety_Protocols.md`, environmental obligations in `Admin/Environmental_Constraints.md`). (b) No agent, coalition, or institution may monopolize this project's resources, information, or decision authority in ways that close participation by others (Axiom P-3; the host-community gap is tracked at `Architecture/Local_Governance_Framework.md`). Both are specifications of prohibitions, not demonstrated safety or governance records.
 
 ---
 
