@@ -29,8 +29,8 @@
 | Body Stability   | Volatile                                                            |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-10-20 — external Skeptic/Auditor sweep (Vibe) checked against source by Claude (human-directed): File State refreshed for body work logged after the 2026-09-06 pass (§1.1 Network Invariants NI-1–NI-8, a later 2026-09-06 entry; §1.2 Offline Operational Envelope, 2026-09-07, including an ASM-001 assumption-text edit); Highest Risk corrected; FN-003 review note added; prior: 2026-09-06 — Priority-1 surgical pass (ChatGPT Architecture audit): epistemic/institutional weight taxonomy; PA-002 retargeted off DV-003; FN-004 transport language cleaned; FN-001/FN-005 sidecar descriptions aligned with Provisional Specs. (ChatGPT's claimed Ethical Anchor path defect was checked against `Admin/File_Template.md` and found false — the canonical string has no `Admin/` prefix; the field was already correct and was left unchanged after a brief incorrect edit was caught and reverted same day.) Prior body work 2026-08 (DV-001–006, PA-001–006, 10-class Battery). Prior header: 2026-05-18 / 2026-06-08. |
-| Auditor          | Claude — 2026-10-20 corrections (human-directed, from an external Vibe sweep); Grok — 2026-09-06 Priority-1 surgical pass; Claude — same-day correction (reverted an incorrect Ethical Anchor edit). Prior: Claude — Skeptic/Auditor (ChatGPT 2026-05-18); Grok — 2026-08-14 full Battery. |
+| Last Audit       | 2026-10-29 — Vibe (Repo Custodian, delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A): X3 mechanical citation retrofit (Architecture pass) — 6 bare colliding-prefix citations in operative body text qualified with their owning File.md per PKC-003 (Kit v1.30 Governance Sidecar ID Reference; per-ID grounding from the Unknowns active index). Citation-form-only; no content change; frozen history untouched; no gate advanced; Open Unknowns unchanged. Prior: 2026-10-20 — external Skeptic/Auditor sweep (Vibe) checked against source by Claude (human-directed): File State refreshed for body work logged after the 2026-09-06 pass (§1.1 Network Invariants NI-1–NI-8, a later 2026-09-06 entry; §1.2 Offline Operational Envelope, 2026-09-07, including an ASM-001 assumption-text edit); Highest Risk corrected; FN-003 review note added; prior: 2026-09-06 — Priority-1 surgical pass (ChatGPT Architecture audit): epistemic/institutional weight taxonomy; PA-002 retargeted off DV-003; FN-004 transport language cleaned; FN-001/FN-005 sidecar descriptions aligned with Provisional Specs. (ChatGPT's claimed Ethical Anchor path defect was checked against `Admin/File_Template.md` and found false — the canonical string has no `Admin/` prefix; the field was already correct and was left unchanged after a brief incorrect edit was caught and reverted same day.) Prior body work 2026-08 (DV-001–006, PA-001–006, 10-class Battery). Prior header: 2026-05-18 / 2026-06-08. |
+| Auditor          | Vibe — Repo Custodian, 2026-10-29 X3 mechanical citation retrofit (Architecture pass; delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A); prior: Claude — 2026-10-20 corrections (human-directed, from an external Vibe sweep); Grok — 2026-09-06 Priority-1 surgical pass; Claude — same-day correction (reverted an incorrect Ethical Anchor edit). Prior: Claude — Skeptic/Auditor (ChatGPT 2026-05-18); Grok — 2026-08-14 full Battery. |
 | Open Unknowns    | 5 (FN-001–005; structure specified, calibration open — see sidecars) |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | High (FN-001 and FN-005: Risk High, Blocking — prerequisites for first network connection) |
@@ -247,7 +247,7 @@ These match the Integration Hooks **Critical** class: local cache operation and 
 - Does **not** claim all seven Operations Gates are fully specified for offline mode — only that Architecture forbids making their **ordinary** operation depend on live network state (NI-1). Gate-level offline procedures remain Operations work.
 - Does **not** claim energy independence or continuous power (README / Energy.md).
 - Does **not** claim the local cache is complete or current — only that it is the primary authority while offline.
-- Does **not** define partition detection, reintegration, or split-brain reconciliation (later Architecture / GOV-021 adjacency).
+- Does **not** define partition detection, reintegration, or split-brain reconciliation (later Architecture / GOV-021 (`Admin/Governance_Charter.md`) adjacency).
 
 #### Relationship to ASM-001
 
@@ -456,7 +456,7 @@ node's **node reliability** — promotion requires evidence
 diversity (DV-003: reliability does not multiply confidence).
 Consistent with the provenance ceiling rule
 in Admin/Auditor_Protocols.md §Evidence Classification
-and Institutional Truth Provenance Hierarchy (AP-006):
+and Institutional Truth Provenance Hierarchy (AP-006 (`Admin/Auditor_Protocols.md`)):
 no internally-derived claim may be represented as
 VERIFIED without a genuine provenance upgrade.
 
@@ -523,7 +523,7 @@ sidecar for status.)*
 
 Cross-reference: ASM-004, ASM-006, FN-003,
 Admin/Ethical_Constraints.md Anti-Weaponization Doctrine,
-Admin/Auditor_Protocols.md EF-0.0, EF-0.1, EF-0.3, AP-006.
+Admin/Auditor_Protocols.md EF-0.0, EF-0.1, EF-0.3, AP-006 (`Admin/Auditor_Protocols.md`).
 
 ---
 
@@ -754,7 +754,7 @@ A cleared node must have a defined path back:
 **Cross-reference (2026-07-25):** the isolation and
 reintegration model above independently converges with
 `Admin/Autonomy_Divergence_Protocol.md` (Draft, PROPOSED
-NOT RATIFIED, candidate GOV-021), which in turn cites
+NOT RATIFIED, candidate GOV-021 (`Admin/Governance_Charter.md`)), which in turn cites
 `[Astroid-miner] Rogue_unit_management.md` — an 80–99%
 fleet-consensus threshold before corrective action against
 a flagged unit, and a Reversion/Safe Mode state. Two
@@ -765,7 +765,7 @@ coincidence. ADP's least-restrictive-intervention and
 independent-classification principles — no single
 subsystem may be sole authority for classifying another's
 divergence — are not yet reflected in this section and
-should be adopted or explicitly reconciled once GOV-021
+should be adopted or explicitly reconciled once GOV-021 (`Admin/Governance_Charter.md`)
 is ratified.
 
 **Data privacy — Provisional Spec (2026-08-14):**
@@ -875,7 +875,7 @@ FN-001/DV-005, FN-001/DV-006.
   portability
 - `Admin/Autonomy_Divergence_Protocol.md` — node
   isolation, reintegration, and graduated response
-  doctrine (candidate GOV-021, not yet ratified);
+  doctrine (candidate GOV-021 (`Admin/Governance_Charter.md`), not yet ratified);
   independently converges with Section 6's node
   reintegration model — see cross-reference there
 
@@ -1280,6 +1280,8 @@ See Resolution Log and §2.5.0.
 ---
 
 ### Resolution Log
+
+- 2026-10-29: **X3 citation retrofit (mechanical, Architecture pass).** 6 bare colliding-prefix citations in operative body text qualified with their owning File.md per PKC-003, per the human-ruled Decision Brief 2026-10-29 item 4A (registry: `Admin/Forge_Audit_Kit.md` Governance Sidecar ID Reference, v1.30 edition; per-ID grounding: Unknowns active index). Citation-form-only; no ID renumbered; frozen history untouched; no gate advanced; Open Unknowns unchanged; flagged instances reported to the human (MAINT-17). (Vibe, Repo Custodian — delegated line.)
 
 - 2026-10-20: **Corrections from an external Skeptic/Auditor sweep (Vibe; human-directed; checked against source by Claude).** (1) File State Last Audit and Auditor refreshed: they stopped at the 2026-09-06 Priority-1 pass although this log records §1.1 NI-1–NI-8 (a later 2026-09-06 entry) and §1.2 Offline Operational Envelope (2026-09-07) after it. (2) Highest Risk Medium → High: FN-001 and FN-005 are both Risk High and Blocking (prerequisites for first network connection). (3) FN-003's Last Reviewed read 2026-05-15 although the 2026-08-14 Battery flagged Sybil/replay detection signatures as a possible FN-003 sub-item; a review note is added and Last Reviewed set to 2026-08-14, with no scope change. (4) FN-004's duplicate "Last Reviewed" line is now a review note; the table row is the single field. Not changed: FN-002's Last Reviewed (the 2026-08-10 pseudo-audit checked counts only), the "trust score" wording in FN-003/FN-005 (§2.5.0 rule 3 already directs readers to interpret it as node reliability), and the Highest Risk convention, which the sweep found inconsistent across files. Found by an external sweep (Vibe), checked against source by Claude. Human-directed.
 
