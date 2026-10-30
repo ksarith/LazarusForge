@@ -11,7 +11,7 @@
 | Spec Gates       | N/A — this file is a cross-reference index, not a specification     |
 | Open Unknowns    | 0 (surfaces existing unknowns from owning files; creates none)      |
 | Owning Domain    | Architecture/                                                       |
-| Last Reviewed    | 2026-09-13                                                           |
+| Last Reviewed    | 2026-10-30 — Campaign 2 finding repair (X8 row refresh): Forge_flow 2→6 and Geck_forge_seed 3→4 Open Unknowns; Precision 5→4; Forge_Net Risk Medium→High; Mechanical_Structures and Thermal_Systems Risk High→Medium (mirrors of the 2026-10-30 X10 recompute). Prior: 2026-09-13                                                           |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
 ---
@@ -54,12 +54,12 @@ Note: gained an `## Authority & Tier Classification` preface 2026-08-07 (verifie
 **Hub role:** the RDC baseline defined here (§VII) is explicitly referenced as the substitution point by four other files in this folder — Engineering.md, Friction_Dynamics.md, Thermal_Systems.md, and this file's own definition. Not visible from any single one of those files alone; only visible juxtaposed.
 
 ### `Architecture/Forge_Net.md`
-**Status:** Exploration · 0/6 · 5 Open Unknowns · Risk: Medium
+**Status:** Exploration · 0/6 · 5 Open Unknowns · Risk: High
 **Does:** Decentralized forge networking philosophy; data layer architecture; shared knowledge base/contribution doctrine; cognitive save state architecture; cluster formation/governance emergence; trust weighting; node loss doctrine; network security threat model.
 **Does not (arrow):** Physical networking hardware (unassigned) · database implementation (unassigned) · cluster voting mechanisms (emergent, cannot specify before observed) · delay-tolerant networking (`Tests/Leviathan_testing.md`) · rogue node containment (`Cognitive_Frameworks.md`) · network energy cost (`Operations/Energy.md`) · data privacy/access control implementation (unassigned — FN-005).
 
 ### `Architecture/Forge_flow.md`
-**Status:** Exploration · 0/6 · 2 Open Unknowns · Risk: Medium
+**Status:** Exploration · 0/6 · 6 Open Unknowns · Risk: Medium
 **Does:** Minimal viable v0 operational logic; **reference standard for shared vocabulary across the entire repository** — terms defined here carry into all other documents unless noted, now explicitly acknowledging `Admin/Canonical_Terms.md`'s adjacent role (fixed 2026-08-08); eight sequential decision gates; Gate Correspondence table; primary KPI definition.
 **Does not (arrow):** Module hardware specs (`Operations/Gate_04...`, `Gate_05...`) · reduction module spec (`Operations/Gate_03_Reduction.md`) · triage workflow (`Operations/Gate_02_Triage.md`) · energy accounting (`Operations/Energy.md`) · autonomous/AI trust architecture (`Cognitive_Frameworks.md`, `Admin/Ethical_Constraints.md`) · version roadmap (`Admin/Trajectories.md`) · facility siting (`Facilities.md`) · fabrication output/wire qualification (`Geck_forge_seed.md`, UNK-008 — reference corrected 2026-08-08).
 
@@ -73,7 +73,7 @@ Note: gained an `## Authority & Tier Classification` preface 2026-08-07 (verifie
 **Does not (arrow):** Engineering fundamentals (`Engineering.md` — peer) · heat transfer in flow systems (`Thermal_Systems.md` — peer) · Air Scrubber specs (`Operations/Air_Scrubber.md`) · Gate_04/05 rotor/crucible parameters (`Operations/Gate_04...`, `Gate_05...`) · Support Raft hull design (`Tests/Support_Raft.md`) · Leviathan mission logic (`Tests/Leviathan_testing.md`) · bearing dimensional specs (`Components.md`).
 
 ### `Architecture/Geck_forge_seed.md`
-**Status:** Exploration · 0/6 · 3 Open Unknowns · Risk: Medium
+**Status:** Exploration · 0/6 · 4 Open Unknowns · Risk: Medium
 **Does:** Minimum viable seed to instantiate a new Forge; core G.E.C.K. module list and criticality rationale; procurement doctrine; precision-as-capability-threshold (introductory); marine variant module list (exploratory); success criteria and v1 scaling pathway. **Owns UNK-008** (welding wire spec/qualification, reassigned here 2026-07-19) — see Forge_flow.md's stale cross-reference above.
 **Does not (arrow):** Detailed G.E.C.K. module engineering specs · full precision doctrine (`Precision.md`) · Leviathan/deep-marine systems (`Admin/Trajectories.md`) · energy infrastructure beyond portable minimum (`Operations/Energy.md`) · component taxonomy (`Components.md`).
 
@@ -84,18 +84,18 @@ Note: gained an `## Authority & Tier Classification` preface 2026-08-07 (verifie
 **Added 2026-09-06:** first draft, subordinate to Governance_Charter.md and Ethical_Constraints.md per its own §Core Design Constraints LGF-P7. Supplies the institutional-interface layer that `Challenges/Water.md` WS-004, `Waste.md` WA-003, `Planned_Obsolescence.md` PO-004, and `Energy_Scarcity.md` ES-001/ES-002 had each been gesturing at independently.
 
 ### `Architecture/Mechanical_Structures.md`
-**Status:** Draft · 2/6 · 4 Open Unknowns · Risk: High
+**Status:** Draft · 2/6 · 4 Open Unknowns · Risk: Medium
 **Does:** Structural frame rigidity/damp-filling standards; thermal expansion mitigation and coordinate delta compensation; kinematic protection loops, shunt current monitoring, torsional alignment interlocks; sacrificial shear pins; falsifiable mechanical performance metrics; contamination/bearing protection doctrine.
 **Does not (arrow):** Engineering fundamentals (`Engineering.md` — extends into fabrication machinery specifically, not a peer split) · tool-path G-code/part geometries · motor driver circuits (`Operations/Electronics.md`) · compressed air/back-pressure specs (`Operations/Air_Scrubber.md`, ME-002) · precision/tolerance doctrine (`Precision.md`).
 **Reciprocal link confirmed:** `Thermal_Systems.md` explicitly names this file as owning "structural response" to the temperature inputs it generates (§Thermal Expansion Disconnect) — checked, this file's own text doesn't restate that link from its side, but doesn't contradict it either; a minor one-directional documentation gap, not a conflict.
 
 ### `Architecture/Precision.md`
-**Status:** Exploration · 0/6 · 5 Open Unknowns · Risk: High
+**Status:** Exploration · 0/6 · 4 Open Unknowns · Risk: High
 **Does:** Precision as capability ceiling (declaration/tracking/revision); tolerance classification tier system (repository-wide standard); metrology doctrine for salvaged equipment (resolves CO-002); measurement uncertainty doctrine; fabrication-precision feedback loop (Gate_07 revises Gate_06 ceiling); precision floor doctrine; Arkansas climate dimensional effects.
 **Does not (arrow):** Engineering fundamentals (`Engineering.md`) · kinematic interlock thresholds (`Mechanical_Structures.md`) · G-code/CAM workflows, arc welding qualification (`Operations/Gate_06_Fabrication.md`) · chemical/thermal metrology (`Chemistry.md`, `Thermal_Systems.md`) · quality certification (GU-003, unassigned).
 
 ### `Architecture/Thermal_Systems.md`
-**Status:** Draft · 1/6 · 6 Open Unknowns · Risk: High
+**Status:** Draft · 1/6 · 6 Open Unknowns · Risk: Medium
 **Does:** Laws of thermodynamics as operational doctrine; heat transfer modes; thermal impedance/resistance; insulation doctrine; heat pump/Peltier/TEG doctrine; Reference Deployment Context thermal baseline; cross-module thermal integration hooks; explicit "thermal expansion bridge" to Mechanical_Structures.md.
 **Does not (arrow):** Engineering fundamentals (`Engineering.md` — peer) · Gate_05 operating parameters (`Operations/Gate_05_Separation_Thermal.md`) · Air Scrubber thermal fault monitoring (`Operations/Air_Scrubber.md`) · battery thermal containment (`Operations/Energy.md` EV-003) · structural response to thermal expansion (`Mechanical_Structures.md` §Thermal Expansion Disconnect — this file generates the inputs, that file owns the response) · pyrolysis thermal profiles (`Operations/Plastics.md`).
 
@@ -164,3 +164,5 @@ No new unknowns registered. Finding 1 is a one-line factual correction candidate
   Human-directed.
 
 - 2026-10-29: **X3 citation retrofit (mechanical, Architecture pass) + corrective revert of 7cac1b1.** 1 bare cross-file colliding-prefix citation qualified with its owning File.md per PKC-003 (CF-004 → `Architecture/Cognitive_Frameworks.md`; registry: `Admin/Forge_Audit_Kit.md` Governance Sidecar ID Reference, v1.30 edition), per the human-ruled Decision Brief 2026-10-29 item 4A. *Corrective:* the immediately preceding commit (7cac1b1) had inserted a bogus (`undefined`) qualification string here via a defective pass script (prefix extraction dropped the trailing hyphen; owner lookup failed); reverted and replaced with the correct owner (precedent: fcbcf82). Citation-form-only; frozen history untouched; no unknown created; no gate advanced. (Vibe, Repo Custodian — delegated line.)
+
+- 2026-10-30: **Campaign 2 finding repair (X8 row refresh): Forge_flow entry Open Unknowns 2→6; Geck_forge_seed 3→4; Precision 5→4; Forge_Net entry Risk Medium→High; Mechanical_Structures and Thermal_Systems Risk cells mirrored High→Medium, matching the owning files after the 2026-10-30 X10 recompute. Does / Does-not text unchanged. Human-directed (Campaign 2 findings).**
