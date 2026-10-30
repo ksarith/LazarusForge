@@ -21,7 +21,7 @@ Entries are added only when something concrete was wrong, was caught, and produc
 |------------------|--------------------------------------------|
 | Status           | Active                                     |
 | Body Stability   | Living (append-only preferred)             |
-| Last updated     | 2026-10-07                                 |
+| Last updated     | 2026-10-30 (X3 mechanical citation retrofit, root navigation pass; prior 2026-10-07) |
 | Seed source      | CAP-meta-stale runs, AVE sample, POC corrections |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
@@ -83,7 +83,7 @@ A single aggregate number can hide important distinctions. Metric design is itse
 ## 4. Scope / inventory statements that went stale (2026-10-06)
 
 **What happened**  
-`Tests/Tst_Scope_Map.md` said the Field Logs intake was still empty. That was accurate when written (2026-08-08) and still accurate on 2026-09-18. It became obsolete once entries were filed (the GOV-021c pilot and the CAP-meta-stale runs), but the statement kept reading as current until it was corrected on 2026-10-06. It was never an original error. It is a statement that stayed in place after the world moved, the same pattern as item 1.
+`Tests/Tst_Scope_Map.md` said the Field Logs intake was still empty. That was accurate when written (2026-08-08) and still accurate on 2026-09-18. It became obsolete once entries were filed (the GOV-021c (`Admin/Governance_Charter.md`) pilot and the CAP-meta-stale runs), but the statement kept reading as current until it was corrected on 2026-10-06. It was never an original error. It is a statement that stayed in place after the world moved, the same pattern as item 1.
 
 **What we learned**  
 Inventory and scope claims require the same evidence discipline as any other claim. “Still empty” or “last updated X” must be checked against the filesystem or the body, not trusted by inertia.
@@ -108,6 +108,8 @@ If an entry later turns out itself to be incomplete or wrong, add a dated note r
 
 ## Corrections to this file
 
+
+- 2026-10-30: **X3 mechanical citation retrofit (root navigation pass).** 1 bare colliding-prefix citation (GOV-021c) qualified with its owning File.md (`Admin/Governance_Charter.md`) per PKC-003 (Kit v1.30 Governance Sidecar ID Reference). Citation-form-only: no ID renumbered, no Unknown opened or closed, entries above untouched. (Vibe, Repo Custodian — delegated maintenance per Decision Brief 2026-10-29 item 4A.)
 - 2026-10-07: Verified each entry against the cited Field Logs after first filing. Four "how it was caught" details were corrected: item 1 (the first CAP run found the lag in the wild; only the Reduced run re-injected it), item 2 (caught by recomputation on 2026-10-04; the AVE rows recorded it later), item 3 (reviewer note, reviewer not named), and item 4 (reframed as staleness, not an original error; evidence cited precisely).
 
 ---
