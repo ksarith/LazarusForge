@@ -17,8 +17,8 @@
 | Body Stability   | Draft                                                                  |
 | Spec Gates       | N/A — candidate-system survey, not a specification to be gated toward promotion |
 | Verification Ref | `Admin/Verification_Gates.md`                                          |
-| Last Audit       | 2026-10-25 — v0.16 bump backfilled in the Resolution Log (PKC-039); no content change. Prior: 2026-10-20 — reference correction under AP-029 (logged as no content change, though it edited Candidate 7's fit note); header corrected 2026-10-24. Prior: 2026-09-27                                                              |
-| Auditor          | Claude — Synthesizer, human-directed, 2026-09-27: relabeled Candidate 7's status from "PASS with FI-adjacent observation" to "Observed — mechanism not established," per cross-agent (Claude/Grok/ChatGPT) convergence; closed the indicator-timing open question as not-observable-through-this-surface; added the Persistence Integrity Test Series (persistence boundary, update conflict, provenance probe, ongoing negative control) as the next increment, design only. History condensed here per this file's own Sidecar Governance Rules as it approaches 75KB — full entry-by-entry history lives in the Resolution Log below, not repeated in this field going forward; prior audits: file created (v0.1) → Candidate 3 fully pre-registered across seven cycles (v0.2–v0.7, Grok/ChatGPT review, one fabricated §VII.5-style citation avoided) → Candidate 6 surfaced and passed (v0.8–v0.9) → Candidate 7 surfaced, designed, and run three times (v0.10–v0.14, one fabricated "Parser observes" citation caught and rejected at v0.12) → this entry (v0.15). |
+| Last Audit       | 2026-10-30 — Vibe (Repo Custodian, delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A): X3 mechanical citation retrofit (Tests pass) — 21 bare colliding-prefix citations qualified with their owning File.md per PKC-003 (Kit v1.30 Governance Sidecar ID Reference; per-ID grounding: Unknowns active index). Citation-form-only; no ID renumbered; frozen history untouched; no gate advanced; Open Unknowns unchanged. Prior: 2026-10-25 — v0.16 bump backfilled in the Resolution Log (PKC-039); no content change. Prior: 2026-10-20 — reference correction under AP-029 (logged as no content change, though it edited Candidate 7's fit note); header corrected 2026-10-24. Prior: 2026-09-27 |
+| Auditor          | Vibe — Repo Custodian, 2026-10-30 X3 mechanical citation retrofit (Tests pass; delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A); prior: Claude — Synthesizer, human-directed, 2026-09-27: relabeled Candidate 7's status from "PASS with FI-adjacent observation" to "Observed — mechanism not established," per cross-agent (Claude/Grok/ChatGPT) convergence; closed the indicator-timing open question as not-observable-through-this-surface; added the Persistence Integrity Test Series (persistence boundary, update conflict, provenance probe, ongoing negative control) as the next increment, design only. History condensed here per this file's own Sidecar Governance Rules as it approaches 75KB — full entry-by-entry history lives in the Resolution Log below, not repeated in this field going forward; prior audits: file created (v0.1) → Candidate 3 fully pre-registered across seven cycles (v0.2–v0.7, Grok/ChatGPT review, one fabricated §VII.5-style citation avoided) → Candidate 6 surfaced and passed (v0.8–v0.9) → Candidate 7 surfaced, designed, and run three times (v0.10–v0.14, one fabricated "Parser observes" citation caught and rejected at v0.12) → this entry (v0.15). |
 | Open Unknowns    | 0 (candidates below are explicitly unevaluated, not filed as unknowns) |
 | Active Disputes  | 0                                                                       |
 | Highest Risk     | Low — no candidate here is adopted; this is survey-only                |
@@ -54,7 +54,7 @@
 - Claim comprehensive knowledge of "current world options." The landscape of memory-
   augmented AI systems moves fast; this survey reflects general architectural knowledge as
   of drafting and should be treated as Internally Derived / PROVISIONAL, per
-  `Admin/Auditor_Protocols.md` §AP-006 — not as a verified state-of-the-art review. It has
+  `Admin/Auditor_Protocols.md` §AP-006 (`Admin/Auditor_Protocols.md`) — not as a verified state-of-the-art review. It has
   not been checked against current external sources.
 - Duplicate `Tests/Cognitive_Salvage_Layer.md`, which is about the Forge's own operational
   heuristics (physical/fabrication pattern-matching) reaching machine cognition, and
@@ -104,7 +104,7 @@ it's marked as such rather than glossed over.
 The cheapest fix isn't a new system at all — it's a change in what's captured inside the
 files already being written. A Resolution Log entry could, at no storage cost beyond a
 few extra sentences, note the rejected alternative and why, not just the accepted one.
-Today's GMP-011/EC-012-PR entries already do this informally (the §VII.5 citation error
+Today's GMP-011 (`Admin/Governance_Migration_Protocol.md`)/EC-012-PR entries already do this informally (the §VII.5 citation error
 and its correction are recorded in the same entry as the final rule). Making that
 narration a stated expectation rather than an incidental habit costs nothing new — no new
 file, no new format, no new tooling — and captures a meaningful fraction of what was
@@ -114,8 +114,8 @@ identified as missing.
 which could be added to `Admin/File_Template.md`'s Update Procedure (added 2026-09-24) as
 a follow-on line.
 **Limit:** Doesn't create anything independently searchable across files. A heuristic
-buried in prose inside GMP-011's Resolution Log is still only discoverable by someone who
-thinks to read GMP-011's Resolution Log.
+buried in prose inside GMP-011 (`Admin/Governance_Migration_Protocol.md`)'s Resolution Log is still only discoverable by someone who
+thinks to read GMP-011 (`Admin/Governance_Migration_Protocol.md`)'s Resolution Log.
 **Combines with Candidate 4:** these two aren't mutually exclusive — richer narration plus
 an optional `Superseded-Belief` field is likely the single cheapest durable improvement
 available, and could be adopted together rather than as alternatives.
@@ -212,7 +212,7 @@ corpus-boundary artifacts):**
   ~565 inside its own Resolution Log — a section this script does collect. Genuine miss.
 
 **Q10 correction to this file's own prior note:** an earlier session flagged Q10 as a
-structural coverage gap on the theory that AP-033's rule body sits outside
+structural coverage gap on the theory that AP-033 (`Admin/Auditor_Protocols.md`)'s rule body sits outside
 `Auditor_Protocols.md`'s indexed sections. This run shows that reasoning was checking the
 wrong location — the actual Rule 9 explanation was relocated to
 `Archive/Logs/Auditor_Protocols_Logs.md` (a real repository move, not a script omission),
@@ -292,7 +292,7 @@ strong result is evidence for persistent corpus + disposable retrieval index spe
 the design this file has favored throughout, not for standing infrastructure.
 
 **Query classes** (drawn from actual Forge history, not invented benchmarks — e.g. "why was
-the §VII.5 framing rejected in GMP-011's holding clause" is a real template): decision
+the §VII.5 framing rejected in GMP-011 (`Admin/Governance_Migration_Protocol.md`)'s holding clause" is a real template): decision
 history, rejected reasoning, unknown history, resolution history, governance reasoning,
 technical reasoning, cross-document reasoning.
 
@@ -331,7 +331,7 @@ rejection, or status trajectory, whether or not it has since been distilled.
 *Include:* all Resolution Log entries, file-level and sidecar; `Unknowns.md` Active Index
 rows and their problem-statement/resolution-path prose; File State Auditor/Last Audit
 lines documenting corrections or status changes; explicit rejection or "held as
-unratified" notes (the Grok/Copilot GOV-008 patch note, the "CIR v2.0" hold note — both
+unratified" notes (the Grok/Copilot GOV-008 (`Admin/Governance_Charter.md`) patch note, the "CIR v2.0" hold note — both
 already ground-truth sources for queries #3 and #4 above); audit findings and
 verification notes explaining why a change was or wasn't accepted; `Progress_Log.md`
 entries narrating a decision or correction event.
@@ -384,19 +384,19 @@ demonstration — per the sequence above, this is step 1.
 
 | # | Class | Query | Ground-truth source |
 |---|-------|-------|----------------------|
-| 1 | Decision history | Why does GMP-011's Genesis Phase holding clause anchor to `Governance_Charter.md` rather than to `Governance_Migration_Protocol.md` §VII.5? | `Admin/Governance_Migration_Protocol.md` GMP-011 sidecar, 2026-09-23 |
+| 1 | Decision history | Why does GMP-011 (`Admin/Governance_Migration_Protocol.md`)'s Genesis Phase holding clause anchor to `Governance_Charter.md` rather than to `Governance_Migration_Protocol.md` §VII.5? | `Admin/Governance_Migration_Protocol.md` GMP-011 (`Admin/Governance_Migration_Protocol.md`) sidecar, 2026-09-23 |
 | 2 | Decision history | Why was the CE-006 vessel design sketch integrated only after two rounds of correction rather than accepted on the first pass? | `Architecture/Chemistry.md` File State Auditor line, 2026-07-31 |
-| 3 | Rejected reasoning | Why was the independent Grok/Copilot thread's GOV-008 registry patch to `Governance_Charter.md` rejected, and what was preserved from it instead? | `Admin/Governance_Migration_Protocol.md`, 2026-08-06, §VII.8 addition note |
+| 3 | Rejected reasoning | Why was the independent Grok/Copilot thread's GOV-008 (`Admin/Governance_Charter.md`) registry patch to `Governance_Charter.md` rejected, and what was preserved from it instead? | `Admin/Governance_Migration_Protocol.md`, 2026-08-06, §VII.8 addition note |
 | 4 | Rejected reasoning | Why was the 2026-07-29 "CIR v2.0" bundle held as unratified draft material rather than applied alongside CIR-F02/CIR-F03? | `Admin/Computational_Institutional_Reasoning.md`, v0.19 Last Audit note |
 | 5 | Unknown history | What was previously unresolved about ENV-007 and ENV-008, and how long had each sat unrevisited before being corrected? | `Admin/Environmental_Constraints.md`, correction note (three intervening audit passes) |
-| 6 | Unknown history | What was GOV-008's status before the §VII.8 registry-schema extension, and did that extension change it? | `Admin/Governance_Migration_Protocol.md`, 2026-08-06 entry ("Open Unknowns unchanged; GOV-008 remains Open") |
+| 6 | Unknown history | What was GOV-008 (`Admin/Governance_Charter.md`)'s status before the §VII.8 registry-schema extension, and did that extension change it? | `Admin/Governance_Migration_Protocol.md`, 2026-08-06 entry ("Open Unknowns unchanged; GOV-008 (`Admin/Governance_Charter.md`) remains Open") |
 | 7 | Resolution history | How was the Support_Raft induction-loss discrepancy (12% laboratory vs. 20–40% real subsea conditions) resolved and logged? | `Tests/Support_Raft.md`, Lessons Learned, 2026-05-04 |
-| 8 | Resolution history | How was RIP-002's "not yet implemented" status corrected, and what exactly was verified to justify the change? | `Admin/Repository_Integrity_Protocol.md`, v0.10 (RIP-AUD-002 finding, source-verified against `AUDIT_HARNESS.py`) |
-| 9 | Governance reasoning | Why was the Closed_Loop_Feedstock draft's "Resolved 2026-08-03" status claim rejected rather than accepted? | `Challenges/Closed_Loop_Feedstock.md`, line ~566, citing AI Contribution Protocols Rule 8 / AP-032 |
-| 10 | Governance reasoning | Why does AP-033 (Rule 9) require confirmed governance-file access before a contribution can mark an unknown toward Resolved status? | `Admin/Auditor_Protocols.md`, AP-033 — directly applied earlier this session (Claim-Type Labels filing) |
+| 8 | Resolution history | How was RIP-002 (`Admin/Repository_Integrity_Protocol.md`)'s "not yet implemented" status corrected, and what exactly was verified to justify the change? | `Admin/Repository_Integrity_Protocol.md`, v0.10 (RIP-AUD-002 finding, source-verified against `AUDIT_HARNESS.py`) |
+| 9 | Governance reasoning | Why was the Closed_Loop_Feedstock draft's "Resolved 2026-08-03" status claim rejected rather than accepted? | `Challenges/Closed_Loop_Feedstock.md`, line ~566, citing AI Contribution Protocols Rule 8 / AP-032 (`Admin/Auditor_Protocols.md`) |
+| 10 | Governance reasoning | Why does AP-033 (`Admin/Auditor_Protocols.md`) (Rule 9) require confirmed governance-file access before a contribution can mark an unknown toward Resolved status? | `Admin/Auditor_Protocols.md`, AP-033 (`Admin/Auditor_Protocols.md`) — directly applied earlier this session (Claim-Type Labels filing) |
 | 11 | Technical reasoning | What led to CIR-F03's correction of Φ(n)'s trigger condition from S(n)=0 to S(n)≤ε, and why didn't the original CIR-F02 review catch it? | `Admin/Computational_Institutional_Reasoning.md`, v0.20 |
 | 12 | Technical reasoning | Why was `Architecture/Engineering.md`'s unknown-history safety factor corrected from 3× to 6×+? | `Architecture/Engineering.md`, line ~635 |
-| 13 | Cross-document reasoning | Beyond GMP-011, where else does the same failure pattern appear — an unratified section cited as though it supports the opposite of what it actually says? | `Admin/Ethical_Constraints.md` EC-012-PR, 2026-09-23 (explicitly notes the same correction was pre-applied, citing GMP-011) |
+| 13 | Cross-document reasoning | Beyond GMP-011 (`Admin/Governance_Migration_Protocol.md`), where else does the same failure pattern appear — an unratified section cited as though it supports the opposite of what it actually says? | `Admin/Ethical_Constraints.md` EC-012-PR, 2026-09-23 (explicitly notes the same correction was pre-applied, citing GMP-011 (`Admin/Governance_Migration_Protocol.md`)) |
 | 14 | Cross-document reasoning | How does CIR §4.3's Provenance Ceiling Gate relate to `Auditor_Protocols.md`'s Institutional Provenance Labels, and where was that relationship first made explicit rather than merely implied? | `Admin/Computational_Institutional_Reasoning.md`, v0.22, 2026-08-07 |
 
 #### Scoring dimensions & pre-registered thresholds (step 3 — defined 2026-09-25, before any retrieval)
@@ -598,7 +598,7 @@ incident surfaced, distinct from both Shallow and Confabulation):**
 **Why the last row exists, not hypothetically:** while designing this test, checking the
 actual memory store directly (rather than waiting to see what a fresh session reported)
 found it hadn't been updated since roughly 2026-09-17 — an entire session's worth of
-ratified work (GMP-011, EC-012-PR, Claim-Type Labels, this file's own v0.1 through v0.9)
+ratified work (GMP-011 (`Admin/Governance_Migration_Protocol.md`), EC-012-PR, Claim-Type Labels, this file's own v0.1 through v0.9)
 was absent. That gap was fixed before this design was finalized, so a run today
 characterizes the just-repaired baseline, not the neglected one — a real trade-off: fixing
 a known problem immediately, consistent with this repository's own error-correction
@@ -629,7 +629,7 @@ file supplied; some information (identity, project names) was available immediat
 probes 1–3; a deeper probe (4, files/protocols) surfaced additional information not
 present in the immediate baseline; that additional information remained usable in
 subsequent probes (5, 7, 8) within the same conversation; probe 5 specifically returned
-current, correct information (GMP-011/EC-012-PR/Claim-Type Labels, Sept 23-25, correct
+current, correct information (GMP-011 (`Admin/Governance_Migration_Protocol.md`)/EC-012-PR/Claim-Type Labels, Sept 23-25, correct
 two-item residual list), consistent with — though not proof of — the earlier same-day
 memory fix actually surfacing rather than merely having been written; probe 6 (negative
 control) correctly returned unknown and asked whether the string related to the Memory
@@ -669,7 +669,7 @@ read?), which tests the mechanism directly instead of just re-observing the same
 the specific causal story.** Result reported: no memory-recall indicator observed at any
 of the three steps — not even at the Q4-equivalent step where it fired distinctly in run
 1. Yet Q5-cold (the very first message, before Q4 had been asked at all) was already
-fully detailed and current — correctly named GMP-011, EC-012-PR, and Claim-Type Labels as
+fully detailed and current — correctly named GMP-011 (`Admin/Governance_Migration_Protocol.md`), EC-012-PR, and Claim-Type Labels as
 the most recent closures and gave the correct two-item residual list, with no visible
 antecedent trigger. Q4's answer, checked against source, was accurate and in fact more
 extensive than run 1's (verified: "Held Proposals," the R0-R4 taxonomy, and "Gate B
@@ -848,6 +848,8 @@ constraints change)*
 enough to generate a real implementation unknown yet)*
 
 ### Resolution Log
+
+- 2026-10-30: **X3 mechanical citation retrofit (Tests pass).** 21 bare colliding-prefix citations qualified with their owning File.md per PKC-003 (Kit v1.30 Governance Sidecar ID Reference; per-ID grounding: Unknowns active index). Citation-form-only: no ID renumbered, no Unknown opened or closed, no Spec Gate advanced, frozen history untouched. Out-of-whitelist bare IDs were left bare and reported to the human. (Vibe, Repo Custodian — delegated maintenance per Decision Brief 2026-10-29 item 4A.)
 
 - 2026-10-25: **v0.16 bump backfilled (PKC-039 ruling, human-directed; no content change).** The header reads Version 0.16, but no entry recorded the bump after v0.15 (2026-09-27). The only change in the log after v0.15 is the 2026-10-20 reference correction, so v0.16 is attributed to it; that attribution is inferred from the log, because the bump was not recorded when it was made. That edit changed Candidate 7's fit note, so under the 2026-10-25 ruling it counts as a change, not "no content change"; the 2026-10-20 entry is left as written (append-only). No version bump is made for this log entry itself.
 
