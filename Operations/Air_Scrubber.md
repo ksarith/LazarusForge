@@ -36,8 +36,8 @@
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 3/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-09-29 — AS-006 registered (Open Unknowns 5 → 6; see Resolution Log). Header corrected 2026-10-24 (Claude, human-directed, from a Vibe per-file audit) to cover it and the passes recorded in the Resolution Log that this chain had skipped: 2026-07-19 chemistry corrections, 2026-08-10 Grok pseudo-audit (findings only, not counted as an audit here per the PKC-020 ruling of 2026-10-25), and the 2026-08-15 review round with the AS-005 registration and the Fire Event row. Prior: 2026-09-20 — 2026-09-20 — EC-013 Air_Scrubber safe-state descent sequence filed as Proposed/Placeholder (§EC-013 Descent Sequence). Blocking for hot runs retained until first hot-run validation. Prior: 2026-05-31 |
-| Auditor          | Claude — 2026-10-24 header correction (human-directed); passes since 2026-05-31 per the Resolution Log: Grok 2026-08-10 pseudo-audit and 2026-08-15 review round, AS-005 and AS-006 registrations (2026-08-15, 2026-09-29); prior: Grok — EC-013 descent section drafted and filed as Proposed/Placeholder (Path A, human-directed 2026-09-20); prior: Gemini |
+| Last Audit       | 2026-10-30 — Vibe (Repo Custodian, delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A): X3 mechanical citation retrofit (Operations pass) — 23 bare colliding-prefix citations qualified with their owning File.md per PKC-003 (Kit v1.30 Governance Sidecar ID Reference; per-ID grounding: Unknowns active index). Citation-form-only; no ID renumbered; frozen history untouched; no gate advanced; Open Unknowns unchanged. Prior: 2026-09-29 — AS-006 registered (Open Unknowns 5 → 6; see Resolution Log). Header corrected 2026-10-24 (Claude, human-directed, from a Vibe per-file audit) to cover it and the passes recorded in the Resolution Log that this chain had skipped: 2026-07-19 chemistry corrections, 2026-08-10 Grok pseudo-audit (findings only, not counted as an audit here per the PKC-020 ruling of 2026-10-25), and the 2026-08-15 review round with the AS-005 registration and the Fire Event row. Prior: 2026-09-20 — 2026-09-20 — EC-013 Air_Scrubber safe-state descent sequence filed as Proposed/Placeholder (§EC-013 Descent Sequence). Blocking for hot runs retained until first hot-run validation. Prior: 2026-05-31 |
+| Auditor          | Vibe — Repo Custodian, 2026-10-30 X3 mechanical citation retrofit (Operations pass; delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A); prior: Claude — 2026-10-24 header correction (human-directed); passes since 2026-05-31 per the Resolution Log: Grok 2026-08-10 pseudo-audit and 2026-08-15 review round, AS-005 and AS-006 registrations (2026-08-15, 2026-09-29); prior: Grok — EC-013 descent section drafted and filed as Proposed/Placeholder (Path A, human-directed 2026-09-20); prior: Gemini |
 | Open Unknowns    | 6 substantively open. EC-013 sequence registered as Proposed/Placeholder (does not close EC-013 tracker). |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | High                                                                |
@@ -97,9 +97,9 @@ logged.*
   (`Architecture/Geck_forge_seed.md`)
 - Noise exposure limits, formal hearing conservation
   program, and PPE standards
-  (`Admin/Safety_Protocols.md` SP-003)
+  (`Admin/Safety_Protocols.md` SP-003 (`Admin/Safety_Protocols.md`))
 - Facility siting and ventilation topology
-  (`Architecture/Facilities.md` FA-001)
+  (`Architecture/Facilities.md` FA-001 (`Architecture/Facilities.md`))
 
 ---
 
@@ -411,7 +411,7 @@ shutdown sequence.
 | **Noise Fault Masking** | Ambient microphone calibration check | Alarm audio margin less than 10 dB above operating noise floor | Flash high-intensity visual strobes; Flag system failure to supervisory network layer. |
 | **Fire Event — Hot Zone** *(added 2026-08-15, applying `Admin/Resolution_Methodology.md`)* | Method-agnostic trigger input — automatic detection hardware not yet specified; manual pull-station/operator call is the minimum viable trigger and is not equipment-gated | Any fire event confirmed in `Architecture/Facilities.md`'s Hot Zone | Forced ventilation halts immediately as part of the response, not after — negative-pressure airflow feeds a fire rather than suppressing it, so delayed shutdown actively works against suppression. Reuses this table's own Fault-latency convention rather than a separate response class. |
 
-**Note on the Fire Event row, 2026-08-15:** `Operations/Gate_06_Fabrication.md` GF-007 named this gap but could not close it alone — the actual shutdown mechanism (halting forced ventilation) is this file's own system, so the interlock logic belongs in this table alongside the other five, not duplicated in GF-007. What stays genuinely open: the *detection* half. No automatic fire/smoke detection hardware is specified anywhere in the repository — this row deliberately keeps the trigger input method-agnostic (manual call is sufficient to exercise the interlock logic) rather than inventing a sensor specification that would itself need physical validation this session cannot produce. Automatic detection hardware selection is a separate, still-open item, not silently assumed solved by this row's existence.
+**Note on the Fire Event row, 2026-08-15:** `Operations/Gate_06_Fabrication.md` GF-007 (`Operations/Gate_06_Fabrication.md`) named this gap but could not close it alone — the actual shutdown mechanism (halting forced ventilation) is this file's own system, so the interlock logic belongs in this table alongside the other five, not duplicated in GF-007. What stays genuinely open: the *detection* half. No automatic fire/smoke detection hardware is specified anywhere in the repository — this row deliberately keeps the trigger input method-agnostic (manual call is sufficient to exercise the interlock logic) rather than inventing a sensor specification that would itself need physical validation this session cannot produce. Automatic detection hardware selection is a separate, still-open item, not silently assumed solved by this row's existence.
 
 ---
 
@@ -767,7 +767,7 @@ operational float margins.
 
 *Grok review 2026-08-15: Resolution Path sound; Blocking Yes correctly retained (Chemistry validation dependency). No closure.*
 
-**Note, 2026-08-15 (Claude, cross-referenced from `Operations/Gate_01_Intake.md` GI-002):** GI-002's compressed-gas discharge doctrine calls for routing suspected-hazardous unknown-content vessel releases through scrubber intake, but this file currently only specifies handling for its own designed process streams (pyrolysis gas, Cl₂ via the chlor-alkali path) — there is no general unknown-content gas intake path. Registered as **AS-005** below rather than folded into this entry's scope, since AS-003 is about calibrating a known stream and AS-005 is about the absence of any path for an unknown one.
+**Note, 2026-08-15 (Claude, cross-referenced from `Operations/Gate_01_Intake.md` GI-002 (`Operations/Gate_01_Intake.md`)):** GI-002 (`Operations/Gate_01_Intake.md`)'s compressed-gas discharge doctrine calls for routing suspected-hazardous unknown-content vessel releases through scrubber intake, but this file currently only specifies handling for its own designed process streams (pyrolysis gas, Cl₂ via the chlor-alkali path) — there is no general unknown-content gas intake path. Registered as **AS-005** below rather than folded into this entry's scope, since AS-003 is about calibrating a known stream and AS-005 is about the absence of any path for an unknown one.
 
 **Why It Matters:** Without calibrated thresholds,
 the interlock system operates on estimated values.
@@ -852,7 +852,7 @@ Stage A intercepts coarse process particulates, Stage C thermally
 quenches hot pyrolysis gas specifically. There is no defined path for
 a discrete, ambient-temperature, unknown-content gas release from a
 different subsystem entirely — specifically, `Gate_01_Intake.md`
-GI-002's compressed-gas discharge doctrine, which calls for routing
+GI-002 (`Operations/Gate_01_Intake.md`)'s compressed-gas discharge doctrine, which calls for routing
 suspected-hazardous vessel releases "through scrubber intake" without
 this file having ever specified what that means mechanically.
 
@@ -864,7 +864,7 @@ Stage D's recirculating water loop — the same loop AS-003 is already
 trying to calibrate against known process chemistry. An unlogged
 contaminant there could silently invalidate that calibration. The
 alternative failure — operators simply venting an unknown gas because
-no defined path exists — is the exact hazard GI-002 exists to prevent.
+no defined path exists — is the exact hazard GI-002 (`Operations/Gate_01_Intake.md`) exists to prevent.
 
 **Resolution Path:**
 - Define a physically separate auxiliary release point — not a tap
@@ -872,28 +872,28 @@ no defined path exists — is the exact hazard GI-002 exists to prevent.
   capture approach already established as this file's own v0 baseline
   (Variant 1, aerated pond-style bubbler): simple, robust, inspectable,
   and chemically isolated from Stage D's calibrated main loop.
-- Sizing depends on GI-002's own still-open vessel-volume assumptions
+- Sizing depends on GI-002 (`Operations/Gate_01_Intake.md`)'s own still-open vessel-volume assumptions
   (largest plausible compressed-gas vessel expected at Intake) —
-  correctly deferred to GI-002 rather than guessed here.
+  correctly deferred to GI-002 (`Operations/Gate_01_Intake.md`) rather than guessed here.
 - Once a release passes through the auxiliary point, its water/media
   becomes a separate managed-waste stream under this file's existing
   "Waste as a Managed Output" doctrine, not merged into Stage D's
   output stream.
-- Cross-reference: `Operations/Gate_01_Intake.md` GI-002 (source of
+- Cross-reference: `Operations/Gate_01_Intake.md` GI-002 (`Operations/Gate_01_Intake.md`) (source of
   the releases this path serves); `Operations/Air_Scrubber.md` AS-003
   (the calibration this path is designed to avoid contaminating).
 - Payment via Specification — once the auxiliary path's capture media
-  and capacity are sized against GI-002's vessel-volume assumptions,
+  and capacity are sized against GI-002 (`Operations/Gate_01_Intake.md`)'s vessel-volume assumptions,
   move to Functional Architecture as Analogous.
 
-**Claude review 2026-08-15:** Surfaced during GI-002's spec-depth pass
-(`Operations/Gate_01_Intake.md`) — GI-002's discharge doctrine assumed
+**Claude review 2026-08-15:** Surfaced during GI-002 (`Operations/Gate_01_Intake.md`)'s spec-depth pass
+(`Operations/Gate_01_Intake.md`) — GI-002 (`Operations/Gate_01_Intake.md`)'s discharge doctrine assumed
 scrubber routing existed without this file ever having specified it.
 Registered as its own ID rather than folded into AS-003, since the
 two are architecturally distinct: AS-003 is calibration of a known,
 continuous, designed-for stream; this is the absence of any path for
 an unpredictable, discrete, unknown one. Deliberately does not size
-the auxiliary unit — that number depends on GI-002's vessel-volume
+the auxiliary unit — that number depends on GI-002 (`Operations/Gate_01_Intake.md`)'s vessel-volume
 assumptions, which are themselves still open, so guessing a capacity
 here would be inventing a number to fill a gap rather than reflecting
 what's actually known. Not Blocking — existing process-stream
@@ -972,6 +972,8 @@ own unknown.
 ---
 
 ### Resolution Log
+
+- 2026-10-30: **X3 mechanical citation retrofit (Operations pass).** 23 bare colliding-prefix citations qualified with their owning File.md per PKC-003 (Kit v1.30 Governance Sidecar ID Reference; per-ID grounding: Unknowns active index). Citation-form-only: no ID renumbered, no Unknown opened or closed, no Spec Gate advanced, frozen history untouched. Out-of-whitelist bare IDs were left bare and reported to the human. (Vibe, Repo Custodian — delegated maintenance per Decision Brief 2026-10-29 item 4A.)
 
 - 2026-10-25: **Header wording updated (PKC-020 ruling; no content change).** The Last Audit annotation that said the logged findings-only pseudo-audit was not counted "pending PKC-020" now cites the ruling of 2026-10-25: a findings-only pseudo-audit does not advance Last Audit (`Admin/Auditor_Protocols.md` v0.45, Rule 10 addendum). No date, field value, Unknown or Spec Gate changed.
 
@@ -1126,9 +1128,9 @@ own unknown.
 
 ## §EC-013 Descent Sequence — Air Scrubber (Proposed / Placeholder)
 
-**STATUS: Proposed / Placeholder.** Filed 2026-09-20 under Path A (EL-006-P3–P5 style), same pattern as `Operations/Plastics.md` §EC-013. This section is visible doctrine and registers the second per-process EC-013 sequence. It does **not** carry operational force for hot runs until a Skeptic pass and first hot-run validation have occurred. **Blocking for hot operational runs remains in force.** Specified ≠ demonstrated.
+**STATUS: Proposed / Placeholder.** Filed 2026-09-20 under Path A (EL-006-P3–P5 style), same pattern as `Operations/Plastics.md` §EC-013. This section is visible doctrine and registers the second per-process EC-013 (`Admin/Ethical_Constraints.md`) sequence. It does **not** carry operational force for hot runs until a Skeptic pass and first hot-run validation have occurred. **Blocking for hot operational runs remains in force.** Specified ≠ demonstrated.
 
-**Cross-reference:** `Admin/Ethical_Constraints.md` EC-013 (requirement owner); EC-004 Governance Failure Modes; `Operations/Plastics.md` §EC-013 (companion sequence — pyrolysis is a primary upstream load). Layer A process-fault interlocks in this file’s own Sensor Layout & Automated Failure Interlocks table (System Fault 04, Thermal Fault, Acidic Ingress E-Stop, **Fire Event — Hot Zone → forced ventilation halts immediately**) are always-on safety logic and are **not** substituted by this sequence. Layer B (this sequence) must obey Layer A; the fire-vent-halt override wins over any step that would keep forced airflow running while a Hot Zone fire is active.
+**Cross-reference:** `Admin/Ethical_Constraints.md` EC-013 (`Admin/Ethical_Constraints.md`) (requirement owner); EC-004 (`Admin/Ethical_Constraints.md`) Governance Failure Modes; `Operations/Plastics.md` §EC-013 (`Admin/Ethical_Constraints.md`) (companion sequence — pyrolysis is a primary upstream load). Layer A process-fault interlocks in this file’s own Sensor Layout & Automated Failure Interlocks table (System Fault 04, Thermal Fault, Acidic Ingress E-Stop, **Fire Event — Hot Zone → forced ventilation halts immediately**) are always-on safety logic and are **not** substituted by this sequence. Layer B (this sequence) must obey Layer A; the fire-vent-halt override wins over any step that would keep forced airflow running while a Hot Zone fire is active.
 
 ### Trigger
 Governance failure (or explicit human/governance command to enter safe-state) while the Air Scrubber is actively supporting a hazardous process — i.e., forced ventilation / wet scrubbing / polishing path is live in service of pyrolysis, milling, hot-zone work, or any other operation that relies on the scrubber’s capture path.
@@ -1136,7 +1138,7 @@ Governance failure (or explicit human/governance command to enter safe-state) wh
 ### Ordered steps (Layer B)
 1. **Signal upstream processes to stop new thermal/chemical load** — Issue (or confirm) halt of downstream heating elements and new feedstock introduction on any coupled process (e.g., Plastics pyrolysis reactor). Do not open new material paths into the scrubber.
 2. **Preserve capture path integrity while load declines** — Keep Stages A–E in their current controlled configuration while upstream heat and vapor generation ramp down. Do not bypass fractional condensation or wet stages. Do not switch to an unmonitored auxiliary path except under Layer A fault logic already defined in this file.
-3. **Managed load reduction** — Allow upstream processes to execute their own EC-013 sequences (e.g., Plastics managed heat-down). Scrubber continues capture of residual off-gas until upstream sources are sealed or confirmed idle.
+3. **Managed load reduction** — Allow upstream processes to execute their own EC-013 (`Admin/Ethical_Constraints.md`) sequences (e.g., Plastics managed heat-down). Scrubber continues capture of residual off-gas until upstream sources are sealed or confirmed idle.
 4. **Sump / media stable-state check** — Confirm Stage D sump pH and temperature are within the bands already used by this file’s interlock table (or log deviation). Do not drain hazardous sumps as part of routine descent unless a Layer A condition or explicit human order requires it.
 5. **Ventilation mode decision under Layer A constraint** — If **no** Fire Event / Fault-04-class condition is active: transition forced ventilation to a controlled low-flow or idle state consistent with negative-pressure boundary doctrine, then isolate. If **any** Fire Event — Hot Zone (or equivalent Layer A fire/thermal critical) is active or asserted: **forced ventilation halts immediately** per this file’s existing interlock row — do not complete a “graceful” airflow step that would feed the fire.
 6. **Isolation and out-of-service mark** — Isolate energy to fans/pumps as appropriate after step 5, record final interlock state, and mark the scrubber out of service until human clearance is recorded.
@@ -1157,16 +1159,16 @@ Record trigger, each step executed or skipped (with reason), every Layer A inter
 ### Explicit non-goals
 - This sequence does **not** self-clear or authorize restart of the scrubber or upstream processes.
 - Missing or incomplete sequence is **not** license to skip descent or to keep forced airflow running against a Fire Event interlock.
-- Filing this text does **not** close EC-013, clear Blocking for hot runs, or claim any physical validation.
+- Filing this text does **not** close EC-013 (`Admin/Ethical_Constraints.md`), clear Blocking for hot runs, or claim any physical validation.
 - This sequence does **not** replace or weaken any row in the Sensor Layout & Automated Failure Interlocks table.
 
 ### Residual / open items (tracked, not blocking this filing)
 - Numeric low-flow / idle ventilation setpoints for step 5 (Placeholder until first hardware designation).
-- Exact hand-off timing with Plastics (and other upstream) EC-013 sequences under simultaneous governance failure (to be refined against live multi-process runs).
+- Exact hand-off timing with Plastics (and other upstream) EC-013 (`Admin/Ethical_Constraints.md`) sequences under simultaneous governance failure (to be refined against live multi-process runs).
 - Automatic fire/smoke detection hardware remains unspecified (already noted in the Fire Event interlock row) — manual trigger remains the minimum viable path.
 - First hot-run validation required before this section may be promoted beyond Proposed/Placeholder.
 
-*Filed 2026-09-20, Path A (Proposed/Placeholder), human-directed. Does not constitute Payment via Specification for EC-013; the tracker remains Open until the agreed active set of hazardous-process files each have a registered sequence or explicit scope-out.*
+*Filed 2026-09-20, Path A (Proposed/Placeholder), human-directed. Does not constitute Payment via Specification for EC-013 (`Admin/Ethical_Constraints.md`); the tracker remains Open until the agreed active set of hazardous-process files each have a registered sequence or explicit scope-out.*
 
 ---
 
@@ -1194,7 +1196,7 @@ Mandatory re-audit conditions for this document:
 - Spec Gates advanced to 4/6 without all four
   protocols achieving Pass status in Test
   Execution Matrix
-- EC-013 descent sequence absent, removed, or
+- EC-013 (`Admin/Ethical_Constraints.md`) descent sequence absent, removed, or
   treated as operationally binding for hot runs
   while still marked Proposed/Placeholder
 - Layer A Fire Event interlock weakened or made
