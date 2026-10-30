@@ -37,7 +37,7 @@
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
 | | Last Audit | 2026-10-30 — Campaign 2 finding repair (human-directed custodian pass; see Resolution Log) |he section markers, and put in date order, from a Vibe per-file audit; no body text changed. Prior: 2026-09-16 — v0 Logic-Zero Run Sheet's P3–P5 gaps filled with Provisional Defaults (Placeholder): known-good image identity/approval/naming, SHA-256 as the v0 hash algorithm with full-chip scope, minimum tool capability and erase success criteria. All three explicitly Open until first actual hardware designation — no image, hash, or tool chain claimed to exist yet. Prior: 2026-09-15 — CF-006 resolved (Option A, Ratified by James): `Security_Protocols.md`'s "signature-verified bootstrap" language corrected to state this file's actual v0 hash-based floor; no change required to this file's own doctrine. Prior: 2026-09-14 — v0 Logic-Zero Run Sheet added (Proposed/Placeholder, under Firmware Trust Doctrine) and CF-006 cross-reference added to EL-006's Resolution Path. No change to EL-006's Status/Risk/Priority. Prior: 2026-08-09 — Grok pseudo-audit (Skeptic read + minimal fixes); prior: 2026-08-02 corrective merge; 2026-08-02 Threat Model/Heartbeat Token still not Gate-1 audited |
-| Auditor          | Vibe — Repo Custodian, 2026-10-30 X3 mechanical citation retrofit (Operations pass; delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A); prior: Claude — 2026-10-24 log backfill (human-directed, from a Vibe per-file audit); prior: Claude — Retrofit/Auditor; Gemini — Synthesizer (CF-001 (`Architecture/Cognitive_Frameworks.md`) parameters); Copilot — drafted Threat Model/Trust Boundary/Firmware Provenance Log restructure (human-directed), 2026-08-02; Grok — drafted Heartbeat Token Cryptography spec and reviewed Copilot's draft (human-directed), 2026-08-02; Claude — verified against source, corrective merge (human-directed), 2026-08-02; Grok pseudo-audit 2026-08-09 — no Spec Gate promotion |
+| Auditor          | Vibe — Repo Custodian, 2026-10-30 X3 mechanical citation retrofit (Operations pass; delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A); prior: Claude — 2026-10-24 log backfill (human-directed, from a Vibe per-file audit); prior: Claude — Retrofit/Auditor; Gemini — Synthesizer (CF-001 parameters); Copilot — drafted Threat Model/Trust Boundary/Firmware Provenance Log restructure (human-directed), 2026-08-02; Grok — drafted Heartbeat Token Cryptography spec and reviewed Copilot's draft (human-directed), 2026-08-02; Claude — verified against source, corrective merge (human-directed), 2026-08-02; Grok pseudo-audit 2026-08-09 — no Spec Gate promotion |
 | Open Unknowns    | 9                                                                   |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | High                                                                |
@@ -895,7 +895,7 @@ obviously-correlated components to the same TMR set in the first place.
 
 ### Hardware Watchdog Doctrine
 
-*CF-001 minimum standard defined 2026-06-08
+*CF-001 (`Architecture/Cognitive_Frameworks.md`) minimum standard defined 2026-06-08
 following Gemini Synthesizer analysis. Confidence:
 Analogous — parameters require validation against
 first hardware prototype. Closes CF-001 resolution
