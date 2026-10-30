@@ -23,8 +23,8 @@
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 1/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-10-27 — Claude (human-directed): Why It Matters lines added to EV-006–EV-008 (the template field was missing); no other change. Prior: 2026-10-27 — Claude (human-directed, PKC-034) three sidecar entries added (EV-006/EV-007/EV-008, from the Superconductivity Horizons SC-H1–H3 list), each Open, Risk Low, Priority Minor, non-Blocking; Open Unknowns 5 → 8; no body doctrine, Spec Gate or existing-unknown change. Prior: 2026-08-09 — Grok pseudo-audit (Skeptic read + minimal Synthesizer fixes); prior: 2026-08-02 dual-audit adjudication; EGL body still not Gate-1 cleared |
-| Auditor          | Claude — Why It Matters lines added (human-directed, 2026-10-27); Claude — PKC-034 registration (human-directed, 2026-10-27); Gemini (2026-05-31); Grok EGL draft (2026-08-01); Gemini+Grok dual-audit (2026-08-02); Grok pseudo-audit (2026-08-09) — no Spec Gate promotion |
+| Last Audit       | 2026-10-30 — Vibe (Repo Custodian, delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A): X3 mechanical citation retrofit (Operations pass) — 1 bare colliding-prefix citations qualified with their owning File.md per PKC-003 (Kit v1.30 Governance Sidecar ID Reference; per-ID grounding: Unknowns active index). Citation-form-only; no ID renumbered; frozen history untouched; no gate advanced; Open Unknowns unchanged. Prior: 2026-10-27 — Claude (human-directed): Why It Matters lines added to EV-006–EV-008 (the template field was missing); no other change. Prior: 2026-10-27 — Claude (human-directed, PKC-034) three sidecar entries added (EV-006/EV-007/EV-008, from the Superconductivity Horizons SC-H1–H3 list), each Open, Risk Low, Priority Minor, non-Blocking; Open Unknowns 5 → 8; no body doctrine, Spec Gate or existing-unknown change. Prior: 2026-08-09 — Grok pseudo-audit (Skeptic read + minimal Synthesizer fixes); prior: 2026-08-02 dual-audit adjudication; EGL body still not Gate-1 cleared |
+| Auditor          | Vibe — Repo Custodian, 2026-10-30 X3 mechanical citation retrofit (Operations pass; delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A); prior: Claude — Why It Matters lines added (human-directed, 2026-10-27); Claude — PKC-034 registration (human-directed, 2026-10-27); Gemini (2026-05-31); Grok EGL draft (2026-08-01); Gemini+Grok dual-audit (2026-08-02); Grok pseudo-audit (2026-08-09) — no Spec Gate promotion |
 | Open Unknowns    | 8                                                                   |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | High                                                                |
@@ -198,7 +198,7 @@ This loop is designed to run continuously and, once validated, would form the Fo
   \[
   W(t) = W_{\text{fixed}} = 5\text{–}10\,\text{W}
   \]
-  Must never brown out. Hard safety boundary (cross-ref `Architecture/Cognitive_Frameworks.md` CF-001).
+  Must never brown out. Hard safety boundary (cross-ref `Architecture/Cognitive_Frameworks.md` CF-001 (`Operations/Electronics.md`)).
 
 - **Scrubber Rail (S)**
   \[
@@ -662,6 +662,8 @@ Key guiding principles drawn from disciplined analysis:
 ---
 
 ### Resolution Log
+
+- 2026-10-30: **X3 mechanical citation retrofit (Operations pass).** 1 bare colliding-prefix citations qualified with their owning File.md per PKC-003 (Kit v1.30 Governance Sidecar ID Reference; per-ID grounding: Unknowns active index). Citation-form-only: no ID renumbered, no Unknown opened or closed, no Spec Gate advanced, frozen history untouched. Out-of-whitelist bare IDs were left bare and reported to the human. (Vibe, Repo Custodian — delegated maintenance per Decision Brief 2026-10-29 item 4A.)
 
 - 2026-10-27: **Why It Matters lines added to EV-006, EV-007 and EV-008 (human-directed; no other change).** The three entries registered under PKC-034 lacked the template's "Why It Matters" field that EV-005 and the other sidecar entries carry. One sentence each was added, drawn only from what the Superconductivity Horizons section already says. No status, risk, priority, description or resolution path changed.
 
