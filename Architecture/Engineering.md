@@ -28,7 +28,7 @@
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 3/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-07-05                                                          |
+| Last Audit       | 2026-10-30 — Campaign 2 finding repair (human-directed custodian pass; see Resolution Log): Last Audit field catch-up — the field lagged the file's newest Resolution Log entry (2026-10-20) by 117 days; advanced to record that entry. Bookkeeping only; not a gate audit. Prior: 2026-07-05 |
 | Auditor          | Grok (2026-05-29); ChatGPT informal (2026-06-11); Claude retrofit; Claude — Architecture review 2026-06-21; Gemini — Exploration audit 2026-07-04; Claude — Documentation correction pass 2026-07-04; Gemini — Exploration audit 2026-07-05; Claude — EN-007 registration + reference cleanup 2026-07-05; Claude — EN-001 differentiated safety factor table 2026-07-05 |
 | Open Unknowns    | 7                                                                   |
 | Active Disputes  | 0                                                                   |
@@ -577,6 +577,8 @@ exists to test.
 ---
 
 ### Resolution Log
+
+- 2026-10-30: **Last Audit field catch-up (Campaign 2 finding repair, Session 6 rec 4; human-directed).** The File State Last Audit field still read 2026-07-05 while the Resolution Log's newest entry was 2026-10-20 (117-day lag). Field advanced to record the 2026-10-20 Downstream Dependents annotation; Prior chain preserved. No doctrine, Unknown, Status or Spec Gate change; not a gate audit.
 
 - 2026-10-20: **Downstream Dependents annotated (no doctrine change; human-directed).** The `Operations/Gate_06_Fabrication.md` and `Architecture/Components.md` rows claim this file as a source of safety factors, but neither file cites Engineering.md; both rows are marked one-way. The other seven dependents were not checked in this pass. Found by an external sweep (Vibe), checked against source by Claude. Human-directed.
 
