@@ -2,7 +2,8 @@
 
 **Standard file structure for LazarusForge documents.**
 Applies to all new files and retrofit audit cycles.
-**Last updated: 2026-10-28 (fourth entry) — Template Exemptions classes 10–11 added (Decision Brief 2026-10-28d, item 6, human-ratified): class 10, Tier 0 philosophical substrate (AUDIT_24 F1); class 11, stub/scaffold/candidate family — Integrity_Incident_Log, Agent_Verification_Event, Experiments, Hardware_Diversity_Ladder (AUDIT_23 F1, AUDIT_27 F2, AUDIT_28 F1, AUDIT_29 F1). Same-pass mechanical repairs: consistency check C4’s description restored (a Pattern A-pass edit had spliced a Last Audit value into it), and this file’s three real Resolution Log entries relocated from inside the Section 9 example block into a proper own Resolution Log, the example restored to pristine. Sections 0–11, Pattern A and classes 1–9 otherwise unchanged.**
+**Last updated: 2026-10-30 (fifth entry) — Log-Split Rule (Option C) adopted by Human Governing Authority ruling (Decision Brief 2026-10-30c, items 1–2): new §Log-Split Rule section (triggers T0 existing rotation/20%/Aging, T1 file size ≥ 100 KB, T2 audit purity; splits execute at each file's next substantive touch, never in bulk, heaviest first); R8 amended — new relocated logs land in the owning folder's `Logs/` subfolder, new audit artifacts in the audited folder's `Audits/` subfolder; existing `Archive/Logs/` changelogs and `Archive/Audits/` artifacts frozen in place. Pattern A Pilot paragraph's "no `logs/` or `audits/` subfolders" clause superseded for these two homes only. Sections 0–11, Pattern A rules R1–R7/R9, checks C1–C8, and Template Exemptions otherwise unchanged.**
+**Prior: 2026-10-28 (fourth entry) — Template Exemptions classes 10–11 added (Decision Brief 2026-10-28d, item 6, human-ratified): class 10, Tier 0 philosophical substrate (AUDIT_24 F1); class 11, stub/scaffold/candidate family — Integrity_Incident_Log, Agent_Verification_Event, Experiments, Hardware_Diversity_Ladder (AUDIT_23 F1, AUDIT_27 F2, AUDIT_28 F1, AUDIT_29 F1). Same-pass mechanical repairs: consistency check C4’s description restored (a Pattern A-pass edit had spliced a Last Audit value into it), and this file’s three real Resolution Log entries relocated from inside the Section 9 example block into a proper own Resolution Log, the example restored to pristine. Sections 0–11, Pattern A and classes 1–9 otherwise unchanged.**
 **Prior: 2026-10-28 (third entry) — AUDIT_10 F1 re-ruled (human ruling, Decision Brief 2026-10-28c, item 2): "Spec Gates N/A by subtype" governs for Challenges Problem-Statement files — the six canonical gates do not apply to them in any reading and no reinterpreted act-readiness count is kept; this supersedes the same-day earlier reconciliation ("the subtype doctrine controls") recorded in the second entry below. §2 Challenges/ File Subtypes doctrine and Template Exemptions class 8 reworded to match (no change to any Challenges file). Sections 0–11, Pattern A, and the rest of Template Exemptions otherwise unchanged.**
 **Prior: 2026-10-28 (second entry) — AUDIT_10 F1 reconciled (human ruling, Decision Brief item 2): the §2 Challenges/ File Subtypes doctrine controls — Problem-Statement Spec Gates are N/A for build-readiness promotion but live as the reinterpreted act-readiness count; Template Exemptions class 8 reworded to match (no change to any Challenges file). Sections 0–11, Pattern A, and the rest of Template Exemptions unchanged.**
 **Prior: 2026-10-28 — Pattern A (in-file Front / Historical split) adopted by Human Governing Authority ruling, all draft defaults D1–D7: new §Pattern A section (boundary heading `## Historical Record`, placement table, rules R1–R9, checks C1–C8, pilot Plastics/Woodworking one-per-cycle, migration at next substantive touch — no bulk sweep). D5 supersedes PKC-002's "not adopted now" note for the trailing-Status version-history part. Sections 0–11 and Template Exemptions otherwise unchanged.**
@@ -90,7 +91,7 @@ One boundary heading, `## Historical Record`, divides a file. Everything above i
 - **R5 — Historical is append-only.** New entries go at the end of their section. Any later annotation inside an existing Historical entry carries a dated marker so an annotation can never read as original text.
 - **R6 — Versioning.** A change to Front text bumps the version (existing ruling, 2026-10-25). A pure Historical append does not bump and does not advance Last Audit. A Front → Historical move changes Front text, so it bumps (D2).
 - **R7 — File State is current only.** Last Audit and Auditor hold the latest as one short line; long "Prior:" chains move to the Resolution Log. Existing chains migrate at the file's next substantive touch, not in bulk. Where a file carries both Last Audit and Last Updated rows, they advance together.
-- **R8 — Relocated logs.** A file whose Resolution Log lives in `Archive/Logs/` keeps one pointer line under `## Historical Record`. The relocation is an allowed form of Historical, not a separate exception.
+- **R8 — Relocated logs.** (Amended 2026-10-30, Decision Brief 2026-10-30c.) A file whose Resolution Log lives outside the file keeps one pointer line under `## Historical Record`. The relocation is an allowed form of Historical, not a separate exception. New relocated logs land in the **owning folder's `Logs/` subfolder** (`Admin/Logs/<FILE>_Log.md`, `Operations/Logs/…`, per folder). Existing `Archive/Logs/` changelogs are frozen in place and move only on their own triggers.
 - **R9 — Exemptions.** The template's existing exemption list stands as-is; derived indexes, pure logs, and exempt classes do not adopt Pattern A. No ad-hoc exemptions.
 
 **Consistency checks (part of this adoption, not a follow-up):**
@@ -108,9 +109,31 @@ One boundary heading, `## Historical Record`, divides a file. Everything above i
 
 C1–C6 extend sweep step 13's neighbors and `integrity_check.py`; C7–C8 use the release 1.27 baseline-and-hash method.
 
-**Pilot:** `Operations/Plastics.md` and `Operations/Woodworking.md` (D7) — one file per cycle, migrated by hand, never mid-audit or mid-gate-campaign. Success tests and stop conditions per the adopted draft §6 (Front size measured before/after; reader test; deliberate skipped-log-entry check test; cascade count — stop if a pilot migration touches files beyond the file and its own log). Pattern B (sibling files) is not proposed; no `logs/` or `audits/` subfolders.
+**Pilot:** `Operations/Plastics.md` and `Operations/Woodworking.md` (D7) — one file per cycle, migrated by hand, never mid-audit or mid-gate-campaign. Success tests and stop conditions per the adopted draft §6 (Front size measured before/after; reader test; deliberate skipped-log-entry check test; cascade count — stop if a pilot migration touches files beyond the file and its own log). Pattern B (sibling files, one log beside each doctrine file) remains not proposed. The adoption-day "no `logs/` or `audits/` subfolders" clause is superseded 2026-10-30 (Decision Brief 2026-10-30c) for two homes only: per-folder `Logs/` subfolders for relocated Resolution Logs and per-folder `Audits/` subfolders for new audit artifacts — see Log-Split Rule below.
 
 **Interaction with PKC-002 (D5):** this adoption supersedes the PKC-002 ruling's "not adopted now" note for the trailing-Status version-history part — the current-version line stays required in Front, the history moves to Historical. The PKC-002 row itself is the human's to close in `Admin/Progress_Log.md`.
+
+---
+
+## Log-Split Rule (Option C — adopted 2026-10-30)
+
+*(Human Governing Authority ruling, Decision Brief 2026-10-30c, items 1–2. Enacted 2026-10-30.)*
+
+A doctrine file's Resolution Log physically splits out of the file when a trigger fires; the front file keeps one R8 pointer line under `## Historical Record`. Splits are per-file, executed at the file's **next substantive touch** — never in bulk, never mid-audit or mid-gate-campaign, one file at a time with the heaviest first. Frozen history moves only under R3/R4: full text moved, never summarized or deleted, with a dated Resolution Log entry and disclosure in the executing pass's log entry.
+
+**Triggers — any one qualifies the file for a split at its next touch:**
+
+- **T0 — Existing triggers:** the file's own rotation rule, the 20% Rule, or the Aging Rule, unchanged.
+- **T1 — Size:** the file measures **≥ 100 KB**.
+- **T2 — Audit purity:** the executing pass judges that audit purity is likely to be affected by the in-file log: (a) the file is not yet Pattern A-migrated and log bulk makes Front/Historical separation unreliable; (b) the file is a canonical measurement input (e.g., an MDR instrument) and further log growth would destabilize the recorded input hash between runs; (c) the pass would need to load or mutate the log's content to complete its own checks, risking cross-contamination of the audit object. The T2 judgment is disclosed in the executing pass's log entry.
+
+**Homes:**
+
+- Split Resolution Logs: the **owning folder's `Logs/` subfolder**, named `<FILE>_Log.md` (precedent: `Archive/Logs/Auditor_Protocols_Logs.md`). Example: an Admin file's log lands in `Admin/Logs/`.
+- New audit artifacts: the **audited folder's `Audits/` subfolder** (e.g., `Admin/Audits/`).
+- Existing `Archive/Logs/` changelogs and `Archive/Audits/` artifacts are **frozen in place**; they move only on their own triggers.
+
+**Interaction notes:** once a file is split, checks C7/C8 apply in two-file form (pointer present in Front; log file append-only between releases). A split of an MDR canonical input is an instrument change: record input version + hash at each run; never mix. The Unknowns.md 1,200-line compression trigger is a separate mechanism, unaffected by this rule.
 
 ---
 
@@ -1002,6 +1025,9 @@ precedent each time.
 - 2026-10-28: **Pattern A (Front / Historical Record split) adopted — Human Governing Authority ruling, all draft defaults D1–D7, enacted by Vibe (Repo Custodian, delegated maintenance).** New §Pattern A section added: boundary heading `## Historical Record`, placement table, rules R1–R9, checks C1–C8, pilot Plastics/Woodworking, migration at next substantive touch (no bulk sweep). D5 supersedes PKC-002's "not adopted now" note for the trailing-Status version-history part (the row itself remains open for the human to close). Sections 0–11, Template Exemptions, and the AUDIT_10 F1 Challenges-exemption question untouched. No file migrates today; pilots stage at their own cycles.
 
 - 2026-10-28: **Pseudo-audit ledger line (Vibe, Repo Custodian — delegated maintenance, human-ratified findings batch 2026-10-28).** Pseudo-audit, findings only, 2026-10-27; report: Archive/Audits/AUDIT_10_Admin-File_Template.md. Per PKC-020 this pass does not advance Last Audit, Last Reviewed, version, or Status; the line exists so the owning file's own record shows the audit happened, per AP-035 Rule 10(c).
+
+
+- 2026-10-30: **Log-Split Rule (Option C) adopted + R8 amended (Vibe, Repo Custodian — delegated maintenance, human-ruled Decision Brief 2026-10-30c, items 1–2).** New §Log-Split Rule section: triggers T0 (existing rotation/20%/Aging), T1 (file ≥ 100 KB), T2 (audit purity — Pattern A-unmigrated separation risk, MDR input-hash instability, or check cross-contamination); splits at each file's next substantive touch, never in bulk, heaviest first. R8 amended: new relocated logs land in the owning folder's `Logs/` subfolder; new audit artifacts in the audited folder's `Audits/` subfolder; existing `Archive/Logs/` and `Archive/Audits/` contents frozen in place. Pilot paragraph's "no logs/ or audits/ subfolders" clause superseded for these two homes only. Header Last-updated advanced (fifth entry). Sections 0–11, Pattern A rules R1–R7/R9, checks C1–C8, and Template Exemptions otherwise unchanged. No file splits today; qualification order at next touches: Progress_Log, Auditor_Protocols, Ethical_Constraints, Governance_Charter (all > 100 KB).
 
 ---
 
