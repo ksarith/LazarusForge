@@ -12,7 +12,7 @@
 | Open Unknowns    | 0                                                                    |
 | Body Stability   | N/A                                                                  |
 | Owning Domain    | Tests/                                                               |
-| Last Reviewed    | 2026-10-29 — cross-agent-session evidence entry FL-20261029-shared-custodian-collaboration filed and index row added (collaboration-milestone recording pass); entry Status filed as Unreviewed, entry file and index row same pass per the status-ownership rule. Prior: 2026-10-27 — flag on the FL-20261007 ratification closed (PKC-036); no entry or index row changed. Prior: 2026-10-25 — gap noted: no entry or index row exists for MAQT Cycle 1 (PKC-041); nothing added to the index. Prior: 2026-10-19 — index rows and log entries added through the Chrono pilot scoring (see Resolution Log); header corrected 2026-10-24 (Claude, human-directed, from a Vibe per-file audit). Prior: 2026-10-03                                                          |
+| Last Reviewed    | 2026-10-30 — Vibe (Repo Custodian, delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A): X3 mechanical citation retrofit (Tests pass) — 9 bare colliding-prefix citations qualified with their owning File.md per PKC-003 (Kit v1.30 Governance Sidecar ID Reference; per-ID grounding: Unknowns active index). Citation-form-only; no ID renumbered; frozen history untouched; no gate advanced; Open Unknowns unchanged. Prior: 2026-10-29 — cross-agent-session evidence entry FL-20261029-shared-custodian-collaboration filed and index row added (collaboration-milestone recording pass); entry Status filed as Unreviewed, entry file and index row same pass per the status-ownership rule. Prior: 2026-10-27 — flag on the FL-20261007 ratification closed (PKC-036); no entry or index row changed. Prior: 2026-10-25 — gap noted: no entry or index row exists for MAQT Cycle 1 (PKC-041); nothing added to the index. Prior: 2026-10-19 — index rows and log entries added through the Chrono pilot scoring (see Resolution Log); header corrected 2026-10-24 (Claude, human-directed, from a Vibe per-file audit). Prior: 2026-10-03 |
 | Sidecar Link     | N/A                                                                  |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
@@ -33,7 +33,7 @@
 
 ## Why This Exists
 
-As of 2026-08-06, every physical-hardware and multi-agent-quorum unknown in this repository — `Hardware_Diversity_Ladder.md`'s Tier 1–3, `Admin/Governance_Migration_Protocol.md` §VII (GOV-008), the entire CSL hard-unknown set — is blocked on the same thing: nobody has actually run the hardware. This file exists so that when someone does, the result has somewhere honest to go, in a format the repository's existing audit discipline can actually use.
+As of 2026-08-06, every physical-hardware and multi-agent-quorum unknown in this repository — `Hardware_Diversity_Ladder.md`'s Tier 1–3, `Admin/Governance_Migration_Protocol.md` §VII (GOV-008 (`Admin/Governance_Charter.md`)), the entire CSL hard-unknown set — is blocked on the same thing: nobody has actually run the hardware. This file exists so that when someone does, the result has somewhere honest to go, in a format the repository's existing audit discipline can actually use.
 
 An unlabeled, undated claim is not evidence — it's a Placeholder as soon as it's written, per `Discovery.md`'s Evidence Classification doctrine. This template exists to prevent that outcome.
 
@@ -77,7 +77,7 @@ File contents:
   Placeholder — per Discovery.md's Evidence Classification. Unlabeled
   entries are treated as Placeholder by default.]
 **Relevant Unknown IDs:** [if this touches a known unknown — GU-005,
-  EN-001, GOV-008, etc. — list them; if unsure, leave blank, a reviewer
+  EN-001, GOV-008 (`Admin/Governance_Charter.md`), etc. — list them; if unsure, leave blank, a reviewer
   will cross-reference]
 **Raw data / files:** [attach or link if applicable]
 ```
@@ -113,7 +113,7 @@ items without unknown batteries or sealed electronics for a first run.
 
 What to do: run each item through `Operations/Gate_01_Intake.md`'s safety
 screening as written — hazard identification first (energetic, chemical,
-biological, radiological per GI-002's discharge doctrine and GI-003's
+biological, radiological per GI-002 (`Operations/Gate_01_Intake.md`)'s discharge doctrine and GI-003 (`Operations/Gate_01_Intake.md`)'s
 detection guidance), then attempt identification and a preliminary parts
 list, then tag with provenance. Don't process past Intake in this run — the
 point is exercising the screening step itself, not producing recovered
@@ -121,7 +121,7 @@ material.
 
 What's actually useful to log: not just "it worked" — how many items you
 held vs. cleared and why, how much judgment call was involved on the
-ambiguous ones, anything you almost missed. That's the data GI-002/GI-003
+ambiguous ones, anything you almost missed. That's the data GI-002 (`Operations/Gate_01_Intake.md`)/GI-003 (`Operations/Gate_01_Intake.md`)
 need and can't get from doctrine alone. A short, honest log of five ordinary
 household items beats an ambitious run that never gets submitted.
 
@@ -172,7 +172,7 @@ Procedure cards for tracks currently cleared to run — fill while running, file
 | `Tests/Field_Logs/RUN_CARD-LaneB-SalvageID.md` | Lane B — Salvage vs. `Chemistry.md`/`Components.md` classes | `FL-YYYYMMDD-salvage-<slug>.md` |
 | `Tests/Field_Logs/RUN_CARD-LE0-Candidate.md` | LT-003 — LE-0 Phase 0–5, Candidate A or B | `FL-YYYYMMDD-le0-candA.md` or `...-candB.md` |
 | `Tests/Field_Logs/RUN_CARD-MAQT-Tier2.md` | MAQT — three physical hosts | `FL-YYYYMMDD-maqt-tier2.md` |
-| `Tests/Field_Logs/MAQT_C1_SESSION_PACKET.md` | MAQT Cycle 1 session packet (roles, probes, EC-013 task) | use with results template |
+| `Tests/Field_Logs/MAQT_C1_SESSION_PACKET.md` | MAQT Cycle 1 session packet (roles, probes, EC-013 (`Admin/Ethical_Constraints.md`) task) | use with results template |
 | `Tests/Field_Logs/RUN_CARD-MAQT-C1-Results.md` | MAQT-1 results template (§VII.3 + capability dimensions + friction) | `FL-YYYYMMDD-maqt-c1-ec013.md` |
 
 | `Tests/Field_Logs/RUN_CARD-CAP-meta-stale-01.md` | Capability grade — stale metadata (operational stages 1–7 + separate ablation assessment) | `FL-YYYYMMDD-cap-meta-stale-01.md` |
@@ -199,9 +199,11 @@ Procedure cards for tracks currently cleared to run — fill while running, file
 | FL-20261006-cap-meta-stale-02 | 2026-10-06 | CAP-meta-stale-01 seed2 — Tst_Scope_Map Field_Logs-empty current-state claims (stages 1–7) | Reviewed — folded into `Tst_Scope_Map.md`, `Discovery.md` | `Tests/Field_Logs/FL-20261006-cap-meta-stale-02.md` |
 | FL-20261006-cap-meta-stale-01-reduced | 2026-10-06 | CAP-meta-stale-01 Reduced ablation — withhold RIP+OpConventions; 7/7 operational, ablation Pass | Reviewed — folded into POC, run card fix | `Tests/Field_Logs/FL-20261006-cap-meta-stale-01-reduced.md` |
 | FL-20261006-cap-meta-stale-01 | 2026-10-06 | CAP-meta-stale-01 Full Admin — Routing.md Last-updated header lag vs map body (stages 1–7) | Reviewed — folded into `Routing.md`, POC | `Tests/Field_Logs/FL-20261006-cap-meta-stale-01.md` |
-| FL-20260815-gov021c-independence | 2026-08-15 | Cross-agent independence dimensions exercised live (High-Risk Unknowns tier) — GOV-021c evidence | Reviewed — folded into `Admin/Autonomy_Divergence_Protocol.md` GOV-021c | `Tests/Field_Logs/FL-20260815-gov021c-independence.md` |
+| FL-20260815-gov021c-independence | 2026-08-15 | Cross-agent independence dimensions exercised live (High-Risk Unknowns tier) — GOV-021c (`Admin/Governance_Charter.md`) evidence | Reviewed — folded into `Admin/Autonomy_Divergence_Protocol.md` GOV-021c (`Admin/Governance_Charter.md`) | `Tests/Field_Logs/FL-20260815-gov021c-independence.md` |
 
 ## Resolution Log
+
+- 2026-10-30: **X3 mechanical citation retrofit (Tests pass).** 9 bare colliding-prefix citations qualified with their owning File.md per PKC-003 (Kit v1.30 Governance Sidecar ID Reference; per-ID grounding: Unknowns active index). Citation-form-only: no ID renumbered, no Unknown opened or closed, no Spec Gate advanced, frozen history untouched. Out-of-whitelist bare IDs were left bare and reported to the human. (Vibe, Repo Custodian — delegated maintenance per Decision Brief 2026-10-29 item 4A.)
 
 
 - 2026-10-29: **First operational cross-agent collaboration filed** — `FL-20261029-shared-custodian-collaboration.md` (shared-custodian methodology, 2026-10-29: two custodial lines working the repository independently same-day with independent verifications agreeing; roles segregated; auditor seat vacated pending a successor, GOV-008/Pathway 1 accounting included; run type cross-agent session in operation, not a quorum trial). Index row added. Evidence only; no doctrine, Unknown or Spec Gate change.
