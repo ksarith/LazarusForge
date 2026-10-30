@@ -29,8 +29,8 @@
 | Body Stability   | Volatile                                                            |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-08-31 — GI-004/GI-006 joint Closure Event (§7 rewritten as §7.1–7.4; see Resolution Log below); prior: 2026-05-19 |
-| Auditor          | Claude — GI-004/GI-006 joint Closure Event: §7 rewritten (Minimum Intake Record schema, superset rule, chain-of-custody doctrine), drafted by Grok, Skeptic-passed with five amendments by ChatGPT, revision independently re-verified by Claude, human-ratified (human-directed), 2026-08-31; prior: Claude — Skeptic/Auditor (actioning ChatGPT audit 2026-05-19)       |
+| Last Audit       | 2026-10-30 — Vibe (Repo Custodian, delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A): X3 mechanical citation retrofit (Operations pass) — 17 bare colliding-prefix citations qualified with their owning File.md per PKC-003 (Kit v1.30 Governance Sidecar ID Reference; per-ID grounding: Unknowns active index). Citation-form-only; no ID renumbered; frozen history untouched; no gate advanced; Open Unknowns unchanged. Prior: 2026-08-31 — GI-004/GI-006 joint Closure Event (§7 rewritten as §7.1–7.4; see Resolution Log below); prior: 2026-05-19 |
+| Auditor          | Vibe — Repo Custodian, 2026-10-30 X3 mechanical citation retrofit (Operations pass; delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A); prior: Claude — GI-004/GI-006 joint Closure Event: §7 rewritten (Minimum Intake Record schema, superset rule, chain-of-custody doctrine), drafted by Grok, Skeptic-passed with five amendments by ChatGPT, revision independently re-verified by Claude, human-ratified (human-directed), 2026-08-31; prior: Claude — Skeptic/Auditor (actioning ChatGPT audit 2026-05-19)       |
 | Open Unknowns    | 6                                                                   |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | Medium                                                              |
@@ -80,7 +80,7 @@
 - Air handling during intake screening
   (Operations/Air_Scrubber.md)
 - Facility siting and intake area safety
-  (Architecture/Facilities.md — FA-001)
+  (Architecture/Facilities.md — FA-001 (`Architecture/Facilities.md`))
 
 ---
 
@@ -360,7 +360,7 @@ screening. Do not handle items showing energetic
 distress signs — swollen batteries, leaking vessels,
 deformed pressure containers. Log and hold for
 specialist assessment.
-Cross-reference: `Architecture/Facilities.md` FA-001 — siting and clearance
+Cross-reference: `Architecture/Facilities.md` FA-001 (`Architecture/Facilities.md`) — siting and clearance
 requirements not yet confirmed.
 
 ---
@@ -552,7 +552,7 @@ enters the Forge. Required fields at v0:
 `operator_id` identifies the actor performing the Intake action. Where an
 agent acts under human authorization, the responsible human authority is
 additionally recorded according to the applicable delegation/attestation
-protocol (`Admin/Auditor_Protocols.md` AP-024 and its open residuals
+protocol (`Admin/Auditor_Protocols.md` AP-024 (`Admin/Auditor_Protocols.md`) and its open residuals
 AP-024-R1/R2). This clause does not invent a new delegation regime; it
 requires that existing attestation doctrine be applied so provenance does
 not become ambiguous at the point of origin.
@@ -568,7 +568,7 @@ Intake record.
 
 **Explicit non-claim:**
 This schema does **not** resolve ST-001 (grain storage and tracking
-protocol), ST-002 (QR documentation standard), or CT-009 (implementation
+protocol), ST-002 (QR documentation standard), or CT-009 (`Admin/Canonical_Terms.md`) (implementation
 consistency). Those remain Open. The canonical Grain System definition
 in `Admin/Canonical_Terms.md` registers vocabulary only; implementation
 work stays in the owning sidecars.
@@ -658,7 +658,7 @@ Intake); ASM-006 (compatibility assumption); GI-004 (schema alignment);
   no grain is required for Intake completion.
 - Human-readable provenance presentation (QR or equivalent) is governed
   by ST-002 when that standard exists.
-- CT-009 continues to track consistency between the Canonical_Terms
+- CT-009 (`Admin/Canonical_Terms.md`) continues to track consistency between the Canonical_Terms
   definition and ST-001/ST-002 implementation.
 
 **Operational residual (confidence, not closure blocker):**
@@ -867,7 +867,7 @@ Intake operation, not a refinement.
   distance, tooling
 - Must be resolved before first operational Intake
   run — hard prerequisite, not a deferral
-- Cross-reference: `Architecture/Facilities.md` FA-001 siting requirements,
+- Cross-reference: `Architecture/Facilities.md` FA-001 (`Architecture/Facilities.md`) siting requirements,
   `Operations/Air_Scrubber.md` for off-gassing
 - Payment via Specification — once discharge
   doctrine is defined and tested, move to
@@ -875,7 +875,7 @@ Intake operation, not a refinement.
 
 **Grok review 2026-08-14:** Path adequate and correctly sequenced by energetic category (Li-ion, other batteries, capacitors, compressed gas) plus isolation, PPE, and hard-prerequisite language. Blocking Yes is correct. **Grok approved (path adequate).** Remains Open — written discharge doctrine + validation still required before first operational Intake run; do not close on path alone.
 
-**Spec-depth pass, 2026-08-15 (digital-only — no equipment exists yet):** The prior path was an outline of what discharge doctrine needed to cover; this pass writes the doctrine itself, at Analogous confidence — standard industry battery/electrical safety practice, not anything requiring Forge-specific physical testing to specify. What stays genuinely open is noted per category. Checked cross-references first: `Architecture/Facilities.md` FA-001 confirmed as the siting doctrine (still Open, so isolation-storage siting itself stays deferred to it); `Operations/Air_Scrubber.md` currently only specifies Cl₂-specific off-gas handling, not general battery thermal-runaway off-gassing (HF, VOCs) — that gap is real and flagged below, not papered over. `Gate_04_Separation_Mechanical.md`'s existing lockout-before-access pattern (MG-007) is reused as the operator-safety precedent rather than inventing a separate one.
+**Spec-depth pass, 2026-08-15 (digital-only — no equipment exists yet):** The prior path was an outline of what discharge doctrine needed to cover; this pass writes the doctrine itself, at Analogous confidence — standard industry battery/electrical safety practice, not anything requiring Forge-specific physical testing to specify. What stays genuinely open is noted per category. Checked cross-references first: `Architecture/Facilities.md` FA-001 (`Architecture/Facilities.md`) confirmed as the siting doctrine (still Open, so isolation-storage siting itself stays deferred to it); `Operations/Air_Scrubber.md` currently only specifies Cl₂-specific off-gas handling, not general battery thermal-runaway off-gassing (HF, VOCs) — that gap is real and flagged below, not papered over. `Gate_04_Separation_Mechanical.md`'s existing lockout-before-access pattern (MG-007) is reused as the operator-safety precedent rather than inventing a separate one.
 
 *Lithium-chemistry cells:* Triage before any discharge attempt — physically damaged, swollen, punctured, or hot-to-touch cells are **not** manually discharged; thermal runaway risk from mechanical intervention exceeds the risk of controlled isolation storage. These route directly to isolated storage (below), no discharge attempted. Undamaged cells: deep-discharge through a resistive load (not a direct short — arc and heat risk), monitored, inside a fire-rated container (steel, sand-lined or vermiculite-lined) with a vent path, never inside an enclosed operator space. Target discharge voltage is chemistry-dependent and genuinely needs verification per cell type at first operational run — flagged Placeholder, not asserted as a universal number. Cells that will not accept discharge (internal fault) are non-recoverable and route to isolated storage, not further intervention.
 
@@ -885,7 +885,7 @@ Intake operation, not a refinement.
 
 *Compressed gas vessels:* Identify contents where labeling or valve type allows; where contents cannot be identified, treat as hazardous by default — fail closed, consistent with the file's existing confidence-labeling discipline elsewhere. Controlled release only in a ventilated area; if contents are suspected hazardous (not just inert), release routes through `Operations/Air_Scrubber.md`'s dedicated auxiliary release point (AS-005, registered 2026-08-15) — a physically separate intake from the main Stage A→E process pipeline, so an unpredictable unknown-content release doesn't enter Stage D's calibrated main water loop. AS-005's own capture-media sizing still depends on this file's largest plausible vessel-volume assumption, which is itself not yet specified — flagged as a residual gap, not silently closed by AS-005's registration. Vessels that cannot be safely released are isolated valve-protected, away from ignition sources and thermal sources, and tagged with contents-unknown status.
 
-*Isolation storage (shared across categories):* A dedicated isolation area, physically separated from active processing stations, houses any energetic material pending discharge or awaiting non-recoverable disposition. Container type varies by category as specified above; siting distance and structural requirements for this area are FA-001's job, not invented here — this doctrine defines what goes in isolation and how, FA-001 defines where.
+*Isolation storage (shared across categories):* A dedicated isolation area, physically separated from active processing stations, houses any energetic material pending discharge or awaiting non-recoverable disposition. Container type varies by category as specified above; siting distance and structural requirements for this area are FA-001 (`Architecture/Facilities.md`)'s job, not invented here — this doctrine defines what goes in isolation and how, FA-001 (`Architecture/Facilities.md`) defines where.
 
 **Status after this pass:** discharge procedures now exist by category at Analogous confidence, closing the "define discharge doctrine" half of the Resolution Path. What remains genuinely open: (1) chemistry-specific discharge voltage targets for lithium cells — needs first-operational-run verification per cell type; (2) the general-gas Air_Scrubber.md intake gap surfaced above, tracked there rather than assumed away; (3) isolation-area siting specifics, correctly deferred to FA-001. GI-002 remains **Open**, Blocking Yes unchanged — doctrine is written, but "written and tested" (the file's own stated bar for promotion to Section 2) still requires the first operational run this file cannot produce without equipment.
 
@@ -953,7 +953,7 @@ and operator health risk downstream.
 
 **Grok review 2026-08-14:** Path adequate. Candidate kit (Geiger + lead swabs as v0 minimum) is concrete and correctly scoped; unsupervised-operation gate is the right control. Blocking No is acceptable while human oversight compensates, but the drift indicator for unsupervised operation is correctly severe. **Grok approved (path adequate).** Remains Open — kit selection + protocol still required.
 
-**Note, 2026-08-15 (Claude):** GI-003's tools (Geiger counter, lead swabs, chemical test strips) are the augmented detection layer feeding the same triage pipeline `Operations/Plastics.md` PL-001's Beilstein test and `Challenges/Waste.md` WA-002's identification protocol already share — a supporting dependency, not a parallel detection path. Positive results from any of the three feed the same downstream destination: `Operations/Gate_02_Triage.md` TS-002's Contaminated bin non-decontaminable state. This does not close GI-003 — kit selection and protocol definition remain open — but it keeps the four detection-and-routing unknowns (GI-003, PL-001, WA-002, TS-002) pointed at one converged pipeline instead of drifting toward separately-imagined ones.
+**Note, 2026-08-15 (Claude):** GI-003's tools (Geiger counter, lead swabs, chemical test strips) are the augmented detection layer feeding the same triage pipeline `Operations/Plastics.md` PL-001's Beilstein test and `Challenges/Waste.md` WA-002's identification protocol already share — a supporting dependency, not a parallel detection path. Positive results from any of the three feed the same downstream destination: `Operations/Gate_02_Triage.md` TS-002 (`Operations/Gate_02_Triage.md`)'s Contaminated bin non-decontaminable state. This does not close GI-003 — kit selection and protocol definition remain open — but it keeps the four detection-and-routing unknowns (GI-003, PL-001, WA-002, TS-002 (`Operations/Gate_02_Triage.md`)) pointed at one converged pipeline instead of drifting toward separately-imagined ones.
 
 ---
 
@@ -1006,17 +1006,17 @@ first link.
 - **Unknown:** GI-004
 - **Proposed status:** Resolved
 - **Payment type:** Specification
-- **Basis:** §7.1 Minimum Intake Record (`Operations/Gate_01_Intake.md`, integrated 2026-08-31) defines the v0 schema as an explicit superset of fields any future grain-system implementation may require at the Intake boundary — grain doctrine may not demand fields Intake does not collect. Field `grain_link` reserved for ST-001 activation. `operator_id` accountability clarified with cross-reference to AP-024 and its open residuals. ST-001, ST-002, and CT-009 remain explicitly Open — this closure specifies the Intake-side contract only, not full grain implementation.
+- **Basis:** §7.1 Minimum Intake Record (`Operations/Gate_01_Intake.md`, integrated 2026-08-31) defines the v0 schema as an explicit superset of fields any future grain-system implementation may require at the Intake boundary — grain doctrine may not demand fields Intake does not collect. Field `grain_link` reserved for ST-001 activation. `operator_id` accountability clarified with cross-reference to AP-024 (`Admin/Auditor_Protocols.md`) and its open residuals. ST-001, ST-002, and CT-009 (`Admin/Canonical_Terms.md`) remain explicitly Open — this closure specifies the Intake-side contract only, not full grain implementation.
 - **Proposer:** Grok — Synthesizer, 2026-08-31 (drafted the original joint proposal with GI-006; produced Revision 1 addressing five amendments requested in a prior ChatGPT Skeptic pass)
 - **Verifier:** Claude — Verifier, 2026-08-31. Independent pass against the revised text, checking each of ChatGPT's five requested amendments was genuinely implemented, and cross-checking every load-bearing factual claim against live source: `Operations/Gate_02_Triage.md`'s reciprocal provenance-loss language ("Mandatory tag system; re-triage if tag absent") confirmed exact; AP-024-R1/R2 residuals confirmed to exist as cited; the Event_ID-mints-new-on-re-triage practice confirmed in `Gate_02_Triage.md`'s own text; the full prior §7 text read line-by-line to confirm the replacement is a clean superset with nothing silently dropped. Verdict: **Pass — Ready for Human Ratification.** No substantive defect found.
-- **Independence attestation:** Grok (Proposer), ChatGPT (pre-integration Skeptic pass on the original draft, requested five amendments: operator_id accountability, "sole link" wording, falsifiable re-ID criterion, Gate_02 language verification, ID-namespace compatibility verification), and Claude (Verifier of the revised draft) are three different agent instances. Same separated-passes pattern as the GMP-010 Closure Event.
+- **Independence attestation:** Grok (Proposer), ChatGPT (pre-integration Skeptic pass on the original draft, requested five amendments: operator_id accountability, "sole link" wording, falsifiable re-ID criterion, Gate_02 language verification, ID-namespace compatibility verification), and Claude (Verifier of the revised draft) are three different agent instances. Same separated-passes pattern as the GMP-010 (`Admin/Governance_Migration_Protocol.md`) Closure Event.
 - **Human ratification:** Not Mandatory under `Admin/Auditor_Protocols.md`'s Unknown Closure Authority (Risk: Medium, not Critical/High) — offered and accepted anyway.
 - **Recording location:** this sidecar entry (primary, complete); `Unknowns.md` Active Index entry removed, Audit Trail note added, same pass.
 - **Human ratification record:** Ratified by Human Governing Authority, 2026-08-31 ("I give the ratification. This material isn't high risk work."). Proposer (Grok) and Verifier (Claude) findings both reviewed; no unresolved objection.
 
 **Resolution:** Closed 2026-08-31 via §7.1's Minimum Intake Record schema, integrated the same day into `Operations/Gate_01_Intake.md`. Full Closure Event above.
 
-**Residuals:** ST-001 (grain storage and tracking protocol), ST-002 (QR documentation standard), CT-009 (Grain System implementation consistency), and an operational-cycle confidence upgrade (Internally Derived/Analogous → higher, same pattern as GU-002) all remain Open. AP-024-R1/R2 (identity/delegation infrastructure) remain Open as they affect agent-performed Intake attestation. Risk and Priority intentionally unchanged.
+**Residuals:** ST-001 (grain storage and tracking protocol), ST-002 (QR documentation standard), CT-009 (`Admin/Canonical_Terms.md`) (Grain System implementation consistency), and an operational-cycle confidence upgrade (Internally Derived/Analogous → higher, same pattern as GU-002) all remain Open. AP-024-R1/R2 (identity/delegation infrastructure) remain Open as they affect agent-performed Intake attestation. Risk and Priority intentionally unchanged.
 
 ---
 
@@ -1062,7 +1062,7 @@ primary source of workplace incidents.
 - Define invocation authority — any operator should
   be able to call a hold without management approval.
 - Cross-reference: GI-002 energetic discharge
-  doctrine, `Architecture/Facilities.md` FA-001 siting requirements,
+  doctrine, `Architecture/Facilities.md` FA-001 (`Architecture/Facilities.md`) siting requirements,
   `Operations/Air_Scrubber.md`.
 - Payment via Specification — once pre-Intake
   categories and responses are defined and operator
@@ -1127,7 +1127,7 @@ chain — Intake is where that chain starts.
 - **Basis:** §7.3 Chain-of-Custody Integrity (`Operations/Gate_01_Intake.md`, integrated 2026-08-31) promotes the prior provisional controls to operative doctrine: tag durability requirement, lost-tag re-identification protocol with a falsifiable success criterion (distinguishable from other plausible candidates in Intake records; more than one plausible candidate = fail, no invented numerical confidence score), never-reuse identifier namespace confirmed compatible with `Gate_02_Triage.md`'s own Event_ID-mints-new-on-re-triage practice, and hard-stop Gate_02 handoff reconciliation. "The tag is the physical link" reworded to "primary operational link" to remove the internal contradiction with the lost-tag recovery path, which necessarily uses secondary characteristics (description, datetime, location, operator knowledge) as a controlled recovery mechanism. Cross-checked against the §7.1 schema so every control references fields that actually exist. Joint with GI-004.
 - **Proposer:** Grok — Synthesizer, 2026-08-31 (drafted the original joint proposal with GI-004; produced Revision 1 addressing five amendments requested in a prior ChatGPT Skeptic pass)
 - **Verifier:** Claude — Verifier, 2026-08-31. Independent pass against the revised text, confirming all five ChatGPT-requested amendments were genuinely implemented (not merely claimed) and re-checking the same load-bearing citations verified for the joint GI-004 Closure Event: `Gate_02_Triage.md`'s reciprocal provenance-loss language, the Event_ID re-triage practice, and the full prior §7 chain-of-custody bullet list read against the replacement to confirm every existing control survived in the new doctrine, just formalized. Verdict: **Pass — Ready for Human Ratification.** No substantive defect found.
-- **Independence attestation:** Grok (Proposer), ChatGPT (pre-integration Skeptic pass, requested five amendments — see GI-004's Closure Event for the full list), and Claude (Verifier of the revised draft) are three different agent instances. Same separated-passes pattern as GMP-010 and GI-004.
+- **Independence attestation:** Grok (Proposer), ChatGPT (pre-integration Skeptic pass, requested five amendments — see GI-004's Closure Event for the full list), and Claude (Verifier of the revised draft) are three different agent instances. Same separated-passes pattern as GMP-010 (`Admin/Governance_Migration_Protocol.md`) and GI-004.
 - **Human ratification:** Not Mandatory under `Admin/Auditor_Protocols.md`'s Unknown Closure Authority (Risk: Medium, not Critical/High) — offered and accepted anyway, jointly with GI-004.
 - **Recording location:** this sidecar entry (primary, complete); `Unknowns.md` Active Index entry removed, Audit Trail note added, same pass.
 - **Human ratification record:** Ratified by Human Governing Authority, 2026-08-31 ("I give the ratification. This material isn't high risk work."). Proposer (Grok) and Verifier (Claude) findings both reviewed; no unresolved objection.
@@ -1261,6 +1261,8 @@ better of the two placements; §7.1 is schema, not doctrine prose.
 ---
 
 ### Resolution Log
+
+- 2026-10-30: **X3 mechanical citation retrofit (Operations pass).** 17 bare colliding-prefix citations qualified with their owning File.md per PKC-003 (Kit v1.30 Governance Sidecar ID Reference; per-ID grounding: Unknowns active index). Citation-form-only: no ID renumbered, no Unknown opened or closed, no Spec Gate advanced, frozen history untouched. Out-of-whitelist bare IDs were left bare and reported to the human. (Vibe, Repo Custodian — delegated maintenance per Decision Brief 2026-10-29 item 4A.)
 
 - 2026-10-20: **Log catch-up (no content change): 2026-09-14 edit.** The record provenance rule was applied to §2 Safety Screening on 2026-09-14, immediately after the detection-limit rule, as the GI-008 candidate text; GI-008 stays Open pending human re-verification before Resolved. The edit was recorded only in GI-008's sidecar entry and the inline §2 marker, with no Resolution Log entry; it is logged here retroactively. Found by an external sweep (Vibe), checked against source by Claude. Human-directed.
 
