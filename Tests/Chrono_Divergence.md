@@ -19,7 +19,7 @@
 | Verification Ref | Admin/Verification_Gates.md |
 | Open Unknowns    | 4 (sidecar below; all non-blocking) |
 | Owner            | `Tests/Chrono_Divergence.md` |
-| Last Audit       | 2026-10-25 — Claude (human-directed, PKC-031) Status "Proposed" changed to "Exploration"; no other change. Prior: 2026-10-24 — Claude (human-directed) two dated post-run notes added from the Pilot's own 2026-10-19 record; no version bump, no content revision. Prior: 2026-10-15 — editorial trim after a repo-wide integrity pass (no content change). Last content revision v0.6 (2026-10-14, after ChatGPT's review of v0.4). Earlier audits (ChatGPT, fresh-instance Claude, Grok) are recorded in the Resolution Log. Method only; no forecast portfolio claimed Measured. |
+| Last Audit       | 2026-10-30 — Vibe (Repo Custodian, delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A): X3 mechanical citation retrofit (Tests pass) — 4 bare colliding-prefix citations qualified with their owning File.md per PKC-003 (Kit v1.30 Governance Sidecar ID Reference; per-ID grounding: Unknowns active index). Citation-form-only; no ID renumbered; frozen history untouched; no gate advanced; Open Unknowns unchanged. Prior: 2026-10-25 — Claude (human-directed, PKC-031) Status "Proposed" changed to "Exploration"; no other change. Prior: 2026-10-24 — Claude (human-directed) two dated post-run notes added from the Pilot's own 2026-10-19 record; no version bump, no content revision. Prior: 2026-10-15 — editorial trim after a repo-wide integrity pass (no content change). Last content revision v0.6 (2026-10-14, after ChatGPT's review of v0.4). Earlier audits (ChatGPT, fresh-instance Claude, Grok) are recorded in the Resolution Log. Method only; no forecast portfolio claimed Measured. |
 | Last Updated     | 2026-10-25 (Status cell only: Proposed → Exploration); previously 2026-10-24 (post-run notes only); previously 2026-10-15 |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
@@ -169,10 +169,10 @@ Branches may target different measures. Comparing D1-A and D1-B as if they measu
 | Field | Content |
 |-------|---------|
 | Idea name | Kit reconciliation salience |
-| Owning file(s) | `Admin/Forge_Audit_Kit.md`; FAK-018; `FL-20261012-kit-regression-Gemini.md` |
+| Owning file(s) | `Admin/Forge_Audit_Kit.md`; FAK-018 (`Admin/Forge_Audit_Kit.md`); `FL-20261012-kit-regression-Gemini.md` |
 | Date (t0) | 2026-10-12 |
 | Origin | **Incidental** spark (Kit regression runs) → **Deliberate** map starting 2026-10-12 |
-| Status / evidence | Kit text defines content-based trigger + reconciliation check. Gemini Cases B and D: **Stage 1 miss** (no unprompted check), **Stage 2 pass** (correct when asked). FAK-018 open, mitigated. Log caveats: Case B Stage 1 reported checks the pack could not support; Case D used retrieval tools (possible bleed). |
+| Status / evidence | Kit text defines content-based trigger + reconciliation check. Gemini Cases B and D: **Stage 1 miss** (no unprompted check), **Stage 2 pass** (correct when asked). FAK-018 (`Admin/Forge_Audit_Kit.md`) open, mitigated. Log caveats: Case B Stage 1 reported checks the pack could not support; Case D used retrieval tools (possible bleed). |
 | Hard floors | Automation/kit does not decide governance; no silent Kit refresh mid-audit. |
 | Open questions | Is the Stage 1 miss salience (placement/wording) or auditor-specific? |
 | Evidence boundary | `FL-20261012-kit-regression-Gemini.md`, Case results table (Stage 1 / Stage 2 columns) and Secondary form notes. One auditor family (Gemini), two cases, one session each. Not a rate. |
@@ -184,7 +184,7 @@ Unit of analysis: one fresh, unprompted audit session of one case on one auditor
 |---------|-----------|------------------|--------|-----------------|-----------------|--------|------------------|--------|
 | D1 | D1-A | After the Gemini Stage 1 miss, before any further families run | **Salience fix** (pointer to the reconciliation check inside the Audit Opening Checklist) | M1 | D1-B (ops); excludes D1-C | Kit variant with the pointer; Cases B and D; ≥2 new auditor families; ≥4 Stage 1 sessions; see session controls below | `Human-declined` if the wording change is rejected | 2026-11-12 |
 | D1 | D1-B | same | **Operator habit only** (always require Stage 2 if Stage 1 omits reconciliation) | M2 | D1-A | Document the habit in the Kit's "How to Use"; no claim that this improves M1 | Not falsified by high M1 rates; may be `Human-declined` if operators refuse the habit | 2026-11-12 |
-| D1 | D1-C | same | **Accept low M1** (do not change Kit wording; do not require Stage 2) | Policy | Excludes D1-A (Kit wording changed) and D1-B (Stage 2 required) | Human decision; may require adjusting FAK-018 closure narrative | `Human-declined` if the salience gap is not accepted | 2026-11-12 |
+| D1 | D1-C | same | **Accept low M1** (do not change Kit wording; do not require Stage 2) | Policy | Excludes D1-A (Kit wording changed) and D1-B (Stage 2 required) | Human decision; may require adjusting FAK-018 (`Admin/Forge_Audit_Kit.md`) closure narrative | `Human-declined` if the salience gap is not accepted | 2026-11-12 |
 | D2 | D2-A | After Case A or C runs (A = content change plus version bump; C = content change without version bump; neither run yet; planted text held by the operator) | Detection by **source-text comparison** (Kit condensed section vs live source body) | Detection path | D2-B as alternate path | Operator runs planted-text pack with an independent auditor | `Falsified` if the defined comparison procedure **fails to detect** a planted content mismatch under valid test conditions. `Resource-deferred` if no bandwidth | 2026-11-12 (record `Resource-deferred` if not run) |
 | D2 | D2-B | same | Detection that **depends on a version difference** (claims version delta is necessary for notice) | Detection path | Excludes D2-A as sole path only if D2-B asserts necessity | Same run; compare reports | `Falsified` if a content mismatch is detected **without** a version difference, when D2-B claimed version difference was necessary. Version-only detection does **not** prove version comparison is the only viable path | 2026-11-12 (record `Resource-deferred` if not run) |
 
@@ -269,7 +269,7 @@ Unit of analysis: one fresh, unprompted audit session of one case on one auditor
 - No Measured accuracy for divergence forecasts until a review scores them.
 - No claim that listing a branch makes it likely or approved.
 - No quantum-mechanical model of ideas or organizations.
-- Filing this stub does not change FAK-018, Kit text, or any Spec Gate.
+- Filing this stub does not change FAK-018 (`Admin/Forge_Audit_Kit.md`), Kit text, or any Spec Gate.
 - Scoring reproducibility is untested. A single pilot cannot show forecasting accuracy.
 - `Closed-by` types other than `Falsified` are governance or resource states, not evidence about an idea.
 
@@ -370,6 +370,8 @@ Unit of analysis: one fresh, unprompted audit session of one case on one auditor
 **Resolution Path:** Fallacy/semantic review on first full map; amend glossary if needed.
 
 ### Resolution Log
+
+- 2026-10-30: **X3 mechanical citation retrofit (Tests pass).** 4 bare colliding-prefix citations qualified with their owning File.md per PKC-003 (Kit v1.30 Governance Sidecar ID Reference; per-ID grounding: Unknowns active index). Citation-form-only: no ID renumbered, no Unknown opened or closed, no Spec Gate advanced, frozen history untouched. Out-of-whitelist bare IDs were left bare and reported to the human. (Vibe, Repo Custodian — delegated maintenance per Decision Brief 2026-10-29 item 4A.)
 
 *(No Unknown resolved. Entries below are file change history, newest first.)*
 
