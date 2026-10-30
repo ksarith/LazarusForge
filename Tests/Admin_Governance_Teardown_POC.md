@@ -11,7 +11,7 @@
 | Spec Gates       | 0/6 — this is an analysis exercise, not a specification              |
 | Open Unknowns    | 0 — this file identifies restructuring candidates, it does not itself resolve any Unknown |
 | Owning Domain    | Tests/ (proof-of-concept / methodology exercise, not physical evidence) |
-| Last Reviewed    | 2026-10-06 — Future experiment section marked partially exercised and an "Early evidence" note added (see Resolution Log); header corrected 2026-10-24 (Claude, human-directed, from a Vibe per-file audit). Prior: 2026-10-04 — 2026-10-04 — hypothesis-not-inventory line added to Scope Boundary; "Future experiment (not scheduled)" section added. Prior: recompute rule, Tier 2 deferral costs, GMP seam appendix, Tier 3/4 disposition options, link to Adm_Scope_Map load-bearing summary |
+| Last Reviewed    | 2026-10-30 — Vibe (Repo Custodian, delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A): X3 mechanical citation retrofit (Tests pass) — 3 bare colliding-prefix citations qualified with their owning File.md per PKC-003 (Kit v1.30 Governance Sidecar ID Reference; per-ID grounding: Unknowns active index). Citation-form-only; no ID renumbered; frozen history untouched; no gate advanced; Open Unknowns unchanged. Prior: 2026-10-06 — Future experiment section marked partially exercised and an "Early evidence" note added (see Resolution Log); header corrected 2026-10-24 (Claude, human-directed, from a Vibe per-file audit). Prior: 2026-10-04 — 2026-10-04 — hypothesis-not-inventory line added to Scope Boundary; "Future experiment (not scheduled)" section added. Prior: recompute rule, Tier 2 deferral costs, GMP seam appendix, Tier 3/4 disposition options, link to Adm_Scope_Map load-bearing summary |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
 ---
@@ -89,14 +89,14 @@ After any row add/remove/retier or size refresh: (1) recompute Totals, (2) updat
 | `Security_Protocols.md` | 106 KB | **2** | Cryptographic mechanisms, multi-sig override, node identity |
 | `Safety_Protocols.md` | 29 KB | **2** | PPE, hazard classes, physical operator risk |
 | `Environmental_Constraints.md` | 51 KB | **2** | Site/regional environmental parameters |
-| `Hardware_Diversity_Ladder.md` | 15 KB | **2** | Four-tier hardware-diversity path to GOV-008's bar — explicitly "records a path, not a status" |
+| `Hardware_Diversity_Ladder.md` | 15 KB | **2** | Four-tier hardware-diversity path to GOV-008 (`Admin/Governance_Charter.md`)'s bar — explicitly "records a path, not a status" |
 | `Ship_of_Theseus.md` | 27 KB | **2** | Identity-continuity doctrine (physical and AI) |
 | `Economics.md` | 37 KB | **2** | Procurement, surplus disposition, barter doctrine |
 | `Engineer_Protocols.md` | 38 KB | **2** | Engineering cognitive/procedural protocols |
 | `Trajectories.md` | 35 KB | **2** | v0→v5 version roadmap, FRT doctrine |
 | `Metrics_Scaffold.md` | 8 KB | **2** | Lane C metric taxonomy — explicitly "not a dashboard" |
 | `Integrity_Incident_Log.md` | 6 KB | **2** | Append-only incident intake, distinct from Progress_Log and Field_Logs |
-| `Forge_Audit_Kit.md` | 26 KB | **2** | Condensed audit operational reference (currently Draft, 0/6 — see FAK-017 and the open "role/retirement question" already on record) |
+| `Forge_Audit_Kit.md` | 26 KB | **2** | Condensed audit operational reference (currently Draft, 0/6 — see FAK-017 (`Admin/Forge_Audit_Kit.md`) and the open "role/retirement question" already on record) |
 | `Experiments.md` | 8 KB | **2** | Falsification records — PROVISIONAL → VERIFIED promotion mechanism |
 | `Adm_Scope_Map.md` | 34 KB | **2** | Admin/'s own per-file scope index (no standard Scope Boundary — it *is* the index) |
 | `Computational_Institutional_Reasoning.md` | 83 KB | **3** | Formal algebra for institutional state — "a formal theoretical framework, not a ratified governance authority" |
@@ -120,7 +120,7 @@ After any row add/remove/retier or size refresh: (1) recompute Totals, (2) updat
 | File | If deferred / ignored, what suffers |
 |------|-------------------------------------|
 | `Autonomy_Divergence_Protocol.md` | MAQT / peer divergence response; LT-007 framing (no sole-authority principle at protocol level) |
-| `Governance_Migration_Protocol.md` | GOV-008 / §VII quorum work; Track A/B classification; axiom amendment path |
+| `Governance_Migration_Protocol.md` | GOV-008 (`Admin/Governance_Charter.md`) / §VII quorum work; Track A/B classification; axiom amendment path |
 | `Security_Protocols.md` | Node identity, multi-sig, crypto mechanism claims; EL-006 adjacent trust language |
 | `Safety_Protocols.md` | **Any physical run** (salvage, Logic-Zero bench, LE-0) — PPE and hazard classes |
 | `Environmental_Constraints.md` | Site selection and environmental parameter claims |
@@ -225,6 +225,8 @@ finding: nothing in this file has been tested that way yet.
 ---
 
 ## Resolution Log
+
+- 2026-10-30: **X3 mechanical citation retrofit (Tests pass).** 3 bare colliding-prefix citations qualified with their owning File.md per PKC-003 (Kit v1.30 Governance Sidecar ID Reference; per-ID grounding: Unknowns active index). Citation-form-only: no ID renumbered, no Unknown opened or closed, no Spec Gate advanced, frozen history untouched. Out-of-whitelist bare IDs were left bare and reported to the human. (Vibe, Repo Custodian — delegated maintenance per Decision Brief 2026-10-29 item 4A.)
 
 - 2026-10-24: Header corrected (human-directed, from a Vibe per-file audit; each finding checked against source first): Last Reviewed now covers the two 2026-10-06 entries below, which had not advanced it. The 2026-10-04 creation entry's mention of `Architecture/Geck_forge_seed.md` is not dangling: that file still exists (the Geck file deleted 2026-10-24 was a stray duplicate in `Admin/`). No analysis, tier total or Spec Gate changed.
 
