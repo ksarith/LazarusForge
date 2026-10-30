@@ -25,8 +25,8 @@
 | Body Stability   | Volatile                                                            |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-09-20 — EC-013 Gate_05 safe-state descent sequence filed as Proposed/Placeholder (§EC-013 Descent Sequence). Blocking for hot runs retained until first hot-run validation. Prior: 2026-08-08 (Scope Boundary DOES-NOT wording corrected to match Lessons Learned); prior: 2026-07-31 (SC-009 registered; SC-004 expanded with Driving Mechanism Options) |
-| Auditor          | Grok — EC-013 descent section drafted and filed as Proposed/Placeholder (Path A, human-directed 2026-09-20); prior: Claude — Retrofit/Auditor; Claude — Synthesizer, human-directed (SC-009, SC-004 expansion), 2026-07-31 |
+| Last Audit       | 2026-10-30 — Vibe (Repo Custodian, delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A): X3 mechanical citation retrofit (Operations pass) — 12 bare colliding-prefix citations qualified with their owning File.md per PKC-003 (Kit v1.30 Governance Sidecar ID Reference; per-ID grounding: Unknowns active index). Citation-form-only; no ID renumbered; frozen history untouched; no gate advanced; Open Unknowns unchanged. Prior: 2026-09-20 — EC-013 Gate_05 safe-state descent sequence filed as Proposed/Placeholder (§EC-013 Descent Sequence). Blocking for hot runs retained until first hot-run validation. Prior: 2026-08-08 (Scope Boundary DOES-NOT wording corrected to match Lessons Learned); prior: 2026-07-31 (SC-009 registered; SC-004 expanded with Driving Mechanism Options) |
+| Auditor          | Vibe — Repo Custodian, 2026-10-30 X3 mechanical citation retrofit (Operations pass; delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A); prior: Grok — EC-013 descent section drafted and filed as Proposed/Placeholder (Path A, human-directed 2026-09-20); prior: Claude — Retrofit/Auditor; Claude — Synthesizer, human-directed (SC-009, SC-004 expansion), 2026-07-31 |
 | Open Unknowns    | 10 substantively open (SC-001 In Progress counted as open; SC-010 registered 2026-09-08). EC-013 sequence registered as Proposed/Placeholder (does not close EC-013 tracker). |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | Medium                                                              |
@@ -69,7 +69,7 @@
   (`Architecture/Forge_flow.md`,
   `Architecture/Geck_forge_seed.md`)
 - Facility siting, clearance, and area-of-operation
-  requirements (`Architecture/Facilities.md` — FA-001)
+  requirements (`Architecture/Facilities.md` — FA-001 (`Architecture/Facilities.md`))
 - MHD auxiliary coil detailed specification
   (deferred — `Admin/Trajectories.md`)
 - Drive system detailed geometry
@@ -762,7 +762,7 @@ under what conditions.
 **Resolution Path:**
 - `Architecture/Facilities.md` was created 2026-06-06 and now
   owns siting and clearance doctrine for all hot and rotating
-  modules. This entry discharges by reference to FA-001 once
+  modules. This entry discharges by reference to FA-001 (`Architecture/Facilities.md`) once
   the safety advisory is updated to cross-reference
   `Architecture/Facilities.md` and the Spin Chamber-specific
   siting requirements are documented there.
@@ -774,10 +774,10 @@ under what conditions.
   siting document.
 - Discharge via Trajectory for off-world and marine variants.
   Payment via Specification for terrestrial v0 baseline
-  once `Architecture/Facilities.md` FA-001 is resolved.
+  once `Architecture/Facilities.md` FA-001 (`Architecture/Facilities.md`) is resolved.
 
 **Claude review 2026-08-14:** Path adequate. Cross-reference to
-`Architecture/Facilities.md` and its FA-001 confirmed real (matches
+`Architecture/Facilities.md` and its FA-001 (`Architecture/Facilities.md`) confirmed real (matches
 the same verification done on Gate_04's MG-006, same underlying
 file). Discharge-by-reference framing is correct — this file
 shouldn't duplicate siting doctrine another file owns. **Approved
@@ -911,6 +911,8 @@ G2 scope decision.
 
 ### Resolution Log
 
+- 2026-10-30: **X3 mechanical citation retrofit (Operations pass).** 12 bare colliding-prefix citations qualified with their owning File.md per PKC-003 (Kit v1.30 Governance Sidecar ID Reference; per-ID grounding: Unknowns active index). Citation-form-only: no ID renumbered, no Unknown opened or closed, no Spec Gate advanced, frozen history untouched. Out-of-whitelist bare IDs were left bare and reported to the human. (Vibe, Repo Custodian — delegated maintenance per Decision Brief 2026-10-29 item 4A.)
+
 - 2026-10-20: **Stale ownership fragment corrected (no doctrine change).** The nozzle-design trigger list still described welding-wire specification as "currently unowned — see cross-module gap noted in Scope Boundary," although the 2026-08-08 pass had already corrected the Scope Boundary to record the 2026-07-19 reassignment of UNK-008 to `Architecture/Geck_forge_seed.md`. The trigger now says so. Found by an external sweep (Vibe), checked against source by Claude. Human-directed.
 
 - 2026-10-20: **Log catch-up and File State count correction (no content change).** (1) SC-010 ("Class C" terminology not reconciled against Gate_04) was registered 2026-09-08, found during the HP-006 cross-layer reconciliation, and recorded only in its sidecar entry; logged here retroactively. (2) §EC-013 Descent Sequence — Gate_05 Spin Chamber was filed 2026-09-20 under Path A as Proposed/Placeholder (Blocking for hot runs retained; does not close the EC-013 tracker); it was recorded in Last Audit/Auditor and the section's own status note but had no Resolution Log entry, and is logged here retroactively. (3) File State read 9 substantively open and was not updated for SC-010; corrected to 10, counting SC-001 In Progress as the file's 2026-08-14 entry already did. Found by an external sweep (Vibe), checked against source by Claude. Human-directed.
@@ -1028,9 +1030,9 @@ G2 scope decision.
 
 ## §EC-013 Descent Sequence — Gate_05 Spin Chamber (Proposed / Placeholder)
 
-**STATUS: Proposed / Placeholder.** Filed 2026-09-20 under Path A (EL-006-P3–P5 style), same pattern as `Operations/Plastics.md` and `Operations/Air_Scrubber.md` §EC-013. This section is visible doctrine and registers the third per-process EC-013 sequence. It does **not** carry operational force for hot runs until a Skeptic pass and first hot-run validation have occurred. **Blocking for hot operational runs remains in force.** Specified ≠ demonstrated.
+**STATUS: Proposed / Placeholder.** Filed 2026-09-20 under Path A (EL-006-P3–P5 style), same pattern as `Operations/Plastics.md` and `Operations/Air_Scrubber.md` §EC-013. This section is visible doctrine and registers the third per-process EC-013 (`Admin/Ethical_Constraints.md`) sequence. It does **not** carry operational force for hot runs until a Skeptic pass and first hot-run validation have occurred. **Blocking for hot operational runs remains in force.** Specified ≠ demonstrated.
 
-**Cross-reference:** `Admin/Ethical_Constraints.md` EC-013 (requirement owner); EC-004 Governance Failure Modes; this file’s thermal doctrine (§7 Heating & Thermal Strategy, §12 Operating Mode, §14 Failure Philosophy); `Operations/Air_Scrubber.md` Layer A interlocks where off-gas or Hot Zone ventilation is coupled. Layer A process-fault / fire interlocks remain always-on safety logic and are **not** substituted by this sequence. Layer B (this sequence) must obey Layer A.
+**Cross-reference:** `Admin/Ethical_Constraints.md` EC-013 (`Admin/Ethical_Constraints.md`) (requirement owner); EC-004 (`Admin/Ethical_Constraints.md`) Governance Failure Modes; this file’s thermal doctrine (§7 Heating & Thermal Strategy, §12 Operating Mode, §14 Failure Philosophy); `Operations/Air_Scrubber.md` Layer A interlocks where off-gas or Hot Zone ventilation is coupled. Layer A process-fault / fire interlocks remain always-on safety logic and are **not** substituted by this sequence. Layer B (this sequence) must obey Layer A.
 
 ### Trigger
 Governance failure (or explicit human/governance command to enter safe-state) while the Spin Chamber is in an active hazardous state — i.e., induction power applied at or above hot-idle, melt present, or rotation under load.
@@ -1040,7 +1042,7 @@ Governance failure (or explicit human/governance command to enter safe-state) wh
 2. **Stop rotation before deep cooling** — Ramp RPM to zero (or to a documented safe residual if drive design requires it). Per this file’s thermal doctrine: **stop rotation before cooling**. Do not solidify under spin.
 3. **Ramp induction power** — Reduce power from the processing band (650–720 °C Al class) toward the **hot-idle band** (500–550 °C Al class) or a defined safe hold. Prefer controlled power-down to hot-idle over an abrupt full quench. Full thermal cycling is deliberately avoided in normal doctrine; a governance-failure descent does not invent a new preference for rapid cool-down.
 4. **Preserve containment** — Keep the crucible sealed / contained. Do not skim, tap, or open extraction interfaces as part of routine descent unless a Layer A condition or explicit human order requires it.
-5. **Atmosphere / off-gas path** — If Air_Scrubber or other forced ventilation is coupled: keep the path under its own EC-013 / Layer A rules. **Fire Event — Hot Zone** (or equivalent) forces immediate halt of forced ventilation per `Operations/Air_Scrubber.md`; that override wins over any graceful airflow continuity step.
+5. **Atmosphere / off-gas path** — If Air_Scrubber or other forced ventilation is coupled: keep the path under its own EC-013 (`Admin/Ethical_Constraints.md`) / Layer A rules. **Fire Event — Hot Zone** (or equivalent) forces immediate halt of forced ventilation per `Operations/Air_Scrubber.md`; that override wins over any graceful airflow continuity step.
 6. **Isolation** — Once rotation is stopped and power is at hot-idle or a logged safe hold, isolate drive and induction energy as appropriate, mark the chamber out of service, and require human clearance before restart. No self-clear.
 
 ### Hard overrides (Layer A wins)
@@ -1057,16 +1059,16 @@ Record trigger, each step executed or skipped (with reason), Layer A overrides t
 ### Explicit non-goals
 - This sequence does **not** self-clear or authorize restart.
 - Missing or incomplete sequence is **not** license to skip descent or to cool under spin.
-- Filing this text does **not** close EC-013, clear Blocking for hot runs, or claim any physical validation.
+- Filing this text does **not** close EC-013 (`Admin/Ethical_Constraints.md`), clear Blocking for hot runs, or claim any physical validation.
 - This sequence does **not** abandon the hot-idle doctrine in favor of mandatory full thermal cycling; rapid full cool is not the default Layer B path.
 
 ### Residual / open items (tracked, not blocking this filing)
 - Numeric safe temperature/pressure/RPM residual bands (Placeholder until first hardware designation; Al-class bands above are Analogous).
 - Exact interaction with SC-001 / SC-005 once RPM envelope and drive imbalance are validated.
-- Hand-off timing with Air_Scrubber EC-013 under simultaneous governance failure + Hot Zone fire.
+- Hand-off timing with Air_Scrubber EC-013 (`Admin/Ethical_Constraints.md`) under simultaneous governance failure + Hot Zone fire.
 - First hot-run validation required before this section may be promoted beyond Proposed/Placeholder.
 
-*Filed 2026-09-20, Path A (Proposed/Placeholder), human-directed. Does not constitute Payment via Specification for EC-013; the tracker remains Open until the agreed active set of hazardous-process files each have a registered sequence or explicit scope-out.*
+*Filed 2026-09-20, Path A (Proposed/Placeholder), human-directed. Does not constitute Payment via Specification for EC-013 (`Admin/Ethical_Constraints.md`); the tracker remains Open until the agreed active set of hazardous-process files each have a registered sequence or explicit scope-out.*
 
 ---
 
@@ -1088,7 +1090,7 @@ Spin Chamber:
 | Wire extrusion interface advanced without welding wire specification owner identified | SC-004 must resolve alongside `Architecture/Geck_forge_seed.md` UNK-008 (ownership reassigned there 2026-07-19; the design principle is defined, the full specification is not) |
 | Melt material class expands beyond Al-class without assumptions review | ASM-002 expiry trigger — temperature bands, density values, and crucible material selection all change with material class |
 | Hot idle doctrine abandoned in favor of full thermal cycling | Core thermal doctrine — crucible and coil life assumptions depend on it |
-| EC-013 descent sequence absent, removed, or treated as operationally binding for hot runs while still marked Proposed/Placeholder | Specified ≠ demonstrated; Blocking for hot runs must remain visible |
+| EC-013 (`Admin/Ethical_Constraints.md`) descent sequence absent, removed, or treated as operationally binding for hot runs while still marked Proposed/Placeholder | Specified ≠ demonstrated; Blocking for hot runs must remain visible |
 | Layer B descent cools under spin or subordinates Fire Event / Air_Scrubber fire-vent-halt | Violates thermal doctrine and Layer A priority |
 
 ### Canonical Drift Triggers
