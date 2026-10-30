@@ -38,7 +38,7 @@
 | Verification Ref | Admin/Verification_Gates.md |
 | Open Unknowns    | 8 (sidecar below; RB-002, RB-003 and RB-007 are Blocking for the stated physical work, the other 5 non-blocking; the three Blocking items also indexed in `Unknowns.md`) |
 | Owner            | `Operations/Robotics.md` |
-| Last Audit       | 2026-10-25 — Claude (human-directed, PKC-031) Status "Proposed" changed to "Exploration"; no other change. Prior: 2026-10-24 — Claude (human-directed) two bare EC-012 citations qualified with their owning file and the Resolution Log reordered newest-first, from a Vibe per-file audit. Prior: 2026-10-15 — three resolution-path additions after ChatGPT's targeted audit (hazard-zone definition, cap evidence basis, safety-channel test record; human-directed; no safety floor changed). 2026-10-11 — clarifications after two independent audits: RB-007 Blocking scope reworded, RB-003 path says what "defined" means, RF-11 adds the test condition. 2026-10-10 safety review pass (Claude, human-directed): floors RF-9 to RF-12 added; RB-002/003/007 changed to scoped Blocking. Earlier: 2026-10-10 — v0 stub filed (Proposed). No physical robot work claimed. |
+| Last Audit       | 2026-10-30 — Vibe (Repo Custodian, delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A): X3 mechanical citation retrofit (Operations pass) — 1 bare colliding-prefix citations qualified with their owning File.md per PKC-003 (Kit v1.30 Governance Sidecar ID Reference; per-ID grounding: Unknowns active index). Citation-form-only; no ID renumbered; frozen history untouched; no gate advanced; Open Unknowns unchanged. Prior: 2026-10-25 — Claude (human-directed, PKC-031) Status "Proposed" changed to "Exploration"; no other change. Prior: 2026-10-24 — Claude (human-directed) two bare EC-012 citations qualified with their owning file and the Resolution Log reordered newest-first, from a Vibe per-file audit. Prior: 2026-10-15 — three resolution-path additions after ChatGPT's targeted audit (hazard-zone definition, cap evidence basis, safety-channel test record; human-directed; no safety floor changed). 2026-10-11 — clarifications after two independent audits: RB-007 Blocking scope reworded, RB-003 path says what "defined" means, RF-11 adds the test condition. 2026-10-10 safety review pass (Claude, human-directed): floors RF-9 to RF-12 added; RB-002/003/007 changed to scoped Blocking. Earlier: 2026-10-10 — v0 stub filed (Proposed). No physical robot work claimed. |
 | Last Updated     | 2026-10-25 (Status cell only: Proposed → Exploration); previously 2026-10-15 |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
@@ -270,7 +270,7 @@ These are **floors**, not a complete safety case. Weakening them requires human 
 | First Logged | 2026-10-10 |
 | Last Reviewed | 2026-10-10 |
 
-**Description:** Firmware-reported state is not ground truth (align `Admin/Ethical_Constraints.md` EC-012 caution).
+**Description:** Firmware-reported state is not ground truth (align `Admin/Ethical_Constraints.md` EC-012 (`Admin/Ethical_Constraints.md`) caution).
 
 **Resolution Path:** Require independent check paths for safety-relevant sensors where feasible; document residual when not.
 
@@ -335,6 +335,8 @@ These are **floors**, not a complete safety case. Weakening them requires human 
 ---
 
 ## Resolution Log
+
+- 2026-10-30: **X3 mechanical citation retrofit (Operations pass).** 1 bare colliding-prefix citations qualified with their owning File.md per PKC-003 (Kit v1.30 Governance Sidecar ID Reference; per-ID grounding: Unknowns active index). Citation-form-only: no ID renumbered, no Unknown opened or closed, no Spec Gate advanced, frozen history untouched. Out-of-whitelist bare IDs were left bare and reported to the human. (Vibe, Repo Custodian — delegated maintenance per Decision Brief 2026-10-29 item 4A.)
 
 - 2026-10-25: Status "Proposed" changed to "Exploration" (human-directed, PKC-031 ruling: "Proposed" is retired and a newly generated file starts at Exploration). No other field, section or Unknown changed.
 
