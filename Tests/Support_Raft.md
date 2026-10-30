@@ -67,7 +67,7 @@
 |---|---|
 | `Admin/Ethical_Constraints.md` | Governing cached document; local decision authority boundaries; Anti-Weaponization |
 | `Admin/Governance_Charter.md` | Constitutional constraints on cache integrity and local authority scope |
-| `Admin/Security_Protocols.md` | Cache sanitization doctrine; SEC-007 (external root-of-trust) applies to Truth Cache |
+| `Admin/Security_Protocols.md` | Cache sanitization doctrine; SEC-007 (`Admin/Security_Protocols.md`) (external root-of-trust) applies to Truth Cache |
 | `Admin/Auditor_Protocols.md` | Cached reference document; Unknown Bulk escalation protocol |
 | `Admin/Ship_of_Theseus.md` | End-of-life and sacrificial shell philosophical grounding |
 | `Operations/Energy.md` | Energy philosophy; bootstrap-honest accounting methodology |
@@ -404,7 +404,7 @@ None are masters. Each occupies a scope. The Raft is not headquarters. It is an 
 | Blocking | Yes — required before v1.0 specification |
 | Owner | Tests/Support_Raft.md |
 | First Logged | 2026-05-04 |
-| Last Reviewed | 2026-06-11 |
+| Last Reviewed | 2026-10-30 — Vibe (Repo Custodian, delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A): X3 mechanical citation retrofit (Tests pass) — 1 bare colliding-prefix citations qualified with their owning File.md per PKC-003 (Kit v1.30 Governance Sidecar ID Reference; per-ID grounding: Unknowns active index). Citation-form-only; no ID renumbered; frozen history untouched; no gate advanced; Open Unknowns unchanged. Prior: 2026-06-11 |
 
 **Description:** Mixed metals in seawater with induced currents from induction charging creates aggressive galvanic corrosion potential across the hull.
 
@@ -667,6 +667,8 @@ None are masters. Each occupies a scope. The Raft is not headquarters. It is an 
 ---
 
 ### Resolution Log
+
+- 2026-10-30: **X3 mechanical citation retrofit (Tests pass).** 1 bare colliding-prefix citations qualified with their owning File.md per PKC-003 (Kit v1.30 Governance Sidecar ID Reference; per-ID grounding: Unknowns active index). Citation-form-only: no ID renumbered, no Unknown opened or closed, no Spec Gate advanced, frozen history untouched. Out-of-whitelist bare IDs were left bare and reported to the human. (Vibe, Repo Custodian — delegated maintenance per Decision Brief 2026-10-29 item 4A.)
 
 - 2026-10-25: **Header wording updated (PKC-020 ruling; no content change).** The Last Audit annotation that said the logged findings-only pseudo-audit was not counted "pending PKC-020" now cites the ruling of 2026-10-25: a findings-only pseudo-audit does not advance Last Audit (`Admin/Auditor_Protocols.md` v0.45, Rule 10 addendum). No date, field value, Unknown or Spec Gate changed.
 
