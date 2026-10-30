@@ -17,8 +17,8 @@
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                         |
-| Last Audit       | 2026-10-25 — Claude (human-directed, PKC-032) added the Drift Indicators section; no content review. Prior: 2026-09-08 (Claude review — added missing Lessons Learned/Active Disputes sections; prior: file created from HP-007 skeleton) |
-| Auditor          | —                                                                   |
+| Last Audit       | 2026-10-30 — Vibe (Repo Custodian, delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A): X3 mechanical citation retrofit (Operations pass) — 4 bare colliding-prefix citations qualified with their owning File.md per PKC-003 (Kit v1.30 Governance Sidecar ID Reference; per-ID grounding: Unknowns active index). Citation-form-only; no ID renumbered; frozen history untouched; no gate advanced; Open Unknowns unchanged. Prior: 2026-10-25 — Claude (human-directed, PKC-032) added the Drift Indicators section; no content review. Prior: 2026-09-08 (Claude review — added missing Lessons Learned/Active Disputes sections; prior: file created from HP-007 skeleton) |
+| Auditor          | Vibe — Repo Custodian, 2026-10-30 X3 mechanical citation retrofit (Operations pass; delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A); prior: —                                                                   |
 | Open Unknowns    | 1                                                                   |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | Medium                                                              |
@@ -52,7 +52,7 @@
 
 Decision Point B in Forge_flow.md evaluates whether a failure is “within current tooling capability.” That evaluation is only deterministic if a known, maintained list of tools actually available to operators exists. This file is that list and its governing rules.
 
-It is deliberately narrow: a living operational reference, not an architecture document. It exists to satisfy `Architecture/Forge_flow.md` ASM-003 and FL-004 (not this file's own ASM-003 below).
+It is deliberately narrow: a living operational reference, not an architecture document. It exists to satisfy `Architecture/Forge_flow.md` ASM-003 and FL-004 (`Architecture/Forge_flow.md`) (not this file's own ASM-003 below).
 
 Without this file, Decision Point B decisions remain operator-dependent mental models and the conservative degraded-mode rule (“if inventory is stale → Decision Point B = NO”) has nothing concrete to check against.
 
@@ -197,14 +197,14 @@ Each of these restates a rule this file already states; none is new doctrine. Th
 | Risk          | Medium                                           |
 | Priority      | Major                                            |
 | Type          | Operational                                      |
-| Blocking      | No (but blocks full FL-001 / Decision Point B determinism) |
+| Blocking      | No (but blocks full FL-001 (`Architecture/Forge_flow.md`) / Decision Point B determinism) |
 | Owner         | Operations/Tooling_Inventory.md                  |
 | First Logged  | 2026-09-08                                       |
 | Last Reviewed | 2026-09-08                                       |
 
 **Description:** The inventory tables above are structural placeholders. No actual tool list has been populated and no human owner has been assigned.
 
-**Why It Matters:** Until the list is real and owned, ASM-003 in Forge_flow.md and FL-004 remain open assumptions. Decision Point B cannot claim full determinism.
+**Why It Matters:** Until the list is real and owned, ASM-003 in Forge_flow.md and FL-004 (`Architecture/Forge_flow.md`) remain open assumptions. Decision Point B cannot claim full determinism.
 
 **Resolution Path (per deployment):**
 - This is closed once, locally, by each Forge instance — never once
@@ -216,12 +216,14 @@ Each of these restates a rule this file already states; none is new doctrine. Th
 - Perform a first physical inventory at that site and populate the
   tables.
 - Record the date of first population in the Resolution Log below.
-- Notify Architecture/Forge_flow.md so ASM-003 Expiry Trigger and FL-004 can be updated — for that instance's own fork/copy.
+- Notify Architecture/Forge_flow.md so ASM-003 Expiry Trigger and FL-004 (`Architecture/Forge_flow.md`) can be updated — for that instance's own fork/copy.
 - Add the short cross-reference note to Architecture/Components.md Scope Boundary or Bootstrap Doctrine section, if not already present.
 
 ---
 
 ## Resolution Log
+
+- 2026-10-30: **X3 mechanical citation retrofit (Operations pass).** 4 bare colliding-prefix citations qualified with their owning File.md per PKC-003 (Kit v1.30 Governance Sidecar ID Reference; per-ID grounding: Unknowns active index). Citation-form-only: no ID renumbered, no Unknown opened or closed, no Spec Gate advanced, frozen history untouched. Out-of-whitelist bare IDs were left bare and reported to the human. (Vibe, Repo Custodian — delegated maintenance per Decision Brief 2026-10-29 item 4A.)
 
 - 2026-10-25: **Drift Indicators section added (PKC-032 ruling, human-directed; no doctrine changed).** Drafted only from rules this file already states (Governing Rules 1 to 3 and 5, ASM-003). No content review was done, and no Unknown, assumption or Status changed. Wording for human review.
 
