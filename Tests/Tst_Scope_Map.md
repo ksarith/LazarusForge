@@ -11,7 +11,7 @@
 | Spec Gates       | N/A — this file is a cross-reference index, not a specification     |
 | Open Unknowns    | 0 (surfaces existing unknowns from owning files; creates none)      |
 | Owning Domain    | Tests/                                                               |
-| Last Reviewed    | 2026-10-25 — MAQT entry Status corrected to record that Cycle 1 ran 2026-09-22 (PKC-041). Prior: 2026-10-25 — Status of the MAQT, Chrono_Divergence and Chrono_Divergence_Pilot entries changed from Proposed to Exploration to match their owning files (PKC-031). Prior: 2026-10-15 — Chrono_Divergence_Pilot.md registered (2026-10-14); stale Chrono version pin removed |
+| Last Reviewed    | 2026-10-30 — Campaign 2 finding repair (X8 row refresh): MAQT 0→3 Open Unknowns registered (MAQT-001–003); Quorum_Agent_Conduct_Protocol 0→7 registered; Support_Raft 13→12; Cognitive_Salvage_Layer/Pyrolysis_Cascade/Solar_Descent Risk cells mirrored High→Critical (2026-10-30 X10 recompute). Prior: 2026-10-25 — MAQT entry Status corrected to record that Cycle 1 ran 2026-09-22 (PKC-041). Prior: 2026-10-25 — Status of the MAQT, Chrono_Divergence and Chrono_Divergence_Pilot entries changed from Proposed to Exploration to match their owning files (PKC-031). Prior: 2026-10-15 — Chrono_Divergence_Pilot.md registered (2026-10-14); stale Chrono version pin removed |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
 ---
@@ -31,7 +31,7 @@ Fifth folder in the Scope_Map rollout, following Admin/ (2026-08-07), Architectu
 Note: shortest, most compressed entry in this folder — a gatekeeping/process file rather than a domain-content file. Its Risk framing (misuse past Level 4 ceiling) is worth reading literally: this file's real function is bounding how much confidence downstream files may borrow from sandboxed results.
 
 ### `Tests/Cognitive_Salvage_Layer.md`
-**Status:** Exploration · 1/6 · 13 Open Unknowns · Risk: High
+**Status:** Exploration · 1/6 · 13 Open Unknowns · Risk: Critical
 **Does:** Cognitive Salvage Layer as a distinct architectural module; heuristic failure class motivating human-in-the-loop integration; feedback loop architecture (scan to autonomous execution); Auditor Decision Tree (Stages 1-4); six-status grading matrix including CANDIDATE_NOVEL; Heuristic Object telemetry schema; GH-series unknowns.
 **Does not (arrow):** Game/puzzle/interface design · robotic arm kinematics/IK solvers · FEA methodology · Forge_Net federated knowledge base (`Architecture/Forge_Net.md`) · auditor operational behavior (`Admin/Auditor_Protocols.md`) · canonical terminology (`Admin/Canonical_Terms.md`) · weld qualification (`Operations/Gate_06_Fabrication.md`).
 Note: points to `Operations/Leviathan.md` as "planned" — confirmed that file genuinely does not exist anywhere in the repository yet. Not stale; the file's own label already says planned, not built. Flagged only so a future session doesn't need to re-check this.
@@ -65,7 +65,7 @@ Note: the only file in this folder carrying a Critical risk rating with an expli
 **Does not (arrow):** Recommend or adopt any candidate — explicitly survey-only · implement anything (no code, schema, or new file format created) · claim verified knowledge of current external memory-augmentation products (flagged Internally Derived/PROVISIONAL per AP-006, not checked against outside sources) · duplicate `Cognitive_Salvage_Layer.md` (Forge task-performance heuristics) or `Admin/Progress_Log.md` (rolling decision continuity) — this file is about the deliberation/dissent those two don't capture.
 
 ### `Tests/Multi_Agent_Quorum_Trial.md`
-**Status:** Exploration — Cycle 1 run 2026-09-22 (logical isolation only; evidence entry not in repo); Tier 2 not yet run · 0/6 (protocol, not spec) · 0 Open Unknowns (registered) · Risk: High — governs who can cause a state transition on canonical `main`; a loose trial here is a race-condition and governance-bypass risk, not just a documentation gap
+**Status:** Exploration — Cycle 1 run 2026-09-22 (logical isolation only; evidence entry not in repo); Tier 2 not yet run · 0/6 (protocol, not spec) · 3 Open Unknowns (registered: MAQT-001–003) · Risk: High — governs who can cause a state transition on canonical `main`; a loose trial here is a race-condition and governance-bypass risk, not just a documentation gap
 **Does:** Operationalizes `Admin/Governance_Migration_Protocol.md` §VII (Bootstrap Quorum, GOV-008 candidate) into a runnable three-machine protocol — machine/agent baseline, role assignment incl. §VII.2's role-rotation clause, Git branch/promotion-authority topology, required Non-collusion probe, human-ratification constraints (inherits GMP-004's unresolved authentication gap in full, does not close it), failure/recovery scenarios, pass/fail scoring against §VII.3's five-item quorum-achieved checklist. §8 Preparation Package (2026-09-20): recommended defaults, fillable pre-trial worksheet, six concrete non-collusion probes, Field_Logs skeleton, minimal viable first-run configuration. §8.6–§8.8 (2026-09-21): role-card pack, minimal context pack, Cycle 1 bounded task. §8.9–§8.10 (2026-09-21): handoff schemas (structured artifacts per role — not transcript-as-interface) and collaboration friction log (requirements-discovery block required on every MAQT Field_Logs entry; discover what to automate after the run, not before).
 **Does not:** Amend §VII or resolve GOV-008/GMP-004; replace `Tests/Field_Logs.md`'s results-logging role. See companion `Tests/MAQT_Role_Cards_and_Cycle1_Task.md` for individual agent role cards.
 Note (2026-10-25): Status previously read Exploration — Protocol Not Yet Run (before that, Proposed Protocol — Not Yet Run); corrected after a source check showed Cycle 1 ran 2026-09-22 (PKC-041).
@@ -77,7 +77,7 @@ Note (2026-10-25): Status previously read Exploration — Protocol Not Yet Run (
 Note: Created 2026-09-21. Operator gives each agent only its own role card from this file — not the full file and not the probe list.
 
 ### `Tests/Quorum_Agent_Conduct_Protocol.md`
-**Status:** Ratified Protocol (trial scope, 2026-10-09) · 0/6 (protocol, not spec) · 0 registered Unknowns (QCC-R1–R7 are tracked in the file's sidecar, with QCC-R2, R5 and R7 also indexed in `Unknowns.md`) · Risk: Medium — a mistaken defection record could unfairly raise scrutiny on an agent, and a misread rule could be mistaken for governance weight; the protocol forbids the second explicitly
+**Status:** Ratified Protocol (trial scope, 2026-10-09) · 0/6 (protocol, not spec) · 7 registered Unknowns (QCC-R1–R7, tracked in the file's sidecar, with QCC-R2, R5 and R7 also indexed in `Unknowns.md`) · Risk: Medium — a mistaken defection record could unfairly raise scrutiny on an agent, and a misread rule could be mistaken for governance weight; the protocol forbids the second explicitly
 **Does:** Defines checkable agent defections (D1–D6), a node key that persists across sessions, a forgiving tit-for-tat scrutiny response on the node-reliability track, and a defect-record and correction path; extends AVE R1/R2 across sessions.
 **Does not:** Ratify AVE or MAQT; amend §VII or advance GOV-008; give reliability any governance weight or claim-confidence effect; cover how people treat one another; set numeric thresholds (all Placeholder).
 Note: Created 2026-10-08 as a proposal, ratified 2026-10-09. Cross-agent audit pending.
@@ -101,18 +101,18 @@ Note: Created 2026-10-14 from a Grok draft corrected against Chrono v0.3/v0.4.
 Note: Created 2026-10-04, scoped to `Admin/` after clarifying that a physical-teardown reading (already covered by `Architecture/Geck_forge_seed.md`) was not what was meant.
 
 ### `Tests/Pyrolysis_Cascade.md`
-**Status:** Draft — Exploration · 0/6 (not yet audited) · 8 Open Unknowns (PYC-001-008) · Risk: High (thermal processing of mixed salvage; halogen/hazardous-fraction exposure)
+**Status:** Draft — Exploration · 0/6 (not yet audited) · 8 Open Unknowns (PYC-001-008) · Risk: Critical (thermal processing of mixed salvage; halogen/hazardous-fraction exposure)
 **Does:** Staged thermal cascade architecture (primary pyrolysis to secondary high-temp reduction with heat integration); candidate material-separation pathways; explicit dependency surface on upstream triage/reduction/hazard/site/energy/scrubber doctrine; test concepts and measurement priorities.
 **Does not (arrow):** Halogenated-polymer triage/field ID (`Operations/Plastics.md` PL-001, `Architecture/Chemistry.md` CE-003) · reduction method selection (`Gate_03_Reduction.md` GR-002) · air scrubbing (`Air_Scrubber.md`) · chemical/biological waste disposal (GR-003, WA-004) · site/emergency/structural safety (FA-001, SP-006, EN-001) · cost baseline/power demand/profitability (ECN-002, EV-001, TR-001).
 **Hard preconditions (explicit, non-negotiable, worth preserving verbatim):** no hot pyrolysis of mixed urban salvage may be proposed, piloted, or claimed until PL-001/CE-003 resolve or feedstock is validated halogen-free; no structural/refractory claims until EN-001 closes for the relevant materials; no site-dependent operational claims until FA-001 closes.
 
 ### `Tests/Solar_Descent.md`
-**Status:** Exploration · 0/6 · 8 Open Unknowns · Risk: High
+**Status:** Exploration · 0/6 · 8 Open Unknowns · Risk: Critical
 **Does:** Solar Descent organizing principle, diverge/reconverge architecture; SD-001 optical downlink (molten tin termination concept); SD-002 thermal/fluid downlink; shared underground chamber reconvergence; geodesic/spherical chamber geometry, modular panel expansion; power conversion cascade; safety governance for both pathways; Astroid-miner companion-system technology transfer paths.
 **Does not (arrow):** General energy storage (`Operations/Energy.md`) · high-temp thermal processing (`Gate_05_Separation_Thermal.md`) · pyrolysis doctrine (`Plastics.md`) · waste-heat water distillation (`Living_Waters.md` LW-001/008) · geotechnical excavation specs (out of scope at current interval) · site-specific geology (site-conditioned, no universal answer) · grid-scale generation (out of scope for v0).
 
 ### `Tests/Support_Raft.md`
-**Status:** Exploration · 0/6 · 13 Open Unknowns · Risk: High — SR-001 (galvanic corrosion) Open/High and required before v1.0; a hull corroding faster than modeled threatens the whole anchor-node concept
+**Status:** Exploration · 0/6 · 12 Open Unknowns · Risk: High — SR-001 (galvanic corrosion) Open/High and required before v1.0; a hull corroding faster than modeled threatens the whole anchor-node concept
 **Does:** Stationary regional anchor infrastructure doctrine; five anchor roles (Energy/Truth/Recovery/Material/Communication); SWATH hull implementation and Sacrificial Shell System; failure philosophy/succession doctrine; SR-001-013 sidecar unknowns.
 **Does not (arrow):** Leviathan unit architecture/autonomy (`Leviathan_testing.md`) · galvanic corrosion chemistry (`Architecture/Chemistry.md` CE-001) · biofouling framing (`Challenges/Biofouling.md`) · firmware trust/cache integrity (`Operations/Electronics.md`) · repository integrity/cache governance (`Admin/Repository_Integrity_Protocol.md`) · energy philosophy (`Operations/Energy.md`) · marine G.E.C.K. variant (`Architecture/Geck_forge_seed.md`) · storm-survival/multi-Raft coordination (`Admin/Trajectories.md`) · identity continuity (`Admin/Ship_of_Theseus.md`) · material separation ops (`Gate_05_Separation_Thermal.md`).
 **Explicit self-distinction (worth preserving verbatim):** *"The Support Raft is an anchor node, not headquarters. It does not direct Leviathan unit behavior... The distinction between anchor and director must be preserved as the system scales."*
@@ -145,6 +145,8 @@ No corrections were needed in this folder, same as Challenges/ — no stale cros
 ---
 
 ## Resolution Log
+
+- 2026-10-30: **Campaign 2 finding repair (X8 row refresh): MAQT entry Open Unknowns 0→3 (MAQT-001–003 registered); Quorum_Agent_Conduct_Protocol entry 0→7 registered Unknowns (QCC-R1–R7; QCC-R2/R5/R7 also indexed in `Unknowns.md`); Support_Raft entry 13→12; Cognitive_Salvage_Layer, Pyrolysis_Cascade and Solar_Descent Risk cells mirrored High→Critical, matching the owning files after the 2026-10-30 X10 recompute. Does / Does-not text unchanged. Human-directed (Campaign 2 findings).**
 
 - 2026-10-25: MAQT entry Status corrected from "Protocol Not Yet Run" to record that Cycle 1 ran on 2026-09-22 (logical isolation only; evidence entry not in repo; Tier 2 not yet run), matching `Tests/Multi_Agent_Quorum_Trial.md` (PKC-041). No Does / Does-not text, count or Unknown changed. Human-directed.
 
