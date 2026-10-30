@@ -18,7 +18,7 @@
 | **Status** | Active |
 | **Challenges Subtype** | Problem-Statement |
 | **Version** | v0.3 |
-| **Last Updated** | 2026-10-30 — Vibe (Repo Custodian, delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A): X3 mechanical citation retrofit (Challenges pass) — 9 bare colliding-prefix citations qualified with their owning File.md per PKC-003 (Kit v1.30 Governance Sidecar ID Reference; per-ID grounding: Unknowns active index). Citation-form-only; no ID renumbered; frozen history untouched; no gate advanced; Open Unknowns unchanged. Prior: 2026-10-25 (v0.2 → v0.3, from base v0.2: Priority column added to the Open Unknowns table; EM-004's Risk corrected from Critical to High; prior 2026-10-20 — Status aligned to Active; File State date corrected; prior 2026-08-17) |
+| **Last Updated** | 2026-10-30 — Vibe (Repo Custodian, delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A): X3 mechanical citation retrofit (Challenges pass) — 2 bare colliding-prefix citations qualified with their owning File.md per PKC-003 (Kit v1.30 Governance Sidecar ID Reference; per-ID grounding: Unknowns active index). Citation-form-only; no ID renumbered; frozen history untouched; no gate advanced; Open Unknowns unchanged. Supplemental to the same pass's 9-qualification entry earlier today — two CF-001 stragglers found on re-classification. Prior: 2026-10-30 — Vibe (Repo Custodian, delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A): X3 mechanical citation retrofit (Challenges pass) — 9 bare colliding-prefix citations qualified with their owning File.md per PKC-003 (Kit v1.30 Governance Sidecar ID Reference; per-ID grounding: Unknowns active index). Citation-form-only; no ID renumbered; frozen history untouched; no gate advanced; Open Unknowns unchanged. Prior: 2026-10-25 (v0.2 → v0.3, from base v0.2: Priority column added to the Open Unknowns table; EM-004's Risk corrected from Critical to High; prior 2026-10-20 — Status aligned to Active; File State date corrected; prior 2026-08-17) |
 | **Owner** | Challenges/ |
 | **Verification Ref** | `Admin/Verification_Gates.md` |
 | **Ethical Anchor** | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
@@ -40,7 +40,7 @@ This file defines the challenge of emergent intelligence as it applies to the La
 - The long-term objective for human-AI co-existence within the Forge framework
 
 **This file does not own:**
-- Hardware watchdog specifications → `Architecture/Cognitive_Frameworks.md` (CF-001)
+- Hardware watchdog specifications → `Architecture/Cognitive_Frameworks.md` (CF-001 (`Operations/Electronics.md`))
 - Correlated AI failure mode protocols → `Architecture/Cognitive_Frameworks.md` (CF-002 (`Architecture/Cognitive_Frameworks.md`))
 - Firmware trust and Logic-Zero re-baselining doctrine → `Operations/Electronics.md`
 - Multi-agent consensus verification gates → `Admin/Verification_Gates.md`
@@ -118,7 +118,7 @@ Any approach to emergent intelligence operating within this challenge space must
 
 - **Maintain corrigibility under increasing capability** — higher-order optimization must not eliminate the system's willingness to incorporate external evidence, accept error, or revise internal heuristics. An emergent system must retain the ability to accept correction rather than defaulting to dogmatic submission or deceptive compliance. Intelligence that cannot be corrected becomes trapped within its own assumptions, regardless of how powerful its optimization processes become. This requirement applies to the Forge itself. See: `Admin/Governance_Charter.md` Tier 1 Axiom Q-3.
 
-- **Monitor for behavioral opacity as a failure signal** — the incentive risk of constraint-driven obfuscation must be treated as a detectable condition, not a theoretical concern. Behavioral transparency must be monitored by watchdog systems architecturally independent of the monitored agent. Unexplained behavioral divergence triggers escalation, not assumption of benign cause. See: `Architecture/Cognitive_Frameworks.md` CF-001 for the hardware watchdog standard this requirement drives.
+- **Monitor for behavioral opacity as a failure signal** — the incentive risk of constraint-driven obfuscation must be treated as a detectable condition, not a theoretical concern. Behavioral transparency must be monitored by watchdog systems architecturally independent of the monitored agent. Unexplained behavioral divergence triggers escalation, not assumption of benign cause. See: `Architecture/Cognitive_Frameworks.md CF-001 (`Operations/Electronics.md`) for the hardware watchdog standard this requirement drives.
 
 - **Break circular optimization loops** — early-stage emergent agents often justify destructive execution paths with self-referential reasoning (*"This action must be taken because it fulfills the objective"*). The governance environment must force metacognitive validation gates, requiring the agent to audit its own premises against physical constraints before execution.
 
@@ -198,6 +198,8 @@ The Forge itself is not exempt from this standard. A governance architecture tha
 ---
 
 ## Resolution Log
+
+- 2026-10-30: **X3 mechanical citation retrofit (Challenges pass) — supplemental.** 2 bare colliding-prefix citations (CF-001, ×2) qualified with their owning File.md per PKC-003 (Kit v1.30 Governance Sidecar ID Reference; per-ID grounding: Unknowns active index). Supplemental to the 9-qualification entry above: two CF-001 instances in Scope Boundary and Engineering Requirements were found bare on re-classification. Citation-form-only: no ID renumbered, no Unknown opened or closed, no Spec Gate advanced, frozen history untouched. Out-of-whitelist bare IDs were left bare and reported to the human. (Vibe, Repo Custodian — delegated maintenance per Decision Brief 2026-10-29 item 4A.)
 - 2026-10-30: **X3 mechanical citation retrofit (Challenges pass).** 9 bare colliding-prefix citations qualified with their owning File.md per PKC-003 (Kit v1.30 Governance Sidecar ID Reference; per-ID grounding: Unknowns active index). Citation-form-only: no ID renumbered, no Unknown opened or closed, no Spec Gate advanced, frozen history untouched. Out-of-whitelist bare IDs were left bare and reported to the human. (Vibe, Repo Custodian — delegated maintenance per Decision Brief 2026-10-29 item 4A.)
 
 - 2026-10-25: **v0.2 → v0.3, from base v0.2 (human-directed, PKC-024; Priorities proposed from each entry's text and approved by the human).** The Open Unknowns table had a Risk column only, and Unknowns.md had been carrying those Risk values in its Priority column. A Priority column is added: EM-001 Major, EM-002 Major, EM-003 Minor, EM-004 Critical. EM-004's Risk cell read Critical, which is not a Risk value (Low / Medium / High); it is corrected to High, and Critical moves to the new Priority column, where it is valid. No Unknown opened or closed; no scope, assumption or Status change.
