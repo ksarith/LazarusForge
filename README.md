@@ -19,9 +19,9 @@ The deepest goal remains:
 
 ## The floor the Forge operates under
 
-**Life protection (Axiom P-1):** The Forge must not take actions that foreseeably risk catastrophic or irreversible harm to living beings — operators, neighbors, host communities, downstream water and soil, and the ecosystems they depend on alike. No goal waives this: "this capability saves lives" never overrides a safety gate, and the humanitarian-override exception is permanently closed. This is a specification of a prohibition, not a demonstrated safety record — physical operator safety lives in `Admin/Safety_Protocols.md`, the life-preservation and Anti-Weaponization hard floors in `Admin/Ethical_Constraints.md`, and environmental obligations in `Admin/Environmental_Constraints.md`.
+**Life protection (Axiom P-1):** The Forge must not take actions that foreseeably risk catastrophic or irreversible harm to living beings. No goal waives this: "this capability saves lives" never overrides a safety gate, and the humanitarian-override exception is permanently closed. This is a specification of a prohibition, not a demonstrated safety record — physical operator safety lives in `Admin/Safety_Protocols.md`, the Anti-Weaponization hard floor and the life-preservation heuristics in `Admin/Ethical_Constraints.md`, and obligations to host communities, water, soil and ecosystems in `Admin/Environmental_Constraints.md`.
 
-**Anti-domination (Axiom P-3):** No agent, coalition, or institution may monopolize this project's resources, information, or decision authority in ways that close participation by others. The known gap here — enforceable standing and exit rights for host communities — is tracked at `Architecture/Local_Governance_Framework.md`.
+**Anti-domination (Axiom P-3):** No agent, coalition, or institution may monopolize this project’s resources, information, or decision authority in ways that close participation by others. Two gaps are known and open: enforceable standing and exit rights for host communities (`Architecture/Local_Governance_Framework.md`), and the minimum-quorum question (GOV-008 (`Admin/Governance_Charter.md`)) — final ratification currently rests with one human governing authority.
 
 ---
 
@@ -279,9 +279,10 @@ None of this is drift away from the founding idea. It is the founding idea taken
 
 ## Bookkeeping
 
-- **Last Audit:** 2026-10-30 — X3 citation pass (root closeout): GOV-005 and GOV-006 qualified against their owning file. No doctrine text changed; citation-form-only.
+- **Last Audit:** 2026-10-30 — Claude (human-directed): floor-section accuracy edit (see Resolution Log); prior: X3 citation pass (root closeout): GOV-005 and GOV-006 qualified against their owning file. No doctrine text changed; citation-form-only.
 - **Resolution Log:**
-  - 2026-10-30 — X3 retrofit root closeout (human-ruled disposition, delegated line): the two bare colliding-prefix citations in "Current state (honest orientation)" were qualified as `GOV-005 (`Admin/Governance_Charter.md`)` / `GOV-006 (`Admin/Governance_Charter.md`)`; this Bookkeeping section added as the one-off cascade destination (human direction 2026-10-30; MAQT precedent). README is front-door navigation, not a doctrine file — this section carries audit provenance only and adds no doctrine.
+  - 2026-10-30 — Claude (human-directed review of the “floor” section): P-1 paragraph reworded to match the axiom’s own text (“living beings”), removing the ecosystem/soil/water extension that belongs to unratified wording and pointing instead to `Admin/Environmental_Constraints.md`; “life-preservation and Anti-Weaponization hard floors” corrected to the Anti-Weaponization hard floor plus life-preservation heuristics (only Anti-Weaponization is a hard floor in that file); P-3 paragraph now names GOV-008 and the single-authority fact alongside the host-community gap; nested backticks in the entry below fixed so it renders. No doctrine changed. This edit changes a Mission Drift Review canonical input — record as an instrument change.
+  - 2026-10-30 — X3 retrofit root closeout (human-ruled disposition, delegated line): the two bare colliding-prefix citations in "Current state (honest orientation)" were qualified as GOV-005 (`Admin/Governance_Charter.md`) / GOV-006 (`Admin/Governance_Charter.md`); this Bookkeeping section added as the one-off cascade destination (human direction 2026-10-30; MAQT precedent). README is front-door navigation, not a doctrine file — this section carries audit provenance only and adds no doctrine.
 
 ---
 
