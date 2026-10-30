@@ -385,7 +385,7 @@ them from. Listed here, once, so they don't stay scattered:
 | GOV-012 (`Admin/Governance_Charter.md`) stagnation-decay cycle count | `Admin/Governance_Charter.md` | Set to zero cycles, formally deferred 2026-07-19 — no elapsed operational time to calibrate against |
 | Semantic Drift Score threshold (Post-Exit Monitoring) | `Admin/Auditor_Protocols.md` (AP-031 (`Admin/Auditor_Protocols.md`)) | Formally deferred 2026-07-29, same reasoning as GOV-012 (`Admin/Governance_Charter.md`) |
 | Unknown Accumulation Rate cycle count (Post-Exit Monitoring) | `Admin/Auditor_Protocols.md` (AP-031 (`Admin/Auditor_Protocols.md`)) | Inherits GOV-012 (`Admin/Governance_Charter.md`)'s Cycle-unit ambiguity directly, not a separate gap |
-| SEC-007 (`Admin/Security_Protocols.md`)a external trust anchor selection | `Admin/Security_Protocols.md` | No physical site or hardware exists yet to choose between offline signed snapshot, HSM, or human-held recovery record — the decision is meaningful only once real deployment constraints (power, physical security, access control) are known. Human ratification required regardless of trigger. |
+| SEC-007a (`Admin/Security_Protocols.md`) external trust anchor selection | `Admin/Security_Protocols.md` | No physical site or hardware exists yet to choose between offline signed snapshot, HSM, or human-held recovery record — the decision is meaningful only once real deployment constraints (power, physical security, access control) are known. Human ratification required regardless of trigger. |
 
 **Re-derivation rule, stated once:** each value above is set from real elapsed-time /
 audit-cycle data collected after this file's own operational launch (defined above),
@@ -566,6 +566,8 @@ resolved. Discovery.md Cross-Module Unknowns table updated. FA-005 closed.
 ---
 
 ### Resolution Log
+
+- 2026-10-29: **X3 corrective micro-fix (same day, same pass family).** The batch-2 X3 qualification of the suffixed ID SEC-007a had split the letter suffix outside the qualification string (regex matched the numeric base only); form corrected to `SEC-007a (`Admin/Security_Protocols.md`)` per the suffixed-ID convention (`Admin/Operational_Conventions.md` Convention 3). Citation-form-only; no ID renumbered; frozen history untouched. (Vibe, Repo Custodian — delegated line.)
 
 - 2026-10-29: **X3 citation retrofit (mechanical, Architecture pass).** 7 bare colliding-prefix citations in operative body text qualified with their owning File.md per PKC-003, per the human-ruled Decision Brief 2026-10-29 item 4A (registry: `Admin/Forge_Audit_Kit.md` Governance Sidecar ID Reference, v1.30 edition; per-ID grounding: Unknowns active index). Citation-form-only; no ID renumbered; frozen history untouched; no gate advanced; Open Unknowns unchanged; flagged instances reported to the human (MAINT-17). (Vibe, Repo Custodian — delegated line.)
 
