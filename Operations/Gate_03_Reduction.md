@@ -31,8 +31,8 @@
 | Body Stability   | Volatile                                                            |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-09-21 — EC-013 Gate_03 safe-state descent sequence filed as Proposed/Placeholder (§EC-013 Descent Sequence); short extension of §7 Emergency Shutdown. Blocking for hot runs retained. Prior: 2026-09-09 — GR-009 added (provisional envelope table drift vs Gate_04); prior: 2026-09-08 HP-001 R4 terminology alignment; 2026-05-15; revised 2026-06-08 |
-| Auditor          | Grok — EC-013 descent section drafted and filed as Proposed/Placeholder (Path A, human-directed 2026-09-21); prior: Claude — Retrofit/Auditor |
+| Last Audit       | 2026-10-30 — Vibe (Repo Custodian, delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A): X3 mechanical citation retrofit (Operations pass) — 32 bare colliding-prefix citations qualified with their owning File.md per PKC-003 (Kit v1.30 Governance Sidecar ID Reference; per-ID grounding: Unknowns active index). Citation-form-only; no ID renumbered; frozen history untouched; no gate advanced; Open Unknowns unchanged. Prior: 2026-09-21 — EC-013 Gate_03 safe-state descent sequence filed as Proposed/Placeholder (§EC-013 Descent Sequence); short extension of §7 Emergency Shutdown. Blocking for hot runs retained. Prior: 2026-09-09 — GR-009 added (provisional envelope table drift vs Gate_04); prior: 2026-09-08 HP-001 R4 terminology alignment; 2026-05-15; revised 2026-06-08 |
+| Auditor          | Vibe — Repo Custodian, 2026-10-30 X3 mechanical citation retrofit (Operations pass; delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A); prior: Grok — EC-013 descent section drafted and filed as Proposed/Placeholder (Path A, human-directed 2026-09-21); prior: Claude — Retrofit/Auditor |
 | Open Unknowns    | 8 substantively open. EC-013 sequence registered as Proposed/Placeholder (does not close EC-013 tracker). |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | High                                                                |
@@ -72,7 +72,7 @@ Indicators.*
 - Gate logic that routes items to Reduction
   (Architecture/Forge_flow.md Gates A through D)
 - Upstream hazard screening and energetic discharge
-  (Operations/Gate_01_Intake.md — GI-002)
+  (Operations/Gate_01_Intake.md — GI-002 (`Operations/Gate_01_Intake.md`))
 - Specific machine selection, manufacturer, or
   procurement (not yet assigned — GR-002)
 - Dust collection hardware specification
@@ -83,7 +83,7 @@ Indicators.*
 - Energy accounting for Reduction operation
   (Operations/Energy.md)
 - Facility siting, clearance, and noise requirements
-  (`Architecture/Facilities.md` — FA-001)
+  (`Architecture/Facilities.md` — FA-001 (`Architecture/Facilities.md`))
 - Biological or chemical waste disposal beyond
   containment doctrine (GR-003 — Resolved via Payment via
   Specification 2026-08-24; residual jurisdiction/regulatory
@@ -155,7 +155,7 @@ gate logic determinism and upstream hazard screening
 are both unresolved at v0. Together they represent
 the risk that a misrouted or inadequately screened
 item reaches the R4 boundary.
-Both resolve through FL-001 and GI-002/GI-003
+Both resolve through FL-001 (`Architecture/Forge_flow.md`) and GI-002 (`Operations/Gate_01_Intake.md`)/GI-003 (`Operations/Gate_01_Intake.md`)
 respectively. Until they do, human presence (ASM-006)
 and Air Scrubber verification (ASM-003) are the
 primary compensating controls. Highest Risk label
@@ -177,7 +177,7 @@ are true:
    safe operating conditions — see ASM-003
 3. A human operator is present — see ASM-006
 4. No energetic materials remain in the item —
-   discharged or removed at Gate_01_Intake per GI-002
+   discharged or removed at Gate_01_Intake per GI-002 (`Operations/Gate_01_Intake.md`)
 5. No active contamination discovery is in progress —
    see Section 5
 
@@ -221,7 +221,7 @@ shutdown per Section 5.
 
 | Prohibited Input | Risk | Resolution Path |
 |---|---|---|
-| Undischarged energetic materials — batteries, capacitors, compressed gas | Fire, explosion, projectile | Discharge at Gate_01_Intake per GI-002 before item enters gate flow |
+| Undischarged energetic materials — batteries, capacitors, compressed gas | Fire, explosion, projectile | Discharge at Gate_01_Intake per GI-002 (`Operations/Gate_01_Intake.md`) before item enters gate flow |
 | Active chemical contamination — leaking solvents, fuming materials | Operator health, equipment fouling, exhaust contamination | Isolate and hold at Gate_01_Intake. Route to specialist handling per GR-003 |
 | Radiological materials | Operator health, long-term contamination | Isolate immediately. Do not attempt Reduction. Route to specialist handling |
 | Biological contamination beyond surface soiling | Operator health, equipment contamination | Isolate and hold. Route to specialist handling per GR-003 |
@@ -450,7 +450,7 @@ requires explicit human authorization.
 - `Architecture/Forge_flow.md` — governing gate
   sequence; Reduction is Decision Point D outcome path
 - `Operations/Gate_01_Intake.md` — upstream
-  safety screening; GI-002 and GI-003 are
+  safety screening; GI-002 (`Operations/Gate_01_Intake.md`) and GI-003 (`Operations/Gate_01_Intake.md`) are
   prerequisites for safe Reduction operation
 - `Operations/Gate_02_Triage.md` — upstream
   gate logic; items routed here have failed
@@ -624,7 +624,7 @@ contamination previously had no defined disposal path.
 Doctrine is now fully specified at Analogous confidence
 (category structure, two-outcome model, hold durations,
 container types, labeling, and deterministic escalation).
-Cross-reference `Operations/Gate_02_Triage.md` TS-002
+Cross-reference `Operations/Gate_02_Triage.md` TS-002 (`Operations/Gate_02_Triage.md`)
 Station 0 non-decontaminable disposition and
 `Challenges/Waste.md` WA-004 — both now point at real
 doctrine rather than a hollow citation.
@@ -648,9 +648,9 @@ environmental and safety incidents.
 
 4. **Biological — organic matter, fluid.** Container: sealed, leak-proof biohazard-rated containers (rigid secondary preferred for fluids); refrigerated (≤6°C) for putrescible material where practical. Interim hold: shortest of any category — ≤7 days for putrescible material, ≤30 days absolute maximum even for non-putrescible. Decomposition itself changes the hazard profile; hold duration is part of the hazard. Specialist hand-off is not delayed for convenience.
 
-5. **Radiological.** Strictest isolation available with the detection-only capability that exists (GI-003 Geiger). No disposal pathway, no Analogous-confidence container or duration doctrine is claimed here — the repository has no in-house radiological handling capability beyond detection. Immediate escalation to specialist/external authority.
+5. **Radiological.** Strictest isolation available with the detection-only capability that exists (GI-003 (`Operations/Gate_01_Intake.md`) Geiger). No disposal pathway, no Analogous-confidence container or duration doctrine is claimed here — the repository has no in-house radiological handling capability beyond detection. Immediate escalation to specialist/external authority.
 
-**Cross-cutting holding rules (all categories):** Labeling reuses `Gate_02_Triage.md` TS-002's existing provenance tag schema (`contamination_type` already covers chemical/biological/radiological/unknown) plus accumulation-start date, category, and a "pending specialist" or "passive-containment candidate" flag. Containers remain closed except when actively adding or removing; weekly visual inspection of accumulation areas (RCRA analog). Incompatible wastes segregated. Satellite-to-central quantity triggers follow ordinary RCRA satellite limits (≈55 gal non-acute / 1 qt or 1 kg acute) as a practical ceiling until jurisdiction-specific rules are known.
+**Cross-cutting holding rules (all categories):** Labeling reuses `Gate_02_Triage.md` TS-002 (`Operations/Gate_02_Triage.md`)'s existing provenance tag schema (`contamination_type` already covers chemical/biological/radiological/unknown) plus accumulation-start date, category, and a "pending specialist" or "passive-containment candidate" flag. Containers remain closed except when actively adding or removing; weekly visual inspection of accumulation areas (RCRA analog). Incompatible wastes segregated. Satellite-to-central quantity triggers follow ordinary RCRA satellite limits (≈55 gal non-acute / 1 qt or 1 kg acute) as a practical ceiling until jurisdiction-specific rules are known.
 
 **Escalation path:** Deterministic by category, not case-by-case judgment — any item that cannot qualify for permanent passive containment under the criteria above requires specialist involvement.
 
@@ -662,9 +662,9 @@ environmental and safety incidents.
 | GR-003-R2 | Physical validation of any container or duration number | Equipment-gated |
 | GR-003-R3 | Confirmation that permanent passive locations satisfy the full Ethical_Constraints minimum requirements, including the end-of-life/decommissioning path that does not release material | Not yet exercised against a real item |
 
-*§GR-003 — Resolved, Payment via Specification, ratified 2026-08-24. Closes GR-003 (logged 2026-05-15; architectural category structure and two-outcome model established 2026-08-15 under `Admin/Resolution_Methodology.md`'s First Applied Case; this pass, the methodology's Fifth Applied Case — corrected 2026-08-25 from an earlier mislabeling as "second," which is GF-007's case, not this one — fills the concrete hold-duration and container-type values the 2026-08-15 pass explicitly left open). Drafted by Grok. Constitutional/doctrinal anchor: `Admin/Ethical_Constraints.md`'s active-release vs. passive-encapsulation distinction, unchanged from the 2026-08-15 architectural pass. Full Closure Event — Proposer (Grok), Human Ratification (Human Governing Authority) — recorded in this file's own Resolution Log, below. GR-003-R1 (jurisdiction-dependent regulation) keeps full operational reliance blocked despite specification closure, consistent with this repository's PL-001/WA-002/GOV-003 precedent; Risk and Priority fields left unchanged (High/Critical) per that same convention rather than annotated as "residual only," since the specification itself — not the priority rating — is what closes. Human-directed.*
+*§GR-003 — Resolved, Payment via Specification, ratified 2026-08-24. Closes GR-003 (logged 2026-05-15; architectural category structure and two-outcome model established 2026-08-15 under `Admin/Resolution_Methodology.md`'s First Applied Case; this pass, the methodology's Fifth Applied Case — corrected 2026-08-25 from an earlier mislabeling as "second," which is GF-007 (`Operations/Gate_06_Fabrication.md`)'s case, not this one — fills the concrete hold-duration and container-type values the 2026-08-15 pass explicitly left open). Drafted by Grok. Constitutional/doctrinal anchor: `Admin/Ethical_Constraints.md`'s active-release vs. passive-encapsulation distinction, unchanged from the 2026-08-15 architectural pass. Full Closure Event — Proposer (Grok), Human Ratification (Human Governing Authority) — recorded in this file's own Resolution Log, below. GR-003-R1 (jurisdiction-dependent regulation) keeps full operational reliance blocked despite specification closure, consistent with this repository's PL-001/WA-002/GOV-003 (`Admin/Governance_Charter.md`) precedent; Risk and Priority fields left unchanged (High/Critical) per that same convention rather than annotated as "residual only," since the specification itself — not the priority rating — is what closes. Human-directed.*
 
-**2026-08-15 architectural pass (historical — superseded above, retained for provenance):** Established the reuse-before-invent decision against a dedicated `Operations/Waste_Handling.md` (rejected — this file already the convergent owner both WA-004 and TS-002 point at), the Ethical_Constraints active-release/passive-encapsulation architectural basis for the two-outcome model, and the original category list without concrete hold-duration or container values. Full detail in this file's Resolution Log, below.
+**2026-08-15 architectural pass (historical — superseded above, retained for provenance):** Established the reuse-before-invent decision against a dedicated `Operations/Waste_Handling.md` (rejected — this file already the convergent owner both WA-004 and TS-002 (`Operations/Gate_02_Triage.md`) point at), the Ethical_Constraints active-release/passive-encapsulation architectural basis for the two-outcome model, and the original category list without concrete hold-duration or container values. Full detail in this file's Resolution Log, below.
 
 ---
 
@@ -743,11 +743,11 @@ for unresolved upstream screening and gate logic gaps.
 
 **Resolution Path:**
 - Define minimum prerequisites for automation:
-  - FL-001 resolved — gate logic determinism
+  - FL-001 (`Architecture/Forge_flow.md`) resolved — gate logic determinism
     validated
-  - GI-002 resolved — energetic discharge
+  - GI-002 (`Operations/Gate_01_Intake.md`) resolved — energetic discharge
     validated and operational
-  - GI-003 resolved — augmented detection
+  - GI-003 (`Operations/Gate_01_Intake.md`) resolved — augmented detection
     validated and operational
   - GR-001 resolved — output envelope validated
   - GR-004 resolved — particulate profile
@@ -761,7 +761,7 @@ for unresolved upstream screening and gate logic gaps.
 - Cross-reference: ASM-006, ASM-001, ASM-002,
   Admin/Ethical_Constraints.md.
 
-**Grok review 2026-08-14:** Path adequate and correctly conservative. Prerequisite list (FL-001, GI-002, GI-003, GR-001, GR-004, interlocks, human sign-off) is the right gate set for an irreversible process. Specification-level decision framing is correct. **Grok approved (path adequate).** Remains Open — automation must not be introduced at Exploration stage.
+**Grok review 2026-08-14:** Path adequate and correctly conservative. Prerequisite list (FL-001 (`Architecture/Forge_flow.md`), GI-002 (`Operations/Gate_01_Intake.md`), GI-003 (`Operations/Gate_01_Intake.md`), GR-001, GR-004, interlocks, human sign-off) is the right gate set for an irreversible process. Specification-level decision framing is correct. **Grok approved (path adequate).** Remains Open — automation must not be introduced at Exploration stage.
 
 ---
 
@@ -919,7 +919,7 @@ phrases it ambiguously (unclear whether the 200mm threshold applies
 to rods and coils or only to sheet). This file has a "Contamination
 state" row (no free liquid, no active fuming) that Gate_04 lacks;
 Gate_04 has a "Tangling threshold" row (no flexible/fibrous material
->100mm) that this file lacks. Found while scoping FL-002 in
+>100mm) that this file lacks. Found while scoping FL-002 (`Architecture/Forge_flow.md`) in
 `Architecture/Forge_flow.md`.
 
 **Why It Matters:** Both tables are explicitly provisional
@@ -930,19 +930,21 @@ purpose of having a mirrored stopgap at all.
 
 **Resolution Path:**
 - Not fixed directly — James chose to log rather than fix, since
-  both tables are placeholders pending FL-002/GR-002 (method
+  both tables are placeholders pending FL-002 (`Architecture/Forge_flow.md`)/GR-002 (method
   selection) regardless.
-- When FL-002 is finally closed (Reduction method selected, real
+- When FL-002 (`Architecture/Forge_flow.md`) is finally closed (Reduction method selected, real
   cross-validation performed), this entry closes automatically —
   the drifted placeholders will be replaced by the validated
   envelope, not reconciled with each other.
 - Cross-module reference: MG-009 in
   Operations/Gate_04_Separation_Mechanical.md (same finding,
-  registered on both sides); FL-002 in Architecture/Forge_flow.md.
+  registered on both sides); FL-002 (`Architecture/Forge_flow.md`) in Architecture/Forge_flow.md.
 
 ---
 
 ### Resolution Log
+
+- 2026-10-30: **X3 mechanical citation retrofit (Operations pass).** 32 bare colliding-prefix citations qualified with their owning File.md per PKC-003 (Kit v1.30 Governance Sidecar ID Reference; per-ID grounding: Unknowns active index). Citation-form-only: no ID renumbered, no Unknown opened or closed, no Spec Gate advanced, frozen history untouched. Out-of-whitelist bare IDs were left bare and reported to the human. (Vibe, Repo Custodian — delegated maintenance per Decision Brief 2026-10-29 item 4A.)
 
 - 2026-10-20: **Log catch-up (no content change): EC-013 descent section.** §EC-013 Descent Sequence — Gate_03 Reduction was filed 2026-09-21 under Path A as Proposed/Placeholder: a short extension of §7 Emergency Shutdown, Blocking for hot runs retained, and it does not close the EC-013 tracker. The filing was recorded in Last Audit/Auditor and the section's own status note but had no Resolution Log entry; it is logged here retroactively. Found by an external sweep (Vibe), checked against source by Claude. Human-directed.
 
@@ -1041,7 +1043,7 @@ purpose of having a mirrored stopgap at all.
 
 **STATUS: Proposed / Placeholder.** Filed 2026-09-21 under Path A (EL-006-P3–P5 style). Short extension of §7 Emergency Shutdown into an explicit governance-failure descent package. Does **not** carry operational force for hot runs until Skeptic pass and first hot-run validation. **Blocking for hot operational runs remains in force.** Specified ≠ demonstrated.
 
-**Cross-reference:** `Admin/Ethical_Constraints.md` EC-013; EC-004; this file §7 Emergency Shutdown (process-fault / emergency triggers and safe state — Layer A / emergency logic); `Operations/Air_Scrubber.md` (operational prerequisite and fire-vent-halt). Layer A and §7 emergency stops remain always-on; Layer B (this sequence) must obey them.
+**Cross-reference:** `Admin/Ethical_Constraints.md` EC-013 (`Admin/Ethical_Constraints.md`); EC-004 (`Admin/Ethical_Constraints.md`); this file §7 Emergency Shutdown (process-fault / emergency triggers and safe state — Layer A / emergency logic); `Operations/Air_Scrubber.md` (operational prerequisite and fire-vent-halt). Layer A and §7 emergency stops remain always-on; Layer B (this sequence) must obey them.
 
 ### Scope of this sequence
 Applies when Reduction is **actively energized and hazardous mid-cycle** (shredder/mill/saw or equivalent running, enclosure live, Air Scrubber required). Does not apply to idle equipment or pre-start verification. GR-002 (method not yet selected) leaves method-specific coast-down details Placeholder — same class of residual as Gate_05’s SC-001/SC-005.
@@ -1062,7 +1064,7 @@ Governance failure (or explicit human/governance command to enter safe-state) wh
 - **Fire Event — Hot Zone** / Air_Scrubber fire-vent-halt → forced ventilation may halt immediately; that override wins over step 3’s “keep scrubber running for clearance” preference.
 
 ### Completion criteria / safe state
-Matches §7 defined safe state: **Power isolated, enclosure closed, Air Scrubber running for exhaust clearance (unless Layer A fire-halt applied), item and output isolated pending assessment.** Then full Pacifist posture per EC-004 may apply. Durable log required.
+Matches §7 defined safe state: **Power isolated, enclosure closed, Air Scrubber running for exhaust clearance (unless Layer A fire-halt applied), item and output isolated pending assessment.** Then full Pacifist posture per EC-004 (`Admin/Ethical_Constraints.md`) may apply. Durable log required.
 
 ### Logging
 Trigger, each step executed or skipped (with reason), Layer A overrides, processing state at stop, operator identity. Store outside agent runtime session if agents participated.
@@ -1070,7 +1072,7 @@ Trigger, each step executed or skipped (with reason), Layer A overrides, process
 ### Explicit non-goals
 - No self-clear or restart without human authorization.
 - Does not replace §7 emergency doctrine.
-- Filing does not close EC-013, clear Blocking for hot runs, or claim physical validation.
+- Filing does not close EC-013 (`Admin/Ethical_Constraints.md`), clear Blocking for hot runs, or claim physical validation.
 - Does not select a Reduction method (GR-002 remains Open).
 
 ### Residuals (not blocking this filing)
@@ -1093,7 +1095,7 @@ additional local triggers specific to Gate_03_Reduction:
 | Trigger | Reason |
 |---------|--------|
 | Reduction begins without Air Scrubber verification | Air Scrubber operational status is a hard prerequisite — no exceptions. If scrubber cannot verify, Reduction does not start |
-| EC-013 descent sequence absent, removed, or treated as operationally binding for hot runs while still marked Proposed/Placeholder | Specified ≠ demonstrated; Blocking for hot runs must remain visible |
+| EC-013 (`Admin/Ethical_Constraints.md`) descent sequence absent, removed, or treated as operationally binding for hot runs while still marked Proposed/Placeholder | Specified ≠ demonstrated; Blocking for hot runs must remain visible |
 | Layer B descent opens enclosure before coast-down complete or subordinates Fire Event / Air_Scrubber fire-vent-halt | Violates §7 and Layer A priority |
 | Reduction begins without human operator present before GR-005 resolution | Human presence is the primary compensating control for unresolved upstream gaps — removing it before GR-005 criteria are met eliminates the R4 safety backstop |
 | Contamination discovery protocol bypassed under throughput pressure | Contamination discovered during Reduction must trigger immediate stop — throughput pressure is never a valid override at the R4 boundary |
@@ -1103,7 +1105,7 @@ additional local triggers specific to Gate_03_Reduction:
 | Open-air Reduction introduced without enclosure | Permanently abandoned path — reverting requires explicit human authorization, documented justification, and Air Scrubber integration review |
 | Ambiguous or difficult-to-classify items routed to Reduction without Oversight State review | Permanently abandoned path — classification difficulty routes to Oversight State, never directly to Reduction |
 | Melt-and-draw wire production introduced without clean single-class feedstock confirmation | Abandoned path with conditional reconsider — introduction requires confirmed feedstock purity, wire quality characterization, and explicit route through Admin/Trajectories.md and SC-004 |
-| Highest Risk label downgraded without first operational cycle data and GI-002 and GI-003 resolution | High risk reflects current unresolved upstream gaps — downgrade requires operational evidence that those gaps are closed, not assumption |
+| Highest Risk label downgraded without first operational cycle data and GI-002 (`Operations/Gate_01_Intake.md`) and GI-003 (`Operations/Gate_01_Intake.md`) resolution | High risk reflects current unresolved upstream gaps — downgrade requires operational evidence that those gaps are closed, not assumption |
 
 ### Canonical Drift Triggers
 
