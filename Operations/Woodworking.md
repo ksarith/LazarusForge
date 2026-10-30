@@ -20,8 +20,8 @@
 | Body Stability | Volatile |
 | Spec Gates | 0/6 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-10-24 — Claude (human-directed) header corrected to cover the 2026-08-15 Grok resolution-path review, which changed the body (review markers on all five sidecar entries, Last Reviewed bumped) without advancing it; the logged 2026-08-10 Grok pseudo-audit (findings only) is not counted here per the PKC-020 ruling of 2026-10-25. Prior: 2026-05-30 (Gemini — Systems/Auditor); revised 2026-06-08           |
-| Auditor | Claude — 2026-10-24 header correction (human-directed, from a Vibe per-file audit); Grok — 2026-08-15 resolution-path review (per the Resolution Log); prior: Gemini — Systems/Auditor |
+| Last Audit       | 2026-10-30 — Vibe (Repo Custodian, delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A): X3 mechanical citation retrofit (Operations pass) — 2 bare colliding-prefix citations qualified with their owning File.md per PKC-003 (Kit v1.30 Governance Sidecar ID Reference; per-ID grounding: Unknowns active index). Citation-form-only; no ID renumbered; frozen history untouched; no gate advanced; Open Unknowns unchanged. Prior: 2026-10-24 — Claude (human-directed) header corrected to cover the 2026-08-15 Grok resolution-path review, which changed the body (review markers on all five sidecar entries, Last Reviewed bumped) without advancing it; the logged 2026-08-10 Grok pseudo-audit (findings only) is not counted here per the PKC-020 ruling of 2026-10-25. Prior: 2026-05-30 (Gemini — Systems/Auditor); revised 2026-06-08           |
+| Auditor | Vibe — Repo Custodian, 2026-10-30 X3 mechanical citation retrofit (Operations pass; delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A); prior: Claude — 2026-10-24 header correction (human-directed, from a Vibe per-file audit); Grok — 2026-08-15 resolution-path review (per the Resolution Log); prior: Gemini — Systems/Auditor |
 | Open Unknowns | 5 |
 | Active Disputes | 0 |
 | Highest Risk | High |
@@ -48,7 +48,7 @@
  * Structural engineering calculations for load-bearing wooden members.
  * Commercial lumber grading standards or large-scale industrial forestry operations.
  * Facility siting, shop layout, and clearance zone requirements
-   (→ `Architecture/Facilities.md` — FA-001).
+   (→ `Architecture/Facilities.md` — FA-001 (`Architecture/Facilities.md`)).
  * Formal hearing conservation program and PPE sourcing standards
    (→ `Admin/Safety_Protocols.md`).
 
@@ -283,7 +283,7 @@ Fine wood dust suspended in air is explosive. Do not allow dust to accumulate on
  * `Operations/Gate_06_Fabrication.md` — wood is a fabrication feedstock; fixturing, joinery, and finishing doctrine connects to fabrication workflow.
  * `Operations/Energy.md` — biochar and wood gas (gasification) are candidate energy inputs; firewood and offcuts feed thermal systems.
  * `Admin/Trajectories.md` — gasification of wood waste as an energy source, large-scale timber processing, and structural engineering calculations are v1+ scope items.
- * `Architecture/Facilities.md` — shop siting, floor loading for heavy log stock, clearance zones for power tool operation (FA-001).
+ * `Architecture/Facilities.md` — shop siting, floor loading for heavy log stock, clearance zones for power tool operation (FA-001 (`Architecture/Facilities.md`)).
  * `Admin/Safety_Protocols.md` — hearing conservation program; PPE sourcing standards for sustained power tool and chainsaw operations.
 
 ## Lessons Learned
@@ -416,6 +416,8 @@ Fine wood dust suspended in air is explosive. Do not allow dust to accumulate on
 ---
 
 ### Resolution Log
+
+- 2026-10-30: **X3 mechanical citation retrofit (Operations pass).** 2 bare colliding-prefix citations qualified with their owning File.md per PKC-003 (Kit v1.30 Governance Sidecar ID Reference; per-ID grounding: Unknowns active index). Citation-form-only: no ID renumbered, no Unknown opened or closed, no Spec Gate advanced, frozen history untouched. Out-of-whitelist bare IDs were left bare and reported to the human. (Vibe, Repo Custodian — delegated maintenance per Decision Brief 2026-10-29 item 4A.)
 
 - 2026-10-25: **Header wording updated (PKC-020 ruling; no content change).** The Last Audit annotation that said the logged findings-only pseudo-audit was not counted "pending PKC-020" now cites the ruling of 2026-10-25: a findings-only pseudo-audit does not advance Last Audit (`Admin/Auditor_Protocols.md` v0.45, Rule 10 addendum). No date, field value, Unknown or Spec Gate changed.
 
