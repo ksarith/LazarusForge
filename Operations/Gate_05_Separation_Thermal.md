@@ -25,11 +25,11 @@
 | Body Stability   | Volatile                                                            |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-10-30 — Vibe (Repo Custodian, delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A): X3 mechanical citation retrofit (Operations pass) — 12 bare colliding-prefix citations qualified with their owning File.md per PKC-003 (Kit v1.30 Governance Sidecar ID Reference; per-ID grounding: Unknowns active index). Citation-form-only; no ID renumbered; frozen history untouched; no gate advanced; Open Unknowns unchanged. Prior: 2026-09-20 — EC-013 Gate_05 safe-state descent sequence filed as Proposed/Placeholder (§EC-013 Descent Sequence). Blocking for hot runs retained until first hot-run validation. Prior: 2026-08-08 (Scope Boundary DOES-NOT wording corrected to match Lessons Learned); prior: 2026-07-31 (SC-009 registered; SC-004 expanded with Driving Mechanism Options) |
+| | Last Audit | 2026-10-30 — Campaign 2 finding repair (human-directed custodian pass; see Resolution Log) |x citations qualified with their owning File.md per PKC-003 (Kit v1.30 Governance Sidecar ID Reference; per-ID grounding: Unknowns active index). Citation-form-only; no ID renumbered; frozen history untouched; no gate advanced; Open Unknowns unchanged. Prior: 2026-09-20 — EC-013 Gate_05 safe-state descent sequence filed as Proposed/Placeholder (§EC-013 Descent Sequence). Blocking for hot runs retained until first hot-run validation. Prior: 2026-08-08 (Scope Boundary DOES-NOT wording corrected to match Lessons Learned); prior: 2026-07-31 (SC-009 registered; SC-004 expanded with Driving Mechanism Options) |
 | Auditor          | Vibe — Repo Custodian, 2026-10-30 X3 mechanical citation retrofit (Operations pass; delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A); prior: Grok — EC-013 descent section drafted and filed as Proposed/Placeholder (Path A, human-directed 2026-09-20); prior: Claude — Retrofit/Auditor; Claude — Synthesizer, human-directed (SC-009, SC-004 expansion), 2026-07-31 |
 | Open Unknowns    | 10 substantively open (SC-001 In Progress counted as open; SC-010 registered 2026-09-08). EC-013 sequence registered as Proposed/Placeholder (does not close EC-013 tracker). |
 | Active Disputes  | 0                                                                   |
-| Highest Risk     | Medium                                                              |
+| Highest Risk     | High                                                              |
 | Sidecar Link     | #auditor-notes--unknowns                                            |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
@@ -78,6 +78,8 @@
   (`Operations/Energy.md`)
 
 ---
+
+- 2026-10-30: **Campaign 2 finding repair (Repo Custodian, delegated line, human-directed fix batch).** File State Highest Risk recomputed Medium → High per open sidecar maxima (SC-009 High, titanium/reactive-metal atmosphere) — closes CAMPAIGN2_AUDIT_23 F1 (X10 value-miss, understated). No doctrine, Status, Spec Gate, or version change; no other field touched. Audit source: Campaign 2 deposit in Operations/OAudits/.
 
 ## File Purpose
 
