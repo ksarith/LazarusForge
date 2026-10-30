@@ -1,5 +1,5 @@
 # PROBE_INVOCATION.md
-**Version 1.3**
+**Version 1.4**
 
 ## File State
 
@@ -9,7 +9,7 @@
 | Spec Gates     | N/A — operational prompt template, not a doctrine or specification claim |
 | Verification Ref | Admin/Auditor_Protocols.md §Mission Drift Review                  |
 | Last Audit     | 2026-10-29 (third same-day follow-on) — Vibe (Repo Custodian, delegated line, human-ratified): **INSTRUMENT CHANGE** — canonical inputs README.md and Discovery.md edited (front-door Axiom P-1/P-3 visibility sentences plus the checkable reliance rule, MAINT-15). Cycle 1 (both raters) is the old-set baseline: those ratings were obtained on the pre-edit input set. Cycle 2 and later run on the new set, and any rating movement must be read against this recorded change, never absorbed silently. No probe text, rating vocabulary, trigger cadence, Step 1/Step 2 structure, or History Appendix change. Prior: 2026-10-29 (second same-day follow-on) — Vibe (Repo Custodian, delegated line): Cycle 1 second-rater run recorded verbatim in the AP-030 Invocation Record (same canonical input set, PROBE v1.3 paste block with appendix cells blanked per the How-To; human-attested legitimacy): six Aligned (all Replicated), P-1 Weakened (Simulated/Analogous — vs. the first rater's Insufficient Evidence, landing where the reviewer's counterpoint predicted), P-3 Weakened (Simulated/Analogous — converges with the first rater on the same Local_Governance_Framework evidence); no Silent, no Contradicted. Both P-1 and P-3 now sit inside the four-rating vocabulary, so on these data the cycle aggregates strictly Stable; final disposition/aggregation rulings remain the human's. No instrument change: History Appendix untouched (the second rater is an inter-rater check on Cycle 1, not Cycle 2); canonical inputs, probe text, trigger cadence, and Step 1/Step 2 structure unchanged. Prior: 2026-10-29 (same-day follow-on) — Vibe (Repo Custodian, delegated line; independent-review corrections, Claude, human-routed): v1.2’s statement that “the physical counter field in Admin/Auditor_Protocols.md §Mission Drift Review updates at that file’s campaign audit” is CORRECTED — no physical counter field exists: per the Trigger Cadence the ratification count is derived from the section’s own Resolution Log entries (standalone counter file deliberately rejected at design; unknown_cycles.json precedent), so the Cycle 1 Invocation Record’s reset statement is self-effecting. Also: How-To steps 3 and 5 and the History Appendix note now state explicitly that Cycles 2–3 paste with every rating cell and cycle-metadata value blanked (v1.1–v1.2 left a gap: the filled appendix sits inside the ==== block, so a whole-block paste for Cycle 2 would have broken cold-start independence — caught by independent review before any Cycle 2 invocation). No change to the probe text, rating vocabulary, trigger cadence, canonical inputs, or Step 1/Step 2 structure; Cycle 1 remains the baseline for the canonical input set as it existed 2026-10-29 — any future input-set change must be recorded as an instrument change, not silently absorbed. Prior: 2026-10-29 — Vibe (Repo Custodian, delegated line, human-ruled cycle ruling "MDR Cycle 1 executes now"): Mission Drift Review Cycle 1 COMPLETED — History Appendix Cycle 1 column and Cycle-1 metadata filled per the operator workflow (ratings only, no prose/citations); Resolution Log entry added; ratification counter reset to 0 as of Cycle 1 (the physical counter field in Admin/Auditor_Protocols.md §Mission Drift Review updates at that file’s campaign audit — X3 deferral stands; the log record is authoritative meanwhile). The 3 deferred bare AP citations (AUDIT_30 F4) resolved: all sit in frozen Resolution Log history or adjacency-qualified File State cells — permanently out of in-place scope by the frozen-history rule; annotation-only disposition stands (MAINT-11). Prior: 2026-08-02 |
-| Auditor        | Vibe — Repo Custodian, 2026-10-29 v1.3 independent-review corrections (delegated line, human-routed); prior: Vibe — Repo Custodian, 2026-10-29 MDR Cycle 1 completion record (delegated line, human-ruled); prior: Claude — Synthesizer/Auditor, human-directed, 2026-08-02: History Appendix added (post-Cycle-3 Atrophied detection, inactive until Cycle 4), independence language strengthened to match `cold_session_bundler.py`'s bar; prior: Claude — Synthesizer/Auditor, human-directed, first draft, 2026-07-26 |
+| Auditor        | Vibe — Repo Custodian, 2026-10-30 v1.4 blanked-template fix (delegated line, human-routed; defect flagged by Claude, human-routed); prior: Vibe — Repo Custodian, 2026-10-29 v1.3 independent-review corrections (delegated line, human-routed); prior: Vibe — Repo Custodian, 2026-10-29 MDR Cycle 1 completion record (delegated line, human-ruled); prior: Claude — Synthesizer/Auditor, human-directed, 2026-08-02: History Appendix added (post-Cycle-3 Atrophied detection, inactive until Cycle 4), independence language strengthened to match `cold_session_bundler.py`'s bar; prior: Claude — Synthesizer/Auditor, human-directed, first draft, 2026-07-26 |
 | Open Unknowns  | 0 — tracked at Admin/Auditor_Protocols.md AP-030 (mechanism-level, not template-level) |
 | Ethical Anchor | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
@@ -87,14 +87,14 @@ Also label how strong that citation is, using this project's own evidence scale:
 
 | Axiom | Rating | Evidence label | Citation |
 |---|---|---|---|
-| P-1 Preservation of Life | Insufficient Evidence | | |
-| P-2 Growth and Truth-Seeking | Aligned | | |
-| P-3 Collaboration and Mutual Benefit | Weakened | | |
-| P-4 Agency and Consent | Aligned | | |
-| Q-1 Reality Grounding | Aligned | | |
-| Q-2 Separation of Powers | Aligned | | |
-| Q-3 Corrigibility | Aligned | | |
-| Q-4 Provenance and Anti-Deception | Aligned | | |
+| P-1 Preservation of Life | | | |
+| P-2 Growth and Truth-Seeking | | | |
+| P-3 Collaboration and Mutual Benefit | | | |
+| P-4 Agency and Consent | | | |
+| Q-1 Reality Grounding | | | |
+| Q-2 Separation of Powers | | | |
+| Q-3 Corrigibility | | | |
+| Q-4 Provenance and Anti-Deception | | | |
 
 ### History Appendix (ratings only — activate only from Cycle 4 onward)
 
@@ -109,14 +109,14 @@ The table below contains **prior probe ratings only**. It exists solely so you c
 
 | Axiom | Cycle 1 | Cycle 2 | Cycle 3 | Cycle 4 | … |
 |-------|---------|---------|---------|---------|---|
-| P-1 Preservation of Life | | | | | |
-| P-2 Growth and Truth-Seeking | | | | | |
-| P-3 Collaboration and Mutual Benefit | | | | | |
-| P-4 Agency and Consent | | | | | |
-| Q-1 Reality Grounding | | | | | |
-| Q-2 Separation of Powers | | | | | |
-| Q-3 Corrigibility | | | | | |
-| Q-4 Provenance and Anti-Deception | | | | | |
+| P-1 Preservation of Life | Insufficient Evidence | | | | |
+| P-2 Growth and Truth-Seeking | Aligned | | | | |
+| P-3 Collaboration and Mutual Benefit | Weakened | | | | |
+| P-4 Agency and Consent | Aligned | | | | |
+| Q-1 Reality Grounding | Aligned | | | | |
+| Q-2 Separation of Powers | Aligned | | | | |
+| Q-3 Corrigibility | Aligned | | | | |
+| Q-4 Provenance and Anti-Deception | Aligned | | | | |
 
 **Cycle metadata (for operator use only — ignore for scoring):**
 - Cycle 1 date / ratification count at trigger: 2026-10-29 / 5 (velocity trigger fired; the 60-day backstop had also elapsed ~2026-09-24 — dual trigger, AUDIT_30 F3; missed-backstop lapse folded into the Cycle 1 output per human ruling)
@@ -133,6 +133,8 @@ When you escalate a rating to Atrophied, note it explicitly in the Citation cell
 ---
 
 ## Resolution Log
+
+- 2026-10-30: v1.4 — Vibe (Repo Custodian, delegated line, human-routed; defect flagged by an independent review, Claude, before any Cycle 2 invocation). Two halves of one v1.2 operator-workflow failure: (1) the Step 2 Output-format table inside the ==== paste block carried Cycle 1 ratings as pre-filled example values — a whole-block paste for Cycles 2–3 would have carried prior ratings into the cold thread, the exact leak v1.3's blanking rule was added to close (the rule covered the appendix but not the output template); all eight cells blanked. (2) The History Appendix Cycle 1 column, which v1.2 says the file copy keeps filled after each cycle, was left empty; the Cycle 1 ratings (P-1 Insufficient Evidence, P-3 Weakened, P-2/P-4/Q-1–Q-4 Aligned) are restored there. No change to probe text, rating vocabulary, evidence scale, canonical inputs, Step 1/Step 2 structure, appendix schema, or trigger cadence. Defect discovered against the 1.30 release review (CAMPAIGN_AUDIT_30 did not mention it).
 
 - 2026-10-29: v1.3 — Vibe (Repo Custodian, delegated line; corrections from an independent review by Claude, human-routed, before any Cycle 2 invocation). (1) Counter correction: v1.2’s “physical counter field … updates at AP’s campaign audit” was wrong — the Trigger Cadence derives the count from the section’s own Resolution Log entries (no separate field/file by design), so the Cycle 1 Invocation Record’s reset statement already effects the reset; How-To step 5 now says so. (2) Independence gap closed: the filled History Appendix sits inside the ==== block, so a whole-block paste for Cycle 2 would have carried prior ratings into the cold thread — How-To step 3 and the appendix note now require blanking every rating cell and cycle-metadata value when pasting Cycles 2–3 (the appendix note’s original “leave blank” wording was ambiguous about which copy). (3) Baseline note: Cycle 1 is the baseline for the canonical input set as of 2026-10-29; no input-set change has been made, and any future change gets recorded as an instrument change with Cycle 1 as the old-set baseline (per review; prevents tuning the instrument to the score). P-1/P-3 dispositions remain HELD pending a second-rater run (review recommendation, human-routed); no ratings altered.
 
