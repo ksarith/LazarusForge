@@ -3,7 +3,7 @@ LAZARUS FORGE — AUDIT HARNESS v18
 Single importable module. See run_audit() docstring for the current
 bootstrap cell and usage.
 
-Full version history: Archive/Logs/AUDIT_HARNESS_CHANGELOG.md
+Full version history: Admin/ALogs/AUDIT_HARNESS_CHANGELOG.md
 """
 
 # ─────────────────────────────────────────────────────────────────────
@@ -133,10 +133,10 @@ FALLBACK_REGISTRY = {
     "Colab_Launcher.py":                 "Automation/Colab_Launcher.py",
     "Colab_Integrity.py":                "Automation/Colab_Integrity.py",
     "Unknowns_Changelog.md":             "Archive/Logs/Unknowns_Changelog.md",
-    "Governance_Charter_Changelog.md":   "Archive/Logs/Governance_Charter_Changelog.md",
-    "Forge_Audit_Kit_Changelog.md":      "Archive/Logs/Forge_Audit_Kit_Changelog.md",
-    "Auditor_Protocols_Logs.md":         "Archive/Logs/Auditor_Protocols_Logs.md",
-    "AUDIT_HARNESS_CHANGELOG.md":        "Archive/Logs/AUDIT_HARNESS_CHANGELOG.md",
+    "Governance_Charter_Changelog.md":   "Admin/ALogs/Governance_Charter_Changelog.md",
+    "Forge_Audit_Kit_Changelog.md":      "Admin/ALogs/Forge_Audit_Kit_Changelog.md",
+    "Auditor_Protocols_Logs.md":         "Admin/ALogs/Auditor_Protocols_Logs.md",
+    "AUDIT_HARNESS_CHANGELOG.md":        "Admin/ALogs/AUDIT_HARNESS_CHANGELOG.md",
     "PROBE_INVOCATION.md":               "Admin/PROBE_INVOCATION.md",
 }
 
@@ -541,7 +541,7 @@ def run_phase1(fetched_files, registry):
 # too aggressive. CURRENT_CYCLE incremented per session, not per year, so
 # every aging computation under it was ~26-50x more aggressive than the
 # ratified intent — confirmed 2026-07-16 (see Admin/Auditor_Protocols.md
-# Adversarial Audit Layer and Archive/Logs/Forge_Audit_Kit_Changelog.md's
+# Adversarial Audit Layer and Admin/ALogs/Forge_Audit_Kit_Changelog.md's
 # 2026-07-14 Battery record for the discovery, and Admin/Governance_Charter.md's
 # GOV-013 drafting session for confirmation this was the actual intent
 # CURRENT_CYCLE was violating, not just an ambiguous term).
@@ -776,7 +776,7 @@ def run_audit(target_file, focus, extra_files=None, doc_status="Exploration",
     Full audit pipeline. v16: restructured from six Colab cells the
     operator pasted and edited in place each session into this one
     function — same checks, same order, no logic change. See
-    Archive/Logs/AUDIT_HARNESS_CHANGELOG.md for the restructure record.
+    Admin/ALogs/AUDIT_HARNESS_CHANGELOG.md for the restructure record.
 
     Bootstrap cell (the only thing pasted into Colab now):
 
