@@ -17,7 +17,7 @@
 | Body Stability | Volatile — no operational trial against this structure has been run yet |
 | Owning Domain | Operations/ |
 | Verification Ref | Admin/Verification_Gates.md |
-| Last Audit | 2026-10-25 — Claude (human-directed, PKC-031) Status "Proposed" changed to "Exploration"; no other change. Prior: 2026-10-25 — Claude (human-directed, PKC-032) added the Drift Indicators section and the Verification Ref row and renamed this field from Last Reviewed; no content review. Prior: 2026-09-18 (structure sections added 2026-10-24, no content review) |
+| Last Audit | 2026-10-30 — Vibe (Repo Custodian, delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A): X3 mechanical citation retrofit (Operations pass) — 6 bare colliding-prefix citations qualified with their owning File.md per PKC-003 (Kit v1.30 Governance Sidecar ID Reference; per-ID grounding: Unknowns active index). Citation-form-only; no ID renumbered; frozen history untouched; no gate advanced; Open Unknowns unchanged. Prior: 2026-10-25 — Claude (human-directed, PKC-031) Status "Proposed" changed to "Exploration"; no other change. Prior: 2026-10-25 — Claude (human-directed, PKC-032) added the Drift Indicators section and the Verification Ref row and renamed this field from Last Reviewed; no content review. Prior: 2026-09-18 (structure sections added 2026-10-24, no content review) |
 | Sidecar Link | `Architecture/Forge_flow.md` FL-006 |
 | Ethical Anchor | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
@@ -33,8 +33,8 @@
 **This file DOES NOT:**
 - Store the entire operational evidence universe. Episodic packet bodies and standing-reference data live in the operational records this file *points to*.
 - Define **want/need policy**. Policy lives in `Architecture/Forge_flow.md` (Oversight State's want/need criteria); this file holds facts relevant to the judgment, not the judgment itself.
-- Decide **routing, authorization, or Escalate**. Escalate procedure is EC-003 (FL-006 half B, separately owned). Routing is Forge_flow.
-- Resolve **GOV-006** or **GMP-004** (identity authentication gaps remain open; they affect who the designated maintainer is, not the structure of this file).
+- Decide **routing, authorization, or Escalate**. Escalate procedure is EC-003 (`Admin/Ethical_Constraints.md`) (FL-006 half B, separately owned). Routing is Forge_flow.
+- Resolve **GOV-006 (`Admin/Governance_Charter.md`)** or **GMP-004 (`Admin/Governance_Migration_Protocol.md`)** (identity authentication gaps remain open; they affect who the designated maintainer is, not the structure of this file).
 - Replace `Gate_01_Intake.md`, `Gate_02_Triage.md`, or any other gate's own operational procedure. Upstream gates own their procedures; this file owns the evidence-control specification for what they hand off to Oversight.
 
 **Anti-policy rule (explicit):**
@@ -52,7 +52,7 @@ This matters especially once autonomous agents operate inside the Forge. An agen
 | **Repository home / control specification** | This file — defines evidence classes, fields, deposit rules, freshness, pointers |
 | **Operational maintainer of live records** | Designated Operations role / operator — **pending** (same honesty as `Tooling_Inventory.md`'s empty tables + TI-001) |
 | **Oversight routing & want/need policy** | `Architecture/Forge_flow.md` (Oversight State) |
-| **Escalate procedure** | `Admin/Ethical_Constraints.md` EC-003 (FL-006 half B — not this file) |
+| **Escalate procedure** | `Admin/Ethical_Constraints.md` EC-003 (`Admin/Ethical_Constraints.md`) (FL-006 half B — not this file) |
 
 ---
 
@@ -76,7 +76,7 @@ Deposited by upstream gates or human operators when something is escalated to Ov
 | Trigger | What condition or event prompted deposit |
 | Source gate / file | Which gate or human deposited this packet |
 | Timestamp | When deposited |
-| Epistemic label | Per AP-006 / existing two-axis practice (known/unknown × confident/uncertain) |
+| Epistemic label | Per AP-006 (`Admin/Auditor_Protocols.md`) / existing two-axis practice (known/unknown × confident/uncertain) |
 | Why deposited | Observation or reason for escalation — describes what was seen, **not** a routing recommendation or quasi-authorization |
 | Pointer to full record | Path, log entry, case ID, or other locator for the packet body |
 | Raw notes (optional) | Brief human-readable context |
@@ -108,7 +108,7 @@ When this file is first populated for a given deployment, the operational mainta
 - Each episodic control entry should carry enough information that a future human or agent can locate the original record and assess whether it is still relevant.
 - Standing reference pointers should note when they were last confirmed live (date, by whom if known).
 - Stale pointers must be labeled as stale rather than silently left as if current.
-- Epistemic labeling follows existing practice (`Admin/Auditor_Protocols.md` AP-006 / the two-axis schema in use elsewhere in this repository).
+- Epistemic labeling follows existing practice (`Admin/Auditor_Protocols.md` AP-006 (`Admin/Auditor_Protocols.md`) / the two-axis schema in use elsewhere in this repository).
 
 ---
 
@@ -155,6 +155,8 @@ Each of these restates a rule this file already states; none is new doctrine. Th
 ---
 
 ## Resolution Log
+
+- 2026-10-30: **X3 mechanical citation retrofit (Operations pass).** 6 bare colliding-prefix citations qualified with their owning File.md per PKC-003 (Kit v1.30 Governance Sidecar ID Reference; per-ID grounding: Unknowns active index). Citation-form-only: no ID renumbered, no Unknown opened or closed, no Spec Gate advanced, frozen history untouched. Out-of-whitelist bare IDs were left bare and reported to the human. (Vibe, Repo Custodian — delegated maintenance per Decision Brief 2026-10-29 item 4A.)
 
 - 2026-10-25: Status "Proposed" changed to "Exploration" (human-directed, PKC-031 ruling: "Proposed" is retired and a newly generated file starts at Exploration). Replaces the "still reads Proposed" remark in the entry below. No other field, section or Unknown changed.
 
