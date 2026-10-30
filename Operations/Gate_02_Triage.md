@@ -30,8 +30,8 @@
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 2/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-09-09 — §XII.1b added (TIL extended with Gate B Secondary Test fields, serving Forge_flow.md's FL-005); prior: 2026-09-01 — GU-002 reciprocal retirement-handoff subsection integrated (interface with Gate_07); prior: 2026-08-09 Grok pseudo-audit (Skeptic read + minimal fixes); body 2026-07-17; §XII drafted 2026-08-02 |
-| Auditor          | ChatGPT — Synthesizer; Claude — Engineer; Claude — Embedded Value Preservation cross-reference added (human-directed), 2026-07-17; Copilot — drafted TIL/TAL/TCM/TMV + CIR-Triage extension (human-directed), 2026-08-02; Claude — verified against source and `Admin/Verification_Gates.md`, corrective merge (human-directed), 2026-08-02; Grok pseudo-audit 2026-08-09 — no Spec Gate promotion |
+| Last Audit       | 2026-10-30 — Vibe (Repo Custodian, delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A): X3 mechanical citation retrofit (Operations pass) — 24 bare colliding-prefix citations qualified with their owning File.md per PKC-003 (Kit v1.30 Governance Sidecar ID Reference; per-ID grounding: Unknowns active index). Citation-form-only; no ID renumbered; frozen history untouched; no gate advanced; Open Unknowns unchanged. Prior: 2026-09-09 — §XII.1b added (TIL extended with Gate B Secondary Test fields, serving Forge_flow.md's FL-005); prior: 2026-09-01 — GU-002 reciprocal retirement-handoff subsection integrated (interface with Gate_07); prior: 2026-08-09 Grok pseudo-audit (Skeptic read + minimal fixes); body 2026-07-17; §XII drafted 2026-08-02 |
+| Auditor          | Vibe — Repo Custodian, 2026-10-30 X3 mechanical citation retrofit (Operations pass; delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A); prior: ChatGPT — Synthesizer; Claude — Engineer; Claude — Embedded Value Preservation cross-reference added (human-directed), 2026-07-17; Copilot — drafted TIL/TAL/TCM/TMV + CIR-Triage extension (human-directed), 2026-08-02; Claude — verified against source and `Admin/Verification_Gates.md`, corrective merge (human-directed), 2026-08-02; Grok pseudo-audit 2026-08-09 — no Spec Gate promotion |
 | Open Unknowns    | 9 (TS-009, TS-010 registered 2026-09-08; TS-001 and TS-003 In Progress counted as open; TS-004 Resolved) |
 | Active Disputes  | 1                                                                   |
 | Highest Risk     | High                                                                |
@@ -76,7 +76,7 @@
 - Material Recovery and Reduction methods
   (→ `Operations/Gate_03_Reduction.md`)
 - Anti-Weaponization pattern-matching mechanism
-  (→ `Admin/Ethical_Constraints.md`, EC-002)
+  (→ `Admin/Ethical_Constraints.md`, EC-002 (`Admin/Ethical_Constraints.md`))
 - Component taxonomy and graduation rules
   (→ `Architecture/Components.md`)
 - Retirement routing decisions for parts returning from service
@@ -87,7 +87,7 @@
 - Whether any predicate in §XII is constitutionally binding
   (→ `Admin/CIR_Gov.md`'s own Binding Status section, which is authoritative;
   CIR_Gov.md is itself Proposed — Not Ratified and structurally depends on
-  GOV-008 — nothing in this file can promote §XII above that status)
+  GOV-008 (`Admin/Governance_Charter.md`) — nothing in this file can promote §XII above that status)
 - The definition of Spec Gates 1–6
   (→ `Admin/Verification_Gates.md` — this file does not define its own
   gate categories)
@@ -417,7 +417,7 @@ Challenge, Scope Alignment, Cross-Reference Integrity, Conflict Check) with
 no seventh "constitutional" tier, and `Admin/CIR_Gov.md` — the file this
 draft proposed to bind itself into — is filed Proposed — Not Ratified, 0/6
 gates, and states explicitly that nothing should issue a CIR-VERIFIED
-transition until GOV-008 is ratified. This section is written below with
+transition until GOV-008 (`Admin/Governance_Charter.md`) is ratified. This section is written below with
 that corrected: every predicate is a *candidate*, not a binding rule.
 
 ### XII.1 Triage Intelligence Layer (TIL) — proposed
@@ -457,11 +457,11 @@ Outcome, and Operator are required.
 
 **`Component_Class` is explicitly provisional, not a settled taxonomy.**
 This file's own TS-004 records that the Component Library Schema
-(`Admin/Canonical_Terms.md` CT-002) is a genuinely open unknown that
+(`Admin/Canonical_Terms.md` CT-002 (`Admin/Canonical_Terms.md`)) is a genuinely open unknown that
 *blocks this file's own Specification promotion*. TIL's log should not be
-read as quietly resolving CT-002 by starting to use class labels
+read as quietly resolving CT-002 (`Admin/Canonical_Terms.md`) by starting to use class labels
 informally — log free-text component descriptions now, and reconcile
-against a controlled vocabulary once CT-002 actually closes. Do not treat
+against a controlled vocabulary once CT-002 (`Admin/Canonical_Terms.md`) actually closes. Do not treat
 early TIL groupings by class as validated categories.
 
 **Event_ID format:** `YYYY-MM-DD-NNN` (date of final disposition + a
@@ -483,7 +483,7 @@ which depends on fate data, not just initial-decision counts.
 **Deferred: multi-Forge ID extension (`YYYY-MM-DD-Fxx-NNNN`).** A version
 of this format that adds a two-digit Forge-site code was also drafted.
 It is deliberately *not* adopted now: `Admin/Trajectories.md` TR-GOV-001
-and GOV-008's own sidecar are explicit that no second physical host
+and GOV-008 (`Admin/Governance_Charter.md`)'s own sidecar are explicit that no second physical host
 exists anywhere in this repository yet, and writing a site code onto
 every tag today would add friction for a scenario that isn't real —
 directly against this same spec's own "start below the tooling
@@ -495,7 +495,7 @@ second Forge exists.
 *Expansion criteria — adopt `YYYY-MM-DD-Fxx-NNNN` when any of the
 following becomes true, not before:*
 - *A second physical Forge host is confirmed to exist (the exact
-  condition GOV-008 and TR-GOV-001 are already tracking) — this is the
+  condition GOV-008 (`Admin/Governance_Charter.md`) and TR-GOV-001 are already tracking) — this is the
   primary trigger.*
 - *Component or provenance data needs to move between two active Forges
   and plain `YYYY-MM-DD-NNN` IDs from each site would collide.*
@@ -529,7 +529,7 @@ Library Schema question, not in this file's TIL note.
 *Added 2026-09-09, Grok-drafted schema, Claude-adapted to extend this*
 *section rather than duplicate it, human-directed. Same
 candidate/not-audited status as the rest of §XII. Serves*
-*`Architecture/Forge_flow.md`'s FL-005 — Decision Point B's Secondary Test*
+*`Architecture/Forge_flow.md`'s FL-005 (`Architecture/Forge_flow.md`) — Decision Point B's Secondary Test*
 *(justified-effort evaluation) is unvalidated against real operation*
 *and its own text requires every decision to be logged with operator*
 *rationale. This is that log, as an extension of §XII.1a's existing*
@@ -550,8 +550,8 @@ fields in addition to the standard XII.1a set:
 | `Scarcity_Value` | Measured / Assumed / None + evidence cited — per Decision Point B's own "measured, not assumed" rule | New |
 | `Secondary_Test_Result` | YES → Repair & Learn, or NO → Decision Point C | Maps to existing `Outcome` field — do not duplicate, this is the same value already captured there |
 | `Rationale` | Free text, must reference at least one of the three axes above | Maps to existing `Notes` field — use `Notes` for this, do not add a separate column |
-| `Alternative_Operator_Decision` | Optional. Same item reviewed by a second operator, or the same operator's counterfactual at half/double the estimated effort | New — highest-value single field for surfacing inter-operator divergence, per FL-005 |
-| `Tooling_Inventory_Snapshot` | Reference/version of the live inventory used for the Primary tooling-capability check | New — ties this record to FL-004 and `Architecture/Forge_flow.md` ASM-003 (not this file's own ASM-003) |
+| `Alternative_Operator_Decision` | Optional. Same item reviewed by a second operator, or the same operator's counterfactual at half/double the estimated effort | New — highest-value single field for surfacing inter-operator divergence, per FL-005 (`Architecture/Forge_flow.md`) |
+| `Tooling_Inventory_Snapshot` | Reference/version of the live inventory used for the Primary tooling-capability check | New — ties this record to FL-004 (`Architecture/Forge_flow.md`) and `Architecture/Forge_flow.md` ASM-003 (not this file's own ASM-003) |
 
 `Later_Fate` (already in XII.1a) is what closes the loop for this
 extension too — no separate outcome-tracking field is needed.
@@ -569,10 +569,10 @@ from a single deployment before any qualitative review; 40-60 spanning
 at least two operators and two item categories before drawing
 conclusions. Per `Operations/Tooling_Inventory.md`'s File Purpose,
 none of this data — nor any threshold later derived from it — is
-canonical across deployments; it only closes FL-005 for the
+canonical across deployments; it only closes FL-005 (`Architecture/Forge_flow.md`) for the
 deployment that collected it.
 
-**Explicit non-goals, same as FL-005's own Resolution Path:** no
+**Explicit non-goals, same as FL-005 (`Architecture/Forge_flow.md`)'s own Resolution Path:** no
 forced numeric scoring at v0; no cross-site uniformity requirement;
 never route a Secondary Test outcome directly to Reduction.
 
@@ -639,9 +639,9 @@ completeness, strategic recoverability — each 0–3, averaged to a 0–1 score
 - It does not stand alone: TAL depends on Energy.md's unaudited EGL, so
   this entire section inherits that dependency's unvalidated status. If
   EGL is later corrected or reworked, this section needs re-review.
-- It does not resolve CT-002 (Component Library Schema, tracked at
+- It does not resolve CT-002 (`Admin/Canonical_Terms.md`) (Component Library Schema, tracked at
   TS-004). §XII.1a's TIL log uses free-text component descriptions
-  precisely because CT-002 remains open — starting to log is not the
+  precisely because CT-002 (`Admin/Canonical_Terms.md`) remains open — starting to log is not the
   same as having settled the taxonomy.
 - It does not adopt the multi-Forge Event_ID extension. §XII.1a specifies
   it and states the trigger conditions for adopting it, but the format in
@@ -667,7 +667,7 @@ See TS-005 through TS-008 below for tracked unknowns against this section.
 | Architecture/Facilities.md | Reference | Zone separation doctrine — acoustic isolation for Station 2 |
 | Operations/Energy.md §IV (proposed, unaudited) | Reference | §XII.2 TAL priority-class model borrows the EAL pattern; inherits its unaudited status |
 | Admin/CIR_Gov.md | Reference | §XII explicitly does not bind to this file; see CIR_Gov.md's own Binding Status |
-| Admin/Canonical_Terms.md | Reference | Owns CT-002 (Component Library Schema); §XII.1a's TIL log uses free-text `Component_Class` pending that resolution |
+| Admin/Canonical_Terms.md | Reference | Owns CT-002 (`Admin/Canonical_Terms.md`) (Component Library Schema); §XII.1a's TIL log uses free-text `Component_Class` pending that resolution |
 | Admin/Trajectories.md | Reference | TR-GOV-001 tracks hardware diversity / second-host status; §XII.1a's multi-Forge Event_ID extension is deferred until that trigger fires |
 
 ---
@@ -762,7 +762,7 @@ cross-operator consistency cannot be verified.
 **Resolution Path:** Working definition added: "A component is sufficient if
 it materially contributes to closure of the current operational loop." Populate
 Baseline Performance Table after N≥50 observations per component class.
-Cross-reference `Architecture/Forge_flow.md` FL-001 (gate logic determinism).
+Cross-reference `Architecture/Forge_flow.md` FL-001 (`Architecture/Forge_flow.md`) (gate logic determinism).
 
 **Grok review 2026-08-14:** Path adequate. Working definition is usable; N≥50 bar is correctly retained as the calibration gate. **Grok approved (path adequate).** Remains In Progress — Baseline Performance Table still needs real observations; do not promote on definition alone.
 
@@ -795,18 +795,18 @@ Full decontamination protocol still needed. Cross-reference
 
 **Grok review 2026-08-14:** Partial path adequate — Station 0 + Contaminated bin are real progress. Residual gap (full decontamination criteria, non-decontaminable routing, provenance tag for contamination status) is correctly named. Blocking Yes remains correct. **Grok approved (partial path adequate).** Remains Open — full decontamination protocol still required before treating contamination routing as closed.
 
-**Spec-depth pass, 2026-08-15 (digital-only — no equipment exists yet):** Checked the rest of the repository before drafting, to avoid inventing doctrine two other unknowns already own. `Admin/Ethical_Constraints.md` EC-014 (Open) is the repo's general toxic-material-encapsulation standard gap — no concrete pass/fail criteria for "adequately encapsulated" exist there either, so this pass does not invent a rival Gate_02-local standard. `Gate_03_Reduction.md` GR-003 (Open, Critical) is the repo's actual final-disposal doctrine gap — "what happens to hazmat that can't be processed" has no owner anywhere in the repo yet. TS-002 should route to that gap explicitly, not paper over it with a second invented disposal path.
+**Spec-depth pass, 2026-08-15 (digital-only — no equipment exists yet):** Checked the rest of the repository before drafting, to avoid inventing doctrine two other unknowns already own. `Admin/Ethical_Constraints.md` EC-014 (`Admin/Ethical_Constraints.md`) (Open) is the repo's general toxic-material-encapsulation standard gap — no concrete pass/fail criteria for "adequately encapsulated" exist there either, so this pass does not invent a rival Gate_02-local standard. `Gate_03_Reduction.md` GR-003 (Open, Critical) is the repo's actual final-disposal doctrine gap — "what happens to hazmat that can't be processed" has no owner anywhere in the repo yet. TS-002 should route to that gap explicitly, not paper over it with a second invented disposal path.
 
 *Three-way Station 0 decision workflow (new — closes the routing-logic half of "full decontamination criteria"):* On contamination flag at Station 0, a component enters exactly one of three states, not left as a binary held/cleared:
 1. **Decontaminated-and-cleared** — a documented decontamination method was applied and a Station 0 recheck (same check method as the original flag) confirms no contamination signal remains. Component re-enters triage at Station 0 per the file's existing re-triage doctrine, carrying a provenance tag recording the prior contamination event (see below) — it does not silently return to "never flagged" status.
 2. **Decontamination attempted, unresolved** — held in the Contaminated bin, re-attempt or escalate; does not proceed past Station 0 under any circumstance while in this state.
-3. **Non-decontaminable** — the component cannot be brought to a clean-recheck state by any method available at this station. Per Ethical_Constraints.md's active-release vs. passive-encapsulation principle, a non-decontaminable component is not automatically waste — but confirming which of those two categories it falls into is exactly what EC-014 doesn't yet define. `Gate_03_Reduction.md` GR-003 gained real disposal categories 2026-08-15 (applying `Admin/Resolution_Methodology.md`) — a non-decontaminable component's ultimate disposition now has actual doctrine to route through, not an empty citation, though GR-003 itself remains Open pending jurisdiction-specific regulatory research and physical validation. What this file does: a non-decontaminable component holds in the Contaminated bin under hazmat isolation (no different physical handling than state 2, but tagged with a distinct provenance status) until either EC-014 or GR-003's categories resolve its specific case. No component in this state may be released to any other station under any operator override; that is the one hard rule this pass adds without waiting on either upstream unknown.
+3. **Non-decontaminable** — the component cannot be brought to a clean-recheck state by any method available at this station. Per Ethical_Constraints.md's active-release vs. passive-encapsulation principle, a non-decontaminable component is not automatically waste — but confirming which of those two categories it falls into is exactly what EC-014 (`Admin/Ethical_Constraints.md`) doesn't yet define. `Gate_03_Reduction.md` GR-003 gained real disposal categories 2026-08-15 (applying `Admin/Resolution_Methodology.md`) — a non-decontaminable component's ultimate disposition now has actual doctrine to route through, not an empty citation, though GR-003 itself remains Open pending jurisdiction-specific regulatory research and physical validation. What this file does: a non-decontaminable component holds in the Contaminated bin under hazmat isolation (no different physical handling than state 2, but tagged with a distinct provenance status) until either EC-014 (`Admin/Ethical_Constraints.md`) or GR-003's categories resolve its specific case. No component in this state may be released to any other station under any operator override; that is the one hard rule this pass adds without waiting on either upstream unknown.
 
-**Shared-destination extension, 2026-08-15:** This same non-decontaminable state is the destination for material-*compositional* hazards, not only surface contamination — specifically the confirmed-halogenated plastics `Operations/Plastics.md` PL-001 flags at reactor triage and the asbestos/heavy-metal/BFR items `Challenges/Waste.md` WA-002's identification protocol flags. Both entered this state directly, skipping the decontamination-attempt state (2) entirely — there is no cleaning method that removes PVC content or asbestos fiber from a component's composition, so treating them as "attempted, unresolved" would misrepresent what happened. Both PL-001 and WA-002 previously pointed at two different, vaguer destinations ("specialist disposal" and "routed per WA-004/GR-003" respectively) without naming a shared one; both now converge on this Contaminated bin non-decontaminable state as the single named path, still correctly holding pending EC-014/GR-003 exactly as before. This does not change what happens to material entering here — it names the destination two other files were each independently gesturing at.
+**Shared-destination extension, 2026-08-15:** This same non-decontaminable state is the destination for material-*compositional* hazards, not only surface contamination — specifically the confirmed-halogenated plastics `Operations/Plastics.md` PL-001 flags at reactor triage and the asbestos/heavy-metal/BFR items `Challenges/Waste.md` WA-002's identification protocol flags. Both entered this state directly, skipping the decontamination-attempt state (2) entirely — there is no cleaning method that removes PVC content or asbestos fiber from a component's composition, so treating them as "attempted, unresolved" would misrepresent what happened. Both PL-001 and WA-002 previously pointed at two different, vaguer destinations ("specialist disposal" and "routed per WA-004/GR-003" respectively) without naming a shared one; both now converge on this Contaminated bin non-decontaminable state as the single named path, still correctly holding pending EC-014 (`Admin/Ethical_Constraints.md`)/GR-003 exactly as before. This does not change what happens to material entering here — it names the destination two other files were each independently gesturing at.
 
 *Provenance tag schema (new — closes the tagging half):* Reuses the `Challenges/Closed_Loop_Feedstock.md` §7.2 Material Certainty Manifest pattern (ratified 2026-07-31) as precedent rather than inventing a parallel tag format — that schema already establishes the repo's convention for how a Bayesian-style status gets encoded and read downstream. Contamination-status tag fields: `contamination_flag` (boolean, set at Station 0), `contamination_type` (chemical / biological / radiological / unknown — "unknown" is a valid and expected value, not an error state), `decon_state` (cleared / held / non-decontaminable, per the three-way workflow above), `decon_method` (free text, required if `decon_state = cleared`), `decon_recheck_by` (operator/station ID, required if `cleared`). A component with `contamination_flag = true` carries this tag permanently in its record even after clearing — later stations and re-salvage doctrine can see the history, consistent with the file's own re-triage doctrine already requiring provenance tags for prior service history.
 
-**Status after this pass:** the routing-workflow and tagging-schema thirds of TS-002's three-item gap now have real specification. The third — a hazard-class-specific pass/fail decontamination *standard* with numeric or testable criteria — correctly stays open, because it depends on EC-014 (encapsulation standard) and, for non-decontaminable disposition, on GR-003 (disposal doctrine), neither of which this file owns or can resolve unilaterally. TS-002 remains **Open**, Blocking Yes unchanged — this pass reduces what's missing to exactly the two upstream dependencies, it does not close the unknown.
+**Status after this pass:** the routing-workflow and tagging-schema thirds of TS-002's three-item gap now have real specification. The third — a hazard-class-specific pass/fail decontamination *standard* with numeric or testable criteria — correctly stays open, because it depends on EC-014 (`Admin/Ethical_Constraints.md`) (encapsulation standard) and, for non-decontaminable disposition, on GR-003 (disposal doctrine), neither of which this file owns or can resolve unilaterally. TS-002 remains **Open**, Blocking Yes unchanged — this pass reduces what's missing to exactly the two upstream dependencies, it does not close the unknown.
 
 ---
 
@@ -854,7 +854,7 @@ Cross-reference `Architecture/Forge_flow.md` FL-001.
 
 **Description:** Originally logged here as "CT-002" — a naming collision with `Admin/Canonical_Terms.md`'s own CT-002, which is the same unknown (Component Library Schema undefined) independently logged eleven days earlier, 2026-05-26. Two sidecars tracked one real question, each with its own Owner field pointing at the *other* file rather than itself.
 
-**Resolution:** Discharged 2026-07-21 (human-directed, surfaced by `Automation/integrity_check.py`'s Unknown Pass). `Admin/Canonical_Terms.md`'s CT-002 is the canonical entry going forward — `Unknowns.md`'s global index already attributed it there before this discharge, making it the de facto owner in practice even though neither file's own Owner field said so. This entry stays here per the Resolved Unknown Discharge Procedure's non-deletion principle (`Admin/Forge_Audit_Kit.md`) — permanent search anchor, ID renamed from the colliding `CT-002` to this file's own local `TS-` convention so it no longer claims a prefix `Admin/Canonical_Terms.md` owns. The underlying question — Component Library Schema — remains genuinely open; only the duplicate tracking is resolved. Still blocks this file's Specification promotion via `Admin/Canonical_Terms.md` CT-002.
+**Resolution:** Discharged 2026-07-21 (human-directed, surfaced by `Automation/integrity_check.py`'s Unknown Pass). `Admin/Canonical_Terms.md`'s CT-002 (`Admin/Canonical_Terms.md`) is the canonical entry going forward — `Unknowns.md`'s global index already attributed it there before this discharge, making it the de facto owner in practice even though neither file's own Owner field said so. This entry stays here per the Resolved Unknown Discharge Procedure's non-deletion principle (`Admin/Forge_Audit_Kit.md`) — permanent search anchor, ID renamed from the colliding `CT-002` to this file's own local `TS-` convention so it no longer claims a prefix `Admin/Canonical_Terms.md` owns. The underlying question — Component Library Schema — remains genuinely open; only the duplicate tracking is resolved. Still blocks this file's Specification promotion via `Admin/Canonical_Terms.md` CT-002.
 
 **Lessons Learned:** an ID prefix collision between two files (`CT-` used both by its rightful owner and, coincidentally or by copy, by a second file) went undetected for 46 days because nothing checked for it — the same class of gap `Admin/Auditor_Protocols.md`'s AP-025/AP-026 named for version strings and duplicated definitions, now confirmed to apply to sidecar IDs too. `Automation/integrity_check.py`'s Unknown Pass (built specifically to catch this class of bug) found it on its first run against the repository.
 
@@ -978,6 +978,8 @@ until a scoring owner and cadence are assigned and logged here.
 ---
 
 ### Resolution Log
+
+- 2026-10-30: **X3 mechanical citation retrofit (Operations pass).** 24 bare colliding-prefix citations qualified with their owning File.md per PKC-003 (Kit v1.30 Governance Sidecar ID Reference; per-ID grounding: Unknowns active index). Citation-form-only: no ID renumbered, no Unknown opened or closed, no Spec Gate advanced, frozen history untouched. Out-of-whitelist bare IDs were left bare and reported to the human. (Vibe, Repo Custodian — delegated maintenance per Decision Brief 2026-10-29 item 4A.)
 
 - 2026-10-25: **ASM-003 citation qualified (PKC-003 ruling; no doctrine change).** The `Tooling_Inventory_Snapshot` field's rationale cited a bare "ASM-003" meaning Forge_flow's tooling-known assumption, while this file's own ASM-003 is the Gate_01 safety-screening assumption. It now names `Architecture/Forge_flow.md` and says it is not this file's own. No field, rule, Unknown or Status changed. Human-directed.
 
@@ -1131,7 +1133,7 @@ Mandatory re-audit conditions for this document:
 - Human/AI Oversight State requirement removed for Strategic or Critical tier components
 - TS-DS-001 resolved without explicit audit cycle and cross-validation with Gate_07_Utilization.md
 - Ethical Anchor field absent, altered, or does not match canonical string
-- §XII (TIL/TAL/TCM/TMV) cited as binding, constitutional, or CIR-integrated without GOV-008 existing and CIR_Gov.md being ratified
+- §XII (TIL/TAL/TCM/TMV) cited as binding, constitutional, or CIR-integrated without GOV-008 (`Admin/Governance_Charter.md`) existing and CIR_Gov.md being ratified
 - §XII treated as having raised this file's Spec Gates count without an actual gate pass on record
 - TMV scores or TCM capability rungs cited in an actual Decision Point D decision without a scoring owner assigned (TS-008) or a v0-tooling check performed (TS-007)
 
