@@ -16,7 +16,7 @@
 | Body Stability   | Volatile                                                            |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-10-30 — Vibe (Repo Custodian, delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A): X3 mechanical citation retrofit (Tests pass) — 7 bare colliding-prefix citations qualified with their owning File.md per PKC-003 (Kit v1.30 Governance Sidecar ID Reference; per-ID grounding: Unknowns active index). Citation-form-only; no ID renumbered; frozen history untouched; no gate advanced; Open Unknowns unchanged. Prior: 2026-10-03 (third pass) — LE-0 build-out under §VIII: run sheet (phases 0–5), evidence schema, instrumentation checklist, result-note template, epistemic success/failure table; Status, Spec Gates, Open Unknowns unchanged; human-directed. Prior: 2026-10-03 (second pass) — LT-004/006/007 stubs. Prior: 2026-10-03 — LT-005 stub. Prior: 2026-10-01 — LT-003/LE-0 definition + LT-002. Prior: 2026-09-30 — LT-001. Also recorded in the Resolution Log: 2026-08-10 Grok pseudo-audit (findings only, not counted here) and 2026-07-19 designation as the resolved cross-repo merge anchor (human governing authority). Earlier: 2026-05-04 / 2026-06-08. |
+| | Last Audit | 2026-10-30 — Campaign 2 finding repair (human-directed custodian pass; see Resolution Log) |istemic success/failure table; Status, Spec Gates, Open Unknowns unchanged; human-directed. Prior: 2026-10-03 (second pass) — LT-004/006/007 stubs. Prior: 2026-10-03 — LT-005 stub. Prior: 2026-10-01 — LT-003/LE-0 definition + LT-002. Prior: 2026-09-30 — LT-001. Also recorded in the Resolution Log: 2026-08-10 Grok pseudo-audit (findings only, not counted here) and 2026-07-19 designation as the resolved cross-repo merge anchor (human governing authority). Earlier: 2026-05-04 / 2026-06-08. |
 | Auditor          | Vibe — Repo Custodian, 2026-10-30 X3 mechanical citation retrofit (Tests pass; delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A); prior: Grok — LE-0 build-out (human-directed); prior Claude — Retrofit/Auditor |
 | Open Unknowns    | 7                                                                   |
 | Active Disputes  | 0                                                                   |
@@ -65,6 +65,8 @@
 
 ---
 
+- 2026-10-30: **Campaign 2 finding repair (Repo Custodian, delegated line, human-directed fix batch).** X3 completion sweep: bare in-whitelist CF-002 (ASM-04 Assumptions row) qualified with owning file (`Architecture/Cognitive_Frameworks.md`) — closes CAMPAIGN2_AUDIT_40 F1. Citation-form-only; frozen history untouched; no doctrine change.
+
 ## File Purpose
 
 Leviathan is a hostile-environment test framework
@@ -105,7 +107,7 @@ path from Architecture/Cognitive_Frameworks.md.
 | ASM-001 | Deep ocean conditions — pressure, temperature, isolation — are sufficiently analogous to off-world industrial environments to produce transferable test data | Comparison of shared characteristics | Medium | Specific off-world deployment context reveals a disanalogy that invalidates deep-ocean test data for that context |
 | ASM-002 | Failure is the expected and informative outcome — a Leviathan that fails early but teaches clearly is more valuable than one that survives quietly | Test philosophy doctrine | High | Survival-without-insight becomes acceptable if mission scope changes to production demonstration |
 | ASM-003 | Power loss must not result in irrecoverable harm — passive recovery mechanisms are achievable with available hardware | Analog AUV systems (Remus, Seaglider) | Medium | First deployment reveals passive recovery is insufficient under actual conditions |
-| ASM-004 | Multiple AI models from different training lineages provide sufficiently diverse cognitive perspectives to detect correlated failure through disagreement analysis | CF-002 diversity assumption | Low | Correlated failure test protocol (Section VII) characterizes actual reasoning overlap — diversity must be demonstrated |
+| ASM-004 | Multiple AI models from different training lineages provide sufficiently diverse cognitive perspectives to detect correlated failure through disagreement analysis | CF-002 (`Architecture/Cognitive_Frameworks.md`) diversity assumption | Low | Correlated failure test protocol (Section VII) characterizes actual reasoning overlap — diversity must be demonstrated |
 | ASM-005 | Poisoned telemetry injection during swarm tests can be isolated from genuine sensor failures for post-mortem analysis | Test design assumption | Medium | First injection test reveals contamination cannot be reliably isolated — test protocol must be revised |
 
 ---
