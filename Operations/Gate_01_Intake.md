@@ -29,11 +29,11 @@
 | Body Stability   | Volatile                                                            |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-10-30 — Vibe (Repo Custodian, delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A): X3 mechanical citation retrofit (Operations pass) — 17 bare colliding-prefix citations qualified with their owning File.md per PKC-003 (Kit v1.30 Governance Sidecar ID Reference; per-ID grounding: Unknowns active index). Citation-form-only; no ID renumbered; frozen history untouched; no gate advanced; Open Unknowns unchanged. Prior: 2026-08-31 — GI-004/GI-006 joint Closure Event (§7 rewritten as §7.1–7.4; see Resolution Log below); prior: 2026-05-19 |
+| | Last Audit | 2026-10-30 — Campaign 2 finding repair (human-directed custodian pass; see Resolution Log) |x citations qualified with their owning File.md per PKC-003 (Kit v1.30 Governance Sidecar ID Reference; per-ID grounding: Unknowns active index). Citation-form-only; no ID renumbered; frozen history untouched; no gate advanced; Open Unknowns unchanged. Prior: 2026-08-31 — GI-004/GI-006 joint Closure Event (§7 rewritten as §7.1–7.4; see Resolution Log below); prior: 2026-05-19 |
 | Auditor          | Vibe — Repo Custodian, 2026-10-30 X3 mechanical citation retrofit (Operations pass; delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A); prior: Claude — GI-004/GI-006 joint Closure Event: §7 rewritten (Minimum Intake Record schema, superset rule, chain-of-custody doctrine), drafted by Grok, Skeptic-passed with five amendments by ChatGPT, revision independently re-verified by Claude, human-ratified (human-directed), 2026-08-31; prior: Claude — Skeptic/Auditor (actioning ChatGPT audit 2026-05-19)       |
 | Open Unknowns    | 6                                                                   |
 | Active Disputes  | 0                                                                   |
-| Highest Risk     | Medium                                                              |
+| Highest Risk     | High                                                              |
 | Sidecar Link     | #auditor-notes--unknowns                                            |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
@@ -83,6 +83,8 @@
   (Architecture/Facilities.md — FA-001 (`Architecture/Facilities.md`))
 
 ---
+
+- 2026-10-30: **Campaign 2 finding repair (Repo Custodian, delegated line, human-directed fix batch).** File State Highest Risk recomputed Medium → High per open sidecar maxima (GI-002 Blocking/High, GI-003 High, GI-007 High) — closes CAMPAIGN2_AUDIT_19 F1 (X10 value-miss, understated). No doctrine, Status, Spec Gate, or version change; no other field touched. Audit source: Campaign 2 deposit in Operations/OAudits/.
 
 ## File Purpose
 
