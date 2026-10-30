@@ -29,8 +29,8 @@
 | Body Stability   | Volatile                                                            |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-09-01 — GU-002 Closure Event: §5 rewritten as an explicit retirement interface contract (Payment via Specification); prior: 2026-05-19; revised 2026-06-08 |
-| Auditor          | Claude — GU-002 Closure Event: §5.1–5.6 retirement handoff interface contract integrated, drafted by Grok across two revisions, Skeptic-passed by ChatGPT (four amendments, then confirmed Skeptic-ready), independently re-verified by Claude (caught understated tag-absent language and a stale Drift Indicator entry), human-ratified (human-directed), 2026-09-01; prior: Claude — Retrofit/Auditor |
+| Last Audit       | 2026-10-30 — Vibe (Repo Custodian, delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A): X3 mechanical citation retrofit (Operations pass) — 16 bare colliding-prefix citations qualified with their owning File.md per PKC-003 (Kit v1.30 Governance Sidecar ID Reference; per-ID grounding: Unknowns active index). Citation-form-only; no ID renumbered; frozen history untouched; no gate advanced; Open Unknowns unchanged. Prior: 2026-09-01 — GU-002 Closure Event: §5 rewritten as an explicit retirement interface contract (Payment via Specification); prior: 2026-05-19; revised 2026-06-08 |
+| Auditor          | Vibe — Repo Custodian, 2026-10-30 X3 mechanical citation retrofit (Operations pass; delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A); prior: Claude — GU-002 Closure Event: §5.1–5.6 retirement handoff interface contract integrated, drafted by Grok across two revisions, Skeptic-passed by ChatGPT (four amendments, then confirmed Skeptic-ready), independently re-verified by Claude (caught understated tag-absent language and a stale Drift Indicator entry), human-ratified (human-directed), 2026-09-01; prior: Claude — Retrofit/Auditor |
 | Open Unknowns    | 4                                                                   |
 | Active Disputes  | 1                                                                   |
 | Highest Risk     | Low                                                                 |
@@ -91,11 +91,11 @@ not a Utilization operation risk.*
   (Operations/Energy.md)
 - Facility siting or operational safety beyond
   logging doctrine (`Architecture/Facilities.md`
-  — FA-001)
+  — FA-001 (`Architecture/Facilities.md`))
 - Formal quality certification or standards
   compliance (not yet assigned — GU-003)
 - FRT floor declaration and v1 economic baseline
-  (`Admin/Economics.md` — EC-002)
+  (`Admin/Economics.md` — EC-002 (`Admin/Ethical_Constraints.md`))
 
 ---
 
@@ -342,7 +342,7 @@ observation.
 - Failures are not blamed — they are classified
   and learned from
 - A weld failure routes feedback to Gate_06
-  Section 3 qualification criteria and GF-006
+  Section 3 qualification criteria and GF-006 (`Operations/Gate_06_Fabrication.md`)
 - A base material failure routes feedback to
   Gate_05_Separation_Thermal.md SC-002
   segregation effectiveness
@@ -359,9 +359,9 @@ are active at v0.
 
 **Path 1 — Gate_06_Fabrication.md:**
 - Weld failure data informs qualification criteria
-  and structural adequacy assessment (GF-006)
+  and structural adequacy assessment (GF-006 (`Operations/Gate_06_Fabrication.md`))
 - Dimensional failure data informs precision
-  ceiling characterization (GF-002)
+  ceiling characterization (GF-002 (`Operations/Gate_06_Fabrication.md`))
 - Wire quality correlation — weld failures on
   internally produced wire feed back to SC-002
   segregation effectiveness and SC-004 wire
@@ -618,7 +618,7 @@ structures — is defined at minimum content level
 but not at schema level. Cross-forge comparison
 requires compatible record structures.
 
-*Grok review 2026-08-15: Resolution Path adequate. FN-001 still Open (spec-complete per Unknowns.md v4.55 but not closed); GI-006 real. No closure.*
+*Grok review 2026-08-15: Resolution Path adequate. FN-001 still Open (spec-complete per Unknowns.md v4.55 but not closed); GI-006 (`Operations/Gate_01_Intake.md`) real. No closure.*
 
 **Why It Matters:** Utilization data contributed
 to Architecture/Forge_Net.md is only comparable
@@ -708,15 +708,15 @@ read as silently deciding the automatic-vs-operator question.
 - **Payment type:** Specification
 - **Basis:** §5.1–5.6 (`Operations/Gate_07_Utilization.md`, integrated 2026-09-01) plus the reciprocal "Retirement handoff from Gate_07 (GU-002 interface)" subsection (`Operations/Gate_02_Triage.md`, same date). Establishes the record/recommend/decide interface contract, gap-tolerant field schema, advisory classification mapping, and tag/degraded-handoff behavior — the latter explicitly distinguishing a missing digital handoff record (no automatic hold) from a missing physical tag (Gate_02's existing mandatory re-triage-if-tag-absent rule applies unweakened). A stale Drift Indicator entry in this file, which still described the handoff format as "unvalidated," was corrected in the same pass to reflect specification-level cross-validation while preserving the operational-cycle confidence residual.
 - **Proposer:** Grok — Synthesizer, 2026-09-01. Drafted the original interface contract (Direction B, joint Gate_07/Gate_02), produced Revision 1 addressing four amendments from a ChatGPT Skeptic pass (removing an "TS-DS-001 Position B encoded" claim that risked silently deciding Gate_02's actual TS-DS-001; separating handoff-record availability from re-triage-initiation authority; correcting the cross-validation framing since no pre-existing Gate_02 retirement-intake schema existed to validate against; making `utilization_record_ref` gap-tolerant), then produced Revision 2 addressing Claude's independent finding that §5.5's tag-loss language ("Gate_02 may route") read as discretionary against Gate_02's own existing "mandatory tag system; re-triage if tag absent" rule.
-- **Verifier:** Claude — Verifier, 2026-09-01. Independently confirmed the two-dispute characterization against live source (Gate_02's TS-DS-001 concerns automatic-vs-operator re-triage, Medium risk; Gate_07's GU-DS-001 concerns fitness-for-purpose ownership, Low risk, already carrying a "Position B is standing practice" note from Grok's 2026-08-15 review) — both distinct disputes are correctly left untouched by this closure. Searched `Gate_02_Triage.md` directly for any existing hold rule tied to a missing *handoff record* (as opposed to a missing tag) — none found, so the degraded-record-path language weakens nothing pre-existing. Found the existing "Mandatory tag system; re-triage if tag absent" rule and confirmed the original draft's "Gate_02 may route" tag-loss language understated it — a real finding, addressed in Revision 2. Independently found a second, unrelated stale reference (the Drift Indicator entry) that neither agent's integration notes had caught, the same class of gap fixed for GMP-006's cross-references. Verdict: **Pass — Ready for Human Ratification.**
-- **Independence attestation:** Grok (Proposer), ChatGPT (pre-integration Skeptic pass, four amendments requested, then a second pass confirming Revision 1 Skeptic-ready), and Claude (Verifier, findings on the tag-absent wording and the stale Drift Indicator, both independent of either agent's own review) are three different agent instances. Same separated-passes pattern as GMP-010, GI-004/GI-006, and GMP-006.
+- **Verifier:** Claude — Verifier, 2026-09-01. Independently confirmed the two-dispute characterization against live source (Gate_02's TS-DS-001 concerns automatic-vs-operator re-triage, Medium risk; Gate_07's GU-DS-001 concerns fitness-for-purpose ownership, Low risk, already carrying a "Position B is standing practice" note from Grok's 2026-08-15 review) — both distinct disputes are correctly left untouched by this closure. Searched `Gate_02_Triage.md` directly for any existing hold rule tied to a missing *handoff record* (as opposed to a missing tag) — none found, so the degraded-record-path language weakens nothing pre-existing. Found the existing "Mandatory tag system; re-triage if tag absent" rule and confirmed the original draft's "Gate_02 may route" tag-loss language understated it — a real finding, addressed in Revision 2. Independently found a second, unrelated stale reference (the Drift Indicator entry) that neither agent's integration notes had caught, the same class of gap fixed for GMP-006 (`Admin/Governance_Migration_Protocol.md`)'s cross-references. Verdict: **Pass — Ready for Human Ratification.**
+- **Independence attestation:** Grok (Proposer), ChatGPT (pre-integration Skeptic pass, four amendments requested, then a second pass confirming Revision 1 Skeptic-ready), and Claude (Verifier, findings on the tag-absent wording and the stale Drift Indicator, both independent of either agent's own review) are three different agent instances. Same separated-passes pattern as GMP-010 (`Admin/Governance_Migration_Protocol.md`), GI-004 (`Operations/Gate_01_Intake.md`)/GI-006 (`Operations/Gate_01_Intake.md`), and GMP-006.
 - **Human ratification:** Not Mandatory under `Admin/Auditor_Protocols.md`'s Unknown Closure Authority (Risk: Medium, not Critical/High) — offered and accepted anyway.
 - **Recording location:** this sidecar entry (primary, complete); `Unknowns.md` Active Index entry removed, Audit Trail note added, same pass.
 - **Human ratification record:** Ratified by Human Governing Authority, 2026-09-01 ("Good deal! Let's get this ratified too."). Proposer (Grok) and Verifier (Claude) findings both reviewed; no unresolved objection.
 
 **Resolution:** Closed 2026-09-01 via §5.1–5.6 and the Gate_02 reciprocal subsection, integrated the same day. Full Closure Event above.
 
-**Residuals:** Operational exercise of at least one real retirement handoff (confidence upgrade only, same pattern as GI-004/GI-006), ASM-006 empirical validation, GU-001 (metric schema may later enrich the fields defined here), Gate_02's TS-DS-001 (automatic vs. operator-initiated re-triage), and Gate_07's own GU-DS-001 (fitness-for-purpose ownership) all remain Open. Risk and Priority intentionally unchanged.
+**Residuals:** Operational exercise of at least one real retirement handoff (confidence upgrade only, same pattern as GI-004 (`Operations/Gate_01_Intake.md`)/GI-006 (`Operations/Gate_01_Intake.md`)), ASM-006 empirical validation, GU-001 (metric schema may later enrich the fields defined here), Gate_02's TS-DS-001 (automatic vs. operator-initiated re-triage), and Gate_07's own GU-DS-001 (fitness-for-purpose ownership) all remain Open. Risk and Priority intentionally unchanged.
 
 ---
 
@@ -781,7 +781,7 @@ externally observable without instrumentation.
 At v0, the forge learns from observable failures
 only.
 
-*Grok review 2026-08-15: Resolution Path honest about v0 limits; GF-006 cross-ref real and still Open. Blocking=No correctly left (acknowledged limitation, not start-interlock). No closure.*
+*Grok review 2026-08-15: Resolution Path honest about v0 limits; GF-006 (`Operations/Gate_06_Fabrication.md`) cross-ref real and still Open. Blocking=No correctly left (acknowledged limitation, not start-interlock). No closure.*
 
 **Why It Matters:** Safety-critical and load-bearing
 parts may exhibit silent failure progression before
@@ -795,12 +795,12 @@ needs a defined upgrade path.
 - Define upgrade path — strain gauges, temperature
   sensors, vibration monitoring on high-criticality
   parts as first instrumentation step.
-- Safety-critical parts per GF-006 flagged for
+- Safety-critical parts per GF-006 (`Operations/Gate_06_Fabrication.md`) flagged for
   shorter inspection intervals.
 - Payment via Specification — once instrumentation
   capability exists and silent failure detection
   is validated, move to Section 3 as Measured.
-- Cross-reference: ASM-003, GF-006,
+- Cross-reference: ASM-003, GF-006 (`Operations/Gate_06_Fabrication.md`),
   Architecture/Components.md Baseline Observability.
 
 ---
@@ -840,6 +840,8 @@ different owning file. FRT floor calibration closes both.
 ---
 
 ### Resolution Log
+
+- 2026-10-30: **X3 mechanical citation retrofit (Operations pass).** 16 bare colliding-prefix citations qualified with their owning File.md per PKC-003 (Kit v1.30 Governance Sidecar ID Reference; per-ID grounding: Unknowns active index). Citation-form-only: no ID renumbered, no Unknown opened or closed, no Spec Gate advanced, frozen history untouched. Out-of-whitelist bare IDs were left bare and reported to the human. (Vibe, Repo Custodian — delegated maintenance per Decision Brief 2026-10-29 item 4A.)
 
 - 2026-08-15: **Grok review round (Gate_07 sequence continuation).** All 5 GU unknowns (GU-001–005) reviewed. Last Reviewed bumped; review markers added. Cross-refs verified real (FN-001 still Open/spec-complete per Unknowns.md v4.55, GI-006, Gate_02_Triage.md, GF-006, TR-002, Trajectories.md, Ship_of_Theseus.md). GU-DS-001 standing doctrine (Gate_07 records / Gate_02 decides) consistent. Zero closures, zero Blocking flips, zero Priority changes. Spec Gates left locked at 0/6. Human-directed.
 
@@ -892,7 +894,7 @@ Gate_07_Utilization:
 | Feedback path tagging abandoned in favor of unstructured free-text records | Explicit feedback path tagging is permanent doctrine — unstructured records do not route to the decisions they can improve |
 | GU-001 schema remains undefined when cross-forge utilization comparison is attempted | Schema compatibility is prerequisite for cross-forge learning — comparison without compatible schemas produces misleading patterns |
 | GU-002 gap-tolerant format specified but never exercised through a real retirement cycle | Handoff format cross-validated with Gate_02 as of 2026-09-01 (Payment via Specification); operational-cycle confidence upgrade remains a separate, non-blocking residual — do not treat first-exercise gaps as a specification defect |
-| Safety-critical parts per GF-006 not flagged for shorter inspection intervals | Silent failure risk is higher for load-bearing parts — standard inspection interval is insufficient |
+| Safety-critical parts per GF-006 (`Operations/Gate_06_Fabrication.md`) not flagged for shorter inspection intervals | Silent failure risk is higher for load-bearing parts — standard inspection interval is insufficient |
 | Real-time monitoring introduced as replacement for event-driven logging before v2 instrumentation capability | Continuous monitoring is v2+ capability — introducing before power budget and sensor capability are validated creates infrastructure dependency |
 | FRT logging omitted from cycle close | FRT records are a required output of each cycle close — omission breaks the system health measurement chain and TR-001 input path |
 | Fabrication output tag from Gate_06 not verified at retirement handoff | Tag survival is the traceability chain — unverified tag status at retirement breaks feedback loop between service performance and fabrication origin |
