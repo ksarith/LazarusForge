@@ -124,7 +124,7 @@ This table is a manual, human-facing orientation — a fast answer to "what's ac
 **Important:** much of the system remains experimental. An architectural specification is not evidence that the corresponding physical capability has been demonstrated. This distinction — specified versus demonstrated — is load-bearing throughout the repository, not just in this section.
 
 For the detailed development state, see [`Unknowns.md`](Unknowns.md) and [`Discovery.md`](Discovery.md).  
-Primary remaining gaps include long-term constitutional stability (GOV-005), human override authentication (GOV-006), and the operational hardware unknowns tracked in `Unknowns.md`.
+Primary remaining gaps include long-term constitutional stability (GOV-005 (`Admin/Governance_Charter.md`)), human override authentication (GOV-006 (`Admin/Governance_Charter.md`)), and the operational hardware unknowns tracked in `Unknowns.md`.
 
 No claims of full automation, self-replication, or net-positive economics are made without measurement. All quantitative figures carry confidence levels per [`Admin/Auditor_Protocols.md`](Admin/Auditor_Protocols.md).
 
@@ -276,6 +276,12 @@ Three developments that are not drift, but the founding idea applied more rigoro
 3. **The system salvages its own claims to certainty the same way it salvages materials.** Nothing gets discarded without accounting — not scrap, not a failed hypothesis, not a resolved unknown that later turns out to have been closed too early. The Unknown Budget rule in `Unknowns.md` is the clearest expression of this.
 
 None of this is drift away from the founding idea. It is the founding idea taken more seriously than a workshop floor alone could demand.
+
+## Bookkeeping
+
+- **Last Audit:** 2026-10-30 — X3 citation pass (root closeout): GOV-005 and GOV-006 qualified against their owning file. No doctrine text changed; citation-form-only.
+- **Resolution Log:**
+  - 2026-10-30 — X3 retrofit root closeout (human-ruled disposition, delegated line): the two bare colliding-prefix citations in "Current state (honest orientation)" were qualified as `GOV-005 (`Admin/Governance_Charter.md`)` / `GOV-006 (`Admin/Governance_Charter.md`)`; this Bookkeeping section added as the one-off cascade destination (human direction 2026-10-30; MAQT precedent). README is front-door navigation, not a doctrine file — this section carries audit provenance only and adds no doctrine.
 
 ---
 
