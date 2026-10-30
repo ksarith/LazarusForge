@@ -36,8 +36,8 @@
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-10-24 — Claude (human-directed) Resolution Log backfilled for the 2026-09-14, 2026-09-15 and 2026-09-16 passes documented below and in the section markers, and put in date order, from a Vibe per-file audit; no body text changed. Prior: 2026-09-16 — v0 Logic-Zero Run Sheet's P3–P5 gaps filled with Provisional Defaults (Placeholder): known-good image identity/approval/naming, SHA-256 as the v0 hash algorithm with full-chip scope, minimum tool capability and erase success criteria. All three explicitly Open until first actual hardware designation — no image, hash, or tool chain claimed to exist yet. Prior: 2026-09-15 — CF-006 resolved (Option A, Ratified by James): `Security_Protocols.md`'s "signature-verified bootstrap" language corrected to state this file's actual v0 hash-based floor; no change required to this file's own doctrine. Prior: 2026-09-14 — v0 Logic-Zero Run Sheet added (Proposed/Placeholder, under Firmware Trust Doctrine) and CF-006 cross-reference added to EL-006's Resolution Path. No change to EL-006's Status/Risk/Priority. Prior: 2026-08-09 — Grok pseudo-audit (Skeptic read + minimal fixes); prior: 2026-08-02 corrective merge; 2026-08-02 Threat Model/Heartbeat Token still not Gate-1 audited |
-| Auditor          | Claude — 2026-10-24 log backfill (human-directed, from a Vibe per-file audit); prior: Claude — Retrofit/Auditor; Gemini — Synthesizer (CF-001 parameters); Copilot — drafted Threat Model/Trust Boundary/Firmware Provenance Log restructure (human-directed), 2026-08-02; Grok — drafted Heartbeat Token Cryptography spec and reviewed Copilot's draft (human-directed), 2026-08-02; Claude — verified against source, corrective merge (human-directed), 2026-08-02; Grok pseudo-audit 2026-08-09 — no Spec Gate promotion |
+| Last Audit       | 2026-10-30 — Vibe (Repo Custodian, delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A): X3 mechanical citation retrofit (Operations pass) — 7 bare colliding-prefix citations qualified with their owning File.md per PKC-003 (Kit v1.30 Governance Sidecar ID Reference; per-ID grounding: Unknowns active index). Citation-form-only; no ID renumbered; frozen history untouched; no gate advanced; Open Unknowns unchanged. Prior: 2026-10-24 — Claude (human-directed) Resolution Log backfilled for the 2026-09-14, 2026-09-15 and 2026-09-16 passes documented below and in the section markers, and put in date order, from a Vibe per-file audit; no body text changed. Prior: 2026-09-16 — v0 Logic-Zero Run Sheet's P3–P5 gaps filled with Provisional Defaults (Placeholder): known-good image identity/approval/naming, SHA-256 as the v0 hash algorithm with full-chip scope, minimum tool capability and erase success criteria. All three explicitly Open until first actual hardware designation — no image, hash, or tool chain claimed to exist yet. Prior: 2026-09-15 — CF-006 resolved (Option A, Ratified by James): `Security_Protocols.md`'s "signature-verified bootstrap" language corrected to state this file's actual v0 hash-based floor; no change required to this file's own doctrine. Prior: 2026-09-14 — v0 Logic-Zero Run Sheet added (Proposed/Placeholder, under Firmware Trust Doctrine) and CF-006 cross-reference added to EL-006's Resolution Path. No change to EL-006's Status/Risk/Priority. Prior: 2026-08-09 — Grok pseudo-audit (Skeptic read + minimal fixes); prior: 2026-08-02 corrective merge; 2026-08-02 Threat Model/Heartbeat Token still not Gate-1 audited |
+| Auditor          | Vibe — Repo Custodian, 2026-10-30 X3 mechanical citation retrofit (Operations pass; delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A); prior: Claude — 2026-10-24 log backfill (human-directed, from a Vibe per-file audit); prior: Claude — Retrofit/Auditor; Gemini — Synthesizer (CF-001 parameters); Copilot — drafted Threat Model/Trust Boundary/Firmware Provenance Log restructure (human-directed), 2026-08-02; Grok — drafted Heartbeat Token Cryptography spec and reviewed Copilot's draft (human-directed), 2026-08-02; Claude — verified against source, corrective merge (human-directed), 2026-08-02; Grok pseudo-audit 2026-08-09 — no Spec Gate promotion |
 | Open Unknowns    | 9                                                                   |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | High                                                                |
@@ -108,7 +108,7 @@ entire governance substrate.*
 - Forge-Net network implementation
   (`Architecture/Forge_Net.md`)
 - Facility siting for electronics work areas
-  (`Architecture/Facilities.md` — FA-001)
+  (`Architecture/Facilities.md` — FA-001 (`Architecture/Facilities.md`))
 
 ---
 
@@ -189,7 +189,7 @@ component with backdoored logic passes every electrical
 test. Targeted hardware supply chain attacks plant
 compromised components in expected salvage pathways.
 ASM-002 and ASM-003 reflect the correlated failure
-risk identified in CF-002 — diversity must be
+risk identified in CF-002 (`Architecture/Cognitive_Frameworks.md`) — diversity must be
 demonstrated, not assumed. ASM-005 highlights the
 recursive trust problem: a watchdog used to detect
 compromise must itself be uncompromised. Discrete
@@ -589,7 +589,7 @@ v0 *practice* (EL-006's Payment via Specification path) requires
 this plus human direction, and still does not close EL-006.
 
 **Never claim from this sheet alone:** Measured firmware trust,
-SEC-007b progress, or universal MCU applicability. See CF-006
+SEC-007b (`Admin/Security_Protocols.md`) progress, or universal MCU applicability. See CF-006
 (Resolved 2026-09-15) for the related discrepancy about what "per
 Electronics.md doctrine" can honestly be claimed to require.
 
@@ -1087,7 +1087,7 @@ MAC's existing pre-implementation role — but MAC should never sit in the
 runtime configuration path itself. See the Drift Indicator added below.
 
 Cross-reference: `Architecture/Cognitive_Frameworks.md`
-Framework D, CF-002 correlated AI failure modes.
+Framework D, CF-002 (`Architecture/Cognitive_Frameworks.md`) correlated AI failure modes.
 
 ---
 
@@ -1182,7 +1182,7 @@ mechanical ones.
   Forge energy infrastructure
 - `Architecture/Cognitive_Frameworks.md` —
   TMR philosophy (Framework D), CF-001 watchdog
-  standard, CF-002 correlated failure modes
+  standard, CF-002 (`Architecture/Cognitive_Frameworks.md`) correlated failure modes
 
 ---
 
@@ -1490,7 +1490,7 @@ lineage, or supply chain origin, creating
 correlated failure modes that bypass TMR
 protection.
 
-*Grok review 2026-08-15: Resolution Path strong (adversarial testing). CF-002 cross-ref real. No closure.*
+*Grok review 2026-08-15: Resolution Path strong (adversarial testing). CF-002 (`Architecture/Cognitive_Frameworks.md`) cross-ref real. No closure.*
 
 **Why It Matters:** TMR only works if failures
 are independent. Correlated failures produce
@@ -1508,7 +1508,7 @@ answer rather than a detectable disagreement.
   components — silicon family, firmware source,
   thermal history.
 - Cross-reference `Architecture/Cognitive_Frameworks.md`
-  CF-002 for AI consensus correlated failure
+  CF-002 (`Architecture/Cognitive_Frameworks.md`) for AI consensus correlated failure
   parallel.
 - Payment via Specification — once independence
   is demonstrated through adversarial testing,
@@ -1610,6 +1610,8 @@ exists and is cross-referenced from §IV.
 ---
 
 ### Resolution Log
+
+- 2026-10-30: **X3 mechanical citation retrofit (Operations pass).** 7 bare colliding-prefix citations qualified with their owning File.md per PKC-003 (Kit v1.30 Governance Sidecar ID Reference; per-ID grounding: Unknowns active index). Citation-form-only: no ID renumbered, no Unknown opened or closed, no Spec Gate advanced, frozen history untouched. Out-of-whitelist bare IDs were left bare and reported to the human. (Vibe, Repo Custodian — delegated maintenance per Decision Brief 2026-10-29 item 4A.)
 
 - 2026-10-24: Resolution Log backfilled for three September passes and put in date order (human-directed, from a Vibe per-file audit; each finding checked against source first). No body text, sidecar entry, Unknown or Spec Gate changed.
 
