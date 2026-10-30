@@ -16,8 +16,8 @@
 | Body Stability   | Volatile                                                            |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-10-03 (third pass) — LE-0 build-out under §VIII: run sheet (phases 0–5), evidence schema, instrumentation checklist, result-note template, epistemic success/failure table; Status, Spec Gates, Open Unknowns unchanged; human-directed. Prior: 2026-10-03 (second pass) — LT-004/006/007 stubs. Prior: 2026-10-03 — LT-005 stub. Prior: 2026-10-01 — LT-003/LE-0 definition + LT-002. Prior: 2026-09-30 — LT-001. Also recorded in the Resolution Log: 2026-08-10 Grok pseudo-audit (findings only, not counted here) and 2026-07-19 designation as the resolved cross-repo merge anchor (human governing authority). Earlier: 2026-05-04 / 2026-06-08. |
-| Auditor          | Grok — LE-0 build-out (human-directed); prior Claude — Retrofit/Auditor |
+| Last Audit       | 2026-10-30 — Vibe (Repo Custodian, delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A): X3 mechanical citation retrofit (Tests pass) — 7 bare colliding-prefix citations qualified with their owning File.md per PKC-003 (Kit v1.30 Governance Sidecar ID Reference; per-ID grounding: Unknowns active index). Citation-form-only; no ID renumbered; frozen history untouched; no gate advanced; Open Unknowns unchanged. Prior: 2026-10-03 (third pass) — LE-0 build-out under §VIII: run sheet (phases 0–5), evidence schema, instrumentation checklist, result-note template, epistemic success/failure table; Status, Spec Gates, Open Unknowns unchanged; human-directed. Prior: 2026-10-03 (second pass) — LT-004/006/007 stubs. Prior: 2026-10-03 — LT-005 stub. Prior: 2026-10-01 — LT-003/LE-0 definition + LT-002. Prior: 2026-09-30 — LT-001. Also recorded in the Resolution Log: 2026-08-10 Grok pseudo-audit (findings only, not counted here) and 2026-07-19 designation as the resolved cross-repo merge anchor (human governing authority). Earlier: 2026-05-04 / 2026-06-08. |
+| Auditor          | Vibe — Repo Custodian, 2026-10-30 X3 mechanical citation retrofit (Tests pass; delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A); prior: Grok — LE-0 build-out (human-directed); prior Claude — Retrofit/Auditor |
 | Open Unknowns    | 7                                                                   |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | High                                                                |
@@ -43,7 +43,7 @@
 - Relationship to Lazarus Forge
 - Correlated AI failure test criteria —
   poisoned telemetry injection protocol
-  (CF-002 resolution path)
+  (CF-002 (`Architecture/Cognitive_Frameworks.md`) resolution path)
 - Leviathan Extensions Framework (A and B)
 - Knowledge classification tiers
 - Anti-pattern safeguards
@@ -93,7 +93,7 @@ Section VII adds the correlated AI failure test
 protocol — the concrete test criteria for
 detecting whether multi-agent consensus is
 producing genuine agreement or amplified shared
-blind spots. This closes the CF-002 resolution
+blind spots. This closes the CF-002 (`Architecture/Cognitive_Frameworks.md`) resolution
 path from Architecture/Cognitive_Frameworks.md.
 
 ---
@@ -335,7 +335,7 @@ unless explicitly justified.
 
 ## VII. Correlated AI Failure Test Protocol
 
-*Closes CF-002 resolution path from
+*Closes CF-002 (`Architecture/Cognitive_Frameworks.md`) resolution path from
 Architecture/Cognitive_Frameworks.md.
 Added 2026-06-08 following Gemini Synthesizer
 analysis. Confidence: Analogous.*
@@ -343,7 +343,7 @@ analysis. Confidence: Analogous.*
 The multi-agent audit cycle — the primary error
 detection mechanism in the repository — assumes
 that different AI models provide independent
-perspectives. CF-002 identified the risk that
+perspectives. CF-002 (`Architecture/Cognitive_Frameworks.md`) identified the risk that
 models sharing training assumptions or data
 lineage may arrive at identical erroneous
 conclusions under ambiguous conditions, producing
@@ -503,7 +503,7 @@ at low continuous compute cost.
 
 **Envelope fit:** Compatible with small-class and dormancy budgets if layers are cheap. Deep class can add more sensors without changing the loop shape.
 
-**What would kill this candidate:** Systematic inability to ration for long-horizon goals under ambiguity (always local greedy), or correlated failure across units that all share the same priority table (links to §VII / CF-002).
+**What would kill this candidate:** Systematic inability to ration for long-horizon goals under ambiguity (always local greedy), or correlated failure across units that all share the same priority table (links to §VII / CF-002 (`Architecture/Cognitive_Frameworks.md`)).
 
 #### Candidate B — Deliberative / uncertainty-gated planning
 
@@ -544,7 +544,7 @@ cell, not a vehicle, not a swarm, not a pressure-hull prototype.
 |-------|------------------|---------|
 | **Power** | Instrumented pack + logger; cold soak optional; load-shed script | LT-001 (path toward Measured), LT-002 (cold-cycle derate) |
 | **Autonomy** | **One** named candidate (A or B above) with logged decision loop | LT-003 |
-| **Sensing** | Dual sensors + ability to inject false telemetry | §VII / CF-002; feeds LT-004 later |
+| **Sensing** | Dual sensors + ability to inject false telemetry | §VII / CF-002 (`Architecture/Cognitive_Frameworks.md`); feeds LT-004 later |
 | **Evidence** | Timestamped log: power state, active layer/plan, sensor values, refuse/degrade events | LT-006 adjacency; distinguishes hardware vs. reasoning vs. bad-telemetry failure |
 | **Recovery** | Explicit safe-state on low energy / uncertainty / constraint conflict | §VI; not full passive buoyancy yet |
 | **Not required yet** | Pressure hull, swarm, peer trust, acoustic mesh, industrial tooling | Deliberately excluded — avoids designing Leviathan-complete before the unknowns that justify its shape are resolved |
@@ -1152,7 +1152,7 @@ isolated from genuine sensor failures.*
 | Trigger | Reason |
 |---------|--------|
 | Survival added as a success criterion | Leviathan is a filter — survival without insight is defined as failure |
-| Correlated failure injection tests skipped after agent mix changes | CF-002 — diversity must be demonstrated after any change to the agent composition |
+| Correlated failure injection tests skipped after agent mix changes | CF-002 (`Architecture/Cognitive_Frameworks.md`) — diversity must be demonstrated after any change to the agent composition |
 | Poisoned telemetry injection isolation requirement removed | ASM-005 — without isolation, test and genuine failure cannot be distinguished |
 | Ethical constraints weakened to allow surveillance or weapons testing | Permanent doctrine — civilian exploratory system only |
 | Extension B cross-unit learning made mandatory or prescriptive | Advisory and non-binding is permanent doctrine — mandatory learning creates runaway cascade risk |
@@ -1446,6 +1446,8 @@ Human-directed.
 ---
 
 ### Resolution Log
+
+- 2026-10-30: **X3 mechanical citation retrofit (Tests pass).** 7 bare colliding-prefix citations qualified with their owning File.md per PKC-003 (Kit v1.30 Governance Sidecar ID Reference; per-ID grounding: Unknowns active index). Citation-form-only: no ID renumbered, no Unknown opened or closed, no Spec Gate advanced, frozen history untouched. Out-of-whitelist bare IDs were left bare and reported to the human. (Vibe, Repo Custodian — delegated maintenance per Decision Brief 2026-10-29 item 4A.)
 
 - 2026-10-24: Last Audit's Prior chain completed (human-directed, from a Vibe per-file audit; each finding checked against source first): it now names the 2026-08-10 pseudo-audit and the 2026-07-19 merge-anchor designation, both already logged below. No section, sidecar, Unknown or Spec Gate changed.
 
