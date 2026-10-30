@@ -19,7 +19,7 @@
 | **Body Stability** | Volatile |
 | **Spec Gates** | 0/6 |
 | **Verification Ref** | `Admin/Verification_Gates.md` |
-| **Last Audit** | 2026-06-11 (Gemini). Body changes since, per the Resolution Log: 2026-07-12 Ethical Anchor correction and template backfill. The 2026-08-10 Grok pseudo-audit (findings only) is not counted per the PKC-020 ruling of 2026-10-25. Header annotated 2026-10-24. |
+| **Last Audit** | 2026-10-30 — Vibe (Repo Custodian, delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A): X3 mechanical citation retrofit (Tests pass) — 1 bare colliding-prefix citations qualified with their owning File.md per PKC-003 (Kit v1.30 Governance Sidecar ID Reference; per-ID grounding: Unknowns active index). Citation-form-only; no ID renumbered; frozen history untouched; no gate advanced; Open Unknowns unchanged. Prior: 2026-06-11 (Gemini). Body changes since, per the Resolution Log: 2026-07-12 Ethical Anchor correction and template backfill. The 2026-08-10 Grok pseudo-audit (findings only) is not counted per the PKC-020 ruling of 2026-10-25. Header annotated 2026-10-24. |
 | **Auditor** | Gemini (Auditor) |
 | **Open Unknowns** | 12 (SR-001 to SR-009 and SR-011 to SR-013; corrected 2026-10-24 from 13, which counted SR-010, Resolved 2026-06-11 and kept in the sidecar as institutional memory; matches the 12 SR rows in `Unknowns.md`) |
 | **Active Disputes** | 0 |
@@ -404,7 +404,7 @@ None are masters. Each occupies a scope. The Raft is not headquarters. It is an 
 | Blocking | Yes — required before v1.0 specification |
 | Owner | Tests/Support_Raft.md |
 | First Logged | 2026-05-04 |
-| Last Reviewed | 2026-10-30 — Vibe (Repo Custodian, delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A): X3 mechanical citation retrofit (Tests pass) — 1 bare colliding-prefix citations qualified with their owning File.md per PKC-003 (Kit v1.30 Governance Sidecar ID Reference; per-ID grounding: Unknowns active index). Citation-form-only; no ID renumbered; frozen history untouched; no gate advanced; Open Unknowns unchanged. Prior: 2026-06-11 |
+| Last Reviewed | 2026-06-11 |
 
 **Description:** Mixed metals in seawater with induced currents from induction charging creates aggressive galvanic corrosion potential across the hull.
 
@@ -669,6 +669,8 @@ None are masters. Each occupies a scope. The Raft is not headquarters. It is an 
 ### Resolution Log
 
 - 2026-10-30: **X3 mechanical citation retrofit (Tests pass).** 1 bare colliding-prefix citations qualified with their owning File.md per PKC-003 (Kit v1.30 Governance Sidecar ID Reference; per-ID grounding: Unknowns active index). Citation-form-only: no ID renumbered, no Unknown opened or closed, no Spec Gate advanced, frozen history untouched. Out-of-whitelist bare IDs were left bare and reported to the human. (Vibe, Repo Custodian — delegated maintenance per Decision Brief 2026-10-29 item 4A.)
+
+- 2026-10-30 (same-day correction): **X3 header annotation relocated.** The X3 pass initially wrote its File State annotation into SR-001's sidecar Last Reviewed row (row-matching error: this file's File State Last Audit row is bold-formatted and was not matched; no other row was affected). SR-001's Last Reviewed is restored to 2026-06-11 and the annotation now sits in the File State Last Audit row. No Unknown status, date or content changed; SR-001 was not reviewed by this pass.
 
 - 2026-10-25: **Header wording updated (PKC-020 ruling; no content change).** The Last Audit annotation that said the logged findings-only pseudo-audit was not counted "pending PKC-020" now cites the ruling of 2026-10-25: a findings-only pseudo-audit does not advance Last Audit (`Admin/Auditor_Protocols.md` v0.45, Rule 10 addendum). No date, field value, Unknown or Spec Gate changed.
 
