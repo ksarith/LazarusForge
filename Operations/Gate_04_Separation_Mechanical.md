@@ -30,8 +30,8 @@
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-09-09 — MG-009 added, diverged duplicate Resolution Log merged; prior: 2026-08-14 (Claude Round 4 review), 2026-08-10 (Grok pseudo-audit, findings only, not counted per the PKC-020 ruling of 2026-10-25), 2026-06-08 rename fixes, 2026-05-15 |
-| Auditor          | Claude — Retrofit/Auditor                                           |
+| Last Audit       | 2026-10-30 — Vibe (Repo Custodian, delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A): X3 mechanical citation retrofit (Operations pass) — 6 bare colliding-prefix citations qualified with their owning File.md per PKC-003 (Kit v1.30 Governance Sidecar ID Reference; per-ID grounding: Unknowns active index). Citation-form-only; no ID renumbered; frozen history untouched; no gate advanced; Open Unknowns unchanged. Prior: 2026-09-09 — MG-009 added, diverged duplicate Resolution Log merged; prior: 2026-08-14 (Claude Round 4 review), 2026-08-10 (Grok pseudo-audit, findings only, not counted per the PKC-020 ruling of 2026-10-25), 2026-06-08 rename fixes, 2026-05-15 |
+| Auditor          | Vibe — Repo Custodian, 2026-10-30 X3 mechanical citation retrofit (Operations pass; delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A); prior: Claude — Retrofit/Auditor                                           |
 | Open Unknowns    | 9                                                                   |
 | Active Disputes  | 1                                                                   |
 | Highest Risk     | Medium                                                              |
@@ -77,7 +77,7 @@
 - Electromagnetic field bias for future versions
   (deferred — `Admin/Trajectories.md`)
 - Facility siting, clearance, and area-of-operation requirements
-  (`Architecture/Facilities.md` — FA-001)
+  (`Architecture/Facilities.md` — FA-001 (`Architecture/Facilities.md`))
 - Detailed sensor specifications or spectroscopy hardware
   (not yet assigned)
 - Powder feedstock handling
@@ -529,7 +529,7 @@ Class A salvage priority.
 - `Tests/Support_Raft.md` — thermal sink for heat pipe output
   in marine configurations
 - `Architecture/Facilities.md` — siting and clearance requirements
-  (FA-001)
+  (FA-001 (`Architecture/Facilities.md`))
 
 **CLF-011 acknowledgment (2026-08-14):** this gate is required to
 emit the `fir_class` batch field (per
@@ -935,7 +935,7 @@ only "flexible sheet"); Gate_03's equivalent row gives rods an
 explicit 200mm threshold. This file has a "Tangling threshold" row
 (no flexible/fibrous material >100mm) that Gate_03 lacks; Gate_03 has
 a "Contamination state" row (no free liquid, no active fuming) that
-this file lacks. Found while scoping FL-002 in
+this file lacks. Found while scoping FL-002 (`Architecture/Forge_flow.md`) in
 `Architecture/Forge_flow.md`.
 
 **Why It Matters:** Both tables are explicitly provisional
@@ -946,17 +946,19 @@ them defeats the purpose of having a mirrored stopgap.
 **Resolution Path:**
 - Not fixed directly — logged per explicit human direction rather
   than corrected, since both tables are placeholders pending
-  FL-002/GR-002 (Reduction method selection) regardless.
-- Closes automatically when FL-002 is resolved — the drifted
+  FL-002 (`Architecture/Forge_flow.md`)/GR-002 (Reduction method selection) regardless.
+- Closes automatically when FL-002 (`Architecture/Forge_flow.md`) is resolved — the drifted
   placeholders get replaced by a validated envelope, not reconciled
   with each other.
 - Cross-module reference: GR-009 in Operations/Gate_03_Reduction.md
-  (same finding, registered on both sides); FL-002 in
+  (same finding, registered on both sides); FL-002 (`Architecture/Forge_flow.md`) in
   Architecture/Forge_flow.md.
 
 ---
 
 ### Resolution Log
+
+- 2026-10-30: **X3 mechanical citation retrofit (Operations pass).** 6 bare colliding-prefix citations qualified with their owning File.md per PKC-003 (Kit v1.30 Governance Sidecar ID Reference; per-ID grounding: Unknowns active index). Citation-form-only: no ID renumbered, no Unknown opened or closed, no Spec Gate advanced, frozen history untouched. Out-of-whitelist bare IDs were left bare and reported to the human. (Vibe, Repo Custodian — delegated maintenance per Decision Brief 2026-10-29 item 4A.)
 
 - 2026-10-25: **Last Audit annotation aligned with the PKC-020 ruling (no content change).** The prior-dates chain in Last Audit listed the 2026-08-10 Grok pseudo-audit alongside real audits. It now says the pass was findings only and is not counted. The Last Audit date (2026-09-09) and every field value are unchanged.
 
