@@ -15,8 +15,8 @@
 | Spec Gates       | 0/6 (not yet audited)                                               |
 | Verification Ref | `Admin/Verification_Gates.md`                                    |
 | First Logged     | 2026-08-04                                                          |
-| Last Audit       | 2026-10-27 — Claude (human-authorized autonomous management; PKC-040): real sidecar review, not a Gate audit — each entry's dependencies checked against its owning file (GR-002 Open; FA-001 Open; SP-006 Open, deferred pending FA-001; EV-001 In Progress; EN-001 In Progress; ECN-002 Open; TR-001 Open); PYC-002 and PYC-004–008 gained Last Reviewed 2026-10-27; entries confirmed accurate; no Status, Risk, Priority or Blocking change. Spec Gates stay 0/6. Prior: — (no Gate audit has been run). Body-changing passes recorded in the Resolution Log: 2026-08-04 ID-collision fix, 2026-08-23 and 2026-08-24 dependency syncs on PYC-001 and PYC-003; the 2026-08-11 Grok pseudo-audit (findings only) is not counted per the PKC-020 ruling of 2026-10-25. Header corrected 2026-10-24. |
-| Auditor          | Claude — 2026-10-27 sidecar review (PKC-040, human-authorized autonomous management; not a formal Gate audit); prior: — (Claude — Synthesizer, PC-/PYC- namespace collision fix only, human-directed, 2026-08-04) |
+| Last Audit       | 2026-10-30 — Vibe (Repo Custodian, delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A): X3 mechanical citation retrofit (Tests pass) — 6 bare colliding-prefix citations qualified with their owning File.md per PKC-003 (Kit v1.30 Governance Sidecar ID Reference; per-ID grounding: Unknowns active index). Citation-form-only; no ID renumbered; frozen history untouched; no gate advanced; Open Unknowns unchanged. Prior: 2026-10-27 — Claude (human-authorized autonomous management; PKC-040): real sidecar review, not a Gate audit — each entry's dependencies checked against its owning file (GR-002 Open; FA-001 Open; SP-006 Open, deferred pending FA-001; EV-001 In Progress; EN-001 In Progress; ECN-002 Open; TR-001 Open); PYC-002 and PYC-004–008 gained Last Reviewed 2026-10-27; entries confirmed accurate; no Status, Risk, Priority or Blocking change. Spec Gates stay 0/6. Prior: — (no Gate audit has been run). Body-changing passes recorded in the Resolution Log: 2026-08-04 ID-collision fix, 2026-08-23 and 2026-08-24 dependency syncs on PYC-001 and PYC-003; the 2026-08-11 Grok pseudo-audit (findings only) is not counted per the PKC-020 ruling of 2026-10-25. Header corrected 2026-10-24. |
+| Auditor          | Vibe — Repo Custodian, 2026-10-30 X3 mechanical citation retrofit (Tests pass; delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A); prior: Claude — 2026-10-27 sidecar review (PKC-040, human-authorized autonomous management; not a formal Gate audit); prior: — (Claude — Synthesizer, PC-/PYC- namespace collision fix only, human-directed, 2026-08-04) |
 | Open Unknowns    | 8 (PYC-001 … PYC-008)                                                 |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | High (thermal processing of mixed salvage; halogen & hazardous-fraction exposure) |
@@ -42,7 +42,7 @@
 - Selection or ownership of the reduction method itself (→ `Operations/Gate_03_Reduction.md` GR-002).
 - Air scrubbing design, performance, or waste-stream doctrine (→ `Operations/Air_Scrubber.md`).
 - Chemical / biological / negative-value waste disposal doctrine (→ GR-003, WA-004).
-- Site assessment, emergency response, or structural safety factors for salvaged furnaces (→ `Architecture/Facilities.md` FA-001, `Admin/Safety_Protocols.md` SP-006, `Architecture/Engineering.md` EN-001).
+- Site assessment, emergency response, or structural safety factors for salvaged furnaces (→ `Architecture/Facilities.md` FA-001 (`Architecture/Facilities.md`), `Admin/Safety_Protocols.md` SP-006 (`Admin/Safety_Protocols.md`), `Architecture/Engineering.md` EN-001).
 - Operating-cost baseline, power-demand characterization, or profitability claims (→ `Admin/Economics.md` ECN-002, `Operations/Energy.md` EV-001, `Admin/Trajectories.md` TR-001).
 - Any Specification-level performance guarantee, yield number, or “self-sufficiency” claim.
 - Fabrication procedures, experimental methodology standards beyond the test concepts listed, or canonical terminology.
@@ -50,7 +50,7 @@
 **Hard preconditions (non-negotiable):**
 - No hot pyrolysis or high-temperature reduction of mixed urban salvage may be proposed, piloted, or claimed under this file until PL-001 and CE-003 are resolved or the feedstock is demonstrably free of halogenated polymers by a validated method.
 - No structural or refractory claims using salvaged materials may advance until EN-001 is closed for the relevant material classes.
-- No site-dependent operational claims (emergency response, real energy balance, tipping-fee economics) until FA-001 is closed.
+- No site-dependent operational claims (emergency response, real energy balance, tipping-fee economics) until FA-001 (`Architecture/Facilities.md`) is closed.
 
 ---
 
@@ -72,7 +72,7 @@ It exists to keep the architectural idea legible, to surface its dependency on a
 | ASM-PYC-002 | A bloomery-type or equivalent high-temperature stage can accept pyrolysis char and separate ferrous / non-ferrous fractions | Historical metallurgical practice; unvalidated on pyrolysis char | Low (Analogous) | GR-002 decision + char characterization |
 | ASM-PYC-003 | Meaningful heat integration between 1100–1300 °C and 400–700 °C stages is thermodynamically possible | Basic heat-transfer principles     | Medium (Analogous) | First energy-balance calculation with bounded yields |
 | ASM-PYC-004 | Off-gas from both stages can be rendered acceptable by the existing Air_Scrubber architecture once upstream halogen load is controlled | Air_Scrubber.md doctrine + external incineration practice | Low | AS-003 closure + residual-Cl acceptance limit |
-| ASM-PYC-005 | Mixed urban salvage will remain highly variable in moisture, metal content, and contamination | Observed Forge development state   | High         | Site-specific characterization after FA-001 |
+| ASM-PYC-005 | Mixed urban salvage will remain highly variable in moisture, metal content, and contamination | Observed Forge development state   | High         | Site-specific characterization after FA-001 (`Architecture/Facilities.md`) |
 
 ---
 
@@ -114,7 +114,7 @@ All quantitative targets that appeared in the archived draft (heat-recapture %, 
 | `Architecture/Chemistry.md` | CE-003 field polymer ID; CE-006 chlorine containment |
 | `Challenges/Waste.md` | WA-002 / WA-004 hazardous & negative-value fractions |
 | `Operations/Energy.md` | EV-001 power demand; any energy-integration claims |
-| `Architecture/Facilities.md` / `Admin/Safety_Protocols.md` | FA-001 site; SP-006 emergency response |
+| `Architecture/Facilities.md` / `Admin/Safety_Protocols.md` | FA-001 (`Architecture/Facilities.md`) site; SP-006 (`Admin/Safety_Protocols.md`) emergency response |
 | `Architecture/Engineering.md` | EN-001 salvaged-material safety factors |
 | `Admin/Economics.md` / `Admin/Trajectories.md` | Cost baseline and any future profitability trajectory |
 
@@ -301,6 +301,8 @@ No test may be run that violates the hard preconditions in Scope Boundary.
 ---
 
 ### Resolution Log
+
+- 2026-10-30: **X3 mechanical citation retrofit (Tests pass).** 6 bare colliding-prefix citations qualified with their owning File.md per PKC-003 (Kit v1.30 Governance Sidecar ID Reference; per-ID grounding: Unknowns active index). Citation-form-only: no ID renumbered, no Unknown opened or closed, no Spec Gate advanced, frozen history untouched. Out-of-whitelist bare IDs were left bare and reported to the human. (Vibe, Repo Custodian — delegated maintenance per Decision Brief 2026-10-29 item 4A.)
 
 - 2026-10-27: **Sidecar review — Last Reviewed added to PYC-002 and PYC-004–PYC-008 (PKC-040, human-authorized autonomous management).** Each entry was genuinely reviewed against its owning file before dating: PYC-002 depends on GR-002 (`Operations/Gate_03_Reduction.md`) — still Open, entry accurate; PYC-004's chain FA-001 → SP-006 (`Admin/Safety_Protocols.md`) confirmed still fully Open (SP-006 deferred pending FA-001); PYC-005 EV-001 In Progress; PYC-006 blocked on GR-002 (Open); PYC-007 EN-001 In Progress; PYC-008 ECN-002/EV-001/FA-001/TR-001 all open. No Status, Risk, Priority, Blocking or dependency text changed — the review confirmed the entries accurate as written. This pass is a sidecar review, not a Gate audit: Spec Gates stay 0/6. Sidecar tables edited: Last Reviewed field added, dated 2026-10-27.
 
