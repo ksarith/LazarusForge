@@ -28,11 +28,11 @@
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 1/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-10-20 — external Skeptic/Auditor sweep (Vibe) checked against source by Claude (human-directed): Resolution Log repaired, TH-002 pointer corrected, Gate_05 rows marked one-way; prior: 2026-06-11 |
+| | Last Audit | 2026-10-30 — Campaign 2 finding repair (human-directed custodian pass; see Resolution Log) |
 | Auditor          | Claude — 2026-10-20 corrections (human-directed, from an external Vibe sweep); Claude (2026-05-31); ChatGPT informal (2026-06-11); Claude retrofit  |
 | Open Unknowns    | 6                                                                   |
 | Active Disputes  | 0                                                                   |
-| Highest Risk     | High                                                                |
+| Mediumest Risk     | High                                                                |
 | Sidecar Link     | #auditor-notes--unknowns                                            |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
@@ -75,6 +75,8 @@
 - Full HVAC regulatory compliance or professional licensure requirements
 
 ---
+
+- 2026-10-30: **Campaign 2 finding repair (Repo Custodian, delegated line, human-directed fix batch).** File State Highest Risk recomputed High → Medium per open sidecar maxima (TH-001/003/004/005 Medium; TH-003 is Blocking-for-Living-Waters but Risk Medium) — closes CAMPAIGN2_AUDIT_17 F1 (X10 value-miss). No doctrine, Status, Spec Gate, or version change.
 
 ## Upstream Dependencies
 
