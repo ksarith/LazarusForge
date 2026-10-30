@@ -32,8 +32,8 @@
 | Body Stability   | Volatile                                                            |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-09-21 — EC-013 Gate_06 safe-state descent sequence filed as Proposed/Placeholder (§EC-013 Descent Sequence); short extension of GF-007 hot-work shutdown. Blocking for hot runs retained. Prior: 2026-09-10 (WAAM/wire-arc DED recognized as future extension of the qualified-wire path §1/§6/§7; LPBF/bound-metal forward-looking note added; Grok-drafted, Claude-verified against source before applying); prior: 2026-08-08; prior: 2026-05-19; revised 2026-06-08 |
-| Auditor          | Grok — EC-013 descent section drafted and filed as Proposed/Placeholder (Path A, human-directed 2026-09-21); prior: Claude — Skeptic/Auditor (actioning ChatGPT audit 2026-05-19) |
+| Last Audit       | 2026-10-30 — Vibe (Repo Custodian, delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A): X3 mechanical citation retrofit (Operations pass) — 17 bare colliding-prefix citations qualified with their owning File.md per PKC-003 (Kit v1.30 Governance Sidecar ID Reference; per-ID grounding: Unknowns active index). Citation-form-only; no ID renumbered; frozen history untouched; no gate advanced; Open Unknowns unchanged. Prior: 2026-09-21 — EC-013 Gate_06 safe-state descent sequence filed as Proposed/Placeholder (§EC-013 Descent Sequence); short extension of GF-007 hot-work shutdown. Blocking for hot runs retained. Prior: 2026-09-10 (WAAM/wire-arc DED recognized as future extension of the qualified-wire path §1/§6/§7; LPBF/bound-metal forward-looking note added; Grok-drafted, Claude-verified against source before applying); prior: 2026-08-08; prior: 2026-05-19; revised 2026-06-08 |
+| Auditor          | Vibe — Repo Custodian, 2026-10-30 X3 mechanical citation retrofit (Operations pass; delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A); prior: Grok — EC-013 descent section drafted and filed as Proposed/Placeholder (Path A, human-directed 2026-09-21); prior: Claude — Skeptic/Auditor (actioning ChatGPT audit 2026-05-19) |
 | Open Unknowns    | 7 substantively open. EC-013 sequence registered as Proposed/Placeholder (does not close EC-013 tracker). |
 | Active Disputes  | 1                                                                   |
 | Highest Risk     | Medium                                                              |
@@ -103,7 +103,7 @@ High risk which reflects process irreversibility.*
   (Operations/Energy.md)
 - Facility siting and fabrication area safety
   beyond operator PPE doctrine
-  (`Architecture/Facilities.md` — FA-001)
+  (`Architecture/Facilities.md` — FA-001 (`Architecture/Facilities.md`))
 - Component Library specification and management
   (`Architecture/Components.md`)
 - Utilization performance metrics
@@ -335,12 +335,12 @@ with uncharacterized material must use:
   pressure systems, or chemically contaminated scrap
 
 Cross-reference: Operations/Gate_02_Triage.md
-contamination routing, GI-003 detection capability.
+contamination routing, GI-003 (`Operations/Gate_01_Intake.md`) detection capability.
 
 **PPE is a prerequisite, not a preference:**
 First arc welding operation does not begin until
 PPE is confirmed available and fitted. See ASM-007.
-Cross-reference: `Architecture/Facilities.md` FA-001
+Cross-reference: `Architecture/Facilities.md` FA-001 (`Architecture/Facilities.md`)
 siting requirements.
 
 ---
@@ -807,7 +807,7 @@ in the network — if one forge's wire consistently
 produces inferior welds, the ecology learns it.
 
 Cross-reference: Admin/Ship_of_Theseus.md grain
-system, GI-006 chain-of-custody doctrine,
+system, GI-006 (`Operations/Gate_01_Intake.md`) chain-of-custody doctrine,
 Architecture/Forge_Net.md quality contribution.
 
 *A fabrication record that documents a failure
@@ -1198,17 +1198,17 @@ fuel separation, extinguisher class requirements,
 ventilation/fire interaction, and hot-work shutdown
 procedures are all absent.
 
-*Grok review 2026-08-15: Resolution Path strong; correctly points fire doctrine to Facilities.md (FA-001) as siting layer. Critical/High Risk preserved; Blocking=No left intact (PPE already hard-prerequisite). No closure.*
+*Grok review 2026-08-15: Resolution Path strong; correctly points fire doctrine to Facilities.md (FA-001 (`Architecture/Facilities.md`)) as siting layer. Critical/High Risk preserved; Blocking=No left intact (PPE already hard-prerequisite). No closure.*
 
 **Spec-depth pass, 2026-08-15 (digital-only — no equipment exists yet):** Checked
 `Architecture/Facilities.md` before drafting, since Grok's review pointed fire
 doctrine there — unlike the WA-002 case earlier this session, Facilities.md's
 Hazard Zone Separation section already has real content (Hot Zone explicitly covers
-arc welding). The one genuine gap was FA-002's clearance radius, resolved this same
+arc welding). The one genuine gap was FA-002 (`Architecture/Facilities.md`)'s clearance radius, resolved this same
 pass using NFPA 51B's established 35ft (11m) standard — see there. That gives this
 entry's fuel-separation item a real number instead of an open placeholder.
 
-*Fuel separation radius:* 35 feet (11m) per FA-002/NFPA 51B, inherited rather than
+*Fuel separation radius:* 35 feet (11m) per FA-002 (`Architecture/Facilities.md`)/NFPA 51B, inherited rather than
 re-derived — this file does not maintain its own separate number. Combustibles
 within that radius are relocated where possible; where not possible, protected with
 fire-resistant covers and a posted fire watch for the duration of hot work plus a
@@ -1220,7 +1220,7 @@ already bounded by nonburnable Hot Zone flooring per Facilities.md Section I.
 Minimum clearance from combustibles inside the curtained area follows the same
 35ft logic scaled down only where a physical barrier (not just distance) is
 substituted — a curtain is a barrier, not a distance-reduction excuse, and doesn't
-independently justify shrinking the FA-002 radius.
+independently justify shrinking the FA-002 (`Architecture/Facilities.md`) radius.
 
 *Extinguisher class requirements:* Class B (flammable liquids — oil, solvent
 residue plausible in salvage feedstock) and Class D (combustible metal fires —
@@ -1233,7 +1233,7 @@ pass most worth operator training emphasis, not just equipment presence.
 *Hot-work shutdown procedure:* Before a welding area is left unattended: (1) arc
 source de-energized and locked out, reusing the same lockout-before-access pattern
 already established at `Gate_04_Separation_Mechanical.md` MG-007 rather than
-inventing a separate one; (2) visual sweep of the work area and the FA-002 radius
+inventing a separate one; (2) visual sweep of the work area and the FA-002 (`Architecture/Facilities.md`) radius
 for smoldering material — slag and hot metal can ignite delayed fires well after
 active welding stops; (3) minimum cool-down hold before the area is considered
 clear, informed by NFPA 51B's standard post-work fire-watch convention rather than
@@ -1292,12 +1292,14 @@ the fire risk profile is materially different.
 - Payment via Specification — once fire doctrine
   is defined and validated, move to Section 2
   as Analogous.
-- Cross-reference: `Architecture/Facilities.md` FA-001,
+- Cross-reference: `Architecture/Facilities.md` FA-001 (`Architecture/Facilities.md`),
   `Operations/Air_Scrubber.md`.
 
 ---
 
 ### Resolution Log
+
+- 2026-10-30: **X3 mechanical citation retrofit (Operations pass).** 17 bare colliding-prefix citations qualified with their owning File.md per PKC-003 (Kit v1.30 Governance Sidecar ID Reference; per-ID grounding: Unknowns active index). Citation-form-only: no ID renumbered, no Unknown opened or closed, no Spec Gate advanced, frozen history untouched. Out-of-whitelist bare IDs were left bare and reported to the human. (Vibe, Repo Custodian — delegated maintenance per Decision Brief 2026-10-29 item 4A.)
 
 - 2026-10-20: **GF-005 re-scoped; DS-001 → GF-DS-001 (human-directed).** (1) GF-005 stays Open, Minor, non-Blocking, but its subject changes from "Utilization stage has no owning file" (satisfied by Gate_07; Grok flagged it stale on 2026-08-15 and the 2026-06-08 log wrongly called it resolved) to the residual governance of the Utilization → fabrication feedback path; the original scope and path are kept in the entry as history. `Unknowns.md` carries the new title (v5.63). (2) The wire-sourcing dispute's bare ID "DS-001" is now GF-DS-001 in its Active Disputes row, note, Drift Indicator and the 2026-05-15 Abandoned Paths row; the bare ID was shared by four different disputes. Dated log entries keep the bare ID as recorded. Raised by an external sweep (Vibe) and by Grok; checked against source by Claude. Human-directed.
 
@@ -1394,7 +1396,7 @@ the fire risk profile is materially different.
 
 **STATUS: Proposed / Placeholder.** Filed 2026-09-21 under Path A (EL-006-P3–P5 style). Short extension of GF-007 hot-work shutdown procedure into an explicit governance-failure descent package. Does **not** carry operational force for hot runs until Skeptic pass and first hot-run validation. **Blocking for hot operational runs remains in force.** Specified ≠ demonstrated.
 
-**Cross-reference:** `Admin/Ethical_Constraints.md` EC-013; EC-004; GF-007 hot-work shutdown (Analogous); `Operations/Air_Scrubber.md` Fire Event — Hot Zone interlock; FA-002 / NFPA 51B fuel-separation radius. Layer A and GF-007 emergency/hot-work stops remain always-on; Layer B must obey them.
+**Cross-reference:** `Admin/Ethical_Constraints.md` EC-013 (`Admin/Ethical_Constraints.md`); EC-004 (`Admin/Ethical_Constraints.md`); GF-007 hot-work shutdown (Analogous); `Operations/Air_Scrubber.md` Fire Event — Hot Zone interlock; FA-002 (`Architecture/Facilities.md`) / NFPA 51B fuel-separation radius. Layer A and GF-007 emergency/hot-work stops remain always-on; Layer B must obey them.
 
 ### Scope of this sequence
 Applies when **arc welding or other hot-work is actively energized** (arc live, or equivalent hot process in progress). Does not apply to idle fabrication areas, cold fit-up, or post-cool monitoring alone. Unlike Gate_05’s molten inventory, an arc can be de-energized immediately without the thermal-shock tradeoffs of a full melt quench.
@@ -1405,7 +1407,7 @@ Governance failure (or explicit human/governance command to enter safe-state) wh
 ### Ordered steps (Layer B)
 1. **De-energize the arc / hot-work source immediately** — Stop welding power. Complete or abandon the current bead only at a safe stopping point if already mid-bead and stopping mid-pool would create a worse hazard; default is immediate de-energize.
 2. **Lock out the energy source** — Reuse lockout-before-access pattern (GF-007 / Gate_04 MG-007 pattern), not a separate invention.
-3. **Visual sweep for smoldering material** — Work area and FA-002 radius (35 ft / 11 m per NFPA 51B inheritance). Slag and hot metal can ignite delayed fires.
+3. **Visual sweep for smoldering material** — Work area and FA-002 (`Architecture/Facilities.md`) radius (35 ft / 11 m per NFPA 51B inheritance). Slag and hot metal can ignite delayed fires.
 4. **Ventilation under Layer A** — If no Fire Event: keep capture/exhaust as needed for fume clearance. If **Fire Event — Hot Zone** (or equivalent): **forced ventilation halts immediately** per Air_Scrubber interlock — do not keep airflow that would feed a fire.
 5. **Minimum cool-down / fire-watch hold** — Per GF-007 / NFPA 51B post-work convention before the area is considered clear (Placeholder numeric duration until first site designation).
 6. **Isolation and no unattended restart** — Area marked; human clearance required before re-energizing hot work. No self-clear.
@@ -1416,7 +1418,7 @@ Governance failure (or explicit human/governance command to enter safe-state) wh
 - Extinguisher class rules (metal-fines vs ABC) remain as in GF-007 — not redefined here.
 
 ### Completion criteria
-Arc/hot-work source de-energized and locked out; visual sweep done; ventilation state consistent with Layer A; cool-down/fire-watch hold started or complete per local rule; durable log present; then Pacifist posture per EC-004 may apply.
+Arc/hot-work source de-energized and locked out; visual sweep done; ventilation state consistent with Layer A; cool-down/fire-watch hold started or complete per local rule; durable log present; then Pacifist posture per EC-004 (`Admin/Ethical_Constraints.md`) may apply.
 
 ### Logging
 Trigger, steps executed/skipped, Layer A overrides, weld/process state at stop, operator identity. Store outside agent runtime session if agents participated.
@@ -1425,7 +1427,7 @@ Trigger, steps executed/skipped, Layer A overrides, weld/process state at stop, 
 - No self-clear or restart without human authorization.
 - Does not replace GF-007 or Air_Scrubber interlocks.
 - Does not resolve GF-007’s remaining open (automatic fire/smoke detection hardware).
-- Filing does not close EC-013, clear Blocking for hot runs, or claim physical validation.
+- Filing does not close EC-013 (`Admin/Ethical_Constraints.md`), clear Blocking for hot runs, or claim physical validation.
 
 ### Residuals (not blocking this filing)
 - Numeric cool-down / fire-watch duration (Placeholder).
@@ -1448,7 +1450,7 @@ additional local triggers specific to Gate_06_Fabrication:
 | Trigger | Reason |
 |---------|--------|
 | Arc welding operation begins without PPE confirmed available and fitted | PPE is a non-negotiable prerequisite — arc eye from UV exposure is permanent and gives no immediate warning. No exceptions. |
-| EC-013 descent sequence absent, removed, or treated as operationally binding for hot runs while still marked Proposed/Placeholder | Specified ≠ demonstrated; Blocking for hot runs must remain visible |
+| EC-013 (`Admin/Ethical_Constraints.md`) descent sequence absent, removed, or treated as operationally binding for hot runs while still marked Proposed/Placeholder | Specified ≠ demonstrated; Blocking for hot runs must remain visible |
 | Layer B descent keeps forced ventilation running against a Fire Event or leaves arc energized after governance-failure stop | Violates GF-007 and Air_Scrubber Layer A priority |
 | Arc welding qualification bypassed to begin fabricating functional parts | Qualification on scrap before functional parts is permanent doctrine — an unqualified weld on a structural component has unknown failure mode |
 | Precision ceiling claimed without GF-002 characterization completed | Uncharacterized ceiling produces overconfident fabrication claims — parts made to assumed tolerance may fail in service silently |
