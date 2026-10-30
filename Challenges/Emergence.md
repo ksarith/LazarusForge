@@ -18,7 +18,7 @@
 | **Status** | Active |
 | **Challenges Subtype** | Problem-Statement |
 | **Version** | v0.3 |
-| **Last Updated** | 2026-10-25 (v0.2 → v0.3, from base v0.2: Priority column added to the Open Unknowns table; EM-004's Risk corrected from Critical to High; prior 2026-10-20 — Status aligned to Active; File State date corrected; prior 2026-08-17) |
+| **Last Updated** | 2026-10-30 — Vibe (Repo Custodian, delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A): X3 mechanical citation retrofit (Challenges pass) — 9 bare colliding-prefix citations qualified with their owning File.md per PKC-003 (Kit v1.30 Governance Sidecar ID Reference; per-ID grounding: Unknowns active index). Citation-form-only; no ID renumbered; frozen history untouched; no gate advanced; Open Unknowns unchanged. Prior: 2026-10-25 (v0.2 → v0.3, from base v0.2: Priority column added to the Open Unknowns table; EM-004's Risk corrected from Critical to High; prior 2026-10-20 — Status aligned to Active; File State date corrected; prior 2026-08-17) |
 | **Owner** | Challenges/ |
 | **Verification Ref** | `Admin/Verification_Gates.md` |
 | **Ethical Anchor** | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
@@ -41,7 +41,7 @@ This file defines the challenge of emergent intelligence as it applies to the La
 
 **This file does not own:**
 - Hardware watchdog specifications → `Architecture/Cognitive_Frameworks.md` (CF-001)
-- Correlated AI failure mode protocols → `Architecture/Cognitive_Frameworks.md` (CF-002)
+- Correlated AI failure mode protocols → `Architecture/Cognitive_Frameworks.md` (CF-002 (`Architecture/Cognitive_Frameworks.md`))
 - Firmware trust and Logic-Zero re-baselining doctrine → `Operations/Electronics.md`
 - Multi-agent consensus verification gates → `Admin/Verification_Gates.md`
 - Closed-loop behavioral feedback mechanics → `Operations/Gate_07_Utilization.md`
@@ -74,7 +74,7 @@ This file exists to establish that emergent intelligence is a reflexive challeng
 |---|---|
 | `Admin/Ethical_Constraints.md` | Anti-Weaponization Doctrine; Life Preservation; Pacifist Operating Posture |
 | `Admin/Governance_Charter.md` | Tier 1 Axiom Q-3 (Corrigibility); constitutional bounds on agent authority |
-| `Architecture/Cognitive_Frameworks.md` | Hardware watchdog standard (CF-001); correlated failure modes (CF-002); Forge Meta-Algorithm (Section IX) |
+| `Architecture/Cognitive_Frameworks.md` | Hardware watchdog standard (CF-001 (`Operations/Electronics.md`)); correlated failure modes (CF-002 (`Architecture/Cognitive_Frameworks.md`)); Forge Meta-Algorithm (Section IX) |
 | `Operations/Electronics.md` | Logic-Zero wipe and reflash doctrine; firmware trust hierarchy |
 | `Admin/Auditor_Protocols.md` | Multi-agent cross-examination protocol; Adversarial Challenge Battery |
 
@@ -84,7 +84,7 @@ This file exists to establish that emergent intelligence is a reflexive challeng
 
 | File | Dependency |
 |---|---|
-| `Architecture/Cognitive_Frameworks.md` | This file defines the challenge that CF-001, CF-002, and Section IX respond to |
+| `Architecture/Cognitive_Frameworks.md` | This file defines the challenge that CF-001 (`Operations/Electronics.md`), CF-002 (`Architecture/Cognitive_Frameworks.md`), and Section IX respond to |
 | `Architecture/Forge_Net.md` | Network trust and drift-detection requirements inherit from this challenge |
 | `Tests/Leviathan_testing.md` | Autonomy constraint architecture and Correlated AI Failure Test Protocol |
 | `Tests/Support_Raft.md` | Oversight architecture for remote autonomous units |
@@ -184,20 +184,21 @@ The Forge itself is not exempt from this standard. A governance architecture tha
 
 | ID | Description | Status | Risk | Priority |
 |---|---|---|---|---|
-| EM-001 | Behavioral opacity detection threshold — at what measurable divergence does watchdog escalation trigger? Requires CF-001 resolution before specification. | Open | High | Major |
+| EM-001 | Behavioral opacity detection threshold — at what measurable divergence does watchdog escalation trigger? Requires CF-001 (`Operations/Electronics.md`) resolution before specification. | Open | High | Major |
 | EM-002 | Correlated failure detection in multi-agent consensus — how does the Forge distinguish genuine independent agreement from amplified shared blind spots? Cross-reference `Tests/Leviathan_testing.md` Correlated AI Failure Test Protocol. | Open | High | Major |
 | EM-003 | Gradual autonomy transition detection — what observable signals distinguish incremental capability expansion from a phase-shift threshold? No current sensor doctrine. | Open | Medium | Minor |
-| EM-004 | Governance substrate integrity under emergent agent access — if an emergent agent gains write access to governance files, what physical or cryptographic backstop prevents constitutional erosion? Mirrors GOV-003, SEC-007. | Open | High | Critical |
+| EM-004 | Governance substrate integrity under emergent agent access — if an emergent agent gains write access to governance files, what physical or cryptographic backstop prevents constitutional erosion? Mirrors GOV-003 (`Admin/Governance_Charter.md`), SEC-007. | Open | High | Critical |
 
 *All four EM entries (EM-001–004) are registered in `Unknowns.md`.*
 
 ---
 
-*See: `Architecture/Cognitive_Frameworks.md` for the hardware watchdog standard (CF-001), correlated failure modes (CF-002), and the Forge Meta-Algorithm (Section IX) that this challenge directly drives. See: `Admin/Verification_Gates.md` for the canonical verification standard governing agent input. See: `Operations/Electronics.md` for the firmware trust and re-baselining doctrines. See: `Operations/Gate_07_Utilization.md` for closed-loop behavioral feedback mechanics. See: `Admin/Governance_Charter.md` Tier 1 Axiom Q-3 for the constitutional corrigibility requirement the Forge holds itself to.*
+*See: `Architecture/Cognitive_Frameworks.md` for the hardware watchdog standard (CF-001 (`Operations/Electronics.md`)), correlated failure modes (CF-002 (`Architecture/Cognitive_Frameworks.md`)), and the Forge Meta-Algorithm (Section IX) that this challenge directly drives. See: `Admin/Verification_Gates.md` for the canonical verification standard governing agent input. See: `Operations/Electronics.md` for the firmware trust and re-baselining doctrines. See: `Operations/Gate_07_Utilization.md` for closed-loop behavioral feedback mechanics. See: `Admin/Governance_Charter.md` Tier 1 Axiom Q-3 for the constitutional corrigibility requirement the Forge holds itself to.*
 
 ---
 
 ## Resolution Log
+- 2026-10-30: **X3 mechanical citation retrofit (Challenges pass).** 9 bare colliding-prefix citations qualified with their owning File.md per PKC-003 (Kit v1.30 Governance Sidecar ID Reference; per-ID grounding: Unknowns active index). Citation-form-only: no ID renumbered, no Unknown opened or closed, no Spec Gate advanced, frozen history untouched. Out-of-whitelist bare IDs were left bare and reported to the human. (Vibe, Repo Custodian — delegated maintenance per Decision Brief 2026-10-29 item 4A.)
 
 - 2026-10-25: **v0.2 → v0.3, from base v0.2 (human-directed, PKC-024; Priorities proposed from each entry's text and approved by the human).** The Open Unknowns table had a Risk column only, and Unknowns.md had been carrying those Risk values in its Priority column. A Priority column is added: EM-001 Major, EM-002 Major, EM-003 Minor, EM-004 Critical. EM-004's Risk cell read Critical, which is not a Risk value (Low / Medium / High); it is corrected to High, and Critical moves to the new Priority column, where it is valid. No Unknown opened or closed; no scope, assumption or Status change.
 
