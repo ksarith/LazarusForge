@@ -16,8 +16,8 @@
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-10-29 — Vibe (Repo Custodian, delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A): X3 mechanical citation retrofit (Architecture pass) — 4 bare colliding-prefix citations in operative body text qualified with their owning File.md per PKC-003 (Kit v1.30 Governance Sidecar ID Reference; per-ID grounding from the Unknowns active index). Citation-form-only; no content change; frozen history untouched; no gate advanced; Open Unknowns unchanged. Prior: 2026-10-20 — external Skeptic/Auditor sweep (Vibe) checked against source by Claude (human-directed): File State refreshed (it had not moved since 2026-06-08 although the log records a 2026-08-10 pseudo-audit and a 2026-09-08 body edit), two log claims annotated, a CO-002 routing note and a consumables note added; prior: 2026-05-14 (Gemini 3 Flash — Skeptic/Auditor); revised 2026-06-08 |
-| Auditor          | Vibe — Repo Custodian, 2026-10-29 X3 mechanical citation retrofit (Architecture pass; delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A); prior: Claude — 2026-10-20 corrections (human-directed, from an external Vibe sweep); Gemini 3 Flash — Skeptic/Auditor |
+| Last Audit       | 2026-10-20 — external Skeptic/Auditor sweep (Vibe) checked against source by Claude (human-directed): File State refreshed (it had not moved since 2026-06-08 although the log records a 2026-08-10 pseudo-audit and a 2026-09-08 body edit), two log claims annotated, a CO-002 routing note and a consumables note added; prior: 2026-05-14 (Gemini 3 Flash — Skeptic/Auditor); revised 2026-06-08 |
+| Auditor          | Claude — 2026-10-20 corrections (human-directed, from an external Vibe sweep); Gemini 3 Flash — Skeptic/Auditor |
 | Open Unknowns    | 2                                                                   |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | Low                                                                 |
@@ -67,10 +67,10 @@ and those whose absence merely degrades performance.
 
 | ID      | Assumption                                                          | Basis                           | Confidence | Expiry Trigger                                            |
 |---------|---------------------------------------------------------------------|---------------------------------|------------|-----------------------------------------------------------|
-| ASM-001 (`undefined`) | Grid power available at v0 bootstrap site                           | Terrestrial deployment context  | Medium     | Off-grid or disaster-zone deployment confirmed            |
-| ASM-002 (`undefined`) | Human operator present during v0 graduation assessments             | Bootstrap Doctrine v0 condition | High       | Autonomous sensing reaches graduation-detection threshold |
-| ASM-003 (`undefined`) | Salvage feedstock available in sufficient volume                    | v0 site selection criteria      | Medium     | Feedstock survey contradicts availability                 |
-| ASM-004 (`undefined`) | Forge loop closes in degraded form with proxy/downgrade substitutions | Bootstrap Doctrine            | Medium     | First loop closure attempt fails in degraded config       |
+| ASM-001 | Grid power available at v0 bootstrap site                           | Terrestrial deployment context  | Medium     | Off-grid or disaster-zone deployment confirmed            |
+| ASM-002 | Human operator present during v0 graduation assessments             | Bootstrap Doctrine v0 condition | High       | Autonomous sensing reaches graduation-detection threshold |
+| ASM-003 | Salvage feedstock available in sufficient volume                    | v0 site selection criteria      | Medium     | Feedstock survey contradicts availability                 |
+| ASM-004 | Forge loop closes in degraded form with proxy/downgrade substitutions | Bootstrap Doctrine            | Medium     | First loop closure attempt fails in degraded config       |
 
 ---
 

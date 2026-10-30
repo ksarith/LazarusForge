@@ -33,7 +33,7 @@ Second folder in the Scope_Map rollout, following `Admin/Adm_Scope_Map.md` (2026
 ### `Architecture/Cognitive_Frameworks.md`
 **Status:** Exploration · 0/6 · 5 Open Unknowns · Risk: High
 **Does:** Cognitive reliability architectures; distributed trust/redundancy; Framework taxonomy A-G; confidence collapse states; split-brain handling; algorithm architecture (Section IX); Epistemic Load Regulation / Triage Posture.
-**Does not (arrow):** PCB/MCU wiring, hardware watchdog circuit (`Operations/Electronics.md`, CF-001) · mechanical actuators (`Mechanical_Structures.md`) · ethical policy (`Admin/Ethical_Constraints.md`) · Leviathan mission logic (`Tests/Leviathan_testing.md`) · networking (`Forge_Net.md`) · crypto (`Admin/Security_Protocols.md`) · autonomous governance law (`Admin/Governance_Charter.md`) · debt measurement implementation (CF-004 (`undefined`)).
+**Does not (arrow):** PCB/MCU wiring, hardware watchdog circuit (`Operations/Electronics.md`, CF-001) · mechanical actuators (`Mechanical_Structures.md`) · ethical policy (`Admin/Ethical_Constraints.md`) · Leviathan mission logic (`Tests/Leviathan_testing.md`) · networking (`Forge_Net.md`) · crypto (`Admin/Security_Protocols.md`) · autonomous governance law (`Admin/Governance_Charter.md`) · debt measurement implementation (CF-004 (`Architecture/Cognitive_Frameworks.md`)).
 Note: gained an `## Authority & Tier Classification` preface 2026-08-07 (verified against source before applying) explicitly stating it does not alter Tier-1 Axioms or override the Charter/Auditor_Protocols/Ethical_Constraints — the clearest explicit non-claim statement of any file in this folder.
 
 ### `Architecture/Components.md`
@@ -119,8 +119,6 @@ No new unknowns registered. Finding 1 is a one-line factual correction candidate
 
 ## Resolution Log
 
-- 2026-10-29: **X3 citation retrofit (mechanical, Architecture pass).** 1 bare colliding-prefix citation in operative body text qualified with their owning File.md per PKC-003, per the human-ruled Decision Brief 2026-10-29 item 4A (registry: `Admin/Forge_Audit_Kit.md` Governance Sidecar ID Reference, v1.30 edition; per-ID grounding: Unknowns active index). Citation-form-only; no ID renumbered; frozen history untouched; no gate advanced; Open Unknowns unchanged; flagged instances reported to the human (MAINT-17). (Vibe, Repo Custodian — delegated line.)
-
 - 2026-09-13: **Content-accuracy pass (not just coverage) run against all 13 files' live
   Scope Boundary sections — part of a repository-wide pass across all five
   `*_Scope_Map.md` files.** One drift found: `Components.md`'s own Scope
@@ -164,3 +162,5 @@ No new unknowns registered. Finding 1 is a one-line factual correction candidate
   `Unknowns.md`. All five referenced Challenges cross-IDs (WS-004, WA-003,
   PO-004, ES-001, ES-002) verified against source before adoption.
   Human-directed.
+
+- 2026-10-29: **X3 citation retrofit (mechanical, Architecture pass) + corrective revert of 7cac1b1.** 1 bare cross-file colliding-prefix citation qualified with its owning File.md per PKC-003 (CF-004 → `Architecture/Cognitive_Frameworks.md`; registry: `Admin/Forge_Audit_Kit.md` Governance Sidecar ID Reference, v1.30 edition), per the human-ruled Decision Brief 2026-10-29 item 4A. *Corrective:* the immediately preceding commit (7cac1b1) had inserted a bogus (`undefined`) qualification string here via a defective pass script (prefix extraction dropped the trailing hyphen; owner lookup failed); reverted and replaced with the correct owner (precedent: fcbcf82). Citation-form-only; frozen history untouched; no unknown created; no gate advanced. (Vibe, Repo Custodian — delegated line.)
