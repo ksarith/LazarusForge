@@ -19,7 +19,7 @@
 | Verification Ref | Admin/Verification_Gates.md |
 | Open Unknowns    | 0 (surfaces CD-001, owned by `Tests/Chrono_Divergence.md`; creates none) |
 | Owner            | `Tests/Chrono_Divergence.md` |
-| Last Audit       | 2026-10-25 — Claude (human-directed, PKC-031) Status "Proposed" changed to "Exploration"; no other change. Prior: 2026-10-24 — Status cell wording aligned with the 2026-10-19 log entry's "human to confirm"; no protocol change. Prior: 2026-10-19 — Steps 3 and 4 recorded in `FL-20261019-chrono-divergence-pilot-scoring` (reviewer sheets, agreement table, disagreement analysis). No protocol change. Prior: freeze marker recorded 2026-10-16 (Pilot v0.6). Decisions are the human's. History is in the Resolution Log. |
+| Last Audit       | 2026-10-30 — Vibe (Repo Custodian, delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A): X3 mechanical citation retrofit (Tests pass) — 2 bare colliding-prefix citations qualified with their owning File.md per PKC-003 (Kit v1.30 Governance Sidecar ID Reference; per-ID grounding: Unknowns active index). Citation-form-only; no ID renumbered; frozen history untouched; no gate advanced; Open Unknowns unchanged. Prior: 2026-10-25 — Claude (human-directed, PKC-031) Status "Proposed" changed to "Exploration"; no other change. Prior: 2026-10-24 — Status cell wording aligned with the 2026-10-19 log entry's "human to confirm"; no protocol change. Prior: 2026-10-19 — Steps 3 and 4 recorded in `FL-20261019-chrono-divergence-pilot-scoring` (reviewer sheets, agreement table, disagreement analysis). No protocol change. Prior: freeze marker recorded 2026-10-16 (Pilot v0.6). Decisions are the human's. History is in the Resolution Log. |
 | Last Updated     | 2026-10-25 (Status cell only: Proposed → Exploration); previously 2026-10-24 (Status cell wording only); previously 2026-10-19 |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
@@ -37,7 +37,7 @@
 - Copy or restate the frozen forecasts F1/F2, the scoring categories, the valid-session definition or the reviewer-agreement rules. These live in `Tests/Chrono_Divergence.md` §4 and §4.1, and this file points there so there is one source.
 - Hold run evidence. Sessions are filed as Field_Logs (`Tests/Field_Logs/FL-YYYYMMDD-chrono-divergence-<slug>.md`, per Chrono Step F), not here.
 - Claim the pointer works, that forecasts are accurate, or that scoring agreement generalizes beyond this pilot size.
-- Change FAK-018 status, Kit text, Spec Gates, or any Unknown.
+- Change FAK-018 (`Admin/Forge_Audit_Kit.md`) status, Kit text, Spec Gates, or any Unknown.
 
 ---
 
@@ -124,7 +124,7 @@ The pilot is procedurally complete even if the reviewers disagree on every score
 ### 8. Explicit non-claims
 
 - No Measured accuracy for divergence forecasts; completion licenses no claim about the pointer.
-- No change to FAK-018, Kit text, Spec Gates, or any Unknown status.
+- No change to FAK-018 (`Admin/Forge_Audit_Kit.md`), Kit text, Spec Gates, or any Unknown status.
 - Scoring reproducibility is untested until this pilot completes, and one pilot cannot show forecasting accuracy.
 - Filing this file does not start the pilot; Step 1 does.
 
@@ -242,6 +242,8 @@ The prompts do not describe the reconciliation check. Both arms use the same pro
 *No Unknowns of this file's own. CD-001 (scoring-rubric stability) is owned by `Tests/Chrono_Divergence.md`; this pilot is its resolution path.*
 
 ### Resolution Log
+
+- 2026-10-30: **X3 mechanical citation retrofit (Tests pass).** 2 bare colliding-prefix citations qualified with their owning File.md per PKC-003 (Kit v1.30 Governance Sidecar ID Reference; per-ID grounding: Unknowns active index). Citation-form-only: no ID renumbered, no Unknown opened or closed, no Spec Gate advanced, frozen history untouched. Out-of-whitelist bare IDs were left bare and reported to the human. (Vibe, Repo Custodian — delegated maintenance per Decision Brief 2026-10-29 item 4A.)
 
 - 2026-10-25: Status "Proposed" changed to "Exploration" (human-directed, PKC-031 ruling: "Proposed" is retired and a newly generated file starts at Exploration). No other field, section or Unknown changed.
 
