@@ -28,8 +28,8 @@
 | Body Stability   | Volatile                                                            |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-10-24 — Claude (human-directed) four bare EC-014 citations qualified with their owning file, the missing 2026-09-20 Resolution Log entry backfilled and the log put in date order, from a Vibe per-file audit. Prior: 2026-09-20 — EC-013 Plastics safe-state descent sequence filed as Proposed/Placeholder (§EC-013 Descent Sequence). Blocking for hot runs retained until first hot-run validation. Prior: 2026-08-23 — PL-001 Resolved, Payment via Specification (Halogenated Polymer Triage Protocol added, class-split for PVC/Cl-Br vs. PTFE/fluoropolymer screening; Blocking Yes retained pending PL-001-R1 empirical validation); prior: 2026-05-27 (Grok — Skeptic/Auditor); revised 2026-06-08; PL-001 disposal-destination convergence pass 2026-08-15 |
-| Auditor          | Grok — EC-013 descent section drafted and filed as Proposed/Placeholder (Path A, human-directed 2026-09-20); prior: Claude — PL-001 protocol drafted by Grok, revised once after a Claude Skeptic pass (Beilstein/fluorine reliability gap identified and corrected), human-ratified (human-directed), 2026-08-23; prior: Grok — Skeptic/Auditor |
+| Last Audit       | 2026-10-30 — Vibe (Repo Custodian, delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A): X3 mechanical citation retrofit (Operations pass) — 20 bare colliding-prefix citations qualified with their owning File.md per PKC-003 (Kit v1.30 Governance Sidecar ID Reference; per-ID grounding: Unknowns active index). Citation-form-only; no ID renumbered; frozen history untouched; no gate advanced; Open Unknowns unchanged. Prior: 2026-10-24 — Claude (human-directed) four bare EC-014 citations qualified with their owning file, the missing 2026-09-20 Resolution Log entry backfilled and the log put in date order, from a Vibe per-file audit. Prior: 2026-09-20 — EC-013 Plastics safe-state descent sequence filed as Proposed/Placeholder (§EC-013 Descent Sequence). Blocking for hot runs retained until first hot-run validation. Prior: 2026-08-23 — PL-001 Resolved, Payment via Specification (Halogenated Polymer Triage Protocol added, class-split for PVC/Cl-Br vs. PTFE/fluoropolymer screening; Blocking Yes retained pending PL-001-R1 empirical validation); prior: 2026-05-27 (Grok — Skeptic/Auditor); revised 2026-06-08; PL-001 disposal-destination convergence pass 2026-08-15 |
+| Auditor          | Vibe — Repo Custodian, 2026-10-30 X3 mechanical citation retrofit (Operations pass; delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A); prior: Grok — EC-013 descent section drafted and filed as Proposed/Placeholder (Path A, human-directed 2026-09-20); prior: Claude — PL-001 protocol drafted by Grok, revised once after a Claude Skeptic pass (Beilstein/fluorine reliability gap identified and corrected), human-ratified (human-directed), 2026-08-23; prior: Grok — Skeptic/Auditor |
 | Open Unknowns    | 4 substantively open (PL-002, PL-003, PL-004, PL-005). PL-001 Resolved — Payment via Specification, 2026-08-23. EC-013 sequence registered as Proposed/Placeholder (does not close EC-013 tracker). |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | High                                                                |
@@ -62,7 +62,7 @@
 - Energy accounting for pyrolysis reactor operation
   (→ `Operations/Energy.md`)
 - Facility siting, clearance, and hot-work zone requirements
-  (→ `Architecture/Facilities.md` — FA-001)
+  (→ `Architecture/Facilities.md` — FA-001 (`Architecture/Facilities.md`))
 - Operator PPE standards and hearing/respiratory conservation program
   (→ `Admin/Safety_Protocols.md`)
 
@@ -131,7 +131,7 @@ thermoplastics). Confirmed halogenated material routes to `Operations/Gate_02_Tr
 Contaminated bin (non-decontaminable state, 2026-08-15 shared-destination extension),
 not to the reactor and not to an undefined "specialist disposal" — the same named
 hold `Challenges/Waste.md` WA-002's hazardous fractions use, pending
-`Admin/Ethical_Constraints.md` EC-014/GR-003 for final disposition. See PL-001.
+`Admin/Ethical_Constraints.md` EC-014 (`Admin/Ethical_Constraints.md`)/GR-003 for final disposition. See PL-001.
 
 ---
 
@@ -208,7 +208,7 @@ that bypasses halogenated feedstock rejection at triage. Cross-reference:
   HCl neutralization via alkaline buffering stage, syngas combustion upstream
   of scrubber inlet; cross-reference AS-003 for saturation thresholds
 - `Operations/Gate_01_Intake.md` — halogenated polymer detection at entry;
-  GI-003 augmented detection capability applies to plastic stream identification
+  GI-003 (`Operations/Gate_01_Intake.md`) augmented detection capability applies to plastic stream identification
 - `Operations/Gate_02_Triage.md` — upstream routing decision for all plastics;
   char residue routes back here for hazardous vs. recoverable classification
 - `Operations/Gate_03_Reduction.md` — pyrolysis is reduction-adjacent; shredding
@@ -225,7 +225,7 @@ that bypasses halogenated feedstock rejection at triage. Cross-reference:
 - `Admin/Trajectories.md` — fractional distillation, filament extrusion hardware
   specification, and deep characterization of oil quality are v1+ scope items
 - `Architecture/Facilities.md` — siting and hot-work zone requirements;
-  pyrolysis reactor clearance zones and ventilation topology (FA-001)
+  pyrolysis reactor clearance zones and ventilation topology (FA-001 (`Architecture/Facilities.md`))
 - `Admin/Safety_Protocols.md` — operator PPE standards; respiratory protection
   requirements for toxic off-gas handling
 
@@ -276,7 +276,7 @@ severe long-term health and contamination risk.
 
 PVC, PTFE (Teflon), and other halogenated plastics must not enter the pyrolysis reactor. This protocol defines the minimum decision procedure at triage. It does not claim field validation. Hot operational runs remain blocked until residual PL-001-R1 is closed.
 
-*Scope.* In scope: identification and reject/hold decisions for suspected halogenated feedstock before reactor entry; routing of confirmed or unresolved halogenated material. Out of scope: Air Scrubber design (AS-003); Gate_01 augmented kit selection (GI-003); final long-term disposal chemistry (`Admin/Ethical_Constraints.md` EC-014 / GR-003). Destination: positive or unresolved halogenated material → `Operations/Gate_02_Triage.md` Contaminated bin (non-decontaminable hold). No parallel sink.
+*Scope.* In scope: identification and reject/hold decisions for suspected halogenated feedstock before reactor entry; routing of confirmed or unresolved halogenated material. Out of scope: Air Scrubber design (AS-003); Gate_01 augmented kit selection (GI-003 (`Operations/Gate_01_Intake.md`)); final long-term disposal chemistry (`Admin/Ethical_Constraints.md` EC-014 (`Admin/Ethical_Constraints.md`) / GR-003). Destination: positive or unresolved halogenated material → `Operations/Gate_02_Triage.md` Contaminated bin (non-decontaminable hold). No parallel sink.
 
 *Two polymer classes (do not conflate).* Beilstein is a halide flame test biased toward chlorine/bromine — a negative result does not reliably rule out fluorine. Screening therefore splits by class:
 
@@ -312,9 +312,9 @@ Default under doubt: Unresolved → Contaminated bin. When in doubt, do not heat
 
 **Hard rule:** a negative Beilstein result clears only the chlorinated/brominated Beilstein path. It must not be treated as a universal "no halogen" result and must not be used to clear fluoropolymer suspicion.
 
-*Interface with GI-003 and AS-003.* GI-003 (Gate_01 augmented detection): optional enrichment. If present and indicates halogenated hazard → Reject or Unresolved per that indication. If absent/Open, this protocol's class-aware Steps 1–3 remain the minimum path — do not wait on GI-003. AS-003 (scrubber alkaline / saturation): not a triage step. Defense in depth if imperfect rejection allows acid gas toward the scrubber. Confirmation is part of PL-001-R1, not a prerequisite to write or execute this reject protocol.
+*Interface with GI-003 (`Operations/Gate_01_Intake.md`) and AS-003.* GI-003 (`Operations/Gate_01_Intake.md`) (Gate_01 augmented detection): optional enrichment. If present and indicates halogenated hazard → Reject or Unresolved per that indication. If absent/Open, this protocol's class-aware Steps 1–3 remain the minimum path — do not wait on GI-003. AS-003 (scrubber alkaline / saturation): not a triage step. Defense in depth if imperfect rejection allows acid gas toward the scrubber. Confirmation is part of PL-001-R1, not a prerequisite to write or execute this reject protocol.
 
-**Explicit non-goals.** Does not set reactor temperature profiles or scrubber hardware design. Does not authorize hot pyrolysis when this protocol is specified but not validated. Does not define Contaminated-bin final disposal (`Admin/Ethical_Constraints.md` EC-014 / GR-003 / Gate_02). Does not replace Gate_01 intake procedures; it specializes halogen screening for the plastics → pyrolysis path. Does not claim Beilstein is diagnostic for fluorine.
+**Explicit non-goals.** Does not set reactor temperature profiles or scrubber hardware design. Does not authorize hot pyrolysis when this protocol is specified but not validated. Does not define Contaminated-bin final disposal (`Admin/Ethical_Constraints.md` EC-014 (`Admin/Ethical_Constraints.md`) / GR-003 / Gate_02). Does not replace Gate_01 intake procedures; it specializes halogen screening for the plastics → pyrolysis path. Does not claim Beilstein is diagnostic for fluorine.
 
 **Residual risks, logged as child notes and not blocking this section's Payment via Specification — Blocking Yes remains until PL-001-R1 clears:**
 
@@ -322,16 +322,16 @@ Default under doubt: Unresolved → Contaminated bin. When in doubt, do not heat
 |----|----------|-------|
 | PL-001-R1 | Empirical validation against a representative feedstock sample (include fluoropolymer challenge material when available) and confirmation that scrubber alkaline stage can handle accidental acid-gas bypass from imperfect rejection | Required before any hot operational run; specification alone does not clear Blocking Yes |
 | PL-001-R2 | Operator training / false-negative rate under real contamination levels | Field data; adjust sequence only via dated revision after evidence |
-| PL-001-R3 | GI-003 kit maturity | Parallel; may strengthen Step 1–3 later without blocking this minimum protocol |
+| PL-001-R3 | GI-003 (`Operations/Gate_01_Intake.md`) kit maturity | Parallel; may strengthen Step 1–3 later without blocking this minimum protocol |
 | PL-001-R4 | Stronger field fluoropolymer identification method when available | Until then: density band + label + hold-on-doubt (3b) is the specified minimum |
 
-*§PL-001 — Resolved, Payment via Specification, ratified 2026-08-23. Closes PL-001 (logged 2026-05-26). Drafted by Grok, revised once after a Claude Skeptic pass identified that the Beilstein test is chlorine/bromine-biased and unreliable for fluorine — the original draft would have let a negative Beilstein result clear PTFE/fluoropolymer suspicion, exactly the false-negative failure mode this unknown exists to prevent. Revision split screening by polymer class (PVC/Cl-Br via Beilstein+density; PTFE/fluoropolymer via labeling+density band, explicitly never cleared by Beilstein alone) and rewrote the Pass condition as a conjunction requiring both classes screened, not a single shared threshold. Constitutional/doctrinal anchor: none required — this is an operational safety protocol, not governance doctrine; destination and cross-references verified against `Operations/Gate_02_Triage.md`'s existing Contaminated bin (2026-08-15 extension) and this file's own GI-003/AS-003 cross-references before integration. Full Closure Event — Proposer (Grok), Skeptic + Verifier (Claude, one revision then Accept), Human Ratification (Human Governing Authority) — recorded in this file's own Resolution Log, below. Blocking Yes remains in force for hot operational runs pending PL-001-R1 empirical validation; specification closure and operational clearance are deliberately distinct events. Human-directed.*
+*§PL-001 — Resolved, Payment via Specification, ratified 2026-08-23. Closes PL-001 (logged 2026-05-26). Drafted by Grok, revised once after a Claude Skeptic pass identified that the Beilstein test is chlorine/bromine-biased and unreliable for fluorine — the original draft would have let a negative Beilstein result clear PTFE/fluoropolymer suspicion, exactly the false-negative failure mode this unknown exists to prevent. Revision split screening by polymer class (PVC/Cl-Br via Beilstein+density; PTFE/fluoropolymer via labeling+density band, explicitly never cleared by Beilstein alone) and rewrote the Pass condition as a conjunction requiring both classes screened, not a single shared threshold. Constitutional/doctrinal anchor: none required — this is an operational safety protocol, not governance doctrine; destination and cross-references verified against `Operations/Gate_02_Triage.md`'s existing Contaminated bin (2026-08-15 extension) and this file's own GI-003 (`Operations/Gate_01_Intake.md`)/AS-003 cross-references before integration. Full Closure Event — Proposer (Grok), Skeptic + Verifier (Claude, one revision then Accept), Human Ratification (Human Governing Authority) — recorded in this file's own Resolution Log, below. Blocking Yes remains in force for hot operational runs pending PL-001-R1 empirical validation; specification closure and operational clearance are deliberately distinct events. Human-directed.*
 
 **Prior history (retained):**
 
-**Grok review 2026-08-15:** Path adequate. Beilstein + density sorting are concrete v0 methods; GI-003 and AS-003 cross-refs are real and correctly load-bearing. Blocking Yes before any hot run is correct. **Grok approved (path adequate).** Remains Open — triage protocol still needs definition + validation; do not run hot pyrolysis until closed. *(Superseded 2026-08-23 — protocol now written; Blocking Yes carried forward unchanged.)*
+**Grok review 2026-08-15:** Path adequate. Beilstein + density sorting are concrete v0 methods; GI-003 (`Operations/Gate_01_Intake.md`) and AS-003 cross-refs are real and correctly load-bearing. Blocking Yes before any hot run is correct. **Grok approved (path adequate).** Remains Open — triage protocol still needs definition + validation; do not run hot pyrolysis until closed. *(Superseded 2026-08-23 — protocol now written; Blocking Yes carried forward unchanged.)*
 
-**Spec-depth pass, 2026-08-15 (digital-only — no equipment exists yet):** Verified against source before acting on Grok's shared-cluster proposal. This file's "specialist disposal" destination and `Challenges/Waste.md` WA-002's "routed per WA-004/GR-003" were two different sentences pointing at the same undefined place — neither named a real path. Resolved by extending `Operations/Gate_02_Triage.md` TS-002's existing Contaminated bin non-decontaminable state (built earlier this session) to explicitly cover compositional hazards, not only surface contamination — no new destination invented, an existing one reused. Both files now converge on the same named hold. Does not change PL-001's disposition status or Blocking Yes — final disposal still correctly awaits `Admin/Ethical_Constraints.md` EC-014/GR-003.
+**Spec-depth pass, 2026-08-15 (digital-only — no equipment exists yet):** Verified against source before acting on Grok's shared-cluster proposal. This file's "specialist disposal" destination and `Challenges/Waste.md` WA-002's "routed per WA-004/GR-003" were two different sentences pointing at the same undefined place — neither named a real path. Resolved by extending `Operations/Gate_02_Triage.md` TS-002 (`Operations/Gate_02_Triage.md`)'s existing Contaminated bin non-decontaminable state (built earlier this session) to explicitly cover compositional hazards, not only surface contamination — no new destination invented, an existing one reused. Both files now converge on the same named hold. Does not change PL-001's disposition status or Blocking Yes — final disposal still correctly awaits `Admin/Ethical_Constraints.md` EC-014 (`Admin/Ethical_Constraints.md`)/GR-003.
 
 ---
 
@@ -473,6 +473,8 @@ char composition is characterized and a routing decision tree is defined.
 
 ### Resolution Log
 
+- 2026-10-30: **X3 mechanical citation retrofit (Operations pass).** 20 bare colliding-prefix citations qualified with their owning File.md per PKC-003 (Kit v1.30 Governance Sidecar ID Reference; per-ID grounding: Unknowns active index). Citation-form-only: no ID renumbered, no Unknown opened or closed, no Spec Gate advanced, frozen history untouched. Out-of-whitelist bare IDs were left bare and reported to the human. (Vibe, Repo Custodian — delegated maintenance per Decision Brief 2026-10-29 item 4A.)
+
 - 2026-10-24: Four bare EC-014 citations now name `Admin/Ethical_Constraints.md`; the 2026-09-20 entry below backfilled and the 2026-06-08 entry moved into date order (human-directed, from a Vibe per-file audit; each finding checked against source first). No protocol, decision table, Unknown or Spec Gate changed.
 
 - 2026-09-20: **EC-013 Plastics safe-state descent sequence filed as Proposed/Placeholder (§EC-013 Descent Sequence).** Drafted by Grok (Path A, human-directed). Blocking for hot runs retained until first hot-run validation; this does not close the EC-013 tracker. *(Backfilled 2026-10-24 from this file's Last Audit and Auditor fields and the section's own header; no log entry was made at the time.)*
@@ -524,9 +526,9 @@ char composition is characterized and a routing decision tree is defined.
 
 ## §EC-013 Descent Sequence — Plastics / Pyrolysis (Proposed / Placeholder)
 
-**STATUS: Proposed / Placeholder.** Filed 2026-09-20 under Path A (EL-006-P3–P5 style). This section is visible doctrine and registers the first per-process EC-013 sequence. It does **not** carry operational force for hot runs until a Skeptic pass and first hot-run validation have occurred. **Blocking for hot operational runs remains in force.** Specified ≠ demonstrated.
+**STATUS: Proposed / Placeholder.** Filed 2026-09-20 under Path A (EL-006-P3–P5 style). This section is visible doctrine and registers the first per-process EC-013 (`Admin/Ethical_Constraints.md`) sequence. It does **not** carry operational force for hot runs until a Skeptic pass and first hot-run validation have occurred. **Blocking for hot operational runs remains in force.** Specified ≠ demonstrated.
 
-**Cross-reference:** `Admin/Ethical_Constraints.md` EC-013 (requirement owner); EC-004 Governance Failure Modes (Pacifist posture + active-process descent carve-out). Layer A process-fault interlocks (including `Operations/Air_Scrubber.md` Fault 04 / thermal divert / fire → halt forced ventilation immediately) are always-on safety logic and are **not** substituted by this sequence. Layer B (this sequence) must obey Layer A; the fire-vent-halt override wins over any step that would keep forced airflow running while a Hot Zone fire is active.
+**Cross-reference:** `Admin/Ethical_Constraints.md` EC-013 (`Admin/Ethical_Constraints.md`) (requirement owner); EC-004 (`Admin/Ethical_Constraints.md`) Governance Failure Modes (Pacifist posture + active-process descent carve-out). Layer A process-fault interlocks (including `Operations/Air_Scrubber.md` Fault 04 / thermal divert / fire → halt forced ventilation immediately) are always-on safety logic and are **not** substituted by this sequence. Layer B (this sequence) must obey Layer A; the fire-vent-halt override wins over any step that would keep forced airflow running while a Hot Zone fire is active.
 
 ### Trigger
 Governance failure (or explicit human/governance command to enter safe-state) while a Plastics pyrolysis / reactor run is active — i.e., heat is applied, feedstock is sealed, or off-gas path is live.
@@ -552,14 +554,14 @@ Record trigger, each step executed or skipped (with reason), Layer A overrides t
 ### Explicit non-goals
 - This sequence does **not** self-clear or authorize restart.
 - Missing or incomplete sequence is **not** license to skip descent or to default to instant-halt when instant-halt itself would breach containment.
-- Filing this text does **not** close EC-013, clear Blocking for hot runs, or claim any physical validation.
+- Filing this text does **not** close EC-013 (`Admin/Ethical_Constraints.md`), clear Blocking for hot runs, or claim any physical validation.
 
 ### Residual / open items (tracked, not blocking this filing)
 - Numeric safe temperature/pressure band for step 5 (Placeholder until first hardware designation).
 - Exact interaction timing with Air_Scrubber interlocks under simultaneous fire + governance-failure conditions (to be refined against live `Air_Scrubber.md` rows).
 - First hot-run validation required before this section may be promoted beyond Proposed/Placeholder.
 
-*Filed 2026-09-20, Path A (Proposed/Placeholder), human-directed. Does not constitute Payment via Specification for EC-013; the tracker remains Open until the agreed active set of hazardous-process files each have a registered sequence or explicit scope-out.*
+*Filed 2026-09-20, Path A (Proposed/Placeholder), human-directed. Does not constitute Payment via Specification for EC-013 (`Admin/Ethical_Constraints.md`); the tracker remains Open until the agreed active set of hazardous-process files each have a registered sequence or explicit scope-out.*
 
 ---
 
@@ -579,7 +581,7 @@ Mandatory re-audit conditions for this document:
 - Mechanical repurposing path used for visibly degraded or unknown-identity polymer
   without PL-004 heuristic check
 - Ethical Anchor field absent, altered, or does not match canonical string
-- EC-013 descent sequence absent, removed, or treated as operationally binding for hot runs while still marked Proposed/Placeholder
+- EC-013 (`Admin/Ethical_Constraints.md`) descent sequence absent, removed, or treated as operationally binding for hot runs while still marked Proposed/Placeholder
 
 **Compound Drift Rule:** If multiple indicators activate simultaneously, halt
 autonomous audit progression and escalate for human review.
