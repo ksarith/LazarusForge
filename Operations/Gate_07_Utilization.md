@@ -29,11 +29,11 @@
 | Body Stability   | Volatile                                                            |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-10-30 — Vibe (Repo Custodian, delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A): X3 mechanical citation retrofit (Operations pass) — 16 bare colliding-prefix citations qualified with their owning File.md per PKC-003 (Kit v1.30 Governance Sidecar ID Reference; per-ID grounding: Unknowns active index). Citation-form-only; no ID renumbered; frozen history untouched; no gate advanced; Open Unknowns unchanged. Prior: 2026-09-01 — GU-002 Closure Event: §5 rewritten as an explicit retirement interface contract (Payment via Specification); prior: 2026-05-19; revised 2026-06-08 |
+| | Last Audit | 2026-10-30 — Campaign 2 finding repair (human-directed custodian pass; see Resolution Log) |x citations qualified with their owning File.md per PKC-003 (Kit v1.30 Governance Sidecar ID Reference; per-ID grounding: Unknowns active index). Citation-form-only; no ID renumbered; frozen history untouched; no gate advanced; Open Unknowns unchanged. Prior: 2026-09-01 — GU-002 Closure Event: §5 rewritten as an explicit retirement interface contract (Payment via Specification); prior: 2026-05-19; revised 2026-06-08 |
 | Auditor          | Vibe — Repo Custodian, 2026-10-30 X3 mechanical citation retrofit (Operations pass; delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A); prior: Claude — GU-002 Closure Event: §5.1–5.6 retirement handoff interface contract integrated, drafted by Grok across two revisions, Skeptic-passed by ChatGPT (four amendments, then confirmed Skeptic-ready), independently re-verified by Claude (caught understated tag-absent language and a stale Drift Indicator entry), human-ratified (human-directed), 2026-09-01; prior: Claude — Retrofit/Auditor |
 | Open Unknowns    | 4                                                                   |
 | Active Disputes  | 1                                                                   |
-| Highest Risk     | Low                                                                 |
+| Highest Risk     | Medium                                                                 |
 | Sidecar Link     | #auditor-notes--unknowns                                            |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
@@ -98,6 +98,8 @@ not a Utilization operation risk.*
   (`Admin/Economics.md` — EC-002 (`Admin/Ethical_Constraints.md`))
 
 ---
+
+- 2026-10-30: **Campaign 2 finding repair (Repo Custodian, delegated line, human-directed fix batch).** File State Highest Risk recomputed Low → Medium per open sidecar maxima (GU-001/GU-004/GU-005 Medium) — closes CAMPAIGN2_AUDIT_25 F1 (X10 value-miss, understated a full band). No doctrine, Status, Spec Gate, or version change; no other field touched. Audit source: Campaign 2 deposit in Operations/OAudits/.
 
 ## File Purpose
 
