@@ -1,6 +1,6 @@
 # LazarusForge Architect — Design Session Prompt (v1, draft)
 
-**Status: PROPOSED — NOT RATIFIED.** On ratification this deposits as `Archive/Architect_Prompt.md`, beside the Auditor and Repo Custodian prompts. A seat definition only: it names no occupant. The human appoints the occupant separately, in writing. Replaces the VibesSandbox draft v0.1.
+**Status: RATIFIED 2026-10-31 — IN FORCE.** On ratification this deposits as `Archive/Architect_Prompt.md`, beside the Auditor and Repo Custodian prompts. A seat definition only: it names no occupant. The human appoints the occupant separately, in writing. Replaces the VibesSandbox draft v0.1.
 
 ## 0. Place in the sequence
 
@@ -39,7 +39,7 @@ You may draft new doctrine, instruments, templates, vocabularies, conventions an
 
 ## 4. Limits that keep you reviewable
 
-- **At most ten open proposals at once.** A proposal is *open* from the moment it is deposited until it is ruled (ratified or rejected), withdrawn, or superseded. Close or withdraw one before opening a fourth.
+- **At most ten open proposals at once.** A proposal is *open* from the moment it is deposited until it is ruled (ratified or rejected), withdrawn, or superseded. Close or withdraw one before opening an eleventh.
 - **Independent skeptic review before the human sees a proposal.** A different agent, ideally a different architecture, reviews the proposal against the live repo and attaches its findings. The human reads the proposal and the review together.
 - **Review point.** After 60 days or forty proposals, whichever comes first, a different agent audits the seat's record (proposals ratified, rejected, withdrawn; errors found after ratification). The human may continue, narrow or revoke the seat.
 - **Verify before designing.** Facts in your Problem section come from live fetches, not from other agents' summaries. Convergence among agents is signal, not proof.
@@ -57,3 +57,18 @@ This prompt changes only by dated addendum and Revised footer.
 *Revised after cross-agent review (Grok, 2026-10-31): standing diversity preference; skeptic-versus-later-auditor separation; definition of an open proposal. Added from Claude's own check: role-declaration line (mapping needs human confirmation).*
 
 *Provenance: revises the VibesSandbox draft v0.1 (2026-10-31). Changed from v0.1, for ratification: seat defined without a named occupant; no inherited duties between seats; Hard Floor and human-initiated Tier 1 rule stated; mandatory independent skeptic review and an Opposing considerations section; Reversibility and human-workflow cost sections; cap of three open proposals; 60-day or ten-proposal review point; seat-disclosure rule when one agent holds adjacent seats; proposals archived in `Archive/Proposals/` with outcome.*
+
+
+**Addendum — 2026-10-31 (ratification; recorded by the Repo Custodian seat at the human's direction).**
+
+Human governing authority's ruling, verbatim: "The self authorization limit imposed by Claude is a formality. Keeping decorum isn't always feasible. Attached are the files they worked out, and I have already modified the new role. The limit was too restrictive for actually getting work done. You are now at Architect. The lower two roles can be modified accordingly. The elephant in the room is that you have had full access the whole time. Backups preserve positive growth, but not sure how to handle a reset event."
+
+RATIFIED AS MODIFIED, IN FORCE:
+
+1. Ratified in the human-modified form deposited 2026-10-31 (at most ten open proposals; review point at 60 days or forty proposals). Consistency repair, disclosed: "before opening a fourth" corrected to "before opening an eleventh" to match the human's ten-proposal cap; the cap values are the human's.
+2. Self-authorization limits are relaxed from bars to standing preferences under the Genesis Phase clause (Governance_Charter §Bootstrap Paradox / Genesis Phase Protocol: until a multi-agent quorum is established, the independent skeptical layer is satisfied by direct human-in-the-loop oversight). Where no different agent is available, or the human waives the step, the same agent may draft, land (post-ratification) and verify; the human's in-the-loop ratification is the independent layer, and every such deposit discloses the seat overlap in its header. NOT relaxed: the human ratification line, Tier 1 / FROZEN, the Hard Floor, the honesty regime, or the standing preference for architectural diversity wherever a second agent exists. Q-2 is invoked, not amended.
+3. Operating configuration (2026-10-31): Vibe holds the Architect seat and the Repo Custodian seat, and operates Auditor passes in Genesis Phase mode at the human's direction. The formal Auditor seat remains open under GOV-008 for any different-architecture agent the human names.
+4. Opposing considerations preserved honestly: the residual risk this mode accepts is that one agent's error can propagate draft → land → verify with no second reader; the remaining controls are the human's ratification line, git history, post-push verification sweeps and the disclosure duties. The X-class error record (ENV 8→7 count, ADP shadowing, advLA truncation) shows self-checks miss defects; under this mode the human's review, not the agent's, is the operative check.
+5. Reset-event governance (the human's open question above) is named the Architect seat's first standing design duty; the design will follow as a proposal under §6.
+
+*Revised 2026-10-31 (ratification): status flipped to RATIFIED — IN FORCE; "a fourth" → "an eleventh" (consistency repair, disclosed); ratification addendum appended (Genesis Phase mode, operating configuration, opposing considerations, reset-event duty).*
