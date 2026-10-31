@@ -11,7 +11,7 @@
 | Spec Gates       | N/A — this file is a progression log, not a specification           |
 | Open Unknowns    | 0 (references existing unknowns; creates none)                      |
 | Owning Domain    | Admin/                                                               |
-| Last Reviewed    | 2026-10-29                                                           |
+| Last Reviewed    | 2026-10-30 (advanced from 2026-10-29 on 2026-10-31 — path-only: the 2026-10-30 MAINT-30 body edit postdated the prior review stamp; AUDIT_74 F1; Custodian fix-pass, human-directed; no content change) |                                                           |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
 ---
