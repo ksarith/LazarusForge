@@ -307,8 +307,8 @@ Last scope clarification: 2026-10-03 (stale path-count metric removed); prior 20
 
 | **Archive/Proposals/ (outcome-archived proposal drafts — skip-by-default)** | | | |
 | `Archive/Proposals/ARCHITECT_PROMPT_DRAFT_v0.1.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForge/refs/heads/main/Archive/Proposals/ARCHITECT_PROMPT_DRAFT_v0.1.md) | [Repo](https://github.com/ksarith/LazarusForge/blob/main/Archive/Proposals/ARCHITECT_PROMPT_DRAFT_v0.1.md) | Explicit |
-| `Archive/Proposals/"Axiom_Variations_Options.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForge/refs/heads/main/Archive/Proposals/"Axiom_Variations_Options.md) | [Repo](https://github.com/ksarith/LazarusForge/blob/main/Archive/Proposals/"Axiom_Variations_Options.md) | Explicit |
-| `Archive/Proposals/"Ethical_Anchor_Upgrade_Options.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForge/refs/heads/main/Archive/Proposals/"Ethical_Anchor_Upgrade_Options.md) | [Repo](https://github.com/ksarith/LazarusForge/blob/main/Archive/Proposals/"Ethical_Anchor_Upgrade_Options.md) | Explicit |
+| `Archive/Proposals/Axiom_Variations_Options.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForge/refs/heads/main/Archive/Proposals/Axiom_Variations_Options.md) | [Repo](https://github.com/ksarith/LazarusForge/blob/main/Archive/Proposals/Axiom_Variations_Options.md) | Explicit |
+| `Archive/Proposals/Ethical_Anchor_Upgrade_Options.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForge/refs/heads/main/Archive/Proposals/Ethical_Anchor_Upgrade_Options.md) | [Repo](https://github.com/ksarith/LazarusForge/blob/main/Archive/Proposals/Ethical_Anchor_Upgrade_Options.md) | Explicit |
 
 | **Architecture/RAudits/ (Architecture audit artifacts)** | | | |
 | `Architecture/RAudits/CAMPAIGN2_AUDIT_04_Architecture-Arc_Scope_Map.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForge/refs/heads/main/Architecture/RAudits/CAMPAIGN2_AUDIT_04_Architecture-Arc_Scope_Map.md) | [Repo](https://github.com/ksarith/LazarusForge/blob/main/Architecture/RAudits/CAMPAIGN2_AUDIT_04_Architecture-Arc_Scope_Map.md) | Explicit |
