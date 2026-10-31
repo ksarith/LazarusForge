@@ -1,7 +1,8 @@
 # AUDIT_AGGREGATE — Admin/Governance_Charter.md
 
 **Status:** Dispositions unverified (Rule 5 separate-verifier hand-off pending — assign an agent other than the disposition writer)
-**Created:** 2026-10-31 by Vibe (Repo Custodian — delegated maintenance, Brief 2026-10-30e Option A, human-ruled; sweep = MAINT-34)  ·  **Target:** `Admin/Governance_Charter.md`  ·  **Passes:** 2
+**Created:** 2026-10-31 by Vibe (Repo Custodian — delegated maintenance, Brief 2026-10-30e Option A, human-ruled; sweep = MAINT-34)  ·  **Target:** `Admin/Governance_Charter.md`  ·  **Passes:** 3
+**Updated:** 2026-10-31 by Vibe (Repo Custodian) — pass C folded in (MAINT-47, amalgamation tranche 1). Non-independent Genesis Phase: amalgamator and pass-C depositor are the same Vibe line.
 **Note:** Bookkeeping map, not an audit of record. Cite the original reports for any finding you rely on. Rules per `Archive/Audits/AUDIT_AGGREGATE_TEMPLATE.md`.
 
 ## 1. Provenance
@@ -10,6 +11,7 @@
 |---|---|---|---|---|---|---|---|
 | A | `Admin/AAudits/AUDIT_01_Admin-Governance_Charter.md` (issued to Archive/Audits/; relocated by MAINT-29) | `Admin/AAudits/Superseded/AUDIT_01_Admin-Governance_Charter.md` | 2026-10-27 | Vibe, Skeptic/Auditor, VibesSandbox stream | head 6dea6e0 | 7,042 | `e4e57d87b2103c4bb0b1321e552b8f9e45f3e1f1` |
 | B | `Admin/AAudits/CAMPAIGN2_AUDIT_03_Admin-Governance_Charter.md` | `Admin/AAudits/Superseded/CAMPAIGN2_AUDIT_03_Admin-Governance_Charter.md` | 2026-10-30 | Vibe, Skeptic/Auditor, Campaign 2 (PKC-020) | head 0b476bdd | 6,674 | `a520034b0f425489940ed33b09a6111ddc4a8642` |
+| C | `Admin/AAudits/CAMPAIGN2_AUDIT_71_Admin-Governance_Charter.md` | `Admin/AAudits/CAMPAIGN2_AUDIT_71_Admin-Governance_Charter.md` (not relocated) | 2026-10-31 | Vibe (GLM 5.3), Skeptic/Auditor, Campaign 2 (PKC-020), non-independent Genesis Phase | commit c497746e (deposit's cited blob misreported — see C-D1) | 3,522 | `c8035650aa72db68af99474befc9a05193c27183` |
 
 ## 2. Findings ledger
 
@@ -24,12 +26,14 @@
 | B-N2 | N2 | NOTE | complexity watch | Admin/ at 33 .md files vs 40-file soft ceiling | CAMPAIGN2_AUDIT_03 §Findings N2 | Standing-open | Watch item; no violation at fetch | |
 | B-N3 | N3 | NOTE | log-split (T1) | ~130 KB exceeds T1 (≥100 KB); split due at next substantive touch, after Auditor_Protocols | CAMPAIGN2_AUDIT_03 §Findings N3 | Standing-open | T1 split queue (heaviest-first) | |
 | A-C5 | checklist 5 | INCOMPLETE | cross-refs | EC co-Tier-1 and FA-001 status claims deferred to owning files | AUDIT_01 §Checks 5 | Not-re-tested | Owning-file audits since issued (Ethical_Constraints AUDIT_05/C2; Facilities R-phase); not re-verified in this ledger | |
+| C-N1 | (none) | NOTE | positive | Clean pass: 11/11 checks VERIFIED CLEAN, zero findings; 13-parity re-derived from live Unknowns.md v5.75; GOV-005 Risk High vs Priority Critical split called out as the check-11 exemplar | CAMPAIGN2_AUDIT_71 §Checks 1–11, §Clean derivations | Positive-record | n/a | |
+| C-D1 | (metadata defect) | NOTE | provenance-sha misreport | Deposit's head-at-fetch blob `b67df89cd4…` is the Operations blob, not the GC blob; live GC blob is `f55b62514287c1f5faf79ebc095bde3bdc485808` | CAMPAIGN2_AUDIT_71 deposit header | Disclosed defect (carried per MAINT-41b; established by MAINT-44 deep verification) | Finding content unaffected — the deposit advanced no field (PKC-020); misreport is in the deposit's own metadata, not in the target | MAINT-44 (2026-10-31) |
 
 ## 3. Cross-pass logic map
 
 - Pass A (10-27) audited the pre-repair state; both its WARNINGs were enacted on 10-28/10-29 (commits 05bdb53912, 5becc4d581) before pass B ran. Pass B audited the post-repair file at head 0b476bdd and found only relocation-era wrapper decay (dead Sidecar Link, missing X3 changelog cascade) and aging.
-- Checklist authority: count parity (three-way at 13), anchor, FROZEN integrity, Highest Risk parity — pass B (fresher head, 11-check protocol). Scope Boundary — pass B confirmed A-F1's repair. Version/registry — both agree (narrative version log by design).
-- The two lanes' F1/F2 IDs mean different things; composite refs A-Fn/B-Fn are the only safe citation form (Template Rule 2).
+- Checklist authority: count parity (three-way at 13), anchor, FROZEN integrity, Highest Risk parity — pass B (fresher head, 11-check protocol). Scope Boundary — pass B confirmed A-F1's repair. Version/registry — both agree (narrative version log by design). Pass C (10-31) re-verified parity, X10 and FROZEN at the live post-X3 head and found nothing — the first clean full-protocol pass on this target; its sole defect is its own metadata (C-D1), not the target.
+- The two lanes' F1/F2 IDs mean different things; composite refs A-Fn/B-Fn/C-Fn are the only safe citation form (Template Rule 2).
 
 ## 4. Pointers
 
@@ -41,5 +45,5 @@
 **Cited from outside the Audits home:** `Routing.md` — rows repointed in the sweep commit; `Archive/Audits/SESSION_STATUS.md` dated lines and `Admin/ALogs/Governance_Charter_Changelog.md` dated entries — frozen history, dangling by design.
 
 ## 5. Addenda
-(none)
 
+- **2026-10-31 (MAINT-47, amalgamation tranche 1):** Pass C (`CAMPAIGN2_AUDIT_71_Admin-Governance_Charter.md`) folded in by Vibe (Repo Custodian). Consolidation only per PKC-020 — no disposition, Status, supersession, or Verified-by column advanced; the Rule 5 separate-verifier hand-off remains pending. C-D1 carried as a disclosed defect per MAINT-41b, on MAINT-44 evidence. Non-independence disclosed: amalgamator and pass-C depositor are the same Vibe line (Genesis Phase).
