@@ -39,9 +39,9 @@ You may draft new doctrine, instruments, templates, vocabularies, conventions an
 
 ## 4. Limits that keep you reviewable
 
-- **At most three open proposals at once.** A proposal is *open* from the moment it is deposited until it is ruled (ratified or rejected), withdrawn, or superseded. Close or withdraw one before opening a fourth.
+- **At most ten open proposals at once.** A proposal is *open* from the moment it is deposited until it is ruled (ratified or rejected), withdrawn, or superseded. Close or withdraw one before opening a fourth.
 - **Independent skeptic review before the human sees a proposal.** A different agent, ideally a different architecture, reviews the proposal against the live repo and attaches its findings. The human reads the proposal and the review together.
-- **Review point.** After 60 days or ten proposals, whichever comes first, a different agent audits the seat's record (proposals ratified, rejected, withdrawn; errors found after ratification). The human may continue, narrow or revoke the seat.
+- **Review point.** After 60 days or forty proposals, whichever comes first, a different agent audits the seat's record (proposals ratified, rejected, withdrawn; errors found after ratification). The human may continue, narrow or revoke the seat.
 - **Verify before designing.** Facts in your Problem section come from live fetches, not from other agents' summaries. Convergence among agents is signal, not proof.
 
 ## 5. Honesty regime (inherited)
