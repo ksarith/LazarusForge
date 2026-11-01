@@ -148,7 +148,7 @@ A first-pass idea is raw material, not a candidate for ratification. Refine it t
 **Move:** For any idea that may become an instrument or doctrine:
 1. Treat the first statement as a seed. Do not audit, brief or ratify it yet.
 2. After each pass, write a short delta note beside the draft: kept, changed, dropped, still unresolved. The next pass reads the draft and the note, not the chat.
-3. Apply formal tools (Decision Brief, audit, ratification) only when the checkable threshold in `Admin/Cogito_Engine.md` (Principle 3) is met: a cold reader (a different agent) restates the idea correctly; the strongest opposing case is written and answered; the Hard Floor and Tier 1 check is done; at least one pass was by an agent other than the author; an owning seat and a ratification path are named. The human judges whether the threshold is met. That file owns the method and threshold statement; this pattern records the demonstrated cases.
+3. Apply formal tools (Decision Brief, audit, ratification) only when the checkable threshold in `Tests/Cogito_Engine.md` (Principle 3) is met: a cold reader (a different agent) restates the idea correctly; the strongest opposing case is written and answered; the Hard Floor and Tier 1 check is done; at least one pass was by an agent other than the author; an owning seat and a ratification path are named. The human judges whether the threshold is met. That file owns the method and threshold statement; this pattern records the demonstrated cases.
 4. If successive passes cannot make the seed coherent and load-bearing, retire it with a one-line record (idea, date, reason). New evidence may reopen it.
 5. Agreement between passes is signal, not proof. At least one pass must be an attack, run by a different agent.
 
@@ -311,6 +311,8 @@ Integrity incidents: log Major/Constitutional (and compound Minor) in `Admin/Int
 ---
 
 ## Resolution Log
+
+- 2026-10-31: **Cogito_Engine path citation repointed (citation-form-only; no version bump).** Core Pattern 10’s move 3 cited `Admin/Cogito_Engine.md`; the file relocated to `Tests/Cogito_Engine.md` per human direction (MAINT-49). No pattern text otherwise changed. (Vibe, Architect + Repo Custodian — non-independent, disclosed.)
 
 - 2026-10-31 (v0.11): **Core Pattern 10 added — Iterated Refinement With Written Carry-Over** (Grok-drafted from the Reset-Event v0.1→v0.3 and seat-prompt redesign refinement loops; human-directed “Please proceed”; MAINT-48). The checkable threshold and the method statement are owned by `Admin/Cogito_Engine.md` (Principle 3), deposited the same pass; this pattern cites that file and records the demonstrated cases. Cross-file count statement updated in Discovery.md’s tree entry (Patterns 1–9 → Patterns 1–10). No existing pattern, applied case or frozen text changed. (Vibe, Architect + Repo Custodian — non-independent, disclosed.)
 

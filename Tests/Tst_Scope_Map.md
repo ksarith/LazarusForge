@@ -11,7 +11,7 @@
 | Spec Gates       | N/A — this file is a cross-reference index, not a specification     |
 | Open Unknowns    | 0 (surfaces existing unknowns from owning files; creates none)      |
 | Owning Domain    | Tests/                                                               |
-| Last Reviewed    | 2026-10-30 — Campaign 2 finding repair (X8 row refresh): MAQT 0→3 Open Unknowns registered (MAQT-001–003); Quorum_Agent_Conduct_Protocol 0→7 registered; Support_Raft 13→12; Cognitive_Salvage_Layer/Pyrolysis_Cascade/Solar_Descent Risk cells mirrored High→Critical (2026-10-30 X10 recompute). Prior: 2026-10-25 — MAQT entry Status corrected to record that Cycle 1 ran 2026-09-22 (PKC-041). Prior: 2026-10-25 — Status of the MAQT, Chrono_Divergence and Chrono_Divergence_Pilot entries changed from Proposed to Exploration to match their owning files (PKC-031). Prior: 2026-10-15 — Chrono_Divergence_Pilot.md registered (2026-10-14); stale Chrono version pin removed |
+| Last Reviewed    | 2026-10-31 — `Tests/Cogito_Engine.md` (relocated from Admin/) and `Tests/Reset_Event_Design.md` (relocated from the sandbox Proposals home) added and indexed per human direction (MAINT-49); no other entry changed. Prior: 2026-10-30 — Campaign 2 finding repair (X8 row refresh): MAQT 0→3 Open Unknowns registered (MAQT-001–003); Quorum_Agent_Conduct_Protocol 0→7 registered; Support_Raft 13→12; Cognitive_Salvage_Layer/Pyrolysis_Cascade/Solar_Descent Risk cells mirrored High→Critical (2026-10-30 X10 recompute). Prior: 2026-10-25 — MAQT entry Status corrected to record that Cycle 1 ran 2026-09-22 (PKC-041). Prior: 2026-10-25 — Status of the MAQT, Chrono_Divergence and Chrono_Divergence_Pilot entries changed from Proposed to Exploration to match their owning files (PKC-031). Prior: 2026-10-15 — Chrono_Divergence_Pilot.md registered (2026-10-14); stale Chrono version pin removed |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
 ---
@@ -122,6 +122,18 @@ Note: Created 2026-10-04, scoped to `Admin/` after clarifying that a physical-te
 **Does:** Trophic Forge concept/organizing principle; base loop architecture and node properties; bootstrap sequence for salvage-first deployment; per-node test parameters; naming rationale/prior art questions.
 **Does not (arrow):** LED array electrical specs (`Operations/Energy.md`, `Operations/Electronics.md`) · pond/condensate water purification (`Living_Waters.md`) · fish species selection — proposed only, pending site context · crop selection/agronomic practice — out of scope at current interval · atmospheric-scale moisture-extraction effects — explicitly out of scope · any tornado/severe-weather-mitigation claim — out of scope at all intervals.
 
+### `Tests/Cogito_Engine.md`
+**Status:** Exploration — Test Instrument (Not Ratified; relocated from Admin/ 2026-10-31, MAINT-49) · 0/6 (Spec Gates N/A — named method, cell-asserted per the Resolution_Methodology precedent) · 0 Open Unknowns · Risk: Low
+**Does:** Names the iterated idea-refinement method: refuse the first pass, written carry-over between passes, a checkable threshold before formal tools, retirement as a result, and an independent attack pass. Owns the threshold/method statement; Resolution_Methodology Core Pattern 10 (v0.11) cites it and records the demonstrated cases.
+**Does not:** Define Decision Brief or proposal format (`Archive/Architect_Prompt.md`), audit method (`Admin/Auditor_Protocols.md`), ratification, or demonstrated resolution patterns (`Admin/Resolution_Methodology.md`); not a seat, not required for routine maintenance.
+Note: Deposited 2026-10-31 at v0.2 (MAINT-48); relocated per human direction 2026-10-31 (MAINT-49). The Reset-Event design below is its working example.
+
+### `Tests/Reset_Event_Design.md`
+**Status:** Exploration — Test Instrument (Not Ratified; moved beyond proposal standing per human direction 2026-10-31, MAINT-49) · 0/6 (Spec Gates N/A — design draft awaiting pre-ratification skeptic pass) · 0 Open Unknowns · Risk: Low
+**Does:** The v0.3 reset-event governance design: tag-primary/zip-fallback restore points, an append-only backup register, whole-tree classification (IDENTICAL/DIVERGED/MISSING/EXTRA/MOVED), frozen-section escalation, a non-waivable second reader, STATE_HOLD on declaration, forward-commit-only landing, and a dry-run precondition. Grok’s and Claude’s skeptic reviews are carried verbatim in the appendices.
+**Does not:** Ratify anything — no `Admin/Reset_Event_Protocol.md` exists, `Admin/Repository_Integrity_Protocol.md` is untouched; the §7 enactment plan and the eight recommended rulings await explicit human ratification. Does not replace RIP’s per-file surgical recovery (stays default), create or schedule backups, or cover history purge for leaked credentials.
+Note: Relocated from VibesSandbox `Proposals/RESET_EVENT_DESIGN_v0.3.md` (plus a dated relocation addendum) per human direction 2026-10-31 (MAINT-49); v0.1 and v0.2 remain in the sandbox home byte-unmodified. Its refinement chain is the demonstrated case in Resolution_Methodology Core Pattern 10.
+
 ---
 
 ## Gaps Exposed By Building This
@@ -145,6 +157,7 @@ No corrections were needed in this folder, same as Challenges/ — no stale cros
 ---
 
 ## Resolution Log
+- 2026-10-31: **`Tests/Cogito_Engine.md` and `Tests/Reset_Event_Design.md` added and indexed** — see their entries above. Both are human-directed relocations (MAINT-49), written fresh, same pattern as the 2026-09-18 and 2026-10-04 additions.
 
 - 2026-10-30: **Campaign 2 finding repair (X8 row refresh): MAQT entry Open Unknowns 0→3 (MAQT-001–003 registered); Quorum_Agent_Conduct_Protocol entry 0→7 registered Unknowns (QCC-R1–R7; QCC-R2/R5/R7 also indexed in `Unknowns.md`); Support_Raft entry 13→12; Cognitive_Salvage_Layer, Pyrolysis_Cascade and Solar_Descent Risk cells mirrored High→Critical, matching the owning files after the 2026-10-30 X10 recompute. Does / Does-not text unchanged. Human-directed (Campaign 2 findings).**
 
