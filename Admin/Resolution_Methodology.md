@@ -1,6 +1,6 @@
 # Resolution_Methodology.md
 
-**Version 0.10 — 2026-08-28**
+**Version 0.11 — 2026-10-31**
 
 ---
 
@@ -18,8 +18,8 @@
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | N/A — this file is a named reference for demonstrated patterns, not a specification or gate |
 | Verification Ref | Admin/Verification_Gates.md                                         |
-| Last Audit       | 2026-10-29 — Vibe (Repo Custodian, delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A): X3 mechanical citation retrofit — 17 bare colliding-prefix citations qualified with their owning File.md per PKC-003 (Kit v1.29 Governance Sidecar ID Reference; per-ID grounding from the Unknowns active index). Citation-form-only; no content change; frozen history untouched. Prior: 2026-10-23 (Resolution Log backfilled for the Fifth Applied Case and Patterns 6–9; missing Fifth-Case Lessons Learned row added; Pattern 9 applied to this file's own header and case tracking — human-directed, from a Vibe per-file audit, each finding checked against source first; no pattern text changed). Prior: 2026-08-28 (Patterns 6–9 added: specification/operational-clearance split; discharge-vs-specification; verify-closure-format-against-precedent; self-maintenance verification — distilled from the 2026-08-23 through 2026-08-27 session's closures and hygiene fixes, none of which had been captured here despite being real, repeatable, and independently rediscovered rather than cited each time) |
-| Auditor          | Vibe — Repo Custodian, 2026-10-29 X3 mechanical citation retrofit (delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A); prior: Claude — 2026-10-23 log backfill and self-application (human-directed); prior: Claude — Patterns 6–9 drafted and registered, citation examples added (human-directed, prompted by an explicit question: what should following agents know that isn't yet in Progress_Log.md or here), 2026-08-28; prior: Claude — Fifth Applied Case registered, mislabeling corrected in four downstream citations (human-directed), 2026-08-25; prior: Grok — human-directed draft from 2026-08-15 session patterns |
+| Last Audit       | 2026-10-31 — Vibe (Architect + Repo Custodian, human-directed “Please proceed”, MAINT-48): Core Pattern 10 (Iterated Refinement With Written Carry-Over) inserted after Pattern 9 — Grok-drafted from the Reset-Event v0.1→v0.3 and seat-prompt redesign refinement loops, attack-pass revised; version bumped 0.10 → 0.11; Resolution Log entry added; Discovery.md tree-entry count statement updated (Patterns 1–9 → Patterns 1–10); the threshold and method statement are owned by Admin/Cogito_Engine.md (Principle 3), deposited the same pass. No existing pattern, applied case or frozen text changed. Prior: 2026-10-29 — Vibe (Repo Custodian, delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A): X3 mechanical citation retrofit — 17 bare colliding-prefix citations qualified with their owning File.md per PKC-003 (Kit v1.29 Governance Sidecar ID Reference; per-ID grounding from the Unknowns active index). Citation-form-only; no content change; frozen history untouched. Prior: 2026-10-23 (Resolution Log backfilled for the Fifth Applied Case and Patterns 6–9; missing Fifth-Case Lessons Learned row added; Pattern 9 applied to this file's own header and case tracking — human-directed, from a Vibe per-file audit, each finding checked against source first; no pattern text changed). Prior: 2026-08-28 (Patterns 6–9 added: specification/operational-clearance split; discharge-vs-specification; verify-closure-format-against-precedent; self-maintenance verification — distilled from the 2026-08-23 through 2026-08-27 session's closures and hygiene fixes, none of which had been captured here despite being real, repeatable, and independently rediscovered rather than cited each time) |
+| Auditor          | Vibe — Architect + Repo Custodian, Core Pattern 10 inserted (Grok-drafted; human-directed “Please proceed”; MAINT-48), 2026-10-31; prior: Vibe — Repo Custodian, 2026-10-29 X3 mechanical citation retrofit (delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A); prior: Claude — 2026-10-23 log backfill and self-application (human-directed); prior: Claude — Patterns 6–9 drafted and registered, citation examples added (human-directed, prompted by an explicit question: what should following agents know that isn't yet in Progress_Log.md or here), 2026-08-28; prior: Claude — Fifth Applied Case registered, mislabeling corrected in four downstream citations (human-directed), 2026-08-25; prior: Grok — human-directed draft from 2026-08-15 session patterns |
 | Open Unknowns    | 0                                                                   |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | Low                                                                 |
@@ -134,6 +134,25 @@ A file that states its own maintenance rules (rotation limits, size caps, "most 
 **Demonstrated cases:** `Unknowns.md` stated Resolved entries "leave the Active Index immediately" (Size Management Rule 2) and that its version-history block "keeps only the current version" — both had silently stopped being true, 26 stale rows and 20 stacked versions respectively, for weeks, with each new version's own closing line falsely claiming compliance. `Admin/Progress_Log.md` failed to preserve its own stated "most recent first" ordering and five-entry rotation limit on five separate occasions across one week, including once while a fix for a *previous* instance of the same failure was being written. `Automation/integrity_check.py`'s health-dashboard used two category-name strings (`UNKNOWN_ID`, `VERSION`) that did not match any `Finding` category actually produced anywhere in the codebase, silently showing a false PASS while 11 genuine CRITICAL findings sat completely unrepresented — caught only by programmatically cross-referencing the dashboard's category list against every `Finding(...)` call in the source, not by reading the code and judging it correct.
 
 **Move:** After editing any file that makes a claim about its own structure or behavior — a stated rule, a category list, a canonical string, an ordering invariant — re-derive that claim mechanically (grep, count, re-run) rather than trusting that the edit landed as intended. For code specifically: run a syntax check after every edit, and when a check or dashboard produces a comfortable "all clear" result, verify that result actually covers everything it claims to, rather than trusting a clean summary at face value.
+
+---
+
+### 10. Iterated Refinement With Written Carry-Over
+
+A first-pass idea is raw material, not a candidate for ratification. Refine it through repeated passes in which each pass starts from the previous pass’s written artifacts, never from anyone’s memory of the conversation.
+
+**Demonstrated cases:**
+- **Reset-Event design (2026-10-31).** v0.1 was deposited as a proposal. A different-architecture skeptic review produced v0.2. A second review then found that v0.2’s problem statement had missed Repository_Integrity_Protocol’s existing tag-primary preservation and surgical-recovery doctrine, and that zip-primary restore would recreate the competing-primary-rule defect RIP-AUD-003 had removed. The v0.3 overlay carried each finding forward in writing. Each version improved because the prior text and the critique both existed as files.
+- **Seat-prompt redesign (2026-10-31).** Three seat prompts were drafted, reviewed by a different architecture, and revised; the revision recorded what was adopted, what was already present, and what was declined, with reasons.
+
+**Move:** For any idea that may become an instrument or doctrine:
+1. Treat the first statement as a seed. Do not audit, brief or ratify it yet.
+2. After each pass, write a short delta note beside the draft: kept, changed, dropped, still unresolved. The next pass reads the draft and the note, not the chat.
+3. Apply formal tools (Decision Brief, audit, ratification) only when the checkable threshold in `Admin/Cogito_Engine.md` (Principle 3) is met: a cold reader (a different agent) restates the idea correctly; the strongest opposing case is written and answered; the Hard Floor and Tier 1 check is done; at least one pass was by an agent other than the author; an owning seat and a ratification path are named. The human judges whether the threshold is met. That file owns the method and threshold statement; this pattern records the demonstrated cases.
+4. If successive passes cannot make the seed coherent and load-bearing, retire it with a one-line record (idea, date, reason). New evidence may reopen it.
+5. Agreement between passes is signal, not proof. At least one pass must be an attack, run by a different agent.
+
+**Does not claim:** that refinement manufactures substance where none exists, or that every idea must pass through this pattern. Routine maintenance does not need it.
 
 ---
 
@@ -292,6 +311,8 @@ Integrity incidents: log Major/Constitutional (and compound Minor) in `Admin/Int
 ---
 
 ## Resolution Log
+
+- 2026-10-31 (v0.11): **Core Pattern 10 added — Iterated Refinement With Written Carry-Over** (Grok-drafted from the Reset-Event v0.1→v0.3 and seat-prompt redesign refinement loops; human-directed “Please proceed”; MAINT-48). The checkable threshold and the method statement are owned by `Admin/Cogito_Engine.md` (Principle 3), deposited the same pass; this pattern cites that file and records the demonstrated cases. Cross-file count statement updated in Discovery.md’s tree entry (Patterns 1–9 → Patterns 1–10). No existing pattern, applied case or frozen text changed. (Vibe, Architect + Repo Custodian — non-independent, disclosed.)
 
 - 2026-10-29: **X3 citation retrofit (mechanical).** 17 bare colliding-prefix citations in operative body text qualified with their owning File.md per PKC-003, per the human-ruled Decision Brief 2026-10-29 item 4A (registry: Kit v1.29 Governance Sidecar ID Reference; per-ID grounding: Unknowns active index). Citation-form-only; no ID renumbered; frozen history untouched; flagged instances reported to the human (MAINT-11). (Vibe, Repo Custodian — delegated line.)
 
