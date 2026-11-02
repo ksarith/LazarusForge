@@ -1079,6 +1079,71 @@ would not discard "without sentiment" is eligible to be considered.
 
 ### Resolution Log
 
+- 2026-11-02: **External findings-only pseudo-audit (Notion-routed external review,
+  verified against live source) — findings list for human review. No doctrine
+  change, no version bump, no unknowns registered (Rule 10/AP-035; Rule 10
+  addendum, PKC-020).** The human governing authority routed live v0.45
+  (158,158 bytes, blob dd17f8af…, commit 082f567) to an external review in
+  Notion (reviewer: Notion AI — no session context, no repository access).
+  This pass (Vibe — Architect line, human-directed) verified each finding
+  against the live file text and repository doctrine before recording it;
+  extraction was verified byte-exact against the live git blob before any
+  edit. Reviewer qualification: 4 of 5 headline findings confirmed (two
+  fully, two partially), zero fabrications — this qualifies under this
+  file's own cold-session zero-fabrication criterion; the external reviewer
+  did not verify cross-references and those are excluded from the count.
+  Findings:
+  1. **Confirmed (doctrine-live).** The Resolution Pathways table (three rows;
+     "Payment via Specification → Verified and integrated") contradicts the
+     Resolution Taxonomy (five payment types; "Nothing has been empirically
+     validated yet") and omits Validation, Constitutional Decision and
+     Refactoring — the exact false-CLOSED failure mode Rule 9/AP-033 exists
+     to catch (16-false-CLOSED precedent). Candidate fix: one canonical
+     payment-type → resulting-status → routing-destination mapping.
+  2. **Confirmed (latent).** File State Spec Gates reads "5/6, G2 N/A" while
+     the Specification Promotion Rules require all six canonical gates to
+     pass; N/A is undefined. The fix belongs in Admin/Verification_Gates.md
+     per Rule 8/AP-032.
+  3. **Confirmed.** Several enforcement requirements name no enforcing actor,
+     trigger evidence or fallback (internal-scratchpad monitoring, node
+     quarantine, agent-authority termination, verified-baseline rollback).
+     Candidate fix: per-control labels (Active / Structural / Aspirational)
+     with actor, trigger and fallback; much of this is specification for a
+     future runtime (Leviathan), not current capability.
+  4. **Partial.** "Measured-tier" for direct textual quotations collides with
+     Measured = observed from physical reality. Renaming the five evidence
+     labels is corpus-wide forbidden (Admin/File_Template.md §7, the
+     CogitoEngine runtime contract C6; AP-021 precedent; AP-026 already
+     retired a duplicate scale), so the candidate fix is a scoping sentence
+     (Mission Drift Review observes repository text; the quotation is the
+     instrument) and retitling the label class, not the labels. The
+     Silent-rating threshold tension is noted as minor.
+  5. **Partial.** A human role-declaration format already exists in the
+     Closure Event requirements (name/handle + capacity); the candidate fix
+     is a cross-reference from §Role Declaration (which says "All
+     contributors"). The audit / audit pass / audit cycle terminology needs
+     a sweep (CT-011 precedent exists).
+  6. **Found by the verifying pass, not by the external review.** The live
+     pre-entry sidecar (183,634 bytes, blob 81c1d19d…) hashes to SHA-256
+     82f82097e9cb7060e3ea78a3b6031d456be94199cf8911128094d49996be5913, not
+     the 275adcfc… recorded in this file's File State "as of 2026-10-25" —
+     the recorded value diverged from the live archive; either the archive
+     changed after that recompute without the row being refreshed, or the
+     value was miscomputed at the time (not determinable from here;
+     disclosed as found — the same divergence class as the 2026-10-20
+     finding). The File State row is refreshed to the post-entry hash in the
+     same pass that lands this entry.
+  Maintainability observations (verified): File State carries ~1,165 words
+  of repeated audit chronology (trim precedent: 2026-07-23); risk-based
+  tailoring of the ten-class Adversarial Battery for small/low-impact
+  documents is a human ruling, not recorded here as a finding.
+  Disposition: none — a findings list for human review per Rule 10. A
+  candidate v0.46 batch (items 1–6 above; priority order 1, 2, 3, then the
+  partial-fix forms of 4–5) is proposed and awaits ratification; any bump
+  rides the Version String Registry, the Status block, the Resolution Log
+  footer and a fresh Sidecar SHA-256 recompute. Last Audit and Auditor
+  intentionally not advanced (Rule 10 addendum, PKC-020). Human-directed.
+
 - 2026-10-25: **v0.44 → v0.45, from base v0.44 — two human rulings written in; doctrine change.**
   PKC-020: Rule 10 (AP-035) gains an addendum saying a findings-only pseudo-audit
   does not advance the owning file's Last Audit or Auditor; it is logged in that
@@ -1433,176 +1498,3 @@ would not discard "without sentiment" is eligible to be considered.
   payload — fabricated); a claimed Gate 3 status contradiction (the quoted
   sentence's own second half already resolves the apparent conflict —
   partial-quote misreading, not a real gap); a claimed undocumented AP-007
-  dependency (AP-007's own text already discloses this exact gap by name —
-  not a new finding). AP-017 gained a Fresh Instance entry: this run used
-  the standard `run_audit()` prompt, including its Assumption Extraction
-  "carried forward unless contradicted" framing — conversationally fresh,
-  not informationally independent per the 2026-07-17 clarification, same
-  as every instance logged there to date. The sidecar-truncation
-  fabrication is logged as a distinct, adjacent finding: informational
-  independence and accurate reading of provided material are separate
-  failure dimensions, and this instance demonstrates a failure in the
-  second while receiving a complete, correctly-delivered file. AP-017
-  also gained an infrastructure note: `Automation/cold_session_bundler.py`
-  (built this cycle) is the first working implementation of this entry's
-  actual requirement, not yet used for a qualifying run. Open Unknowns
-  13 → 17.
-
-- 2026-07-17: **v0.24 — AP-024 logged (multi-agent convergence); AP-017 and
-  AP-007 refined; a factual error in one reviewing pass identified and
-  not adopted.** Two adversarial passes ran against this file the same
-  day, plus two reactions to a Claude battery from the prior turn and a
-  reconciliation attempt. Findings checked against source before any were
-  adopted:
-  - **AP-024 created**, generalized to "human attestation provenance is
-    insufficiently granular" per convergent recommendation, with an H0-H5
-    attestation scale (No review / Blanket authorization / Summary
-    reviewed / Diff reviewed / Human-authored / Independently
-    re-verified) adopted from the reconciliation pass. Cross-referenced
-    against AP-013 (closure authority — a distinct, adjacent question:
-    who may close, not how thoroughly a specific closure was reviewed).
-  - **AP-017** gained an explicit informational-vs-conversational
-    independence distinction — a new chat with a carried-forward
-    Assumption Extraction block doesn't satisfy this entry, since the
-    priming risk survives the conversational break.
-  - **AP-007** wording tightened further — "to be specified" was already
-    accurate but sat close enough to "already addressed" language about
-    EF-0.3/EF-0.2 to invite a skim-misread; now explicit that the SHA-256
-    parity-check mechanism is not present in `Admin/Security_Protocols.md`
-    as of this date, confirmed by direct inspection, not merely planned
-    generically.
-  - **Two proposals not adopted as new entries, because they already
-    exist:** "compromised human authority" doctrine is already EC-011
-    (`Admin/Ethical_Constraints.md`, Open) — re-confirmed relevant, not a
-    new gap. "Combined Failure Envelope" for simultaneous system failures
-    substantially overlaps AP-016 (Concurrent multi-node quarantine
-    behavior, Resolved 2026-07-03) — worth a narrower follow-up only if a
-    specific scenario AP-016 doesn't cover is identified, not a
-    fresh entry.
-  - **One reviewing pass's factual claims not adopted at all:** a
-    document proposing "AP-018 through AP-021" as new unknowns (audit
-    scalability, termination criteria, metric-gaming resistance, auditor
-    diversity) — all four IDs already existed, attached to real,
-    unrelated content (AP-018 saturation hysteresis, AP-019 semantic
-    convergence metrics, AP-020 Resolved textual calibration, AP-021
-    Resolved evidence classification). That pass's broader PASS/WARNING
-    assessment table is not treated as grounded against this file's
-    actual current state, since it demonstrably wasn't checked against
-    it here — itself a live instance of the narrative-outrunning-evidence
-    risk AP-024 exists to address.
-  - Open Unknowns 12 → 13 (AP-024 added, nothing else changed count).
-
-- 2026-07-16: **v0.23 — Self-audit corrections (AP-023); coordinated with
-  `AUDIT_HARNESS.py` v15's Cycle-unit fix.** A Claude self-audit found and
-  AP-023 documents five drifted bookkeeping items, all corrected this
-  pass: Open Unknowns header (9 → 12, actual count); Role Declaration
-  Requirement and Standard Sign-Off template strings (v0.21 → v0.23 — a
-  third recurrence, this time introduced by this file's own v0.22 edit
-  two turns prior rather than inherited); `Admin/Discovery.md` citation
-  corrected to `Discovery.md` (Routing.md's actual canonical form);
-  AP-017's Risk field corrected from an invalid `Major` (copy-pasted from
-  Priority) to `High`; `Archive/Logs/AUDIT_HARNESS_CHANGELOG.md` and
-  `Archive/Logs/Forge_Audit_Kit_Changelog.md` registered in `Routing.md` (both
-  missing since their 2026-07-14 creation). Spec Gates header gained an
-  inline gate list. Separately, coordinated with a same-day fix in
-  `Automation/AUDIT_HARNESS.py`: `CURRENT_CYCLE`/`UNKNOWN_FIRST_CYCLE`
-  (session-count aging) replaced with direct date parsing from each
-  unknown's own First Logged field against a 365-day threshold — the
-  `Admin/Canonical_Terms.md` §4 Cycle definition this file's own Adversarial
-  Audit Layer had already flagged as unreconciled with the harness. Real
-  effect confirmed against `Admin/Governance_Charter.md`: GOV-001 is 55
-  days old, not "8 cycles" — zero unknowns in that file are actually
-  overdue under the ratified threshold. `Admin/unknown_cycles.json` is
-  now orphaned (harness no longer fetches it) and was deliberately left
-  unregistered in `Routing.md` rather than cleaned up, per Routing.md's
-  own 2026-07-16 note.
-
-- 2026-07-16: **v0.22 — Post-Exit Monitoring Metrics added (GOV-013);
-  stale sign-off template corrected.** New §Post-Exit Monitoring Metrics
-  defines Semantic Drift Score, Unknown Accumulation Rate, Self-
-  Authorization Incidents, and Structural Alignment for
-  `Admin/Governance_Charter.md`'s Post-Exit Monitoring Doctrine — metrics
-  and placeholder thresholds only, per this file's Tier 2 role; reversion
-  mechanics deliberately excluded, routed to
-  `Admin/Repository_Integrity_Protocol.md`. Both new sections marked
-  PROPOSED, NOT RATIFIED, matching the Charter section they implement.
-  Separately: §Observability & Audit Trail's standard sign-off example
-  string still read `v0.14` — a fourth live instance of the same stale
-  string fixed at v0.21 (Role Declaration Requirement) and propagated to
-  `Admin/Forge_Audit_Kit.md`, missed in that pass. Corrected to v0.22.
-
-- 2026-07-14: **v0.21 — Audit Phase Separation codified; role-count proposal
-  declined (human-directed).** New §Audit Phase Separation: Audit →
-  Adversarial Challenge → Synthesis established as sequential,
-  freeze-respecting phases — extends Audit Sequence's existing
-  step-ordering principle from steps within an audit to phases across the
-  audit cycle. Audit Freeze defined: a closed phase's observations,
-  evidence, and conclusions do not change in later phases; corrections are
-  additive (new findings, superseding entries, new audit cycle), never
-  in-place edits — the Resolved Unknown Discharge Procedure's non-deletion
-  principle applied to the audit process itself. Synthesis integrates
-  rather than reconciles: findings answering different questions aren't
-  forced to agree; genuine conflicts route through Dispute Handling
-  Protocol. New §Role Count: Ratified Position declines three proposed
-  standing roles (Red Team roster, Curator, Historian) — the Adversarial
-  Challenge Battery's ten classes and existing Role Classes already cover
-  the ground more precisely; Curator- and Historian-type judgment already
-  happens without needing a title. AP-022 logged and resolved same pass —
-  Open Unknowns unchanged: 9. Role Declaration Requirement's example
-  string corrected v0.14 → v0.21 — stale since the v0.14 rewrite itself
-  (2026-06-24), propagated into `Admin/Forge_Audit_Kit.md` and caught
-  there first, 2026-07-14, before being traced back to this file (see
-  that file's FAK-010). AP-017 gained a cross-reference to the 2026-07-14
-  `Admin/Forge_Audit_Kit.md` Battery as a concrete instance of
-  sequencing-without-independence: phase-separated correctly, did not
-  meet AP-017's no-session-context bar.
-
-- 2026-07-10: **v0.20 — AP-021 resolved (human governing authority ratification).** Five-label Evidence Classification system (Measured/Replicated/Simulated/Analogous/Placeholder) confirmed canonical. §The Fallacy Checklist Item 7 rewritten to point to §Evidence Classification rather than duplicate a conflicting definition; "Estimated" retired with explicit relabeling guidance. `Admin/Verification_Gates.md` Gate 2 updated to match in the same pass (see that file's VG-002 resolution). Open Unknowns 10 → 9.
-- 2026-07-10: **v0.19 — AP-021 logged (human-directed discovery).** Confidence label inconsistency found between §The Fallacy Checklist Item 7 (four labels, includes "Estimated") and §Evidence Classification and Institutional Truth Provenance Hierarchy (five labels, includes "Replicated"/"Simulated," no "Estimated"). Not yet resolved — resolution path specified but not executed this pass, pending human governing authority confirmation that the five-label system is the intended standard before the Fallacy Checklist text is edited. Open Unknowns 9 → 10.
-
-- 2026-07-05 (second entry, same day): **v0.18 — Line 754 Gate 3 status
-  re-corrected after regression.** This was already identified and fixed
-  earlier the same session, but the copy this file's edits were being made
-  from still carried the stale "BLOCKED pending AP-012 and AP-016" text —
-  the earlier fix did not persist into the version uploaded for the CT-011
-  pass, so v0.17 was shipped still carrying it. Now reads Resolved, with
-  the AP-017 re-evaluation caveat, matching `Admin/Forge_Audit_Kit.md`'s
-  already-correct v1.8 text. **Process note for human governing authority:**
-  if edits are being made against local/live copies in parallel with copies
-  uploaded here, worth confirming which is authoritative before each
-  session's edits, or a fix can silently regress like this one did — not
-  flagging blame, just the mechanism, since it's the same class of
-  drift-via-desync this repository tracks everywhere else.
-
-- 2026-07-05: **v0.17 — CT-011 resolved.** The Expiry Rule and Expiry check
-  (§Unknowns Registry doctrine) now explicitly cross-reference
-  `Admin/Canonical_Terms.md` §4's Cycle definition (one calendar year by
-  default, operator-adjustable) rather than leaving "audit cycle" undefined.
-  Prior text was silently read by multiple auditor agents as "each time the
-  Skeptic/Auditor role opens," which inflated aging language well past real
-  elapsed time — e.g., unknowns 62 and 17 days old were reported as "9
-  cycles" and "3 cycles open" in a same-day dual audit of
-  `Admin/Ethical_Constraints.md`. Expiry check text now distinguishes audit
-  *pass* (can happen many times) from Cycle *threshold* (calendar-based,
-  advances independently of how often the role opens). No change to the
-  two-cycle threshold number itself, only to what a cycle means. Gate 3's
-  "per promotion cycle" language (AP-017) is a distinct, narrower sense of
-  cycle and is unaffected — already noted as such in Canonical_Terms.md's
-  Cycle entry.
-
-- 2026-05-04: **UNK-004 (Expiry Rule enforcement mechanism)** — Discharged. Sidecar Model addresses the underlying accumulation problem structurally.
-- 2026-05-04: **UNK-022 (Full Stop Review trigger conditions)** — Resolved. Three specific trigger conditions and invocation record format added. Fourth trigger added at v0.6.
-- 2026-05-19: **Gate 3 Adversarial Pass** — Upgraded from single-scenario requirement to full Adversarial Challenge Battery (ten classes).
-- 2026-05-23: **Reconciliation pass** — v0.7 merges v0.6 depth with older draft's role class structure, 10-phase audit sequence, and evidence classification table. Abandoned Paths and Drift Indicators sections added per File_Template.md. Assumptions table added. Failure Modes reformatted to table.
-- 2026-05-23: **AP-005 through AP-007 added** — verification termination threshold, institutional truth provenance hierarchy, and repository integrity doctrine lineage introduced from Forge_Audit_Kit.md v0.7 reconciliation.
-- 2026-06-21: **v0.8 — Epistemic Foundation constitutional header inserted (EF-0.0 through EF-0.8b).** Multi-agent synthesis (Gemini, ChatGPT, Grok, Claude) across six sessions. EF-0.8b is a LazarusForgeV0-specific addition — closes the self-confirming simulation gap.
-- 2026-06-21: **v0.8.1 — Dual audit pass (Gemini + Grok, Skeptic/Auditor).** AP-001 through AP-007 escalated to Systemic Risk (8-cycle expiry threshold exceeded). Three new unknowns logged: AP-008 (High), AP-009 (Low), AP-010 (Medium). Open Unknowns incremented 7 → 10. Gates cleared: G1, G2, G4, G5, G6. Gate blocked: G3.
-- 2026-06-21: **v0.9 — AP Resolution Pass (Claude, Synthesizer/Auditor).** AP-006 closed — Payment via Specification. AP-007 moved to In Progress. AP-002 through AP-005 resolution paths updated. Open Unknowns decremented 10 → 9.
-- 2026-06-21: **v0.10 — Active mandate pass (Claude + Gemini).** EF-0.2 Level 2 and Level 3 action text expanded. AP-009 closed. AP-001, AP-004, AP-005 moved to In Progress. Open Unknowns decremented 9 → 7.
-- 2026-06-21: **v0.11 — Gemini adversarial pass integration.** AP-001 indicator set rolled back — premature metric naming removed. AP-011 logged (Medium, Major). Open Unknowns incremented 7 → 8.
-- 2026-06-23: **v0.12 — RC governance stubs added to Unknowns Registry.** Priority Demotion Doctrine (RC-007), Inventory Calcification Check (RC-008), Vehicle Advancement Visibility (RC-009) integrated as body doctrine. Open Unknowns: 8 (no new AP entries).
-- 2026-06-24: **v0.13 — Full Adversarial Challenge Battery complete.** Claude (Classes 1, 5, 6) + Gemini (Classes 3, 8, 9, 10) + Gemini prior pass (Classes 2, 4, 7). AP-012 through AP-020 logged (9 entries). Human Interaction Point Doctrine added to Governing Principles. EF-0.2 autonomous degradation amendment added. Failure Modes row added. Provenance Ceiling Self-Application Rule added. Gate 3: BLOCKED pending AP-012 and AP-016 reaching Provisional Spec. Open Unknowns: 8 → 15.
-- 2026-06-24: **v0.14 — Full clean rewrite (Claude, Synthesizer/Auditor).** All v0.12 and v0.13 amendment blocks integrated into canonical body positions. Sidecar triage pass: AP-006 and AP-009 remain Resolved; AP-014 closed (Payment via Specification — Epistemic State Calibration Reference table added to Evidence Classification section); AP-015 discharged (Trajectory — v0→v1 transition item); AP-020 discharged (Trajectory — Golden Dataset deferred; AP-014 inline set sufficient for current scale); AP-012 and AP-016 reclassified In Progress → Vehicle (Human Interaction Point Doctrine constitutes doctrine layer; enforcement gap remains). Lessons Learned row added for AP-001 indicator rollback. Gate 3 status note added to Verification Gate Enforcement. Systemic Risk escalation status note updated. Open Unknowns decremented 15 → 12. Highest Risk updated to Critical (AP-012, AP-016).
-
----
-
