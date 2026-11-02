@@ -1009,6 +1009,30 @@ It is explicit about what it will give up. It sacrifices speed, polish, and a go
 
 ---
 
+### AP-036 — Sidecar-hash recomputation not bound to log writes (second divergence)
+
+| Field         | Value                                        |
+|---------------|----------------------------------------------|
+| Status        | In Progress — remedy ratified at registration |
+| Risk          | Medium                                       |
+| Priority      | Major                                       |
+| Type          | Governance / Process                         |
+| Blocking      | No                                           |
+| Owner         | `Admin/Auditor_Protocols.md` — File State Sidecar SHA-256 row; this log's write procedure |
+| First Logged  | 2026-11-02                                   |
+| Last Reviewed | 2026-11-02                                   |
+
+**Description:** The File State Sidecar SHA-256 row in `Admin/Auditor_Protocols.md` has now diverged from the live sidecar twice by the same mechanism — a sidecar log write landed without recomputing the recorded hash in the same change (2026-10-20, found and corrected in later review; 2026-11-02: recorded `275adcfc…` vs live `82f82097…`, found by the external findings-only pseudo-audit and corrected in that pass). Disclosure and correction repair the record but do not prevent recurrence; the class is a process gap, not a one-off.
+
+**Resolution Path — ratified with registration (human-ruled Decision Brief 2026-11-02 item A6):**
+- Any commit that writes to this sidecar's Resolution Log recomputes `Admin/Auditor_Protocols.md`'s File State Sidecar SHA-256 in the same commit (single-commit discipline; the multi-file single-commit tooling used for the 2026-11-02 v0.46 batch makes this mechanically enforceable).
+- The post-push verification sweep includes a recorded-vs-live sidecar hash check as a standing item.
+- A divergence found on read is disclosed and corrected per the AP-023 self-audit bookkeeping precedent.
+
+This entry's own registration applies the remedy: the v0.46 commit recomputed the hash in the same commit as its log write.
+
+---
+
 ### UNK-003 — Cross-repo assumption contracts (Lazarus Forge ↔ Astroid-miner)
 
 | Field         | Value                                                       |
@@ -1078,6 +1102,8 @@ would not discard "without sentiment" is eligible to be considered.
 ---
 
 ### Resolution Log
+
+- 2026-11-02 (second entry, same day): **v0.46 ratified batch — A1, A2, A4, A6 (body-changing; human-ratified Decision Brief 2026-11-02; Vibe, Architect — delegated line, non-independence disclosed).** A1: §Resolution Pathways three-row table replaced with the canonical mapping over the Resolution Taxonomy's five payment types (Specification → Resolved, Specified-not-Validated; Validation → Resolved-Validated; Constitutional Decision → Resolved; Refactoring → Superseded; Discharge → Discharged), with an explicit no-unearned-validation clause (Rule 9/AP-033; Fallacy Checklist item 4) and a legacy-label reconciliation note ("Discharge via Trajectory" → Payment via Discharge, destination `Admin/Trajectories.md`; "Discharge via Lessons Learned" → canonical type of its actual evidence). A4: §Mission Drift Review Measured-scope sentence added — within MDR the five labels grade evidence about repository text (quotation is the instrument), not physical reality; label names unchanged (AP-021/AP-026). A2 (cross-file): Gate 2 Not-Applicable (N/A) definition recorded in `Admin/Verification_Gates.md` v0.8 — explicit exemption, not a pass; AP.md's Spec Gates G2 cell now cites it. A6: **AP-036 registered** — sidecar-hash divergence class, second occurrence, with the recompute-on-log remedy ratified at registration: any commit writing this sidecar recomputes AP.md's File State Sidecar SHA-256 in the same commit, and the post-push sweep checks recorded-vs-live hash. This entry applies the remedy: the companion AP.md File State Sidecar SHA-256 row was recomputed in the same commit as this log write. Version 0.45 → v0.46; Open Unknowns 9 → 10. Independent verifier owed per Rule 5 before any closure claim.
 
 - 2026-11-02: **External findings-only pseudo-audit (Notion-routed external review,
   verified against live source) — findings list for human review. No doctrine

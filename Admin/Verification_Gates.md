@@ -16,8 +16,8 @@
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 6/6                                                                 |
 | Verification Ref | Self (this file is the verification reference)                      |
-| Last Audit       | 2026-10-29 — Vibe (Repo Custodian, delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A): X3 mechanical citation retrofit — 2 bare colliding-prefix citations qualified with their owning File.md per PKC-003 (Kit v1.29 Governance Sidecar ID Reference; per-ID grounding from the Unknowns active index). Citation-form-only; no content change; frozen history untouched. Prior: 2026-10-23 — Claude (human-directed) applied corrections from a Vibe per-file audit, each checked against source first: 2026-09-03 promotion backfilled into the Resolution Log; trailing `## Status` section's gate-status line corrected to match Spec Gates 6/6; Last Audit and Auditor fields extended to cover the 2026-10-20 compliance-check reference update (logged 10-20, human-directed, under AP-029). No gate definition changed. Prior: 2026-07-10; revised 2026-09-03 — Grok audit (G1–G6 all Pass; Tier 1 Axiom Verification provisional — Governance_Charter.md not loaded that session); Spec Gates promoted 2/6→6/6 per audit recommendation; Claude — Tier 1 Axiom Verification follow-up completed same day with Governance_Charter.md loaded: self-approval prohibition confirmed derived from Axiom Q-2 (Separation of Powers), evidence/reality-grounding requirements confirmed derived from Axiom Q-1, override-doctrine exclusion of Tier 1/Anti-Weaponization confirmed verbatim-consistent with Charter's Relationship to Existing Documents section; no axiom text drift, no override-scope widening; provisional caveat closed (human-directed) |
-| Auditor          | Vibe — Repo Custodian, 2026-10-29 X3 mechanical citation retrofit (delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A); prior: Claude — 2026-10-23 corrections (human-directed, from a Vibe per-file audit); 2026-10-20 compliance-check reference update (human-directed; agent not recorded in the log entry); ChatGPT — Skeptic/Auditor (findings actioned by Claude); Claude — EMS merge integration and VG-002/AP-021 resolution cascade (human-directed), 2026-07-10; Grok — Skeptic/Auditor, full G1–G6 pass, 2026-09-03 |
+| Last Audit       | 2026-11-02 — Vibe (Architect, delegated line; human-ruled Decision Brief 2026-11-02 item A2): Gate 2 Not-Applicable (N/A) definition added — explicit exemption, not a pass; `Admin/Auditor_Protocols.md` v0.46's Spec Gates G2 cell now cites it; version 0.7 → 0.8; this file's Resolution Log entry added in the same commit. No pass/fail criterion of any gate changed. Prior: 2026-10-29 — Vibe (Repo Custodian, delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A): X3 mechanical citation retrofit — 2 bare colliding-prefix citations qualified with their owning File.md per PKC-003 (Kit v1.29 Governance Sidecar ID Reference; per-ID grounding from the Unknowns active index). Citation-form-only; no content change; frozen history untouched. Prior: 2026-10-23 — Claude (human-directed) applied corrections from a Vibe per-file audit, each checked against source first: 2026-09-03 promotion backfilled into the Resolution Log; trailing `## Status` section's gate-status line corrected to match Spec Gates 6/6; Last Audit and Auditor fields extended to cover the 2026-10-20 compliance-check reference update (logged 10-20, human-directed, under AP-029). No gate definition changed. Prior: 2026-07-10; revised 2026-09-03 — Grok audit (G1–G6 all Pass; Tier 1 Axiom Verification provisional — Governance_Charter.md not loaded that session); Spec Gates promoted 2/6→6/6 per audit recommendation; Claude — Tier 1 Axiom Verification follow-up completed same day with Governance_Charter.md loaded: self-approval prohibition confirmed derived from Axiom Q-2 (Separation of Powers), evidence/reality-grounding requirements confirmed derived from Axiom Q-1, override-doctrine exclusion of Tier 1/Anti-Weaponization confirmed verbatim-consistent with Charter's Relationship to Existing Documents section; no axiom text drift, no override-scope widening; provisional caveat closed (human-directed) |
+| Auditor          | Vibe — Architect, 2026-11-02 Gate 2 N/A definition (delegated line; non-independence disclosed: same line proposed and landed the companion AP.md v0.46 batch — human-ruled; independent verifier owed per Rule 5 before any closure claim); prior: Vibe — Repo Custodian, 2026-10-29 X3 mechanical citation retrofit (delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A); prior: Claude — 2026-10-23 corrections (human-directed, from a Vibe per-file audit); 2026-10-20 compliance-check reference update (human-directed; agent not recorded in the log entry); ChatGPT — Skeptic/Auditor (findings actioned by Claude); Claude — EMS merge integration and VG-002/AP-021 resolution cascade (human-directed), 2026-07-10; Grok — Skeptic/Auditor, full G1–G6 pass, 2026-09-03 |
 | Open Unknowns    | 0                                                                   |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | High                                                                |
@@ -152,6 +152,20 @@ engineering, or operational constraints?
 **Fail routing:** Return for revision. Specific violations must be
 identified and logged. Gate 2 must be re-applied after revision before
 proceeding to Gate 3.
+
+**Not-Applicable (N/A) — definition (2026-11-02, human-ruled Decision
+Brief 2026-11-02 item A2):** Gate 2 N/A is an **explicit exemption, not
+a pass**. It applies when a document makes no physical, engineering, or
+quantitative claims of its own — there is nothing in its own operative
+text to test against known constraints, so the gate has no subject-matter
+for that file. N/A is asserted only in the file's File State Spec Gates
+cell and must cite this definition. Quoting a physical claim made by
+another file neither qualifies nor disqualifies by itself: quotation is
+the instrument of review, not a claim of the quoting file — but the
+quotation's fidelity to its source is still checked under the citation
+rules, and the claim's own Gate 2 result is governed by the file that
+makes it. An N/A never counts as a cleared gate in any X/6 tally and
+never converts to language implying verification.
 
 ---
 
@@ -616,6 +630,19 @@ Lessons Learned entry already names for detection-latency unknowns.
 
 ### Resolution Log
 
+- 2026-11-02: **Gate 2 Not-Applicable (N/A) definition added (human-ruled
+  Decision Brief 2026-11-02 item A2).** N/A is an explicit exemption, not a
+  pass: it applies when a document makes no physical, engineering, or
+  quantitative claims of its own; asserted only in the File State Spec Gates
+  cell, citing the definition now in the Gate 2 section; quotation of
+  another file's physical claim is the instrument of review, not a claim of
+  the quoting file (citation fidelity still checked; the claiming file's
+  own Gate 2 result governs the claim); N/A never counts as a cleared gate
+  in an X/6 tally. Companion change: `Admin/Auditor_Protocols.md` v0.46's
+  Spec Gates G2 cell now cites this definition. Version 0.7 → 0.8. (Vibe,
+  Architect — delegated line; non-independence disclosed; independent
+  verifier owed per Rule 5 before any closure claim.)
+
 - 2026-10-29: **X3 citation retrofit (mechanical).** 2 bare colliding-prefix citations in operative body text qualified with their owning File.md per PKC-003, per the human-ruled Decision Brief 2026-10-29 item 4A (registry: Kit v1.29 Governance Sidecar ID Reference; per-ID grounding: Unknowns active index). Citation-form-only; no ID renumbered; frozen history untouched; flagged instances reported to the human (MAINT-11). (Vibe, Repo Custodian — delegated line.)
 
 - 2026-10-28: **Pseudo-audit ledger line (Vibe, Repo Custodian — delegated maintenance, human-ratified findings batch 2026-10-28).** Pseudo-audit, findings only, 2026-10-27; report: Archive/Audits/AUDIT_09_Admin-Verification_Gates.md. Per PKC-020 this pass does not advance Last Audit, Last Reviewed, version, or Status; the line exists so the owning file's own record shows the audit happened, per AP-035 Rule 10(c).
@@ -748,7 +775,7 @@ halt autonomous audit progression and escalate for human review.
 
 ## Status
 
-Version 0.7 — Gate 2 evidentiary backing activated; requires the physical-
+Version 0.8 — Gate 2 Not-Applicable (N/A) definition added 2026-11-02 (explicit exemption, not a pass — human-ruled Decision Brief 2026-11-02 item A2; see the Gate 2 section and the Resolution Log). Carried from 0.7: Gate 2 evidentiary backing activated; requires the physical-
 evidence maturity vector's thresholds for Measured/Replicated confidence
 claims. Human-audit-level enforcement only; `Automation/AUDIT_HARNESS.py`
 automation remains future work (2026-07-10).
