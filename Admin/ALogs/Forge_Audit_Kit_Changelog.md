@@ -1,6 +1,7 @@
 # Forge_Audit_Kit.md — Version History
 
 - **v1.30 — 2026-10-29:** X3 mechanical citation retrofit (mechanical pass, delegated line, human-ruled Decision Brief 2026-10-29 item 4A): 2 bare colliding-prefix citations in the Kit’s operative text qualified with their owning File.md per PKC-003 (Governance Sidecar ID Reference, v1.29 edition; per-ID grounding from the Unknowns active index). Citation-form-only; no ID renumbered; no gate advanced; Open Unknowns unchanged at 4. (Vibe — Repo Custodian, delegated line.)
+- **v1.31 — 2026-11-02:** EIP- ownership row added to the Governance Sidecar ID Reference for `Admin/External_Intake_Protocol.md` (MAINT-53, human-ratified landing; per-ID grounding: EIP-001–003 mirrored in `Unknowns.md` same pass). Registration-form-only; no ID renumbered; no gate advanced; Open Unknowns unchanged at 4. (Vibe — Architect line, delegated; non-independent, disclosed.)
 
 Full changelog for `Admin/Forge_Audit_Kit.md`, relocated out of the
 kit's own body as of v1.10 (2026-07-14). Newest entries first. Add new
