@@ -23,7 +23,8 @@ Passes, run in sequence, each appending Finding objects to one shared list:
     4. Unknown Pass        — duplicate sidecar ID detection
     5. Reference Pass      — cross-reference resolution, via audit_lib.py
     6. Version String Pass — self-citation version drift (AP-025 pattern)
-    7. Output              — structured JSON + human-readable summary
+    7. Pattern A Pass      — Pattern A consistency (C1–C3, C5, C6)
+    8. Output              — structured JSON + human-readable summary
 
 Honesty about scope, stated up front rather than discovered later:
     - Registry Pass inherits parse_routing()'s known limitation: files
@@ -68,7 +69,7 @@ except Exception as e:
 
 
 TOOL_NAME = "integrity_check"
-TOOL_VERSION = "0.2"  # 0.2: LOCAL-ONLY scope label; quiet harness import; DEGRADED if aliases fail
+TOOL_VERSION = "0.3"  # 0.3: Pattern A checks (C1–C3, C5, C6); 0.2: LOCAL-ONLY scope label; quiet harness import; DEGRADED if aliases fail
 
 # Sidecar ID pattern: matches "### AP-017 — ..." style defining headers,
 # not table rows. Prefix is 2-6 uppercase letters, ID is 3+ digits.
@@ -87,6 +88,38 @@ SELF_VERSION_RE = re.compile(r'([A-Za-z_]+(?:\.md)?)\s+v(\d+\.\d+)')
 
 # File State version line, e.g. "**Version 0.25**"
 FILE_STATE_VERSION_RE = re.compile(r'^\*\*Version\s+(\d+\.\d+)\*\*', re.MULTILINE)
+
+# --- Pattern A consistency (File_Template.md §Pattern A), added v0.3 ---
+# C1: exactly one boundary heading. An R8 pointer file still keeps the
+# boundary heading itself, so pointers need no special case here.
+BOUNDARY_RE = re.compile(r'^##\s+Historical\s+Record\s*$')
+
+# C3 declared-version forms, tried in order: 1. the File State line
+# "**Version 0.25**" (FILE_STATE_VERSION_RE above); 2. a version block
+# "**Version 0.11 (working)**" (bold prefix only); 3. a status line
+# "Version 0.18 — Exploration" (Ethical_Constraints-style header).
+VERSION_BLOCK_RE = re.compile(r'^\*\*Version\s+(\d+\.\d+)', re.MULTILINE)
+STATUS_LINE_VERSION_RE = re.compile(r'^Version\s+(\d+\.\d+)\s+—', re.MULTILINE)
+
+# C3/C6: a Resolution Log line is trusted only when a date sits at (or a
+# short label like "Note (" precedes a date at) the line start.
+RL_DATE_RE = re.compile(r'^\s*(?:[-*]\s*)?(?:\*\*)?\s*(?:[A-Za-z][\w \-]{0,40}\()?(\d{4}-\d{2}-\d{2})')
+
+# C3: a version transition named on a trusted line.
+TRANSITION_RE = re.compile(r'v?(\d+\.\d+)\s*(?:→|->)\s*v?(\d+\.\d+)')
+
+# C5: a "Prior:" chain link in the File State region (header block).
+PRIOR_CHAIN_RE = re.compile(r'^[ \t]*(?:[-*][ \t]*)?\*{0,2}[ \t]*Prior[ \t]*\*{0,2}[ \t]*:')
+
+# C2: headings that legitimately straddle or sit below the boundary.
+C2_EXEMPT_HEADINGS = ("Auditor Notes & Unknowns", "Lessons Learned", "Abandoned Paths")
+
+# C2 structural scan: level-2 headings.
+H2_RE = re.compile(r'^##\s+(.+?)\s*$')
+
+# C5: on an unmigrated file the File State region (header block) ends at
+# the first level-2 heading.
+TOPLEVEL_HEADING_RE = re.compile(r'^##[ \t]+\S')
 
 
 def walk_repo(root):
@@ -325,6 +358,183 @@ def unknowns_summary_pass(root, all_files, findings):
     return {"total": total, "by_priority": by_priority, "by_status": by_status}
 
 
+def pattern_a_pass(root, all_files, findings):
+    """
+    Pattern A consistency checks, per File_Template.md §Pattern A.
+
+    Implemented 2026-11-04 (v0.3) under a human-ruled scope: C1, C2,
+    C3, C5 and C6. C4 is retired (MAINT-56) and C7–C8 are deferred
+    by human ruling 2026-11-04 until a RELEASES register exists —
+    this pass checks none of those and does not pretend to.
+
+    Gating, stated up front rather than discovered later:
+    - C1, C2 and C6 apply only to a file that HAS a
+      `## Historical Record` boundary. No live file has migrated to
+      Pattern A yet, so unmigrated files are skipped silently here;
+      the migrated/unmigrated counts in the report carry that
+      information without per-file NOTE noise.
+    - C3 applies to any file that declares a version by one of the
+      three known header forms, migrated or not.
+    - C5 applies to every file's File State region (header block:
+      above the boundary, or above the first `## ` heading on an
+      unmigrated file). Frozen files under Archive/ are included
+      deliberately — this is a census of R7 Prior-chain debt, not a
+      live-file-only sample; expect warnings there until a human
+      rules an exemption gate.
+
+    Known limits, in the spirit of this module's own docstring:
+    - C3 trusts a Resolution Log line only when a date sits at (or a
+      short label like "Note (" precedes a date at) the line start,
+      and only transitions that involve the declared version. A
+      transition mentioned mid-paragraph is not evidence.
+    - C6 is direction-agnostic (ascending and descending both pass)
+      and tolerant of same-day entries; it flags only a real reversal.
+    """
+    migrated = 0
+    unmigrated = 0
+    declared_files = 0
+    prior_chain_files = 0
+
+    for rel_path, is_extensionless in all_files:
+        if is_extensionless:
+            continue
+        full_path = os.path.join(root, rel_path)
+        try:
+            with open(full_path, encoding="utf-8", errors="replace") as f:
+                content = f.read()
+        except Exception:
+            continue
+        lines = content.split("\n")
+
+        # --- C1: exactly one boundary heading ---
+        boundary_line = None
+        boundary_count = 0
+        for i, ln in enumerate(lines):
+            if BOUNDARY_RE.match(ln):
+                if boundary_count == 0:
+                    boundary_line = i
+                boundary_count += 1
+        if boundary_count > 1:
+            findings.append(Finding("CRITICAL", "PATTERN_A", rel_path,
+                                     f"Found {boundary_count} '## Historical Record' "
+                                     "boundary headings — C1 requires exactly one."))
+        if boundary_line is None:
+            unmigrated += 1
+        else:
+            migrated += 1
+
+        # --- C2: no Front heading below the boundary ---
+        if boundary_count == 1:
+            front_headings = set()
+            for ln in lines[:boundary_line]:
+                m = H2_RE.match(ln)
+                if m:
+                    h = m.group(1)
+                    if h not in C2_EXEMPT_HEADINGS and h != "Historical Record":
+                        front_headings.add(h)
+            for j, ln in enumerate(lines[boundary_line + 1:], start=boundary_line + 2):
+                m = H2_RE.match(ln)
+                if not m:
+                    continue
+                h = m.group(1)
+                if h in C2_EXEMPT_HEADINGS or h == "Historical Record":
+                    continue
+                if h in front_headings:
+                    findings.append(Finding("WARNING", "PATTERN_A", rel_path,
+                                             f"Front heading '## {h}' reappears below "
+                                             f"the boundary at line {j} — C2 violated."))
+
+        # --- C3: header version vs newest dated RL transition ---
+        m = (FILE_STATE_VERSION_RE.search(content)
+             or VERSION_BLOCK_RE.search(content)
+             or STATUS_LINE_VERSION_RE.search(content))
+        if m:
+            declared = m.group(1)
+            declared_files += 1
+            newest = None  # (date, line_no, source, target)
+            for j, ln in enumerate(lines, start=1):
+                dm = RL_DATE_RE.match(ln)
+                if not dm:
+                    continue
+                for tm in TRANSITION_RE.finditer(ln):
+                    src, tgt = tm.group(1), tm.group(2)
+                    if declared == src or declared == tgt:
+                        if newest is None or (dm.group(1), j) > (newest[0], newest[1]):
+                            newest = (dm.group(1), j, src, tgt)
+            if newest is None:
+                findings.append(Finding("WARNING", "PATTERN_A", rel_path,
+                                         f"Header declares v{declared} but no dated "
+                                         "Resolution Log entry names a transition to "
+                                         f"or from v{declared} — C3 cannot confirm the "
+                                         "header version."))
+            elif newest[3] != declared:
+                findings.append(Finding("WARNING", "PATTERN_A", rel_path,
+                                         f"Header version v{declared} does not match the "
+                                         "newest dated Resolution Log transition "
+                                         f"'{newest[2]} → {newest[3]}' at line "
+                                         f"{newest[1]} — C3 violated."))
+
+        # --- C5: no Prior: chain in the File State region ---
+        if boundary_line is not None:
+            region_end = boundary_line
+        else:
+            region_end = len(lines)
+            for i, ln in enumerate(lines):
+                if TOPLEVEL_HEADING_RE.match(ln):
+                    region_end = i
+                    break
+        hits = [j for j, ln in enumerate(lines[:region_end], start=1)
+                if PRIOR_CHAIN_RE.match(ln)]
+        if hits:
+            prior_chain_files += 1
+            findings.append(Finding("WARNING", "PATTERN_A", rel_path,
+                                     "File State region still holds a Prior: chain "
+                                     f"({len(hits)} link(s), first at line {hits[0]}) — "
+                                     "C5/R7 debt; migrate on next touch."))
+
+        # --- C6: dated entries below the boundary are in date order ---
+        if boundary_count == 1:
+            dated = []
+            for j, ln in enumerate(lines[boundary_line + 1:], start=boundary_line + 2):
+                dm = RL_DATE_RE.match(ln)
+                if dm:
+                    dated.append((j, dm.group(1)))
+            if len(dated) >= 2:
+                dates = [d for _, d in dated]
+                asc = all(dates[i] <= dates[i + 1] for i in range(len(dates) - 1))
+                desc = all(dates[i] >= dates[i + 1] for i in range(len(dates) - 1))
+                if not (asc or desc):
+                    direction = None
+                    for i in range(len(dates) - 1):
+                        if dates[i] < dates[i + 1]:
+                            direction = "asc"
+                            break
+                        if dates[i] > dates[i + 1]:
+                            direction = "desc"
+                            break
+                    for i in range(len(dates) - 1):
+                        bad = ((direction == "asc" and dates[i] > dates[i + 1])
+                               or (direction == "desc" and dates[i] < dates[i + 1]))
+                        if bad:
+                            findings.append(Finding("WARNING", "PATTERN_A", rel_path,
+                                                     "Historical Record dated entries "
+                                                     f"out of order: line {dated[i][0]} "
+                                                     f"({dated[i][1]}) vs line "
+                                                     f"{dated[i + 1][0]} "
+                                                     f"({dated[i + 1][1]}) — C6 violated."))
+                            break
+
+    return {
+        "migrated_files": migrated,
+        "unmigrated_files": unmigrated,
+        "declared_version_files": declared_files,
+        "prior_chain_files": prior_chain_files,
+        "checks": "C1–C3, C5, C6",
+        "retired": "C4 (MAINT-56)",
+        "deferred": "C7–C8 (human ruling 2026-11-04, until a RELEASES register exists)",
+    }
+
+
 def run(root):
     findings = []
     all_files = walk_repo(root)
@@ -334,6 +544,7 @@ def run(root):
     unknown_pass(root, all_files, findings)
     reference_pass(root, all_files, findings)
     version_string_pass(root, all_files, findings)
+    pattern_a_summary = pattern_a_pass(root, all_files, findings)
     unknowns_summary = unknowns_summary_pass(root, all_files, findings)
 
     by_severity = {"CRITICAL": [], "WARNING": [], "NOTE": []}
@@ -365,6 +576,7 @@ def run(root):
         "summary": {sev: len(items) for sev, items in by_severity.items()},
         "findings": [f.to_dict() for f in findings],
         "unknowns_summary": unknowns_summary,
+        "pattern_a": pattern_a_summary,
     }
     return report
 
@@ -394,7 +606,7 @@ def print_health_summary(report):
     Tier 1 + Tier 2 health summary, added 2026-08-27 per a scoped
     dashboard request. Tier 1 = PASS/FAIL per existing check category,
     derived from CRITICAL/WARNING counts already in this report — no
-    new checking logic, just a threshold read on what the five passes
+    new checking logic, just a threshold read on what the six passes
     above already found. Tier 2 = active-unknown counts from
     Unknowns.md's own Priority column, via unknowns_summary_pass.
 
@@ -423,6 +635,7 @@ def print_health_summary(report):
         ("DUPLICATE_ID", "Sidecar ID uniqueness"),
         ("REFERENCE", "Cross-reference resolution"),
         ("VERSION_STRING", "Version-citation freshness"),
+        ("PATTERN_A", "Pattern A checks (C1–C3, C5, C6)"),
     ]
 
     vs = report.get("verification_scope") or {}
