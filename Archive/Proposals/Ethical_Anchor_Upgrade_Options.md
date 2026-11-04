@@ -73,7 +73,7 @@ Design rule used below: quote P-1's own words ("foreseeably risk", "catastrophic
 3. **Per-file bookkeeping.** PKC-020 cascade on 96 files is heavy. Needs a ruling: one Resolution Log entry per folder batch for a mechanical sweep, rather than per file.
 4. **Cycle 1 baseline.** If the anchor is added to the probe's canonical inputs, record it as an instrument change and re-baseline.
 
-## Decisions needed from James
+## Decisions needed
 
 1. Pick V0 / V1 / V2 / V3 / V4 (or a blend).
 2. Allow folder-batch bookkeeping for the sweep? (yes / no)
