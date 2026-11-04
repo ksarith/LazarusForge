@@ -2,7 +2,8 @@
 
 **Standard file structure for LazarusForge documents.**
 Applies to all new files and retrofit audit cycles.
-**Last updated: 2026-10-30 (seventh entry) — Architecture subfolder naming resolved (human direction, same day): subfolder letters are the folder's X3 designated zip-code letter (Routing.md, registered 2026-10-28), not its initial — Architecture (X3 letter R) → `Architecture/RLogs/` and `Architecture/RAudits/` when its homes are first needed; the MAINT-29 Admin/Architecture shared-initial collision is CLOSED. §Log-Split Rule "Subfolder naming" paragraph reworded to match. Sections 0–11, rules R1–R9, checks C1–C8, and Template Exemptions otherwise unchanged.**
+**Last updated: 2026-11-03 (eighth entry) — Critical joins the Risk vocabulary (human ruling, 2026-11-03, MAINT-55): File State Highest Risk and sidecar Risk values now read Low / Medium / High / Critical. The 2026-10-25 PKC-004/PKC-024 vocabulary clause ("Critical" is not a Risk value) is superseded on that point only — the Blocking designation still carries elevated severity, Risk and Priority remain distinct fields, and Critical is the one deliberate value shared by both vocabularies (CE-003 carries Risk Critical and Priority Critical side by side). File State example row, doctrine paragraph and sidecar example row reworded to match; companion `Architecture/Chemistry.md` Highest Risk corrected High→Critical in the same pass (two live File States already carried Critical: `Challenges/Closed_Loop_Feedstock.md`, `Challenges/Living_Waters.md`). Provenance: defect family identified by the external Claude 1.33 Alpha release review, live-verified by Custodian (Vibe, Genesis Phase, non-independent), ruled by the human governing authority. Sections 0–11, rules R1–R9, checks C1–C8, and Template Exemptions otherwise unchanged.**
+**Prior: 2026-10-30 (seventh entry) — Architecture subfolder naming resolved (human direction, same day): subfolder letters are the folder's X3 designated zip-code letter (Routing.md, registered 2026-10-28), not its initial — Architecture (X3 letter R) → `Architecture/RLogs/` and `Architecture/RAudits/` when its homes are first needed; the MAINT-29 Admin/Architecture shared-initial collision is CLOSED. §Log-Split Rule "Subfolder naming" paragraph reworded to match. Sections 0–11, rules R1–R9, checks C1–C8, and Template Exemptions otherwise unchanged.**
 **Prior: 2026-10-30 (sixth entry) — Per-folder home naming ruled + Admin relocation executed (human direction following Decision Brief 2026-10-30c §7): log and audit subfolders take the owning folder's designated zip-code letter — Admin → `ALogs/` and `AAudits/`. §Log-Split Rule Homes and R8 reworded to `<Letter>Logs/`/`<Letter>Audits/`; letters for other folders assigned when their homes are first needed (the shared A initial of Admin and Architecture recorded as an open naming question). Same-pass relocation (direct human direction, byte-identical create-then-delete moves): five Admin-owned changelogs Archive/Logs/ → Admin/ALogs/ and thirty-seven Admin-file audit artifacts Archive/Audits/ → Admin/AAudits/; root-owned changelogs and corpus-wide artifacts remain in Archive, frozen. Sections 0–11, rules R1–R7/R9, checks C1–C8, and Template Exemptions otherwise unchanged.**
 **Prior: 2026-10-30 (fifth entry) — Log-Split Rule (Option C) adopted by Human Governing Authority ruling (Decision Brief 2026-10-30c, items 1–2): new §Log-Split Rule section (triggers T0 existing rotation/20%/Aging, T1 file size ≥ 100 KB, T2 audit purity; splits execute at each file's next substantive touch, never in bulk, heaviest first); R8 amended — new relocated logs land in the owning folder's `Logs/` subfolder, new audit artifacts in the audited folder's `Audits/` subfolder; existing `Archive/Logs/` changelogs and `Archive/Audits/` artifacts frozen in place. Pattern A Pilot paragraph's "no `logs/` or `audits/` subfolders" clause superseded for these two homes only. Sections 0–11, Pattern A rules R1–R7/R9, checks C1–C8, and Template Exemptions otherwise unchanged.**
 **Prior: 2026-10-28 (fourth entry) — Template Exemptions classes 10–11 added (Decision Brief 2026-10-28d, item 6, human-ratified): class 10, Tier 0 philosophical substrate (AUDIT_24 F1); class 11, stub/scaffold/candidate family — Integrity_Incident_Log, Agent_Verification_Event, Experiments, Hardware_Diversity_Ladder (AUDIT_23 F1, AUDIT_27 F2, AUDIT_28 F1, AUDIT_29 F1). Same-pass mechanical repairs: consistency check C4’s description restored (a Pattern A-pass edit had spliced a Last Audit value into it), and this file’s three real Resolution Log entries relocated from inside the Section 9 example block into a proper own Resolution Log, the example restored to pristine. Sections 0–11, Pattern A and classes 1–9 otherwise unchanged.**
@@ -294,7 +295,7 @@ Place immediately below the Navigation Anchors block (and Safety Advisory if pre
 | Auditor          | [Agent — Role]                                                      |
 | Open Unknowns    | N                                                                   |
 | Active Disputes  | N                                                                   |
-| Highest Risk     | Low / Medium / High                                                 |
+| Highest Risk     | Low / Medium / High / Critical                                                 |
 | Sidecar Link     | #auditor-notes--unknowns                                            |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 ```
@@ -309,9 +310,13 @@ or deliberately omitted.
 The Kit is a condensed reference; the Gates file is the canonical authority.
 
 **Highest Risk takes a Risk value, never a Priority value** (human ruling, 2026-10-25, PKC-004 and
-PKC-024). The allowed values are Low / Medium / High. "Critical" is not a Risk value; elevated
-severity is carried by the Blocking designation on an unknown. Risk and Priority are distinct
-fields: Risk values must not appear in a Priority column, nor Priority values in a Risk field.
+PKC-024; vocabulary amended by human ruling, 2026-11-03, MAINT-55). The allowed values are
+Low / Medium / High / Critical. "Critical" joined the Risk vocabulary by human ruling on 2026-11-03
+(two live File States already carried it; `Architecture/Chemistry.md` corrected in the same
+pass); elevated severity is still carried by the Blocking designation on an unknown. Risk and
+Priority are distinct fields: Risk values must not appear in a Priority column, nor Priority
+values in a Risk field — Critical is the one deliberate exception, valid in both vocabularies
+by the same ruling (CE-003 carries Risk Critical and Priority Critical side by side).
 An open Blocking item that is ignored is a warning condition in audits and in work that depends
 on it.
 
@@ -656,7 +661,7 @@ The sidecar. Placed after Active Disputes.
 | Field         | Value                                            |
 |---------------|--------------------------------------------------|
 | Status        | Open / In Progress / Resolved                    |
-| Risk          | Low / Medium / High                              |
+| Risk          | Low / Medium / High / Critical                              |
 | Priority      | Minor / Major / Critical                         |
 | Type          | Technical / Ethical / Architectural / Governance |
 | Blocking      | Yes / No                                         |
