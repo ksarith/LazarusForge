@@ -1,5 +1,5 @@
 """
-Lazarus Forge - Metadata Parser v0.2
+Lazarus Forge - Metadata Parser v0.3 (schema: MAINT-56 nine-field File State)
 Evidence-first, provenance-rich, conflict-aware parser.
 
 Design philosophy (per Automation subsystem doctrine):
@@ -188,13 +188,20 @@ class MetadataParser:
     }
 
     # Fields expected on a fully-described canonical File State block, per
-    # Admin/File_Template.md §2 — the full eleven-field schema, used by
-    # everything except Problem-Statement subtype files in Challenges/.
+    # Admin/File_Template.md §2 — the canonical nine-field schema since
+    # 2026-11-04 (MAINT-56, human ruling): the eleven-field schema through
+    # 2026-11-03 carried last_audit and auditor, retired to each file's
+    # Resolution Log and changelog home. Used by everything except
+    # Problem-Statement subtype files in Challenges/.
     EXPECTED_FIELDS = [
         "status", "body_stability", "spec_gates", "verification_ref",
-        "last_audit", "auditor", "open_unknowns", "active_disputes",
+        "open_unknowns", "active_disputes",
         "highest_risk", "sidecar_link", "ethical_anchor",
     ]
+    # last_audit/auditor remain in KEY_MAPPINGS and LEGACY_PATTERNS on
+    # purpose: files not yet migrated still carry the rows, and they are
+    # harvested as ordinary fields without conflict — just no longer
+    # counted as expected.
 
     # Problem-Statement subtype (Challenges/ files that name a problem
     # without themselves converging toward a build) uses a deliberately
