@@ -15,7 +15,7 @@
 |------------------|---------------------------------------------------------------------|
 | Status           | Draft                                                               |
 | Body Stability   | Transitional                                                        |
-| Spec Gates       | 5/6 (G1, G3, G4, G5, G6 clear — G3 cleared 2026-08-03 via AP-017 Resolved; G5 cleared 2026-09-03, see Last Audit; G2 N/A — explicit exemption, not a pass: no physical/quantitative claims of its own, per `Admin/Verification_Gates.md` §Gate 2 Not-Applicable (N/A) definition (v0.8, 2026-11-02)) |
+| Spec Gates       | 5/6 (G1, G3, G4, G5, G6 clear — G3 cleared 2026-08-03 via AP-017 Resolved; G5 cleared 2026-09-03, see the sidecar Resolution Log (`Admin/ALogs/Auditor_Protocols_Logs.md`); G2 N/A — explicit exemption, not a pass: no physical/quantitative claims of its own, per `Admin/Verification_Gates.md` §Gate 2 Not-Applicable (N/A) definition (v0.8, 2026-11-02)) |
 | Verification Ref | Admin/Verification_Gates.md                                      |
 | Open Unknowns    | 10 (AP-036 In Progress — registered 2026-11-02, recompute-on-log remedy ratified with it (Decision Brief item A6); AP-029 Resolved — Constitutional Decision, 2026-10-20; AP-013 Resolved 2026-08-19; AP-005 Resolved 2026-08-19; AP-004 Resolved 2026-08-20; AP-024 Resolved — Payment via Specification, 2026-08-20; see `Admin/ALogs/Auditor_Protocols_Logs.md` Resolution Log for full Closure Events) |
 | Active Disputes  | 1                                                                   |
