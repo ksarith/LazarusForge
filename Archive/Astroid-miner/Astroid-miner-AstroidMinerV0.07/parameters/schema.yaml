@@ -1,0 +1,38 @@
+# Master Parameter Provenance Schema (v0.02 Standard)
+$schema: "http://json-schema.org/draft-07/schema#"
+title: "ParameterProvenanceRecord"
+type: "object"
+required:
+  - parameter_id
+  - symbol
+  - value
+  - unit
+  - provenance_state
+properties:
+  parameter_id:
+    type: "string"
+    pattern: "^PAR-[A-Z0-9]{3,8}-[0-9]{3}$"
+  symbol:
+    type: "string"
+  value:
+    type: ["number", "boolean", "string"]
+  unit:
+    type: "string"
+  provenance_state:
+    type: "string"
+    enum:
+      - "measured"
+      - "literature_derived"
+      - "engineering_estimate"
+      - "exploratory_placeholder"
+      - "unknown"
+      - "derived_from_model"
+      - "assumption"
+  source_citation:
+    type: "string"
+  confidence_score:
+    type: "number"
+    minimum: 0.0
+    maximum: 1.0
+  notes:
+    type: "string"
