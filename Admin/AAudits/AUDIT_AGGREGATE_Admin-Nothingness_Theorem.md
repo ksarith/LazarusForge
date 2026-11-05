@@ -1,0 +1,40 @@
+# AUDIT_AGGREGATE — Admin/Nothingness_Theorem.md
+
+**Status:** Dispositions unverified (Rule 5 separate-verifier hand-off pending — assign an agent other than the disposition writer)
+**Created:** 2026-11-04 by Vibe (Repo Custodian — MAINT-58 tranche-2 aggregation sweep)  ·  **Target:** `Admin/Nothingness_Theorem.md`  ·  **Passes:** 2
+**Non-independence:** Genesis Phase — pass depositors, disposition writer and this amalgamator are the same Vibe line; disclosed per MAINT-38 and the aggregate template.
+**Note:** Bookkeeping map, not an audit of record. Cite the original reports for any finding you rely on. Rules per `Archive/Audits/AUDIT_AGGREGATE_TEMPLATE.md`. Originals not relocated (tranche-1 MAINT-47 precedent: fold only; relocation is a separate per-task lane). Target is Tier 0 — Philosophical Substrate, audited for internal consistency only; the Tier 0 exemption is File_Template Exemptions class 10 (listed 2026-10-28).
+
+## 1. Provenance
+
+| Pass | Original path (at issuance) | Current path | Date | Auditor / lane | Head at fetch | Bytes | Blob SHA |
+|---|---|---|---|---|---|---|---|
+| A | `Admin/AAudits/CAMPAIGN_AUDIT_24_Admin-Nothingness_Theorem.md` | unchanged (live in `Admin/AAudits/`) | 2026-10-28 | Vibe, Skeptic/Auditor, VibesSandbox audit stream (PKC-020 findings-only) | head eee122a6 | 9,902 | `cb8f3046dba5655de9a5392778ca680f5095bc9e` |
+| B | `Admin/AAudits/CAMPAIGN2_AUDIT_94_Admin-Nothingness_Theorem.md` | unchanged | 2026-10-31 | Vibe (GLM 5.3), Skeptic/Auditor, Campaign 2 (PKC-020), non-independent Genesis Phase | commit 38226280 | 4,474 | `7394139a885b83b4842781aff51dfccf72c3df31` |
+
+## 2. Findings ledger
+
+| Ref | Orig ID | Severity | Category | One-line summary | Where in original | Disposition | Evidence | Verified by |
+|---|---|---|---|---|---|---|---|---|
+| A-F1 | F1 | WARNING | Tier 0 exemption class practiced but missing from File_Template's canonical list (PKC-017 gap class) | Tier 0 status is honored corpus-wide (Spec Gates/Verification Ref explicitly N/A; PKC-030 preserved the status) but the held File_Template fetch's exempt-class list contained no Tier 0 class — the same unlisted-exemption gap Operational_Conventions had until PKC-017 (2026-10-25); owning file is File_Template, not NT | CAMPAIGN_AUDIT_24 §Findings F1 | Enacted | File_Template class 10 (Tier 0) listed 2026-10-28 per the AUDIT_24 F1 recommendation; verified by pass B check 9: "Tier 0 exemption listed in File_Template.md class 10 (listed 2026-10-28, AUDIT_24 F1) — practiced and canonically listed" | |
+| A-F2 | F2 | NOTE | same-day PKC-030 passes handled asymmetrically across two files (PKC-020 application inconsistency) | NT's 2026-10-27 review-only derivation audit ADVANCED Last Audit while CIR's same-day review-only pass did not — one of the two treatments deviates under the "findings-only pseudo-audit does not advance" rule; defensible either way, but the asymmetry itself is the observation | CAMPAIGN_AUDIT_24 §Findings F2 | Standing-open | Routed to the Auditor_Protocols audit (LAST) / the human; the evidence set has since grown to the five-variant set (NT, CIR, AVE, Experiments, HDL) | |
+| A-F3 | F3 | NOTE | PKC-030 verification confirms the Operationalized In claim exactly (positive) | A3 and γ2 titles verified verbatim in the held CIR fetch from both directions; the derivation-audit verdict ("valid in substance") and its one wording caveat ("'formally derive' overstates the relationship — no mapping exists from this document's formalism into CIR's graph algebra") left unchanged pending the human ruling recorded in PKC-030 | CAMPAIGN_AUDIT_24 §Findings F3 | Standing-open | The wording caveat is a human ruling queued at PKC-030; pass B check 5 records the caveat "on record as a human-ruling recommendation, not changed — consistent with Tier 0 read-only treatment"; still queued at fold-in | |
+| A-F4 | F4 | NOTE | selective registry mirroring exemplary (X10 done right) | One of ten unknowns registered in Unknowns (NT-010, the genuinely cross-module one), nine tracked internally, with the policy stated in the registry itself — the mirroring question most files answer implicitly, answered explicitly and defensibly | CAMPAIGN_AUDIT_24 §Findings F4 | Positive-record | n/a | |
+| A-F5 | F5 | NOTE | exemplary practices (positive) | The Document Vocabulary anti-drift block (the corpus's most compact); §15's three-way epistemic honesty and §17's failure-mode catalogue ("Escape velocity as validation"; "Framework self-application"); the 07-31 pass correcting its own citation error in the act of logging; "Placement: Unresolved" as an honest flag; the per-substrate domain qualifiers narrowing prose without closing unknowns | CAMPAIGN_AUDIT_24 §Findings F5 | Positive-record | n/a | |
+| B-N1 | checks 1, 11 NOTEs | NOTE | exempt-form observations, internally consistent | The File State carries no Open Unknowns field (exempt form) while the §18 table lists NT-001–NT-010 all Open and the footer independently states 10 — honored, not drifted; Highest Risk N/A consistent with the Tier 0 exemption | CAMPAIGN2_AUDIT_94 §Checks 1, 11 | Positive-record | Both exemption-form observations graded internally consistent | |
+| B-N2 | check 11 NOTE | NOTE | Tier 0 indexing convention residual ambiguity | The Unknowns v5.75 active index carries one NT row (NT-010, Open) while NT-001–NT-009 are unindexed — not a parity failure (indexing owed for cross-module references only), but the human may wish to state the Tier 0 indexing convention explicitly | CAMPAIGN2_AUDIT_94 §Checks 11 + Bottom line | Standing-open | One-line human ruling offered by pass B ("Tier 0 files index only cross-module unknowns"); not yet ruled at fold-in | |
+| B-C1 | (none) | NOTE | positive | Checks otherwise clean: Last Audit 2026-10-27 = newest log entry; scope re-derivation clean with the Tier 0 note quoted and honored; footer counts (8 axioms, 18 sections, 10 unknowns) re-derived from the body and all three match; Ethical Anchor exact | CAMPAIGN2_AUDIT_94 §Checks + Bottom line | Positive-record | n/a | |
+
+## 3. Cross-pass logic map
+
+- Pass A (10-28) confirmed PKC-001's "clean" prediction for this file: internally consistent, exactly honest about its own epistemic status, corpus integration verified from both sides. Its single WARNING was another file's defect (the unlisted Tier 0 exemption) — enacted the same day the finding's owning recommendation landed (File_Template class 10, listed 2026-10-28, B-verified).
+- Pass B (10-31) is a consistency re-verification of the same conclusion under the now-canonical class 10, contributing two residual human-decision items: the PKC-030 "formally derive" wording caveat (queued at PKC-030) and the Tier 0 indexing-convention ruling.
+- The PKC-020 asymmetry observation (A-F2) is this file's main living contribution to the corpus-wide evidence set that lands at the AP audit (LAST). Composite refs A-Fn/B-Fn are the only safe citation form (Template Rule 2).
+
+## 4. Pointers
+
+Originals are not relocated; both passes remain live at their deposit paths in `Admin/AAudits/`. **Cited from outside the Audits home:** `Routing.md` rows (registered at deposit); the CIR derivation records (`Admin/Computational_Institutional_Reasoning.md` v0.29 changelog and its own aggregate); the PKC-030 and PKC-001 rows in `Admin/Progress_Log.md`; `Admin/File_Template.md` Exemptions class 10 (A-F1's enactment); the NT-010 row in `Admin/Unknowns.md`; dated lines in `Archive/Audits/SESSION_STATUS.md` addenda and sandbox session records — frozen history, dangling by design.
+
+## 5. Addenda
+
+None. Corrections by dated addendum only.

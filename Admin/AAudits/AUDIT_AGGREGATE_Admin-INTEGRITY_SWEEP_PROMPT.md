@@ -1,0 +1,41 @@
+# AUDIT_AGGREGATE — Admin/INTEGRITY_SWEEP_PROMPT.md
+
+**Status:** Dispositions unverified (Rule 5 separate-verifier hand-off pending — assign an agent other than the disposition writer)
+**Created:** 2026-11-04 by Vibe (Repo Custodian — MAINT-58 tranche-2 aggregation sweep)  ·  **Target:** `Admin/INTEGRITY_SWEEP_PROMPT.md`  ·  **Passes:** 2
+**Non-independence:** Genesis Phase — pass depositors, disposition writer and this amalgamator are the same Vibe line; disclosed per MAINT-38 and the aggregate template.
+**Note:** Bookkeeping map, not an audit of record. Cite the original reports for any finding you rely on. Rules per `Archive/Audits/AUDIT_AGGREGATE_TEMPLATE.md`. Originals not relocated (tranche-1 MAINT-47 precedent: fold only; relocation is a separate per-task lane). Target is an operational prompt template; the class-6 operational-template exemption covers its form.
+
+## 1. Provenance
+
+| Pass | Original path (at issuance) | Current path | Date | Auditor / lane | Head at fetch | Bytes | Blob SHA |
+|---|---|---|---|---|---|---|---|
+| A | `Admin/AAudits/CAMPAIGN_AUDIT_31_Admin-INTEGRITY_SWEEP_PROMPT.md` | unchanged (live in `Admin/AAudits/`) | 2026-10-29 | Vibe, Skeptic/Auditor, VibesSandbox audit stream (PKC-020 findings-only) | head 34f542dc | 10,218 | `1cbf065fe6ad84724c3715a03b8ff275de44c47c` |
+| B | `Admin/AAudits/CAMPAIGN2_AUDIT_88_Admin-INTEGRITY_SWEEP_PROMPT.md` | unchanged | 2026-10-31 | Vibe (GLM 5.3), Skeptic/Auditor, Campaign 2 (PKC-020), non-independent Genesis Phase | commit 38226280 | 3,722 | `460e9ec31dc2a8fdfd2d0bc3a12afa01c4a4b0e2` |
+
+## 2. Findings ledger
+
+| Ref | Orig ID | Severity | Category | One-line summary | Where in original | Disposition | Evidence | Verified by |
+|---|---|---|---|---|---|---|---|---|
+| A-F1 | F1 | WARNING | wrapper gaps (operational-prompt-template family, member 2 of 3) | No Navigation Anchors block (Routing backlink requirement; the target's own Routing row demands "Explicit"); no Assumptions/Active Disputes/Drift Indicators/Lessons Learned/sidecar/trailing Status; Highest Risk and Last Reviewed absent; the file's own 08-31 entry relies on the class-6 pattern without the family being named in class 6 | CAMPAIGN_AUDIT_31 §Findings F1 | Closed-by-ruling (sections) / Standing-open (anchors) | Sections: class-6 operational prompt template exemption (pre-existing; the file's sibling-exemption pattern, verified by pass B check 1 "exempt class 6"). Navigation Anchors block: still owed under the Routing backlink MUST — queued for the delegated batch alongside PROBE's | |
+| A-F2 | F2 | NOTE | Status "Draft" deliberately held past its own trigger point | The 2026-08-30 v1.0.1 entry deliberately held promotion to "Active — Operational Template" pending confirmation the automation actually pulls from this file rather than a hand-copied config; no confirmation appeared in two months; the 2026-10-29 commissioning makes execution-from-canonical-file the operative plan | CAMPAIGN_AUDIT_31 §Findings F2 | Standing-open | Routed to the human at issuance: confirm the automation's config source (or rule the Status promotion); any enactment is a Custodian pass | |
+| A-F3 | F3 | NOTE | Derived-from pin stale vs live Kit (v1.15 vs v1.29) | Content-based check performed instead: the prompt depends on the Kit only as the default condensed audit reference and the Ethical Anchor source, both stable across v1.15→v1.29; the RIP pin unversioned | CAMPAIGN_AUDIT_31 §Findings F3 | Closed-by-ruling | PKC-022 (2026-10-27, option B) — pins retired, stale pins ruled non-drift; the required content-based check was performed at pass A | |
+| A-F4 | F4 | NOTE | workflow wrapper describes the finding-application path as zip-only (mild) | File Purpose and How-To-Use step 4 describe "worked primarily through periodic zip uploads" while both custodial lines now work live against GitHub with fetch-before-edit; the human's own passes may still be zip-primary, so not graded drift | CAMPAIGN_AUDIT_31 §Findings F4 | Standing-open | Wording-refresh candidate for the custodian backlog (routed there at issuance); harmless to the prompt's function — not re-verified at fold-in | |
+| A-F5 | F5 | NOTE | ID hygiene clean; no dangling IDs | All bare tier-2 IDs (PKC-001 ×4, PKC-020, PKC-026, X11, and historical cluster examples in dated log narrative) consistent with live-known states; PKC-001 framing matches the 2026-10-27 ruling and the 10-29 closeout | CAMPAIGN_AUDIT_31 §Findings F5 | Positive-record | The X3 retrofit designation (authorized, staged Admin/ first) applies to these citations in a separate custodial pass — not drift while pending | |
+| A-pos1 | §Positives | NOTE | exemplary practices (extensive) | Commissioning annotation integrity (header honestly stayed 1.0.5; the file passes its own step-14 and step-7 checks); scope honesty matching the 10-29 ruling; PKC-001 closeout consistency; three-way registration parity exact (the file/Routing/Discovery verbatim pattern); decline-with-evidence practice (two false-positive sweep findings checked against File_Template and declined with citations); the honesty-rules block; git continuity clean (8 commits, no discontinuity) | CAMPAIGN_AUDIT_31 §Positives | Positive-record | n/a | |
+| A-IN1 | (routed) | INCOMPLETE | routed items | Family exemption ruling → human/AP audit (LAST); Status promotion/automation-source confirmation → human; F4 wording refresh → custodian backlog; F5 X3 qualifications → the authorized X3 pass | CAMPAIGN_AUDIT_31 §Routed items | Not re-tested | Routed at issuance; owners pending | |
+| B-N1 | NOTE | NOTE | "campaign end" timing question | The instrument is commissioned (2026-10-29 ruling, Decision Brief item 1B) to execute once, corpus-wide, at campaign end — with Campaign 2 numbering now continuing through the current era, whether "campaign end" means the close of the Admin completion batch or the full corpus sweep is unstated | CAMPAIGN2_AUDIT_88 §Findings NOTE | Standing-open | Human scheduling decision, surfaced by pass B; not yet answered at fold-in | |
+| B-C1 | (none) | NOTE | positive | Checks 1–11 otherwise clean: header 1.0.6 matches the 10-29 promotion entry; steps 1–15 unbroken and in order across v1.0.3–1.0.6; the 1.0.5 no-bump annotation explained; PKC citations adjacency-qualified; Ethical Anchor exact — "clean, internally consistent instrument" | CAMPAIGN2_AUDIT_88 §Checks + Bottom line | Positive-record | n/a | |
+
+## 3. Cross-pass logic map
+
+- Pass A (10-29) audited the file the same day its commissioning annotation landed (commit 47a469e7, delegated Custodian act) and found a clean, honest instrument whose findings were almost all dispositions for others: the family exemption ruling (since resolved by the class-6 reading), the Status-promotion confirmation, the pin staleness (ruled non-drift), and a mild zip-only wording refresh for the custodian backlog.
+- Pass B (10-31) verified the v1.0.6 promotion chain and found the instrument internally consistent, adding one genuinely open item: the "campaign end" timing question for the commissioned once-only execution.
+- The two passes bracket an operational arc (commissioned 10-29; promoted 1.0.5→1.0.6 same-day) rather than a repair arc — no finding of pass A was enacted between the passes; the dispositions are rulings and routings. Composite refs A-Fn/B-Fn are the only safe citation form (Template Rule 2).
+
+## 4. Pointers
+
+Originals are not relocated; both passes remain live at their deposit paths in `Admin/AAudits/`. **Cited from outside the Audits home:** `Routing.md` rows (registered at deposit; its backlink MUST is the standing anchor claim); `Admin/Forge_Audit_Kit.md` and `Admin/Repository_Integrity_Protocol.md` (the derived-from pins); the PKC-001 closeout cross-reference in `Admin/Progress_Log.md`; the INTEGRITY_SWEEP_REPORT_2026-10-30 execution record in `Archive/Audits/`; dated lines in `Archive/Audits/SESSION_STATUS.md` addenda and sandbox session records — frozen history, dangling by design.
+
+## 5. Addenda
+
+None. Corrections by dated addendum only.

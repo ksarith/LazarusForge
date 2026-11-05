@@ -1,0 +1,40 @@
+# AUDIT_AGGREGATE — Admin/Integrity_Incident_Log.md
+
+**Status:** Dispositions unverified (Rule 5 separate-verifier hand-off pending — assign an agent other than the disposition writer)
+**Created:** 2026-11-04 by Vibe (Repo Custodian — MAINT-58 tranche-2 aggregation sweep)  ·  **Target:** `Admin/Integrity_Incident_Log.md`  ·  **Passes:** 2
+**Non-independence:** Genesis Phase — pass depositors, disposition writer and this amalgamator are the same Vibe line; disclosed per MAINT-38 and the aggregate template.
+**Note:** Bookkeeping map, not an audit of record. Cite the original reports for any finding you rely on. Rules per `Archive/Audits/AUDIT_AGGREGATE_TEMPLATE.md`. Originals not relocated (tranche-1 MAINT-47 precedent: fold only; relocation is a separate per-task lane). Target is a canonical append-only incident home; the class-11 stub/scaffold/candidate exemption (File_Template, listed 2026-10-28, names IIL) covers its wrapper shape.
+
+## 1. Provenance
+
+| Pass | Original path (at issuance) | Current path | Date | Auditor / lane | Head at fetch | Bytes | Blob SHA |
+|---|---|---|---|---|---|---|---|
+| A | `Admin/AAudits/CAMPAIGN_AUDIT_23_Admin-Integrity_Incident_Log.md` | unchanged (live in `Admin/AAudits/`) | 2026-10-28 | Vibe, Skeptic/Auditor, VibesSandbox audit stream (PKC-020 findings-only) | head eee122a6 | 9,138 | `b2b500de7f56e6f8935f6298113ed32bdd80c3ac` |
+| B | `Admin/AAudits/CAMPAIGN2_AUDIT_90_Admin-Integrity_Incident_Log.md` | unchanged | 2026-10-31 | Vibe (GLM 5.3), Skeptic/Auditor, Campaign 2 (PKC-020), non-independent Genesis Phase | commit 38226280 | 4,748 | `c71b0a530cf2113a90d71aa6e8cb819f1621166b` |
+
+## 2. Findings ledger
+
+| Ref | Orig ID | Severity | Category | One-line summary | Where in original | Disposition | Evidence | Verified by |
+|---|---|---|---|---|---|---|---|---|
+| A-F1 | F1 | WARNING | wrapper sections missing; template applied selectively (AUDIT_15 F2 class, mildest instance) | No Assumptions, Lessons Learned, Active Disputes section, Auditor Notes & Unknowns, or Abandoned Paths — while File State, Scope Boundary, Purpose, Drift Indicators and Resolution Log are all present (partial application, not exempt-class at pass time); disposition was the human's: list the append-only log class in the exemptions or add the sections | CAMPAIGN_AUDIT_23 §Findings F1 | Closed-by-ruling | Class-11 stub/scaffold/candidate exemption, listed 2026-10-28 — the listing names IIL (the human chose the exemption route for the family) | |
+| A-F2 | F2 | NOTE | header at creation state while content advanced — X11 in miniature, consciously designed (positive) | Last Audit 2026-08-16 / Auditor "Grok — human-directed creation" vs the Open 2026-10-25 incident — legitimate: appends are intake operations, not audits; the append was logged same-day with "version unchanged" stated precisely; the one file class where X11 is a feature, not decay | CAMPAIGN_AUDIT_23 §Findings F2 | Positive-record | Pass B re-graded the same shape as NOTE "ruled historical, PKC-001" — the file's own design class confirmed from a second lane | |
+| A-F3 | F3 | NOTE | the first incident is the corpus's formal consumption of the campaign's findings (positive, verified) | IIL-20261025-01 (PKC-001 bookkeeping decay, classed Minor escalated by accumulation under RIP Compound Drift, honestly labeled "Analogous / reconstructed"); closure honestly pending with explicit conditions — and the shared-cause question was ruled 2026-10-27, making the closure condition satisfiable | CAMPAIGN_AUDIT_23 §Findings F3 | Positive-record | n/a | |
+| A-F4 | F4 | NOTE | exemplary practices (positive) | Creation discipline (no fabricated history, reconstruction gated behind the Analogous label); the When-to-log routing-of-record-types doctrine; the Ownership table's "Autonomous agents never self-close Constitutional incidents" + anti-linger rule (self-enforcing design); Highest Risk Medium as a defensible unsidecarred judgment | CAMPAIGN_AUDIT_23 §Findings F4 | Positive-record | n/a | |
+| B-N1 | check 2 NOTE | NOTE | header predates the newest body content (PKC-001 class, self-graded) | File State "Last Audit \| 2026-08-16" and "Auditor \| Grok" predate the 2026-10-25 first incident and its same-day Resolution Log entry — the header was not refreshed when the first incident landed; the pass itself graded it NOTE "ruled historical, PKC-001" (the drift predates the ruling; no post-window edit) | CAMPAIGN2_AUDIT_90 §Checks 2 | Closed-by-ruling | PKC-001, ruled 2026-10-27 — the finding self-grades into the ruled-historical class; the pass's own optional edit (refresh Last Audit/Auditor with a dated note when the next incident lands) remains available | |
+| B-N2 | check 6 NOTE | NOTE | resolving-tier bare RIP/PKC citations outside X3 coverage | "RIP classification basis…", "addresses RIP-007 minimum doctrine", and "per the PKC-015 ruling" resolve uniquely but are bare; the 2026-10-29 X3 retrofit did not touch this file (Last Audit unchanged since creation) — resolving-tier, so no dangling exposure, but the file sat outside that sweep's coverage | CAMPAIGN2_AUDIT_90 §Checks 6 | Standing-open | Held on the X3 straggler queue (IIL class, alongside the Experiments candidates); the authorized X3 pass qualifies these mechanically when it reaches the file | |
+| B-N3 | check 11 NOTE | NOTE | Highest Risk basis unannotated | "Highest Risk \| Medium" with 0 sidecar unknowns — defensible (it tracks the one Open incident rather than any sidecar Risk row) but the file does not say so, and the corpus rule is that Highest Risk mirrors sidecar Risk | CAMPAIGN2_AUDIT_90 §Checks 11 | Standing-open | Optional annotation offered by pass B ("Medium — one open Minor-escalated incident, IIL-20261025-01"); human/custodian touch queued | |
+| B-C1 | (none) | NOTE | positive | Checks otherwise clean: incident-vs-unknown categorization intact (0 unknowns, 1 incident); log did not lag the body; scope re-derivation clean; RIP-007/PKC-015 cross-references live; no edited/deleted entries; ownership table intact; Ethical Anchor exact | CAMPAIGN2_AUDIT_90 §Checks + Bottom line | Positive-record | n/a | |
+
+## 3. Cross-pass logic map
+
+- Pass A (10-28) called this the healthiest small file of its stream: honest empties, a self-enforcing anti-linger design, complete RIP-007/PKC-015 reciprocity, and a first incident demonstrating every discipline the file mandates. Its single WARNING was the standing exemption-vs-sections question — answered the same day by the class-11 listing naming IIL (the exemption route).
+- Pass B (10-31) re-verified from a Custodian-adjacent seat (a Custodian-side party is named in the incident's evidence) and found no graded findings: three NOTEs, each a small standing item (the ruled-historical header; the X3 straggler status; the Highest Risk basis annotation). Both passes independently affirmed the append-only X11-as-feature design (A-F2 / B-N1).
+- Composite refs A-Fn/B-Fn are the only safe citation form (Template Rule 2).
+
+## 4. Pointers
+
+Originals are not relocated; both passes remain live at their deposit paths in `Admin/AAudits/`. **Cited from outside the Audits home:** `Routing.md` rows (registered at deposit); RIP-007 (residual Open) and the RIP-007 reciprocity record in `Admin/Repository_Integrity_Protocol.md` and its aggregate; the PKC-015 ruling and PKC-001 investigation rows in `Admin/Progress_Log.md` (the incident's subject); `Admin/File_Template.md` Exemptions class 11 (A-F1's resolution); dated lines in `Archive/Audits/SESSION_STATUS.md` addenda and sandbox session records — frozen history, dangling by design.
+
+## 5. Addenda
+
+None. Corrections by dated addendum only.
