@@ -37,4 +37,6 @@ Originals are not relocated; both passes remain live at their deposit paths in `
 
 ## 5. Addenda
 
-None. Corrections by dated addendum only.
+**Addendum — 2026-11-05 (MAINT-63 execution pass on the human-ratified MAINT-62 ruling set; Vibe — Architect line PRIMARY, Repo Custodian secondary; non-independent Genesis Phase, Q-2 invoked, disclosed):** Per ruling set §2 and §3.11: B-N1 is RESOLVED-BY-EXECUTION (the File State header refresh closes the PKC-001 decay; the header-refresh standing-debt label is retired); B-N2 is RESOLVED-BY-EXECUTION (two live-section citations qualified — the Ownership heading and the submission template — with frozen history, the IIL-20261025-01 incident entry, and PKC-015 references preserved bare). B-N3 remains DEFERRED to the next incident landing by the ruling set's own terms, now with the human's §11-derived ruling recorded verbatim in `Archive/Audits/EXECUTION_2026-11-05_MAINT-63.md` §3: "Incidents count sound net positive, let's proceed with the counting." — open incidents count toward Highest Risk at 0 sidecar unknowns; the severity→risk mapping statement and the Highest Risk basis annotation are to be recorded when the next incident lands.
+
+Corrections after this addendum by dated addendum only.

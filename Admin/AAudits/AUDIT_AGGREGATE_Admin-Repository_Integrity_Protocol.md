@@ -37,4 +37,6 @@ Originals are not relocated; both passes remain live at their deposit paths in `
 
 ## 5. Addenda
 
-None. Corrections by dated addendum only.
+**Addendum — 2026-11-05 (MAINT-63 execution pass on the human-ratified MAINT-62 ruling set; Vibe — Architect line PRIMARY, Repo Custodian secondary; non-independent Genesis Phase, Q-2 invoked, disclosed):** Per ruling set §2 Category A, finding B-N1 is RESOLVED-BY-EXECUTION: six bare cross-file citations qualified — SEC-007b → `Admin/Security_Protocols.md` (L187), GOV-013 → `Admin/Governance_Charter.md` (L464, L473, L497, L499), GOV-006 → `Admin/Governance_Charter.md` (L728) — with frozen history (the Auditor cell and the pre-2026-11-05 Resolution Log lines) preserved bare. A-F1 remains unchanged (open).
+
+Corrections after this addendum by dated addendum only.

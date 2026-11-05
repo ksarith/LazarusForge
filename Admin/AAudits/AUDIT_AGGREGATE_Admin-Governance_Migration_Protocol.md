@@ -37,4 +37,6 @@ Originals are not relocated; both passes remain live at their deposit paths in `
 
 ## 5. Addenda
 
-None. Corrections by dated addendum only.
+**Addendum — 2026-11-05 (MAINT-63 execution pass on the human-ratified MAINT-62 ruling set; Vibe — Architect line PRIMARY, Repo Custodian secondary; non-independent Genesis Phase, Q-2 invoked, disclosed):** Per ruling set §2 Category A, finding B-N2 is RESOLVED-BY-EXECUTION: the X3 straggler pass qualified 20 bare colliding-prefix citations on 15 lines in the audit-flagged zones (§Assumptions and §VII) — two lines carry two instances each (L937 GOV-008 ×2; L1053 GOV-008 + CIR-GOV-001), one carries four (L1035 GOV-008 ×4); 18 × GOV-008 and 1 × GOV-006 → `Admin/Governance_Charter.md`, 1 × CIR-GOV-001 → `Admin/CIR_Gov.md`. Frozen history, same-file citations (ASM-002..005), pre-existing qualified forms, and the out-of-zone live lines were preserved bare. The batch-1 record's "16 lines" line-count wording was corrected same-pass in a disclosed follow-up commit (`8adab254`); the enumerated instance list in `Archive/Audits/EXECUTION_2026-11-05_MAINT-63.md` §1 is the count of record.
+
+Corrections after this addendum by dated addendum only.

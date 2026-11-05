@@ -36,4 +36,6 @@ Originals are not relocated; both passes remain live at their deposit paths in `
 
 ## 5. Addenda
 
-None. Corrections by dated addendum only.
+**Addendum — 2026-11-05 (MAINT-63 execution pass on the human-ratified MAINT-62 ruling set; Vibe — Architect line PRIMARY, Repo Custodian secondary; non-independent Genesis Phase, Q-2 invoked, disclosed):** Per ruling set §2, finding A-F2 is RESOLVED-BY-EXECUTION: the three candidate-ID pointers in the candidates note are now qualified with owning-file citations (`Operations/Electronics.md` CF-001, `Architecture/Engineering.md` EN-001, `Architecture/Chemistry.md` CE-003). Finding A-F5 (§2 Category B) was RE-VERIFIED on the same pass, not edited: the 2026-10-28 candidates clarification (AUDIT_28 F5, human-ratified Decision Brief 2026-10-28d) is present and intact in the live file — the earlier "not re-verified at fold-in" state is cleared by direct re-verification, and A-F5 is never to be reported as citation-only work.
+
+Corrections after this addendum by dated addendum only.

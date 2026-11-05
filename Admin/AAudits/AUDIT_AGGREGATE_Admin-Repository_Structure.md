@@ -36,4 +36,6 @@ Originals are not relocated; both passes remain live at their deposit paths in `
 
 ## 5. Addenda
 
-None. Corrections by dated addendum only.
+**Addendum — 2026-11-05 (MAINT-63 execution pass on the human-ratified MAINT-62 ruling set; Vibe — Architect line PRIMARY, Repo Custodian secondary; non-independent Genesis Phase, Q-2 invoked, disclosed):** Per ruling set §7, finding B-N1 is RESOLVED-BY-EXECUTION: a dated §II note now records the per-folder Log/Audit subfolder convention (`Admin/ALogs/` and `Admin/AAudits/`, created 2026-10-30 MAINT-29) — the File_Template Log-Split Rule owns the rule; RS records placement. This closes the CAMPAIGN2_AUDIT_97 check 7 near-trip. Graded rows unchanged.
+
+Corrections after this addendum by dated addendum only.

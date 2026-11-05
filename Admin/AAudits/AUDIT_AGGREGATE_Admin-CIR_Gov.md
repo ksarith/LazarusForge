@@ -33,4 +33,6 @@ Originals are not relocated; the pass remains live at its deposit path in `Admin
 
 ## 5. Addenda
 
-None. Corrections by dated addendum only.
+**Addendum — 2026-11-05 (MAINT-63 execution pass on the human-ratified MAINT-62 ruling set; Vibe — Architect line PRIMARY, Repo Custodian secondary; non-independent Genesis Phase, Q-2 invoked, disclosed):** Per ruling set §3.5, finding A-F2 is RESOLVED-BY-EXECUTION. CIR-GOV-002 (owner `Admin/CIR_Gov.md`; γ_provenance circularity, discharged by the M₀(n) reformulation) is now mirrored in the Unknowns.md §5 resolved-entries paragraph — registered and resolved same-day 2026-08-18, absent from the Active Index per Rule 2; resolution detail remains in `Admin/CIR_Gov.md` and AUDIT_04 F2. No §2 ledger row rewritten; this addendum is the dated annotation the ruling set requires.
+
+Corrections after this addendum by dated addendum only.

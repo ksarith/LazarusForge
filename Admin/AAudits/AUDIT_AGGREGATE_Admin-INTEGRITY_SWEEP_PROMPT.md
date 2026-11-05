@@ -38,4 +38,6 @@ Originals are not relocated; both passes remain live at their deposit paths in `
 
 ## 5. Addenda
 
-None. Corrections by dated addendum only.
+**Addendum — 2026-11-05 (MAINT-63 execution pass on the human-ratified MAINT-62 ruling set; Vibe — Architect line PRIMARY, Repo Custodian secondary; non-independent Genesis Phase, Q-2 invoked, disclosed):** Per ruling set §8, finding B-N1 is RESOLVED-BY-RULING: the commission-closure note is recorded in the owning file's File State with the ratified wording verbatim — "For this specific commission, the corpus-wide execution recorded on 2026-10-30 satisfies the authorized once-only execution requirement. No further execution is owed under that commission." No step changed or renumbered; no universal campaign-end definition created; the ISP header stays 1.0.6. A-F1 remains unchanged (open).
+
+Corrections after this addendum by dated addendum only.

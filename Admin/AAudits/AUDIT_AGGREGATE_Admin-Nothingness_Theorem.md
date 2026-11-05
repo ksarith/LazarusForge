@@ -37,4 +37,6 @@ Originals are not relocated; both passes remain live at their deposit paths in `
 
 ## 5. Addenda
 
-None. Corrections by dated addendum only.
+**Addendum — 2026-11-05 (MAINT-63 execution pass on the human-ratified MAINT-62 ruling set; Vibe — Architect line PRIMARY, Repo Custodian secondary; non-independent Genesis Phase, Q-2 invoked, disclosed):** Per ruling set §3.3, finding B-N2 is RESOLVED-BY-RULING: the Tier 0 convention is recorded as Unknowns.md Size Management Rule 7 (Unknowns v5.79) — Tier 0 files index only cross-module unknowns in `Unknowns.md`; file-internal unknowns remain tracked in the owning file; cross-module means an actual dependency or interaction requiring another module's decision, not mere mention.
+
+Corrections after this addendum by dated addendum only.
