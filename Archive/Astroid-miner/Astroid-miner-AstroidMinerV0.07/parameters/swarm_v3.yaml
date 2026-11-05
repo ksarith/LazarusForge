@@ -1,0 +1,102 @@
+# Parameter provenance records for MDL-SWR-03 (ZeroGSubsystemSwarm_v3.py)
+# Schema: parameters/schema.yaml
+# All values extracted from the original hardcoded dict. No numerical changes.
+
+- parameter_id: PAR-PWR-SOLAR-001
+  symbol: panel_specific_power_kw_per_kg
+  value: 0.08
+  unit: kW/kg
+  provenance_state: exploratory_placeholder
+  source_citation: "Hardcoded in ZeroGSubsystemSwarm_v3.py (V0.01 baseline)"
+  confidence_score: 0.15
+  notes: "Specific power of solar panels. Typical literature values for space-rated arrays range ~0.05-0.2 kW/kg depending on generation and concentration. Treated as placeholder until literature citation or engineering estimate is attached."
+
+- parameter_id: PAR-ANC-FORCE-001
+  symbol: anchoring_force_n_per_kg
+  value: 15.0
+  unit: N/kg
+  provenance_state: exploratory_placeholder
+  source_citation: "Hardcoded in ZeroGSubsystemSwarm_v3.py (V0.01 baseline)"
+  confidence_score: 0.10
+  notes: "Force capacity of anchoring subsystem per unit mass. No source geometry or soil-mechanics derivation supplied."
+
+- parameter_id: PAR-MIN-DIG-001
+  symbol: dig_rate_kg_per_kg
+  value: 15.0
+  unit: kg/kg (per cycle)
+  provenance_state: exploratory_placeholder
+  source_citation: "Hardcoded in ZeroGSubsystemSwarm_v3.py (V0.01 baseline)"
+  confidence_score: 0.10
+  notes: "Mining mass throughput per unit mining-subsystem mass per cycle. Cycle duration is undefined."
+
+- parameter_id: PAR-REF-RATE-001
+  symbol: refining_rate
+  value: 12.0
+  unit: kg/kg (per cycle)
+  provenance_state: exploratory_placeholder
+  source_citation: "Hardcoded in ZeroGSubsystemSwarm_v3.py (V0.01 baseline)"
+  confidence_score: 0.10
+  notes: "Refining throughput per unit refining-subsystem mass. Units and cycle time implicit."
+
+- parameter_id: PAR-FAB-YIELD-001
+  symbol: base_fab_yield
+  value: 0.65
+  unit: dimensionless
+  provenance_state: assumption
+  source_citation: "Hardcoded in ZeroGSubsystemSwarm_v3.py (V0.01 baseline)"
+  confidence_score: 0.20
+  notes: "Base fabrication yield factor. Explicit simplifying assumption; no process chemistry backing."
+
+- parameter_id: PAR-FAB-RATE-001
+  symbol: fab_rate
+  value: 8.0
+  unit: kg/kg (per cycle)
+  provenance_state: exploratory_placeholder
+  source_citation: "Hardcoded in ZeroGSubsystemSwarm_v3.py (V0.01 baseline)"
+  confidence_score: 0.10
+  notes: "Fabrication mass throughput per unit fabrication-subsystem mass."
+
+- parameter_id: PAR-PWR-AU-001
+  symbol: au_distance
+  value: 1.3
+  unit: AU
+  provenance_state: assumption
+  source_citation: "Hardcoded in ZeroGSubsystemSwarm_v3.py (V0.01 baseline)"
+  confidence_score: 0.40
+  notes: "Heliocentric distance used for inverse-square solar flux. Typical main-belt / near-Earth value chosen for example runs."
+
+- parameter_id: PAR-TOOL-AREA-001
+  symbol: tool_area_m2
+  value: 0.05
+  unit: m^2
+  provenance_state: exploratory_placeholder
+  source_citation: "Hardcoded in ZeroGSubsystemSwarm_v3.py (V0.01 baseline)"
+  confidence_score: 0.10
+  notes: "Effective tool contact area used for cohesion force calculation."
+
+- parameter_id: PAR-REF-KWH-001
+  symbol: kg_per_kwh
+  value: 2.5
+  unit: kg/kWh
+  provenance_state: exploratory_placeholder
+  source_citation: "Hardcoded in ZeroGSubsystemSwarm_v3.py (V0.01 baseline)"
+  confidence_score: 0.10
+  notes: "Mass processed per unit energy in refining. No process energy balance supplied."
+
+- parameter_id: PAR-SPIN-TAX-001
+  symbol: spin_power_tax_kw_per_kg
+  value: 0.005
+  unit: kW/kg
+  provenance_state: exploratory_placeholder
+  source_citation: "Hardcoded in ZeroGSubsystemSwarm_v3.py (V0.01 baseline)"
+  confidence_score: 0.10
+  notes: "Power overhead attributed to spin / slurry systems."
+
+- parameter_id: PAR-FAB-SLURRY-001
+  symbol: micro_g_slurry
+  value: true
+  unit: boolean
+  provenance_state: assumption
+  source_citation: "Hardcoded in ZeroGSubsystemSwarm_v3.py (V0.01 baseline)"
+  confidence_score: 0.25
+  notes: "Enables a 15% fabrication yield bonus when true. Explicit modeling assumption."

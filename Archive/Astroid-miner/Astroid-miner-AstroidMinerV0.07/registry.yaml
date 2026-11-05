@@ -1,0 +1,492 @@
+# Machine-readable source of truth for Astroid Miner's epistemic registry.
+# REGISTRY.md and MODELS.md remain the human-readable documents; this file
+# exists so tools/validate_registry.py can catch drift between what those
+# documents claim and what the repository actually contains (missing files,
+# duplicate model IDs, EXEC-FULL claims without a backing test, deprecated
+# files still imported by production code).
+#
+# Schema:
+#   path: relative path from repo root (required, must exist on disk)
+#   type: CONCEPT | MODEL | ENGINEERING | GOVERNANCE | HISTORICAL_RAW | BUILD
+#   authority: AUTHORITATIVE-DRAFT | AUTHORITATIVE-MODEL | EXPLORATORY | DEPRECATED | LEGACY-LINEAGE
+#   validation: UNVALIDATED | PARTIALLY-VALIDATED | BENCHMARKED | PEER-REVIEWED
+#   executability: EXEC-FULL | EXEC-PARTIAL | INERT-SKETCH | N/A
+#   parameter_status: PROVENANCED | PARTIALLY-PROVENANCED | UNPROVENANCED | N/A
+#   model_id: optional, e.g. MDL-SWR-03 (only for entries with a Model ID in MODELS.md)
+#   test_ref: optional, required by the validator whenever executability is EXEC-FULL
+#             or EXEC-PARTIAL — format "path/to/test_file.py::test_function_name"
+#   notes: optional free text
+
+entries:
+- path: docs/decisions/DEC-001-silicate-pathway.md
+  type: GOVERNANCE
+  authority: AUTHORITATIVE-DRAFT
+  validation: UNVALIDATED
+  executability: N/A
+  parameter_status: N/A
+  notes: RESOLVED 2026-08-12, option (b), formal deprecation of the silicate pathway.
+- path: docs/decisions/DEC-002-subsystem-capacity-protocol.md
+  type: GOVERNANCE
+  authority: AUTHORITATIVE-DRAFT
+  validation: UNVALIDATED
+  executability: N/A
+  parameter_status: N/A
+  notes: RESOLVED 2026-08-12, option (a), PowerSubsystem capacity() reconciled to global_state.
+- path: README.md
+  type: CONCEPT
+  authority: AUTHORITATIVE-DRAFT
+  validation: UNVALIDATED
+  executability: N/A
+  parameter_status: N/A
+- path: CONTRIBUTING.md
+  type: GOVERNANCE
+  authority: AUTHORITATIVE-DRAFT
+  validation: UNVALIDATED
+  executability: N/A
+  parameter_status: N/A
+- path: Discovery.md
+  type: CONCEPT
+  authority: EXPLORATORY
+  validation: UNVALIDATED
+  executability: N/A
+  parameter_status: N/A
+- path: LONG_HORIZON.md
+  type: CONCEPT
+  authority: AUTHORITATIVE-DRAFT
+  validation: UNVALIDATED
+  executability: N/A
+  parameter_status: N/A
+- path: REGISTRY.md
+  type: BUILD
+  authority: AUTHORITATIVE-DRAFT
+  validation: UNVALIDATED
+  executability: N/A
+  parameter_status: N/A
+- path: MODELS.md
+  type: BUILD
+  authority: AUTHORITATIVE-DRAFT
+  validation: UNVALIDATED
+  executability: N/A
+  parameter_status: N/A
+- path: registry.yaml
+  type: BUILD
+  authority: AUTHORITATIVE-DRAFT
+  validation: UNVALIDATED
+  executability: N/A
+  parameter_status: N/A
+  notes: This file. Self-referential entry so validate_registry.py's coverage check passes.
+- path: docs/architecture/concepts.md
+  type: CONCEPT
+  authority: EXPLORATORY
+  validation: UNVALIDATED
+  executability: N/A
+  parameter_status: UNPROVENANCED
+- path: docs/architecture/fault-tolerant-power-control.md
+  type: ENGINEERING
+  authority: EXPLORATORY
+  validation: UNVALIDATED
+  executability: N/A
+  parameter_status: UNPROVENANCED
+- path: docs/architecture/mechanical-structures.md
+  type: ENGINEERING
+  authority: EXPLORATORY
+  validation: UNVALIDATED
+  executability: N/A
+  parameter_status: UNPROVENANCED
+  notes: Generated content injected during V0.02 assembly. No verified provenance from V0.01.
+- path: docs/architecture/roles-doctrine.md
+  type: GOVERNANCE
+  authority: AUTHORITATIVE-DRAFT
+  validation: UNVALIDATED
+  executability: N/A
+  parameter_status: N/A
+- path: docs/architecture/swarm-vs-monolith-vs-hybrid.md
+  type: CONCEPT
+  authority: AUTHORITATIVE-DRAFT
+  validation: UNVALIDATED
+  executability: N/A
+  parameter_status: UNPROVENANCED
+- path: docs/architecture/system-architecture-overview.md
+  type: CONCEPT
+  authority: AUTHORITATIVE-DRAFT
+  validation: UNVALIDATED
+  executability: N/A
+  parameter_status: UNPROVENANCED
+- path: docs/architecture/uranus-ejector-module.md
+  type: CONCEPT
+  authority: EXPLORATORY
+  validation: UNVALIDATED
+  executability: N/A
+  parameter_status: UNPROVENANCED
+- path: docs/architecture/zero-spheres-stability.md
+  type: ENGINEERING
+  authority: EXPLORATORY
+  validation: UNVALIDATED
+  executability: N/A
+  parameter_status: UNPROVENANCED
+- path: docs/isru/feedstock-characterization.md
+  type: ENGINEERING
+  authority: AUTHORITATIVE-DRAFT
+  validation: PARTIALLY-VALIDATED
+  executability: N/A
+  parameter_status: PARTIALLY-PROVENANCED
+- path: docs/isru/magnetic-drive.md
+  type: ENGINEERING
+  authority: EXPLORATORY
+  validation: UNVALIDATED
+  executability: N/A
+  parameter_status: UNPROVENANCED
+- path: docs/isru/low-value-acquisitions-strategy.md
+  type: CONCEPT
+  authority: AUTHORITATIVE-DRAFT
+  validation: UNVALIDATED
+  executability: N/A
+  parameter_status: UNPROVENANCED
+- path: docs/isru/module-getm.md
+  type: ENGINEERING
+  authority: EXPLORATORY
+  validation: UNVALIDATED
+  executability: N/A
+  parameter_status: UNPROVENANCED
+- path: docs/isru/zero-g-collection-anchoring.md
+  type: ENGINEERING
+  authority: AUTHORITATIVE-DRAFT
+  validation: UNVALIDATED
+  executability: N/A
+  parameter_status: PARTIALLY-PROVENANCED
+- path: docs/isru/zero-g-fabrication.md
+  type: ENGINEERING
+  authority: AUTHORITATIVE-DRAFT
+  validation: UNVALIDATED
+  executability: N/A
+  parameter_status: PARTIALLY-PROVENANCED
+- path: docs/power/1.5-au-solar-farm-concept.md
+  type: ENGINEERING
+  authority: EXPLORATORY
+  validation: UNVALIDATED
+  executability: N/A
+  parameter_status: UNPROVENANCED
+- path: docs/power/energy-scaling.md
+  type: ENGINEERING
+  authority: AUTHORITATIVE-DRAFT
+  validation: UNVALIDATED
+  executability: N/A
+  parameter_status: PARTIALLY-PROVENANCED
+- path: docs/power/superconductor-interconnect-proposal.md
+  type: ENGINEERING
+  authority: EXPLORATORY
+  validation: UNVALIDATED
+  executability: N/A
+  parameter_status: UNPROVENANCED
+- path: docs/power/solar-concentrator-mirror-arrays.md
+  type: CONCEPT
+  authority: EXPLORATORY
+  validation: UNVALIDATED
+  executability: N/A
+  parameter_status: UNPROVENANCED
+  notes: Secondhand technical analysis from external model, not independently verified (V0.04).
+- path: docs/power/liquid-metal-rotating-mirrors.md
+  type: CONCEPT
+  authority: EXPLORATORY
+  validation: UNVALIDATED
+  executability: N/A
+  parameter_status: UNPROVENANCED
+  notes: Secondhand technical analysis from external model, not independently verified (V0.04).
+- path: docs/terraforming/martian-atmosphere.md
+  type: CONCEPT
+  authority: EXPLORATORY
+  validation: UNVALIDATED
+  executability: N/A
+  parameter_status: UNPROVENANCED
+- path: docs/terraforming/ceres-planet-building.md
+  type: CONCEPT
+  authority: EXPLORATORY
+  validation: UNVALIDATED
+  executability: N/A
+  parameter_status: UNPROVENANCED
+- path: docs/terraforming/ceres-metabolic-nucleus.md
+  type: CONCEPT
+  authority: EXPLORATORY
+  validation: UNVALIDATED
+  executability: N/A
+  parameter_status: UNPROVENANCED
+- path: docs/terraforming/mars-atmosphere-bootstrapping.md
+  type: CONCEPT
+  authority: EXPLORATORY
+  validation: UNVALIDATED
+  executability: N/A
+  parameter_status: UNPROVENANCED
+- path: docs/terraforming/mars-core-jumpstart-sketch.md
+  type: CONCEPT
+  authority: EXPLORATORY
+  validation: UNVALIDATED
+  executability: N/A
+  parameter_status: UNPROVENANCED
+- path: docs/terraforming/planetary-orbital-conditioning.md
+  type: CONCEPT
+  authority: EXPLORATORY
+  validation: UNVALIDATED
+  executability: N/A
+  parameter_status: UNPROVENANCED
+- path: docs/vision/cross-repo-lazarus-forge-link.md
+  type: CONCEPT
+  authority: AUTHORITATIVE-DRAFT
+  validation: PARTIALLY-VALIDATED
+  executability: N/A
+  parameter_status: N/A
+  notes: Verified directly against LazarusForgeV0-1Alpha12.zip (V0.05).
+- path: docs/vision/interstellar-seeding.md
+  type: CONCEPT
+  authority: EXPLORATORY
+  validation: UNVALIDATED
+  executability: N/A
+  parameter_status: N/A
+- path: docs/vision/oceanic-tests.md
+  type: CONCEPT
+  authority: EXPLORATORY
+  validation: UNVALIDATED
+  executability: N/A
+  parameter_status: N/A
+- path: docs/vision/rogue-unit-management.md
+  type: GOVERNANCE
+  authority: AUTHORITATIVE-DRAFT
+  validation: UNVALIDATED
+  executability: N/A
+  parameter_status: N/A
+- path: docs/vision/safety-lights.md
+  type: CONCEPT
+  authority: EXPLORATORY
+  validation: UNVALIDATED
+  executability: N/A
+  parameter_status: N/A
+- path: docs/vision/vision.md
+  type: CONCEPT
+  authority: LEGACY-LINEAGE
+  validation: UNVALIDATED
+  executability: N/A
+  parameter_status: N/A
+- path: docs/vision/ethical-ai-frameworks.md
+  type: GOVERNANCE
+  authority: AUTHORITATIVE-DRAFT
+  validation: UNVALIDATED
+  executability: N/A
+  parameter_status: N/A
+  notes: v1.1 consolidated (August 2026). Merges original Leviathan/Lazarus base with the v1.1 delta (role separation, Tested
+    Framework First, runaway/rogue hardening, location agnosticism, auditability, non-goals). Supersedes the standalone delta
+    file.
+- path: docs/vision/ethical-ai-frameworks-v1.1.md
+  type: GOVERNANCE
+  authority: DEPRECATED
+  validation: UNVALIDATED
+  executability: N/A
+  parameter_status: N/A
+  notes: Historical delta only. Content merged into ethical-ai-frameworks.md (v1.1 consolidated, August 2026). Retained for
+    provenance.
+- path: docs/vision/self-evolving-ai.md
+  type: CONCEPT
+  authority: AUTHORITATIVE-DRAFT
+  validation: UNVALIDATED
+  executability: N/A
+  parameter_status: N/A
+- path: src/astroid_miner/models/power_subsystem.py
+  type: MODEL
+  model_id: MDL-PWR-01
+  authority: AUTHORITATIVE-MODEL
+  validation: UNVALIDATED
+  executability: EXEC-FULL
+  parameter_status: UNPROVENANCED
+  test_ref: tests/test_optimizer_interface.py::TestModelImportSmoke::test_power_subsystem_wired_into_solver
+  notes: 'DEC-002 (a) implemented 2026-08-12: fully integrated with ConstraintSolver. V0.08: capacity() returns CapacityResult
+    (DEC-002 hard interface).'
+- path: src/astroid_miner/models/replication_model.py
+  type: MODEL
+  model_id: MDL-REP-01
+  authority: AUTHORITATIVE-MODEL
+  validation: UNVALIDATED
+  executability: EXEC-FULL
+  parameter_status: UNPROVENANCED
+  test_ref: tests/test_optimizer_interface.py::TestModelImportSmoke::test_replication_model_imports
+  notes: Runs example/demo code at import time as a side effect (not fixed).
+- path: src/astroid_miner/models/zero_g_simulator.py
+  type: MODEL
+  model_id: MDL-SIM-01
+  authority: AUTHORITATIVE-MODEL
+  validation: UNVALIDATED
+  executability: EXEC-FULL
+  parameter_status: UNPROVENANCED
+  test_ref: tests/test_optimizer_interface.py::TestModelImportSmoke::test_zero_g_simulator_imports
+- path: src/astroid_miner/models/zero_g_subsystem_swarm_v3.py
+  type: MODEL
+  model_id: MDL-SWR-03
+  authority: AUTHORITATIVE-MODEL
+  validation: UNVALIDATED
+  executability: EXEC-FULL
+  parameter_status: PARTIALLY-PROVENANCED
+  test_ref: tests/test_optimizer_interface.py::TestModelImportSmoke::test_swarm_v3_solve_cycle_runs
+  notes: 'Primary swarm bottleneck solver. load_params() verified against parameters/swarm_v3.yaml. V0.08: all production
+    subsystems return CapacityResult; solve_cycle exposes capacity_results.'
+- path: experiments/deprecated/replication_constraint_graph_v4_silicate.py
+  type: MODEL
+  model_id: MDL-GRA-04
+  authority: DEPRECATED
+  validation: UNVALIDATED
+  executability: INERT-SKETCH
+  parameter_status: UNPROVENANCED
+  test_ref: tests/test_optimizer_interface.py::TestModelImportSmoke::test_replication_constraint_graph_v4_silicate_is_known_broken
+  notes: 'DEC-001 (b), 2026-08-12: formally deprecated. Relocated August 2026 from src/astroid_miner/models/ to experiments/deprecated/
+    so it is no longer on the importable package path. solve_cycle() raises NameError by design-of-test (pinned failure).'
+- path: src/astroid_miner/optimization/optimizer.py
+  type: MODEL
+  model_id: MDL-OPT-01
+  authority: EXPLORATORY
+  validation: UNVALIDATED
+  executability: EXEC-PARTIAL
+  parameter_status: UNPROVENANCED
+  test_ref: tests/test_optimizer_interface.py::TestOptimizerInterface::test_default_growth_key_is_fabricated
+- path: experiments/deprecated/zero_g_subsystem_swarm_v1.py
+  type: MODEL
+  model_id: MDL-SWR-01
+  authority: DEPRECATED
+  validation: UNVALIDATED
+  executability: EXEC-FULL
+  parameter_status: UNPROVENANCED
+  notes: Superseded by MDL-SWR-03. Deprecated models are exempt from the test_ref requirement.
+- path: experiments/deprecated/dynamic_optimizer_monte_carlo_v1.py
+  type: MODEL
+  model_id: MDL-MC-01
+  authority: DEPRECATED
+  validation: UNVALIDATED
+  executability: EXEC-FULL
+  parameter_status: UNPROVENANCED
+  notes: Superseded by MDL-MC-02 (itself deprecated per DEC-001).
+- path: experiments/monte_carlo/dynamic_monte_carlo_optimized.py
+  type: MODEL
+  model_id: MDL-MC-02
+  authority: DEPRECATED
+  validation: UNVALIDATED
+  executability: INERT-SKETCH
+  parameter_status: UNPROVENANCED
+  notes: DEC-001 (b), 2026-08-12. Imports nonexistent replication_constraint_graph_v3.
+- path: experiments/monte_carlo/monte_carlo_asteroid_comparison.py
+  type: MODEL
+  model_id: MDL-MC-03
+  authority: DEPRECATED
+  validation: UNVALIDATED
+  executability: INERT-SKETCH
+  parameter_status: UNPROVENANCED
+  notes: DEC-001 (b), 2026-08-12. Same disposition as MDL-MC-02.
+- path: archive/raw-development/astroid-mining.txt
+  type: HISTORICAL_RAW
+  authority: LEGACY-LINEAGE
+  validation: UNVALIDATED
+  executability: N/A
+  parameter_status: N/A
+- path: archive/raw-development/astroid-mining-2.txt
+  type: HISTORICAL_RAW
+  authority: LEGACY-LINEAGE
+  validation: UNVALIDATED
+  executability: N/A
+  parameter_status: N/A
+- path: archive/raw-development/astroid-mining-3.txt
+  type: HISTORICAL_RAW
+  authority: LEGACY-LINEAGE
+  validation: UNVALIDATED
+  executability: N/A
+  parameter_status: N/A
+- path: archive/raw-development/power-allocation-optimizer.md
+  type: MODEL
+  authority: AUTHORITATIVE-DRAFT
+  validation: UNVALIDATED
+  executability: INERT-SKETCH
+  parameter_status: UNPROVENANCED
+- path: parameters/schema.yaml
+  type: BUILD
+  authority: AUTHORITATIVE-DRAFT
+  validation: UNVALIDATED
+  executability: N/A
+  parameter_status: N/A
+- path: parameters/swarm_v3.yaml
+  type: BUILD
+  authority: AUTHORITATIVE-DRAFT
+  validation: UNVALIDATED
+  executability: N/A
+  parameter_status: N/A
+  notes: Provenance records for MDL-SWR-03. Checked for duplicate parameter_id by the validator.
+- path: tools/update_archive.py
+  type: BUILD
+  authority: LEGACY-LINEAGE
+  validation: UNVALIDATED
+  executability: INERT-SKETCH
+  parameter_status: N/A
+  notes: Historical V0.01→V0.02 archive builder; not part of the release gate. Kept for provenance.
+- path: tools/verify_manifest.py
+  type: BUILD
+  authority: AUTHORITATIVE-DRAFT
+  validation: UNVALIDATED
+  executability: EXEC-FULL
+  parameter_status: N/A
+  notes: Self-exempt from test_ref requirement -- it IS a verification tool, not a model.
+  test_ref: tests/test_release_integrity.py::TestVerifyManifest::test_verify_manifest_detects_match
+- path: tools/validate_registry.py
+  type: BUILD
+  authority: AUTHORITATIVE-DRAFT
+  validation: UNVALIDATED
+  executability: EXEC-FULL
+  parameter_status: N/A
+  notes: 'Hardened V0.08 validator: taxonomy enums, import boundaries, EXEC↔test_ref, production path constraints. Self-check
+    via test_registry (non-recursive taxonomy test).'
+  test_ref: tests/test_registry.py::TestRegistryTaxonomy::test_all_entries_have_required_fields
+- path: tests/test_optimizer_interface.py
+  type: BUILD
+  authority: AUTHORITATIVE-DRAFT
+  validation: UNVALIDATED
+  executability: EXEC-FULL
+  parameter_status: N/A
+  notes: 11 tests as of V0.07. Self-exempt from test_ref requirement.
+  test_ref: tests/test_optimizer_interface.py::TestOptimizerInterface::test_default_growth_key_is_fabricated
+- path: pyproject.toml
+  type: BUILD
+  authority: AUTHORITATIVE-DRAFT
+  validation: UNVALIDATED
+  executability: N/A
+  parameter_status: N/A
+- path: src/astroid_miner/models/contracts.py
+  type: BUILD
+  authority: AUTHORITATIVE-DRAFT
+  validation: UNVALIDATED
+  executability: EXEC-FULL
+  parameter_status: N/A
+  test_ref: tests/test_subsystem_contract.py::TestCapacityResult::test_basic_fields
+  notes: DEC-002 CapacityResult + SubsystemProtocol (V0.08). Hard interface for subsystem capacity().
+- path: tests/test_subsystem_contract.py
+  type: BUILD
+  authority: AUTHORITATIVE-DRAFT
+  validation: UNVALIDATED
+  executability: EXEC-FULL
+  parameter_status: N/A
+  test_ref: tests/test_subsystem_contract.py::TestSubsystemContract::test_all_production_subsystems_return_capacity_result
+  notes: Repository contract tests for DEC-002 capacity protocol.
+- path: tests/test_registry.py
+  type: BUILD
+  authority: AUTHORITATIVE-DRAFT
+  validation: UNVALIDATED
+  executability: EXEC-FULL
+  parameter_status: N/A
+  test_ref: tests/test_registry.py::TestRegistryTaxonomy::test_all_entries_have_required_fields
+  notes: Registry validator contract tests.
+- path: tests/test_import_boundaries.py
+  type: BUILD
+  authority: AUTHORITATIVE-DRAFT
+  validation: UNVALIDATED
+  executability: EXEC-FULL
+  parameter_status: N/A
+  test_ref: tests/test_import_boundaries.py::TestImportBoundaries::test_src_does_not_import_experiments_or_archive
+  notes: Production import boundary tests (no experiments/archive/deprecated).
+- path: tests/test_release_integrity.py
+  type: BUILD
+  authority: AUTHORITATIVE-DRAFT
+  validation: UNVALIDATED
+  executability: EXEC-FULL
+  parameter_status: N/A
+  test_ref: tests/test_release_integrity.py::TestVerifyManifest::test_verify_manifest_detects_match
+  notes: Release / manifest integrity smoke tests.

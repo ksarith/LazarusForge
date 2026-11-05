@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "astroid-miner"
+version = "0.7.0"
+description = "Salvage-first zero-g mining and replication constraint models (Astroid Miner)"
+requires-python = ">=3.9"
+dependencies = [
+    "numpy",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
