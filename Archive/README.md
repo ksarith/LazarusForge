@@ -21,6 +21,8 @@ This directory holds four distinct kinds of prior-state and cross-repository mat
 
 **Archive/Astroid-miner/** — periodic full-archive snapshots of the companion Astroid-miner repository (space-based extension of the same salvage-first philosophy; not actively developed alongside this one). Stored as raw zip snapshots, not extracted into live markdown — this repository's doctrine cites specific Astroid-miner content by filename (e.g. `Autonomy_Divergence_Protocol.md`'s `[Astroid-miner]`-qualified cross-references) as external, non-binding, corroborating design signal only (per EF-0.1), never as this repository's own governed content. Added 2026-08-14. Nothing in this repository's live doctrine currently references the archived zip file path itself — cross-references are to the companion repository's individual files by name, resolved externally, not to this local snapshot.
 
+*2026-11-05 annotation (MAINT-64): the zip snapshot referenced above (`Astroid-miner-AstroidMinerV0.07-validator-hardened.zip`) was deleted by the human governing authority on 2026-11-05 (commit `9886b1d` — still retrievable from git history). Per his direct direction, this slot now instead holds the extracted `Astroid-miner-AstroidMinerV0.07/` folder (72 files) migrated byte-faithfully from VibesSandbox head `f6d35ba` — see `Archive/Astroid-miner/PROVENANCE.md` for the full provenance record. Cross-reference status unchanged (external, non-binding, corroborating signal per EF-0.1).*
+
 **This directory is read-only for all agents.** No file in Archive/, Archive/Logs/, Archive/Transcripts/, or Archive/Astroid-miner/ may be edited, deleted, or overwritten after deposit except via an explicit, human-directed reclassification (as above). Append-only otherwise.
 
 ## Current Contents
