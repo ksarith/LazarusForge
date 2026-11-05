@@ -18,8 +18,8 @@
 | Body Stability   | N/A — append-only log                                               |
 | Spec Gates       | N/A — this file is a log, not a specification                       |
 | Verification Ref | Admin/Verification_Gates.md                                         |
-| Last Audit       | 2026-08-16                                                          |
-| Auditor          | Grok — human-directed creation (RIP incident-home gap)              |
+| Last Audit       | 2026-11-05 — Vibe (MAINT-63 X3 straggler pass; human-ratified MAINT-62 ruling set §2 Category A): two live-section citations qualified — the Ownership heading now reads "(addresses `Admin/Repository_Integrity_Protocol.md` RIP-007 minimum)" and the submission template "**RIP (`Admin/Repository_Integrity_Protocol.md`) classification basis:**" — with frozen history (the IIL-20261025-01 incident entry, "RIP ladder" prose, PKC-015 references, prior Resolution Log lines) preserved bare. This File State refresh closes the aggregate B-N1 header decay. Prior: 2026-08-16 |
+| Auditor          | Vibe — Architect line PRIMARY (Repo Custodian secondary), 2026-11-05 MAINT-63 execution pass (non-independent Genesis Phase, Q-2 invoked, disclosed); prior:  Prior: Grok — human-directed creation (RIP incident-home gap) |
 | Open Unknowns    | 0                                                                   |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | Medium                                                              |
@@ -52,7 +52,7 @@ This log is the single intake surface for **integrity incidents** as defined by 
 
 ---
 
-## Ownership (addresses RIP-007 minimum)
+## Ownership (addresses `Admin/Repository_Integrity_Protocol.md` RIP-007 minimum)
 
 | Severity | Who may log | Who may close |
 |----------|-------------|----------------|
@@ -94,7 +94,7 @@ Append only. Never edit or delete prior entries (same discipline as Field_Logs /
 
 **Summary:** [one paragraph, observable facts only]
 
-**RIP classification basis:** [which Protected Element / ladder example]
+**RIP (`Admin/Repository_Integrity_Protocol.md`) classification basis:** [which Protected Element / ladder example]
 
 **Affected paths:** [files / sections]
 
@@ -169,3 +169,4 @@ Append only. Never edit or delete prior entries (same discipline as Field_Logs /
 
 - 2026-08-16: **File created (v0.1).** Canonical home for RIP integrity incidents; ownership table addresses RIP-007 minimum doctrine; append-only intake aligned with Field_Logs discipline. Registered in Routing.md. RIP Scope Boundary / response ladder updated to point here instead of "log willy-nilly." No past incidents fabricated into the log. Human-directed.
 - 2026-10-25: **First entry logged (IIL-20261025-01).** Retrospective Compound Drift incident for PKC-001 bookkeeping decay, labeled Analogous / reconstructed, per the PKC-015 ruling. No format, ownership or scope change; version unchanged. Human-directed.
+- 2026-11-05: **Two live-section citations qualified (MAINT-63 X3 straggler pass).** The Ownership heading now reads "(addresses `Admin/Repository_Integrity_Protocol.md` RIP-007 minimum)" and the submission template now reads "**RIP (`Admin/Repository_Integrity_Protocol.md`) classification basis:**" — live sections only; the frozen IIL-20261025-01 incident entry, its "RIP ladder" prose, and prior Resolution Log lines keep their original bare forms per the frozen-history rule (PKC-015 references preserved bare). File State header refreshed, closing the aggregate's B-N1 header-decay finding. Per the human-ratified MAINT-62 ruling set §2 Category A; executed 2026-11-05, Vibe — Architect line PRIMARY (Repo Custodian secondary), non-independent Genesis Phase, Q-2 invoked, disclosed.
