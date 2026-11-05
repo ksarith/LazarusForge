@@ -1,0 +1,44 @@
+# AUDIT_AGGREGATE — Admin/Environmental_Constraints.md
+
+**Status:** Dispositions unverified (Rule 5 separate-verifier hand-off pending — assign an agent other than the disposition writer)
+**Created:** 2026-11-04 by Vibe (Repo Custodian — MAINT-58 tranche-2 aggregation sweep)  ·  **Target:** `Admin/Environmental_Constraints.md`  ·  **Passes:** 2
+**Non-independence:** Genesis Phase — pass depositors, disposition writer and this amalgamator are the same Vibe line; disclosed per MAINT-38 and the aggregate template.
+**Note:** Bookkeeping map, not an audit of record. Cite the original reports for any finding you rely on. Rules per `Archive/Audits/AUDIT_AGGREGATE_TEMPLATE.md`. Originals not relocated (tranche-1 MAINT-47 precedent: fold only; relocation is a separate per-task lane).
+
+## 1. Provenance
+
+| Pass | Original path (at issuance) | Current path | Date | Auditor / lane | Head at fetch | Bytes | Blob SHA |
+|---|---|---|---|---|---|---|---|
+| A | `Admin/AAudits/CAMPAIGN_AUDIT_25_Admin-Environmental_Constraints.md` | unchanged (live in `Admin/AAudits/`) | 2026-10-28 | Vibe, Skeptic/Auditor, VibesSandbox audit stream (PKC-020 findings-only) | head eee122a6 | 16,500 | `c3d52370ea3dd8174eec529d0a4267c87e7d81bb` |
+| B | `Admin/AAudits/CAMPAIGN2_AUDIT_80_Admin-Environmental_Constraints.md` | unchanged | 2026-10-31 | Vibe (GLM 5.3), Skeptic/Auditor, Campaign 2 (PKC-020), non-independent Genesis Phase | commit f8a1f4c0 | 2,255 | `d817e1118f4e3567c9cf61c2597d8bf39055486a` |
+
+## 2. Findings ledger
+
+| Ref | Orig ID | Severity | Category | One-line summary | Where in original | Disposition | Evidence | Verified by |
+|---|---|---|---|---|---|---|---|---|
+| A-F1 | F1 | WARNING | bare colliding-prefix IDs + dangling "See sidecar" (PKC-003; claim-vs-state) | Live text still carries bare EC-010/GOV-010/FA-003/SP-005/EC-009 despite the 2026-07-06 log's "All bare cross-reference IDs canonized" G5 claim; the Category-2 "See sidecar" pointer dangles for all four foreign unknowns | CAMPAIGN_AUDIT_25 §Findings F1 | Asserted (enacted) | 2026-10-29 X3 retrofit on this file (1 qualification per its Last Audit chain); pass B check 6 read VERIFIED CLEAN — the bare-ID half is repaired; the dangling-pointer half rode the same citation scope | |
+| A-F2 | F2 | WARNING | stale "pending human ratification" 103 days past the ratification (X9) | The single Lessons Learned row's Revalidation field still awaits the ENV-DS-001 ratification that came 2026-07-17 — the stale fact survived in the third place later passes didn't look | CAMPAIGN_AUDIT_25 §Findings F2 | Not re-tested | Pass B did not re-derive the Lessons Learned row; carried for the next touching pass / verifier | |
+| A-F3 | F3 | WARNING | ENV-008 sidecar narrates verification outstanding while the file's own Relationship section records it completed 2026-07-19 (X9) | The sidecar (Status "Partially Addressed", Last Reviewed 2026-07-06) waits on a re-verification the Relationship section says was done 13 days later; also: "Partially Addressed" is not among AP's valid closure outcomes | CAMPAIGN_AUDIT_25 §Findings F3 | Enacted | ENV-008 Resolved 2026-10-28; verified by pass B check 1's clean derivation ("ENV-008 Resolved 2026-10-28 and correctly excluded") | |
+| A-F4 | F4 | WARNING | Aging-Rule actionable, unactioned (X8) | All eight non-resolved unknowns at Last Reviewed 2026-06-19/2026-07-07 (131/113 days at pass time) against the 90-day actionable bar; the 08-11 pseudo-audit reviewed the states without advancing the fields (correctly, findings-only) | CAMPAIGN_AUDIT_25 §Findings F4 | Standing-open | The class is already before the human via AUDIT_19 F2 (Economics' ECNs); review still owed on the next touching pass | |
+| A-F5 | F5 | WARNING | EC-009 narration stale against current Ethical_Constraints (X9) | Scope Boundary "pending EC-009" and Relationship "resolution paths lead here" vs EC-009 Ratified 2026-08-22 — Payment via Specification, with no routing to this file in EC-009's text; mitigation: this file's last pass predates the ratification | CAMPAIGN_AUDIT_25 §Findings F5 | Not re-tested | Candidate for the delegated maintenance list at issuance; not re-derived at fold-in (EC fetch not repeated) | |
+| A-F6 | F6 | NOTE | Last Audit/Auditor not advanced by the 08-11 pseudo-audit (PKC-001 class) | File State Last Audit 2026-07-17 while the newest log entry is the 08-11 pseudo-audit — the ruled-historical bookkeeping-decay shape; the pseudo-audit's own posture was exemplary | CAMPAIGN_AUDIT_25 §Findings F6 | Closed-by-ruling | PKC-001 / PKC-007, ruled 2026-10-27 — declared historical, no backfill; remedy is the mechanical check | |
+| A-F7 | F7 | NOTE | trailing Status Version line two versions behind (X7) | Status block's version line still reads v0.2 (2026-07-06) while the log is at v0.4; the block's own 07-17 paragraph records the ratification | CAMPAIGN_AUDIT_25 §Findings F7 | Closed-by-ruling | PKC-002, ruled 2026-10-25 (trailing-Status staleness class; closed 2026-10-28 per the enactment record) | |
+| A-F8 | F8 | NOTE | drift-indicator loss-check count-ambiguous | "any of the eight downstream dependents" vs a nine-row table (eight ID-bearing + one context-only Leviathan row) — not mechanical as written | CAMPAIGN_AUDIT_25 §Findings F8 | Standing-open | Exact-wording recommendation queued at issuance (delegated index-polish batch); wording not re-verified at fold-in | |
+| A-F9 | F9 | NOTE | positives (extensive) | Three-way parity exact at 8 both directions; Highest Risk value-parity CORRECT (streak-ending); EC-010 reciprocity verified both directions; first clean X1 scope check of that stream; full template schema with honest empties; ASM-EC- suffixed-ID disambiguation (X3 in-file mitigation done right); the ratified bridge doctrine's own misuse-as-default guard | CAMPAIGN_AUDIT_25 §F9 + Checklist | Positive-record | n/a | |
+| A-IN1 | INCOMPLETEs | INCOMPLETE | cross-refs deferred | Facilities.md Section VII rows (ENV-010); GR-003 citation (Gate_03 audit); AUDIT_HARNESS "line 71" (Automation/ standing skip); SP-005 cross-claims | CAMPAIGN_AUDIT_25 §INCOMPLETEs carried forward | Not re-tested | Owning-file sweeps pending; Automation/ under standing skip ruling | |
+| B-N1 | N1 | NOTE | Status section ordering, cosmetic | The v0.6 (2026-10-29) entry sits below the 2026-07-07 entry rather than above the 10-28 v0.5 entry — dated, so not a wording finding; reads oddly for a newest-first section | CAMPAIGN2_AUDIT_80 §Notes N1 | Standing-open | Cosmetic ordering queued (single-item, deferred to a natural touch; no urgency claimed) | |
+| B-C1 | (none) | NOTE | positive | Checks 1–11 otherwise clean: open count 8 re-verified from live sidecars with the ENV-008 exclusion; Highest Risk High re-verified (ENV-001/002/009); "the 2026-10-28/29 staleness reconciliation pass did its job and verifies against source" | CAMPAIGN2_AUDIT_80 §Clean derivations | Positive-record | n/a | |
+
+## 3. Cross-pass logic map
+
+- Pass A (10-28) found strong human-ratified content under five WARNINGs of wrapper/pointer decay — the X11 shape again — with two positives that ended streaks (first clean scope check; first correct Highest Risk value-parity). Its ENV-008 finding (A-F3) was enacted between the passes: the 2026-10-28/29 staleness-reconciliation pass resolved ENV-008 and corrected the open-unknown count, both verified live by pass B.
+- Pass B (10-31) is a post-reconciliation verification: everything it re-derived checked clean, leaving one cosmetic Status-ordering note (B-N1) and carrying the still-open human-queue items (Aging-Rule actionable set; EC-009 reconciliation — A-F4/A-F5).
+- Disposition asymmetry disclosed: A-F1 is asserted (X3 enacted, B-verified) but its dangling-"See-sidecar" half has no separately located repair; A-F2/A-F5 were not re-derived by B and are carried for the verifier. Composite refs A-Fn/B-Fn are the only safe citation form (Template Rule 2).
+
+## 4. Pointers
+
+Originals are not relocated; both passes remain live at their deposit paths in `Admin/AAudits/`. **Cited from outside the Audits home:** `Routing.md` rows (registered at deposit); the ENV-007/ENV-008 footnotes in `Admin/Unknowns.md`; the AUDIT_19 F2 Aging-Rule class record before the human; dated lines in `Archive/Audits/SESSION_STATUS.md` addenda and sandbox session records — frozen history, dangling by design.
+
+## 5. Addenda
+
+None. Corrections by dated addendum only.
