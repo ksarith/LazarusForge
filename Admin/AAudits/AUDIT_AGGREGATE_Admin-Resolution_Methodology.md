@@ -1,0 +1,41 @@
+# AUDIT_AGGREGATE — Admin/Resolution_Methodology.md
+
+**Status:** Dispositions unverified (Rule 5 separate-verifier hand-off pending — assign an agent other than the disposition writer)
+**Created:** 2026-11-04 by Vibe (Repo Custodian — MAINT-58 tranche-2 aggregation sweep)  ·  **Target:** `Admin/Resolution_Methodology.md`  ·  **Passes:** 2 (+1 shared dated correction)
+**Non-independence:** Genesis Phase — pass depositors, disposition writer and this amalgamator are the same Vibe line; disclosed per MAINT-38 and the aggregate template.
+**Note:** Bookkeeping map, not an audit of record. Cite the original reports for any finding you rely on. Rules per `Archive/Audits/AUDIT_AGGREGATE_TEMPLATE.md`. Originals not relocated (tranche-1 MAINT-47 precedent: fold only; relocation is a separate per-task lane).
+
+## 1. Provenance
+
+| Pass | Original path (at issuance) | Current path | Date | Auditor / lane | Head at fetch | Bytes | Blob SHA |
+|---|---|---|---|---|---|---|---|
+| A | `Admin/AAudits/CAMPAIGN_AUDIT_22_Admin-Resolution_Methodology.md` | unchanged (live in `Admin/AAudits/`) | 2026-10-28 | Vibe, Skeptic/Auditor, VibesSandbox audit stream (PKC-020 findings-only) | head eee122a6 | 11,517 | `91d572323892093daf9c618179c3248152a507de` |
+| A-CORR | `Admin/AAudits/CAMPAIGN_AUDIT_20-22_CORRECTION_2026-10-28.md` (shared with the ADP and CIR aggregates) | unchanged | 2026-10-28 | Vibe, Skeptic/Auditor, VibesSandbox audit stream (dated correction; no grade changes) | head eee122a6 | 6,401 | `1e89cc8c1f3e68e70cc09d4e401958e978914050` |
+| B | `Admin/AAudits/CAMPAIGN2_AUDIT_82_Admin-Resolution_Methodology.md` | unchanged | 2026-10-31 | Vibe (GLM 5.3), Skeptic/Auditor, Campaign 2 (PKC-020), non-independent Genesis Phase | commit f8a1f4c0 | 1,766 | `8e8d60be786849bd960eef3405bc9443f8cec730` |
+
+## 2. Findings ledger
+
+| Ref | Orig ID | Severity | Category | One-line summary | Where in original | Disposition | Evidence | Verified by |
+|---|---|---|---|---|---|---|---|---|
+| A-F1 | F1 | WARNING | bare colliding-prefix citations in demonstrated-case narration (PKC-003) | Bare GI-002/GI-003 (owners never named), "GF-007/FA-002 fire doctrine" (FA-002's owner unnamed), and bare TS-002 — all prefixes on the harness's COLLIDING_PREFIXES list, in pattern-narration context | CAMPAIGN_AUDIT_22 §Findings F1 | Asserted (enacted) | 2026-10-29 X3 retrofit on this file (17 qualifications per its Last Audit chain — the campaign's largest single-file retrofit); pass B read all checks clean, Last Audit 2026-10-29 (X3) matching the newest log entry | |
+| A-F2 | F2 | WARNING | wrapper block mid-body; reorder flagged-and-deferred (section-integrity) | Lessons Learned → Drift Indicators block sits between the Second and Third/Fourth/Fifth Applied Cases; the 10-23 pass documented the anomaly and correctly deferred restructuring under a no-version-bump pass — "reorder still due" | CAMPAIGN_AUDIT_22 §Findings F2 | Closed-by-ruling | PKC-007, ruled 2026-10-27 — names this exact shape verbatim ("section order (cases after Lessons Learned)… ruled historical… get no further repair"); the A-CORR correction withdraws the "reorder still due" framing in favor of the ruling | |
+| A-F3 | F3 | NOTE | File State Version field absent while the subtitle carries the version (X11-flavored) | The File State table has no Version row; the version lives only in the subtitle "Version 0.9 — 2026-08-28" — the field existed (the 08-15 v0.4 pass repaired it) and has since disappeared, undocumented | CAMPAIGN_AUDIT_22 §Findings F3 | Standing-open | No rule violation located (the version is tracked consistently one heading above the table); the field's disappearance is undocumented — carried for the next substantive pass / human wording choice | |
+| A-F4 | F4 | NOTE | version-sequence gap honestly documented (v0.7 → v0.9, no v0.8) | No v0.8 exists anywhere; the 10-23 pass states why the 08-25 entry carries no version number — documentation over renumbering, defensible, now a permanent registry anomaly | CAMPAIGN_AUDIT_22 §Findings F4 | Closed-by-ruling | PKC-007, ruled 2026-10-27 — names "no v0.8 recorded anywhere (v0.7 → v0.9)" verbatim, declared historical, no repair | |
+| A-F5 | F5 | NOTE | exemplary practices (positive) | Pattern 9's self-application; the Fifth Case's tracking-drift meta-lesson (the X9/X11 class independently named); the v0.4 self-correction; Pattern 8's residual-notation verified live; Pattern 6's Risk/Priority-unchanged closure doctrine | CAMPAIGN_AUDIT_22 §Findings F5 | Positive-record | n/a | |
+| A-CORR | (correction) | — | rulings surfaced post-issuance | PKC-007 pre-dispositioned A-F2 and A-F4 verbatim (ruled 2026-10-27, one day pre-issuance); observations stand, "reorder still due" framing withdrawn in favor of the ruling | CAMPAIGN_AUDIT_20-22_CORRECTION §Finding-by-finding mapping | Closed-by-ruling | PKC-007 (with PKC-001 context), ruled 2026-10-27 | |
+| A-IN1 | checks 5, carried | INCOMPLETE | cross-refs deferred | Ops/Arc Scope_Map contents; Unknowns_Changelog v4.83 (Archive/); Pattern 9's historical claims about Unknowns/Progress_Log; Automation/ dashboard claims (standing skip ruling); the carried CE-005 stale GR-003 phrase (recorded for the root sweep) | CAMPAIGN_AUDIT_22 §INCOMPLETEs | Not re-tested | Owning sweeps pending; Automation/ under standing skip ruling | |
+| B-C1 | (none) | NOTE | positive | Checks 1–11 all VERIFIED CLEAN: Open Unknowns 0 verified (a named reference creating no unknowns); Highest Risk Low consistent with the zero-unknown convention; Version 0.10 header matches File State; X3 retrofit (17 qualifications) = newest log entry; Ethical Anchor exact | CAMPAIGN2_AUDIT_82 §Clean derivations | Positive-record | n/a | |
+
+## 3. Cross-pass logic map
+
+- Pass A (10-28) called this the cleanest wrapper of its batch: full section set, zero unknowns honestly stated, strict newest-first log, and all eleven case-claims verified against the registry in both directions. Its two WARNINGs split by the later correction: the mid-body wrapper order and the v0.8 gap were already ruled historical (PKC-007, named verbatim); the bare colliding-prefix narration was not, and the 2026-10-29 X3 retrofit qualified it — this file took the campaign's largest single retrofit (17 instances).
+- Pass B (10-31) found everything clean and re-confirmed the zero-unknown control convention (Highest Risk Low) that the VG aggregate's B-pass used as its counter-example. Note B records Version 0.10 — the file's version has advanced since pass A's v0.9, via the X3-era passes; header/log/File State agree at B.
+- Composite refs A-Fn/B-Fn (A-CORR for the shared correction) are the only safe citation form (Template Rule 2).
+
+## 4. Pointers
+
+Originals are not relocated; all three artifacts remain live at their deposit paths in `Admin/AAudits/`. **Cited from outside the Audits home:** `Routing.md` rows (registered at deposit); the PKC-007 ruling row in `Admin/Progress_Log.md`; the Pattern 9 historical references to `Admin/Unknowns.md` and `Admin/Progress_Log.md`; dated lines in `Archive/Audits/SESSION_STATUS.md` addenda and sandbox session records — frozen history, dangling by design.
+
+## 5. Addenda
+
+None. Corrections by dated addendum only.
