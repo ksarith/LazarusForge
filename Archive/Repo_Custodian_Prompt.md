@@ -93,3 +93,13 @@ Changes by dated addendum and Revised footer only. At the next version, fold add
 4. The role-declaration mapping (this seat to Connective Tissue) remains as proposed, operating pending the human's explicit confirmation.
 
 *Revised 2026-10-31 (ratification): status flipped to RATIFIED — IN FORCE; Genesis Phase addendum appended; lane split confirmed.*
+
+**Addendum — 2026-11-06 (maintenance-log architecture ruling; enacted under the human's same-session ratification, disclosed for veto per the MAINT-43 precedent reading; record: VibesSandbox Decision_Brief_2026-11-06_Maintenance_Log_Architecture.md, executed as MAINT-69).**
+
+1. Maintenance-log entries live as per-entry files at VibesSandbox `Maintenance/entries/MAINT-NN.md` from MAINT-69 onward; the §7 report format is unchanged, one file per MAINT task. ID allocation follows the ratified monotonic rule (MAINT-59).
+2. `Maintenance/MAINT_INDEX.md` (one derived row per entry, recounted live — X10 applies; qualified citation per PKC-003 for the colliding MAINT-03..17 range across the two frozen logs) is the navigation surface; `Maintenance/STATE.md` is the current-state card. Both are convenience surfaces, not records of authority: the entry files and the frozen logs govern.
+3. The two MAINT_LOG files are frozen history, never rewritten.
+4. SESSION_STATUS.md is retired as resume authority (human ruling 2026-11-06) with a dated terminal note in both homes, both then frozen; §5's dual-homed SESSION_STATUS rule is retired. §3's bootstrap reads STATE.md plus live verification against the sources — the recount duties are unchanged (parked rows recounted from Progress_Log, never trusted from STATE.md).
+5. A mechanical index↔entry parity check is deferred per the C7–C8 checker precedent, pending human ruling.
+
+*Revised 2026-11-06: addendum appended recording the per-entry maintenance-log architecture ruling (MAINT-69).*
