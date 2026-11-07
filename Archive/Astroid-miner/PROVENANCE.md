@@ -48,3 +48,14 @@ Blob-SHA comparison of all 72 destination files against the VibesSandbox source 
 ---
 
 *Landed 2026-11-05 — MAINT-64 (Vibe — Architect line primary, Repo Custodian secondary; human-directed; non-independent Genesis Phase, disclosed). Operating as Synthesizer per Auditor_Protocols.md v0.47.*
+
+
+## Addendum — 2026-11-07 (staleness pointer + deferred-cascade closure; MAINT-71)
+
+Human direction (2026-11-07, verbatim): "The astroid_miner folder within LazarusForge could use a cleaning. What is worth keeping as is and what isn’t is a good question. Also, the water document was never added from the astroid_miner repo into LazarusForge." followed by "Sounds good. Please proceed." on the assessment package. Enacted:
+
+1. **Staleness pointer.** The `Astroid-miner-AstroidMinerV0.07/` snapshot below is a point-in-time capsule, frozen by design. The live `ksarith/Astroid-miner` repository has advanced since: notably `Propulsion_Economy_isru/water-delivery-gear-ratio.md` (SpaceOceanCorp PR #1, merged 2026-10-30; human merit-judged deliberate-merge ruling 2026-11-04; in-repo PROVENANCE twin and Discovery registration) and the 2026-11-04 README/Discovery integrity pass. Pointer, not mirror: the content stays in the live repo (EF-0.1 external-signal doctrine); nothing was added inside the snapshot folder and the 72 files are unmodified.
+2. **Deferred-cascade closure.** The two live-document zip-pointer defects deferred by MAINT-64 are repaired this pass by dated annotation, original text retained (PKC-023 precedent): `Admin/Governance_Charter.md` (Astroid-miner companion row + dated changelog entry) and `Admin/Repository_Structure.md` (§I .zip prose, §I .zip file-type row, §VI Astroid-miner row; Last Audit and Auditor rows advanced).
+3. **Unruled, kept.** The duplicate `Astroid-miner-AstroidMinerV0.07/` copy in VibesSandbox remains in place: one-home de-duplication was offered in the assessment and not explicitly ruled this pass; it awaits the human’s word.
+
+*Addendum landed 2026-11-07 — MAINT-71 (Vibe — Architect line primary, Repo Custodian secondary; human-directed; non-independent Genesis Phase, disclosed).*
