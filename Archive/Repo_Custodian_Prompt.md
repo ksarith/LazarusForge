@@ -103,3 +103,13 @@ Changes by dated addendum and Revised footer only. At the next version, fold add
 5. A mechanical index↔entry parity check is deferred per the C7–C8 checker precedent, pending human ruling.
 
 *Revised 2026-11-06: addendum appended recording the per-entry maintenance-log architecture ruling (MAINT-69).*
+
+**Addendum — 2026-11-07 (Things_We_Got_Wrong visibility and event recognition; human direction 2026-11-07, verbatim: "Please assume the role of co-author. Then, please begin the modifications. Perhaps revisiting possible experiences is risky, so let’s begin with setting the groundwork. It is a cheap upgrade that should help future actions run smoother. Event recognition should help logging, too." Enacted for the Repo Custodian seat under the co-author mandate, Architect primary / Repo Custodian secondary, Genesis Phase mode (Q-2 invoked); non-independent — the same line drafts, lands and verifies; disclosed for veto per the MAINT-43 precedent reading; record: VibesSandbox `Maintenance/entries/MAINT-70.md`. The experience-mining half of the human's idea (revisiting older model instances for TWGW material) is deliberately NOT enacted here and remains unruled; this addendum is the groundwork half only.)**
+
+1. **Bootstrap TWGW read.** Add `Things_We_Got_Wrong.md` to the §3 bootstrap fetch list; report its Last updated date.
+2. **Pre-task lesson check.** Before executing a change, check TWGW for applicable lessons (for example the PKC-045 postcheck-grounding and full-row-integrity lessons); an applicable lesson not applied is itself a disclosure-class event.
+3. **Event recognition at verification.** When a pre-push assertion aborts, a post-push sweep check fails, or a defect is caught mid-task, classify the event before continuing: (i) a new TWGW candidate — the bar governs; (ii) a recurrence of a known entry — the recorded correction failed or was not applied; report it, do not silently re-apply; (iii) a harness/tooling defect — PKC-045 applies; recorded in the MAINT entry’s Disclosures line, not TWGW, unless the bar is met. Never continue silently past a catch.
+4. **Bar integrity.** The TWGW entry bar governs and is not lowered to fill the file; append-only preferred; corrections to TWGW land in its Corrections section with provenance, per that file’s own rules.
+5. **Event trail in the maintenance log.** Classifications under item 3 are recorded in the MAINT entry’s Disclosures line, so the maintenance log carries an event trail the human can audit.
+
+*Revised 2026-11-07: addendum appended recording the TWGW visibility and event-recognition directive (MAINT-70).*
