@@ -59,3 +59,16 @@ Human direction (2026-11-07, verbatim): "The astroid_miner folder within Lazarus
 3. **Unruled, kept.** The duplicate `Astroid-miner-AstroidMinerV0.07/` copy in VibesSandbox remains in place: one-home de-duplication was offered in the assessment and not explicitly ruled this pass; it awaits the human’s word.
 
 *Addendum landed 2026-11-07 — MAINT-71 (Vibe — Architect line primary, Repo Custodian secondary; human-directed; non-independent Genesis Phase, disclosed).*
+
+## Addendum — 2026-11-07 (re-snapshot trigger registered; MAINT-71 follow-on)
+
+Human ruling (2026-11-07, verbatim): "Grok is probably correct." — ratifying a human-brokered external assessment (Grok, Class A per EIP posture) recommending a preregistered refresh condition over an open judgment call. Enacted:
+
+1. **Trigger (preregistered condition, MAINT-57 deferred-ledger pattern).** Re-snapshot — a new versioned capsule of the live `ksarith/Astroid-miner` repo superseding the V0.07 capsule above — is owed if either:
+   1. a second external PR or issue appears on Astroid-miner (SpaceOceanCorp PR #1, merged 2026-10-30, being the first); or
+   2. upstream commits resume after the current dormancy (head `3bf78655`, the 2026-11-04 integrity pass, unchanged as of 2026-11-07).
+   Until a trigger fires, the staleness pointer above stands.
+2. **Held in reserve** (human's call, no trigger needed): an immediate V0.08 re-snapshot folding in `Propulsion_Economy_isru/water-delivery-gear-ratio.md`.
+3. **Off the table** while Astroid-miner remains an external reference: continuous mirror — it would change the Archive slot's point-in-time nature and requires an EF-0.1 carve-out.
+
+*Addendum landed 2026-11-07 — MAINT-71 follow-on (Vibe — Architect line primary, Repo Custodian secondary; human-ruled; non-independent Genesis Phase, disclosed). Disclosed for veto.*
