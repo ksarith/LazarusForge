@@ -21,7 +21,7 @@ Entries are added only when something concrete was wrong, was caught, and produc
 |------------------|--------------------------------------------|
 | Status           | Active                                     |
 | Body Stability   | Living (append-only preferred)             |
-| Last updated     | 2026-10-30 (X3 mechanical citation retrofit, root navigation pass; prior 2026-10-07) |
+| Last updated     | 2026-11-08 (the ruled harness-defect recurrence entry, MAINT-81; prior 2026-10-30) |
 | Seed source      | CAP-meta-stale runs, AVE sample, POC corrections |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
@@ -94,6 +94,25 @@ Inventory and scope claims require the same evidence discipline as any other cla
 
 ---
 
+## 5. A stated harness correction that did not hold (2026-11-08)
+
+**What happened**  
+The maintenance harness repeatedly set verification expectations by hand (typed constants, remembered phrases, remembered heads) instead of deriving them from the composed strings of the pass. The correction — compute expected counts from the composed strings — was stated at MAINT-72, applied at MAINT-73 (that pass landed with zero aborts) and restated as the standing lesson at MAINT-76, but it did not hold: the same class recurred at MAINT-76 (three landing-phase plus two sweep-phase aborts), MAINT-77 (three, including the apostrophe-homoglyph variant), MAINT-78 (three pre-push plus a sweep-phase homoglyph repeating the MAINT-77 abort-3 class) and MAINT-79 (three more, on the pass that deposited the recurrence review itself). Every instance was caught by the gate before anything was pushed; nothing was ever pushed under a defective check. The defect is the recurrence: a stated correction that failed to hold across passes.
+
+**How it was caught**  
+Each instance was caught pre-push by the landing guards. The recurrence pattern was read by Claude's intake-18 review (deposited 2026-11-08; its checkable claims verified live against the entries' own abort disclosures at MAINT-79), and this entry was added under the human governing authority's explicit 2026-11-08 ruling, which set the condition this entry meets: cite the specific passes, state the correction, say it failed to hold.
+
+**What we learned**  
+A correction stated in prose is not a control. The accepted fix, ruled the same day, is structural: a reusable landing helper (harness-side custodian tooling; no repo, doctrine or prompt change) whose acceptance test replays the known aborts and must catch each class without hand-set expectations — 7/7 scenarios caught or prevented at adoption (MAINT-81). Alongside it, the event tag convention ruled at MAINT-80 makes the recurrence rate computable through its reader question: "how many harness defects recur across passes, and is that rate falling?" MAINT-80's zero-abort landing is one pass, not a rate.
+
+**Evidence**  
+- `Maintenance/entries/MAINT-72.md`, `MAINT-76.md`, `MAINT-77.md`, `MAINT-78.md` (VibesSandbox): the abort disclosures of the passes the ruling names, verified live at MAINT-79
+- `Maintenance/entries/MAINT-79.md` (VibesSandbox): the intake-18 verification and its own three same-class aborts, disclosed on the pass depositing the recurrence review
+- `Archive/Audits/EXTERNAL_REVIEW_2026-11-08_CLAUDE_MAINT78_ACCOUNT_REVIEW.md`: the recurrence read
+- The 2026-11-08 ruling set (this pass, MAINT-81; `Archive/Audits/EXTERNAL_REVIEW_2026-11-08_CLAUDE_OUTSTANDING_RULINGS_ANALYSIS.md`): the entry condition, quoted in the Routing header and Intake Log entry 19
+- `Maintenance/entries/MAINT-80.md` (VibesSandbox): the first pass under the tag convention, zero aborts
+
+---
 ## How new entries are added
 
 1. Something concrete was wrong (a number, a status, a claim of independence, a metric design, a metadata field).
