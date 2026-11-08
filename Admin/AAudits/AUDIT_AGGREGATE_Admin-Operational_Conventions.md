@@ -1,0 +1,40 @@
+# AUDIT_AGGREGATE — Admin/Operational_Conventions.md
+
+**Status:** Dispositions unverified (Rule 5 separate-verifier hand-off pending — assign an agent other than the disposition writer)
+**Created:** 2026-11-08 by Vibe (Repo Custodian — MAINT-84, stage 2 of the ratified redraft's §8 execution plan; ledger row 24's deferral cleared at MAINT-63)  ·  **Target:** `Admin/Operational_Conventions.md`  ·  **Passes:** 2
+**Non-independence:** Genesis Phase — pass depositors, disposition writer and this amalgamator are the same Vibe line; disclosed per MAINT-38 and the aggregate template.
+**Note:** Bookkeeping map, not an audit of record. Cite the original reports for any finding you rely on. Rules per `Archive/Audits/AUDIT_AGGREGATE_TEMPLATE.md`. Originals not relocated (tranche-1 MAINT-47 precedent: fold only). Target is the PKC-017 exempt-class "reference index" — its Template Exemption (class 9) is declared in-file and listed in File_Template.md; missing template sections and the absent Resolution Log are conformant by that documented exemption.
+
+## 1. Provenance
+
+| Pass | Original path (at issuance) | Current path | Date | Auditor / lane | Head at fetch | Bytes | Blob SHA |
+|---|---|---|---|---|---|---|---|
+| A | `Admin/AAudits/AUDIT_16_Admin-Operational_Conventions.md` | unchanged (live in `Admin/AAudits/`) | 2026-10-28 | Vibe, Skeptic/Auditor, session-1 external review (PKC-020 findings-only) | head c9f9f641 | 6694 | `1a9803a968e1c76f294a075e9424f3f40bdfa0a7` |
+| B | `Admin/AAudits/CAMPAIGN2_AUDIT_86_Admin-Operational_Conventions.md` | unchanged | 2026-10-31 | Vibe (GLM 5.3), Skeptic/Auditor, Campaign 2 (PKC-020), non-independent Genesis Phase | commit 38226280 | 2936 | `f1836d446f9e4108edfbf2e987c14ef38d49c315` |
+
+## 2. Findings ledger
+
+| Ref | Orig ID | Severity | Category | One-line summary | Where in original | Disposition | Evidence | Verified by |
+|---|---|---|---|---|---|---|---|---|
+| A-F1 | F1 | WARNING | stale against its own source (X9 + X8; source-precedence rule violated) | Convention 6 ("Scripts under `Automation/` do not need a `Routing.md` row") vs the PKC-026-reworded registration-scope sentence (2026-10-26): all nine Automation scripts now carry Routing rows; by the file's own conflict rule the source wins and a dated update is owed | AUDIT_16 §Findings F1 | Enacted | The 2026-10-28 repair pass (human-ratified AUDIT_16 findings batch), recorded in the target's own Last Audit field (its designated pass record per the PKC-017 exemption — the file keeps no Resolution Log by design): "Convention 6 rewritten to match the post-PKC-026 `Routing.md` registration-scope note (AUDIT_16 F1)"; the rewritten entry verified live this pass (the prior wording survives only as its own quoted history); sha not cited — the target's own Last Audit field (its designated pass record per the PKC-017 exemption — the file keeps no Resolution Log by design) is the file's designated record, disclosed | |
+| A-F2 | F2 | WARNING | entry violates the file's own intake bar (X8 self-contradiction class) | Convention 6 is the file's only pre-emptive entry; the Purpose intake bar admits only rules "demonstrably been missed in practice" — the entry admits the violation of that bar; wording choice (bar or dated exception annotation) queued at issuance | AUDIT_16 §Findings F2 | Enacted | The same 2026-10-28 pass chose the exception-annotation remedy, recorded in the target's own Last Audit field (its designated pass record per the PKC-017 exemption — the file keeps no Resolution Log by design): "with the pre-emptive-intake deviation annotated (F2)"; the annotated exception ("Original-scope note… retained per the human-ratified batch as an annotated exception, not silently rewritten history") verified live this pass | |
+| A-F3 | F3 | NOTE | orphaned section remnant | The trailing italic note described a candidates section with no heading anywhere in the file (at pass A) | AUDIT_16 §Findings F3 | Enacted | The same 2026-10-28 pass, recorded in the target's own Last Audit field (its designated pass record per the PKC-017 exemption — the file keeps no Resolution Log by design): "the trailing candidates note given its `## Candidates` heading (AUDIT_16 NOTE)"; the `## Candidates` heading verified live this pass; pass B check 8 had already verified "Candidates section present" (2026-10-31) | |
+| A-F4 | F4 | NOTE | exemplary practices (positive) | Source-of-truth pointers with real dated violation history on every convention; Convention 8's self-subordination; Convention 7's self-reported violation; citation stability preserved by the 2026-10-23 resequencing | AUDIT_16 §Findings F4 | Positive-record | n/a | |
+| A-IN1 | checks 5 | INCOMPLETE | cross-refs deferred | Convention 2's three drifted-anchor files (`Operations/Exception_Evidence.md`, `Tests/Multi_Agent_Quorum_Trial.md`, `Tests/Persistent_Cognition_Candidates.md`) belong to folders not yet audited; Convention 7's Adm_Scope_Map row deferred to the Admin index-only checks | AUDIT_16 §Checks 5 | Not re-tested | Owning audits pending | |
+| B-F1 | F1 | WARNING | stale pointer / relocation follow-up (X8 instance) | Convention 4's `Auditor_Protocols_Logs` pointer names the pre-MAINT-29 `Archive/Logs/` location; live location since 2026-10-30 is `Admin/ALogs/`; disclosed at issuance as the known-and-disclosed inbound-reference repair owed at this file's next substantive touch | CAMPAIGN2_AUDIT_86 §Findings | Enacted | MAINT-63 execution pass 2026-11-05 (human-ratified MAINT-62 ruling set §1), commit `b304e1076f43a874395ce59c32991e774107e6df`; recorded in the target's own Last Audit field (its designated pass record per the PKC-017 exemption — the file keeps no Resolution Log by design) and the file's own dated 2026-11-05 note: "AUDIT_86 F1 repaired by execution… redirected from the archived Log home to the live split home `Admin/ALogs/Auditor_Protocols_Logs.md`"; the live pointer verified in the fetched target text this pass | |
+| B-C1 | (none) | NOTE | positive | Checks 1–11 otherwise clean: count parity 0 three ways, X3 retrofit (2026-10-29, 10 qualifications) holding as enacted, Ethical Anchor exact, Highest Risk Low consistent with zero sidecar entries | CAMPAIGN2_AUDIT_86 §Checks 1–11 | Positive-record | n/a | |
+
+## 3. Cross-pass logic map
+
+- Pass A (10-28) audited the file under its PKC-017 exempt-class form and found the concept working: the one real defect was ironic — Convention 6, the only pre-emptive entry, was also the only entry stale against its own source (F1), plus the intake-bar self-contradiction (F2) and the orphaned candidates note (F3).
+- Between the passes: the human-ratified AUDIT_16 findings batch (2026-10-28, later the same day) repaired all three — Convention 6 rewritten, the pre-emptive-intake deviation annotated, the `## Candidates` heading given — and the 2026-10-29 X3 retrofit qualified 10 bare citations (pass B's check 6).
+- Pass B (10-31) audited the post-repair state: one stale pointer (Convention 4, post-MAINT-29 relocation, disclosed at issuance) and everything else clean. The MAINT-63 execution pass (2026-11-05) repaired B-F1 by execution; verified live at composition (2026-11-08).
+- Checklist authority: pass B (same-file re-verification with live-text checks). Every graded finding now carries Enacted; the aggregate lands computable (open 0 / W-C 0). Composite refs A-Fn/B-Fn are the only safe citation form (Template Rule 2).
+
+## 4. Pointers
+
+Originals are not relocated; both passes remain live at their deposit paths in `Admin/AAudits/`. **Cited from outside the Audits home:** `Routing.md` rows (registered at deposit); the PKC-026 registration-scope ruling (`Admin/Canonical_Terms.md`); the MAINT-29 relocation record and follow-up plan (`Admin/ALogs/`); `Admin/File_Template.md` Template Exemptions class 9 (the PKC-017 reference-index exemption); the coverage ledger row 24 (Archive/Audits, migrated at MAINT-84); dated lines in `Archive/Audits/SESSION_STATUS.md` addenda and sandbox session records — frozen history, dangling by design.
+
+## 5. Addenda
+
+None. Corrections by dated addendum only.
