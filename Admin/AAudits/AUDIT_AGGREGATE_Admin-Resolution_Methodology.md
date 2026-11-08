@@ -38,4 +38,6 @@ Originals are not relocated; all three artifacts remain live at their deposit pa
 
 ## 5. Addenda
 
-None. Corrections by dated addendum only.
+**Addendum — 2026-11-08 (MAINT-82 batch repairs pass, executing the batch-repairs endorsement of the human-ruled MAINT-81 ruling set; the MAINT-66 verification records govern; Vibe — Architect line primary, Repo Custodian secondary; non-independent Genesis Phase, Q-2 invoked, disclosed):** The §4 phrase names Pattern 9 historical references to `Admin/Unknowns.md` and `Admin/Progress_Log.md` — frozen-history mentions, which stay as written (frozen history is never rewritten; the Progress Log's `Admin/` path is correct). The live-reading correction owed by the same defect class: the Unknowns global index lives at repo root `Unknowns.md`, not `Admin/Unknowns.md` (verified at MAINT-66); where this aggregate's corpus is consulted live, read the §4 Unknowns reference against the root index.
+
+Corrections after this addendum by dated addendum only.

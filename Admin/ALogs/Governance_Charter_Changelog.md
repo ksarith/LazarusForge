@@ -188,6 +188,8 @@ Pseudo-audit, findings only, 2026-10-27; report: Archive/Audits/AUDIT_01_Admin-G
 
 ### GOV-007 — Bootstrap governance authority initialization undefined
 
+**Relocation note — 2026-11-08 (MAINT-82 batch repairs pass, executing the batch-repairs endorsement of the human-ruled MAINT-81 ruling set; the MAINT-66 verification records govern; Vibe — Architect line primary, Repo Custodian secondary, delegated under the 2026-11-02/04 co-author mandate; non-independent Genesis Phase, Q-2 invoked, disclosed):** this sidecar entry is relocated history. The live, governing definition of GOV-007 is the Charter body's own GOV-007 — Current-State Consolidation section (`Admin/Governance_Charter.md`, added 2026-09-18; Status In Progress (Active), Risk High, Priority Major), which governs wherever the two diverge (this entry's wrapper values predate the consolidation and read In Progress / Medium). The duplicate was verified at MAINT-66 (Charter 9 occurrences, changelog 5, present since 1.33) and the repair ruled in the 2026-11-08 MAINT-81 ruling set. Dated annotation only — the historical entry text below stays as written.
+
 | Field         | Value                           |
 |---------------|---------------------------------|
 | Status        | In Progress                     |
