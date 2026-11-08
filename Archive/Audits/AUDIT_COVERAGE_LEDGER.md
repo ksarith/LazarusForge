@@ -17,6 +17,8 @@ Note: not relocated; lives beside the aggregates it indexes (Archive/Audits/ hom
 
 - 2026-11-08 (MAINT-84): the ledger restructured into Table I + Table II per the human-ratified Rule 10 restructure (Addendum #4 to the aggregate template). Table I carries the pass-coverage map (# | Target | Passes | Aggregate); Table II the open-counts register (# | Target | Open M/W/F | Open W-C | Rule 7 trigger state | Last counted). Open M/W/F now gates on finding severities MAJOR, WARNING, CRITICAL and FAIL (the ratified §2 vocabulary; no CRITICAL or FAIL severity has been emitted to date). Open W-C counts NOTE-severity rows in carrying dispositions (Watch-carried, or Standing-open pending the Rule 8 re-label) — visibility only, never gating. Counts for the 29 aggregated targets are the fixed-classifier mechanical values (MAINT-84 regeneration; method, the 13 recorded-vs-mechanical mismatches and the 8 stale §2 rows with re-labels owed: `Archive/Audits/AUDIT_COVERAGE_RECONCILE_2026-11-08_MAINT-84.md`); the 64 pass-holding non-aggregated rows are carried unchanged (nothing re-counted; their Last counted stays as recorded). The old single-table register remains in git history; no history row was silently rewritten — this bullet is the dated, attributed migration record.
 
+- 2026-11-08 (MAINT-85): first live regeneration executed (`Automation/coverage_ledger_regen.py`, Python 3.12.3, exit 0, REGEN OK — run by the external seat from the pinned zip; deposit verbatim at `Archive/Audits/EXTERNAL_REVIEW_2026-11-08_GROK_MAINT-85_REGEN_AND_BLIND_HANDCOUNT.md`, Intake Log entry 20). The 13 recorded-vs-mechanical mismatches adjudicated: all class (a) — the mechanical counts are correct and the pre-MAINT-84 recorded values were MAINT-59 hand-count drift (method and per-target evidence: `Archive/Audits/AUDIT_COVERAGE_RECONCILE_2026-11-08_MAINT-85.md`). The 8 stale §2 rows re-labelled under §5d at the charter-commissioned substantive touch (CIR_Gov A-F2, Experiments A-F2, Governance_Migration_Protocol B-N2, Integrity_Incident_Log B-N2, INTEGRITY_SWEEP_PROMPT B-N1, Nothingness_Theorem B-N2, Repository_Integrity_Protocol B-N1, Repository_Structure B-N1), each with a dated §5 addendum on the owning aggregate; Table II totals 52 Open M/W/F / 34 Open W-C → 50 / 28. The INTEGRITY_SWEEP_PROMPT frozen fixture re-frozen (1, 3) → (1, 2), dated, in the script and recorded in the reconcile report #2. Table II remains the script’s output; the rows changed this pass carry Last counted 2026-11-08 · Vibe · MAINT-85, attributed, never silently rewritten.
+
 ## Maintenance rule
 
 This ledger must be updated at every landing that registers a new pass deposit, changes a disposition, or opens/closes a carrying row. An un-updated ledger is itself a stale-index defect (the enacting proposal's own warning). Updates are recorded by changing the Last counted column (dated, attributed) — never by rewriting history rows silently.
@@ -130,28 +132,28 @@ This ledger must be updated at every landing that registers a new pass deposit, 
 | 4 | `Admin/Autonomy_Divergence_Protocol.md` | 5 | 1 | blocked (A-F1, A-F2, A-F3, A-F4, A-F6) | 2026-11-08 · Vibe · MAINT-84 |
 | 5 | `Admin/BATTERY_SEED.md` | — | — | single pass — aggregate not owed (template: 2+ passes) | 2026-11-04 · Vibe · MAINT-59 |
 | 6 | `Admin/Canonical_Terms.md` | 3 | 0 | blocked (A-F2, A-F3, A-F4) | 2026-11-08 · Vibe · MAINT-84 |
-| 7 | `Admin/CIR_Gov.md` | 1 | 0 | blocked (A-F2) | 2026-11-08 · Vibe · MAINT-84 |
+| 7 | `Admin/CIR_Gov.md` | 0 | 0 | computable (all graded findings closed) | 2026-11-08 · Vibe · MAINT-85 |
 | 8 | `Admin/Computational_Institutional_Reasoning.md` | 3 | 2 | blocked (A-F2, A-F3, A-F4) | 2026-11-08 · Vibe · MAINT-84 |
 | 9 | `Admin/Economics.md` | 0 | 1 | computable (all graded findings closed) | 2026-11-08 · Vibe · MAINT-84 |
 | 10 | `Admin/Engineer_Protocols.md` | 2 | 1 | blocked (A-F1, A-F2) | 2026-11-08 · Vibe · MAINT-84 |
 | 11 | `Admin/Environmental_Constraints.md` | 4 | 2 | blocked (A-F1, A-F2, A-F4, A-F5) | 2026-11-08 · Vibe · MAINT-84 |
 | 12 | `Admin/Ethical_Constraints.md` | 3 | 1 | blocked (A-F2, A-F3, A-C8) | 2026-11-08 · Vibe · MAINT-84 |
-| 13 | `Admin/Experiments.md` | 1 | 1 | blocked (A-F2) | 2026-11-08 · Vibe · MAINT-84 |
+| 13 | `Admin/Experiments.md` | 0 | 1 | computable (all graded findings closed) | 2026-11-08 · Vibe · MAINT-85 |
 | 14 | `Admin/External_Intake_Protocol.md` | — | — | single pass — aggregate not owed (template: 2+ passes) | 2026-11-04 · Vibe · MAINT-59 |
 | 15 | `Admin/File_Template.md` | 3 | 3 | blocked (A-F2, A-F3, B-F1) | 2026-11-08 · Vibe · MAINT-84 |
 | 16 | `Admin/Forge_Audit_Kit.md` | — | — | no aggregate — deferred (FAK 35K-ceiling ruling pending) | 2026-11-04 · Vibe · MAINT-59 |
 | 17 | `Admin/Governance_Charter.md` | 3 | 2 | blocked (B-F1, B-F2, B-F3) | 2026-11-08 · Vibe · MAINT-84 |
-| 18 | `Admin/Governance_Migration_Protocol.md` | 3 | 1 | blocked (A-F1, A-F2, A-F3) | 2026-11-08 · Vibe · MAINT-84 |
+| 18 | `Admin/Governance_Migration_Protocol.md` | 3 | 0 | blocked (A-F1, A-F2, A-F3) | 2026-11-08 · Vibe · MAINT-85 |
 | 19 | `Admin/Hardware_Diversity_Ladder.md` | 1 | 1 | blocked (A-F1) | 2026-11-08 · Vibe · MAINT-84 |
-| 20 | `Admin/Integrity_Incident_Log.md` | 0 | 2 | computable (all graded findings closed) | 2026-11-08 · Vibe · MAINT-84 |
-| 21 | `Admin/INTEGRITY_SWEEP_PROMPT.md` | 1 | 3 | blocked (A-F1) | 2026-11-08 · Vibe · MAINT-84 |
+| 20 | `Admin/Integrity_Incident_Log.md` | 0 | 1 | computable (all graded findings closed) | 2026-11-08 · Vibe · MAINT-85 |
+| 21 | `Admin/INTEGRITY_SWEEP_PROMPT.md` | 1 | 2 | blocked (A-F1) | 2026-11-08 · Vibe · MAINT-85 |
 | 22 | `Admin/Metrics_Scaffold.md` | 0 | 1 | computable (all graded findings closed) | 2026-11-08 · Vibe · MAINT-84 |
-| 23 | `Admin/Nothingness_Theorem.md` | 0 | 3 | computable (all graded findings closed) | 2026-11-08 · Vibe · MAINT-84 |
+| 23 | `Admin/Nothingness_Theorem.md` | 0 | 2 | computable (all graded findings closed) | 2026-11-08 · Vibe · MAINT-85 |
 | 24 | `Admin/Operational_Conventions.md` | 0 | 0 | computable (all graded findings closed) | 2026-11-08 · Vibe · MAINT-84 |
 | 25 | `Admin/PROBE_INVOCATION.md` | 3 | 0 | blocked (A-F1, A-F2, A-F3) | 2026-11-08 · Vibe · MAINT-84 |
 | 26 | `Admin/Progress_Log.md` | 1 | 1 | blocked (A-F1) | 2026-11-08 · Vibe · MAINT-84 |
-| 27 | `Admin/Repository_Integrity_Protocol.md` | 0 | 1 | computable (all graded findings closed) | 2026-11-08 · Vibe · MAINT-84 |
-| 28 | `Admin/Repository_Structure.md` | 2 | 1 | blocked (A-F1, A-F2) | 2026-11-08 · Vibe · MAINT-84 |
+| 27 | `Admin/Repository_Integrity_Protocol.md` | 0 | 0 | computable (all graded findings closed) | 2026-11-08 · Vibe · MAINT-85 |
+| 28 | `Admin/Repository_Structure.md` | 2 | 0 | blocked (A-F1, A-F2) | 2026-11-08 · Vibe · MAINT-85 |
 | 29 | `Admin/Resolution_Methodology.md` | 1 | 1 | blocked (A-F1) | 2026-11-08 · Vibe · MAINT-84 |
 | 30 | `Admin/Safety_Protocols.md` | — | — | single pass — aggregate not owed (template: 2+ passes) | 2026-11-04 · Vibe · MAINT-59 |
 | 31 | `Admin/Security_Protocols.md` | 3 | 0 | blocked (A-F1, A-F2, A-F5) | 2026-11-08 · Vibe · MAINT-84 |

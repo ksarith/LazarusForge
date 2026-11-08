@@ -9,6 +9,7 @@ Pipeline:
   3. Recompute per-target Open M/W/F and Open W-C.
   4. Self-test the five frozen hand-counted fixtures (2026-11-08, MAINT-84).
   5. Compare against the recorded Table II in Archive/Audits/AUDIT_COVERAGE_LEDGER.md.
+  Fixture history: frozen 2026-11-08, MAINT-84 (five targets, hand-counted); re-frozen 2026-11-08, MAINT-85 (INTEGRITY_SWEEP_PROMPT (1, 3) -> (1, 2) after the B-N1 re-label per the owning aggregate’s Addendum 2026-11-08; recorded in Archive/Audits/AUDIT_COVERAGE_RECONCILE_2026-11-08_MAINT-85.md).
 
 Fixed compound classifier:
   - severity = the first whitespace token of the Severity cell, uppercased.
@@ -49,7 +50,7 @@ FROZEN_FIXTURES = {
     "Economics": (0, 1),
     "Verification_Gates": (2, 0),
     "Hardware_Diversity_Ladder": (1, 1),
-    "INTEGRITY_SWEEP_PROMPT": (1, 3),
+    "INTEGRITY_SWEEP_PROMPT": (1, 2),
 }
 
 
