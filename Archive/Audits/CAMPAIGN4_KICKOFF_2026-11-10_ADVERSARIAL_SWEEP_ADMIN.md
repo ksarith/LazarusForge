@@ -70,3 +70,11 @@ The first two passes both found the repository-wide 90-day Aging Rule tripped (A
 ## Resume point
 
 Next file: Admin/Governance_Charter.md (CAMPAIGN4_AUDIT_03). Head at kickoff: `242eabd2` (LF main). This artifact is the sweep's tracker until the human directs otherwise (SESSION_STATUS remains retired per MAINT-69; this file is a deposit, not a status authority).
+
+---
+
+## Tracker addendum — 2026-11-10 (CAMPAIGN4_AUDIT_03 landed)
+
+3. ~~Admin/Governance_Charter.md~~ — DONE: CAMPAIGN4_AUDIT_03 (Admin/AAudits/, this campaign artifact 03; findings F-CH-1 through F-CH-6: one MAJOR — GOV-022 has no sidecar record despite File State claiming full Closure Events live in the sidecar Resolution Log; WARNINGs — four dangling body pointers to the sidecar's nonexistent pre-relocation home `Archive/Logs/Governance_Charter_Changelog.md` (relocation-repair-miss recurrence), X10 Status mismatch on GOV-009/GOV-010 (index "In Progress" vs sidecar "Open"), Aging Rule tripped 13/13 open entries (systemic pattern instance 3), false "duplicate heading removed 2026-10-27" correction record in the sidecar; NOTE — Highest Risk field's sidecar-only scope excludes the open High-risk dispute GOV-DS-001). Compound Drift Rule fired and escalated in the deposit; checks 1–11 otherwise verified clean against live source at head `d098543d`, including the 13=13=13 count parity, the 6/6 gate claim recomputed against live Verification_Gates.md, and the exact Ethical Anchor.
+
+**Resume point (updated):** next file Admin/Verification_Gates.md (CAMPAIGN4_AUDIT_04). Head at this addendum's compose: `d098543d` (LF main). This addendum appends tracker state only; the kickoff text above is untouched (append-only per the deposit carve-out).
