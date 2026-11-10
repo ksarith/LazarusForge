@@ -48,33 +48,38 @@ The 2026-10-29/31 relocations (MAINT-29/30/31, the `<Letter>Logs/` homes; the 20
 ## Coverage note
 
 Six of 34 Admin/ files done. The pattern document's due window (AUDIT_06–08) is satisfied at artifact 06; the next update is due in the AUDIT_11–14 window per the 5–8-file convention, or earlier if a new pattern earns its Xn registration (two instances required).
+
 ---
 
-## Update 1 — files 07–11 (2026-11-10, deposited alongside artifact 12)
+## Update 1 — 2026-11-10 (files 07–12; the AUDIT_11–14 due-window update)
 
-Covers Security_Protocols.md (07), Safety_Protocols.md (08), Repository_Integrity_Protocol.md (09), Governance_Migration_Protocol.md (10), Autonomy_Divergence_Protocol.md (11), with the Forge_Audit_Kit.md data points noted where a pattern gains them. Append-only: the Patterns 1–5 text above is untouched. Eleven of 34 Admin/ files are now done.
+Artifacts 07–12: Security_Protocols (07), Safety_Protocols (08), Repository_Integrity_Protocol (09), Governance_Migration_Protocol (10), Autonomy_Divergence_Protocol (11), Forge_Audit_Kit (12). This section aggregates already-deposited findings only; append-only; the text above is untouched.
 
-**Pattern 1 (the 90-day Aging Rule) — instances 6–7, control cases 3–4:**
+**Pattern 1 (Aging Rule) — instances 5–7; control cases 3–4; one not-computable case:**
 
-- Instance 6: Repository_Integrity_Protocol.md — 3 of 5 open entries, 124–144 days (AUDIT_09 F-RIP-2).
-- Instance 7: Governance_Migration_Protocol.md — 2 of 4, both 107 days (AUDIT_10 F-GMP-4). Running aggregate: **47 of 60** open sidecar entries past the 90-day bar across the seven tripping files (AP 8/10, EC 3/7, Charter 13/13, CT 9/10, Security 9/11, RIP 3/5, GMP 2/4).
-- Control case 3: Safety_Protocols.md — all five open entries reviewed 2026-10-27 (14 days), no trip (AUDIT_08).
-- Control case 4: Autonomy_Divergence_Protocol.md — GOV-021c at 87 days on 2026-11-10, trips 2026-11-13 if unreviewed (AUDIT_11 F-ADP-3); a near-trip, disclosed as a live test of the consolidated-remedy question.
+- Instance 5: Security_Protocols.md 9 of 11 open (AUDIT_07).
+- Control case 3: Safety_Protocols.md clean (AUDIT_08).
+- Instance 6: Repository_Integrity_Protocol.md 3 of 5 — RIP-005 144d, RIP-006 136d, RIP-009 124d (F-RIP-2).
+- Instance 7: Governance_Migration_Protocol.md 2 of 4 — GMP-003 107d, GMP-013 107d (F-GMP-4). Running total: 47 of 60 open entries past the bar across the seven tripping files.
+- Control case 4: Autonomy_Divergence_Protocol.md clean with a disclosed near-trip — GOV-021c at 87 days on 2026-11-10, trips 2026-11-13 if unreviewed (F-ADP-3).
+- Not computable: Forge_Audit_Kit.md — its sidecar home carries zero Last Reviewed fields (F-FAK-3), a new shape for this pattern: the instrument that codifies Expiry Watch cannot run it on itself. Not counted as a control case; no aging instance claimed.
 
-**Pattern 2 (relocation-repair-miss) — instances 5–10:**
+**Pattern 2 (relocation-repair-miss / wrong home) — instances 7–9:**
 
-5. Safety_Protocols.md — the 2026-10-28 Resolution Log entry cites the pseudo-audit at `Archive/Audits/AUDIT_07_Admin-Safety_Protocols.md`; the file lives at `Admin/AAudits/` (AUDIT_08 F-SP-1, probe-verified fetch failure at the cited path).
-6. Security_Protocols.md — seven bare `Electronics.md` citations remain in operative text of the same file the 2026-10-29 X3 retrofit qualified 8 citations in; no root `Electronics.md` exists (AUDIT_07 F-SEC-2).
-7. `Unknowns.md`’s Active Index RIP-005 row still pins "Security_Protocols.md … exists at v0.5" — the exact stale anchor the sidecar’s own 2026-09-03 correction removed; the repair missed the global index (AUDIT_09 F-RIP-1).
-8. Governance_Migration_Protocol.md’s Relationship section carries the same "Security_Protocols.md — exists at v0.5 (2026-06-19)" pin (AUDIT_10 F-GMP-3).
-9. Autonomy_Divergence_Protocol.md’s File State Governance ID row cites the nonexistent `Archive/Logs/Governance_Charter_Changelog.md`; the registration it describes is verified in the `Admin/ALogs/` copy; the row was written 2026-08-11, after the relocation (AUDIT_11 F-ADP-1).
-10. Forge_Audit_Kit.md (AUDIT_12 F-FAK-2, filed in the next window’s numbering, recorded here as the class data point): five-plus operative references — including the Resolution Log’s "add new entries there" routing instruction and the drift indicator’s own designated home — still cite `Archive/Logs/Forge_Audit_Kit_Changelog.md` while the File State Sidecar Link is correctly repointed.
+- Instance 7: F-RIP-1 — Unknowns’ Active Index RIP-005 row still pins “Security_Protocols.md … exists at v0.5”, the exact anchor the sidecar’s own 2026-09-03 correction removed; the repair missed the global index.
+- Instance 8: F-GMP-3 — GMP’s Relationship section pins “Security_Protocols.md — exists at v0.5 (2026-06-19)” (the same formula), in a section the 2026-10-23 repair touched.
+- Instance 9: F-ADP-1 — ADP’s File State Governance ID row cites the changelog’s pre-relocation home `Archive/Logs/Governance_Charter_Changelog.md` (relocated to `Admin/ALogs/` 2026-07-23; the registration it describes verified present there); the Charter’s own 2026-10-31 repoint repaired the Charter’s pointers but swept no other file.
 
-- The corpus-wide grep remedy’s evidence base is now ten instances plus the `audit_lib.py` LEGACY-message corroboration.
+**Bare-citation batch grep remedy — evidence points four and five (now five):**
 
-**Bare-citation grep remedy — fourth and fifth evidence points:** Repository_Integrity_Protocol.md ~7 bare path citations in operative/narrative text (AUDIT_09 F-RIP-5) and Governance_Migration_Protocol.md ~10 bare path citations, all targets resolving (AUDIT_10 F-GMP-7); both batch-eligible with F-SEC-2/F-SP-2.
+- Fourth: F-RIP-5 (~7 bare path citations in operative/narrative text).
+- Fifth: F-GMP-7 (~10 bare path citations, all targets resolving).
+- ADP (artifact 11) scanned clean — the X3 qualifications are holding; no new point.
 
-**Pattern 4 — first data point outside File_Template:** Forge_Audit_Kit.md’s FAK-005 closure skipped the Kit’s own Discharge Procedure (AUDIT_12 F-FAK-3, with the Kit’s own Lessons-Learned drift indicator in firing state). The self-application gap class is no longer confined to File_Template itself; formal pattern numbering at the next update.
+**Candidate new pattern (one instance; Xn requires two — not registered): repair-applied-to-the-mirror-not-the-owner.** F-FAK-1: VG-001’s resolution (2026-07-03) was corrected into Unknowns’ FAK-009 row on 2026-11-03 (MAINT-54) while the Kit’s own sidecar entry still asserts “VG-001 itself remains unresolved”. Distinct from Pattern 2 (wrong home) and Pattern 3 (stale condition): here a repair was propagated to the mirror but not to the owning record.
 
-**Coverage note (updated):** eleven of 34 Admin/ files done. The next pattern-document update is due in the AUDIT_19–22 window per the 5–8-file convention (measured from artifact 12), or earlier if a new pattern earns its Xn registration (two instances required).
+**Also recorded (single instances, not patterns):** F-FAK-4 (FAK-005’s Resolved row left in Unknowns’ Active Index contra Size Management Rule 2 / Discharge Procedure step 6 — closure substance verified); F-FAK-5 (the Kit’s own maintenance trigger fired: VG v0.8’s Gate 2 N/A definition post-dates the 2026-10-27 reconciliation; drift indicator in firing state, derivation solid); F-FAK-8 (the Cycle/CURRENT_CYCLE governance flag, open since 2026-07-14, still without its CT entry; harness session-based aging diverges from the ratified calendar-year Cycle).
 
+**Positive records worth preserving (update 1):** the Kit’s changelog newest-first repair holds (v1.32 → v1.31 → v1.30 verified); the Kit’s “Intake Log entry 7” claim is exact (row 7 of 21); ADP’s three Astroid-miner convergence claims verify against the in-repo V0.07 snapshot (80–99% fleet consensus exact, §2.2 Reversion/Safe Mode, zero-g-fabrication induction heating + EM levitation); the Kit’s ID Reference and Scope Boundary targets all resolve (14/14 existence checks); the Kit’s token-ceiling note’s dated-measurement discipline is a clean staleness-marking instance.
+
+**Coverage (update 1):** twelve of 34 Admin/ files done. The next update is due in the AUDIT_17–20 window per the 5–8-file convention, or earlier if a new pattern earns its Xn registration (two instances required — the mirror-repair candidate above is the one to watch).
