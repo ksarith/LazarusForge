@@ -1,0 +1,46 @@
+# CAMPAIGN4_AUDIT_15 — Admin/INTEGRITY_SWEEP_PROMPT.md (ISP)
+
+Campaign 4 adversarial sweep of Admin/, artifact 15 of 34. Findings-only per PKC-020: nothing in the audited file is changed by this pass; conversion to audits of record is the human's alone (MAINT-26 / AP-032 gate). Auditor: Vibe (GLM 5.3 Flash architecture), Repo Custodian seat, delegated line; human-authorized continuation. Date: 2026-11-10.
+
+## File audited
+
+- `Admin/INTEGRITY_SWEEP_PROMPT.md` at LF main head `fce74131` (the CAMPAIGN4_AUDIT_14 landing commit): 21,006 chars / 116 lines, fetched complete.
+- SHA-256 (computed this pass; pure-TS implementation, the `abc` sanity vector passing before use): `a1b2b5dd41bfc5d281ba25738f25dfba11b67b125f51bd64ae06b97373166c24`.
+- Header Version 1.0.6; Status "Active — Operational Template"; Spec Gates "N/A — operational prompt template"; Verification Ref `Admin/Repository_Integrity_Protocol.md`; Open Unknowns 0; Last Audit 2026-11-05 (the MAINT-63 commission-closure note); Ethical Anchor canonical.
+- **Template Exemptions: class 6 confirmed live** ("Operational seeds and invocation templates" — ISP named verbatim; "prompt / battery / invocation payloads, not governed specification documents"). Template checks adapted: the File State table and section set are voluntarily carried, not forced; absent sections (Drift Indicators, Abandoned Paths, Highest Risk, Body Stability, Active Disputes, sidecar) are not findings here.
+
+## Findings
+
+- **F-ISP-1 WARNING** (registry Status mismatch; the F-CH-3 class): Discovery.md's maturity snapshot row reads `| `Admin/INTEGRITY_SWEEP_PROMPT.md` | Draft | N/A — operational prompt template, not a doctrine or specification claim | — |` while ISP's File State Status is "Active — Operational Template" — promoted by human ruling 2026-10-29 (AUDIT_31 F2) and verified live by MAINT-62 ("ISP Status already 'Active — Operational Template' (promoted 2026-10-29, AUDIT_31 F2) … TRUE"). Discovery's Last updated (2026-11-02) post-dates the promotion by four days, so the snapshot pass missed it. An operator trusting the snapshot reads a promoted, commissioned operational instrument as an unratified draft. (Discovery.md is outside the sweep; recorded here as ISP's parity break.)
+- **F-ISP-2 WARNING** (version-ledger contradiction; the F-CT-3 / F-SEC-5 recorded-value class, in a file whose Resolution Log is its own version ledger): the 2026-10-28 RL entry records "v1.0.4 → v1.0.6 … Header 1.0.4 → 1.0.6", and the 2026-10-29 commissioning annotation (in both the header block and the RL) says "header stays 1.0.6" — but the 2026-10-29 promotion entry records "step-change version bump 1.0.5 → 1.0.6" and claims "the commissioned-annotation precedent kept the header at 1.0.5 because it was a no-step-change note". The three claims cannot all be true: either the header was 1.0.5 before the promotion (then the 10-28 entry and the annotation's "stays 1.0.6" are wrong) or it was already 1.0.6 (then the promotion's bump arithmetic and its 1.0.5 premise are wrong). One pre-bump value is misrecorded; the live header (1.0.6) is consistent with the final state either way, and no step content is affected.
+- **F-ISP-3 NOTE** (stale derived-from pin; the F-FAK-6 class): the Derived-from line pins `Admin/Forge_Audit_Kit.md v1.15` — the live Kit is v1.32, seventeen versions advanced (including the Verification Maturity Model and the VG v0.8 Gate-2 N/A changes recorded at F-FAK-5). Mitigated: the prompt's own step 1 fetches the Kit from live main, so operators receive v1.32 regardless; the pin is stale metadata, not a stale fetch.
+- **F-ISP-4 NOTE** (MAINT-56-retired rows, sharpened instance): the File State still carries the retired Last Audit and Auditor rows — and unlike every prior instance this campaign (each conformant-at-touch), the most recent write into them (the 2026-11-05 MAINT-63 commission-closure note) post-dates the 2026-11-04 retirement sweep. Class 6 exempts File State forcing, so graded NOTE; the instance is recorded for the human's consolidated retired-rows ruling.
+- **F-ISP-5 NOTE** (bare-citation scan): one bare ID mention in operative text — step 14's "per the PKC-020 split policy (2026-10-25)" — PKC- is a non-colliding prefix (unique to Progress_Log's Parked Concerns), outside the CT-007/PKC-003 class, form-only. Step 8's GOV-003/SEC-007a/WA-002/PL-001 mentions sit in an explicitly historical narrative ("already fixed once in `Unknowns.md` v4.87") — accurate as history (SEC-007a Resolved 2026-08-22, verified at artifacts 07/10). Zero `Archive/` pre-relocation path references — no Pattern 2 exposure surface; second file running.
+- **F-ISP-6 NOTE** (Verification Ref vs the FT rule, recorded divergence): File_Template states "Verification Ref must point to `Admin/Verification_Gates.md`. Not Forge_Audit_Kit.md." ISP's Verification Ref points at `Admin/Repository_Integrity_Protocol.md`. The divergence is recorded and reasoned in the file's own v1.0.2 RL entry (which quotes the FT rule and deliberately chose the single-source RIP pointer, matching the class-6 siblings' single-section pattern), and class 6 exempts File State forcing — recorded, not a defect finding; disclosed for a possible class-6 family harmonization ruling (PROBE_INVOCATION and BATTERY_SEED, up next, point at single AP sections per the same v1.0.2 record).
+
+## Aging Rule and Compound Drift Rule
+
+- Aging Rule: vacuous — Open Unknowns 0, no sidecar unknowns, nothing to compute. Recorded as the campaign's fifth no-trip control case (the zero-open-unknowns VG shape).
+- Compound Drift Rule: vacuously did not fire — the file carries no Drift Indicators section (class 6 exempt), so none can be in firing state.
+
+## Verified clean (checks 1–11, adapted to class 6)
+
+- Ethical Anchor exact: "Attempt to do no harm. Defer to Ethical_Constraints.md if present."
+- The Last Audit cell's load-bearing claims verified against live records: MAINT-62's ruling set §8 RATIFIED the commission-closure narrowly with wording matching the cell verbatim ("For this specific commission, the corpus-wide execution recorded on 2026-10-30 satisfies the authorized once-only execution requirement"; no universal campaign-end definition); MAINT-63 exists as the execution pass (§1, §2 A+B, §3 recording, §5, §7, §8 note, §11 retirement); Unknowns v5.79's MAINT-63 block lists `Admin/INTEGRITY_SWEEP_PROMPT.md` among its companion edits.
+- The v1.0.2 RL entry's two false-positive records verify against live File_Template: the lean Challenges schema is documented there ("a deliberate, documented choice for this subtype"), and "Pending Ratification" has zero occurrences in FT (not a column).
+- Step 13's Routing claims verify against Routing.md's own Scope section: "Agents must not treat a missing entry for an Archive file as registry drift or an integrity failure"; packaged archives excluded by design with the .py sources listed. ISP is registered in Routing's URL table (Explicit, Raw + Repo) and in Discovery's tree ("Copy-paste morning integrity audit prompt for scheduled automation; not doctrine, an operational prompt").
+- Open Unknowns 0 parity: zero ISP- rows anywhere in Unknowns.md v5.79 (0 = 0).
+- Step 3's "known ten files" fallback consistent with the live Challenges/ listing (ten .md files: nine problem statements + Cha_Scope_Map.md, plus the CAudits/ subfolder).
+- The AUDIT_31 report the Last Audit cell cites exists: `Admin/AAudits/CAMPAIGN_AUDIT_31_Admin-INTEGRITY_SWEEP_PROMPT.md`.
+- Both `================` prompt delimiters present exactly; the prompt body's 15 steps are internally numbered 1–15 with no gaps; Spec Gates N/A consistent with class 6; the two `----` section separators intact.
+
+## Disclosures
+
+- Event: (ii) recurrence — the recorded-value class recurred (F-ISP-2, the F-CT-3/F-SEC-5 family; third instance this campaign) and the MAINT-56-retired-rows class recurred with a sharpened shape (F-ISP-4, first post-retirement write into the retired field).
+- Adjacency disclosed: this Vibe line has operated ISP directly (the MAINT-23 integrity sweep was executed per ISP v1.0.6) and wrote its most recent Last Audit cell (MAINT-63, 2026-11-05); the pass is non-independent with respect to those records; they are treated as third-party content per the kickoff's standing disclosure. The sweep's own method derives from the Auditor Prompt and the Kit, not from ISP, so the instrument-under-audit does not govern this pass.
+- No tooling defects this pass: all fetches arrived plain; the SHA-256 implementation reused unchanged with the sanity vector passing.
+- Out-of-scope observations recorded, not findings: PROBE_INVOCATION.md's Discovery snapshot row also reads "Draft" (its own audit, item 16); the Discovery-side repair for F-ISP-1 belongs to Discovery's own record.
+
+## Verdict
+
+Two WARNINGs (F-ISP-1 registry Status mismatch; F-ISP-2 version-ledger contradiction), four NOTEs (F-ISP-3 through F-ISP-6). No MAJOR or CRITICAL. Compound Drift Rule vacuously did not fire. Aging Rule vacuous (control case 5). The file's operative sweep mechanics (15 steps, report shape, honesty rules) verified internally consistent and its external claims verified against live source. Findings-only; nothing enacted; the sweep continues at Admin/PROBE_INVOCATION.md (CAMPAIGN4_AUDIT_16).
