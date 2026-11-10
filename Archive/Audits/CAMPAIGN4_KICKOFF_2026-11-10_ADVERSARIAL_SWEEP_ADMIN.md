@@ -235,3 +235,12 @@ Head at this addendum's compose: `f476362a` (LF main). Append-only; the kickoff 
 **Numbering note:** two different texts were both numbered "tracker addendum 10" — the canonical one above (restored) and the parallel one (clobbered out; preserved in git history at LF `e90e282e`, alongside the parallel pattern-doc Update 1). The canonical numbering stands; this addendum takes 18, continuing the canonical sequence.
 
 **Resume point (unchanged):** `Admin/Repository_Structure.md` (CAMPAIGN4_AUDIT_20). Head at this addendum’s compose: `90acea4b` (LF main — the canonical chain tip this repair restores and builds on). Append-only; the kickoff text above is untouched.
+
+
+---
+
+## Tracker addendum 19 — 2026-11-10 (CAMPAIGN4_AUDIT_20 landed)
+
+20. ~~Admin/Repository_Structure.md~~ — DONE: CAMPAIGN4_AUDIT_20 (Admin/AAudits/, artifact 20; findings F-RS-1 through F-RS-7). F-RS-1 WARNING (wrong-home audit-report citation — the Resolution Log’s 2026-10-28 entry routes to the pre-relocation `Archive/Audits/` home while the live report sits at `Admin/AAudits/AUDIT_12_Admin-Repository_Structure.md`; relocation-repair-miss, Pattern 2 instance 16), F-RS-2 WARNING (stale operative Automation/ counts in two places — "eleven" vs live twelve `.py` files, and the "described in `Automation/README.md`" half doubly stale: the README’s own table describes ten of twelve), F-RS-3 WARNING (the Casing Standard’s acronym example is self-identical — "`Air_Scrubber.md` not `Air_Scrubber.md`" — voiding the rule’s only demonstration; TWGW candidate), F-RS-4/5/6/7 NOTEs (MAINT-56-retired Last Audit/Auditor rows still carried, one-directional; RS-001’s pre-resolution description + Resolution Path residue under Resolved status, Pattern 5 shape; bare colliding-ID "AUDIT_12 F2" citations twice; per-folder Log/Audit subfolders created before RS’s only related entry — near-trip retro-closed by the MAINT-62/63 convention note). Aging Rule vacuous (0 open unknowns — tenth no-trip control case); Compound Drift Rule did not fire. All fabrication probes passed except the two recorded as findings (the F-RS-1 path, the F-RS-2 counts); root table 9/9 exact vs live root; X10 clean.
+
+**Resume point (updated):** next file Admin/Adm_Scope_Map.md (CAMPAIGN4_AUDIT_21). Head at this addendum’s compose: `03f15726` (LF main). Append-only; the kickoff text above is untouched.
