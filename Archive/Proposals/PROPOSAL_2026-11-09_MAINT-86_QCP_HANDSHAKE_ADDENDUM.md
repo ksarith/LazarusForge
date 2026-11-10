@@ -1,6 +1,6 @@
 # PROPOSAL — Handshake (opening declarations) addendum for the Quorum Agent Conduct Protocol — MAINT-86
 
-**Status: PROPOSED — nothing below is in force. This draft adds a proposed §8 (Handshake — opening declarations) to `Tests/Quorum_Agent_Conduct_Protocol.md`, severable into four parts (8.1–8.4), each carrying a pre-drafted ruling line; partial ratification is normal per the severable-package convention. Enactment, in whole or in part, awaits the human governing authority's word; nothing is inserted into the protocol file by this deposit.**
+**Status: PARTIALLY RATIFIED 2026-11-10 — RATIFY 8.1–8.2 only (8.3 struck; 8.4 held at his option, unruled), via his verbatim adoption of Claude's leans ("Lets proceed with these recommendations."); executed same day (MAINT-90). This draft adds a proposed §8 (Handshake — opening declarations) to `Tests/Quorum_Agent_Conduct_Protocol.md`, severable into four parts (8.1–8.4); the §2 text below remains the registered proposal text, of which only 8.1–8.2 was inserted; see the dated execution record at the end of this file.**
 
 Drafted: 2026-11-09 UTC, session MAINT-86. Commissioned by the human governing authority's 2026-11-09 direction, verbatim "Please do.", on his question "The handshake process might best reside in Tests/Quorum_Agent_Conduct_Protocol.md. What do you think?" and the same-day assessment that the protocol is the right home for a LazarusForge handshake process (the mapping is §1). Drafted under the co-author mandate (granted 2026-11-04); Architect line primary, Repo Custodian secondary. Operating per Auditor_Protocols.md v0.47.
 
@@ -81,3 +81,8 @@ Nothing in this proposal self-ratifies; the protocol file is untouched until his
 ---
 
 *Drafted 2026-11-09 — MAINT-86 (Vibe — co-author mandate; Architect line primary, Repo Custodian secondary; non-independent Genesis Phase, Q-2 invoked, disclosed). One line drafted this proposal and the Parlay source sections it adapts; the commission is the human's (his 2026-11-09 "Please do."). Operating per Auditor_Protocols.md v0.47.*
+
+
+---
+
+**Execution record (2026-11-10, MAINT-90).** His ruling set, verbatim: "Lets proceed with these recommendations." (his 2026-11-10 adoption of Claude's leans, relayed and deposited as intake 21 at `Archive/Audits/EXTERNAL_REVIEW_2026-11-10_CLAUDE_MAINT-88_89_RULING_LEANS.md`). Executed per §6 as adapted to the partial ruling: 8.1–8.2 inserted into `Tests/Quorum_Agent_Conduct_Protocol.md` before "## Auditor Notes & Unknowns", verbatim from §2; the §6.1 Resolution Log entry landed adapted to the partial scope (8.3 struck, 8.4 held; dated 2026-11-10, the ruling date); the §6.2 File State Last Updated line landed adapted the same way; the severance is recorded in an in-section note. 8.3's intent is carried by the protocol's existing Cooperate row and D1–D6 and by Parlay GOVERNANCE v0.6 (PARLAY-009), where it collects evidence. Nothing else in the protocol changed: no D-code, Placeholder, Status, Spec Gate, Unknown, or scope line moved. Non-independence disclosed (the drafting line executed its own proposal's ratification; the ratification is the human's alone).

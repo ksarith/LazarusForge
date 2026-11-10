@@ -2,7 +2,7 @@
 
 - **Deposited:** 2026-11-09 (MAINT-89), in `Archive/Proposals/` per house convention (MAINT-83 / MAINT-86 precedent).
 - **Routing act:** the human governing authority's verbatim 2026-11-09 selection "2 then 3 please" — item 3: draft the chrono-divergence register format as a proposal, with the LazarusForge owed-rulings-register home option. Item 2 (the MAINT-88 quick-close ruling worksheet) landed separately at VibesSandbox `e1e30ea5` + verification addendum `fbcd93de`.
-- **Status:** PROPOSED — nothing enacted by this deposit; every part awaits his ruling. Four pre-drafted ruling lines at §4; staged execution at §5; explicit non-changes at §6.
+- **Status:** STRUCK 2026-11-10 — his ruling set, verbatim "Lets proceed with these recommendations." (his adoption of Claude's leans; the STRIKE line per Claude's lean, the hold-until-C3 alternative not taken — reading disclosed). No register; the owed set stays in VS STATE's held queue and successive briefs; the chrono-divergence framing returns to parked-unruled under the 2026-11-07 sufficiency-thread precedent, with the C3 review (~2026-11-30) recorded as the natural reopen point. §4–§6 below stand as the registered proposal text; §5's staged execution was not run.
 - **ID allocation:** MAINT-89, next monotonic after MAINT-88 per the ratified rule (MAINT-59); live-checked before deposit (VS `entries/` carries MAINT-69 through MAINT-88, MAINT_INDEX 105 rows, no row 89; LazarusForge untouched at `3e139a80` before this deposit, verified live).
 - **Provenance:** the underlying discussion is human-brokered Class A — two external seats' reads of the MAINT-87 decision-target Brief, relayed by him ("No decisions yet, but have been discussing."), not deposited as records. His chrono-divergence framing was parked unruled under the 2026-11-07 sufficiency-thread precedent; this proposal exists only because his "2 then 3 please" act authorized drafting item 3. External seats' advice carries no ratification weight; only his word enacts anything here.
 
@@ -76,3 +76,8 @@ The enactment pass (the next MAINT-NN after his ruling) would, in order:
 - The two external seats' reads remain human-brokered Class A discussion, not deposited records; their concurrence is not a ruling and carries no ratification weight.
 - The chrono-divergence framing stays unruled unless and until his ratification of line 1 or line 3 constitutes the ruling; STRIKE re-parks it fully.
 - This proposal does not modify TWGW, the checker, the seat prompts, the frozen logs, Unknowns, or any File State field, in any repository.
+
+
+---
+
+**Disposition record (2026-11-10, MAINT-90).** STRUCK per his ruling set (verbatim: "Lets proceed with these recommendations.", adopting Claude's leans; Claude's lean was STRIKE with the C3 review as the reopen point, and the hold-until-C3 alternative was not taken — this reading is disclosed for veto). Nothing was enacted from this proposal: no register file was created, the MAINT-87 Brief received no supersession head-note, and VS STATE's held queue received no register pointer. The chrono-divergence framing (evidence clocks, blocking dependencies, divergence windows, seal conditions) returns to parked-unruled under the 2026-11-07 sufficiency-thread precedent; it is preserved in this file and the MAINT-89 record for reconsideration at the C3 review with usage evidence. Non-independence disclosed (the proposing line recorded its own proposal's strike; the ruling is the human's alone).

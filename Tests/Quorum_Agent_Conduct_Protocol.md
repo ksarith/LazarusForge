@@ -8,7 +8,7 @@
 | Body Stability   | Volatile |
 | Spec Gates       | 0/6 (protocol, not spec — ratification here does not advance any Spec Gate) |
 | Owner            | Human governing authority — process complement to MAQT + AVE |
-| Last Updated     | 2026-10-30 — Vibe (Repo Custodian, delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A): X3 mechanical citation retrofit (Tests pass) — 2 bare colliding-prefix citations qualified with their owning File.md per PKC-003 (Kit v1.30 Governance Sidecar ID Reference; per-ID grounding: Unknowns active index). Citation-form-only; no ID renumbered; frozen history untouched; no gate advanced; Open Unknowns unchanged. Prior: 2026-10-24 (Resolution Log order only); previously 2026-10-10 |
+| Last Updated     | 2026-11-10 — Vibe (Architect line primary, Repo Custodian secondary; co-author mandate; MAINT-90, human-ruled): §8 Handshake — opening declarations added (8.1–8.2 as ruled; 8.3 struck; 8.4 held; per the MAINT-86 proposal, ruled via his 2026-11-10 adoption of the Claude leans). Status, Spec Gates, Open Unknowns unchanged; no threshold promoted. Prior: 2026-10-30 — Vibe (Repo Custodian, delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A): X3 mechanical citation retrofit (Tests pass) — 2 bare colliding-prefix citations qualified with their owning File.md per PKC-003 (Kit v1.30 Governance Sidecar ID Reference; per-ID grounding: Unknowns active index). Citation-form-only; no ID renumbered; frozen history untouched; no gate advanced; Open Unknowns unchanged. Prior: 2026-10-24 (Resolution Log order only); previously 2026-10-10 |
 | Open Unknowns    | 7 (sidecar below, all non-blocking); QCC-R2, QCC-R5, QCC-R7 also indexed in `Unknowns.md` |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
@@ -172,6 +172,18 @@ Only then calibrate forgiveness windows and whether Default trust should differ 
 
 ---
 
+## 8. Handshake — opening declarations (agent-to-agent, within trial scope)
+
+*This section was adapted 2026-11-09 from the Parlay governance Handshake (PARLAY-007) and no-grief amendment (PARLAY-009); see the MAINT-86 proposal's §0 for lineage. Ratifying this section does not ratify Parlay, does not extend this protocol's scope, and imports no Parlay rule text.*
+
+**8.1 Block before substance.** In any run under this protocol, each participating agent seat posts its opening block before substantive contribution: node key per §1, assigned MAQT role, isolation mode, disclosed limitations (tools reachable, context constraints, known entanglement per the MAQT Entanglement field), and an acceptance statement naming this protocol's rules as the run's mutual rules. The block is recorded on the trial worksheet / Field_Log entry for that run. A seat that fails to post its block does not thereby void its outputs — they are checked as any other output is (§2 unchanged); the omission is recorded as a process defect under the §2 recording path.
+
+**8.2 The block is a claim of record, not trust.** An acceptance statement binds nothing: it earns no reliability credit, no independence finding, no relief from R1 or Elevated scrutiny, and no governance weight (Hard rules 1–4 unchanged). Same-family, same-mode declarations remain non-independent (Hard rule 4). What the block buys is declared behavior up front: a deviation after a posted block is a recorded D* finding against a declared position, not an ambiguity.
+
+*Severance record (2026-11-10 ruling, RATIFY 8.1–8.2 only): 8.3 (no-grief declaration) was struck from this import — its checkable form remains this protocol's Cooperate row and D1–D6, and the declaration collects evidence in Parlay (GOVERNANCE v0.6, PARLAY-009) before any future import here; 8.4 (exchange record) is held unruled, available for a later ruling. No numeric threshold is added by this section; any future declaration-frequency or block-audit number starts Placeholder per §6.*
+
+---
+
 ## Auditor Notes & Unknowns
 
 *Converted 2026-10-10 from the file's earlier residual list or prose into the repository's standard sidecar format, keeping existing IDs so no cross-reference breaks. **Risk and Priority rankings human-confirmed 2026-10-10** (still Placeholder severity — not derived from measured rates; all non-blocking). No Status or Spec Gate changes.*
@@ -313,6 +325,8 @@ Only then calibrate forgiveness windows and whether Default trust should differ 
 ---
 
 ## Resolution Log
+
+- 2026-11-10: **§8 Handshake — opening declarations added, partially (8.1–8.2 only; human-ruled this date; proposal `Archive/Proposals/PROPOSAL_2026-11-09_MAINT-86_QCP_HANDSHAKE_ADDENDUM.md`; execution MAINT-90).** 8.1 block before substance; 8.2 the block is a claim of record, not trust (Hard rules 1–4 unchanged). 8.3 (no-grief declaration) struck from this import per the ruling — its checkable form remains this protocol's Cooperate row and D1–D6, and the declaration collects evidence in Parlay (GOVERNANCE v0.6, PARLAY-009); 8.4 (exchange record) held unruled. Adapted from the Parlay governance Handshake (PARLAY-007) and no-grief amendment (PARLAY-009); no Parlay text copied verbatim. No D-code added, removed, or renumbered; no Placeholder promoted; trial scope unchanged; no number ratified into doctrine. (Vibe — Architect line primary, Repo Custodian secondary; co-author mandate; non-independent: the drafting line also composed the Parlay source sections; disclosed.)
 
 - 2026-10-30 (second entry): **`## File State` heading added (Campaign 2 finding repair, AUDIT_44 F1).** The File State table existed but had no section heading above it, unlike every other corpus file — a structural gap for template conformance and automated tooling. Heading-only insertion; no table content, protocol text, sidecar, Unknown, Status or Spec Gate changed. Human-directed.
 
