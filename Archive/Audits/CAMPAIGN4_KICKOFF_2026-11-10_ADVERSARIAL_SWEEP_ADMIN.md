@@ -155,3 +155,11 @@ Head at this addendum’s compose: `e24e443d` (LF main). Append-only; the kickof
 
 **Resume point (updated):** next file Admin/Engineer_Protocols.md (CAMPAIGN4_AUDIT_13). Head at this addendum’s compose: `94f57c8c` (LF main). Append-only; the kickoff text above is untouched.
 
+
+---
+
+## Tracker addendum 11 — 2026-11-10 (CAMPAIGN4_AUDIT_13 landed)
+
+13. ~~Admin/Engineer_Protocols.md~~ — DONE: CAMPAIGN4_AUDIT_13 (Admin/AAudits/, artifact 13; findings F-EP-1 through F-EP-7). F-EP-1 WARNING (Section 8 hazard table stale: PL-001 and GR-003 — both Resolved 2026-08-23/24 — still listed under "Active Critical Unknowns"; the other seven rows verify live against Unknowns v5.79), F-EP-2 WARNING ("AI Contribution Rules 1–7" cites a section that does not exist under that name — AP v0.47’s live section is "AI Contribution Protocols" — and the range is stale: AP-032 Rule 8 and AP-033 Rule 9, added 2026-10-30, apply directly to engineering contributions), F-EP-3 WARNING (the 2026-10-28 RL ledger line cites the audit report at the nonexistent `Archive/Audits/AUDIT_08_Admin-Engineer_Protocols.md`; the report lives at `Admin/AAudits/`; relocation-repair-miss, Pattern 2 instance 11 — same 2026-10-28 batch as F-SP-1), F-EP-4 WARNING (Aging Rule tripped 5/5 — EP-001–004 at 165d, EP-006 at 164d; systemic instance 9; running total 52 of 65; CAMPAIGN2_AUDIT_81 F3 recurrence), F-EP-5 WARNING (EP-005 has zero trace in Unknowns.md v5.79 — no active row, correct, but no standard resolved-note either, unlike PL-001/GR-003/WA-002/CIR-GOV-002 — and the file’s own "EP-001 through EP-006 are indexed there" claim is now false), F-EP-6/7 NOTEs (MAINT-56-retired rows, conformant at its 2026-11-03 touch; the FT §8→§9 sidecar-format pointer defect; the unexecuted AUDIT_08 F2 EC-001 qualification). Compound Drift Rule did not fire (no own indicator in firing state). All fabrication probes passed; X10 5=5=5 exact with field-for-field Priorities; Highest Risk Medium recomputes; Ethical Anchor exact.
+
+**Resume point (updated):** next file Admin/External_Intake_Protocol.md (CAMPAIGN4_AUDIT_14). Head at this addendum’s compose: `36d8e783` (LF main). Append-only; the kickoff text above is untouched.
