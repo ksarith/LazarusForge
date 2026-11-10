@@ -124,3 +124,39 @@ Structural index files that restate per-file fields (scope maps, maturity snapsh
 **Bare-citation grep remedy — sixth through eighth evidence points:** PROBE_INVOCATION's unqualified "MAINT-15" (AUDIT_16 F-PI-4), BATTERY_SEED's unqualified "MAINT-11" (AUDIT_17 F-BS-3), Adm_Scope_Map's unqualified "AUDIT_01–AUDIT_29" range twice (AUDIT_21 F-ASM-9).
 
 **Coverage note (updated):** twenty-one of 34 Admin/ files done. The next pattern-document update is due in the AUDIT_27–30 window per the 5–8-file convention (measured from artifact 21), or earlier if a new pattern earns its Xn registration (two instances required).
+---
+
+## Update 3 — files 22–28 (2026-11-10, deposited alongside artifact 28)
+
+Covers Trajectories.md (22), Progress_Log.md (23), Integrity_Incident_Log.md (24), Experiments.md (25), CIR_Gov.md (26), Computational_Institutional_Reasoning.md (27), Environmental_Constraints.md (28). Append-only: the Patterns 1–6 text and Updates 1–2 above are untouched. Twenty-eight of 34 Admin/ files are now done. The window was planned as files 22–27; it closes at 28 with this deposit, per the Update 2 precedent of including the depositing artifact. Provenance: artifacts 22–27 were executed after the MAINT-109 parallel-composition repair; their findings are aggregated from the canonical tracker record (addenda 21–26).
+
+**Pattern 1 (the 90-day Aging Rule) — instances 10–11, control cases 12–16:**
+
+- Instance 10: Trajectories.md — 3 of 3 open entries, 128–171 days (AUDIT_22 F-TRJ-1).
+- Instance 11: CIR_Gov.md — 1 of 1, CIR-GOV-001 at 102 days (AUDIT_26 F-CIR-1). Running aggregate: **56 of 69** open sidecar entries past the bar across the eleven tripping files.
+- Control cases (no trip): Progress_Log (12th — 0 open unknowns, vacuous), Integrity_Incident_Log (13th — vacuous), Experiments (14th — no time-based indicator; the rule formally inapplicable), Computational_Institutional_Reasoning (15th — CIR-001 reviewed 2026-10-27, 14 days; the first control case with a live review date), Environmental_Constraints (16th — all eight open entries reviewed 2026-10-28, 13 days).
+
+**Pattern 2 (relocation-repair-miss) — instances 17–19:**
+
+17. Trajectories.md — two wrong-home audit citations in the RL (`Archive/Audits/AUDIT_13_Admin-Trajectories.md` vs live `Admin/AAudits/`; written pre-relocation, repair passes missed the file) (AUDIT_22 F-TRJ-7).
+18. Progress_Log.md — mixed-home rotation doctrine: three operative passages still route to the pre-relocation `Archive/Logs/Progress_Log_Changelog.md` while three others in the same file cite `Admin/ALogs/` correctly; plus the ledger line’s `Archive/Audits/` report citation (AUDIT_23 F-PL-1).
+19. CIR_Gov.md — the 2026-10-28 pseudo-audit ledger line cites `Archive/Audits/AUDIT_04_Admin-CIR_Gov.md`; the report lives at `Admin/AAudits/` (AUDIT_26 F-CIR-2; same 2026-10-28 ledger-line batch as instances 5 and 11).
+
+- The corpus-wide grep remedy’s evidence base is now nineteen instances plus the `audit_lib.py` LEGACY-message corroboration. Environmental_Constraints.md shows no Pattern 2 exposure surface (zero Archive/ references), joining External_Intake_Protocol and INTEGRITY_SWEEP_PROMPT.
+
+**Pattern 5 (stale conditions on resolved events) — instance 3:**
+
+3. Trajectories.md — the FAK-005-ceiling registry row tracks an event resolved twice over (ceiling re-baselined 12,000→35,000, then retired entirely; FAK-005 Resolved 2026-10-29 by human ruling) (AUDIT_22 F-TRJ-5).
+
+**Pattern 6 (index-mirror decay) — instances 4–5:**
+
+4. `Unknowns.md`’s Active Index ENV-010 row still reads "reciprocity unverified … unconfirmed" against the owning sidecar’s CONFIRMED PARTIAL GAP, verified against Facilities.md source 2026-07-07 and re-verified live 2026-11-10 (AUDIT_28 F-ENV-1a).
+5. `Unknowns.md`’s ENV-007/ENV-008 footnote still reads "Resolved/Partially Addressed respectively as of 2026-07-06" — ENV-008 was re-statused Resolved 2026-10-28 (AUDIT_28 F-ENV-1b).
+
+**Mischaracterization records (nearest-neighbour class, not yet numbered):** F-TRJ-3 (GK-003 cited for the marine-durability unknown that is GK-004), F-TRJ-4 (UNK-008 labeled "autonomy architecture"; it is welding wire specification), F-EXP-2 (the MAINT-63 qualification pass paired CF-001 with `Operations/Electronics.md`, a non-owning file). Three instances in one window; the numbering decision is deferred to the human with the other class rulings.
+
+**Bare-citation grep remedy — ninth through thirteenth evidence points:** Trajectories’ bare "AUDIT_13"/"AUDIT_12" now genuinely ambiguous in Admin/AAudits/ (AUDIT_22 F-TRJ-8); Progress_Log’s bare non-colliding citations (AUDIT_23 F-PL-5); Integrity_Incident_Log’s bare non-colliding citations (AUDIT_24 F-IIL-6); Computational_Institutional_Reasoning’s bare "MAINT-11" (AUDIT_27 F-CIRF-3); Environmental_Constraints’s four bare foreign-unknown IDs in Category 2 plus bare "AUDIT_25" twice and bare "MAINT-11" (AUDIT_28 F-ENV-2/F-ENV-3).
+
+**New watch item:** escape-sequence scan (literal \uXXXX sequences in live text), added to the method at AUDIT_27 after F-CIRF-1 found four in Computational_Institutional_Reasoning.md’s File State; first application to Environmental_Constraints.md returned clean.
+
+**Coverage note (updated):** twenty-eight of 34 Admin/ files done. The next pattern-document update is due at the campaign’s close (files 29–34) per the 5–8-file convention, or earlier if a new pattern earns its Xn registration (two instances required).
