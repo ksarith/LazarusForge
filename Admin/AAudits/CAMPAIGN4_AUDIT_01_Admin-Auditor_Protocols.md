@@ -1,0 +1,36 @@
+# CAMPAIGN4_AUDIT_01_Admin-Auditor_Protocols.md
+
+**Campaign 4 (Adversarial Sweep), artifact 01. Findings-only deposit per PKC-020 — advances no Last Audit, Last Reviewed, version, or Status.**
+**Deposited:** 2026-11-10, Vibe (GLM 5.3 Flash architecture; no adjacent seat held on this file; Vibe authored nothing audited here — independence intact; GOV-008 architectural-diversity preference noted: prior AP seat-holders include Vibe lines).
+**Commission:** human direction, 2026-11-10 ("Can you audit ... using its own logic?" then "preserve your findings and then start a sweep of adversarial passes for the admin folder").
+
+## AUDIT: Admin/Auditor_Protocols.md
+- Size fetched / sections not read: 157,759 chars, none (full text; first fetch via web tool truncated mid-body, re-fetched complete via GitHub API at head `242eabd2`)
+- Head at fetch: `242eabd2` (repo URI sha prefix; MAINT-90 landing commit)
+- Seat disclosure: Vibe / GLM architecture; findings-only (PKC-020); references checked against live source fetched this session: sidecar `Admin/ALogs/Auditor_Protocols_Logs.md` (201,432 chars, full), `Admin/Verification_Gates.md` (49,543; v0.8 live, matching the G2 cell's citation), `Unknowns.md` (114,950; v5.79), `Admin/Forge_Audit_Kit.md` (48,053; v1.32), `Things_We_Got_Wrong.md` (10,254; Last updated 2026-11-08 — TWGW bootstrap read done per the 2026-11-07 addendum)
+- Instrument note: a second read path truncated the sidecar at exactly 63,637 chars — matching the Auditor Prompt §2's documented "locally held copies near 63 KB were found silently truncated" observation. Re-fetch discipline held; no check graded on truncated text.
+
+### Checks 1–11
+1. **Sidecar count parity — VERIFIED CLEAN.** Live sidecar open set: AP-002, AP-003, AP-007, AP-008, AP-010, AP-011, AP-018, AP-019, AP-030, AP-036 = 10 non-Resolved (UNK-003 Deferred, tracked separately per its own note). File State "Open Unknowns 10" matches, derived from source, not from the claimant's count.
+2. **Sidecar SHA-256 — VERIFIED CLEAN.** Independently computed SHA-256 of the live sidecar: `c68ed28a3f9e931a9ca3ed04d314d420631b767846dbb6dfdeedf890efe69f31` — matches the recorded 2026-11-04 value exactly. The AP-036 recompute-on-log remedy is holding.
+3. **Header vs body — VERIFIED CLEAN.** Header v0.47; Status block 0.47; both Version String Registry citations (Role Declaration, Observability sign-off) read v0.47; footer current through v0.47.
+4. **Scope Boundary re-derivation — VERIFIED CLEAN** (both lists quoted; consistent with the body's actual sections).
+5. **Cross-references — FINDING (F1, F2 below).** All named targets exist and resolve (`Verification_Gates.md` v0.8 confirmed live; `Forge_Net.md`, `Governance_Charter.md`, `Ethical_Constraints.md`, `Canonical_Terms.md`, `File_Template.md`, `BATTERY_SEED.md`, `Automation/cold_session_bundler.py`, `Admin/ALogs/Auditor_Protocols_Logs.md` all exist).
+6. **Bare colliding-ID citations — VERIFIED CLEAN** for operative text (spot-checked AP-007/AP-008/FN-001 references; all qualified).
+7. **Drift Indicators — FINDING (F3 below).** "Unknown remains unreviewed more than 90 days" is currently true.
+8. **Section integrity — VERIFIED CLEAN.** No duplicate `##` headings; Active Disputes count (1, DS-001 Open) matches File State.
+9. **Version/registry consistency — VERIFIED CLEAN** against live `Verification_Gates.md` v0.8 (2026-11-02) and Kit v1.32.
+10. **Ethical Anchor — VERIFIED CLEAN.** Exact canonical string, one occurrence.
+11. **Highest Risk parity — VERIFIED CLEAN.** Highest open sidecar Risk = High (AP-007, AP-008); File State reads High. Correctly mirrors Risk, not the index's Priority column (which shows Major for several).
+
+### Findings
+
+- **F1 — WARNING (mechanical drift; X9 stale narration).** Scope Boundary: "Cross-repo verification architecture (→ Forge_Net.md)" — bare unprefixed path; the file lives at `Architecture/Forge_Net.md`. Resolves, so graded per the three-tier rule as a live-but-unprefixed pointer; line 1084 of the same file uses the correct prefixed form. AP-027's own fix precedent covers exactly this class.
+- **F2 — WARNING (registration parity; X10).** `Unknowns.md`'s active index lists 9 AP rows (AP-002, 003, 007, 008, 010, 011, 018, 019, 030) but not AP-036, while File State counts 10 open. Possibly correct under the new Tier 0 indexing convention (Unknowns.md v5.79, 2026-11-05, MAINT-62 §3.3: file-internal unknowns stay in the owning file) — but that convention is applied to AP-036 and not to the other nine file-internal AP rows, so the index is internally inconsistent under either reading. Flagged for the human to pick which side of Rule 7 the AP series sits on.
+- **F3 — WARNING (drift indicator fired; Aging Rule).** Seven open entries carry Last Reviewed 2026-06-24 (139 days before this pass: AP-002, 003, 008, 010, 011, 018, 019) and AP-007 carries 2026-08-02 (100 days). The drift indicator "Unknown remains unreviewed more than 90 days" is a mandatory re-audit condition and is currently true. The AP-029 closure record itself observed this rule "about to trip" on 2026-10-20; it has since tripped without a Resolution Pass.
+- **F4 — NOTE (missing required fields).** AP-030's sidecar entry has no field table at all (no Status/Risk/Priority/First Logged/Last Reviewed rows; its state exists only in the Unknowns.md index row), and its substantial 2026-10-29 MDR activity is not reflected in any Last Reviewed field. Every other entry carries the full table.
+- **F5 — NOTE (self-reference ambiguity).** Relationship to Existing Documents: "`LazarusForge` — companion doctrine repository (`ksarith/LazarusForge`)" — this file lives in `ksarith/LazarusForge`, so the repository is described as a "companion" to itself (readable only as "companion relative to Astroid-miner"). Introduced or perpetuated by the v0.47 MAINT-56 repoint; worth one clarifying word from the human.
+- **F6 — NOTE (guardrail scope).** Sidecar word count (26,734) exceeds the body's (21,267); combined ratio ~56%, far past the 20% Metadata Guardrail. The 2026-07-23 relocation is a documented exception, but the guardrail text nowhere states whether it applies to relocated sidecars — the same structural gap class as the 10-Entry Rule that AP-029 closed.
+
+### Bottom line
+The file's self-referential machinery is in unusually good shape: count parity, the sidecar hash, the ethical anchor, version strings, and Highest Risk all verify clean against live source — the fields with a history of divergence are currently the ones holding. The real exposure is time, not bookkeeping: the Aging Rule has tripped on 8 of 10 open unknowns (F3), which under the file's own doctrine is a mandatory re-audit condition, and the Compound Drift Rule says multiple active indicators on one file mean escalate rather than proceed. Recommended human-authorized edits: (1) prefix `Forge_Net.md` → `Architecture/Forge_Net.md` in the Scope Boundary (F1); (2) decide and record which side of Unknowns.md Rule 7 the AP series sits on, then reconcile index and File State (F2); (3) add the missing field table to AP-030 and either run the overdue unknown-review pass or register its deferral explicitly (F3/F4). F5 and F6 are wording/scope questions only the human can rule on.
