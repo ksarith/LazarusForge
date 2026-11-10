@@ -207,3 +207,13 @@ Head at this addendum’s compose: `e24e443d` (LF main). Append-only; the kickof
 **Resume point (updated):** Admin/Operational_Conventions.md — CAMPAIGN4_AUDIT_19.
 
 Head at this addendum’s compose: `9e41d15f` (LF main). Append-only; the kickoff text above is untouched.
+
+---
+
+## Tracker addendum 17 — 2026-11-10 (CAMPAIGN4_AUDIT_19 landed)
+
+19. ~~Admin/Operational_Conventions.md — CAMPAIGN4_AUDIT_19 deposited~~ DONE (findings-only, PKC-020): F-OC-1 WARNING (Convention 8 cites the pre-relocation `Archive/Logs/Progress_Log_Changelog.md` home — the live changelog is `Admin/ALogs/Progress_Log_Changelog.md`, relocated 2026-10-30 MAINT-29; the 2026-11-05 MAINT-63 touch repaired Convention 4 in this same file but missed Convention 8; relocation-repair-miss, Pattern 2 instance 15), F-OC-2/3/4 NOTEs (Convention 6's "all nine" Automation script count vs live twelve — substance verified 12/12 registered in Routing; Convention 4's generic Archive/Logs check heuristic predates the relocation; Auditor cell "prior: Prior:" duplication). Aging Rule vacuous (0 open unknowns — ninth no-trip control case); Compound Drift Rule vacuously did not fire. All fabrication probes passed (audit_lib backtick-letter rule code-true; integrity_check suffix regex + Archive exclusion live; FT class 9 listing live; the three Convention-2 Ethical Anchors now exact; RM §9 history verbatim; Unknowns_Changelog 2026-09-10 note verbatim; live rotation checks within caps). Out-of-scope recorded: Unknowns.md's header cites two Archive/Logs changelog homes that live at Admin/ALogs/.
+
+**Resume point (updated):** `Admin/Repository_Structure.md` — CAMPAIGN4_AUDIT_20.
+
+Head at this addendum's compose: `f476362a` (LF main). Append-only; the kickoff text above is untouched.
