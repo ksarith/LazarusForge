@@ -48,3 +48,33 @@ The 2026-10-29/31 relocations (MAINT-29/30/31, the `<Letter>Logs/` homes; the 20
 ## Coverage note
 
 Six of 34 Admin/ files done. The pattern document's due window (AUDIT_06–08) is satisfied at artifact 06; the next update is due in the AUDIT_11–14 window per the 5–8-file convention, or earlier if a new pattern earns its Xn registration (two instances required).
+---
+
+## Update 1 — files 07–11 (2026-11-10, deposited alongside artifact 12)
+
+Covers Security_Protocols.md (07), Safety_Protocols.md (08), Repository_Integrity_Protocol.md (09), Governance_Migration_Protocol.md (10), Autonomy_Divergence_Protocol.md (11), with the Forge_Audit_Kit.md data points noted where a pattern gains them. Append-only: the Patterns 1–5 text above is untouched. Eleven of 34 Admin/ files are now done.
+
+**Pattern 1 (the 90-day Aging Rule) — instances 6–7, control cases 3–4:**
+
+- Instance 6: Repository_Integrity_Protocol.md — 3 of 5 open entries, 124–144 days (AUDIT_09 F-RIP-2).
+- Instance 7: Governance_Migration_Protocol.md — 2 of 4, both 107 days (AUDIT_10 F-GMP-4). Running aggregate: **47 of 60** open sidecar entries past the 90-day bar across the seven tripping files (AP 8/10, EC 3/7, Charter 13/13, CT 9/10, Security 9/11, RIP 3/5, GMP 2/4).
+- Control case 3: Safety_Protocols.md — all five open entries reviewed 2026-10-27 (14 days), no trip (AUDIT_08).
+- Control case 4: Autonomy_Divergence_Protocol.md — GOV-021c at 87 days on 2026-11-10, trips 2026-11-13 if unreviewed (AUDIT_11 F-ADP-3); a near-trip, disclosed as a live test of the consolidated-remedy question.
+
+**Pattern 2 (relocation-repair-miss) — instances 5–10:**
+
+5. Safety_Protocols.md — the 2026-10-28 Resolution Log entry cites the pseudo-audit at `Archive/Audits/AUDIT_07_Admin-Safety_Protocols.md`; the file lives at `Admin/AAudits/` (AUDIT_08 F-SP-1, probe-verified fetch failure at the cited path).
+6. Security_Protocols.md — seven bare `Electronics.md` citations remain in operative text of the same file the 2026-10-29 X3 retrofit qualified 8 citations in; no root `Electronics.md` exists (AUDIT_07 F-SEC-2).
+7. `Unknowns.md`’s Active Index RIP-005 row still pins "Security_Protocols.md … exists at v0.5" — the exact stale anchor the sidecar’s own 2026-09-03 correction removed; the repair missed the global index (AUDIT_09 F-RIP-1).
+8. Governance_Migration_Protocol.md’s Relationship section carries the same "Security_Protocols.md — exists at v0.5 (2026-06-19)" pin (AUDIT_10 F-GMP-3).
+9. Autonomy_Divergence_Protocol.md’s File State Governance ID row cites the nonexistent `Archive/Logs/Governance_Charter_Changelog.md`; the registration it describes is verified in the `Admin/ALogs/` copy; the row was written 2026-08-11, after the relocation (AUDIT_11 F-ADP-1).
+10. Forge_Audit_Kit.md (AUDIT_12 F-FAK-2, filed in the next window’s numbering, recorded here as the class data point): five-plus operative references — including the Resolution Log’s "add new entries there" routing instruction and the drift indicator’s own designated home — still cite `Archive/Logs/Forge_Audit_Kit_Changelog.md` while the File State Sidecar Link is correctly repointed.
+
+- The corpus-wide grep remedy’s evidence base is now ten instances plus the `audit_lib.py` LEGACY-message corroboration.
+
+**Bare-citation grep remedy — fourth and fifth evidence points:** Repository_Integrity_Protocol.md ~7 bare path citations in operative/narrative text (AUDIT_09 F-RIP-5) and Governance_Migration_Protocol.md ~10 bare path citations, all targets resolving (AUDIT_10 F-GMP-7); both batch-eligible with F-SEC-2/F-SP-2.
+
+**Pattern 4 — first data point outside File_Template:** Forge_Audit_Kit.md’s FAK-005 closure skipped the Kit’s own Discharge Procedure (AUDIT_12 F-FAK-3, with the Kit’s own Lessons-Learned drift indicator in firing state). The self-application gap class is no longer confined to File_Template itself; formal pattern numbering at the next update.
+
+**Coverage note (updated):** eleven of 34 Admin/ files done. The next pattern-document update is due in the AUDIT_19–22 window per the 5–8-file convention (measured from artifact 12), or earlier if a new pattern earns its Xn registration (two instances required).
+
