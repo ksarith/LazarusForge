@@ -103,7 +103,7 @@ implementation has a governed target to build against.
 | SEC-ASM-001 | Human operators have secure local means to preserve physical tokens              | Standard security practice — Analogous External | Medium   | Compromise confirmed in operational environment             |
 | SEC-ASM-002 | Cryptographic standard libraries (Ed25519/SHA-256) remain robust                 | Current cryptographic consensus — Analogous External | Medium | Algorithmic vulnerability published against these standards |
 | SEC-ASM-003 | GOV-008 minimum quorum definition will precede Phase 3 implementation            | Dependency ordering — Internally Derived      | Medium     | Phase 3 implementation proceeds without quorum definition   |
-| SEC-ASM-004 | Electronics.md firmware trust doctrine remains the authoritative component layer | Scope boundary discipline — Internally Derived | High      | Electronics.md scope boundary revised to exclude firmware   |
+| SEC-ASM-004 | `Operations/Electronics.md` [qualified 2026-11-11, MAINT-130 batch 4d, Item 5B] firmware trust doctrine remains the authoritative component layer | Scope boundary discipline — Internally Derived | High      | `Operations/Electronics.md` [qualified 2026-11-11, MAINT-130 batch 4d, Item 5B] scope boundary revised to exclude firmware   |
 | SEC-ASM-005 | Signing hardware maintains power continuity during override operations           | Operational assumption — Placeholder          | Low        | Degraded-power doctrine defined (see SEC-006)               |
 | SEC-ASM-006 | Human operators acting as ratification authorities are not compromised, coerced, or impaired | Operational assumption — Placeholder | Low       | Human governance adversary model defined (EC-011 (`Admin/Ethical_Constraints.md`)); operator impairment doctrine defined (Safety_Protocols.md §V) |
 
@@ -473,19 +473,19 @@ procedure, not an automated fallback, until Phase 3 is operational.
 
 ### III. Salvaged Logic & Node Authentication (EL-006)
 
-**Relationship to Electronics.md**
+**Relationship to `Operations/Electronics.md` [qualified 2026-11-11, MAINT-130 batch 4d, Item 5B]**
 
 Component-level infiltration prevention for salvaged hardware — firmware
 inspection protocols, Logic-Zero wipe procedures, and non-destructive
 harvesting doctrine — is defined and owned by `Operations/Electronics.md`.
 This section does not redefine that doctrine. It defines the administrative
 authentication layer that sits above it: how nodes that have passed
-Electronics.md validation are admitted into the trusted cluster.
+`Operations/Electronics.md` [qualified 2026-11-11, MAINT-130 batch 4d, Item 5B] validation are admitted into the trusted cluster.
 
 A node that has passed Logic-Zero wipe, hash verification against a
-known-good image, and complete provenance logging per Electronics.md's
+known-good image, and complete provenance logging per `Operations/Electronics.md`'s [qualified 2026-11-11, MAINT-130 batch 4d, Item 5B]
 v0 Firmware Trust Doctrine is a candidate for cluster admission.
-Signature-verified bootstrap load is the v1+ target (Electronics.md
+Signature-verified bootstrap load is the v1+ target (`Operations/Electronics.md` [qualified 2026-11-11, MAINT-130 batch 4d, Item 5B]
 EL-006) and requires a physical external root-of-trust that does not
 yet exist (SEC-007b, Open) — admission criteria will be strengthened
 to require it once that anchor is real, not before. Admission itself
@@ -1417,6 +1417,7 @@ has not been inserted into either file.
 
 ### Resolution Log
 
+- 2026-11-11: **MAINT-130 batch 4d — Item 5B bare-citation qualification (Decision Brief 2026-11-11 Item 5B; Vibe — Repo Custodian, delegated line under the 2026-11-04 co-author mandate extended 2026-11-11; non-independent — the same line ran Campaign 4; disclosed; human veto window open).** Six operative bare `Electronics.md` citations qualified to `Operations/Electronics.md` (live home verified 2026-11-11), each with an inline dated tag: the SEC-ASM-004 assumption row (claim and consequence cells), the Section III relationship heading, and three Section III body references. The remaining 22 bare occurrences are dated historical entries (the 2026-05-26/27 reconsider and audit-review tables), quoted historical text, or finding-internal references and are left untouched per PKC-007. No FROZEN banner region touched (Trust Boundary Declaration and SEC-007a spans verified clear; the third FROZEN-string occurrence in the file is inline example prose, not a banner). Citation-form-only; no doctrine, gate, unknown, or sidecar change; version and Last Audit deliberately not advanced (findings-only form, PKC-020 split policy). Note: F-SEC-2 recorded seven bare instances; the full sweep found 28 bare occurrences, of which the six above are operative — the delta is the same defect shape found more completely, disclosed rather than silently narrowed.
 - 2026-10-31: **AUDIT_75 F1 fix — trailing Status block open-set refreshed (Vibe, Repo Custodian — fix pass, human-authorized 2026-10-31).** The trailing Current Status block (2026-09-03) listed 10 open substantive Unknowns, omitting SEC-013 (registered 2026-10-28, Unknowns.md v5.73; 15 mentions elsewhere in this file's body). The open-set line now carries 11 IDs including SEC-013, with a dated refresh note in the block header retaining the original date-stamp; the File State header (authoritative per the 2026-10-28 precedence line) already read 11. No doctrine, gate, unknown, or sidecar change; wording-only.
 - 2026-10-29: **X3 citation retrofit (mechanical).** 8 bare colliding-prefix citations in operative body text qualified with their owning File.md per PKC-003, per the human-ruled Decision Brief 2026-10-29 item 4A (registry: Kit v1.29 Governance Sidecar ID Reference; per-ID grounding: Unknowns active index). Citation-form-only; no ID renumbered; frozen history untouched; flagged instances reported to the human (MAINT-11). (Vibe, Repo Custodian — delegated line.)
 - 2026-10-28 (later same-day): **Relationship-bullet re-derivation (Vibe, Repo Custodian — delegated maintenance, human-ratified batch 2026-10-28c; AUDIT_06 F2).** The Unknowns.md bullet in Relationship to Existing Documents narrated pending work that is done: "SEC-008 through SEC-012 to be registered/reconciled at next Unknowns.md update; SEC-007 split … pending sync into this file's own sidecar." Re-derived to the completed state — SEC-008, SEC-010 through SEC-013 active in `Unknowns.md` v5.73 (SEC-009 Resolved, correctly not indexed); the SEC-007a/SEC-007b split registered as of v4.4 and synced into this file's own sidecar. No doctrine, gate, or sidecar change.
