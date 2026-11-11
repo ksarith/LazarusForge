@@ -3,7 +3,7 @@
 
 **Full version history in `Archive/Logs/Unknowns_Changelog.md` (2026-07-19 cleanup pass, following the precedent set by `Archive/Logs/AUDIT_HARNESS_CHANGELOG.md` and `Archive/Logs/Forge_Audit_Kit_Changelog.md`; scrubbed to current-version-only 2026-07-28 — the "current plus last four in full" window was itself compressed further, since the changelog carries full text for every version back to v1.0 (the in-file Audit Trail was moved there under Rule 4). This block now keeps only the current version.)**
 
-**Version 5.80 -- 2026-11-11. RIP-005 Active Index description cell corrected — stale Security_Protocols v0.5 version pin removed (MAINT-130 batch 4f; Decision Brief 2026-11-11 Item 5B residue; Campaign 4 finding F-RIP-1; Vibe — Repo Custodian, delegated line under the 2026-11-04 co-author mandate extended 2026-11-11; non-independent — the same line ran Campaign 4; disclosed; human veto window open).** The Active Index RIP-005 row still read "file exists at v0.5" — the exact stale anchor the owning sidecar's 2026-09-03 correction (RIP-AUD-004 in `Admin/Repository_Integrity_Protocol.md`) had already removed from the sidecar and Status "since the same staleness would recur"; the 2026-09-03 repair missed the global index row (relocation-repair-miss class, Pattern 2 instance 7; doubly stale per AUDIT_07's no-current-version-string finding). Description corrected to the sidecar's check-directly convention rather than re-pinning a new version number; Status, owner, and Priority cells untouched; no unknown opened, closed, or renumbered; no other row touched. Per Size Management Rule 2 this block holds only the current version; v5.79 is in `Archive/Logs/Unknowns_Changelog.md`. Companion edits: `Archive/Logs/Unknowns_Changelog.md` (v5.80 entry).**
+**Version 5.81 -- 2026-11-11. Active Index mirror recompute — ENV-010 row, ENV-007/008 footnote, TR-001 Priority cell (MAINT-130 Item 8; Decision Brief 2026-11-11; Vibe — Repo Custodian, delegated line under the 2026-11-04 co-author mandate extended 2026-11-11; non-independent — the same line ran Campaign 4; disclosed; human veto window open).** Three stale Active Index cells recomputed from the live owning sidecars, never copied from another mirror: (1) ENV-010's Title cell still read the reciprocity question as unconfirmed — the owning sidecar's 2026-10-28 review confirmed a partial gap (three parameters fully missing, one partial); Title recomputed to the sidecar's own wording, Subtype cell recomputed from the sidecar's Type field (Governance / Integration, was an em-dash placeholder), Status and Priority cells already matched. (2) The ENV-007/ENV-008 footnote read one Resolved and one Partially Addressed as of 2026-07-06 — both sidecars now read Resolved (ENV-008's Last Reviewed 2026-10-28); footnote recomputed accordingly. (3) TR-001's Priority (Promo) cell read a Blocking-watch value in a Priority column — the same Risk/Priority conflation class retired by PKC-004; recomputed to the sidecar's Priority Major with the Blocking Yes fact preserved in the cell. No unknown opened, closed, or renumbered; no Status change; no owning-file edit. Companion edits: `Archive/Logs/Unknowns_Changelog.md` (v5.81 entry). Per Size Management Rule 2 this block holds only the current version; v5.80 is in `Archive/Logs/Unknowns_Changelog.md`.**
 ---
 
 **Expiry Rule active — see `Admin/Canonical_Terms.md` §4 for the Cycle definition this rule now explicitly references (one calendar year default, not one audit pass — see CT-011). Protocol Performance metrics collecting.**
@@ -677,7 +677,7 @@ RB-007 (Human-shared space unresolved)
 
 | ID | Title | Owning File | Status | Subtype | Priority (Promo) |
 |---|---|---|---|---|---|
-| TR-001 | v1 profitability baseline | `Admin/Trajectories.md` | Open | — | Blocking |
+| TR-001 | v1 profitability baseline | `Admin/Trajectories.md` | Open | — | Major (Blocking Yes) |
 | TR-002 | FRT floor value not yet calibrated | `Admin/Trajectories.md` | Open | — | Major |
 | TR-003 | Off-world nuclear containment architecture undefined — formalizes a dependency the file's own v3 text had flagged in prose since 2026-06-26 but never registered as a tracked unknown; not active until v3 planning begins | `Admin/Trajectories.md` | Open | — | Major |
 
@@ -784,10 +784,10 @@ RB-007 (Human-shared space unresolved)
 | ENV-005 | Community engagement protocol undefined | `Admin/Environmental_Constraints.md` | Open | — | Major |
 | ENV-006 | No-externalized-entropy doctrine not operationalized | `Admin/Environmental_Constraints.md` | Open | — | Major |
 | ENV-009 | No site has been assessed against this file's constraints — all values are Placeholder | `Admin/Environmental_Constraints.md` | Open | — | Critical |
-| ENV-010 | Upstream Facilities.md checklist reciprocity unverified — whether Facilities.md's Site Initialization Checklist actually mandates collection of this file's Category 1 parameters is unconfirmed | `Admin/Environmental_Constraints.md` | Open | — | Major |
+| ENV-010 | Upstream Facilities.md checklist reciprocity — CONFIRMED PARTIAL GAP (sidecar review 2026-10-28; Blocking Yes for Candidate Spec promotion) | `Admin/Environmental_Constraints.md` | Open | Governance / Integration | Major |
 
 *ENV-009 Critical — file is doctrine only until first site assessment replaces Placeholder values.*
-*ENV-007 and ENV-008 are Resolved/Partially Addressed respectively as of 2026-07-06 and do not appear in this active index per Size Management Rule 2 — see Environmental_Constraints.md's own sidecar and Discovery.md's 2026-06-21 registration note.*
+*ENV-007 and ENV-008 are both Resolved per their owning sidecars (ENV-008's sidecar Last Reviewed 2026-10-28) and do not appear in this active index per Size Management Rule 2 — see Environmental_Constraints.md's own sidecars and Discovery.md's 2026-06-21 registration note. Footnote recomputed from the live sidecars 2026-11-11 (MAINT-130 Item 8); the 2026-07-06 reading of ENV-008 as only Partially Addressed is superseded.*
 
 ### Closed-Loop Feedstock
 

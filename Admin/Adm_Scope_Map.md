@@ -57,13 +57,13 @@ Pilot for a per-folder scope-map pattern, proposed 2026-08-07 as a fix for a kno
 **Note:** Added to this map 2026-09-13 — Last Updated 2026-09-07, after this map's prior 2026-08-15 build; missed by the original build for that reason, not excluded deliberately.
 
 ### `Admin/Auditor_Protocols.md`
-**Status:** Draft · 4/6 · 10 Open Unknowns · Risk: High
+**Status:** Draft · 5/6 · 10 Open Unknowns · Risk: High *(gates recomputed from the live File State 2026-11-11 — MAINT-130 Item 8 mirror recompute; AP-036 In Progress, AP-029 Resolved)*
 **Does:** Epistemic Foundation (EF-0.0-0.8b, meta-constitutional); auditor role classes; audit sequencing; Fallacy Checklist; Sidecar Model; Unknowns governance; verification gate enforcement; Adversarial Challenge Battery; Mission Drift Review; AI/human contributor protocols.
 **Does not (arrow):** Canonical terminology (`Canonical_Terms.md`) - repository ownership boundaries (`Governance_Charter.md`) - cross-repo verification architecture (`Forge_Net.md`).
 **Correction 2026-09-13:** this entry previously said 14. AP-013, AP-005, AP-004, and AP-024 were each Resolved 2026-08-19/20 — corrected to 10.
 
 ### `Admin/Autonomy_Divergence_Protocol.md`
-**Status:** Draft — PROPOSED NOT RATIFIED · 0/6 · 1 Open Unknown (GOV-021c) · Risk: High
+**Status:** Draft — PROPOSED NOT RATIFIED · 6/6 · 1 Open Unknown (GOV-021c) · Risk: High *(gates recomputed from the live File State 2026-11-11 — MAINT-130 Item 8 mirror recompute)*
 **Does:** Response protocol for observed divergence of autonomous/semi-autonomous subsystems; Capability Anomaly vs Governance Concern classification; graduated Response Tiers; restoration, logging, and review obligations. Explicitly rejects any "capability implies exit from oversight" framing.
 **Does not (arrow):** Detection calibration / Watch exit conditions (GOV-021b, Resolved 2026-08-11) - coordinated multi-agent divergence (GOV-021c, Open — sole remaining ratification blocker) - ethical hard floors (`Ethical_Constraints.md`) - Charter hierarchy - Auditor Protocols - CIR algebra. Normalized to DOES/DOES NOT template 2026-08-09.
 **Correction 2026-09-13:** this entry previously listed GOV-021b as still Open alongside GOV-021c (2 Open Unknowns). `Unknowns.md` confirms GOV-021b was Resolved 2026-08-11 — stale by over a month. Corrected to 1 Open Unknown.
@@ -95,7 +95,7 @@ Pilot for a per-folder scope-map pattern, proposed 2026-08-07 as a fix for a kno
 **Does not (arrow):** FRT doctrine/floor (`Trajectories.md`) - FRT logging (`Gate_07_Utilization.md`) - primary KPI (`Architecture/Forge_flow.md`) - energy cost model (`Operations/Energy.md`) - safety envelopes for commercial value streams (`Safety_Protocols.md`, `Operations/Plastics.md`, `Operations/Woodworking.md`).
 
 ### `Admin/Engineer_Protocols.md`
-**Status:** Draft · 2/6 · 5 Open Unknowns (EP-005 Resolved 2026-10-27, PKC-028) · Risk: High
+**Status:** Draft · 2/6 · 5 Open Unknowns (EP-005 Resolved 2026-10-27, PKC-028) · Risk: Medium *(Risk recomputed from the live File State 2026-11-11 — MAINT-130 Item 8 mirror recompute; CAMPAIGN2_AUDIT_81 F1)*
 **Does:** Engineering problem-solving protocols; assumption-challenge triggers; anti-reinvention/failure-harvesting rules; Engineer-Auditor dispute resolution.
 **Does not (arrow):** Domain-specific calculations (`Operations/`, `Architecture/`) - general audit procedure (`Auditor_Protocols.md`) - PPE/risk thresholds (`Safety_Protocols.md`).
 
@@ -109,6 +109,11 @@ Pilot for a per-folder scope-map pattern, proposed 2026-08-07 as a fix for a kno
 **Does:** Pre-action authorization (Confidence Threshold Doctrine, EC-001, closed 2026-08-11); ownership/legal rights recognition; Anti-Weaponization Doctrine (hard floor, Pattern Recognition Annex EC-002, closed 2026-08-11); life preservation; toxic material handling; cultural/sacred site recognition; refusal as first-class action; Pacifist Operating Posture; Inferred Authorization Annex (EC-008, Ratified 2026-08-22); Human Authority Conflict Doctrine (EC-009, Ratified 2026-08-22); Human Escalation Protocol (EC-003, Ratified 2026-08-22).
 **Does not (arrow):** Escalation channel's concrete transport implementation (`Tests/Leviathan_testing.md` — the protocol itself is EC-003, Ratified; only the transport is unassigned) · jurisdiction conflict hierarchy (EC-010, deferred) · human governance adversary model (EC-011, pending) · canonical term definitions (`Admin/Canonical_Terms.md`) · cryptographic governance enforcement (`Admin/Security_Protocols.md`) · constitutional governance hierarchy (`Admin/Governance_Charter.md`).
 **Correction 2026-09-13:** this entry previously showed 16 Open Unknowns and cited EC-001/EC-002 as open cross-references and EC-016's naming convention as the sole ratification note. The file's own File State confirms only 7 remain open (EC-006, EC-010–EC-015) — EC-001, EC-002, EC-003, EC-004, EC-005, EC-007, EC-008, EC-009, and EC-016 are all closed/Ratified, most recently on 2026-08-11 and 2026-08-22. This is the most significant drift found in this folder's accuracy pass — a governance-critical file's map entry overstating its own open-question count by more than double.
+
+### `Admin/External_Intake_Protocol.md`
+**Status:** Exploration — Candidate · G2 N/A (explicit intake exemption, not a pass) · 3 Open Unknowns (EIP-001, EIP-002, EIP-003) · Risk: High (Placeholder — EIP-001) *(entry added 2026-11-11 — MAINT-130 Item 8 mirror recompute; values recomputed from the live File State; coverage gap — the file has existed since 2026-11-02 with no Scope Entry here)*
+**Does:** How inbound artifacts from open channels are received, verified, recorded, rejected and defended against; which channels are open (default-deny posture); role separation between the agent that reads inbound text, the agent that verifies against the live repository, and the disposition holder; inbound text treated as data, never as instructions.
+**Does not (arrow):** What submitters should do (`CONTRIBUTING.md`) · the Field Log submission format (`Tests/Field_Logs.md`) · the response to a confirmed repository-integrity violation (`Repository_Integrity_Protocol.md` §Violation Classification and Response Ladder) · how findings advance (`Auditor_Protocols.md` §Unknown Closure Authority).
 
 ### `Admin/Experiments.md`
 **Status:** Draft · 0/6 · 0 Open Unknowns · Risk: Low
@@ -150,7 +155,7 @@ FLAG: Single most load-bearing file in the repository — six other files in thi
 **Does not (arrow):** Collect, compute, or report data itself (taxonomy, not a dashboard) · modify or depend on `Automation/AUDIT_HARNESS.py` / `Automation/integrity_check.py` (integrity layer stays separate from this measurement layer) · duplicate `Unknowns.md`'s Active Index (Unknowns-opened/resolved counts point back there, not restated) · invent numeric targets or thresholds · claim-type a metric's own value (`Admin/Canonical_Terms.md` §4 governs that, separately).
 
 ### `Admin/INTEGRITY_SWEEP_PROMPT.md`
-**Status:** Draft · N/A — operational prompt template, not a doctrine or specification claim · 0 Open Unknowns · Risk: unlabeled in File State
+**Status:** Active — Operational Template · N/A — operational prompt template, not a doctrine or specification claim · 0 Open Unknowns · Risk: unlabeled in File State *(Status recomputed from the live File State 2026-11-11 — MAINT-130 Item 8 mirror recompute; v1.0.6)*
 **Does:** The exact prompt text handed to a fresh audit session or scheduled automation to run one LazarusForge morning integrity sweep; the fixed report shape; the honesty rules that keep findings from being invented or over-graded.
 **Does not (arrow):** The integrity protocol's own design rationale or grading rules (`Repository_Integrity_Protocol.md`) · the condensed doctrine an auditor loads to run the sweep (`Forge_Audit_Kit.md`) · how a finding gets fixed once found (each owning file's own Resolution Log).
 **Note:** Added to this map 2026-09-13 — created 2026-08-30, after this map's prior 2026-08-15 Last Reviewed date; missed by the original build for that reason, not excluded deliberately.
@@ -214,7 +219,7 @@ Note: created same day as this Scope_Map build's own findings were still fresh �
 **Does not (arrow):** Facility constraints (`Architecture/Facilities.md`) - Air Scrubber hardware specs (`Operations/Air_Scrubber.md`) - Anti-Weaponization/Life Preservation hard floors (`Ethical_Constraints.md` — explicitly distinguished as governance constraints, not operational safety) - legal/regulatory compliance (SP-005, human decision).
 
 ### `Admin/Security_Protocols.md`
-**Status:** Draft · 0/6 · 10 Open Unknowns (SEC-001, SEC-003, SEC-004, SEC-005, SEC-006, SEC-007b, SEC-008, SEC-010, SEC-011, SEC-012) · Risk: High
+**Status:** Draft · 0/6 · 11 Open Unknowns (SEC-001, SEC-003, SEC-004, SEC-005, SEC-006, SEC-007b, SEC-008, SEC-010, SEC-011, SEC-012, SEC-013) · Risk: High *(count recomputed from the live File State 2026-11-11 — MAINT-130 Item 8 mirror recompute; SEC-013 was missing from the list)*
 **Does:** Multi-signature Human Override Verification crypto; code-signing (RIP Phase 3); node identity/key rotation; air-gapping and cryptographic fallback; trust-boundary declaration; compromise detection doctrine (SEC-009, Ratified 2026-08-22).
 **Does not (arrow):** Component-level hardware infiltration prevention (`Operations/Electronics.md`) - constitutional doctrine (`Governance_Charter.md`) - auditor behavior (`Auditor_Protocols.md`) - minimum agent quorum definition (GOV-008, `Governance_Charter.md` — this file consumes that threshold as an input) - human-factors attack surface (pending, cross-refs `Safety_Protocols.md` and `Ethical_Constraints.md` EC-011).
 **Correction 2026-09-13:** this entry previously said 13. SEC-002, SEC-007a, and SEC-009 were Ratified 2026-08-22 — corrected to 10.
@@ -230,7 +235,7 @@ Note: created same day as this Scope_Map build's own findings were still fresh �
 **Does not (arrow):** Future-version component taxonomy (module docs, when active) - detailed economic model (`Economics.md`) - FRT logging procedure (`Operations/Gate_07_Utilization.md`) - component procurement (`Architecture/Geck_forge_seed.md`).
 
 ### `Admin/Verification_Gates.md`
-**Status:** Draft · 2/6 · 0 Open Unknowns · Risk: High
+**Status:** Draft · 6/6 · 0 Open Unknowns · Risk: Low *(all cells recomputed from the live File State 2026-11-11 — MAINT-130 Item 8 mirror recompute; the prior 2/6 · High cells were stale)*
 **Does:** The six canonical verification gates for document promotion; pass criteria and evidence standards per gate; Full Stop Review triggers; gate enforcement rules.
 **Does not (arrow):** Auditor role doctrine, sequencing, Adversarial Battery (all `Auditor_Protocols.md`) - condensed reference (`Forge_Audit_Kit.md`) - cryptographic enforcement (`Security_Protocols.md`) - ethical policy (`Ethical_Constraints.md`) - constitutional hierarchy (`Governance_Charter.md`).
 
@@ -355,3 +360,5 @@ Findings 1–3 (structural scope gaps) closed 2026-08-09. Findings 4–5 remain 
   against `Unknowns.md` and found to be a false positive — both outcomes
   documented under Gaps Exposed above. No new unknowns registered.
   Human-directed.
+
+- 2026-11-11: **Mirror recompute pass (MAINT-130 Item 8; Decision Brief 2026-11-11; Vibe — Repo Custodian, delegated line under the 2026-11-04 co-author mandate extended 2026-11-11; non-independent — the same line ran Campaign 4; disclosed; human veto window open).** Six entries' stale cells recomputed from the live File States and one coverage gap closed: `Verification_Gates.md` 2/6 · High → 6/6 · Low; `Security_Protocols.md` 10 → 11 Open Unknowns (SEC-013 missing from the list); `Auditor_Protocols.md` 4/6 → 5/6 (AP-036 In Progress, AP-029 Resolved); `Autonomy_Divergence_Protocol.md` 0/6 → 6/6; `Engineer_Protocols.md` Risk High → Medium (CAMPAIGN2_AUDIT_81 F1); `INTEGRITY_SWEEP_PROMPT.md` Status Draft → Active — Operational Template (v1.0.6). New Scope Entry added for `Admin/External_Intake_Protocol.md` (Exploration — Candidate; G2 N/A exemption; 3 Open Unknowns EIP-001/002/003; Risk High (Placeholder)), present since 2026-11-02 with no entry here. All values recomputed from live source, never copied from another mirror. The D-6/D-7 mirror-cadence convention lines remain PROPOSED and were NOT enacted — this pass is a one-time recompute. No owning file changed; no unknown opened or closed.
