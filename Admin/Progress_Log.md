@@ -31,7 +31,7 @@ Created 2026-08-09 to fix a recurring failure mode found the same day, in two pl
 - Create unknowns. A parked concern that becomes a real open unknown is promoted to an `Unknowns.md` entry; this file then only points to it.
 - Hold anything that belongs in a Resolution Log — file-specific change history stays in that file's own log, not here. This file is for cross-cutting lessons and session-level continuity, not a substitute for per-file logs.
 
-**Size discipline, learned directly from what broke last time:** this section rotates. Keep the current entry plus the four most recent in full below; older entries move to `Archive/Logs/Progress_Log_Changelog.md` in full, same split pattern already established for `Unknowns.md`/`Unknowns_Changelog.md`. No version number in any heading here — headings are dated, so nothing about adding a new entry ever requires editing an old one's title. This rotation rule was exercised for the first time the same day this file was created — see Resolution Log.
+**Size discipline, learned directly from what broke last time:** this section rotates. Keep the current entry plus the four most recent in full below; older entries move to `Admin/ALogs/Progress_Log_Changelog.md` in full [repointed 2026-11-11, MAINT-130 batch 4b, from the pre-relocation Archive/Logs/ home; F-PL-1], same split pattern already established for `Unknowns.md`/`Unknowns_Changelog.md`. No version number in any heading here — headings are dated, so nothing about adding a new entry ever requires editing an old one's title. This rotation rule was exercised for the first time the same day this file was created — see Resolution Log.
 
 ---
 
@@ -52,7 +52,7 @@ Full history, including entries rotated out of the five above, in `Admin/ALogs/P
 ## Forward Growth Avenues (2026-09-21)
 
 **Supersedes the 2026-08-21 version** (full prior text preserved in
-`Archive/Logs/Progress_Log_Changelog.md`). Strategic direction ratified by the Human Governing Authority following ChatGPT's operational-proving assessment (2026-09-21): the Forge has accumulated enough governance doctrine that the default question is no longer "what governance should we add?" but "what do we need to prove next, and what is the smallest real-world experiment that produces that evidence?" Three-lane structure replaces the prior Lane A/B/C/D/E taxonomy. Prior Lane A item list is archived in full.
+`Admin/ALogs/Progress_Log_Changelog.md` [repointed 2026-11-11, MAINT-130 batch 4b, from the pre-relocation Archive/Logs/ home; F-PL-1]). Strategic direction ratified by the Human Governing Authority following ChatGPT's operational-proving assessment (2026-09-21): the Forge has accumulated enough governance doctrine that the default question is no longer "what governance should we add?" but "what do we need to prove next, and what is the smallest real-world experiment that produces that evidence?" Three-lane structure replaces the prior Lane A/B/C/D/E taxonomy. Prior Lane A item list is archived in full.
 
 ### Lanes
 
@@ -76,7 +76,7 @@ Governance construction remains available but is no longer the default next step
 
 **MAQT Cycle 1 (Multi-Agent Quorum Trial)**
 Protocol file: `Tests/Multi_Agent_Quorum_Trial.md` · Companion: `Tests/MAQT_Role_Cards_and_Cycle1_Task.md`
-*Status note (2026-10-25, PKC-041): Cycle 1 ran on 2026-09-22 (Gemini / Copilot / Grok, logical isolation only; see `Archive/Logs/Progress_Log_Changelog.md`), and its evidence entry is not in the tree. The open MAQT step is Tier 2 per `Tests/Field_Logs/RUN_CARD-MAQT-Tier2.md`. The direction below is the original and is unchanged.*
+*Status note (2026-10-25, PKC-041): Cycle 1 ran on 2026-09-22 (Gemini / Copilot / Grok, logical isolation only; see `Admin/ALogs/Progress_Log_Changelog.md` [repointed 2026-11-11, MAINT-130 batch 4b, from the pre-relocation Archive/Logs/ home; F-PL-1]), and its evidence entry is not in the tree. The open MAQT step is Tier 2 per `Tests/Field_Logs/RUN_CARD-MAQT-Tier2.md`. The direction below is the original and is unchanged.*
 
 Run Cycle 1 as a **requirements-discovery experiment**, not merely a quorum test. The output should not be "PASS/FAIL." It should be the requirements for the Forge's eventual multi-agent operating environment — which claims hold under three independent agents, which break, where the human remains indispensable, which governance rules need mechanical enforcement, which information must cross agent boundaries and in what form.
 
@@ -163,7 +163,7 @@ The future problem is not "can an AI read the repository?" It is "can an AI reli
 
 ### Prior Lane A candidate list
 
-The prior verified Lane A funnel (2026-08-21/30, confirmed GMP-006/007/008/010/011/012, CLF-011, GMP-013, and the full reclassification table) is preserved in full in `Archive/Logs/Progress_Log_Changelog.md` under the **2026-08-21 Forward Growth Avenues** section. Items from that list still relevant: CLF-011 §4b contract ratification. (GMP-011, formerly listed here as the lowest-friction remaining spec candidate, Resolved 2026-09-23 — see Residual governance work above.)
+The prior verified Lane A funnel (2026-08-21/30, confirmed GMP-006/007/008/010/011/012, CLF-011, GMP-013, and the full reclassification table) is preserved in full in `Admin/ALogs/Progress_Log_Changelog.md` [repointed 2026-11-11, MAINT-130 batch 4b, from the pre-relocation Archive/Logs/ home; F-PL-1] under the **2026-08-21 Forward Growth Avenues** section. Items from that list still relevant: CLF-011 §4b contract ratification. (GMP-011, formerly listed here as the lowest-friction remaining spec candidate, Resolved 2026-09-23 — see Residual governance work above.)
 
 
 
@@ -237,6 +237,8 @@ None active. (Section created 2026-10-25, PKC-008.)
 
 ## Resolution Log
 
+- 2026-11-11: Relocation-repair-miss repoints (Decision Brief 2026-11-11 Item 5B; MAINT-130 batch 4b; co-author delegation; non-independent, disclosed; F-PL-1 disposition). Four operative routing pointers to the pre-relocation `Archive/Logs/Progress_Log_Changelog.md` home repointed to the live `Admin/ALogs/` sidecar: the Purpose section's rotation doctrine, the Forward Growth Avenues supersession note, the Lane A PKC-041 status note, and the Prior Lane A candidate-list pointer — each with an inline dated correction tag preserving the original path. The 2026-10-28 pseudo-audit ledger line's report citation repointed to `Admin/AAudits/AUDIT_14_Admin-Progress_Log.md` in the same pass. Also decoded three literal backslash-u2014 escape sequences to em dashes in the 2026-08-22 SEC-series entries — the F-CIRF-1 class, caught by this pass's escape-scan gate on pre-existing text. Triage note: this pass found four operative routings where F-PL-1 recorded three; the fourth (the supersession note) is the same defect shape and is included. The Parked Concerns table's dated verification rows referencing pre-relocation homes are left untouched as historical records (PKC-007); reclassification remains the human's. Nothing else changed.
+
 - 2026-10-29: **Decision Brief 2026-10-29 ruled — four rulings and one carried closeout enacted (Vibe, Repo Custodian — delegated maintenance, human-ruled).** The human governing authority ruled on all five brief items the same day the brief was filed: (1) targeted integrity sweep — COMMISSIONED in principle, executing once at campaign end, corpus-wide (item 1, option B; internal-proposal posture per the promotion ruling; commissioning annotation in `Admin/INTEGRITY_SWEEP_PROMPT.md`, header stays 1.0.5); (2) PKC-001's carried inverse-check candidate — CLOSED satisfied-by-adoption (item 2, option A: the check exists and runs as `Admin/INTEGRITY_SWEEP_PROMPT.md` v1.0.4 step 14; dated closeout note added to the PKC-001 row in the Parked Concerns table); (3) Kit Spec Gates hold — DISSOLVED (item 3, option B; PKC-022 option-B precedent — stale triggers are dissolved, not refreshed; `Admin/Forge_Audit_Kit.md` v1.28 → v1.29; the gates remain 0/6 and advance only by fresh audit + human ratification; no FAK opened or closed); (4) X3 mechanical retrofit of bare IDs — FULL RETROFIT AUTHORIZED NOW (item 4, option A), staged folder-by-folder with Admin/ first, one commit per folder with the full cascade, frozen history exempt, executing as separate custodian passes interleaved with the campaign; (5) successor auditor — naming DEFERRED to campaign end (item 5, option B), reduced independent review accepted for the remainder of the per-file sweep (ruling note in the custodian prompt §7 addendum). No Parked Concern row status changed by this pass; no unknown opened or closed. Open Parked Concerns rows: 8 (PKC-009, -010, -021, -023, -026, -043, -044, -045; 45 rows recounted live this pass, 37 Resolved).
 
 - 2026-10-29: **Collaboration milestone recorded — Current Lessons entry + Field_Logs evidence file (Vibe, Repo Custodian — delegated maintenance, human-directed).** The human directed a recording of the event: the first structural multi-agent collaboration in the repository's operation, produced by the same-day shared-custodian methodology (auditor promoted into custodianship; ASM roles note and MAINT-04 earlier today). Recorded: a Current Lessons entry carrying the collaboration goal lineage (Lane A, Genesis Phase doctrine, MAQT Cycle 1), the operational event with the independent-verification agreement between lines, and the candid Pathway 1/Pathway 2 accounting; the Convention-8 rotation of the oldest entry (2026-10-28 File-State column-width/str_replace anchor lesson) to `Archive/Logs/Progress_Log_Changelog.md`; and a new cross-agent-session evidence entry `FL-20261029-shared-custodian-collaboration.md` with its index row in `Tests/Field_Logs.md`. No count, Status, Spec Gate, or Unknown changed anywhere; Open Parked Concerns rows stay 8. Human-directed.
@@ -247,7 +249,7 @@ None active. (Section created 2026-10-25, PKC-008.)
 
 - 2026-10-28: **PKC-043 and PKC-044 parked — Decision Brief 2026-10-28d item 8’s standing process conventions canonized** (Vibe, Repo Custodian — delegated maintenance, human-ratified). Adoption-verification (every delegated-stream adoption verified against fresh fetches, never on trust) and fetch-completeness (large-file fetches verified non-truncated before checklist runs; GMP §VII.8 remains INCOMPLETE pending its targeted fresh fetch) recorded as citable Parked rows. Draft numbering note: the working plan had provisionally called these PKC-032/033, but both IDs were already in live use (Operations template gaps; Ops_Scope_Map refresh — both Resolved), so the rows take the next free IDs, PKC-043/044. File State Last Reviewed advanced 2026-10-27 → 2026-10-28. Open Parked Concerns rows: 7.
 
-- 2026-10-28: **Pseudo-audit ledger line (Vibe, Repo Custodian — delegated maintenance, human-ratified findings batch 2026-10-28).** Pseudo-audit, findings only, 2026-10-27; report: Archive/Audits/AUDIT_14_Admin-Progress_Log.md. Per PKC-020 this pass does not advance Last Audit, Last Reviewed, version, or Status; the line exists so the owning file's own record shows the audit happened, per AP-035 Rule 10(c).
+- 2026-10-28: **Pseudo-audit ledger line (Vibe, Repo Custodian — delegated maintenance, human-ratified findings batch 2026-10-28).** Pseudo-audit, findings only, 2026-10-27; report: Admin/AAudits/AUDIT_14_Admin-Progress_Log.md (repointed 2026-11-11, MAINT-130 batch 4b, from the pre-relocation Archive/Audits/ home; F-PL-1). Per PKC-020 this pass does not advance Last Audit, Last Reviewed, version, or Status; the line exists so the owning file's own record shows the audit happened, per AP-035 Rule 10(c).
 
 - 2026-10-27: **Decision Brief b ruling session enacted (Vibe, human-authorized autonomous management).** Seven rows resolved: PKC-005 (FROZEN citation corrected under the freeze-covers-doctrine-not-citations ruling — first FROZEN-text precedent), PKC-006 (read-only pseudo-audit verified the Charter's 13-count, all GOV closure events, and Security_Protocols' header↔sidecar parity; one duplicate-heading fix in the Charter changelog), PKC-007 (log irregularities declared historical), PKC-011 (owner confirmed `Lazarus-Forge-` was a deleted learning-era experiment; §VI updated to retired), PKC-012 (folder-count convention stated explicitly across ASM-001/§II/Adm_Scope_Map), PKC-019 (three RIP-011 semantics ratified as practiced; codification at RIP's next natural revision), PKC-037 (read-only pseudo-audit verified CF-002 reciprocity and all four Tests files' interfaces; no defect). Also enacted: INTEGRITY_SWEEP_PROMPT v1.0.4 step 14 (the PKC-001 inverse check — Resolution Log newest entry vs newest body/File State change), `Automation/audit_lib.py` bare colliding-ID citation check (PKC-021 item iii). Findings-only per PKC-020 where applicable; every substantive edit carried its own file-level bookkeeping. Open Parked Concerns rows: 5.
 
@@ -1273,12 +1275,12 @@ None active. (Section created 2026-10-25, PKC-008.)
   2026-08-11 version.** Full prior section preserved verbatim in
   `Archive/Logs/Progress_Log_Changelog.md` rather than discarded. Spot-
   checked before adoption, not applied on trust: FN-001/FN-005 status
-  (Critical, Open, both blocking network connection \u2014 confirmed exact
+  (Critical, Open, both blocking network connection — confirmed exact
   match), SEC-007a/SEC-007b split (confirmed, 007b correctly shown
   blocked on 007a), and the approximate Active Index counts (~49
-  Critical claimed, 48 found by direct count \u2014 close enough, self-
+  Critical claimed, 48 found by direct count — close enough, self-
   labeled approximate). No fabrication found. New section is
-  substantially more structured than what it replaces \u2014 explicit lanes
+  substantially more structured than what it replaces — explicit lanes
   distinguishing spec-draftable work from human-only decisions from
   evidence-blocked items, plus an explicit non-work list and a suggested
   session sequence. Human-directed.
