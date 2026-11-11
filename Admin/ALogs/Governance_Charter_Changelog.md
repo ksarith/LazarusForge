@@ -4,7 +4,7 @@
 
 Relocated here 2026-07-23, matching the same-day precedent established for
 `Admin/Auditor_Protocols.md`'s own sidecar relocation to
-`Archive/Logs/Auditor_Protocols_Logs.md`, which itself followed the earlier
+`Archive/Logs/Auditor_Protocols_Logs.md` [since 2026-10-30 at `Admin/ALogs/`; tagged 2026-11-11, MAINT-130 batch 4e], which itself followed the earlier
 exception documented for `Admin/Forge_Audit_Kit.md`'s sidecar relocation at
 v1.10 and `Unknowns.md`'s changelog split at its own v4.20 cleanup pass:
 this is a working constitutional document, and its self-tracking content
@@ -19,8 +19,8 @@ reversion to the centralized-registry failure mode `Unknowns.md` retired
 at v4.3 — that failure was one global store for every module's unknowns;
 this is a per-file archive, still 1:1 owned by `Admin/Governance_Charter.md`
 alone, physically split rather than logically centralized. The same
-distinction already applies to `Archive/Logs/Forge_Audit_Kit_Changelog.md`,
-`Unknowns_Changelog.md`, and `Archive/Logs/Auditor_Protocols_Logs.md`.
+distinction already applies to `Archive/Logs/Forge_Audit_Kit_Changelog.md` [since 2026-10-30 at `Admin/ALogs/`; tagged 2026-11-11, MAINT-130 batch 4e],
+`Unknowns_Changelog.md`, and `Archive/Logs/Auditor_Protocols_Logs.md` [since 2026-10-30 at `Admin/ALogs/`; tagged 2026-11-11, MAINT-130 batch 4e].
 
 `Admin/Governance_Charter.md` retains: File State, Scope Boundary, the
 full Tier 1 Axioms (Protections and Prohibitions Clauses), all governance
