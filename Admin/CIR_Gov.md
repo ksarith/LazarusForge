@@ -587,9 +587,11 @@ This file's own Resolution Log (2026-07-31 filing entry, 2026-07-31 Skeptic/Audi
 
 ## Resolution Log
 
+- 2026-11-11: Path repoint (Decision Brief 2026-11-11 Item 5B; MAINT-130 batch 4; co-author delegation; non-independent, disclosed). The 2026-10-28 pseudo-audit ledger line's report citation repointed from the pre-relocation `Archive/Audits/` home to the live report at `Admin/AAudits/AUDIT_04_Admin-CIR_Gov.md` (F-CIR-2; same 2026-10-28 ledger-line batch as F-SP-1/F-EP-3). Original path preserved in the inline correction tag; citation-form-only; nothing else changed.
+
 - 2026-10-28 (later same-day): **PKC-031 X2 sweep + AUDIT_04 F3 enacted (Vibe, Repo Custodian — delegated maintenance, human-ratified batch 2026-10-28c).** (1) §Binding Status sentence vocabulary migrated "Proposed" → "Exploration" (File State Status already migrated 2026-10-25). (2) ## Drift Indicators section added — triggers: GOV-008 dependency flip; X11 wrapper-decay bookkeeping (body-changing passes advance Last Audit/Auditor and log here; findings-only passes log only the ledger line, PKC-020); PKC-031/PKC-003 vocabulary and citation drift. (3) File State Last Audit/Auditor advanced. No doctrine change; the architecture remains Exploration — Not Ratified.
 
-- 2026-10-28: **Pseudo-audit ledger line (Vibe, Repo Custodian — delegated maintenance, human-ratified findings batch 2026-10-28).** Pseudo-audit, findings only, 2026-10-27; report: Archive/Audits/AUDIT_04_Admin-CIR_Gov.md. Per PKC-020 this pass does not advance Last Audit, Last Reviewed, version, or Status; the line exists so the owning file's own record shows the audit happened, per AP-035 Rule 10(c).
+- 2026-10-28: **Pseudo-audit ledger line (Vibe, Repo Custodian — delegated maintenance, human-ratified findings batch 2026-10-28).** Pseudo-audit, findings only, 2026-10-27; report: Admin/AAudits/AUDIT_04_Admin-CIR_Gov.md (repointed 2026-11-11, MAINT-130 batch 4, from the pre-relocation Archive/Audits/ home; F-CIR-2). Per PKC-020 this pass does not advance Last Audit, Last Reviewed, version, or Status; the line exists so the owning file's own record shows the audit happened, per AP-035 Rule 10(c).
 
 - 2026-10-25: Status "Proposed" changed to "Exploration" (human-directed, PKC-031 ruling: "Proposed" is retired and a newly generated file starts at Exploration). No other field, section or Unknown changed.
 
