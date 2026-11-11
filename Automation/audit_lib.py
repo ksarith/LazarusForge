@@ -26,6 +26,15 @@ reuse surface, not internal implementation detail):
 Also defines Finding, the structured-finding class both tools append to.
 Every finding carries severity and category from construction — not
 retrofitted onto a plain string later.
+
+2026-11-11 (MAINT-130 batch 4i, Decision Brief 2026-11-11 Item 5B
+ruling B): the LEGACY finding message repointed from Discovery.md to
+Archive/Rename_Registry.md — the Rename Registry migrated from
+Discovery.md 2026-08-09 and this message predated the relocation
+(Campaign 4 finding F-CT-1's corroborating tooling instance). Message
+string only; no check logic changed. Automation is template-exempt
+(File_Template.md Template Exemptions class 7); recorded here per this
+module's own docstring provenance convention.
 """
 
 import re
@@ -132,7 +141,7 @@ def check_cross_refs(filename, content, registry, aliases, findings):
             findings.append(Finding(
                 "WARNING", "REFERENCE", filename,
                 f"[LEGACY] '{ref}' — legacy name; check Rename Registry "
-                f"in Discovery.md for canonical path."
+                f"in Archive/Rename_Registry.md for canonical path."  // repointed 2026-11-11, MAINT-130 batch 4i (was Discovery.md; registry migrated 2026-08-09)
             ))
         elif clean in PLANNED_RENAMES:
             findings.append(Finding(
