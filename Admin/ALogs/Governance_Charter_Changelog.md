@@ -30,6 +30,10 @@ GOV-XXX sidecar entry and the full Resolution Log — lives here now.
 
 ---
 
+## 2026-11-11 — GOV-022 sidecar entry backfill (Claude draft, human-requested; lands only on the human governing authority's ruling)
+
+The Charter's File State, the 2026-08-21 Progress_Log entry and PKC-006's 2026-10-27 resolution all name this file as holding the full GOV-022 Closure Event; this file carried GOV-001 through GOV-021 and no GOV-022 entry (CAMPAIGN4_AUDIT_03 F-CH-1; CAMPAIGN4_AUDIT_04 F-VG-1). A GOV-022 entry is appended below, reconstructed only from the Charter body's Reversibility section and its attribution note, the Charter body's 2026-08-20 closure row, and the Progress_Log 2026-08-21 entry; fields those sources do not state are marked not recoverable. It is a backfill, not the original entry. No Charter field, Status, Spec Gate or Last Reviewed value is advanced by this pass.
+
 ## 2026-11-04 — MAINT-56 File State row retirement (Vibe, Repo Custodian — delegated line, human-ruled 2026-11-04)
 
 The Charter body’s File State Last Audit and Auditor rows retired per the `Admin/File_Template.md` §2 amendment (9-field schema, human ruling 2026-11-04, MAINT-56); both rows preserved verbatim below per the never-delete discipline. In the same pass: the retired companion-repository dead name repointed to `LazarusForge` in the Charter’s Relationship to Existing Documents, and the Charter body’s Resolution Log “Full history” pointer repointed to this file’s current home (path-only; dated history untouched — same class as the 2026-10-31 MAINT-29 follow-up). Charter version 0.10 → 0.11 (working). No Tier 1 Axiom, FROZEN text, or enforcement mechanism modified; no GOV-* unknown opened or closed.
@@ -667,4 +671,37 @@ independently — a shared mechanism may serve both.
 | Owner         | `Admin/Governance_Charter.md`    |
 | First Logged  | 2026-07-19 (as a candidate ID, in `Admin/Autonomy_Divergence_Protocol.md`) — formally registered here 2026-07-27 |
 | Last Reviewed | 2026-07-27                       |
+
+---
+
+### GOV-022 — Reversibility as a cross-cutting operating principle (backfilled entry)
+
+*Backfilled 2026-11-11 from the Charter body (Operating Principles, Reversibility and its attribution note; the 2026-08-20 Multi-Agent Closure Event row) and the Progress_Log 2026-08-21 entry. The original sidecar entry cited by those records is not present in this file; this entry adds no fact those sources do not state, and fields they do not state are marked not recoverable.*
+
+| Field         | Value                           |
+|---------------|----------------------------------|
+| Status        | Resolved — Payment via Specification |
+| Risk          | not recoverable from live records |
+| Priority      | not recoverable from live records |
+| Type          | not recoverable from live records |
+| Blocking      | not recoverable from live records |
+| Owner         | `Admin/Governance_Charter.md`    |
+| First Logged  | 2026-07-23 (per the Charter body's attribution note: "logged 2026-07-23") |
+| Last Reviewed | 2026-08-21 (ratification date per the Charter body; the original field value is not recoverable) |
+
+**Description:** Whether reversibility should be named as a cross-cutting operating principle in the Charter. Grok framed three options (the exact original wording is not recoverable). The Charter body's note records that Option (a) was chosen over Option (b) because the connection is most useful where the pattern already lives operationally (`Operations/Gate_03_Reduction.md`), not primarily as an audit heuristic; Option (c) was the "already sufficiently expressed / redundant" position.
+
+**Closure Event (2026-08-20; ratified 2026-08-21):**
+- **Unknown:** GOV-022
+- **Proposed status:** Resolved
+- **Payment type:** Specification
+- **Basis:** Source investigation (Gate_03_Reduction.md, the Resolved Unknown Discharge Procedure in `Admin/Forge_Audit_Kit.md`, and the Epistemic Ledger EF-0.3 in `Admin/Auditor_Protocols.md`) found the principle independently implemented in three places with no cross-linking between them or to Axiom P-1 / Axiom Q-3 — evidence against Option (c)'s redundancy premise. The Reversibility section was integrated into the Charter body as a minimal cross-reference, explicitly not a ninth Tier 1 Axiom and with explicit non-goals.
+- **Proposer:** Claude, 2026-08-20, drafted after a three-agent discussion and at the human governing authority's direct question whether Gate_03 already articulated the principle.
+- **Verifier:** ChatGPT — Pass across eight dimensions; reversed its own initial preference for Option (c) once the source investigation was available, and asked that the reversal be preserved as Lessons Learned.
+- **Independence attestation:** not recoverable from live records.
+- **Human ratification record:** Ratified by the Human Governing Authority, 2026-08-21 (per the Charter body's attribution note and the Progress_Log 2026-08-21 entry). Rationale text not recoverable.
+
+**Resolution:** Closed via the Reversibility section integrated into `Admin/Governance_Charter.md` (Operating Principles).
+
+**Lessons Learned (as recorded in the Charter body's 2026-08-20 closure row):** Redundancy requires one clear expression covering the ground; three independent reinventions of the same principle with zero cross-linking is evidence of a missing index rather than existing coverage. A verifier reversing its own prior substantive judgment on the record, not just declining to self-verify, is itself worth preserving as a pattern.
 
