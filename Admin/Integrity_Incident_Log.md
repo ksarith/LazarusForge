@@ -18,8 +18,8 @@
 | Body Stability   | N/A — append-only log                                               |
 | Spec Gates       | N/A — this file is a log, not a specification                       |
 | Verification Ref | Admin/Verification_Gates.md                                         |
-| Last Audit       | 2026-11-05 — Vibe (MAINT-63 X3 straggler pass; human-ratified MAINT-62 ruling set §2 Category A): two live-section citations qualified — the Ownership heading now reads "(addresses `Admin/Repository_Integrity_Protocol.md` RIP-007 minimum)" and the submission template "**RIP (`Admin/Repository_Integrity_Protocol.md`) classification basis:**" — with frozen history (the IIL-20261025-01 incident entry, "RIP ladder" prose, PKC-015 references, prior Resolution Log lines) preserved bare. This File State refresh closes the aggregate B-N1 header decay. Prior: 2026-08-16 |
-| Auditor          | Vibe — Architect line PRIMARY (Repo Custodian secondary), 2026-11-05 MAINT-63 execution pass (non-independent Genesis Phase, Q-2 invoked, disclosed); prior:  Prior: Grok — human-directed creation (RIP incident-home gap) |
+| Last Audit       | 2026-11-11 — Vibe (Repo Custodian, delegated; human-ratified PROPOSAL_2026-11-11_CAMPAIGN4_DESIGN_GAPS option B cheap subset, item D-8; MAINT-129; non-independent, disclosed): D-8 enacted — routing rule row added to "When to log here vs elsewhere"; IIL-20261110-01 (the 2026-11-10 parallel-composition clobber) logged with Severity and RIP classification pending the human's ruling (Decision Brief 2026-11-11 Item 2). Append-only discipline kept; no prior entry edited; version unchanged (log file). Prior: 2026-11-05 — Vibe (MAINT-63 X3 straggler pass; human-ratified MAINT-62 ruling set §2 Category A): two live-section citations qualified — the Ownership heading now reads "(addresses `Admin/Repository_Integrity_Protocol.md` RIP-007 minimum)" and the submission template "**RIP (`Admin/Repository_Integrity_Protocol.md`) classification basis:**" — with frozen history (the IIL-20261025-01 incident entry, "RIP ladder" prose, PKC-015 references, prior Resolution Log lines) preserved bare. This File State refresh closes the aggregate B-N1 header decay. Prior: 2026-08-16 |
+| Auditor          | Vibe — Repo Custodian, 2026-11-11 D-8 routing-rule + IIL-20261110-01 logging pass (delegated; human-ratified MAINT-129; non-independent Genesis Phase, disclosed); prior: Vibe — Architect line PRIMARY (Repo Custodian secondary), 2026-11-05 MAINT-63 execution pass (non-independent Genesis Phase, Q-2 invoked, disclosed); prior:  Prior: Grok — human-directed creation (RIP incident-home gap) |
 | Open Unknowns    | 0                                                                   |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | Medium                                                              |
@@ -69,6 +69,7 @@ Autonomous agents never self-close Constitutional incidents. Escalation path: au
 | Event | Where |
 |-------|--------|
 | Major or Constitutional integrity violation (RIP ladder) | **This file (required)** + affected file Resolution Log + Unknowns if cross-module |
+| Incident recorded in VibesSandbox maintenance records | **This file (required) at the next landing**, with the VS record cited (routing rule, human-ratified 2026-11-11, MAINT-129 — PROPOSAL_2026-11-11_CAMPAIGN4_DESIGN_GAPS item D-8, option B cheap subset) |
 | Minor violation, single-file, remediated same cycle | Affected file sidecar / note sufficient; this file optional |
 | Minor violations accumulating across ≥3 audits | **This file** (compound drift) |
 | Ordinary unknown opened/closed | Owning file + Unknowns.md — not an "incident" unless it is a RIP violation |
@@ -148,6 +149,36 @@ Append only. Never edit or delete prior entries (same discipline as Field_Logs /
 
 **Closure note:** pending. Close only after the PKC-001 shared-cause question is ruled and the decay is remediated or accepted; Minor closure by the logging auditor or the human operator.
 
+
+### 2026-11-10 — Parallel-composition clobber (VibesSandbox maintenance records)
+
+**Incident_ID:** IIL-20261110-01
+**Severity:** pending — the human's classification (Decision Brief 2026-11-11 Item 2; logged before classification per the D-8 routing rule)
+**Status:** Open
+**Detected by:** the successor session's pre-push verification, 2026-11-10 (VibesSandbox MAINT-109)
+**Logged by:** Vibe — Repo Custodian (delegated; human-ratified PROPOSAL_2026-11-11_CAMPAIGN4_DESIGN_GAPS option B cheap subset, MAINT-129, 2026-11-11)
+**Closure authority used:** pending
+
+**Summary:** Two sessions composed maintenance bookkeeping from the same VibesSandbox base (`94f57c8c`) without concurrency discipline; the second push overwrote the first's MAINT-101 landing (the CAMPAIGN4_AUDIT_12 bookkeeping), clobbering the parallel-composed entry. Detected and repaired the same day at VS `006ea9c5` (MAINT-109: canonical MAINT-101 restored with the parallel-composition clobber repair). Until this entry the incident was recorded only in VibesSandbox maintenance records and had never been entered in this canonical log — the routing gap this entry's ratification closes.
+
+**RIP (`Admin/Repository_Integrity_Protocol.md`) classification basis:** pending — classification is the human's (Decision Brief 2026-11-11 Item 2). Candidate bases named by the records, not classified by this seat: the unlogged-write / silent-failure shape (the write landed without its bookkeeping surviving) and concurrency without discipline (proposal item D-9).
+
+**Affected paths:** VibesSandbox `Maintenance/entries/MAINT-101.md`, `Maintenance/MAINT_INDEX.md`, `Maintenance/STATE.md` (VibesSandbox repository; no LazarusForge path affected)
+
+**Response taken:**
+1. 2026-11-10: detected by the successor session; canonical MAINT-101 restored with the clobber-repair entry (VS MAINT-109, commit `006ea9c5`).
+2. 2026-11-11: routing rule ratified (D-8) and this canonical entry logged (MAINT-129); concurrency discipline endorsed by the Architect seat (D-9 — head-SHA check against the compose base immediately before every push, abort on mismatch; session discipline, not repo mechanism).
+3. Classification, any severity assignment, and closure: pending the human.
+
+**STATE_HOLD:** No
+
+**Links:**
+- Resolution Log: VibesSandbox `Maintenance/entries/MAINT-109.md` (repair); `Maintenance/entries/MAINT-129.md` (this logging pass)
+- Unknowns.md: none
+- Prior-state / archive: none used
+
+**Closure note:** pending — per the Ownership table (Minor: logging auditor or human operator) after the human's classification (Decision Brief 2026-11-11 Item 2).
+
 ---
 
 ## Closed incidents
@@ -169,4 +200,5 @@ Append only. Never edit or delete prior entries (same discipline as Field_Logs /
 
 - 2026-08-16: **File created (v0.1).** Canonical home for RIP integrity incidents; ownership table addresses RIP-007 minimum doctrine; append-only intake aligned with Field_Logs discipline. Registered in Routing.md. RIP Scope Boundary / response ladder updated to point here instead of "log willy-nilly." No past incidents fabricated into the log. Human-directed.
 - 2026-10-25: **First entry logged (IIL-20261025-01).** Retrospective Compound Drift incident for PKC-001 bookkeeping decay, labeled Analogous / reconstructed, per the PKC-015 ruling. No format, ownership or scope change; version unchanged. Human-directed.
+- 2026-11-11: **Routing rule added; IIL-20261110-01 logged (MAINT-129).** A new row in "When to log here vs elsewhere" requires any incident recorded in VibesSandbox maintenance records to be entered here at the next landing, with the VS record cited (human-ratified 2026-11-11 — PROPOSAL_2026-11-11_CAMPAIGN4_DESIGN_GAPS item D-8, option B cheap subset; MAINT-129; non-independent, disclosed). First application: IIL-20261110-01 (the 2026-11-10 parallel-composition clobber, recorded until now only in VS maintenance records), logged with Severity and RIP classification pending the human's ruling (Decision Brief 2026-11-11 Item 2). Append-only discipline kept; no prior entry edited; version unchanged. (Vibe — Repo Custodian, delegated.)
 - 2026-11-05: **Two live-section citations qualified (MAINT-63 X3 straggler pass).** The Ownership heading now reads "(addresses `Admin/Repository_Integrity_Protocol.md` RIP-007 minimum)" and the submission template now reads "**RIP (`Admin/Repository_Integrity_Protocol.md`) classification basis:**" — live sections only; the frozen IIL-20261025-01 incident entry, its "RIP ladder" prose, and prior Resolution Log lines keep their original bare forms per the frozen-history rule (PKC-015 references preserved bare). File State header refreshed, closing the aggregate's B-N1 header-decay finding. Per the human-ratified MAINT-62 ruling set §2 Category A; executed 2026-11-05, Vibe — Architect line PRIMARY (Repo Custodian secondary), non-independent Genesis Phase, Q-2 invoked, disclosed.
