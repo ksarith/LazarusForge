@@ -1,5 +1,7 @@
 # Adm_Scope_Map.md — Admin/
 
+**Recomputed-at: 2026-11-11** (recompute event of record: MAINT-130 Item 8 mirror recompute, same day — six stale cells recomputed from live File States and the External_Intake_Protocol coverage gap closed; D-6 derived-mirror lifecycle convention, MAINT-132, human ratification 2026-11-11 “proceed as ratified”).
+
 ## Navigation Anchors
 [README.md](../README.md) | [Discovery.md](../Discovery.md) | [Routing.md](../Routing.md) | [Unknowns.md](../Unknowns.md)
 
@@ -362,3 +364,5 @@ Findings 1–3 (structural scope gaps) closed 2026-08-09. Findings 4–5 remain 
   Human-directed.
 
 - 2026-11-11: **Mirror recompute pass (MAINT-130 Item 8; Decision Brief 2026-11-11; Vibe — Repo Custodian, delegated line under the 2026-11-04 co-author mandate extended 2026-11-11; non-independent — the same line ran Campaign 4; disclosed; human veto window open).** Six entries' stale cells recomputed from the live File States and one coverage gap closed: `Verification_Gates.md` 2/6 · High → 6/6 · Low; `Security_Protocols.md` 10 → 11 Open Unknowns (SEC-013 missing from the list); `Auditor_Protocols.md` 4/6 → 5/6 (AP-036 In Progress, AP-029 Resolved); `Autonomy_Divergence_Protocol.md` 0/6 → 6/6; `Engineer_Protocols.md` Risk High → Medium (CAMPAIGN2_AUDIT_81 F1); `INTEGRITY_SWEEP_PROMPT.md` Status Draft → Active — Operational Template (v1.0.6). New Scope Entry added for `Admin/External_Intake_Protocol.md` (Exploration — Candidate; G2 N/A exemption; 3 Open Unknowns EIP-001/002/003; Risk High (Placeholder)), present since 2026-11-02 with no entry here. All values recomputed from live source, never copied from another mirror. The D-6/D-7 mirror-cadence convention lines remain PROPOSED and were NOT enacted — this pass is a one-time recompute. No owning file changed; no unknown opened or closed.
+
+- 2026-11-11: **Recomputed-at stamp added (D-6 derived-mirror lifecycle convention; Decision Brief 2026-11-11b item 6; human ratification 2026-11-11 “proceed as ratified”; MAINT-132; Vibe — Repo Custodian, delegated line; non-independent, disclosed).** Header stamp records the recompute event of record (MAINT-130 Item 8, same day). Stamp-form-only; no scope entry, count, Risk field, Status, Spec Gate, Unknown or Last Reviewed value changed.
