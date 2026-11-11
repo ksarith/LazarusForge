@@ -30,6 +30,17 @@ GOV-XXX sidecar entry and the full Resolution Log — lives here now.
 
 ---
 
+## 2026-11-11 — MAINT-133 Blocking/High-risk cohort pass (D-3 Aging Rule remedy, Kit v1.34; genuine review)
+
+The one-time cohort pass authorized at the Aging Rule’s adoption (Kit v1.34; Decision Brief 2026-11-11b item 1): tripped registered entries of Blocking or High-risk class genuinely reviewed — each entry re-read against the live body state at LF head `b2ae99e6`, not a batch refresh. Last Reviewed advanced only here, on this genuine review. Executed under the human governing authority’s co-author delegation (2026-11-04 mandate; the 2026-11-11 proceed-as-ratified word, verbatim in the MAINT-133 entry and the 11b brief Addendum); non-independent (the same line drafted the Aging Rule remedy and runs this pass), disclosed; human veto window open.
+
+- **GOV-005** (Long-term constitutional stability unproven; Last Reviewed 2026-05-23 → 2026-11-11): promotion remains blocked by this unknown (File State Spec Gates cell) and by Enforcement Checkpoint 2 (Bootstrap Paradox); no operational cycles or site-confirmation events recorded in the live record through 2026-11-11. Status Open / Risk High / Priority Critical / Blocking Yes all confirmed accurate. No amendment.
+- **GOV-006** (Human override authenticity validation undefined; 2026-06-16 → 2026-11-11): the gap is live — the Charter body’s Checkpoint-2 block states human override mechanisms remain declarative-only (GOV-006-A); no authentication mechanism has landed. Status Open / Risk High confirmed. No amendment.
+- **GOV-008** (Minimum hardware and agent quorum; 2026-07-31 → 2026-11-11): the GMP §VII candidate specification (2026-07-31) carries no ratification record in the Charter body, Progress_Log, or the Active Index row; the Blocking Watch row’s wording (GOV-007 Genesis Phase exit condition not yet met) verified accurate. Status confirmed. No amendment.
+
+Scope disclosure: this pass enumerated the six registered owners whose sidecars were read this pass (Charter, Security_Protocols, Cognitive_Salvage_Layer, Cognitive_Frameworks, Ethical_Constraints, Computational_Institutional_Reasoning) plus the Active Index’s Critical/Blocking cross-reference; the remaining registered owners (Auditor_Protocols, Canonical_Terms, Repository_Integrity_Protocol, Governance_Migration_Protocol, External_Intake_Protocol, Agent_Verification_Event) were not enumerated this pass and remain in the derived owed-review set, surfacing per battery run under the D-3 remedy. Within-bar confirmed, not tripped: SEC-007b (2026-09-10), EC-011 (2026-09-27), EC-012 (2026-09-18), CF-001 (2026-08-22), CIR-001 (2026-10-27). Resolved entries excluded (EC-001/002, GOV-003/013/015/018).
+
+---
 ## 2026-11-11 — GOV-022 sidecar entry backfill (Claude draft, human-requested; lands only on the human governing authority's ruling)
 
 The Charter's File State, the 2026-08-21 Progress_Log entry and PKC-006's 2026-10-27 resolution all name this file as holding the full GOV-022 Closure Event; this file carried GOV-001 through GOV-021 and no GOV-022 entry (CAMPAIGN4_AUDIT_03 F-CH-1; CAMPAIGN4_AUDIT_04 F-VG-1). A GOV-022 entry is appended below, reconstructed only from the Charter body's Reversibility section and its attribution note, the Charter body's 2026-08-20 closure row, and the Progress_Log 2026-08-21 entry; fields those sources do not state are marked not recoverable. It is a backfill, not the original entry. No Charter field, Status, Spec Gate or Last Reviewed value is advanced by this pass.
@@ -155,7 +166,7 @@ Pseudo-audit, findings only, 2026-10-27; report: Archive/Audits/AUDIT_01_Admin-G
 | Blocking      | Yes                             |
 | Owner         | Repository-wide                 |
 | First Logged  | 2026-05-23                      |
-| Last Reviewed | 2026-05-23                      |
+| Last Reviewed | 2026-11-11 |
 
 **Description:** Multi-cycle survivability of constitutional governance architecture — including Tier 1 Axiom stability across agent successions — remains unproven.
 
@@ -176,7 +187,7 @@ Pseudo-audit, findings only, 2026-10-27; report: Archive/Audits/AUDIT_01_Admin-G
 | Blocking      | No                              |
 | Owner         | `Admin/Governance_Charter.md`   |
 | First Logged  | 2026-05-23                      |
-| Last Reviewed | 2026-06-16                      |
+| Last Reviewed | 2026-11-11 |
 
 **Description:** The repository lacks a defined mechanism for validating human override authenticity versus authority spoofing. Axiom P-4 (Agency and Consent) makes this a constitutional requirement — but the mechanism remains undefined.
 
@@ -224,7 +235,7 @@ Pseudo-audit, findings only, 2026-10-27; report: Archive/Audits/AUDIT_01_Admin-G
 | Blocking      | No                              |
 | Owner         | `Admin/Governance_Charter.md`   |
 | First Logged  | 2026-05-25                      |
-| Last Reviewed | 2026-07-31                      |
+| Last Reviewed | 2026-11-11 |
 
 **Description:** The minimum number and diversity of independent agents or hardware systems required to satisfy Axiom Q-2 (Separation of Powers) during Genesis Phase is undefined. The Genesis Phase exit condition depends on this quorum definition.
 

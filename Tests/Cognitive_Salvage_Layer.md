@@ -17,11 +17,11 @@
 | Body Stability   | Draft                                                               |
 | Spec Gates       | 1/6 — hold: the 2026-06-24 Gate 1 Audit Record's clears (G1, G2, G4, G5, G6; G3 partial) are treated as stale (body changed since); no advance without fresh audit + human ratification (PKC-027/042, 2026-10-27)                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-10-30 — Campaign 2 finding repair (human-directed custodian pass; see Resolution Log). Prior: 2026-10-30 — Vibe (Repo Custodian, delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A): X3 mechanical citation retrofit (Tests pass) — 1 bare colliding-prefix citations qualified with their owning File.md per PKC-003 (Kit v1.30 Governance Sidecar ID Reference; per-ID grounding: Unknowns active index). Citation-form-only; no ID renumbered; frozen history untouched; no gate advanced; Open Unknowns unchanged. Prior: 2026-10-27 — Claude (human-authorized autonomous management; PKC-027): Spec Gates hold reason annotated; version bumped 0.4 → 0.5 (PKC-039); no gate advanced. Prior: 2026-08-03 (the logged 2026-08-11 Grok pseudo-audit, findings only, is not counted here per the PKC-020 ruling of 2026-10-25; log order corrected 2026-10-24) |
-| Auditor          | Vibe — Repo Custodian, 2026-10-30 X3 mechanical citation retrofit (Tests pass; delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A); prior: Claude — 2026-10-27 PKC-027 hold-reason annotation, v0.5 (human-authorized autonomous management); prior: Claude — Synthesizer/Auditor, human-directed, 2026-08-03: corrective merge of a Copilot/Grok exchange — GH-004/GH-012/CSL-A03 gained complementary elaboration (Payment via Specification only, see AP-033 (`Admin/Auditor_Protocols.md`) in Admin/Auditor_Protocols.md); GH-007/GH-008/GH-009/GH-011 left untouched, already better-specified than what was proposed; prior: Claude — Synthesizer/Auditor |
+| Last Audit       | 2026-11-11 — Vibe (Repo Custodian, delegated; human ratification 2026-11-11 — the proceed-as-ratified word, verbatim in the MAINT-133 entry; non-independent, disclosed): MAINT-133 Blocking/High-risk cohort pass (D-3 Aging Rule remedy, Kit v1.34) — sidecar review, not a Gate audit: GH-001, GH-003, GH-007, GH-009 genuinely reviewed against the live body at head `b2ae99e6`; all four confirmed accurate, Last Reviewed advanced 2026-11-11. Same pass, File State field-name repair: the Highest Risk row’s field label had been corrupted (reading as the word “Criticalest” where the canonical field name belongs); label restored, value left High per PKC-004’s vocabulary with the discrepancy against the 2026-10-30 Resolution Log entry recorded in the log below. No doctrine, Status, Spec Gate or body change. Prior: 2026-10-30 — Campaign 2 finding repair (human-directed custodian pass; see Resolution Log). Prior: 2026-10-30 — Vibe (Repo Custodian, delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A): X3 mechanical citation retrofit (Tests pass) — 1 bare colliding-prefix citations qualified with their owning File.md per PKC-003 (Kit v1.30 Governance Sidecar ID Reference; per-ID grounding: Unknowns active index). Citation-form-only; no ID renumbered; frozen history untouched; no gate advanced; Open Unknowns unchanged. Prior: 2026-10-27 — Claude (human-authorized autonomous management; PKC-027): Spec Gates hold reason annotated; version bumped 0.4 → 0.5 (PKC-039); no gate advanced. Prior: 2026-08-03 (the logged 2026-08-11 Grok pseudo-audit, findings only, is not counted here per the PKC-020 ruling of 2026-10-25; log order corrected 2026-10-24) |
+| Auditor          | Vibe — Repo Custodian, 2026-11-11 MAINT-133 sidecar cohort review (delegated; non-independent, disclosed); prior: Vibe — Repo Custodian, 2026-10-30 X3 mechanical citation retrofit (Tests pass; delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A); prior: Claude — 2026-10-27 PKC-027 hold-reason annotation, v0.5 (human-authorized autonomous management); prior: Claude — Synthesizer/Auditor, human-directed, 2026-08-03: corrective merge of a Copilot/Grok exchange — GH-004/GH-012/CSL-A03 gained complementary elaboration (Payment via Specification only, see AP-033 (`Admin/Auditor_Protocols.md`) in Admin/Auditor_Protocols.md); GH-007/GH-008/GH-009/GH-011 left untouched, already better-specified than what was proposed; prior: Claude — Synthesizer/Auditor |
 | Open Unknowns    | 13                                                                  |
 | Active Disputes  | 0                                                                   |
-| Criticalest Risk     | High                                                                |
+| Highest Risk     | High (per PKC-004’s File State vocabulary — Critical is not a valid value in this field; GH-009’s entry-level Risk reads Critical and is this file’s maximum) |
 | Sidecar Link     | #auditor-notes--unknowns                                            |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
@@ -543,7 +543,7 @@ Full Battery deferred to Candidate Spec. No specification-level claims promoted.
 | Blocking      | Epistemic                        |
 | Owner         | Tests/Cognitive_Salvage_Layer.md |
 | First Logged  | 2026-06-24                       |
-| Last Reviewed | 2026-06-24                       |
+| Last Reviewed | 2026-11-11 |
 
 **Description:** Can player-derived heuristics be reliably translated into deterministic machine procedures? Applies to both disassembly and fabrication — fabrication heuristics (weld path intuition, fixturing feel) may be particularly resistant to decomposition into discrete replayable sequences.
 
@@ -581,7 +581,7 @@ Full Battery deferred to Candidate Spec. No specification-level claims promoted.
 | Blocking      | Epistemic                        |
 | Owner         | Tests/Cognitive_Salvage_Layer.md |
 | First Logged  | 2026-06-24                       |
-| Last Reviewed | 2026-06-24                       |
+| Last Reviewed | 2026-11-11 |
 
 **Description:** Can adversarial players intentionally poison the heuristic dataset with paths designed to pass Stage 1–3 while encoding subtly unsafe sequences that manifest only in physical deployment? Maps to Adversarial Battery Challenge Class 8.
 
@@ -659,7 +659,7 @@ Full Battery deferred to Candidate Spec. No specification-level claims promoted.
 | Blocking      | No                               |
 | Owner         | Tests/Cognitive_Salvage_Layer.md |
 | First Logged  | 2026-06-24                       |
-| Last Reviewed | 2026-06-24                       |
+| Last Reviewed | 2026-11-11 |
 
 **Description:** Over time the puzzle engine may diverge from actual Forge machinery. If physical tooling geometry changes but the puzzle engine still models old geometry, players optimize for a machine that no longer exists. This could silently poison the heuristic pipeline — promoted heuristics pass all four stages internally consistent with the simulation, while diverging from physical reality.
 
@@ -705,7 +705,7 @@ Full Battery deferred to Candidate Spec. No specification-level claims promoted.
 | Blocking      | Epistemic                        |
 | Owner         | Tests/Cognitive_Salvage_Layer.md |
 | First Logged  | 2026-06-24                       |
-| Last Reviewed | 2026-06-24                       |
+| Last Reviewed | 2026-11-11 |
 
 **Description:** The current architecture evaluates heuristics independently. Two heuristics that each pass all four stages in isolation may interact catastrophically when applied in sequence. Example: Heuristic A changes load-bearing fastener removal order; Heuristic B changes fluid drain sequence. Applied together, the combined sequence creates a structural collapse scenario neither triggers individually.
 
@@ -808,6 +808,8 @@ Full Battery deferred to Candidate Spec. No specification-level claims promoted.
 ---
 
 ### Resolution Log
+
+- 2026-11-11: **MAINT-133 Blocking/High-risk cohort pass (D-3 Aging Rule remedy, Kit v1.34; genuine review) + File State field-name repair.** GH-001, GH-003, GH-007, GH-009 — the file’s tripped registered entries of Blocking or High-risk class (GH-001/GH-003 Risk High, Blocking Epistemic; GH-007 Risk High; GH-009 Risk Critical) — each re-read against the live body state at head `b2ae99e6`: the body sections the entries describe are unchanged in substance since logging (the later passes — 2026-08-03, 2026-10-27, 2026-10-30 — touched other entries and File State fields only); GH-009’s Critical elevation stands (N-squared interaction scaling). All four confirmed accurate; Last Reviewed advanced to 2026-11-11 on this genuine review. **Field-name repair, self-caught this pass:** the File State risk field’s label was corrupted (an off-vocabulary word where “Highest Risk” belongs) and the 2026-10-30 entry below records that field being recomputed “High → Critical” while the live value read High. Disposition: label restored to the canonical name; value left **High**, because PKC-004’s 2026-10-25 ruling fixes the File State vocabulary at Low/Medium/High — Critical is a Priority value, so the 2026-10-30 entry’s recorded value was itself an instance of the PKC-004 conflation class; that entry’s wording is left as written (PKC-007) and corrected by this dated note. No doctrine, Status, Spec Gate or body change. Executed under the human governing authority’s co-author delegation (2026-11-04 mandate; the 2026-11-11 proceed-as-ratified word, verbatim in the MAINT-133 entry and the 11b brief Addendum); non-independent (the same line drafted the Aging Rule remedy and runs this pass), disclosed; human veto window open.
 
 - 2026-10-30: **X3 mechanical citation retrofit (Tests pass).** 1 bare colliding-prefix citations qualified with their owning File.md per PKC-003 (Kit v1.30 Governance Sidecar ID Reference; per-ID grounding: Unknowns active index). Citation-form-only: no ID renumbered, no Unknown opened or closed, no Spec Gate advanced, frozen history untouched. Out-of-whitelist bare IDs were left bare and reported to the human. (Vibe, Repo Custodian — delegated maintenance per Decision Brief 2026-10-29 item 4A.)
 
