@@ -2,7 +2,7 @@
 
 **Standard file structure for LazarusForge documents.**
 Applies to all new files and retrofit audit cycles.
-**Last updated: 2026-11-04 — Pattern A checks C1–C3, C5, C6 implemented in `Automation/integrity_check.py` (v0.3) and C7–C8 deferred by human ruling (2026-11-04) until the VibesSandbox RELEASES register exists; previous header line relocated verbatim to the Resolution Log below per R7. Sections 0–11, Pattern A rules, Template Exemptions otherwise unchanged.**
+**Last updated: 2026-11-11 — File_Template touch (Decision Brief 2026-11-11 Item 6B; co-author delegation, MAINT-130): §2 states which classes owe which canonical File State fields (the class-10/11 boundary settled); this file added to its own Template Exemptions as class 12 (self-application; Pattern 4's fifth data point); class 11's entry gains the field-obligation boundary; previous header line relocated verbatim to the Resolution Log below per R7. Sections 0–11, Pattern A rules, classes 1–11 otherwise unchanged.**
 
 ---
 
@@ -195,7 +195,11 @@ The full File Template is **not** applied to every file in the repository. Forci
    - `Admin/Agent_Verification_Event.md`
    - `Admin/Experiments.md`
    - `Admin/Hardware_Diversity_Ladder.md`
-   One exemption-class ruling covering the family instead of per-file dispositions (AUDIT_23 F1, AUDIT_27 F2, AUDIT_28 F1, AUDIT_29 F1): these files declare themselves — in their own File State or Status lines — an append-only intake log awaiting entries, a candidate/exploration event schema, a falsification-record scaffold, and a proposed implementation reference: structural shells whose content accrues later. They carry File State tables, Scope Boundaries and their own sidecars and remain fully auditable; the exemption is from forcing the full template section set onto a shell (Lessons Learned with no lessons yet, Abandoned Paths with no history yet), which manufactures the empty sections this template exists to prevent — per its own counsel, prefer exemption over forced retrofit. The exemption ends the moment a file’s own record outgrows the stub/scaffold/candidate state; each file’s own Status, Last-Reviewed and sidecar discipline still apply unchanged. Listed here 2026-10-28 (Decision Brief 2026-10-28d, item 6, human-ratified).
+   One exemption-class ruling covering the family instead of per-file dispositions (AUDIT_23 F1, AUDIT_27 F2, AUDIT_28 F1, AUDIT_29 F1): these files declare themselves — in their own File State or Status lines — an append-only intake log awaiting entries, a candidate/exploration event schema, a falsification-record scaffold, and a proposed implementation reference: structural shells whose content accrues later. They carry File State tables, Scope Boundaries and their own sidecars and remain fully auditable; the exemption is from forcing the full template section set onto a shell (Lessons Learned with no lessons yet, Abandoned Paths with no history yet), which manufactures the empty sections this template exists to prevent — per its own counsel, prefer exemption over forced retrofit. The exemption ends the moment a file’s own record outgrows the stub/scaffold/candidate state; each file’s own Status, Last-Reviewed and sidecar discipline still apply unchanged. Listed here 2026-10-28 (Decision Brief 2026-10-28d, item 6, human-ratified). Field-obligation boundary (2026-11-11, MAINT-130): this exemption is from the full section set only — class-11 files owe the canonical §2 File State field set, with an explicit value wherever a field has no live value (see §2).
+
+12. **This file**
+   - `Admin/File_Template.md`
+   The template is the meta-document that prescribes structure for other files; its section requirements do not bind their own prescriber (the self-application gap, Pattern 4's fifth data point). Its maintenance obligations are the header Last-updated line and its own Resolution Log; it carries no File State table, and that is not a violation. Listed here 2026-11-11 (Decision Brief 2026-11-11 Item 6B; co-author delegation, MAINT-130).
 
 **Non-exempt (template applies on retrofit and for new files):**  
 All other files under `Admin/`, `Architecture/`, `Operations/`, `Challenges/`, and `Tests/` that carry doctrine, protocols, specifications, or gate definitions.
@@ -309,6 +313,8 @@ values in a Risk field — Critical is the one deliberate exception, valid in bo
 by the same ruling (CE-003 carries Risk Critical and Priority Critical side by side).
 An open Blocking item that is ignored is a warning condition in audits and in work that depends
 on it.
+
+**Which classes owe these fields (the class-10/11 boundary, Decision Brief 2026-11-11 Item 6B; co-author delegation, MAINT-130):** every non-exempt file owes the full canonical field set above. Class-11 files (stub/scaffold/candidate family, Template Exemptions class 11) are exempt from the full section set only — they still owe the canonical File State field set, and where a field has no live value (for example a file with no sidecar) the field is present with an explicit value such as `none — no sidecar`, never omitted. Class-10 files (Tier 0 philosophical substrate) owe no File State table. A File State recorded as "completed", or a template-section gap recorded as "closed", is only true when the canonical fields the file owes are actually present.
 
 ---
 
@@ -1071,3 +1077,5 @@ single document — including Ethical_Constraints.md.
 
 > The attempt to do no harm is not contingent on the presence of a governance document.
 > It is the floor that survives everything else.
+- 2026-11-11 (fifth-entry pass): **Class-10/11 field boundary + self-exemption (Vibe — co-author delegation 2026-11-11, MAINT-130; Decision Brief 2026-11-11 Item 6B; non-independent, disclosed).** §2 now states which classes owe which canonical File State fields: class-11 (stub/scaffold/candidate family) owes the canonical field set with explicit no-value values; class-10 (Tier 0 philosophical substrate) owes no File State table; a "File State completed" or "gaps closed" record is only true when the owed fields are actually present. This file added to its own Template Exemptions as class 12 — the self-application gap, Pattern 4's fifth data point (AUDIT_05 F-FT-1 lineage): the template's section requirements do not bind their own prescriber; its maintenance obligations are the header Last-updated line and this Resolution Log. Class 11's entry gains the field-obligation boundary sentence. Previous header line relocated verbatim per R7: **Last updated: 2026-11-04 — Pattern A checks C1–C3, C5, C6 implemented in `Automation/integrity_check.py` (v0.3) and C7–C8 deferred by human ruling (2026-11-04) until the VibesSandbox RELEASES register exists; previous header line relocated verbatim to the Resolution Log below per R7. Sections 0–11, Pattern A rules, Template Exemptions otherwise unchanged.** Sections 0–11, Pattern A rules, classes 1–11 otherwise unchanged. No other file changed by this entry's edits.
+

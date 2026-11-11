@@ -5,10 +5,13 @@
 | Status           | Candidate / Exploration |
 | Body Stability   | Volatile |
 | Spec Gates       | 0/6 |
-| Last Audit       | 2026-10-29 — Vibe (Repo Custodian, delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A): X3 mechanical citation retrofit — 1 bare colliding-prefix citations qualified with their owning File.md per PKC-003 (Kit v1.29 Governance Sidecar ID Reference; per-ID grounding from the Unknowns active index). Citation-form-only; no content change; frozen history untouched. Prior: 2026-10-28 — Vibe (Repo Custodian, delegated maintenance, human-ratified Decision Brief 2026-10-28d): File State completed — Highest Risk, Last Audit and Auditor added (AUDIT_27 F1); Highest Risk set to the own-sidecar maximum (AVE-R1 Medium (Placeholder)). Prior passes: content last changed 2026-10-10; 2026-10-23 Resolution Log reorder only |
+| Verification Ref | Admin/Verification_Gates.md |
+| Last Audit       | 2026-11-11 — Vibe (co-author delegation 2026-11-11, MAINT-130; non-independent, disclosed): File State completed per Decision Brief 2026-11-11 Item 6A — Verification Ref, Active Disputes and Sidecar Link added (the three canonical fields this table lacked); values: Verification Ref → Admin/Verification_Gates.md; Active Disputes → 0 (no disputes section or recorded dispute); Sidecar Link → in-file anchor (sidecar at end of file). No schema, rule or doctrine change; no unknown opened or closed. Prior: 2026-10-29 — Vibe (Repo Custodian, delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A): X3 mechanical citation retrofit — 1 bare colliding-prefix citations qualified with their owning File.md per PKC-003 (Kit v1.29 Governance Sidecar ID Reference; per-ID grounding from the Unknowns active index). Citation-form-only; no content change; frozen history untouched. Prior: 2026-10-28 — Vibe (Repo Custodian, delegated maintenance, human-ratified Decision Brief 2026-10-28d): File State completed — Highest Risk, Last Audit and Auditor added (AUDIT_27 F1); Highest Risk set to the own-sidecar maximum (AVE-R1 Medium (Placeholder)). Prior passes: content last changed 2026-10-10; 2026-10-23 Resolution Log reorder only |
 | Auditor          | Vibe — Repo Custodian, 2026-10-29 X3 mechanical citation retrofit (delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A); prior: Vibe — Repo Custodian, 2026-10-28 File State completion (delegated maintenance, human-ratified Decision Brief 2026-10-28d); prior: Grok — schema draft 2026-09-07 (human-directed); human-confirmed Risk/Priority rankings 2026-10-10; human-directed log reorder 2026-10-23 |
 | Open Unknowns    | 4 (sidecar at end of file, all non-blocking); AVE-R1 and AVE-R4 also indexed in `Unknowns.md` |
+| Active Disputes  | 0 |
 | Highest Risk     | Medium (Placeholder — AVE-R1) |
+| Sidecar Link     | #auditor-notes--unknowns (in-file, end of file) |
 | Owner            | `Admin/Agent_Verification_Event.md` (process schema); operational samples may land in `Tests/Field_Logs.md` |
 | Last Updated     | 2026-10-28 (File State completed — Highest Risk, Last Audit, Auditor added per AUDIT_27 F1; no schema, rule or doctrine change. Prior: 2026-10-23 Resolution Log reorder only; content last changed 2026-10-10) |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
@@ -171,6 +174,8 @@ Tracked as sidecar entries in **Auditor Notes & Unknowns** at the end of this fi
 ---
 
 ## Resolution Log
+
+- 2026-11-11: **File State completed — the three missing canonical fields added (MAINT-130; Decision Brief 2026-11-11 Item 6A, on the Item 6B template touch).** Verification Ref, Active Disputes and Sidecar Link added to the File State table (values in the header). The class-10/11 field boundary applied here was settled in `Admin/File_Template.md` §2 in the same pass. No schema, rule, reliance-limit or doctrine change; no unknown opened or closed. Executed under the human governing authority's co-author delegation (2026-11-04 mandate, extended to the Decision Brief 2026-11-11 execution 2026-11-11); non-independent (the same line ran Campaign 4), disclosed; human veto window open.
 
 - 2026-10-29: **X3 citation retrofit (mechanical).** 1 bare colliding-prefix citations in operative body text qualified with their owning File.md per PKC-003, per the human-ruled Decision Brief 2026-10-29 item 4A (registry: Kit v1.29 Governance Sidecar ID Reference; per-ID grounding: Unknowns active index). Citation-form-only; no ID renumbered; frozen history untouched; flagged instances reported to the human (MAINT-11). (Vibe, Repo Custodian — delegated line.)
 

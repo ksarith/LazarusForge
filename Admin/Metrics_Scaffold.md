@@ -8,11 +8,14 @@
 | Field            | Value                                                               |
 |------------------|----------------------------------------------------------------------|
 | Status           | Active — Scaffold Only (no data collection required yet)            |
+| Body Stability   | Stable — scaffold-only; no content change since the 2026-10-28 AUDIT_17 F1–F3 completion pass |
 | Spec Gates       | N/A — this file defines a measurement taxonomy, not a specification |
 | Verification Ref | Admin/Verification_Gates.md |
 | Open Unknowns    | 0                                                                     |
+| Active Disputes  | 0 |
 | Owning Domain    | Admin/                                                                |
 | Last Reviewed    | 2026-10-28                                                            |
+| Sidecar Link     | #auditor-notes--unknowns (in-file) |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present.   |
 
 ---
@@ -115,6 +118,8 @@ None. No interpretation conflict is currently open against this file or its metr
 No open unknowns. (File State Open Unknowns: 0 — AUDIT_17 checklist item 5 re-verified live that no `MS-`-prefixed IDs exist anywhere and no Metrics_Scaffold cluster is owed in `Unknowns.md`.)
 
 ### Resolution Log
+
+- 2026-11-11: **File State completed — Body Stability, Active Disputes and Sidecar Link added (MAINT-130; Decision Brief 2026-11-11 Item 6A).** Values: Body Stability "Stable — scaffold-only; no content change since the 2026-10-28 AUDIT_17 F1–F3 completion pass"; Active Disputes 0; Sidecar Link in-file anchor (sidecar at end of file). The class-10/11 field boundary applied here was settled in `Admin/File_Template.md` §2 the same pass. No metric definition changed; no version string exists to bump (AUDIT_17 checklist item 10); Last Reviewed left at 2026-10-28 (no separate review performed beyond this File State completion). Executed under the human governing authority's co-author delegation (2026-11-04 mandate, extended to the Decision Brief 2026-11-11 execution 2026-11-11); non-independent (the same line ran Campaign 4), disclosed; human veto window open.
 
 - 2026-10-28: **AUDIT_17 F1–F3 enacted (human-ratified same day; enacted by Vibe, Repo Custodian, delegated maintenance).** F1: `Verification Ref` row added to File State, pointing at `Admin/Verification_Gates.md` — clears the guaranteed `AUDIT_HARNESS.py` Phase 1 Check 2 flag on this file. F2: template-section gaps closed — `## Scope Boundary` added (the DOES/DOES-NOT lists moved out of Purpose into it, relabeled to the canonical **This file DOES define / DOES NOT define** form; bullet text unchanged), plus `## Assumptions` (ASM-001–003, drawn from the file's own stated claims), `## Lessons Learned`, `## Active Disputes`, `## Auditor Notes & Unknowns`, and `## Drift Indicators`. F3: standalone top-level `## Resolution Log` folded to `### Resolution Log` nested under Auditor Notes & Unknowns (the PKC-018 new-files form), this entry prepended newest-first. Last Reviewed advanced 2026-09-24 → 2026-10-28 — first substantive touch since creation. §1–§4 metric definitions, the Purpose paragraph, and every claim verified clean by AUDIT_17 (F4) otherwise untouched; no version string exists to bump (AUDIT_17 checklist item 10). Findings report: `Archive/Audits/AUDIT_17_Admin-Metrics_Scaffold.md`.
 
