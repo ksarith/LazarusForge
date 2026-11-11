@@ -173,7 +173,7 @@ was written and the omission checked for. Fixed in the same pass as this entry.
 ### 8. A "keep only the N most recent, rotate the rest" rule does not enforce itself
 
 Several files carry a stated self-maintenance rule of this shape — `Admin/Progress_Log.md`
-("rotate to `Archive/Logs/Progress_Log_Changelog.md` once more than five entries
+("rotate to `Admin/ALogs/Progress_Log_Changelog.md` once more than five entries [repointed 2026-11-11, MAINT-130 batch 4c, from the pre-relocation Archive/Logs/ home]
 accumulate") and `Unknowns.md` ("this block now keeps only the current version," full
 history in `Archive/Logs/Unknowns_Changelog.md`) are the two confirmed instances. Writing
 the rule into the file does not make a new entry trigger the rotation; each addition has
@@ -211,3 +211,5 @@ or are declined. None currently pending.*
 
 - 2026-10-29: X3 citation retrofit (mechanical) — 10 bare colliding-prefix citations qualified with their owning File.md per PKC-003 (human-ruled Decision Brief 2026-10-29 item 4A). This file keeps no Resolution Log per its Template Exemption (PKC-017); the pass is recorded here as a dated note and in the File State cells above. (Vibe, Repo Custodian — delegated line.)
 - 2026-11-05: MAINT-63 execution pass — AUDIT_86 F1 repaired by execution (human-ratified MAINT-62 ruling set §1): Convention 4's two stale pointer mentions redirected from the archived Log home to the live split home `Admin/ALogs/Auditor_Protocols_Logs.md` (relocation of 2026-10-30, MAINT-29). This file keeps no Resolution Log per its Template Exemption (PKC-017); the pass is recorded here as a dated note and in the File State cells above. (Vibe — Architect line PRIMARY, Repo Custodian secondary, delegated; non-independent Genesis Phase, disclosed.)
+
+*Note (2026-11-11, Decision Brief 2026-11-11 Item 5B; MAINT-130 batch 4c; co-author delegation; non-independent, disclosed): Convention 8's rotation pointer repointed from the pre-relocation `Archive/Logs/Progress_Log_Changelog.md` home to the live `Admin/ALogs/Progress_Log_Changelog.md` (F-OC-1; the relocation of 2026-10-30, MAINT-29). Citation-form-only. This file keeps no Resolution Log per its Template Exemption (PKC-017); recorded as a dated note per the MAINT-63 precedent.*

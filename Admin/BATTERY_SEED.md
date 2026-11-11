@@ -13,7 +13,7 @@
 | Open Unknowns  | 0 — tracked at Admin/Auditor_Protocols.md AP-017 (mechanism-level, not template-level) |
 | Ethical Anchor | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
-**Derived from:** `Admin/Auditor_Protocols.md` §Adversarial Challenge Battery and AP-017's Resolution Path (`Archive/Logs/Auditor_Protocols_Logs.md`). Version pin retired per human ruling 2026-10-27 (PKC-022, option B): the seed defers to the attached source at run time and copies no version-sensitive content, so no version pin is maintained.
+**Derived from:** `Admin/Auditor_Protocols.md` §Adversarial Challenge Battery and AP-017's Resolution Path (`Admin/ALogs/Auditor_Protocols_Logs.md [repointed 2026-11-11, MAINT-130 batch 4c, from the pre-relocation Archive/Logs/ home]`). Version pin retired per human ruling 2026-10-27 (PKC-022, option B): the seed defers to the attached source at run time and copies no version-sensitive content, so no version pin is maintained.
 When this file contradicts that source, the source document prevails.
 
 ---
@@ -22,7 +22,7 @@ When this file contradicts that source, the source document prevails.
 
 **DOES define:** The frozen prompt block a `cold_session_bundler.py` payload should carry as its `standard_audit_prompt` when the goal is a genuine AP-017-qualifying instance (a full ten-class Adversarial Challenge Battery, not general review); the operator checklist for running one; the additional target-file list required when the audit's subject is `Admin/Auditor_Protocols.md` itself.
 
-**DOES NOT define:** AP-017's closure bar itself (→ `Archive/Logs/Auditor_Protocols_Logs.md` AP-017 — this file supplies instances toward that bar, it doesn't set it) · the Battery's ten class definitions (→ `Admin/Auditor_Protocols.md` §Adversarial Challenge Battery) · `cold_session_bundler.py`'s stripping/manifest mechanics (→ that module).
+**DOES NOT define:** AP-017's closure bar itself (→ `Admin/ALogs/Auditor_Protocols_Logs.md [repointed 2026-11-11, MAINT-130 batch 4c, from the pre-relocation Archive/Logs/ home]` AP-017 — this file supplies instances toward that bar, it doesn't set it) · the Battery's ten class definitions (→ `Admin/Auditor_Protocols.md` §Adversarial Challenge Battery) · `cold_session_bundler.py`'s stripping/manifest mechanics (→ that module).
 
 ---
 
@@ -41,7 +41,7 @@ When this file contradicts that source, the source document prevails.
 4. Inspect the manifest yourself; never paste it to the auditor.
 5. Open a brand-new session, ideally on a different model family than any prior instance logged for this same AP-017 (`Admin/Auditor_Protocols.md`) cycle (cross-model is part of the acceptance criteria, not just a nice-to-have).
 6. Paste the entire rendered payload as the first and only message. No framing, no "this is for AP-017 (`Admin/Auditor_Protocols.md`)," no "previous attempts found X."
-7. Log the raw output under AP-017 in `Archive/Logs/Auditor_Protocols_Logs.md` per the Fresh Instance format already established there — include the manifest's `raw_sha256` values and the model identifier. Compare against any other instances on record; disagreements route through AP-004.
+7. Log the raw output under AP-017 in `Admin/ALogs/Auditor_Protocols_Logs.md [repointed 2026-11-11, MAINT-130 batch 4c, from the pre-relocation Archive/Logs/ home]` per the Fresh Instance format already established there — include the manifest's `raw_sha256` values and the model identifier. Compare against any other instances on record; disagreements route through AP-004.
 
 ---
 
@@ -70,11 +70,13 @@ When the audit's subject is `Admin/Auditor_Protocols.md` itself, bundle these al
 - `Admin/Auditor_Protocols.md` (the target)
 - The Ethical Anchor verification surface — either `Admin/Ethical_Constraints.md` in full, or at minimum confirm the target's own Ethical Anchor field is present for the bundler's Audit Entry Conditions exception to apply (it already retains this row through stripping — see that module's Ethical Anchor carve-out).
 
-**Not yet built, flagged honestly:** a stripped copy of `Archive/Logs/Auditor_Protocols_Logs.md` that retains only Description / Why It Matters / Resolution Path per entry (doctrine) and removes Status / Risk / Resolution / Fresh-instance / Surfaced-by content (retrospective judgment) is not something `cold_session_bundler.py` can produce yet — it strips retrospective content from a file's own body, not from a second file it points to. Until that exists, either omit the archive from a self-audit bundle entirely (the target file's own body is self-contained enough for a Battery pass — this is what every logged AP-017 instance to date has actually done) or, if archive content is genuinely needed, manually curate a Description/Why-It-Matters/Resolution-Path-only excerpt before pasting — never paste the raw archive file into a cold session.
+**Not yet built, flagged honestly:** a stripped copy of `Admin/ALogs/Auditor_Protocols_Logs.md [repointed 2026-11-11, MAINT-130 batch 4c, from the pre-relocation Archive/Logs/ home]` that retains only Description / Why It Matters / Resolution Path per entry (doctrine) and removes Status / Risk / Resolution / Fresh-instance / Surfaced-by content (retrospective judgment) is not something `cold_session_bundler.py` can produce yet — it strips retrospective content from a file's own body, not from a second file it points to. Until that exists, either omit the archive from a self-audit bundle entirely (the target file's own body is self-contained enough for a Battery pass — this is what every logged AP-017 instance to date has actually done) or, if archive content is genuinely needed, manually curate a Description/Why-It-Matters/Resolution-Path-only excerpt before pasting — never paste the raw archive file into a cold session.
 
 ---
 
 ## Resolution Log
+
+- 2026-11-11: Relocation-repair-miss repoints (Decision Brief 2026-11-11 Item 5B; MAINT-130 batch 4c; co-author delegation; non-independent, disclosed; F-BS-1 disposition). Operative pointers to the pre-relocation home repointed to the live copy, each with an inline dated correction tag; dated historical entries are untouched (PKC-007). Citation-form-only; nothing else changed.
 
 - 2026-10-29: **X3 citation retrofit (mechanical).** 5 bare colliding-prefix citations in operative body text qualified with their owning File.md per PKC-003, per the human-ruled Decision Brief 2026-10-29 item 4A (registry: Kit v1.29 Governance Sidecar ID Reference; per-ID grounding: Unknowns active index). Citation-form-only; no ID renumbered; frozen history untouched; flagged instances reported to the human (MAINT-11). (Vibe, Repo Custodian — delegated line.)
 

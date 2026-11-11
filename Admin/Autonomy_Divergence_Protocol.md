@@ -22,7 +22,7 @@
 | Highest Risk     | High (governs response to AI governance/objective divergence)      |
 | Sidecar Link     | #auditor-notes--unknowns                                            |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
-| Governance ID    | GOV-021 — formally registered in `Archive/Logs/Governance_Charter_Changelog.md` 2026-07-27; protocol itself remains Draft / PROPOSED NOT RATIFIED |
+| Governance ID    | GOV-021 — formally registered in `Admin/ALogs/Governance_Charter_Changelog.md [repointed 2026-11-11, MAINT-130 batch 4c, from the pre-relocation Archive/Logs/ home]` 2026-07-27; protocol itself remains Draft / PROPOSED NOT RATIFIED |
 
 ---
 
@@ -472,6 +472,8 @@ Re-audit this file if any of the following activate (all canonical File_Template
 **Compound Drift Rule:** If multiple indicators activate simultaneously, halt autonomous audit progression and escalate for human review.
 
 ### Resolution Log
+
+- 2026-11-11: Relocation-repair-miss repoints (Decision Brief 2026-11-11 Item 5B; MAINT-130 batch 4c; co-author delegation; non-independent, disclosed; F-ADP-1 disposition). Operative pointers to the pre-relocation home repointed to the live copy, each with an inline dated correction tag; dated historical entries are untouched (PKC-007). Citation-form-only; nothing else changed.
 
 - 2026-10-29: **X3 citation retrofit (mechanical).** 8 bare colliding-prefix citations in operative body text qualified with their owning File.md per PKC-003, per the human-ruled Decision Brief 2026-10-29 item 4A (registry: Kit v1.29 Governance Sidecar ID Reference; per-ID grounding: Unknowns active index). Citation-form-only; no ID renumbered; frozen history untouched; flagged instances reported to the human (MAINT-11). (Vibe, Repo Custodian — delegated line.)
 
