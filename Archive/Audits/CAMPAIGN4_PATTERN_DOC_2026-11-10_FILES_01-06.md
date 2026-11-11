@@ -160,3 +160,21 @@ Covers Trajectories.md (22), Progress_Log.md (23), Integrity_Incident_Log.md (24
 **New watch item:** escape-sequence scan (literal \uXXXX sequences in live text), added to the method at AUDIT_27 after F-CIRF-1 found four in Computational_Institutional_Reasoning.md’s File State; first application to Environmental_Constraints.md returned clean.
 
 **Coverage note (updated):** twenty-eight of 34 Admin/ files done. The next pattern-document update is due at the campaign’s close (files 29–34) per the 5–8-file convention, or earlier if a new pattern earns its Xn registration (two instances required).
+
+## Final update — 2026-11-11 (files 29–34; campaign close)
+
+Deposited alongside artifact 34 per the convention. Per-pattern deltas from items 29–34 (Economics, Agent_Verification_Event, Hardware_Diversity_Ladder, Metrics_Scaffold, Nothingness_Theorem, Ship_of_Theseus):
+
+**Pattern 1 (the 90-day Aging Rule):** items 29–32 and 34 no-trip (control cases 17–21); item 33 tripped (systemic instance 12; the first trip since CIR). Final sweep aggregate: 67 of 84 open sidecar entries past the bar on the generic FT reading (58 of 75 if confined to registered entries), with the file-internal reach question disclosed for the human. The systemic remedy pass remains queued.
+
+**Pattern (recorded-state vs live-state — the F-AVE-1 File State class):** three new instances (AVE, HDL, MSF — canonical §2 fields missing against "completed"/"gaps closed" enactment records); Ship_of_Theseus is the positive control (every canonical field present). The class-10/class-11 boundary clarification from F-NT-5 stands: class-11 files owe the fields, class-10 files don't. The batch ruling remains pending with the human.
+
+**Pattern (git-verified unlogged changes — the F-HDL-1 blind spot):** instances three and four this tranche (NT: three changes; ST: two), bringing the class to four files (CT, HDL, NT, ST). The remedy observation is now sweep-wide: no prior pass's log-vs-body grade queried git history, so every clean grade of that check is provisional until a git-verified re-run.
+
+**Bare-citation grep remedy — fourteenth through nineteenth evidence points:** Economics (bare "AUDIT_19 (campaign)" ×3 cross-campaign collision, bare "Decision Brief 2026-10-28b" ×8, bare "Gate_07" ×2); Agent_Verification_Event (bare DV-003 ×4, bare "AUDIT_27" ×3, bare MAINT-11 ×1); Hardware_Diversity_Ladder (bare GOV-008 ×4, bare SEC-007a/b, bare EL-007, bare "AUDIT_29" ×2, bare MAINT-11 ×1); Metrics_Scaffold (bare AUDIT_17 ×6 two-lane collision, bare MAQT ×1, bare PKC-018 ×1); Nothingness_Theorem (bare PKC-030 ×1); Ship_of_Theseus (bare PKC-027 ×1 in an operative File State cell, bare MAINT-11 ×1, bare AUDIT_18 ×3).
+
+**Zero-relocation-exposure files (zero Archive/ references):** Metrics_Scaffold (first), Nothingness_Theorem (second), Ship_of_Theseus (third).
+
+**Escape-sequence watch item:** clean at every application this tranche — second through seventh consecutive clean scans; no new instance since F-CIRF-1.
+
+**Coverage note (final):** thirty-four of 34 Admin/ files done — the sweep is complete. Every finding above remains findings-only (PKC-020); dispositions are the human's.
