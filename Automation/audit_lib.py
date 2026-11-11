@@ -141,7 +141,9 @@ def check_cross_refs(filename, content, registry, aliases, findings):
             findings.append(Finding(
                 "WARNING", "REFERENCE", filename,
                 f"[LEGACY] '{ref}' — legacy name; check Rename Registry "
-                f"in Archive/Rename_Registry.md for canonical path."  // repointed 2026-11-11, MAINT-130 batch 4i (was Discovery.md; registry migrated 2026-08-09)
+                # Repointed 2026-11-11, MAINT-130 batch 4i (was Discovery.md; registry migrated
+                # 2026-08-09); see this module's docstring note.
+                f"in Archive/Rename_Registry.md for canonical path."
             ))
         elif clean in PLANNED_RENAMES:
             findings.append(Finding(
