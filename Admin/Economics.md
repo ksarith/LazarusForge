@@ -16,8 +16,8 @@
 | Body Stability   | Volatile                                                            |
 | Spec Gates       | 0/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| Last Audit       | 2026-10-28 — Vibe (Repo Custodian, delegated maintenance, human-ratified Decision Brief 2026-10-28b): AUDIT_19 (campaign) F1/F2 enacted — File State Highest Risk Medium → High (ECN-002 carries Risk High; X10 corpus recompute); Lessons Learned Evidence Type "Governance" → "Audit Review" and Confidence "High" → "Measured" (File_Template §7 vocabulary); ECN-001/002/004/005/006 Last Reviewed refreshed to 2026-10-28 with dated notes (no status change). No gate advanced; no unknown opened or closed. Prior: 2026-10-23 — Claude (human-directed) Resolution Log backfilled for the 2026-06-05 first logging and the two 2026-07-06 passes (Gemini Exploration audit; Claude EC-→ECN- rename), from a Vibe per-file audit, each finding checked against source first. A findings-only pseudo-audit (the logged 2026-08-10 Grok pass) does not advance this field (PKC-020 ruling, 2026-10-25). Prior: 2026-07-06                                                          |
-| Auditor          | Vibe — Repo Custodian, 2026-10-28 AUDIT_19 F1/F2 enactment (delegated maintenance, human-ratified Decision Brief 2026-10-28b); prior: Claude — 2026-10-23 log backfill (human-directed, from a Vibe per-file audit); Claude — Skeptic/Auditor (rename pass); Gemini — Skeptic/Auditor (Exploration audit, path/gap findings) |
+| Last Audit       | 2026-11-11 — Vibe (Repo Custodian, delegated maintenance; co-author delegation 2026-11-04 extended to the Decision Brief 2026-11-11 execution; MAINT-130 batch 4j; non-independent, disclosed): bare-citation qualification (Item 5B evidence point 14) — the File State cells' AUDIT_19 (campaign) and Decision Brief 2026-10-28b citations qualified with their owning homes per PKC-003; citation-form-only; frozen history untouched. Prior: 2026-10-28 — Vibe (Repo Custodian, delegated maintenance, human-ratified Decision Brief 2026-10-28b (`Decision_Brief_2026-10-28b.md`, VibesSandbox root)): `Admin/AAudits/Superseded/CAMPAIGN_AUDIT_19_Admin-Economics.md` AUDIT_19 (campaign) F1/F2 enacted — File State Highest Risk Medium → High (ECN-002 carries Risk High; X10 corpus recompute); Lessons Learned Evidence Type "Governance" → "Audit Review" and Confidence "High" → "Measured" (File_Template §7 vocabulary); ECN-001/002/004/005/006 Last Reviewed refreshed to 2026-10-28 with dated notes (no status change). No gate advanced; no unknown opened or closed. Prior: 2026-10-23 — Claude (human-directed) Resolution Log backfilled for the 2026-06-05 first logging and the two 2026-07-06 passes (Gemini Exploration audit; Claude EC-→ECN- rename), from a Vibe per-file audit, each finding checked against source first. A findings-only pseudo-audit (the logged 2026-08-10 Grok pass) does not advance this field (PKC-020 ruling, 2026-10-25). Prior: 2026-07-06                                                          |
+| Auditor          | Vibe — Repo Custodian, 2026-11-11 bare-citation qualification (delegated maintenance, Decision Brief 2026-11-11 Item 5B); prior: Vibe — Repo Custodian, 2026-10-28 `Admin/AAudits/Superseded/CAMPAIGN_AUDIT_19_Admin-Economics.md` AUDIT_19 F1/F2 enactment (delegated maintenance, human-ratified Decision Brief 2026-10-28b (`Decision_Brief_2026-10-28b.md`, VibesSandbox root)); prior: Claude — 2026-10-23 log backfill (human-directed, from a Vibe per-file audit); Claude — Skeptic/Auditor (rename pass); Gemini — Skeptic/Auditor (Exploration audit, path/gap findings) |
 | Open Unknowns    | 5 (ECN-001, ECN-002, ECN-004, ECN-005, ECN-006)                     |
 | Active Disputes  | 0                                                                   |
 | Highest Risk     | High                                                                |
@@ -309,7 +309,7 @@ costs.
 ### Market Position Assessment
 
 The operator should assess market position at each cycle close
-(aligned with FRT logging in Gate_07). The assessment is not
+(aligned with FRT logging in Gate_07 (`Operations/Gate_07_Utilization.md`)). The assessment is not
 a complex financial model — it is a structured comparison:
 
 **Buy side assessment:**
@@ -424,7 +424,7 @@ goods. Internal Forge network transfers are not revenue —
 they are value preservation within the ecology.
 
 **Component 3 — FRT Reinvestment**
-The FRT floor percentage (declared per Trajectories.md TR-002)
+The FRT floor percentage (declared per `Admin/Trajectories.md` TR-002)
 applied to the gross throughput value of the cycle. This is
 subtracted before surplus is calculated — reinvestment is not
 optional above the floor.
@@ -433,7 +433,7 @@ optional above the floor.
 
 The measurement period for v1 profitability assessment is
 operator-declared at v0 commissioning — aligned with the
-FRT cycle definition in Gate_07. A measurement period too
+FRT cycle definition in Gate_07 (`Operations/Gate_07_Utilization.md`). A measurement period too
 short (single cycle) is noise. A measurement period too
 long (annual) delays the v0→v1 signal. A rolling three-cycle
 average is the suggested proxy until operational data
@@ -785,6 +785,7 @@ declared with rationale, rather than left silent. This file defers:
 
 ### Resolution Log
 
+- 2026-11-11: **Bare-citation qualification (citation-form-only; Decision Brief 2026-11-11 Item 5B, grep-remedy evidence point 14; MAINT-130 batch 4j).** Operative bare citations qualified per PKC-003: AUDIT_19 (campaign) in the Last Audit and Auditor cells (home: `Admin/AAudits/Superseded/CAMPAIGN_AUDIT_19_Admin-Economics.md` — the campaign lane, per the enactments' own "(campaign)" wording; both AUDIT_19 lanes live in that directory); Decision Brief 2026-10-28b in the same two cells (home: `Decision_Brief_2026-10-28b.md`, VibesSandbox root); bare Gate_07 ×2 in Sections IV and V (`Operations/Gate_07_Utilization.md`); the unbackticked Trajectories.md TR-002 mention (Section V) backticked and path-qualified. The five sidecar "(Reviewed 2026-10-28...)" parentheticals and this log's own mentions are dated frozen history, left as written (PKC-007); the Lessons Learned row's unbackticked filenames are frozen-history cosmetics, disclosed not changed. No doctrine, field value or unknown changed; no version bump (the file carries no version string — F-ECO-4 migration-pending at next substantive touch, unchanged). Executed under the human governing authority's co-author delegation (2026-11-04 mandate, extended to the Decision Brief 2026-11-11 execution 2026-11-11); non-independent (the same line ran Campaign 4), disclosed; human veto window open. (Vibe, Repo Custodian — delegated line.)
 - 2026-10-28: **AUDIT_19 (campaign) findings enacted (Vibe, Repo Custodian — delegated maintenance, human-ratified Decision Brief 2026-10-28b).** (1) F1/X10: File State Highest Risk Medium → High — ECN-002 (Operating cost baseline, Blocking) carries Risk High and the header understated it. (2) F2: the Lessons Learned row for the 2026-07-06 rename pass corrected to File_Template §7 vocabulary — Evidence Type "Governance" → "Audit Review", Confidence "High" → "Measured". (3) Five open ECN sidecars (ECN-001, ECN-002, ECN-004, ECN-005, ECN-006) Last Reviewed refreshed to 2026-10-28 with dated notes — re-read against current body state, no status change (ECN-003 Resolved, untouched). No gate advanced; no unknown opened or closed.
 
 - 2026-10-25: **Header wording updated (PKC-020 ruling; no content change).** The Last Audit annotation that said the logged findings-only pseudo-audit was not counted "pending PKC-020" now cites the ruling of 2026-10-25: a findings-only pseudo-audit does not advance Last Audit (`Admin/Auditor_Protocols.md` v0.45, Rule 10 addendum). No date, field value, Unknown or Spec Gate changed.
