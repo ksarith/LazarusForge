@@ -6,14 +6,14 @@
 | Body Stability   | Volatile |
 | Spec Gates       | 0/6 |
 | Verification Ref | Admin/Verification_Gates.md |
-| Last Audit       | 2026-11-11 — Vibe (co-author delegation 2026-11-11, MAINT-130; non-independent, disclosed): File State completed per Decision Brief 2026-11-11 Item 6A — Verification Ref, Active Disputes and Sidecar Link added (the three canonical fields this table lacked); values: Verification Ref → Admin/Verification_Gates.md; Active Disputes → 0 (no disputes section or recorded dispute); Sidecar Link → in-file anchor (sidecar at end of file). No schema, rule or doctrine change; no unknown opened or closed. Prior: 2026-10-29 — Vibe (Repo Custodian, delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A): X3 mechanical citation retrofit — 1 bare colliding-prefix citations qualified with their owning File.md per PKC-003 (Kit v1.29 Governance Sidecar ID Reference; per-ID grounding from the Unknowns active index). Citation-form-only; no content change; frozen history untouched. Prior: 2026-10-28 — Vibe (Repo Custodian, delegated maintenance, human-ratified Decision Brief 2026-10-28d): File State completed — Highest Risk, Last Audit and Auditor added (AUDIT_27 F1); Highest Risk set to the own-sidecar maximum (AVE-R1 Medium (Placeholder)). Prior passes: content last changed 2026-10-10; 2026-10-23 Resolution Log reorder only |
-| Auditor          | Vibe — Repo Custodian, 2026-10-29 X3 mechanical citation retrofit (delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A); prior: Vibe — Repo Custodian, 2026-10-28 File State completion (delegated maintenance, human-ratified Decision Brief 2026-10-28d); prior: Grok — schema draft 2026-09-07 (human-directed); human-confirmed Risk/Priority rankings 2026-10-10; human-directed log reorder 2026-10-23 |
+| Last Audit       | 2026-11-11 — Vibe (Repo Custodian, delegated maintenance; co-author delegation 2026-11-04 extended to the Decision Brief 2026-11-11 execution; MAINT-130 batch 4j; non-independent, disclosed): bare-citation qualification (Item 5B evidence point 15) — DV-003 ×3 in the body, AUDIT_27 in both File State cells, and the Decision Brief 2026-10-29 / 2026-10-28d citations in the Last Audit and Auditor cells qualified with owning files/homes per PKC-003; citation-form-only; frozen history untouched. Prior: 2026-11-11 — Vibe (co-author delegation 2026-11-11, MAINT-130; non-independent, disclosed): File State completed per Decision Brief 2026-11-11 Item 6A — Verification Ref, Active Disputes and Sidecar Link added (the three canonical fields this table lacked); values: Verification Ref → Admin/Verification_Gates.md; Active Disputes → 0 (no disputes section or recorded dispute); Sidecar Link → in-file anchor (sidecar at end of file). No schema, rule or doctrine change; no unknown opened or closed. Prior: 2026-10-29 — Vibe (Repo Custodian, delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A (`Decision_Brief_2026-10-29.md`, VibesSandbox root)): X3 mechanical citation retrofit — 1 bare colliding-prefix citations qualified with their owning File.md per PKC-003 (Kit v1.29 Governance Sidecar ID Reference; per-ID grounding from the Unknowns active index). Citation-form-only; no content change; frozen history untouched. Prior: 2026-10-28 — Vibe (Repo Custodian, delegated maintenance, human-ratified Decision Brief 2026-10-28d (`Decision_Brief_2026-10-28d.md`, VibesSandbox root)): File State completed — Highest Risk, Last Audit and Auditor added (`Admin/AAudits/CAMPAIGN_AUDIT_27_Admin-Agent_Verification_Event.md` AUDIT_27 F1); Highest Risk set to the own-sidecar maximum (AVE-R1 Medium (Placeholder)). Prior passes: content last changed 2026-10-10; 2026-10-23 Resolution Log reorder only |
+| Auditor          | Vibe — Repo Custodian, 2026-11-11 bare-citation qualification (delegated maintenance, Decision Brief 2026-11-11 Item 5B); prior: Vibe — Repo Custodian, 2026-10-29 X3 mechanical citation retrofit (delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A (`Decision_Brief_2026-10-29.md`, VibesSandbox root)); prior: Vibe — Repo Custodian, 2026-10-28 File State completion (delegated maintenance, human-ratified Decision Brief 2026-10-28d (`Decision_Brief_2026-10-28d.md`, VibesSandbox root)); prior: Grok — schema draft 2026-09-07 (human-directed); human-confirmed Risk/Priority rankings 2026-10-10; human-directed log reorder 2026-10-23 |
 | Open Unknowns    | 4 (sidecar at end of file, all non-blocking); AVE-R1 and AVE-R4 also indexed in `Unknowns.md` |
 | Active Disputes  | 0 |
 | Highest Risk     | Medium (Placeholder — AVE-R1) |
 | Sidecar Link     | #auditor-notes--unknowns (in-file, end of file) |
 | Owner            | `Admin/Agent_Verification_Event.md` (process schema); operational samples may land in `Tests/Field_Logs.md` |
-| Last Updated     | 2026-10-28 (File State completed — Highest Risk, Last Audit, Auditor added per AUDIT_27 F1; no schema, rule or doctrine change. Prior: 2026-10-23 Resolution Log reorder only; content last changed 2026-10-10) |
+| Last Updated     | 2026-10-28 (File State completed — Highest Risk, Last Audit, Auditor added per `Admin/AAudits/CAMPAIGN_AUDIT_27_Admin-Agent_Verification_Event.md` AUDIT_27 F1; no schema, rule or doctrine change. Prior: 2026-10-23 Resolution Log reorder only; content last changed 2026-10-10) |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
 ---
@@ -27,7 +27,7 @@ AVE sits on the **node reliability / process** track only.
 | Track | AVE role |
 |-------|----------|
 | **Node reliability** (agent-as-observer) | AVE outcomes update process reliability under verification |
-| **Claim confidence** (DV-003 / evidence properties) | **Out of scope** — AVE must never multiply into epistemic confidence of a proposition |
+| **Claim confidence** (DV-003, `Architecture/Forge_Net.md` §2.5 / evidence properties) | **Out of scope** — AVE must never multiply into epistemic confidence of a proposition |
 
 Cross-reference: `Architecture/Forge_Net.md` §2.5.0 (claim confidence ≠ node reliability ≠ governance weight).
 
@@ -103,7 +103,7 @@ Compute over a window of the last **k** scored events for that `claiming_agent` 
 
 **Partial** outcomes: count as Fail for survival rate unless notes document an agreed partial credit rule for that class.
 
-**Do not** average Inference with Inventory. **Do not** publish a single scalar used as DV-003 input.
+**Do not** average Inference with Inventory. **Do not** publish a single scalar used as DV-003 input (`Architecture/Forge_Net.md` §2.5).
 
 ---
 
@@ -116,7 +116,7 @@ These govern **scrutiny**, not belief.
 | **R1 — Mandatory source-check** | Any ClosureBlocking claim, or LoadBearing Structure/Inventory claim from an agent with source-survival rate &lt; threshold (Placeholder: 0.8 over k≥5) | Verify against source before merge, Unknown status change, or File State edit |
 | **R2 — Session quarantine** | One or more doubled_down = Yes on Fail in the same session | Treat further checkable claims from that agent in-session as **unverified until checked**; do not block unrelated agents |
 | **R3 — Sampling relief** | Source-survival ≥ threshold over k≥10 and zero Closure-contamination in window | May reduce *spot-check rate* on Cosmetic Inventory only; **never** skip R1 triggers |
-| **R4 — No confidence promotion** | Any reliability metric | **Forbidden** to increase claim confidence, promote Provisional→higher epistemic state, or satisfy DV-003 thresholds |
+| **R4 — No confidence promotion** | Any reliability metric | **Forbidden** to increase claim confidence, promote Provisional→higher epistemic state, or satisfy DV-003 thresholds (`Architecture/Forge_Net.md` §2.5) |
 
 Thresholds above are **Placeholder** until calibrated against Field_Logs samples. Structure of rules is fixed; numbers are not.
 
@@ -175,6 +175,7 @@ Tracked as sidecar entries in **Auditor Notes & Unknowns** at the end of this fi
 
 ## Resolution Log
 
+- 2026-11-11: **Bare-citation qualification (citation-form-only; Decision Brief 2026-11-11 Item 5B, grep-remedy evidence point 15; MAINT-130 batch 4j).** Twelve operative bare citations qualified per PKC-003: DV-003 ×3 in the body (owner verified live: `Architecture/Forge_Net.md` §2.5); AUDIT_27 in the Last Audit and Last Updated cells (home: `Admin/AAudits/CAMPAIGN_AUDIT_27_Admin-Agent_Verification_Event.md` — this campaign's own AUDIT_27 is Computational_Institutional_Reasoning.md, so the cross-campaign collision is resolved by full-path grounding); Decision Brief 2026-10-29 and 2026-10-28d in the Last Audit and Auditor cells (homes: `Decision_Brief_2026-10-29.md` / `Decision_Brief_2026-10-28d.md`, VibesSandbox root). This Resolution Log's own DV-003, AUDIT_27, Decision Brief and MAINT-11 mentions are dated frozen history and left as written (PKC-007). No schema, rule, reliance-limit or doctrine change; no unknown opened or closed. Executed under the human governing authority's co-author delegation (2026-11-04 mandate, extended to the Decision Brief 2026-11-11 execution 2026-11-11); non-independent (the same line ran Campaign 4), disclosed; human veto window open. (Vibe, Repo Custodian — delegated line.)
 - 2026-11-11: **File State completed — the three missing canonical fields added (MAINT-130; Decision Brief 2026-11-11 Item 6A, on the Item 6B template touch).** Verification Ref, Active Disputes and Sidecar Link added to the File State table (values in the header). The class-10/11 field boundary applied here was settled in `Admin/File_Template.md` §2 in the same pass. No schema, rule, reliance-limit or doctrine change; no unknown opened or closed. Executed under the human governing authority's co-author delegation (2026-11-04 mandate, extended to the Decision Brief 2026-11-11 execution 2026-11-11); non-independent (the same line ran Campaign 4), disclosed; human veto window open.
 
 - 2026-10-29: **X3 citation retrofit (mechanical).** 1 bare colliding-prefix citations in operative body text qualified with their owning File.md per PKC-003, per the human-ruled Decision Brief 2026-10-29 item 4A (registry: Kit v1.29 Governance Sidecar ID Reference; per-ID grounding: Unknowns active index). Citation-form-only; no ID renumbered; frozen history untouched; flagged instances reported to the human (MAINT-11). (Vibe, Repo Custodian — delegated line.)
