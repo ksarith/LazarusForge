@@ -642,3 +642,7 @@ unused elsewhere first. No change to any other file's Open Unknowns count.
 ---
 
 *Earlier version history (pre-v4.16), if any existed, was not present in the `Unknowns.md` block at the time of this split — this file begins where that block began.*
+
+---
+
+**2026-11-12 — live home relocated to `Logs/Unknowns_Changelog.md` (MAINT-135 phase 1, R-4; R8 root-home amendment, `Admin/File_Template.md`; the human’s reduction-review ruling set, verbatim "Can I have you begin the cleanup?"). This Archive copy is frozen as the v1.0–v5.81 history; new entries land at the root home. Pointer-not-mirror (MAINT-71): the history is not copied there.**
