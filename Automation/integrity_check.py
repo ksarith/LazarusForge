@@ -24,7 +24,8 @@ Passes, run in sequence, each appending Finding objects to one shared list:
     5. Reference Pass      — cross-reference resolution, via audit_lib.py
     6. Version String Pass — self-citation version drift (AP-025 pattern)
     7. Pattern A Pass      — Pattern A consistency (C1–C3, C5, C6)
-    8. Output              — structured JSON + human-readable summary
+    8. Size Census Pass    — T1 split-queue roster, derived per run (R-1a, 2026-11-12 ruling set)
+    9. Output              — structured JSON + human-readable summary
 
 Honesty about scope, stated up front rather than discovered later:
     - Registry Pass inherits parse_routing()'s known limitation: files
@@ -69,7 +70,7 @@ except Exception as e:
 
 
 TOOL_NAME = "integrity_check"
-TOOL_VERSION = "0.3"  # 0.3: Pattern A checks (C1–C3, C5, C6); 0.2: LOCAL-ONLY scope label; quiet harness import; DEGRADED if aliases fail
+TOOL_VERSION = "0.4"  # 0.4: Size Census Pass (T1 roster, R-1a); 0.3: Pattern A checks (C1–C3, C5, C6); 0.2: LOCAL-ONLY scope label; quiet harness import; DEGRADED if aliases fail
 
 # Sidecar ID pattern: matches "### AP-017 — ..." style defining headers,
 # not table rows. Prefix is 2-6 uppercase letters, ID is 3+ digits.
@@ -535,6 +536,81 @@ def pattern_a_pass(root, all_files, findings):
     }
 
 
+# --- Size Census Pass (T1 split-queue roster), added v0.4 ---
+# R-1a of the human's 2026-11-12 reduction-review ruling set ("Can I
+# have you begin the cleanup?"): the T1 split queue self-reports every
+# run, derived from live files, never maintained by hand (the MAINT-89
+# derive-don't-maintain precedent).
+# T1 bar: File_Template §Log-Split Rule trigger T1 reads "the file
+# measures >= 100 KB". This census reads that as 100,000 bytes (SI),
+# the reading the 2026-11-12 reduction-review census itself used
+# (Canonical_Terms.md at 100,570 bytes is in the roster;
+# Computational_Institutional_Reasoning.md at ~91 KB is out). A
+# 102,400-byte (binary) reading would exclude Canonical_Terms.md; if
+# the human rules the bar differently, change T1_BYTES here — one
+# constant, derived everywhere.
+T1_BYTES = 100_000
+
+# A "log home" is a file whose containing directory name ends in
+# "Logs" (Admin/ALogs/, Archive/Logs/, the root Logs/, and
+# Architecture/RLogs/ when it materializes). R-6b (2026-11-12 ruling
+# set) accepted log homes' size as honest — they are Historical by
+# definition — so they stay on the roster but are classed differently
+# from split-queue doctrine files. Classification is directory-based
+# only; a log-named file outside a *Logs/ directory is classed as a
+# doctrine file.
+LOG_HOME_DIR_RE = re.compile(r"(?:^|/)[A-Za-z_]*Logs/")
+
+
+def size_census_pass(root, all_files, findings):
+    """T1 size census: measure every trackable file, roster the queue.
+
+    Scope, stated honestly:
+    - Measures bytes on disk at run time (os.path.getsize); a census,
+      not a content check. Nothing here decides or executes a split —
+      R8 executes splits at each file's next substantive touch.
+    - Covers every trackable file walk_repo returns, including
+      extensionless files and everything under Archive/ (the
+      2026-11-12 census counted Archive/Logs/Unknowns_Changelog.md).
+    - Every over-bar file produces one WARNING: the queue is real and
+      open (F-FT-3), and R-6b's acceptance covers the log homes'
+      size, not their absence from the roster.
+    """
+    measured = []
+    for rel_path, _is_extensionless in all_files:
+        full_path = os.path.join(root, rel_path)
+        try:
+            size = os.path.getsize(full_path)
+        except OSError:
+            continue
+        measured.append((rel_path, size))
+    measured.sort(key=lambda t: (-t[1], t[0]))
+
+    roster = []
+    for rel_path, size in measured:
+        if size < T1_BYTES:
+            continue
+        is_log_home = bool(LOG_HOME_DIR_RE.search(rel_path))
+        roster.append({"path": rel_path, "bytes": size, "log_home": is_log_home})
+        if is_log_home:
+            msg = (f"{size} bytes, at or above the {T1_BYTES}-byte T1 bar — "
+                   "log home; size accepted as honest per R-6b (2026-11-12 ruling set).")
+        else:
+            msg = (f"{size} bytes, at or above the {T1_BYTES}-byte T1 bar — "
+                   "R8 Log-Split queued (next substantive touch, heaviest first).")
+        findings.append(Finding("WARNING", "SIZE_CENSUS", rel_path, msg))
+
+    return {
+        "t1_bytes": T1_BYTES,
+        "files_measured": len(measured),
+        "over_bar_count": len(roster),
+        "over_bar_log_homes": sum(1 for r in roster if r["log_home"]),
+        "over_bar_split_queue": sum(1 for r in roster if not r["log_home"]),
+        "roster_over_bar": roster,
+        "authority": ("R-1a, the human's 2026-11-12 reduction-review ruling set "
+                      "(derived from live files each run, never maintained by hand)"),
+    }
+
 def run(root):
     findings = []
     all_files = walk_repo(root)
@@ -545,6 +621,7 @@ def run(root):
     reference_pass(root, all_files, findings)
     version_string_pass(root, all_files, findings)
     pattern_a_summary = pattern_a_pass(root, all_files, findings)
+    size_census_summary = size_census_pass(root, all_files, findings)
     unknowns_summary = unknowns_summary_pass(root, all_files, findings)
 
     by_severity = {"CRITICAL": [], "WARNING": [], "NOTE": []}
@@ -577,6 +654,7 @@ def run(root):
         "findings": [f.to_dict() for f in findings],
         "unknowns_summary": unknowns_summary,
         "pattern_a": pattern_a_summary,
+        "size_census": size_census_summary,
     }
     return report
 
@@ -636,6 +714,7 @@ def print_health_summary(report):
         ("REFERENCE", "Cross-reference resolution"),
         ("VERSION_STRING", "Version-citation freshness"),
         ("PATTERN_A", "Pattern A checks (C1–C3, C5, C6)"),
+        ("SIZE_CENSUS", "T1 size census (R-1a derived roster)"),
     ]
 
     vs = report.get("verification_scope") or {}
