@@ -1279,7 +1279,7 @@ with the Charter to fix on the Charter side.
 | Blocking      | No                                         |
 | Owner         | `Admin/Governance_Migration_Protocol.md`   |
 | First Logged  | 2026-06-05                                 |
-| Last Reviewed | 2026-07-26                                 |
+| Last Reviewed | 2026-11-13                                 |
 
 **Description:** Section III Phase 2 notes that at v0, adversarial
 review may be conducted by a different AI agent class or by the human
@@ -1924,7 +1924,7 @@ further change is a new proposal.
 | Blocking      | No                                         |
 | Owner         | `Admin/Governance_Migration_Protocol.md`   |
 | First Logged  | 2026-07-26                                 |
-| Last Reviewed | 2026-07-26                                 |
+| Last Reviewed | 2026-11-13                                 |
 
 **Description:** §VI Epistemic Quorum Doctrine defines quorum
 requirements, independence dimensions, and an outcome taxonomy, but
@@ -1965,6 +1965,7 @@ Claude — Synthesizer/Auditor, human-directed, 2026-07-26.*
 
 ### Resolution Log
 
+- 2026-11-13: **MAINT-141 — A1a consolidated completion pass, owed-review cohort (Decision Brief 2026-11-13 A1a Line 1 RATIFY + Line 3 CARRY, human ruling "Let's take your lean as the direction. Please proceed."; Vibe — Architect line PRIMARY, Repo Custodian secondary; co-author mandate 2026-11-02/04, extended 2026-11-11; non-independent — the same line drafted the brief and executes its remedy; disclosed; human veto window open).** Two of this file's registered open sidecar entries tripped the 90-day owed-review bar at 2026-11-13 (Last Reviewed before 2026-08-15): GMP-003, GMP-013. Each was genuinely re-read against the live body this pass; findings recorded, findings-only — no entry text rewritten, no status changed, no unknown opened or closed: GMP-003 — adversarial review at v0 (Phase 2) remains underspecified for the repository's actual single-contributor context; unchanged since the 2026-09-03 correction pass; GMP-013 — §VI Epistemic Quorum Doctrine remains doctrine text without tooling or machine-readable metadata. Last Reviewed advanced to 2026-11-13 for both. Open Unknowns unchanged at 4 (GMP-002, 003, 004, 013). No doctrine text changed; the trailing Status block stays bare per its standing deliberate-non-update decision; this log stays bare-textured per its own frozen-history scope notes.
 - 2026-11-11: **MAINT-130 batch 4e — stale version pin retired (Decision Brief 2026-11-11 Item 5B residue, F-GMP-3; Vibe — Repo Custodian, delegated line under the 2026-11-04 co-author mandate extended 2026-11-11; non-independent — the same line ran Campaign 4; disclosed; human veto window open).** The Relationship section's Security_Protocols bullet pinned the file "at v0.5 (2026-06-19)"; SP has advanced far past v0.5 and the dependency is on SP reaching Provisional Specification, not a frozen version. Pin retired in place with a dated tag, per the PKC-022 pin-retirement precedent. Citation-form-only; no doctrine or gate change; version and Last Audit not advanced (findings-only form, PKC-020 split policy).
 - 2026-11-11: **Tail restoration from git (MAINT-130; Decision Brief 2026-11-11 Item 9a).** The file had ended mid-word ("...second consumer of its al") since commit 7a698608 (2026-08-01); the cut point was stable across every later commit. The missing tail — the end of the Version 0.7 Status entry, the Version 0.6, 0.5, 0.4 and 0.3 entries, and the closing "What must remain constant" footer (2,410 characters) — restored verbatim from commit 42e8b4b1 (2026-07-26, the last complete state). Post-truncation commits grew the file only above the cut point, so nothing legitimate was lost in the restored region. Restored text verified escape-free; no other body text touched; version unchanged (restoration, not amendment). Executed under the co-author delegation (2026-11-04 mandate, extended 2026-11-11); non-independent, disclosed; human veto window open.
 - 2026-11-05: **MAINT-63 X3 straggler citation pass (mechanical).** 20 bare colliding-prefix citations in §Assumptions and §VII qualified with their owning File.md per PKC-003 — 18 × GOV-008 and 1 × GOV-006 (both → `Admin/Governance_Charter.md`), 1 × CIR-GOV-001 (→ `Admin/CIR_Gov.md`) — on 15 lines (two carry two instances, one carries four), per the enumerated instance list in `Archive/Audits/EXECUTION_2026-11-05_MAINT-63.md` §1 (per-ID grounding: Unknowns active index; CAMPAIGN2_AUDIT_73 N2). Citation-form-only; no content change; frozen history untouched (this log, File State pass-notes and the trailing Status block stay bare). Preserved bare by scope: the PKC-016 dated annotations (×2) and the backticked pre-rename `CIR-001` inside the 2026-08-06 provenance note; remaining bare GOV-008 mentions outside the audit-flagged zones (Scope Boundary, §VIII, Drift Indicators, Auditor Notes and Unknowns entries) are enumerated in the execution record for any future straggler pass. Human-ratified MAINT-62 ruling set §2 Category A. (Vibe — Architect line PRIMARY, Repo Custodian secondary.)
