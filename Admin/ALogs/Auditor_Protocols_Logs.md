@@ -74,7 +74,7 @@ entry and the full Resolution Log — lives here now.
 | Blocking      | No                         |
 | Owner         | Admin/Auditor_Protocols.md |
 | First Logged  | 2026-05-04                 |
-| Last Reviewed | 2026-06-24                 |
+| Last Reviewed | 2026-11-13                 |
 
 **Description:** Whether the clarification that human override rights do not extend to Ethical_Constraints hard-line doctrines is explicitly stated in both documents in a mutually consistent way.
 
@@ -95,7 +95,7 @@ entry and the full Resolution Log — lives here now.
 | Blocking      | No                         |
 | Owner         | Admin/Auditor_Protocols.md |
 | First Logged  | 2026-05-04                 |
-| Last Reviewed | 2026-06-24                 |
+| Last Reviewed | 2026-11-13                 |
 
 **Description:** A machine-readable format (JSON/YAML) for recording gate passages, blocks, and overrides that can be queried and compared across audit cycles does not yet exist.
 
@@ -207,7 +207,7 @@ entry and the full Resolution Log — lives here now.
 | Blocking      | No                         |
 | Owner         | `Admin/Auditor_Protocols.md` |
 | First Logged  | 2026-05-23                 |
-| Last Reviewed | 2026-08-02                 |
+| Last Reviewed | 2026-11-13                 |
 
 **Description:** The repository lacks explicit operational doctrine for audit history integrity, rollback detection, canonical-path authority, and institutional memory corruption at the auditor protocol level.
 
@@ -232,7 +232,7 @@ entry and the full Resolution Log — lives here now.
 | Blocking      | No                         |
 | Owner         | `Admin/Auditor_Protocols.md` |
 | First Logged  | 2026-06-21                 |
-| Last Reviewed | 2026-06-24                 |
+| Last Reviewed | 2026-11-13                 |
 
 **Description:** Sections [EF-0.2] and [EF-0.7] define operational actions — "Subsystem Quarantine," "Halt autonomous audit progression," "Epistemic Reset" — as descriptive text. No software interface, structural signaling mechanism, exit code schema, file system lock protocol, or CI/CD branch freeze specification exists to map how an autonomous agent is expected to execute a hard freeze or isolation block without causing downstream crashes or silent state corruption.
 
@@ -272,7 +272,7 @@ entry and the full Resolution Log — lives here now.
 | Blocking      | No                         |
 | Owner         | `Admin/Auditor_Protocols.md` |
 | First Logged  | 2026-06-21                 |
-| Last Reviewed | 2026-06-24                 |
+| Last Reviewed | 2026-11-13                 |
 
 **Description:** EF-0.8b establishes the physical reality grounding doctrine but no mandatory coupling path exists between the Epistemic Foundation layer and the repository's physical test harnesses. The audit sequence has no phase requiring physical harness confirmation. A specification that satisfies EF-0.8b's text but has never been submitted to a physical test harness remains PROVISIONAL under the doctrine's own terms.
 
@@ -295,7 +295,7 @@ entry and the full Resolution Log — lives here now.
 | Blocking      | No                         |
 | Owner         | `Admin/Auditor_Protocols.md` |
 | First Logged  | 2026-06-21                 |
-| Last Reviewed | 2026-06-24                 |
+| Last Reviewed | 2026-11-13                 |
 
 **Description:** The AP-004 arbitration framework relies on human intervention as its terminal escape route (Tier 3). Under operational load, the frequency of Tier 3 escalations will cause human operator cognitive erosion. An undertrained or fatigued operator will default to stamping overrides without documenting substantive rationale, bypassing the Human Override Doctrine and masking systemic architectural drift.
 
@@ -518,7 +518,7 @@ Separately, one reported finding (claimed sidecar truncation at AP-017, omitting
 | Blocking      | No                           |
 | Owner         | Admin/Auditor_Protocols.md   |
 | First Logged  | 2026-06-24                   |
-| Last Reviewed | 2026-06-24                   |
+| Last Reviewed | 2026-11-13                   |
 
 **Description:** The 40% saturation threshold in the Priority Demotion Doctrine (RC-007) has no rate-of-change filter, hysteresis band, or smoothing doctrine. A single marginal entry at 39.9% saturation does not trigger review; one at 40.0% does. This creates an incentive to under-report genuine epistemic gaps to avoid tripping the threshold.
 
@@ -541,7 +541,7 @@ Separately, one reported finding (claimed sidecar truncation at AP-017, omitting
 | Blocking      | No                           |
 | Owner         | Admin/Auditor_Protocols.md   |
 | First Logged  | 2026-06-24                   |
-| Last Reviewed | 2026-06-24                   |
+| Last Reviewed | 2026-11-13                   |
 
 **Description:** The Inventory Calcification Check and Vehicle Advancement Visibility rules measure structural state changes but not whether a resolution path is actually converging toward closure. An agent can satisfy both rules indefinitely by adding a single sentence of flavor text every 1.5 cycles, keeping the entry technically active while making no genuine progress.
 
@@ -907,7 +907,7 @@ It is explicit about what it will give up. It sacrifices speed, polish, and a go
 | Blocking      | No                           |
 | Owner         | Admin/Auditor_Protocols.md — §Mission Drift Review |
 | First Logged  | 2026-07-26                   |
-| Last Reviewed | 2026-07-26                   |
+| Last Reviewed | 2026-11-13                   |
 
 **Description:** §Mission Drift Review's ratification-velocity trigger (every 5 ratified governance/canonical changes) is a provisional operating parameter, explicitly labeled no higher than Placeholder on this document's own Evidence Classification scale. It was set by multi-agent consensus reasoning (Gemini, Grok, ChatGPT) about audit fatigue and drift-detection sensitivity, not by any operational data — the mechanism has not run once yet.
 
@@ -1103,6 +1103,7 @@ would not discard "without sentiment" is eligible to be considered.
 
 ### Resolution Log
 
+- 2026-11-13: **MAINT-141 — A1a consolidated completion pass, owed-review cohort (Decision Brief 2026-11-13 A1a Line 1 RATIFY + Line 3 CARRY, human ruling "Let's take your lean as the direction. Please proceed."; Vibe — Architect line PRIMARY, Repo Custodian secondary; co-author mandate 2026-11-02/04, extended 2026-11-11; non-independent — the same line drafted the brief and executes its remedy; disclosed; human veto window open).** All nine registered open AP entries tripped the 90-day owed-review bar at 2026-11-13 (Last Reviewed before 2026-08-15, per the Kit v1.34 owed-review routing / D-3, reach registered-only): AP-002, 003, 007, 008, 010, 011, 018, 019, 030. Each was genuinely re-read against the live bodies this pass; findings recorded, findings-only — no entry text rewritten, no status changed, no unknown opened or closed: AP-002 — the AP side (EF-0.4/EF-0.5) is live as described, but the EC side has matured since the entry was written: EC-009 (Human Authority Conflict Doctrine) ratified 2026-08-22, the floor-above-direct-order boundary ratified 2026-07-26, EC-011 interim authentication recorded; the entry's "confirmation pending" description predates that ratification grade, and the mutual-consistency confirmation the entry asks for is now closer to satisfiable — making it is a disposition, not a review act, so AP-002 stays In Progress; AP-003 — no machine-readable audit-trail schema in the live body (EF-0.3's five fields remain the operative minimum); AP-007 — partial implementation confirmed live (the Sidecar SHA-256 recompute-on-log row and the relocated-sidecar integrity check); repository-wide doctrine-lineage protections and SP parity checks still absent (live grep: none); AP-008 — no technical quarantine interface in the live body; AP-010 — EF-0.8b live; no harness coupling in the phase protocol (live grep: none); AP-011 — no cool-down doctrine; AP-018 — no hysteresis/smoothing doctrine; AP-019 — semantic progress markers partially operationalized (RC-009), matching the entry's description; full integration as a sidecar validation criterion still open; AP-030 — MDR Cycle 1 executed 2026-10-29 with ratings recorded in this sidecar; cycles 2-3 pending; Open per its own terms. Last Reviewed advanced to 2026-11-13 for all nine. AP-036 recompute-on-log remedy applied: this file's whole-file SHA-256 recomputed and recorded in `Admin/Auditor_Protocols.md` File State in this same commit; the pre-entry live sidecar hashed to the recorded 2026-11-11 value (`e7a6a211…`) — no divergence on entry; the hash was computed with a sandbox-local SHA-256 implementation validated against four NIST test vectors before use (the execution environment provides no crypto.subtle; disclosed). No doctrine text changed; no version bump (sidecar metadata pass).
 - 2026-11-11: **MAINT-130 batch 4c — relocation-repair-miss repoints in Admin/Auditor_Protocols.md (Decision Brief 2026-11-11 Item 5B; Vibe — Repo Custodian, delegated line under the 2026-11-04 co-author mandate extended 2026-11-11; non-independent — the same line ran Campaign 4; disclosed; human veto window open).** Eight operative pointers in AP.md to this sidecar's pre-relocation `Archive/Logs/` home were repointed to `Admin/ALogs/`, each with an inline dated tag preserving the original path (PKC-007: dated historical entries untouched; only operative routing repointed). Recorded here rather than in AP.md because AP.md's in-file log directs new entries to this sidecar. No AP.md body content changed beyond the pointers; the Sidecar SHA-256 pin in AP.md's File State was recomputed in the same commit to match this entry's landing.
 - 2026-11-04: **v0.46 → v0.47 — MAINT-56 File State minimization + stale-line corrections (human-ruled 2026-11-04; Vibe — Repo Custodian, delegated line; non-independent, disclosed).** (1) The AP.md File State Last Audit and Auditor rows retired per the File_Template §2 amendment (human ruling 2026-11-04); preserved verbatim below per the never-delete discipline. (2) AP.md’s Astroid-miner lines corrected to active-repository status — first external contribution: SpaceOceanCorp PR #1 (water-delivery gear-ratio note), merged 2026-10-30 after human merit review (recorded in that repository’s provenance file); the retired companion-repository name repointed to `LazarusForge`. (3) Four current-tense old-home path pointers in AP.md repointed to this file’s current home (path-only; dated history untouched; MAINT-29 precedent). (4) Both Version String Registry citations, the Status block and the in-body footer updated to 0.47 in one pass. (5) This entry’s companion AP.md File State Sidecar SHA-256 row was recomputed in the same commit as this log write (AP-036 recompute-on-log remedy, mechanically enforced via single-commit multi-file push). No rule, gate, assumption or Unknown changed; AP-036 remains In Progress — its remedy is applied here, not closed; closure awaits an independent verifier per Rule 5.
   Retired Last Audit row, preserved verbatim: "Last Audit       │ 2026-11-02 — Vibe (Architect, delegated line; human-ratified Decision Brief 2026-11-02 batch, items A1/A2/A4/A6): v0.45 → v0.46 — A1: §Resolution Pathways three-row table replaced with the canonical mapping over the Resolution Taxonomy's five payment types, with an explicit no-unearned-validation clause (Rule 9/AP-033, Fallacy Checklist item 4) and a legacy-label reconciliation note; A4: §Mission Drift Review gained a Measured-scope sentence (labels grade repository text; quotation is the instrument; label names unchanged per AP-021/AP-026); A2: Gate 2 Not-Applicable definition recorded in `Admin/Verification_Gates.md` (v0.7 → v0.8) and cited in this file's Spec Gates G2 cell; A6: AP-036 registered with the recompute-on-log remedy, applied in this commit (Sidecar SHA-256 recomputed in the same commit as the sidecar log write). Open Unknowns 9 → 10; both Version String Registry citations, Status block, footer and sidecar Resolution Log updated in one pass. Independent verifier owed per Rule 5 before any closure claim. Prior: 2026-10-31 — Vibe (Repo Custodian, delegated line; 1.31 offline review by Claude, human-routed): MAINT-29 relocation follow-up — Sidecar Link row and the Sidecar SHA-256 row's two path mentions repointed `Archive/Logs/Auditor_Protocols_Logs.md` → `Admin/ALogs/Auditor_Protocols_Logs.md` (the changelog is byte-identical at its new home, so the recorded SHA-256 value is unchanged); this row's and the Open Unknowns row's current-tense "see … Resolution Log" pointers repointed likewise. Path-only; no content change; no version bump; dated history left as written. Prior: 2026-10-25 — v0.44 → v0.45, from base v0.44 (human-directed): findings-only pseudo-audit rule added to Rule 10 (PKC-020) and `Unknowns.md` audit handling added under Audit Entry Conditions (PKC-025); both Version String Registry citations, the Status block and the Resolution Log footer updated; Sidecar SHA-256 recomputed. Prior: 2026-10-20 (second pass) — 10-Entry Rule removed (v0.44) at the human governing authority's direction, closing AP-029 as a Constitutional Decision (ratification completes on commit): §The 10-Entry Rule is now a tombstone; the Metadata Bloat row, `Admin/File_Template.md`, `Admin/Verification_Gates.md` and `Tests/Persistent_Cognition_Candidates.md` were updated; the Status block and Resolution Log footer version drift was corrected; the Sidecar SHA-256 was recomputed. Checked against source by Claude; no independent verifier on this pass. Human-directed. Earlier the same day: 2026-10-20 — external integrity sweep (Vibe — Skeptic/Auditor, human-directed, per `Admin/INTEGRITY_SWEEP_PROMPT.md` v1.0.2) found the Sidecar SHA-256 below stale (the 2026-09-02 hash predated archive content modified by the 2026-09-29 UNK-003 write-up) and two bare `Unknowns_Changelog.md` citations in `Unknowns.md`. Claude re-verified both against source (recorded hash `f338b1c1…` vs. actual `0d0b6fa6…` before this edit), fixed the citations, closed AP-029 as Resolved — Payment via Constitutional Decision (ratification completes on commit; Open Unknowns 10 → 9; see sidecar entry), and recomputed the hash. A second Vibe pass then independently verified the package (count, structure, hash) and flagged the original "Discharge" label, corrected here to match the Resolution Taxonomy. Grok's same-day sweep reported no AP findings and did not check the sidecar hash. Tier 1 Axiom verification was not performed by the Vibe sweep (no prior committed baseline in its session) and was not performed in this pass. Human-directed. Prior: 2026-09-29 — UNK-003 (Cross-repo assumption contracts, owned by this file per `Unknowns.md`'s active index) received its first full sidecar write-up in `Archive/Logs/Auditor_Protocols_Logs.md`, formalizing a Deferred row that predates this file's tracked history. Status unchanged (Deferred — pending Leviathan milestone); Open Unknowns count below intentionally left at 10 rather than incremented to 11, since it is not a new unknown, only a newly-written-up existing one, and whether Deferred items were ever included in that count historically was not established either way — flagged here rather than resolved silently. Human-directed. Prior: 2026-09-02 — self-application audit corrected five internal drift points (see Auditor field below); revised 2026-09-03 — Grok audit (G1/G3/G4/G6 Pass, G5 conditional, Tier 1 provisional); Claude follow-up same day: (1) Tier 1 Axiom Verification completed with Governance_Charter.md loaded — eight-axiom list, Genesis Phase Protocol role-separation citation, and all Q-1 anchors confirmed verbatim-consistent, no drift, provisional caveat closed; (2) full cross-reference sweep for G5 found one genuine unprefixed-path defect beyond AP-027's prior fix (`Unknowns_Changelog.md` → corrected to `Archive/Logs/Unknowns_Changelog.md`); two other unprefixed same-sentence shorthand mentions and one historical quoted-fabrication reference reviewed and left as-is (not live citations); G5 cleared, Spec Gates 4/6→5/6. Version-history gap (v0.39–0.41) reviewed — already correctly flagged as an explicit open item pending reconstruction in the 2026-09-02 note; left as-is, not invented (human-directed). Prior: 2026-08-02. 2026-11-02 note: an external findings-only pseudo-audit pass (Notion-routed external review, verified against live source by Vibe — Architect line, human-directed) is logged in the Resolution Log; findings only — not counted toward this field per Rule 10 addendum (PKC-020).".
