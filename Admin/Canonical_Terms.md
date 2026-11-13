@@ -786,7 +786,7 @@ halt autonomous audit progression and escalate for human review.
 | Blocking      | No                       |
 | Owner         | Admin/Canonical_Terms.md |
 | First Logged  | 2026-05-26               |
-| Last Reviewed | 2026-06-24               |
+| Last Reviewed | 2026-11-13               |
 
 **Description:** Several early internal variables within legacy automation
 layers may still map back to alternative names used prior to folder
@@ -811,7 +811,7 @@ canonical folder-prefixed paths.
 | Blocking      | Yes (Gate_02_Triage.md Spec promotion)  |
 | Owner         | Admin/Canonical_Terms.md                |
 | First Logged  | 2026-05-26                              |
-| Last Reviewed | 2026-07-21                              |
+| Last Reviewed | 2026-11-13                              |
 
 **Description:** The technical definition for what constitutes a Component
 Library entry format remains fluid. Without a rigorous taxonomy specification,
@@ -845,7 +845,7 @@ question, still genuinely open.
 | Blocking      | No                       |
 | Owner         | Admin/Canonical_Terms.md |
 | First Logged  | 2026-05-27               |
-| Last Reviewed | 2026-06-24               |
+| Last Reviewed | 2026-11-13               |
 
 **Description:** As governance, ontology, integrity, audit, and security
 become mutually referenced, the modification propagation path between them
@@ -868,7 +868,7 @@ as a v0→v1 transition task.
 | Blocking      | Yes (Security_Protocols.md Section III.2)       |
 | Owner         | Admin/Canonical_Terms.md                        |
 | First Logged  | 2026-05-28                                      |
-| Last Reviewed | 2026-06-24                                      |
+| Last Reviewed | 2026-11-13                                      |
 
 **Description:** `Admin/Security_Protocols.md` Section III requires key-pair
 generation within a "trusted initialization environment" but the term is
@@ -893,7 +893,7 @@ file. Minimum required elements: (1) physical custody requirements;
 | Blocking      | No                       |
 | Owner         | Admin/Canonical_Terms.md |
 | First Logged  | 2026-06-14               |
-| Last Reviewed | 2026-06-24               |
+| Last Reviewed | 2026-11-13               |
 
 **Description:** Several ethical and authorization terms appear across
 Ethical_Constraints.md, Governance_Charter.md, and Auditor_Protocols.md
@@ -917,7 +917,7 @@ term in Section 4 as entries mature across owning files.
 | Blocking      | No                         |
 | Owner         | Admin/Canonical_Terms.md   |
 | First Logged  | 2026-06-23                 |
-| Last Reviewed | 2026-06-24                 |
+| Last Reviewed | 2026-11-13                 |
 
 **Description:** No doctrine governs the detection of circular dependencies
 (A → B → C → A) in the blocking chain. At current scale these have not
@@ -1015,7 +1015,7 @@ outstanding. Last Reviewed advanced 2026-07-05 → 2026-10-28.
 | Blocking      | No                       |
 | Owner         | Admin/Canonical_Terms.md |
 | First Logged  | 2026-06-24               |
-| Last Reviewed | 2026-06-24               |
+| Last Reviewed | 2026-11-13               |
 
 **Description:** HF-001 (Heuristic Failure) was proposed in
 `Tests/Cognitive_Salvage_Layer.md` v0.2 as a first-class Forge failure class
@@ -1045,7 +1045,7 @@ definition exists but cross-file consistency has not yet been verified.
 | Blocking      | No                       |
 | Owner         | Admin/Canonical_Terms.md |
 | First Logged  | 2026-06-26               |
-| Last Reviewed | 2026-06-26               |
+| Last Reviewed | 2026-11-13               |
 
 **Description:** The Grain System canonical definition
 has been registered in this file (Section 4), establishing
@@ -1078,7 +1078,7 @@ canonical definition is confirmed consistent.
 | Blocking      | No                       |
 | Owner         | Admin/Canonical_Terms.md |
 | First Logged  | 2026-07-03               |
-| Last Reviewed | 2026-07-03               |
+| Last Reviewed | 2026-11-13               |
 
 **Description:** `Admin/Governance_Charter.md`'s "Canonical Verification
 Gates" (Gate 1–6) was renamed to "Enforcement Checkpoints" (Checkpoint
@@ -1154,6 +1154,7 @@ Auditor_Protocols.md specifically, which is now closed.
 
 ### Resolution Log
 
+- 2026-11-13: **MAINT-141 — A1a consolidated completion pass, owed-review cohort (Decision Brief 2026-11-13 A1a Line 1 RATIFY + Line 3 CARRY, human ruling "Let's take your lean as the direction. Please proceed."; Vibe — Architect line PRIMARY, Repo Custodian secondary; co-author mandate 2026-11-02/04, extended 2026-11-11; non-independent — the same line drafted the brief and executes its remedy; disclosed; human veto window open).** Nine of this file's ten open sidecar entries tripped the 90-day owed-review bar at 2026-11-13 (Last Reviewed before 2026-08-15): CT-001, 002, 003, 004, 005, 006, 008, 009, 010; CT-007's Last Reviewed (2026-10-28) is within the bar and untouched. Each was genuinely re-read against the live body this pass; findings recorded, findings-only — no entry text rewritten, no status changed, no unknown opened or closed: CT-001 — the Resolution Path's `Automation/AUDIT_HARNESS.py` internal-string audit remains unexecuted; the entry's Rename Registry pointer is current (the batch 4g repoint verified live); CT-002 — the Component Library Schema remains undefined; the colliding CT-002 in the other file remains as described; CT-003 — `Dependency_Priority_Map.md` confirmed still absent from the repository root (live listing check this pass); CT-004 — still open, twin of SEC-005 (Trusted Initialization Environment); CT-005 — the EC-001 consistency confirmation still awaits that entry's maturity; CT-006 — circular-dependency detection remains undefined; CT-008 — HF-001 defined in §4; cross-file canonicalization tracking remains in progress; CT-009 — the Grain System definition is live in §4; the implementation-protocol consistency tracking against ST-001/ST-002 remains open; CT-010 — rename propagation tracking remains in progress. Last Reviewed advanced to 2026-11-13 for all nine. Header unchanged at 0.14 (sidecar metadata pass — LR advances and this log entry only; no doctrine text changed; the batch 4g/4i header-unchanged precedent). Open Unknowns unchanged at 10.
 - 2026-11-11: **Rename Registry home repoints + File State retirement (Vibe — Repo Custodian, delegated line under the 2026-11-04 co-author mandate extended 2026-11-11; MAINT-130 batch 4g; Decision Brief 2026-11-11 Item 5B; Campaign 4 finding F-CT-1; non-independent — the same line ran Campaign 4; disclosed; human veto window open).** (a) Five operative passages naming `Discovery.md` as the Rename Registry's home repointed to `Archive/Rename_Registry.md` with inline dated tags (registry migrated 2026-08-09; relocation-repair-miss, Pattern 2 instance 4): the Scope Boundary's filename-resolution line, the Conflict Resolution Doctrine's rule 4, the Drift Indicators' scope-absorption condition, CT-001's sidecar description, and the Relationship section's registry line. F-CT-1 recorded three passages; the full-text sweep found five — same defect shape found more completely, delta disclosed (F-SEC-2 precedent). The file's two pre-existing correct `Archive/Rename_Registry.md` citations (§Relationship to Rename_Registry, the Canonical Mapping table row) untouched; the Canonical Cross-Reference row's `Discovery.md` confirmed-list reference is a different function (file registry, not the Rename Registry) and untouched. (b) File State's Last Audit and Auditor rows retired per MAINT-56 (2026-11-04) at this touch, per Campaign 4 finding F-CT-5 ("next touch must retire them"); both rows' full text relocated verbatim below; the dangling "Prior: 2026-09-23" chain fragment relocates with its row. Header version unchanged at 0.14 (citation-form + field-retirement pass; no doctrine text changed). Retired Last Audit row verbatim: | Last Audit       | 2026-10-31 — Vibe (Repo Custodian, fix pass, human-authorized 2026-10-31): CAMPAIGN2_AUDIT_77 F1 — the unlogged 0.12 → 0.13 header bump reconstructed from git history (landed in the 2026-10-29 X3 retrofit commit 5becc4d5; the pass's entries said citation-form-only) and recorded: Status current line, Version String Registry, and this cell advanced; header bumped 0.13 → 0.14 per PKC-039. No unknown opened or closed; no doctrine changed. Prior: 2026-10-29 — Vibe (Repo Custodian, delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A): X3 mechanical citation retrofit — 24 bare colliding-prefix citations qualified with their owning File.md per PKC-003 (Kit v1.29 Governance Sidecar ID Reference; per-ID grounding from the Unknowns active index). Citation-form-only; no content change; frozen history untouched. Prior: 2026-10-28 (later same-day) — Vibe (Repo Custodian, delegated maintenance, human-ratified Decision Brief 2026-10-28b + batch 2026-10-28c): v0.11 → v0.12 — CT-007 and the ID-prefix registry reconciled to the executed ECN- rename (2026-07-06), the erroneous EC-008 citation corrected (AUDIT_19 F3); File State Highest Risk Low → High (X10 corpus recompute — open sidecars CT-004 and CT-007 both carry Risk High). No unknown opened or closed; no doctrine changed. Prior: 2026-10-28 — Vibe (Repo Custodian, delegated maintenance, human-assigned X3 completion): v0.10 → v0.11 — designations completed: `K` = `Automation/` (kinetic), `B` = base layer (root-level files). Prior: 2026-10-28 — Vibe (Repo Custodian, delegated maintenance, human-ratified Decision Brief ruling, X3): v0.9 → v0.10 — Folder Designation Characters registered in §1; CT-007 annotated with the ruling and Last Reviewed advanced. Prior: 2026-10-28 — Vibe (Repo Custodian, delegated maintenance, human-ratified findings batch) v0.8 → v0.9, from base v0.8: AUDIT_11 F1–F4 enacted — Open Unknowns recounted 9 → 10 (off-by-one since the 2026-07-05 CT-011 resolution logged the transition as 10 → 9; no unknown opened); two misplaced Resolution Log entries relocated into the log; Version String Registry added; CT-005's bare EC-001 citation qualified. Prior: 2026-10-25 — Claude (human-directed) v0.7 → v0.8, from base v0.7: "Proposed" retired as a status designation (PKC-031) and the unversioned 2026-08-17, 2026-09-14 and 2026-09-23 passes covered by this one bump (PKC-029); see Resolution Log. Prior: 2026-10-24 — Claude (human-directed) corrected "Three vocabulary sources" to four and added a note to the Status section, from a Vibe per-file audit (see Resolution Log). Prior: 2026-09-23                                                          | Retired Auditor row verbatim: | Auditor          | Vibe — Repo Custodian, 2026-10-29 X3 mechanical citation retrofit (delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A); prior: Vibe — Repo Custodian, 2026-10-28 CT-007 registry reconciliation + Highest Risk recompute (delegated maintenance, human-ratified batches 2026-10-28b/c); prior: Vibe — Repo Custodian, 2026-10-28 X3 completion — B/K assignments (delegated maintenance, human-assigned); prior: Vibe — Repo Custodian, 2026-10-28 X3 Folder Designation registration (delegated maintenance, human-ratified); prior: Vibe — 2026-10-28 AUDIT_11 findings enactment (delegated maintenance, human-ratified batch); prior: Claude — 2026-10-25 v0.8 bump and Proposed note (human-directed); prior: Claude — 2026-10-24 wording correction and Status note (human-directed); prior: Claude — Claim-Type Labels registered under §4 (Grok proposer, human-directed), 2026-09-23; prior: Claude — "Disambiguation: Uses of 'Gate'" section added (FL-012, human-directed), 2026-09-14; prior: Claude — four new terms registered (Active Constitutional Surface, Claimed/Recognized/Ratified Constitutional Lineage) at GOV-018 closure, checked against existing vocabulary first — no competing term found (human-directed); prior: Claude — Synthesizer/Auditor (2026-06-24); Claude — Cycle definition + version-string correction (2026-07-05); Claude — CT-011 resolution 2026-07-05 |
 
 - 2026-11-11: Git re-verification of the log-vs-body record (Decision Brief 2026-11-11 Item 7A; MAINT-130 batch 3, co-author delegation; non-independent, disclosed). CAMPAIGN4_AUDIT_06 check 3 graded this log VERIFIED CLEAN against git history, and this pass confirms no unlogged changes are outstanding: the campaign's one CT instance (the unlogged X3 header bump 0.12 → 0.13) was already reconstructed from git and recorded in the 2026-10-31 entry, with the PKC-039 bump to 0.14. No content change; nothing reverted.
