@@ -721,7 +721,7 @@ Mandatory re-audit conditions for this document:
 | Blocking      | No                                      |
 | Owner         | `Admin/Repository_Integrity_Protocol.md`|
 | First Logged  | 2026-05-23                              |
-| Last Reviewed | 2026-06-19                              |
+| Last Reviewed | 2026-11-13                              |
 
 **Description:** Phase 3 integrity enforcement (cryptographic verification, authority authentication, append-only log enforcement) depends on `Admin/Security_Protocols.md` reaching sufficient cryptographic implementation maturity. Phase 3 implementation does not yet exist.
 
@@ -744,7 +744,7 @@ Mandatory re-audit conditions for this document:
 | Blocking      | No                                      |
 | Owner         | `Admin/Repository_Integrity_Protocol.md`|
 | First Logged  | 2026-06-19                              |
-| Last Reviewed | 2026-06-27                              |
+| Last Reviewed | 2026-11-13                              |
 
 **Description:** RIP-001 resolution path establishes an `/Archive/` directory but does not define how long archived versions must be retained.
 
@@ -765,7 +765,7 @@ Mandatory re-audit conditions for this document:
 | Blocking      | No                                      |
 | Owner         | `Admin/Repository_Integrity_Protocol.md`|
 | First Logged  | 2026-06-19                              |
-| Last Reviewed | 2026-06-19                              |
+| Last Reviewed | 2026-11-13                              |
 
 **Description:** (Updated 2026-08-16) Minimum closure-authority doctrine now lives in `Admin/Integrity_Incident_Log.md` §Ownership (Minor → detecting auditor; Major → human operator confirm; Constitutional → human governing party only). Residual gap: escalation timing SLAs, multi-incident pattern review cadence, and whether audit-lead is a distinct role from human operator are still undefined.
 
@@ -813,7 +813,7 @@ Mandatory re-audit conditions for this document:
 | Blocking      | No                                      |
 | Owner         | `Admin/Repository_Integrity_Protocol.md`|
 | First Logged  | 2026-07-09                              |
-| Last Reviewed | 2026-07-09                              |
+| Last Reviewed | 2026-11-13                              |
 
 **Description:** Every Protected Element in this file is checked per-file, in isolation. Nothing correlates findings *across* files within the same audit pass. A set of small, simultaneous Minor findings scattered across several unrelated files — each individually unremarkable — would currently read as several disconnected Minor items rather than surface as a single coordinated pattern worth escalating.
 
@@ -908,6 +908,7 @@ Mandatory re-audit conditions for this document:
 
 ### Resolution Log
 
+- 2026-11-13: **MAINT-141 — A1a consolidated completion pass, owed-review cohort (Decision Brief 2026-11-13 A1a Line 1 RATIFY + Line 3 CARRY, human ruling "Let's take your lean as the direction. Please proceed."; Vibe — Architect line PRIMARY, Repo Custodian secondary; co-author mandate 2026-11-02/04, extended 2026-11-11; non-independent — the same line drafted the brief and executes its remedy; disclosed; human veto window open).** Four of this file's registered open sidecar entries tripped the 90-day owed-review bar at 2026-11-13 (Last Reviewed before 2026-08-15): RIP-005, 006, 007, 009; RIP-002's Last Reviewed (2026-09-03) is within the bar and untouched. Each was genuinely re-read against the live bodies this pass; findings recorded, findings-only — no entry text rewritten, no status changed, no unknown opened or closed: RIP-005 — Security_Protocols.md Phase 3 (cryptographic verification) confirmed still a specification target, not an operational reality (live §Phase 3 read this pass); RIP-006 — the 2026-06-27 partial resolution stands; distillate-architecture retention remains undefined (no distillate architecture exists in the repository); RIP-007 — the minimum-ownership resolution (IIL §Ownership, recorded 2026-08-16) confirmed live in `Admin/Integrity_Incident_Log.md` (the three-tier ownership table present; the Major row's human-operator confirmation recorded 2026-11-11, MAINT-132); the residual (cadence, SLA, audit-lead role) remains open; the advance was applied to the entry's main field table only — the duplicate orphan field table with its 2026-06-19/2026-08-16 pair (F-RIP-3) is left as written, historical; RIP-009 — no standing cross-file correlation mechanism exists; Campaign-4-style pattern documents remain ad-hoc artifacts rather than a repository mechanism. Last Reviewed advanced to 2026-11-13 for all four. This entry is the pass's record; the File State Last Audit and Auditor rows were not prepended (they are retirement-class per MAINT-56 and this file is not in the MAINT-137 retirement roster; no ruling covers their retirement here — flagged, not enacted). Anchors (per §Lightweight Revision Anchors): `rl_entry_count_after` = 19; `file_line_count_after` = 1061; `open_unknowns_after` = 5. `content_hash_after` omitted for the self-reference reason (Progress_Log PKC-019). `prior_rl_entry_count` = 18, by live count this pass.
 - 2026-11-05: **MAINT-63 X3 straggler citation pass (mechanical).** 6 bare colliding-prefix citations in live doctrine text qualified with their owning File.md per PKC-003 — 4 × GOV-013 and 1 × GOV-006 (→ `Admin/Governance_Charter.md`), 1 × SEC-007b (→ `Admin/Security_Protocols.md`) — per the enumerated instance list published before the edits in `Archive/Audits/EXECUTION_2026-11-05_MAINT-63.md` §1 (CAMPAIGN2_AUDIT_76 N1). Citation-form-only; no gate, doctrine, unknown or spec change; frozen history untouched (this log and the Status version-history mentions preserved bare). Anchors (per §Lightweight Revision Anchors): `rl_entry_count_after` = 18; `file_line_count_after` = 1060; `open_unknowns_after` = 5. `content_hash_after` omitted for the self-reference reason (Progress_Log PKC-019). `prior_rl_entry_count` = 17 by live count (the 2026-10-28 entry carried no anchor fields). Human-ratified MAINT-62 ruling set §2 Category A. (Vibe — Architect line PRIMARY, Repo Custodian secondary.)
 
 - 2026-10-28: **VG Status-precedence line propagated + pseudo-audit ledger line (Vibe, Repo Custodian — delegated maintenance, human-ratified findings batch 2026-10-28).** (1) The trailing Status section now carries the precedence sentence from `Admin/Verification_Gates.md` (AUDIT_09 F4(a)): the File State header is authoritative if the Status block and it ever disagree. (2) Pseudo-audit, findings only, 2026-10-27; report: Archive/Audits/AUDIT_03_Admin-Repository_Integrity_Protocol.md (PKC-020 — the pass itself advanced nothing; this file's Last Audit advance records today's maintenance edit, not the pseudo-audit). No gate advanced; no unknown opened or closed.
