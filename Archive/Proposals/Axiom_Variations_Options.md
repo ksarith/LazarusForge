@@ -80,3 +80,9 @@ P-3 bars monopolized decision authority, while ratification authority currently 
 1. Choose A0 / A1 / A2 (A3 deferred, A4 rejected), and whether to add A5.
 2. Add the visibility sentences now (Track A)?
 3. Wait for the second Cycle 1 rater first? (recommended: yes)
+
+---
+
+## Ruled note — 2026-11-18 (MAINT-154): ARCHIVED — axioms stable at this time
+
+The human governing authority ruled 2026-11-18, verbatim: "Axioms are stable right now.  We should archive the proposal." Reading, disclosed: this ruling archives the paired option set — this file and `Ethical_Anchor_Upgrade_Options.md` (the 2026-10-29 drafting pair, both already sited in `Archive/Proposals/` since birth), his singular "the proposal" covering the pair as they have stood as one open queue item together. Effect: both files are closed as active proposals by status, not moved — nothing is adopted, no variant is enacted, no axiom text changes, the Tier 1 FROZEN Axioms block and the Ethical Anchor string are untouched (Hard Floor, his alone). The option sets remain preserved on the record for durability; reopening any option is his line, and this note neither schedules nor moots the second-Cycle-1-rater question the pair carries. Landed with the MAINT-154 entries (commit shas on the commits and in the MAINT_INDEX row). Non-independence: T0-equivalent, disclosed — the ruling is solely his word.

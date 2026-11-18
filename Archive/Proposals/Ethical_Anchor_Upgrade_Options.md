@@ -80,3 +80,9 @@ Design rule used below: quote P-1's own words ("foreseeably risk", "catastrophic
 3. Include the Astroid-miner mirror in the same pass? (yes / no)
 4. Should this wait for the second Cycle 1 rater? (recommended: yes)
 5. Ratification path: none exists in the current rules (see the correction above). Any change to the string is an out-of-process sovereign decision plus an edit to the GMP Hard Floor.
+
+---
+
+## Ruled note — 2026-11-18 (MAINT-154): ARCHIVED (paired ruling)
+
+Archived by the same 2026-11-18 ruling that closed `Axiom_Variations_Options.md` (the disclosed pair reading is recorded there), his words verbatim in the MAINT-154 entry: "Axioms are stable right now.  We should archive the proposal." This file's options (V0–V4, the hazard list, the sovereign-act requirement named in the correction above) stand closed as an active proposal and preserved on the record. The Ethical Anchor string itself is untouched and remains outside every amendment process; no decision was taken by this note; the awaiting-his-disposition list below is closed by the archival ruling, reopening at his word. Landed with MAINT-154. Non-independence: T0-equivalent, disclosed.

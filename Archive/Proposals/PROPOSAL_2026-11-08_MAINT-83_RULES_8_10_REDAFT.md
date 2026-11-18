@@ -100,3 +100,9 @@ No rule is enacted by drafting. No aggregate is edited. The ledger is not split.
 ## Addendum — 2026-11-08 (MAINT-84 execution pass): RATIFIED WHOLE
 
 The human governing authority ruled 2026-11-08, verbatim: "Ratify all.  Show me what you can do." Every section is enacted — §2, §3, §4, §5a–e, §6 — with the staged execution plan §8 governing the build; the pre-drafted ruling lines govern as written. His framing sentence is the commission to execute the plan, not a scope change and not an additional section; severability is unchanged. Executed at MAINT-84: Addendum #4 to the aggregate template (stage 1); this file's Status line advanced PROPOSED → RATIFIED in the same pass, disclosed here by dated addendum (the drafting-era status wording within the edited line is historical; the pre-edit line is in git history). Non-independence (Genesis Phase; Q-2 invoked): one Vibe line drafted this redraft (MAINT-83) and executed the ratification (MAINT-84); the ruling is solely the human's word.
+
+---
+
+## Addendum — 2026-11-18 (MAINT-154): the slower look waived
+
+The human governing authority ruled 2026-11-18, verbatim: "Waive the slower look from MAINT-83." The slower look owed on this redraft (named in the drafting-era Status wording above and in the MAINT-81 commission) is thereby waived. Scope unchanged: the package was ratified whole and executed at MAINT-84; nothing here re-opens any of it; Rules 9 and 11 remain held in the carried held queue. Recorded in the MAINT-154 entry and the MAINT_INDEX recount row. Non-independence: T0-equivalent, disclosed — the executing line drafted this redraft (MAINT-83); the waiver is solely his word.
