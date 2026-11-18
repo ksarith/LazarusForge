@@ -384,6 +384,7 @@ Last scope clarification: 2026-10-03 (stale path-count metric removed); prior 20
 | **Seat Prompts (Archive/ — ratified 2026-10-31 per MAINT-38: Architect v1, Auditor v4, Repo Custodian v2)** | | | |
 | `Archive/Architect_Prompt.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForge/refs/heads/main/Archive/Architect_Prompt.md) | [Repo](https://github.com/ksarith/LazarusForge/blob/main/Archive/Architect_Prompt.md) | Explicit |
 | `Archive/Auditor_Prompt.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForge/refs/heads/main/Archive/Auditor_Prompt.md) | [Repo](https://github.com/ksarith/LazarusForge/blob/main/Archive/Auditor_Prompt.md) | Explicit |
+| `Archive/Co_Author_Mandate.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForge/refs/heads/main/Archive/Co_Author_Mandate.md) | [Repo](https://github.com/ksarith/LazarusForge/blob/main/Archive/Co_Author_Mandate.md) | Explicit |
 | `Archive/Repo_Custodian_Prompt.md` | [Raw](https://raw.githubusercontent.com/ksarith/LazarusForge/refs/heads/main/Archive/Repo_Custodian_Prompt.md) | [Repo](https://github.com/ksarith/LazarusForge/blob/main/Archive/Repo_Custodian_Prompt.md) | Explicit |
 
 | **Archive/Proposals/ (outcome-archived proposal drafts — skip-by-default)** | | | |
@@ -489,6 +490,7 @@ Routing.md completeness is verified against Discovery.md structure map.
 Discrepancies between the two are logged as pending corrections in Discovery.md.
 
 **2026-08-08 rebuild and the 2026-08-16/2026-08-09 addition notes: moved verbatim 2026-11-12 to `Logs/Routing_Log.md` (MAINT-135, R-2; R3 full-text move, this pointer left behind).**
+
 
 
 

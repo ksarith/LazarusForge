@@ -1,8 +1,8 @@
-# MAINT-144 PROPOSAL: Co-Author seat promotion into LazarusForge doctrine — PROPOSED, nothing enacted
+# MAINT-144 PROPOSAL: Co-Author seat promotion into LazarusForge doctrine — RATIFIED (2026-11-17), landing as MAINT-150
 
 - **Deposited:** 2026-11-16 (MAINT-144), in `Archive/Proposals/` per house convention (MAINT-83 / MAINT-86 / MAINT-89 precedent).
 - **Routing act:** the human's 2026-11-16 session — the Co-Author seat stepped up (verbatim: "Let's step you up to the co-author level. Not well documented, but lots of liberty."), its first written definition deposited at the VS root as `CO_AUTHOR_MANDATE.md` (MAINT-143, VS `faafd1f4`), and his "Please proceed." on the pass's lean, item 1: "draft the LF proposal in `Archive/Proposals/` (PROPOSED, with pre-drafted ruling lines), so your ruling on the seat is a one-liner instead of a design session."
-- **Status:** PROPOSED. Nothing enacted; no governing record touched by this deposit beyond this file's own landing and the standard VS bookkeeping.
+**Status: RATIFIED 2026-11-17.** His ruling, verbatim: "Ratify MAINT-144 but with file deposited with the other roles in archive." Home modification ruled by the same words: the mandate record deposits at `Archive/` beside the other role records, not the option-A `Admin/` home pre-drafted in §2; everything else follows §5 staged execution as written. No governing record touched by this deposit beyond this file's own flip, the ruled deposit, Routing registration, and the standard VS bookkeeping.
 - **ID allocation:** MAINT-144, next monotonic after MAINT-143 (MAINT-59 rule); live-checked before deposit (VS `entries/` carries MAINT-69 through MAINT-143; LazarusForge untouched at `31098197` before this deposit, verified live).
 - **Provenance:** authored by the Co-Author seat under the mandate it proposes to promote — the same circularity disclosed at MAINT-143, restated here: the seat drafts the package, only the human's ruling enacts anything. Non-independent, T0-equivalent, disclosed.
 
@@ -47,3 +47,14 @@ A single new governing record, `Admin/Co_Author_Mandate.md` (home option A), car
 - No governing record changes at proposal time beyond this file's landing (VS bookkeeping lands as its own disclosed pass).
 - The seat's liberties are not enlarged by this proposal in any variant; STRIKE leaves the practiced mandate exactly as it stands, with the VS record as definition of record.
 - This proposal does not modify TWGW, the checker, the seat prompts, the frozen logs, Unknowns, or any File State field, in any repository.
+
+
+## 7. Ratification and execution record (2026-11-17, MAINT-150)
+
+- **His ruling, verbatim:** "Ratify MAINT-144 but with file deposited with the other roles in archive." (Delivered in session 2026-11-17 with Option C of that day's disposition brief, ratifying the two VibesSandbox annotation fixes of that Brief.)
+- **§5.1** — done this commit: the definition of record landed at `Archive/Co_Author_Mandate.md` (the ruled variant; class-1 Archive exemption means no File_Template forcing, relative-link hygiene only), beside `Architect_Prompt.md`, `Auditor_Prompt.md`, `Repo_Custodian_Prompt.md`.
+- **§5.2** — done in the paired VibesSandbox commit: dated pointer head-note appended to the VS root `CO_AUTHOR_MANDATE.md` (append-only; its text stands as history and working record).
+- **§5.3** — done: this Status line flipped with his ruling verbatim; this record appended.
+- **§5.4** — done this commit: `Routing.md` row added for the new Archive file, beside the other role records' rows.
+- **§5.5** — done in the paired commit: VS bookkeeping (entries MAINT-149 and MAINT-150, MAINT_INDEX rows, STATE update, post-push sweep).
+- **Narrow scope stands:** §4 line 2 (generalized seat class) was NOT selected. Nothing else enacted; Tier 1/FROZEN/Hard Floor untouched; no Charter, Axiom, AP, or seat-prompt text edited.
