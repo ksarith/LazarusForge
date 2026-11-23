@@ -28,11 +28,9 @@
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 1/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| | Last Audit | 2026-10-30 — Campaign 2 finding repair (human-directed custodian pass; see Resolution Log) |
-| Auditor          | Claude — 2026-10-20 corrections (human-directed, from an external Vibe sweep); Claude (2026-05-31); ChatGPT informal (2026-06-11); Claude retrofit  |
 | Open Unknowns    | 6                                                                   |
 | Active Disputes  | 0                                                                   |
-| Mediumest Risk     | High                                                                |
+| Highest Risk    | Medium |
 | Sidecar Link     | #auditor-notes--unknowns                                            |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
@@ -792,6 +790,10 @@ useful in a waste-heat harvest application. Document acceptance threshold as
 ---
 
 ### Resolution Log
+
+- 2026-11-23: **File Template conformance fix (Vibe — Co-Author standing primary, delegated; MAINT-156; non-independent, disclosed; human veto window open).** File State field name 'Mediumest Risk' renamed 'Highest Risk' (canonical §2 name), value reconciled to the file's own 2026-10-30 Campaign 2 recomputation (High → Medium, CAMPAIGN2_AUDIT_17 F1), which the non-canonical field name had masked; retired Last Audit/Auditor rows removed per MAINT-56 at this substantive touch, cell narratives relocated verbatim below. Metadata-only File State surgery: no doctrine, Spec Gate, or version change (metadata-pass convention, MAINT-137/141 precedent).
+  > Last Audit: 2026-10-30 — Campaign 2 finding repair (human-directed custodian pass; see Resolution Log)
+  > Auditor: Claude — 2026-10-20 corrections (human-directed, from an external Vibe sweep); Claude (2026-05-31); ChatGPT informal (2026-06-11); Claude retrofit
 
 - 2026-10-20: **Log repair and pointer corrections from an external Skeptic/Auditor sweep (Vibe; human-directed; checked against source by Claude).** (1) *Log repair.* The tail of the file-creation entry ("Engineering.md. Sections 1–8 drafted covering…", ending "`Admin/Verification_Gates.md`.") had run onto the end of the 2026-06-11 entry with its opening line missing. It is now separated under its own labeled fragment entry, dated approximately 2026-05-31 from the Auditor field and TH-001–TH-004 First Logged dates; nothing was reconstructed or added to it. (2) *TH-002.* Its pointer to "SC-001 in Gate_05" for the shell temperature profile was wrong — SC-001 is RPM envelope validation; no Gate_05 unknown owns exterior shell temperature. The text now says so. (3) *Gate_05 rows.* Both Downstream Dependents rows for Gate_05 are marked one-way: Gate_05 cites this file nowhere and does not track TH-001. (4) File State Last Audit and Auditor refreshed. Not changed: the §2.3 numbering gap. Human-directed.
 

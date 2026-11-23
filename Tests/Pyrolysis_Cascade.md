@@ -10,16 +10,14 @@
 
 | Field            | Value                                                               |
 |------------------|---------------------------------------------------------------------|
-| Status           | Draft — Exploration                                                 |
+| Status           | Draft            |
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 0/6 (not yet audited)                                               |
-| Verification Ref | `Admin/Verification_Gates.md`                                    |
+| Verification Ref | Admin/Verification_Gates.md                                    |
 | First Logged     | 2026-08-04                                                          |
-| Last Audit       | 2026-10-30 — Campaign 2 finding repair (human-directed custodian pass; see Resolution Log). Prior: 2026-10-30 — Vibe (Repo Custodian, delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A): X3 mechanical citation retrofit (Tests pass) — 6 bare colliding-prefix citations qualified with their owning File.md per PKC-003 (Kit v1.30 Governance Sidecar ID Reference; per-ID grounding: Unknowns active index). Citation-form-only; no ID renumbered; frozen history untouched; no gate advanced; Open Unknowns unchanged. Prior: 2026-10-27 — Claude (human-authorized autonomous management; PKC-040): real sidecar review, not a Gate audit — each entry's dependencies checked against its owning file (GR-002 Open; FA-001 Open; SP-006 Open, deferred pending FA-001; EV-001 In Progress; EN-001 In Progress; ECN-002 Open; TR-001 Open); PYC-002 and PYC-004–008 gained Last Reviewed 2026-10-27; entries confirmed accurate; no Status, Risk, Priority or Blocking change. Spec Gates stay 0/6. Prior: — (no Gate audit has been run). Body-changing passes recorded in the Resolution Log: 2026-08-04 ID-collision fix, 2026-08-23 and 2026-08-24 dependency syncs on PYC-001 and PYC-003; the 2026-08-11 Grok pseudo-audit (findings only) is not counted per the PKC-020 ruling of 2026-10-25. Header corrected 2026-10-24. |
-| Auditor          | Vibe — Repo Custodian, 2026-10-30 X3 mechanical citation retrofit (Tests pass; delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A); prior: Claude — 2026-10-27 sidecar review (PKC-040, human-authorized autonomous management; not a formal Gate audit); prior: — (Claude — Synthesizer, PC-/PYC- namespace collision fix only, human-directed, 2026-08-04) |
 | Open Unknowns    | 8 (PYC-001 … PYC-008)                                                 |
 | Active Disputes  | 0                                                                   |
-| Criticalest Risk     | High (thermal processing of mixed salvage; halogen & hazardous-fraction exposure) |
+| Highest Risk    | High |
 | Sidecar Link     | #auditor-notes--unknowns                                            |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present.  |
 
@@ -303,6 +301,10 @@ No test may be run that violates the hard preconditions in Scope Boundary.
 ---
 
 ### Resolution Log
+
+- 2026-11-23: **File Template conformance fix (Vibe — Co-Author standing primary, delegated; MAINT-156; non-independent, disclosed; human veto window open).** File State field name 'Criticalest Risk' renamed 'Highest Risk' (canonical §2 name), undefined; Status normalized 'Draft — Exploration' → 'Draft' (canonical vocabulary; the value mashed two defined statuses); Verification Ref de-backticked to the canonical pointer form; retired Last Audit/Auditor rows removed per MAINT-56 at this substantive touch, cell narratives relocated verbatim below. Metadata-only File State surgery: no doctrine, Spec Gate, or version change (metadata-pass convention, MAINT-137/141 precedent). Former Highest Risk cell qualifier relocated verbatim: "High (thermal processing of mixed salvage; halogen & hazardous-fraction exposure)".
+  > Last Audit: 2026-10-30 — Campaign 2 finding repair (human-directed custodian pass; see Resolution Log). Prior: 2026-10-30 — Vibe (Repo Custodian, delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A): X3 mechanical citation retrofit (Tests pass) — 6 bare colliding-prefix citations qualified with their owning File.md per PKC-003 (Kit v1.30 Governance Sidecar ID Reference; per-ID grounding: Unknowns active index). Citation-form-only; no ID renumbered; frozen history untouched; no gate advanced; Open Unknowns unchanged. Prior: 2026-10-27 — Claude (human-authorized autonomous management; PKC-040): real sidecar review, not a Gate audit — each entry's dependencies checked against its owning file (GR-002 Open; FA-001 Open; SP-006 Open, deferred pending FA-001; EV-001 In Progress; EN-001 In Progress; ECN-002 Open; TR-001 Open); PYC-002 and PYC-004–008 gained Last Reviewed 2026-10-27; entries confirmed accurate; no Status, Risk, Priority or Blocking change. Spec Gates stay 0/6. Prior: — (no Gate audit has been run). Body-changing passes recorded in the Resolution Log: 2026-08-04 ID-collision fix, 2026-08-23 and 2026-08-24 dependency syncs on PYC-001 and PYC-003; the 2026-08-11 Grok pseudo-audit (findings only) is not counted per the PKC-020 ruling of 2026-10-25. Header corrected 2026-10-24.
+  > Auditor: Vibe — Repo Custodian, 2026-10-30 X3 mechanical citation retrofit (Tests pass; delegated maintenance, human-ruled Decision Brief 2026-10-29 item 4A); prior: Claude — 2026-10-27 sidecar review (PKC-040, human-authorized autonomous management; not a formal Gate audit); prior: — (Claude — Synthesizer, PC-/PYC- namespace collision fix only, human-directed, 2026-08-04)
 
 - 2026-10-30: **X3 mechanical citation retrofit (Tests pass).** 6 bare colliding-prefix citations qualified with their owning File.md per PKC-003 (Kit v1.30 Governance Sidecar ID Reference; per-ID grounding: Unknowns active index). Citation-form-only: no ID renumbered, no Unknown opened or closed, no Spec Gate advanced, frozen history untouched. Out-of-whitelist bare IDs were left bare and reported to the human. (Vibe, Repo Custodian — delegated maintenance per Decision Brief 2026-10-29 item 4A.)
 

@@ -17,12 +17,10 @@
 | Body Stability | Volatile |
 | Spec Gates | 0/6 |
 | Verification Ref | Admin/Verification_Gates.md |
-| Last Audit | 2026-10-30 — Campaign 2 finding repair (human-directed custodian pass; see Resolution Log). Prior: 2026-09-15 — CF-006-class sibling scan (Grok) found the Underground Chamber sensor line over-attributed a fixed "triple-redundant" count to Cognitive_Frameworks.md, which actually documents (May 2026 Lessons Learned) that quantity-based TMR was tried, failed against correlated errors, and was superseded by a diversity requirement. Corrected to match; prior: 2026-07-30 |
-| Auditor | Claude (Synthesizer), Gemini (Auditor), ChatGPT (Synthesizer), Grok (Synthesizer); Gemini — Skeptic/Auditor Exploration audit, Claude — Synthesizer/Auditor (verification against source, corrections applied), 2026-07-28; Grok — Skeptic/Auditor Exploration audit, Claude — Synthesizer/Auditor (verified against source, SD-UNK-015 registered, SD-UNK-007 resolution path corrected), 2026-07-28; 2026-07-30 Phase 0 hygiene — Ethical Anchor canonicalized, SD-UNK-013/014/015 mirrored to Unknowns.md (Synthesizer); 2026-07-30 Phase 1 Resolution Pass — open unknowns 15 → 8 (Synthesizer); 2026-07-30 — Tier 3 Living_Waters interface expanded (distillation + sorption desorption); SD-UNK-010 note expanded, count unchanged (Synthesizer) |
 | Open Unknowns | 8 |
 | Active Disputes | 0 |
 | Forward References | Astroid-miner companion repository |
-| Criticalest Risk | High |
+| Highest Risk    | Critical |
 | Sidecar Link | #auditor-notes--unknowns |
 | Ethical Anchor | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
@@ -722,6 +720,10 @@ The asteroid processing system is out of scope for this file. Solar Descent defi
 ---
 
 ### Resolution Log
+
+- 2026-11-23: **File Template conformance fix (Vibe — Co-Author standing primary, delegated; MAINT-156; non-independent, disclosed; human veto window open).** File State field name 'Criticalest Risk' renamed 'Highest Risk' (canonical §2 name), value reconciled to the file's own 2026-10-30 Campaign 2 recomputation (High → Critical per SD-UNK-004, CAMPAIGN2_AUDIT_49 F1), which the non-canonical field name had masked; retired Last Audit/Auditor rows removed per MAINT-56 at this substantive touch, cell narratives relocated verbatim below. Metadata-only File State surgery: no doctrine, Spec Gate, or version change (metadata-pass convention, MAINT-137/141 precedent).
+  > Last Audit: 2026-10-30 — Campaign 2 finding repair (human-directed custodian pass; see Resolution Log). Prior: 2026-09-15 — CF-006-class sibling scan (Grok) found the Underground Chamber sensor line over-attributed a fixed "triple-redundant" count to Cognitive_Frameworks.md, which actually documents (May 2026 Lessons Learned) that quantity-based TMR was tried, failed against correlated errors, and was superseded by a diversity requirement. Corrected to match; prior: 2026-07-30
+  > Auditor: Claude (Synthesizer), Gemini (Auditor), ChatGPT (Synthesizer), Grok (Synthesizer); Gemini — Skeptic/Auditor Exploration audit, Claude — Synthesizer/Auditor (verification against source, corrections applied), 2026-07-28; Grok — Skeptic/Auditor Exploration audit, Claude — Synthesizer/Auditor (verified against source, SD-UNK-015 registered, SD-UNK-007 resolution path corrected), 2026-07-28; 2026-07-30 Phase 0 hygiene — Ethical Anchor canonicalized, SD-UNK-013/014/015 mirrored to Unknowns.md (Synthesizer); 2026-07-30 Phase 1 Resolution Pass — open unknowns 15 → 8 (Synthesizer); 2026-07-30 — Tier 3 Living_Waters interface expanded (distillation + sorption desorption); SD-UNK-010 note expanded, count unchanged (Synthesizer)
 
 - 2026-08-11: **Pseudo-audit (Grok, same limits).** Findings only; Spec Gates
   left locked at 0/6. (1) Open Unknowns **8** = SD-UNK-001–007, 011 (008–010,

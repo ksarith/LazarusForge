@@ -30,11 +30,9 @@
 | Body Stability   | Transitional                                                        |
 | Spec Gates       | 2/6                                                                 |
 | Verification Ref | Admin/Verification_Gates.md                                      |
-| | Last Audit | 2026-10-30 — Campaign 2 finding repair (human-directed custodian pass; see Resolution Log) |
-| Auditor          | Claude — 2026-10-20 corrections (human-directed, from an external Vibe sweep); Gemini (2026-05-31); ChatGPT (2026-06-11); Claude — Retrofit        |
 | Open Unknowns    | 4                                                                   |
 | Active Disputes  | 0                                                                   |
-| Mediumest Risk     | High                                                                |
+| Highest Risk    | Medium |
 | Sidecar Link     | #auditor-notes--unknowns                                            |
 | Ethical Anchor   | Attempt to do no harm. Defer to Ethical_Constraints.md if present. |
 
@@ -432,6 +430,10 @@ to next major file revision — non-blocking.
 ---
 
 ### Resolution Log
+
+- 2026-11-23: **File Template conformance fix (Vibe — Co-Author standing primary, delegated; MAINT-156; non-independent, disclosed; human veto window open).** File State field name 'Mediumest Risk' renamed 'Highest Risk' (canonical §2 name), value reconciled to the file's own 2026-10-30 Campaign 2 recomputation (High → Medium, CAMPAIGN2_AUDIT_15 F1), which the non-canonical field name had masked; retired Last Audit/Auditor rows removed per MAINT-56 at this substantive touch, cell narratives relocated verbatim below. Metadata-only File State surgery: no doctrine, Spec Gate, or version change (metadata-pass convention, MAINT-137/141 precedent).
+  > Last Audit: 2026-10-30 — Campaign 2 finding repair (human-directed custodian pass; see Resolution Log)
+  > Auditor: Claude — 2026-10-20 corrections (human-directed, from an external Vibe sweep); Gemini (2026-05-31); ChatGPT (2026-06-11); Claude — Retrofit
 
 - 2026-10-20: **Log repair and File State refresh from an external Skeptic/Auditor sweep (Vibe; human-directed; checked against source by Claude).** (1) *Log repair.* A fragment of an earlier entry ("mechanical, and kinematic engineering doctrine for salvaged-component fabrication machinery… Spec Gate 1 assessed as passing.") was spliced into the middle of the 2026-06-08 entry, under a truncated duplicate of that entry's first sentence ("- 2026-06-08: Navigation Anchors block added. Scope Boundary updated."). The duplicate line is removed — the complete entry follows it — and the fragment is moved after the complete entry under its own labeled heading, verbatim; its opening lines and exact date are not recoverable and were not reconstructed. (2) *File State.* Last Audit and Auditor had not moved for the 2026-07-28 Open Unknowns correction (3 → 4); refreshed. (3) *Noted, not changed:* Thermal_Systems.md names this file as owner of the structural response to thermal expansion, but this file does not cite Thermal_Systems.md, and `Architecture/Arc_Scope_Map.md`'s "reciprocal link confirmed" overstates that; this file also carries no Upstream/Downstream tables. Human-directed.
 
